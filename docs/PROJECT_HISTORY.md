@@ -4,6 +4,24 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-08-31 — sesja PR-3 c.d.: audyt + wzbogacenie mapy wektorowej Zendikaru (gałąź arena/01a0591f-mtg, PR #6)
+
+**Zlecenie właściciela:** „...zadanie audytu mapy wektorowej Zendikaru
+i dodania nowych elementów... Na razie mapa wygląda biednie."
+
+**Wykonanie:** audyt stanu mapy (AUDYT_...-mapa-zendikar.md) → plan →
+wzbogacenie `maps/zendikar/podklad.svg` o elementy przyrodnicze i
+osadnicze (góry/wulkany, lasy, rzeki, miasta, bagna, ruiny/Skyclave)
+**potwierdzone w źródłach** (MTG Wiki / Guide Zendikar / Plane Shift) +
+legenda symboli + podpis źródłowy → `map.json` z polem `elementy`
+(każdy z URL-em) i rozszerzonymi `kotwice`. Rekonstrukcja T3 nienaruszona
+(ADR 0012: `rekonstrukcja: true`, Murasa przerywana, pozycje przybliżone).
+Testy 70/70, build OK (2 483 kB).
+
+**Decyzje:** brak nowego ADR — wzbogacenie mapy mieści się w granicach
+ADR 0007/0012 (pass mapowy, Pętla Jakości krok 4). Pozycje punktów są
+przybliżone (nie ma oficjalnej mapy), co jest jawnie zadeklarowane.
+
 ## 2026-08-31 — sesja PR-3: Pętla Jakości + K5 (gałąź arena/01a0591f-mtg, PR #6)
 
 **Zlecenie właściciela:** „Kontynuujemy projekt." — bez nowej dostawy kart,

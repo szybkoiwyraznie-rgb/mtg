@@ -3,6 +3,37 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-08-31 — Mapa Zendikaru: audyt i wzbogacenie wektorowe (PR-3 c.d.)
+
+- **Audyt mapy** (`docs/audits/AUDYT_2026-08-31-PR3-mapa-zendikar.md`):
+  mapa T3 była „uboga" — same kontynenty z etykietami, brak gór, lasów,
+  rzek, miast, bagnisk i ruin.
+- **Podkład SVG wzbogacony** o elementy **potwierdzone w źródłach**
+  (MTG Wiki / Guide Zendikar / Plane Shift — pole `elementy` w map.json):
+  - **Tazeem**: las Oran-Rief, rzeka Umara + wąwóz + wodospad Magosi,
+    Merfolk Enclave, Sea Gate + miasto + Lighthouse, Sky Rock, Coralhelm
+    (zywa skała nad Halimar), Pasmo Lun Bulwark, Hadatown, ruiny Ysterid.
+  - **Akoum**: pasmo wulkaniczne + superwulkan, Oko Ugina, Windblast Gorge,
+    Affa, Goma Fada, Tal Terig.
+  - **Bala Ged**: dżungla Tangled Vale, rzeka Umung, Bojuka Bay,
+    Bordermire, Umungshore, Surrakar Caves.
+  - **Guul Draz**: Malakir, Free City of Nimana, Hagra Cistern,
+    Hanging Swamp, Pelakka Karst.
+  - **Murasa** (przerywana): Góry Skyfang/Shatterskull, Na Plateau,
+    rzeka Raimunza, Sunder Bay, jaddi-trees, Murasa Skyclave.
+  - **Ondu**: Makindi Trenches, Turntimber, Teetering Peaks, Agadeem +
+    Hedron Fields, Kabira, Beyeen/Mount Valakut, Jwar, Serpent's Maw.
+  - **Sejiri**: Midnight Pass, Ikiral, wietrzne góry, zmrożony step.
+  Dodana **legenda symboli** (góry/wulkan, las, bagno, osada, ruina)
+  i podpis źródłowy.
+- **`map.json`**: pole `elementy` (każdy element z URL-em źródła),
+  rozszerzone `kotwice` (nowe punkty z notką źródła) i zaktualizowana
+  notka. **Rekonstrukcja T3 nienaruszona** (`rekonstrukcja: true`,
+  Murasa przerywana, podpis kartograficzny); pozycje punktów są
+  przybliżone (nie ma oficjalnej mapy — ADR 0012).
+- Testy: 70/70; `npm run build` = OK (podkład osadzony, PIN 2BFZ
+  na Tazeem/Halimar bez zmian).
+
 ## 2026-08-31 — Pętla Jakości operacyjna + K5 (PR-3)
 
 - **K5 — `tools/wiki-stats.mjs`**: completeness score stron wg wzoru
