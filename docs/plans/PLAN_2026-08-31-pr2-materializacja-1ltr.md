@@ -58,4 +58,17 @@ teście UI; CI zielone po pushu.
 
 ## Podsumowanie wykonania
 
-_(dopisane na końcu zadania)_
+_(stan na koniec tury „mapa + hasła", 2026-08-31)_
+
+- Etap 1 (plan) ✓ C11; etap 2 (kwerenda lore) ✓ — cytowania w hasłach.
+- Etap 3 czątkowo: snapshot Scryfall ✓, strona planu ✓, taxonomia ✓;
+  **wpis kolekcji wstrzymany** — teksty dostawy (prompt + narracja)
+  przepadły w kondensacji historii czatu, właściciel został poproszony
+  o ponowne wklejenie (kanon verbatim — ADR 0003 nie pozwala na
+  rekonstrukcję z pamięci).
+- Etapy 4–5: karta Katalogowa czeka na wpis; 4 hasła ✓ (crebain, dunland,
+  isengard, rohan).
+- Etap 6 ✓ (C12 + map.json z kotwicami/regionami); etap 7 ✓ silnik map v1
+  (pan/zoom, legenda, kotwice, ?pin=, 63/63 testów); etap 8 czątkowo
+  (co-nowego, PROJECT_HISTORY, LESSONS L4) — dokończenie po materializacji
+  karty.

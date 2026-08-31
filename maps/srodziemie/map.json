@@ -1,0 +1,49 @@
+{
+  "plan": "srodziemie",
+  "tytul": "Śródziemie",
+  "wariant": "T2",
+  "podklad": "podklad.svg",
+  "wymiary": { "szerokosc": 3200, "wysokosc": 2400 },
+  "zrodlo": {
+    "url": "https://github.com/k1tesurfen/mapome",
+    "tytul": "mapome — SVG map of Middle-earth (preview-mapome-slim.svg)",
+    "autor": "k1tesurfen",
+    "licencja": "CC-BY-4.0",
+    "pobrano": "2026-08-31",
+    "notka": "Ta sama mapa na Wikimedia Commons: File:Map of Middle-Earth.svg. Podkład w pełni wektorowy (T2 przez adopcję — ADR 0009)."
+  },
+  "rekonstrukcja": false,
+  "kotwice": [
+    { "nazwa": "Isengard", "x": 0.4163, "y": 0.5313, "typ": "etykieta-podkladu", "notka": "kotwica z etykiety „Isengard”; południowy kraniec Gór Mglistych" },
+    { "nazwa": "Edoras", "x": 0.4703, "y": 0.6392, "typ": "etykieta-podkladu", "notka": "stolica Rohanu" },
+    { "nazwa": "Tharbad", "x": 0.3422, "y": 0.4104, "typ": "etykieta-podkladu", "notka": "przeprawa na Gwathló, skraj Enedwaithu" },
+    { "nazwa": "Enedwaith", "x": 0.315, "y": 0.5458, "typ": "etykieta-podkladu", "notka": "środek etykiety regionu" },
+    { "nazwa": "Minhiriath", "x": 0.2594, "y": 0.4692, "typ": "etykieta-podkladu", "notka": "środek etykiety regionu" },
+    { "nazwa": "Fords of Isen", "x": 0.4063, "y": 0.5813, "typ": "etykieta-podkladu", "notka": "Brody na Isenie" },
+    { "nazwa": "Helm's Deep", "x": 0.4713, "y": 0.6033, "typ": "etykieta-podkladu", "notka": "Helmowy Jar" },
+    { "nazwa": "Fangorn", "x": 0.4844, "y": 0.55, "typ": "etykieta-podkladu", "notka": "Las Fangorn" },
+    { "nazwa": "The Wold", "x": 0.55, "y": 0.5275, "typ": "etykieta-podkladu", "notka": "północno-wschodni kraniec Rohanu" },
+    { "nazwa": "Ered Nimrais", "x": 0.4094, "y": 0.6654, "typ": "etykieta-podkladu", "notka": "środek etykiety pasma (Białe Góry)" }
+  ],
+  "regiony": [
+    {
+      "haslo": "dunland",
+      "bbox": [0.35, 0.43, 0.44, 0.55],
+      "pewnosc": "przyblizona",
+      "uzasadnienie": "Kraina ukośna między rzeką Glanduin (płn.-zach.), Górami Mglistymi (wsch.) i rzeką Isen (płd.-zach.); prostokątny bbox ją przybliża (PROCES_MAP MA4)."
+    },
+    {
+      "haslo": "isengard",
+      "bbox": [0.405, 0.515, 0.435, 0.545],
+      "pewnosc": "dokladna",
+      "uzasadnienie": "Warownia na południowym krańcu Gór Mglistych; kotwica etykiety „Isengard” na podkładzie (MA4)."
+    },
+    {
+      "haslo": "rohan",
+      "bbox": [0.425, 0.525, 0.62, 0.66],
+      "pewnosc": "przyblizona",
+      "uzasadnienie": "Wspólny bbox pastwisk między Isen, Górami Mglistymi a Ered Nimrais; Wold wystaje ku północy, Eastfold ku wschodowi — bbox to przybliżenie (MA4)."
+    }
+  ],
+  "pinezki": []
+}

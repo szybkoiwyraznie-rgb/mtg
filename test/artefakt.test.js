@@ -18,12 +18,20 @@ test('build bazy repozytorium produkuję artefakt z danymi i kodem', async () =>
   assert.ok(!html.includes('<!--BUNDLE-->'), 'znacznik bundla niesubstituowany');
   assert.ok(!html.includes('<!--STYL-->'), 'znacznik stylu niesubstituowany');
 
-  // dane: pusta baza ma statystyki zerowe i pustą strukturę
+  // dane: statystyki zgodne z liczbą stron danego typu; mapy z podkładami
   const m = html.match(/globalThis\.CODEX_DATA = (\{[\s\S]*?\});\n\n\/\/ =====/);
   assert.ok(m, 'CODEX_DATA nierozpoznawalne');
   const dane = JSON.parse(m[1]);
-  assert.deepEqual(dane.statystyki, { karty: 0, hasla: 0, plany: 0 });
+  const naliczone = { karty: 0, hasla: 0, plany: 0 };
+  const KLUCZE = { karta: 'karty', haslo: 'hasla', plan: 'plany' };
+  for (const s of Object.values(dane.strony)) naliczone[KLUCZE[s.typ]]++;
+  assert.deepEqual(dane.statystyki, naliczone, 'statystyki niezgodne ze stronami');
   assert.ok(typeof dane.coNowegoHtml === 'string');
+  for (const [slug, mapa] of Object.entries(dane.mapy ?? {})) {
+    if (mapa.problem) continue;
+    assert.ok(mapa.podkladData?.startsWith('data:'), `mapa ${slug}: brak osadzonego podkładu (ADR 0009)`);
+    assert.ok(Array.isArray(mapa.pinezki), `mapa ${slug}: brak tablicy pinezek`);
+  }
 
   // składnia wstrzykniętego JS jest poprawna (node --check)
   const js = html.match(/<script>\n([\s\S]*?)\n<\/script>/)[1];

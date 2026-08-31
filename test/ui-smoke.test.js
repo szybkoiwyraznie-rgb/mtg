@@ -23,7 +23,7 @@ function wykonajArtefakt(sciezkaHtml) {
 }
 
 test('UI: pusta baza renderuje stronę główną ze stanami pustymi', async () => {
-  const cel = await zbuduj({ out: 'dist/test-ui-empty.html' });
+  const cel = await zbuduj({ root: 'test/fixtures-pusta', out: 'dist/test-ui-empty.html' });
   const shim = wykonajArtefakt(cel);
 
   assert.ok(shim.app.innerHTML.includes('MTG Lore Codex'), 'brak logotypu');
@@ -72,6 +72,35 @@ test('UI: baza fixture renderuje kartę, hasło i plan z wikilinkami', async () 
 
   shim.idz('#/tag/fauna');
   assert.ok(shim.app.innerHTML.includes('Tag: fauna (2)'), 'tag: brak 2 stron');
+
+  fs.rmSync(cel, { force: true });
+  shim.przywroc();
+});
+
+test('UI: mapa planu z realnej bazy — podkład, regiony, legenda, kotwice', async () => {
+  const cel = await zbuduj({ out: 'dist/test-ui-mapa.html' });
+  const shim = wykonajArtefakt(cel);
+
+  shim.idz('#/mapa/srodziemie');
+  const mapa = shim.app.innerHTML;
+  assert.ok(mapa.includes('Mapa: Śródziemie'), 'mapa: brak tytułu');
+  assert.ok(mapa.includes('data:image/svg+xml;base64,'), 'mapa: brak osadzonego podkładu (ADR 0009)');
+  assert.ok(mapa.includes('mapa-region'), 'mapa: brak warstwy regionów');
+  assert.ok(mapa.includes('href="#/haslo/dunland"'), 'mapa: region dunland nie linkuje hasła');
+  assert.ok(mapa.includes('href="#/haslo/rohan"'), 'mapa: region rohan nie linkuje hasła');
+  assert.ok(mapa.includes('Legenda'), 'mapa: brak legendy pewności');
+  assert.ok(mapa.includes('dokładna'), 'mapa: brak poziomu pewności w legendzie');
+  assert.ok(mapa.includes('CC-BY-4.0'), 'mapa: brak atrybucji podkładu');
+  assert.ok(mapa.includes('Kotwice etykiet'), 'mapa: brak listy kotwic (weryfikacja MA4)');
+  assert.ok(mapa.includes('Brak pinezek'), 'mapa: stan pusty pinezek ma być widoczny przed materializacją');
+  assert.ok(mapa.includes('data-mapa-ruch'), 'mapa: brak warstwy pan/zoom');
+  assert.ok(mapa.includes('mapa-przycisk'), 'mapa: brak przycisków zoomu');
+
+  // plan linkuje do mapy; trasa nieznanej planu → 404
+  shim.idz('#/plan/srodziemie');
+  assert.ok(shim.app.innerHTML.includes('#/mapa/srodziemie'), 'plan: brak linku do mapy');
+  shim.idz('#/mapa/nieznany-plan');
+  assert.ok(shim.app.innerHTML.includes('Nie znaleziono'), 'mapa: brak 404 dla nieznanego planu');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();

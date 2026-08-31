@@ -60,3 +60,18 @@ nadpisanie, a nie błąd składni.
 **Reguła:** każdy build przechodzi przez `tools/module-graph.mjs`
 (detekcja cykli + asercja braku kolizji nazw na poziomie modułów);
 nowy moduł bez przejścia przez te sprawdzenia nie wchodzi do `src/`.
+
+## L4 (2026-08-31) — nie zakładaj trybu offline dla wersji lokalnej
+
+**Objaw:** argumentacja ADR 0009 przy odrzucaniu kafli mapowych brała jako
+premise „artefakt działa offline z `file://`".
+
+**Przyczyna:** lokalna wersja artefaktu była mylnie utożsamiana z wersją
+bez sieci. Właściciel sprostował (2026-08-31, czat): wersja lokalna to
+po prostu plik na desktopie z internetem; jedynym elementem lokalnym są
+tory obrazów FOT/KON z katalogu `./img/`.
+
+**Reguła:** wymagania środowiskowe właściciela (sieć, urządzenia, katalogi)
+potwierdzać wprost, nie wywodzić z filozofii projektu; zewnętrzne zasoby
+są dopuszczalne, o ile artefakt degraduje się z nich z wdziękiem
+(druk Scryfalla: obraz online, cichy fallback — ADR 0008).

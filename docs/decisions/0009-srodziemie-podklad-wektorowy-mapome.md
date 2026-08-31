@@ -33,10 +33,14 @@ warstwy interaktywne. W praktyce researchu (MA1) pojawiły się problemy:
    silnika map; pinezki, etykiety i legenda pewności są wektorową
    nakładką HTML/SVG nad podkładem (spójnie z ADR 0001 — jeden plik,
    zero zależności runtime).
-3. **Kafle map online: odrzucone.** Artefakt musi działać offline z
-   `file://` i na Pages bez zewnętrznych wywołań (ADR 0001/0002); kafle
-   to zależność od serwera trzeciego (dostępność, prywatność, licencje).
-   Mapy online mogą być co najwyżej linkami w sekcji Źródła.
+3. **Kafle map online: odrzucone.** Artefakt pozostaje jednym plikiem
+   (ADR 0001) i nie uzależnia funkcji od serwera trzeciego (dostępność,
+   prywatność, licencje kafli). Mapy online mogą być co najwyżej linkami
+   w sekcji Źródła. *(Korekta premise'a 2026-08-31, czat: lokalna wersja
+   artefaktu NIE jest „offline" — na komputerze właściciela internet
+   działa normalnie, a z sieci dociąga się np. druki Scryfalla; lokalny
+   katalog jest źródłem wyłącznie torów FOT/KON. Powyższe powody
+   odrzucenia kafli pozostają aktualne, ale „tryb offline" nim nie jest.)*
 4. **Trace'owanie rastrów: odrzucone** — bez weryfikacji wzrokowej
    efektu ryzyko błędnych linii jest nieakceptowalne; gotowe źródło
    wektorowe jest lepsze i tańsze.

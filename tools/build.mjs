@@ -137,7 +137,18 @@ export async function zbuduj({ out, root = ROOT } = {}) {
     },
   };
 
-  // mapy: przekazujemy rejestr pinezek do danych (silnik map: PR-3)
+  // mapy: rejestr map + podkłady osadzone jako data-URI (ADR 0009 —
+  // artefakt jednoplikowy; SVG w procentach base64, gzIPPowany transfer
+  // na Pages zwróci ~4–5× mniejszy strumień)
+  for (const [slug, mapa] of mapy) {
+    if (mapa.problem || !mapa.podklad) continue;
+    const plik = path.join(root, 'maps', slug, mapa.podklad);
+    if (!fs.existsSync(plik)) continue; // brak pliku wychwyci test mapy (MA2)
+    const rozsz = path.extname(plik).toLowerCase();
+    const mime = rozsz === '.svg' ? 'image/svg+xml' : rozsz === '.png' ? 'image/png'
+      : rozsz === '.webp' ? 'image/webp' : 'image/jpeg';
+    mapa.podkladData = `data:${mime};base64,${fs.readFileSync(plik).toString('base64')}`;
+  }
   dane.mapy = Object.fromEntries(mapy.entries());
 
   if (problemy.length > 0) {
