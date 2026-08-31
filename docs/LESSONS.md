@@ -20,7 +20,7 @@ zdaniu`, potem **Objaw** → **Przyczyna** → **Reguła**.
 
 ---
 
-## L1 (2026-08-31, dziedziczona z mtg-game) — przed pracą sprawdzaj empirycznie, które ograniczenia sandboksа faktycznie obowiązują
+## L1 (2026-08-31, dziedziczona z mtg-game) — przed pracą sprawdzaj empirycznie, które ograniczenia sandboxa faktycznie obowiązują
 
 **Objaw:** przekonanie „egress zablokowany, więc Scryfall nieosiągalny"
 prowadziłoby do projektu z ręcznie wklejanymi danymi; przekonanie „edit_file
