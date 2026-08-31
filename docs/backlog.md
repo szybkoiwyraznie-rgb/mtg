@@ -4,6 +4,32 @@
 > właściciela albo z Pętli Jakości. Tu zapisujemy rozpoznanie, żeby nie
 > robić go drugi raz. (Konwencja dziedziczona z mtg-game.)
 
+## Kolejka link-miningu: encje czekające na drugą kartę (Śródziemie)
+
+Hasło powstaje, gdy ≥2 karty odwołują się do encji w treści (zasada
+właściciela 2026-08-31; SZKIELET_HASLA.md). Licznik wzmianek — karty
+mówiące o encji **w treści** (nie samym tagiem):
+
+| Encja | Klasa (docelowa) | Karty wspominające | Do hasła brakuje |
+|---|---|---|---|
+| crebain | fauna | 1ltr-dunland-crebain | 1 karta |
+| dunland | geografia | 1ltr-dunland-crebain | 1 karta |
+| isengard | geografia | 1ltr-dunland-crebain | 1 karta |
+| Saruman | postac | 1ltr-dunland-crebain | 1 karta |
+| Uruk-hai | spolecznosc | 1ltr-dunland-crebain | 1 karta |
+| Biała Ręka | koncepcja | 1ltr-dunland-crebain | 1 karta |
+| rohan | geografia | — (plan srodziemie wspomina) | licznik od kart, nie planów |
+
+Przy materializacji encji w drugiej karcie: utworzyć hasło wg
+SZKIELET_HASLA.md i **dopisać wikilinki ze wszystkich stron, które ją
+wspominają** (Pętla Jakości, krok 3). Wycofane 2026-08-31 hasła
+przedwcześnie utworzone (crebain/dunland/isengard/rohan) — treść do
+odzyskania z git history (commit e8fa07a) po odblokowaniu progów.
+
+Regiony mapy Śródziemia (`maps/srodziemie/map.json`) wracają razem
+z hasłami geograficznymi (MA4/MA5); wyliczone bboxy do odzyskania
+z commit e8fa07a.
+
 ## Wyszukiwarka fuzzy
 
 Domyślna wyszukiwarka to substring po tytułach/tagach/planach. Gdy baza

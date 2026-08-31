@@ -1,6 +1,6 @@
 # ADR 0003: Pętla jawnego przekazywania kart i hierarchia kanonu
 
-- **Status:** Zaakceptowana
+- **Status:** Częściowo zastąpiona — hierarchię kanonu zastępuje ADR 0010 (2026-08-31); pętla przekazywania i parość 1:1 pozostają w mocy
 - **Data:** 2026-08-31
 - **Decydenci:** właściciel projektu (decyzje 2026-08-31); agent Arena (sesja PR-1)
 

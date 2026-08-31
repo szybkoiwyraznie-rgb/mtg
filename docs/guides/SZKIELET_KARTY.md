@@ -18,8 +18,8 @@ Wpis dostarczany w czacie lub issue, w formacie tabelarycznym
 | Plan / Setting | setting po transpozycji | `Śródziemie` |
 | MV | mana value — **ignorowane** (decyzja 2026-08-31), przechowywane verbatim | `4` |
 | Colors | kolory | `B` |
-| Prompt | prompt wizualizacyjny alternatywnego artu | długi opis… |
-| Narracja | fabuła karty (kanon!) | długi opis… |
+| Prompt | prompt wizualizacyjny alternatywnego artu — kotwica osadzenia (ADR 0010) | długi opis… |
+| Narracja | fabuła karty — **kotwica osadzenia, nie kanon** (ADR 0010; kanonem jest karta MtG + lore świata) | długi opis… |
 
 Sesja zapisuje wpis jako `collection/entries/<slug>.md`:
 
@@ -85,7 +85,7 @@ istnienia, nie trzeba wpisywać ścieżek).
 | 4 | **Mechanika jako Opowieść** | Koszt, kolor, statyki, keywords, zdolności — odczytane WYŁĄCZNIE ze snapshotu Scryfall — przetłumaczone na narrację (czarny = szpiegostwo i strach; Flying = zwiadowcy powietrzni; Amass = rosnąca armia). Obowiązkowe. |
 | 5 | **Flavor Text** | Oryginał (EN, verbatim ze snapshotu) + tłumaczenie + interpretacja w kontekście. Jeśli karta nie ma flavoru — sekcja istnieje i mówi to wprost. Obowiązkowe. |
 | 6 | **Transpozycja** | Most: jak karta MtG (plan rodzinny/mechanika) przełożona została na setting docelowy. Dla kart „natywnych" krótko; dla transpozycji — sedno. Obowiązkowe. |
-| 7 | **Narracja Kolekcji** | Narracja właściciela **verbatim** (kopiowana z wpisu; to powtórzenie jest celowe — strona ma być samowystarczalna). Obowiązkowe. |
+| 7 | **Narracja Kolekcji** | Narracja właściciela **verbatim** (kopiowana z wpisu; to powtórzenie jest celowe — strona ma być samowystarczalna). Status: **kotwica osadzenia, nie kanon** (ADR 0010) — przy rozbieżnościach z kartą MtG lub lorem świata wygrywa kanon, a rozbieżność opisujemy jawnie. Obowiązkowe. |
 | 8 | **Wizualizacja** | Prompt (verbatim) + opis słowny, co obraz pokazuje/scenuje. **Zero generowania grafik** (ADR 0008). Obowiązkowe. |
 | 9 | **Wątki i Powiązania** | Wikilinki do haseł i innych kart; krótkie uzasadnienie powiązania. Obowiązkowe (może być na starcie puste z uzasadnieniem — uzupełnia Pętla Jakości). |
 | 10 | **Na Mapie** | Lokalizacja + poziom pewności (`dokladna`/`region`/`przyblizona`) + skąd wiemy (lore). Pinezka w `maps/<plan>/map.json`. Obowiązkowe od momentu istnienia mapy planu. |

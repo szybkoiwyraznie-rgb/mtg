@@ -50,7 +50,14 @@ z kotwicami z etykiet podkładu (wyprowadzone parserem XML) i regionami;
 silnik map v1 (pan/zoom/kotwice/legenda/?pin=) + osadzanie podkładu
 base64 w buildzie; test 63/63.
 
-**Otwarte:** wpis kolekcji verbatim (prompt + narracja właściciela
-przepadły w kondensacji historii czatu — właściciel został poproszony
-o ponowne wklejenie) → Karta Katalogowa 12 sekcji → pinezka
-1ltr-dunland-crebain w map.json.
+**Korekty właściciela (ta sama tura):** (1) hierarchia kanonu — prompt
+i narracja kolekcji NIE są kanonem, tylko kotwicą osadzenia; kanonem jest
+karta MtG + lore świata → ADR 0010 (zastępuje hierarchię ADR 0003);
+(2) hasła powstają dopiero po progu 2 kart odwołujących się do encji →
+4 hasła utworzone przedwcześnie wycofano, encje w kolejce link-miningu
+(docs/backlog.md).
+
+**Domknięcie PR-2 (ta sama tura):** właściciel ponownie przekazał dane
+1LTR (prompt + narracja) → wpis kolekcji verbatim + Karta Katalogowa
+(12 sekcji) + pinezka regionu Dunland (0,406/0.492) w map.json →
+testy 64/64, artefakt 2,4 MB.

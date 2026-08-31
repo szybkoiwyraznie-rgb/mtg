@@ -77,7 +77,7 @@ test('UI: baza fixture renderuje kartę, hasło i plan z wikilinkami', async () 
   shim.przywroc();
 });
 
-test('UI: mapa planu z realnej bazy — podkład, regiony, legenda, kotwice', async () => {
+test('UI: mapa planu z realnej bazy — podkład, pinezka, legenda, kotwice', async () => {
   const cel = await zbuduj({ out: 'dist/test-ui-mapa.html' });
   const shim = wykonajArtefakt(cel);
 
@@ -85,14 +85,13 @@ test('UI: mapa planu z realnej bazy — podkład, regiony, legenda, kotwice', as
   const mapa = shim.app.innerHTML;
   assert.ok(mapa.includes('Mapa: Śródziemie'), 'mapa: brak tytułu');
   assert.ok(mapa.includes('data:image/svg+xml;base64,'), 'mapa: brak osadzonego podkładu (ADR 0009)');
-  assert.ok(mapa.includes('mapa-region'), 'mapa: brak warstwy regionów');
-  assert.ok(mapa.includes('href="#/haslo/dunland"'), 'mapa: region dunland nie linkuje hasła');
-  assert.ok(mapa.includes('href="#/haslo/rohan"'), 'mapa: region rohan nie linkuje hasła');
+  assert.ok(mapa.includes('data-pinezka="1ltr-dunland-crebain"'), 'mapa: brak pinezki karty 1LTR');
+  assert.ok(mapa.includes('href="#/karta/1ltr-dunland-crebain"'), 'mapa: pinezka nie linkuje karty');
+  assert.ok(mapa.includes('?pin=1ltr-dunland-crebain'), 'mapa: brak deep-linka pinezki');
   assert.ok(mapa.includes('Legenda'), 'mapa: brak legendy pewności');
   assert.ok(mapa.includes('dokładna'), 'mapa: brak poziomu pewności w legendzie');
   assert.ok(mapa.includes('CC-BY-4.0'), 'mapa: brak atrybucji podkładu');
   assert.ok(mapa.includes('Kotwice etykiet'), 'mapa: brak listy kotwic (weryfikacja MA4)');
-  assert.ok(mapa.includes('Brak pinezek'), 'mapa: stan pusty pinezek ma być widoczny przed materializacją');
   assert.ok(mapa.includes('data-mapa-ruch'), 'mapa: brak warstwy pan/zoom');
   assert.ok(mapa.includes('mapa-przycisk'), 'mapa: brak przycisków zoomu');
 
@@ -101,6 +100,34 @@ test('UI: mapa planu z realnej bazy — podkład, regiony, legenda, kotwice', as
   assert.ok(shim.app.innerHTML.includes('#/mapa/srodziemie'), 'plan: brak linku do mapy');
   shim.idz('#/mapa/nieznany-plan');
   assert.ok(shim.app.innerHTML.includes('Nie znaleziono'), 'mapa: brak 404 dla nieznanego planu');
+
+  fs.rmSync(cel, { force: true });
+  shim.przywroc();
+});
+
+test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, narracja kotwicy', async () => {
+  const cel = await zbuduj({ out: 'dist/test-ui-karta.html' });
+  const shim = wykonajArtefakt(cel);
+
+  shim.idz('#/karta/1ltr-dunland-crebain');
+  const karta = shim.app.innerHTML;
+  assert.ok(karta.includes('Dunland Crebain'), 'karta: brak tytułu');
+  assert.ok(karta.includes('1LTR'), 'karta: brak imgId');
+  assert.ok(karta.includes('Creature — Bird Horror'), 'karta: brak typu ze snapshotu');
+  assert.ok(karta.includes('Amass'), 'karta: brak mechaniki Amass ze snapshotu');
+  assert.ok(karta.includes("What's that, Strider?"), 'karta: brak flavor textu');
+  assert.ok(karta.includes('Alexander Ostrowski'), 'karta: brak artysty ze snapshotu');
+  assert.ok(karta.includes('kotwica osadzenia'), 'karta: brak oznaczenia statusu narracji (ADR 0010)');
+  assert.ok(karta.includes('Na skraju dunlandzkiego urwiska'), 'karta: brak narracji verbatim');
+  assert.ok(karta.includes('perspektywy żabiej'), 'karta: brak promptu verbatim');
+  assert.ok(karta.includes('#/mapa/srodziemie?pin=1ltr-dunland-crebain'), 'karta: brak deep-linka pinezki');
+  assert.ok(karta.includes('Podsumowanie Lore'), 'karta: brak sekcji podsumowania');
+  assert.ok(karta.includes('Kolejka link-miningu'), 'karta: brak sekcji wątków z kolejką encji');
+
+  shim.idz('#/karty');
+  assert.ok(shim.app.innerHTML.includes('Karty Katalogowe (1)'), 'lista kart: brak 1LTR');
+  shim.idz('#/');
+  assert.ok(shim.app.innerHTML.includes('Dunland Crebain'), 'home: brak ostatniej materializacji');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();

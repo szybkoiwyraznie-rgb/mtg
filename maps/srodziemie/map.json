@@ -25,25 +25,14 @@
     { "nazwa": "The Wold", "x": 0.55, "y": 0.5275, "typ": "etykieta-podkladu", "notka": "północno-wschodni kraniec Rohanu" },
     { "nazwa": "Ered Nimrais", "x": 0.4094, "y": 0.6654, "typ": "etykieta-podkladu", "notka": "środek etykiety pasma (Białe Góry)" }
   ],
-  "regiony": [
+  "regiony": [],
+  "pinezki": [
     {
-      "haslo": "dunland",
-      "bbox": [0.35, 0.43, 0.44, 0.55],
-      "pewnosc": "przyblizona",
-      "uzasadnienie": "Kraina ukośna między rzeką Glanduin (płn.-zach.), Górami Mglistymi (wsch.) i rzeką Isen (płd.-zach.); prostokątny bbox ją przybliża (PROCES_MAP MA4)."
-    },
-    {
-      "haslo": "isengard",
-      "bbox": [0.405, 0.515, 0.435, 0.545],
-      "pewnosc": "dokladna",
-      "uzasadnienie": "Warownia na południowym krańcu Gór Mglistych; kotwica etykiety „Isengard” na podkładzie (MA4)."
-    },
-    {
-      "haslo": "rohan",
-      "bbox": [0.425, 0.525, 0.62, 0.66],
-      "pewnosc": "przyblizona",
-      "uzasadnienie": "Wspólny bbox pastwisk między Isen, Górami Mglistymi a Ered Nimrais; Wold wystaje ku północy, Eastfold ku wschodowi — bbox to przybliżenie (MA4)."
+      "karta": "1ltr-dunland-crebain",
+      "x": 0.406,
+      "y": 0.492,
+      "pewnosc": "region",
+      "uzasadnienie": "Dunland — kraina między rzeką Glanduin (płn.), Górami Mglistymi (wsch.) i rzeką Isen (płd.), na północny zachód od Isengardu (kotwica etykiety 0,416/0,531). Scena karty rozgrywa się na dunlandzkim urwisku nad wąwozem armii (narracja kolekcji — kotwica osadzenia). Pinezka środka regionu wg lore (PROCES_MAP MA4)."
     }
-  ],
-  "pinezki": []
+  ]
 }

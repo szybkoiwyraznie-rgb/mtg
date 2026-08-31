@@ -11,14 +11,17 @@ wspólny dla wielu kart (albo istotny sam w sobie). Wspólna wiedza ląduje
 w hasle, a karty odsyłają wikilinkami — bez dublowania. Backlinki („W
 kolekcji") liczy się automatycznie.
 
-Hasło powstaje kiedy:
+Hasło powstaje kiedy (zasada właściciela, 2026-08-31):
 
-1. **link-mining** wykryje encję wspominaną w 2+ stronach bez hasła
-   (Pętla Jakości, ADR 0006);
-2. właściciel zleci hasło wprost;
-3. materializacja karty tworzy encję „ciężką" (frakcja, region, postać
-   epokowa), której hasło natychmiast się przyda — wtedy tworzy się
-   je razem z pierwszą kartą, jawnie to uzasadniając w PR.
+1. **co najmniej 2 karty** odwołują się w swojej treści do encji
+   (link-mining, Pętla Jakości, ADR 0006) — hasło nie powstaje „na
+   zapas" przy pierwszej wzmiance;
+2. właściciel zleci hasło wprost (zlecenie jest suwerenne wobec progu
+   kart, ale domyślnie również czeka na drugą kartę).
+
+Encja wspomniana w jednej karcie zostaje **zwykłym tekstem** (martwy
+wikilink psuje build — ADR 0005) i trafia do kolejki link-miningu
+(`docs/backlog.md`); wiedza o niej żyje w sekcjach Karty Katalogowej.
 
 ## Plik hasła
 
@@ -84,7 +87,9 @@ obrys na mapie). Nowa klasa = zmiana tego gidu + ADR 0005 (świadomie).
 ## Dobre praktyki
 
 - Hasło pisze się językiem encyklopedycznym; narracja właściciela jest
-  kanonem i cytowana jako „narracja kolekcji" przy rozbieżnościach.
+  **kotwicą osadzenia** (ADR 0010) i bywa przywoływana jako „narracja
+  kolekcji", ale przy rozbieżnościach wygrywa kanon: karta MtG + lore
+  świata.
 - Hasło nie streszcza kart — opisuje świat. Karty linkują do hasła,
   hasło linkuje do encji, nie do streszczeń kart.
 - Jedno hasło = jedna encja (nie „Crebain i wargi").

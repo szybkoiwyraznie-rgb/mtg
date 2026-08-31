@@ -11,7 +11,7 @@ const katalog = 'docs/decisions';
 const pliki = fs.readdirSync(katalog).filter((f) => /^\d{4}-.*\.md$/.test(f)).sort();
 const readme = fs.readFileSync(path.join(katalog, 'README.md'), 'utf8');
 
-const STATUSY = ['Proponowana', 'Zaakceptowana', 'Odrzucona', 'Zastąpiona', 'Wycofana'];
+const STATUSY = ['Proponowana', 'Zaakceptowana', 'Odrzucona', 'Zastąpiona', 'Częściowo zastąpiona', 'Wycofana'];
 
 test('numeracja ADR jest ciągła od 0001', () => {
   const numery = pliki.map((f) => Number(f.slice(0, 4)));
@@ -23,9 +23,9 @@ test('każdy ADR ma status z listy dozwolonych i datę', () => {
   const problemy = [];
   for (const f of pliki) {
     const tresc = fs.readFileSync(path.join(katalog, f), 'utf8');
-    const m = tresc.match(/\*\*Status:\*\*\s*(\S+)/);
+    const m = tresc.match(/\*\*Status:\*\*\s*([^\n—]+)/);
     if (!m) { problemy.push(`${f}: brak pola Status`); continue; }
-    if (!STATUSY.includes(m[1])) problemy.push(`${f}: status "${m[1]}" poza listą`);
+    if (!STATUSY.includes(m[1].trim())) problemy.push(`${f}: status "${m[1].trim()}" poza listą`);
     if (!/\*\*Data:\*\*\s*\d{4}-\d{2}-\d{2}/.test(tresc)) problemy.push(`${f}: brak daty YYYY-MM-DD`);
   }
   assert.deepEqual(problemy, []);
