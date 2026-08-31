@@ -4,38 +4,39 @@ Kamienie (K) odpowiadają naturalnym PR-om; kolejność jest umowna —
 priorytet w każdej chwili ustawia właściciel (dostawy kart mają zawsze
 pierwszeństwo). Stan aktualizuje się na końcu sesji.
 
-## K1 — Fundamenty (PR-1) — **w toku (ta sesja)**
+## K1 — Fundamenty (PR-1) — **domknięte** (merged; CRIT: Pages publikuje)
 
 Struktura repo, AGENTS.md, ADR-y 0001–0008, ENVIRONMENT, gidy, silnik
 z pustą bazą, testy integralności + fixture'y, CI + Pages, szablony
-GitHub, konfiguracja repo (ochrona main). **Kryterium:** `npm test` i
-`npm run build` zielone na pustej bazie; Pages publikuje pustą witrynę.
+GitHub, konfiguracja repo (ochrona main).
 
-## K2 — Pilot: 1LTR Dunland Crebain end-to-end (PR-2)
+## K2 — Pilot: 1LTR Dunland Crebain end-to-end — **domknięte** (materializacja 1LTR + mapa Śródziemia; do tego doszedł 2BFZ, mapa Zendikar)
 
 Pierwsza materializacja: wpis kolekcji (dostarczony 2026-08-31) → snapshot
 Scryfall → pełna Karta Katalogowa (wszystkie sekcje szkieletu, cytowania
-z kwerendy) → strona planu Śródziemie → pierwsze 2–3 Karty Haseł (kandydaci:
-Crebain, Dunland, Isengard/Biała Ręka) → build + Pages. **Cel: walidacja
-całego pipeline'u i obu typów stron na jednej karcie.**
+z kwerendy) → strona planu Śródziemie → build + Pages. **Cel: walidacja
+całego pipeline'u i obu typów stron na jednej karcie** — osiągnięty.
 
-## K3 — Mapa Śródziemia T1 + protokół pinezek (PR-2/PR-3)
+## K3 — Mapa Śródziemia T1 + protokół pinezek — **domknięte** (wariant T2 przez adopcję mapome)
 
 Research podkładu (MA1), struktura `maps/srodziemie/`, pierwsza pinezka
 (1LTR, region Dunlandu, poziom pewności), render strony mapy z pan/zoom
 i deep-linkiem `#/mapa/srodziemie`. Ocena jakości zoomu → decyzja o T2.
 
-## K4 — Silnik map produkcyjnie (PR-3+)
+## K4 — Silnik map produkcyjnie — **w toku (rdzeń gotowy)**
 
-Pan/zoom dotykowy, etykiety w skali, regiony haseł geograficznych,
-pinezki z tooltipami i linkami do kart, legenda poziomów pewności.
-Rozwój na jednej karcie, dopóki właściciel nie dostarczy kolejnych.
+Pan/zoom dotykowy, etykiety w skali, pinezki z tooltipami i linkami do
+kart, legenda poziomów pewności, deep-link `#/mapa/…?pin=`, mini-mapa
+w infoboksie karty — działają (zweryfikowane na 2 kardach). Zostaje:
+**regiony/obwódki haseł geograficznych** (wymagają istnienia haseł —
+przed osiągnięciem progu ≥2 kart), dalszy rozwój po dostawach kolejnych kart.
 
-## K5 — Pętla Jakości operacyjna (PR z pierwszym przebiegiem)
+## K5 — Pętla Jakości operacyjna — **domknięte (PR-3, 2026-08-31)**
 
-`tools/wiki-stats.mjs` (completeness score) + pierwszy pełny przebieg
-pętli: pogłębianie, link-mining, pass mapowy, co-nowego. Wprowadzenie
-przy pierwszych 3–5 kartach.
+`tools/wiki-stats.mjs` (completeness score, wzór PETLA_JAKOSCI — max 8)
++ pierwszy pełny przebieg pętli (pogłębianie planów, link-mining — brak
+haseł, pass mapowy — bez braków, co-nowego). Progi twarde — gdy zbiorą
+się dane referencyjne.
 
 ## K6+ — Tryb wielokartowy (po decyzji właściciela)
 

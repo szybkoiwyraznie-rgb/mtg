@@ -4,7 +4,22 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
-## 2026-08-31 — sesja PR-1: Fundamenty (gałąź arena/01a05755-mtg, PR #3)
+## 2026-08-31 — sesja PR-3: Pętla Jakości + K5 (gałąź arena/01a0591f-mtg, PR #6)
+
+**Zlecenie właściciela:** „Kontynuujemy projekt." — bez nowej dostawy kart,
+więc pracą domyślną była Pętla Jakości (ADR 0006).
+
+**Wykonanie:** audyt stanu po poprzednim scaleniu (AUDYT_...-PR3.md) →
+plan → K5 `tools/wiki-stats.mjs` (completeness score, wzór PETLA_JAKOSCI,
+max 8) + skrypty npm + test → pogłębianie stron planów (geografia + Źródła;
+38%→63%) → link-mining (brak haseł — potwierdzone) → pass mapowy (bez
+braków) → co-nowego, handoff, historia, roadmapa. Testy 65 → 70.
+
+**Decyzje:** brak nowych ADR-ów — zmiany nie przekraczają granic
+ustalonych decyzji (narzędzie pomiarowe + treść planów). Kamień K5
+domknięty.
+
+## 2026-08-31 — sesja PR-2 (w toku): mapa Śródziemia + hasła (ta sama gałąź/PR #3)
 
 **Zlecenie właściciela:** zarządzenie nowym repozytorium, podstawowe pliki,
 katalogi i zasady — projekt „wikipedia lore kolekcji" na wzorcu kultury

@@ -3,6 +3,31 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-08-31 — Pętla Jakości operacyjna + K5 (PR-3)
+
+- **K5 — `tools/wiki-stats.mjs`**: completeness score stron wg wzoru
+  z `docs/guides/PETLA_JAKOSCI.md` (sekcje 3 + źródła 2 + wikilinki 1 +
+  pinezka 2, max 8). Skrypty `npm run stats` i `npm run stats:json`;
+  raport sortuje od najsłabszej strony — obiektywny punkt startu
+  pogłębiania. Bez twardych progów (dane referencyjne zbiorą się
+  z kolejnymi sesjami).
+- **Pogłębianie (krok 2)**: strony planów (najsłabsza warstwa — 38%
+  przed zmianą) rozbudowane o geografię i sekcję Źródła:
+  - **Śródziemie** — Geografia (Dunland i Dunlendowie, Isengard/Orthanc
+    i Przełęcz Calenardhon, Enedwaith, rzeki Isen i Gwathló) + Źródła;
+  - **Zendikar** — Geografia (siedem kontynentów, Tazeem: Oran-Rief,
+    Halimar, rzeka Umara, Emeria, Sea Gate, Coralhelm Refuge, domy
+    ekspedycyjne) + Źródła.
+  Skorygowana kompletność: plany 38% → 63%.
+- **Link-mining (krok 3)**: przegląd potwierdził — **brak nowych haseł**.
+  Żadna encja nie jest jeszcze wspominana przez ≥2 karty (karty z różnych
+  planów: Śródziemie i Zendikar); kolejka w `docs/backlog.md` pozostaje
+  aktualna.
+- **Pass mapowy (krok 4)**: obie karty mają pinezki (region), oba plany
+  mają mapy — bez braków.
+- **Integralność**: `npm test` = 70/70 (nowy `test/wiki-stats.test.js`),
+  `npm run build` = OK. Karty pozostały nietknięte.
+
 ## 2026-08-31 — Pierwsza karta! Mapa Śródziemia + kanon v2 (PR-2, w toku)
 
 - **Mapa Zendikaru — rekonstrukcja T3** (`#/mapa/zendikar`, ADR 0012):
