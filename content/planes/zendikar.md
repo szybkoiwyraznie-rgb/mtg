@@ -15,19 +15,35 @@ który przebudowuje krajobraz w przelocie, w powietrzu unoszą się kamienne
 niebiańskich Skyclave) czekają na śmiałków. Na Zendikarzu ekspedycje
 poszukiwaczy skarbów to sposób na życie — i przemysł.
 
-Plan składa się z siedmiu kontynentów: górystej, wulkanicznej **Akoum**;
-bagiennej **Bala Ged**; mrocznej **Guul Draz**, krainy wampirów; płaskowyżu
-**Murasa**; pionowej **Ondu**; polarnej, zamarzniętej **Sejiri** oraz
-**Tazeem** — niebieskiego kontynentu merfolków, z wielką tamą **Sea Gate**
-oddzielającą ocean od śródlądowego morza **Halimar**.
+## Geography
 
-Geografia kluczowa dla pierwszej karty planu: **Tazeem** i wybrzeża
-Halimar — dom **Coralhelm**, największej osady merfolków na planie.
+Zendikar to siedem kontynentów, z których każdy ma „niemożliwą geografię":
+górzysta, wulkaniczna **Akoum** (z Okiem Ugina); bagienna **Bala Ged**;
+mroczna **Guul Draz**, kraina wampirów i jej miasto **Malakir**; płaskowyż
+**Murasa** (jego położenie w kanonie nieustalone); pionowa **Ondu**;
+polarna, zamarznięta **Sejiri**; oraz **Tazeem** — najgęściej zaludniony,
+niebieski kontynent merfolków.
+
+**Tazeem** to trzy strefy: rozległy, poskręcany las **Oran-Rief**, głębokie,
+sztuczne morze śródlądowe **Halimar** oraz nad nim otwarte niebo z
+unoszącymi się kamieniami i ruinami **Emeria, the Sky Ruin**. Rzeka
+**Umara** przecina kontynent głębokim wąwozem. Na szczycie wysokiego muru
+nad Halimar wznosi się **Sea Gate** — największe miasto Tazeem i centralny
+punkt handlu i kultury całego planu. Nad Halimar i wybrzeżami żyją
+merfolkowie, których wielkim domem jest **Coralhelm Refuge**, największa
+osada tego ludu.
+
+Przed przebudzeniem **Eldrazi** pięć domów ekspedycyjnych (Valakut,
+Pelakka, Akoum, Murasa, Bala Ged) czyniło z Sea Gate bazę wypraw w głąb
+dziczy. Po zniszczeniu Sea Gate przez Eldrazi, a następnie jego odbudowie,
+ekspedycje stały się jeszcze żywotniejsze — a grupa, która pierwsza
+przedostała się do ruin Emerii, założyła **Sea Gate Expeditionary House**.
 
 ## Setting w pigułce
 
 - **Era:** okres Bitwy o Zendikar (po przebudzeniu Eldrazi; Sea Gate staje
-  się schronieniem i bastionem sojuszników).
+  się schronieniem i bastionem sojuszników), z odwołaniem do wcześniejszych
+  i późniejszych kampanii (Zendikar Rising — odzyskanie Skyclave).
 - **Kanon settingu:** karty MtG (Battle for Zendikar i sąsiednie sety),
   *Planeswalker's Guide to Zendikar*, *Plane Shift: Zendikar*, artbook
   *The Art of Magic: The Gathering — Zendikar* oraz opowiadania
@@ -35,3 +51,18 @@ Halimar — dom **Coralhelm**, największej osady merfolków na planie.
 - **Mapa:** [mapa rekonstrukcji](#/mapa/zendikar) — oficjalna mapa planu
   nigdy nie powstała, więc podkład jest własną rekonstrukcją geografii
   z tekstów źródłowych (położenie Murasy przybliżone).
+
+## Źródła
+
+- MTG Wiki, „Tazeem" — trzy strefy kontynentu, Halimar (głębokie, sztuczne
+  morze, mur 500+ stóp), Sea Gate na murze, Oran-Rief, rzeka Umara,
+  Emeria, domy ekspedycyjne:
+  <https://mtg.fandom.com/wiki/Tazeem>
+- MTG Salvation, „The World of Zendikar Part IV: Return to Zendikar" —
+  Tazeem jako centrum Bitwy o Zendikar, tama Sea Gate, Coralhelm Refuge
+  jako największa osada merfolków: <https://www.mtgsalvation.com/articles/49510-the-world-of-zendikar-part-iv-return-to-zendikar>
+- *A Planeswalker's Guide to Zendikar* (Wizards of the Coast) — hedrony,
+  Roil, geografia kontynentów, Emeria:
+  <https://magic.wizards.com/en/news/feature/a-planeswalkers-guide-to-zendikar>
+- MTG Wiki, „Zendikar (plane)" — siedem kontynentów, efekty Eldrazi,
+  Skyclave: <https://mtg.wiki/page/Zendikar_(plane)>
