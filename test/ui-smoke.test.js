@@ -140,9 +140,23 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (1)'), 'lista kart: brak 1LTR');
-  assert.ok(lista.includes('Śródziemie'), 'lista kart: brak tytułu planu zamiast sluga (feedback G)');
+  assert.ok(lista.includes('Karty Katalogowe (2)'), 'lista kart: brak 2 kart');
+  assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
   assert.ok(!lista.includes('>srodziemie<'), 'lista kart: slug planu nie może być widoczny jako tekst (feedback G)');
+
+  // druga karta: chudy format dostawy (ADR 0011) — czysty kanon
+  shim.idz('#/karta/2bfz-coralhelm-guide');
+  const karta2 = shim.app.innerHTML;
+  assert.ok(karta2.includes('Coralhelm Guide'), 'karta 2BFZ: brak tytułu');
+  assert.ok(karta2.includes('Merfolk Scout Ally'), 'karta 2BFZ: brak typu ze snapshotu');
+  assert.ok(karta2.includes('Viktor Titov'), 'karta 2BFZ: brak artysty posiadanego wydruku');
+  assert.ok(karta2.includes('Jori En'), 'karta 2BFZ: brak flavoru ze snapshotu');
+  assert.ok(karta2.includes('Druk w Kolekcji'), 'karta 2BFZ: brak sekcji o wydruku (ADR 0011)');
+  assert.ok(karta2.includes('Na Mapie'), 'karta 2BFZ: brak osadzenia w treści');
+  assert.ok(!karta2.includes('Narracja Koleksji') && !karta2.includes('Narracja Kolekcji'), 'karta 2BFZ: bez sekcji narracji (ADR 0011)');
+  assert.ok(!karta2.includes('ADR'), 'karta 2BFZ: treść bez mechaniki Codexu (feedback B)');
+  // bez mapy planu: infoboks nie oferuje wejścia na mapę
+  assert.ok(!karta2.includes('#/mapa/zendikar'), 'karta 2BFZ: brak linku do nieistniejącej mapy planu');
   shim.idz('#/');
   assert.ok(shim.app.innerHTML.includes('Dunland Crebain'), 'home: brak ostatniej materializacji');
 

@@ -5,6 +5,13 @@ ADR 0006). Najnowsze na górze.
 
 ## 2026-08-31 — Pierwsza karta! Mapa Śródziemia + kanon v2 (PR-2, w toku)
 
+- **Materializacja 2BFZ Coralhelm Guide** — druga Karta Katalogowa,
+  pierwsza dostarczona chudym formatem (imgId · nazwa · set · plan;
+  ADR 0011): snapshot BFZ #74 (Viktor Titov), lore przewodniczki
+  z Coralhelm nad Halimar na Tazeem, flavor Jori En z tłumaczeniem.
+  Plan **Zendikar** zyskał stronę (siedem kontynentów, Sea Gate,
+  Roil); mapa planu w przygotowaniu — oficjalna mapa nigdy nie
+  powstała, podkład będzie rekonstrukcją (rozpoznanie w backlogu).
 - **Materializacja 1LTR Dunland Crebain** — pierwsza Karta Katalogowa
   (10 sekcji): snapshot Scryfalla posiadanego wydruku (borderless,
   David Rapoza), mechanika jako opowieść (Flying + Amass Orcs 2),

@@ -1,0 +1,73 @@
+{
+  "object": "card",
+  "id": "33787a5b-d1d1-4d60-ba09-d9c98025e9b3",
+  "oracle_id": "979e670e-bbd8-4595-8d9d-ad1c0bc422e3",
+  "multiverse_ids": [
+    401848
+  ],
+  "mtgo_id": 58749,
+  "mtgo_foil_id": 58750,
+  "tcgplayer_id": 105589,
+  "cardmarket_id": 284826,
+  "name": "Coralhelm Guide",
+  "lang": "en",
+  "released_at": "2015-10-02",
+  "uri": "https://api.scryfall.com/cards/33787a5b-d1d1-4d60-ba09-d9c98025e9b3",
+  "scryfall_uri": "https://scryfall.com/card/bfz/74/coralhelm-guide?utm_source=api",
+  "layout": "normal",
+  "highres_image": true,
+  "image_status": "highres_scan",
+  "mana_cost": "{1}{U}",
+  "cmc": 2.0,
+  "type_line": "Creature — Merfolk Scout Ally",
+  "oracle_text": "{4}{U}: Target creature can't be blocked this turn.",
+  "power": "2",
+  "toughness": "1",
+  "colors": [
+    "U"
+  ],
+  "color_identity": [
+    "U"
+  ],
+  "keywords": [],
+  "games": [
+    "paper",
+    "mtgo"
+  ],
+  "reserved": false,
+  "promo": false,
+  "reprint": false,
+  "variation": false,
+  "set_id": "91719374-7ac5-4afa-ada8-5da964dcf1d4",
+  "set": "bfz",
+  "set_name": "Battle for Zendikar",
+  "set_type": "expansion",
+  "rarity": "common",
+  "flavor_text": "\"She knows every step of this coastline, both above and below the surface, and she has hideouts all along the way. She will get you there.\"\n—Jori En, expedition leader",
+  "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+  "artist": "Viktor Titov",
+  "artist_ids": [
+    "2270c0b0-afb4-42b0-bcb6-25fe4ad6eef2"
+  ],
+  "illustration_id": "02172ec6-fd88-4c18-aebb-42958236caa8",
+  "border_color": "black",
+  "frame": "2015",
+  "full_art": false,
+  "textless": false,
+  "booster": true,
+  "story_spotlight": false,
+  "collector_number": "74",
+  "digital": false,
+  "image_uris": {
+    "small": "https://cards.scryfall.io/small/front/3/3/33787a5b-d1d1-4d60-ba09-d9c98025e9b3.jpg?1783938210",
+    "normal": "https://cards.scryfall.io/normal/front/3/3/33787a5b-d1d1-4d60-ba09-d9c98025e9b3.jpg?1783938210",
+    "large": "https://cards.scryfall.io/large/front/3/3/33787a5b-d1d1-4d60-ba09-d9c98025e9b3.jpg?1783938210",
+    "png": "https://cards.scryfall.io/png/front/3/3/33787a5b-d1d1-4d60-ba09-d9c98025e9b3.png?1783938210",
+    "art_crop": "https://cards.scryfall.io/art_crop/front/3/3/33787a5b-d1d1-4d60-ba09-d9c98025e9b3.jpg?1783938210",
+    "border_crop": "https://cards.scryfall.io/border_crop/front/3/3/33787a5b-d1d1-4d60-ba09-d9c98025e9b3.jpg?1783938210"
+  },
+  "legalities_note": "skrócono legalities/prices/related_uris (niewykorzystywane przez Codex)",
+  "slug": "2bfz-coralhelm-guide",
+  "source": "https://api.scryfall.com/cards/named?exact=Coralhelm+Guide&set=BFZ",
+  "pobrano": "2026-08-31"
+}

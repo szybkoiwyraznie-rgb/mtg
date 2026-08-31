@@ -20,6 +20,31 @@ mówiące o encji **w treści** (nie samym tagiem):
 | Biała Ręka | koncepcja | 1ltr-dunland-crebain | 1 karta |
 | rohan | geografia | — (plan srodziemie wspomina) | licznik od kart, nie planów |
 
+## Kolejka link-miningu: encje czekające na drugą kartę (Zendikar)
+
+| Encja | Klasa (docelowa) | Karty wspominające | Do hasła brakuje |
+|---|---|---|---|
+| tazeem | geografia | 2bfz-coralhelm-guide | 1 karta |
+| halimar | geografia | 2bfz-coralhelm-guide | 1 karta |
+| coralhelm | geografia | 2bfz-coralhelm-guide | 1 karta |
+| sea gate | geografia | 2bfz-coralhelm-guide, plan zendikar | licznik od kart, nie planów |
+| Jori En | postac | 2bfz-coralhelm-guide | 1 karta |
+| merfolk | spolecznosc | 2bfz-coralhelm-guide | 1 karta |
+| Roil | koncepcja | 2bfz-coralhelm-guide, plan zendikar | licznik od kart, nie planów |
+| Eldrazi | koncepcja | 2bfz-coralhelm-guide, plan zendikar | licznik od kart, nie planów |
+
+## Mapa Zendikaru (priorytet właściciela 2026-08-31)
+
+Oficjalna mapa planu **nigdy nie powstała** (potwierdzone kwerendą:
+Plane Shift / coolstuffinc — „possible to create a map based on
+cardinal directions and geographic hints, but there hasn't been an
+official one"). Kanon daje: 7 kontynentów + wzajemne położenie
+(Akoum płn.-wsch., Bala Ged łączy Akoum z Guul Draz, Tazeem naprzeciw
+Guul Draz przez wąski ocean, Ondu płd.-zach., Sejiri biegun, Murasa
+pozycja nieustalona). Opcje podkładu: rekonstrukcja własna (SVG,
+geografia z tekstów źródłowych) — bez licencjonowanych map zewnętrznych.
+Do decyzji: ADR + wariant (PROCES_MAP).
+
 Przy materializacji encji w drugiej karcie: utworzyć hasło wg
 SZKIELET_HASLA.md i **dopisać wikilinki ze wszystkich stron, które ją
 wspominają** (Pętla Jakości, krok 3). Wycofane 2026-08-31 hasła
