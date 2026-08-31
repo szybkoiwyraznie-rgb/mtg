@@ -36,7 +36,7 @@ export function renderPlan(slug) {
     ${plan.mapa && plan.mapa !== 'pending'
       ? `<p class="mapa-link"><a class="przycisk" href="#/mapa/${plan.slug}">🗺️ Otwórz mapę planu</a></p>`
       : plan.mapa === 'pending'
-        ? `<p class="meta mapa-pending">Mapa planu: w przygotowaniu (proces mapowy — docs/guides/PROCES_MAP.md).</p>`
+        ? `<p class="meta mapa-pending">Mapa planu: w przygotowaniu.</p>`
         : ''}
 
     ${plan.html ? `<div class="plan-opis">${plan.html}</div>` : ''}
