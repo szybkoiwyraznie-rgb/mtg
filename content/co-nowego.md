@@ -3,8 +3,29 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
-## 2026-08-31 — Mapa Zendikaru: audyt i wzbogacenie wektorowe (PR-3 c.d.)
+## 2026-08-31 — Mapa Zendikaru: audyt, wzbogacenie i naprawy (PR-3 c.d.)
 
+- **Naprawy kolizji na mapie** (na podstawie zrzutu właściciela):
+  - **Tal Terig** przeniesione z wody na ląd (Akoum) — pozycja potwierdzona
+    skryptowym testem point-in-polygon;
+  - **legenda symboli** przeniesiona na otwarty ocean (nie zasłania już
+    wysp Ondu ani „Mt. Valakut" przy Beyeen);
+  - okolice **Sea Gate / Sky Rock / pin** rozsunięte (skala i pozycje);
+  - **halo pod tekstem** etykiet (`paint-order: stroke`) — napisy czytelne
+    nad elementami przyrody;
+  - naprawiony uszkodzony kontur Tazeem (brakujący punkt `C`).
+  Zostaje rekonstrukcja T3 (ADR 0012): `rekonstrukcja: true`, Murasa
+  przerywana, podpis „rekonstrukcja".
+- **Decyzja właściciela (b): mapa fanowska jako źródło.** Do `map.json`
+  dodane pole `zrodlo_fanmapa` (czeka na opis właściciela) i flaga
+  `pozycja_zrodlo` na `kotwice` pozycji nieustalonych w kanonie (Murasa,
+  okolice) — po wklejeniu opisu pozycje zostaną zsynchronizowane jako
+  „rekonstrukcja (nie kanon)".
+- **Decyzja właściciela (c): doskonalenie map wektorowych w Pętli
+  Jakości.** Dopisany osobny **krok 4b** w
+  `docs/guides/PETLA_JAKOSCI.md` (audyt → pozycje ze źródeł →
+  wzbogacenie wektora → poprawa kolizji → weryfikacja + dokumentacja)
+  i wzmianka w `AGENTS.md` §2 oraz README.
 - **Audyt mapy** (`docs/audits/AUDYT_2026-08-31-PR3-mapa-zendikar.md`):
   mapa T3 była „uboga" — same kontynenty z etykietami, brak gór, lasów,
   rzek, miast, bagnisk i ruin.

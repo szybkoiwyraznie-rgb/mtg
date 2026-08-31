@@ -80,3 +80,17 @@
 2. `npm test` + `npm run build` zielone; `npm run stats` działa.
 3. `map.json` z `elementy` + `kotwice`; rekonstrukcja T3 nienaruszona.
 4. Dokumentacja (co-nowego, historia, handoff) zaktualizowana; push.
+
+## Dodatkowa decyzja właściciela (2026-08-31, tura napraw)
+
+- **(b) Mapa fanowska jako źródło:** właściciel włącza najlepszą mapę
+  fanowską jako źródło dla pozycji elementów **nieustalonych w kanonie**
+  (ADR 0012: Murasa i okolice). W `map.json` dodane pole
+  `zrodlo_fanmapa` (czeka na opis właściciela) + flaga `pozycja_zrodlo`
+  na `kotwice` pozycji nieustalonych. Po wklejeniu opisu pozycje zostaną
+  zsynchronizowane i podpisane jako rekonstrukcja (nie kanon).
+- **(c) Krok 4b w Pętli Jakości:** doskonalenie map wektorowych
+  tworzonych z danych tekstowych zostało dopisane jako osobny krok
+  w `docs/guides/PETLA_JAKOSCI.md` (procedura: audyt → pozycje ze
+  źródeł → wzbogacenie wektora → poprawa kolizji → weryfikacja +
+  dokumentacja) i wzmiankowane w `AGENTS.md` §2 oraz README.

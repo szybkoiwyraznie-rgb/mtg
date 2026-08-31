@@ -74,7 +74,9 @@ Jakości (ADR 0006).
 5. **Transpozycja:** lore opisuje setting podany we wpisie; mechanika, nazwa
    i flavor pochodzą z karty MtG (snapshot Scryfall, ADR 0004).
 6. **Domyślna praca bez zlecenia = Pętla Jakości** (ADR 0006): integralność
-   → pogłębianie → link-mining → pass mapowy → co-nowego.
+   → pogłębianie → link-mining → pass mapowy → **doskonalenie map
+   wektorowych (krok 4b; mapy z danych tekstowych)** → co-nowego. Szczegóły
+   kroków w `docs/guides/PETLA_JAKOSCI.md`.
 
 ## 3. Zasady pracy z repozytorium
 

@@ -65,6 +65,47 @@ rozrost.
   w `docs/plans/`, nie „przy okazji".
 - Hasła `geografia`/`postac` mają regiony/obwódki, jeśli mapa istnieje.
 
+## Krok 4b — doskonalenie map wektorowych (mapy tworzone z danych tekstowych)
+
+Dotyczy map **rekonstruowanych z tekstu** (warianty T3 — np. Zendikar,
+ADR 0012), które nie mają oficjalnego podkładu i powstają z opisów lore.
+Kryteria uruchomienia (którekolwiek):
+
+1. Mapa jest „uboga" — brak elementów przyrodniczych/osadniczych
+   (góry, lasy, rzeki, miasta, bagna, ruiny), które da się potwierdzić
+   w źródłach; to sygnał właściciela lub wynik kroku 2 (pogłębianie).
+2. Mapa ma **kolizje wizualne**: elementy/elementy lub napisy nachodzą
+   na siebie; markery lądują na wodzie (poza kontynentem); legenda/
+   podpis zasłania treść. Wykrywane wizualnie zrzutem (jak wyżej).
+3. Właściciel zleca „doskonalenie mapy" wprost (tak jak w tej sesji).
+
+Procedura:
+
+1. **Audyt stanu** (punkt 1 wyżej). Skryptowo zweryfikuj, które markery/
+   etykiety leżą **poza kontynentem** (point-in-polygon na `podklad.svg`)
+   i które **nachodzą** na siebie (bbox etykiet, etykieta↔marker). Wynik
+   zapisz w `docs/audits/AUDYT_...-mapa-<plan>.md` (konwencja PR treściowego).
+2. **Ustal pozycje ze źródeł**, nie z kursora: kontynent + sąsiedztwo
+   (MA4/PROCES_MAP). Dla pozycji **nieustalonych w kanonie** dopuszczalne
+   jest oprzeć się na najlepszej mapie fanowskiej — wtedy źródło i adnotację
+   zapisujemy w `map.json` (pole `zrodlo_fanmapa` + flaga `pozycja_zrodlo`
+   w `kotwice`/-elementach), a pozycję podpisujemy jako „rekonstrukcja,
+   nie kanon" (w podpisie podkładu SVG).
+3. **Wzbogać wektor podkładu** (`maps/<plan>/podklad.svg`): symbolika
+   (góry, wulkany, lasy, rzeki, miasta, bagna, ruiny/skyclave) w palecie
+   pergaminu ADR 0008, + **legenda symboli**; nowe elementy idą do SVG,
+   **nie** do `map.json` (tam tylko pinezki/regiony/kotwice).
+4. **Popraw kolizje**: przenieś markery na ląd, rozsuń nakładające się
+   etykiety, przenieś legendę/podpis poza obszar treści mapy; dodaj
+   „halo" pod tekstem (`paint-order: stroke`) dla czytelności nad
+   elementami przyrody.
+5. **Zweryfikuj wizualnie** (zrzut podkładu — np. rasteryzacja SVG do
+   PNG) i **udokumentuj w `map.json`**: `elementy` (nazwa, typ, kontynent,
+   URL źródła), `kotwice` (z notką źródła), `zrodlo.notka` (adnotacja
+   o rekonstrukcji). `npm build` + `npm test` zielone.
+
+Wynik każdego doskonalenia mapy wpisuje się do `content/co-nowego.md`.
+
 ## Krok 5 — co nowego + zamknięcie
 
 1. Wpis w `content/co-nowego.md`: data + lista zmian sesji (co pogłębione,

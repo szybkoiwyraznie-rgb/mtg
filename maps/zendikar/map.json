@@ -13,86 +13,488 @@
     "autor": "MTG Lore Codex (praca własna)",
     "licencja": "praca własna na kanonie tekstowym",
     "pobrano": "2026-08-31",
-    "notka": "Oficjalna mapa planu nigdy nie powstała — podkład jest własną rekonstrukcją (T3): układ kontynentów za tekstami źródłowymi (Plane Shift: Zendikar), wzorowany układem map fanowskich (m.in. r/mtgvorthos). Położenie Murasy w kanonie nieustalone — oznaczone linią przerywaną. Wzbogacenie z 2026-08-31 dodaje elementy przyrodnicze i osadnicze potwierdzone w źródłach (patrz pole elementy); pozycje punktów są przybliżone (rekonstrukcja, nie kanon)."
+    "notka": "Oficjalna mapa planu nigdy nie powstała — podkład jest własną rekonstrukcją (T3): układ kontynentów za tekstami źródłowymi (Plane Shift: Zendikar), wzorowany układem map fanowskich (m.in. r/mtgvorthos). Położenie Murasy w kanonie nieustalone — oznaczone linią przerywaną. Wzbogacenie z 2026-08-31 dodaje elementy przyrodnicze i osadnicze potwierdzone w źródłach (patrz pole elementy); pozycje punktów są przybliżone (rekonstrukcja, nie kanon). Decyzja właściciela 2026-08-31: najlepsza z map fanowskich zostaje włączona jako źródło pomocnicze dla pozycji elementów NIEUSTALONYCH w kanonie (z adnotacją — patrz pole zrodlo_fanmapa). Układ kontynentów i pozycje kanoniczne (Plane Shift / MTG Wiki) pozostają bez zmian."
   },
   "rekonstrukcja": true,
   "kotwice": [
-    { "nazwa": "Sejiri", "x": 0.425, "y": 0.107, "typ": "etykieta-podkladu", "notka": "polarny kontynent" },
-    { "nazwa": "Midnight Pass", "x": 0.35, "y": 0.143, "typ": "etykieta-podkladu", "notka": "jedyna brama do Sejiri (Guide Zendikar)" },
-    { "nazwa": "Ikiral", "x": 0.435, "y": 0.146, "typ": "etykieta-podkladu", "notka": "osada w ruinie 10-milowego hedronu (Guide Zendikar)" },
-    { "nazwa": "Akoum", "x": 0.82, "y": 0.282, "typ": "etykieta-podkladu", "notka": "wulkaniczny kontynent północno-wschodni" },
-    { "nazwa": "Affa", "x": 0.71, "y": 0.229, "typ": "etykieta-podkladu", "notka": "osada w regionie Teeth of Akoum (MTG Wiki)" },
-    { "nazwa": "Goma Fada", "x": 0.9225, "y": 0.201, "typ": "etykieta-podkladu", "notka": "osada Akoum (MTG Wiki)" },
-    { "nazwa": "Oko Ugina", "x": 0.804, "y": 0.384, "typ": "etykieta-podkladu", "notka": "hedron ukryty w górach Akoum" },
-    { "nazwa": "Windblast Gorge", "x": 0.9, "y": 0.318, "typ": "etykieta-podkladu", "notka": "wąwóz/żleb Akoum (MTG Wiki)" },
-    { "nazwa": "Tal Terig", "x": 0.685, "y": 0.421, "typ": "etykieta-podkladu", "notka": "osada Akoum (MTG Wiki)" },
-    { "nazwa": "Bala Ged", "x": 0.715, "y": 0.568, "typ": "etykieta-podkladu", "notka": "bagna i dżungla; łączy Akoum z Guul Draz" },
-    { "nazwa": "Umung", "x": 0.735, "y": 0.657, "typ": "etykieta-podkladu", "notka": "rzeka Bala Ged (MTG Wiki)" },
-    { "nazwa": "Bojuka Bay", "x": 0.55, "y": 0.682, "typ": "etykieta-podkladu", "notka": "zatoka Bala Ged (MTG Wiki)" },
-    { "nazwa": "Guul Draz", "x": 0.65, "y": 0.832, "typ": "etykieta-podkladu", "notka": "kraina wampirów" },
-    { "nazwa": "Malakir", "x": 0.6075, "y": 0.896, "typ": "etykieta-podkladu", "notka": "największe miasto Guul Draz" },
-    { "nazwa": "Nimana", "x": 0.74, "y": 0.909, "typ": "etykieta-podkladu", "notka": "Free City of Nimana (MTG Wiki)" },
-    { "nazwa": "Tazeem", "x": 0.305, "y": 0.321, "typ": "etykieta-podkladu", "notka": "kontynent merfolków" },
-    { "nazwa": "Oran-Rief", "x": 0.28, "y": 0.4, "typ": "etykieta-podkladu", "notka": "las, większość interioru Tazeem (Guide Zendikar)" },
-    { "nazwa": "Halimar", "x": 0.3125, "y": 0.483, "typ": "etykieta-podkladu", "notka": "morze śródlądowe Tazeem" },
-    { "nazwa": "Umara", "x": 0.2925, "y": 0.307, "typ": "etykieta-podkladu", "notka": "rzeka przecinająca Tazeem (Guide Zendikar)" },
-    { "nazwa": "Sea Gate", "x": 0.406, "y": 0.563, "typ": "etykieta-podkladu", "notka": "tama oddzielająca Halimar od oceanu; miasto + Lighthouse" },
-    { "nazwa": "Sky Rock", "x": 0.4225, "y": 0.477, "typ": "etykieta-podkladu", "notka": "unoszący się hedron przy Sea Gate" },
-    { "nazwa": "Emeria", "x": 0.44, "y": 0.236, "typ": "etykieta-podkladu", "notka": "ruiny w niebie nad Tazeem" },
-    { "nazwa": "Hadatown", "x": 0.235, "y": 0.509, "typ": "etykieta-podkladu", "notka": "miasto złodziei Tazeem (MTG Wiki)" },
-    { "nazwa": "Ondu", "x": 0.245, "y": 0.8, "typ": "etykieta-podkladu", "notka": "kontynent południowo-zachodni" },
-    { "nazwa": "Turntimber", "x": 0.225, "y": 0.836, "typ": "etykieta-podkladu", "notka": "las Ondu (MTG Wiki)" },
-    { "nazwa": "Makindi Trenches", "x": 0.32, "y": 0.771, "typ": "etykieta-podkladu", "notka": "labirynt wąwozów Ondu (MTG Wiki)" },
-    { "nazwa": "Agadeem", "x": 0.125, "y": 0.879, "typ": "etykieta-podkladu", "notka": "wyspa Ondu" },
-    { "nazwa": "Kabira", "x": 0.215, "y": 0.911, "typ": "etykieta-podkladu", "notka": "osada Agadeem (MTG Wiki)" },
-    { "nazwa": "Wyspy Jwar", "x": 0.065, "y": 0.779, "typ": "etykieta-podkladu", "notka": "wyspy na zachód od Ondu" },
-    { "nazwa": "Beyeen", "x": 0.0525, "y": 0.857, "typ": "etykieta-podkladu", "notka": "wyspa Ondu" },
-    { "nazwa": "Murasa", "x": 0.5, "y": 0.868, "typ": "etykieta-podkladu", "notka": "płaskowyż; położenie przybliżone — nieustalone w kanonie" },
-    { "nazwa": "Skyfang", "x": 0.505, "y": 0.829, "typ": "etykieta-podkladu", "notka": "góry Skyfang/Shatterskull Murasa (MTG Wiki)" },
-    { "nazwa": "Sunder Bay", "x": 0.46, "y": 0.943, "typ": "etykieta-podkladu", "notka": "wejście do Murasy (Guide Zendikar)" }
+    {
+      "nazwa": "Sejiri",
+      "x": 0.425,
+      "y": 0.107,
+      "typ": "etykieta-podkladu",
+      "notka": "polarny kontynent"
+    },
+    {
+      "nazwa": "Midnight Pass",
+      "x": 0.35,
+      "y": 0.143,
+      "typ": "etykieta-podkladu",
+      "notka": "jedyna brama do Sejiri (Guide Zendikar)"
+    },
+    {
+      "nazwa": "Ikiral",
+      "x": 0.435,
+      "y": 0.146,
+      "typ": "etykieta-podkladu",
+      "notka": "osada w ruinie 10-milowego hedronu (Guide Zendikar)"
+    },
+    {
+      "nazwa": "Akoum",
+      "x": 0.82,
+      "y": 0.282,
+      "typ": "etykieta-podkladu",
+      "notka": "wulkaniczny kontynent północno-wschodni"
+    },
+    {
+      "nazwa": "Affa",
+      "x": 0.71,
+      "y": 0.229,
+      "typ": "etykieta-podkladu",
+      "notka": "osada w regionie Teeth of Akoum (MTG Wiki)"
+    },
+    {
+      "nazwa": "Goma Fada",
+      "x": 0.9225,
+      "y": 0.201,
+      "typ": "etykieta-podkladu",
+      "notka": "osada Akoum (MTG Wiki)"
+    },
+    {
+      "nazwa": "Oko Ugina",
+      "x": 0.804,
+      "y": 0.384,
+      "typ": "etykieta-podkladu",
+      "notka": "hedron ukryty w górach Akoum"
+    },
+    {
+      "nazwa": "Windblast Gorge",
+      "x": 0.9,
+      "y": 0.318,
+      "typ": "etykieta-podkladu",
+      "notka": "wąwóz/żleb Akoum (MTG Wiki)"
+    },
+    {
+      "nazwa": "Tal Terig",
+      "x": 0.685,
+      "y": 0.421,
+      "typ": "etykieta-podkladu",
+      "notka": "osada Akoum (MTG Wiki)",
+      "pozycja_zrodlo": "nieustalone-w-kanonie"
+    },
+    {
+      "nazwa": "Bala Ged",
+      "x": 0.715,
+      "y": 0.568,
+      "typ": "etykieta-podkladu",
+      "notka": "bagna i dżungla; łączy Akoum z Guul Draz"
+    },
+    {
+      "nazwa": "Umung",
+      "x": 0.735,
+      "y": 0.657,
+      "typ": "etykieta-podkladu",
+      "notka": "rzeka Bala Ged (MTG Wiki)"
+    },
+    {
+      "nazwa": "Bojuka Bay",
+      "x": 0.55,
+      "y": 0.682,
+      "typ": "etykieta-podkladu",
+      "notka": "zatoka Bala Ged (MTG Wiki)"
+    },
+    {
+      "nazwa": "Guul Draz",
+      "x": 0.65,
+      "y": 0.832,
+      "typ": "etykieta-podkladu",
+      "notka": "kraina wampirów"
+    },
+    {
+      "nazwa": "Malakir",
+      "x": 0.6075,
+      "y": 0.896,
+      "typ": "etykieta-podkladu",
+      "notka": "największe miasto Guul Draz"
+    },
+    {
+      "nazwa": "Nimana",
+      "x": 0.74,
+      "y": 0.909,
+      "typ": "etykieta-podkladu",
+      "notka": "Free City of Nimana (MTG Wiki)"
+    },
+    {
+      "nazwa": "Tazeem",
+      "x": 0.305,
+      "y": 0.321,
+      "typ": "etykieta-podkladu",
+      "notka": "kontynent merfolków"
+    },
+    {
+      "nazwa": "Oran-Rief",
+      "x": 0.28,
+      "y": 0.4,
+      "typ": "etykieta-podkladu",
+      "notka": "las, większość interioru Tazeem (Guide Zendikar)"
+    },
+    {
+      "nazwa": "Halimar",
+      "x": 0.3125,
+      "y": 0.483,
+      "typ": "etykieta-podkladu",
+      "notka": "morze śródlądowe Tazeem"
+    },
+    {
+      "nazwa": "Umara",
+      "x": 0.2925,
+      "y": 0.307,
+      "typ": "etykieta-podkladu",
+      "notka": "rzeka przecinająca Tazeem (Guide Zendikar)"
+    },
+    {
+      "nazwa": "Sea Gate",
+      "x": 0.406,
+      "y": 0.563,
+      "typ": "etykieta-podkladu",
+      "notka": "tama oddzielająca Halimar od oceanu; miasto + Lighthouse"
+    },
+    {
+      "nazwa": "Sky Rock",
+      "x": 0.4225,
+      "y": 0.477,
+      "typ": "etykieta-podkladu",
+      "notka": "unoszący się hedron przy Sea Gate"
+    },
+    {
+      "nazwa": "Emeria",
+      "x": 0.44,
+      "y": 0.236,
+      "typ": "etykieta-podkladu",
+      "notka": "ruiny w niebie nad Tazeem"
+    },
+    {
+      "nazwa": "Hadatown",
+      "x": 0.235,
+      "y": 0.509,
+      "typ": "etykieta-podkladu",
+      "notka": "miasto złodziei Tazeem (MTG Wiki)"
+    },
+    {
+      "nazwa": "Ondu",
+      "x": 0.245,
+      "y": 0.8,
+      "typ": "etykieta-podkladu",
+      "notka": "kontynent południowo-zachodni"
+    },
+    {
+      "nazwa": "Turntimber",
+      "x": 0.225,
+      "y": 0.836,
+      "typ": "etykieta-podkladu",
+      "notka": "las Ondu (MTG Wiki)"
+    },
+    {
+      "nazwa": "Makindi Trenches",
+      "x": 0.32,
+      "y": 0.771,
+      "typ": "etykieta-podkladu",
+      "notka": "labirynt wąwozów Ondu (MTG Wiki)"
+    },
+    {
+      "nazwa": "Agadeem",
+      "x": 0.125,
+      "y": 0.879,
+      "typ": "etykieta-podkladu",
+      "notka": "wyspa Ondu"
+    },
+    {
+      "nazwa": "Kabira",
+      "x": 0.215,
+      "y": 0.911,
+      "typ": "etykieta-podkladu",
+      "notka": "osada Agadeem (MTG Wiki)"
+    },
+    {
+      "nazwa": "Wyspy Jwar",
+      "x": 0.065,
+      "y": 0.779,
+      "typ": "etykieta-podkladu",
+      "notka": "wyspy na zachód od Ondu"
+    },
+    {
+      "nazwa": "Beyeen",
+      "x": 0.0525,
+      "y": 0.857,
+      "typ": "etykieta-podkladu",
+      "notka": "wyspa Ondu"
+    },
+    {
+      "nazwa": "Murasa",
+      "x": 0.5,
+      "y": 0.868,
+      "typ": "etykieta-podkladu",
+      "notka": "płaskowyż; położenie przybliżone — nieustalone w kanonie",
+      "pozycja_zrodlo": "nieustalone-w-kanonie"
+    },
+    {
+      "nazwa": "Skyfang",
+      "x": 0.505,
+      "y": 0.829,
+      "typ": "etykieta-podkladu",
+      "notka": "góry Skyfang/Shatterskull Murasa (MTG Wiki)",
+      "pozycja_zrodlo": "nieustalone-w-kanonie"
+    },
+    {
+      "nazwa": "Sunder Bay",
+      "x": 0.46,
+      "y": 0.943,
+      "typ": "etykieta-podkladu",
+      "notka": "wejście do Murasy (Guide Zendikar)",
+      "pozycja_zrodlo": "nieustalone-w-kanonie"
+    }
   ],
   "regiony": [],
   "elementy": [
-    { "nazwa": "Oran-Rief", "typ": "las", "kontynent": "Tazeem", "zrodlo": "https://mtg.fandom.com/wiki/Tazeem" },
-    { "nazwa": "Umara (rzeka)", "typ": "rzeka", "kontynent": "Tazeem", "zrodlo": "https://mtg.fandom.com/wiki/Tazeem" },
-    { "nazwa": "Umagosi Waterfall", "typ": "wodospad", "kontynent": "Tazeem", "zrodlo": "https://mtg.fandom.com/wiki/Tazeem" },
-    { "nazwa": "Merfolk Enclave", "typ": "osada", "kontynent": "Tazeem", "zrodlo": "https://mtg.fandom.com/wiki/Tazeem" },
-    { "nazwa": "Sea Gate + Lighthouse", "typ": "miasto", "kontynent": "Tazeem", "zrodlo": "https://mtg.fandom.com/wiki/Tazeem" },
-    { "nazwa": "Sky Rock", "typ": "hedron", "kontynent": "Tazeem", "zrodlo": "https://mtg.fandom.com/wiki/Tazeem" },
-    { "nazwa": "Coralhelm", "typ": "zywa-skała", "kontynent": "Tazeem", "zrodlo": "https://mtg.fandom.com/wiki/Tazeem" },
-    { "nazwa": "Lun Bulwark", "typ": "pasmo-górskie", "kontynent": "Tazeem", "zrodlo": "https://mtg.fandom.com/wiki/Tazeem" },
-    { "nazwa": "Hadatown", "typ": "miasto", "kontynent": "Tazeem", "zrodlo": "https://mtg.fandom.com/wiki/Tazeem" },
-    { "nazwa": "Emeria (Sky Ruin)", "typ": "ruiny", "kontynent": "Tazeem", "zrodlo": "https://mtg.fandom.com/wiki/Tazeem" },
-    { "nazwa": "Wulkaniczne pasmo Akoum", "typ": "pasmo-górskie", "kontynent": "Akoum", "zrodlo": "https://mtg.wiki/page/Zendikar_(plane)" },
-    { "nazwa": "Oko Ugina", "typ": "hedron", "kontynent": "Akoum", "zrodlo": "https://mtg.wiki/page/Zendikar_(plane)" },
-    { "nazwa": "Windblast Gorge", "typ": "wąwóz", "kontynent": "Akoum", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Affa", "typ": "miasto", "kontynent": "Akoum", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Goma Fada", "typ": "miasto", "kontynent": "Akoum", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Tal Terig", "typ": "miasto", "kontynent": "Akoum", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Tangled Vale (dżungla)", "typ": "las", "kontynent": "Bala Ged", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Rzeka Umung", "typ": "rzeka", "kontynent": "Bala Ged", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Bojuka Bay", "typ": "zatoka", "kontynent": "Bala Ged", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Bordermire (bagna)", "typ": "bagno", "kontynent": "Bala Ged", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Hagra Cistern", "typ": "ruina", "kontynent": "Guul Draz", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Hanging Swamp", "typ": "bagno", "kontynent": "Guul Draz", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Free City of Nimana", "typ": "miasto", "kontynent": "Guul Draz", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Malakir", "typ": "miasto", "kontynent": "Guul Draz", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Góry Skyfang/Shatterskull", "typ": "pasmo-górskie", "kontynent": "Murasa", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Na Plateau", "typ": "płaskowyż", "kontynent": "Murasa", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Rzeka Raimunza", "typ": "rzeka", "kontynent": "Murasa", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Sunder Bay", "typ": "zatoka", "kontynent": "Murasa", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Jaddi-trees", "typ": "las", "kontynent": "Murasa", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Makindi Trenches", "typ": "wąwóz", "kontynent": "Ondu", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Turntimber", "typ": "las", "kontynent": "Ondu", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Teetering Peaks", "typ": "pasmo-górskie", "kontynent": "Ondu", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Agadeem + Hedron Fields", "typ": "hedron-pole", "kontynent": "Ondu", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Kabira", "typ": "miasto", "kontynent": "Ondu", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Beyeen / Mount Valakut", "typ": "wulkan", "kontynent": "Ondu", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Jwar (Strand of Jwar)", "typ": "ruina", "kontynent": "Ondu", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Serpent's Maw", "typ": "wąwóz", "kontynent": "Ondu", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Midnight Pass", "typ": "przełęcz", "kontynent": "Sejiri", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Ikiral", "typ": "osada", "kontynent": "Sejiri", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" },
-    { "nazwa": "Zmrożony step i klify", "typ": "step", "kontynent": "Sejiri", "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)" }
+    {
+      "nazwa": "Oran-Rief",
+      "typ": "las",
+      "kontynent": "Tazeem",
+      "zrodlo": "https://mtg.fandom.com/wiki/Tazeem"
+    },
+    {
+      "nazwa": "Umara (rzeka)",
+      "typ": "rzeka",
+      "kontynent": "Tazeem",
+      "zrodlo": "https://mtg.fandom.com/wiki/Tazeem"
+    },
+    {
+      "nazwa": "Umagosi Waterfall",
+      "typ": "wodospad",
+      "kontynent": "Tazeem",
+      "zrodlo": "https://mtg.fandom.com/wiki/Tazeem"
+    },
+    {
+      "nazwa": "Merfolk Enclave",
+      "typ": "osada",
+      "kontynent": "Tazeem",
+      "zrodlo": "https://mtg.fandom.com/wiki/Tazeem"
+    },
+    {
+      "nazwa": "Sea Gate + Lighthouse",
+      "typ": "miasto",
+      "kontynent": "Tazeem",
+      "zrodlo": "https://mtg.fandom.com/wiki/Tazeem"
+    },
+    {
+      "nazwa": "Sky Rock",
+      "typ": "hedron",
+      "kontynent": "Tazeem",
+      "zrodlo": "https://mtg.fandom.com/wiki/Tazeem"
+    },
+    {
+      "nazwa": "Coralhelm",
+      "typ": "zywa-skała",
+      "kontynent": "Tazeem",
+      "zrodlo": "https://mtg.fandom.com/wiki/Tazeem"
+    },
+    {
+      "nazwa": "Lun Bulwark",
+      "typ": "pasmo-górskie",
+      "kontynent": "Tazeem",
+      "zrodlo": "https://mtg.fandom.com/wiki/Tazeem"
+    },
+    {
+      "nazwa": "Hadatown",
+      "typ": "miasto",
+      "kontynent": "Tazeem",
+      "zrodlo": "https://mtg.fandom.com/wiki/Tazeem"
+    },
+    {
+      "nazwa": "Emeria (Sky Ruin)",
+      "typ": "ruiny",
+      "kontynent": "Tazeem",
+      "zrodlo": "https://mtg.fandom.com/wiki/Tazeem"
+    },
+    {
+      "nazwa": "Wulkaniczne pasmo Akoum",
+      "typ": "pasmo-górskie",
+      "kontynent": "Akoum",
+      "zrodlo": "https://mtg.wiki/page/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Oko Ugina",
+      "typ": "hedron",
+      "kontynent": "Akoum",
+      "zrodlo": "https://mtg.wiki/page/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Windblast Gorge",
+      "typ": "wąwóz",
+      "kontynent": "Akoum",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Affa",
+      "typ": "miasto",
+      "kontynent": "Akoum",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Goma Fada",
+      "typ": "miasto",
+      "kontynent": "Akoum",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Tal Terig",
+      "typ": "miasto",
+      "kontynent": "Akoum",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Tangled Vale (dżungla)",
+      "typ": "las",
+      "kontynent": "Bala Ged",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Rzeka Umung",
+      "typ": "rzeka",
+      "kontynent": "Bala Ged",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Bojuka Bay",
+      "typ": "zatoka",
+      "kontynent": "Bala Ged",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Bordermire (bagna)",
+      "typ": "bagno",
+      "kontynent": "Bala Ged",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Hagra Cistern",
+      "typ": "ruina",
+      "kontynent": "Guul Draz",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Hanging Swamp",
+      "typ": "bagno",
+      "kontynent": "Guul Draz",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Free City of Nimana",
+      "typ": "miasto",
+      "kontynent": "Guul Draz",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Malakir",
+      "typ": "miasto",
+      "kontynent": "Guul Draz",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Góry Skyfang/Shatterskull",
+      "typ": "pasmo-górskie",
+      "kontynent": "Murasa",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Na Plateau",
+      "typ": "płaskowyż",
+      "kontynent": "Murasa",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Rzeka Raimunza",
+      "typ": "rzeka",
+      "kontynent": "Murasa",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Sunder Bay",
+      "typ": "zatoka",
+      "kontynent": "Murasa",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Jaddi-trees",
+      "typ": "las",
+      "kontynent": "Murasa",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Makindi Trenches",
+      "typ": "wąwóz",
+      "kontynent": "Ondu",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Turntimber",
+      "typ": "las",
+      "kontynent": "Ondu",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Teetering Peaks",
+      "typ": "pasmo-górskie",
+      "kontynent": "Ondu",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Agadeem + Hedron Fields",
+      "typ": "hedron-pole",
+      "kontynent": "Ondu",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Kabira",
+      "typ": "miasto",
+      "kontynent": "Ondu",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Beyeen / Mount Valakut",
+      "typ": "wulkan",
+      "kontynent": "Ondu",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Jwar (Strand of Jwar)",
+      "typ": "ruina",
+      "kontynent": "Ondu",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Serpent's Maw",
+      "typ": "wąwóz",
+      "kontynent": "Ondu",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Midnight Pass",
+      "typ": "przełęcz",
+      "kontynent": "Sejiri",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Ikiral",
+      "typ": "osada",
+      "kontynent": "Sejiri",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Zmrożony step i klify",
+      "typ": "step",
+      "kontynent": "Sejiri",
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    }
   ],
   "pinezki": [
     {
@@ -102,5 +504,11 @@
       "pewnosc": "region",
       "uzasadnienie": "Coralhelm Refuge — największa osada merfolków Zendikaru, leżąca na wybrzeżach Halimar (morze śródlądowe Tazeem); karta nie wskazuje dokładnego brzegu, więc pinezka oznacza region wybrzeży Halimar."
     }
-  ]
+  ],
+  "zrodlo_fanmapa": {
+    "tytul": "Mapa fanowska Zendikaru (do dodania)",
+    "url": "",
+    "opis_oczekiwany": true,
+    "notka": "Właściciel dostarczy dokładny opis (co gdzie się znajduje) z najlepszej mapy fanowskiej. Po wklejeniu opisu pozycje elementów NIEUSTALONYCH w kanonie (np. Murasa i jej wnętrze, względne położenia miast w ramach kontynentów) zostaną zsynchronizowane z tym opisem i oznaczone jako 'pozycja wg mapy fanowskiej (nie kanon)'. Wpisy poniżej to punkty wyjścia z kanonu tekstowego."
+  }
 }

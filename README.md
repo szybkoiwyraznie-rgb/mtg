@@ -61,7 +61,9 @@ kart pokazują dodatkowe tory obrazów. Na Pages tory te nie istnieją
   docelowego > wiedza agenta/internet (z cytowaniami) (ADR 0010/0011).
 - **Zero generowanych grafik** (ADR 0008); tory obrazów: Scryfall / FOT /
   KON / twarz syntetyczna.
-- **Domyślna praca sesji** bez zlecenia: Pętla Jakości (ADR 0006).
+- **Domyślna praca sesji** bez zlecenia: Pętla Jakości (ADR 0006) —
+  integralność, pogłębianie, link-mining, pass mapowy, doskonalenie map
+  wektorowych, co-nowego.
 
 Dokumenty konstytutywne: [`AGENTS.md`](AGENTS.md) (sesje),
 [`docs/PRODUCT.md`](docs/PRODUCT.md) (co budujemy),
