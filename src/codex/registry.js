@@ -82,12 +82,12 @@ export function walidujStrone(strona, ctx) {
     else for (const k of kolory) if (!KOLORY.includes(k)) p.push(`${gdzie}: kolor "${k}" poza ${KOLORY.join('/')}`);
 
     if (strona.pinezka) {
+      // Współrzędne NIE żyją tu — jedyny źródło prawdy to maps/<plan>/map.json
+      // (PROCES_MAP.md MA2). Frontmatter deklaruje istnienie pinezki i pewność.
       if (strona.pinezka.mapa !== strona.plan) p.push(`${gdzie}: pinezka.mapa "${strona.pinezka.mapa}" ≠ plan "${strona.plan}"`);
       if (!POZIOMY_PEWNOSCI.includes(strona.pinezka.pewnosc)) {
         p.push(`${gdzie}: pinezka.pewnosc "${strona.pinezka.pewnosc}" poza ${POZIOMY_PEWNOSCI.join('/')}`);
       }
-      const x = Number(strona.pinezka.x); const y = Number(strona.pinezka.y);
-      if (!(x >= 0 && x <= 1) || !(y >= 0 && y <= 1)) p.push(`${gdzie}: pinezka x/y muszą być w [0,1]`);
     }
 
     const sekcje = wytnijSekcje(strona.body ?? '');

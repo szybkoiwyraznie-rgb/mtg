@@ -28,19 +28,20 @@ import {
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ENTRY = 'src/codex/main.js';
 
-export async function zbuduj({ out = 'dist/mtg-lore-codex.html' } = {}) {
+export async function zbuduj({ out, root = ROOT } = {}) {
+  out = out ?? path.join(root, 'dist/mtg-lore-codex.html');
   const problemy = [];
 
   // ── 1. Ładowanie treści ──────────────────────────────────────────
-  const suroweStrony = wczytajStrony();
+  const suroweStrony = wczytajStrony({ root });
   for (const s of suroweStrony) if (s.problem) problemy.push(s.problem);
   const strony = suroweStrony.filter((s) => !s.problem);
 
-  const taxonomia = wczytajTaxonomie();
-  const kolekcja = wczytajKolekcje();
-  const scryfall = wczytajScryfall();
-  const mapy = wczytajMapy();
-  const coNowego = wczytajCoNowego();
+  const taxonomia = wczytajTaxonomie({ root });
+  const kolekcja = wczytajKolekcje({ root });
+  const scryfall = wczytajScryfall({ root });
+  const mapy = wczytajMapy({ root });
+  const coNowego = wczytajCoNowego({ root });
 
   const { bySlug, duplikaty } = zbudujRejestr(strony);
   for (const d of duplikaty) problemy.push(`zduplikowany slug: ${d}`);
@@ -168,7 +169,7 @@ export async function zbuduj({ out = 'dist/mtg-lore-codex.html' } = {}) {
     .replace('<!--STYL-->', () => `<style>\n${css}\n</style>`)
     .replace('<!--BUNDLE-->', () => `<script>\n${daneJs}\n\n${kod}\n</script>`);
 
-  const cel = path.resolve(ROOT, out);
+  const cel = path.resolve(out);
   fs.mkdirSync(path.dirname(cel), { recursive: true });
   fs.writeFileSync(cel, html);
 

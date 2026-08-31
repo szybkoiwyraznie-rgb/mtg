@@ -1,0 +1,24 @@
+{
+  "source": "https://api.scryfall.com/cards/named?exact=Testowy+Zwiadowca",
+  "pobrano": "2026-08-31",
+  "slug": "1tst-testowy-zwiadowca",
+  "name": "Testowy Zwiadowca",
+  "mana_cost": "{2}{B}",
+  "cmc": 3,
+  "type_line": "Creature — Bird Horror",
+  "oracle_text": "Flying\nWhen this creature enters, test amass 2.",
+  "power": "1",
+  "toughness": "1",
+  "colors": ["B"],
+  "keywords": ["Flying"],
+  "set": "tst",
+  "set_name": "Test Set",
+  "rarity": "common",
+  "artist": "Testowy Artysta",
+  "flavor_text": "\u201eTestowy cytat flavor.\u201d — Testowy Autor",
+  "image_uris": {
+    "normal": "https://cards.scryfall.io/test.jpg",
+    "large": "https://cards.scryfall.io/test-lg.jpg"
+  },
+  "scryfall_uri": "https://scryfall.com/card/tst/1/testowy-zwiadowca"
+}

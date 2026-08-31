@@ -12,8 +12,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parseFrontmatter } from '../src/codex/frontmatter.js';
 
-export function wczytajPlikiMarkdown(katalog) {
-  const abs = path.resolve(katalog);
+export function wczytajPlikiMarkdown(katalog, { root = '.' } = {}) {
+  const abs = path.resolve(root, katalog);
   if (!fs.existsSync(abs)) return [];
   return fs.readdirSync(abs)
     .filter((f) => f.endsWith('.md') && f !== 'README.md') // README = dokumentacja katalogu, nie strona
@@ -27,7 +27,7 @@ export function wczytajPlikiMarkdown(katalog) {
 }
 
 /** Strony treściowe: content/cards, content/lore, content/planes. */
-export function wczytajStrony() {
+export function wczytajStrony({ root = '.' } = {}) {
   const strony = [];
   const mapowanie = [
     { katalog: 'content/cards', typ: 'karta' },
@@ -35,7 +35,7 @@ export function wczytajStrony() {
     { katalog: 'content/planes', typ: 'plan' },
   ];
   for (const { katalog, typ } of mapowanie) {
-    for (const plik of wczytajPlikiMarkdown(katalog)) {
+    for (const plik of wczytajPlikiMarkdown(katalog, { root })) {
       const fm = plik.fm ?? {};
       if (fm.typ !== typ) {
         strony.push({
@@ -59,17 +59,17 @@ export function wczytajStrony() {
 }
 
 /** Słownik tagów: content/taxonomia.json → Map(tag → opis). */
-export function wczytajTaxonomie() {
-  const p = path.resolve('content/taxonomia.json');
+export function wczytajTaxonomie({ root = '.' } = {}) {
+  const p = path.resolve(root, 'content/taxonomia.json');
   if (!fs.existsSync(p)) return new Map();
   const raw = JSON.parse(fs.readFileSync(p, 'utf8'));
   return new Map(Object.entries(raw));
 }
 
 /** Wpisy kolekcji: collection/entries/*.md → Map(slug → {fm, prompt, narracja}). */
-export function wczytajKolekcje() {
+export function wczytajKolekcje({ root = '.' } = {}) {
   const wpisy = new Map();
-  for (const plik of wczytajPlikiMarkdown('collection/entries')) {
+  for (const plik of wczytajPlikiMarkdown('collection/entries', { root })) {
     const fm = plik.fm ?? {};
     const slug = plik.plik.replace(/\.md$/, '');
     const { prompt, narracja } = rozdzielWpis(plik.body);
@@ -91,9 +91,9 @@ function rozdzielWpis(body) {
 }
 
 /** Snapshoty Scryfall: scryfall/*.json → Map(slug → obiekt). */
-export function wczytajScryfall() {
+export function wczytajScryfall({ root = '.' } = {}) {
   const mapa = new Map();
-  const katalog = path.resolve('scryfall');
+  const katalog = path.resolve(root, 'scryfall');
   if (!fs.existsSync(katalog)) return mapa;
   for (const f of fs.readdirSync(katalog).filter((x) => x.endsWith('.json')).sort()) {
     try {
@@ -107,9 +107,9 @@ export function wczytajScryfall() {
 }
 
 /** Rejestry map: maps/<plan>/map.json → Map(plan → obiekt). */
-export function wczytajMapy() {
+export function wczytajMapy({ root = '.' } = {}) {
   const mapa = new Map();
-  const katalog = path.resolve('maps');
+  const katalog = path.resolve(root, 'maps');
   if (!fs.existsSync(katalog)) return mapa;
   for (const plan of fs.readdirSync(katalog).sort()) {
     const plik = path.join(katalog, plan, 'map.json');
@@ -124,7 +124,7 @@ export function wczytajMapy() {
 }
 
 /** „Co nowego": content/co-nowego.md (może nie istnieć). */
-export function wczytajCoNowego() {
-  const p = path.resolve('content/co-nowego.md');
+export function wczytajCoNowego({ root = '.' } = {}) {
+  const p = path.resolve(root, 'content/co-nowego.md');
   return fs.existsSync(p) ? fs.readFileSync(p, 'utf8') : null;
 }

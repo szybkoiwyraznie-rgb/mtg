@@ -136,6 +136,8 @@ function quoteIfNeeded(v) {
   if (v === null || v === undefined) return 'null';
   if (typeof v === 'number' || typeof v === 'boolean') return String(v);
   const s = String(v);
+  // round-trip: string wyglądający jak liczba/bool/null MUSI dostać cudzysłów
+  if (/^(true|false|null|~|-?\d+(\.\d+)?)$/.test(s)) return JSON.stringify(s);
   if (/[:#]/.test(s) && !/^['"]/.test(s)) return JSON.stringify(s);
   return s;
 }
