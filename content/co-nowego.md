@@ -3,7 +3,29 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
-## 2026-08-31 — Mapa Zendikaru: audyt, wzbogacenie i naprawy (PR-3 c.d.)
+## 2026-08-31 — Mapa Zendikaru: rysowanie szczegółów, czysty podkład + brak pikselozy
+
+- **Elementy fanowskie faktycznie narysowane na podkładzie SVG** (nie
+  tylko odnotowane w `map.json`): ~31 nowych symboli/etykiet — Akoum
+  (Spike Fields, Grip Haven, Slab Haven, Ghostwatch, Kargan Lands, Ora
+  Ondar, Khalni Heart, Glasspool + Ior Ruin), Bala Ged (Guum Wilds,
+  Bojuka Bog), Guul Draz (Zof Marsh, Hagra Swamp, Lake Jast, Lulea),
+  Murasa (Kazandu, Pillar Plains, Vazi River, Singing City, Visimal,
+  Kazul Pass, Roaring Falls, Living Spire, Tumbled Palace), Sejiri
+  (Benthidrix), Ondu (Prison of Omath, Cliffhaven, Graypelt, Mosscrack,
+  Crypt of Agadeem, Zulaport). Wszystkie umieszczone testem
+  point-in-polygon (na lądzie, bez kolizji z istniejącymi markerami).
+- **Usunięte zastrzeżenia:** zniknął podpis „Rekonstrukcja układu
+  kontynentów...", podtytuł Murasy „(położenie przybliżone)" i przerywana
+  linia Murasy (pozycja uzupełniona wg źródła). Mapa pokazuje treść
+  bez adnotacji „uwaga! fanowskie!" — zgodnie z decyzją właściciela.
+- **Naprawiona pikseloza przy przybliżeniu** (sedno zgłoszenia):
+  podkład SVG osadzany teraz **inline** w scenie mapy zamiast jako
+  `<img>` z data-URI. `<img>` rasteryzował SVG w rozmiarze layoutu,
+  a transform zoomu skalał rozciągniętą bitmapę → pikseloza. Inline
+  `<svg>` pozostaje wektorem i przerysowuje się w każdym przybliżeniu
+  (bez zwiększania rozmiaru pliku). Podkłady rastrowe (PNG/JPG, np.
+  Śródziemie) dalej jako `<img>`.
 
 - **Naprawy kolizji na mapie** (na podstawie zrzutu właściciela):
   - **Tal Terig** przeniesione z wody na ląd (Akoum) — pozycja potwierdzona

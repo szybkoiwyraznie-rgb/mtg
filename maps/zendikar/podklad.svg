@@ -296,10 +296,10 @@
   <path d="M 720,1240 C 700,1260 690,1280 700,1295" stroke="#8a7a5c" stroke-width="3" fill="none" stroke-dasharray="5 4"/>
 
   <!-- ============================================================ -->
-  <!-- MURASA (płaskowyż — położenie przybliżone, przerywany)        -->
+  <!-- MURASA (płaskowyż — pozycja wg źródła uzupełniającego)        -->
   <!-- ============================================================ -->
   <path d="M 860,1160 C 890,1110 970,1095 1030,1115 C 1090,1100 1140,1140 1145,1200 C 1160,1260 1120,1310 1060,1320 C 1010,1350 930,1345 890,1310 C 850,1280 840,1210 860,1160 Z"
-    fill="#e8dbb8" stroke="#a89468" stroke-width="3.5" stroke-dasharray="26 18"/>
+    fill="#e8dbb8" stroke="#a89468" stroke-width="3.5" />
   <path d="M 925,1175 q 40 -8 85 0 M 950,1265 q 40 8 80 0" stroke="#a89468" stroke-width="2" fill="none" opacity="0.35"/>
 
   <!-- Skyfang / Shatterskull Mountains (pasmo) -->
@@ -319,6 +319,77 @@
   <use href="#ruina" transform="translate(1035,1140) scale(0.8)"/>
   <use href="#miasto" transform="translate(940,1245) scale(0.8)"/>
 
+  <!-- ============================================================ -->
+  <!-- WZBOGACENIE szczegółowe (źródła uzupełniające — patrz map.json) -->
+  <!-- ============================================================ -->
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#4a3a28" text-anchor="middle">
+    <use href="#gora" transform="translate(1370,431) scale(0.85)"/>
+    <use href="#gora" transform="translate(1356,435) scale(0.72)"/>
+    <use href="#gora" transform="translate(1384,437) scale(0.85)"/>
+    <text x="1370" y="457" font-size="15" font-style="italic" fill="#6b5d52">Spike Fields</text>
+    <use href="#miasto" transform="translate(1380,504) scale(0.85)"/>
+    <text x="1380" y="530" font-size="15" font-style="italic" fill="#6b5d52">Grip Haven</text>
+    <use href="#miasto" transform="translate(1362,478) scale(0.85)"/>
+    <text x="1362" y="504" font-size="15" font-style="italic" fill="#6b5d52">Slab Haven</text>
+    <use href="#miasto" transform="translate(1372,540) scale(0.85)"/>
+    <text x="1372" y="566" font-size="15" font-style="italic" fill="#6b5d52">Ghostwatch</text>
+    <use href="#gora" transform="translate(1560,336) scale(0.85)"/>
+    <use href="#gora" transform="translate(1546,340) scale(0.72)"/>
+    <text x="1560" y="362" font-size="15" font-style="italic" fill="#6b5d52">Kargan Lands</text>
+    <use href="#drzewo" transform="translate(1760,392) scale(0.95)"/>
+    <use href="#drzewo" transform="translate(1744,397) scale(0.80)"/>
+    <use href="#drzewo" transform="translate(1776,396) scale(0.95)"/>
+    <text x="1760" y="418" font-size="15" font-style="italic" fill="#6b5d52">Ora Ondar</text>
+    <use href="#drzewo" transform="translate(1840,420) scale(0.95)"/>
+    <text x="1840" y="446" font-size="15" font-style="italic" fill="#6b5d52">Khalni Heart</text>
+    <ellipse cx="1800" cy="588" rx="26" ry="17" fill="#b9cdd8" stroke="#7fa0b4" stroke-width="2.5"/>
+    <text x="1800" y="614" font-size="15" font-style="italic" fill="#6b5d52">Glasspool</text>
+    <use href="#ruina" transform="translate(1810,595) scale(0.8)"/>
+    <use href="#drzewo" transform="translate(1560,840) scale(0.95)"/>
+    <use href="#drzewo" transform="translate(1544,845) scale(0.80)"/>
+    <use href="#drzewo" transform="translate(1576,844) scale(0.95)"/>
+    <text x="1560" y="866" font-size="15" font-style="italic" fill="#6b5d52">Guum Wilds</text>
+    <use href="#bagno" transform="translate(1762,854) scale(0.90)"/>
+    <text x="1762" y="880" font-size="15" font-style="italic" fill="#6b5d52">Bojuka Bog</text>
+    <use href="#bagno" transform="translate(1100,1204) scale(0.90)"/>
+    <use href="#bagno" transform="translate(1080,1210) scale(0.80)"/>
+    <use href="#bagno" transform="translate(1120,1210) scale(0.80)"/>
+    <text x="1100" y="1230" font-size="15" font-style="italic" fill="#6b5d52">Zof Marsh</text>
+    <use href="#bagno" transform="translate(1320,1260) scale(0.90)"/>
+    <use href="#bagno" transform="translate(1300,1266) scale(0.80)"/>
+    <text x="1320" y="1286" font-size="15" font-style="italic" fill="#6b5d52">Hagra Swamp</text>
+    <ellipse cx="1240" cy="1330" rx="26" ry="17" fill="#b9cdd8" stroke="#7fa0b4" stroke-width="2.5"/>
+    <text x="1240" y="1356" font-size="15" font-style="italic" fill="#6b5d52">Lake Jast</text>
+    <use href="#miasto" transform="translate(1400,1337) scale(0.85)"/>
+    <text x="1400" y="1363" font-size="15" font-style="italic" fill="#6b5d52">Lulea</text>
+    <use href="#gora" transform="translate(938,1307) scale(0.85)"/>
+    <text x="938" y="1333" font-size="15" font-style="italic" fill="#6b5d52">Kazandu</text>
+    <use href="#gora" transform="translate(932,1285) scale(0.85)"/>
+    <use href="#gora" transform="translate(918,1289) scale(0.72)"/>
+    <path d="M 960,1328 C 968,1314 980,1326 988,1312" stroke="#5b8ba6" stroke-width="4" fill="none" opacity="0.85"/>
+    <use href="#miasto" transform="translate(882,1300) scale(0.85)"/>
+    <text x="882" y="1326" font-size="15" font-style="italic" fill="#6b5d52">Singing City</text>
+    <use href="#gora" transform="translate(894,1283) scale(0.85)"/>
+    <use href="#gora" transform="translate(920,1260) scale(0.85)"/>
+    <path d="M 1060,1260 L 1060,1274 l 5,1 l 2,-12" stroke="#5b8ba6" stroke-width="3" fill="#b9cdd8"/>
+    <use href="#gora" transform="translate(1000,1281) scale(0.85)"/>
+    <text x="1000" y="1307" font-size="15" font-style="italic" fill="#6b5d52">Living Spire</text>
+    <use href="#ruina" transform="translate(950,1253) scale(0.8)"/>
+    <use href="#gora" transform="translate(1078,176) scale(0.85)"/>
+    <text x="1078" y="202" font-size="15" font-style="italic" fill="#6b5d52">Benthidrix</text>
+    <use href="#ruina" transform="translate(560,1160) scale(0.8)"/>
+    <text x="560" y="1186" font-size="15" font-style="italic" fill="#6b5d52">Prison of Omath</text>
+    <use href="#miasto" transform="translate(620,1050) scale(0.85)"/>
+    <text x="620" y="1076" font-size="15" font-style="italic" fill="#6b5d52">Cliffhaven</text>
+    <use href="#gora" transform="translate(660,1078) scale(0.85)"/>
+    <text x="660" y="1104" font-size="15" font-style="italic" fill="#6b5d52">Graypelt</text>
+    <use href="#gora" transform="translate(365,1180) scale(0.85)"/>
+    <text x="365" y="1206" font-size="15" font-style="italic" fill="#6b5d52">Mosscrack</text>
+    <use href="#ruina" transform="translate(320,1240) scale(0.8)"/>
+    <text x="320" y="1266" font-size="15" font-style="italic" fill="#6b5d52">Crypt of Agadeem</text>
+    <use href="#miasto" transform="translate(257,1068) scale(0.75)"/>
+    <text x="257" y="1094" font-size="15" font-style="italic" fill="#6b5d52">Zulaport</text>
+  </g>
   <!-- ============================================================ -->
   <!-- ETYKIETY                                                     -->
   <!-- ============================================================ -->
@@ -366,7 +437,7 @@
     <text x="132" y="1188" font-size="14" fill="#6b5d52">Mt. Valakut</text>
 
     <text class="tytul-kontynentu" x="1000" y="1215" font-size="42" letter-spacing="3">Murasa</text>
-    <text x="1000" y="1252" font-size="20" font-style="italic" fill="#6b5d52">(położenie przybliżone)</text>
+    
     <text x="1012" y="1162" font-size="16" fill="#6b5d52">Skyfang</text>
     <text x="920" y="1328" font-size="14" fill="#6b5d52">Sunder Bay</text>
   </g>
@@ -400,5 +471,4 @@
   <rect x="30" y="30" width="1940" height="1340" fill="none" stroke="#8a7a5c" stroke-width="1.5" opacity="0.6"/>
 
   <!-- podpis kartograficzny -->
-  <text x="1968" y="1362" font-family="Georgia, serif" font-size="21" font-style="italic" fill="#6b5d52" text-anchor="end">Rekonstrukcja układu kontynentów wg kanonu tekstowego — położenie Murasy przybliżone; elementy wg MTG Wiki / Guide Zendikar / Plane Shift</text>
 </svg>

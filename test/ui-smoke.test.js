@@ -86,7 +86,10 @@ test('UI: mapa planu z realnej bazy — podkład, pinezka, legenda', async () =>
   const mapa = shim.app.innerHTML;
   assert.ok(mapa.includes('Mapa: Śródziemie'), 'mapa: brak tytułu');
   assert.ok(!mapa.includes('wariant'), 'mapa: nagłówek bez danych technicznych podkładu');
-  assert.ok(mapa.includes('data:image/svg+xml;base64,'), 'mapa: brak osadzonego podkładu (ADR 0009)');
+  assert.ok(
+    mapa.includes('data:image/svg+xml;base64,') || mapa.includes('<svg class="mapa-podklad"'),
+    'mapa: brak osadzonego podkładu (ADR 0009)',
+  );
   assert.ok(mapa.includes('data-pinezka="1ltr-dunland-crebain"'), 'mapa: brak pinezki karty 1LTR');
   assert.ok(mapa.includes('href="#/karta/1ltr-dunland-crebain"'), 'mapa: pinezka nie linkuje karty');
   assert.ok(mapa.includes('?pin=1ltr-dunland-crebain'), 'mapa: brak deep-linka pinezki');
@@ -109,7 +112,10 @@ test('UI: mapa planu z realnej bazy — podkład, pinezka, legenda', async () =>
   shim.idz('#/mapa/zendikar');
   const mapaZ = shim.app.innerHTML;
   assert.ok(mapaZ.includes('Mapa: Zendikar'), 'mapa Zendikaru: brak tytułu');
-  assert.ok(mapaZ.includes('data:image/svg+xml;base64,'), 'mapa Zendikaru: brak osadzonego podkładu');
+  assert.ok(
+    mapaZ.includes('data:image/svg+xml;base64,') || mapaZ.includes('<svg class="mapa-podklad"'),
+    'mapa Zendikaru: brak osadzonego podkładu',
+  );
   assert.ok(mapaZ.includes('data-pinezka="2bfz-coralhelm-guide"'), 'mapa Zendikaru: brak pinezki 2BFZ');
   assert.ok(mapaZ.includes('?pin=2bfz-coralhelm-guide'), 'mapa Zendikaru: brak deep-linka pinezki');
   assert.ok(mapaZ.includes('praca własna'), 'mapa Zendikaru: brak atrybucji rekonstrukcji (T3)');
