@@ -157,7 +157,7 @@ export async function zbuduj({ out, root = ROOT } = {}) {
     })
     .join('\n\n');
 
-  const daneJs = `// ===== CODEX_DATA (wstrzyknięte przez build — ADR 0001) =====\nvar CODEX_DATA = ${JSON.stringify(dane, null, 2)};`;
+  const daneJs = `// ===== CODEX_DATA (wstrzyknięte przez build — ADR 0001) =====\nglobalThis.CODEX_DATA = ${JSON.stringify(dane, null, 2)};`;
 
   const shell = fs.readFileSync(path.join(ROOT, 'src/codex/index.html'), 'utf8');
   for (const znacznik of ['<!--STYL-->', '<!--BUNDLE-->']) {

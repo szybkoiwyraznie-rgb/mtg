@@ -54,7 +54,7 @@ test('fixture: wikilinki rozwiązuje się wzajemnie (karta ↔ hasło)', () => {
 test('fixture: build artefaktu z niepustą bazą zawiera treść i backlinki', async () => {
   const cel = await zbuduj({ root: ROOT_FIXTURE, out: 'dist/test-fixture-artefakt.html' });
   const html = fs.readFileSync(cel, 'utf8');
-  const dane = JSON.parse(html.match(/var CODEX_DATA = (\{[\s\S]*?\});\n\n\/\/ =====/)[1]);
+  const dane = JSON.parse(html.match(/globalThis\.CODEX_DATA = (\{[\s\S]*?\});\n\n\/\/ =====/)[1]);
 
   assert.deepEqual(dane.statystyki, { karty: 1, hasla: 1, plany: 1 });
   const karta = dane.strony['1tst-testowy-zwiadowca'];

@@ -13,13 +13,13 @@ test('build bazy repozytorium produkuję artefakt z danymi i kodem', async () =>
 
   // szkielet + wstrzyknięcia
   assert.ok(html.includes('id="app"'), 'brak kontenera aplikacji');
-  assert.ok(html.includes('var CODEX_DATA'), 'brak danych CODEX_DATA');
+  assert.ok(html.includes('globalThis.CODEX_DATA'), 'brak danych CODEX_DATA');
   assert.ok(html.includes('uruchomRouter'), 'brak kodu silnika');
   assert.ok(!html.includes('<!--BUNDLE-->'), 'znacznik bundla niesubstituowany');
   assert.ok(!html.includes('<!--STYL-->'), 'znacznik stylu niesubstituowany');
 
   // dane: pusta baza ma statystyki zerowe i pustą strukturę
-  const m = html.match(/var CODEX_DATA = (\{[\s\S]*?\});\n\n\/\/ =====/);
+  const m = html.match(/globalThis\.CODEX_DATA = (\{[\s\S]*?\});\n\n\/\/ =====/);
   assert.ok(m, 'CODEX_DATA nierozpoznawalne');
   const dane = JSON.parse(m[1]);
   assert.deepEqual(dane.statystyki, { karty: 0, hasla: 0, plany: 0 });
