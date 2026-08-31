@@ -1,8 +1,59 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1400" width="2000" height="1400">
-  <title>Zendikar — rekonstrukcja układu kontynentów</title>
+  <title>Zendikar — rekonstrukcja układu kontynentów (wzbogacona)</title>
 
-  <!-- ocean -->
+  <!-- ============================================================ -->
+  <!-- DEFINICJE SYMBOLI (styl pergaminu — paleta Codexu)           -->
+  <!-- ============================================================ -->
+  <defs>
+    <!-- góra (zwykła) -->
+    <g id="gora">
+      <path d="M -16,12 L 0,-14 L 16,12 Z" fill="#c9b48a" stroke="#8a7a5c" stroke-width="1.5"/>
+      <path d="M -7,-4 L 0,-14 L 7,-4 L 3,-2 L 0,-6 L -3,-2 Z" fill="#efe8d6"/>
+    </g>
+    <!-- wulkan (Akoum — czerwony) -->
+    <g id="wulkan">
+      <path d="M -20,14 L -6,-12 L 2,-12 L 16,14 Z" fill="#a6715e" stroke="#7d4a3a" stroke-width="1.5"/>
+      <path d="M -6,-12 L 2,-12 L 0,-18 Z" fill="#b3392e"/>
+      <path d="M -2,4 l -2,-3 M 2,7 l -2,-3 M 7,10 l -2,-3" stroke="#5c332a" stroke-width="1.2" opacity="0.8"/>
+    </g>
+    <!-- drzewo (las/jaddi) -->
+    <g id="drzewo">
+      <path d="M 0,14 L 0,6 M 0,6 C -9,-2 -6,-14 0,-18 C 6,-14 9,-2 0,6 Z" fill="#7d9464" stroke="#4f6140" stroke-width="1.2"/>
+      <path d="M 0,6 C 0,9 -5,11 -8,12 M 0,6 C 0,9 5,11 8,12" stroke="#4f6140" stroke-width="1.2" fill="none"/>
+    </g>
+    <!-- bagno (mokradła) -->
+    <g id="bagno">
+      <path d="M -18,0 q 6,-7 12,0 q 6,7 12,0" stroke="#5f7a55" stroke-width="2" fill="none"/>
+      <path d="M -12,8 q 5,-6 10,0 q 5,6 10,0" stroke="#5f7a55" stroke-width="2" fill="none"/>
+    </g>
+    <!-- miasto / osada -->
+    <g id="miasto">
+      <rect x="-9" y="-9" width="18" height="18" fill="#8a7a5c" stroke="#4a3a28" stroke-width="1.2"/>
+      <rect x="-5" y="-5" width="10" height="10" fill="#e8dbb8"/>
+      <circle cx="0" cy="0" r="2" fill="#4a3a28"/>
+    </g>
+    <!-- ruina / słup (Skyclave / ruiny) -->
+    <g id="ruina">
+      <path d="M -8,12 L -8,-8 L 8,-8 L 8,12" fill="#d8c9a3" stroke="#4a3a28" stroke-width="1.2"/>
+      <path d="M -4,12 L -4,2 M 0,-8 L 0,2 M 4,12 L 4,2" stroke="#4a3a28" stroke-width="1.2"/>
+    </g>
+    <!-- gdyby przydał się osobny hedron na lądzie -->
+    <g id="hedron">
+      <path d="M 0,-12 L 10,0 L 0,12 L -10,0 Z" fill="#d8c9a3" stroke="#4a3a28" stroke-width="1.5"/>
+      <path d="M -4,-7 L 4,-7 M -6,0 L 6,0 M -4,7 L 4,7" stroke="#4a3a28" stroke-width="0.8"/>
+    </g>
+  </defs>
+
+  <!-- ============================================================ -->
+  <!-- OCEAN                                                        -->
+  <!-- ============================================================ -->
   <rect x="0" y="0" width="2000" height="1400" fill="#ccd8d2"/>
+
+  <!-- główne prądy oceanu -->
+  <g stroke="#8fa89e" stroke-width="2" fill="none" opacity="0.35">
+    <path d="M 0,980 C 300,940 700,940 1000,1000 C 1300,1060 1600,1020 2000,960"/>
+    <path d="M 0,320 C 300,360 700,340 1100,300 C 1500,260 1800,300 2000,340"/>
+  </g>
 
   <!-- fale (styl map dawnych) -->
   <g stroke="#8fa89e" stroke-width="2.5" fill="none" opacity="0.5" stroke-linecap="round">
@@ -22,25 +73,49 @@
     <path transform="translate(250,860)" d="M -70,0 A 70 70 0 1 1 70,0 A 55 55 0 1 0 -40,0 A 26 26 0 1 1 12,0"/>
     <path transform="translate(1120,260)" d="M -70,0 A 70 70 0 1 1 70,0 A 55 55 0 1 0 -40,0 A 26 26 0 1 1 12,0"/>
     <path transform="translate(980,1010)" d="M -70,0 A 70 70 0 1 1 70,0 A 55 55 0 1 0 -40,0 A 26 26 0 1 1 12,0"/>
+    <path transform="translate(430,1050)" d="M -60,0 A 60 60 0 1 1 60,0 A 46 46 0 1 0 -34,0 A 22 22 0 1 1 10,0"/>
   </g>
 
   <!-- wolno dryfujące hedrony -->
-  <g stroke="#6b5d52" stroke-width="2.5" fill="none" opacity="0.65">
+  <g stroke="#6b5d52" stroke-width="2.5" fill="#e8dbb8" opacity="0.65">
     <path transform="translate(350,300)" d="M 0,-14 L 10,0 L 0,14 L -10,0 Z"/>
     <path transform="translate(1180,345)" d="M 0,-11 L 8,0 L 0,11 L -8,0 Z"/>
     <path transform="translate(420,925)" d="M 0,-12 L 9,0 L 0,12 L -9,0 Z"/>
+    <path transform="translate(560,235)" d="M 0,-13 L 9,0 L 0,13 L -9,0 Z"/>
+    <path transform="translate(1830,760)" d="M 0,-10 L 7,0 L 0,10 L -7,0 Z"/>
+    <path transform="translate(120,760)" d="M 0,-11 L 8,0 L 0,11 L -8,0 Z"/>
   </g>
 
-  <!-- Sejiri (polarny lód) -->
+  <!-- ============================================================ -->
+  <!-- SEJIRI (polarny lód — zmrożony step, klify, góry)            -->
+  <!-- ============================================================ -->
   <path d="M 500,120 C 560,70 700,60 800,80 C 900,55 1080,60 1160,95 C 1240,80 1230,150 1150,165 C 1180,210 1080,235 1000,215 C 920,245 780,240 700,215 C 620,235 540,215 520,180 C 470,165 460,140 500,120 Z"
     fill="#eef0e6" stroke="#9fb4ae" stroke-width="3.5"/>
+
+  <!-- klify / zmarzlina tekstura -->
   <g stroke="#9fb4ae" stroke-width="1.5" opacity="0.5" fill="none">
     <path d="M 600,100 l 60 25 l 55 -20"/>
     <path d="M 900,120 l 50 20 l 60 -15"/>
     <path d="M 720,190 l 70 -15"/>
+    <path d="M 560,150 l 40 18"/>
+    <path d="M 1060,150 l 45 16"/>
   </g>
 
-  <!-- wschodni łańcuch lądowy: Akoum — Bala Ged — Guul Draz (połączone przesmykami) -->
+  <!-- wietrzne góry Sejiri -->
+  <use href="#gora" transform="translate(700,140) scale(0.9)"/>
+  <use href="#gora" transform="translate(790,120) scale(1.05)"/>
+  <use href="#gora" transform="translate(880,135) scale(0.9)"/>
+  <use href="#gora" transform="translate(970,120) scale(1.0)"/>
+  <use href="#gora" transform="translate(1055,140) scale(0.85)"/>
+
+  <!-- Midnight Pass (jedyna brama) -->
+  <use href="#ruina" transform="translate(600,170) scale(0.8)"/>
+  <!-- Ikiral — osada w ruinie hedronu -->
+  <use href="#miasto" transform="translate(830,165) scale(0.8)"/>
+
+  <!-- ============================================================ -->
+  <!-- AKOUM (wulkaniczny) — pasmo, superwulkan, Oko Ugina, miasta   -->
+  <!-- ============================================================ -->
   <path d="M 1355,330
     L 1400,235 L 1455,258 L 1500,175 L 1565,245 L 1635,190 L 1705,255 L 1775,205 L 1838,285 L 1908,340
     L 1872,425 L 1918,485 L 1842,535 L 1862,605 L 1775,628
@@ -73,16 +148,66 @@
     C 1362,400 1350,370 1355,330 Z"
     fill="#e8dbb8" stroke="#a89468" stroke-width="3.5"/>
 
-  <!-- wulkanicne szczyty Akoum -->
-  <g fill="#9c6b5e" opacity="0.85">
-    <path d="M 1465,395 L 1497,340 L 1529,395 Z"/>
-    <path d="M 1682,495 L 1712,442 L 1742,495 Z"/>
-  </g>
+  <!-- wulkaniczny pasmo + superwulkan (centrum Akoum) -->
+  <use href="#wulkan" transform="translate(1470,400) scale(1.1)"/>
+  <use href="#wulkan" transform="translate(1620,430) scale(1.3)"/>
+  <use href="#wulkan" transform="translate(1710,480) scale(1.0)"/>
+  <use href="#wulkan" transform="translate(1770,360) scale(0.9)"/>
+  <!-- Oko Ugina (hedron w górach) -->
+  <use href="#hedron" transform="translate(1608,538) scale(1.2)"/>
 
-  <!-- Oko Ugina (hedron) -->
-  <path d="M 1610,522 L 1624,540 L 1610,558 L 1596,540 Z" fill="#e8dbb8" stroke="#4a3a28" stroke-width="2.5"/>
+  <!-- Windblast Gorge / Drake Ravine -->
+  <path d="M 1730,300 C 1760,340 1755,380 1785,410" stroke="#7d4a3a" stroke-width="3" fill="none" stroke-dasharray="6 5"/>
+  <!-- miasta/strony Akoum -->
+  <use href="#miasto" transform="translate(1420,340) scale(0.9)"/>
+  <use href="#miasto" transform="translate(1830,300) scale(0.9)"/>
+  <use href="#miasto" transform="translate(1370,560) scale(0.9)"/>
+  <use href="#ruina" transform="translate(1500,560) scale(0.85)"/>
 
-  <!-- Tazeem -->
+  <!-- ============================================================ -->
+  <!-- BALA GED (dżungla i bagna)                                   -->
+  <!-- ============================================================ -->
+  <!-- (wschodni łańcuch już narysowany — dorysowujemy teksturę) -->
+  <!-- rzeka Umung -->
+  <path d="M 1280,830 C 1330,860 1380,880 1440,860 C 1500,840 1540,850 1580,880" stroke="#5b8ba6" stroke-width="4" fill="none" opacity="0.85"/>
+  <!-- Bojuka Bay -->
+  <path d="M 1170,950 C 1120,930 1080,940 1060,970" stroke="#a89468" stroke-width="3" fill="none"/>
+  <!-- dżungla (Tangled Vale) -->
+  <use href="#drzewo" transform="translate(1310,730) scale(1.0)"/>
+  <use href="#drzewo" transform="translate(1390,700) scale(1.05)"/>
+  <use href="#drzewo" transform="translate(1460,730) scale(0.95)"/>
+  <use href="#drzewo" transform="translate(1520,760) scale(1.0)"/>
+  <use href="#drzewo" transform="translate(1350,790) scale(0.9)"/>
+  <!-- bagna (Bordermire) -->
+  <use href="#bagno" transform="translate(1210,870) scale(1.0)"/>
+  <use href="#bagno" transform="translate(1300,900) scale(1.0)"/>
+  <use href="#bagno" transform="translate(1420,900) scale(1.0)"/>
+  <!-- Surrakar Caves / Umungshore -->
+  <use href="#ruina" transform="translate(1240,790) scale(0.8)"/>
+  <use href="#miasto" transform="translate(1500,850) scale(0.8)"/>
+
+  <!-- ============================================================ -->
+  <!-- GUUL DRAZ (mokradła, bagna, Malakir, Nimana)                 -->
+  <!-- ============================================================ -->
+  <!-- bagno tekstura -->
+  <use href="#bagno" transform="translate(1300,1080) scale(1.1)"/>
+  <use href="#bagno" transform="translate(1400,1120) scale(1.1)"/>
+  <use href="#bagno" transform="translate(1500,1100) scale(1.0)"/>
+  <use href="#bagno" transform="translate(1350,1210) scale(1.1)"/>
+  <use href="#bagno" transform="translate(1450,1250) scale(1.0)"/>
+  <!-- Hanging Swamp -->
+  <use href="#bagno" transform="translate(1130,1180) scale(1.0)"/>
+  <!-- Malakir (miasto wampirów) -->
+  <use href="#miasto" transform="translate(1215,1255) scale(1.3)"/>
+  <!-- Free City of Nimana -->
+  <use href="#miasto" transform="translate(1480,1230) scale(0.95)"/>
+  <!-- Hagra Cistern / Pelakka Karst -->
+  <use href="#ruina" transform="translate(1430,1160) scale(0.85)"/>
+  <use href="#ruina" transform="translate(1350,1040) scale(0.8)"/>
+
+  <!-- ============================================================ -->
+  <!-- TAZEEM (merfolk) — Oran-Rief, Umara, Sea Gate, Emeria         -->
+  <!-- ============================================================ -->
   <path d="M 380,420 C 430,360 540,350 620,380 C 700,350 800,370 850,420 C 910,450 940,520 930,590 C 960,650 920,720 870,740 C 890,800 840,850 780,840 C 720,880 630,870 580,830 C 500,850 420,820 400,760 C 350,720 340,650 370,600 C 340,550 350,470 380,420 Z"
     fill="#e8dbb8" stroke="#a89468" stroke-width="3.5"/>
 
@@ -90,16 +215,73 @@
   <path d="M 475,660 C 480,600 560,560 630,565 C 700,570 765,610 770,670 C 775,725 700,765 625,760 C 550,770 470,720 475,660 Z"
     fill="#b9cdd8" stroke="#7fa0b4" stroke-width="2.5"/>
 
-  <!-- tama Sea Gate -->
+  <!-- Oran-Rief — las (interior Tazeem) -->
+  <use href="#drzewo" transform="translate(470,470) scale(1.1)"/>
+  <use href="#drzewo" transform="translate(560,450) scale(1.05)"/>
+  <use href="#drzewo" transform="translate(650,470) scale(1.1)"/>
+  <use href="#drzewo" transform="translate(730,490) scale(0.95)"/>
+  <use href="#drzewo" transform="translate(520,530) scale(0.9)"/>
+  <use href="#drzewo" transform="translate(620,540) scale(0.85)"/>
+  <use href="#drzewo" transform="translate(430,600) scale(0.9)"/>
+
+  <!-- rzeka Umara + wąwóz (przecina kontynent) -->
+  <path d="M 630,565 C 600,520 570,480 560,430 C 550,400 555,380 570,370" stroke="#5b8ba6" stroke-width="5" fill="none" opacity="0.9"/>
+  <path d="M 630,565 C 590,520 560,470 550,420 C 600,430 640,430 655,380" stroke="#8fbfd0" stroke-width="2" fill="none" opacity="0.6"/>
+  <!-- wodospad Magosi -->
+  <path d="M 560,430 L 556,455 l 12,3 l 4,-26" stroke="#5b8ba6" stroke-width="3" fill="#b9cdd8"/>
+  <!-- Merfolk Enclave (wyspa na Umara) -->
+  <circle cx="585" cy="480" r="7" fill="#d8c9a3" stroke="#4a3a28" stroke-width="1.2"/>
+  <use href="#ruina" transform="translate(585,480) scale(0.5)"/>
+
+  <!-- tama + miasto Sea Gate + Lighthouse -->
   <path d="M 735,758 L 778,736" stroke="#7b2d26" stroke-width="8" stroke-linecap="round"/>
+  <use href="#miasto" transform="translate(790,742) scale(1.0)"/>
+  <!-- Lighthouse (wysoka wieża) -->
+  <path d="M 818,700 L 818,728 L 814,728 L 814,700 L 822,700 L 822,728 L 818,728 Z" fill="#efe8d6" stroke="#4a3a28" stroke-width="1.2"/>
+
+  <!-- Sky Rock (hedron przy Sea Gate) -->
+  <use href="#hedron" transform="translate(845,680) scale(0.9)"/>
+
+  <!-- Coralhelm — zywa skała nad Halimar (pinezka 2BFZ, region) -->
+  <path d="M 720,610 C 740,600 770,600 788,615 C 795,628 788,642 770,648 C 745,652 720,640 718,626 Z" fill="#d8c9a3" stroke="#4a3a28" stroke-width="1.6" stroke-dasharray="5 4"/>
+
+  <!-- Pasmo Lun Bulwark (płd. wybrzeże Tazeem) -->
+  <use href="#gora" transform="translate(420,730) scale(1.0)"/>
+  <use href="#gora" transform="translate(480,760) scale(0.9)"/>
+  <use href="#gora" transform="translate(560,770) scale(0.95)"/>
+
+  <!-- Hadatown (thieves den) -->
+  <use href="#miasto" transform="translate(470,700) scale(0.75)"/>
+  <!-- Ruins of Ysterid / Jade Room -->
+  <use href="#ruina" transform="translate(680,720) scale(0.8)"/>
 
   <!-- Emeria — ruiny w niebie (dryfujący hedron) -->
   <path d="M 880,268 L 893,285 L 880,302 L 867,285 Z" fill="none" stroke="#4a3a28" stroke-width="2.5"/>
   <path d="M 915,252 L 924,264 L 915,276 L 906,264 Z" fill="none" stroke="#4a3a28" stroke-width="2" opacity="0.7"/>
+  <path d="M 845,240 L 853,250 L 845,260 L 837,250 Z" fill="none" stroke="#4a3a28" stroke-width="1.6" opacity="0.6"/>
 
-  <!-- Ondu -->
+  <!-- ============================================================ -->
+  <!-- ONDU (pionowy — rowy, lasy, Agadeem, Jwar, Beyeen)           -->
+  <!-- ============================================================ -->
   <path d="M 250,1000 C 320,950 420,960 490,990 C 570,960 660,980 700,1040 C 760,1070 780,1150 740,1210 C 760,1270 690,1310 610,1295 C 540,1320 450,1300 400,1255 C 320,1270 260,1220 265,1150 C 235,1100 225,1040 250,1000 Z"
     fill="#e8dbb8" stroke="#a89468" stroke-width="3.5"/>
+
+  <!-- turntimber (las) -->
+  <use href="#drzewo" transform="translate(360,1040) scale(1.05)"/>
+  <use href="#drzewo" transform="translate(440,1020) scale(1.1)"/>
+  <use href="#drzewo" transform="translate(520,1040) scale(0.95)"/>
+  <use href="#drzewo" transform="translate(600,1070) scale(1.0)"/>
+  <use href="#drzewo" transform="translate(330,1090) scale(0.9)"/>
+
+  <!-- Makindi Trenches + Teetering Peaks -->
+  <path d="M 640,1100 l 40 -12 M 660,1130 l 42 -10 M 500,1160 l 46 -10" stroke="#8a7a5c" stroke-width="2.5" fill="none"/>
+  <use href="#gora" transform="translate(660,1085) scale(1.0)"/>
+  <use href="#gora" transform="translate(600,1120) scale(0.9)"/>
+
+  <!-- Agadeem / Hedron Fields / Kabira -->
+  <use href="#hedron" transform="translate(300,1230) scale(0.8)"/>
+  <use href="#hedron" transform="translate(360,1260) scale(0.7)"/>
+  <use href="#miasto" transform="translate(430,1240) scale(0.9)"/>
 
   <!-- wyspy Ondu: Jwar, Agadeem, Beyeen -->
   <g fill="#e8dbb8" stroke="#a89468" stroke-width="3">
@@ -109,43 +291,105 @@
     <circle cx="105" cy="1200" r="15"/>
   </g>
 
-  <!-- Malakir -->
-  <circle cx="1215" cy="1255" r="7" fill="#4a3a28"/>
+  <!-- Beyeen / Mount Valakut (wulkan) -->
+  <use href="#wulkan" transform="translate(105,1210) scale(0.75)"/>
+  <!-- Jwar — Strand of Jwar -->
+  <use href="#ruina" transform="translate(125,1020) scale(0.7)"/>
+  <use href="#miasto" transform="translate(175,1070) scale(0.6)"/>
 
-  <!-- Murasa (położenie przybliżone — linia przerywana) -->
+  <!-- Serpent's Maw (wąski wąwóz) -->
+  <path d="M 720,1240 C 700,1260 690,1280 700,1295" stroke="#8a7a5c" stroke-width="3" fill="none" stroke-dasharray="5 4"/>
+
+  <!-- ============================================================ -->
+  <!-- MURASA (płaskowyż — położenie przybliżone, przerywany)        -->
+  <!-- ============================================================ -->
   <path d="M 860,1160 C 890,1110 970,1095 1030,1115 C 1090,1100 1140,1140 1145,1200 C 1160,1260 1120,1310 1060,1320 C 1010,1350 930,1345 890,1310 C 850,1280 840,1210 860,1160 Z"
     fill="#e8dbb8" stroke="#a89468" stroke-width="3.5" stroke-dasharray="26 18"/>
   <path d="M 925,1175 q 40 -8 85 0 M 950,1265 q 40 8 80 0" stroke="#a89468" stroke-width="2" fill="none" opacity="0.35"/>
 
-  <!-- etykiety kontynentów -->
+  <!-- Skyfang / Shatterskull Mountains (pasmo) -->
+  <use href="#gora" transform="translate(950,1190) scale(0.95)"/>
+  <use href="#gora" transform="translate(1010,1170) scale(1.05)"/>
+  <use href="#gora" transform="translate(1070,1190) scale(0.9)"/>
+  <!-- Na Plateau -->
+  <use href="#gora" transform="translate(920,1290) scale(0.85)"/>
+  <!-- jaddi-trees (kepa) -->
+  <use href="#drzewo" transform="translate(1000,1310) scale(0.9)"/>
+  <use href="#drzewo" transform="translate(1060,1300) scale(0.8)"/>
+  <!-- rzeka Raimunza -->
+  <path d="M 1080,1320 C 1060,1300 1050,1270 1060,1240 C 1070,1210 1090,1190 1085,1160" stroke="#5b8ba6" stroke-width="4" fill="none" opacity="0.85"/>
+  <!-- Sunder Bay (wejście) -->
+  <path d="M 860,1290 C 880,1310 900,1320 920,1315" stroke="#a89468" stroke-width="3" fill="none"/>
+  <!-- Murasa Skyclave / ruiny -->
+  <use href="#ruina" transform="translate(1030,1140) scale(0.8)"/>
+  <use href="#miasto" transform="translate(940,1240) scale(0.8)"/>
+
+  <!-- ============================================================ -->
+  <!-- ETYKIETY                                                     -->
+  <!-- ============================================================ -->
   <g font-family="Georgia, 'Times New Roman', serif" fill="#4a3a28" text-anchor="middle">
     <text x="850" y="150" font-size="44" letter-spacing="4">Sejiri</text>
-    <text x="850" y="185" font-size="22" font-style="italic" fill="#6b5d52">(polarny lód)</text>
+    <text x="850" y="185" font-size="22" font-style="italic" fill="#6b5d52">(zmrożony step)</text>
+    <text x="700" y="200" font-size="18" fill="#6b5d52">Midnight Pass</text>
+    <text x="870" y="205" font-size="18" fill="#6b5d52">Ikiral</text>
 
     <text x="1640" y="395" font-size="46" letter-spacing="4">Akoum</text>
     <text x="1640" y="430" font-size="22" font-style="italic" fill="#6b5d52">(wulkaniczny)</text>
-    <text x="1610" y="588" font-size="22" fill="#4a3a28">Oko Ugina</text>
+    <text x="1608" y="592" font-size="22" fill="#4a3a28">Oko Ugina</text>
+    <text x="1800" y="445" font-size="18" fill="#6b5d52">Windblast Gorge</text>
+    <text x="1420" y="320" font-size="18" fill="#6b5d52">Affa</text>
+    <text x="1845" y="282" font-size="18" fill="#6b5d52">Goma Fada</text>
+    <text x="1370" y="590" font-size="18" fill="#6b5d52">Tal Terig</text>
 
     <text x="1430" y="795" font-size="42" letter-spacing="3">Bala Ged</text>
-    <text x="1430" y="830" font-size="22" font-style="italic" fill="#6b5d52">(bagna i dżungla)</text>
+    <text x="1430" y="830" font-size="22" font-style="italic" fill="#6b5d52">(dżungla i bagna)</text>
+    <text x="1470" y="920" font-size="18" fill="#6b5d52">Umung</text>
+    <text x="1100" y="955" font-size="18" fill="#6b5d52">Bojuka Bay</text>
 
     <text x="1300" y="1165" font-size="42" letter-spacing="3">Guul Draz</text>
-    <text x="1300" y="1200" font-size="22" font-style="italic" fill="#6b5d52">(kraina wampirów)</text>
-    <text x="1215" y="1292" font-size="24">Malakir</text>
+    <text x="1300" y="1200" font-size="22" font-style="italic" fill="#6b5d52">(mokradła, wampiry)</text>
+    <text x="1215" y="1294" font-size="24">Malakir</text>
+    <text x="1480" y="1272" font-size="18" fill="#6b5d52">Nimana</text>
 
     <text x="610" y="450" font-size="46" letter-spacing="4">Tazeem</text>
-    <text x="625" y="672" font-size="26" font-style="italic" fill="#3d5a6e">Halimar</text>
+    <text x="560" y="560" font-size="20" font-style="italic" fill="#3d5a6e">Oran-Rief</text>
+    <text x="625" y="676" font-size="26" font-style="italic" fill="#3d5a6e">Halimar</text>
+    <text x="585" y="430" font-size="16" fill="#3d5a6e">Umara</text>
+    <text x="560" y="405" font-size="14" fill="#3d5a6e">Magosi Wodospad</text>
     <text x="812" y="788" font-size="24">Sea Gate</text>
-    <text x="880" y="330" font-size="24">Emeria</text>
-    <text x="505" y="812" font-size="22" font-style="italic" fill="#6b5d52">Las Oran-Rief</text>
+    <text x="845" y="668" font-size="16" fill="#6b5d52">Sky Rock</text>
+    <text x="830" y="338" font-size="24">Emeria</text>
+    <text x="470" y="712" font-size="16" fill="#6b5d52">Hadatown</text>
 
     <text x="490" y="1120" font-size="44" letter-spacing="4">Ondu</text>
+    <text x="640" y="1080" font-size="16" fill="#6b5d52">Makindi Trenches</text>
+    <text x="450" y="1170" font-size="17" fill="#5f7a55">Turntimber</text>
+    <text x="430" y="1275" font-size="18" fill="#6b5d52">Kabira</text>
     <text x="130" y="1108" font-size="22">Wyspy Jwar</text>
     <text x="250" y="1318" font-size="22">Agadeem</text>
     <text x="105" y="1248" font-size="22">Beyeen</text>
+    <text x="75" y="1150" font-size="16" fill="#6b5d52">Mt. Valakut</text>
 
     <text x="1000" y="1215" font-size="42" letter-spacing="3">Murasa</text>
     <text x="1000" y="1248" font-size="20" font-style="italic" fill="#6b5d52">(położenie przybliżone)</text>
+    <text x="1010" y="1160" font-size="16" fill="#6b5d52">Skyfang</text>
+    <text x="920" y="1320" font-size="14" fill="#6b5d52">Sunder Bay</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- LEGENDA SYMBOLI                                             -->
+  <!-- ============================================================ -->
+  <g transform="translate(70,1050)" font-family="Georgia, serif" fill="#4a3a28">
+    <rect x="0" y="0" width="150" height="118" fill="#f4ecd8" stroke="#8a7a5c" stroke-width="2" opacity="0.94"/>
+    <text x="12" y="22" font-size="16" font-weight="bold" text-anchor="start">Legenda</text>
+    <use href="#gora" transform="translate(22,42) scale(0.6)"/>
+    <text x="38" y="47" font-size="14" text-anchor="start">góry / pasmo</text>
+    <use href="#drzewo" transform="translate(22,66) scale(0.6)"/>
+    <text x="38" y="71" font-size="14" text-anchor="start">las / jaddi</text>
+    <use href="#bagno" transform="translate(22,90) scale(0.6)"/>
+    <text x="38" y="95" font-size="14" text-anchor="start">bagno / mokradła</text>
+    <use href="#miasto" transform="translate(22,112) scale(0.6)"/>
+    <text x="38" y="117" font-size="14" text-anchor="start">osada / miasto</text>
   </g>
 
   <!-- róża wiatrów -->
@@ -161,5 +405,5 @@
   <rect x="30" y="30" width="1940" height="1340" fill="none" stroke="#8a7a5c" stroke-width="1.5" opacity="0.6"/>
 
   <!-- podpis kartograficzny -->
-  <text x="1968" y="1362" font-family="Georgia, serif" font-size="21" font-style="italic" fill="#6b5d52" text-anchor="end">Rekonstrukcja układu kontynentów wg kanonu tekstowego — położenie Murasy przybliżone</text>
+  <text x="1968" y="1362" font-family="Georgia, serif" font-size="21" font-style="italic" fill="#6b5d52" text-anchor="end">Rekonstrukcja układu kontynentów wg kanonu tekstowego — położenie Murasy przybliżone; elementy wg MTG Wiki / Guide Zendikar / Plane Shift</text>
 </svg>
