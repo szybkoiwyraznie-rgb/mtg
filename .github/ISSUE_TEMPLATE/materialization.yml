@@ -1,0 +1,59 @@
+name: Materializacja karty
+description: Przekaż kartę do materializacji w Codexie (pętla jawnego przekazywania)
+title: "[Materializacja]: "
+labels: ["materializacja"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Karta zostanie zmaterializowana po wpisaniu do `collection/entries/`
+        i pobraniu snapshotu Scryfall (ADR 0003/0004). Wpis jest verbatim —
+        dokładnie to, co tu podasz, stanie się kanonem.
+  - type: input
+    id: imgid
+    attributes:
+      label: Ilustracja (imgId z arkusza kolekcji)
+      description: np. 1LTR
+    validations:
+      required: true
+  - type: input
+    id: nazwa
+    attributes:
+      label: Nazwa karty
+    validations:
+      required: true
+  - type: input
+    id: wydanie
+    attributes:
+      label: Set / wydanie
+      description: np. LTR
+    validations:
+      required: true
+  - type: input
+    id: plan
+    attributes:
+      label: Plan / Setting (po transpozycji)
+      description: np. Śródziemie
+    validations:
+      required: true
+  - type: input
+    id: kolory
+    attributes:
+      label: Kolory
+      description: np. B albo B,R
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt (wizualizacja alternatywnego artu)
+      description: Trafi do strony verbatim.
+    validations:
+      required: true
+  - type: textarea
+    id: narracja
+    attributes:
+      label: Narracja (fabuła karty — kanon)
+      description: Trafi do strony verbatim.
+    validations:
+      required: true

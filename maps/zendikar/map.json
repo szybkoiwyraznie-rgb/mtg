@@ -1,0 +1,46 @@
+{
+  "plan": "zendikar",
+  "tytul": "Zendikar",
+  "wariant": "T3",
+  "podklad": "podklad.svg",
+  "wymiary": {
+    "szerokosc": 2000,
+    "wysokosc": 1400
+  },
+  "zrodlo": {
+    "url": "https://magic.wizards.com/en/news/feature/plane-shift-zendikar-2016-01-13",
+    "tytul": "Zendikar — rekonstrukcja układu kontynentów wg kanonu tekstowego (Plane Shift: Zendikar)",
+    "autor": "MTG Lore Codex (praca własna)",
+    "licencja": "praca własna na kanonie tekstowym",
+    "pobrano": "2026-08-31",
+    "notka": "Oficjalna mapa planu nigdy nie powstała — podkład jest własną rekonstrukcją (T3): układ kontynentów za tekstami źródłowymi (Plane Shift: Zendikar), wzorowany układem map fanowskich (m.in. r/mtgvorthos). Położenie Murasy w kanonie nieustalone — oznaczone linią przerywaną."
+  },
+  "rekonstrukcja": true,
+  "kotwice": [
+    { "nazwa": "Sejiri", "x": 0.425, "y": 0.107, "typ": "etykieta-podkladu", "notka": "polarny kontynent" },
+    { "nazwa": "Akoum", "x": 0.82, "y": 0.282, "typ": "etykieta-podkladu", "notka": "wulkaniczny kontynent północno-wschodni" },
+    { "nazwa": "Oko Ugina", "x": 0.805, "y": 0.42, "typ": "etykieta-podkladu", "notka": "hedron ukryty w górach Akoum" },
+    { "nazwa": "Bala Ged", "x": 0.715, "y": 0.568, "typ": "etykieta-podkladu", "notka": "bagna i dżungla; łączy Akoum z Guul Draz" },
+    { "nazwa": "Guul Draz", "x": 0.65, "y": 0.832, "typ": "etykieta-podkladu", "notka": "kraina wampirów" },
+    { "nazwa": "Malakir", "x": 0.6075, "y": 0.896, "typ": "etykieta-podkladu", "notka": "największe miasto Guul Draz" },
+    { "nazwa": "Tazeem", "x": 0.305, "y": 0.321, "typ": "etykieta-podkladu", "notka": "kontynent merfolków" },
+    { "nazwa": "Halimar", "x": 0.3125, "y": 0.479, "typ": "etykieta-podkladu", "notka": "morze śródlądowe Tazeem" },
+    { "nazwa": "Sea Gate", "x": 0.406, "y": 0.563, "typ": "etykieta-podkladu", "notka": "tama oddzielająca Halimar od oceanu" },
+    { "nazwa": "Emeria", "x": 0.44, "y": 0.236, "typ": "etykieta-podkladu", "notka": "ruiny w niebie nad Tazeem" },
+    { "nazwa": "Ondu", "x": 0.245, "y": 0.8, "typ": "etykieta-podkladu", "notka": "kontynent południowo-zachodni" },
+    { "nazwa": "Agadeem", "x": 0.125, "y": 0.879, "typ": "etykieta-podkladu", "notka": "wyspa Ondu" },
+    { "nazwa": "Wyspy Jwar", "x": 0.065, "y": 0.779, "typ": "etykieta-podkladu", "notka": "wyspy na zachód od Ondu" },
+    { "nazwa": "Beyeen", "x": 0.0525, "y": 0.891, "typ": "etykieta-podkladu", "notka": "wyspa Ondu" },
+    { "nazwa": "Murasa", "x": 0.5, "y": 0.868, "typ": "etykieta-podkladu", "notka": "płaskowyż; położenie przybliżone — nieustalone w kanonie" }
+  ],
+  "regiony": [],
+  "pinezki": [
+    {
+      "karta": "2bfz-coralhelm-guide",
+      "x": 0.4,
+      "y": 0.47,
+      "pewnosc": "region",
+      "uzasadnienie": "Coralhelm Refuge — największa osada merfolków Zendikaru, leżąca na wybrzeżach Halimar (morze śródlądowe Tazeem); karta nie wskazuje dokładnego brzegu, więc pinezka oznacza region wybrzeży Halimar."
+    }
+  ]
+}
