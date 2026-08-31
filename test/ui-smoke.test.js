@@ -77,7 +77,7 @@ test('UI: baza fixture renderuje kartę, hasło i plan z wikilinkami', async () 
   shim.przywroc();
 });
 
-test('UI: mapa planu z realnej bazy — podkład, pinezka, legenda, kotwice', async () => {
+test('UI: mapa planu z realnej bazy — podkład, pinezka, legenda', async () => {
   const cel = await zbuduj({ out: 'dist/test-ui-mapa.html' });
   const shim = wykonajArtefakt(cel);
 
@@ -91,7 +91,7 @@ test('UI: mapa planu z realnej bazy — podkład, pinezka, legenda, kotwice', as
   assert.ok(mapa.includes('Legenda'), 'mapa: brak legendy pewności');
   assert.ok(mapa.includes('dokładna'), 'mapa: brak poziomu pewności w legendzie');
   assert.ok(mapa.includes('CC-BY-4.0'), 'mapa: brak atrybucji podkładu');
-  assert.ok(mapa.includes('Kotwice etykiet'), 'mapa: brak listy kotwic (weryfikacja MA4)');
+  assert.ok(!mapa.includes('Kotwice'), 'mapa: UI kotwic etykiet ma pozostać usunięte (feedback E)');
   assert.ok(mapa.includes('data-mapa-ruch'), 'mapa: brak warstwy pan/zoom');
   assert.ok(mapa.includes('mapa-przycisk'), 'mapa: brak przycisków zoomu');
 
@@ -105,7 +105,7 @@ test('UI: mapa planu z realnej bazy — podkład, pinezka, legenda, kotwice', as
   shim.przywroc();
 });
 
-test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, narracja kotwicy', async () => {
+test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () => {
   const cel = await zbuduj({ out: 'dist/test-ui-karta.html' });
   const shim = wykonajArtefakt(cel);
 
@@ -115,17 +115,23 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, narracja kotwicy', asy
   assert.ok(karta.includes('1LTR'), 'karta: brak imgId');
   assert.ok(karta.includes('Creature — Bird Horror'), 'karta: brak typu ze snapshotu');
   assert.ok(karta.includes('Amass'), 'karta: brak mechaniki Amass ze snapshotu');
-  assert.ok(karta.includes("What's that, Strider?"), 'karta: brak flavor textu');
-  assert.ok(karta.includes('Alexander Ostrowski'), 'karta: brak artysty ze snapshotu');
-  assert.ok(karta.includes('kotwica osadzenia'), 'karta: brak oznaczenia statusu narracji (ADR 0010)');
-  assert.ok(karta.includes('Na skraju dunlandzkiego urwiska'), 'karta: brak narracji verbatim');
+  assert.ok(karta.includes('nie ma flavor'), 'karta: brak adnotacji o wydruku bez flavor (print #411)');
+  assert.ok(!karta.includes("What's that, Strider?"), 'karta: flavor Sama nie może się pojawiać (print #411 bez flavor)');
+  assert.ok(karta.includes('David Rapoza'), 'karta: brak artysty posiadanego printu (#411)');
+  assert.ok(karta.includes('Na skraju dunlandzkiego urwiska'), 'karta: brak narracji kolekcji');
   assert.ok(karta.includes('perspektywy żabiej'), 'karta: brak promptu verbatim');
   assert.ok(karta.includes('#/mapa/srodziemie?pin=1ltr-dunland-crebain'), 'karta: brak deep-linka pinezki');
+  assert.ok(karta.includes('mini-mapa'), 'karta: brak miniatury mapy w infoboksie (feedback C)');
   assert.ok(karta.includes('Podsumowanie Lore'), 'karta: brak sekcji podsumowania');
-  assert.ok(karta.includes('Kolejka link-miningu'), 'karta: brak sekcji wątków z kolejką encji');
+  assert.ok(karta.includes('Wątki i Powiązania'), 'karta: brak sekcji wątków');
+  assert.ok(!karta.includes('ADR'), 'karta: treść nie może odsyłać do mechaniki Codexu (feedback B)');
+  assert.ok(!karta.includes('verbatim'), 'karta: treść nie może zawierać etykiet procesowych (feedback B)');
 
   shim.idz('#/karty');
-  assert.ok(shim.app.innerHTML.includes('Karty Katalogowe (1)'), 'lista kart: brak 1LTR');
+  const lista = shim.app.innerHTML;
+  assert.ok(lista.includes('Karty Katalogowe (1)'), 'lista kart: brak 1LTR');
+  assert.ok(lista.includes('Śródziemie'), 'lista kart: brak tytułu planu zamiast sluga (feedback G)');
+  assert.ok(!lista.includes('>srodziemie<'), 'lista kart: slug planu nie może być widoczny jako tekst (feedback G)');
   shim.idz('#/');
   assert.ok(shim.app.innerHTML.includes('Dunland Crebain'), 'home: brak ostatniej materializacji');
 

@@ -15,105 +15,82 @@ pinezka:
 
 ## Metryka i Kontekst Świata
 
-*Dunland Crebain* to pierwsza materializowana karta kolekcji (1LTR) i
-zarazem pierwszy mieszkanek planu Śródziemie. Scena, którą karta
-przedstawia, osadzona jest na zachodzie kontynentu, u południowego
-krańca Gór Mglistych: w Dunlandzie i nad doliną Isengardu, na tyłach
-frontu, który Saruman otworzył przeciwko Rohanowi w Wojnie o Pierścień
-(3019 r. Trzeciej Ery).
+*Dunland Crebain* to pierwszy mieszkaniec planu Śródziemie w tej
+kolekcji. Scena karty rozgrywa się na zachodzie kontynentu, u stóp
+południowego krańca Gór Mglistych — w Dunlandzie, nad doliną, w której
+zbiera się armia Isengardu.
 
-W timelnie świata to moment tuż przed isengardzkim natarciem: skrzydlaty
-zwiad już przeszukiwał niebo nad Eregionem i Rohanem (stado crebain
-przelatuje nad Hollin w *Drużynie Pierścienia*), a w dolinie Nan Curunír
-zbierała się armia, której zwiadowcy mieli wyznaczyć godzinę ataku.
+W timelnie świata jest to okres tuż przed natarciem Sarumana na Rohan
+(Wojna o Pierścień, 3019 r. Trzeciej Ery): skrzydlaty zwiad już
+przeszukuje niebo nad Eregionem i marchiami Rohanu, a pochodnie
+formujących się oddziałów czekają tylko na sygnał.
 
 ## Postacie i Byty
 
-- **Crebain** — stado wielkich, krukowatych ptaków zwiadowczych; bohater
-  karty i jej tytułowy „Dunlandczyk". W kanonie Tolkiena crebain
-  zamieszkują Dunland i Las Fangorn, a w Wojnie o Pierścień służą
-  wywiadowi Isengardu.
-- **Uruk-hai Białej Ręki** — dwaj orkowie z hełmami noszącymi herb
-  Sarumana, zastygli na urwisku w oczekiwaniu na znak od zwiadowców
-  (byty z kotwicy osadzenia — narracji kolekcji).
+- **Crebain** — stado wielkich, krukowatych ptaków zwiadowczych;
+  tytułowy bohater karty. W Śródziemiu zamieszkują Dunland i Las
+  Fangorn, a w Wojnie o Pierścień służą wywiadowi Isengardu.
+- **Dwaj Uruk-hai Białej Ręki** — orkowie w czarnej zbroi, zastygli na
+  skraju urwiska w oczekiwaniu na znak od skrzydlatych zwiadowców.
 - **Armia Sarumana** — formujące się w wąwozie oddziały z pochodniami;
-  w mechanice karty odpowiada im token Armii Orków (Amass Orcs 2).
-- **Saruman Biały** — zleceniodawca zwiadu, pan Isengardu; w scenerii
-  obecny pośrednio, przez herb Białej Ręki.
-
-Wszystkie encje czekają na Karty Haseł — hasła powstają dopiero, gdy
-co najmniej **2 karty** odwołają się do nich w treści (zasada
-właściciela 2026-08-31; ADR 0006, krok 3).
+  w mechanice karty odpowiada im Armia Orków, którą powiększa zdolność
+  amass.
+- **Saruman Biały** — pan Isengardu i zleceniodawca zwiadu; obecny
+  w scenie pośrednio, przez herb Białej Ręki na hełmach orków.
 
 ## Nazwa Karty
 
-Nazwa składa się z dwóch słowników Śródziemia. **Crebain** to sindarińska
-liczba mnoga od *craban* — „kruk/wrona"; słowo pożyczone do elfickiego
-z języków ludzkich (formę pojedynczą opublikowano dopiero w 2007 r.).
-**Dunland** to nazwa krainy, w starszych formach „Dunfearan" — „górska
-kraina Dzikich Ludzi", Dunlendów.
+Nazwa składa się z dwóch słowników Śródziemia. **Crebain** to
+sindarińska liczba mnoga od *craban* — „kruk, wrona"; słowo pożyczone
+do języka elfów z mowy ludzkiej. **Dunland** to nazwa krainy —
+„górska ziemia" Dzikich Ludzi, Dunlendów.
 
-Pełne odczytanie tytułu: „Kruki z Dunlandu" — nie jakieś metaforyczne
-ptaki, lecz konkretna, kanoniczna rasa zwiadowców z rozkazu Isengardu,
-nazwana od swojej ojcowizny.
+Pełne odczytanie tytułu: „Kruki z Dunlandu". Nie metaforyczne ptaki,
+lecz konkretna rasa zwiadowców z rozkazu Isengardu, nazwana od swojej
+ojcowizny.
 
 ## Mechanika jako Opowieść
 
-Odczyt wyłącznie ze snapshotu Scryfalla (ADR 0004):
+Koszt {2}{B} i statystyki 1/1 opowiadają o tym, że pojedynczy crebain
+jest niczym — ptak słabszy od leykusa. Groza leży w stadzie i w tym,
+za kim przylatuje. Czarny kolor w filozofii Magic: The Gathering to
+szpiegostwo, strach i śmierć: dokładnie warsztat isengardzkiego zwiadu.
 
-- **Koszt {2}{B}, 1/1, Creature — Bird Horror** — ptak słaby jak
-  pojedynczy osobnik; groza leży w stadzie i w tym, za kim przylatuje.
-  Czarny kolor w filozofii MtG to szpiegostwo, strach i śmierć —
-  dokładnie warsztat crebain.
-- **Flying** — zwiadowcy powietrzni: przelatują tam, gdzie nie dochodzi
-  piechota, i patrzą z góry na ruchy przeciwnika.
-- **„When this creature enters, amass Orcs 2"** — przybycie zwiadowców
-  powiększa Armię Orków o dwa liczniki: w narracji ujęto to dosłownie —
-  ptasi zwiad jest katalizatorem formowania się orkowej armii. To
-  najbliższe mechaniczne echo sceny z kotwicy kolekcji (urwisko, wąwóz,
-  pochodnie oddziałów).
-- Typ **Bird Horror** — „ptak horror" — podkreśla, że to nie zwykłe
-  wrony, lecz coś, co boi się tylko tego, kto wie, po co przyleciało.
-- **Common** — w Wojnie o Pierścień crebain są masowi i liczni; rzadkość
-  karty oddaje proliferację zwiadu.
+**Flying** czyni crebain zwiadowcą powietrznym: przelatuje tam, gdzie
+nie dochodzi piechota, i patrzy z góry na ruchy przeciwnika. Zdolność
+**amass Orcs 2** — „gdy to stworzenie wchodzi na pole bitwy, zgromadź
+Orków 2" — przetwarza przybycie zwiadowców na dwa liczniki na Armii
+Orków: ptasi zwiad jest katalizatorem formującej się armii. Typ
+**Bird Horror** podkreśla, że to nie zwykłe wrony, lecz coś, co boją
+się tylko ci, którzy wiedzą, po co przyleciało. Rzadkość **common**
+oddaje masowość zwiadu — takich stad było wiele.
 
 ## Flavor Text
 
-Oryginał (verbatim ze snapshotu):
+Ten wydruk karty (borderless, wydanie alternatywne LTR) nie ma flavor
+tekstu — scena mówi sama za siebie.
 
-> „What's that, Strider? It don't look like a cloud."
-> —Sam
-
-Tłumaczenie: *„Co to jest, Striderzie? To nie wygląda jak chmura." —
-Sam.*
-
-To echo sceny z Hollin: Drużyna Pierścienia, wędrując przez dawny
-Eregion, dostrzega na horyzoncie „chmurę", która okazuje się zwartym
-stadem crebain — i cały dzień ukrywa się bez ogniska, bo stado mogło
-być zwiadem Sarumana (Władca Pierścieni, ks. II, „The Ring Goes
-South"). Flavor doskonale skleja kartę z kanonem: niepokój Sama jest
-pierwszym sygnałem, że niebo nad Drużyną właśnie zaczęło pracować dla
-Isengardu.
+Kontekst, który przywołuje, pochodzi z *Władcy Pierścieni*: wędrująca
+przez dawny Eregion (Hollin) Drużyna Pierścienia dostrzegła na
+horyzoncie „chmurę", która okazała się zwartym stadem crebain —
+i przez cały następny dzień ukrywała się bez ogniska, bo niebo mogło
+pracować dla Isengardu. „Nie wszystkim ptakom można ufać" — ostrzega
+wtedy Aragorn.
 
 ## Transpozycja
 
-LTR (*The Lord of the Rings: Tales of Middle-earth*) to wydanie z linii
-Universes Beyond: to nie karta innego planu przeniesiona na Śródziemie,
-lecz **Śródziemie przełożone na język MtG**. Miejsce karty w kolekcji
-właściciela jest więc „natywne": nazwa, mechanika (Amass Orcs — sygnatura
-całego setu o Wojnie o Pierścień) i flavor tekst działają wprost na
-kanonie Tolkiena, bez warstwy transpozycyjnej.
+*The Lord of the Rings: Tales of Middle-earth* to wydanie z linii
+Universes Beyond: Śródziemie przełożone na język Magic: The Gathering.
+Miejsce karty w kolekcji jest więc natywne — nazwa, mechanika (amass
+to sygnatura całego setu o Wojnie o Pierścień) i sceneria działają
+wprost na kanonie Tolkiena, bez pośredniej warstwy transpozycyjnej.
 
-Jedyna świadoma decyzja osadzenia (kolekcja): scena zostaje zlokali-
-zowana **w samym Dunlandzie, na urwisku nad wąwozem armii** — czyli tam,
-skąd stado pochodzi — a nie w Hollin, gdzie crebain pojawiają się
-w książce. Kanon opisuje oba teatry zwiadu; kotwica wybiera ten
-dunlandzki.
+Kolekcja osadza scenę w samym Dunlandzie — tam, skąd stado pochodzi —
+na urwisku nad wąwozem armii. Kanon opisuje zwiad crebain w dwóch
+teatrach: nad Hollin (gdzie zauważa go Drużyna) i nad ziemiami na
+zachód od Gór Mglistych (skąd pochodzi stado).
 
 ## Narracja Kolekcji
-
-*Status: kotwica osadzenia — nie kanon (ADR 0010). Przy rozbieżnościach
-z kartą MtG lub lorem Tolkiena wygrywa kanon zewnętrzny.*
 
 > Na skraju dunlandzkiego urwiska dwaj Uruk-hai Białej Ręki zastygają
 > w napięciu, wypatrując znaku od swoich skrzydlatych zwiadowców.
@@ -124,19 +101,13 @@ z kartą MtG lub lorem Tolkiena wygrywa kanon zewnętrzny.*
 > pikuje w dół, a jego krzyk zdaje się ostatnim sygnałem, na który czeka
 > każde ostrze w mroku.
 
-Narracja spina w jedną scenę trzy warstwy, które karta trzyma osobno:
-zwiadowcę (Dunland Crebain), armię (token Orc Army z Amass) i dowódcę
-(Sarumana przez Białą Rękę). Z punktu widzenia kanonu wszystkie elementy
-są prawomocne — crebain, Uruk-hai i armia Isengardu współistnieją
-w Wojnie o Pierścień.
-
 ## Wizualizacja
 
-*Status promptu: kotwica osadzenia — nie kanon (ADR 0010). Zero
-generowanych grafik (ADR 0008): wizualizacja karty to tory obrazów
-poniżej.*
+Oficjalny druk tego wydania (borderless, odwrócona rama) ilustruje
+**David Rapoza** — artysta znany z mrocznych, malarskich interpretacji
+fantasy; druk wyświetla się w infoboksie obok.
 
-Prompt (verbatim):
+Alternatywna koncepcja wizualna kolekcji:
 
 > Dynamiczna, mroczna scena bitewna ukazująca nierozerwalny związek
 > pomiędzy latającymi zwiadowcami a nadciągającą armią. Na pierwszym
@@ -146,85 +117,70 @@ Prompt (verbatim):
 > i spoglądają w górę, w napięciu dzierżąc swoje zębate miecze i piki.
 > Poniżej nich, w głębokim, spowitym cieniem wąwozie, widać setki innych
 > orków formujących się w oddziały i zapalających pochodnie, których
-> światło ledwo przebija mrok. Nad nimi, na tle niespokojnego, burzowego
-> nieba w odcieniach fioletu i zgniłego pomarańczu, krąży stado
-> crebainów. To nie są zwykłe ptaki – to koszmarne, krukowate bestie
-> o postrzępionych, jakby dymnych piórach, nienaturalnie długich szponach
-> i dziobach rozwartych w niemym krzyku. Ich oczy świecą złowrogim,
-> żółtym blaskiem. Jeden z crebainów jest znacznie bliżej, pikuje w dół,
-> niemal w stronę obserwatora, jakby przekazywał orkom sygnał do ataku.
-> Cała kompozycja ma oddawać moment tuż przed natarciem, w którym
-> przybycie ptasich szpiegów jest bezpośrednim katalizatorem dla
-> formującej się na dole armii.
+> światło ledwo przebija mrok. Nad nimi, na tle niespokojnego,
+> burzowego nieba w odcieniach fioletu i zgniłego pomarańczu, krąży
+> stado crebainów. To nie są zwykłe ptaki – to koszmarne, krukowate
+> bestie o postrzępionych, jakby dymnych piórach, nienaturalnie długich
+> szponach i dziobach rozwartych w niemym krzyku. Ich oczy świecą
+> złowrogim, żółtym blaskiem. Jeden z crebainów jest znacznie bliżej,
+> pikuje w dół, niemal w stronę obserwatora, jakby przekazywał orkom
+> sygnał do ataku. Cała kompozycja ma oddawać moment tuż przed
+> natarciem, w którym przybycie ptasich szpiegów jest bezpośrednim
+> katalizatorem dla formującej się na dole armii.
 
-Scena inscenizuje mechanikę karty: pion lotu zwiadowcy (Flying) nad
-rozłażącą się w szeregami armią (Amass Orcs 2), w kadrze „tuż przed
-natarciem". Tory obrazów (ADR 0008): oficjalny druk karty — Alexander
-Ostrowski, *The Lord of the Rings: Tales of Middle-earth* #82 —
-wyświetlany online ze snapshotu Scryfalla; lokalnie tory FOT/KON
-z katalogu `./img/` właściciela (1LTRFOT.png / 1LTRKON.png, cichy
-fallback na Pages).
+Kompozycja z niskiej, żabiej perspektywy spina pion lotu zwiadowcy
+(Flying) z rozłogą armii w wąwozie (amass Orcs 2) w jeden kadr „tuż
+przed natarciem".
 
 ## Wątki i Powiązania
 
-Kolejka link-miningu (encje wspomniane w tej karcie; hasła powstaną po
-drugiej karcie odwołującej się do nich w treści — zasada właściciela
-2026-08-31, zapisana w docs/backlog.md):
+Karta dotyka całej sieci bytów zachodniej granicy Śródziemia:
 
-- **crebain** — tytułowa rasa zwiadowców (fauna);
-- **dunland** — kraina scenerii i połowa nazwy karty (geografia);
-- **isengard** / **Saruman** — zleceniodawcy zwiadu (geografia / postać);
-- **Uruk-hai** i **Biała Ręka** — żołnierze i herb Isengardu (spolecznosc
-  / koncepcja);
-- **rohan** — teatr docelowy zwiadu (geografia).
+- **crebain** — tytułowa rasa zwiadowców; połowa nazwy karty;
+- **Dunland** — kraina scenerii i ojcowizna stada;
+- **Isengard** i **Saruman** — zleceniodawcy zwiadu, wrogowie Rohanu;
+- **Uruk-hai** i **Biała Ręka** — żołnierze i herb Isengardu;
+- **Rohan** — królestwo, którego niebo i marchie są celem zwiadu.
 
-Inne karty kolekcji: brak — to pierwsza materializacja. Druga karta
-dotykająca któregokolwiek z powyższych bytów odblokuje pierwsze hasło
-(Pętla Jakości, krok 3).
+Na razie są to zwykłe wzmianki w treści karty — encje zyskają własne
+hasła, gdy druga karta kolekcji odwoła się do nich w swojej treści.
 
 ## Na Mapie
 
-Pinezka na mapie Śródziemia (`#/mapa/srodziemie?pin=1ltr-dunland-crebain`)
-wskazuje środek regionu **Dunland** z poziomem pewności **region**:
-kraina między rzeką Glanduin (północ), Górami Mglistymi (wschód)
-i rzeką Isen (południe), na północny zachód od Isengardu. Współrzędne
-wyprowadzono z kotwic etykiet podkładu (Isengard, Tharbad, Enedwaith,
-Glanduin — maps/srodziemie/map.json), nie z położenia kursora
-(PROCES_MAP MA4). Kotwice można obejrzeć na mapie warstwą „kotwice
-etykiet (weryfikacja)".
+Karta jest osadzona w regionie **Dunland** — krainie między rzeką
+Glanduin na północy, Górami Mglistymi na wschodzie i rzeką Isen na
+południu, na północny zachód od Isengardu. Poziom pewności: region
+(pinezka środka krainy, nie punkt na mapie).
+
+Miniatura z pinezką znajduje się w infoboksie; kliknięcie przenosi
+na mapę Śródziemia z wycentrowaną pinezką tej karty.
 
 ## Źródła
 
-- Snapshot Scryfalla `scryfall/1ltr-dunland-crebain.json` — nazwa, koszt,
-  typ, mechanika, flavor, artysta, wydanie (pobrano 2026-08-31;
-  ADR 0004). Kanon rzędu 1 (ADR 0010).
+- Scryfall — dane karty i wydruk:
+  <https://scryfall.com/card/ltr/411/dunland-crebain>
 - Tolkien Gateway, „Crebain" — siedlisko (Dunland i Fangorn), scena
-  w Hollin, etymologia *craban* (publikacja formy pojedynczej 2007):
+  w Hollin, etymologia *craban*:
   <https://tolkiengateway.net/wiki/Crebain>
-- *Władca Pierścieni*, ks. II, rozdz. „The Ring Goes South" — przelot
-  crebain nad Hollin („crebain z Fangornu i Dunlandu"); rozdz.
-  „A Knife in the Dark" — „Nie wszystkim ptakom można ufać" (kanon
-  rzędu 2).
+- J.R.R. Tolkien, *Władca Pierścieni* — przelot crebain nad Hollin
+  i ostrzeżenie Aragorna (ks. II, rozdz. „The Ring Goes South"
+  i „A Knife in the Dark").
 - The Tolkien Forum, „Dunlendings" — geografia i losy Dunlandu
-  w Wojnie o Pierścień: <https://thetolkien.forum/wiki/Dunlendings>
+  w Wojnie o Pierścień:
+  <https://thetolkien.forum/wiki/Dunlendings>
 - CBR, „The Lord of the Rings' Most Misunderstood Villains, Explained" —
-  kontekst konfliktu Dunland–Rohan: <https://www.cbr.com/lotr-misunderstood-villains-explained/>
-- Narracja i prompt kolekcji (kotwica osadzenia — ADR 0010):
-  `collection/entries/1ltr-dunland-crebain.md`, dostarczone 2026-08-31.
-- Mapa: podkład mapome (k1tesurfen, CC-BY-4.0) — ADR 0009.
+  kontekst konfliktu Dunland–Rohan:
+  <https://www.cbr.com/lotr-misunderstood-villains-explained/>
+- Narracja i koncepcja wizualna kolekcji (dostawa właściciela
+  z 2026-08-31).
 
 ## Podsumowanie Lore
 
-*Dunland Crebain* jest w kolekcji ambasadorem całej logiki Wojny o
-Pierścień: wojna nie zaczyna się od armii, tylko od oczu. Stado krukowatych
-zwiadowców — w kanonie Tolkiena przelatujące nad Hollin i w kolekcji
+*Dunland Crebain* jest ambasadorem całej logiki Wojny o Pierścień:
+wojna nie zaczyna się od armii, tylko od oczu. Stado krukowatych
+zwiadowców — w kanonie Tolkiena przelatujące nad Hollin, w tej kolekcji
 kolistujące nad dunlandzkim urwiskiem — spina niebo z ziemią: jego krzyk
 jest sygnałem, na który czekają pochodnie w wąwozie. Mechanika karty
-opowiada to samo zdanie językiem MtG: tani, czarny, latający zwiadowca,
-który sam nic nie zdziała (1/1), ale którego przybycie rośnie o dwa
-poziomy Armii Orków.
-
-Dla bazy karta otwiera plan Śródziemia, jego mapę z pinezką regionu
-Dunland oraz kolejkę encji (crebain, dunland, isengard, rohan, Saruman,
-Uruk-hai, Biała Ręka), które czekają na drugą kartę, by dostać własne
-Karty Haseł.
+opowiada to samo zdanie językiem gry: tani, czarny, latający zwiadowca,
+który sam nic nie zdziała (1/1), ale którego przybycie powiększa Armię
+Orków o dwa poziomy.

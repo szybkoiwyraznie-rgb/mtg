@@ -6,14 +6,17 @@ ADR 0006). Najnowsze na górze.
 ## 2026-08-31 — Pierwsza karta! Mapa Śródziemia + kanon v2 (PR-2, w toku)
 
 - **Materializacja 1LTR Dunland Crebain** — pierwsza Karta Katalogowa
-  (12 sekcji): wpis kolekcji verbatim (prompt + narracja z dostawy),
-  snapshot Scryfalla, mechanika jako opowieść (Flying + Amass Orcs 2),
-  flavor Sama z tłumaczeniem, pinezka regionu Dunland na mapie.
+  (12 sekcji): wpis kolekcji przytoczony w całości (prompt + narracja
+  z dostawy), snapshot Scryfalla posiadanego wydruku (borderless,
+  David Rapoza), mechanika jako opowieść (Flying + Amass Orcs 2),
+  pinezka regionu Dunland na mapie. Posiadaný wydruk nie ma flavor
+  tekstu — sekcja flavoru opisuje scenę Hollin, którą karta przywołuje.
 - **Mapa Śródziemia z silnikiem v1** (`#/mapa/srodziemie`): podkład
   w pełni wektorowy (projekt *mapome*, k1tesurfen, CC-BY-4.0 — ADR 0009),
-  pan/zoom, legenda pewności, warstwa kotwic etykiet do weryfikacji,
-  deep-link `?pin=`. Kotwice (Isengard, Edoras, Tharbad…) wyprowadzone
-  programistycznie z etykiet podkładu.
+  pan/zoom, legenda pewności, deep-link `?pin=`. Pinezki i etykiety
+  zachowują stały rozmiar podczas zoomowania.
+- **Karta Katalogowa z mini-mapą**: infoboks pokazuje miniaturę mapy
+  planu z pinezką — klik przenosi na mapę z wycentrowaną pinezką.
 - **ADR 0010 — hierarchia kanonu v2** (korekta właściciela): kanonem jest
   karta MtG + lore świata docelowego; prompt i narracja kolekcji to
   **kotwica osadzenia**, nie prawda objawiona. Zastępuje hierarchię

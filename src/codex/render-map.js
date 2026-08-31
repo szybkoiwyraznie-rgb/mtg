@@ -36,7 +36,6 @@ export function renderMape(slugPlanu, query = {}) {
   const wys = mapa.wymiary?.wysokosc ?? 2400;
   const pinezki = mapa.pinezki ?? [];
   const regiony = mapa.regiony ?? [];
-  const kotwice = mapa.kotwice ?? [];
   const pinDocelowy = query.pin && pinezki.some((p) => p.karta === query.pin) ? query.pin : '';
 
   const svgRegiony = regiony.map((r) => {
@@ -54,9 +53,9 @@ export function renderMape(slugPlanu, query = {}) {
     const poz = POZIOMY_PEWNOSCI[p.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
     return `<a href="#/karta/${escapeHtml(p.karta)}" class="mapa-pinezka pewnosc-${p.pewnosc}"
       data-pinezka="${escapeHtml(p.karta)}" data-x="${p.x}" data-y="${p.y}"
-      style="left:${p.x * 100}%; top:${p.y * 100}%; border-color:${poz.kolor}"
+      style="left:${p.x * 100}%; top:${p.y * 100}%; --kolor:${poz.kolor}"
       title="${escapeHtml(karta?.tytul ?? p.karta)} — pewność: ${poz.etykieta}">
-      <span class="mapa-pinezka-glow" style="background:${poz.kolor}"></span>
+      <span class="mapa-pinezka-glow"></span>
       <span class="mapa-pinezka-etykieta">${escapeHtml(karta?.tytul ?? p.karta)}</span>
     </a>`;
   }).join('');
@@ -67,13 +66,9 @@ export function renderMape(slugPlanu, query = {}) {
     const haslo = dane.strony?.[r.haslo];
     const poz = POZIOMY_PEWNOSCI[r.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
     return `<a href="#/haslo/${escapeHtml(r.haslo)}" class="mapa-etykieta-regionu" data-region-etykieta
-      style="left:${((x0 + x1) / 2) * 100}%; top:${y0 * 100}%; color:${poz.kolor}">
-      ${escapeHtml(haslo?.tytul ?? r.haslo)}</a>`;
+      style="left:${((x0 + x1) / 2) * 100}%; top:${y0 * 100}%; --kolor:${poz.kolor}">
+      <span>${escapeHtml(haslo?.tytul ?? r.haslo)}</span></a>`;
   }).join('');
-
-  const htmlKotwice = kotwice.map((k) => `
-    <span class="mapa-kotwica" data-kotwica title="${escapeHtml(k.nazwa)} — kotwica etykiety podkładu"
-      style="left:${k.x * 100}%; top:${k.y * 100}%">⌖<span class="mapa-kotwica-nazwa">${escapeHtml(k.nazwa)}</span></span>`).join('');
 
   return `
   <nav class="okruszki">
@@ -86,15 +81,14 @@ export function renderMape(slugPlanu, query = {}) {
   <article class="mapa-strona">
     <header class="mapa-naglowek">
       <h1>Mapa: ${escapeHtml(mapa.tytul ?? slugPlanu)}</h1>
-      <p class="meta">wariant ${escapeHtml(String(mapa.wariant ?? '?'))} (podkład w pełni wektorowy — ADR 0009) ·
-        pinezki kart: ${pinezki.length} · regiony: ${regiony.length} · kotwice etykiet: ${kotwice.length}</p>
+      <p class="meta">wariant ${escapeHtml(String(mapa.wariant ?? '?'))} (podkład w pełni wektorowy) ·
+        pinezki kart: ${pinezki.length} · regiony: ${regiony.length}</p>
     </header>
 
     <div class="mapa-pasek">
       <button class="przycisk mapa-przycisk" data-mapa-akcja="oddal" aria-label="Oddal">−</button>
       <button class="przycisk mapa-przycisk" data-mapa-akcja="przybliz" aria-label="Przybliż">+</button>
       <button class="przycisk mapa-przycisk" data-mapa-akcja="reset" aria-label="Reset widoku">⟲</button>
-      <label class="mapa-kotwice-przelacznik"><input type="checkbox" data-mapa-kotwice> kotwice etykiet (weryfikacja)</label>
       <span class="mapa-podpowiedz">przeciągnij, aby przesunąć · kółko / przyciski, aby przybliżyć</span>
     </div>
 
@@ -108,7 +102,6 @@ export function renderMape(slugPlanu, query = {}) {
             : `<div class="mapa-brak-podkladu">Brak osadzonego podkładu (build nie wstrzyknął pliku — sprawdź maps/${escapeHtml(slugPlanu)}/podklad.svg).</div>`}
           <svg class="mapa-regiony" viewBox="0 0 ${szer} ${wys}" preserveAspectRatio="none" aria-hidden="true">${svgRegiony}</svg>
           <div class="mapa-warstwa">${htmlPinezki}${htmlRegionyEtykiety}</div>
-          <div class="mapa-warstwa mapa-warstwa-kotwice" data-mapa-warstwa-kotwice hidden>${htmlKotwice}</div>
         </div>
       </div>
     </div>
@@ -120,7 +113,6 @@ export function renderMape(slugPlanu, query = {}) {
           <li><span class="mapa-pinezka-legenda" style="background:${p.kolor}"></span>
             <strong>${p.etykieta}</strong> — ${p.opis}</li>`).join('')}
         <li><span class="mapa-obwodka-legenda"></span><strong>obwódka regionu</strong> — kraina hasła geograficznego (kolor = pewność)</li>
-        <li>⌖ <strong>kotwica etykiety</strong> — pozycja odczytana z etykiety podkładu (warstwa do weryfikacji, domyślnie ukryta)</li>
       </ul>
     </section>
 
@@ -138,11 +130,6 @@ export function renderMape(slugPlanu, query = {}) {
               <span class="meta">${escapeHtml(p.uzasadnienie ?? '')}</span></li>`;
           }).join('')}</ul>`}
     </section>
-
-    ${kotwice.length ? `<details class="mapa-kotwice-lista"><summary>Kotwice etykiet podkładu (${kotwice.length}) — dane weryfikacyjne</summary>
-      <ul>${kotwice.map((k) => `<li><strong>${escapeHtml(k.nazwa)}</strong>
-        <span class="meta">x=${k.x}, y=${k.y}${k.notka ? ` · ${escapeHtml(k.notka)}` : ''}</span></li>`).join('')}</ul>
-    </details>` : ''}
 
     <footer class="mapa-atrybucja">
       <p>Podkład: <a href="${escapeHtml(mapa.zrodlo?.url ?? '#')}" rel="noopener noreferrer" target="_blank">${escapeHtml(mapa.zrodlo?.tytul ?? 'źródło')}</a>
@@ -171,9 +158,11 @@ export function zamontujMape(app) {
 
   const nanies = () => {
     ruch.style.transform = `translate(${stan.ox}px, ${stan.oy}px) scale(${stan.k})`;
-    for (const el of okno.querySelectorAll('[data-pinezka], [data-region-etykieta], [data-kotwica]')) {
-      const baza = el.classList.contains('mapa-kotwica') ? 'translate(-50%, -50%)' : 'translate(-50%, -100%)';
-      el.style.transform = `${baza} scale(${1 / stan.k})`;
+    // pinezki i etykiety regionów: kotwice zerowego rozmiaru (transform-origin
+    // 0 0 w CSS) — czysty scale(1/k) utrzymuje STAŁY rozmiar na ekranie
+    // w każdym przybliżeniu (rys. poprawka „pinezka się nie przeskalowuje")
+    for (const el of okno.querySelectorAll('[data-pinezka], [data-region-etykieta]')) {
+      el.style.transform = `scale(${1 / stan.k})`;
     }
   };
 
@@ -247,15 +236,6 @@ export function zamontujMape(app) {
   const koniecWskaznika = (e) => { wskazniki.delete(e.pointerId); if (wskazniki.size < 2) ostatniDystans = null; };
   okno.addEventListener('pointerup', koniecWskaznika);
   okno.addEventListener('pointercancel', koniecWskaznika);
-
-  // warstwa kotwic (weryfikacja) — przełącznik w pasku
-  const przelacznik = pasek.querySelector('[data-mapa-kotwice]');
-  if (przelacznik) {
-    przelacznik.addEventListener('change', () => {
-      const warstwa = okno.querySelector('[data-mapa-warstwa-kotwice]');
-      if (warstwa) warstwa.hidden = !przelacznik.checked;
-    });
-  }
 
   nanies();
 }

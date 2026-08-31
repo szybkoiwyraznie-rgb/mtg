@@ -38,7 +38,7 @@ export function renderGlowna() {
           <li>
             <a href="#/karta/${k.slug}">${escapeHtml(k.tytul)}</a>
             ${kropkiKolorow(k.kolory)}
-            <span class="meta">${escapeHtml(k.materializacja)} · <a href="#/plan/${k.plan}">${escapeHtml(k.plan)}</a></span>
+            <span class="meta">${escapeHtml(k.materializacja)} · <a href="#/plan/${k.plan}">${escapeHtml(dajDane().strony[k.plan]?.tytul ?? k.plan)}</a></span>
             ${chipsyTagow(k.tagi)}
           </li>`).join('')}</ul>`}
   </section>

@@ -12,6 +12,7 @@
 import { escapeHtml } from './markdown.js';
 import { dajStrone, dajDane, backlinki } from './data.js';
 import { stanPusty, chipsyTagow, kropkiKolorow, nieZnalesc } from './render.js';
+import { POZIOMY_PEWNOSCI } from './render-map.js';
 
 export function renderKarte(slug) {
   const karta = dajStrone(slug);
@@ -41,6 +42,7 @@ export function renderKarte(slug) {
     <div class="karta-uklad">
       <aside class="infoboks">
         ${toryObrazow(karta, sc)}
+        ${miniMapa(karta, dane)}
         <dl class="dane-karty">
           ${sc ? wiersz('Typ', sc.type_line) : ''}
           ${sc?.mana_cost ? wiersz('Koszt', sc.mana_cost) : ''}
@@ -51,7 +53,7 @@ export function renderKarte(slug) {
           ${sc?.keywords?.length ? wiersz('Zdolności', sc.keywords.join(', ')) : ''}
           ${kol?.mv !== undefined && kol?.mv !== null && kol.mv !== '' ? wiersz('MV (arkusz)', String(kol.mv)) : ''}
           ${plan ? wiersz('Plan', `<a href="#/plan/${plan.slug}">${escapeHtml(plan.tytul)}</a>`) : ''}
-          ${karta.pinezka ? wiersz('Na mapie', `<a href="#/mapa/${karta.plan}?pin=${slug}">pinezka (${karta.pinezka.pewnosc})</a>`) : ''}
+          ${karta.pinezka ? wiersz('Na mapie', `<a href="#/mapa/${karta.plan}?pin=${slug}">pokaż na mapie (${escapeHtml(POZIOMY_PEWNOSCI[karta.pinezka.pewnosc]?.etykieta ?? karta.pinezka.pewnosc)})</a>`) : ''}
         </dl>
         ${sc ? `<p class="meta"><a href="${escapeHtml(sc.scryfall_uri ?? '#')}" target="_blank" rel="noopener">Karta na Scryfall ↗</a></p>` : ''}
         ${chipsyTagow(karta.tagi)}
@@ -67,6 +69,22 @@ export function renderKarte(slug) {
 
 function wiersz(klucz, wartosc) {
   return `<dt>${escapeHtml(klucz)}</dt><dd>${wartosc}</dd>`;
+}
+
+/** Miniatura mapy planu z pinezką tej karty (klik → mapa z wycentrowaną pinezką). */
+function miniMapa(karta, dane) {
+  if (!karta.pinezka) return '';
+  const mapa = dane.mapy?.[karta.plan];
+  if (!mapa || mapa.problem || !mapa.podkladData) return '';
+  const pinezka = (mapa.pinezki ?? []).find((p) => p.karta === karta.slug);
+  if (!pinezka) return '';
+  const kolor = (POZIOMY_PEWNOSCI[pinezka.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona).kolor;
+  return `<a class="mini-mapa" href="#/mapa/${karta.plan}?pin=${karta.slug}"
+    title="Pokaż na mapie planu (pewność: ${escapeHtml(POZIOMY_PEWNOSCI[pinezka.pewnosc]?.etykieta ?? pinezka.pewnosc)})">
+    <img src="${mapa.podkladData}" alt="Miniatura mapy planu: ${escapeHtml(mapa.tytul ?? karta.plan)}" loading="lazy">
+    <span class="mini-mapa-pinezka" style="left:${pinezka.x * 100}%; top:${pinezka.y * 100}%; background:${kolor}"></span>
+    <span class="mini-mapa-podpis">📍 ${escapeHtml(mapa.tytul ?? karta.plan)} — pokaż na mapie</span>
+  </a>`;
 }
 
 /** Tory obrazów z cichym fallbackiem (ADR 0008). */

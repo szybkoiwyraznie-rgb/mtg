@@ -13,14 +13,14 @@ export function renderListeKart() {
   <h1>Karty Katalogowe (${karty.length})</h1>
   <p class="meta">Każda karta materializowana jawnie przez właściciela (ADR 0003).</p>
   ${karty.length === 0
-    ? stanPusty('Brak kart w bazie.', 'Pierwsza dostawa: 1LTR Dunland Crebain (PR-2).')
+    ? stanPusty('Brak kart w bazie.', 'Karty materializują się wyłącznie po jawnej dostawie właściciela.')
     : `<table class="tabela-kart">
         <thead><tr><th>Karta</th><th>imgId</th><th>Plan</th><th>Kolory</th><th>Materializacja</th></tr></thead>
         <tbody>${karty.map((k) => `
           <tr>
             <td><a href="#/karta/${k.slug}">${escapeHtml(k.tytul)}</a></td>
             <td>${escapeHtml(k.imgId)}</td>
-            <td><a href="#/plan/${k.plan}">${escapeHtml(k.plan)}</a></td>
+            <td><a href="#/plan/${k.plan}">${escapeHtml(dajDane().strony[k.plan]?.tytul ?? k.plan)}</a></td>
             <td>${kropkiKolorow(k.kolory)}</td>
             <td>${escapeHtml(k.materializacja ?? '')}</td>
           </tr>`).join('')}</tbody>
@@ -33,11 +33,11 @@ export function renderListeHasel() {
   <h1>Karty Haseł (${hasla.length})</h1>
   <p class="meta">Encje świata wspólne dla wielu kart — bez dublowania wiedzy (ADR 0005).</p>
   ${hasla.length === 0
-    ? stanPusty('Brak haseł.', 'Pierwsze hasła powstaną przy pierwszej materializacji (link-mining).')
+    ? stanPusty('Brak haseł.', 'Pierwsze hasła powstaną, gdy druga karta odwoła się do wspólnej encji (link-mining).')
     : `<ul class="lista-hasel">${hasla.map((h) => `
         <li>
           <a href="#/haslo/${h.slug}">${escapeHtml(h.tytul)}</a>
-          <span class="meta">${escapeHtml(h.klasa)} · ${escapeHtml(h.plan)}</span>
+          <span class="meta">${escapeHtml(h.klasa)} · ${escapeHtml(dajDane().strony[h.plan]?.tytul ?? h.plan)}</span>
         </li>`).join('')}</ul>`}`;
 }
 

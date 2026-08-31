@@ -5,6 +5,18 @@ Powiązania: [ADR 0003](../decisions/0003-petla-jawnego-przekazywania-i-hierarch
 [ADR 0005](../decisions/0005-szkielety-stron-i-protokol-wikilinkow.md),
 [ADR 0008](../decisions/0008-tory-obrazow-fot-kon.md).
 
+## Zasada czystości treści (feedback właściciela 2026-08-31)
+
+Strona karty to **wyłącznie treść encyklopedyczna**. W `content/cards/*.md`
+nie ma miejsca na mechanikę Codexu ani proces: żadnych odnośników do
+ADR-ów, „zasad właściciela", Pętli Jakości, kolejki link-miningu,
+PROCES_MAP, ścieżek plików (docs/, maps/, collection/), etykiet
+„Status:", „(verbatim)", „Odczyt wyłącznie ze snapshotu". To wiedza
+procesowa — żyje w docs/ (ADR, ten plik, backlog), nie na renderowanej
+stronie. Sekcja mówi treścią: brak flavoru = akapit o braku flavoru;
+status hierarchii kanonu (kotwica osadzenia) opisuje narrację językiem
+treści, nie etykietą procesu.
+
 ## Format dostawy karty (właściciel → sesja)
 
 Wpis dostarczany w czacie lub issue, w formacie tabelarycznym
@@ -83,9 +95,9 @@ istnienia, nie trzeba wpisywać ścieżek).
 | 2 | **Postacie i Byty** | Kto/co konkretnie występuje na karcie i w narracji; każda istotna encja dostaje wikilink (kandydat do hasła). Obowiązkowe. |
 | 3 | **Nazwa Karty** | Etymologia i sens nazwy w świecie (np. „crebain" = sindarińskie „wrony/kruki"). Źródło: karta + setting + kwerenda. Obowiązkowe. |
 | 4 | **Mechanika jako Opowieść** | Koszt, kolor, statyki, keywords, zdolności — odczytane WYŁĄCZNIE ze snapshotu Scryfall — przetłumaczone na narrację (czarny = szpiegostwo i strach; Flying = zwiadowcy powietrzni; Amass = rosnąca armia). Obowiązkowe. |
-| 5 | **Flavor Text** | Oryginał (EN, verbatim ze snapshotu) + tłumaczenie + interpretacja w kontekście. Jeśli karta nie ma flavoru — sekcja istnieje i mówi to wprost. Obowiązkowe. |
+| 5 | **Flavor Text** | Oryginał (EN, przytoczony ze snapshotu) + tłumaczenie + interpretacja w kontekście. Jeśli posiadanego wydruk nie ma flavoru — sekcja istnieje i mówi to wprost (bez cytowania flavoru innych printów tej karty). Obowiązkowe. |
 | 6 | **Transpozycja** | Most: jak karta MtG (plan rodzinny/mechanika) przełożona została na setting docelowy. Dla kart „natywnych" krótko; dla transpozycji — sedno. Obowiązkowe. |
-| 7 | **Narracja Kolekcji** | Narracja właściciela **verbatim** (kopiowana z wpisu; to powtórzenie jest celowe — strona ma być samowystarczalna). Status: **kotwica osadzenia, nie kanon** (ADR 0010) — przy rozbieżnościach z kartą MtG lub lorem świata wygrywa kanon, a rozbieżność opisujemy jawnie. Obowiązkowe. |
+| 7 | **Narracja Kolekcji** | Narracja właściciela przytoczona w całości (to powtórzenie jest celowe — strona ma być samowystarczalna). Hierarchia kanonu: to **kotwica osadzenia, nie kanon** (ADR 0010) — przy rozbieżnościach z kartą MtG lub lorem świata wygrywa kanon, a rozbieżność opisujemy w treści. Statusu NIE etykietujemy na stronie (zasada czystości treści powyżej). Obowiązkowe. |
 | 8 | **Wizualizacja** | Prompt (verbatim) + opis słowny, co obraz pokazuje/scenuje. **Zero generowania grafik** (ADR 0008). Obowiązkowe. |
 | 9 | **Wątki i Powiązania** | Wikilinki do haseł i innych kart; krótkie uzasadnienie powiązania. Obowiązkowe (może być na starcie puste z uzasadnieniem — uzupełnia Pętla Jakości). |
 | 10 | **Na Mapie** | Lokalizacja + poziom pewności (`dokladna`/`region`/`przyblizona`) + skąd wiemy (lore). Pinezka w `maps/<plan>/map.json`. Obowiązkowe od momentu istnienia mapy planu. |

@@ -229,10 +229,6 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
   min-width: 2.2rem; text-align: center; padding: 0.3rem 0.6rem;
   font-size: 1.1rem; line-height: 1.1;
 }
-.mapa-kotwice-przelacznik {
-  display: inline-flex; align-items: center; gap: 0.35rem;
-  font-size: 0.88rem; color: var(--tusz-miękki); cursor: pointer;
-}
 .mapa-podpowiedz { font-size: 0.8rem; color: var(--tusz-miękki); margin-left: auto; }
 .mapa-okno {
   position: relative; overflow: hidden;
@@ -257,36 +253,38 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
 .mapa-warstwa { position: absolute; inset: 0; pointer-events: none; }
 .mapa-warstwa a { pointer-events: auto; }
 
+/* Pinezka: element-kotwica 0×0 na (x%,y%); dzieci pozycjonowane absolutnie.
+   transform-origin: 0 0 + scale(1/k) z silnika = stały rozmiar na ekranie
+   w każdym przybliżeniu, szpic pinezki zawsze w punkcie docelowym. */
 .mapa-pinezka {
-  position: absolute; display: flex; flex-direction: column; align-items: center;
-  text-decoration: none; z-index: 5;
+  position: absolute; width: 0; height: 0;
+  transform-origin: 0 0; text-decoration: none; z-index: 5;
 }
 .mapa-pinezka-glow {
+  position: absolute; left: -11px; bottom: 0;
   width: 22px; height: 22px; border-radius: 50% 50% 50% 0;
   transform: rotate(-45deg); border: 2px solid #fff;
+  background: var(--kolor, #b26a00);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
 }
 .mapa-pinezka-etykieta {
-  margin-top: 0.25rem; white-space: nowrap; font-size: 0.78rem; font-weight: 600;
+  position: absolute; top: 7px; left: 0; transform: translateX(-50%);
+  white-space: nowrap; font-size: 0.78rem; font-weight: 600;
   background: rgba(30, 24, 14, 0.82); color: #f6efdf;
   border-radius: 5px; padding: 0.1rem 0.4rem;
 }
 .mapa-pinezka:hover .mapa-pinezka-etykieta { background: #2c2313; }
 
 .mapa-etykieta-regionu {
-  position: absolute; transform: translate(-50%, 0);
+  position: absolute; width: 0; height: 0;
+  transform-origin: 0 0; text-decoration: none; z-index: 4;
+}
+.mapa-etykieta-regionu span {
+  position: absolute; left: 0; top: 0; transform: translateX(-50%);
   font-family: var(--serif); font-weight: 700; font-size: 0.95rem;
-  letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none;
+  letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap;
+  color: var(--kolor, var(--akcent));
   text-shadow: 0 1px 0 #f4eede, 0 -1px 0 #f4eede, 1px 0 0 #f4eede, -1px 0 0 #f4eede;
-  z-index: 4;
-}
-.mapa-kotwica {
-  position: absolute; font-size: 15px; color: #35507a; font-weight: 700;
-  z-index: 3; transform: translate(-50%, -50%); cursor: help; white-space: nowrap;
-}
-.mapa-kotwica-nazwa {
-  font-size: 0.68rem; font-weight: 600; margin-left: 0.15rem;
-  background: rgba(53, 80, 122, 0.14); border-radius: 4px; padding: 0 0.25rem;
 }
 .mapa-legenda-lista { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.4rem; }
 .mapa-pinezka-legenda {
@@ -298,12 +296,31 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
   display: inline-block; width: 26px; height: 14px; vertical-align: -2px;
   border: 2px dashed var(--akcent); border-radius: 4px; margin-right: 0.45rem;
 }
-.mapa-kotwice-lista { margin: 1rem 0; font-size: 0.9rem; }
-.mapa-kotwice-lista summary { cursor: pointer; color: var(--tusz-miękki); }
-.mapa-kotwice-lista ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
 .mapa-atrybucja { margin-top: 1.4rem; font-size: 0.85rem; }
 .mapa-atrybucja p { margin: 0.2rem 0; }
 @media (max-width: 640px) {
   .mapa-podpowiedz { display: none; }
   .mapa-okno { height: clamp(340px, 62vh, 640px); }
+}
+
+/* ── Mini-mapa w infoboksie karty ─────────────────────────────────── */
+.mini-mapa {
+  position: relative; display: block; overflow: hidden;
+  border: 1px solid var(--ramka); border-radius: 8px;
+  margin: 0.8rem 0 0.2rem; text-decoration: none; line-height: 0;
+}
+.mini-mapa:hover { border-color: var(--akcent); }
+.mini-mapa img { width: 100%; display: block; }
+.mini-mapa-pinezka {
+  position: absolute; width: 13px; height: 13px;
+  margin: -13px 0 0 -6.5px;
+  border-radius: 50% 50% 50% 0; transform: rotate(-45deg);
+  background: #b26a00; border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+.mini-mapa-podpis {
+  position: absolute; left: 0; right: 0; bottom: 0; line-height: 1.3;
+  font-size: 0.72rem; font-weight: 600; text-align: center; color: #f6efdf;
+  background: linear-gradient(transparent, rgba(30, 24, 14, 0.85));
+  padding: 1.4rem 0.4rem 0.3rem;
 }
