@@ -1,0 +1,219 @@
+/* MTG Lore Codex — style witryny (wstrzykiwane do artefaktu przez build).
+   Priorytety: czytelność tekstu lore, mobile/iPad, brak zależności. */
+
+:root {
+  --tlo: #f7f2e7;
+  --tlo-karta: #fffdf6;
+  --tusz: #2a2320;
+  --tusz-miękki: #6b5d52;
+  --akcent: #7b2d26;
+  --akcent-2: #9c6b3f;
+  --ramka: #d9cdb8;
+  --cien: 0 1px 3px rgba(42, 35, 32, 0.12), 0 4px 14px rgba(42, 35, 32, 0.08);
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--tlo);
+  color: var(--tusz);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+a { color: var(--akcent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Nagłówek i nawigacja ─────────────────────────────────────────── */
+
+.naglowek {
+  position: sticky; top: 0; z-index: 10;
+  background: linear-gradient(180deg, #2a2320, #3a2f28);
+  box-shadow: var(--cien);
+}
+
+.naglowek-wnetrze {
+  max-width: 1100px; margin: 0 auto; padding: 0.55rem 1rem;
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+}
+
+.logo {
+  color: #f3e9d2; font-family: var(--serif); font-weight: 700;
+  font-size: 1.05rem; letter-spacing: 0.04em; white-space: nowrap;
+}
+.logo:hover { text-decoration: none; color: #fff; }
+
+.nawigacja { display: flex; gap: 0.1rem; flex-wrap: wrap; }
+.nawigacja a {
+  color: #cdbfa6; padding: 0.3rem 0.55rem; border-radius: 6px; font-size: 0.92rem;
+}
+.nawigacja a:hover { background: rgba(255, 255, 255, 0.08); text-decoration: none; }
+.nawigacja a.aktywna { background: var(--akcent); color: #fff; }
+
+.szukaj { margin-left: auto; }
+.szukaj input {
+  background: #f3e9d2; border: 1px solid #57493d; border-radius: 8px;
+  padding: 0.35rem 0.7rem; font-size: 0.92rem; width: 180px; color: var(--tusz);
+}
+.szukaj input:focus { outline: 2px solid var(--akcent-2); }
+
+/* ── Układ treści ─────────────────────────────────────────────────── */
+
+.tresc {
+  max-width: 1100px; margin: 0 auto; padding: 1.4rem 1rem 3rem;
+  min-height: 70vh;
+}
+
+h1, h2, h3 { font-family: var(--serif); line-height: 1.25; }
+h1 { font-size: 1.9rem; margin: 0.4rem 0 0.6rem; }
+h2 { font-size: 1.35rem; margin: 1.6rem 0 0.5rem; border-bottom: 1px solid var(--ramka); padding-bottom: 0.25rem; }
+h3 { font-size: 1.1rem; margin: 1.1rem 0 0.4rem; }
+
+.meta { color: var(--tusz-miękki); font-size: 0.88rem; margin: 0.2rem 0; }
+
+.hero { text-align: center; padding: 1.5rem 0 0.5rem; }
+.hero h1 { font-size: 2.3rem; margin-bottom: 0.3rem; }
+.lead { max-width: 640px; margin: 0 auto; color: var(--tusz-miękki); }
+
+.sekcja { margin-top: 1.8rem; }
+
+/* ── Okruszki ─────────────────────────────────────────────────────── */
+
+.okruszki { font-size: 0.85rem; color: var(--tusz-miękki); margin-bottom: 0.6rem; }
+
+/* ── Karta Katalogowa ─────────────────────────────────────────────── */
+
+.karta-naglowek h1, .haslo-naglowek h1, .plan-naglowek h1 { margin-bottom: 0.1rem; }
+
+.karta-uklad {
+  display: grid; grid-template-columns: 300px 1fr; gap: 1.4rem; align-items: start;
+}
+@media (max-width: 760px) { .karta-uklad { grid-template-columns: 1fr; } }
+
+.infoboks {
+  background: var(--tlo-karta); border: 1px solid var(--ramka);
+  border-radius: 10px; padding: 0.9rem; box-shadow: var(--cien);
+}
+
+.obraz-rama {
+  position: relative; aspect-ratio: 488 / 680; overflow: hidden;
+  border-radius: 8px; background: #241d1a; margin-bottom: 0.5rem;
+}
+.obraz-rama img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.twarz-syntetyczna {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 0.6rem;
+  background: linear-gradient(160deg, #4a3b33, #241d1a);
+  color: #e8dcc4; font-family: var(--serif); text-align: center; padding: 1rem;
+}
+.nazwa-syntetyczna { font-size: 1.2rem; letter-spacing: 0.03em; }
+
+.tory-przyciski { display: flex; gap: 0.35rem; margin: 0.35rem 0 0.7rem; }
+.tor-przycisk {
+  flex: 1; border: 1px solid var(--ramka); background: var(--tlo);
+  border-radius: 6px; padding: 0.3rem 0.2rem; font-size: 0.85rem; cursor: pointer;
+}
+.tor-przycisk.aktywny { background: var(--akcent); color: #fff; border-color: var(--akcent); }
+
+.dane-karty { display: grid; grid-template-columns: auto 1fr; gap: 0.25rem 0.6rem; margin: 0.5rem 0; }
+.dane-karty dt { color: var(--tusz-miękki); font-size: 0.85rem; }
+.dane-karty dd { margin: 0; font-size: 0.92rem; }
+
+.kolory { display: inline-flex; gap: 3px; vertical-align: middle; }
+.kropka { width: 13px; height: 13px; border-radius: 50%; display: inline-block; border: 1px solid rgba(0, 0, 0, 0.25); }
+
+.chipsy { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.5rem 0; }
+.chip {
+  background: #ece2cc; border: 1px solid var(--ramka); border-radius: 999px;
+  padding: 0.12rem 0.6rem; font-size: 0.8rem; color: var(--tusz);
+}
+.chip:hover { background: var(--akcent); color: #fff; text-decoration: none; }
+.chip .licznik { opacity: 0.65; margin-left: 0.25rem; }
+
+/* ── Hasło i plan ─────────────────────────────────────────────────── */
+
+.haslo-uklad { display: grid; grid-template-columns: 1fr 220px; gap: 1.4rem; align-items: start; }
+@media (max-width: 760px) { .haslo-uklad { grid-template-columns: 1fr; } }
+.haslo-infoboks { position: sticky; top: 4.2rem; }
+
+.klasa {
+  background: var(--akcent-2); color: #fff; border-radius: 6px;
+  padding: 0.1rem 0.5rem; font-size: 0.8rem;
+}
+
+.mapa-link { margin: 0.6rem 0; }
+.przycisk {
+  display: inline-block; background: var(--akcent); color: #fff; border-radius: 8px;
+  padding: 0.45rem 0.9rem; font-size: 0.95rem;
+}
+.przycisk:hover { text-decoration: none; filter: brightness(1.1); }
+
+/* ── Listy i kafle ────────────────────────────────────────────────── */
+
+.kafle-planow { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 0.8rem; }
+.kafel-planu {
+  display: flex; flex-direction: column; gap: 0.15rem;
+  background: var(--tlo-karta); border: 1px solid var(--ramka); border-radius: 10px;
+  padding: 0.8rem 0.9rem; box-shadow: var(--cien); color: var(--tusz);
+}
+.kafel-planu:hover { text-decoration: none; border-color: var(--akcent); }
+.kafel-planu .nazwa { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; }
+.kafel-planu .licznik { color: var(--akcent); font-weight: 600; font-size: 0.9rem; }
+
+.lista-materializacji, .lista-hasel, .lista-planow, .lista-kart-planu, .lista-hasel-planu { list-style: none; padding: 0; margin: 0; }
+.lista-materializacji li, .lista-hasel li, .lista-planow li, .lista-kart-planu li, .lista-hasel-planu li {
+  padding: 0.55rem 0.2rem; border-bottom: 1px solid var(--ramka);
+}
+.lista-materializacji li { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+
+.tabela-kart { width: 100%; border-collapse: collapse; background: var(--tlo-karta); border: 1px solid var(--ramka); }
+.tabela-kart th, .tabela-kart td { padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--ramka); text-align: left; font-size: 0.92rem; }
+.tabela-kart th { background: #ece2cc; font-family: var(--serif); }
+
+.typ { color: var(--tusz-miękki); font-size: 0.78rem; border: 1px solid var(--ramka); border-radius: 4px; padding: 0 0.3rem; }
+
+/* ── Stany puste / błędy ──────────────────────────────────────────── */
+
+.stan-pusty {
+  background: var(--tlo-karta); border: 1px dashed var(--ramka); border-radius: 10px;
+  padding: 1.1rem 1.2rem; margin: 0.7rem 0;
+}
+.stan-pusty .komunikat { margin: 0; font-weight: 600; }
+.stan-pusty .podpowiedz { margin: 0.35rem 0 0; color: var(--tusz-miękki); font-size: 0.9rem; }
+
+/* ── Treść lore (markdown) ────────────────────────────────────────── */
+
+.karta-tresc img, .haslo-tresc img, .plan-opis img, .co-nowego img { max-width: 100%; border-radius: 8px; }
+
+blockquote {
+  margin: 0.6rem 0; padding: 0.4rem 1rem; border-left: 3px solid var(--akcent-2);
+  background: #efe6d2; border-radius: 0 8px 8px 0; color: #4c4038;
+}
+blockquote p { margin: 0.2rem 0; }
+
+table { border-collapse: collapse; margin: 0.7rem 0; }
+th, td { border: 1px solid var(--ramka); padding: 0.4rem 0.6rem; font-size: 0.92rem; }
+th { background: #ece2cc; font-family: var(--serif); }
+
+code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-size: 0.9em; }
+
+.martwy-link { color: #b33; background: #f6d9d9; border-radius: 4px; padding: 0 0.3rem; }
+
+.backlinki { margin-top: 1.6rem; }
+.backlinki ul, .w-kolekcji ul { padding-left: 1.2rem; }
+
+.co-nowego h2 { margin-top: 1.2rem; }
+
+/* ── Stopka ───────────────────────────────────────────────────────── */
+
+.stopka {
+  border-top: 1px solid var(--ramka); background: #efe8da; color: var(--tusz-miękki);
+  text-align: center; padding: 1rem; font-size: 0.85rem;
+}

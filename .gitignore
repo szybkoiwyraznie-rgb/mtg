@@ -1,0 +1,16 @@
+# Artefakt budowany przez CI / lokalnie — nie trzymamy go w repo (ADR 0001).
+dist/
+
+# Zależności (projekt ich nie używa — ADR 0002, ale gdyby powstały lokalnie)
+node_modules/
+
+# Lokalne ilustracje właściciela (~10 GB, tory FOT/KON — ADR 0008) — NIGDY w Git.
+img/
+
+# Śmieci systemowe
+.DS_Store
+Thumbs.db
+
+# Pliki tymczasowe sesji (komunikaty commitów itp.)
+*.tmp
+/home/user/msg.txt
