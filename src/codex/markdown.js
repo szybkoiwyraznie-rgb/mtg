@@ -131,8 +131,38 @@ export function renderMarkdown(md, { resolveLink } = {}) {
     t = t.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
     t = t.replace(/\*([^*]+)\*/g, '<em>$1</em>');
 
-    return t;
+    // symbole many na końcu — kolorowe ikony zamiast notacji {1}{U}
+    return manaIkony(t);
   }
+}
+
+// Kolory many: [tło ikony, tusz symbolu]
+const MANY = {
+  W: ['#f3ead2', '#2e2414'],
+  U: ['#7fa9cf', '#2e2414'],
+  B: ['#3a322c', '#f6efdf'],
+  R: ['#c2543b', '#f6efdf'],
+  G: ['#8fb98a', '#2e2414'],
+  C: ['#cfc5b6', '#2e2414'],
+  X: ['#cfc5b6', '#2e2414'],
+};
+
+// {1}{U}, {4}{U}, {W/U}… → kolorowe ikony many (span.mana, własne kolory tła/tuszu)
+export function manaIkony(tekst) {
+  return String(tekst).replace(
+    /\{([WUBRGCXP0-9]+(?:\/[WUBRGCXP0-9]+)?)\}/g,
+    (calkowity, symbol) => {
+      const czesci = symbol.split('/');
+      if (czesci.length > 2) return calkowity;
+      const definicje = czesci.map((z) => MANY[z] ?? MANY.C);
+      if (czesci.length === 2) {
+        const styl = `--tlo-a:${definicje[0][0]};--tlo-b:${definicje[1][0]};`;
+        return `<span class="mana mana-hybryda" style="${styl}">${symbol}</span>`;
+      }
+      const styl = `--tlo:${definicje[0][0]};--tusz:${definicje[0][1]};`;
+      return `<span class="mana" style="${styl}">${symbol}</span>`;
+    },
+  );
 }
 
 export function escapeHtml(s) {

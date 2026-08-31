@@ -33,17 +33,18 @@ mówiące o encji **w treści** (nie samym tagiem):
 | Roil | koncepcja | 2bfz-coralhelm-guide, plan zendikar | licznik od kart, nie planów |
 | Eldrazi | koncepcja | 2bfz-coralhelm-guide, plan zendikar | licznik od kart, nie planów |
 
-## Mapa Zendikaru (priorytet właściciela 2026-08-31)
+## Mapa Zendikaru — WYKONANA (ADR 0012)
 
-Oficjalna mapa planu **nigdy nie powstała** (potwierdzone kwerendą:
-Plane Shift / coolstuffinc — „possible to create a map based on
-cardinal directions and geographic hints, but there hasn't been an
-official one"). Kanon daje: 7 kontynentów + wzajemne położenie
-(Akoum płn.-wsch., Bala Ged łączy Akoum z Guul Draz, Tazeem naprzeciw
-Guul Draz przez wąski ocean, Ondu płd.-zach., Sejiri biegun, Murasa
-pozycja nieustalona). Opcje podkładu: rekonstrukcja własna (SVG,
-geografia z tekstów źródłowych) — bez licencjonowanych map zewnętrznych.
-Do decyzji: ADR + wariant (PROCES_MAP).
+Zrobione 2026-08-31 (feedback G właściciela): **rekonstrukcja własna
+wariantu T3** w `maps/zendikar/` (podkład SVG + map.json z flagą
+`rekonstrukcja: true`). Oficjalna mapa planu nigdy nie powstała;
+układ kontynentów z kanonu tekstowego (Plane Shift: Zendikar),
+wzorowany układem map fanowskich. Murasa ma linię przerywaną
+(„położenie przybliżone” — w kanonie nieustalone). Kotwice etykiet
+(Tazeem, Halimar, Sea Gate, Emeria, Akoum, Oko Ugina, Bala Ged,
+Guul Draz, Malakir, Ondu, Agadeem, Beyeen, Wyspy Jwar, Sejiri,
+Murasa) czekają na pinezki kolejnych kart Zendikaru. Jeśli Wizards
+kiedyś opublikuje oficjalną mapę — ponowić decyzję (T2/T1).
 
 Przy materializacji encji w drugiej karcie: utworzyć hasło wg
 SZKIELET_HASLA.md i **dopisać wikilinki ze wszystkich stron, które ją

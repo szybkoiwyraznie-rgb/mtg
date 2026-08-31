@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1400" width="2000" height="1400">
+  <title>Zendikar — rekonstrukcja układu kontynentów</title>
+
+  <!-- ocean -->
+  <rect x="0" y="0" width="2000" height="1400" fill="#ccd8d2"/>
+
+  <!-- fale (styl map dawnych) -->
+  <g stroke="#8fa89e" stroke-width="2.5" fill="none" opacity="0.5" stroke-linecap="round">
+    <path transform="translate(200,780)" d="M -30,0 q 15,-12 30,0 q 15,12 30,0 M -22,14 q 12,-10 24,0 M -12,28 q 8,-7 16,0"/>
+    <path transform="translate(245,905)" d="M -30,0 q 15,-12 30,0 q 15,12 30,0 M -22,14 q 12,-10 24,0 M -12,28 q 8,-7 16,0"/>
+    <path transform="translate(1050,185)" d="M -30,0 q 15,-12 30,0 q 15,12 30,0 M -22,14 q 12,-10 24,0 M -12,28 q 8,-7 16,0"/>
+    <path transform="translate(1265,315)" d="M -30,0 q 15,-12 30,0 q 15,12 30,0 M -22,14 q 12,-10 24,0 M -12,28 q 8,-7 16,0"/>
+    <path transform="translate(1000,950)" d="M -30,0 q 15,-12 30,0 q 15,12 30,0 M -22,14 q 12,-10 24,0 M -12,28 q 8,-7 16,0"/>
+    <path transform="translate(1745,1005)" d="M -30,0 q 15,-12 30,0 q 15,12 30,0 M -22,14 q 12,-10 24,0 M -12,28 q 8,-7 16,0"/>
+    <path transform="translate(1900,705)" d="M -30,0 q 15,-12 30,0 q 15,12 30,0 M -22,14 q 12,-10 24,0 M -12,28 q 8,-7 16,0"/>
+    <path transform="translate(70,305)" d="M -30,0 q 15,-12 30,0 q 15,12 30,0 M -22,14 q 12,-10 24,0 M -12,28 q 8,-7 16,0"/>
+    <path transform="translate(1900,125)" d="M -30,0 q 15,-12 30,0 q 15,12 30,0 M -22,14 q 12,-10 24,0 M -12,28 q 8,-7 16,0"/>
+  </g>
+
+  <!-- wiry Roil na otwartym oceanie -->
+  <g stroke="#7f9a90" stroke-width="3" fill="none" opacity="0.45" stroke-linecap="round">
+    <path transform="translate(250,860)" d="M -70,0 A 70 70 0 1 1 70,0 A 55 55 0 1 0 -40,0 A 26 26 0 1 1 12,0"/>
+    <path transform="translate(1120,260)" d="M -70,0 A 70 70 0 1 1 70,0 A 55 55 0 1 0 -40,0 A 26 26 0 1 1 12,0"/>
+    <path transform="translate(980,1010)" d="M -70,0 A 70 70 0 1 1 70,0 A 55 55 0 1 0 -40,0 A 26 26 0 1 1 12,0"/>
+  </g>
+
+  <!-- wolno dryfujące hedrony -->
+  <g stroke="#6b5d52" stroke-width="2.5" fill="none" opacity="0.65">
+    <path transform="translate(350,300)" d="M 0,-14 L 10,0 L 0,14 L -10,0 Z"/>
+    <path transform="translate(1180,345)" d="M 0,-11 L 8,0 L 0,11 L -8,0 Z"/>
+    <path transform="translate(420,925)" d="M 0,-12 L 9,0 L 0,12 L -9,0 Z"/>
+  </g>
+
+  <!-- Sejiri (polarny lód) -->
+  <path d="M 500,120 C 560,70 700,60 800,80 C 900,55 1080,60 1160,95 C 1240,80 1230,150 1150,165 C 1180,210 1080,235 1000,215 C 920,245 780,240 700,215 C 620,235 540,215 520,180 C 470,165 460,140 500,120 Z"
+    fill="#eef0e6" stroke="#9fb4ae" stroke-width="3.5"/>
+  <g stroke="#9fb4ae" stroke-width="1.5" opacity="0.5" fill="none">
+    <path d="M 600,100 l 60 25 l 55 -20"/>
+    <path d="M 900,120 l 50 20 l 60 -15"/>
+    <path d="M 720,190 l 70 -15"/>
+  </g>
+
+  <!-- wschodni łańcuch lądowy: Akoum — Bala Ged — Guul Draz (połączone przesmykami) -->
+  <path d="M 1355,330
+    L 1400,235 L 1455,258 L 1500,175 L 1565,245 L 1635,190 L 1705,255 L 1775,205 L 1838,285 L 1908,340
+    L 1872,425 L 1918,485 L 1842,535 L 1862,605 L 1775,628
+    L 1690,610 L 1655,645 L 1635,675
+    C 1650,695 1710,695 1750,760
+    C 1775,790 1770,820 1762,855
+    L 1700,905
+    C 1660,930 1600,940 1550,950
+    L 1470,965 L 1400,950 L 1360,955
+    L 1345,985 L 1330,1015
+    L 1385,1045 L 1470,1080 L 1530,1120
+    C 1560,1150 1580,1180 1585,1210
+    L 1560,1270
+    C 1520,1320 1470,1340 1400,1352
+    L 1330,1352 L 1240,1338 L 1170,1300
+    C 1120,1270 1085,1230 1080,1180
+    L 1085,1090
+    C 1090,1055 1115,1040 1145,1040
+    L 1220,1012 L 1275,988 L 1290,955
+    C 1275,940 1250,935 1225,930
+    L 1185,895
+    C 1160,860 1150,830 1162,790
+    L 1172,745
+    C 1190,715 1220,700 1265,690
+    L 1330,688 L 1400,705 L 1450,690 L 1500,700 L 1560,672
+    L 1590,645 L 1600,618
+    C 1570,605 1530,598 1490,608
+    L 1420,600 L 1385,575
+    C 1360,530 1355,480 1370,435
+    C 1362,400 1350,370 1355,330 Z"
+    fill="#e8dbb8" stroke="#a89468" stroke-width="3.5"/>
+
+  <!-- wulkanicne szczyty Akoum -->
+  <g fill="#9c6b5e" opacity="0.85">
+    <path d="M 1465,395 L 1497,340 L 1529,395 Z"/>
+    <path d="M 1682,495 L 1712,442 L 1742,495 Z"/>
+  </g>
+
+  <!-- Oko Ugina (hedron) -->
+  <path d="M 1610,522 L 1624,540 L 1610,558 L 1596,540 Z" fill="#e8dbb8" stroke="#4a3a28" stroke-width="2.5"/>
+
+  <!-- Tazeem -->
+  <path d="M 380,420 C 430,360 540,350 620,380 C 700,350 800,370 850,420 C 910,450 940,520 930,590 C 960,650 920,720 870,740 C 890,800 840,850 780,840 C 720,880 630,870 580,830 C 500,850 420,820 400,760 C 350,720 340,650 370,600 C 340,550 350,470 380,420 Z"
+    fill="#e8dbb8" stroke="#a89468" stroke-width="3.5"/>
+
+  <!-- Halimar (morze śródlądowe) -->
+  <path d="M 475,660 C 480,600 560,560 630,565 C 700,570 765,610 770,670 C 775,725 700,765 625,760 C 550,770 470,720 475,660 Z"
+    fill="#b9cdd8" stroke="#7fa0b4" stroke-width="2.5"/>
+
+  <!-- tama Sea Gate -->
+  <path d="M 735,758 L 778,736" stroke="#7b2d26" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Emeria — ruiny w niebie (dryfujący hedron) -->
+  <path d="M 880,268 L 893,285 L 880,302 L 867,285 Z" fill="none" stroke="#4a3a28" stroke-width="2.5"/>
+  <path d="M 915,252 L 924,264 L 915,276 L 906,264 Z" fill="none" stroke="#4a3a28" stroke-width="2" opacity="0.7"/>
+
+  <!-- Ondu -->
+  <path d="M 250,1000 C 320,950 420,960 490,990 C 570,960 660,980 700,1040 C 760,1070 780,1150 740,1210 C 760,1270 690,1310 610,1295 C 540,1320 450,1300 400,1255 C 320,1270 260,1220 265,1150 C 235,1100 225,1040 250,1000 Z"
+    fill="#e8dbb8" stroke="#a89468" stroke-width="3.5"/>
+
+  <!-- wyspy Ondu: Jwar, Agadeem, Beyeen -->
+  <g fill="#e8dbb8" stroke="#a89468" stroke-width="3">
+    <circle cx="125" cy="1015" r="20"/>
+    <circle cx="175" cy="1070" r="14"/>
+    <path d="M 200,1220 C 205,1170 260,1150 295,1180 C 320,1210 310,1270 270,1285 C 230,1300 195,1265 200,1220 Z"/>
+    <circle cx="105" cy="1200" r="15"/>
+  </g>
+
+  <!-- Malakir -->
+  <circle cx="1215" cy="1255" r="7" fill="#4a3a28"/>
+
+  <!-- Murasa (położenie przybliżone — linia przerywana) -->
+  <path d="M 860,1160 C 890,1110 970,1095 1030,1115 C 1090,1100 1140,1140 1145,1200 C 1160,1260 1120,1310 1060,1320 C 1010,1350 930,1345 890,1310 C 850,1280 840,1210 860,1160 Z"
+    fill="#e8dbb8" stroke="#a89468" stroke-width="3.5" stroke-dasharray="26 18"/>
+  <path d="M 925,1175 q 40 -8 85 0 M 950,1265 q 40 8 80 0" stroke="#a89468" stroke-width="2" fill="none" opacity="0.35"/>
+
+  <!-- etykiety kontynentów -->
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#4a3a28" text-anchor="middle">
+    <text x="850" y="150" font-size="44" letter-spacing="4">Sejiri</text>
+    <text x="850" y="185" font-size="22" font-style="italic" fill="#6b5d52">(polarny lód)</text>
+
+    <text x="1640" y="395" font-size="46" letter-spacing="4">Akoum</text>
+    <text x="1640" y="430" font-size="22" font-style="italic" fill="#6b5d52">(wulkaniczny)</text>
+    <text x="1610" y="588" font-size="22" fill="#4a3a28">Oko Ugina</text>
+
+    <text x="1430" y="795" font-size="42" letter-spacing="3">Bala Ged</text>
+    <text x="1430" y="830" font-size="22" font-style="italic" fill="#6b5d52">(bagna i dżungla)</text>
+
+    <text x="1300" y="1165" font-size="42" letter-spacing="3">Guul Draz</text>
+    <text x="1300" y="1200" font-size="22" font-style="italic" fill="#6b5d52">(kraina wampirów)</text>
+    <text x="1215" y="1292" font-size="24">Malakir</text>
+
+    <text x="610" y="450" font-size="46" letter-spacing="4">Tazeem</text>
+    <text x="625" y="672" font-size="26" font-style="italic" fill="#3d5a6e">Halimar</text>
+    <text x="812" y="788" font-size="24">Sea Gate</text>
+    <text x="880" y="330" font-size="24">Emeria</text>
+    <text x="505" y="812" font-size="22" font-style="italic" fill="#6b5d52">Las Oran-Rief</text>
+
+    <text x="490" y="1120" font-size="44" letter-spacing="4">Ondu</text>
+    <text x="130" y="1108" font-size="22">Wyspy Jwar</text>
+    <text x="250" y="1318" font-size="22">Agadeem</text>
+    <text x="105" y="1248" font-size="22">Beyeen</text>
+
+    <text x="1000" y="1215" font-size="42" letter-spacing="3">Murasa</text>
+    <text x="1000" y="1248" font-size="20" font-style="italic" fill="#6b5d52">(położenie przybliżone)</text>
+  </g>
+
+  <!-- róża wiatrów -->
+  <g stroke="#6b5d52" fill="none" opacity="0.8">
+    <circle cx="150" cy="560" r="52" stroke-width="2"/>
+    <path d="M 150,508 L 150,612 M 98,560 L 202,560" stroke-width="2"/>
+    <path d="M 150,508 L 160,560 L 150,612 L 140,560 Z" fill="#6b5d52" stroke="none" opacity="0.5"/>
+  </g>
+  <text x="150" y="498" font-family="Georgia, serif" font-size="26" fill="#4a3a28" text-anchor="middle">N</text>
+
+  <!-- ramka -->
+  <rect x="14" y="14" width="1972" height="1372" fill="none" stroke="#8a7a5c" stroke-width="3"/>
+  <rect x="30" y="30" width="1940" height="1340" fill="none" stroke="#8a7a5c" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- podpis kartograficzny -->
+  <text x="1968" y="1362" font-family="Georgia, serif" font-size="21" font-style="italic" fill="#6b5d52" text-anchor="end">Rekonstrukcja układu kontynentów wg kanonu tekstowego — położenie Murasy przybliżone</text>
+</svg>

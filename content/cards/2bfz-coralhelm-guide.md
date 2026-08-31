@@ -8,11 +8,14 @@ plan: zendikar
 kolory: [U]
 tagi: [ekspedycje, geografia]
 materializacja: 2026-08-31
+pinezka:
+  mapa: zendikar
+  pewnosc: region
 ---
 
 ## Metryka i Kontekst Świata
 
-Karta pokazuje merfalkę-przewodniczkę: zwiadowczynię, która prowadzi
+Karta pokazuje merfolkę-przewodniczkę: zwiadowczynię, która prowadzi
 wyprawy wzdłuż wybrzeża. Pochodzi z **Coralhelm**, największej osady
 merfolków na planie, położonej nad śródlądowym morzem **Halimar**
 na kontynencie **Tazeem**.
@@ -24,7 +27,7 @@ uchodźcy, poszukiwacze — płacą każdą cenę ludziom, którzy znają drogę
 
 ## Postacie i Byty
 
-Jedynym bytem karty jest **merfalka-przewodniczka** — Scout i Ally
+Jedynym bytem karty jest **merfolka-przewodniczka** — Scout i Ally
 w jednym, tytułowa przewodniczka z Coralhelm.
 
 Merfolkowie to lud cywilizacji Tazeem: niebieski naród żeglarzy,
@@ -72,7 +75,7 @@ below the surface, and she has hideouts all along the way. She will get
 you there."*
 
 Referencję wystawia postać, która sama zna się na prowadzeniu: Jori En
-to merfolk-uczona, badaczka hedronów, która po zagładzie rodzinnej Bala
+jest merfolką i uczoną, badaczka hedronów, która po zagładzie rodzinnej Bala
 Ged działała na Tazeem i prowadziła wyprawy w kampanii Bitwy o Zendikar
 — towarzyszyła m.in. Jace'owi Belerenowi w drodze na Akoum. Gdy ktoś
 taki mówi o przewodniczce „doprowadzi cię", to opinia eksperta.

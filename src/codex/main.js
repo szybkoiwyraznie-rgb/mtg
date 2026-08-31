@@ -11,7 +11,7 @@ import { renderGlowna } from './render-home.js';
 import { renderKarte, zamontujToryObrazow } from './render-card.js';
 import { renderHaslo } from './render-lore.js';
 import { renderPlan } from './render-plane.js';
-import { renderListeKart, renderListeHasel, renderListePlanow, renderChmoreTagow, renderTag } from './render-lists.js';
+import { renderListeKart, zamontujFiltryKart, renderListeHasel, renderListePlanow, renderChmoreTagow, renderTag } from './render-lists.js';
 import { renderCoNowego } from './render-whatsnew.js';
 import { renderSzukanie } from './render-search.js';
 import { renderMape, zamontujMape } from './render-map.js';
@@ -44,6 +44,7 @@ function renderuj(trasa) {
   tytulStrony(tytul);
   zamontujToryObrazow(app);
   zamontujMape(app);
+  zamontujFiltryKart(app);
 
   const tresc = app.querySelector('.tresc');
   if (tresc) tresc.scrollTop = 0;

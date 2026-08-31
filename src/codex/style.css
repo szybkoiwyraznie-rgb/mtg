@@ -179,6 +179,44 @@ h3 { font-size: 1.1rem; margin: 1.1rem 0 0.4rem; }
 
 .typ { color: var(--tusz-miękki); font-size: 0.78rem; border: 1px solid var(--ramka); border-radius: 4px; padding: 0 0.3rem; }
 
+/* ── Ikony many {1}{U} → kolorowe kółka ───────────────────────────── */
+
+.mana {
+  display: inline-block; box-sizing: border-box;
+  width: 1.15em; height: 1.15em; line-height: 1.12em;
+  border-radius: 50%; text-align: center;
+  font-family: var(--sans); font-size: 0.72em; font-weight: 700;
+  background: var(--tlo, #cfc5b6); color: var(--tusz, #2a2320);
+  border: 1px solid rgba(42, 35, 32, 0.45);
+  vertical-align: -0.18em; margin: 0 1px;
+}
+.mana-hybryda {
+  background: linear-gradient(135deg, var(--tlo-a, #cfc5b6) 50%, var(--tlo-b, #cfc5b6) 50%);
+  font-size: 0.5em; line-height: 2.2em; letter-spacing: -0.06em;
+}
+
+/* ── Filtry listy kart (nazwa + tagi) ─────────────────────────────── */
+
+.filtry-kart { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin: 0.8rem 0; }
+.filtry-kart input[type="search"] {
+  flex: 1 1 12rem; max-width: 20rem;
+  padding: 0.45rem 0.6rem; font: inherit; font-size: 0.92rem;
+  border: 1px solid var(--ramka); border-radius: 8px;
+  background: var(--tlo-karta); color: var(--tusz);
+}
+.filtry-tagow { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.tag-filtr {
+  font: inherit; font-size: 0.78rem; cursor: pointer;
+  padding: 0.22rem 0.6rem; border-radius: 999px;
+  border: 1px solid var(--ramka); background: var(--tlo-karta); color: var(--tusz-miękki);
+}
+.tag-filtr[aria-pressed="true"] {
+  background: var(--akcent); border-color: var(--akcent); color: #fffdf6;
+}
+.licznik-kart { margin: 0.4rem 0 0; color: var(--tusz-miękki); font-size: 0.85rem; }
+.tag-lista { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.tag-lista .typ { font-size: 0.72rem; }
+
 /* ── Stany puste / błędy ──────────────────────────────────────────── */
 
 .stan-pusty {

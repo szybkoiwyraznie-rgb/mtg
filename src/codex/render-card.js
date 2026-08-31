@@ -9,7 +9,7 @@
  * gdy plik nie istnieje (na Pages ich nie widać).
  */
 
-import { escapeHtml } from './markdown.js';
+import { escapeHtml, manaIkony } from './markdown.js';
 import { dajStrone, dajDane, backlinki } from './data.js';
 import { stanPusty, chipsyTagow, kropkiKolorow, nieZnalesc } from './render.js';
 import { POZIOMY_PEWNOSCI } from './render-map.js';
@@ -45,7 +45,7 @@ export function renderKarte(slug) {
         ${miniMapa(karta, dane)}
         <dl class="dane-karty">
           ${sc ? wiersz('Typ', sc.type_line) : ''}
-          ${sc?.mana_cost ? wiersz('Koszt', sc.mana_cost) : ''}
+          ${sc?.mana_cost ? wiersz('Koszt', manaIkony(sc.mana_cost)) : ''}
           ${sc ? wiersz('Wydanie', `${sc.set_name} (${String(sc.set).toUpperCase()})`) : ''}
           ${sc ? wiersz('Rzadkość', sc.rarity) : ''}
           ${sc ? wiersz('Artysta', sc.artist) : ''}

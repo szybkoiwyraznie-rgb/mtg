@@ -5,13 +5,23 @@ ADR 0006). Najnowsze na górze.
 
 ## 2026-08-31 — Pierwsza karta! Mapa Śródziemia + kanon v2 (PR-2, w toku)
 
+- **Mapa Zendikaru — rekonstrukcja T3** (`#/mapa/zendikar`, ADR 0012):
+  podkład własny (SVG) z układem kontynentów z kanonu tekstowego,
+  wzorowany mapami fanowskimi; Murasa z linią przerywaną („położenie
+  przybliżone”). Pinezka 2BFZ — region wybrzeży Halimar; mini-mapa
+  w infoboksie karty podłączyła się sama.
+- **Ikony many** — notacja typu `{1}{U}` w treści i infoboksie Koszt
+  renderuje się jako kolorowe ikony many (biała, niebieska, czarna,
+  czerwona, zielona + bezbarwna).
+- **Lista kart**: sortowanie alfabetyczne (pl), tagi w tabeli
+  oraz filtr nazwy i tagów; usunięty meta-tekst procesowy
+  (feedback właściciela z przeglądu tury 5).
 - **Materializacja 2BFZ Coralhelm Guide** — druga Karta Katalogowa,
   pierwsza dostarczona chudym formatem (imgId · nazwa · set · plan;
   ADR 0011): snapshot BFZ #74 (Viktor Titov), lore przewodniczki
   z Coralhelm nad Halimar na Tazeem, flavor Jori En z tłumaczeniem.
   Plan **Zendikar** zyskał stronę (siedem kontynentów, Sea Gate,
-  Roil); mapa planu w przygotowaniu — oficjalna mapa nigdy nie
-  powstała, podkład będzie rekonstrukcją (rozpoznanie w backlogu).
+  Roil); mapa planu — własna rekonstrukcja (patrz wyżej).
 - **Materializacja 1LTR Dunland Crebain** — pierwsza Karta Katalogowa
   (10 sekcji): snapshot Scryfalla posiadanego wydruku (borderless,
   David Rapoza), mechanika jako opowieść (Flying + Amass Orcs 2),

@@ -3,7 +3,7 @@ typ: plan
 slug: zendikar
 tytul: Zendikar
 typIP: plan-mtg
-mapa: pending
+mapa: zendikar
 materializacja: 2026-08-31
 tagi: [geografia]
 ---
@@ -32,5 +32,6 @@ Halimar — dom **Coralhelm**, największej osady merfolków na planie.
   *Planeswalker's Guide to Zendikar*, *Plane Shift: Zendikar*, artbook
   *The Art of Magic: The Gathering — Zendikar* oraz opowiadania
   z kampanii BFZ/OTG (odniesienia oznaczane na kartach).
-- **Mapa:** w przygotowaniu — oficjalna mapa planu nigdy nie powstała,
-  więc podkład będzie rekonstrukcją geografii z tekstów źródłowych.
+- **Mapa:** [mapa rekonstrukcji](#/mapa/zendikar) — oficjalna mapa planu
+  nigdy nie powstała, więc podkład jest własną rekonstrukcją geografii
+  z tekstów źródłowych (położenie Murasy przybliżone).

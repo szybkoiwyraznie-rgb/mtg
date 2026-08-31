@@ -105,6 +105,18 @@ test('UI: mapa planu z realnej bazy — podkład, pinezka, legenda', async () =>
   shim.idz('#/mapa/nieznany-plan');
   assert.ok(shim.app.innerHTML.includes('Nie znaleziono'), 'mapa: brak 404 dla nieznanego planu');
 
+  // mapa Zendikaru: własna rekonstrukcja T3 (ADR 0012, feedback G)
+  shim.idz('#/mapa/zendikar');
+  const mapaZ = shim.app.innerHTML;
+  assert.ok(mapaZ.includes('Mapa: Zendikar'), 'mapa Zendikaru: brak tytułu');
+  assert.ok(mapaZ.includes('data:image/svg+xml;base64,'), 'mapa Zendikaru: brak osadzonego podkładu');
+  assert.ok(mapaZ.includes('data-pinezka="2bfz-coralhelm-guide"'), 'mapa Zendikaru: brak pinezki 2BFZ');
+  assert.ok(mapaZ.includes('?pin=2bfz-coralhelm-guide'), 'mapa Zendikaru: brak deep-linka pinezki');
+  assert.ok(mapaZ.includes('praca własna'), 'mapa Zendikaru: brak atrybucji rekonstrukcji (T3)');
+  assert.ok(mapaZ.includes('wybrzeży Halimar'), 'mapa Zendikaru: brak uzasadnienia pinezki (MA4)');
+  shim.idz('#/plan/zendikar');
+  assert.ok(shim.app.innerHTML.includes('#/mapa/zendikar'), 'plan Zendikaru: brak linku do mapy');
+
   fs.rmSync(cel, { force: true });
   shim.przywroc();
 });
@@ -137,12 +149,20 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(!karta.includes('perspektywy żabiej'), 'karta: treść promptu nie może się pojawiać (ADR 0011)');
   assert.ok(!karta.includes('ADR'), 'karta: treść nie może odsyłać do mechaniki Codexu (feedback B)');
   assert.ok(!karta.includes('verbatim'), 'karta: treść nie może zawierać etykiet procesowych (feedback B)');
+  assert.ok(karta.includes('class="mana"'), 'karta 1LTR: brak ikon many (feedback D)');
+  assert.ok(!karta.includes('{2}{B}'), 'karta 1LTR: notacja many ma być ikonami, nie tekstem w klamrach (feedback D)');
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
   assert.ok(lista.includes('Karty Katalogowe (2)'), 'lista kart: brak 2 kart');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
   assert.ok(!lista.includes('>srodziemie<'), 'lista kart: slug planu nie może być widoczny jako tekst (feedback G)');
+  assert.ok(lista.indexOf('Coralhelm Guide') < lista.indexOf('Dunland Crebain'), 'lista kart: brak sortowania alfabetycznego (feedback E)');
+  assert.ok(lista.includes('data-filtry-kart'), 'lista kart: brak interfejsu filtrów (feedback E)');
+  assert.ok(lista.includes('placeholder="Szukaj karty po nazwie…"'), 'lista kart: brak pola filtrowania nazw (feedback E)');
+  assert.ok(lista.includes('data-tag="ekspedycje"') && lista.includes('data-tag="fauna"'), 'lista kart: brak przycisków filtrowania po tagach (feedback E)');
+  assert.ok(lista.includes('data-tagi='), 'lista kart: brak tagów w wierszach tabeli (feedback E)');
+  assert.ok(!lista.includes('materializowana jawnie'), 'lista kart: bez meta-tekstu ADR 0003 (feedback F)');
 
   // druga karta: chudy format dostawy (ADR 0011) — czysty kanon
   shim.idz('#/karta/2bfz-coralhelm-guide');
@@ -155,8 +175,13 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(karta2.includes('Na Mapie'), 'karta 2BFZ: brak osadzenia w treści');
   assert.ok(!karta2.includes('Narracja Koleksji') && !karta2.includes('Narracja Kolekcji'), 'karta 2BFZ: bez sekcji narracji (ADR 0011)');
   assert.ok(!karta2.includes('ADR'), 'karta 2BFZ: treść bez mechaniki Codexu (feedback B)');
-  // bez mapy planu: infoboks nie oferuje wejścia na mapę
-  assert.ok(!karta2.includes('#/mapa/zendikar'), 'karta 2BFZ: brak linku do nieistniejącej mapy planu');
+  assert.ok(karta2.includes('merfolka-przewodniczka'), 'karta 2BFZ: brak formy „merfolka-przewodniczka” (feedback B)');
+  assert.ok(!karta2.includes('merfalka') && !karta2.includes('merfalkę'), 'karta 2BFZ: forma „merfalka” niedozwolona (feedback B)');
+  assert.ok(karta2.includes('class="mana"'), 'karta 2BFZ: brak ikon many (feedback D)');
+  assert.ok(!karta2.includes('{1}{U}') && !karta2.includes('{4}{U}'), 'karta 2BFZ: notacja many ma być ikonami, nie tekstem w klamrach (feedback D)');
+  // mapa planu istnieje (ADR 0012): infoboks z mini-mapą i deep-linkiem pinezki
+  assert.ok(karta2.includes('#/mapa/zendikar?pin=2bfz-coralhelm-guide'), 'karta 2BFZ: brak deep-linka pinezki');
+  assert.ok(karta2.includes('mini-mapa'), 'karta 2BFZ: brak miniatury mapy w infoboksie');
   shim.idz('#/');
   assert.ok(shim.app.innerHTML.includes('Dunland Crebain'), 'home: brak ostatniej materializacji');
 
