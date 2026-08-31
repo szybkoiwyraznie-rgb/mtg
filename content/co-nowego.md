@@ -16,11 +16,25 @@ ADR 0006). Najnowsze na górze.
   - naprawiony uszkodzony kontur Tazeem (brakujący punkt `C`).
   Zostaje rekonstrukcja T3 (ADR 0012): `rekonstrukcja: true`, Murasa
   przerywana, podpis „rekonstrukcja".
-- **Decyzja właściciela (b): mapa fanowska jako źródło.** Do `map.json`
-  dodane pole `zrodlo_fanmapa` (czeka na opis właściciela) i flaga
-  `pozycja_zrodlo` na `kotwice` pozycji nieustalonych w kanonie (Murasa,
-  okolice) — po wklejeniu opisu pozycje zostaną zsynchronizowane jako
-  „rekonstrukcja (nie kanon)".
+- **Decyzja właściciela (b): mapa fanowska jako źródło — wdrożone.** Do
+  `map.json` dodane pole `zrodlo_fanmapa` wskazujące na dostarczony przez
+  właściciela opis **`maps/zendikar/zrodlo-fanowska.md`** (pełna topografia
+  + wirtualny układ współrzędnych). **Zasada właściciela (2026-08-31):**
+  kanon (Plane Shift / MTG Wiki) pozostaje podstawą; mapa fanowska **tylko
+  rozszerza** wiedzę o pozycje, których oficjalnie nie podano (względne
+  położenia osad/regionów w obrębie kontynentów, detale topograficzne),
+  i **nie zmienia** pozycji twardo kanonicznych. Do `kotwice` dopisano
+  **27 nowych punktów** z opisu fanowskiego (Murasa: Kazandu, Pillar
+  Plains, Vazi River, Singing City, Visimal, Kazul Pass, Roaring Falls,
+  Living Spire, Tumbled Palace; Guul Draz: Zof Marsh, Hagra Swamp,
+  Lake Jast, Lulea; Bala Ged: Guum Wilds, Bojuka Bog; Akoum: Ora Ondar,
+  Khalni Heart, Glasspool + Ior Ruin, Spike Fields, Grip Haven, Slab
+  Haven, Ghostwatch, Kargan Lands; Sejiri: Benthidrix). Wszystkie
+  oznaczone `pozycja_zrodlo: "mapa-fanowska"` i adnotowane jako
+  rekonstrukcja (nie kanon); istniejące Murasa/Skyfang/Sunder Bay
+  przepięte z `nieustalone-w-kanonie` na `mapa-fanowska`. Pozycje
+  zweryfikowane testem point-in-polygon (wszystkie na lądzie, kanon
+  niezmieniony).
 - **Decyzja właściciela (c): doskonalenie map wektorowych w Pętli
   Jakości.** Dopisany osobny **krok 4b** w
   `docs/guides/PETLA_JAKOSCI.md` (audyt → pozycje ze źródeł →

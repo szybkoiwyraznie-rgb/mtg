@@ -86,9 +86,19 @@
 - **(b) Mapa fanowska jako źródło:** właściciel włącza najlepszą mapę
   fanowską jako źródło dla pozycji elementów **nieustalonych w kanonie**
   (ADR 0012: Murasa i okolice). W `map.json` dodane pole
-  `zrodlo_fanmapa` (czeka na opis właściciela) + flaga `pozycja_zrodlo`
-  na `kotwice` pozycji nieustalonych. Po wklejeniu opisu pozycje zostaną
-  zsynchronizowane i podpisane jako rekonstrukcja (nie kanon).
+  `zrodlo_fanmapa` + flaga `pozycja_zrodlo` na `kotwice` pozycji
+  nieustalonych. **Wdrożone:** właściciel dostarczył opis i obrazki
+  (zapisane jako `maps/zendikar/zrodlo-fanowska.md`, 2026-08-31).
+  **Zasada właściciela:** kanon (Plane Shift / MTG Wiki) pozostaje
+  podstawą; mapa fanowska **tylko rozszerza** pozycje niepodane
+  oficjalnie (względne położenia osad/regionów w obrębie kontynentów,
+  detale topograficzne) i **nie zmienia** pozycji twardo kanonicznych.
+  Do `kotwice` dopisano 27 punktów z opisu (Murasa, Guul Draz, Bala Ged,
+  Akoum, Sejiri), wszystkie `pozycja_zrodlo: "mapa-fanowska"` i
+  adnotowane jako rekonstrukcja (nie kanon); istniejące Murasa / Skyfang
+  / Sunder Bay przepięte z `nieustalone-w-kanonie` na `mapa-fanowska`.
+  Pozycje zweryfikowane testem point-in-polygon (wszystkie na lądzie,
+  kanon niezmieniony).
 - **(c) Krok 4b w Pętli Jakości:** doskonalenie map wektorowych
   tworzonych z danych tekstowych zostało dopisane jako osobny krok
   w `docs/guides/PETLA_JAKOSCI.md` (procedura: audyt → pozycje ze

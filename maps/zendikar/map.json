@@ -13,7 +13,7 @@
     "autor": "MTG Lore Codex (praca własna)",
     "licencja": "praca własna na kanonie tekstowym",
     "pobrano": "2026-08-31",
-    "notka": "Oficjalna mapa planu nigdy nie powstała — podkład jest własną rekonstrukcją (T3): układ kontynentów za tekstami źródłowymi (Plane Shift: Zendikar), wzorowany układem map fanowskich (m.in. r/mtgvorthos). Położenie Murasy w kanonie nieustalone — oznaczone linią przerywaną. Wzbogacenie z 2026-08-31 dodaje elementy przyrodnicze i osadnicze potwierdzone w źródłach (patrz pole elementy); pozycje punktów są przybliżone (rekonstrukcja, nie kanon). Decyzja właściciela 2026-08-31: najlepsza z map fanowskich zostaje włączona jako źródło pomocnicze dla pozycji elementów NIEUSTALONYCH w kanonie (z adnotacją — patrz pole zrodlo_fanmapa). Układ kontynentów i pozycje kanoniczne (Plane Shift / MTG Wiki) pozostają bez zmian."
+    "notka": "Oficjalna mapa planu nigdy nie powstała — podkład jest własną rekonstrukcją (T3): układ kontynentów za tekstami źródłowymi (Plane Shift: Zendikar), wzorowany układem map fanowskich (m.in. r/mtgvorthos). Położenie Murasy w kanonie nieustalone — oznaczone linią przerywaną. Wzbogacenie z 2026-08-31 dodaje elementy przyrodnicze i osadnicze potwierdzone w źródłach (patrz pole elementy); pozycje punktów są przybliżone (rekonstrukcja, nie kanon). Decyzja właściciela 2026-08-31: najlepsza z map fanowskich zostaje włączona jako źródło pomocnicze dla pozycji elementów NIEUSTALONYCH w kanonie (z adnotacją — patrz pole zrodlo_fanmapa). Układ kontynentów i pozycje kanoniczne (Plane Shift / MTG Wiki) pozostają bez zmian. Źródło pomocnicze (mapa fanowska, rozszerzenie — NIE kanon): maps/zendikar/zrodlo-fanowska.md. Pozycje oznaczone 'mapa-fanowska' w kotwice/elementy."
   },
   "rekonstrukcja": true,
   "kotwice": [
@@ -242,7 +242,7 @@
       "y": 0.829,
       "typ": "etykieta-podkladu",
       "notka": "góry Skyfang/Shatterskull Murasa (MTG Wiki)",
-      "pozycja_zrodlo": "nieustalone-w-kanonie"
+      "pozycja_zrodlo": "mapa-fanowska"
     },
     {
       "nazwa": "Sunder Bay",
@@ -250,7 +250,207 @@
       "y": 0.943,
       "typ": "etykieta-podkladu",
       "notka": "wejście do Murasy (Guide Zendikar)",
-      "pozycja_zrodlo": "nieustalone-w-kanonie"
+      "pozycja_zrodlo": "mapa-fanowska"
+    },
+    {
+      "nazwa": "Kazandu",
+      "x": 0.469,
+      "y": 0.934,
+      "typ": "region",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "sub-region płd. Murasy (opis mapy fanowskiej)"
+    },
+    {
+      "nazwa": "Pillar Plains",
+      "x": 0.466,
+      "y": 0.918,
+      "typ": "region",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "równiny wokół Vazi River (opis)"
+    },
+    {
+      "nazwa": "Vazi River",
+      "x": 0.487,
+      "y": 0.943,
+      "typ": "rzeka",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "rzeka przez Kazandu (opis)"
+    },
+    {
+      "nazwa": "Singing City",
+      "x": 0.441,
+      "y": 0.929,
+      "typ": "osada",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "zachodnie wybrzeże Kazandu (opis)"
+    },
+    {
+      "nazwa": "Visimal",
+      "x": 0.447,
+      "y": 0.917,
+      "typ": "osada",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "płn. od Singing City (opis)"
+    },
+    {
+      "nazwa": "Kazul Pass",
+      "x": 0.46,
+      "y": 0.9,
+      "typ": "przełęcz",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "płn.-zach. Murasy (opis)"
+    },
+    {
+      "nazwa": "Roaring Falls",
+      "x": 0.53,
+      "y": 0.9,
+      "typ": "wodospad",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "wodospady na wschodzie Murasy (opis)"
+    },
+    {
+      "nazwa": "Living Spire",
+      "x": 0.5,
+      "y": 0.915,
+      "typ": "szczyt",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "samotny szczyt płd. od centrum (opis)"
+    },
+    {
+      "nazwa": "Tumbled Palace",
+      "x": 0.475,
+      "y": 0.895,
+      "typ": "ruina",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "ruiny w głębi lądu, przy Sunder Bay (opis)"
+    },
+    {
+      "nazwa": "Zof Marsh",
+      "x": 0.55,
+      "y": 0.86,
+      "typ": "region",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "bagna płn.-zach. Guul Draz (opis)"
+    },
+    {
+      "nazwa": "Hagra Swamp",
+      "x": 0.66,
+      "y": 0.9,
+      "typ": "bagno",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "pod Hanging Swamp (opis)"
+    },
+    {
+      "nazwa": "Lake Jast",
+      "x": 0.62,
+      "y": 0.95,
+      "typ": "jezioro",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "jezioro płd. Guul Draz (opis)"
+    },
+    {
+      "nazwa": "Lulea",
+      "x": 0.7,
+      "y": 0.955,
+      "typ": "osada",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "płd.-wsch. od jeziora (opis)"
+    },
+    {
+      "nazwa": "Guum Wilds",
+      "x": 0.78,
+      "y": 0.6,
+      "typ": "las",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "płn. Bala Ged (opis)"
+    },
+    {
+      "nazwa": "Bojuka Bog",
+      "x": 0.881,
+      "y": 0.61,
+      "typ": "bagno",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "najdalsze wschodnie wybrzeże Bala Ged (opis)"
+    },
+    {
+      "nazwa": "Ora Ondar",
+      "x": 0.88,
+      "y": 0.28,
+      "typ": "las",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "zalesiony wschód Akoum (opis)"
+    },
+    {
+      "nazwa": "Khalni Heart",
+      "x": 0.92,
+      "y": 0.3,
+      "typ": "las",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "serce lasu Ora Ondar (opis)"
+    },
+    {
+      "nazwa": "Glasspool",
+      "x": 0.9,
+      "y": 0.42,
+      "typ": "jezioro",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "jezioro/depresja płd.-wsch. Akoum (opis)"
+    },
+    {
+      "nazwa": "Ior Ruin",
+      "x": 0.905,
+      "y": 0.425,
+      "typ": "ruina",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "ruiny w Glasspool (opis)"
+    },
+    {
+      "nazwa": "Spike Fields",
+      "x": 0.685,
+      "y": 0.308,
+      "typ": "region",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "zachodnie pasma Akoum (opis)"
+    },
+    {
+      "nazwa": "Grip Haven",
+      "x": 0.69,
+      "y": 0.36,
+      "typ": "osada",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "forteca w Spike Fields (opis)"
+    },
+    {
+      "nazwa": "Slab Haven",
+      "x": 0.681,
+      "y": 0.342,
+      "typ": "osada",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "forteca płd. od Grip Haven (opis)"
+    },
+    {
+      "nazwa": "Ghostwatch",
+      "x": 0.686,
+      "y": 0.386,
+      "typ": "osada",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "w górach płd.-zach. Akoum (opis)"
+    },
+    {
+      "nazwa": "Kargan Lands",
+      "x": 0.78,
+      "y": 0.24,
+      "typ": "region",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "płn.-wsch. od Teeth of Akoum (opis)"
+    },
+    {
+      "nazwa": "Benthidrix",
+      "x": 0.539,
+      "y": 0.126,
+      "typ": "szczyt",
+      "pozycja_zrodlo": "mapa-fanowska",
+      "notka": "samotny szczyt Sejiri, płn. od Akoum (opis)"
     }
   ],
   "regiony": [],
@@ -506,9 +706,9 @@
     }
   ],
   "zrodlo_fanmapa": {
-    "tytul": "Mapa fanowska Zendikaru (do dodania)",
+    "tytul": "Mapa fanowska Zendikaru (rozszerzenie, NIE kanon)",
+    "plik": "zrodlo-fanowska.md",
     "url": "",
-    "opis_oczekiwany": true,
-    "notka": "Właściciel dostarczy dokładny opis (co gdzie się znajduje) z najlepszej mapy fanowskiej. Po wklejeniu opisu pozycje elementów NIEUSTALONYCH w kanonie (np. Murasa i jej wnętrze, względne położenia miast w ramach kontynentów) zostaną zsynchronizowane z tym opisem i oznaczone jako 'pozycja wg mapy fanowskiej (nie kanon)'. Wpisy poniżej to punkty wyjścia z kanonu tekstowego."
+    "notka": "Źródło fanowskie dostarczone przez właściciela 2026-08-31. ROZSZERZA wiedzę o elementy i względne położenia, których oficjalnie nie podano (pozycje osad/regionów w obrębie kontynentów, detale topograficzne). NIE zmienia pozycji twardo kanonicznych (Plane Shift / MTG Wiki). Pozycje oznaczone `pozycja_zrodlo: \"mapa-fanowska\"` w kotwice/elementy. Pełny opis: maps/zendikar/zrodlo-fanowska.md"
   }
 }
