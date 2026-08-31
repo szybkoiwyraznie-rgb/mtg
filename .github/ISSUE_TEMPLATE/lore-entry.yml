@@ -1,0 +1,39 @@
+name: Hasło lore
+description: Zleć lub zaproponuj Kartę Haseł (encję świata)
+title: "[Hasło]: "
+labels: ["haslo"]
+body:
+  - type: input
+    id: encja
+    attributes:
+      label: Encja (co ma opisywać hasło)
+      description: np. Crebain, Dunland, Biała Ręka
+    validations:
+      required: true
+  - type: dropdown
+    id: klasa
+    attributes:
+      label: Klasa encji
+      options:
+        - geografia
+        - fauna
+        - flora
+        - społeczeństwo (frakcja, lud, organizacja)
+        - postać
+        - wydarzenie
+        - magia
+        - artefakt
+        - koncepcja
+    validations:
+      required: true
+  - type: input
+    id: plan
+    attributes:
+      label: Plan / Setting
+    validations:
+      required: true
+  - type: textarea
+    id: uwagi
+    attributes:
+      label: Uwagi / kontekst / źródła
+      description: Które karty wspominają encję? Co szczególnie ważne?

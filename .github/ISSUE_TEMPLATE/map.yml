@@ -1,0 +1,27 @@
+name: Mapa planu
+description: Zleć pracę mapową dla planu/settingu (proces MA1–MA5)
+title: "[Mapa]: "
+labels: ["mapa"]
+body:
+  - type: input
+    id: plan
+    attributes:
+      label: Plan / Setting
+    validations:
+      required: true
+  - type: dropdown
+    id: wariant
+    attributes:
+      label: Wariant docelowy
+      description: T1 hybryda jest domyślny (ADR 0007); T2/T3 wymagają uzasadnienia.
+      options:
+        - T1 (hybryda — raster + wektorowe warstwy)
+        - T2 (wektoryzacja kluczowych linii)
+        - T3 (rekonstrukcja — świat bez mapy)
+    validations:
+      required: true
+  - type: textarea
+    id: podklad
+    attributes:
+      label: Kandydat na podkład (jeśli masz preferencję)
+      description: URL/tytuł mapy; inaczej sesja zrobi research wg PROCES_MAP.md MA1.
