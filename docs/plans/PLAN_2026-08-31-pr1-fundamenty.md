@@ -80,4 +80,34 @@ z opisem, scalenie należy do właściciela.
 
 ## Podsumowanie wykonania
 
-_(dopisane na końcu zadania)_
+**Stan: kompletny.** Etapy 1–10 odhaczone commitami C1–C10 (12 commitów):
+
+| Commit | Zakres |
+|---|---|
+| C1 | plan zadania + push + PR #3 (przed implementacją, wg trybu sesji) |
+| C2 | ADR 0001–0008 + rejestr |
+| C3 | dokumenty rdzenne (AGENTS, README, PRODUCT, ARCHITECTURE, WORKFLOW, ROADMAP, LESSONS L1–L3, backlog, CONTRIBUTING, SECURITY) |
+| C4/C4b | ENVIRONMENT (fakty zweryfikowane) + 4 gidy + poprawka literówki |
+| C5 | silnik: build jednoplikowy, module-graph, loader, src/codex (13 modułów), style, README katalogów |
+| C6 | 60 testów integralności + fixture'y end-to-end (w tym: detekcja kolizji nazw zadziałała i złapała realny konflikt) |
+| C7 | test dymny UI z mini-shimem DOM (62 testy łącznie); CODEX_DATA na globalThis |
+| C8 | szablony GitHub (issue ×3, PR), seed Co-nowego, PROJECT_HISTORY |
+| C9 | usunięcie mtg-game.zip; (ustawienia repo → checklistę właściciela, patrz niżej) |
+| C10 | handoff sesji + ten podpis |
+
+**Kryteria ukończenia spełnione:** `npm test` 62/62; `npm run build`
+produkuje artefakt (13 modułów, ~43 kB) działający z `file://`; UI smoke
+test potwierdza renderowanie główna/listy/karta/hasło/plan/404 na
+fixture'ach.
+
+**Odstępstwa od planu (z powodu uprawnień bota Areny):**
+1. Pliki `.github/workflows/*.yml` NIE są wcommittowane (bot nie ma
+   uprawnienia `workflows` — 403 na push i API). Treść w opisie PR #3;
+   właściciel dodaje je przez UI GitHuba na gałąź sesji.
+2. Ochrona `main` (ruleset), polityka squash-only i opis repo —
+   wymagają admina; checklisty kliknięć w opisie PR #3 i handoffie.
+
+**Wnioski do LESSONS:** L1 (weryfikacja empiryczna środowiska), L2
+(push = istnienie), L3 (kolizje nazw po sklejeniu — złapana realnie w
+C5). Nowe pułapki zapisane w handoffie (uprawnienia bota, globalThis
+vs var, cudzysłowy w JSON przez heredoc).
