@@ -250,15 +250,18 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
 .mapa-regiony { position: absolute; inset: 0; width: 100%; height: 100%; }
 .mapa-region { cursor: pointer; }
 .mapa-region-link { text-decoration: none; }
-.mapa-warstwa { position: absolute; inset: 0; pointer-events: none; }
-.mapa-warstwa a { pointer-events: auto; }
+/* Nakładka ekranowa: pinezki i etykiety regionów ŻYJĄ poza skalowaną
+   warstwą podkładu — silnik pozycjonuje je w pikselach (translate).
+   Stały rozmiar i ostre krawędzie w każdym przybliżeniu; klikalne,
+   a sama nakładka nie blokuje panowania po mapie. */
+.mapa-nakladka { position: absolute; inset: 0; pointer-events: none; z-index: 6; }
+.mapa-nakladka a { pointer-events: auto; }
 
-/* Pinezka: element-kotwica 0×0 na (x%,y%); dzieci pozycjonowane absolutnie.
-   transform-origin: 0 0 + scale(1/k) z silnika = stały rozmiar na ekranie
-   w każdym przybliżeniu, szpic pinezki zawsze w punkcie docelowym. */
+/* Pinezka: element-kotwica 0×0 w punkcie docelowym (transform ustawia
+   silnik); dzieci pozycjonowane absolutnie — szpic glow w punkcie. */
 .mapa-pinezka {
-  position: absolute; width: 0; height: 0;
-  transform-origin: 0 0; text-decoration: none; z-index: 5;
+  position: absolute; left: 0; top: 0; width: 0; height: 0;
+  text-decoration: none; z-index: 5;
 }
 .mapa-pinezka-glow {
   position: absolute; left: -11px; bottom: 0;
@@ -276,8 +279,8 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
 .mapa-pinezka:hover .mapa-pinezka-etykieta { background: #2c2313; }
 
 .mapa-etykieta-regionu {
-  position: absolute; width: 0; height: 0;
-  transform-origin: 0 0; text-decoration: none; z-index: 4;
+  position: absolute; left: 0; top: 0; width: 0; height: 0;
+  text-decoration: none; z-index: 4;
 }
 .mapa-etykieta-regionu span {
   position: absolute; left: 0; top: 0; transform: translateX(-50%);

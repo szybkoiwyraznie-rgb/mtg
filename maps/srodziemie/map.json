@@ -3,7 +3,10 @@
   "tytul": "Śródziemie",
   "wariant": "T2",
   "podklad": "podklad.svg",
-  "wymiary": { "szerokosc": 3200, "wysokosc": 2400 },
+  "wymiary": {
+    "szerokosc": 3200,
+    "wysokosc": 2400
+  },
   "zrodlo": {
     "url": "https://github.com/k1tesurfen/mapome",
     "tytul": "mapome — SVG map of Middle-earth (preview-mapome-slim.svg)",
@@ -14,16 +17,76 @@
   },
   "rekonstrukcja": false,
   "kotwice": [
-    { "nazwa": "Isengard", "x": 0.4163, "y": 0.5313, "typ": "etykieta-podkladu", "notka": "kotwica z etykiety „Isengard”; południowy kraniec Gór Mglistych" },
-    { "nazwa": "Edoras", "x": 0.4703, "y": 0.6392, "typ": "etykieta-podkladu", "notka": "stolica Rohanu" },
-    { "nazwa": "Tharbad", "x": 0.3422, "y": 0.4104, "typ": "etykieta-podkladu", "notka": "przeprawa na Gwathló, skraj Enedwaithu" },
-    { "nazwa": "Enedwaith", "x": 0.315, "y": 0.5458, "typ": "etykieta-podkladu", "notka": "środek etykiety regionu" },
-    { "nazwa": "Minhiriath", "x": 0.2594, "y": 0.4692, "typ": "etykieta-podkladu", "notka": "środek etykiety regionu" },
-    { "nazwa": "Fords of Isen", "x": 0.4063, "y": 0.5813, "typ": "etykieta-podkladu", "notka": "Brody na Isenie" },
-    { "nazwa": "Helm's Deep", "x": 0.4713, "y": 0.6033, "typ": "etykieta-podkladu", "notka": "Helmowy Jar" },
-    { "nazwa": "Fangorn", "x": 0.4844, "y": 0.55, "typ": "etykieta-podkladu", "notka": "Las Fangorn" },
-    { "nazwa": "The Wold", "x": 0.55, "y": 0.5275, "typ": "etykieta-podkladu", "notka": "północno-wschodni kraniec Rohanu" },
-    { "nazwa": "Ered Nimrais", "x": 0.4094, "y": 0.6654, "typ": "etykieta-podkladu", "notka": "środek etykiety pasma (Białe Góry)" }
+    {
+      "nazwa": "Isengard",
+      "x": 0.4163,
+      "y": 0.5313,
+      "typ": "etykieta-podkladu",
+      "notka": "kotwica z etykiety „Isengard”; południowy kraniec Gór Mglistych"
+    },
+    {
+      "nazwa": "Edoras",
+      "x": 0.4703,
+      "y": 0.6392,
+      "typ": "etykieta-podkladu",
+      "notka": "stolica Rohanu"
+    },
+    {
+      "nazwa": "Tharbad",
+      "x": 0.3422,
+      "y": 0.4104,
+      "typ": "etykieta-podkladu",
+      "notka": "przeprawa na Gwathló, skraj Enedwaithu"
+    },
+    {
+      "nazwa": "Enedwaith",
+      "x": 0.315,
+      "y": 0.5458,
+      "typ": "etykieta-podkladu",
+      "notka": "środek etykiety regionu"
+    },
+    {
+      "nazwa": "Minhiriath",
+      "x": 0.2594,
+      "y": 0.4692,
+      "typ": "etykieta-podkladu",
+      "notka": "środek etykiety regionu"
+    },
+    {
+      "nazwa": "Fords of Isen",
+      "x": 0.4063,
+      "y": 0.5813,
+      "typ": "etykieta-podkladu",
+      "notka": "Brody na Isenie"
+    },
+    {
+      "nazwa": "Helm's Deep",
+      "x": 0.4713,
+      "y": 0.6033,
+      "typ": "etykieta-podkladu",
+      "notka": "Helmowy Jar"
+    },
+    {
+      "nazwa": "Fangorn",
+      "x": 0.4844,
+      "y": 0.55,
+      "typ": "etykieta-podkladu",
+      "notka": "Las Fangorn"
+    },
+    {
+      "nazwa": "The Wold",
+      "x": 0.55,
+      "y": 0.5275,
+      "typ": "etykieta-podkladu",
+      "notka": "północno-wschodni kraniec Rohanu"
+    },
+    {
+      "nazwa": "Ered Nimrais",
+      "x": 0.4094,
+      "y": 0.6654,
+      "typ": "etykieta-podkladu",
+      "notka": "środek etykiety pasma (Białe Góry)"
+    }
   ],
   "regiony": [],
   "pinezki": [
@@ -32,7 +95,7 @@
       "x": 0.406,
       "y": 0.492,
       "pewnosc": "region",
-      "uzasadnienie": "Dunland — kraina między rzeką Glanduin (płn.), Górami Mglistymi (wsch.) i rzeką Isen (płd.), na północny zachód od Isengardu (kotwica etykiety 0,416/0,531). Scena karty rozgrywa się na dunlandzkim urwisku nad wąwozem armii (narracja kolekcji — kotwica osadzenia). Pinezka środka regionu wg lore (PROCES_MAP MA4)."
+      "uzasadnienie": "Dunland — kraina między rzeką Glanduin (płn.), Górami Mglistymi (wsch.) i rzeką Isen (płd.), na północny zachód od Isengardu. Scena karty rozgrywa się na dunlandzkim urwisku nad wąwozem armii — pinezka wskazuje środek krainy."
     }
   ]
 }

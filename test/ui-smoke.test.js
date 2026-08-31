@@ -93,6 +93,8 @@ test('UI: mapa planu z realnej bazy — podkład, pinezka, legenda', async () =>
   assert.ok(mapa.includes('CC-BY-4.0'), 'mapa: brak atrybucji podkładu');
   assert.ok(!mapa.includes('Kotwice'), 'mapa: UI kotwic etykiet ma pozostać usunięte (feedback E)');
   assert.ok(mapa.includes('data-mapa-ruch'), 'mapa: brak warstwy pan/zoom');
+  assert.ok(mapa.includes('mapa-nakladka'), 'mapa: brak nakładki ekranowej dla pinezek (stały rozmiar, ostry render)');
+  assert.ok(!mapa.includes('left:40.6%'), 'mapa: pinezki nie mogą być pozycjonowane procentami w skalowanej warstwie');
   assert.ok(mapa.includes('mapa-przycisk'), 'mapa: brak przycisków zoomu');
 
   // plan linkuje do mapy; trasa nieznanej planu → 404
@@ -123,7 +125,11 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(karta.includes('#/mapa/srodziemie?pin=1ltr-dunland-crebain'), 'karta: brak deep-linka pinezki');
   assert.ok(karta.includes('mini-mapa'), 'karta: brak miniatury mapy w infoboksie (feedback C)');
   assert.ok(karta.includes('Podsumowanie Lore'), 'karta: brak sekcji podsumowania');
-  assert.ok(karta.includes('Wątki i Powiązania'), 'karta: brak sekcji wątków');
+  assert.ok(!karta.includes('Wątki i Powiązania'), 'karta: wątki mają żyć w treści (pogrubienia), nie w osobnej sekcji');
+  assert.ok(karta.includes('<strong>Uruk-hai</strong>'), 'karta: brak pogrubionych encji lore w treści');
+  assert.ok(!karta.includes('leykus'), 'karta: bez niekanonicznych porównań ("leykus")');
+  assert.ok(!karta.includes('pierwszy mieszkaniec'), 'karta: bez meta-komentarzy o kolekcji (feedback B)');
+  assert.ok(!karta.includes('zyskają własne hasła'), 'karta: bez opisu procesu link-miningu (feedback B)');
   assert.ok(!karta.includes('ADR'), 'karta: treść nie może odsyłać do mechaniki Codexu (feedback B)');
   assert.ok(!karta.includes('verbatim'), 'karta: treść nie może zawierać etykiet procesowych (feedback B)');
 

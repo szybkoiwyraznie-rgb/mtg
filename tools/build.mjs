@@ -184,6 +184,27 @@ export async function zbuduj({ out, root = ROOT } = {}) {
   fs.mkdirSync(path.dirname(cel), { recursive: true });
   fs.writeFileSync(cel, html);
 
+  // index.html obok artefaktu: serwer (i Pages) otwierają katalog główny
+  // od razu na Codexie — bez klikania w plik na liście katalogu.
+  // Tylko dla właściwego artefaktu (testy budują pod innymi nazwami).
+  const nazwa = path.basename(cel);
+  if (nazwa === 'mtg-lore-codex.html') {
+  const index = `<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0; url=${nazwa}">
+<title>MTG Lore Codex</title>
+</head>
+<body>
+<p>Przekierowanie do <a href="${nazwa}">${nazwa}</a>…</p>
+<script>location.replace('${nazwa}');</script>
+</body>
+</html>
+`;
+  fs.writeFileSync(path.join(path.dirname(cel), 'index.html'), index);
+  }
+
   console.log(`Zbudowano ${out}`);
   console.log(`  stron w bazie: ${Object.keys(stronyDane).length} (karty: ${dane.statystyki.karty}, hasła: ${dane.statystyki.hasla}, plany: ${dane.statystyki.plany})`);
   console.log(`  modułów: ${moduly.length}`);

@@ -87,22 +87,31 @@ Slug karty = `<imgId>-małe-litery>-<slug-nazwy>`; snapshot Scryfalla i wpis
 kolekcji mają **ten sam slug** w swoich katalogach (testy pilnują
 istnienia, nie trzeba wpisywać ścieżek).
 
+## Wątki w treści, nie w osobnej sekcji (korekta właściciela 2026-08-31)
+
+Karta NIE ma sekcji „Wątki i Powiązania". Najważniejsze encje lore są
+**pogrubione w treści** (pierwsze wystąpienie: rasa, kraina, postać,
+konflikt). Wikilink `[[Hasło]]` wstawiamy w miejscu pogrubienia
+dopiero wtedy, gdy hasło istnieje — czyli gdy encja pojawiła się
+już w treści ≥2 kart (progu haseł pilnuje backlog link-miningu).
+Pogrubienie to więc „hasło na razie" — znacznik, że encja zasługuje
+na własną stronę.
+
 ## Sekcje treści (kolejność obowiązkowa)
 
 | # | Sekcja | Kontrakt (skąd wiedza, co obowiązkowe) |
 |---|---|---|
-| 1 | **Metryka i Kontekst Świata** | Infobox buduje silnik z danych (frontmatter + snapshot). W treści: umiejscowienie sceny w settingu po transpozycji — gdzie i kiedy w timelnie świata. Obowiązkowe. |
-| 2 | **Postacie i Byty** | Kto/co konkretnie występuje na karcie i w narracji; każda istotna encja dostaje wikilink (kandydat do hasła). Obowiązkowe. |
+| 1 | **Metryka i Kontekst Świata** | Infobox buduje silnik z danych (frontmatter + snapshot). W treści: umiejscowienie sceny w settingu po transpozycji — gdzie i kiedy w osi czasu świata. Obowiązkowe. |
+| 2 | **Postacie i Byty** | KANON: kim/czym są byty występujące na karcie i w narracji w świecie settingu (rasa, rola, miejsce w konflikcie). Opis sceny z prompta wizualizacyjnego należy do sekcji 7–8, nie tutaj. Obowiązkowe. |
 | 3 | **Nazwa Karty** | Etymologia i sens nazwy w świecie (np. „crebain" = sindarińskie „wrony/kruki"). Źródło: karta + setting + kwerenda. Obowiązkowe. |
 | 4 | **Mechanika jako Opowieść** | Koszt, kolor, statyki, keywords, zdolności — odczytane WYŁĄCZNIE ze snapshotu Scryfall — przetłumaczone na narrację (czarny = szpiegostwo i strach; Flying = zwiadowcy powietrzni; Amass = rosnąca armia). Obowiązkowe. |
 | 5 | **Flavor Text** | Oryginał (EN, przytoczony ze snapshotu) + tłumaczenie + interpretacja w kontekście. Jeśli posiadanego wydruk nie ma flavoru — sekcja istnieje i mówi to wprost (bez cytowania flavoru innych printów tej karty). Obowiązkowe. |
 | 6 | **Transpozycja** | Most: jak karta MtG (plan rodzinny/mechanika) przełożona została na setting docelowy. Dla kart „natywnych" krótko; dla transpozycji — sedno. Obowiązkowe. |
 | 7 | **Narracja Kolekcji** | Narracja właściciela przytoczona w całości (to powtórzenie jest celowe — strona ma być samowystarczalna). Hierarchia kanonu: to **kotwica osadzenia, nie kanon** (ADR 0010) — przy rozbieżnościach z kartą MtG lub lorem świata wygrywa kanon, a rozbieżność opisujemy w treści. Statusu NIE etykietujemy na stronie (zasada czystości treści powyżej). Obowiązkowe. |
-| 8 | **Wizualizacja** | Prompt (verbatim) + opis słowny, co obraz pokazuje/scenuje. **Zero generowania grafik** (ADR 0008). Obowiązkowe. |
-| 9 | **Wątki i Powiązania** | Wikilinki do haseł i innych kart; krótkie uzasadnienie powiązania. Obowiązkowe (może być na starcie puste z uzasadnieniem — uzupełnia Pętla Jakości). |
-| 10 | **Na Mapie** | Lokalizacja + poziom pewności (`dokladna`/`region`/`przyblizona`) + skąd wiemy (lore). Pinezka w `maps/<plan>/map.json`. Obowiązkowe od momentu istnienia mapy planu. |
-| 11 | **Źródła** | Lista cytowań z kwerendy: link + co z niego zaczerpnięto. Wiedza z pamięci treningowej bez URL-a — oznaczona „wiedza ogólna". Obowiązkowe. |
-| 12 | **Podsumowanie Lore** | Synteza 1–2 akapity, język encyklopedyczny. Obowiązkowe. |
+| 8 | **Wizualizacja** | Alternatywna koncepcja wizualna kolekcji (prompt przytoczony w całości) + opis słowny, co obraz scenuje. **Zero generowania grafik** (ADR 0008). Obowiązkowe. |
+| 9 | **Na Mapie** | Lokalizacja + poziom pewności (`dokladna`/`region`/`przyblizona`) + skąd wiemy (lore). Pinezka w `maps/<plan>/map.json`. Obowiązkowe od momentu istnienia mapy planu. |
+| 10 | **Źródła** | Lista cytowań z kwerendy: link + co z niego zaczerpnięto. Wiedza z pamięci treningowej bez URL-a — oznaczona „wiedza ogólna". Obowiązkowe. |
+| 11 | **Podsumowanie Lore** | Synteza 1–2 akapity, język encyklopedyczny. Obowiązkowe. |
 
 ## Procedura materializacji (kolejność kroków)
 
@@ -113,8 +122,8 @@ istnienia, nie trzeba wpisywać ścieżek).
    (tytuł, typ IP, krótki opis) — rozbudowa później.
 4. Kwerenda internetowa (2–5 zapytań): lore karty, encje z narracji,
    etymologia, geografia dla pinezki.
-5. Pisanie Karty Katalogowej wg szkieletu; wikilinki tam, gdzie encja
-   zasługuje na hasło.
+5. Pisanie Karty Katalogowej wg szkieletu; kluczowe encje pogrubione
+   w treści; wikilink tylko tam, gdzie hasło już istnieje.
 6. Pinezka: jeśli mapa planu istnieje → dopisz do `maps/<plan>/map.json`
    z uzasadnieniem; jeśli nie → pinezka w treści + notka w roadmapie
    (proces mapowy, PROCES_MAP.md).

@@ -23,7 +23,9 @@ export const POZIOMY_PEWNOSCI = ['dokladna', 'region', 'przyblizona'];
 
 export const TYPY_IP = ['plan-mtg', 'zewnetrzne', 'custom'];
 
-/** Kanoniczne sekcje h2 — Karta Katalogowa (SZKIELET_KARTY.md; wszystkie obowiązkowe). */
+/** Kanoniczne sekcje h2 — Karta Katalogowa (SZKIELET_KARTY.md; wszystkie obowiązkowe).
+ * Wątki i powiązania NIE są osobną sekcją: kluczowe encje są pogrubione
+ * w treści, a wikilink dostają dopiero istniejące hasła (próg ≥2 kart). */
 export const SEKCJE_KARTY = [
   'Metryka i Kontekst Świata',
   'Postacie i Byty',
@@ -33,7 +35,6 @@ export const SEKCJE_KARTY = [
   'Transpozycja',
   'Narracja Kolekcji',
   'Wizualizacja',
-  'Wątki i Powiązania',
   'Na Mapie',
   'Źródła',
   'Podsumowanie Lore',

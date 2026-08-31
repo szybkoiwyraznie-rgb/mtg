@@ -15,28 +15,32 @@ pinezka:
 
 ## Metryka i Kontekst Świata
 
-*Dunland Crebain* to pierwszy mieszkaniec planu Śródziemie w tej
-kolekcji. Scena karty rozgrywa się na zachodzie kontynentu, u stóp
-południowego krańca Gór Mglistych — w Dunlandzie, nad doliną, w której
-zbiera się armia Isengardu.
+Scena karty rozgrywa się na zachodzie kontynentu, u stóp południowego
+krańca **Gór Mglistych** — w **Dunlandzie**, nad doliną, w której
+zbiera się armia **Isengardu**.
 
-W timelnie świata jest to okres tuż przed natarciem Sarumana na Rohan
-(Wojna o Pierścień, 3019 r. Trzeciej Ery): skrzydlaty zwiad już
-przeszukuje niebo nad Eregionem i marchiami Rohanu, a pochodnie
+W osi czasu świata jest to okres tuż przed natarciem **Sarumana** na
+**Rohan** (Wojna o Pierścień, 3019 r. Trzeciej Ery): skrzydlaty zwiad
+już przeszukuje niebo nad **Eregionem** i marchiami Rohanu, a pochodnie
 formujących się oddziałów czekają tylko na sygnał.
 
 ## Postacie i Byty
 
-- **Crebain** — stado wielkich, krukowatych ptaków zwiadowczych;
-  tytułowy bohater karty. W Śródziemiu zamieszkują Dunland i Las
-  Fangorn, a w Wojnie o Pierścień służą wywiadowi Isengardu.
-- **Dwaj Uruk-hai Białej Ręki** — orkowie w czarnej zbroi, zastygli na
-  skraju urwiska w oczekiwaniu na znak od skrzydlatych zwiadowców.
-- **Armia Sarumana** — formujące się w wąwozie oddziały z pochodniami;
+- **Crebain** — wielkie krukowate ptaki służące za zwiadowców;
+  tytułowi bohaterowie karty. W Śródziemiu gnieżdżą się w Dunlandzie
+  i **Lesie Fangorn**, a w Wojnie o Pierścień przeszukują niebo
+  na rozkaz Isengardu.
+- **Uruk-hai** — nowa rasa orków wyhodowana przez Sarumana: wyżsi
+  i silniejsi od zwykłych orków, odporni na światło dzienne; trzon
+  jego armii.
+- **Biała Ręka** — herb Sarumana, malowany na hełmach i tarczach
+  jego Uruk-hai.
+- **Saruman Biały** — czarodziej, głowa zakonu Istari, pan Isengardu;
+  zdrajca, który zbroi armię przeciw Rohanowi i nasyła ptasi zwiad
+  na jego ziemie.
+- **Armia Isengardu** — formujące się wąwozem oddziały z pochodniami;
   w mechanice karty odpowiada im Armia Orków, którą powiększa zdolność
   amass.
-- **Saruman Biały** — pan Isengardu i zleceniodawca zwiadu; obecny
-  w scenie pośrednio, przez herb Białej Ręki na hełmach orków.
 
 ## Nazwa Karty
 
@@ -52,8 +56,8 @@ ojcowizny.
 ## Mechanika jako Opowieść
 
 Koszt {2}{B} i statystyki 1/1 opowiadają o tym, że pojedynczy crebain
-jest niczym — ptak słabszy od leykusa. Groza leży w stadzie i w tym,
-za kim przylatuje. Czarny kolor w filozofii Magic: The Gathering to
+jest niczym — jeden ptak, który w otwartej walce nie podejmie nawet
+żołnierza. Groza leży w stadzie i w tym, za kim przylatuje. Czarny kolor w filozofii Magic: The Gathering to
 szpiegostwo, strach i śmierć: dokładnie warsztat isengardzkiego zwiadu.
 
 **Flying** czyni crebain zwiadowcą powietrznym: przelatuje tam, gdzie
@@ -71,7 +75,7 @@ Ten wydruk karty (borderless, wydanie alternatywne LTR) nie ma flavor
 tekstu — scena mówi sama za siebie.
 
 Kontekst, który przywołuje, pochodzi z *Władcy Pierścieni*: wędrująca
-przez dawny Eregion (Hollin) Drużyna Pierścienia dostrzegła na
+przez dawny Eregion (Hollin) **Drużyna Pierścienia** dostrzegła na
 horyzoncie „chmurę", która okazała się zwartym stadem crebain —
 i przez cały następny dzień ukrywała się bez ogniska, bo niebo mogło
 pracować dla Isengardu. „Nie wszystkim ptakom można ufać" — ostrzega
@@ -105,7 +109,7 @@ zachód od Gór Mglistych (skąd pochodzi stado).
 
 Oficjalny druk tego wydania (borderless, odwrócona rama) ilustruje
 **David Rapoza** — artysta znany z mrocznych, malarskich interpretacji
-fantasy; druk wyświetla się w infoboksie obok.
+fantasy; jego druk widnieje obok, w ramce karty.
 
 Alternatywna koncepcja wizualna kolekcji:
 
@@ -132,28 +136,12 @@ Kompozycja z niskiej, żabiej perspektywy spina pion lotu zwiadowcy
 (Flying) z rozłogą armii w wąwozie (amass Orcs 2) w jeden kadr „tuż
 przed natarciem".
 
-## Wątki i Powiązania
-
-Karta dotyka całej sieci bytów zachodniej granicy Śródziemia:
-
-- **crebain** — tytułowa rasa zwiadowców; połowa nazwy karty;
-- **Dunland** — kraina scenerii i ojcowizna stada;
-- **Isengard** i **Saruman** — zleceniodawcy zwiadu, wrogowie Rohanu;
-- **Uruk-hai** i **Biała Ręka** — żołnierze i herb Isengardu;
-- **Rohan** — królestwo, którego niebo i marchie są celem zwiadu.
-
-Na razie są to zwykłe wzmianki w treści karty — encje zyskają własne
-hasła, gdy druga karta kolekcji odwoła się do nich w swojej treści.
-
 ## Na Mapie
 
 Karta jest osadzona w regionie **Dunland** — krainie między rzeką
 Glanduin na północy, Górami Mglistymi na wschodzie i rzeką Isen na
-południu, na północny zachód od Isengardu. Poziom pewności: region
-(pinezka środka krainy, nie punkt na mapie).
-
-Miniatura z pinezką znajduje się w infoboksie; kliknięcie przenosi
-na mapę Śródziemia z wycentrowaną pinezką tej karty.
+południu, na północny zachód od Isengardu. Osadzenie ma poziom pewności
+regionu: pinezka wskazuje środek krainy, nie konkretny punkt.
 
 ## Źródła
 

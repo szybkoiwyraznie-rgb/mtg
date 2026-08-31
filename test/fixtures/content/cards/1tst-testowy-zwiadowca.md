@@ -46,10 +46,6 @@ Testowa narracja właściciela — kanon najwyższego rzędu w świecie fixture'
 
 Testowy prompt wizualizacyjny — mroczna scena z testowego świata.
 
-## Wątki i Powiązania
-
-- hasło: [[testowy-ptak]]
-
 ## Na Mapie
 
 Pinezka regionowa w testlandii (pewnosc: region).

@@ -6,17 +6,26 @@ ADR 0006). Najnowsze na górze.
 ## 2026-08-31 — Pierwsza karta! Mapa Śródziemia + kanon v2 (PR-2, w toku)
 
 - **Materializacja 1LTR Dunland Crebain** — pierwsza Karta Katalogowa
-  (12 sekcji): wpis kolekcji przytoczony w całości (prompt + narracja
+  (11 sekcji): wpis kolekcji przytoczony w całości (prompt + narracja
   z dostawy), snapshot Scryfalla posiadanego wydruku (borderless,
   David Rapoza), mechanika jako opowieść (Flying + Amass Orcs 2),
-  pinezka regionu Dunland na mapie. Posiadaný wydruk nie ma flavor
+  pinezka regionu Dunland na mapie. Posiadany wydruk nie ma flavor
   tekstu — sekcja flavoru opisuje scenę Hollin, którą karta przywołuje.
+  Strona karty to czysta treść encyklopedyczna: kanon w „Postaciach
+  i Bytach", najważniejsze encje pogrubione w opisie (bez osobnej
+  sekcji wątków — wikilinki po progu dwóch kart).
 - **Mapa Śródziemia z silnikiem v1** (`#/mapa/srodziemie`): podkład
   w pełni wektorowy (projekt *mapome*, k1tesurfen, CC-BY-4.0 — ADR 0009),
   pan/zoom, legenda pewności, deep-link `?pin=`. Pinezki i etykiety
   zachowują stały rozmiar podczas zoomowania.
 - **Karta Katalogowa z mini-mapą**: infoboks pokazuje miniaturę mapy
   planu z pinezką — klik przenosi na mapę z wycentrowaną pinezką.
+- **Ostre pinezki w każdym zoomie**: pinezki i etykiety przeniesione
+  do nakładki ekranowej (pozycjonowane w pikselach, poza skalowaną
+  warstwą podkładu) — stały rozmiar bez rozmycia przy przybliżeniu.
+- **Artefakt otwiera się od razu**: `index.html` obok pliku bazy
+  przekierowuje na niego — wejście na serwer nie pokazuje listingu
+  katalogu.
 - **ADR 0010 — hierarchia kanonu v2** (korekta właściciela): kanonem jest
   karta MtG + lore świata docelowego; prompt i narracja kolekcji to
   **kotwica osadzenia**, nie prawda objawiona. Zastępuje hierarchię

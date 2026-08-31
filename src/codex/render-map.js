@@ -1,12 +1,16 @@
 /**
  * Silnik map v1 (ADR 0007/0009, ROADMAP K3): podkład mapy jako <img>
  * (data-URI z builda) + wektorowa warstwa regionów (SVG w układzie
- * podkładu) + pinezki i kotwice jako HTML o stałym rozmiarze
- * (kontraskalowanie). Pan: pointer events (mysz + dotyk + szczypnięcie),
- * zoom: kółko / przyciski; deep-link `#/mapa/<plan>?pin=<slug-karty>`.
+ * podkładu) + pinezki i etykiety regionów w NAKŁADCE EKRANOWEJ —
+ * warstwie poza transformem zoomu, pozycjonowanej w pikselach.
+ * Dzięki temu markery mają stały rozmiar i ostre krawędzie w każdym
+ * przybliżeniu (skalowana warstwa kompozytowa przeglądarki zamienia
+ * się w rozciągniętą bitmapę — patrz LESSONS L5). Pan: pointer events
+ * (mysz + dotyk + szczypnięcie), zoom: kółko / przyciski; deep-link
+ * `#/mapa/<plan>?pin=<slug-karty>`.
  *
- * Współrzędne pinezek/regionów/kotwic są znormalizowane 0–1 (MA2) —
- * silnik mnoży je przez wymiary podkładu (viewBox SVG = wymiary).
+ * Współrzędne pinezek/regionów są znormalizowane 0–1 (MA2) — silnik
+ * mnoży je przez wymiary podkładu (viewBox SVG = wymiary).
  */
 
 import { escapeHtml } from './markdown.js';
@@ -28,7 +32,7 @@ export function renderMape(slugPlanu, query = {}) {
     if (!plan) return nieZnalesc(`mapa „${escapeHtml(String(slugPlanu ?? ''))}"`);
     return stanPusty(
       `Plan <strong>${escapeHtml(plan.tytul)}</strong> nie ma jeszcze mapy.`,
-      'Proces mapowy uruchamia się z pierwszą materializowaną kartą planu (docs/guides/PROCES_MAP.md).',
+      'Mapa powstaje razem z pierwszą kartą osadzoną w tym planie.',
     );
   }
 
@@ -53,7 +57,7 @@ export function renderMape(slugPlanu, query = {}) {
     const poz = POZIOMY_PEWNOSCI[p.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
     return `<a href="#/karta/${escapeHtml(p.karta)}" class="mapa-pinezka pewnosc-${p.pewnosc}"
       data-pinezka="${escapeHtml(p.karta)}" data-x="${p.x}" data-y="${p.y}"
-      style="left:${p.x * 100}%; top:${p.y * 100}%; --kolor:${poz.kolor}"
+      style="--kolor:${poz.kolor}"
       title="${escapeHtml(karta?.tytul ?? p.karta)} — pewność: ${poz.etykieta}">
       <span class="mapa-pinezka-glow"></span>
       <span class="mapa-pinezka-etykieta">${escapeHtml(karta?.tytul ?? p.karta)}</span>
@@ -66,7 +70,7 @@ export function renderMape(slugPlanu, query = {}) {
     const haslo = dane.strony?.[r.haslo];
     const poz = POZIOMY_PEWNOSCI[r.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
     return `<a href="#/haslo/${escapeHtml(r.haslo)}" class="mapa-etykieta-regionu" data-region-etykieta
-      style="left:${((x0 + x1) / 2) * 100}%; top:${y0 * 100}%; --kolor:${poz.kolor}">
+      data-x="${(x0 + x1) / 2}" data-y="${y0}" style="--kolor:${poz.kolor}">
       <span>${escapeHtml(haslo?.tytul ?? r.haslo)}</span></a>`;
   }).join('');
 
@@ -101,9 +105,9 @@ export function renderMape(slugPlanu, query = {}) {
             ? `<img class="mapa-podklad" src="${mapa.podkladData}" alt="Podkład mapy: ${escapeHtml(mapa.tytul ?? slugPlanu)}" draggable="false">`
             : `<div class="mapa-brak-podkladu">Brak osadzonego podkładu (build nie wstrzyknął pliku — sprawdź maps/${escapeHtml(slugPlanu)}/podklad.svg).</div>`}
           <svg class="mapa-regiony" viewBox="0 0 ${szer} ${wys}" preserveAspectRatio="none" aria-hidden="true">${svgRegiony}</svg>
-          <div class="mapa-warstwa">${htmlPinezki}${htmlRegionyEtykiety}</div>
         </div>
       </div>
+      <div class="mapa-nakladka" data-mapa-nakladka>${htmlPinezki}${htmlRegionyEtykiety}</div>
     </div>
 
     <section class="sekcja mapa-legenda">
@@ -120,7 +124,7 @@ export function renderMape(slugPlanu, query = {}) {
       <h2>Pinezki kart (${pinezki.length})</h2>
       ${pinezki.length === 0
         ? stanPusty('Brak pinezek — mapa czeka na pierwszą kartę.',
-          'Pinezka pojawi się razem z materializacją karty planu (proces MA4 — docs/guides/PROCES_MAP.md).')
+          'Pinezka pojawi się razem z pierwszą kartą osadzoną w tym planie.')
         : `<ul class="lista-materializacji">${pinezki.map((p) => {
             const karta = dane.strony?.[p.karta];
             const poz = POZIOMY_PEWNOSCI[p.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
@@ -134,7 +138,7 @@ export function renderMape(slugPlanu, query = {}) {
     <footer class="mapa-atrybucja">
       <p>Podkład: <a href="${escapeHtml(mapa.zrodlo?.url ?? '#')}" rel="noopener noreferrer" target="_blank">${escapeHtml(mapa.zrodlo?.tytul ?? 'źródło')}</a>
       — ${escapeHtml(mapa.zrodlo?.autor ?? '?')}, licencja ${escapeHtml(mapa.zrodlo?.licencja ?? '?')}${mapa.zrodlo?.pobrano ? `, pobrano ${escapeHtml(mapa.zrodlo.pobrano)}` : ''}.</p>
-      <p class="meta">Współrzędne pinezek są znormalizowane 0–1 względem podkładu (PROCES_MAP MA2); lokalizacje ustalane z lore, nie z położenia kursora (MA4).</p>
+      <p class="meta">Współrzędne pinezek są znormalizowane względem podkładu; lokalizacje ustalane z lore, nie z położenia kursora.</p>
     </footer>
   </article>`;
 }
@@ -150,19 +154,32 @@ export function zamontujMape(app) {
 
   const ruch = okno.querySelector('[data-mapa-ruch]');
   if (!ruch) return;
+  const nakladka = okno.querySelector('[data-mapa-nakladka]');
   const pasek = app.querySelector('.mapa-pasek') ?? okno;
 
   const stan = { k: 1, ox: 0, oy: 0 };
   const K_MIN = 0.4, K_MAX = 14;
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 
+  // Wymiary TREŚCI mapy (układ, nie transform — nie zmieniają się z zoomem).
+  const aspekt = parseFloat(okno.getAttribute('data-aspekt')) || 3200 / 2400;
+  const szerokoscSceny = () => ruch.clientWidth || ruch.offsetWidth || okno.clientWidth || 800;
+  const wysokoscSceny = () => szerokoscSceny() / aspekt;
+
   const nanies = () => {
     ruch.style.transform = `translate(${stan.ox}px, ${stan.oy}px) scale(${stan.k})`;
-    // pinezki i etykiety regionów: kotwice zerowego rozmiaru (transform-origin
-    // 0 0 w CSS) — czysty scale(1/k) utrzymuje STAŁY rozmiar na ekranie
-    // w każdym przybliżeniu (rys. poprawka „pinezka się nie przeskalowuje")
-    for (const el of okno.querySelectorAll('[data-pinezka], [data-region-etykieta]')) {
-      el.style.transform = `scale(${1 / stan.k})`;
+    // Pinezki i etykiety regionów żyją w nakładce POZA skalowaną warstwą:
+    // pozycję liczymy w pikselach ekranu (x·W·k + ox), więc markery mają
+    // stały rozmiar i ostry render w każdym przybliżeniu — nie skalują
+    // się z podkładem i nie dziedziczą rozciągniętej bitmapy warstwy.
+    if (!nakladka) return;
+    const w = szerokoscSceny();
+    const h = wysokoscSceny();
+    for (const el of nakladka.querySelectorAll('[data-pinezka], [data-region-etykieta]')) {
+      const x = parseFloat(el.dataset.x);
+      const y = parseFloat(el.dataset.y);
+      if (!Number.isFinite(x) || !Number.isFinite(y)) continue;
+      el.style.transform = `translate(${(x * w * stan.k + stan.ox).toFixed(2)}px, ${(y * h * stan.k + stan.oy).toFixed(2)}px)`;
     }
   };
 
@@ -180,12 +197,12 @@ export function zamontujMape(app) {
   if (pinDocelowy) {
     const el = okno.querySelector(`[data-pinezka="${escape(pinDocelowy)}"]`);
     if (el) {
-      const w = okno.clientWidth || 800;
-      const h = okno.clientHeight || 600;
-      const aspekt = parseFloat(okno.getAttribute('data-aspekt')) || 3200 / 2400;
+      const w = szerokoscSceny();
+      const h = wysokoscSceny();
+      const wysOkna = okno.clientHeight || h;
       stan.k = 2.5;
-      stan.ox = w / 2 - parseFloat(el.dataset.x) * w * stan.k;
-      stan.oy = h / 2 - parseFloat(el.dataset.y) * (w / aspekt) * stan.k;
+      stan.ox = (okno.clientWidth || w) / 2 - parseFloat(el.dataset.x) * w * stan.k;
+      stan.oy = wysOkna / 2 - parseFloat(el.dataset.y) * h * stan.k;
     }
   }
 

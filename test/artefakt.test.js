@@ -40,3 +40,13 @@ test('build bazy repozytorium produkuję artefakt z danymi i kodem', async () =>
 
   fs.rmSync(cel, { force: true });
 });
+
+test('build domyślnego artefaktu pisze index.html przekierowujący (root serwera)', async () => {
+  // domyślna nazwa pliku, ale katalog tymczasowy — dist/ zostaje nietknięte
+  const cel = await zbuduj({ out: '/tmp/codex-test-index/mtg-lore-codex.html' });
+  const index = fs.readFileSync('/tmp/codex-test-index/index.html', 'utf8');
+  assert.ok(index.includes('url=mtg-lore-codex.html'), 'index.html nie przekierowuje na artefakt');
+  assert.ok(index.includes("location.replace('mtg-lore-codex.html')"), 'index.html bez rezerwowego JS');
+  fs.rmSync('/tmp/codex-test-index', { recursive: true, force: true });
+  fs.rmSync(cel, { force: true });
+});

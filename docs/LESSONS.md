@@ -75,3 +75,19 @@ tory obrazów FOT/KON z katalogu `./img/`.
 potwierdzać wprost, nie wywodzić z filozofii projektu; zewnętrzne zasoby
 są dopuszczalne, o ile artefakt degraduje się z nich z wdziękiem
 (druk Scryfalla: obraz online, cichy fallback — ADR 0008).
+
+## L5 (2026-08-31) — markery mapy w warstwie ekranowej, nie w skalowanej
+
+**Objaw:** pinezki z kontraskalowaniem `scale(1/k)` miały pozornie stały
+rozmiar, ale przy dużym przybliżeniu rozmywały się w „duże piksele"
+(zrzut właściciela).
+
+**Przyczyna:** pinezki żyły wewnątrz warstwy z `transform: scale(k)`
+(oraz `will-change: transform`) — przeglądarka rasteryzuje taką warstwę
+kompozytową do bitmapy i rozciąga ją wg transformu; kontraskala
+utrzymywała geometrię, ale nie jakość rastra.
+
+**Reguła:** znaczniki UI (pinezki, etykiety) pozycjonujemy w NAKŁADCE
+poza transformem — pozycja liczona w pikselach ekranu
+(`x·W·k + ox`); skalowana warstwa zawiera wyłącznie treść mapy
+(podkład, SVG regionów). To standardowy układ markerów mapowych.
