@@ -56,7 +56,8 @@ test('UI: baza fixture renderuje kartę, hasło i plan z wikilinkami', async () 
   assert.ok(karta.includes('Testowy Zwiadowca'), 'karta: brak tytułu');
   assert.ok(karta.includes('1TST'), 'karta: brak imgId');
   assert.ok(karta.includes('Testowy Artysta'), 'karta: brak danych Scryfall');
-  assert.ok(karta.includes('kanon najwyższego rzędu'), 'karta: brak narracji kolekcji');
+  assert.ok(karta.includes('Druk w Kolekcji'), 'karta: brak sekcji o posiadanym wydruku (ADR 0011)');
+  assert.ok(!karta.includes('Narracja Kolekcji'), 'karta: sekcja narracji zniesiona (ADR 0011)');
   assert.ok(karta.includes('href="#/haslo/testowy-ptak"'), 'karta: brak wikilinku do hasła');
   assert.ok(karta.includes('Linkujące strony'), 'karta: brak sekcji backlinków');
 
@@ -121,8 +122,6 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(karta.includes('nie ma flavor'), 'karta: brak adnotacji o wydruku bez flavor (print #411)');
   assert.ok(!karta.includes("What's that, Strider?"), 'karta: flavor Sama nie może się pojawiać (print #411 bez flavor)');
   assert.ok(karta.includes('David Rapoza'), 'karta: brak artysty posiadanego printu (#411)');
-  assert.ok(karta.includes('Na skraju dunlandzkiego urwiska'), 'karta: brak narracji kolekcji');
-  assert.ok(karta.includes('perspektywy żabiej'), 'karta: brak promptu verbatim');
   assert.ok(karta.includes('#/mapa/srodziemie?pin=1ltr-dunland-crebain'), 'karta: brak deep-linka pinezki');
   assert.ok(karta.includes('mini-mapa'), 'karta: brak miniatury mapy w infoboksie (feedback C)');
   assert.ok(karta.includes('Podsumowanie Lore'), 'karta: brak sekcji podsumowania');
@@ -133,6 +132,9 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(!karta.includes('leykus'), 'karta: bez niekanonicznych porównań ("leykus")');
   assert.ok(!karta.includes('pierwszy mieszkaniec'), 'karta: bez meta-komentarzy o kolekcji (feedback B)');
   assert.ok(!karta.includes('zyskają własne hasła'), 'karta: bez opisu procesu link-miningu (feedback B)');
+  assert.ok(!karta.includes('Uruk-hai'), 'karta: byty z dawnej narracji/promptu nie mogą być na stronie karty (ADR 0011)');
+  assert.ok(!karta.includes('Narracja Koleksji') && !karta.includes('Narracja Kolekcji'), 'karta: sekcja narracji zniesiona (ADR 0011)');
+  assert.ok(!karta.includes('perspektywy żabiej'), 'karta: treść promptu nie może się pojawiać (ADR 0011)');
   assert.ok(!karta.includes('ADR'), 'karta: treść nie może odsyłać do mechaniki Codexu (feedback B)');
   assert.ok(!karta.includes('verbatim'), 'karta: treść nie może zawierać etykiet procesowych (feedback B)');
 

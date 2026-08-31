@@ -102,8 +102,6 @@ export async function zbuduj({ out, root = ROOT } = {}) {
           kolory: wpisKolekcji.fm.kolory ?? [],
           mv: wpisKolekcji.fm.mv ?? null,
           dostarczono: wpisKolekcji.fm.dostarczono ?? null,
-          prompt: wpisKolekcji.prompt,
-          narracja: wpisKolekcji.narracja,
         } : null,
         scryfall: snap ? {
           name: snap.name, mana_cost: snap.mana_cost, cmc: snap.cmc,

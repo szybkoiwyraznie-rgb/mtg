@@ -86,10 +86,9 @@ obrys na mapie). Nowa klasa = zmiana tego gidu + ADR 0005 (świadomie).
 
 ## Dobre praktyki
 
-- Hasło pisze się językiem encyklopedycznym; narracja właściciela jest
-  **kotwicą osadzenia** (ADR 0010) i bywa przywoływana jako „narracja
-  kolekcji", ale przy rozbieżnościach wygrywa kanon: karta MtG + lore
-  świata.
+- Hasło pisze się językiem encyklopedycznym; kanonem jest karta MtG
+  (snapshot) + lore świata docelowego (ADR 0010/0011) — narracja kolekcji
+  nie jest już dostarczana i nie może być źródłem hasła.
 - Hasło nie streszcza kart — opisuje świat. Karty linkują do hasła,
   hasło linkuje do encji, nie do streszczeń kart.
 - Jedno hasło = jedna encja (nie „Crebain i wargi").

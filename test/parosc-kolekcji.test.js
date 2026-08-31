@@ -21,11 +21,11 @@ test('każdy wpis kolekcji ma swoją Kartę Katalogową (zamknięta pętla)', ()
   assert.deepEqual(bezKarty, [], `Wpisy bez strony karty:\n${bezKarty.join('\n')}`);
 });
 
-test('wpis kolekcji zawiera verbatim Prompt i Narrację', () => {
+test('wpis kolekcji ma komplet pól dostawy (ADR 0011)', () => {
   const braki = [];
   for (const [slug, w] of kolekcja) {
-    if (!w.prompt || w.prompt.trim() === '') braki.push(`${slug}: brak Prompt`);
-    if (!w.narracja || w.narracja.trim() === '') braki.push(`${slug}: brak Narracji`);
+    // Chudy format dostawy (ADR 0011): cztery pola + data. Prompt/Narracja
+    // nie są wymagane — występują tylko w archiwalnych wpisach sprzed ADR 0011.
     for (const pole of ['imgId', 'nazwa', 'wydanie', 'plan', 'dostarczono']) {
       if (!w.fm[pole]) braki.push(`${slug}: brak pola ${pole} we frontmatterze`);
     }

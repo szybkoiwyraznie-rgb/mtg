@@ -86,43 +86,12 @@ Osadzenie w Dunlandzie — ojcowiźnie stada — jest zgodne z kanonem;
 kanoniczny epizod zwiadu, przelot nad Hollin, rozgrywa się nieco
 na północ, w dawnym Eregionie.
 
-## Narracja Kolekcji
+## Druk w Kolekcji
 
-> Na skraju dunlandzkiego urwiska dwaj Uruk-hai Białej Ręki zastygają
-> w napięciu, wypatrując znaku od swoich skrzydlatych zwiadowców.
-> W wąwozie pod nimi formuje się cicha armia Sarumana, a kolejne
-> pochodnie rozpalają się w miarę, jak oddziały odnajdują swoje miejsca.
-> Nad sceną krąży stado crebainów — tych samych kruków, które z rozkazu
-> Isengardu przeczesują ziemie na zachód od Gór Mglistych. Jeden z nich
-> pikuje w dół, a jego krzyk zdaje się ostatnim sygnałem, na który czeka
-> każde ostrze w mroku.
-
-## Wizualizacja
-
-Oficjalny druk tego wydania (borderless, odwrócona rama) ilustruje
-**David Rapoza** — artysta znany z mrocznych, malarskich interpretacji
-fantasy; jego druk widnieje obok, w ramce karty.
-
-Alternatywna koncepcja wizualna kolekcji:
-
-> Dynamiczna, mroczna scena bitewna ukazująca nierozerwalny związek
-> pomiędzy latającymi zwiadowcami a nadciągającą armią. Na pierwszym
-> planie, z perspektywy żabiej, widać plecy i ramiona dwóch potężnych
-> orków Uruk-hai, odzianych w czarną, surową zbroję i hełmy z symbolem
-> Białej Ręki Sarumana. Zatrzymali się na skraju skalistego urwiska
-> i spoglądają w górę, w napięciu dzierżąc swoje zębate miecze i piki.
-> Poniżej nich, w głębokim, spowitym cieniem wąwozie, widać setki innych
-> orków formujących się w oddziały i zapalających pochodnie, których
-> światło ledwo przebija mrok. Nad nimi, na tle niespokojnego,
-> burzowego nieba w odcieniach fioletu i zgniłego pomarańczu, krąży
-> stado crebainów. To nie są zwykłe ptaki – to koszmarne, krukowate
-> bestie o postrzępionych, jakby dymnych piórach, nienaturalnie długich
-> szponach i dziobach rozwartych w niemym krzyku. Ich oczy świecą
-> złowrogim, żółtym blaskiem. Jeden z crebainów jest znacznie bliżej,
-> pikuje w dół, niemal w stronę obserwatora, jakby przekazywał orkom
-> sygnał do ataku. Cała kompozycja ma oddawać moment tuż przed
-> natarciem, w którym przybycie ptasich szpiegów jest bezpośrednim
-> katalizatorem dla formującej się na dole armii.
+W kolekcji jest wydruk borderless z odwróconą ramą (wariant alternatywny
+LTR #411). Ilustruje go **David Rapoza** — artysta kojarzony z mrocznymi,
+malarskimi interpretacjami fantasy. Druk wyświetla się w ramce karty
+obok.
 
 ## Na Mapie
 
@@ -148,8 +117,6 @@ regionu: pinezka wskazuje środek krainy, nie konkretny punkt.
 - CBR, „The Lord of the Rings' Most Misunderstood Villains, Explained" —
   kontekst konfliktu Dunland–Rohan:
   <https://www.cbr.com/lotr-misunderstood-villains-explained/>
-- Narracja i koncepcja wizualna kolekcji (dostawa właściciela
-  z 2026-08-31).
 
 ## Podsumowanie Lore
 

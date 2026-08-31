@@ -6,14 +6,15 @@ ADR 0006). Najnowsze na górze.
 ## 2026-08-31 — Pierwsza karta! Mapa Śródziemia + kanon v2 (PR-2, w toku)
 
 - **Materializacja 1LTR Dunland Crebain** — pierwsza Karta Katalogowa
-  (11 sekcji): wpis kolekcji przytoczony w całości (prompt + narracja
-  z dostawy), snapshot Scryfalla posiadanego wydruku (borderless,
+  (10 sekcji): snapshot Scryfalla posiadanego wydruku (borderless,
   David Rapoza), mechanika jako opowieść (Flying + Amass Orcs 2),
   pinezka regionu Dunland na mapie. Posiadany wydruk nie ma flavor
   tekstu — sekcja flavoru opisuje scenę Hollin, którą karta przywołuje.
-  Strona karty to czysta treść encyklopedyczna: kanon w „Postaciach
-  i Bytach", najważniejsze encje pogrubione w opisie (bez osobnej
-  sekcji wątków — wikilinki po progu dwóch kart).
+  Strona karty to w całości kanon (snapshot + lore z cytowaniami):
+  byty faktycznie obecne na karcie w „Postaciach i Bytach",
+  najważniejsze encje pogrubione w opisie (bez osobnej sekcji wątków —
+  wikilinki po progu dwóch kart), opis posiadanego wydruku
+  w „Druku w Kolekcji".
 - **Mapa Śródziemia z silnikiem v1** (`#/mapa/srodziemie`): podkład
   w pełni wektorowy (projekt *mapome*, k1tesurfen, CC-BY-4.0 — ADR 0009),
   pan/zoom, legenda pewności, deep-link `?pin=`. Pinezki i etykiety
@@ -31,13 +32,19 @@ ADR 0006). Najnowsze na górze.
   karta MtG + lore świata docelowego; prompt i narracja kolekcji to
   **kotwica osadzenia**, nie prawda objawiona. Zastępuje hierarchię
   ADR 0003.
+- **ADR 0011 — chudy format dostawy** (decyzja właściciela): dostawa
+  to jedna linijka — imgId, nazwa, set, plan; reszta ze snapshotu
+  Scryfalla. Narracja i prompt wychodzą z pętli i ze strony karty
+  (pozostają w archiwum wpisów kolekcji); sekcje „Narracja Koleksji"
+  i „Wizualizacja" zastępuje „Druk w Kolekcji".
 - **Zasada progu haseł** (korekta właściciela): hasło powstaje dopiero,
   gdy ≥2 karty odwołują się do encji w treści. Cztery hasła utworzone
   przedwcześnie (crebain, dunland, isengard, rohan) **wycofano** —
   wiedza żyje w sekcjach karty, encje w kolejce link-miningu
   (docs/backlog.md).
-- Testy: 64 (nowe: test dymny mapy i karty z realnej bazy; fixture
-  „pusta baza"; status ADR „Częściowo zastąpiona").
+- Testy: 65 (test dymny mapy i karty z realnej bazy; fixture „pusta
+  baza"; statusy ADR „Częściowo zastąpiona"; pilnowanie kanonu karty
+  i chudego formatu dostawy).
 
 ## 2026-08-31 — Fundamenty (PR-1)
 

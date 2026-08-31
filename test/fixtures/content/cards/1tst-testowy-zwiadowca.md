@@ -38,13 +38,9 @@ Kolor B i koszt {2}{B} opowiadają o szpiegostwie; lot o zwiadzie powietrznym.
 
 Karta-źródło pochodzi z planu testowego; transpozycja pełna.
 
-## Narracja Kolekcji
+## Druk w Kolekcji
 
-Testowa narracja właściciela — kanon najwyższego rzędu w świecie fixture'ów.
-
-## Wizualizacja
-
-Testowy prompt wizualizacyjny — mroczna scena z testowego świata.
+Wydruk testowy: testowa rama, testowy artysta.
 
 ## Na Mapie
 

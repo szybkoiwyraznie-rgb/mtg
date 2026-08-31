@@ -9,14 +9,15 @@ IP niż plan rodzinny karty), więc żadne gotowe źródło (Scryfall, Wiki
 MtG/Fandom) nie opisuje „tej" wersji świata. Nie ma miejsca, które:
 
 - łączy kartę, jej mechanikę i flavor z lore settingu po transpozycji;
-- trzyma narracje właściciela jako kanon;
+- trzyma karty materializowane jawnie przez właściciela, a kanonem jest
+  karta MtG + lore świata docelowego (ADR 0010/0011);
 - pozwala nawigować po świecie (encje wspólne wielu kart, mapy planów).
 
 ## Wizja
 
 „Wikipedia" kolekcji: każda jawnie przekazana karta materializuje się jako
 **Karta Katalogowa** (szkielet: kontekst świata, postacie, nazwa, mechanika
-jako opowieść, flavor, transpozycja, narracja, powiązania, mapa, źródła,
+jako opowieść, flavor, transpozycja, druk w kolekcji, mapa, źródła,
 podsumowanie). Encje wspólne dla wielu kart dostają **Karty Haseł**
 (geografia, fauna, frakcje, magia, postacie, wydarzenia…), linkowane
 wikilinkami w obie strony — wiedza nie dubluje się, a baza nawiguje jak

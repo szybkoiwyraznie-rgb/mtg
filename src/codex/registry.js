@@ -24,6 +24,9 @@ export const POZIOMY_PEWNOSCI = ['dokladna', 'region', 'przyblizona'];
 export const TYPY_IP = ['plan-mtg', 'zewnetrzne', 'custom'];
 
 /** Kanoniczne sekcje h2 — Karta Katalogowa (SZKIELET_KARTY.md; wszystkie obowiązkowe).
+ * ADR 0011 (chudy format dostawy): karta jest w całości kanoniczna —
+ * nie ma sekcji narracji ani alternatywnej koncepcji wizualnej;
+ * „Druk w Kolekcji" opisuje wyłącznie oficjalny wydruk ze snapshotu.
  * Wątki i powiązania NIE są osobną sekcją: kluczowe encje są pogrubione
  * w treści, a wikilink dostają dopiero istniejące hasła (próg ≥2 kart). */
 export const SEKCJE_KARTY = [
@@ -33,8 +36,7 @@ export const SEKCJE_KARTY = [
   'Mechanika jako Opowieść',
   'Flavor Text',
   'Transpozycja',
-  'Narracja Kolekcji',
-  'Wizualizacja',
+  'Druk w Kolekcji',
   'Na Mapie',
   'Źródła',
   'Podsumowanie Lore',

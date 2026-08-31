@@ -1,6 +1,8 @@
 # ADR 0010: Hierarchia kanonu v2 — karta MtG i lore świata ponad narracją kolekcji
 
-- **Status:** Zaakceptowana
+- **Status:** Częściowo zastąpiona — warstwa kotwicy osadzenia (narracja
+  i prompt) wychodzi z pętli dostawy (ADR 0011); hierarchia źródeł
+  (karta MtG > lore świata > agent) pozostaje w mocy
 - **Data:** 2026-08-31
 - **Decydenci:** właściciel projektu (korekta procesowa, 2026-08-31, czat); agent Arena (sesja PR-2)
 - **Zastępuje:** fragment „hierarchia kanonu" ADR 0003 (pozostałe decyzje

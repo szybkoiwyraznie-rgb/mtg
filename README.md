@@ -55,9 +55,10 @@ kart pokazują dodatkowe tory obrazów. Na Pages tory te nie istnieją
 ## Zasady w skrócie
 
 - **Pętla jawnego przekazywania:** materializowana jest wyłącznie karta
-  wysłana przez właściciela (ADR 0003).
-- **Hierarchia kanonu:** narracja właściciela > kanon settingu > Oracle
-  Scryfall > wiedza agenta/internet (z cytowaniami).
+  wysłana przez właściciela (ADR 0003); dostawa jest chuda — imgId, nazwa,
+  set, plan (ADR 0011).
+- **Hierarchia kanonu:** karta MtG (snapshot Scryfall) > lore świata
+  docelowego > wiedza agenta/internet (z cytowaniami) (ADR 0010/0011).
 - **Zero generowanych grafik** (ADR 0008); tory obrazów: Scryfall / FOT /
   KON / twarz syntetyczna.
 - **Domyślna praca sesji** bez zlecenia: Pętla Jakości (ADR 0006).

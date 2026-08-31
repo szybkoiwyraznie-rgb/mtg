@@ -57,11 +57,14 @@ Jakości (ADR 0006).
 
 1. **Pętla jawnego przekazywania (ADR 0003):** NIC nie jest materializowane
    bez wpisu właściciela w `collection/entries/`. Wpis jest **nienaruszalny**
-   (read-only) i jest kanonem najwyższego rzędu. Test parości pilnuje umowy
-   w obie strony.
-2. **Hierarchia kanonu (ADR 0003):** narracja właściciela > kanon settingu
-   docelowego > Oracle karty (Scryfall) > wiedza agenta/internet. Konflikt
-   rozstrzyga wyższy poziom, a rozbieżność opisuje się jawnie w treści.
+   (read-only) — to archiwum dostawy, nie źródło kanonu. Test parości
+   pilnuje umowy w obie strony.
+2. **Hierarchia kanonu (ADR 0010/0011):** karta MtG (snapshot Scryfall,
+   ADR 0004) > lore świata docelowego > wiedza agenta/internet (z cytowaniami).
+   Dostawa jest chuda — `imgId · nazwa · set · plan` (ADR 0011); narracja
+   i prompt nie są dostarczane ani renderowane na Karcie Katalogowej.
+   Konflikt rozstrzyga wyższy poziom, a rozbieżność opisuje się jawnie
+   w treści.
 3. **Kwerenda internetowa z cytowaniem.** Wiedza spoza pamięci treningowej
    wchodzi do treści wyłącznie z linkiem w sekcji Źródła. „Z internetu"
    bez URL-a nie istnieje.

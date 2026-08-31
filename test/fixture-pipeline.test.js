@@ -60,7 +60,7 @@ test('fixture: build artefaktu z niepustą bazą zawiera treść i backlinki', a
   const karta = dane.strony['1tst-testowy-zwiadowca'];
   assert.ok(karta, 'brak karty w danych');
   assert.equal(karta.imgId, '1TST');
-  assert.equal(karta.kolekcja.narracja.includes('kanon najwyższego rzędu'), true);
+  assert.equal(karta.kolekcja.dostarczono, '2026-08-31');
   assert.equal(karta.scryfall.artist, 'Testowy Artysta');
   assert.ok(karta.html.includes('<a href="#/haslo/testowy-ptak">'), 'brak wikilinku w HTML');
 

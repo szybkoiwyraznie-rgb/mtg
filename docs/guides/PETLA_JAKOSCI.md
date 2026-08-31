@@ -45,7 +45,7 @@ kroku 3.
 1. Przejrzyj strony pod kątem encji wspominanych w 2+ miejscach:
    - te same nazwy własne w treści (postacie, miejsca, frakcje, bestie);
    - te same tagi;
-   - powtarzające się motywy w narracjach właściciela.
+   - powtarzające się motywy w treściach kart.
 2. Dla każdej encji bez hasła: czy zasługuje? (encja jednorazowa,
    wspomniana mimochodem — nie).
 3. Utwórz hasło (SZKIELET_HASLA) i **dopisz wikilinki ze wszystkich stron,
@@ -76,7 +76,7 @@ rozrost.
 
 - Nie materializuje kart bez dostawy (ADR 0003) — nawet „oczywistych".
 - Nie generuje grafik (ADR 0008).
-- Nie przepisuje narracji właściciela ani wpisów kolekcji.
+- Nie przepisuje wpisów kolekcji (nienaruszalne archiwum dostaw).
 - Nie wprowadza nowych pól frontmatter/tagów/klas „na zapas" — to ADR.
 
 ## Metryka (od momentu powstania `tools/wiki-stats.mjs`)

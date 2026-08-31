@@ -1,6 +1,8 @@
 # ADR 0005: Szkielety stron (Karta Katalogowa, Karta Haseł) i protokół wikilinków
 
-- **Status:** Zaakceptowana
+- **Status:** Częściowo zastąpiona — szkielet Karty Katalogowej zmienia
+  ADR 0011 (aktualny kontrakt sekcji żyje w docs/guides/SZKIELET_KARTY.md);
+  szkielet Karty Haseł i protokół wikilinków pozostają w mocy
 - **Data:** 2026-08-31
 - **Decydenci:** właściciel projektu (zatwierdzenie listy sekcji 2026-08-31); agent Arena (sesja PR-1)
 
