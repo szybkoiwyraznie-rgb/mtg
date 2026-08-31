@@ -102,7 +102,7 @@ na własną stronę.
 | # | Sekcja | Kontrakt (skąd wiedza, co obowiązkowe) |
 |---|---|---|
 | 1 | **Metryka i Kontekst Świata** | Infobox buduje silnik z danych (frontmatter + snapshot). W treści: umiejscowienie sceny w settingu po transpozycji — gdzie i kiedy w osi czasu świata. Obowiązkowe. |
-| 2 | **Postacie i Byty** | KANON: kim/czym są byty występujące na karcie i w narracji w świecie settingu (rasa, rola, miejsce w konflikcie). Opis sceny z prompta wizualizacyjnego należy do sekcji 7–8, nie tutaj. Obowiązkowe. |
+| 2 | **Postacie i Byty** | KANON: byty, które FAKTYCZNIE występują na karcie (co widać w jej scenie/typie), osadzone w lore świata — rasa, rola, siedlisko. Byty żyjące tylko w narracji/prompcie kolekcji (np. postacie z odrębnej sceny) opisujemy WYŁĄCZNIE w sekcjach 7–8; jeśli lore gatunku wskazuje kogoś poza kartą (np. nadawcę zwiadu), pojawia się to dopiero w rozwinięciu lore, jasno jako lore świata, nie jako zawartość karty. Obowiązkowe. |
 | 3 | **Nazwa Karty** | Etymologia i sens nazwy w świecie (np. „crebain" = sindarińskie „wrony/kruki"). Źródło: karta + setting + kwerenda. Obowiązkowe. |
 | 4 | **Mechanika jako Opowieść** | Koszt, kolor, statyki, keywords, zdolności — odczytane WYŁĄCZNIE ze snapshotu Scryfall — przetłumaczone na narrację (czarny = szpiegostwo i strach; Flying = zwiadowcy powietrzni; Amass = rosnąca armia). Obowiązkowe. |
 | 5 | **Flavor Text** | Oryginał (EN, przytoczony ze snapshotu) + tłumaczenie + interpretacja w kontekście. Jeśli posiadanego wydruk nie ma flavoru — sekcja istnieje i mówi to wprost (bez cytowania flavoru innych printów tej karty). Obowiązkowe. |

@@ -23,6 +23,7 @@ ADR 0006). Najnowsze na górze.
 - **Ostre pinezki w każdym zoomie**: pinezki i etykiety przeniesione
   do nakładki ekranowej (pozycjonowane w pikselach, poza skalowaną
   warstwą podkładu) — stały rozmiar bez rozmycia przy przybliżeniu.
+  Nagłówek mapy bez danych technicznych (wariant podkładu).
 - **Artefakt otwiera się od razu**: `index.html` obok pliku bazy
   przekierowuje na niego — wejście na serwer nie pokazuje listingu
   katalogu.

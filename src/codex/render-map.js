@@ -85,8 +85,7 @@ export function renderMape(slugPlanu, query = {}) {
   <article class="mapa-strona">
     <header class="mapa-naglowek">
       <h1>Mapa: ${escapeHtml(mapa.tytul ?? slugPlanu)}</h1>
-      <p class="meta">wariant ${escapeHtml(String(mapa.wariant ?? '?'))} (podkład w pełni wektorowy) ·
-        pinezki kart: ${pinezki.length} · regiony: ${regiony.length}</p>
+      <p class="meta">pinezki kart: ${pinezki.length} · regiony: ${regiony.length}</p>
     </header>
 
     <div class="mapa-pasek">

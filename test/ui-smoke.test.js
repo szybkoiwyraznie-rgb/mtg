@@ -84,6 +84,7 @@ test('UI: mapa planu z realnej bazy — podkład, pinezka, legenda', async () =>
   shim.idz('#/mapa/srodziemie');
   const mapa = shim.app.innerHTML;
   assert.ok(mapa.includes('Mapa: Śródziemie'), 'mapa: brak tytułu');
+  assert.ok(!mapa.includes('wariant'), 'mapa: nagłówek bez danych technicznych podkładu');
   assert.ok(mapa.includes('data:image/svg+xml;base64,'), 'mapa: brak osadzonego podkładu (ADR 0009)');
   assert.ok(mapa.includes('data-pinezka="1ltr-dunland-crebain"'), 'mapa: brak pinezki karty 1LTR');
   assert.ok(mapa.includes('href="#/karta/1ltr-dunland-crebain"'), 'mapa: pinezka nie linkuje karty');
@@ -126,7 +127,9 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(karta.includes('mini-mapa'), 'karta: brak miniatury mapy w infoboksie (feedback C)');
   assert.ok(karta.includes('Podsumowanie Lore'), 'karta: brak sekcji podsumowania');
   assert.ok(!karta.includes('Wątki i Powiązania'), 'karta: wątki mają żyć w treści (pogrubienia), nie w osobnej sekcji');
-  assert.ok(karta.includes('<strong>Uruk-hai</strong>'), 'karta: brak pogrubionych encji lore w treści');
+  assert.ok(karta.includes('<strong>crebain</strong>'), 'karta: brak pogrubionych encji lore w treści');
+  assert.ok(karta.includes('Jedynym bytem karty'), 'karta: Postacie i Byty mają zaczynać się od tego, co jest na karcie (kanon)');
+  assert.ok(!karta.includes('Armia Isengardu'), 'karta: byty z narracji/promptu nie mogą być listowane jako byty karty');
   assert.ok(!karta.includes('leykus'), 'karta: bez niekanonicznych porównań ("leykus")');
   assert.ok(!karta.includes('pierwszy mieszkaniec'), 'karta: bez meta-komentarzy o kolekcji (feedback B)');
   assert.ok(!karta.includes('zyskają własne hasła'), 'karta: bez opisu procesu link-miningu (feedback B)');
