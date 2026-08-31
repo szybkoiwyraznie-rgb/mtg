@@ -30,7 +30,7 @@ test('map.json ma strukturę wg PROCES_MAP.md (MA2)', () => {
     if (!mapa.wymiary?.szerokosc || !mapa.wymiary?.wysokosc) problemy.push(`${plan}: brak wymiarów`);
     const podklad = path.join('maps', plan, String(mapa.podklad ?? ''));
     if (mapa.wariant !== 'T3' && !fs.existsSync(podklad)) problemy.push(`${plan}: brak pliku podkładu ${podklad}`);
-    if (mapa.rekonstrukcja === undefined) probleby_push(problemy, `${plan}: brak flagi rekonstrukcja (T3 wymaga true)`);
+    if (mapa.rekonstrukcja === undefined) problemy.push(`${plan}: brak flagi rekonstrukcja (T3 wymaga true)`);
     if (mapa.rekonstrukcja === true && mapa.wariant !== 'T3') problemy.push(`${plan}: rekonstrukcja tylko dla T3`);
   }
   assert.deepEqual(problemy, [], `Wadliwe map.json:\n${problemy.join('\n')}`);

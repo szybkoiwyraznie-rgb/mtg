@@ -34,17 +34,22 @@ teście UI; CI zielone po pushu.
 | 3 | Wpis kolekcji verbatim + snapshot Scryfall + taxonomia + strona planu Śródziemie | testy parości/pokrycia zielone | C12 |
 | 4 | Karta Katalogowa (12 sekcji, wikilinki do haseł, pinezka) | walidacja szkieletu + build | C13 |
 | 5 | Hasła: crebain (fauna), dunland (geografia), isengard (geografia), rohan (geografia, krótkie — z link-miningu) | walidacja haseł + backlinki w buildzie | C14 |
-| 6 | Mapa: research podkładu (MA1) → `maps/srodziemie/` (map.json + podkład, MA2) → pinezka regionowa Dunlandu (MA4) | test map zielony | C15 |
+| 6 | Mapa **wektorowa** (ADR 0009): `maps/srodziemie/` = podkład.svg (mapome, CC-BY-4.0, T2 przez adopcję) + map.json (źródło, kotwice, pinezka regionowa Dunlandu) | test map zielony | C15 |
 | 7 | Silnik map v1: underlay + pinezki HTML/SVG, pan/zoom (pointer+wheel+dotyk), legenda pewności, deep-link `?pin=` | smoke test UI na trasie `#/mapa/…` | C16 |
 | 8 | Co-nowego + historia + handoff (aktualizacja) | push, CI zielone | C17 |
 
 ## Ryzyka
 
-- **Rozmiar podkładu mapy**: osadzamy base64 w artefakcie (filozofia jednego
-  pliku, ADR 0001/0007) — wybieramy podkład ≤ ~1,5 MB; większy = szukamy
-  mniejszego (bez skalowania w node, zero deps).
-- **Współrzędne pinezki**: wyznaczane z oglądu podkładu + wiedzy lore
-  (region Dunlandu), poziom pewności `region` + uzasadnienie (MA4).
+- ~~**Rozmiar podkładu mapy**~~ → rozstrzygnięte przez ADR 0009: podkład
+  wektorowy (mapome SVG, CC-BY-4.0), base64 ~2,4 MB w artefakcie —
+  akceptowane; gzIPPowany transfer na Pages ~4–5× mniejszy.
+- **Raster z fanowskimi nalotami** → porzucone po analizie programistycznej
+  (maski gęstości atramentu nie dawały wiarygodnej weryfikacji); decyzja
+  właściciela: mapa wektorowa od razu (ADR 0009).
+- **Współrzędne pinezki**: kotwice wyprowadzone programistycznie z wersji
+  SVG z etykietami tekstowymi (Isengard ≈ (1330, 1275), Edoras, Tharbad,
+  ENEDWAITH, Glanduin, Fords of Isen); pinezka Dunlandu = centroid regionu
+  względem kotwic, poziom pewności `region` + uzasadnienie (MA4).
 - **Kaskada haseł** (Rohan/Saruman/Uruk-hai): pilot tworzy 4 hasła;
   Saruman i Uruk-hai zostają plain-tekstem z wpisem do kolejki link-miningu
   (Pętla Jakości) — dokumentuję w handoffie.

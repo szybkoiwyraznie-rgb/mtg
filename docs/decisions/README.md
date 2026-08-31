@@ -24,6 +24,7 @@ dziedziczona z projektu mtg-game.
 | [0006](0006-petla-jakosci-jako-praca-domyslna.md) | Pętla Jakości jako domyślna praca sesji | Zaakceptowana |
 | [0007](0007-mapa-t1-hybryda.md) | Mapy planów — T1 hybryda z rasterowym podkładem | Zaakceptowana |
 | [0008](0008-tory-obrazow-fot-kon.md) | Tory obrazów: brak generowanych grafik; FOT/KON lokalnie z cichym fallbackiem | Zaakceptowana |
+| [0009](0009-srodziemie-podklad-wektorowy-mapome.md) | Śródziemie: podkład w pełni wektorowy (mapome, CC-BY-4.0) zamiast rastra; T2 przez adopcję | Zaakceptowana |
 
 Spójnością rejestru (numeracja, statusy, tabela) pilnuje
 `test/rejestr-adr.test.js`.
