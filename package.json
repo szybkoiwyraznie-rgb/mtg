@@ -10,6 +10,8 @@
     "test:all": "node tools/run-tests.mjs all",
     "test:ci": "node tools/run-tests.mjs all",
     "build": "node tools/build.mjs",
+    "stats": "node tools/wiki-stats.mjs",
+    "stats:json": "node tools/wiki-stats.mjs --json",
     "serve": "python3 -m http.server --directory dist 8000"
   },
   "engines": {
