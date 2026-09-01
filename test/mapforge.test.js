@@ -55,9 +55,10 @@ test('mapforge: wstega szerokość rośnie liniowo (rzeka)', () => {
   const { lewo, prawo, d } = wstega([[0, 0], [50, 0], [100, 0]], 2, 8);
   assert.ok(d.startsWith('M '));
   const szerNa = (i) => Math.hypot(prawo[i][0] - lewo[i][0], prawo[i][1] - lewo[i][1]);
-  assert.ok(szerNa(0) < szerNa(Math.floor(lewo.length / 2)));
-  assert.ok(szerNa(Math.floor(lewo.length / 2)) < szerNa(lewo.length - 1));
-  assert.ok(Math.abs(szerNa(lewo.length - 1) - 16) < 1, 'końcowa szerokość ≈ 2×s1');
+  // Stożek: najszersza w środku, zwęża się do punktu na OBU końcach.
+  const srd = Math.floor(lewo.length / 2);
+  assert.ok(szerNa(srd) > szerNa(0) && szerNa(srd) > szerNa(lewo.length - 1), 'środek najszerszy');
+  assert.ok(szerNa(0) < 2.5 && szerNa(lewo.length - 1) < 2.5, 'końce zwężone do punktu');
 });
 
 test('mapforge: chaikin/gladka produkują path d', () => {
@@ -167,7 +168,7 @@ test('mapforge: motywy — atlas wymienia paletę, oba deterministyczne', () => 
   // napisów; reszta mapy pozostaje czarno-biało-szara wg ADR 0019).
   const KOLOR_FUNKCYJNY = new Set([
     'e2ecf4', 'cbdced', '6f9bc0', '6f9cc6',   // woda / jezioro / rzeka (błękit)
-    '2a3f6b', '233764', '1c2f58',            // granatowe etykiety
+    '6b1f2e', '5a1622', '4d1220',            // bordowe etykiety
   ]);
   const wyp = [...a1.matchAll(/fill="#([0-9a-f]{6})"/g)].map((m) => m[1]);
   assert.ok(wyp.length > 300, 'wypełnień do sprawdzenia');

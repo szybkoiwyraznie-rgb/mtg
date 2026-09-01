@@ -27,7 +27,7 @@ import {
   droga, miasto, ruina, hedron, etykieta, lukEtykieta, kompas, ramka,
   skalaLinia, drzewo,
 } from './bloki.mjs';
-import { prng, gladka, prosta, parsujD } from './geom.mjs';
+import { prng, zaokr, gladka, prosta, parsujD } from './geom.mjs';
 
 const BLOKI_BIOMOW = { las, bagno, step, lod };
 const BLOKI_POI = { miasto, ruina, hedron };
@@ -128,7 +128,28 @@ export function renderuj(scena, { styl } = {}) {
     warstwy.push(`<!-- === ETYKIETY === -->`,
       `<g font-family="Georgia, 'Times New Roman', serif" fill="${PAL.tekst}" ` +
       `style="paint-order: stroke; stroke: ${PAL.halo}; stroke-width: 3px; stroke-linejoin: round;">`);
-    for (const e of scena.etykiety ?? []) warstwy.push(etykieta(e.tekst, e.x, e.y, e.opcje ?? {}));
+    for (const e of scena.etykiety ?? []) {
+      const op = e.opcje ?? {};
+      // Kotwiczenie etykiety DO OBIEKTU (`przyDo: [x,y]`): napis kładziemy
+      // tuż obok znacznika (zamiast oderwanych, dalekich współrzędnych) i
+      // rysujemy krótką kreskę wskazującą obiekt. Kierunek dobierany
+      // deterministycznie (najpierw w prawo, potem w lewo, wyżej, niżej),
+      // z poszanowaniem mapy (bez wychodzenia poza szer/wys). Reużywalne
+      // dla przyszłych map i edycji współrzędnych w scenie.
+      if (op.przyDo) {
+        const [ax, ay] = op.przyDo;
+        const roz = op.offset ?? 16;
+        const kierunk = [
+          [ax + roz, ay], [ax - roz, ay], [ax, ay - roz], [ax, ay + roz],
+        ].filter(([x2, y2]) => x2 > 6 && x2 < szer - 6 && y2 > 6 && y2 < wys - 6);
+        const [lx, ly] = kierunk[0] ?? [ax + roz, ay];
+        // kreska: od krawędzi obiektu do punktu zaczepienia napisu
+        warstwy.push(`<path d="M ${zaokr(ax)} ${zaokr(ay)} L ${zaokr(ax + (lx - ax) * 0.55)} ${zaokr(ay + (ly - ay) * 0.55)}" fill="none" stroke="${PAL.ital}" stroke-width="1" opacity="0.7"/>`);
+        warstwy.push(etykieta(e.tekst, lx, ly, op));
+      } else {
+        warstwy.push(etykieta(e.tekst, e.x, e.y, op));
+      }
+    }
     for (const e of scena.etykietyLukowe ?? []) warstwy.push(lukEtykieta(e.id, e.punkty, e.tekst, e.opcje ?? {}));
     warstwy.push(`</g>`);
   }

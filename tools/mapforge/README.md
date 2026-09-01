@@ -53,17 +53,17 @@ przed renderem.
 | `bagno(id, poly, {gestosc})` | wielokąt | kępki turzyc + płytka oczka wodne |
 | `step(id, poly, {gestosc})` | wielokąt | kępy traw |
 | `lod(id, poly, {pekniecia})` | wielokąt | biała nakładka + spękania |
-| `pasmo(id, punkty, {szer, snieg, przedgorze})` | linia grzbietu | **żagle** (wklęsło-wypukłe szczyty) z fasetą cienia, jitter wierzchołka, ciasny rozstaw, przedgórze |
-| `szczyt(x, y, w, h, {snieg, lean})` | punkt | pojedynczy szczyt „żagiel" (lewa wypukła, prawa wklęsła, cień + haczura); `lean` = przechył wierzchołka |
+| `pasmo(id, punkty, {szer, snieg, przedgorze})` | linia grzbietu | **zębate, gęsto nachodzące się pasmo** (n ≈ dl/(szer·0.5), w ≈ szer·0.62) — ciągła, falista grań z przełęczami + ciemny pas cienia pod grzbietem + drugi rząd pogórza. Bez tego szczyty były rzadkie i „pływały" (feedback właściciela) |
+| `szczyt(x, y, w, h, {snieg, lean})` | punkt | pojedynczy ostry szczyt: lewa ściana jasna, prawa **gęsto kreskowana** (6 pociągnięć), 2 jasne kreski na świetle; `lean` = przechył wierzchołka |
 | `wulkan(x, y, {skala, dym})` | punkt | stożek z kraterem i lazem dymu |
-| `rzeka(id, punkty, {s0, s1})` | linia + szerokości | wstęga zwężająca się ku źródłu + punkt źródła |
+| `rzeka(id, punkty, {s0, s1})` | linia + szerokości | wstęga **stożkowa** (zwęża się do punktu na obu końcach — nie urywa się płasko; punkt źródła) |
 | `doplyw(id, punkty, {s0, s1})` | linia | cieńsza wstęga (bez źródła) |
 | `jezioro({cx, cy, rx, ry})` | elipsa | tafla + podwójny brzeg + fala |
 | `droga(id, punkty, {typ})` | linia | `szlak` — kropki (konwencja line-art mapome `0 9`); `droga` — kreski |
-| `miasto(x, y, {skala})` | punkt | mur łukiem + bloki zabudowy |
-| `ruina(x, y, {skala})` | punkt | przerwane mury + przewrócone kolumny |
+| `miasto(x, y, {skala})` | punkt | zwarta gromadka domków z dwuspadowym dachem (osada) |
+| `ruina(x, y, {skala})` | punkt | 3 złamane kolumny + przewrócona belka i gruz |
 | `hedron(x, y, {skala, opacity})` | punkt | kamienny pierścień (dryf = opacity) |
-| `etykieta(tekst, x, y, {kat, fs, ital})` | tekst | halo + obrót wokół punktu (`kat` w stopniach) |
+| `etykieta(tekst, x, y, {kat, fs, ital})` | tekst | halo + obrót wokół punktu (`kat` w stopniach); `przyDo:[x,y]` kotwiczy napis obok obiektu + kreska |
 | `lukEtykieta(id, punkty, tekst, {fs})` | łuk | etykieta po łuku (textPath) — zatoki, doliny |
 | `kompas / ramka / skalaLinia` | — | oprawa mapy |
 
