@@ -27,9 +27,14 @@ i deep-linkiem `#/mapa/srodziemie`. Ocena jakości zoomu → decyzja o T2.
 
 Pan/zoom dotykowy, etykiety w skali, pinezki z tooltipami i linkami do
 kart, legenda poziomów pewności, deep-link `#/mapa/…?pin=`, mini-mapa
-w infoboksie karty — działają (zweryfikowane na 2 kardach). Zostaje:
-**regiony/obwódki haseł geograficznych** (wymagają istnienia haseł —
-przed osiągnięciem progu ≥2 kart), dalszy rozwój po dostawach kolejnych kart.
+w infoboksie karty — działają (zweryfikowane na 2 kardach). Od sesji
+PR-4: badge pinezki ukryty do najechania (hover/focus) oraz **warstwa
+karty** — kliknięcie pinezki otwiera Kartę Katalogową na zmaksymalizowanej
+warstwie nad mapą, zamykanej ✕/tłem/Esc z powrotem do mapy w tym samym
+stanie zoomu (progressive enhancement: bez JS pinezka jest zwykłym
+linkiem). Zostaje: **regiony/obwódki haseł geograficznych** (wymagają
+istnienia haseł — przed osiągnięciem progu ≥2 kart), dalszy rozwój po
+dostawach kolejnych kart.
 
 ## K5 — Pętla Jakości operacyjna — **domknięte (PR-3, 2026-08-31)**
 

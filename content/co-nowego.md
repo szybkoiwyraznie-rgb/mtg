@@ -3,8 +3,24 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
-## 2026-09-01 — Naprawa publikacji GitHub Pages
+## 2026-09-01 — Naprawa publikacji GitHub Pages + mapy: badge pinezek i warstwa karty + pogłębienie druków
 
+- **Mapy — badge pinezek ukryte do najechania.** Etykieta pinezki
+  karty (nazwa karty przy znaczniku) nie zaśmieca już mapy — pokazuje
+  się po najechaniu kursorem (albo fokusem klawiaturowym); tooltip
+  pinezki działa jak dotychczas.
+- **Mapy — kliknięcie pinezki otwiera kartę na warstwie nad mapą.**
+  Wpis katalogowy otwiera się na zmaksymalizowanej warstwie; przycisk
+  ✕ w prawym górnym rogu (oraz klik w tło i Esc) zamyka warstwę
+  i wraca do mapy **w tym samym stanie przybliżenia** — mapa nie jest
+  odmontowywana. Klik z modyfikatorem (Ctrl/Cmd) otwiera kartę
+  w nowej karcie przeglądarki, a pinezka pozostaje zwykłym linkiem.
+- **Pogłębienie:** „Druk w Kolekcji" obu kart (1LTR: warianty wydań
+  w LTR i biografia Davida Rapozy; 2BFZ: kariera Viktora Titova)
+  z cytowaniami; strona planu Zendikar otrzymała sekcję **Ludy**
+  (rasy planu, rody wampirów Guul Draz, korowie-pielgrzymi, Zulaport)
+  wg *Planeswalker's Guide to Zendikar*. W źródłach 2BFZ zniknął wpis
+  „wiedza ogólna bez URL-a" — każdy fakt ma teraz cytat.
 - **Strona na Pages zaczęła działać.** Przyczyna trzech nieudanych
   publikacji (od powstania `pages.yml`): strona Pages nie była w ogóle
   włączona dla repozytorium, więc workflow padał na kroku konfiguracji —
@@ -12,8 +28,6 @@ ADR 0006). Najnowsze na górze.
   (Settings → Pages → Source: „GitHub Actions"); od teraz **każdy push
   do `main` publikuje aktualną wersję bazy automatycznie** (dotychczasowy
   mechanizm `on: push` w workflow — bez zmian).
-- Treść bazy (karty, plany, mapy) bez zmian — naprawa wyłącznie
-  infrastruktury publikowania.
 
 
 ## 2026-08-31 — Mapa Zendikaru: rysowanie szczegółów, czysty podkład + brak pikselozy

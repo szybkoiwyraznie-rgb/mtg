@@ -27,6 +27,26 @@ z gałęzi zdalnej (commit planu był wypchnięty od razu, L2 zadziałała).
 **Stan na koniec:** re-run deployu na main → zielony, strona Pages żyje
 (szczegóły w PLAN_2026-09-01-pr4-pages-fix.md, „Wynik weryfikacji").
 
+**Dalsze zadania sesji (zlecenie właściciela, merge na końcu sesji):**
+
+- **A (Pages):** potwierdzono, że po włączeniu site'a nowy artefakt
+  powstanie dopiero przy pierwszym pushu do main (scalenie PR #7) —
+  bot nie może odpalić workflow (`actions: write` brak; ENVIRONMENT §3).
+- **B1:** badge pinezki ukryty do najechania (CSS hover/focus-visible,
+  tooltip `title` pozostaje) — commit „mapy B1".
+- **B2:** warstwa karty z pinezki — `render-map.js` montuje dialog
+  (role=dialog, aria-modal) z rendererem Karty Katalogowej przekazanym
+  z `main.js` (brak cyklu importów); zamykanie ✕/tło/Esc, powrót fokusu
+  na mapę, mapa nieodmontowywana (zoom/pan zachowane); tory obrazów
+  montowane w warstwie; progressive enhancement (link #/karta/… bez JS).
+- **C (Pętla Jakości):** integralność 70/70; pogłębienie 3 stron
+  („Druk w Kolekcji" 1LTR/2BFZ z kwerendą o artystach i wydaniach;
+  plan Zendikar — nowa sekcja „Ludy" wg *Planeswalker's Guide*);
+  naprawa „wiedzy bez URL-a" w źródłach 2BFZ (reguła cytowań);
+  link-mining: nadal brak encji w ≥2 kartach (kolejka w backlogu);
+  pass mapowy: bez braków; stats: karty 88%, plany 63% (wikilinki
+  czekają na progu haseł).
+
 ## 2026-08-31 — sesja PR-3 c.d.: audyt + wzbogacenie mapy wektorowej Zendikaru (gałąź arena/01a0591f-mtg, PR #6)
 
 **Zlecenie właściciela:** „...zadanie audytu mapy wektorowej Zendikaru
