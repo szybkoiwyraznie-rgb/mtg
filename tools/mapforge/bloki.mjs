@@ -17,7 +17,7 @@ export const PAL = {
   lad: '#e8dbb8', ladStroke: '#a89468',
   woda: '#ccd8d2', wodaGleb: '#b9cdd8', wodaStroke: '#7fa0b4',
   rzeka: '#5b8ba6',
-  tekst: '#4a3a28', ital: '#6b5d52', halo: '#f4ecd8',
+  tekst: '#4a3a28', ital: '#6b5d52', halo: '#f4ecd8', etykieta: '#2a3f6b',
   drzewo: '#7a8a5a', drzewoCien: '#5c6b44', pienn: '#6b5d52',
   bagno: '#6f8a72', step: '#b5a877',
   skala: '#d8c9a3', skalaCien: '#8a7550', skalaLinia: '#a89468',
@@ -40,15 +40,17 @@ const MOTYWY = {
    *  (pinezki kart). Tryb „tusz" (czysta kreska, zero wypełnień)
    *  pozostaje dostępny dla własnych palet — tryb deklaruje motyw. */
   atlas: {
-    lad: '#f5f5f5', ladStroke: '#3f3f3f',
-    woda: '#e9e9e9', wodaGleb: '#dcdcdc', wodaStroke: '#8f8f8f',
-    rzeka: '#5a5a5a',
-    tekst: '#1c1c1c', ital: '#3f3f3f', halo: '#f5f5f5',
+    lad: '#f7f7f7', ladStroke: '#3f3f3f',
+    // Woda w delikatnym niebieskim (decyzja właściciela 2026-09-01 — odstępstwo
+    // od czystego achromatu z ADR 0019: kolor tylko dla wody i etykiet).
+    woda: '#e2ecf4', wodaGleb: '#cbdced', wodaStroke: '#6f9bc0',
+    rzeka: '#6f9cc6',
+    tekst: '#1c1c1c', ital: '#3f3f3f', halo: '#f7f7f7', etykieta: '#2a3f6b',
     drzewo: '#dedede', drzewoCien: '#c3c3c3', pienn: '#3f3f3f',
     bagno: '#5f5f5f', step: '#9b9b9b',
     skala: '#eaeaea', skalaCien: '#6b6b6b', skalaLinia: '#8f8f8f',
     droga: '#3f3f3f',
-    lodFill: '#fafafa', lodPek: '#bdbdbd', snieg: '#ffffff',
+    lodFill: '#f4f8fb', lodPek: '#b9cfe0', snieg: '#ffffff',
     krater: '#4a4a4a', dym: '#909090', mur: '#d9d9d9', kamien: '#cfcfcf',
     poswiataKolor: '#9f9f9f',
     poswiata: [{ w: 10, o: 0.35 }, { w: 5.5, o: 0.5 }, { w: 2, o: 0.9 }],
@@ -148,8 +150,8 @@ export function las(id, poly, { gestosc = 1, skala = 1, minOdst = 8, maski = nul
  */
 export function bagno(id, poly, { gestosc = 1, maski = null } = {}) {
   const rng = prng(`bagno:${id}`);
-  const n = Math.round(pole(poly) / 480 * gestosc);
-  return rozrzut(poly, n, rng, 9, maski).map(([x, y]) => {
+  const n = Math.round(pole(poly) / 330 * gestosc);
+  return rozrzut(poly, n, rng, 7, maski).map(([x, y]) => {
     let out = `<g class="mf-kepka" data-x="${rr(x)}" data-y="${rr(y)}">`;
     // sitowie: 3–5 krótkich pionowych kresek (rozchylonych, o różnej wys.)
     const m = 3 + Math.floor(rng() * 3);
@@ -219,57 +221,51 @@ function punktWPoligonie(poly, rng) {
 /* ---------- pasmo górskie (grzbiet + szczyty z faseta cienia) ---------- */
 
 /**
- * Pojedynczy szczyt w duchu mapome — ręcznie rysowany, cieniowany „żagiel":
- * asymetryczny wierzchołek (lewa wypukła, prawa wklęsła), ciemniejsza faseta
- * po prawej i GĘSTE kreskowanie na cienistej ścianie (wiele krótkich,
- * równoległych pociągnięć jak na mapie mapome) oraz parę jasnych kresek
- * na oświetlonej (lewej) stronie. `lean` przesuwa wierzchołek (jitter
- * w pasmie), dzięki czemu grzbiety składają się w chwiejną, naturalną linię.
+ * Pojedynczy szczyt w duchu mapome — klasyczna, OSTRZA góra rysowana kreską:
+ * trójkąt z ostrym wierzchołkiem (asymetria przez `lean`), oświetlona
+ * (lewa) ściana jasna, cienista (prawa) ściana zaciemniona i GĘSTO
+ * kreskowana (równoległe pociągnięcia w dół zbocza, jak na mapie mapome).
+ * Wcześniejsza wersja przypominała „żagiel"/kaczkę — zastąpiona trójkątem
+ * ze stopą grzbietu i kreskowaniem wypełniającym cień.
  */
 export function szczyt(x, y, w, h, { snieg = false, lean = 0 } = {}) {
-  const Pk = [x + lean * w, y - h];                 // wierzchołek (przesunięty)
+  const Pk = [x + lean * w, y - h];                 // ostry wierzchołek
   const L = [x - w, y];
   const R = [x + w, y];
-  // lewa krawędź — wypukła na zewnątrz; prawa — wklęsła („żagiel")
-  const c1 = [x - w * 0.9, y - h * 0.6];
-  const cR = [x + w * 0.02, y - h * 0.5];
-  const cR2 = [x + w * 0.7, y - h * 0.52];
-  const kontur = `M ${rr(L[0])} ${rr(L[1])} C ${rr(c1[0])} ${rr(c1[1])}, ` +
-    `${rr(Pk[0] - w * 0.1)} ${rr(Pk[1])}, ${rr(Pk[0])} ${rr(Pk[1])} ` +
-    `C ${rr(cR[0])} ${rr(cR[1])}, ${rr(cR2[0])} ${rr(cR2[1])}, ${rr(R[0])} ${rr(R[1])} Z`;
-  // cień: prawa połowa (od szczytu opadająca do podstawy) — ciemniejsza faseta
-  const cienD = `M ${rr(Pk[0])} ${rr(Pk[1])} C ${rr(cR[0])} ${rr(cR[1])}, ` +
-    `${rr(cR2[0])} ${rr(cR2[1])}, ${rr(R[0])} ${rr(R[1])} L ${rr(Pk[0] + w * 0.08)} ${rr(y)} Z`;
-  // GĘSTE kreskowanie na cienistej ścianie (od grzbietu do podstawy)
+  const Bm = [x + lean * w * 0.5, y];               // stopa grzbietu (dół cienia)
+  // lewa krawędź lekko wypukła (naturalne „rąbanie"), prawa prosta
+  const cL = [x - w * 0.88, y - h * 0.62];
+  const kontur = `M ${rr(L[0])} ${rr(L[1])} Q ${rr(cL[0])} ${rr(cL[1])} ${rr(Pk[0])} ${rr(Pk[1])} L ${rr(R[0])} ${rr(R[1])} Z`;
+  // cienista (prawa) faseta: Pk–R–Bm
+  const cienD = `M ${rr(Pk[0])} ${rr(Pk[1])} L ${rr(R[0])} ${rr(R[1])} L ${rr(Bm[0])} ${rr(Bm[1])} Z`;
+  // GĘSTE kreskowanie cienistej ściany: równoległe pociągnięcia w dół zbocza
   let hach = '';
-  const NH = 7;
+  const NH = 6;
   for (let i = 0; i < NH; i++) {
-    const f = (i + 0.5) / NH;
-    const ax = Pk[0] + (R[0] - Pk[0]) * f;
+    const f = (i + 0.55) / NH;
+    const ax = Pk[0] + (R[0] - Pk[0]) * f;          // u góry na prawym zboczu
     const ay = Pk[1] + (y - Pk[1]) * f;
-    const bx = ax - w * 0.05;
-    const by = y;
-    hach += `M ${rr(ax)} ${rr(ay)} L ${rr(bx)} ${rr(by)} `;
+    const bx = Bm[0] + (R[0] - Bm[0]) * f;          // u dołu na krawędzi podstawy
+    hach += `M ${rr(ax)} ${rr(ay)} L ${rr(bx)} ${rr(y - h * 0.02)} `;
   }
-  // jasne kreski na oświetlonej (lewej) ścianie — podkreślają wypukłość
+  // 2 jasne kreski na oświetlonej (lewej) ścianie — podkreślenie padania światła
   let os = '';
-  const NL = 3;
-  for (let i = 0; i < NL; i++) {
-    const f = (i + 0.5) / NL;
+  for (let i = 0; i < 2; i++) {
+    const f = 0.32 + i * 0.36;
     const ax = Pk[0] + (L[0] - Pk[0]) * f;
     const ay = Pk[1] + (y - Pk[1]) * f;
-    os += `M ${rr(ax)} ${rr(ay)} L ${rr(ax + w * 0.04)} ${rr(ay + h * 0.12)} `;
+    os += `M ${rr(ax)} ${rr(ay)} L ${rr(ax + w * 0.04)} ${rr(ay + h * 0.14)} `;
   }
   const sn = snieg
-    ? `<path d="M ${rr(Pk[0] - w * 0.22)} ${rr(Pk[1] + h * 0.16)} L ${rr(Pk[0])} ${rr(Pk[1])} ` +
-      `L ${rr(Pk[0] + w * 0.16)} ${rr(Pk[1] + h * 0.18)} L ${rr(Pk[0] + w * 0.06)} ${rr(Pk[1] + h * 0.28)} ` +
-      `L ${rr(Pk[0] - w * 0.06)} ${rr(Pk[1] + h * 0.3)} Z" fill="${PAL.snieg}"/>`
+    ? `<path d="M ${rr(Pk[0] - w * 0.2)} ${rr(Pk[1] + h * 0.14)} L ${rr(Pk[0])} ${rr(Pk[1])} ` +
+      `L ${rr(Pk[0] + w * 0.14)} ${rr(Pk[1] + h * 0.16)} L ${rr(Pk[0] + w * 0.05)} ${rr(Pk[1] + h * 0.26)} ` +
+      `L ${rr(Pk[0] - w * 0.05)} ${rr(Pk[1] + h * 0.28)} Z" fill="${PAL.snieg}"/>`
     : '';
   return `<g class="mf-szczyt" data-x="${rr(x)}" data-y="${rr(y)}">` +
-    `<path d="${kontur}" fill="${PAL.skala}" stroke="${PAL.tekst}" stroke-width="1.4" stroke-linejoin="round"/>` +
-    `<path d="${cienD}" fill="${PAL.skalaCien}" opacity="0.55"/>` +
-    `<path d="${hach}" stroke="${PAL.skalaCien}" stroke-width="0.9" fill="none" opacity="0.9" stroke-linecap="round"/>` +
-    `<path d="${os}" stroke="${PAL.halo}" stroke-width="0.8" fill="none" opacity="0.8" stroke-linecap="round"/>` +
+    `<path d="${kontur}" fill="${PAL.skala}" stroke="${PAL.tekst}" stroke-width="1.2" stroke-linejoin="round"/>` +
+    `<path d="${cienD}" fill="${PAL.skalaCien}" opacity="0.5"/>` +
+    `<path d="${hach}" stroke="${PAL.skalaCien}" stroke-width="0.9" fill="none" opacity="0.9"/>` +
+    `<path d="${os}" stroke="${PAL.halo}" stroke-width="0.8" fill="none" opacity="0.85"/>` +
     sn +
     `</g>`;
 }
@@ -374,27 +370,45 @@ export function droga(id, punkty, { typ = 'szlak' } = {}) {
 
 /* ---------- POI: osady i ruiny ---------- */
 
-/** Miasto: mur łukiem + bloki zabudowy + punkt. */
+/**
+ * Miasto (osada) w duchu mapome — nie „sześciany na łuku", lecz zwarta
+ * gromadka małych domków z dwuspadowym dachem (czarnym), tworząca
+ * czytelną osadę na tle mapy. Kilka budynków w nieregularnym szyku.
+ */
 export function miasto(x, y, { skala = 1 } = {}) {
   const s = skala;
-  return `<g class="mf-miasto" data-x="${rr(x)}" data-y="${rr(y)}">` +
-    `<path d="M ${rr(x - 10 * s)} ${rr(y + 3 * s)} a 10 ${7 * s} 0 0 1 ${20 * s} 0" fill="${PAL.mur}" stroke="${PAL.skalaCien}" stroke-width="1.4"/>` +
-    `<rect x="${rr(x - 5 * s)}" y="${rr(y - 3 * s)}" width="${rr(4.5 * s)}" height="${rr(4 * s)}" fill="${PAL.tekst}"/>` +
-    `<rect x="${rr(x + 0.5 * s)}" y="${rr(y - 1 * s)}" width="${rr(4 * s)}" height="${rr(4.5 * s)}" fill="${PAL.tekst}"/>` +
-    `<rect x="${rr(x - 8 * s)}" y="${rr(y - 0.5 * s)}" width="${rr(4 * s)}" height="${rr(3.5 * s)}" fill="${PAL.tekst}"/>` +
-    `<circle cx="${rr(x + 7 * s)}" cy="${rr(y - 4 * s)}" r="${rr(1.6 * s)}" fill="${PAL.tekst}"/>` +
-    `</g>`;
+  const dom = (hx, hy, sw, wh) =>
+    `<path d="M ${rr(hx - sw)} ${rr(hy + wh * 0.4)} L ${rr(hx - sw)} ${rr(hy - wh * 0.6)} ` +
+    `L ${rr(hx)} ${rr(hy - wh)} L ${rr(hx + sw)} ${rr(hy - wh * 0.6)} L ${rr(hx + sw)} ${rr(hy + wh * 0.4)} Z" fill="${PAL.tekst}"/>`;
+  const ukl = [
+    [-6, 1, 3, 4], [1, -1, 3.2, 4.4], [6, 2, 2.6, 3.6],
+    [-2, -6, 3.4, 4.6], [5, -6, 2.4, 3.2], [3, 5, 2.6, 3.6], [-5, 6, 2.8, 3.8],
+  ];
+  let out = `<g class="mf-miasto" data-x="${rr(x)}" data-y="${rr(y)}">`;
+  for (const [dx, dy, sw, wh] of ukl) out += dom(x + dx * s, y + dy * s, sw * s, wh * s);
+  return out + `</g>`;
 }
 
-/** Ruina: przerwane mury + przewrócone kolumny. */
+/**
+ * Ruina w duchu mapome — kilka ZŁAMANYCH kolumn (krótkie, z ukośnym
+ * „urwanym" szczytem), przewrócona belka i kamyki gruzu. Zamiast
+ * wcześniejszego „łuku z kropką" (nieczytelne).
+ */
 export function ruina(x, y, { skala = 1 } = {}) {
   const s = skala;
-  return `<g class="mf-ruina" data-x="${rr(x)}" data-y="${rr(y)}">` +
-    `<path d="M ${rr(x - 9 * s)} ${rr(y + 2 * s)} a 9 ${8 * s} 0 0 1 ${7 * s} -9" fill="none" stroke="${PAL.skalaCien}" stroke-width="${rr(2.2 * s)}" stroke-linecap="round"/>` +
-    `<path d="M ${rr(x + 5 * s)} ${rr(y - 4 * s)} a 6 ${6 * s} 0 0 1 4 ${8 * s}" fill="none" stroke="${PAL.skalaCien}" stroke-width="${rr(2 * s)}" stroke-linecap="round"/>` +
-    `<path d="M ${rr(x - 2 * s)} ${rr(y + 5 * s)} l ${rr(6 * s)} ${rr(2 * s)}" stroke="${PAL.skalaCien}" stroke-width="${rr(2 * s)}" stroke-linecap="round"/>` +
-    `<circle cx="${rr(x - 4 * s)}" cy="${rr(y + 3 * s)}" r="${rr(1.5 * s)}" fill="${PAL.skalaCien}"/>` +
-    `</g>`;
+  const kol = (bx, by, hgt, wdt, zlam) =>
+    `<path d="M ${rr(bx)} ${rr(by)} L ${rr(bx)} ${rr(by - hgt)} M ${rr(bx + wdt)} ${rr(by)} L ${rr(bx + wdt)} ${rr(by - hgt)} ` +
+    `M ${rr(bx)} ${rr(by - hgt)} L ${rr(bx + wdt)} ${rr(by - hgt + zlam)}" ` +
+    `stroke="${PAL.skalaCien}" stroke-width="${rr(1.9 * s)}" fill="none" stroke-linecap="round"/>`;
+  let out = `<g class="mf-ruina" data-x="${rr(x)}" data-y="${rr(y)}">`;
+  out += kol(x - 7 * s, y + 3 * s, 6 * s, 2.6 * s, 3 * s);
+  out += kol(x - 1 * s, y + 4 * s, 4 * s, 2.4 * s, -2.4 * s);
+  out += kol(x + 5 * s, y + 3 * s, 7 * s, 2.6 * s, 2.4 * s);
+  // przewrócona belka (gruz) u dołu + kamyki
+  out += `<path d="M ${rr(x - 9 * s)} ${rr(y + 6 * s)} l ${rr(15 * s)} ${rr(-1 * s)}" stroke="${PAL.skalaCien}" stroke-width="${rr(2 * s)}" stroke-linecap="round"/>`;
+  out += `<circle cx="${rr(x + 6 * s)}" cy="${rr(y + 6 * s)}" r="${rr(1.3 * s)}" fill="${PAL.skalaCien}"/>`;
+  out += `<circle cx="${rr(x - 3 * s)}" cy="${rr(y + 7 * s)}" r="${rr(1 * s)}" fill="${PAL.skalaCien}"/>`;
+  return out + `</g>`;
 }
 
 /** Hedron: kamienny pierścień z rysunkiem (dryfujący — opacity). */
@@ -414,14 +428,16 @@ export function hedron(x, y, { skala = 1, opacity = 1 } = {}) {
 export function etykieta(tekst, x, y, { kat = 0, fs = 15, ital = false, kolor = null, duze = false, kotwica = 'middle' } = {}) {
   const transform = kat ? ` transform="rotate(${zaokr(kat, 1)} ${rr(x)} ${rr(y)})"` : '';
   const kl = duze ? 'tytul-kontynentu' : null;
-  return `<text x="${rr(x)}" y="${rr(y)}" font-size="${fs}"${ital ? ' font-style="italic"' : ''}${kolor ? ` fill="${kolor}"` : ''}${kl ? ` class="${kl}"` : ''} text-anchor="${kotwica}"${transform}>${tekst}</text>`;
+  const fill = kolor ?? PAL.etykieta;
+  return `<text x="${rr(x)}" y="${rr(y)}" font-size="${fs}"${ital ? ' font-style="italic"' : ''} fill="${fill}"${kl ? ` class="${kl}"` : ''} text-anchor="${kotwica}"${transform}>${tekst}</text>`;
 }
 
 /** Etykieta po łuku ( zatoki, doliny ) — path w defs + textPath. */
 export function lukEtykieta(id, punkty, tekst, { fs = 16, ital = true, kolor = null } = {}) {
   const d = gladka(chaikin(punkty, 2));
+  const fill = kolor ?? PAL.etykieta;
   return `<path id="mf-luk-${id}" d="${d}" fill="none"/>` +
-    `\n<text font-size="${fs}"${ital ? ' font-style="italic"' : ''}${kolor ? ` fill="${kolor}"` : ` fill="${PAL.ital}"`}>` +
+    `\n<text font-size="${fs}"${ital ? ' font-style="italic"' : ''} fill="${fill}">` +
     `<textPath href="#mf-luk-${id}" startOffset="50%" text-anchor="middle">${tekst}</textPath></text>`;
 }
 

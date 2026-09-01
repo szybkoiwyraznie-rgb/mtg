@@ -159,12 +159,20 @@ test('mapforge: motywy — atlas wymienia paletę, oba deterministyczne', () => 
   const a1 = renderuj(scenaDemo(), { styl: 'atlas' });
   const a2 = renderuj(scenaDemo(), { styl: 'atlas' });
   assert.ok(p.includes('fill="#e8dbb8"'), 'pergamin: ląd pergaminowy');
-  assert.ok(a1.includes('fill="#f5f5f5"'), 'atlas: ląd = jasny szary');
+  assert.ok(a1.includes('fill="#f7f7f7"'), 'atlas: ląd = jasny szary');
   assert.ok(a1.includes('fill="#c3c3c3"'), 'atlas: walor tonalny (cień koron)');
   assert.ok(!a1.includes('fill="#e8dbb8"') && !a1.includes('fill="#f7f2e2"'), 'bez pergaminu i bez sepii');
+  // Achromatyczność z wyjątkiem KOLORU WODY i ETYKIET (decyzja właściciela
+  // 2026-09-01: kolor tylko dla wody — morza/rzeki/jeziora — i granatowych
+  // napisów; reszta mapy pozostaje czarno-biało-szara wg ADR 0019).
+  const KOLOR_FUNKCYJNY = new Set([
+    'e2ecf4', 'cbdced', '6f9bc0', '6f9cc6',   // woda / jezioro / rzeka (błękit)
+    '2a3f6b', '233764', '1c2f58',            // granatowe etykiety
+  ]);
   const wyp = [...a1.matchAll(/fill="#([0-9a-f]{6})"/g)].map((m) => m[1]);
   assert.ok(wyp.length > 300, 'wypełnień do sprawdzenia');
   for (const h of wyp) {
+    if (KOLOR_FUNKCYJNY.has(h)) continue;   // dozwolony kolor funkcjonalny (woda/label)
     const r = parseInt(h.slice(0, 2), 16), g = parseInt(h.slice(2, 4), 16), b2 = parseInt(h.slice(4, 6), 16);
     assert.ok(r === g && g === b2, `achromatycznie: #${h} (R=${r} G=${g} B=${b2})`);
   }
