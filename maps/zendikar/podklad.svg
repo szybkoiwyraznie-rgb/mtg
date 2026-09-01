@@ -164,7 +164,7 @@
   <use href="#miasto" transform="translate(1420,340) scale(0.85)"/> <!-- Affa -->
   <use href="#miasto" transform="translate(1830,300) scale(0.85)"/> <!-- Goma Fada -->
   <use href="#miasto" transform="translate(1440,560) scale(0.85)"/> <!-- Tal Terig -->
-  <use href="#ruina"    transform="translate(1500,560) scale(0.8)"/> <!-- Akoum Skyclave -->
+  <use href="#ruina"    transform="translate(1560,620) scale(0.8)"/> <!-- Akoum Skyclave -->
 
   <!-- Bala Ged: rzeka Umung -->
   <path d="M 1280,830 C 1330,860 1380,880 1440,860 C 1500,840 1540,850 1580,880" stroke="#5b8ba6" stroke-width="4" fill="none" opacity="0.85"/>
@@ -229,7 +229,7 @@
   <use href="#ruina" transform="translate(585,480) scale(0.5)"/>
 
   <!-- tama + miasto Sea Gate + Lighthouse -->
-  <path d="M 735,758 L 778,736" stroke="#7b2d26" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 694,748 L 786,738" stroke="#7b2d26" stroke-width="6" stroke-linecap="round"/>
   <use href="#miasto" transform="translate(790,742) scale(0.95)"/>
   <!-- Lighthouse (wysoka wieża) -->
   <path d="M 818,700 L 818,728 L 814,728 L 814,700 L 822,700 L 822,728 L 818,728 Z" fill="#efe8d6" stroke="#4a3a28" stroke-width="1.2"/>
@@ -269,7 +269,7 @@
   <use href="#drzewo" transform="translate(330,1090) scale(0.9)"/>
 
   <!-- Makindi Trenches + Teetering Peaks -->
-  <path d="M 640,1100 l 40 -12 M 660,1130 l 42 -10 M 500,1160 l 46 -10" stroke="#8a7a5c" stroke-width="2.5" fill="none"/>
+  <path d="M 620,1160 C 640,1148 640,1130 668,1120 C 696,1112 700,1096 706,1092" stroke="#8a7a5c" stroke-width="2.5" fill="none"/>
   <use href="#gora" transform="translate(665,1088) scale(1.0)"/>
   <use href="#gora" transform="translate(605,1122) scale(0.9)"/>
 
@@ -282,7 +282,7 @@
   <g fill="#e8dbb8" stroke="#a89468" stroke-width="3">
     <circle cx="125" cy="1015" r="20"/>
     <circle cx="175" cy="1070" r="14"/>
-    <path d="M 200,1220 C 205,1170 260,1150 295,1180 C 320,1210 310,1270 270,1285 C 230,1300 195,1265 200,1220 Z"/>
+    <path d="M 186,1226 C 190,1174 245,1154 281,1184 C 305,1216 296,1274 257,1289 C 216,1304 181,1270 186,1226 Z"/>
     <circle cx="105" cy="1200" r="15"/>
   </g>
 
@@ -298,7 +298,12 @@
   <!-- ============================================================ -->
   <!-- MURASA (płaskowyż — pozycja wg źródła uzupełniającego)        -->
   <!-- ============================================================ -->
-  <path d="M 860,1160 C 890,1110 970,1095 1030,1115 C 1090,1100 1140,1140 1145,1200 C 1160,1260 1120,1310 1060,1320 C 1010,1350 930,1345 890,1310 C 850,1280 840,1210 860,1160 Z"
+  <path d="M 858,1155
+    C 888,1106 963,1094 1025,1112
+    C 1070,1100 1108,1136 1108,1196
+    C 1108,1256 1082,1302 1030,1320
+    C 990,1335 940,1340 900,1314
+    C 866,1290 852,1228 858,1155 Z"
     fill="#e8dbb8" stroke="#a89468" stroke-width="3.5" />
   <path d="M 925,1175 q 40 -8 85 0 M 950,1265 q 40 8 80 0" stroke="#a89468" stroke-width="2" fill="none" opacity="0.35"/>
 
@@ -307,41 +312,41 @@
   <use href="#gora" transform="translate(1005,1170) scale(1.05)"/>
   <use href="#gora" transform="translate(1065,1190) scale(0.9)"/>
   <!-- Na Plateau -->
-  <use href="#gora" transform="translate(915,1290) scale(0.85)"/>
+  <use href="#gora" transform="translate(895,1200) scale(0.85)"/>
   <!-- jaddi-trees (kepa) -->
-  <use href="#drzewo" transform="translate(1000,1315) scale(0.9)"/>
-  <use href="#drzewo" transform="translate(1055,1305) scale(0.8)"/>
+  <use href="#drzewo" transform="translate(1030,1210) scale(0.9)"/>
+  <use href="#drzewo" transform="translate(1046,1200) scale(0.8)"/>
   <!-- rzeka Raimunza -->
-  <path d="M 1075,1325 C 1055,1305 1048,1275 1058,1245 C 1068,1215 1088,1195 1082,1160" stroke="#5b8ba6" stroke-width="4" fill="none" opacity="0.85"/>
+  <path d="M 1046,1205 C 1036,1235 1038,1260 1044,1258" stroke="#5b8ba6" stroke-width="4" fill="none" opacity="0.85"/>
   <!-- Sunder Bay (wejście) -->
-  <path d="M 860,1290 C 880,1312 900,1322 920,1317" stroke="#a89468" stroke-width="3" fill="none"/>
+  <path d="M 868,1300 C 884,1315 902,1322 916,1315" stroke="#a89468" stroke-width="3" fill="none"/>
   <!-- Murasa Skyclave / ruiny -->
-  <use href="#ruina" transform="translate(1035,1140) scale(0.8)"/>
-  <use href="#miasto" transform="translate(940,1245) scale(0.8)"/>
+  <use href="#ruina" transform="translate(1022,1132) scale(0.8)"/>
+  <use href="#miasto" transform="translate(906,1230) scale(0.8)"/>
 
   <!-- ============================================================ -->
   <!-- WZBOGACENIE szczegółowe (źródła uzupełniające — patrz map.json) -->
   <!-- ============================================================ -->
   <g font-family="Georgia, 'Times New Roman', serif" fill="#4a3a28" text-anchor="middle">
-    <use href="#gora" transform="translate(1370,431) scale(0.85)"/>
-    <use href="#gora" transform="translate(1356,435) scale(0.72)"/>
-    <use href="#gora" transform="translate(1384,437) scale(0.85)"/>
-    <text x="1370" y="457" font-size="15" font-style="italic" fill="#6b5d52">Spike Fields</text>
-    <use href="#miasto" transform="translate(1380,504) scale(0.85)"/>
-    <text x="1380" y="530" font-size="15" font-style="italic" fill="#6b5d52">Grip Haven</text>
-    <use href="#miasto" transform="translate(1362,478) scale(0.85)"/>
-    <text x="1362" y="504" font-size="15" font-style="italic" fill="#6b5d52">Slab Haven</text>
-    <use href="#miasto" transform="translate(1372,540) scale(0.85)"/>
-    <text x="1372" y="566" font-size="15" font-style="italic" fill="#6b5d52">Ghostwatch</text>
+    <use href="#gora" transform="translate(1510,432) scale(0.85)"/>
+    <use href="#gora" transform="translate(1496,436) scale(0.72)"/>
+    <use href="#gora" transform="translate(1524,438) scale(0.85)"/>
+    <text x="1510" y="460" font-size="15" font-style="italic" fill="#6b5d52">Spike Fields</text>
+    <use href="#miasto" transform="translate(1505,512) scale(0.85)"/>
+    <text x="1505" y="538" font-size="15" font-style="italic" fill="#6b5d52">Grip Haven</text>
+    <use href="#miasto" transform="translate(1485,490) scale(0.85)"/>
+    <text x="1485" y="516" font-size="15" font-style="italic" fill="#6b5d52">Slab Haven</text>
+    <use href="#miasto" transform="translate(1490,548) scale(0.85)"/>
+    <text x="1490" y="574" font-size="15" font-style="italic" fill="#6b5d52">Ghostwatch</text>
     <use href="#gora" transform="translate(1560,336) scale(0.85)"/>
     <use href="#gora" transform="translate(1546,340) scale(0.72)"/>
     <text x="1560" y="362" font-size="15" font-style="italic" fill="#6b5d52">Kargan Lands</text>
-    <use href="#drzewo" transform="translate(1760,392) scale(0.95)"/>
-    <use href="#drzewo" transform="translate(1744,397) scale(0.80)"/>
-    <use href="#drzewo" transform="translate(1776,396) scale(0.95)"/>
-    <text x="1760" y="418" font-size="15" font-style="italic" fill="#6b5d52">Ora Ondar</text>
-    <use href="#drzewo" transform="translate(1840,420) scale(0.95)"/>
-    <text x="1840" y="446" font-size="15" font-style="italic" fill="#6b5d52">Khalni Heart</text>
+    <use href="#drzewo" transform="translate(1762,394) scale(0.95)"/>
+    <use href="#drzewo" transform="translate(1746,399) scale(0.80)"/>
+    <use href="#drzewo" transform="translate(1778,398) scale(0.95)"/>
+    <text x="1752" y="366" font-size="15" font-style="italic" fill="#6b5d52">Ora Ondar</text>
+    <use href="#drzewo" transform="translate(1848,470) scale(0.95)"/>
+    <text x="1848" y="498" font-size="15" font-style="italic" fill="#6b5d52">Khalni Heart</text>
     <ellipse cx="1800" cy="588" rx="26" ry="17" fill="#b9cdd8" stroke="#7fa0b4" stroke-width="2.5"/>
     <text x="1800" y="614" font-size="15" font-style="italic" fill="#6b5d52">Glasspool</text>
     <use href="#ruina" transform="translate(1810,595) scale(0.8)"/>
@@ -349,32 +354,32 @@
     <use href="#drzewo" transform="translate(1544,845) scale(0.80)"/>
     <use href="#drzewo" transform="translate(1576,844) scale(0.95)"/>
     <text x="1560" y="866" font-size="15" font-style="italic" fill="#6b5d52">Guum Wilds</text>
-    <use href="#bagno" transform="translate(1762,854) scale(0.90)"/>
-    <text x="1762" y="880" font-size="15" font-style="italic" fill="#6b5d52">Bojuka Bog</text>
-    <use href="#bagno" transform="translate(1100,1204) scale(0.90)"/>
-    <use href="#bagno" transform="translate(1080,1210) scale(0.80)"/>
-    <use href="#bagno" transform="translate(1120,1210) scale(0.80)"/>
-    <text x="1100" y="1230" font-size="15" font-style="italic" fill="#6b5d52">Zof Marsh</text>
-    <use href="#bagno" transform="translate(1320,1260) scale(0.90)"/>
-    <use href="#bagno" transform="translate(1300,1266) scale(0.80)"/>
-    <text x="1320" y="1286" font-size="15" font-style="italic" fill="#6b5d52">Hagra Swamp</text>
-    <ellipse cx="1240" cy="1330" rx="26" ry="17" fill="#b9cdd8" stroke="#7fa0b4" stroke-width="2.5"/>
-    <text x="1240" y="1356" font-size="15" font-style="italic" fill="#6b5d52">Lake Jast</text>
+    <use href="#bagno" transform="translate(1642,860) scale(0.90)"/>
+    <text x="1642" y="890" font-size="15" font-style="italic" fill="#6b5d52">Bojuka Bog</text>
+    <use href="#bagno" transform="translate(1175,1125) scale(0.90)"/>
+    <use href="#bagno" transform="translate(1155,1131) scale(0.80)"/>
+    <use href="#bagno" transform="translate(1195,1131) scale(0.80)"/>
+    <text x="1175" y="1155" font-size="15" font-style="italic" fill="#6b5d52">Zof Marsh</text>
+    <use href="#bagno" transform="translate(1330,1230) scale(0.90)"/>
+    <use href="#bagno" transform="translate(1310,1236) scale(0.80)"/>
+    <text x="1330" y="1258" font-size="15" font-style="italic" fill="#6b5d52">Hagra Swamp</text>
+    <ellipse cx="1418" cy="1288" rx="26" ry="17" fill="#b9cdd8" stroke="#7fa0b4" stroke-width="2.5"/>
+    <text x="1418" y="1322" font-size="15" font-style="italic" fill="#6b5d52">Lake Jast</text>
     <use href="#miasto" transform="translate(1400,1337) scale(0.85)"/>
     <text x="1400" y="1363" font-size="15" font-style="italic" fill="#6b5d52">Lulea</text>
-    <use href="#gora" transform="translate(938,1307) scale(0.85)"/>
-    <text x="938" y="1333" font-size="15" font-style="italic" fill="#6b5d52">Kazandu</text>
-    <use href="#gora" transform="translate(932,1285) scale(0.85)"/>
-    <use href="#gora" transform="translate(918,1289) scale(0.72)"/>
-    <path d="M 960,1328 C 968,1314 980,1326 988,1312" stroke="#5b8ba6" stroke-width="4" fill="none" opacity="0.85"/>
-    <use href="#miasto" transform="translate(882,1300) scale(0.85)"/>
-    <text x="882" y="1326" font-size="15" font-style="italic" fill="#6b5d52">Singing City</text>
-    <use href="#gora" transform="translate(894,1283) scale(0.85)"/>
-    <use href="#gora" transform="translate(920,1260) scale(0.85)"/>
-    <path d="M 1060,1260 L 1060,1274 l 5,1 l 2,-12" stroke="#5b8ba6" stroke-width="3" fill="#b9cdd8"/>
-    <use href="#gora" transform="translate(1000,1281) scale(0.85)"/>
-    <text x="1000" y="1307" font-size="15" font-style="italic" fill="#6b5d52">Living Spire</text>
-    <use href="#ruina" transform="translate(950,1253) scale(0.8)"/>
+    <use href="#gora" transform="translate(926,1238) scale(0.85)"/>
+    <text x="946" y="1300" font-size="15" font-style="italic" fill="#6b5d52">Kazandu</text>
+    <use href="#gora" transform="translate(915,1225) scale(0.85)"/>
+    <use href="#gora" transform="translate(903,1229) scale(0.72)"/>
+    <path d="M 945,1276 C 953,1262 965,1274 973,1260" stroke="#5b8ba6" stroke-width="4" fill="none" opacity="0.85"/>
+    <use href="#miasto" transform="translate(866,1282) scale(0.85)"/>
+    <text x="872" y="1308" font-size="14" font-style="italic" fill="#6b5d52">Singing City</text>
+    <use href="#gora" transform="translate(900,1272) scale(0.85)"/>
+    <use href="#gora" transform="translate(915,1250) scale(0.85)"/>
+    <path d="M 1046,1245 L 1046,1259 l 5,1 l 2,-12" stroke="#5b8ba6" stroke-width="3" fill="#b9cdd8"/>
+    <use href="#gora" transform="translate(1015,1252) scale(0.85)"/>
+    <text x="1015" y="1276" font-size="15" font-style="italic" fill="#6b5d52">Living Spire</text>
+    <use href="#ruina" transform="translate(960,1245) scale(0.8)"/>
     <use href="#gora" transform="translate(1078,176) scale(0.85)"/>
     <text x="1078" y="202" font-size="15" font-style="italic" fill="#6b5d52">Benthidrix</text>
     <use href="#ruina" transform="translate(560,1160) scale(0.8)"/>
@@ -424,7 +429,7 @@
     <text x="536" y="412" font-size="14" fill="#3d5a6e">Magosi Wodospad</text>
     <text x="812" y="792" font-size="24">Sea Gate</text>
     <text x="928" y="660" font-size="16" fill="#6b5d52">Sky Rock</text>
-    <text x="836" y="338" font-size="24">Emeria</text>
+    <text x="880" y="322" font-size="22">Emeria</text>
     <text x="462" y="716" font-size="16" fill="#6b5d52">Hadatown</text>
 
     <text class="tytul-kontynentu" x="490" y="1120" font-size="44" letter-spacing="4">Ondu</text>
@@ -439,7 +444,7 @@
     <text class="tytul-kontynentu" x="1000" y="1215" font-size="42" letter-spacing="3">Murasa</text>
     
     <text x="1012" y="1162" font-size="16" fill="#6b5d52">Skyfang</text>
-    <text x="920" y="1328" font-size="14" fill="#6b5d52">Sunder Bay</text>
+    <text x="882" y="1340" font-size="13" fill="#6b5d52">Sunder Bay</text>
   </g>
 
   <!-- ============================================================ -->
