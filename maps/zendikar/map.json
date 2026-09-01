@@ -33,8 +33,8 @@
     },
     {
       "nazwa": "Ikiral",
-      "x": 0.435,
-      "y": 0.146,
+      "x": 0.44,
+      "y": 0.16,
       "typ": "etykieta-podkladu",
       "notka": "osada w ruinie 10-milowego hedronu (Guide Zendikar)"
     },
@@ -195,22 +195,22 @@
     },
     {
       "nazwa": "Makindi Trenches",
-      "x": 0.32,
-      "y": 0.771,
+      "x": 0.35,
+      "y": 0.7271,
       "typ": "etykieta-podkladu",
-      "notka": "labirynt wąwozów Ondu (MTG Wiki)"
+      "notka": "wąwozy/rowy przy wybrzeżu Ondu (MTG Wiki)"
     },
     {
       "nazwa": "Agadeem",
-      "x": 0.125,
-      "y": 0.879,
+      "x": 0.086,
+      "y": 0.9586,
       "typ": "etykieta-podkladu",
-      "notka": "wyspa Ondu"
+      "notka": "wyspa Ondu; przesunięta w czystą wodę SW od Ondu (nie nachodzi na ląd)"
     },
     {
       "nazwa": "Kabira",
-      "x": 0.215,
-      "y": 0.911,
+      "x": 0.2225,
+      "y": 0.9014,
       "typ": "etykieta-podkladu",
       "notka": "osada Agadeem (MTG Wiki)"
     },
@@ -278,11 +278,11 @@
     },
     {
       "nazwa": "Singing City",
-      "x": 0.441,
-      "y": 0.929,
+      "x": 0.453,
+      "y": 0.8943,
       "typ": "osada",
       "pozycja_zrodlo": "mapa-fanowska",
-      "notka": "zachodnie wybrzeże Kazandu (opis)"
+      "notka": "stanowisko sprzed Eldrazi na Murasie (Plane Shift: Zendikar)"
     },
     {
       "nazwa": "Visimal",
@@ -326,8 +326,8 @@
     },
     {
       "nazwa": "Zof Marsh",
-      "x": 0.55,
-      "y": 0.86,
+      "x": 0.579,
+      "y": 0.8714,
       "typ": "region",
       "pozycja_zrodlo": "mapa-fanowska",
       "notka": "bagna płn.-zach. Guul Draz (opis)"
@@ -351,7 +351,7 @@
     {
       "nazwa": "Lulea",
       "x": 0.7,
-      "y": 0.955,
+      "y": 0.9571,
       "typ": "osada",
       "pozycja_zrodlo": "mapa-fanowska",
       "notka": "płd.-wsch. od jeziora (opis)"
@@ -523,6 +523,28 @@
       "typ": "jezioro",
       "pozycja_zrodlo": "mapa-fanowska-wariant-3-4",
       "notka": "jezioro wewnątrz centralnego lasu Kazandu (Murasa)"
+    },
+    {
+      "nazwa": "Crypt of Agadeem",
+      "x": 0.085,
+      "y": 0.9214,
+      "typ": "ruina",
+      "notka": "krypta na wyspie Agadeem (MTG Wiki)"
+    },
+    {
+      "nazwa": "Valakut",
+      "x": 0.731,
+      "y": 0.2743,
+      "typ": "wulkan",
+      "notka": "superwulkan w sercu Akoum (MTG Wiki: Akoum); poprawka z Beyeen 2026-09-01"
+    },
+    {
+      "nazwa": "Zulaport",
+      "x": 0.0525,
+      "y": 0.8571,
+      "typ": "osada",
+      "notka": "wspólnota portowa na wybrzeżu Beyeen (Plane Shift: Zendikar, Ondu)",
+      "pozycja_zrodlo": "plane-shift"
     }
   ],
   "regiony": [],
@@ -732,10 +754,11 @@
       "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
     },
     {
-      "nazwa": "Beyeen / Mount Valakut",
+      "nazwa": "Beyeen",
       "typ": "wulkan",
       "kontynent": "Ondu",
-      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)",
+      "notka": "wyspa Ondu; port Zulaport (Plane Shift: Zendikar). Valakut przeniesiony na Akoum (MTG Wiki) — poprawka 2026-09-01"
     },
     {
       "nazwa": "Jwar (Strand of Jwar)",
@@ -766,6 +789,13 @@
       "typ": "step",
       "kontynent": "Sejiri",
       "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Valakut (superwulkan)",
+      "typ": "wulkan",
+      "kontynent": "Akoum",
+      "notka": "superwulkan w centrum Akoum (MTG Wiki: Akoum); wcześniej błędnie przy Beyeen — poprawka 2026-09-01",
+      "zrodlo": "https://mtg.fandom.com/wiki/Akoum"
     }
   ],
   "pinezki": [
