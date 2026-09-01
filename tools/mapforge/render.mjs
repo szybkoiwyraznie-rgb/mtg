@@ -27,7 +27,7 @@ import {
   droga, miasto, ruina, hedron, etykieta, lukEtykieta, kompas, ramka,
   skalaLinia, drzewo,
 } from './bloki.mjs';
-import { prng, gladka, prosta, parsujD } from './geom.mjs';
+import { prng, zaokr, gladka, prosta, parsujD, pit } from './geom.mjs';
 
 const BLOKI_BIOMOW = { las, bagno, step, lod };
 const BLOKI_POI = { miasto, ruina, hedron };
@@ -53,6 +53,96 @@ export function poswiataWybrzeza(d) {
   ).join('');
 }
 
+/**
+ * Rozstaw etykiet bez kolizji (uwaga mapy E1 / feedback właściciela (e)).
+ *
+ * Deterministyczny, zachłanny algorytm: etykiety przetwarzamy w kolejności
+ * „wielka/miasto → drobne", a każdą kładziemy w pierwszym wolnym miejscu
+ * z deterministycznej listy kandydatów (wokół `przyDo`, gdy jest — inaczej
+ * wokół jej `x,y`). Kandydat jest dobry, gdy (1) mieści się w mapie,
+ * (2) nie koliduje z już położonymi etykietami (ten sam model bboxu co
+ * map-audit), (3) leży na lądzie — chyba że etykieta należy do obiektu
+ * wodnego (whitelist `woda`) albo jest podtytułem `(...)`/nazwą w wodzie.
+ *
+ * Zwraca listę `{ tekst, x, y, opcje, zakotwicz, przyDo }` — `zakotwicz`
+ * to punkt obiektu, do którego rysujemy kreskę (gdy etykieta odsunięta).
+ * Behawior `przyDo` (kreska + napis obok) zostaje zachowany.
+ */
+export function rozstawEtykiety(etykiety, { szer, wys, maskiLadow = [], woda = new Set() } = {}) {
+  const naLadzie = (x, y) => !maskiLadow.length || maskiLadow.some((m) => pit([x, y], m));
+  const wWodzie = (t) => woda.has(t) || t.startsWith('(') || t === 'ruiny w niebie';
+
+  // Model bboxu zgodny z tools/map-audit.py (0.62·fs·znaki, bazowa linia).
+  const bbox = (t, x, y, fs) => [
+    x - t.length * fs * 0.31, y - fs * 0.82,
+    x + t.length * fs * 0.31, y + fs * 0.24,
+  ];
+  const koliduje = (b, u) => b[0] < u[2] && u[0] < b[2] && b[1] < u[3] && u[1] < b[3];
+
+  // Kolejność: najpierw duże napisy (tytuły kontynentów) i miasta, potem
+  // drobne POI; w obrębie tej samej klasy — wg tekstu (determinizm).
+  const waga = (e) => {
+    const op = e.opcje ?? {};
+    if (op.duze) return 0;
+    if (op.fs >= 18) return 1;
+    return 2;
+  };
+  const kolejnosc = [...etykiety].sort((a, b) => {
+    const wa = waga(a), wb = waga(b);
+    if (wa !== wb) return wa - wb;
+    return a.tekst.localeCompare(b.tekst, 'pl');
+  });
+
+  // Deterministyczne kierunki kandydatów: najpierw boki, potem rogi,
+  // potem coraz dalej (zgodnie z ruchem wskazówek). `offset` rośnie, dzięki
+  // czemu ciasne skupiska miast (Akoum, Guul Dráz) rozsuwają się na bok.
+  const kierunki = [];
+  for (const r of [16, 26, 38, 52, 70, 92, 118]) {
+    kierunki.push([r, 0], [-r, 0], [0, -r], [0, r],
+      [r, -r], [r, r], [-r, -r], [-r, r],
+      [r, -r / 2], [r, r / 2], [-r, -r / 2], [-r, r / 2],
+      [r / 2, -r], [r / 2, r], [-r / 2, -r], [-r / 2, r]);
+  }
+
+  const polozone = [];       // bboxy już ułożonych
+  const wynik = [];
+  for (const e of kolejnosc) {
+    const op = e.opcje ?? {};
+    const fs = op.fs ?? 15;
+    const ax = op.przyDo ? op.przyDo[0] : e.x;
+    const ay = op.przyDo ? op.przyDo[1] : e.y;
+    const wodaEty = wWodzie(e.tekst);
+    let wybrany = null;
+
+    // Właściwa (oryginalna) pozycja ma pierwszeństwo, o ile sensowna.
+    const kandydaci = [[e.x, e.y], ...kierunki.map(([dx, dy]) => [ax + dx, ay + dy])];
+    for (const [cx, cy] of kandydaci) {
+      if (cx < 6 || cx > szer - 6 || cy < 6 || cy > wys - 6) continue;
+      const bb = bbox(e.tekst, cx, cy, fs);
+      if (polozone.some((u) => koliduje(bb, u))) continue;
+      if (!wodaEty && !naLadzie(cx, cy)) continue;   // lądowe etykiety nie mogą „pływać"
+      wybrany = { x: cx, y: cy, bb };
+      break;
+    }
+    // Ostateczność: oryginalna pozycja (żeby nic nie zniknęło).
+    if (!wybrany) {
+      const bb = bbox(e.tekst, e.x, e.y, fs);
+      wybrany = { x: e.x, y: e.y, bb };
+    }
+    polozone.push(wybrany.bb);
+    wynik.push({
+      tekst: e.tekst,
+      x: wybrany.x,
+      y: wybrany.y,
+      opcje: op,
+      przyDo: op.przyDo ?? null,
+      // kreskę rysujemy, gdy napis odsunięty od obiektu o > 10 px
+      zakotwicz: op.przyDo && Math.hypot(wybrany.x - ax, wybrany.y - ay) > 10 ? [ax, ay] : null,
+    });
+  }
+  return wynik;
+}
+
 export function renderuj(scena, { styl } = {}) {
   motyw(styl ?? scena.styl ?? 'pergamin');
   const szer = scena.szerokosc ?? 2000;
@@ -68,6 +158,18 @@ export function renderuj(scena, { styl } = {}) {
     warstwy.push(`<!-- === LĄDY === -->`,
       ...scena.lądy.map((l) =>
         `<path d="${laczD(l)}" fill="${PAL.lad}" stroke="${PAL.ladStroke}" stroke-width="3.5"/>`));
+  }
+
+  // Maska lądu (unia wszystkich kontynentów): drogi i rzeki przycinamy do
+  // wybrzeża, żeby nigdy nie „płynęły" / nie „biegły" przez ocean. Rzeka
+  // dochodząca do morza rozpływa się w nim (klip kończy ją idealnie na linii
+  // brzegowej), a droga zawsze pozostaje na lądzie (uwaga mapy E1).
+  const ladowPaths = (scena.lądy ?? []).map(laczD);
+  const klipDoLadow = `url(#lady-klip)`;
+  if (ladowPaths.length) {
+    warstwy.splice(1, 0, `<defs><clipPath id="lady-klip">${
+      ladowPaths.map((d) => `<path d="${d}"/>`).join('')
+    }</clipPath></defs>`);
   }
 
   // maski lądu: biomy i pasma nie „pływają" po oceanie (otoczka biomu bywa
@@ -93,11 +195,32 @@ export function renderuj(scena, { styl } = {}) {
       ...scena.jeziora.map((j) => jezioro(j, j.opcje ?? {})));
   }
 
+  // Ujście rzeki: rzeka, której ostatni punkt leży w wodzie (morze/jezioro),
+  // dostaje gradient wtapiający ją w akwen (feedback właściciela 2026-09-01:
+  // zlewanie się, nie ucięcie przy brzegu). Rzeka kończąca się na lądzie
+  // pozostaje jednolita (wstęga i tak zwęża się do punktu).
+  const naLadzie = (p) => !maskiLadow.length || maskiLadow.some((m) => pit(p, m));
+  const wJeziorze = (p) => (scena.jeziora ?? []).some((j) => {
+    const dx = (p[0] - j.cx) / (j.rx || 1);
+    const dy = (p[1] - j.cy) / (j.ry || 1);
+    return dx * dx + dy * dy <= 1.0;
+  });
+  const ujscie = (r) => {
+    const end = r.punkty[r.punkty.length - 1];
+    if (naLadzie(end)) return null;
+    return { typ: wJeziorze(end) ? 'jezioro' : 'morze' };
+  };
+
   if (scena.rzeki?.length) {
-    warstwy.push(`<!-- === RZEKI === -->`);
+    // Rzeki NIE są już przycinane do lądu — ujście wpływa w morze i zlewa
+    // się z nim gradientem (pełna nieprzezroczystość, kolor wody). Dzięki
+    // temu nie ma twardego ucięcia na linii brzegowej; rzeka „rozpływa się".
+    warstwy.push(`<!-- === RZEKI (ujścia z gradientem w wodę) === -->`);
     for (const r of scena.rzeki) {
-      warstwy.push(rzeka(r.id, r.punkty, r.opcje ?? {}));
-      for (const d of r.doplywy ?? []) warstwy.push(doplyw(d.id, d.punkty, d.opcje ?? {}));
+      warstwy.push(rzeka(r.id, r.punkty, { ujscie: ujscie(r), ...(r.opcje ?? {}) }));
+      for (const d of r.doplywy ?? []) {
+        warstwy.push(doplyw(d.id, d.punkty, { ujscie: ujscie(d), ...(d.opcje ?? {}) }));
+      }
     }
   }
 
@@ -112,8 +235,11 @@ export function renderuj(scena, { styl } = {}) {
   }
 
   if (scena.drogi?.length) {
-    warstwy.push(`<!-- === DROGI I SZLAKI === -->`,
-      ...scena.drogi.map((d) => droga(d.id, d.punkty, d.opcje ?? {})));
+    // Drogi przycięte do lądu: nigdy nie biegną przez morze — patrz uwaga (c).
+    warstwy.push(`<!-- === DROGI I SZLAKI (przycięte do lądu) === -->`,
+      `<g${ladowPaths.length ? ` clip-path="${klipDoLadow}"` : ''}>`,
+      ...scena.drogi.map((d) => droga(d.id, d.punkty, d.opcje ?? {})),
+      `</g>`);
   }
 
   if (scena.poi?.length) {
@@ -125,10 +251,27 @@ export function renderuj(scena, { styl } = {}) {
   }
 
   if (scena.etykiety?.length || scena.etykietyLukowe?.length) {
-    warstwy.push(`<!-- === ETYKIETY === -->`,
+    // Woda-dozwolona dla etykiet (obiekty wodne/bay, podtytuły `(...)`).
+    // Domyślnie lista konwencji projektu (map-audit) + etykiety zaczynające
+    // się od `(`; scena może ją nadpisać przez `strefyWodne`.
+    const strefyWodne = new Set(scena.strefyWodne ??
+      ['Bojuka Bay', 'Sunder Bay', 'Chill Depths', 'Makindi Trenches',
+        'Halimar', 'Beyeen', 'Agadeem', 'Wyspy Jwar', 'Emeria', 'Zulaport']);
+    const rozstawione = rozstawEtykiety(scena.etykiety ?? [], {
+      szer, wys, maskiLadow, woda: strefyWodne,
+    });
+    warstwy.push(`<!-- === ETYKIETY (bez kolizji) === -->`,
       `<g font-family="Georgia, 'Times New Roman', serif" fill="${PAL.tekst}" ` +
       `style="paint-order: stroke; stroke: ${PAL.halo}; stroke-width: 3px; stroke-linejoin: round;">`);
-    for (const e of scena.etykiety ?? []) warstwy.push(etykieta(e.tekst, e.x, e.y, e.opcje ?? {}));
+    for (const e of rozstawione) {
+      // Kreska prowadząca od obiektu do odsuniętego napisu (przyDo) —
+      // czytelne zakotwiczenie zamiast „pływającej" etykiety.
+      if (e.zakotwicz) {
+        const [ax, ay] = e.zakotwicz;
+        warstwy.push(`<path d="M ${zaokr(ax)} ${zaokr(ay)} L ${zaokr(ax + (e.x - ax) * 0.55)} ${zaokr(ay + (e.y - ay) * 0.55)}" fill="none" stroke="${PAL.ital}" stroke-width="1" opacity="0.7"/>`);
+      }
+      warstwy.push(etykieta(e.tekst, e.x, e.y, e.opcje));
+    }
     for (const e of scena.etykietyLukowe ?? []) warstwy.push(lukEtykieta(e.id, e.punkty, e.tekst, e.opcje ?? {}));
     warstwy.push(`</g>`);
   }

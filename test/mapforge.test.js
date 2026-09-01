@@ -55,9 +55,10 @@ test('mapforge: wstega szerokość rośnie liniowo (rzeka)', () => {
   const { lewo, prawo, d } = wstega([[0, 0], [50, 0], [100, 0]], 2, 8);
   assert.ok(d.startsWith('M '));
   const szerNa = (i) => Math.hypot(prawo[i][0] - lewo[i][0], prawo[i][1] - lewo[i][1]);
-  assert.ok(szerNa(0) < szerNa(Math.floor(lewo.length / 2)));
-  assert.ok(szerNa(Math.floor(lewo.length / 2)) < szerNa(lewo.length - 1));
-  assert.ok(Math.abs(szerNa(lewo.length - 1) - 16) < 1, 'końcowa szerokość ≈ 2×s1');
+  // Stożek: najszersza w środku, zwęża się do punktu na OBU końcach.
+  const srd = Math.floor(lewo.length / 2);
+  assert.ok(szerNa(srd) > szerNa(0) && szerNa(srd) > szerNa(lewo.length - 1), 'środek najszerszy');
+  assert.ok(szerNa(0) < 2.5 && szerNa(lewo.length - 1) < 2.5, 'końce zwężone do punktu');
 });
 
 test('mapforge: chaikin/gladka produkują path d', () => {
@@ -84,12 +85,21 @@ test('mapforge: pasmo — szczyty i przedgorze', () => {
   assert.ok(n >= 8, `szczyty + przedgorze (${n})`);
   assert.ok(!svg.includes('opacity="0.3"'), 'bez linii grzbietu (przygaszona kreska czyta się jak droga po mapie)');
   const s = szczyt(0, 0, 20, 30, { snieg: true });
-  assert.ok(s.includes('#f6f4ec'), 'śnieg na szczycie');
+  assert.ok(s.includes('#f6f4ec'), 'śnieg na szczycie (pergamin)');
 });
 
 test('mapforge: rzeka/jezioro/droga — atrybuty stylu', () => {
   const r = rzeka('r', [[0, 0], [100, 100]], { s0: 2, s1: 6 });
   assert.ok(r.includes('fill="#5b8ba6"') && r.includes('circle'), 'wstęga + źródło');
+  // Ujście rzeki z gradientem: rzeka wtapia się w wodę (płynne zlewanie,
+  // nie ucięcie przy brzegu) — gradient od koloru rzeki do koloru morza
+  // w układzie współrzędnych mapy, pełna nieprzezroczystość.
+  const ru = rzeka('rUj', [[0, 0], [100, 100]], { s0: 2, s1: 6, ujscie: { typ: 'morze' } });
+  assert.ok(ru.includes('linearGradient'), 'ujście: gradient');
+  assert.ok(ru.includes('id="mf-rzeka-rUj"'), 'ujście: id gradientu');
+  assert.ok(ru.includes('stop-color="#5b8ba6"'), 'ujście: od koloru rzeki (pergamin)');
+  const rl = rzeka('rJz', [[0, 0], [100, 100]], { s0: 2, s1: 6, ujscie: { typ: 'jezioro' } });
+  assert.ok(rl.includes('stop-color="#b9cdd8"'), 'ujście: do koloru jeziora');
   const j = jezioro({ cx: 10, cy: 10, rx: 50, ry: 30 });
   assert.ok(j.includes('ellipse'));
   const sz = droga('d1', [[0, 0], [50, 50]], { typ: 'szlak' });
@@ -159,12 +169,20 @@ test('mapforge: motywy — atlas wymienia paletę, oba deterministyczne', () => 
   const a1 = renderuj(scenaDemo(), { styl: 'atlas' });
   const a2 = renderuj(scenaDemo(), { styl: 'atlas' });
   assert.ok(p.includes('fill="#e8dbb8"'), 'pergamin: ląd pergaminowy');
-  assert.ok(a1.includes('fill="#f5f5f5"'), 'atlas: ląd = jasny szary');
+  assert.ok(a1.includes('fill="#f7f7f7"'), 'atlas: ląd = jasny szary');
   assert.ok(a1.includes('fill="#c3c3c3"'), 'atlas: walor tonalny (cień koron)');
   assert.ok(!a1.includes('fill="#e8dbb8"') && !a1.includes('fill="#f7f2e2"'), 'bez pergaminu i bez sepii');
+  // Achromatyczność z wyjątkiem KOLORU WODY i ETYKIET (decyzja właściciela
+  // 2026-09-01: kolor tylko dla wody — morza/rzeki/jeziora — i granatowych
+  // napisów; reszta mapy pozostaje czarno-biało-szara wg ADR 0019).
+  const KOLOR_FUNKCYJNY = new Set([
+    'e2ecf4', 'cbdced', '6f9bc0', '6f9cc6',   // woda / jezioro / rzeka (błękit)
+    '6b1f2e', '5a1622', '4d1220',            // bordowe etykiety
+  ]);
   const wyp = [...a1.matchAll(/fill="#([0-9a-f]{6})"/g)].map((m) => m[1]);
   assert.ok(wyp.length > 300, 'wypełnień do sprawdzenia');
   for (const h of wyp) {
+    if (KOLOR_FUNKCYJNY.has(h)) continue;   // dozwolony kolor funkcjonalny (woda/label)
     const r = parseInt(h.slice(0, 2), 16), g = parseInt(h.slice(2, 4), 16), b2 = parseInt(h.slice(4, 6), 16);
     assert.ok(r === g && g === b2, `achromatycznie: #${h} (R=${r} G=${g} B=${b2})`);
   }
@@ -180,7 +198,7 @@ test('mapforge: renderuj — deterministyczny, warstwowy, kompletny', () => {
   const s2 = renderuj(scenaDemo());
   assert.equal(s1, s2, 'regeneracja daje identyczny SVG (czysty diff)');
   for (const w of ['OCEAN', 'LĄDY', 'BIOMY', 'JEZIORA', 'RZEKI', 'PASMA GÓRSKIE', 'WULKANY', 'DROGI I SZLAKI', 'POI', 'ETYKIETY', 'WYBRZEŻA (poświata)', 'OPRAWA (kompas, skala, ramka)']) {
-    assert.ok(s1.includes(`=== ${w} ===`), `warstwa ${w}`);
+    assert.ok(s1.includes(`=== ${w}`), `warstwa ${w}`);
   }
   assert.ok(s1.startsWith('<?xml') && s1.trim().endsWith('</svg>'));
   assert.equal((s1.match(/<svg/g) ?? []).length, 1, 'dokładnie jeden <svg>');

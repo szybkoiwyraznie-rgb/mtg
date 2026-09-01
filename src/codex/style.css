@@ -299,22 +299,24 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
   font-size: 13.5px;
   line-height: 1.1;
   white-space: nowrap;
-  color: #4a4438;
+  /* Bordo etykieta (feedback właściciela 2026-09-01): odróżnia napisy od
+     wody (granat zlewał się z błękitem morza); spójne z SVG (PAL.etykieta). */
+  color: #6b1f2e;
   text-shadow:
-    -1px -1px 0 var(--mapa-halo, rgba(255,255,255,.92)),
-     1px -1px 0 var(--mapa-halo, rgba(255,255,255,.92)),
-    -1px  1px 0 var(--mapa-halo, rgba(255,255,255,.92)),
-     1px  1px 0 var(--mapa-halo, rgba(255,255,255,.92)),
-     0 0 4px var(--mapa-halo, rgba(255,255,255,.92));
+    -1px -1px 0 var(--mapa-halo, rgba(255,255,255,.95)),
+     1px -1px 0 var(--mapa-halo, rgba(255,255,255,.95)),
+    -1px  1px 0 var(--mapa-halo, rgba(255,255,255,.95)),
+     1px  1px 0 var(--mapa-halo, rgba(255,255,255,.95)),
+     0 0 4px var(--mapa-halo, rgba(255,255,255,.95));
   pointer-events: none;
 }
-.mapa-etykieta-podkladu.kursywa { font-style: italic; color: #55524a; }
-.mapa-etykieta-podkladu.tier-glowna { font-size: 15.5px; color: #33302a; }
+.mapa-etykieta-podkladu.kursywa { font-style: italic; color: #6b1f2e; }
+.mapa-etykieta-podkladu.tier-glowna { font-size: 15.5px; color: #5a1622; }
 .mapa-etykieta-podkladu.tier-kontynent {
   font-size: 24px;
   font-weight: 600;
   letter-spacing: 2.5px;
-  color: #26231d;
+  color: #4d1220;
   text-transform: uppercase;
 }
 .mapa-etykieta-podkladu.poza-zasiegiem { display: none; }

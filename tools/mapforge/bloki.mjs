@@ -17,7 +17,7 @@ export const PAL = {
   lad: '#e8dbb8', ladStroke: '#a89468',
   woda: '#ccd8d2', wodaGleb: '#b9cdd8', wodaStroke: '#7fa0b4',
   rzeka: '#5b8ba6',
-  tekst: '#4a3a28', ital: '#6b5d52', halo: '#f4ecd8',
+  tekst: '#4a3a28', ital: '#6b5d52', halo: '#f4ecd8', etykieta: '#6b1f2e',
   drzewo: '#7a8a5a', drzewoCien: '#5c6b44', pienn: '#6b5d52',
   bagno: '#6f8a72', step: '#b5a877',
   skala: '#d8c9a3', skalaCien: '#8a7550', skalaLinia: '#a89468',
@@ -40,15 +40,17 @@ const MOTYWY = {
    *  (pinezki kart). Tryb „tusz" (czysta kreska, zero wypełnień)
    *  pozostaje dostępny dla własnych palet — tryb deklaruje motyw. */
   atlas: {
-    lad: '#f5f5f5', ladStroke: '#3f3f3f',
-    woda: '#e9e9e9', wodaGleb: '#dcdcdc', wodaStroke: '#8f8f8f',
-    rzeka: '#5a5a5a',
-    tekst: '#1c1c1c', ital: '#3f3f3f', halo: '#f5f5f5',
+    lad: '#f7f7f7', ladStroke: '#3f3f3f',
+    // Woda w delikatnym niebieskim (decyzja właściciela 2026-09-01 — odstępstwo
+    // od czystego achromatu z ADR 0019: kolor tylko dla wody i etykiet).
+    woda: '#e2ecf4', wodaGleb: '#cbdced', wodaStroke: '#6f9bc0',
+    rzeka: '#6f9cc6',
+    tekst: '#1c1c1c', ital: '#3f3f3f', halo: '#f7f7f7', etykieta: '#6b1f2e',
     drzewo: '#dedede', drzewoCien: '#c3c3c3', pienn: '#3f3f3f',
     bagno: '#5f5f5f', step: '#9b9b9b',
     skala: '#eaeaea', skalaCien: '#6b6b6b', skalaLinia: '#8f8f8f',
     droga: '#3f3f3f',
-    lodFill: '#fafafa', lodPek: '#bdbdbd', snieg: '#ffffff',
+    lodFill: '#f4f8fb', lodPek: '#b9cfe0', snieg: '#ffffff',
     krater: '#4a4a4a', dym: '#909090', mur: '#d9d9d9', kamien: '#cfcfcf',
     poswiataKolor: '#9f9f9f',
     poswiata: [{ w: 10, o: 0.35 }, { w: 5.5, o: 0.5 }, { w: 2, o: 0.9 }],
@@ -69,46 +71,102 @@ const rr = (v) => zaokr(v);
 
 /* ---------- biome: las (kępy koron + pnie) ---------- */
 
-/** Pojedyncze drzewo (korona z cieniem + pień). */
+/**
+ * „Chmurkowa" korona ręcznie rysowanej kępy — zamknięta ścieżka z wypukłych
+ * łuków wokół elipsy (jak kępa liści na mapie mapome). Deterministyczna
+ * przez rng: nieregularny obrys (jitter promienia) daje naturalne,
+ * niegdysiejszo-geometryczne kępy.
+ */
+function korona(cx, cy, rx, ry, n, rng) {
+  const k = [];
+  for (let i = 0; i < n; i++) {
+    const a = (2 * Math.PI * i) / n;
+    const j = 1 - 0.28 + rng() * 0.30;       // 0.72..1.02 — nieregularny obrys
+    k.push([cx + Math.cos(a) * rx * j, cy + Math.sin(a) * ry * j]);
+  }
+  let d = `M ${rr(k[0][0])} ${rr(k[0][1])} `;
+  for (let i = 0; i < n; i++) {
+    const a = k[i];
+    const b = k[(i + 1) % n];
+    const rl = Math.hypot(b[0] - a[0], b[1] - a[1]) * 0.62;
+    d += `A ${rr(rl)} ${rr(rl)} 0 0 1 ${rr(b[0])} ${rr(b[1])} `;
+  }
+  return d + 'Z';
+}
+
+/**
+ * Pojedyncze drzewo w duchu mapome: kępa liści (chmurka), nie „kula na
+ * patyku". Ciemna masa cienia u podstawy, jasna korona z tuszowym konturem,
+ * asymetryczny boczny pęd i krótka haczura cieniowania. Dzięki temu gęsty
+ * las składa się w falistą, „ręczną" teksturę zamiast równych kółek.
+ */
 export function drzewo(x, y, s, rng) {
   const jx = (rng() - 0.5) * 2;
   const jy = (rng() - 0.5) * 2;
-  const r = s * (3.6 + rng() * 1.6);
-  if (PAL.tryb === 'tusz') {
-    return `<g class="mf-drzewo" data-x="${rr(x + jx)}" data-y="${rr(y + jy)}">` +
-      `<path d="M ${rr(x + jx)} ${rr(y + jy)} l 0 ${rr(s * 2.4)}" stroke="${PAL.pienn}" stroke-width="${rr(s * 0.7)}"/>` +
-      `<circle cx="${rr(x + jx)}" cy="${rr(y + jy - r * 0.18)}" r="${rr(r)}" fill="${PAL.drzewo}" stroke="${PAL.skalaCien}" stroke-width="1.5"/>` +
-      (r > 4.5 ? `<path d="M ${rr(x + jx - r * 0.45)} ${rr(y + jy + r * 0.2)} a ${rr(r * 0.62)} ${rr(r * 0.62)} 0 0 1 ${rr(r * 0.8)} ${rr(-r * 0.25)}" ` +
-        `fill="none" stroke="${PAL.skalaCien}" stroke-width="0.9" opacity="0.7"/>` : '') +
-      `</g>`;
+  const X = x + jx;
+  const Y = y + jy;
+  const r = s * (4.6 + rng() * 2.0);
+  const pena = PAL.tekst;                  // tusz / kontur
+  const grub = Math.max(0.6, s * 0.6);
+  // ciemna masa u podstawy (pod spodem, po lewej-dole) — zza niej wystaje korona
+  const cien = korona(X - r * 0.16, Y + r * 0.26, r * 0.94, r * 0.8, 7, rng);
+  // asymetryczny boczny pęd (te same wypełnienie — zlewa się z koroną)
+  const bocz = korona(X + r * 0.52, Y + r * 0.1, r * 0.5, r * 0.44, 6, rng);
+  // główna korona (jasna), lekko w górę-lewo; jej kontur = obrys kępy
+  const glow = korona(X - r * 0.05, Y - r * 0.18, r, r * 0.9, 8, rng);
+  // haczura cieniowania w dolnej części korony (krótkie łuki)
+  let hach = '';
+  for (let i = 0; i < 3; i++) {
+    const hx = X - r * 0.3 + i * r * 0.26;
+    const hy = Y + r * 0.36;
+    hach += `M ${rr(hx)} ${rr(hy)} a ${rr(r * 0.09)} ${rr(r * 0.16)} 0 0 1 ${rr(r * 0.2)} ${rr(-r * 0.08)} `;
   }
-  return `<g class="mf-drzewo" data-x="${rr(x + jx)}" data-y="${rr(y + jy)}">` +
-    `<path d="M ${rr(x + jx)} ${rr(y + jy)} l 0 ${rr(s * 2.4)}" stroke="${PAL.pienn}" stroke-width="${rr(s * 0.7)}"/>` +
-    `<circle cx="${rr(x + jx - r * 0.42)}" cy="${rr(y + jy + r * 0.22)}" r="${rr(r * 0.72)}" fill="${PAL.drzewoCien}" opacity="0.6"/>` +
-    `<circle cx="${rr(x + jx)}" cy="${rr(y + jy - r * 0.18)}" r="${rr(r)}" fill="${PAL.drzewo}"/>` +
+  return `<g class="mf-drzewo" data-x="${rr(X)}" data-y="${rr(Y)}">` +
+    `<path d="${cien}" fill="${PAL.drzewoCien}" opacity="0.55"/>` +
+    `<path d="${glow}" fill="${PAL.drzewo}"/>` +
+    `<path d="${bocz}" fill="${PAL.drzewo}"/>` +
+    `<path d="${glow}" fill="none" stroke="${pena}" stroke-width="${rr(grub)}" stroke-linejoin="round"/>` +
+    `<path d="${hach}" stroke="${PAL.drzewoCien}" stroke-width="${rr(Math.max(0.7, s * 0.9))}" fill="none" opacity="0.85" stroke-linecap="round"/>` +
     `</g>`;
 }
 
 /** Las: deterministyczny rozsiew drzew w wielokącie. */
-export function las(id, poly, { gestosc = 1, skala = 1, minOdst = 15, maski = null } = {}) {
+export function las(id, poly, { gestosc = 1, skala = 1, minOdst = 8, maski = null } = {}) {
   const rng = prng(`las:${id}`);
-  const n = Math.round(pole(poly) / 240 * gestosc);
-  return rozrzut(poly, n, rng, minOdst * skala, maski)
+  const n = Math.round(pole(poly) / 72 * gestosc);
+  // drzewa mocno zachodzą na siebie (rozstaw < średnica korony) → gęsta,
+  // „ręczna" masa kęp jak mapome, zamiast rozsypanych kropek
+  return rozrzut(poly, n, rng, Math.max(3, minOdst) * 0.48, maski)
     .map(([x, y]) => drzewo(x, y, skala, rng)).join('\n');
 }
 
-/* ---------- biome: bagno (kępki turzyc + płytkie oczka) ---------- */
+/* ---------- biome: bagno (sitowie + płytkie oczka) ---------- */
 
+/**
+ * Bagno w duchu mapome — nie pojedyncze „esy" (wyglądały jak rząd znaczków
+ * „JJJ"), lecz kępka SITOWIA: kilka krótkich, lekko rozchylonych pionowych
+ * kresek + co jakiś czas płytkie oczko (pozioma falka). Gęsty rozsiew
+ * (mały odstęp) składa się w teksturę mokradeł zamiast rytmicznych rzędów.
+ */
 export function bagno(id, poly, { gestosc = 1, maski = null } = {}) {
   const rng = prng(`bagno:${id}`);
-  const n = Math.round(pole(poly) / 620 * gestosc);
-  return rozrzut(poly, n, rng, 18, maski).map(([x, y]) => {
-    const k = (rng() - 0.5) * 2;
-    return `<g class="mf-kepka" data-x="${rr(x)}" data-y="${rr(y)}">` +
-      `<path d="M ${rr(x - 7)} ${rr(y)} q 3 -9 6 0 M ${rr(x - 1)} ${rr(y + k)} q 3 -10 6 0 M ${rr(x + 4)} ${rr(y - k)} q 3 -8 6 0" ` +
-      `stroke="${PAL.bagno}" stroke-width="1.6" fill="none" stroke-linecap="round"/>` +
-      (rng() < 0.3 ? `<ellipse cx="${rr(x + 9)}" cy="${rr(y + 5)}" rx="5" ry="2.6" fill="${PAL.wodaGleb}" opacity="0.55"${PAL.tryb === 'tusz' ? ` stroke="${PAL.wodaStroke}" stroke-width="0.9"` : ''}/>` : '') +
-      `</g>`;
+  const n = Math.round(pole(poly) / 330 * gestosc);
+  return rozrzut(poly, n, rng, 7, maski).map(([x, y]) => {
+    let out = `<g class="mf-kepka" data-x="${rr(x)}" data-y="${rr(y)}">`;
+    // sitowie: 3–5 krótkich pionowych kresek (rozchylonych, o różnej wys.)
+    const m = 3 + Math.floor(rng() * 3);
+    for (let i = 0; i < m; i++) {
+      const dx = (rng() - 0.5) * 10;
+      const hgt = 6 + rng() * 5;
+      out += `<path d="M ${rr(x + dx)} ${rr(y)} l ${rr((rng() - 0.5) * 1.6)} ${rr(-hgt)}" ` +
+        `stroke="${PAL.bagno}" stroke-width="1" stroke-linecap="round" fill="none"/>`;
+    }
+    // płytkie oczko: pozioma falka (jak tafla na mapie mapome)
+    if (rng() < 0.4) {
+      out += `<path d="M ${rr(x - 5)} ${rr(y + 4)} q 3 -3 6 0 q 3 3 6 0" ` +
+        `stroke="${PAL.wodaStroke}" stroke-width="1" fill="none" opacity="0.7" stroke-linecap="round"/>`;
+    }
+    return out + `</g>`;
   }).join('\n');
 }
 
@@ -162,65 +220,88 @@ function punktWPoligonie(poly, rng) {
 
 /* ---------- pasmo górskie (grzbiet + szczyty z faseta cienia) ---------- */
 
-/** Pojedynczy szczyt: główna ściana + oświetlona/ocieniowana faseta + opcjonalny śnieg. */
-export function szczyt(x, y, w, h, { snieg = false } = {}) {
-  if (PAL.tryb === 'tusz') {
-    let hach = '';
-    for (let i = 1; i <= 3; i++) {
-      const f = 0.28 + i * 0.19;                      // wzdłuż lewej krawędzi
-      const ax = x - w + w * f;
-      const ay = y - h * f;
-      const bx = x - w * (0.38 - i * 0.09);
-      const by = y - h * (f - 0.16);
-      hach += `M ${rr(ax)} ${rr(ay)} L ${rr(bx)} ${rr(by)} `;
-    }
-    return `<g class="mf-szczyt" data-x="${rr(x)}" data-y="${rr(y)}">` +
-      `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x)} ${rr(y - h)} L ${rr(x + w)} ${rr(y)} Z" fill="${PAL.skala}" stroke="${PAL.skalaCien}" stroke-width="1.8" stroke-linejoin="round"/>` +
-      `<path d="${hach}" stroke="${PAL.skalaCien}" stroke-width="1" fill="none" opacity="0.85"/>` +
-      `</g>`;
+/**
+ * Pojedynczy szczyt w duchu mapome — CZARNO-BIAŁY, predefiniowany „półprodukt":
+ * szeroki, ostry, nieregularny trójkąt (zęby z drobnymi podarciami) z czarnym
+ * wypełnieniem i pionowymi zarysowaniami cienia. Bez pustego „żagla" — ma się
+ * czytać jako zbity, rysowany kreską szczyt. `lean` przechyla wierzchołek.
+ */
+export function szczyt(x, y, w, h, { snieg = false, lean = 0 } = {}) {
+  const pkX = 0.5 + lean;                         // wierzchołek odchylony przez lean
+  const c = PAL.tekst;                            // czerń (atlas) / tusz (pergamin)
+  const cien = PAL.skalaCien;
+  let d = `M ${rr(x)} ${rr(y)} `;
+  d += `L ${rr(x + w * (0.12 + Math.abs(lean) * 0.1))} ${rr(y - h * 0.3)} `;
+  d += `L ${rr(x + w * pkX * 0.7)} ${rr(y - h * 0.68)} `;
+  d += `L ${rr(x + w * pkX)} ${rr(y - h)} `;
+  d += `L ${rr(x + w * (pkX + (1 - pkX) * 0.42))} ${rr(y - h * 0.72)} `;
+  d += `L ${rr(x + w * 0.85)} ${rr(y - h * 0.28)} `;
+  d += `L ${rr(x + w)} ${rr(y)} Z`;
+  // pionowe zarysowania cienia (prawe zbocze) — biała kreska na czarnym
+  let hat = '';
+  const nH = 5;
+  for (let i = 0; i < nH; i++) {
+    const f = (i + 0.6) / nH;
+    const ax = x + w * (pkX + (1 - pkX) * f);
+    const ay = y - h * (1 - f);
+    hat += `M ${rr(ax)} ${rr(ay)} L ${rr(ax)} ${rr(y)} `;
   }
+  const sn = snieg
+    ? `<path d="M ${rr(x + w * (pkX - 0.18))} ${rr(y - h * 0.86)} L ${rr(x + w * pkX)} ${rr(y - h)} ` +
+      `L ${rr(x + w * (pkX + 0.14))} ${rr(y - h * 0.84)} L ${rr(x + w * (pkX + 0.05))} ${rr(y - h * 0.74)} ` +
+      `L ${rr(x + w * (pkX - 0.06))} ${rr(y - h * 0.76)} Z" fill="${PAL.snieg}"/>`
+    : '';
   return `<g class="mf-szczyt" data-x="${rr(x)}" data-y="${rr(y)}">` +
-    `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x)} ${rr(y - h)} L ${rr(x + w)} ${rr(y)} Z" fill="${PAL.skala}" stroke="${PAL.skalaCien}" stroke-width="1.8" stroke-linejoin="round"/>` +
-    `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x)} ${rr(y - h)} L ${rr(x - w * 0.18)} ${rr(y)} Z" fill="${PAL.skalaCien}" opacity="0.45"/>` +
-    (snieg ? `<path d="M ${rr(x - w * 0.3)} ${rr(y - h * 0.68)} L ${rr(x)} ${rr(y - h)} L ${rr(x + w * 0.3)} ${rr(y - h * 0.68)} L ${rr(x + w * 0.12)} ${rr(y - h * 0.6)} L ${rr(x)} ${rr(y - h * 0.72)} L ${rr(x - w * 0.12)} ${rr(y - h * 0.58)} Z" fill="${PAL.snieg}"/>` : '') +
+    `<path d="${d}" fill="${c}" stroke="${c}" stroke-width="0.5" stroke-linejoin="round"/>` +
+    `<path d="${hat}" stroke="${PAL.halo}" stroke-width="0.6" fill="none" opacity="0.35"/>` +
+    sn +
     `</g>`;
 }
 
 /**
- * Pasmo: linia grzbietu (wygładzona) + szczyty rozmieszczone wzdłuż niej,
- * na przemian po obu stronach, wyższe w centrum, niższe na krańcach
- * (naturalny profil masywu). `przedgorze` dosypuje drobne wzgórza wokół.
+ * Pasmo — CZARNO-BIAŁA, ZĘBATA GRAŃ w stylu mapome: JEDEN gęsty, nakładający
+ * się ciąg zębów (naprzemiennie wysokie/niskie szczyty) wzdłuż wygładzonej
+ * linii grzbietu, z minimalistycznym pogórzem tylko przy dolnym brzegu.
+ * Wcześniej były 2 rozdzielne rzędy „płotka" — teraz gęsta, nierówna masa.
  */
 export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = false, przedgorze = true, maski = null, liniaGrzbietu = false } = {}) {
   const naLadzie = (p) => !maski || !maski.length || maski.some((m) => pit(p, m));
   const rng = prng(`pasmo:${id}`);
   const grzbiet = chaikin(punkty, 3, false);
-  const n = gestoscSzczytow ?? Math.max(3, Math.round(dlugosc(grzbiet) / 80));
-  // linia grzbietu domyślnie WYŁĄCZONA: przygaszona kreska przez pasmo czyta
-  // się jak droga (feedback właściciela) — szczyty same składają się w pasmo
+  const dl = dlugosc(grzbiet);
   let out = liniaGrzbietu ? `<path d="${gladka(grzbiet)}" stroke="${PAL.skalaCien}" stroke-width="2" fill="none" opacity="0.3"/>` : '';
+
+  // JEDEN gęsty, nakładający się rząd: szerokie zęby (w ≈ szer) blisko siebie
+  // (rozstaw ≈ szer*0.7), naprzemienna wysokość → naturalna "zębata" grań.
+  const n = gestoscSzczytow ?? Math.max(9, Math.round(dl / (szer * 0.7)));
   for (let i = 0; i < n; i++) {
     const t = n === 1 ? 0.5 : i / (n - 1);
     const [x, y] = punktNa(grzbiet, t);
-    const waga = Math.sin(Math.PI * t); // wyżej w środku pasma
-    const h = szer * (0.7 + waga * 0.55 + rng() * 0.25);
-    const w = szer * (0.42 + rng() * 0.18);
-    const strona = i % 2 === 0 ? 1 : -1;
-    const dx = strona * szer * 0.22;
-    // maska lądu: kandydat offsetowy, potem bez offsetu, w ostateczności brak
-    const kandydat = [x + dx, y + Math.abs(dx) * 0.12];
+    const waga = Math.sin(Math.PI * t);          // wyżej w środku pasma
+    const wysoki = i % 2 === 0;
+    const w = szer * (1.0 + rng() * 0.2);        // szeroka podstawa → zęby nachodzą
+    const h = szer * (wysoki ? (0.95 + waga * 0.5 + rng() * 0.15) : (0.55 + waga * 0.3 + rng() * 0.1));
+    const dx = (rng() - 0.5) * szer * 0.15;
+    const kandydat = [x + dx, y];
     const pozycja = naLadzie(kandydat) ? kandydat : (naLadzie([x, y]) ? [x, y] : null);
-    if (pozycja) out += szczyt(pozycja[0], pozycja[1], w, h, { snieg: snieg && waga > 0.55 });
+    if (pozycja) out += szczyt(pozycja[0], pozycja[1], w, h, {
+      snieg: snieg && wysoki && waga > 0.55,
+      lean: (rng() - 0.5) * 0.5,
+    });
   }
+
+  // Minimalistyczne pogórze przy dolnym brzegu (małe, niskie, nieliczne)
   if (przedgorze) {
-    for (let i = 0; i < n; i++) {
-      const t = (i + 0.5) / n;
+    const n2 = Math.max(4, Math.round(dl / (szer * 0.95)));
+    for (let i = 0; i < n2; i++) {
+      const t = (i + 0.5) / n2;
       const [x, y] = punktNa(grzbiet, t);
-      const strona = i % 2 === 0 ? -1 : 1;
-      const px = x + strona * szer * (0.55 + rng() * 0.2);
-      const py = y + szer * 0.2;
-      if (!naLadzie([px, py])) continue;          // przedgórze nie pływa
-      out += szczyt(px, py, szer * 0.22, szer * (0.28 + rng() * 0.12), {});
+      const px = x + (rng() - 0.5) * szer * 0.6;
+      const py = y + szer * 0.26;
+      if (!naLadzie([px, py])) continue;          // pogórze nie pływa
+      out += szczyt(px, py, szer * 0.5, szer * 0.36, {
+        lean: (rng() - 0.5) * 0.6,
+      });
     }
   }
   return out;
@@ -246,16 +327,42 @@ export function wulkan(x, y, { skala = 1, dym = true } = {}) {
 
 /* ---------- rzeka (wstęga o rosnącej szerokości) ---------- */
 
-export function rzeka(id, punkty, { s0 = 3, s1 = 9, zrodlo = true } = {}) {
+/**
+ * Rzeka jako wstęga stożkowa (źródło wąskie, ujście szerokie) z opcjonalnym
+ * ujściem wtapiającym się w wodę. Gdy `ujscie` jest podane, kolor wstęgi
+ * przechodzi gradientem od `PAL.rzeka` (przy źródle) do koloru wody
+ * (`PAL.woda` dla morza / `PAL.wodaGleb` dla jeziora) przy ujściu, przy
+ * PEŁNEJ nieprzezroczystości — dzięki temu rzeka nie odcina się twardo na
+ * brzegu, lecz „rozpływa się" w akwenie (feedback właściciela 2026-09-01:
+ * zlewanie się, a nie ucięcie przy linii brzegowej).
+ */
+export function rzeka(id, punkty, { s0 = 3, s1 = 9, zrodlo = true, ujscie = null } = {}) {
   const { d } = wstega(punkty, s0, s1);
   const pocz = punkty[0];
-  return (zrodlo ? `<circle cx="${rr(pocz[0])}" cy="${rr(pocz[1])}" r="${rr(s0 * 0.7)}" fill="${PAL.rzeka}"/>` : '') +
-    `<path d="${d}" fill="${PAL.rzeka}" opacity="0.9"/>`;
+  const konc = punkty[punkty.length - 1];
+  let fill = PAL.rzeka;
+  let defs = '';
+  if (ujscie) {
+    const doKolor = ujscie.typ === 'jezioro' ? PAL.wodaGleb : PAL.woda;
+    // Gradient w układzie współrzędnych mapy: od źródła do ujścia, więc
+    // kolor zanika równo z kierunkiem płynięcia (nie z kierunkiem bboxu).
+    const a = 0.62;   // początek zanikania (62% długości biegu)
+    defs = `<linearGradient id="mf-rzeka-${id}" gradientUnits="userSpaceOnUse" ` +
+      `x1="${rr(pocz[0])}" y1="${rr(pocz[1])}" x2="${rr(konc[0])}" y2="${rr(konc[1])}">` +
+      `<stop offset="0" stop-color="${PAL.rzeka}"/>` +
+      `<stop offset="${a}" stop-color="${PAL.rzeka}"/>` +
+      `<stop offset="1" stop-color="${doKolor}"/>` +
+      `</linearGradient>`;
+    fill = `url(#mf-rzeka-${id})`;
+  }
+  return (defs ? `<defs>${defs}</defs>` : '') +
+    (zrodlo ? `<circle cx="${rr(pocz[0])}" cy="${rr(pocz[1])}" r="${rr(s0 * 0.7)}" fill="${PAL.rzeka}"/>` : '') +
+    `<path d="${d}" fill="${fill}"/>`;
 }
 
 /** Dopływ — cieńsza wstęga wpadająca do rzeki głównej. */
-export function doplyw(id, punkty, { s0 = 1.5, s1 = 3.5 } = {}) {
-  return rzeka(id, punkty, { s0, s1, zrodlo: false });
+export function doplyw(id, punkty, { s0 = 1.5, s1 = 3.5, ujscie = null } = {}) {
+  return rzeka(id, punkty, { s0, s1, zrodlo: false, ujscie });
 }
 
 /* ---------- jezioro (tafla + linia brzegowa + fale) ---------- */
@@ -281,27 +388,45 @@ export function droga(id, punkty, { typ = 'szlak' } = {}) {
 
 /* ---------- POI: osady i ruiny ---------- */
 
-/** Miasto: mur łukiem + bloki zabudowy + punkt. */
+/**
+ * Miasto (osada) w duchu mapome — nie „sześciany na łuku", lecz zwarta
+ * gromadka małych domków z dwuspadowym dachem (czarnym), tworząca
+ * czytelną osadę na tle mapy. Kilka budynków w nieregularnym szyku.
+ */
 export function miasto(x, y, { skala = 1 } = {}) {
   const s = skala;
-  return `<g class="mf-miasto" data-x="${rr(x)}" data-y="${rr(y)}">` +
-    `<path d="M ${rr(x - 10 * s)} ${rr(y + 3 * s)} a 10 ${7 * s} 0 0 1 ${20 * s} 0" fill="${PAL.mur}" stroke="${PAL.skalaCien}" stroke-width="1.4"/>` +
-    `<rect x="${rr(x - 5 * s)}" y="${rr(y - 3 * s)}" width="${rr(4.5 * s)}" height="${rr(4 * s)}" fill="${PAL.tekst}"/>` +
-    `<rect x="${rr(x + 0.5 * s)}" y="${rr(y - 1 * s)}" width="${rr(4 * s)}" height="${rr(4.5 * s)}" fill="${PAL.tekst}"/>` +
-    `<rect x="${rr(x - 8 * s)}" y="${rr(y - 0.5 * s)}" width="${rr(4 * s)}" height="${rr(3.5 * s)}" fill="${PAL.tekst}"/>` +
-    `<circle cx="${rr(x + 7 * s)}" cy="${rr(y - 4 * s)}" r="${rr(1.6 * s)}" fill="${PAL.tekst}"/>` +
-    `</g>`;
+  const dom = (hx, hy, sw, wh) =>
+    `<path d="M ${rr(hx - sw)} ${rr(hy + wh * 0.4)} L ${rr(hx - sw)} ${rr(hy - wh * 0.6)} ` +
+    `L ${rr(hx)} ${rr(hy - wh)} L ${rr(hx + sw)} ${rr(hy - wh * 0.6)} L ${rr(hx + sw)} ${rr(hy + wh * 0.4)} Z" fill="${PAL.tekst}"/>`;
+  const ukl = [
+    [-6, 1, 3, 4], [1, -1, 3.2, 4.4], [6, 2, 2.6, 3.6],
+    [-2, -6, 3.4, 4.6], [5, -6, 2.4, 3.2], [3, 5, 2.6, 3.6], [-5, 6, 2.8, 3.8],
+  ];
+  let out = `<g class="mf-miasto" data-x="${rr(x)}" data-y="${rr(y)}">`;
+  for (const [dx, dy, sw, wh] of ukl) out += dom(x + dx * s, y + dy * s, sw * s, wh * s);
+  return out + `</g>`;
 }
 
-/** Ruina: przerwane mury + przewrócone kolumny. */
+/**
+ * Ruina w duchu mapome — kilka ZŁAMANYCH kolumn (krótkie, z ukośnym
+ * „urwanym" szczytem), przewrócona belka i kamyki gruzu. Zamiast
+ * wcześniejszego „łuku z kropką" (nieczytelne).
+ */
 export function ruina(x, y, { skala = 1 } = {}) {
   const s = skala;
-  return `<g class="mf-ruina" data-x="${rr(x)}" data-y="${rr(y)}">` +
-    `<path d="M ${rr(x - 9 * s)} ${rr(y + 2 * s)} a 9 ${8 * s} 0 0 1 ${7 * s} -9" fill="none" stroke="${PAL.skalaCien}" stroke-width="${rr(2.2 * s)}" stroke-linecap="round"/>` +
-    `<path d="M ${rr(x + 5 * s)} ${rr(y - 4 * s)} a 6 ${6 * s} 0 0 1 4 ${8 * s}" fill="none" stroke="${PAL.skalaCien}" stroke-width="${rr(2 * s)}" stroke-linecap="round"/>` +
-    `<path d="M ${rr(x - 2 * s)} ${rr(y + 5 * s)} l ${rr(6 * s)} ${rr(2 * s)}" stroke="${PAL.skalaCien}" stroke-width="${rr(2 * s)}" stroke-linecap="round"/>` +
-    `<circle cx="${rr(x - 4 * s)}" cy="${rr(y + 3 * s)}" r="${rr(1.5 * s)}" fill="${PAL.skalaCien}"/>` +
-    `</g>`;
+  const kol = (bx, by, hgt, wdt, zlam) =>
+    `<path d="M ${rr(bx)} ${rr(by)} L ${rr(bx)} ${rr(by - hgt)} M ${rr(bx + wdt)} ${rr(by)} L ${rr(bx + wdt)} ${rr(by - hgt)} ` +
+    `M ${rr(bx)} ${rr(by - hgt)} L ${rr(bx + wdt)} ${rr(by - hgt + zlam)}" ` +
+    `stroke="${PAL.skalaCien}" stroke-width="${rr(1.9 * s)}" fill="none" stroke-linecap="round"/>`;
+  let out = `<g class="mf-ruina" data-x="${rr(x)}" data-y="${rr(y)}">`;
+  out += kol(x - 7 * s, y + 3 * s, 6 * s, 2.6 * s, 3 * s);
+  out += kol(x - 1 * s, y + 4 * s, 4 * s, 2.4 * s, -2.4 * s);
+  out += kol(x + 5 * s, y + 3 * s, 7 * s, 2.6 * s, 2.4 * s);
+  // przewrócona belka (gruz) u dołu + kamyki
+  out += `<path d="M ${rr(x - 9 * s)} ${rr(y + 6 * s)} l ${rr(15 * s)} ${rr(-1 * s)}" stroke="${PAL.skalaCien}" stroke-width="${rr(2 * s)}" stroke-linecap="round"/>`;
+  out += `<circle cx="${rr(x + 6 * s)}" cy="${rr(y + 6 * s)}" r="${rr(1.3 * s)}" fill="${PAL.skalaCien}"/>`;
+  out += `<circle cx="${rr(x - 3 * s)}" cy="${rr(y + 7 * s)}" r="${rr(1 * s)}" fill="${PAL.skalaCien}"/>`;
+  return out + `</g>`;
 }
 
 /** Hedron: kamienny pierścień z rysunkiem (dryfujący — opacity). */
@@ -321,14 +446,16 @@ export function hedron(x, y, { skala = 1, opacity = 1 } = {}) {
 export function etykieta(tekst, x, y, { kat = 0, fs = 15, ital = false, kolor = null, duze = false, kotwica = 'middle' } = {}) {
   const transform = kat ? ` transform="rotate(${zaokr(kat, 1)} ${rr(x)} ${rr(y)})"` : '';
   const kl = duze ? 'tytul-kontynentu' : null;
-  return `<text x="${rr(x)}" y="${rr(y)}" font-size="${fs}"${ital ? ' font-style="italic"' : ''}${kolor ? ` fill="${kolor}"` : ''}${kl ? ` class="${kl}"` : ''} text-anchor="${kotwica}"${transform}>${tekst}</text>`;
+  const fill = kolor ?? PAL.etykieta;
+  return `<text x="${rr(x)}" y="${rr(y)}" font-size="${fs}"${ital ? ' font-style="italic"' : ''} fill="${fill}"${kl ? ` class="${kl}"` : ''} text-anchor="${kotwica}"${transform}>${tekst}</text>`;
 }
 
 /** Etykieta po łuku ( zatoki, doliny ) — path w defs + textPath. */
 export function lukEtykieta(id, punkty, tekst, { fs = 16, ital = true, kolor = null } = {}) {
   const d = gladka(chaikin(punkty, 2));
+  const fill = kolor ?? PAL.etykieta;
   return `<path id="mf-luk-${id}" d="${d}" fill="none"/>` +
-    `\n<text font-size="${fs}"${ital ? ' font-style="italic"' : ''}${kolor ? ` fill="${kolor}"` : ` fill="${PAL.ital}"`}>` +
+    `\n<text font-size="${fs}"${ital ? ' font-style="italic"' : ''} fill="${fill}">` +
     `<textPath href="#mf-luk-${id}" startOffset="50%" text-anchor="middle">${tekst}</textPath></text>`;
 }
 

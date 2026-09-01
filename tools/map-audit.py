@@ -34,7 +34,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 NS = '{http://www.w3.org/2000/svg}'
 FILLE_LADU = {'#e8dbb8', '#eef0e6',         # pergamin: ląd / lodowiec (Sejiri)
-               '#f5f5f5'}                    # atlas (mapforge): ląd = jasny szary papier
+               '#f7f7f7'}                    # atlas (mapforge): ląd = jasny szary papier
 MARKERY = {'gora', 'wulkan', 'drzewo', 'bagno', 'miasto', 'ruina'}
 SPODZEANE_WODY = {                           # konwencja projektu
     'Bojuka Bay', 'Sunder Bay', 'Chill Depths', 'Makindi Trenches',
@@ -258,10 +258,11 @@ class Mapa:
         """Rzeki (wstęgi) i linie bez klasy (grzbiety, spękania) — próbki
         wzdłuż ścieżki muszą leżeć na lądzie (≥75%); poświata wybrzeża
         (ta sama `d` co ląd) i drogi (kreskowane — mogą prowadzić promem)
-        są wyłączone."""
+        są wyłączone. Elementy przycięte do maski lądu (`clip-path` odwołujące
+        się do #lady-klip) są z definicji na lądzie — pomijane."""
         d_ladow = {el.get('d') for el in self.root.iter(NS + 'path')
                    if el.get('fill') in FILLE_LADU}
-        RZEKI = {'#5b8ba6', '#5a5a5a', '#1f1f1f'}
+        RZEKI = {'#5b8ba6', '#6f9cc6', '#5a5a5a', '#1f1f1f'}   # pergamin + atlas (mapforge)
         out = []
 
         for el in self.root.iter(NS + 'path'):
@@ -275,6 +276,8 @@ class Mapa:
             if not (rzeka or linia):
                 continue
             if self._w_klasie(el):
+                continue
+            if self._przycie_do_ladu(el):
                 continue
             pts = self._punkty_d(el.get('d') or '')
             if len(pts) < 8:
@@ -292,6 +295,17 @@ class Mapa:
         e = self._rodzice.get(id(el))
         while e is not None:
             if e.get('class'):
+                return True
+            e = self._rodzice.get(id(e))
+        return False
+
+    def _przycie_do_ladu(self, el):
+        """Czy element (lub jego przodek `<g>`) jest przycięty do maski lądu
+        (#lady-klip) — gwarancja silnika, że rzeka/droga nie wyjdzie na morze."""
+        e = el
+        while e is not None:
+            clip = e.get('clip-path') or ''
+            if '#lady-klip' in clip:
                 return True
             e = self._rodzice.get(id(e))
         return False

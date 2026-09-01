@@ -340,6 +340,11 @@ Od 2026-09-01 projekt ma własny, deterministyczny silnik mapowy:
 `tools/mapforge/` (zero zależności; katalog klocków i schemat sceny —
 `tools/mapforge/README.md`; demo: `maps/_warsztat/podklad.svg`).
 
+**To jest teraz domyślny sposób tworzenia map T3/T4 nowego planu (E4
+planu `PLAN_2026-09-01-mapforge.md`):** start od `scena.json` → render
+podkładu mapforgiem (motyw atlas, ADR 0019), nie ręczne pisanie
+podkładu „od zera". PROCES_MAP MA1 pkt 5 prowadzi przez ten wzorzec.
+
 Reguły użycia:
 
 1. **Nowy element mapy planu = klocek ze sceny**, nie ręczny `<path>`
@@ -354,3 +359,18 @@ Reguły użycia:
 4. **Migracja istniejących podkładów tylko wg
    `docs/plans/PLAN_2026-09-01-mapforge.md`** (E1–E3), nigdy „przy
    okazji" innego zadania.
+
+**Język glifów „hand-drawn" (od PR-5, 2026-09-01):** obiekty przyrody
+mają naśladować line-art mapome, nie prymitywy:
+
+- **Las** = kępa-chmurka (zamknięta ścieżka z wypukłych łuków), nie
+  `<circle>`; gęsty i nakładający się (`minOdst < średnica korony`),
+  więc składa się w masę. `gestosc` gęstość, `skala` rozmiar korony.
+- **Góra** = asymetryczny „żagiel" (lewa wypukła, prawa wklęsła), cień
+  w facecie po prawej + haczura; `lean` przechyla wierzchołek. `pasmo()`
+  układa szczyty ciasno z jitterem → chwiejny grzbiet.
+
+Szczegóły i pełny katalog klocków: `tools/mapforge/README.md`.
+Zmiana stylu glifu = edycja `tools/mapforge/bloki.mjs` (`korona`,
+`drzewo`, `szczyt`, `pasmo`) + regeneracja `maps/<plan>/podklad.svg`
+i `maps/_warsztat/podklad*.svg` + testy.

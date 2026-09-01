@@ -34,9 +34,11 @@
 - E1 dostał guard (nie regeneruje sceny z renderu forge — rekursja);
   słownik wariantów w testach: T1–T4.
 
-### E4 — Wzorzec dla nowych planów
-- PROCES_MAP.md: nowe mapy (T3/T4) startują od sceny + mapforge;
-  SKILL_MAPA_PLANU odsyła do katalogu klocków (już §11).
+### E4 — Wzorzec dla nowych planów ✅ 2026-09-01 (PR-5)
+- PROCES_MAP.md (MA1 pkt 5): nowe mapy (T3/T4) startują od sceny
+  + mapforge (scena.json → render motywu atlas), ręczne `path` tylko
+  jako świadomy wyjątek; SKILL_MAPA_PLANU §11 wskazuje to jako
+  domyślny sposób tworzenia map nowego planu.
 
 ### E5 (opcjonalnie) — Warsztat rozszerzalny
 - Klocki czekające na potrzebę: cytadela/fort, latarnia, wrak,

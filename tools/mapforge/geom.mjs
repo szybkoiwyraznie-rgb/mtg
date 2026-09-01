@@ -224,7 +224,13 @@ export function wstega(pts, s0 = 3, s1 = 9) {
     let dy = b[1] - a[1];
     const L = Math.hypot(dx, dy) || 1;
     dx /= L; dy /= L;
-    const s = s0 + ((s1 - s0) * i) / Math.max(1, n - 1);
+    // Stożek: szerokość ZWĘŻA SIĘ DO PUNKTU na obu końcach (kształt półksiężyca
+    // od źródła do ujścia) — bez tego rzeka urywa się płasko („abberacja").
+    // s0/s1 to szerokość nominalna w środku; końce → ~0.
+    const t = i / Math.max(1, n - 1);
+    const srodek = s0 + ((s1 - s0) * t);
+    const stożek = Math.sin(Math.PI * Math.min(1, Math.max(0, t)));   // 0..1..0
+    const s = Math.max(0.2, srodek * (0.12 + 0.88 * stożek));
     lewo.push([g[i][0] - dy * s, g[i][1] + dx * s]);
     prawo.push([g[i][0] + dy * s, g[i][1] - dx * s]);
   }

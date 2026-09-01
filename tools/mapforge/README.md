@@ -49,23 +49,41 @@ przed renderem.
 
 | Klocek | Dane | Co rysuje |
 |---|---|---|
-| `las(id, poly, {gestosc, skala})` | wielokąt zasięgu | rozsiew koron (2 tony + pień), blue-noise |
+| `las(id, poly, {gestosc, skala})` | wielokąt zasięgu | **kępy liści** (nieregularne „chmurki" z haczurą), nakładające się w gęstą masę — jak mapome |
 | `bagno(id, poly, {gestosc})` | wielokąt | kępki turzyc + płytka oczka wodne |
 | `step(id, poly, {gestosc})` | wielokąt | kępy traw |
 | `lod(id, poly, {pekniecia})` | wielokąt | biała nakładka + spękania |
-| `pasmo(id, punkty, {szer, snieg, przedgorze})` | linia grzbietu | szczyty z faseta cienia, profil wyższy w centrum, przedgórze |
-| `szczyt(x, y, w, h, {snieg})` | punkt | pojedynczy szczyt (ściana + cień + śnieg) |
+| `pasmo(id, punkty, {szer, snieg, przedgorze})` | linia grzbietu | **czarno-biała, zębata grań w stylu mapome** — JEDEN gęsty, nakładający się ciąg zębów (n ≈ dl/(szer·0.7), w ≈ szer·1.0–1.2, naprzemienna wysokość) + minimalistyczne pogórze przy dolnym brzegu. Wcześniejsze 2 rzędy „płotka" czytały się jak plot, nie góry (feedback właściciela) |
+| `szczyt(x, y, w, h, {snieg, lean})` | punkt | pojedynczy ostry czarny szczyt (trójkąt kątowy z pionowym kreskowaniem cienia po prawej); `lean` = przechył wierzchołka |
 | `wulkan(x, y, {skala, dym})` | punkt | stożek z kraterem i lazem dymu |
-| `rzeka(id, punkty, {s0, s1})` | linia + szerokości | wstęga zwężająca się ku źródłu + punkt źródła |
+| `rzeka(id, punkty, {s0, s1, ujscie})` | linia + szerokości | wstęga **stożkowa** (zwęża się do punktu na obu końcach — nie urywa się płasko; punkt źródła). `ujscie: {typ:'morze'|'jezioro'}` dodaje **gradient wtapiający ujście** w wodę (pełna nieprzezroczystość, kolor → kolor akwenu) — rzeka „rozpływa się", nie odcina się twardo przy brzegu (feedback właściciela) |
 | `doplyw(id, punkty, {s0, s1})` | linia | cieńsza wstęga (bez źródła) |
 | `jezioro({cx, cy, rx, ry})` | elipsa | tafla + podwójny brzeg + fala |
 | `droga(id, punkty, {typ})` | linia | `szlak` — kropki (konwencja line-art mapome `0 9`); `droga` — kreski |
-| `miasto(x, y, {skala})` | punkt | mur łukiem + bloki zabudowy |
-| `ruina(x, y, {skala})` | punkt | przerwane mury + przewrócone kolumny |
+| `miasto(x, y, {skala})` | punkt | zwarta gromadka domków z dwuspadowym dachem (osada) |
+| `ruina(x, y, {skala})` | punkt | 3 złamane kolumny + przewrócona belka i gruz |
 | `hedron(x, y, {skala, opacity})` | punkt | kamienny pierścień (dryf = opacity) |
-| `etykieta(tekst, x, y, {kat, fs, ital})` | tekst | halo + obrót wokół punktu (`kat` w stopniach) |
+| `etykieta(tekst, x, y, {kat, fs, ital})` | tekst | halo + obrót wokół punktu (`kat` w stopniach); `przyDo:[x,y]` kotwiczy napis obok obiektu + kreska |
 | `lukEtykieta(id, punkty, tekst, {fs})` | łuk | etykieta po łuku (textPath) — zatoki, doliny |
 | `kompas / ramka / skalaLinia` | — | oprawa mapy |
+
+### Język rysowania glifów (styl „hand-drawn" jak mapome)
+
+Glify przyrody nawiązują do line-artu mapome (benchmark, ADR 0015):
+
+- **Las:** korona to zamknięta ścieżka z wypukłych łuków wokół elipsy
+  („chmurka"), nie `<circle>` — nieregularny obrys (jitter promienia),
+  ciemna masa cienia u podstawy, asymetryczny boczny pęd i krótka haczura
+  cieniowania. Lasy są **gęste i nakładają się** (`minOdst < średnica
+  korony`), więc składają się w falistą, teksturowaną masę.
+- **Góra:** pojedynczy szczyt to kątowy czarny trójkąt z zarysowanym
+  prawym zboczem (pionowe kreski cienia), jak w klasycznych mapach
+  line-art; `lean` przechyla wierzchołek. `pasmo()` składa je w JEDEN
+  gęsty, zębaty łańcuch o naprzemiennej wysokości — czytelna grań,
+  nie „płotek".
+
+Obie formy pozostają deterministyczne (rng z hasha id) i audytowalne
+(`data-x/y` na klocku, kontur zamknięty).
 
 Scenę składa `render.mjs` (warstwy: ocean → poświata wybrzeży → lądy →
 biomy → jeziora → rzeki → pasma → wulkany → drogi → POI → etykiety →

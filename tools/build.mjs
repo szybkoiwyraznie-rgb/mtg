@@ -21,6 +21,7 @@ import {
   wczytajMapy, wczytajCoNowego,
 } from './content-loader.mjs';
 import { renderMarkdown } from '../src/codex/markdown.js';
+import { napiszZip } from './zip.mjs';
 import {
   zbudujRejestr, resolverLinkow, walidujStrone, policzBacklinki, policzTagi,
 } from '../src/codex/registry.js';
@@ -186,6 +187,7 @@ export async function zbuduj({ out, root = ROOT } = {}) {
   // od razu na Codexie — bez klikania w plik na liście katalogu.
   // Tylko dla właściwego artefaktu (testy budują pod innymi nazwami).
   const nazwa = path.basename(cel);
+  const katalog = path.dirname(cel);
   if (nazwa === 'mtg-lore-codex.html') {
   const index = `<!doctype html>
 <html lang="pl">
@@ -200,7 +202,26 @@ export async function zbuduj({ out, root = ROOT } = {}) {
 </body>
 </html>
 `;
-  fs.writeFileSync(path.join(path.dirname(cel), 'index.html'), index);
+  fs.writeFileSync(path.join(katalog, 'index.html'), index);
+
+  // Archiwum ZIP do pobrania („pobierz online' do użycia lokalnie / na dysk).
+  // Pakuje artefakt (+ index.html) i — gdy mapy będą osobnymi plikami —
+  // cały katalog maps/**/, żeby ZIP był samowystarczalny po rozpakowaniu.
+  // Metoda STORE bez zależności (ADR 0002); patrz tools/zip.mjs.
+  const plikiZip = [];
+  plikiZip.push({ path: 'index.html', data: fs.readFileSync(path.join(katalog, 'index.html')) });
+  plikiZip.push({ path: nazwa, data: fs.readFileSync(cel) });
+  const katalogMap = path.join(katalog, 'maps');
+  if (fs.existsSync(katalogMap)) {
+    for (const f of chodz(katalogMap)) {
+      const rel = path.relative(katalogMap, f).split(path.sep).join('/');
+      plikiZip.push({ path: `maps/${rel}`, data: fs.readFileSync(f) });
+    }
+  }
+  const zip = napiszZip(plikiZip);
+  const celZip = path.join(katalog, 'mtg-lore-codex.zip');
+  fs.writeFileSync(celZip, zip);
+  console.log(`  archiwum: ${(zip.length / 1024).toFixed(1)} kB (${plikiZip.length} plików)`);
   }
 
   console.log(`Zbudowano ${out}`);
@@ -208,6 +229,17 @@ export async function zbuduj({ out, root = ROOT } = {}) {
   console.log(`  modułów: ${moduly.length}`);
   console.log(`  rozmiar: ${(html.length / 1024).toFixed(1)} kB`);
   return cel;
+}
+
+/** Rekurencyjny spis plików w katalogu (posortowany, ścieżki absolutne). */
+function chodz(katalog) {
+  const wyn = [];
+  for (const e of fs.readdirSync(katalog, { withFileTypes: true })) {
+    const pelna = path.join(katalog, e.name);
+    if (e.isDirectory()) wyn.push(...chodz(pelna));
+    else wyn.push(pelna);
+  }
+  return wyn.sort();
 }
 
 /** Usuwa składnię modułów — po sklejeniu wszystko dzieli jeden zasięg (L3). */
