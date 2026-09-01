@@ -87,15 +87,6 @@ Zendikar — karta nie przechodzi żadnej transpozycji: jej plan rodzinny
 i plan kolekcji to ten sam plan. Osadzenie w Coralhelm nad Halimar
 na Tazeem wynika wprost z kanonu świata i nazwy karty.
 
-## Druk w Kolekcji
-
-W kolekcji jest standardowy wydruk BFZ #74 (czarna rama, klasyczna
-rama z 2015 roku). Ilustruje go **Viktor Titov** — ilustrator
-z Moskwy pracujący dla branży rozrywkowej; karty MtG ilustruje od
-bloku Khans of Tarkir (2014), a poza Zendikarem m.in. *Shefet
-Monitor* (Amonkhet) i nowy wizerunek *Verdant Force*. Druk wyświetla
-się w ramce karty obok.
-
 ## Na Mapie
 
 Karta jest osadzona w regionie **Tazeem** — niebieskim kontynencie
@@ -122,12 +113,6 @@ nie konkretny punkt.
   <https://magic.wizards.com/en/news/feature/battle-for-zendikar-mechanics>
 - MTG Wiki, „Blue" — filozofia koloru niebieskiego (wiedza, spryt,
   przebiegłość): <https://mtg.fandom.com/wiki/Blue>
-- The Scent of a Gamer, „MtG artists: Viktor Titov" — kariera artysty
-  (ilustruje od bloku Khans of Tarkir, m.in. *Den Protector*,
-  *Shefet Monitor*, *Verdant Force*):
-  <https://scentofagamer.wordpress.com/2018/10/13/mtg-artists-viktor-titov/>
-- Strona artysty — portfolio i warsztat (MtG, ilustracja
-  rozrywkowa): <https://www.viktortitov.com/info>
 
 ## Podsumowanie Lore
 

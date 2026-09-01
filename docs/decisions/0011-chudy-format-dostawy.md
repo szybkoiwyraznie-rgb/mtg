@@ -1,6 +1,9 @@
 # ADR 0011: Chudy format dostawy — karta bez narracji i promptu
 
-- **Status:** Zaakceptowana
+- **Status:** Częściowo zastąpiona — sekcję „Druk w Kolekcji" z listy
+  sekcji Karty Katalogowej znosi ADR 0014 (dane wydruku pozostają
+  w infoboksie ze snapshotu); chudy format dostawy i wyłączenie
+  narracji/promptu z pętli pozostają w mocy
 - **Data:** 2026-08-31
 - **Decydenci:** właściciel projektu (decyzja 2026-08-31, czat); agent Arena (sesja PR-2.1)
 - **Zastępuje:** warstwę „kotwicy osadzenia" z ADR 0010 (narracja i prompt

@@ -56,7 +56,7 @@ test('UI: baza fixture renderuje kartę, hasło i plan z wikilinkami', async () 
   assert.ok(karta.includes('Testowy Zwiadowca'), 'karta: brak tytułu');
   assert.ok(karta.includes('1TST'), 'karta: brak imgId');
   assert.ok(karta.includes('Testowy Artysta'), 'karta: brak danych Scryfall');
-  assert.ok(karta.includes('Druk w Kolekcji'), 'karta: brak sekcji o posiadanym wydruku (ADR 0011)');
+  assert.ok(!karta.includes('Druk w Kolekcji'), 'karta: sekcja „Druk w Kolekcji" zniesiona (ADR 0014)');
   assert.ok(!karta.includes('Narracja Kolekcji'), 'karta: sekcja narracji zniesiona (ADR 0011)');
   assert.ok(karta.includes('href="#/haslo/testowy-ptak"'), 'karta: brak wikilinku do hasła');
   assert.ok(karta.includes('Linkujące strony'), 'karta: brak sekcji backlinków');
@@ -196,7 +196,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(karta2.includes('Merfolk Scout Ally'), 'karta 2BFZ: brak typu ze snapshotu');
   assert.ok(karta2.includes('Viktor Titov'), 'karta 2BFZ: brak artysty posiadanego wydruku');
   assert.ok(karta2.includes('Jori En'), 'karta 2BFZ: brak flavoru ze snapshotu');
-  assert.ok(karta2.includes('Druk w Kolekcji'), 'karta 2BFZ: brak sekcji o wydruku (ADR 0011)');
+  assert.ok(!karta2.includes('Druk w Kolekcji'), 'karta 2BFZ: sekcja „Druk w Kolekcji" zniesiona (ADR 0014)');
   assert.ok(karta2.includes('Na Mapie'), 'karta 2BFZ: brak osadzenia w treści');
   assert.ok(!karta2.includes('Narracja Koleksji') && !karta2.includes('Narracja Kolekcji'), 'karta 2BFZ: bez sekcji narracji (ADR 0011)');
   assert.ok(!karta2.includes('ADR'), 'karta 2BFZ: treść bez mechaniki Codexu (feedback B)');

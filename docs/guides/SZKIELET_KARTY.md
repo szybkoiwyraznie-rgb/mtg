@@ -106,10 +106,15 @@ na własną stronę.
 | 4 | **Mechanika jako Opowieść** | Koszt, kolor, statyki, keywords, zdolności — odczytane WYŁĄCZNIE ze snapshotu Scryfall — przetłumaczone na narrację (czarny = szpiegostwo i strach; Flying = zwiadowcy powietrzni; Amass = rosnąca armia). Obowiązkowe. |
 | 5 | **Flavor Text** | Oryginał (EN, przytoczony ze snapshotu) + tłumaczenie + interpretacja w kontekście. Jeśli posiadanego wydruk nie ma flavoru — sekcja istnieje i mówi to wprost (bez cytowania flavoru innych printów tej karty). Obowiązkowe. |
 | 6 | **Transpozycja** | Most: jak karta MtG (plan rodzinny/mechanika) przełożona została na setting docelowy. Dla kart „natywnych" krótko; dla transpozycji — sedno. Obowiązkowe. |
-| 7 | **Druk w Kolekcji** | Fakt kolekcjonerski: oficjalny wydruk, który właściciel posiada (artysta, wariant ramy, styl artysty) — wyłącznie z danych snapshotu. Druk wyświetla infoboks. **Zero generowania grafik** (ADR 0008); żadnych alternatywnych koncepcji wizualnych (ADR 0011). Obowiązkowe. |
-| 8 | **Na Mapie** | Lokalizacja + poziom pewności (`dokladna`/`region`/`przyblizona`) + skąd wiemy (lore). Pinezka w `maps/<plan>/map.json`. Obowiązkowe od momentu istnienia mapy planu. |
-| 9 | **Źródła** | Lista cytowań z kwerendy: link + co z niego zaczerpnięto. Wiedza z pamięci treningowej bez URL-a — oznaczona „wiedza ogólna". Obowiązkowe. |
-| 10 | **Podsumowanie Lore** | Synteza 1–2 akapity, język encyklopedyczny. Obowiązkowe. |
+| 7 | **Na Mapie** | Lokalizacja + poziom pewności (`dokladna`/`region`/`przyblizona`) + skąd wiemy (lore). Pinezka w `maps/<plan>/map.json`. Obowiązkowe od momentu istnienia mapy planu. |
+| 8 | **Źródła** | Lista cytowań z kwerendy: link + co z niego zaczerpnięto. Wiedza z pamięci treningowej bez URL-a — oznaczona „wiedza ogólna". Obowiązkowe. |
+| 9 | **Podsumowanie Lore** | Synteza 1–2 akapity, język encyklopedyczny. Obowiązkowe. |
+
+Sekcji „Druk w Kolekcji" **nie ma** (ADR 0014, decyzja właściciela
+2026-09-01): dane wydruku (wydanie, rzadkość, artysta) pokazuje wyłącznie
+infoboks, wprost ze snapshotu — bez sekcji narracyjnej, bez kwerend
+o artystach i wariantach wydań. Pogłębianie strony karty to lore
+(ADR 0015), nie meta-informacje kolekcjonerskie.
 
 ## Procedura materializacji (kolejność kroków)
 

@@ -38,10 +38,6 @@ Kolor B i koszt {2}{B} opowiadają o szpiegostwie; lot o zwiadzie powietrznym.
 
 Karta-źródło pochodzi z planu testowego; transpozycja pełna.
 
-## Druk w Kolekcji
-
-Wydruk testowy: testowa rama, testowy artysta.
-
 ## Na Mapie
 
 Pinezka regionowa w testlandii (pewnosc: region).

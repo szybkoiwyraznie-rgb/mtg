@@ -86,21 +86,6 @@ Osadzenie w Dunlandzie — ojcowiźnie stada — jest zgodne z kanonem;
 kanoniczny epizod zwiadu, przelot nad Hollin, rozgrywa się nieco
 na północ, w dawnym Eregionie.
 
-## Druk w Kolekcji
-
-W kolekcji jest wydruk **LTR #411** — wariant bez obramowania
-(borderless) z efektem ramki *inverted*; istnieje w wykończeniach
-zwykłym i foil. Karta doczekała się w LTR trzech wydruków (#82
-standardowy, #411 borderless, #533), więc posiadany egzemplarz to
-jedna z odmian alternatywnych.
-
-Ilustruje go **David Rapoza** — amerykański ilustrator i artysta
-konceptualny, samouk z Massachusetts; obok kart MtG (w samym LTR
-także m.in. *Fangorn, Tree Shepherd*, *Saruman of Many Colors*
-i *Last March of the Ents*) znany z okładek Marvela (Spider-Man,
-Spider-Verse) i autorskiego komiksu *Steve Lichman*. Druk wyświetla
-się w ramce karty obok.
-
 ## Na Mapie
 
 Karta jest osadzona w regionie **Dunland** — krainie między rzeką
@@ -110,15 +95,8 @@ regionu: pinezka wskazuje środek krainy, nie konkretny punkt.
 
 ## Źródła
 
-- Scryfall — dane karty, wydruk oraz lista wszystkich wydań w LTR
-  (#82 · #411 · #533) i wykończeń:
+- Scryfall — dane karty (snapshot Oracle: mechanika, typ, flavor):
   <https://scryfall.com/card/ltr/411/dunland-crebain>
-- Cook & Becker, „Dave Rapoza" — biografia artysty (MtG, Marvel,
-  *Steve Lichman*):
-  <https://www.cookandbecker.com/en/artist/177/dave-rapoza.html>
-- mtg.wtf, „David Rapoza" — katalog kart ilustrowanych przez Rapozę
-  (w tym wątek Śródziemia w LTR):
-  <https://mtg.wtf/artist/david_rapoza>
 - Tolkien Gateway, „Crebain" — siedlisko (Dunland i Las Fangorn),
   zwiad łączony z Sarumanem, scena w Hollin, etymologia *craban*,
   cytat Aragorna:
