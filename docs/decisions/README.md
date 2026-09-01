@@ -27,7 +27,8 @@ dziedziczona z projektu mtg-game.
 | [0009](0009-srodziemie-podklad-wektorowy-mapome.md) | Śródziemie: podkład w pełni wektorowy (mapome, CC-BY-4.0) zamiast rastra; T2 przez adopcję | Zaakceptowana |
 | [0010](0010-hierarchia-kanonu-v2-karta-i-lore-nad-narracja.md) | Hierarchia kanonu v2: karta MtG + lore świata > narracja kolekcji (kotwica osadzenia, nie kanon); zastępuje hierarchię ADR 0003 | Częściowo zastąpiona (kotwica osadzenia — patrz ADR 0011) |
 | [0011](0011-chudy-format-dostawy.md) | Chudy format dostawy: imgId · nazwa · set · plan; narracja i prompt poza pętlą i poza Kartą Katalogową (sekcja „Druk w Kolekcji") | Zaakceptowana |
-| [0012](0012-zendikar-rekonstrukcja-mapy-t3.md) | Zendikar — mapa rekonstrukcji wariantu T3: podkład własny z kanonu tekstowego (brak oficjalnej mapy), Murasa oznaczona jako przybliżona | Zaakceptowana |
+| [0012](0012-zendikar-rekonstrukcja-mapy-t3.md) | Zendikar — mapa rekonstrukcji wariantu T3: podkład własny z kanonu tekstowego (brak oficjalnej mapy), Murasa oznaczona jako przybliżona | Częściowo zastąpiona (adnotacje na podkładzie — patrz ADR 0013) |
+| [0013](0013-zendikar-mapa-bez-adnotacji-rekonstrukcyjnych.md) | Zendikar — mapa bez adnotacji rekonstrukcyjnych na podkładzie; proweniencja w map.json i treści strony planu | Zaakceptowana |
 
 Spójnością rejestru (numeracja, statusy, tabela) pilnuje
 `test/rejestr-adr.test.js`.

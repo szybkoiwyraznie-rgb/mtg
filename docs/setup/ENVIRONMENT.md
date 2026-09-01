@@ -63,6 +63,10 @@ testy) upewnij się, że praca jest na zdalnej gałęzi.
   zmiany workflowów (CI/Pages) i włączanie usług repozytorium wykonuje
   **właściciel**; agent przygotowuje treść zmiany w docs (plan/lekka
   łataka w backlogu), nie w `.github/`.
+- **Bot nie ma też `actions: write`** (zweryfikowane 2026-09-01):
+  `gh workflow run` → 403, `gh run rerun` bywa odmawiane. Odpalanie/
+  rerun workflowów (gdy nie ma naturalnego triggera pushu do main)
+  wykonuje właściciel w UI Actions.
 - Komunikaty commitów pisz do pliku **poza repo** (np. `/home/user/msg.txt`),
   żeby nie trafiły do commita.
 - Gałąź sesji to `arena/<id>`; nigdy nie pushuj do `main` (ochrona i tak

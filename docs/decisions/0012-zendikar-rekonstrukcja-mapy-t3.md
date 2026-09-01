@@ -1,6 +1,8 @@
 # ADR 0012: Zendikar — mapa rekonstrukcji wariantu T3 (podkład własny)
 
-- **Status:** Zaakceptowana
+- **Status:** Częściowo zastąpiona — adnotacje rekonstrukcyjne na podkładzie
+  (podpis kartograficzny, przerywana Murasa, „położenie przybliżone")
+  znosi ADR 0013; wariant T3 i kanon tekstowy jako źródło pozostają w mocy
 - **Data:** 2026-08-31
 - **Decydenci:** właściciel projektu (feedback G, tura 2026-08-31: „robimy mapę wektorową Zendikaru, można się wzorować na mapach fanowskich”); agent Arena (sesja PR-2, rekonstrukcja i implementacja)
 

@@ -67,7 +67,16 @@ Z commitów z tego planu zrealizowano:
 
 ## Wynik weryfikacji
 
-_(uzupełnione po włączeniu Pages przez właściciela)_
+- **2026-09-01, właściciel:** Pages włączony ręcznie — potwierdzone API:
+  `build_type: "workflow"`, `html_url: https://szybkoiwyraznie-rgb.github.io/mtg/`.
+- Bot Areny nie może odpalić publikacji sam (`gh run rerun` → „cannot be
+  rerun; its workflow file may be broken" — kaprys GitHuba; `workflow_dispatch`
+  → 403, brak `actions: write`; ENVIRONMENT §3). **Trigger pierwszej
+  publikacji: scalenie PR #7** — push do `main` odpala `on: push`
+  w `pages.yml`; site już istnieje, więc `configure-pages` przejdzie,
+  a każdy kolejny push do main publikuje automatycznie.
+- Status deployu po scaleniu: _aktualizowany po merge'u (następna sesja
+  widzi go w `gh run list --workflow=pages.yml` i pod adresem Pages)._
 
 ## Granice
 
