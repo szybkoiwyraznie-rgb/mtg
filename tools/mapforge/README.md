@@ -31,12 +31,13 @@ python3 tools/map-audit.py <plan>               # weryfikacja geometrii wygenero
 Paleta to dane, nie kod: `motyw('atlas')` wymienia cały zestaw kolorów
 przed renderem.
 
-- **pergamin** (domyślny, ADR 0008) — barwne klocki na pergaminie;
-- **atlas** — „tusz na papierze": ląd=papier, wodę odróżniają tylko
-  klasyczne **linie wody** przy wybrzeżu, korony drzew jako blade masy
-  z tuszowymi pniami, rzeki i szlaki tuszem, ocean bez plam. Inspirowane
-  line-artem podkładu Śródziemia (T2/mapome); kolor zostaje warstwom
-  funkcjonalnym UI (np. czerwone pinezki kart), nie artworkowi.
+- **pergamin** (ADR 0008) — barwne klocki na pergaminie;
+- **atlas** (**domyślny dla map planów, ADR 0019**) — czysty
+  czarno-biały line-art jak podkład Śródziemia (T2/mapome): sama
+  kreska na białym papierze. Tryb `tusz`: korony drzew i szczyty
+  konturem, cieniowanie haćurą, wodę odróżniają tylko **linie wody**
+  przy wybrzeżu, rzeki i szlaki tuszem, ocean bez plam. Kolor zostaje
+  warstwom funkcjonalnym UI (np. czerwone pinezki kart), nie artworkowi.
 
   ```bash
   node tools/mapforge/cli.mjs --demo --styl=atlas maps/_warsztat/podklad-atlas.svg

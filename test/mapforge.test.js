@@ -117,8 +117,10 @@ test('mapforge: motywy — atlas wymienia paletę, oba deterministyczne', () => 
   const a1 = renderuj(scenaDemo(), { styl: 'atlas' });
   const a2 = renderuj(scenaDemo(), { styl: 'atlas' });
   assert.ok(p.includes('fill="#e8dbb8"'), 'pergamin: ląd pergaminowy');
-  assert.ok(a1.includes('fill="#f7f2e2"'), 'atlas: ląd papierowy');
+  assert.ok(a1.includes('fill="#ffffff"'), 'atlas: ląd = biały papier');
   assert.ok(!a1.includes('fill="#e8dbb8"') && !a1.includes('fill="#ccd8d2"'), 'atlas bez palety pergaminu');
+  assert.ok((a1.match(/stroke="#111111"/g) ?? []).length > 200, 'atlas: kreska tuszowa dominuje');
+  assert.ok(a1.includes('fill="#ffffff" stroke="#111111"'), 'korony/szczyty konturem');
   assert.ok(!a1.includes('ellipse') || !/plamy/.test(a1), 'atlas: ocean bez plam');
   assert.equal(a1, a2, 'atlas deterministyczny');
   assert.ok(a1.includes('styl: atlas') && p.includes('styl: pergamin'), 'styl w nagłówku');

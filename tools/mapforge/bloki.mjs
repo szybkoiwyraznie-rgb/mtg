@@ -27,27 +27,30 @@ export const PAL = {
   poswiataKolor: '#b9cdd8',
   poswiata: [{ w: 12, o: 0.10 }, { w: 7, o: 0.16 }, { w: 3, o: 0.24 }],
   oceanPlamy: true,
+  tryb: 'kolor',   // 'kolor' = wypelnienia; 'tusz' = kontur + haczura (line-art)
 };
 
 const MOTYWY = {
   pergamin: {},
-  /** Atlasowy line-art: tusz na papierze (inspiracja podkładem Śródziemia,
-   *  T2/mapome) — „czysty, sterylny" obraz; kolor zostaje warstwom
-   *  funkcjonalnym (pinezki), nie artworkowi. */
+  /** Czysty czarno-biały line-art (decyzja właściciela; wzorzec: podkład
+   *  Śródziemia T2/mapome): sama kreska na białym papierze — korony
+   *  i szczyty konturem, cienie haćurą, woda biała z tuszowymi liniami.
+   *  Kolor zarezerwowany dla warstw funkcjonalnych UI (pinezki kart). */
   atlas: {
-    lad: '#f7f2e2', ladStroke: '#3a342b',
-    woda: '#efe9d8', wodaGleb: '#e4ddc8', wodaStroke: '#5a5344',
-    rzeka: '#5a5344',
-    tekst: '#262119', ital: '#4a4438', halo: '#f7f2e2',
-    drzewo: '#ece5d1', drzewoCien: '#d9d1b9', pienn: '#3a342b',
-    bagno: '#5a5344', step: '#8d846f',
-    skala: '#f2ecdb', skalaCien: '#3a342b', skalaLinia: '#5a5344',
-    droga: '#3a342b',
-    lodFill: '#fbf8ee', lodPek: '#d8d2c0',
-    krater: '#5a5344', dym: '#8d846f', mur: '#e6dfc9', kamien: '#efe9d6',
-    poswiataKolor: '#8d846f',
-    poswiata: [{ w: 10, o: 0.14 }, { w: 5.5, o: 0.22 }, { w: 2, o: 0.55 }],
+    lad: '#ffffff', ladStroke: '#111111',
+    woda: '#ffffff', wodaGleb: '#ffffff', wodaStroke: '#111111',
+    rzeka: '#1f1f1f',
+    tekst: '#000000', ital: '#000000', halo: '#ffffff',
+    drzewo: '#ffffff', drzewoCien: '#ffffff', pienn: '#111111',
+    bagno: '#111111', step: '#555555',
+    skala: '#ffffff', skalaCien: '#111111', skalaLinia: '#111111',
+    droga: '#111111',
+    lodFill: '#ffffff', lodPek: '#aaaaaa',
+    krater: '#111111', dym: '#777777', mur: '#ffffff', kamien: '#ffffff',
+    poswiataKolor: '#111111',
+    poswiata: [{ w: 8, o: 0.20 }, { w: 4, o: 0.45 }, { w: 2, o: 0.90 }],
     oceanPlamy: false,
+    tryb: 'tusz',
   },
 };
 
@@ -68,6 +71,14 @@ export function drzewo(x, y, s, rng) {
   const jx = (rng() - 0.5) * 2;
   const jy = (rng() - 0.5) * 2;
   const r = s * (3.6 + rng() * 1.6);
+  if (PAL.tryb === 'tusz') {
+    return `<g class="mf-drzewo">` +
+      `<path d="M ${rr(x + jx)} ${rr(y + jy)} l 0 ${rr(s * 2.4)}" stroke="${PAL.pienn}" stroke-width="${rr(s * 0.7)}"/>` +
+      `<circle cx="${rr(x + jx)}" cy="${rr(y + jy - r * 0.18)}" r="${rr(r)}" fill="${PAL.drzewo}" stroke="${PAL.skalaCien}" stroke-width="1.5"/>` +
+      (r > 4.5 ? `<path d="M ${rr(x + jx - r * 0.45)} ${rr(y + jy + r * 0.2)} a ${rr(r * 0.62)} ${rr(r * 0.62)} 0 0 1 ${rr(r * 0.8)} ${rr(-r * 0.25)}" ` +
+        `fill="none" stroke="${PAL.skalaCien}" stroke-width="0.9" opacity="0.7"/>` : '') +
+      `</g>`;
+  }
   return `<g class="mf-drzewo">` +
     `<path d="M ${rr(x + jx)} ${rr(y + jy)} l 0 ${rr(s * 2.4)}" stroke="${PAL.pienn}" stroke-width="${rr(s * 0.7)}"/>` +
     `<circle cx="${rr(x + jx - r * 0.42)}" cy="${rr(y + jy + r * 0.22)}" r="${rr(r * 0.72)}" fill="${PAL.drzewoCien}" opacity="0.6"/>` +
@@ -93,7 +104,7 @@ export function bagno(id, poly, { gestosc = 1 } = {}) {
     return `<g class="mf-kepka">` +
       `<path d="M ${rr(x - 7)} ${rr(y)} q 3 -9 6 0 M ${rr(x - 1)} ${rr(y + k)} q 3 -10 6 0 M ${rr(x + 4)} ${rr(y - k)} q 3 -8 6 0" ` +
       `stroke="${PAL.bagno}" stroke-width="1.6" fill="none" stroke-linecap="round"/>` +
-      (rng() < 0.3 ? `<ellipse cx="${rr(x + 9)}" cy="${rr(y + 5)}" rx="5" ry="2.6" fill="${PAL.wodaGleb}" opacity="0.55"/>` : '') +
+      (rng() < 0.3 ? `<ellipse cx="${rr(x + 9)}" cy="${rr(y + 5)}" rx="5" ry="2.6" fill="${PAL.wodaGleb}" opacity="0.55"${PAL.tryb === 'tusz' ? ` stroke="${PAL.wodaStroke}" stroke-width="0.9"` : ''}/>` : '') +
       `</g>`;
   }).join('\n');
 }
@@ -128,6 +139,21 @@ export function lod(id, poly, { pekniecia = 3 } = {}) {
 
 /** Pojedynczy szczyt: główna ściana + oświetlona/ocieniowana faseta + opcjonalny śnieg. */
 export function szczyt(x, y, w, h, { snieg = false } = {}) {
+  if (PAL.tryb === 'tusz') {
+    let hach = '';
+    for (let i = 1; i <= 3; i++) {
+      const f = 0.28 + i * 0.19;                      // wzdłuż lewej krawędzi
+      const ax = x - w + w * f;
+      const ay = y - h * f;
+      const bx = x - w * (0.38 - i * 0.09);
+      const by = y - h * (f - 0.16);
+      hach += `M ${rr(ax)} ${rr(ay)} L ${rr(bx)} ${rr(by)} `;
+    }
+    return `<g class="mf-szczyt">` +
+      `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x)} ${rr(y - h)} L ${rr(x + w)} ${rr(y)} Z" fill="${PAL.skala}" stroke="${PAL.skalaCien}" stroke-width="1.8" stroke-linejoin="round"/>` +
+      `<path d="${hach}" stroke="${PAL.skalaCien}" stroke-width="1" fill="none" opacity="0.85"/>` +
+      `</g>`;
+  }
   return `<g class="mf-szczyt">` +
     `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x)} ${rr(y - h)} L ${rr(x + w)} ${rr(y)} Z" fill="${PAL.skala}" stroke="${PAL.skalaCien}" stroke-width="1.8" stroke-linejoin="round"/>` +
     `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x)} ${rr(y - h)} L ${rr(x - w * 0.18)} ${rr(y)} Z" fill="${PAL.skalaCien}" opacity="0.45"/>` +
@@ -174,7 +200,10 @@ export function wulkan(x, y, { skala = 1, dym = true } = {}) {
   return `<g class="mf-wulkan">` +
     `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x - w * 0.22)} ${rr(y - h * 0.82)} L ${rr(x)} ${rr(y - h * 0.7)} L ${rr(x + w * 0.22)} ${rr(y - h * 0.82)} L ${rr(x + w)} ${rr(y)} Z" ` +
     `fill="${PAL.skala}" stroke="${PAL.skalaCien}" stroke-width="1.8" stroke-linejoin="round"/>` +
-    `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x - w * 0.22)} ${rr(y - h * 0.82)} L ${rr(x - w * 0.05)} ${rr(y)} Z" fill="${PAL.skalaCien}" opacity="0.45"/>` +
+    (PAL.tryb === 'tusz'
+      ? `<path d="M ${rr(x - w * 0.72)} ${rr(y - h * 0.14)} L ${rr(x - w * 0.34)} ${rr(y - h * 0.5)} M ${rr(x - w * 0.52)} ${rr(y - h * 0.08)} L ${rr(x - w * 0.2)} ${rr(y - h * 0.38)}" ` +
+        `stroke="${PAL.skalaCien}" stroke-width="1" fill="none" opacity="0.85"/>`
+      : `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x - w * 0.22)} ${rr(y - h * 0.82)} L ${rr(x - w * 0.05)} ${rr(y)} Z" fill="${PAL.skalaCien}" opacity="0.45"/>`) +
     `<ellipse cx="${rr(x - w * 0.02)}" cy="${rr(y - h * 0.74)}" rx="${rr(w * 0.2)}" ry="${rr(skala * 1.8)}" fill="${PAL.krater}"/>` +
     (dym ? `<path d="M ${rr(x)} ${rr(y - h * 0.86)} q ${rr(6 * skala)} ${rr(-9 * skala)} 0 ${rr(-16 * skala)} q ${rr(-6 * skala)} ${rr(-7 * skala)} ${rr(2 * skala)} ${rr(-13 * skala)}" ` +
       `stroke="${PAL.dym}" stroke-width="${rr(2.4 * skala)}" fill="none" opacity="0.65" stroke-linecap="round"/>` : '') +

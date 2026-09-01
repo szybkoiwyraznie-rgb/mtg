@@ -34,6 +34,7 @@ dziedziczona z projektu mtg-game.
 | [0016](0016-format-wpisu-karty-kanon-katalogowy.md) | Format Wpisu Karty — kanon katalogowy: blok danych Oracle w treści, warstwy mechaniki, odczyt flavoru; bez sekcji „Ilustracja" i „Druk w Kolekcji" | Zaakceptowana |
 | [0017](0017-fot-kon-w-tresci-karty.md) | FOT/KON rysują się w treści karty (FOT nad sekcjami, KON pod pierwszą) — koniec przycisków torów; zastępuje mechanikę torów ADR 0008 | Zaakceptowana |
 | [0018](0018-wspolny-silnik-mapowy-mapforge.md) | Wspólny silnik mapowy `mapforge` — deterministyczny render SVG z danych (biomy, rzeki, pasma, etykiety pod kątem); warsztat T4 | Zaakceptowana |
+| [0019](0019-mapy-planow-czysty-czarno-bialy.md) | Mapy planów w motywie atlasowym — czysty czarno-biały line-art (tusz/papier); kolor tylko dla warstw funkcjonalnych UI | Zaakceptowana |
 
 Spójnością rejestru (numeracja, statusy, tabela) pilnuje
 `test/rejestr-adr.test.js`.
