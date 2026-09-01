@@ -57,6 +57,11 @@ test('UI: baza fixture renderuje kartę, hasło i plan z wikilinkami', async () 
   assert.ok(karta.includes('1TST'), 'karta: brak imgId');
   assert.ok(karta.includes('Testowy Artysta'), 'karta: brak danych Scryfall');
   assert.ok(!karta.includes('Druk w Kolekcji'), 'karta: sekcja „Druk w Kolekcji" zniesiona (ADR 0014)');
+  // ADR 0017: sloty FOT/KON wplecione w treść (nie przyciski torów)
+  assert.ok(karta.includes('data-fot') && karta.includes('data-kon'), 'karta: brak slotów FOT/KON (ADR 0017)');
+  assert.ok(!karta.includes('tor-przycisk'), 'karta: przyciski torów zniesione (ADR 0017)');
+  assert.ok(karta.indexOf('data-fot') < karta.indexOf('<h2'), 'karta: FOT ma być nad pierwszą sekcją (ADR 0017)');
+  assert.ok(karta.indexOf('data-kon') > karta.indexOf('<h2'), 'karta: KON ma być pod pierwszą sekcją (ADR 0017)');
   assert.ok(!karta.includes('Narracja Kolekcji'), 'karta: sekcja narracji zniesiona (ADR 0011)');
   assert.ok(karta.includes('href="#/haslo/testowy-ptak"'), 'karta: brak wikilinku do hasła');
   assert.ok(karta.includes('Linkujące strony'), 'karta: brak sekcji backlinków');

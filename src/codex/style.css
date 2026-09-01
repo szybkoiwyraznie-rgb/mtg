@@ -115,12 +115,6 @@ h3 { font-size: 1.1rem; margin: 1.1rem 0 0.4rem; }
 }
 .nazwa-syntetyczna { font-size: 1.2rem; letter-spacing: 0.03em; }
 
-.tory-przyciski { display: flex; gap: 0.35rem; margin: 0.35rem 0 0.7rem; }
-.tor-przycisk {
-  flex: 1; border: 1px solid var(--ramka); background: var(--tlo);
-  border-radius: 6px; padding: 0.3rem 0.2rem; font-size: 0.85rem; cursor: pointer;
-}
-.tor-przycisk.aktywny { background: var(--akcent); color: #fff; border-color: var(--akcent); }
 
 .dane-karty { display: grid; grid-template-columns: auto 1fr; gap: 0.25rem 0.6rem; margin: 0.5rem 0; }
 .dane-karty dt { color: var(--tusz-miękki); font-size: 0.85rem; }
@@ -392,3 +386,18 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
   background: linear-gradient(transparent, rgba(30, 24, 14, 0.85));
   padding: 1.4rem 0.4rem 0.3rem;
 }
+
+/* ── Sloty FOT/KON w treści karty (ADR 0017) ── */
+.karta-fot, .karta-kon { margin: 0 0 1.1rem; }
+.karta-fot img, .karta-kon img { width: 100%; display: block; border-radius: 10px; border: 1px solid var(--ramka); box-shadow: var(--cien); }
+.karta-fot img { aspect-ratio: 21 / 9; object-fit: cover; }
+.karta-kon img { aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* ── Sloty FOT/KON w treści karty (ADR 0017) ──────────────────────── */
+.karta-fot, .karta-kon { margin: 0 0 1.1rem; }
+.karta-fot img, .karta-kon img {
+  width: 100%; display: block; border-radius: 10px;
+  border: 1px solid var(--ramka); box-shadow: var(--cien);
+}
+.karta-fot img { aspect-ratio: 21 / 9; object-fit: cover; }
+.karta-kon img { aspect-ratio: 16 / 9; object-fit: cover; }
