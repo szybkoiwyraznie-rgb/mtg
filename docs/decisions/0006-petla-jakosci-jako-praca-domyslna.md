@@ -1,6 +1,8 @@
 # ADR 0006: Pętla Jakości jako domyślna praca sesji
 
-- **Status:** Zaakceptowana
+- **Status:** Częściowo zastąpiona — kroki 2 (pogłębianie = LORE,
+  nie meta-informacje) i 4 (pass mapowy = kompletacja i jakość map,
+  warsztat T4) doprecyzowuje ADR 0015; pozostałe kroki pozostają w mocy
 - **Data:** 2026-08-31
 - **Decydenci:** właściciel projektu (koncepcja „Pętli Jakości"); agent Arena (sesja PR-1)
 

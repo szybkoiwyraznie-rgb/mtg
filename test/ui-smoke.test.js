@@ -56,7 +56,12 @@ test('UI: baza fixture renderuje kartę, hasło i plan z wikilinkami', async () 
   assert.ok(karta.includes('Testowy Zwiadowca'), 'karta: brak tytułu');
   assert.ok(karta.includes('1TST'), 'karta: brak imgId');
   assert.ok(karta.includes('Testowy Artysta'), 'karta: brak danych Scryfall');
-  assert.ok(karta.includes('Druk w Kolekcji'), 'karta: brak sekcji o posiadanym wydruku (ADR 0011)');
+  assert.ok(!karta.includes('Druk w Kolekcji'), 'karta: sekcja „Druk w Kolekcji" zniesiona (ADR 0014)');
+  // ADR 0017: sloty FOT/KON wplecione w treść (nie przyciski torów)
+  assert.ok(karta.includes('data-fot') && karta.includes('data-kon'), 'karta: brak slotów FOT/KON (ADR 0017)');
+  assert.ok(!karta.includes('tor-przycisk'), 'karta: przyciski torów zniesione (ADR 0017)');
+  assert.ok(karta.indexOf('data-fot') < karta.indexOf('<h2'), 'karta: FOT ma być nad pierwszą sekcją (ADR 0017)');
+  assert.ok(karta.indexOf('data-kon') > karta.indexOf('<h2'), 'karta: KON ma być pod pierwszą sekcją (ADR 0017)');
   assert.ok(!karta.includes('Narracja Kolekcji'), 'karta: sekcja narracji zniesiona (ADR 0011)');
   assert.ok(karta.includes('href="#/haslo/testowy-ptak"'), 'karta: brak wikilinku do hasła');
   assert.ok(karta.includes('Linkujące strony'), 'karta: brak sekcji backlinków');
@@ -102,6 +107,25 @@ test('UI: mapa planu z realnej bazy — podkład, pinezka, legenda', async () =>
   assert.ok(!mapa.includes('left:40.6%'), 'mapa: pinezki nie mogą być pozycjonowane procentami w skalowanej warstwie');
   assert.ok(mapa.includes('mapa-przycisk'), 'mapa: brak przycisków zoomu');
 
+  // B1 (feedback właściciela): badge pinezki ukryty do najechania/fokusu
+  const stylArt = fs.readFileSync(cel, 'utf8');
+  assert.ok(
+    /\.mapa-pinezka-etykieta\s*{[^}]*opacity:\s*0/.test(stylArt),
+    'mapa: badge pinezki ma być domyślnie ukryty (B1)',
+  );
+  assert.ok(
+    stylArt.includes('.mapa-pinezka:hover .mapa-pinezka-etykieta')
+      && stylArt.includes('.mapa-pinezka:focus-visible .mapa-pinezka-etykieta'),
+    'mapa: brak reguł odsłaniających badge (hover + focus-visible, B1)',
+  );
+
+  // B2 (feedback właściciela): warstwa karty z pinezki, zamykanie ✕/tło/Esc
+  assert.ok(mapa.includes('data-map-warstwa'), 'mapa: brak warstwy karty (B2)');
+  assert.ok(mapa.includes('role="dialog"') && mapa.includes('aria-modal="true"'), 'mapa: warstwa bez semantyki dialogu (B2)');
+  assert.ok(mapa.includes('data-map-warstwa-zamknij'), 'mapa: brak zamknięcia warstwy ✕/tło (B2)');
+  assert.ok(mapa.includes('aria-label="Zamknij i wróć do mapy"'), 'mapa: przycisk zamknięcia bez etykiety (B2)');
+  assert.ok(stylArt.includes('.mapa-warstwa[hidden] { display: none; }'), 'mapa: brak reguły ukrycia warstwy (B2)');
+
   // plan linkuje do mapy; trasa nieznanej planu → 404
   shim.idz('#/plan/srodziemie');
   assert.ok(shim.app.innerHTML.includes('#/mapa/srodziemie'), 'plan: brak linku do mapy');
@@ -122,6 +146,34 @@ test('UI: mapa planu z realnej bazy — podkład, pinezka, legenda', async () =>
   assert.ok(mapaZ.includes('wybrzeży Halimar'), 'mapa Zendikaru: brak uzasadnienia pinezki (MA4)');
   shim.idz('#/plan/zendikar');
   assert.ok(shim.app.innerHTML.includes('#/mapa/zendikar'), 'plan Zendikaru: brak linku do mapy');
+
+  fs.rmSync(cel, { force: true });
+  shim.przywroc();
+});
+
+test('UI: mapa T3 — etykiety podkładu w nakładce ekranowej (stały rozmiar, LOD)', async () => {
+  const cel = await zbuduj({ out: 'dist/test-ui-mapa-etykiety.html' });
+  const shim = wykonajArtefakt(cel);
+
+  shim.idz('#/mapa/zendikar');
+  const mapa = shim.app.innerHTML;
+  const n = (mapa.match(/data-podklad-etykieta/g) ?? []).length;
+  assert.ok(n > 60, `etykiety podkładu w nakładce: tylko ${n} (oczekiwano >60)`);
+  assert.ok(mapa.includes('data-podklad-orj="1"'), 'oryginały <text> nie są ukryte');
+  assert.ok(mapa.includes('tier-kontynent'), 'brak tieru kontynentów (większa czcionka)');
+  assert.ok((mapa.match(/tier-kontynent/g) ?? []).length >= 7, 'mniej niż 7 tytułów kontynentów');
+  assert.ok(mapa.includes('tier-szczegol'), 'brak tieru drobnych etykiet');
+  assert.ok(/data-min-k="1\.[0-9]+"/.test(mapa), 'drobne etykiety bez progu LOD (data-min-k)');
+  assert.ok(mapa.includes('data-fs='), 'etykiety bez zapamiętanego rozmiaru źródłowego (data-fs)');
+  assert.ok(mapa.includes('data-kotwica="middle"'), 'brak kotwiczenia middle (dziedziczenie text-anchor z grup SVG)');
+  assert.ok((mapa.match(/data-kotwica=/g) ?? []).length >= 60, 'mniej niż 60 etykiet z kotwicą');
+  const bey = mapa.match(/data-kotwica="(\w+)"[^>]*>Beyeen</);
+  assert.ok(bey && bey[1] === 'middle', 'Beyeen ma być kotwiczony middle (był rozjechany)');
+
+  // T2 (adoptowany, mapome) — typografia podkładu zostaje bez zmian
+  shim.idz('#/mapa/srodziemie');
+  const mapa2 = shim.app.innerHTML;
+  assert.ok(!mapa2.includes('data-podklad-etykieta'), 'podkład adoptowany (T2) nie może mieć przeniesionych etykiet');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();
@@ -170,14 +222,28 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(lista.includes('data-tagi='), 'lista kart: brak tagów w wierszach tabeli (feedback E)');
   assert.ok(!lista.includes('materializowana jawnie'), 'lista kart: bez meta-tekstu ADR 0003 (feedback F)');
 
+  // ADR 0016: format Wpisu Karty — blok danych Oracle w treści, warstwy mechaniki,
+  // polskie odczytanie nazwy; sekcje „Ilustracja"/„Druk w Kolekcji" nie istnieją
+  shim.idz('#/karta/1ltr-dunland-crebain');
+  const karta1 = shim.app.innerHTML;
+  assert.ok(karta1.includes('dwa many dowolnego koloru'), 'karta 1LTR: brak bloku danych Oracle (ADR 0016)');
+  assert.ok(karta1.includes('Odczyt zasadniczy') && karta1.includes('Całość jako opowieść'), 'karta 1LTR: brak warstw mechaniki (ADR 0016)');
+  assert.ok(karta1.includes('Crebainy z Dunlandu'), 'karta 1LTR: brak polskiego odczytania nazwy (ADR 0016)');
+  assert.ok(!karta1.includes('<h2>Ilustracja'), 'karta 1LTR: sekcja ilustracyjna zakazana (ADR 0016)');
+  assert.ok(!karta1.includes('<h2>Druk w Kolekcji'), 'karta 1LTR: sekcja druku zniesiona (ADR 0014)');
+
   // druga karta: chudy format dostawy (ADR 0011) — czysty kanon
   shim.idz('#/karta/2bfz-coralhelm-guide');
   const karta2 = shim.app.innerHTML;
   assert.ok(karta2.includes('Coralhelm Guide'), 'karta 2BFZ: brak tytułu');
   assert.ok(karta2.includes('Merfolk Scout Ally'), 'karta 2BFZ: brak typu ze snapshotu');
+  assert.ok(karta2.includes('jeden mana dowolnego koloru'), 'karta 2BFZ: brak bloku danych Oracle (ADR 0016)');
+  assert.ok(karta2.includes('Przewodniczka z Koralowego Hełmu'), 'karta 2BFZ: brak polskiego odczytania nazwy (ADR 0016)');
+  assert.ok(karta2.includes('Odczyt fraza po frazie'), 'karta 2BFZ: brak odczytu flavoru fraza po frazie (ADR 0016)');
+  assert.ok(!karta2.includes('<h2>Ilustracja'), 'karta 2BFZ: sekcja ilustracyjna zakazana (ADR 0016)');
   assert.ok(karta2.includes('Viktor Titov'), 'karta 2BFZ: brak artysty posiadanego wydruku');
   assert.ok(karta2.includes('Jori En'), 'karta 2BFZ: brak flavoru ze snapshotu');
-  assert.ok(karta2.includes('Druk w Kolekcji'), 'karta 2BFZ: brak sekcji o wydruku (ADR 0011)');
+  assert.ok(!karta2.includes('Druk w Kolekcji'), 'karta 2BFZ: sekcja „Druk w Kolekcji" zniesiona (ADR 0014)');
   assert.ok(karta2.includes('Na Mapie'), 'karta 2BFZ: brak osadzenia w treści');
   assert.ok(!karta2.includes('Narracja Koleksji') && !karta2.includes('Narracja Kolekcji'), 'karta 2BFZ: bez sekcji narracji (ADR 0011)');
   assert.ok(!karta2.includes('ADR'), 'karta 2BFZ: treść bez mechaniki Codexu (feedback B)');

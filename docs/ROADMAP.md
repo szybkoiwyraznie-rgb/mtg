@@ -27,9 +27,14 @@ i deep-linkiem `#/mapa/srodziemie`. Ocena jakości zoomu → decyzja o T2.
 
 Pan/zoom dotykowy, etykiety w skali, pinezki z tooltipami i linkami do
 kart, legenda poziomów pewności, deep-link `#/mapa/…?pin=`, mini-mapa
-w infoboksie karty — działają (zweryfikowane na 2 kardach). Zostaje:
-**regiony/obwódki haseł geograficznych** (wymagają istnienia haseł —
-przed osiągnięciem progu ≥2 kart), dalszy rozwój po dostawach kolejnych kart.
+w infoboksie karty — działają (zweryfikowane na 2 kardach). Od sesji
+PR-4: badge pinezki ukryty do najechania (hover/focus) oraz **warstwa
+karty** — kliknięcie pinezki otwiera Kartę Katalogową na zmaksymalizowanej
+warstwie nad mapą, zamykanej ✕/tłem/Esc z powrotem do mapy w tym samym
+stanie zoomu (progressive enhancement: bez JS pinezka jest zwykłym
+linkiem). Zostaje: **regiony/obwódki haseł geograficznych** (wymagają
+istnienia haseł — przed osiągnięciem progu ≥2 kart), dalszy rozwój po
+dostawach kolejnych kart.
 
 ## K5 — Pętla Jakości operacyjna — **domknięte (PR-3, 2026-08-31)**
 
@@ -44,10 +49,24 @@ Batche materializacji (10–20 kart/sesję wg dostaw), nowi agenci-wyzwania:
 drugi plan i mapa (proces mapowy od nowa), taxonomia tagów w praktyce,
 wyszukiwarka fuzzy (backlog).
 
+## K7 — Warsztat mapowy T4: wspólny silnik rysowania map — **w toku (kierunek)**
+
+Kierunek z doprecyzowania Pętli Jakości (ADR 0015, właściciel 2026-09-01):
+reużywalne metody rysowania obiektów (pasma/grzbiety górskie, rzeki
+z dopływami, biomu: las/bagno/step/lód/pustynia, osady/ruiny/hedrony),
+wspólna paleta pergaminu + halo + legenda, pamięć warsztatu
+w `SKILL_MAPA_PLANU.md`. Mapy tworzone od zera (T3→T4, aktualne
+i przyszłe plany) dążą jakością do mapy Śródziemia (T2 mapome)
+i docelowo ją wyprzedzają; benchmark = porównanie z mapą Śródziemia
++ ocena właściciela. Realizowane passami mapowymi Pętli Jakości
+(krok 4) i jako osobne zadania z `docs/plans/`.
+
 ## Wątki otwarte (czekają na decyzję właściciela)
 
 - Grafiki dla Kart Haseł — czy, jakie, gdzie składowane (ADR 0008 zostawia
   slot; wymaga decyzji + ewentualnego ADR o storage).
-- Wektoryzacja T2 mapy Śródziemia — po obejrzeniu T1.
+- Wzbogacenie mapy Śródziemia (T2, podkład mapome) o warstwy
+  przyrodniczo-osadnicze w duchu warsztatu T4 — gdy właściciel zechce
+  (analogia do Zendikaru z PR-3).
 - Pełny offline (cache obrazów Scryfalla w repo) — gdy korzystanie z Pages
   bez sieci będzie realnym scenariuszem.

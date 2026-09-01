@@ -20,9 +20,18 @@ poszukiwaczy skarbów to sposób na życie — i przemysł.
 Zendikar to siedem kontynentów, z których każdy ma „niemożliwą geografię":
 górzysta, wulkaniczna **Akoum** (z Okiem Ugina); bagienna **Bala Ged**;
 mroczna **Guul Draz**, kraina wampirów i jej miasto **Malakir**; płaskowyż
-**Murasa** (jego położenie w kanonie nieustalone); pionowa **Ondu**;
-polarna, zamarznięta **Sejiri**; oraz **Tazeem** — najgęściej zaludniony,
-niebieski kontynent merfolków.
+**Murasa**; pionowa **Ondu**; polarna, zamarznięta **Sejiri**; oraz
+**Tazeem** — najgęściej zaludniony, niebieski kontynent merfolków.
+
+**Murasa** to wyspa-płaskowyż: wnętrze kontynentu wznosi się nad morze
+nieregularnym „murem" klifów, w który wcina się największa przerwa —
+zatoka **Sunder Bay**. Do wnętrza wiodą cztery drogi: Sunder Bay, klify
+**Kazuul**, wąwóz **Thunder Gap** (przez tzw. Pillar Plains) i przełęcz
+**Glint Pass**. Za murem krajobart robi się pionowy: pasmo **Skyfang**
+(wyrasta z zachodniej strony i wspina w głąb wnętrza, dzieląc zachodnią
+połowę), lesisty płaskowyż **Na Plateau** na wschód od środka —
+w jego sercu legendarne ruiny **Singing City**, „śpiewające" z podziemi —
+oraz kanionowy kraj **Kazandu**, plątanina gigantycznych **jaddi**.
 
 **Tazeem** to trzy strefy: rozległy, poskręcany las **Oran-Rief**, głębokie,
 sztuczne morze śródlądowe **Halimar** oraz nad nim otwarte niebo z
@@ -39,6 +48,23 @@ dziczy. Po zniszczeniu Sea Gate przez Eldrazi, a następnie jego odbudowie,
 ekspedycje stały się jeszcze żywotniejsze — a grupa, która pierwsza
 przedostała się do ruin Emerii, założyła **Sea Gate Expeditionary House**.
 
+## Ludy
+
+Głównymi rasami rozumnymi planu są — obok ludzi — **elfy**,
+**gobliny**, **kor**, **merfolkowie** i **wampiry**. Wampiry żyją
+jawnie w Guul Draz, sławne z dekadencji swego stylu życia: ich
+społeczeństwo dzieli się na „rodziny" podległe **Bloodchiefom**,
+praojcom rasy, którzy trzymają kupieckie **Malakir** (pięć rodów
+wielkich: Nirkana, Kalastria, Emevera, Urnaav i Ghet). Korowie są
+odwrotnością tego świata: prowadzą surowe, koczownicze życie,
+w którym liczy się to, co da się nieść — „serce jest organem
+w ruchu" — a wędrówki splatają w pielgrzymki od świętego miejsca
+do świętego miejsca. Na styku ras i planu rośnie przemysł
+ekspedycyjny: w miastach-mieszańcach typu **Zulaport** na wybrzeżu
+Beyeen (ludzie, kor, gobliny, merfolkowie) handel ma swoich cichych
+władców — wierzy się, że lokalną ekonomię trzyma wampirzyca Indorel
+i jej siatka zauszników.
+
 ## Setting w pigułce
 
 - **Era:** okres Bitwy o Zendikar (po przebudzeniu Eldrazi; Sea Gate staje
@@ -51,6 +77,8 @@ przedostała się do ruin Emerii, założyła **Sea Gate Expeditionary House**.
 - **Mapa:** [mapa rekonstrukcji](#/mapa/zendikar) — oficjalna mapa planu
   nigdy nie powstała, więc podkład jest własną rekonstrukcją geografii
   z tekstów źródłowych (położenie Murasy przybliżone).
+- **Karty kolekcji:** [[2bfz-coralhelm-guide|Coralhelm Guide]] (BFZ) —
+  merfolka-przewodniczka z Coralhelm nad Halimar na Tazeem.
 
 ## Źródła
 
@@ -64,5 +92,22 @@ przedostała się do ruin Emerii, założyła **Sea Gate Expeditionary House**.
 - *A Planeswalker's Guide to Zendikar* (Wizards of the Coast) — hedrony,
   Roil, geografia kontynentów, Emeria:
   <https://magic.wizards.com/en/news/feature/a-planeswalkers-guide-to-zendikar>
+- MTG Wiki, „A Planeswalker's Guide to Zendikar" — główne rasy planu
+  (elfy, gobliny, kor, merfolkowie, wampiry), trzy części przewodnika:
+  <https://mtg.fandom.com/wiki/A_Planeswalker%27s_Guide_to_Zendikar>
+- mtglore.com, „A Planeswalker's Guide to Zendikar" (kopia artykułu
+  Wizards) — wampiry Guul Draz (Bloodchiefowie, pięć wielkich rodów,
+  Malakir) i korowie (koczownictwo, pielgrzymki, „serce jest organem
+  w ruchu"):
+  <https://mtglore.com/web-articles/a-planeswalkers-guide-to-zendikar/>
+- mtglore.com, „A Planeswalker's Guide to Zendikar: Ondu" (kopia) —
+  Zulaport na Beyeen: mieszana rasowo społeczność, wampirzyca Indorel
+  za lokalnym handlem:
+  <https://mtglore.com/web-articles/a-planeswalkers-guide-to-zendikar-ondu>
 - MTG Wiki, „Zendikar (plane)" — siedem kontynentów, efekty Eldrazi,
   Skyclave: <https://mtg.wiki/page/Zendikar_(plane)>
+- *A Planeswalker's Guide to Zendikar: Murasa and Sejiri* (Wizards
+  of the Coast) — Murasa jako wyspa-płaskowyż, mur klifów, cztery drogi
+  do wnętrza (Sunder Bay, Cliffs of Kazuul, Thunder Gap, Glint Pass),
+  Skyfang, Na Plateau i Singing City, Kazandu:
+  <https://magic.wizards.com/en/news/feature/a-planeswalkers-guide-to-zendikar-murasa-and-sejiri>

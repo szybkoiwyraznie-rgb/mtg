@@ -10,6 +10,11 @@
 >
 > **Zakres:** T3 (własny, wektorowy podkład SVG z opisu lore). Uzupełnia,
 > nie zastępuje `PROCES_MAP.md` (T1 hybryda) ani ADR 0007/0012.
+>
+> **Pamięć warsztatu T4 (ADR 0015):** ten plik jest rejestrem reużywalnych
+> metod rysowania (pasma górskie, rzeki, biomu, osady/ruiny) — każdą nową,
+> sprawdzoną metodę dopisuje się tutaj, żeby kolejne mapy powstawały
+> szybciej i w jednym stylu, dążąc jakością do mapy Śródziemia.
 
 ---
 
@@ -287,3 +292,65 @@ w powiększeniu.
 - **Nie** dokładaj POI na mikro-wysepki (Beyeen/Jwar) — będzie kolizja etykiet.
 - **Nie** zostawiaj `_px.raw`, `_view.png`, `tmp-rsvg/` w repo — to artefakty
   robocze (gitignore/usuń).
+
+---
+
+## 10. Weryfikacja geomeotryczna bez renderowania (`tools/map-audit.py`)
+
+> Wniosek z audytu mapy Zendikaru 2026-09-01 (zgłoszenia właściciela a–j
+> + 7 błędów znalezionych skryptem): render-piksele (§3) są dobre do
+> smoke-testu, ale **kolizje etykiet i „nazwa w wodzie" łapie tanio
+> geometria**. Od tej pory standard passu mapowego (ADR 0015 pkt 3):
+
+```bash
+python3 tools/map-audit.py [plan] [--woda="Nazwa1,Nazwa2"]
+```
+
+Sprawdza: etykiety na lądzie (PIT po spłaszczeniu Beziera), kolizje par
+etykiet (bbox ≈ 0.62·fs·znaki), markery na lądzie, pinezki kart
+z `map.json` na lądzie; kotwice w wodzie raportuje informacyjnie.
+Kod wyjścia 1 = problemy (gotowe pod CI). Mapy liniowe (T2, adoptowane)
+są pomijane w testach na-lądzie z adnotacją.
+
+### Reguły wynikające (obowiązkowe przy rysowaniu i poprawkach)
+
+1. **Etykieta POI zawsze z markerem** — osierocona etykieta „niczego
+   się nie tyczy" (zgłoszenie i: Ikiral, Emeria).
+2. **Tytuły kontynentów (fs 40+) mają strefę ~110 px** — etykiety POI
+   nie wchodzą w pas tytułu; tytuł lepiej trzymać przy krawędzi
+   kontynentu lub nad gęstym wnętrzem.
+3. **Obiekty wodne (zatoki, rowy, głębiny, przeprawy) kursywą** — wtedy
+   „w wodzie" jest cechą, nie błędem; whitelisty w `map-audit.py`.
+4. **PIT tylko po spłaszczeniu krzywych C** — punkty kontrolne Beziera
+   dają fałszywe lądy/morza; fill bywa dziedziczony z `<g>` (wysepki!).
+5. **Markery z `opacity` = celowe dryfowanie** (hedrony Emerii) —
+   weryfikator je pomija; grupy z `transform` (legenda, kompas) też.
+6. **Pozycja kanoniczna > ładniejsza pozycja**: Na Plateau wg Guide leży
+   na wschód od środka Murasy, a Singing City w jej sercu — przekład
+   geometrii pod kanon, nie odwrotnie (proweniencja w `map.json`).
+7. **Rejestruj wszystko, co narysowane**: etykieta/marker bez wpisu
+   w `kotwice`/`elementy` (i odwrotnie) to dług techniczny mapy
+   ( Living Spire był rysowany, niezarejestrowany — domknięte).
+
+---
+
+## 11. mapforge — rysuj klockami, nie krzywymi (ADR 0018)
+
+Od 2026-09-01 projekt ma własny, deterministyczny silnik mapowy:
+`tools/mapforge/` (zero zależności; katalog klocków i schemat sceny —
+`tools/mapforge/README.md`; demo: `maps/_warsztat/podklad.svg`).
+
+Reguły użycia:
+
+1. **Nowy element mapy planu = klocek ze sceny**, nie ręczny `<path>`
+   (las → `las`, grzbiet → `pasmo`, rzeka → `rzeka` z `s0/s1`, szlak →
+   `droga` typ `szlak` — kropki jak w line-art mapome, zatoka →
+   `lukEtykieta`).
+2. **Determinizm przez `id`**: zmiana jednego obiektu nie przetasowuje
+   pozostałych; regeneracja daje identyczny SVG.
+3. **Po każdym renderze**: `python3 tools/map-audit.py <plan>` — 0
+   problemów obowiązkowe (oprawa jest zwolniona przez grupę
+   z transformem).
+4. **Migracja istniejących podkładów tylko wg
+   `docs/plans/PLAN_2026-09-01-mapforge.md`** (E1–E3), nigdy „przy
+   okazji" innego zadania.

@@ -129,8 +129,15 @@ export function ocenStrone(strona) {
   };
 }
 
-export function raport(strony) {
-  const r = strony.map(ocenStrone);
+export function raport(strony, mapyPlanow = null) {
+  // Plany nie mają pinezki we frontmatter (pinezki noszą karty) — pragmatycznie:
+  // plan „ma pinezkę", gdy mapa planu (maps/<plan>/map.json) pinezkuje choć jedną kartę.
+  const udekorowane = strony.map((s) => (
+    s.typ === 'plan' && mapyPlanow?.get?.(s.slug)?.pinezki?.length
+      ? { ...s, pinezka: { mapa: s.slug } }
+      : s
+  ));
+  const r = udekorowane.map(ocenStrone);
   const sr = (arr, f) => arr.length
     ? Math.round((arr.reduce((a, x) => a + x[f], 0) / arr.length) * 10) / 10 : 0;
   return {
@@ -170,11 +177,11 @@ if (jestMain) {
   const strony = wczytajStrony({ root: ROOT });
   const mapa = wczytajMapy({ root: ROOT });
   const tax = wczytajTaxonomie({ root: ROOT });
-  const r = raport(strony);
+  const r = raport(strony, mapa);
   if (process.argv.includes('--json')) {
     console.log(JSON.stringify(r, null, 2));
   } else {
     console.log(formatuj(r));
-    console.log('  Plany bez kontraktu sekcji mierzone są pragmatycznie („Setting w pigułce").');
+    console.log('  Plany bez kontraktu sekcji mierzone są pragmatycznie („Setting w pigułce"); pinezka planu = pinezki kart na jego mapie.');
   }
 }

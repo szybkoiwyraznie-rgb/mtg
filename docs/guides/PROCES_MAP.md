@@ -25,8 +25,14 @@ kartę** (lub zlecenie właściciela). Pilot: Śródziemie, karta 1LTR.
    `zrodlo`: URL, tytuł, autor, data pobrania; notka „użytek prywatny" —
    ADR 0007 §3).
 4. Gdy mapy nie ma (świat custom): wariant T3 — mapa proceduralna z opisów
-   lore, **wyraźnie oznaczona** `rekonstrukcja: true` w map.json; styl
-   własny (nie podszywanie pod kanon).
+   lore, zapisana `rekonstrukcja: true` w map.json (proweniencja w danych,
+   bez adnotacji na podkładzie — ADR 0013); styl własny (nie podszywanie
+   pod kanon).
+5. T4 — rekonstrukcja wzniesiona na **wspólnym warsztacie mapowym**
+   (ADR 0015): te same zasady co T3 plus reużywalne metody rysowania
+   (pasma górskie, rzeki, biomu), wspólna paleta i pamięć warsztatu
+   w `SKILL_MAPA_PLANU.md`; jakościowo dąży do mapy Śródziemia (T2)
+   i wyżej. Mapa T3 dojrzewa do T4 wraz z warsztatem.
 
 ## MA2 — Struktura danych mapy
 

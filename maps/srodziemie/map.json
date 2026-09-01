@@ -18,25 +18,40 @@
   "rekonstrukcja": false,
   "kotwice": [
     {
-      "nazwa": "Isengard",
-      "x": 0.4163,
-      "y": 0.5313,
-      "typ": "etykieta-podkladu",
-      "notka": "kotwica z etykiety „Isengard”; południowy kraniec Gór Mglistych"
-    },
-    {
-      "nazwa": "Edoras",
-      "x": 0.4703,
-      "y": 0.6392,
-      "typ": "etykieta-podkladu",
-      "notka": "stolica Rohanu"
-    },
-    {
       "nazwa": "Tharbad",
       "x": 0.3422,
       "y": 0.4104,
       "typ": "etykieta-podkladu",
       "notka": "przeprawa na Gwathló, skraj Enedwaithu"
+    },
+    {
+      "nazwa": "Minhiriath",
+      "x": 0.2594,
+      "y": 0.4692,
+      "typ": "etykieta-podkladu",
+      "notka": "środek etykiety regionu"
+    },
+    {
+      "nazwa": "Dunland",
+      "x": 0.406,
+      "y": 0.492,
+      "typ": "region",
+      "zrodlo": "https://tolkiengateway.net/wiki/Dunland",
+      "notka": "kraina karty 1ltr-dunland-crebain: między Glanduin (płn.), Górami Mglistymi (wsch.) i Isen (płd.); pinezka karty = środek regionu"
+    },
+    {
+      "nazwa": "The Wold",
+      "x": 0.55,
+      "y": 0.5275,
+      "typ": "etykieta-podkladu",
+      "notka": "północno-wschodni kraniec Rohanu"
+    },
+    {
+      "nazwa": "Isengard",
+      "x": 0.4163,
+      "y": 0.5313,
+      "typ": "etykieta-podkladu",
+      "notka": "kotwica z etykiety „Isengard”; południowy kraniec Gór Mglistych"
     },
     {
       "nazwa": "Enedwaith",
@@ -46,11 +61,11 @@
       "notka": "środek etykiety regionu"
     },
     {
-      "nazwa": "Minhiriath",
-      "x": 0.2594,
-      "y": 0.4692,
+      "nazwa": "Fangorn",
+      "x": 0.4844,
+      "y": 0.55,
       "typ": "etykieta-podkladu",
-      "notka": "środek etykiety regionu"
+      "notka": "Las Fangorn"
     },
     {
       "nazwa": "Fords of Isen",
@@ -67,18 +82,11 @@
       "notka": "Helmowy Jar"
     },
     {
-      "nazwa": "Fangorn",
-      "x": 0.4844,
-      "y": 0.55,
+      "nazwa": "Edoras",
+      "x": 0.4703,
+      "y": 0.6392,
       "typ": "etykieta-podkladu",
-      "notka": "Las Fangorn"
-    },
-    {
-      "nazwa": "The Wold",
-      "x": 0.55,
-      "y": 0.5275,
-      "typ": "etykieta-podkladu",
-      "notka": "północno-wschodni kraniec Rohanu"
+      "notka": "stolica Rohanu"
     },
     {
       "nazwa": "Ered Nimrais",

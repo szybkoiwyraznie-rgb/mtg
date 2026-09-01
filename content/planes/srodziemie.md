@@ -40,6 +40,14 @@ w dawnym **Eregionie** (Hollin), przelatuje zwiad crebainów, który widzi
 Drużyna Pierścienia w drodze na południe — a ptaki te mają w Dunlandzie
 swoją ojcowiznę.
 
+Na południowej krawędzi Enedwaith, na Gwathló, leżą ruiny **Tharbad**:
+miasto-most z czasów Arnoru i Gondoru, po powodzi zniszczone i opuszczone
+(T.E. 2912), ośrodek dawnej Wielkiej Drogi Północ–Południe. W Wojnie
+o Pierścień istnieje już tylko niebezpieczna przeprawa brodem po resztkach
+mostu — to tam, w drodze do Rivendell (T.E. 3018), Boromir stracił konia.
+Dla świata karty znaczy to tyle, że even na mapie dziczy zostają szlaki
+i przeprawy, o których wie każdy przewodnik — i każdy zwiadowca.
+
 ## Setting w pigułce
 
 - **Era:** Trzecia Era Śródziemia (kulminacja: Wojna o Pierścień, 3018–3019 T.E.).
@@ -48,6 +56,8 @@ swoją ojcowiznę.
 - **Mapa:** podkład wektorowy projektu mapome (k1tesurfen, licencja
   CC-BY-4.0) — otwórz przez przycisk powyżej lub trasę
   `#/mapa/srodziemie`.
+- **Karty kolekcji:** [[1ltr-dunland-crebain|Dunland Crebain]] (LTR) —
+  crebainy, zwiad Wojny o Pierścień z ojcowizną w Dunlandzie.
 
 ## Źródła
 
@@ -62,3 +72,7 @@ swoją ojcowiznę.
   i Przełęczy Calenardhon: <http://www.glyphweb.com/arda/c/circleofisengard.php>
 - J.R.R. Tolkien, *Władca Pierścieni* — sceny w Enedwaith/Eregionie
   (przelot crebain), dzieje Dunlandu i Rohanu (dodatki).
+- Tolkien Gateway, „Tharbad" — dzieje miasta-mostu: fort Arnoru/Gondoru,
+  upadek po powodzi T.E. 2912, brodowa przeprawa Boromira (T.E. 3018,
+  utrata konia), losy Wielkiej Drogi:
+  <https://tolkiengateway.net/wiki/Tharbad>

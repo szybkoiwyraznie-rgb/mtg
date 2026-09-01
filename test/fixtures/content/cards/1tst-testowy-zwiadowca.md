@@ -16,6 +16,12 @@ pinezka:
 
 ## Metryka i Kontekst Świata
 
+- **Koszt:** {1}{U} — jeden mana dowolnego koloru i jeden niebieski
+- **Typ:** Creature — Bird Scout (stworzenie — ptak, zwiadowca)
+- **Statystyki:** 1/1
+- **Zdolności:** Flying (latanie)
+- **Wydanie:** Testowy Set (TST), nr 1, common
+
 Testowa karta fixture'a: scena testowego świata, [testlandia](#/plan/testlandia).
 
 ## Postacie i Byty
@@ -37,10 +43,6 @@ Kolor B i koszt {2}{B} opowiadają o szpiegostwie; lot o zwiadzie powietrznym.
 ## Transpozycja
 
 Karta-źródło pochodzi z planu testowego; transpozycja pełna.
-
-## Druk w Kolekcji
-
-Wydruk testowy: testowa rama, testowy artysta.
 
 ## Na Mapie
 

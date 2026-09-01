@@ -15,6 +15,14 @@ pinezka:
 
 ## Metryka i Kontekst Świata
 
+- **Koszt:** {1}{U} — jeden mana dowolnego koloru i jeden niebieski
+- **Typ:** Creature — Merfolk Scout Ally (stworzenie — merfolk,
+  zwiadowca, sojusznik)
+- **Statystyki:** 2/1
+- **Zdolność:** {4}{U}: wskazane stworzenie nie może zostać
+  zablokowane w tej turze (aktywowana)
+- **Wydanie:** Battle for Zendikar (BFZ), nr 74/274, common
+
 Karta pokazuje merfolkę-przewodniczkę: zwiadowczynię, która prowadzi
 wyprawy wzdłuż wybrzeża. Pochodzi z **Coralhelm**, największej osady
 merfolków na planie, położonej nad śródlądowym morzem **Halimar**
@@ -43,26 +51,34 @@ powierzchnią i pod nią".
 
 **Coralhelm** to nazwa własna — największej osady merfolków na Zendikarze,
 nad morzem Halimar na Tazeem („koralowy hełm"). **Guide** to zawód:
-przewodniczka wypraw. Pełne odczytanie tytułu: „Przewodniczka
-z Coralhelm" — osoba, nie pojęcie.
+przewodniczka wypraw. Pełne polskie odczytanie tytułu:
+**„Przewodniczka z Koralowego Hełmu"** — osoba, nie pojęcie.
 
 ## Mechanika jako Opowieść
 
-Koszt {1}{U} i statystyki 2/1 opowiadają o cenie i istocie zawodu:
-przewodniczka jest tania w najęciu i lekka w marszu, ale w otwartej
-walce — nikim. Niebieski kolor to w filozofii Magic: The Gathering
-wiedza, spryt i przebiegłość: dokładnie kapitał, z którego żyje
-przewodniczka.
+**Odczyt zasadniczy.** {1}{U} przywołuje 2/1. Aktywowana zdolność
+{4}{U} ma cel (wskazane stworzenie) i działa do końca tury: wybrane
+stworzenie nie może zostać zablokowane — cokolwiek przeciwnik wystawi
+na jego drodze.
 
-Aktywowana zdolność **{4}{U}: wskazana istota nie może zostać
-zablokowana w tej turze** to esencja zawodu w jednym zdaniu mechaniki:
-przeprowadzenie. Klient zapłaci, przewodniczka zna ścieżki nad i pod
-powierzchnią — i grupa przechodzi tam, gdzie przeciwnik nie zdoła jej
-zatrzymać. Typ **Scout** oznacza zwiadowczynię; podtyp **Ally** wplata
-ją w mechanikę sojuszników Battle for Zendikar, w której ekspedycja
-rośnie w siłę, gdy przybywają kolejni jej członkowie. Rzadkość
-**common** mówi: na planie przygód dobrych przewodników jest wielu —
-ale każdy z nich jest na wagę złota.
+**Interpretacja fabularna.** Statystyki 2/1 za dwa many to cenna
+szybkość i krucha konstrukcja: przewodniczka jest efektywna wcześnie,
+ale nie jest stworzona do otwartej walki — jej wartość leży w czymś
+innym. Niebieski kolor to w filozofii Magic: The Gathering wiedza,
+spryt i przebiegłość: kapitał, z którego żyje. Każdy podtyp to warstwa:
+**Merfolk** — zna wodę, wybrzeże nad powierzchnią i pod nią;
+**Scout** — rekonesans to jej fach; **Ally** — w Battle for Zendikar
+sojusznicy różnych ras wzmacniają się nawzajem, gdy przybywają kolejni
+(rally), więc przewodniczka rośnie w siłę razem z ekspedycją.
+
+**Całość jako opowieść.** Aktywowana zdolność jest mechaniczną
+kwintesencją zawodu: klient płaci {4}{U}, przewodniczka znajduje
+sekretne przejście — podwodny tunel, ścieżkę za wodospadem — i grupa
+przechodzi tam, gdzie przeciwnik nie zdoła jej zatrzymać. Wysoki koszt
+aktywacji mówi, że to nie sztuczka, lecz manewr wymagający czasu
+i przygotowania. Rzadkość **common** dodaje: na planie przygód dobrych
+przewodników jest wielu — ale każdy jest na wagę złota. Przewodniczka
+nie walczy sama: otwiera drogę innym, potężniejszym od siebie.
 
 ## Flavor Text
 
@@ -74,11 +90,24 @@ W oryginale: *"She knows every step of this coastline, both above and
 below the surface, and she has hideouts all along the way. She will get
 you there."*
 
-Referencję wystawia postać, która sama zna się na prowadzeniu: Jori En
-jest merfolką i uczoną, badaczka hedronów, która po zagładzie rodzinnej Bala
-Ged działała na Tazeem i prowadziła wyprawy w kampanii Bitwy o Zendikar
-— towarzyszyła m.in. Jace'owi Belerenowi w drodze na Akoum. Gdy ktoś
-taki mówi o przewodniczce „doprowadzi cię", to opinia eksperta.
+Odczyt fraza po frazie:
+
+- **„Zna każdy krok tego wybrzeża, nad powierzchnią i pod nią"** —
+  mistrzowska znajomość terenu, domena przewodnika; merfolkia natura
+  czyni z wody drugą połowę mapy.
+- **„Kryjówki po całej drodze"** — bezpośrednie wyjaśnienie mechaniki:
+  to właśnie sieć sekretnych kryjówek i przejść czyni wskazane
+  stworzenie nieblokowalnym.
+- **„Ona cię tam doprowadzi"** — pewność i niezawodność; obietnica,
+  nie przechwałka.
+
+Cytat nie jest anonimowy: **Jori En** to merfolka i uczona, badaczka
+hedronów, która po zagładzie rodzinnej Bala Ged działała na Tazeem
+i prowadziła wyprawy w kampanii Bitwy o Zendikar — towarzyszyła m.in.
+Jace'owi Belerenowi w drodze na Akoum. Gdy ktoś taki wystawia
+przewodniczce referencje, to opinia eksperta — i umiejscowienie karty
+w konkretnej fabule: specjalistka, której umiejętności są cenione
+przez dowództwo wypraw.
 
 ## Transpozycja
 
@@ -87,18 +116,12 @@ Zendikar — karta nie przechodzi żadnej transpozycji: jej plan rodzinny
 i plan kolekcji to ten sam plan. Osadzenie w Coralhelm nad Halimar
 na Tazeem wynika wprost z kanonu świata i nazwy karty.
 
-## Druk w Kolekcji
-
-W kolekcji jest standardowy wydruk BFZ #74 (czarna rama, klasyczna
-rama z 2015 roku). Ilustruje go **Viktor Titov**. Druk wyświetla się
-w ramce karty obok.
-
 ## Na Mapie
 
 Karta jest osadzona w regionie **Tazeem** — niebieskim kontynencie
-merfolków, nad śródlądowym morzem Halimar, w sercu krainy Coralhelm.
-Osadzenie ma poziom pewności regionu: wybrzeża i wody Halimar,
-nie konkretny punkt.
+merfolków, nad śródlądowym morzem Halimar, w sercu krainy Coralhelm
+(szerszą geografię opisuje plan [[zendikar|Zendikar]]). Osadzenie ma
+poziom pewności regionu: wybrzeża i wody Halimar, nie konkretny punkt.
 
 ## Źródła
 
@@ -113,16 +136,27 @@ nie konkretny punkt.
 - MTG Wiki, „Jori En" — biografia: Bala Ged, badania hedronów, rola
   w kampanii Bitwy o Zendikar:
   <https://mtg.fandom.com/wiki/Jori_En>
-- Wiedza ogólna (bez URL-a): rola podtypu Ally w mechanice Battle
-  for Zendikar; filozofia koloru niebieskiego.
+- Wizards of the Coast, „Battle for Zendikar Mechanics" — zdolności
+  Sojuszników (Rally): wyzwalane, gdy Sojusznik wchodzi na pole
+  bitwy pod twoją kontrolą:
+  <https://magic.wizards.com/en/news/feature/battle-for-zendikar-mechanics>
+- MTG Wiki, „Blue" — filozofia koloru niebieskiego (wiedza, spryt,
+  przebiegłość): <https://mtg.fandom.com/wiki/Blue>
 
 ## Podsumowanie Lore
 
-*Coralhelm Guide* mówi, czym jest Zendikar, lepiej niż niejedna karta
-legendarna: plan, na którym przeżycie zależy nie od siły, ale od tych,
-którzy znają drogę. Tania zwiadowczyni 2/1, która za {4}{U} przeprowadza
-dowolną istotę omijając wszystko, co chciałoby ją zatrzymać, opowiada
-w języku mechaniki dokładnie to, co flavor Jori En słowami: na wybrzeżu
-nad i pod powierzchnią kryją się ścieżki, którymi przewodniczka
-doprowadzi każdego, kto jej zaufa. W świecie, gdzie ziemia sama się
-buntuje, wiedza terenowa jest najtwardszą walutą.
+*Coralhelm Guide* to opowieść o cichej bohaterce czasów zagłady:
+
+- **Wiedza terenowa jest najtwardszą walutą Zendikaru** — na planie,
+  gdzie ziemia sama się buntuje, przeżycie zależy od tych, którzy znają
+  drogę.
+- **Nie każdy bohater walczy na pierwszej linii** — 2/1 za {1}{U}
+  nie wygra bitwy, ale za {4}{U} przeprowadzi kogokolwiek obok całej
+  linii obrony wroga.
+- **Sojusz to mechanika i morał zarazem** — podtyp Ally wplata
+  przewodniczkę w sieć wzajemnego wsparcia, którą ludy Zendikaru
+  przeciwstawiają Eldrazi.
+
+Spryt, wiedza i współpraca wobec niepojętej siły — dokładnie to, czym
+Zendikar broni się przed zagładą; przewodniczka z Koralowego Hełmu
+ucieleśnia tę ideę jedną zdolnością: otworzyć drogę.

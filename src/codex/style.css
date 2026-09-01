@@ -115,12 +115,6 @@ h3 { font-size: 1.1rem; margin: 1.1rem 0 0.4rem; }
 }
 .nazwa-syntetyczna { font-size: 1.2rem; letter-spacing: 0.03em; }
 
-.tory-przyciski { display: flex; gap: 0.35rem; margin: 0.35rem 0 0.7rem; }
-.tor-przycisk {
-  flex: 1; border: 1px solid var(--ramka); background: var(--tlo);
-  border-radius: 6px; padding: 0.3rem 0.2rem; font-size: 0.85rem; cursor: pointer;
-}
-.tor-przycisk.aktywny { background: var(--akcent); color: #fff; border-color: var(--akcent); }
 
 .dane-karty { display: grid; grid-template-columns: auto 1fr; gap: 0.25rem 0.6rem; margin: 0.5rem 0; }
 .dane-karty dt { color: var(--tusz-miękki); font-size: 0.85rem; }
@@ -293,6 +287,37 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
    Stały rozmiar i ostre krawędzie w każdym przybliżeniu; klikalne,
    a sama nakładka nie blokuje panowania po mapie. */
 .mapa-nakladka { position: absolute; inset: 0; pointer-events: none; z-index: 6; }
+
+/* ── Etykiety podkładu: stały rozmiar ekranowy (nie skalują się z zoomem),
+      większa czcionka niż w SVG, halo dla czytelności, LOD od progu zoomu ── */
+.mapa-etykieta-podkladu {
+  position: absolute;
+  /* fallback bez JS (widok domyślny, kotwica middle); JS dokleja własny
+     transform z pozycją + Kotwiczenie SVG (patrz render-map.js) */
+  transform: translate(-50%, -0.82em);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 13.5px;
+  line-height: 1.1;
+  white-space: nowrap;
+  color: #4a4438;
+  text-shadow:
+    -1px -1px 0 var(--mapa-halo, rgba(255,255,255,.92)),
+     1px -1px 0 var(--mapa-halo, rgba(255,255,255,.92)),
+    -1px  1px 0 var(--mapa-halo, rgba(255,255,255,.92)),
+     1px  1px 0 var(--mapa-halo, rgba(255,255,255,.92)),
+     0 0 4px var(--mapa-halo, rgba(255,255,255,.92));
+  pointer-events: none;
+}
+.mapa-etykieta-podkladu.kursywa { font-style: italic; color: #55524a; }
+.mapa-etykieta-podkladu.tier-glowna { font-size: 15.5px; color: #33302a; }
+.mapa-etykieta-podkladu.tier-kontynent {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  color: #26231d;
+  text-transform: uppercase;
+}
+.mapa-etykieta-podkladu.poza-zasiegiem { display: none; }
 .mapa-nakladka a { pointer-events: auto; }
 
 /* Pinezka: element-kotwica 0×0 w punkcie docelowym (transform ustawia
@@ -313,7 +338,13 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
   white-space: nowrap; font-size: 0.78rem; font-weight: 600;
   background: rgba(30, 24, 14, 0.82); color: #f6efdf;
   border-radius: 5px; padding: 0.1rem 0.4rem;
+  /* badge domyślnie ukryty — pokazuje się dopiero po najechaniu/fovusie
+     (feedback właściciela B1): mapa bez stałych nalepek, pinezka nadal
+     ma tooltip `title`; etykieta pozostaje dostępna z klawiatury. */
+  opacity: 0; pointer-events: none; transition: opacity 0.12s ease;
 }
+.mapa-pinezka:hover .mapa-pinezka-etykieta,
+.mapa-pinezka:focus-visible .mapa-pinezka-etykieta { opacity: 1; }
 .mapa-pinezka:hover .mapa-pinezka-etykieta { background: #2c2313; }
 
 .mapa-etykieta-regionu {
@@ -339,6 +370,27 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
 }
 .mapa-atrybucja { margin-top: 1.4rem; font-size: 0.85rem; }
 .mapa-atrybucja p { margin: 0.2rem 0; }
+
+/* ── Warstwa karty z pinezki (feedback B2) ─────────────────────────── */
+.mapa-warstwa { position: fixed; inset: 0; z-index: 60; display: flex; }
+.mapa-warstwa[hidden] { display: none; }
+.mapa-warstwa-tlo { position: absolute; inset: 0; background: rgba(24, 18, 10, 0.72); }
+.mapa-warstwa-panel {
+  position: relative; flex: 1; display: flex; flex-direction: column;
+  margin: clamp(6px, 2.5vw, 36px);
+  background: var(--tlo-karta); border: 1px solid var(--ramka);
+  border-radius: 12px; box-shadow: var(--cien); overflow: hidden;
+}
+.mapa-warstwa-zamknij {
+  position: absolute; top: 10px; right: 12px; z-index: 2;
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid var(--ramka); background: var(--tlo);
+  color: var(--tusz); font-size: 1.15rem; line-height: 1; cursor: pointer;
+  box-shadow: var(--cien);
+}
+.mapa-warstwa-zamknij:hover { background: var(--akcent); color: #f6efdf; border-color: var(--akcent); }
+.mapa-warstwa-tresc { overflow-y: auto; height: 100%; padding: 1.2rem 1.4rem 2rem; }
+.mapa-warstwa-tresc .okruszki { padding-right: 52px; }
 @media (max-width: 640px) {
   .mapa-podpowiedz { display: none; }
   .mapa-okno { height: clamp(340px, 62vh, 640px); }
@@ -365,3 +417,18 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
   background: linear-gradient(transparent, rgba(30, 24, 14, 0.85));
   padding: 1.4rem 0.4rem 0.3rem;
 }
+
+/* ── Sloty FOT/KON w treści karty (ADR 0017) ── */
+.karta-fot, .karta-kon { margin: 0 0 1.1rem; }
+.karta-fot img, .karta-kon img { width: 100%; display: block; border-radius: 10px; border: 1px solid var(--ramka); box-shadow: var(--cien); }
+.karta-fot img { aspect-ratio: 21 / 9; object-fit: cover; }
+.karta-kon img { aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* ── Sloty FOT/KON w treści karty (ADR 0017) ──────────────────────── */
+.karta-fot, .karta-kon { margin: 0 0 1.1rem; }
+.karta-fot img, .karta-kon img {
+  width: 100%; display: block; border-radius: 10px;
+  border: 1px solid var(--ramka); box-shadow: var(--cien);
+}
+.karta-fot img { aspect-ratio: 21 / 9; object-fit: cover; }
+.karta-kon img { aspect-ratio: 16 / 9; object-fit: cover; }

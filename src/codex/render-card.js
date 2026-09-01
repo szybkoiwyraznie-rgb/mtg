@@ -60,11 +60,29 @@ export function renderKarte(slug) {
       </aside>
 
       <div class="karta-tresc">
-        ${karta.html ?? ''}
+        <figure class="karta-fot" data-fot hidden>
+          <img data-fot-img src="./img/${escapeHtml(karta.imgId)}FOT.png"
+            alt="Panorama FOT — wizualizacja właściciela: ${escapeHtml(karta.tytul)}"
+            decoding="async">
+        </figure>
+        ${wstawKon(karta.html ?? '', karta)}
         ${sekcjaLinkujacychKarty(linkujace)}
       </div>
     </div>
   </article>`;
+}
+
+/** Slot KON (bestiariusz) wpleciony pod pierwszą sekcją treści (ADR 0017). */
+function wstawKon(html, karta) {
+  const kon = `
+        <figure class="karta-kon" data-kon hidden>
+          <img data-kon-img src="./img/${escapeHtml(karta.imgId)}KON.png"
+            alt="Bestiariusz KON — wizualizacja właściciela: ${escapeHtml(karta.tytul)}"
+            decoding="async">
+        </figure>`;
+  const h2 = [...String(html).matchAll(/<h2[ >]/g)];
+  if (h2.length < 2) return html + kon; // jedna sekcja (lub brak) → na koniec
+  return html.slice(0, h2[1].index) + kon + html.slice(h2[1].index);
 }
 
 function wiersz(klucz, wartosc) {
@@ -87,7 +105,8 @@ function miniMapa(karta, dane) {
   </a>`;
 }
 
-/** Tory obrazów z cichym fallbackiem (ADR 0008). */
+/** Obraz karty w infoboksie (druk Scryfalla) + sloty FOT/KON w treści
+ * (ADR 0017: rysują się same, gdy pliki istnieją; cichy fallback). */
 function toryObrazow(karta, sc) {
   const scryfallSrc = sc?.image_uris?.normal ?? null;
   return `
@@ -101,52 +120,21 @@ function toryObrazow(karta, sc) {
         ${kropkiKolorow(karta.kolory)}
       </div>
     </div>
-    <div class="tory-przyciski" data-imgid="${escapeHtml(karta.imgId)}" data-slug="${escapeHtml(karta.slug)}">
-      <button type="button" class="tor-przycisk" data-tor="scryfall" hidden>Druk</button>
-      <button type="button" class="tor-przycisk" data-tor="FOT" hidden>FOT</button>
-      <button type="button" class="tor-przycisk" data-tor="KON" hidden>KON</button>
-    </div>
   </figure>`;
 }
 
 /** Sondowanie torów FOT/KON + podmiana obrazu (montowane przez main.js). */
 export function zamontujToryObrazow(kontener) {
-  const tory = kontener?.querySelector('.tory-przyciski');
-  if (!tory) return;
-  const imgId = tory.dataset.imgid;
-  const slug = tory.dataset.slug;
-  const glowny = kontener.querySelector('#tor-glowny');
-  const syntetyczna = kontener.querySelector('#twarz-syntetyczna');
-
-  const ustaw = (src) => {
-    if (!src) return;
-    syntetyczna.style.display = 'none';
-    glowny.style.display = '';
-    glowny.src = src;
-  };
-
-  const przyciski = {};
-  for (const btn of tory.querySelectorAll('.tor-przycisk')) {
-    przyciski[btn.dataset.tor] = btn;
-    btn.addEventListener('click', () => {
-      if (btn.dataset.tor === 'scryfall') {
-        ustaw(dajStrone(slug)?.scryfall?.image_uris?.normal ?? null);
-      } else {
-        ustaw(`./img/${imgId}${btn.dataset.tor}.png`);
-      }
-      for (const b of Object.values(przyciski)) b.classList.toggle('aktywny', b === btn);
-    });
-  }
-
-  // tor główny (Scryfall) dostępny, gdy snapshot istnieje
-  if (glowny.getAttribute('src')) przyciski.scryfall.hidden = false;
-
-  // sonda FOT/KON: cichy fallback — nieudane ładowanie ukrywa przycisk
-  for (const sufiks of ['FOT', 'KON']) {
-    const sonda = new Image();
-    sonda.onload = () => { przyciski[sufiks].hidden = false; };
-    sonda.onerror = () => { przyciski[sufiks].remove(); };
-    sonda.src = `./img/${imgId}${sufiks}.png`;
+  // Sonda slotów FOT/KON (ADR 0017): slot rysuje się w treści karty,
+  // gdy plik istnieje; nieudane ładowanie usuwa slot bez śladu
+  // (cichy fallback — na Pages slotów nie widać).
+  for (const slot of kontener?.querySelectorAll?.('[data-fot], [data-kon]') ?? []) {
+    const img = slot.querySelector('img');
+    if (!img) continue;
+    img.onload = () => { slot.hidden = false; };
+    img.onerror = () => { slot.remove(); };
+    // próba załadowania (slot ukryty do skutku)
+    img.src = img.getAttribute('src');
   }
 }
 

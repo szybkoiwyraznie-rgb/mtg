@@ -43,7 +43,7 @@ function renderuj(trasa) {
   app.innerHTML = rama(aktywna, tytul, html);
   tytulStrony(tytul);
   zamontujToryObrazow(app);
-  zamontujMape(app);
+  zamontujMape(app, { renderKarty: renderKarte, zamontujKarte: zamontujToryObrazow });
   zamontujFiltryKart(app);
 
   const tresc = app.querySelector('.tresc');

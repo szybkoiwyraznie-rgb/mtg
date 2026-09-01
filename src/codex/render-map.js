@@ -15,6 +15,13 @@
  * Dla podkładów PNG/JPG zostaje <img> (raster — nie ma czego
  * przerysowywać wektorowo). Współrzędne pinezek/regionów są
  * znormalizowane 0–1 (MA2) — silnik mnoży je przez wymiary podkładu.
+ *
+ * ETYKIETY PODKŁADU o stałym rozmiarze ekranowym (feedback właściciela):
+ * <text> z atrybutami x/y jest duplikowany do nakładki ekranowej
+ * (większa czcionka, halo, NIE skaluje się z zoomem), oryginał w SVG
+ * dostaje visibility:hidden. Etykiety bez x/y (textPath, pozycjonowane
+ * transformem — np. line-art mapome) zostają w SVG. Drobne napisy mają
+ * LOD: data-min-k — widoczne dopiero od danego przybliżenia.
  */
 
 import { escapeHtml } from './markdown.js';
@@ -33,6 +40,61 @@ function podkladSvgMarkup(dataUri) {
   } catch (e) {
     return '';
   }
+}
+
+/**
+ * Wyciąga z markupu podkładu SVG etykiety <text x="…" y="…">Treść</text>
+ * (zwykłe, pozycjonowane atrybutami — nie textPath/transformem).
+ * Zwraca { etykiety, markup } — markup z visibility:hidden na źródłach,
+ * żeby nie było podwójnych napisów (etykieta żyje w nakładce).
+ */
+function przeniesEtykietyDoNakladki(markup) {
+  const vb = /viewBox="0 0 ([\d.]+) ([\d.]+)"/.exec(markup);
+  const etykiety = [];
+  if (!vb) return { etykiety, markup };
+  const [w, h] = [parseFloat(vb[1]), parseFloat(vb[2])];
+  // Spacer po tokenach z transitioning dziedziczenia text-anchor (stos grup <g>):
+  // etykieta bez własnego atrybutu kotwiczy się tak, jak w podkładzie SVG
+  // (middle z grupy okalającej albo domyślne start) — inaczej nakładka
+  // rozjeżdża się z obiektem (feedback właściciela: Beyeen/Malakir/Lulea).
+  const czesci = markup.split(/(<\/g>|<g\b[^>]*>|<text\b[^>]*>[^<]*<\/text>)/);
+  const stos = ['start'];
+  let out = '';
+  for (const cz of czesci) {
+    if (!cz) continue;
+    if (cz.startsWith('</g>')) {
+      if (stos.length > 1) stos.pop();
+      out += cz;
+      continue;
+    }
+    if (/^<g\b/.test(cz)) {
+      const gm = /text-anchor="(start|middle|end)"/.exec(cz);
+      stos.push(gm ? gm[1] : stos[stos.length - 1]);
+      out += cz;
+      continue;
+    }
+    const tm = /^<text\b([^>]*)>([^<]*)<\/text>$/.exec(cz);
+    if (!tm) { out += cz; continue; }
+    const atryb = tm[1];
+    const tresc = tm[2];
+    const mx = /\sx="(-?[\d.]+)"/.exec(atryb);
+    const my = /\sy="(-?[\d.]+)"/.exec(atryb);
+    if (!mx || !my || !tresc.trim()) { out += cz; continue; } // textPath/transform → zostaje w SVG
+    const kotwica = /\stext-anchor="(start|middle|end)"/.exec(atryb)?.[1]
+      ?? (/tytul-kontynentu/.test(atryb) ? 'middle' : stos[stos.length - 1]);
+    const fs = parseFloat((/font-size="([\d.]+)"/.exec(atryb) || [0, 15])[1]);
+    etykiety.push({
+      x: parseFloat(mx[1]) / w,
+      y: parseFloat(my[1]) / h,
+      fs,
+      kotwica,
+      kursywa: /italic/.test(atryb),
+      kontynent: /tytul-kontynentu/.test(atryb),
+      tresc: tresc.trim(),
+    });
+    out += `<text data-podklad-orj="1" style="visibility:hidden"${atryb}>${tresc}</text>`;
+  }
+  return { etykiety, markup: out };
 }
 
 export const POZIOMY_PEWNOSCI = {
@@ -82,6 +144,30 @@ export function renderMape(slugPlanu, query = {}) {
     </a>`;
   }).join('');
 
+  // Etykiety podkładu → nakładka ekranowa (stały rozmiar przy zoomie).
+  // Tylko T3+ (podkłady własne: ręczne/mapforge) — podkładów adoptowanych
+  // (T2, np. mapome) typografii nie ruszamy.
+  let etykietyPodkladu = [];
+  let podkladMarkup = '';
+  if (mapa.podkladData && mapa.podklad && mapa.wariant !== 'T1' && mapa.wariant !== 'T2' && /\.svg$/i.test(String(mapa.podklad))) {
+    const surowy = podkladSvgMarkup(mapa.podkladData);
+    if (surowy) {
+      const r = przeniesEtykietyDoNakladki(surowy);
+      etykietyPodkladu = r.etykiety;
+      podkladMarkup = r.markup;
+    }
+  }
+  const htmlEtykietyPodkladu = etykietyPodkladu.map((e) => {
+    // LOD: drobne napisy pokazują się od przybliżenia, w którym ich
+    // oryginalny rozmiar „urósłby" do czytelnych ~16 px ekranu
+    const prog = e.kontynent ? 0 : e.fs >= 17 ? 1 : Math.min(1.6, Math.max(1, 16 / e.fs));
+    const tier = e.kontynent ? 'tier-kontynent' : e.fs >= 17 ? 'tier-glowna' : 'tier-szczegol';
+    return `<span class="mapa-etykieta-podkladu ${tier}${e.kursywa ? ' kursywa' : ''}" data-podklad-etykieta
+      data-x="${e.x.toFixed(4)}" data-y="${e.y.toFixed(4)}" data-fs="${e.fs}" data-min-k="${prog.toFixed(2)}"
+      data-kotwica="${e.kotwica}"
+      style="left:${(e.x * 100).toFixed(2)}%;top:${(e.y * 100).toFixed(2)}%">${e.tresc}</span>`;
+  }).join('');
+
   const htmlRegionyEtykiety = regiony.map((r) => {
     const [x0, y0, x1, y1] = r.bbox ?? [];
     if ([x0, y0, x1, y1].some((v) => typeof v !== 'number')) return '';
@@ -119,14 +205,25 @@ export function renderMape(slugPlanu, query = {}) {
       <div class="mapa-ruch" data-mapa-ruch>
         <div class="mapa-scena" style="aspect-ratio: ${szer} / ${wys}">
           ${mapa.podkladData
-            ? ((mapa.podklad && /\.svg$/i.test(String(mapa.podklad)) && podkladSvgMarkup(mapa.podkladData))
+            ? (podkladMarkup
                 || `<img class="mapa-podklad" src="${mapa.podkladData}" alt="Podkład mapy: ${escapeHtml(mapa.tytul ?? slugPlanu)}" draggable="false">`)
             : `<div class="mapa-brak-podkladu">Brak osadzonego podkładu (build nie wstrzyknął pliku — sprawdź maps/${escapeHtml(slugPlanu)}/podklad.svg).</div>`}
           <svg class="mapa-regiony" viewBox="0 0 ${szer} ${wys}" preserveAspectRatio="none" aria-hidden="true">${svgRegiony}</svg>
         </div>
       </div>
-      <div class="mapa-nakladka" data-mapa-nakladka>${htmlPinezki}${htmlRegionyEtykiety}</div>
+      <div class="mapa-nakladka" data-mapa-nakladka>${htmlEtykietyPodkladu}${htmlPinezki}${htmlRegionyEtykiety}</div>
     </div>
+
+    ${pinezki.length > 0 ? `
+    <div class="mapa-warstwa" data-map-warstwa hidden role="dialog" aria-modal="true"
+      aria-label="Karta Katalogowa otwarta z mapy">
+      <div class="mapa-warstwa-tlo" data-map-warstwa-zamknij></div>
+      <div class="mapa-warstwa-panel">
+        <button type="button" class="mapa-warstwa-zamknij" data-map-warstwa-zamknij
+          aria-label="Zamknij i wróć do mapy" title="Zamknij i wróć do mapy (Esc)">✕</button>
+        <div class="mapa-warstwa-tresc" data-map-warstwa-tresc></div>
+      </div>
+    </div>` : ''}
 
     <section class="sekcja mapa-legenda">
       <h2>Legenda</h2>
@@ -165,8 +262,16 @@ export function renderMape(slugPlanu, query = {}) {
  * Montuje interakcje mapy (wywoływane z main.js po renderze, jak
  * zamontujToryObrazow). Bezpiecznie wychodzi, gdy mapy nie ma w DOM
  * (testy na shimie DOM).
+ *
+ * `opcje.renderKarty` (renderer Karty Katalogowej) i `opcje.zamontujKarte`
+ * (montaż torów obrazów) włączają WARSTWĘ KARTY (feedback właściciela B2):
+ * kliknięcie pinezki otwiera wpis katalogowy na zmaksymalizowanej warstwie
+ * NAD mapą (zamknięcie: ✕ / tło / Esc — powrót do mapy w tym samym
+ * stanie zoomu/pana, bo mapa nie jest odmontowywana). Bez `renderKarty`
+ * pinezka pozostaje zwykłym linkem (nawigacja #/karta/…) — progressive
+ * enhancement działające też z wyłączonym JS.
  */
-export function zamontujMape(app) {
+export function zamontujMape(app, opcje = {}) {
   const okno = app?.querySelector?.('.mapa-okno');
   if (!okno) return;
 
@@ -174,6 +279,49 @@ export function zamontujMape(app) {
   if (!ruch) return;
   const nakladka = okno.querySelector('[data-mapa-nakladka]');
   const pasek = app.querySelector('.mapa-pasek') ?? okno;
+
+  // ── Warstwa karty (B2): otwarcie z pinezki, zamknięcie z powrotem ──
+  const warstwa = app.querySelector('[data-map-warstwa]');
+  const trescWarstwy = warstwa?.querySelector?.('[data-map-warstwa-tresc]');
+  const renderKarty = opcje.renderKarty;
+
+  const zamknijWarstwe = () => {
+    if (!warstwa) return;
+    warstwa.hidden = true;
+    if (trescWarstwy) trescWarstwy.innerHTML = ''; // zwolnij pamięć
+    okno.focus?.();
+  };
+
+  if (warstwa && trescWarstwy && typeof renderKarty === 'function') {
+    const otworzKarte = (slug) => {
+      trescWarstwy.innerHTML = renderKarty(slug);
+      warstwa.hidden = false;
+      opcje.zamontujKarte?.(warstwa); // tory obrazów (Scryfall/FOT/KON)
+      warstwa.querySelector('[data-map-warstwa-zamknij]')?.focus?.();
+    };
+    for (const el of nakladka.querySelectorAll('[data-pinezka]')) {
+      el.addEventListener('click', (e) => {
+        // modyfikatory = zamiar użytkownika (nowa karta/okno) — nie standing
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+        otworzKarte(el.dataset.pinezka);
+      });
+    }
+    for (const btn of warstwa.querySelectorAll('[data-map-warstwa-zamknij]')) {
+      btn.addEventListener('click', zamknijWarstwe);
+    }
+    // Esc zamyka, dopóki fokus jest w warstwie (keydown bąbelkuje do niej)
+    warstwa.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { e.preventDefault(); zamknijWarstwe(); }
+    });
+  }
+
+  // Etykiety podkładu mają bazę left/top % (działają bez JS w widoku
+  // domyślnym); po montażu przechodzą na pozycjonowanie transformem.
+  for (const el of nakladka?.querySelectorAll('[data-podklad-etykieta]') ?? []) {
+    el.style.left = '0%';
+    el.style.top = '0%';
+  }
 
   const stan = { k: 1, ox: 0, oy: 0 };
   const K_MIN = 0.4, K_MAX = 14;
@@ -193,11 +341,26 @@ export function zamontujMape(app) {
     if (!nakladka) return;
     const w = szerokoscSceny();
     const h = wysokoscSceny();
-    for (const el of nakladka.querySelectorAll('[data-pinezka], [data-region-etykieta]')) {
+    for (const el of nakladka.querySelectorAll('[data-pinezka], [data-region-etykieta], [data-podklad-etykieta]')) {
       const x = parseFloat(el.dataset.x);
       const y = parseFloat(el.dataset.y);
       if (!Number.isFinite(x) || !Number.isFinite(y)) continue;
-      el.style.transform = `translate(${(x * w * stan.k + stan.ox).toFixed(2)}px, ${(y * h * stan.k + stan.oy).toFixed(2)}px)`;
+      const px = (x * w * stan.k + stan.ox).toFixed(2);
+      const py = (y * h * stan.k + stan.oy).toFixed(2);
+      if (!el.hasAttribute('data-podklad-etykieta')) {
+        el.style.transform = `translate(${px}px, ${py}px)`;
+        continue;
+      }
+      // Kotwiczenie jak w SVG: poziomo wg text-anchor (middle/start/end),
+      // pionowo baseline na punkcie (typografia unosi tekst nad baseline).
+      // Uwaga: to MUSI być w jednym transformie — osobny CSS-owy translate
+      // zostałby nadpisany przez inline styl (bug: etykiety przesunięte
+      // w prawo-dół względem obiektów).
+      const dx = el.dataset.kotwica === 'start' ? '0%' : el.dataset.kotwica === 'end' ? '-100%' : '-50%';
+      el.style.transform = `translate(${px}px, ${py}px) translate(${dx}, -0.82em)`;
+      // LOD (level of detail): drobna etykieta widoczna dopiero od swojego progu
+      const prog = parseFloat(el.dataset.minK || '1');
+      el.classList.toggle('poza-zasiegiem', stan.k + 1e-9 < prog);
     }
   };
 

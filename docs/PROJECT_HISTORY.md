@@ -4,6 +4,104 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-01 — sesja PR-4 c.d. 2: ADR 0016 (format Wpisu Karty) + podgląd sandboxowy
+
+**Zlecenia właściciela:** (A) uruchomienie Pages bez merge'a / podgląd;
+(B) audyt formatu Wpisu Karty wobec szablonu katalogowego właściciela
+(dwa przykłady: 1LTR, 2BFZ); doprecyzowanie: żadnej sekcji opisu
+ilustracji źródłowej (transpozycje FOT/KON inne) — obraz Scryfalla
+tylko w infoboksie; pytanie o kodowanie FOT/KON.
+
+**Wykonanie:**
+- **A:** bot nie może odpalić workflowu (brak `actions: write`);
+  właścicielowi wystarczy „Re-run all jobs" na failed runie w UI Actions
+  (workflow na main poprawny, site już włączony). Podgląd sandboxowy:
+  serwer `dist/` na porcie 8000 (live preview). Merge PR #7 i tak
+  odpali publikację automatycznie.
+- **FOT/KON:** potwierdzone zakodowane (ADR 0008): tory
+  Druk/FOT/KON + sonda `./img/<imgId>FOT|KON.png` z cichym fallbackiem;
+  działają też w warstwie karty z pinezki (B2).
+- **ADR 0016:** przyjęto z katalogu właściciela — blok danych Oracle
+  w treści (wpis samowystarczalny), kontekst setu/osi czasu, polskie
+  odczytanie nazwy, mechanika w 3 warstwach z podtypami jako warstwami,
+  flavor fraza po frazie + kontekst cytującego, podsumowanie tezami;
+  odrzucono — sekcja „Ilustracja" (zakaz), „Druk w Kolekcji" (ADR 0014),
+  numeracja liczbowa. Retrofit 1LTR + 2BFZ + fixture; asercje dymne
+  pilnują bloku danych, warstw mechaniki i zakazu sekcji ilustracyjnej.
+- Incydent: drugi reset workspace w sesji (ENVIRONMENT §2) — odtworzono
+  `reset --soft FETCH_HEAD` (drzewo przetrwało, historia na zdalnej).
+
+## 2026-09-01 — sesja PR-4 c.d.: doprecyzowanie Pętli Jakości (ADR 0014/0015) + usunięcie „Druku w Kolekcji"
+
+**Zlecenie właściciela:** pogłębianie to **lore**, nie meta-informacje
+(„co mnie obchodzi, co robią artyści" — sekcja „Druk w Kolekcji"
+usunięta na jego polecenie); pass mapowy to **kompletacja i jakość map**
+(nowe POI, weryfikacja dokładności, lepsze metody rysowania wektorowego,
+wspólny silnik mapowy T4 dążący do jakości mapy Śródziemia i wyżej).
+„Dopisz to wszystko do dokumentacji Pętli."
+
+**Wykonanie:**
+- **ADR 0014** — sekcja „Druk w Kolekcji" znika ze szkieletu (9 sekcji);
+  dane wydruku tylko w infoboksie ze snapshotu; usunięta z obu kart,
+  fixture'ów, `SEKCJE_KARTY` (registry), SZKIELET_KARTY; asercje
+  ui-smoke odwrócone; ADR 0011 → „Częściowo zastąpiona". Pogłębione
+  wcześniej biografie artystów usunięte wraz z cytatami (Cook & Becker,
+  mtg.wtf, scentofagamer, viktortitov.com).
+- **ADR 0015** — Pętla Jakości v2: krok 2 = LORE (anti-lista
+  meta-informacji), krok 4 = pass mapowy scalony z dawnym 4b
+  (kompletność operacyjna → nowe POI → weryfikacja dokładności →
+  warsztat rysowania → wspólny silnik T4 → regiony haseł); definicja
+  wariantu T4. ADR 0006 → „Częściowo zastąpiona". PETLA_JAKOSCI.md
+  przepisana (kroki 2 i 4), AGENTS.md §2 pkt 6 zaktualizowany,
+  PROCES_MAP (drabina + T4), SKILL_MAPA_PLANU (pamięć warsztatu T4),
+  ROADMAP (nowy kamień K7 — warsztat mapowy T4; odświeżony wątek
+  mapy Śródziemia).
+- Nota porządkowa: commit 87d0fce objął oprócz ADR 0014 również ADR 0015
+  i statusy rejestrów (komunikat commitu nie wyczerpuje zawartości).
+
+## 2026-09-01 — sesja PR-4: naprawa publikacji GitHub Pages (gałąź arena/01a05bc9-mtg, PR #7)
+
+**Zlecenie właściciela:** „artefakt na pages nie działa — failed to deploy".
+
+**Diagnoza:** wszystkie 3 historyczne runy „Publikacja na GitHub Pages"
+failure; ostatni pada na `actions/configure-pages@v5` — `Get Pages site
+failed … Not Found`. Strona Pages nigdy nie została włączona
+(`GET /repos/…/pages` → 404); workflow poprawny, build/testy zielone.
+K1 („CRIT: Pages publikuje") nie było nigdy spełnione — audyt PR #6
+wykazał i zapisał to (`docs/audits/AUDYT_2026-09-01-PR6.md`).
+
+**Rozstrzygnięcie:** właściciel włączył Pages ręcznie (Settings → Pages →
+Source: GitHub Actions); auto-publikacja przy pushu do main działa
+od ręki (istniejący `on: push`). Wariant repo-side (`configure-pages:
+enablement: true`) przygotowany i zdjęty: push zmian
+w `.github/workflows/` jest odrzucany dla bota Areny (brak uprawnienia
+`workflows`) — fakt stały zapisany w ENVIRONMENT §3, wniosek w L6.
+W trakcie sesji sandbox zresetował workspace (ENVIRONMENT §2) — odzyskano
+z gałęzi zdalnej (commit planu był wypchnięty od razu, L2 zadziałała).
+
+**Stan na koniec:** re-run deployu na main → zielony, strona Pages żyje
+(szczegóły w PLAN_2026-09-01-pr4-pages-fix.md, „Wynik weryfikacji").
+
+**Dalsze zadania sesji (zlecenie właściciela, merge na końcu sesji):**
+
+- **A (Pages):** potwierdzono, że po włączeniu site'a nowy artefakt
+  powstanie dopiero przy pierwszym pushu do main (scalenie PR #7) —
+  bot nie może odpalić workflow (`actions: write` brak; ENVIRONMENT §3).
+- **B1:** badge pinezki ukryty do najechania (CSS hover/focus-visible,
+  tooltip `title` pozostaje) — commit „mapy B1".
+- **B2:** warstwa karty z pinezki — `render-map.js` montuje dialog
+  (role=dialog, aria-modal) z rendererem Karty Katalogowej przekazanym
+  z `main.js` (brak cyklu importów); zamykanie ✕/tło/Esc, powrót fokusu
+  na mapę, mapa nieodmontowywana (zoom/pan zachowane); tory obrazów
+  montowane w warstwie; progressive enhancement (link #/karta/… bez JS).
+- **C (Pętla Jakości):** integralność 70/70; pogłębienie 3 stron
+  („Druk w Kolekcji" 1LTR/2BFZ z kwerendą o artystach i wydaniach;
+  plan Zendikar — nowa sekcja „Ludy" wg *Planeswalker's Guide*);
+  naprawa „wiedzy bez URL-a" w źródłach 2BFZ (reguła cytowań);
+  link-mining: nadal brak encji w ≥2 kartach (kolejka w backlogu);
+  pass mapowy: bez braków; stats: karty 88%, plany 63% (wikilinki
+  czekają na progu haseł).
+
 ## 2026-08-31 — sesja PR-3 c.d.: audyt + wzbogacenie mapy wektorowej Zendikaru (gałąź arena/01a0591f-mtg, PR #6)
 
 **Zlecenie właściciela:** „...zadanie audytu mapy wektorowej Zendikaru

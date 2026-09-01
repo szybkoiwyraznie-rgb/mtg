@@ -1,7 +1,7 @@
 {
   "plan": "zendikar",
   "tytul": "Zendikar",
-  "wariant": "T3",
+  "wariant": "T4",
   "podklad": "podklad.svg",
   "wymiary": {
     "szerokosc": 2000,
@@ -33,8 +33,8 @@
     },
     {
       "nazwa": "Ikiral",
-      "x": 0.435,
-      "y": 0.146,
+      "x": 0.44,
+      "y": 0.16,
       "typ": "etykieta-podkladu",
       "notka": "osada w ruinie 10-milowego hedronu (Guide Zendikar)"
     },
@@ -195,22 +195,22 @@
     },
     {
       "nazwa": "Makindi Trenches",
-      "x": 0.32,
-      "y": 0.771,
+      "x": 0.35,
+      "y": 0.7271,
       "typ": "etykieta-podkladu",
-      "notka": "labirynt wąwozów Ondu (MTG Wiki)"
+      "notka": "wąwozy/rowy przy wybrzeżu Ondu (MTG Wiki)"
     },
     {
       "nazwa": "Agadeem",
-      "x": 0.125,
-      "y": 0.879,
+      "x": 0.086,
+      "y": 0.9586,
       "typ": "etykieta-podkladu",
-      "notka": "wyspa Ondu"
+      "notka": "wyspa Ondu; przesunięta w czystą wodę SW od Ondu (nie nachodzi na ląd)"
     },
     {
       "nazwa": "Kabira",
-      "x": 0.215,
-      "y": 0.911,
+      "x": 0.2225,
+      "y": 0.9014,
       "typ": "etykieta-podkladu",
       "notka": "osada Agadeem (MTG Wiki)"
     },
@@ -238,11 +238,11 @@
     },
     {
       "nazwa": "Skyfang",
-      "x": 0.505,
-      "y": 0.829,
-      "typ": "etykieta-podkladu",
-      "notka": "góry Skyfang/Shatterskull Murasa (MTG Wiki)",
-      "pozycja_zrodlo": "mapa-fanowska"
+      "x": 0.453,
+      "y": 0.8714,
+      "typ": "pasmo-górskie",
+      "notka": "pasmo od zachodniego muru Murasy w głąb wnętrza, dzieli zachodnią połowę kontynentu (Guide: Murasa)",
+      "pozycja_zrodlo": "planeswalkers-guide"
     },
     {
       "nazwa": "Sunder Bay",
@@ -254,11 +254,11 @@
     },
     {
       "nazwa": "Kazandu",
-      "x": 0.469,
-      "y": 0.934,
+      "x": 0.4775,
+      "y": 0.9371,
       "typ": "region",
       "pozycja_zrodlo": "mapa-fanowska",
-      "notka": "sub-region płd. Murasy (opis mapy fanowskiej)"
+      "notka": "kanionowy kraj jaddi na płd.-zach. Murasy; Kazandu Splinter (elfy) (Guide: Murasa)"
     },
     {
       "nazwa": "Pillar Plains",
@@ -278,19 +278,19 @@
     },
     {
       "nazwa": "Singing City",
-      "x": 0.441,
-      "y": 0.929,
-      "typ": "osada",
-      "pozycja_zrodlo": "mapa-fanowska",
-      "notka": "zachodnie wybrzeże Kazandu (opis)"
+      "x": 0.52,
+      "y": 0.8857,
+      "typ": "ruina",
+      "pozycja_zrodlo": "planeswalkers-guide",
+      "notka": "cyklopowy labirynt ruin w sercu Na Plateau; „śpiew\" z podziemi wyprawia szaleństwo poszukiwaczom (Guide: Murasa)"
     },
     {
       "nazwa": "Visimal",
       "x": 0.447,
-      "y": 0.917,
+      "y": 0.9171,
       "typ": "osada",
       "pozycja_zrodlo": "mapa-fanowska",
-      "notka": "płn. od Singing City (opis)"
+      "notka": "zachodnie wybrzeże Murasy, płn. od wejścia Sunder Bay (mapa fanowska; pozycja orientacyjna)"
     },
     {
       "nazwa": "Kazul Pass",
@@ -326,8 +326,8 @@
     },
     {
       "nazwa": "Zof Marsh",
-      "x": 0.55,
-      "y": 0.86,
+      "x": 0.579,
+      "y": 0.8714,
       "typ": "region",
       "pozycja_zrodlo": "mapa-fanowska",
       "notka": "bagna płn.-zach. Guul Draz (opis)"
@@ -351,7 +351,7 @@
     {
       "nazwa": "Lulea",
       "x": 0.7,
-      "y": 0.955,
+      "y": 0.9571,
       "typ": "osada",
       "pozycja_zrodlo": "mapa-fanowska",
       "notka": "płd.-wsch. od jeziora (opis)"
@@ -523,6 +523,68 @@
       "typ": "jezioro",
       "pozycja_zrodlo": "mapa-fanowska-wariant-3-4",
       "notka": "jezioro wewnątrz centralnego lasu Kazandu (Murasa)"
+    },
+    {
+      "nazwa": "Crypt of Agadeem",
+      "x": 0.085,
+      "y": 0.9214,
+      "typ": "ruina",
+      "notka": "krypta na wyspie Agadeem (MTG Wiki)"
+    },
+    {
+      "nazwa": "Valakut",
+      "x": 0.731,
+      "y": 0.2743,
+      "typ": "wulkan",
+      "notka": "superwulkan w sercu Akoum (MTG Wiki: Akoum); poprawka z Beyeen 2026-09-01"
+    },
+    {
+      "nazwa": "Zulaport",
+      "x": 0.0525,
+      "y": 0.8571,
+      "typ": "osada",
+      "notka": "wspólnota portowa na wybrzeżu Beyeen (Plane Shift: Zendikar, Ondu)",
+      "pozycja_zrodlo": "plane-shift"
+    },
+    {
+      "nazwa": "Na Plateau",
+      "x": 0.5075,
+      "y": 0.8571,
+      "typ": "płaskowyż",
+      "pozycja_zrodlo": "planeswalkers-guide",
+      "notka": "lesisty płaskowyż na wschód od środka Murasy, siedlisko wurmów i plemion goblinów (Guide: Murasa)"
+    },
+    {
+      "nazwa": "Thunder Gap",
+      "x": 0.5025,
+      "y": 0.7986,
+      "typ": "przejście",
+      "pozycja_zrodlo": "opis-przewodnika",
+      "notka": "przejście przez mur Murasy w rejonie Pillar Plains (Guide); pozycja orientacyjna"
+    },
+    {
+      "nazwa": "Glint Pass",
+      "x": 0.548,
+      "y": 0.875,
+      "typ": "przejście",
+      "pozycja_zrodlo": "opis-przewodnika",
+      "notka": "jedna z czterech dróg do wnętrza Murasy (Guide); pozycja orientacyjna"
+    },
+    {
+      "nazwa": "Cliffs of Kazuul",
+      "x": 0.5,
+      "y": 0.9471,
+      "typ": "przejście",
+      "pozycja_zrodlo": "opis-przewodnika",
+      "notka": "klify — droga do wnętrza Murasy od południa (Guide); pozycja orientacyjna"
+    },
+    {
+      "nazwa": "Living Spire",
+      "x": 0.534,
+      "y": 0.9186,
+      "typ": "obiekt",
+      "pozycja_zrodlo": "plane-shift",
+      "notka": "żywa iglica wyrosła po przebudzeniu Eldrazi (Plane Shift: Zendikar)"
     }
   ],
   "regiony": [],
@@ -675,13 +737,15 @@
       "nazwa": "Góry Skyfang/Shatterskull",
       "typ": "pasmo-górskie",
       "kontynent": "Murasa",
-      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+      "zrodlo": "https://magic.wizards.com/en/news/feature/a-planeswalkers-guide-to-zendikar-murasa-and-sejiri",
+      "notka": "od zachodniego wybrzeża w głąb wnętrza (Guide: Murasa)"
     },
     {
       "nazwa": "Na Plateau",
       "typ": "płaskowyż",
       "kontynent": "Murasa",
-      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+      "zrodlo": "https://magic.wizards.com/en/news/feature/a-planeswalkers-guide-to-zendikar-murasa-and-sejiri",
+      "notka": "wschód od środka Murasy (Guide: Murasa)"
     },
     {
       "nazwa": "Rzeka Raimunza",
@@ -699,7 +763,8 @@
       "nazwa": "Jaddi-trees",
       "typ": "las",
       "kontynent": "Murasa",
-      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+      "zrodlo": "https://magic.wizards.com/en/news/feature/a-planeswalkers-guide-to-zendikar-murasa-and-sejiri",
+      "notka": "głównie lasy Kazandu (Guide: Murasa)"
     },
     {
       "nazwa": "Makindi Trenches",
@@ -732,10 +797,11 @@
       "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
     },
     {
-      "nazwa": "Beyeen / Mount Valakut",
+      "nazwa": "Beyeen",
       "typ": "wulkan",
       "kontynent": "Ondu",
-      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)",
+      "notka": "wyspa Ondu; port Zulaport (Plane Shift: Zendikar). Valakut przeniesiony na Akoum (MTG Wiki) — poprawka 2026-09-01"
     },
     {
       "nazwa": "Jwar (Strand of Jwar)",
@@ -766,6 +832,27 @@
       "typ": "step",
       "kontynent": "Sejiri",
       "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+    },
+    {
+      "nazwa": "Valakut (superwulkan)",
+      "typ": "wulkan",
+      "kontynent": "Akoum",
+      "notka": "superwulkan w centrum Akoum (MTG Wiki: Akoum); wcześniej błędnie przy Beyeen — poprawka 2026-09-01",
+      "zrodlo": "https://mtg.fandom.com/wiki/Akoum"
+    },
+    {
+      "nazwa": "Singing City",
+      "typ": "ruina",
+      "kontynent": "Murasa",
+      "zrodlo": "https://magic.wizards.com/en/news/feature/a-planeswalkers-guide-to-zendikar-murasa-and-sejiri",
+      "notka": "labirynt ruin w sercu Na Plateau (Guide: Murasa); Plane Shift: ruiny sprzed Eldrazi"
+    },
+    {
+      "nazwa": "Living Spire",
+      "typ": "obiekt",
+      "kontynent": "Murasa",
+      "zrodlo": "plane-shift",
+      "notka": "post-Eldraziowa iglica na Murasie (Plane Shift: Zendikar)"
     }
   ],
   "pinezki": [
@@ -788,5 +875,7 @@
     "plik": "zrodlo-fanowska-warianty-3-4.md",
     "url": "",
     "notka": "Dodatkowe źródła fanowskie dostarczone przez właściciela 2026-09-01 jako WARIANTY 3 i 4 układu geograficznego. Zasada użycia: kanon (Plane Shift / MTG Wiki) > wariant 2 (zrodlo-fanowska.md) > warianty 3/4. Stosować WYŁĄCZNIE, gdy ani pozycja kanoniczna, ani mapa fanowska (wariant 2) nie pozwalają poprawnie narysować danego POI — jako ostatnia deska ratunku dla miejsc NIEUSTALONYCH w kanonie. Oba warianty mają INNY układ współrzędnych i geometrię kontynentów niż podklad.svg — nie skalować 1:1, używać tylko do ustalenia względnego położenia POI. NIE zmieniają pozycji twardo kanonicznych ani układu kontynentów. Pełny opis: maps/zendikar/zrodlo-fanowska-warianty-3-4.md"
-  }
+  },
+  "scena": "scena.json",
+  "silnik": "mapforge (ADR 0018/0019); podklad-reczny.svg = archiwum ery ręcznej (T3)"
 }

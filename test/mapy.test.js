@@ -25,13 +25,13 @@ test('map.json ma strukturę wg PROCES_MAP.md (MA2)', () => {
   for (const [plan, mapa] of mapy) {
     if (mapa.problem) { problemy.push(`${plan}: ${mapa.problem}`); continue; }
     if (mapa.plan !== plan) problemy.push(`${plan}: mapa.plan = "${mapa.plan}"`);
-    if (!['T1', 'T2', 'T3'].includes(mapa.wariant)) problemy.push(`${plan}: wariant "${mapa.wariant}"`);
+    if (!['T1', 'T2', 'T3', 'T4'].includes(mapa.wariant)) problemy.push(`${plan}: wariant "${mapa.wariant}"`);
     if (!mapa.zrodlo?.url || !mapa.zrodlo?.pobrano) problemy.push(`${plan}: brak źródła podkładu (MA1)`);
     if (!mapa.wymiary?.szerokosc || !mapa.wymiary?.wysokosc) problemy.push(`${plan}: brak wymiarów`);
     const podklad = path.join('maps', plan, String(mapa.podklad ?? ''));
     if (mapa.wariant !== 'T3' && !fs.existsSync(podklad)) problemy.push(`${plan}: brak pliku podkładu ${podklad}`);
     if (mapa.rekonstrukcja === undefined) problemy.push(`${plan}: brak flagi rekonstrukcja (T3 wymaga true)`);
-    if (mapa.rekonstrukcja === true && mapa.wariant !== 'T3') problemy.push(`${plan}: rekonstrukcja tylko dla T3`);
+    if (mapa.rekonstrukcja === true && !['T3', 'T4'].includes(mapa.wariant)) problemy.push(`${plan}: rekonstrukcja tylko dla T3/T4`);
   }
   assert.deepEqual(problemy, [], `Wadliwe map.json:\n${problemy.join('\n')}`);
 });

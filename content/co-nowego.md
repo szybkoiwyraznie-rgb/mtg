@@ -3,6 +3,159 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-01 — E1+E2 mapforge na Zendikarze + naprawa kotwiczenia etykiet
+
+- **Naprawa etykiet nakładki** (feedback z podglądu): transform inline
+  nadpisywał CSS-owe centrowanie — etykiety wisiły lewym-górnym rogiem
+  na punkcie (Beyeen, Malakir, Lulea…). Teraz: dziedziczenie
+  `text-anchor` z grup SVG + kotwiczenie na baseline w jednym
+  transformie; asercja „Beyeen = middle" w testach (84/84).
+- **E1:** `maps/zendikar/scena.json` — scena danych wygenerowana
+  z ręcznego podkładu (generator: `tools/mapforge/e1-scena-zendikar.py`;
+  biomy z otoczek klastrów, grzbiety z PCA, okręgi → łuki).
+- **E2:** `maps/zendikar/podklad-forge.svg` — próbny render całego
+  Zendikaru silnikiem mapforge w motywie atlas (ADR 0019); podkład
+  produkcyjny niezmienny do oceny właściciela.
+- **Sprostowanie (po rzucie oka właściciela):** pierwszy render E2
+  miał biomy na oceanie — otoczki wypukłe biomów są szersze niż
+  kontynenty, a audyt nie oglądał treści mapforge. Naprawa podwójna:
+  silnik dostał **maski lądu** (rozsiew drzew/kępek i szczyty pasm
+  lądują tylko na lądzie; `parsujD` do parsera ścieżek), a audyt
+  nauczył się czytać treść `mf-*` (kotwice `data-x/y` deklarowane
+  przez klocki + interpreter komend ścieżek). Wysepki generowane
+  jako okręgi na krzywych Beziera. Testy masek i parsera: 86/86.
+- **Sprostowanie 2 (kolejny rzut oka):** „linie jak drogi po oceanie"
+  to były przygaszone linie grzbietu pasm — klaster gór zlewał Ondu
+  z Murasą (grzbiet przez cieśninę), a na Sejiri linia biegła przez
+  czapę. Naprawa: pasma liczone **per ląd**, linia grzbietu
+  **domyślnie wyłączona**, spękania lodu tylko wewnątrz czapy;
+  audyt próbuje punktów rzek i linii wzdłuż ścieżki (≥75% na lądzie).
+
+## 2026-09-01 — LIVE: mapa Zendikaru rysowana mapforge (T4)
+
+- **Wdrożone (E3):** produkcyjny podkład `maps/zendikar/podklad.svg`
+  jest teraz renderem silnika mapforge (motyw atlas, ADR 0018/0019)
+  ze sceny danych `scena.json` — 9 lądów, 6 biomów, 5 pasm (per ląd),
+  rzeki-wstęgi, 44 POI, 74 etykiety w nakładce ekranowej z LOD.
+  Podkład ery ręcznej zarchiwizowany jako `podklad-reczny.svg`;
+  `map.json` awansował do **wariantu T4** (ADR 0015: mapa T3 dojrzewa
+  do T4 wraz z warsztatem). Edycje mapy od dziś: scena → render (E1
+  chroni przed regeneracją z renderu). Audyt: 0 problemów; 86/86.
+
+## 2026-09-01 — Etykiety mapy o stałym rozmiarze ekranowym (LOD)
+
+- Na stronie mapy planu (podkłady własne T3/T4 — Zendikar; adoptowanych
+  T2 nie ruszamy) napisy podkładu zostały przeniesione do nakładki
+  ekranowej, jak pinezki: **większa czcionka (13,5–24 px zamiast
+  ~6 px efektywnych), halo dla czytelności i stały rozmiar przy
+  zoomowaniu** — przybliżanie powiększa mapę, nie napisy. Drobne
+  etykiety mają **LOD**: pojawiają się dopiero od przybliżenia, w którym
+  stałyby się czytelne (próg liczony z oryginalnego rozmiaru).
+- Oryginalne `<text>` w SVG dostają `visibility:hidden` (bez JS
+  nakładka pozycjonuje się procentowo — graceful degradation);
+  etykiety po łuku (textPath) zostają w podkładzie.
+  Testy UI: 83/83.
+
+## 2026-09-01 — mapforge: wspólny silnik mapowy (warsztat T4)
+
+- **Nowe narzędzie `tools/mapforge/`** (ADR 0018): deterministyczny
+  generator podkładów SVG z danych — reużywalne klocki: lasy (rozsiew
+  koron), bagna, step, lodowce, pasma górskie (szczyty z cieniem
+  i przedgórzem), wulkany, rzeki zwężające się do źródła (wstęgi),
+  dopływy, jeziora, szlaki kropkowane i drogi, miasta/ruiny/hedrony,
+  etykiety pod dowolnym kątem i po łuku (zatoki), kompas, skala,
+  ramka, poświata wybrzeży. Zero zależności; identyczna regeneracja
+  (deterministyczne „losowości" z hasha id).
+- **Demo-katalog klocków:** `maps/_warsztat/podklad.svg` (Wyspa
+  Próbna) — przechodzi audyt mapowy bez zastrzeżeń.
+- **Motywy: `pergamin` i `atlas`** — po A/B właściciel wybrał monochro-
+  matyczny atlas (ADR 0019), a po renderze czysto czarno-białego
+  doprecyzował: **walor tonalny w szarościach** (czarny–szary–biały,
+  bez sepii/brązu). Test pilnuje achromatyczności wszystkich
+  wypełnień (R=G=B); atlas = domyślny motyw map planów (T4).
+- Research (ADR 0018): Azgaar FMG (MIT) to generator losowy — my
+  renderujemy kanon; techniki line-artu mapome (kropka 0,9; dyscyplina
+  grubości) wcielone w klockach.
+- 11 nowych testów silnika (81/81 w pakiecie); plan adopcji:
+  `docs/plans/PLAN_2026-09-01-mapforge.md`.
+
+## 2026-09-01 — Pełna Pętla Jakości (LORE + mapy + metryka)
+
+- **Pogłębienie LORE obu planów:** Śródziemie zyskało akapit o Tharbad
+  (miasto-most na Gwathló; przeprawa Boromira w 3018 r. — Tolkien
+  Gateway), Zendikar o Murasie wg oficjalnego Planeswalker's Guide
+  (wyspa-płaskowyż, cztery wejścia, Na Plateau z Singing City, Kazandu).
+- **Sieć wikilinków:** plany odsyłają do swoich kart („Karty kolekcji"),
+  karty do planów („Na Mapie") — pierwsze połączenia grafu bazy.
+- **Pass mapowy:** kanoniczny przekład wnętrza Murasy (Skyfang od zachodu,
+  Na Plateau + Singing City na wschodzie wg Guide, Blackbloom w Kazandu),
+  nowe kotwice z cytowaniami (Zendikar: 74, Śródziemie: 11 + Dunland),
+  Living Spire domknięty w rejestrze.
+- **Nowe narzędzie warsztatu T4:** `tools/map-audit.py` — geometryczna
+  weryfikacja map (etykiety/markery/pinezki na lądzie, kolizje etykiet);
+  obie mapy przechodzą 0 problemów. Wnioski w `SKILL_MAPA_PLANU.md` §10.
+- **Metryka:** plany liczone pragmatycznie także w pinezce; completeness
+  **100% (8/8) na wszystkich czterech stronach** (było 76%).
+
+## 2026-09-01 — FOT/KON w treści karty + poprawki mapy Zendikaru (a–j)
+
+- **Ilustracje FOT/KON rysują się same w treści karty** (wersja
+  lokalna): panorama FOT otwiera główną kolumnę, bestiariusz KON
+  wchodzi pod pierwszą sekcją. Przyciski torów znikają; druk
+  Scryfalla pozostaje w infoboksie. Na Pages (bez katalogu `img/`)
+  strona wygląda jak dotychczas — cichy fallback.
+- **Mapa Zendikaru — 10 poprawek po zrzutach właściciela + 7 znalezionych
+  audytem:** Valakut wrócił na Akoum (kanon: superwulkan kontynentu,
+  MTG Wiki — stał błędnie przy Beyeen), wyspa Agadeem przestała
+  nachodzić na Ondu, Crypt of Agadeem leży na swojej wyspie, Makindi
+  Trenches w morzu (koniec kolizji z Cliffhaven), Singing City
+  na Murasie (koniec „ogonka" wybrzeża), rozsunięte Zof Marsh/Guul
+  Draz, Fort Keff/Ora Ondar/Kargan Lands, Glasspool opisany jako
+  jezioro (kanon) z etykietą obok, Ikiral i Emeria mają markery
+  (ruiny/hedrony), legenda powiększona. Pełny audyt:
+  `docs/audits/AUDYT_2026-09-01-mapa-zendikar-feedback.md`; pozycje
+  i proweniencja zsynchronizowane w `map.json` (70 kotwic).
+
+## 2026-09-01 — Naprawa GitHub Pages + mapy (badge, warstwa karty) + porządek w Pętli Jakości
+
+- **Strona na Pages zaczęła działać.** Przyczyna trzech nieudanych
+  publikacji (od powstania `pages.yml`): strona Pages nie była w ogóle
+  włączona dla repozytorium, więc workflow padał na kroku konfiguracji —
+  jeszcze zanim cokolwiek zdążył opublikować. Włączona przez właściciela
+  (Settings → Pages → Source: „GitHub Actions"); od teraz **każdy push
+  do `main` publikuje aktualną wersję bazy automatycznie**.
+- **Mapy — badge pinezek ukryte do najechania.** Etykieta pinezki
+  karty (nazwa karty przy znaczniku) nie zaśmieca już mapy — pokazuje
+  się po najechaniu kursorem (albo fokusem klawiaturowym); tooltip
+  pinezki działa jak dotychczas.
+- **Mapy — kliknięcie pinezki otwiera kartę na warstwie nad mapą.**
+  Wpis katalogowy otwiera się na zmaksymalizowanej warstwie; przycisk
+  ✕ w prawym górnym rogu (oraz klik w tło i Esc) zamyka warstwę
+  i wraca do mapy **w tym samym stanie przybliżenia** — mapa nie jest
+  odmontowywana. Klik z modyfikatorem (Ctrl/Cmd) otwiera kartę
+  w nowej karcie przeglądarki, a pinezka pozostaje zwykłym linkiem.
+- **Karty Katalogowe bez sekcji „Druk w Kolekcji"** (decyzja
+  właściciela): strona karty to wyłącznie lore — dane wydruku (wydanie,
+  rzadkość, artysta) pokazuje tylko infoboks, wprost ze snapshotu
+  Scryfalla.
+- **Nowy format Wpisu Karty (ADR 0016)** — po audycie szablonu
+  katalogowego właściciela: każda Karta Katalogowa otwiera się teraz
+  **blokiem danych Oracle w treści** (koszt z rozwinięciem, typ
+  z tłumaczeniem, statystyki, zdolności, wydanie z numerem), mechanika
+  czytana jest w trzech warstwach (odczyt zasadniczy → interpretacja
+  fabularna → całość jako opowieść, podtypy jako warstwy), flavor
+  odczytywany fraza po frazie z kontekstem postaci cytującej, nazwa
+  z pełnym polskim odczytaniem („Crebainy z Dunlandu",
+  „Przewodniczka z Koralowego Hełmu"), podsumowanie tezami. Obie
+  istniejące karty przebudowane do nowego formatu. Sekcja opisu
+  ilustracji **zakazana** (transpozycje FOT/KON bywają zupełnie inne);
+  obraz Scryfalla żyje wyłącznie w infoboksie.
+- **Pogłębienie lore:** strona planu Zendikar z nową sekcją **Ludy**
+  (rasy planu, rody wampirów Guul Draz, korowie-pielgrzymi, Zulaport)
+  wg *Planeswalker's Guide to Zendikar*; w źródłach karty 2BFZ zniknął
+  wpis „wiedza ogólna bez URL-a" — każdy fakt ma cytat.
+
+
 ## 2026-08-31 — Mapa Zendikaru: rysowanie szczegółów, czysty podkład + brak pikselozy
 
 - **Elementy fanowskie faktycznie narysowane na podkładzie SVG** (nie
