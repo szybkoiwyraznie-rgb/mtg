@@ -24,6 +24,12 @@ ADR 0006). Najnowsze na górze.
   nauczył się czytać treść `mf-*` (kotwice `data-x/y` deklarowane
   przez klocki + interpreter komend ścieżek). Wysepki generowane
   jako okręgi na krzywych Beziera. Testy masek i parsera: 86/86.
+- **Sprostowanie 2 (kolejny rzut oka):** „linie jak drogi po oceanie"
+  to były przygaszone linie grzbietu pasm — klaster gór zlewał Ondu
+  z Murasą (grzbiet przez cieśninę), a na Sejiri linia biegła przez
+  czapę. Naprawa: pasma liczone **per ląd**, linia grzbietu
+  **domyślnie wyłączona**, spękania lodu tylko wewnątrz czapy;
+  audyt próbuje punktów rzek i linii wzdłuż ścieżki (≥75% na lądzie).
 
 ## 2026-09-01 — Etykiety mapy o stałym rozmiarze ekranowym (LOD)
 
