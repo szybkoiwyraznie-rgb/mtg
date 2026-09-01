@@ -360,17 +360,27 @@ Reguły użycia:
    `docs/plans/PLAN_2026-09-01-mapforge.md`** (E1–E3), nigdy „przy
    okazji" innego zadania.
 
-**Język glifów „hand-drawn" (od PR-5, 2026-09-01):** obiekty przyrody
-mają naśladować line-art mapome, nie prymitywy:
+**Język glifów „hand-drawn" (od PR-5, 2026-09-01; ADR 0020):** obiekty
+przyrody mają naśladować line-art mapome, nie prymitywy — od ADR 0020
+glify przybieramy z projektów istniejących (ZASADA WŁAŚCICIELA: nie
+ryśować koła, korzystać z obiektów z licencją):
 
 - **Las** = kępa-chmurka (zamknięta ścieżka z wypukłych łuków), nie
   `<circle>`; gęsty i nakładający się (`minOdst < średnica korony`),
   więc składa się w masę. `gestosc` gęstość, `skala` rozmiar korony.
-- **Góra** = asymetryczny „żagiel" (lewa wypukła, prawa wklęsła), cień
-  w facecie po prawej + haczura; `lean` przechyla wierzchołek. `pasmo()`
-  układa szczyty ciasno z jitterem → chwiejny grzbiet.
+- **Góra** = **glif adoptowany z mapome** (ADR 0020) — sylwetka klastra
+  1–3 szczytów z biblioteki `tools/mapforge/glify-mapaome.mjs`
+  (CC-BY-4.0, atrybucja w nagłówku pliku i generowanego SVG).
+  `pasmo()` układa glify gęsto, z lekkim nachodzeniem, rozmiarem
+  ważonym sinusem grzbietu i sortem po dolnej krawędzi. Mega-klastery
+  (`GLIFY_GORY_HERO`) — tylko jawnie (`glifId`) dla masywów zdefiniowanych
+  w scenie.
+- **Rzeka** = kolor akwenu (morze/jezioro), bez gradientu i opacity —
+  zlewa się z wodą na ujściu (ADR 0020, decyzja właściciela 2026-09-01).
 
 Szczegóły i pełny katalog klocków: `tools/mapforge/README.md`.
-Zmiana stylu glifu = edycja `tools/mapforge/bloki.mjs` (`korona`,
-`drzewo`, `szczyt`, `pasmo`) + regeneracja `maps/<plan>/podklad.svg`
-i `maps/_warsztat/podklad*.svg` + testy.
+Nowe glify = ekstrakt z podkładu mapome w repo (patrz nagłówek
+`glify-mapaome.mjs`) albo adopcja symbolu z zapisanego kandydata
+(Azgaar, MIT — ADR 0020) z atrybucją. Zmiana układu/gęstości = edycja
+`tools/mapforge/bloki.mjs` (`pasmo`, `szczyt`) + regeneracja
+`maps/<plan>/podklad.svg` i `maps/_warsztat/podklad*.svg` + testy.

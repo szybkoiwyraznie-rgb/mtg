@@ -3,6 +3,36 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-01 — PR-9: mapforge — adopcja glifów gór z mapome + rzeki w kolorze morza (ADR 0020)
+
+- **Góry wyglądają jak na mapie Śródziemia** (decyzja właściciela:
+  obecne glify odrzucone — „masakryczne", benchmark = mapome). Zgodnie
+  z zaleceniem właściciela („nie ma sensu odkrywać koła na nowo")
+  wykonane research GitHubu i **adopcja wektorowych obiektów**
+  (ADR 0020, research w `docs/plans/PLAN_2026-09-01-glify-mapaowe-i-rzeki.md`):
+  - **Glify gór adoptowane z mapome** (CC-BY-4.0 — github.com/k1tesurfen/
+    mapome; to JEST mapa-benchmark w repo): 30 ręcznie rysowanych sylwetek
+    klastrów 1–3 szczytów + 3 mega-klastery, wycięte z podkładu
+    Śródziemia w repo → `tools/mapforge/glify-mapaome.mjs` (dane, nie
+    kod — zero zależności, ADR 0002).
+  - `szczyt()`/`pasmo()` rysują wyłącznie glifami adoptowanymi: rozsiew
+    wzdłuż grzbietu (rozmiar ważony sinusem, odbicia, jitter), kolejność
+    wg dolnej krawędzi — bliższe szczyty na wierzchu (technika z
+    researchu). Mega-klastery do jawnego użycia w scenie (`glifId`).
+- **Rzeki = kolor morza, bez gradientu i opacity** (decyzja właściciela
+  2026-09-01: rzeka „rozmywała się" w morzu, a nie twardo w niego
+  wpadała): ujście w morze → kolor morza, ujście w jezioro → kolor
+  jeziora, na lądzie → kolor morza. Gradient znany z PR-5 usunięty.
+- **Proweniencja (ADR 0013):** atrybucja CC-BY-4.0 w nagłówku każdego
+  generowanego SVG + `maps/zendikar/map.json` (pole `zrodlo_glify`) +
+  ADR 0020 + README mapforge + SKILL_MAPA_PLANU.
+- **Zendikar (T4) i demo-warsztat wyrenderowane na nowo**;
+  `map-audit.py` → 0; testy 87/87; build OK (4 strony, 14 modułów).
+- **Azgaar/Fantasy-Map-Generator (MIT)** — zapisany kandydat na kolejne
+  klocki (E5: cytadela/fort, latarnia, wrak, wodospad, obwódki haseł);
+  góry Azgaar nie pasowały do benchmarku (jasne/techniczne), techniki
+  rozsiewu wdrożone.
+
 ## 2026-09-01 — PR-5: mapforge — glify „hand-drawn" (las kępa, góra żagiel) + warsztat
 
 - **Przebudowa glifów mapforge** (zgłoszenie właściciela: obiekty

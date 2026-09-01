@@ -4,6 +4,44 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-01 — sesja PR-9: adopcja glifów mapowych (mapome) + rzeki w kolorze morza (ADR 0020)
+
+**Zlecenie właściciela (zadanie, nie Pętla Jakości — jawnie wyłączona):**
+(a) góry na Zendikarze „masakryczne" — mają odpowiadać stylowi mapy
+Śródziemia (benchmark mapome); (b) rzeka — ten sam kolor co morze i brak
+opacity („rozmywała się w nim" — zamiast gradientu z PR-5); (c) research
+GitHub: istniejące projekty z wektorowymi obiektami do map — „nie ma
+sensu odkrywać koła na nowo". Właściciel przejął rolę developera po
+zawieszonym agencie.
+
+**Research (przed kodowaniem, w PLAN_2026-09-01-glify-mapaowe-i-rzeki.md):**
+mapome (CC-BY-4.0, już w repo) = benchmark właściciela i źródło glifów;
+Azgaar/Fantasy-Map-Generator (MIT, 171 symbolów SVG) = kandydat na
+przyszłe klocki + techniki rozsiewu (symbol+use, sort po dolnej krawędzi);
+pozostali kandydaci (arda i in.) odrzuceni (brak licencji/bibliotek).
+
+**Wykonanie:**
+- **ADR 0020** — adopcja DANYCH (ścieżki SVG), nie kodu (zero zależności,
+  ADR 0002): biblioteka 30 glifów mapome w `tools/mapforge/glify-mapaome.mjs`
+  (ekstrakcja z `mountains_and_forests` podkładu Śródziemia w repo; 3
+  mega-klastery hero do jawnego użycia w scenie).
+- `szczyt()`/`pasmo()` — wyłącznie glify adoptowane: rozsiew wzdłuż
+  grzbietu (sinus + flip + jitter + sort po dolnej krawędzi); klastery
+  nachodzą nieznacznie, każdy szczyt czytelny (benchmark).
+- `rzeka()` — kolor akwenu (morze `PAL.woda` / jezioro `PAL.wodaGleb`),
+  brak gradientu i opacity; kolor rzeki usunięty z palet.
+- Atrybucja CC-BY-4.0: nagłówek generowanego SVG, `maps/zendikar/map.json`
+  (`zrodlo_glify`), ADR 0020, README mapforge, SKILL.
+- Regeneracja: `maps/zendikar/podklad.svg` + warsztat (atlas/pergamin).
+
+**Weryfikacja:** 87/87 testów; build 4 strony/14 modułów; map-audit 0;
+wizualny re-view PNG (rasterizacja libvips w sandboxie, poza repo) —
+góry zgodne z benchmarkiem mapome, rzeki zlewają się z morzem.
+
+**Pozostaje:** ocena właściciela; kolejka E5 (cytadela/fort, latarnia,
+wrak, wodospad, obwódki haseł) — kandydat: symbole Azgaar (MIT) z
+atrybucją.
+
 ## 2026-09-01 — sesja PR-5 c.d.: mapforge glify „hand-drawn" + zakres map + definicja audytu
 
 **Kontekst:** właściciel po obejrzeniu demo mapforge: obiekty generowane

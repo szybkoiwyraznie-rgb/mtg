@@ -49,7 +49,7 @@ Batche materializacji (10–20 kart/sesję wg dostaw), nowi agenci-wyzwania:
 drugi plan i mapa (proces mapowy od nowa), taxonomia tagów w praktyce,
 wyszukiwarka fuzzy (backlog).
 
-## K7 — Warsztat mapowy T4: wspólny silnik rysowania map — **w toku (kierunek; glify przebudowane)**
+## K7 — Warsztat mapowy T4: wspólny silnik rysowania map — **w toku (kierunek; ADR 0020: glify adoptowane)**
 
 Kierunek z doprecyzowania Pętli Jakości (ADR 0015, właściciel 2026-09-01):
 reużywalne metody rysowania obiektów (pasma/grzbiety górskie, rzeki
@@ -64,10 +64,21 @@ i docelowo ją wyprzedzają; benchmark = porównanie z mapą Śródziemia
 **PR-5 (2026-09-01) — glify „hand-drawn":** las = kępa-chmurka (łuki,
 cień, haczura), gęsta i nakładająca się; góra = „żagiel" (wklęsło-wypukła,
 cień, haczura, `lean`); `pasmo()` ciasno z jitterem. Zendikar T4
-przerenderowany; `map-audit.py` 0. Zostaje: **ubogacanie map wyłącznie
-T3/T4** (map T2/adoptowanych nie ruszamy), dalsza kompletność POI
-i warsztat (E5 klocki: cytadela/fort, latarnia, wrak, wodospad,
-obwódki haseł).
+przerenderowany; `map-audit.py` 0.
+
+**PR-9 (2026-09-01) — ADR 0020: adopcja wektorowych obiektów** (zlecenie
+właściciela: „nie odkrywać koła"): research GitHub (mapome CC-BY-4.0,
+Azgaar MIT i in.) → góry rysują **glify adoptowane z mapome**
+(`tools/mapforge/glify-mapaome.mjs`, 30 sylwetek + 3 mega-klastery,
+ekstrakcja z podkładu Śródziemia w repo — to JEST benchmark ADR 0015);
+`pasmo()` = rozsiew glifów (sinus grzbietu, flip, jitter, sort po dolnej
+krawędzi — technika Azgaar); **rzeki w kolorze akwenu, bez gradientu
+i opacity** (decyzja właściciela). Atrybucja CC-BY-4.0 w nagłówku SVG,
+`map.json` (`zrodlo_glify`), ADR 0020, README, SKILL. Zendikar T4
+przerenderowany, audyt 0, testy 87/87. Zostaje: **ubogacanie map
+wyłącznie T3/T4** (map T2/adoptowanych nie ruszamy), dalsza kompletność
+POI i warsztat (E5 klocki: cytadela/fort, latarnia, wrak, wodospad,
+obwódki haseł — kandydat na obiekty: symbole Azgaar, MIT, z atrybucją).
 
 **SKALOWANIE MAP (2026-09-01, pomiar buildu):** artefakt jednoplikowy
 (ADR 0001/0009) ma **4,45 MB, z czego 96,7% to base64 dwóch map**
