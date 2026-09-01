@@ -39,6 +39,7 @@ MARKERY = {'gora', 'wulkan', 'drzewo', 'bagno', 'miasto', 'ruina'}
 SPODZEANE_WODY = {                           # konwencja projektu
     'Bojuka Bay', 'Sunder Bay', 'Chill Depths', 'Makindi Trenches',
     'Halimar', 'Beyeen', 'Agadeem', 'Wyspy Jwar', 'Emeria', 'Zulaport',
+    'Hagra Cistern',
 }
 
 
