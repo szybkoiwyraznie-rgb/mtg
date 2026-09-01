@@ -82,6 +82,7 @@ test('mapforge: pasmo — szczyty i przedgorze', () => {
   const svg = pasmo('gracz', [[0, 100], [300, 100]], { szer: 40 });
   const n = (svg.match(/mf-szczyt/g) ?? []).length;
   assert.ok(n >= 8, `szczyty + przedgorze (${n})`);
+  assert.ok(!svg.includes('opacity="0.3"'), 'bez linii grzbietu (przygaszona kreska czyta się jak droga po mapie)');
   const s = szczyt(0, 0, 20, 30, { snieg: true });
   assert.ok(s.includes('#f6f4ec'), 'śnieg na szczycie');
 });

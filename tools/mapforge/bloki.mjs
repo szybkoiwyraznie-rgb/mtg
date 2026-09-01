@@ -127,15 +127,37 @@ export function step(id, poly, { gestosc = 1, maski = null } = {}) {
 
 export function lod(id, poly, { pekniecia = 3 } = {}) {
   const rng = prng(`lod:${id}`);
-  const { x0, x1, y0, y1 } = { x0: Math.min(...poly.map((p) => p[0])), x1: Math.max(...poly.map((p) => p[0])), y0: Math.min(...poly.map((p) => p[1])), y1: Math.max(...poly.map((p) => p[1])) };
   let out = `<path d="${prosta(poly, true)}" fill="${PAL.lodFill}" stroke="${PAL.wodaStroke}" stroke-width="2"/>`;
+  // spękania W OBRĘBIE czapy: końce i środek wewnątrz poligonu
+  // (bbox czapy jest szerszy niż lód — spękania poza czapą czyta się
+  // jak linie po oceanie)
   for (let i = 0; i < pekniecia; i++) {
-    const a = [x0 + rng() * (x1 - x0), y0 + rng() * (y1 - y0)];
-    const b = [x0 + rng() * (x1 - x0), y0 + rng() * (y1 - y0)];
-    out += `<path d="${prosta(chaikin([a, [(a[0] + b[0]) / 2 + (rng() - 0.5) * 30, (a[1] + b[1]) / 2 + (rng() - 0.5) * 30], b], 2))}" ` +
+    let a = null; let b = null;
+    for (let proby = 0; proby < 40 && !(a && b); proby++) {
+      const k1 = punktWPoligonie(poly, rng);
+      const k2 = punktWPoligonie(poly, rng);
+      if (!k1 || !k2) continue;
+      const sr = [(k1[0] + k2[0]) / 2, (k1[1] + k2[1]) / 2];
+      if (Math.hypot(k2[0] - k1[0], k2[1] - k1[1]) < 60) continue;
+      if (!pit(sr, poly)) continue;
+      a = k1; b = k2;
+    }
+    if (!a || !b) continue;
+    out += `<path d="${prosta(chaikin([a, [(a[0] + b[0]) / 2 + (rng() - 0.5) * 24, (a[1] + b[1]) / 2 + (rng() - 0.5) * 24], b], 2))}" ` +
       `stroke="${PAL.lodPek}" stroke-width="1.5" fill="none" opacity="0.8"/>`;
   }
   return out;
+}
+
+/** Punkt wewnątrz poligonu (rejection sampling w bboxie). */
+function punktWPoligonie(poly, rng) {
+  const xs = poly.map((p) => p[0]); const ys = poly.map((p) => p[1]);
+  const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+  for (let i = 0; i < 30; i++) {
+    const p = [x0 + rng() * (x1 - x0), y0 + rng() * (y1 - y0)];
+    if (pit(p, poly)) return p;
+  }
+  return null;
 }
 
 /* ---------- pasmo górskie (grzbiet + szczyty z faseta cienia) ---------- */
@@ -169,12 +191,14 @@ export function szczyt(x, y, w, h, { snieg = false } = {}) {
  * na przemian po obu stronach, wyższe w centrum, niższe na krańcach
  * (naturalny profil masywu). `przedgorze` dosypuje drobne wzgórza wokół.
  */
-export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = false, przedgorze = true, maski = null } = {}) {
+export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = false, przedgorze = true, maski = null, liniaGrzbietu = false } = {}) {
   const naLadzie = (p) => !maski || !maski.length || maski.some((m) => pit(p, m));
   const rng = prng(`pasmo:${id}`);
   const grzbiet = chaikin(punkty, 3, false);
   const n = gestoscSzczytow ?? Math.max(3, Math.round(dlugosc(grzbiet) / 80));
-  let out = `<path d="${gladka(grzbiet)}" stroke="${PAL.skalaCien}" stroke-width="2" fill="none" opacity="0.3"/>`;
+  // linia grzbietu domyślnie WYŁĄCZONA: przygaszona kreska przez pasmo czyta
+  // się jak droga (feedback właściciela) — szczyty same składają się w pasmo
+  let out = liniaGrzbietu ? `<path d="${gladka(grzbiet)}" stroke="${PAL.skalaCien}" stroke-width="2" fill="none" opacity="0.3"/>` : '';
   for (let i = 0; i < n; i++) {
     const t = n === 1 ? 0.5 : i / (n - 1);
     const [x, y] = punktNa(grzbiet, t);

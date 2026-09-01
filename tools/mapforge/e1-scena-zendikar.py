@@ -89,6 +89,17 @@ def np_atan2(y, x):
     return __import__('math').atan2(y, x)
 
 
+def _pit(pt, poly):
+    x, y = pt
+    w = False
+    for i in range(len(poly)):
+        x1, y1 = poly[i]
+        x2, y2 = poly[(i + 1) % len(poly)]
+        if (y1 > y) != (y2 > y) and x < (x2 - x1) * (y - y1) / (y2 - y1) + x1:
+            w = not w
+    return w
+
+
 def przerzedz(pts, n=10):
     if len(pts) <= n:
         return [[round(x, 1), round(y, 1)] for x, y in pts]
@@ -248,9 +259,32 @@ def main():
                 biomy.append({'id': 'lod-sejiri', 'typ': 'lod',
                               'punkty': przerzedz(poly, 24), 'opcje': {'pekniecia': 3}})
 
+    # pasma per LĄD: klaster gór nie może zlewać kontynentów (przy siatce
+    # 200 px Ondu + Murasa dawały jeden klaster → „grzbiet" przez ocean)
+    lady_pol = []
+    for el in svg.iter(NS + 'path'):
+        if (grupa_fill(el, rodzice[id(el)]) or '') in FILL_LADU and id(el) not in transformowane:
+            poly = sciezka(el.get('d'))
+            if len(poly) > 16:
+                lady_pol.append(poly)
+
+    def lad_gory(p):
+        for idx, poly in enumerate(lady_pol):
+            if _pit(p, poly):
+                return idx
+        return None
+
     pasma = []
-    for i, kl in enumerate(klastry(gory, minimum=3), 1):
-        pasma.append({'id': f'pasmo-{i}', 'punkty': grzbiet_z_klastra(kl, 5), 'opcje': {'szer': 40}})
+    gory_per_lad = {}
+    for g in gory:
+        l = lad_gory(g)
+        if l is not None:
+            gory_per_lad.setdefault(l, []).append(g)
+    i = 0
+    for l, grupa in sorted(gory_per_lad.items()):
+        for kl in klastry(grupa, minimum=3):
+            i += 1
+            pasma.append({'id': f'pasmo-{i}', 'punkty': grzbiet_z_klastra(kl, 5), 'opcje': {'szer': 40}})
 
     scena = {
         'nazwa': 'zendikar-e1', 'szerokosc': int(W), 'wysokosc': int(H), 'styl': 'atlas',

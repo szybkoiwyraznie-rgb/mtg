@@ -102,6 +102,10 @@ class Mapa:
         for g in self.root.iter(NS + 'g'):
             if g.get('transform'):
                 self.transformowane.update(id(e) for e in g.iter())
+        self._rodzice = {}
+        for g in self.root.iter():
+            for dziecko in g:
+                self._rodzice[id(dziecko)] = g
         self.ma_lad = bool(self.lady or self.okregi)
 
     def na_ladzie(self, x, y, tolerancja=6):
@@ -152,8 +156,55 @@ class Mapa:
                 out.setdefault(kl, []).append(pos)
         return out
 
-    @staticmethod
-    def _pozycja_z_path(d):
+    @classmethod
+    def _punkty_d(cls, d):
+        """Punkty NA ścieżce (pełny interpreter) — próbki do kontroli
+        rzek/linii; patrz _pozycja_z_path."""
+        pts, cur, start = [], [0.0, 0.0], [0.0, 0.0]
+        for c, args_s in re.findall(r'([MLCQASTHVmlcqasthvZz])([^MLCQASTHVmlcqasthvZz]*)', d):
+            args = [float(v) for v in re.findall(r'-?[\d.]+', args_s)]
+            if c in 'Mm':
+                for j in range(0, len(args) - 1, 2):
+                    cur = ([cur[0] + args[j], cur[1] + args[j + 1]] if (c == 'm' and pts)
+                           else [args[j], args[j + 1]])
+                    if j == 0:
+                        start = cur[:]
+                    pts.append(tuple(cur))
+            elif c in 'LlTt':
+                for j in range(0, len(args) - 1, 2):
+                    cur = ([cur[0] + args[j], cur[1] + args[j + 1]] if c in 'lt'
+                           else [args[j], args[j + 1]])
+                    pts.append(tuple(cur))
+            elif c in 'Hh':
+                for v in args:
+                    cur = [cur[0] + v, cur[1]] if c == 'h' else [v, cur[1]]
+                    pts.append(tuple(cur))
+            elif c in 'Vv':
+                for v in args:
+                    cur = [cur[0], cur[1] + v] if c == 'v' else [cur[0], v]
+                    pts.append(tuple(cur))
+            elif c in 'Cc':
+                for j in range(0, len(args) - 5, 6):
+                    cur = ([cur[0] + args[j + 4], cur[1] + args[j + 5]] if c == 'c'
+                           else [args[j + 4], args[j + 5]])
+                    pts.append(tuple(cur))
+            elif c in 'QqSs':
+                for j in range(0, len(args) - 3, 4):
+                    cur = ([cur[0] + args[j + 2], cur[1] + args[j + 3]] if c in 'qs'
+                           else [args[j + 2], args[j + 3]])
+                    pts.append(tuple(cur))
+            elif c in 'Aa':
+                for j in range(0, len(args) - 6, 7):
+                    cur = ([cur[0] + args[j + 5], cur[1] + args[j + 6]] if c == 'a'
+                           else [args[j + 5], args[j + 6]])
+                    pts.append(tuple(cur))
+            elif c in 'Zz':
+                cur = start[:]
+                pts.append(tuple(cur))
+        return pts
+
+    @classmethod
+    def _pozycja_z_path(cls, d):
         """Centroid punktów NA ścieżce (interpreter komend: M/L/C/Q/S/A/H/V/Z,
         wersje małe = względne). Zbiera wyłącznie punkty leżące na krzywej —
         parametry łuków (promienie/flagi) i punkty kontrolne NIE są
@@ -202,6 +253,48 @@ class Mapa:
         if len(pts) < 2:
             return None
         return (sum(a for a, _ in pts) / len(pts), sum(b for _, b in pts) / len(pts))
+
+    def linie_w_wodzie(self):
+        """Rzeki (wstęgi) i linie bez klasy (grzbiety, spękania) — próbki
+        wzdłuż ścieżki muszą leżeć na lądzie (≥75%); poświata wybrzeża
+        (ta sama `d` co ląd) i drogi (kreskowane — mogą prowadzić promem)
+        są wyłączone."""
+        d_ladow = {el.get('d') for el in self.root.iter(NS + 'path')
+                   if el.get('fill') in FILLE_LADU}
+        RZEKI = {'#5b8ba6', '#5a5a5a', '#1f1f1f'}
+        out = []
+
+        for el in self.root.iter(NS + 'path'):
+            if id(el) in self.transformowane or el.get('d') in d_ladow:
+                continue
+            fill = el.get('fill')
+            stroke = el.get('stroke')
+            dash = el.get('stroke-dasharray')
+            rzeka = fill in RZEKI and not stroke
+            linia = (stroke and not fill and not dash) or (stroke and fill == 'none' and not dash)
+            if not (rzeka or linia):
+                continue
+            if self._w_klasie(el):
+                continue
+            pts = self._punkty_d(el.get('d') or '')
+            if len(pts) < 8:
+                continue
+            probki = pts[::max(1, len(pts) // 12)]
+            na_ladzie = sum(1 for q in probki if self.na_ladzie(q[0], q[1], tolerancja=6))
+            if na_ladzie / len(probki) < 0.75:
+                out.append(('rzeka' if rzeka else 'linia',
+                            round(sum(q[0] for q in probki) / len(probki)),
+                            round(sum(q[1] for q in probki) / len(probki)),
+                            f"{na_ladzie}/{len(probki)}"))
+        return out
+
+    def _w_klasie(self, el):
+        e = self._rodzice.get(id(el))
+        while e is not None:
+            if e.get('class'):
+                return True
+            e = self._rodzice.get(id(e))
+        return False
 
     def markery(self):
         out = []
@@ -262,6 +355,8 @@ def audytuj_podklad(mapa, nazwa, mjson, woda):
     for href, x, y in mapa.markery():
         if not mapa.na_ladzie(x, y):
             problemy.append(f'{nazwa}: MARKER W WODZIE: {href} @({x:.0f},{y:.0f})')
+    for rodzaj, x, y, stat in mapa.linie_w_wodzie():
+        problemy.append(f'{nazwa}: {rodzaj.upper()} W WODZIE: środek @({x},{y}), na lądzie {stat}')
     for kl, pozycje in sorted(mapa.forge_w_wodzie().items()):
         przykl = ', '.join(f'({x:.0f},{y:.0f})' for x, y in pozycje[:3])
         problemy.append(f'{nazwa}: FORGE W WODZIE: {kl} ×{len(pozycje)} (np. {przykl})')
