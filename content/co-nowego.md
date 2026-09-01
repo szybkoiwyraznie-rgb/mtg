@@ -3,6 +3,30 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-01 — PR-5: Pętla Jakości v2 — pogłębienie LORE Śródziemia + domknięcie E4
+
+- **Pogłębienie LORE (krok 2):** plan **Śródziemie** (dotąd niepogłębiany
+  w PR-4) dostał nową sekcję **„Ludy"** — na wzór analogicznej sekcji
+  w Zendikarze. Opisuje trzy grupy zachodniego Śródziemia: **Dunlendów**
+  (Gwathuirim, potomków górali Białych Gór, wypchniętych z Calenardhonu),
+  **Rohirrimów** (Eorlingas, od Éothéod/Northmanów, obdarowanych Rohanem
+  po Polu Celebrantu) oraz **ludzi i siły Isengardu** (Uruk-hai, Biała
+  Ręka, krzyżowanie orków i ludzi). Z cytowaniami (Tolkien Gateway,
+  Encyclopedia of Arda).
+- **Anty-dublowanie (ADR 0005/0010):** encje (dunland/isengard/Saruman/
+  Uruk-hai/Biała Ręka/rohan) **nadal czekają na próg drugiej karty** —
+  nie utworzono haseł, nie dodano wikilinków do nieistniejących stron;
+  wiedza o nich żyje w treści planu i w `docs/backlog.md`.
+- **Pass mapowy (krok 4):** domknięty **E4** planu mapforge — wzorzec
+  „nowy plan = scena + render mapforge" spisany w `docs/guides/PROCES_MAP.md`
+  (MA1 pkt 5) i `docs/guides/SKILL_MAPA_PLANU.md` §11 (mapforge jako
+  domyślny sposób tworzenia map T3/T4); `PLAN_2026-09-01-mapforge.md`
+  oznacza E4 jako wykonany. Weryfikacja: `tools/map-audit.py` na obu
+  mapach — 0 problemów.
+- **Krok 3 (link-mining):** potwierdzony brak nowych haseł — karty są
+  z różnych planów, licznik wzmianek od kart (nie planów). Backlog aktualny.
+- Testy: `npm test` 86/86; `npm run build` OK (4 strony, 14 modułów).
+
 ## 2026-09-01 — E1+E2 mapforge na Zendikarze + naprawa kotwiczenia etykiet
 
 - **Naprawa etykiet nakładki** (feedback z podglądu): transform inline

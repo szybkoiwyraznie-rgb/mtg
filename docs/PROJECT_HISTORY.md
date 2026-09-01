@@ -4,6 +4,24 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-01 — sesja PR-5 (Pętla Jakości v2: pogłębienie LORE + E4)
+
+**Kontekst:** „kontynuujemy projekt" bez dostawy nowych kart → domyślna
+praca = Pętla Jakości (ADR 0006/0015). Punkt wyjścia = scalony PR #7 (PR-4).
+
+**Wykonanie:**
+- Audyt PR #7 (integralność 86/86, completeness 100%, deploy Pages
+  zielony, map-audit 0; znalezienia: E4, niepogłębiane Śródziemie).
+- Krok 2 (LORE): sekcja „Ludy" w `content/planes/srodziemie.md`
+  (Dunlendowie/Gwathuirim, Rohirrim/Eorlingas, ludzie i siły Isengardu)
+  z cytowaniami (Tolkien Gateway, Encyclopedia of Arda). Bez haseł
+  (próg ≥2 kart), bez martwych wikilinków.
+- Krok 3 (link-mining): brak nowych haseł (karty z różnych planów).
+- Krok 4 (mapa): domknięcie **E4** — wzorzec „nowy plan = scena +
+  render mapforge" w PROCES_MAP (MA1 pkt 5) i SKILL §11; E4 w planie
+  mapforge oznaczony. Weryfikacja obu map audytem (0 problemów).
+- Krok 5: co-nowego, handoff, kumulatywny opis PR.
+
 ## 2026-09-01 — sesja PR-4 c.d. 2: ADR 0016 (format Wpisu Karty) + podgląd sandboxowy
 
 **Zlecenia właściciela:** (A) uruchomienie Pages bez merge'a / podgląd;
