@@ -1,7 +1,11 @@
 # Gid: Proces mapowy — od researchu do pinezek
 
 Powiązania: [ADR 0007](../decisions/0007-mapa-t1-hybryda.md) (decyzja T1
-hybryda i drabina wariantów), `docs/ROADMAP.md` (K3/K4).
+hybryda i drabina wariantów), `docs/ROADMAP.md` (K3/K4). **Dla wariantu T3
+(własny, wektorowy podkład SVG z opisu lore — np. Zendikar) wykonuj wg
+[`SKILL_MAPA_PLANU.md`](SKILL_MAPA_PLANU.md):** drabina źródeł, pułapki
+nonzero-fill, pixelacja przy zoomie, geometria kontynentów, weryfikacja
+`_px.raw`.
 
 Proces uruchamia się, gdy plan/setting ma **pierwszą materializowaną
 kartę** (lub zlecenie właściciela). Pilot: Śródziemie, karta 1LTR.
