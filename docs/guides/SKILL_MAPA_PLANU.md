@@ -359,3 +359,18 @@ Reguły użycia:
 4. **Migracja istniejących podkładów tylko wg
    `docs/plans/PLAN_2026-09-01-mapforge.md`** (E1–E3), nigdy „przy
    okazji" innego zadania.
+
+**Język glifów „hand-drawn" (od PR-5, 2026-09-01):** obiekty przyrody
+mają naśladować line-art mapome, nie prymitywy:
+
+- **Las** = kępa-chmurka (zamknięta ścieżka z wypukłych łuków), nie
+  `<circle>`; gęsty i nakładający się (`minOdst < średnica korony`),
+  więc składa się w masę. `gestosc` gęstość, `skala` rozmiar korony.
+- **Góra** = asymetryczny „żagiel" (lewa wypukła, prawa wklęsła), cień
+  w facecie po prawej + haczura; `lean` przechyla wierzchołek. `pasmo()`
+  układa szczyty ciasno z jitterem → chwiejny grzbiet.
+
+Szczegóły i pełny katalog klocków: `tools/mapforge/README.md`.
+Zmiana stylu glifu = edycja `tools/mapforge/bloki.mjs` (`korona`,
+`drzewo`, `szczyt`, `pasmo`) + regeneracja `maps/<plan>/podklad.svg`
+i `maps/_warsztat/podklad*.svg` + testy.

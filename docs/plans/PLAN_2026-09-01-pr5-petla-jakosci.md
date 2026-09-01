@@ -1,7 +1,12 @@
-# PLAN: PR-5 — Pętla Jakości v2 (pogłębienie LORE + pass mapowy T4)
+# PLAN: PR-5 — Pętla Jakości v2 (pogłębienie LORE + pass mapowy T4) + mapforge glify
 
 > Sesja bez dostawy nowych kart. Domyślna praca = Pętla Jakości (ADR 0006/0015).
 > Gałąź `arena/01a05d50-mtg`, punkt wyjścia = merge PR #7 (PR-4).
+> **Rozszerzenie właściciela:** (1) ubogacanie map o POI dotyczy tylko
+> map T3/T4 (dziś Zendikar), nie T2 (Śródziemie); (2) audyt PR = dokładne
+> sprawdzenie poprawności/logiki (tekst + kod), nie raport „zielone";
+> (3) realne zadanie: **przebudować glify mapforge** (las, góra), by
+> wyglądały „hand-drawn" jak mapa Śródziemia, nie generycznie i dziecinnie.
 
 ## Zadania (w kolejności Pętli, krok 1 nigdy nie pomijany)
 
@@ -32,17 +37,33 @@
   (karty są z różnych planów; plany nie liczą się do progu). Brak nowych
   haseł; backlog pozostaje aktualny.
 
+### Zadanie A — dokumentacja Pętli Jakości
+- `docs/guides/PETLA_JAKOSCI.md` krok 4 pkt 2: zakres ubogacania map
+  (tylko T3/T4; T2/adoptowane nie ruszamy).
+- `docs/guides/PETLA_JAKOSCI.md` krok 1: definicja audytu (recenzja
+  kodu/treści, nie raport zielone).
+
+### Zadanie B — audyt kodu PR #7 (recenzja)
+- `docs/audits/AUDYT_2026-09-01-PR7.md`: głęboka weryfikacja silnika
+  mapforge (glify, gęstość lasów, jitter pasma, ciche fallbacki,
+  rozmiar) — jako kolejka napraw.
+
+### Zadanie C — przebudowa glifów mapforge (realne zadanie)
+- `tools/mapforge/bloki.mjs`: `drzewo`/`korona` (las = kępa-chmurka,
+  gęsta i nakładająca się), `szczyt` (góra = żagiel, `lean`), `pasmo`
+  (ciaśniej, jitter). Regeneracja `maps/zendikar/podklad.svg` (T4, atlas)
+  + `maps/_warsztat/podklad*.svg`.
+- `tools/mapforge/README.md`: rozdział „Język rysowania glifów".
+- `SKILL_MAPA_PLANU.md` §11: reguły glifów.
+- `npm test` + `npm run build` + `map-audit` 0.
+
 ### Krok 4 — pass mapowy (kompletacja i jakość map — ADR 0015 pkt 4)
 - **E4 planu mapforge (PLAN_2026-09-01-mapforge.md):** dopisać do
   `docs/guides/PROCES_MAP.md` (MA1 pkt 5 / MA2) i `SKILL_MAPA_PLANU.md`,
   że **nowe mapy T3/T4 startują od sceny + mapforge**, a SKILL odsyła do
   katalogu klocków (§11 już to czyni — domknąć wzorzec w PROCES_MAP).
-- **Śródziemie (T2, podkład adoptowany):** weryfikacja kotwic/pinezki
-  względem podkładu i źródeł; ewentualne uzupełnienie `kotwice`
-  (np. Orthanc, brody na Isenie, Eregion/Hollin, Gap of Calenardhon)
-  wyłącznie z pozycji istniejących etykiet podkładu mapome (kotwice
-  programistyczne — bez przesuwania kanonu). Bez zmiany geometrii
-  podkładu (adoptowany, T2 — nie rysujemy „przy okazji").
+- **Śródziemie (T2, podkład adoptowany):** **bez ubogacania** (decyzja
+  właściciela — zakres dotyczy tylko T3/T4); podkład nienaruszony.
 - `tools/map-audit.py <plan>` → 0 problemów (standard).
 
 ### Krok 5 — zamknięcie
@@ -53,4 +74,4 @@
 ## Poza zakresem
 - Materializacja kart (brak dostawy), generowanie grafik (ADR 0008),
   przepisywanie wpisów kolekcji (nienaruszalne), tworzenie haseł przed
-  progiem ≥2 kart.
+  progiem ≥2 kart, ubogacanie map T2 (Śródziemie).

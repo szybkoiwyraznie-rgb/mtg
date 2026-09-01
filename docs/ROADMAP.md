@@ -49,7 +49,7 @@ Batche materializacji (10–20 kart/sesję wg dostaw), nowi agenci-wyzwania:
 drugi plan i mapa (proces mapowy od nowa), taxonomia tagów w praktyce,
 wyszukiwarka fuzzy (backlog).
 
-## K7 — Warsztat mapowy T4: wspólny silnik rysowania map — **w toku (kierunek)**
+## K7 — Warsztat mapowy T4: wspólny silnik rysowania map — **w toku (kierunek; glify przebudowane)**
 
 Kierunek z doprecyzowania Pętli Jakości (ADR 0015, właściciel 2026-09-01):
 reużywalne metody rysowania obiektów (pasma/grzbiety górskie, rzeki
@@ -60,6 +60,14 @@ i przyszłe plany) dążą jakością do mapy Śródziemia (T2 mapome)
 i docelowo ją wyprzedzają; benchmark = porównanie z mapą Śródziemia
 + ocena właściciela. Realizowane passami mapowymi Pętli Jakości
 (krok 4) i jako osobne zadania z `docs/plans/`.
+
+**PR-5 (2026-09-01) — glify „hand-drawn":** las = kępa-chmurka (łuki,
+cień, haczura), gęsta i nakładająca się; góra = „żagiel" (wklęsło-wypukła,
+cień, haczura, `lean`); `pasmo()` ciasno z jitterem. Zendikar T4
+przerenderowany; `map-audit.py` 0. Zostaje: **ubogacanie map wyłącznie
+T3/T4** (map T2/adoptowanych nie ruszamy), dalsza kompletność POI
+i warsztat (E5 klocki: cytadela/fort, latarnia, wrak, wodospad,
+obwódki haseł).
 
 ## Wątki otwarte (czekają na decyzję właściciela)
 

@@ -3,6 +3,38 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-01 — PR-5: mapforge — glify „hand-drawn" (las kępa, góra żagiel) + warsztat
+
+- **Przebudowa glifów mapforge** (zgłoszenie właściciela: obiekty
+  generowane przez mapforge wyglądają „strasznie generycznie i dziecinnie";
+  cel = efekt graficzny jak mapa Śródziemia/mapome):
+  - **Las** — korona to zamknięta ścieżka z wypukłych łuków („chmurka"),
+    nie `<circle>`: nieregularny obrys (jitter promienia), ciemna masa
+    cienia u podstawy, asymetryczny boczny pęd i krótka haczura
+    cieniowania. Lasy są **gęste i nakładają się** (`minOdst < średnica
+    korony`), więc składają się w falistą, teksturowaną masę — jak Mirkwood.
+  - **Góra** — pojedynczy szczyt to asymetryczny „żagiel": lewa krawędź
+    wypukła na zewnątrz, prawa wklęsła, cień w ciemniejszej facecie po
+    prawej + haczura. `lean` przechyla wierzchołek; `pasmo()` układa
+    szczyty ciaśniej z jitterem → naturalna, chwiejna linia grzbietu.
+  - Obie formy pozostają **deterministyczne** (rng z hasha id) i
+    audytowalne (`data-x/y`, kontur zamknięty, map-audit 0).
+- **Zendikar (T4) wyrenderowany na nowo** z przebudowanymi glifami
+  (motyw atlas, ADR 0019): Oran-Rief / Ondu / Murasa to gęste kępy,
+  Akoum / Skyfang / Sejiri to żagle z cieniem. `map-audit.py` → 0.
+- **Demo-warsztat** `maps/_warsztat/podklad*.svg` zaktualizowane
+  (katalog klocków na jednym obrazie).
+- **Zakres ubogacania map (decyzja właściciela 2026-09-01):** nowe POI
+  i wzbogacanie podkładu dotyczą wyłącznie map **T3/T4** (podkłady
+  własne — dziś Zendikar); map **T2 (adoptowany podkład Śródziemia/
+  mapome) nie ruszamy**. Dopisane do `docs/guides/PETLA_JAKOSCI.md` (krok 4).
+- **Audyt = recenzja kodu, nie raport zielone** — doprecyzowane
+  w `docs/guides/PETLA_JAKOSCI.md` (krok 1); `AUDYT_2026-09-01-PR7.md`
+  zawiera głęboką weryfikację silnika mapforge (glify geometryczne,
+  lasy nie-nakładające się, brak jitteru pasma, ciche fallbacki).
+- Testy: `npm test` 86/86; `npm run build` OK (4 strony, 14 modułów;
+  artefakt ~4,6 MB — koszt świadomy z ADR 0009).
+
 ## 2026-09-01 — PR-5: Pętla Jakości v2 — pogłębienie LORE Śródziemia + domknięcie E4
 
 - **Pogłębienie LORE (krok 2):** plan **Śródziemie** (dotąd niepogłębiany

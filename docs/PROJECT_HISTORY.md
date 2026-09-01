@@ -4,6 +4,29 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-01 — sesja PR-5 c.d.: mapforge glify „hand-drawn" + zakres map + definicja audytu
+
+**Kontekst:** właściciel po obejrzeniu demo mapforge: obiekty generowane
+przez silnik wyglądają „strasznie generycznie i dziecinnie"; chce efektu
+graficznego jak mapa Śródziemia (mapome). Dodatkowo: (1) ubogacanie map
+o POI dotyczy wyłącznie map T3/T4 (dziś Zendikar) — map T2 (adoptowany
+podkład) nie ruszamy; (2) audyt PR ma być dokładnym sprawdzeniem kodu,
+nie raportem „zielone".
+
+**Wykonanie:**
+- **Dokumentacja Pętli Jakości:** zakres ubogacania map (krok 4 pkt 2 —
+  tylko T3/T4) oraz definicja audytu (krok 1 — recenzja kodu/treści,
+  nie raport zielone) dopisane do `docs/guides/PETLA_JAKOSCI.md`.
+- **Audyt kodu mapforge** (`AUDYT_2026-09-01-PR7.md`): glify
+  geometryczne (koło/trójkąt), lasy nie-nakładające się, brak jitteru
+  pasma, ciche fallbacki (`?? las`), rozmiar artefaktu — kolejka napraw.
+- **Przebudowa glifów:** las = kępa-chmurka (łuki, cień, boczny pęd,
+  haczura), gęsta i nakładająca się; góra = żagiel (lewa wypukła, prawa
+  wklęsła, cień, haczura) z `lean`; `pasmo()` ciaśniej z jitterem.
+  Determinizm zachowany (rng z hasha id); `data-x/y` i kontur zamknięty
+  → `map-audit.py` 0. Zendikar T4 i demo-warsztat wyrenderowane na nowo.
+- Testy 86/86; build OK; artefakt ~4,6 MB (koszt ADR 0009).
+
 ## 2026-09-01 — sesja PR-5 (Pętla Jakości v2: pogłębienie LORE + E4)
 
 **Kontekst:** „kontynuujemy projekt" bez dostawy nowych kart → domyślna

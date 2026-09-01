@@ -49,12 +49,12 @@ przed renderem.
 
 | Klocek | Dane | Co rysuje |
 |---|---|---|
-| `las(id, poly, {gestosc, skala})` | wielokąt zasięgu | rozsiew koron (2 tony + pień), blue-noise |
+| `las(id, poly, {gestosc, skala})` | wielokąt zasięgu | **kępy liści** (nieregularne „chmurki" z haczurą), nakładające się w gęstą masę — jak mapome |
 | `bagno(id, poly, {gestosc})` | wielokąt | kępki turzyc + płytka oczka wodne |
 | `step(id, poly, {gestosc})` | wielokąt | kępy traw |
 | `lod(id, poly, {pekniecia})` | wielokąt | biała nakładka + spękania |
-| `pasmo(id, punkty, {szer, snieg, przedgorze})` | linia grzbietu | szczyty z faseta cienia, profil wyższy w centrum, przedgórze |
-| `szczyt(x, y, w, h, {snieg})` | punkt | pojedynczy szczyt (ściana + cień + śnieg) |
+| `pasmo(id, punkty, {szer, snieg, przedgorze})` | linia grzbietu | **żagle** (wklęsło-wypukłe szczyty) z fasetą cienia, jitter wierzchołka, ciasny rozstaw, przedgórze |
+| `szczyt(x, y, w, h, {snieg, lean})` | punkt | pojedynczy szczyt „żagiel" (lewa wypukła, prawa wklęsła, cień + haczura); `lean` = przechył wierzchołka |
 | `wulkan(x, y, {skala, dym})` | punkt | stożek z kraterem i lazem dymu |
 | `rzeka(id, punkty, {s0, s1})` | linia + szerokości | wstęga zwężająca się ku źródłu + punkt źródła |
 | `doplyw(id, punkty, {s0, s1})` | linia | cieńsza wstęga (bez źródła) |
@@ -66,6 +66,23 @@ przed renderem.
 | `etykieta(tekst, x, y, {kat, fs, ital})` | tekst | halo + obrót wokół punktu (`kat` w stopniach) |
 | `lukEtykieta(id, punkty, tekst, {fs})` | łuk | etykieta po łuku (textPath) — zatoki, doliny |
 | `kompas / ramka / skalaLinia` | — | oprawa mapy |
+
+### Język rysowania glifów (styl „hand-drawn" jak mapome)
+
+Glify przyrody nawiązują do line-artu mapome (benchmark, ADR 0015):
+
+- **Las:** korona to zamknięta ścieżka z wypukłych łuków wokół elipsy
+  („chmurka"), nie `<circle>` — nieregularny obrys (jitter promienia),
+  ciemna masa cienia u podstawy, asymetryczny boczny pęd i krótka haczura
+  cieniowania. Lasy są **gęste i nakładają się** (`minOdst < średnica
+  korony`), więc składają się w falistą, teksturowaną masę.
+- **Góra:** pojedynczy szczyt to asymetryczny „żagiel" — lewa krawędź
+  wypukła na zewnątrz, prawa wklęsła; cień w ciemniejszej facecie po
+  prawej + haczura na ścianie; `lean` przechyla wierzchołek, a ciasny
+  rozstaw w `pasmo()` daje chwiejną, naturalną linię grzbietu.
+
+Obie formy pozostają deterministyczne (rng z hasha id) i audytowalne
+(`data-x/y` na klocku, kontur zamknięty).
 
 Scenę składa `render.mjs` (warstwy: ocean → poświata wybrzeży → lądy →
 biomy → jeziora → rzeki → pasma → wulkany → drogi → POI → etykiety →

@@ -69,31 +69,72 @@ const rr = (v) => zaokr(v);
 
 /* ---------- biome: las (kępy koron + pnie) ---------- */
 
-/** Pojedyncze drzewo (korona z cieniem + pień). */
+/**
+ * „Chmurkowa" korona ręcznie rysowanej kępy — zamknięta ścieżka z wypukłych
+ * łuków wokół elipsy (jak kępa liści na mapie mapome). Deterministyczna
+ * przez rng: nieregularny obrys (jitter promienia) daje naturalne,
+ * niegdysiejszo-geometryczne kępy.
+ */
+function korona(cx, cy, rx, ry, n, rng) {
+  const k = [];
+  for (let i = 0; i < n; i++) {
+    const a = (2 * Math.PI * i) / n;
+    const j = 1 - 0.28 + rng() * 0.30;       // 0.72..1.02 — nieregularny obrys
+    k.push([cx + Math.cos(a) * rx * j, cy + Math.sin(a) * ry * j]);
+  }
+  let d = `M ${rr(k[0][0])} ${rr(k[0][1])} `;
+  for (let i = 0; i < n; i++) {
+    const a = k[i];
+    const b = k[(i + 1) % n];
+    const rl = Math.hypot(b[0] - a[0], b[1] - a[1]) * 0.62;
+    d += `A ${rr(rl)} ${rr(rl)} 0 0 1 ${rr(b[0])} ${rr(b[1])} `;
+  }
+  return d + 'Z';
+}
+
+/**
+ * Pojedyncze drzewo w duchu mapome: kępa liści (chmurka), nie „kula na
+ * patyku". Ciemna masa cienia u podstawy, jasna korona z tuszowym konturem,
+ * asymetryczny boczny pęd i krótka haczura cieniowania. Dzięki temu gęsty
+ * las składa się w falistą, „ręczną" teksturę zamiast równych kółek.
+ */
 export function drzewo(x, y, s, rng) {
   const jx = (rng() - 0.5) * 2;
   const jy = (rng() - 0.5) * 2;
-  const r = s * (3.6 + rng() * 1.6);
-  if (PAL.tryb === 'tusz') {
-    return `<g class="mf-drzewo" data-x="${rr(x + jx)}" data-y="${rr(y + jy)}">` +
-      `<path d="M ${rr(x + jx)} ${rr(y + jy)} l 0 ${rr(s * 2.4)}" stroke="${PAL.pienn}" stroke-width="${rr(s * 0.7)}"/>` +
-      `<circle cx="${rr(x + jx)}" cy="${rr(y + jy - r * 0.18)}" r="${rr(r)}" fill="${PAL.drzewo}" stroke="${PAL.skalaCien}" stroke-width="1.5"/>` +
-      (r > 4.5 ? `<path d="M ${rr(x + jx - r * 0.45)} ${rr(y + jy + r * 0.2)} a ${rr(r * 0.62)} ${rr(r * 0.62)} 0 0 1 ${rr(r * 0.8)} ${rr(-r * 0.25)}" ` +
-        `fill="none" stroke="${PAL.skalaCien}" stroke-width="0.9" opacity="0.7"/>` : '') +
-      `</g>`;
+  const X = x + jx;
+  const Y = y + jy;
+  const r = s * (4.6 + rng() * 2.0);
+  const pena = PAL.tekst;                  // tusz / kontur
+  const grub = Math.max(0.6, s * 0.6);
+  // ciemna masa u podstawy (pod spodem, po lewej-dole) — zza niej wystaje korona
+  const cien = korona(X - r * 0.16, Y + r * 0.26, r * 0.94, r * 0.8, 7, rng);
+  // asymetryczny boczny pęd (te same wypełnienie — zlewa się z koroną)
+  const bocz = korona(X + r * 0.52, Y + r * 0.1, r * 0.5, r * 0.44, 6, rng);
+  // główna korona (jasna), lekko w górę-lewo; jej kontur = obrys kępy
+  const glow = korona(X - r * 0.05, Y - r * 0.18, r, r * 0.9, 8, rng);
+  // haczura cieniowania w dolnej części korony (krótkie łuki)
+  let hach = '';
+  for (let i = 0; i < 3; i++) {
+    const hx = X - r * 0.3 + i * r * 0.26;
+    const hy = Y + r * 0.36;
+    hach += `M ${rr(hx)} ${rr(hy)} a ${rr(r * 0.09)} ${rr(r * 0.16)} 0 0 1 ${rr(r * 0.2)} ${rr(-r * 0.08)} `;
   }
-  return `<g class="mf-drzewo" data-x="${rr(x + jx)}" data-y="${rr(y + jy)}">` +
-    `<path d="M ${rr(x + jx)} ${rr(y + jy)} l 0 ${rr(s * 2.4)}" stroke="${PAL.pienn}" stroke-width="${rr(s * 0.7)}"/>` +
-    `<circle cx="${rr(x + jx - r * 0.42)}" cy="${rr(y + jy + r * 0.22)}" r="${rr(r * 0.72)}" fill="${PAL.drzewoCien}" opacity="0.6"/>` +
-    `<circle cx="${rr(x + jx)}" cy="${rr(y + jy - r * 0.18)}" r="${rr(r)}" fill="${PAL.drzewo}"/>` +
+  return `<g class="mf-drzewo" data-x="${rr(X)}" data-y="${rr(Y)}">` +
+    `<path d="${cien}" fill="${PAL.drzewoCien}" opacity="0.55"/>` +
+    `<path d="${glow}" fill="${PAL.drzewo}"/>` +
+    `<path d="${bocz}" fill="${PAL.drzewo}"/>` +
+    `<path d="${glow}" fill="none" stroke="${pena}" stroke-width="${rr(grub)}" stroke-linejoin="round"/>` +
+    `<path d="${hach}" stroke="${PAL.drzewoCien}" stroke-width="${rr(Math.max(0.7, s * 0.9))}" fill="none" opacity="0.85" stroke-linecap="round"/>` +
     `</g>`;
 }
 
 /** Las: deterministyczny rozsiew drzew w wielokącie. */
-export function las(id, poly, { gestosc = 1, skala = 1, minOdst = 15, maski = null } = {}) {
+export function las(id, poly, { gestosc = 1, skala = 1, minOdst = 8, maski = null } = {}) {
   const rng = prng(`las:${id}`);
-  const n = Math.round(pole(poly) / 240 * gestosc);
-  return rozrzut(poly, n, rng, minOdst * skala, maski)
+  const n = Math.round(pole(poly) / 72 * gestosc);
+  // drzewa mocno zachodzą na siebie (rozstaw < średnica korony) → gęsta,
+  // „ręczna" masa kęp jak mapome, zamiast rozsypanych kropek
+  return rozrzut(poly, n, rng, Math.max(3, minOdst) * 0.48, maski)
     .map(([x, y]) => drzewo(x, y, skala, rng)).join('\n');
 }
 
@@ -162,27 +203,46 @@ function punktWPoligonie(poly, rng) {
 
 /* ---------- pasmo górskie (grzbiet + szczyty z faseta cienia) ---------- */
 
-/** Pojedynczy szczyt: główna ściana + oświetlona/ocieniowana faseta + opcjonalny śnieg. */
-export function szczyt(x, y, w, h, { snieg = false } = {}) {
-  if (PAL.tryb === 'tusz') {
-    let hach = '';
-    for (let i = 1; i <= 3; i++) {
-      const f = 0.28 + i * 0.19;                      // wzdłuż lewej krawędzi
-      const ax = x - w + w * f;
-      const ay = y - h * f;
-      const bx = x - w * (0.38 - i * 0.09);
-      const by = y - h * (f - 0.16);
-      hach += `M ${rr(ax)} ${rr(ay)} L ${rr(bx)} ${rr(by)} `;
-    }
-    return `<g class="mf-szczyt" data-x="${rr(x)}" data-y="${rr(y)}">` +
-      `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x)} ${rr(y - h)} L ${rr(x + w)} ${rr(y)} Z" fill="${PAL.skala}" stroke="${PAL.skalaCien}" stroke-width="1.8" stroke-linejoin="round"/>` +
-      `<path d="${hach}" stroke="${PAL.skalaCien}" stroke-width="1" fill="none" opacity="0.85"/>` +
-      `</g>`;
+/**
+ * Pojedynczy szczyt w duchu mapome — asymetryczny, ręcznie rysowany „żagiel":
+ * lewa krawędź wypukła na zewnątrz, prawa wklęsła (charakterystyczna
+ * „rybia płetwa" gór), cień po prawej w ciemniejszej facecie i krótka
+ * haczura. `lean` przesuwa wierzchołek (jitter w pasmie), dzięki czemu
+ * grzbiety składają się w naturalną, chwiejną linię zamiast równych
+ * trójkątów.
+ */
+export function szczyt(x, y, w, h, { snieg = false, lean = 0 } = {}) {
+  const Pk = [x + lean * w, y - h];                 // wierzchołek (przesunięty)
+  const L = [x - w, y];
+  const R = [x + w, y];
+  // lewa krawędź — wypukła na zewnątrz; prawa — wklęsła („żagiel")
+  const c1 = [x - w * 0.92, y - h * 0.58];
+  const cR = [x + w * 0.08, y - h * 0.5];
+  const cR2 = [x + w * 0.66, y - h * 0.52];
+  const kontur = `M ${rr(L[0])} ${rr(L[1])} C ${rr(c1[0])} ${rr(c1[1])}, ` +
+    `${rr(Pk[0] - w * 0.12)} ${rr(Pk[1])}, ${rr(Pk[0])} ${rr(Pk[1])} ` +
+    `C ${rr(cR[0])} ${rr(cR[1])}, ${rr(cR2[0])} ${rr(cR2[1])}, ${rr(R[0])} ${rr(R[1])} Z`;
+  // cień: prawa połowa (od szczytu opadająca do podstawy) — ciemniejsza faseta
+  const cienD = `M ${rr(Pk[0])} ${rr(Pk[1])} C ${rr(cR[0])} ${rr(cR[1])}, ` +
+    `${rr(cR2[0])} ${rr(cR2[1])}, ${rr(R[0])} ${rr(R[1])} L ${rr(Pk[0] + w * 0.06)} ${rr(y)} Z`;
+  // haczura na cienistej ścianie
+  let hach = '';
+  for (let i = 1; i <= 3; i++) {
+    const f = i / 4;
+    const ax = Pk[0] + (R[0] - Pk[0]) * f * 0.82;
+    const ay = Pk[1] + (y - Pk[1]) * f;
+    hach += `M ${rr(ax)} ${rr(ay)} L ${rr(ax - w * 0.07)} ${rr(ay - h * 0.06)} `;
   }
+  const sn = snieg
+    ? `<path d="M ${rr(Pk[0] - w * 0.24)} ${rr(Pk[1] + h * 0.18)} L ${rr(Pk[0])} ${rr(Pk[1])} ` +
+      `L ${rr(Pk[0] + w * 0.18)} ${rr(Pk[1] + h * 0.2)} L ${rr(Pk[0] + w * 0.07)} ${rr(Pk[1] + h * 0.3)} ` +
+      `L ${rr(Pk[0] - w * 0.06)} ${rr(Pk[1] + h * 0.32)} Z" fill="${PAL.snieg}"/>`
+    : '';
   return `<g class="mf-szczyt" data-x="${rr(x)}" data-y="${rr(y)}">` +
-    `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x)} ${rr(y - h)} L ${rr(x + w)} ${rr(y)} Z" fill="${PAL.skala}" stroke="${PAL.skalaCien}" stroke-width="1.8" stroke-linejoin="round"/>` +
-    `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x)} ${rr(y - h)} L ${rr(x - w * 0.18)} ${rr(y)} Z" fill="${PAL.skalaCien}" opacity="0.45"/>` +
-    (snieg ? `<path d="M ${rr(x - w * 0.3)} ${rr(y - h * 0.68)} L ${rr(x)} ${rr(y - h)} L ${rr(x + w * 0.3)} ${rr(y - h * 0.68)} L ${rr(x + w * 0.12)} ${rr(y - h * 0.6)} L ${rr(x)} ${rr(y - h * 0.72)} L ${rr(x - w * 0.12)} ${rr(y - h * 0.58)} Z" fill="${PAL.snieg}"/>` : '') +
+    `<path d="${kontur}" fill="${PAL.skala}" stroke="${PAL.tekst}" stroke-width="1.6" stroke-linejoin="round"/>` +
+    `<path d="${cienD}" fill="${PAL.skalaCien}" opacity="0.5"/>` +
+    `<path d="${hach}" stroke="${PAL.skalaCien}" stroke-width="1" fill="none" opacity="0.85"/>` +
+    sn +
     `</g>`;
 }
 
@@ -204,23 +264,28 @@ export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = f
     const [x, y] = punktNa(grzbiet, t);
     const waga = Math.sin(Math.PI * t); // wyżej w środku pasma
     const h = szer * (0.7 + waga * 0.55 + rng() * 0.25);
-    const w = szer * (0.42 + rng() * 0.18);
+    const w = szer * (0.5 + rng() * 0.22);
     const strona = i % 2 === 0 ? 1 : -1;
-    const dx = strona * szer * 0.22;
+    const dx = strona * szer * 0.18;   // ciaśniej → szczyty nachodzą na siebie
     // maska lądu: kandydat offsetowy, potem bez offsetu, w ostateczności brak
     const kandydat = [x + dx, y + Math.abs(dx) * 0.12];
     const pozycja = naLadzie(kandydat) ? kandydat : (naLadzie([x, y]) ? [x, y] : null);
-    if (pozycja) out += szczyt(pozycja[0], pozycja[1], w, h, { snieg: snieg && waga > 0.55 });
+    if (pozycja) out += szczyt(pozycja[0], pozycja[1], w, h, {
+      snieg: snieg && waga > 0.55,
+      lean: (rng() - 0.5) * 0.55,
+    });
   }
   if (przedgorze) {
     for (let i = 0; i < n; i++) {
       const t = (i + 0.5) / n;
       const [x, y] = punktNa(grzbiet, t);
       const strona = i % 2 === 0 ? -1 : 1;
-      const px = x + strona * szer * (0.55 + rng() * 0.2);
-      const py = y + szer * 0.2;
+      const px = x + strona * szer * (0.5 + rng() * 0.2);
+      const py = y + szer * 0.22;
       if (!naLadzie([px, py])) continue;          // przedgórze nie pływa
-      out += szczyt(px, py, szer * 0.22, szer * (0.28 + rng() * 0.12), {});
+      out += szczyt(px, py, szer * 0.24, szer * (0.3 + rng() * 0.14), {
+        lean: (rng() - 0.5) * 0.7,
+      });
     }
   }
   return out;
