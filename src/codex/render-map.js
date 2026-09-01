@@ -1,21 +1,39 @@
 /**
- * Silnik map v1 (ADR 0007/0009, ROADMAP K3): podkład mapy jako <img>
- * (data-URI z builda) + wektorowa warstwa regionów (SVG w układzie
- * podkładu) + pinezki i etykiety regionów w NAKŁADCE EKRANOWEJ —
- * warstwie poza transformem zoomu, pozycjonowanej w pikselach.
- * Dzięki temu markery mają stały rozmiar i ostre krawędzie w każdym
- * przybliżeniu (skalowana warstwa kompozytowa przeglądarki zamienia
- * się w rozciągniętą bitmapę — patrz LESSONS L5). Pan: pointer events
+ * Silnik map v1 (ADR 0007/0009, ROADMAP K3): podkład mapy + wektorowa
+ * warstwa regionów (SVG w układzie podkładu) + pinezki i etykiety
+ * regionów w NAKŁADCE EKRANOWEJ — warstwie poza transformem zoomu,
+ * pozycjonowanej w pikselach. Dzięki temu markery mają stały rozmiar
+ * i ostre krawędzie w każdym przybliżeniu. Pan: pointer events
  * (mysz + dotyk + szczypnięcie), zoom: kółko / przyciski; deep-link
  * `#/mapa/<plan>?pin=<slug-karty>`.
  *
- * Współrzędne pinezek/regionów są znormalizowane 0–1 (MA2) — silnik
- * mnoży je przez wymiary podkładu (viewBox SVG = wymiary).
+ * Podkład SVG jest osadzany INLINE (a nie jako <img> z data-URI):
+ * <img> z SVG przeglądarka rasteryzuje w rozmiarze layoutu, a CSS-owy
+ * transform zoomu skaluje wtedy ROZCIĄGNIĘTĄ BITMAPĘ → pikseloza.
+ * Inline <svg> pozostaje wektorem i przerysowuje się w każdym
+ * przybliżeniu (rozwiązuje pikselozę bez zwiększania rozmiaru pliku).
+ * Dla podkładów PNG/JPG zostaje <img> (raster — nie ma czego
+ * przerysowywać wektorowo). Współrzędne pinezek/regionów są
+ * znormalizowane 0–1 (MA2) — silnik mnoży je przez wymiary podkładu.
  */
 
 import { escapeHtml } from './markdown.js';
 import { dajDane } from './data.js';
 import { nieZnalesc, stanPusty } from './render.js';
+
+/** Dekoduje base64 data-URI SVG do surowego znacznika (inline). */
+function podkladSvgMarkup(dataUri) {
+  const m = /^data:image\/svg\+xml;base64,(.*)$/.exec(dataUri);
+  if (!m) return '';
+  try {
+    const bin = atob(m[1]);
+    const bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
+    const markup = new TextDecoder('utf-8').decode(bytes);
+    return markup.includes('<svg ') ? markup.replace('<svg ', '<svg class="mapa-podklad" ', 1) : '';
+  } catch (e) {
+    return '';
+  }
+}
 
 export const POZIOMY_PEWNOSCI = {
   dokladna: { etykieta: 'dokładna', kolor: '#2e7d32', opis: 'miejsce jednoznaczne w kanonie' },
@@ -101,7 +119,8 @@ export function renderMape(slugPlanu, query = {}) {
       <div class="mapa-ruch" data-mapa-ruch>
         <div class="mapa-scena" style="aspect-ratio: ${szer} / ${wys}">
           ${mapa.podkladData
-            ? `<img class="mapa-podklad" src="${mapa.podkladData}" alt="Podkład mapy: ${escapeHtml(mapa.tytul ?? slugPlanu)}" draggable="false">`
+            ? ((mapa.podklad && /\.svg$/i.test(String(mapa.podklad)) && podkladSvgMarkup(mapa.podkladData))
+                || `<img class="mapa-podklad" src="${mapa.podkladData}" alt="Podkład mapy: ${escapeHtml(mapa.tytul ?? slugPlanu)}" draggable="false">`)
             : `<div class="mapa-brak-podkladu">Brak osadzonego podkładu (build nie wstrzyknął pliku — sprawdź maps/${escapeHtml(slugPlanu)}/podklad.svg).</div>`}
           <svg class="mapa-regiony" viewBox="0 0 ${szer} ${wys}" preserveAspectRatio="none" aria-hidden="true">${svgRegiony}</svg>
         </div>
