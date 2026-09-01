@@ -451,6 +451,78 @@
       "typ": "szczyt",
       "pozycja_zrodlo": "mapa-fanowska",
       "notka": "samotny szczyt Sejiri, płn. od Akoum (opis)"
+    },
+    {
+      "nazwa": "Chill Depths",
+      "x": 0.58,
+      "y": 0.094,
+      "typ": "zatoka",
+      "pozycja_zrodlo": "mapa-fanowska-wariant-3-4",
+      "notka": "mroźna zatoka na płn.-wsch. wybrzeżu Sejiri"
+    },
+    {
+      "nazwa": "Explorers Peak",
+      "x": 0.725,
+      "y": 0.286,
+      "typ": "szczyt",
+      "pozycja_zrodlo": "mapa-fanowska-wariant-3-4",
+      "notka": "samotny szczyt na zachód od Teeth of Akoum"
+    },
+    {
+      "nazwa": "Fort Keff",
+      "x": 0.845,
+      "y": 0.236,
+      "typ": "osada",
+      "pozycja_zrodlo": "mapa-fanowska-wariant-3-4",
+      "notka": "twierdza u wschodnich podnóży Teeth of Akoum"
+    },
+    {
+      "nazwa": "Glass Haven",
+      "x": 0.875,
+      "y": 0.394,
+      "typ": "osada",
+      "pozycja_zrodlo": "mapa-fanowska-wariant-3-4",
+      "notka": "osada/przystań na zachód od Glasspool"
+    },
+    {
+      "nazwa": "Riverroot",
+      "x": 0.789,
+      "y": 0.627,
+      "typ": "region",
+      "pozycja_zrodlo": "mapa-fanowska-wariant-3-4",
+      "notka": "rejon leśny nad rzeką w centrum Bala Ged"
+    },
+    {
+      "nazwa": "Surrakar Caves",
+      "x": 0.623,
+      "y": 0.561,
+      "typ": "jaskinia",
+      "pozycja_zrodlo": "mapa-fanowska-wariant-3-4",
+      "notka": "jaskinie na płd.-zach. wybrzeżu Bala Ged"
+    },
+    {
+      "nazwa": "The Border Mire",
+      "x": 0.704,
+      "y": 0.659,
+      "typ": "region",
+      "pozycja_zrodlo": "mapa-fanowska-wariant-3-4",
+      "notka": "bagnisty przesmyk łączący Guul Draz z Bala Ged"
+    },
+    {
+      "nazwa": "Wolfbriar",
+      "x": 0.175,
+      "y": 0.811,
+      "typ": "region",
+      "pozycja_zrodlo": "mapa-fanowska-wariant-3-4",
+      "notka": "ostoja w środku puszczy Turntimber"
+    },
+    {
+      "nazwa": "Blackbloom Lake",
+      "x": 0.525,
+      "y": 0.877,
+      "typ": "jezioro",
+      "pozycja_zrodlo": "mapa-fanowska-wariant-3-4",
+      "notka": "jezioro wewnątrz centralnego lasu Kazandu (Murasa)"
     }
   ],
   "regiony": [],
