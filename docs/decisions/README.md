@@ -31,6 +31,7 @@ dziedziczona z projektu mtg-game.
 | [0013](0013-zendikar-mapa-bez-adnotacji-rekonstrukcyjnych.md) | Zendikar — mapa bez adnotacji rekonstrukcyjnych na podkładzie; proweniencja w map.json i treści strony planu | Zaakceptowana |
 | [0014](0014-karta-bez-sekcji-druk-w-kolekcji.md) | Karta Katalogowa bez sekcji „Druk w Kolekcji" — dane wydruku tylko w infoboksie; pogłębianie = lore, nie meta | Zaakceptowana |
 | [0015](0015-petla-jakosci-v2-lore-i-warsztat-mapowy.md) | Pętla Jakości v2 — krok 2: pogłębianie LORE; krok 4: kompletacja i jakość map (POI, weryfikacja, wspólny warsztat rysowania T4) | Zaakceptowana |
+| [0016](0016-format-wpisu-karty-kanon-katalogowy.md) | Format Wpisu Karty — kanon katalogowy: blok danych Oracle w treści, warstwy mechaniki, odczyt flavoru; bez sekcji „Ilustracja" i „Druk w Kolekcji" | Zaakceptowana |
 
 Spójnością rejestru (numeracja, statusy, tabela) pilnuje
 `test/rejestr-adr.test.js`.

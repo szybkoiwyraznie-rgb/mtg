@@ -189,11 +189,25 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(lista.includes('data-tagi='), 'lista kart: brak tagów w wierszach tabeli (feedback E)');
   assert.ok(!lista.includes('materializowana jawnie'), 'lista kart: bez meta-tekstu ADR 0003 (feedback F)');
 
+  // ADR 0016: format Wpisu Karty — blok danych Oracle w treści, warstwy mechaniki,
+  // polskie odczytanie nazwy; sekcje „Ilustracja"/„Druk w Kolekcji" nie istnieją
+  shim.idz('#/karta/1ltr-dunland-crebain');
+  const karta1 = shim.app.innerHTML;
+  assert.ok(karta1.includes('dwa many dowolnego koloru'), 'karta 1LTR: brak bloku danych Oracle (ADR 0016)');
+  assert.ok(karta1.includes('Odczyt zasadniczy') && karta1.includes('Całość jako opowieść'), 'karta 1LTR: brak warstw mechaniki (ADR 0016)');
+  assert.ok(karta1.includes('Crebainy z Dunlandu'), 'karta 1LTR: brak polskiego odczytania nazwy (ADR 0016)');
+  assert.ok(!karta1.includes('<h2>Ilustracja'), 'karta 1LTR: sekcja ilustracyjna zakazana (ADR 0016)');
+  assert.ok(!karta1.includes('<h2>Druk w Kolekcji'), 'karta 1LTR: sekcja druku zniesiona (ADR 0014)');
+
   // druga karta: chudy format dostawy (ADR 0011) — czysty kanon
   shim.idz('#/karta/2bfz-coralhelm-guide');
   const karta2 = shim.app.innerHTML;
   assert.ok(karta2.includes('Coralhelm Guide'), 'karta 2BFZ: brak tytułu');
   assert.ok(karta2.includes('Merfolk Scout Ally'), 'karta 2BFZ: brak typu ze snapshotu');
+  assert.ok(karta2.includes('jeden mana dowolnego koloru'), 'karta 2BFZ: brak bloku danych Oracle (ADR 0016)');
+  assert.ok(karta2.includes('Przewodniczka z Koralowego Hełmu'), 'karta 2BFZ: brak polskiego odczytania nazwy (ADR 0016)');
+  assert.ok(karta2.includes('Odczyt fraza po frazie'), 'karta 2BFZ: brak odczytu flavoru fraza po frazie (ADR 0016)');
+  assert.ok(!karta2.includes('<h2>Ilustracja'), 'karta 2BFZ: sekcja ilustracyjna zakazana (ADR 0016)');
   assert.ok(karta2.includes('Viktor Titov'), 'karta 2BFZ: brak artysty posiadanego wydruku');
   assert.ok(karta2.includes('Jori En'), 'karta 2BFZ: brak flavoru ze snapshotu');
   assert.ok(!karta2.includes('Druk w Kolekcji'), 'karta 2BFZ: sekcja „Druk w Kolekcji" zniesiona (ADR 0014)');

@@ -100,21 +100,28 @@ na własną stronę.
 
 | # | Sekcja | Kontrakt (skąd wiedza, co obowiązkowe) |
 |---|---|---|
-| 1 | **Metryka i Kontekst Świata** | Infobox buduje silnik z danych (frontmatter + snapshot). W treści: umiejscowienie sceny w settingu po transpozycji — gdzie i kiedy w osi czasu świata. Obowiązkowe. |
+| 1 | **Metryka i Kontekst Świata** | Otwiera ją **blok danych Oracle w treści** (ADR 0016): koszt many (ikony + rozwinięcie słowne), typ (EN + tłumaczenie PL), statystyki, zdolności (Oracle + tłumaczenie PL), wydanie (set, nr kolekcjonerski, rzadkość) — wpis jest samowystarczalny, infoboks pozostaje nawigacyjny. Dalej: akapit **kontekstu setu i osi czasu** — czym jest dodatek i gdzie w historii planu żyje scena. Obowiązkowe. |
 | 2 | **Postacie i Byty** | KANON: byty, które FAKTYCZNIE występują na karcie (co widać w jej scenie/typie), osadzone w lore świata — rasa, rola, siedlisko. Byty żyjące tylko w wyobraźni poza kartą (np. postacie z fanowskich scen) nie mają na stronie karty miejsca w ogóle; jeśli lore gatunku wskazuje kogoś poza kartą (np. nadawcę zwiadu), pojawia się to dopiero w rozwinięciu lore, jasno jako lore świata, nie jako zawartość karty. Obowiązkowe. |
-| 3 | **Nazwa Karty** | Etymologia i sens nazwy w świecie (np. „crebain" = sindarińskie „wrony/kruki"). Źródło: karta + setting + kwerenda. Obowiązkowe. |
-| 4 | **Mechanika jako Opowieść** | Koszt, kolor, statyki, keywords, zdolności — odczytane WYŁĄCZNIE ze snapshotu Scryfall — przetłumaczone na narrację (czarny = szpiegostwo i strach; Flying = zwiadowcy powietrzni; Amass = rosnąca armia). Obowiązkowe. |
-| 5 | **Flavor Text** | Oryginał (EN, przytoczony ze snapshotu) + tłumaczenie + interpretacja w kontekście. Jeśli posiadanego wydruk nie ma flavoru — sekcja istnieje i mówi to wprost (bez cytowania flavoru innych printów tej karty). Obowiązkowe. |
+| 3 | **Nazwa Karty** | Etymologia i sens nazwy w świecie (np. „crebain" = sindarińskie „wrony/kruki") oraz **pełne polskie odczytanie nazwy** („Crebainy z Dunlandu"). Źródło: karta + setting + kwerenda. Obowiązkowe. |
+| 4 | **Mechanika jako Opowieść** | Dane WYŁĄCZNIE ze snapshotu Scryfall. Trzy warstwy (ADR 0016): **odczyt zasadniczy** (co każda zdolność robi mechanicznie, po polsku, precyzyjnie) → **interpretacja fabularna** (czym to jest w świecie; podtypy czytane jako warstwy: Merfolk · Scout · Ally) → **całość jako opowieść** (jak koszt, statystyki, typy i zdolności składają się w jedną historię). Obowiązkowe. |
+| 5 | **Flavor Text** | Oryginał (EN, przytoczony ze snapshotu) + tłumaczenie + **odczyt fraza po frazie** (co każdy fragment mówi), kontekst postaci cytującej i związek cytatu z mechaniką. Jeśli posiadanego wydruku nie ma flavoru — sekcja istnieje i mówi to wprost (bez cytowania flavoru innych printów tej karty). Obowiązkowe. |
 | 6 | **Transpozycja** | Most: jak karta MtG (plan rodzinny/mechanika) przełożona została na setting docelowy. Dla kart „natywnych" krótko; dla transpozycji — sedno. Obowiązkowe. |
 | 7 | **Na Mapie** | Lokalizacja + poziom pewności (`dokladna`/`region`/`przyblizona`) + skąd wiemy (lore). Pinezka w `maps/<plan>/map.json`. Obowiązkowe od momentu istnienia mapy planu. |
 | 8 | **Źródła** | Lista cytowań z kwerendy: link + co z niego zaczerpnięto. Wiedza z pamięci treningowej bez URL-a — oznaczona „wiedza ogólna". Obowiązkowe. |
-| 9 | **Podsumowanie Lore** | Synteza 1–2 akapity, język encyklopedyczny. Obowiązkowe. |
+| 9 | **Podsumowanie Lore** | 2–4 tezy tematyczne (punkt + zdanie uzasadnienia) + akapit domykający syntezę; język encyklopedyczny (ADR 0016). Obowiązkowe. |
 
 Sekcji „Druk w Kolekcji" **nie ma** (ADR 0014, decyzja właściciela
 2026-09-01): dane wydruku (wydanie, rzadkość, artysta) pokazuje wyłącznie
 infoboks, wprost ze snapshotu — bez sekcji narracyjnej, bez kwerend
 o artystach i wariantach wydań. Pogłębianie strony karty to lore
 (ADR 0015), nie meta-informacje kolekcjonerskie.
+
+Sekcji „Ilustracja" **nie ma i nie powstaje** (decyzja właściciela
+2026-09-01, ADR 0016): obraz ze Scryfalla uczestniczy we Wpisie
+wyłącznie jako infoboks (tor główny, ADR 0008) — jego udział w treści
+kończy się na nim. Opisywanie druku źródłowego jest szkodliwe dla kart
+transponowanych: wizualizacje alternatywne (FOT/KON) bywają zupełnie
+inne i osadzone w innych planach.
 
 ## Procedura materializacji (kolejność kroków)
 
