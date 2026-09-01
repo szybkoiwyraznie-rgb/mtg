@@ -3,6 +3,66 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-01 — geografia mapy Zendikaru: audyt całości + przebudowa Tazeem, cieśnina Akoum/Bala Ged–Guul Draz, drogi-trakty, etykiety bez kresek
+
+Zlecenie właściciela (uzupełnienie PR-9): (a) „labelki niektórych POI są
+odsunięte od samych miejsc i rysowana jest linia łącząca — nie lepiej bliżej
+dać tą labelkę?"; (b) „drogi rozrzucone losowo, nie prowadzą nigdzie
+sensownie — powinny być traktami między największymi miastami/POI";
+(c) „geografia jest z dupy — wymaga POWAŻNEGO AUDYTU… solidnie, w jednym
+albo kilku podejściach" — doprecyzowane: **audyt CAŁEJ mapy**, nie tylko
+Tazeem. Prototyp do oceny wdrożenia wystawiony w sandboxie (port 4173).
+
+- **Audyt całości** (`docs/audits/AUDYT_2026-09-01-geografia-zendikaru.md`):
+  podsłuch geometryczny (scena.json + SVG→PNG) vs hierarchia kanon > mapa
+  fanowska v2 > warianty 3/4. Trzy problemy systemowe: (1) ludy rysowane
+  w sprzeczności z treścią — najgorzej Tazeem (Halimar = step bez wody,
+  brak Coralhelm, Sea Gate na płd.-wsch. wybrzeżu zamiast na murze);
+  (2) topologia — jeden ląd łączył trzy kontynenty (Akoum+Bala Ged+Guul
+  Draz); (3) POI „dekoracyjne" (Bojuka na zachodzie, Malakir na zachodzie,
+  Valakut w Akoum zamiast na Beyeen…).
+- **Tazeem przebudowany (P0)** — mapa zgodna z treścią planu i kartą
+  *Coralhelm Guide*: **Halimar = morze śródlądowe** (nowy tryb `jezioro.d`
+  w mapforge — nieregularna tafla), **Sea Gate (900,660) na murze** nad
+  kanałem-tamą wyprowadzającym morze w ocean, **Coralhelm (660,505) na
+  północnym brzegu** (+ pinezka karty przeniesiona), rzeka Umara do Halimar
+  (Magosi Wodospad), druga rzeka = wypływ z płn. brzegu, Oran-Rief = pas
+  lasu zachód od morza, Enclave w lesie, Ula Temple na brzegu, The Bulwark
+  (pasmo zachód→południe), Emeria + hedron nad taflą (opacity = dryf),
+  Sky Rock NW.
+- **Cieśnina Akoum / Bala Ged–Guul Draz (P0):** `lad-2` rozdzielony na
+  `lad-akoum` + `lad-bala-guul` — cieśnina od gulfu do otwartego oceanu.
+  Guul Draz ↔ Bala Ged zostają połączone (w2/w3), odgraniczone The Border
+  Mire. Bojuka = najdalszy wschód: „Bojuka Bay" przeniesiona na wsch.
+  wybrzeże przy Bojuka Bog.
+- **POI (P1):** Goma Fada → zachodni cypl, Affa → centrum kotliny, Malakir
+  → wschodnia stolica / Nimana → zachód od Lake Jast (były zamienione
+  stronami), Lulea → płd.-wsch., Surrakar → dżungla, Zof Marsh → NW,
+  Kabira → wyspa Agadeem, Prison of Omath → centrum kotliny Ondu, Makindi
+  Trenches → centrum; nowe: **wysepka Valakut z wulkanem** (Beyeen —
+  „Mt. Valakut" usunięta z Akoum), Oko Ugina = pasmo (nie dryfujący
+  hedron), Teeth of Akoum (etykieta przy klastrze wulkanów), Tangled
+  Vales, Hanging Swamp + Hagra Swamp + Hagra Cistern (nowe jezioro),
+  Ula Temple, Enclave, Coralhelm, Kazuul Pass.
+- **Drogi = trakty (pkt b):** 5 losowych przerywanych linii → trasy
+  między największymi miastami: Hadatown→Sea Gate (Tazeem),
+  Goma Fada→Affa→Tal Terig (Akoum), Cliffhaven→Graypelt→Mosscrack (Ondu),
+  Singing City→Sunder Bay (Murasa), Malakir→Nimana (Guul Draz).
+- **Etykiety przy obiektach, bez kresek (pkt a):** silnik `render.mjs` nie
+  rysuje już linii łączących (`zakotwicz`); 16 etykiet z liniami
+  przysuniętych do obiektów w scenie.
+- **Spójność:** `map.json` — 26 kotwic zsynchronizowanych z nowymi
+  pozycjami, 9 nowych (Coralhelm, Ula Temple, Merfolk Enclave, The
+  Bulwark, Teeth of Akoum, Tangled Vales, Hagra Cistern, Hanging Swamp,
+  Prison of Omath), pinezka *Coralhelm Guide* → Coralhelm, duplikat
+  kotwicy Living Spire usunięty; `map-audit.py` — „Hagra Cistern" do
+  SPODZEANE_WODY.
+- **Reszta (P2) → ROADMAP, kolejka E-geo-1..9** (m.in. archipelag
+  Jwar/Beyeen/Agadeem między Ondu a Akoum wg w2, Tazeem na płd.-zachód,
+  detale Murasy/Akoum/Guul Draz/Ondu, Omath vs Omnath).
+- Weryfikacja: testy 87/87; `map-audit.py` 0; build OK; kontrola wizualna
+  PNG (3 korekty pozycji etykiet po przeglądzie).
+
 ## 2026-09-01 — PR-9: mapforge — adopcja glifów gór z mapome + rzeki w kolorze morza (ADR 0020)
 
 - **Góry wyglądają jak na mapie Śródziemia** (decyzja właściciela:

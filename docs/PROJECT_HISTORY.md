@@ -4,6 +4,54 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-01 — sesja (uzupełnienie PR-9): audyt + przebudowa geografii CAŁEJ mapy Zendikaru
+
+**Zlecenie właściciela (czat, po raporcie PR-9):** „Wystaw mi prototyp
+Codexu w sandboxie do oceny wdrożenia" + trzy korekty mapy: (a) etykiety
+POI odsunięte od miejsc z liniami łączącymi → „nie lepiej po prostu bliżej
+dać tą labelkę?"; (b) drogi losowe → „powinny być liniami traktów między
+największymi miastami/POI na danym kontynencie"; (c) „ta geografia jest
+moim zdaniem w ogóle z dupy… wymaga POWAŻNEGO AUDYTU… solidnie, w jednym
+albo kilku podejściach" — doprecyzowane: **CAŁA mapa** (lądy, miasta,
+układ), nie tylko Tazeem. Pętla Jakości nadal wyłączona w tej sesji.
+
+**Przebieg:**
+1. **Prototyp wystawiony** (Vite `vite preview`, port 4173, host 0.0.0.0 —
+   podgląd w sandboxie) — do oceny wdrożenia przez właściciela.
+2. **PLAN** (`docs/plans/PLAN_2026-09-01-audyt-geografii-i-drogi.md`):
+   metodologia (podsłuch geometryczny + porównanie tabelaryczne vs
+   hierarchia kanon > v2 > w3/4), zakres, kryteria, plan pracy.
+3. **AUDYT** (`docs/audits/AUDYT_2026-09-01-geografia-zendikaru.md`):
+   werdykty per kontynent (T1–T11, L1–L6, A1–A8, B1–B8, O1–O5, M1–M3,
+   drogi §8, etykiety §9) + kolejka E-geo-1..9 (§11). Kluczowe: Tazeem
+   w sprzeczności z treścią (P0), jeden ląd łączył 3 kontynenty (P0),
+   POI dekoracyjne (P0/P1), Murasa/Sejiri OK.
+4. **Implementacja P0/P1** (scena.json + podklad.svg + map.json):
+   - Tazeem: Halimar = morze śródlądowe (nowy tryb `jezioro.d`), Sea Gate
+     na murze + kanał-tama, Coralhelm, Oran-Rief pas, Enclave, Ula Temple,
+     The Bulwark, Emeria nad taflą, rzeki; tytuł przeniesiony.
+   - Topologia: `lad-2` → `lad-akoum` + `lad-bala-guul` z cieśniną
+     (topologię zweryfikowano testem punkt-w-polygon na ASCII siatce —
+     pierwotny odczyt „zatoki" był błędny; łącznik = półwysep
+     x~1600-1720, y~610-760); Bojuka = najdalszy wschód.
+   - POI: przeniesienia wg w2 + nowe (Valakut na wysepce, Oko Ugina =
+     pasmo, Teeth, Tangled Vales, Hanging Swamp, Hagra Cistern, Kazuul
+     Pass); duplikat ruiny Surrakar usunięty.
+   - Drogi: 5 trakty między miastami; etykiety: silnik bez kresek
+     (`zakotwicz` usunięty z render.mjs), 16 etykiet przysuniętych.
+   - map.json: kotwice zsynchronizowane (26), 9 nowych, pinezka karty
+     Coralhelm Guide przeniesiona, duplikat Living Spire usunięty.
+5. **Weryfikacja:** testy 87/87 (1 test wymagał zachowania frazy
+   „wybrzeży Halimar" w uzasadnieniu pinezki — MA4), map-audit 0
+   (+„Hagra Cistern" do SPODZEANE_WODY), build OK, kontrola wizualna
+   PNG (sharp, /home/user/tmp — poza repo) z korektami: Morze Zendikaru
+   na wodę (etykietnik zabłądził na ląd), Umung przy rzece, Ula Temple
+   od brzegu.
+
+**Zostawione na kolejną sesję:** E-geo-1..9 (ROADMAP) — archipelag
+między Ondu a Akoum, Tazeem SW (decyzja z właścicielem), detale,
+Omath/Omnath.
+
 ## 2026-09-01 — sesja PR-9: adopcja glifów mapowych (mapome) + rzeki w kolorze morza (ADR 0020)
 
 **Zlecenie właściciela (zadanie, nie Pętla Jakości — jawnie wyłączona):**
