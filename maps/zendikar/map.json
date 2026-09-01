@@ -877,5 +877,14 @@
     "notka": "Dodatkowe źródła fanowskie dostarczone przez właściciela 2026-09-01 jako WARIANTY 3 i 4 układu geograficznego. Zasada użycia: kanon (Plane Shift / MTG Wiki) > wariant 2 (zrodlo-fanowska.md) > warianty 3/4. Stosować WYŁĄCZNIE, gdy ani pozycja kanoniczna, ani mapa fanowska (wariant 2) nie pozwalają poprawnie narysować danego POI — jako ostatnia deska ratunku dla miejsc NIEUSTALONYCH w kanonie. Oba warianty mają INNY układ współrzędnych i geometrię kontynentów niż podklad.svg — nie skalować 1:1, używać tylko do ustalenia względnego położenia POI. NIE zmieniają pozycji twardo kanonicznych ani układu kontynentów. Pełny opis: maps/zendikar/zrodlo-fanowska-warianty-3-4.md"
   },
   "scena": "scena.json",
-  "silnik": "mapforge (ADR 0018/0019); podklad-reczny.svg = archiwum ery ręcznej (T3)"
+  "zrodlo_glify": {
+    "obiekty": "góry (sylwetki szczytów i pasm)",
+    "projekt": "k1tesurfen/mapome — Map of Middle-Earth",
+    "url": "https://github.com/k1tesurfen/mapome",
+    "licencja": "CC-BY-4.0",
+    "plik_w_repo": "maps/srodziemie/podklad.svg (grupa mountains_and_forests)",
+    "biblioteka": "tools/mapforge/glify-mapaome.mjs (30 glifów, ekstrakcja 2026-09-01)",
+    "notka": "Góry podkładu rysują glify adoptowane z mapome (ADR 0020) — ręcznie rysowane sylwetki klastrów 1–3 szczytów w języku mapy Śródziemia (benchmark ADR 0015). Atrybucja CC-BY-4.0 obowiązuje dla tego podkładu; atrybucja źródła mapome w nagłówku podklad.svg. Rzeka rysowana w kolorze akwenu (bez gradientu i opacity) — decyzja właściciela 2026-09-01 (ADR 0020)."
+  },
+  "silnik": "mapforge (ADR 0018/0019/0020); podklad-reczny.svg = archiwum ery ręcznej (T3)"
 }

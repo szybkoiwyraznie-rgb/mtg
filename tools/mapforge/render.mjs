@@ -212,10 +212,9 @@ export function renderuj(scena, { styl } = {}) {
   };
 
   if (scena.rzeki?.length) {
-    // Rzeki NIE są już przycinane do lądu — ujście wpływa w morze i zlewa
-    // się z nim gradientem (pełna nieprzezroczystość, kolor wody). Dzięki
-    // temu nie ma twardego ucięcia na linii brzegowej; rzeka „rozpływa się".
-    warstwy.push(`<!-- === RZEKI (ujścia z gradientem w wodę) === -->`);
+    // Rzeki nie są przycinane do lądu — ujście wpływa w akwen i zlewa się
+    // z nim, bo ma jego kolor (bez gradientu i bez opacity, ADR 0020).
+    warstwy.push(`<!-- === RZEKI (kolor akwenu; ujścia zlewają się z wodą) === -->`);
     for (const r of scena.rzeki) {
       warstwy.push(rzeka(r.id, r.punkty, { ujscie: ujscie(r), ...(r.opcje ?? {}) }));
       for (const d of r.doplywy ?? []) {
@@ -286,6 +285,7 @@ export function renderuj(scena, { styl } = {}) {
 
   return `<?xml version="1.0" encoding="utf-8"?>\n` +
     `<!-- Wygenerowano tools/mapforge (ADR 0018); scena: ${scena.nazwa ?? '(bez nazwy)'}; styl: ${styl ?? scena.styl ?? 'pergamin'} -->\n` +
+    `<!-- Glify gór adoptowane: k1tesurfen/mapome, CC-BY-4.0 (github.com/k1tesurfen/mapome) — ADR 0020 -->\n` +
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${szer} ${wys}" font-family="Georgia, 'Times New Roman', serif">\n` +
     warstwy.join('\n') + '\n</svg>\n';
 }

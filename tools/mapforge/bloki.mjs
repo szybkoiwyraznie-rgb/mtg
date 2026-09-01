@@ -11,12 +11,14 @@ import {
   prng, zaokr, chaikin, gladka, prosta, rozrzut, pole, dlugosc,
   punktNa, wstega, pit,
 } from './geom.mjs';
+import { GLIFY_GORY, GLIFY_GORY_HERO } from './glify-mapaome.mjs';
 
-/** Paleta bazowa = motyw „pergamin" (ADR 0008). */
+/** Paleta bazowa = motyw „pergamin" (ADR 0008).
+ *  UWAGA: kolor rzeki nie istnieje w palecie — rzeka ma kolor akwenu
+ *  (ADR 0020, decyzja właściciela 2026-09-01). */
 export const PAL = {
   lad: '#e8dbb8', ladStroke: '#a89468',
   woda: '#ccd8d2', wodaGleb: '#b9cdd8', wodaStroke: '#7fa0b4',
-  rzeka: '#5b8ba6',
   tekst: '#4a3a28', ital: '#6b5d52', halo: '#f4ecd8', etykieta: '#6b1f2e',
   drzewo: '#7a8a5a', drzewoCien: '#5c6b44', pienn: '#6b5d52',
   bagno: '#6f8a72', step: '#b5a877',
@@ -44,7 +46,6 @@ const MOTYWY = {
     // Woda w delikatnym niebieskim (decyzja właściciela 2026-09-01 — odstępstwo
     // od czystego achromatu z ADR 0019: kolor tylko dla wody i etykiet).
     woda: '#e2ecf4', wodaGleb: '#cbdced', wodaStroke: '#6f9bc0',
-    rzeka: '#6f9cc6',
     tekst: '#1c1c1c', ital: '#3f3f3f', halo: '#f7f7f7', etykieta: '#6b1f2e',
     drzewo: '#dedede', drzewoCien: '#c3c3c3', pienn: '#3f3f3f',
     bagno: '#5f5f5f', step: '#9b9b9b',
@@ -218,93 +219,100 @@ function punktWPoligonie(poly, rng) {
   return null;
 }
 
-/* ---------- pasmo górskie (grzbiet + szczyty z faseta cienia) ---------- */
+/* ---------- pasmo górskie (glify adoptowane z mapome, ADR 0020) ---------- */
+
+const POGLIFY = new Map(GLIFY_GORY.map((g) => [g.id, g]));
 
 /**
- * Pojedynczy szczyt w duchu mapome — CZARNO-BIAŁY, predefiniowany „półprodukt":
- * szeroki, ostry, nieregularny trójkąt (zęby z drobnymi podarciami) z czarnym
- * wypełnieniem i pionowymi zarysowaniami cienia. Bez pustego „żagla" — ma się
- * czytać jako zbity, rysowany kreską szczyt. `lean` przechyla wierzchołek.
+ * Pojedynczy szczyt — GLIF ADOPTOWANY z mapome (ADR 0020): ręcznie rysowana
+ * sylwetka klastra 1–3 szczytów (język rysunku wzorcowego, mapa Śródziemia —
+ * benchmark ADR 0015). Jednolita skala po wysokości `h`, środek dolnej
+ * krawędzi bboxa glifa w punkcie (x, y); `flip = -1` odbija lustro. `w` to
+ * okna szerokościowa dla snowcapu i audytu (faktyczna szerokość wynika z
+ * proporcji glifa). Klasa `mf-szczyt` i kotwice data-x/y bez zmian (map-audit).
  */
-export function szczyt(x, y, w, h, { snieg = false, lean = 0 } = {}) {
-  const pkX = 0.5 + lean;                         // wierzchołek odchylony przez lean
-  const c = PAL.tekst;                            // czerń (atlas) / tusz (pergamin)
-  const cien = PAL.skalaCien;
-  let d = `M ${rr(x)} ${rr(y)} `;
-  d += `L ${rr(x + w * (0.12 + Math.abs(lean) * 0.1))} ${rr(y - h * 0.3)} `;
-  d += `L ${rr(x + w * pkX * 0.7)} ${rr(y - h * 0.68)} `;
-  d += `L ${rr(x + w * pkX)} ${rr(y - h)} `;
-  d += `L ${rr(x + w * (pkX + (1 - pkX) * 0.42))} ${rr(y - h * 0.72)} `;
-  d += `L ${rr(x + w * 0.85)} ${rr(y - h * 0.28)} `;
-  d += `L ${rr(x + w)} ${rr(y)} Z`;
-  // pionowe zarysowania cienia (prawe zbocze) — biała kreska na czarnym
-  let hat = '';
-  const nH = 5;
-  for (let i = 0; i < nH; i++) {
-    const f = (i + 0.6) / nH;
-    const ax = x + w * (pkX + (1 - pkX) * f);
-    const ay = y - h * (1 - f);
-    hat += `M ${rr(ax)} ${rr(ay)} L ${rr(ax)} ${rr(y)} `;
-  }
+export function szczyt(x, y, w, h, { snieg = false, flip = 1, glifId = null } = {}) {
+  const rng = prng(`szczyt:${rr(x)}:${rr(y)}:${rr(h)}:${glifId ?? 'los'}`);
+  const kandydaci = glifId ? [POGLIFY.get(glifId)] : GLIFY_GORY.filter((g) => !GLIFY_GORY_HERO.includes(g.id));
+  const glif = glifId ? kandydaci[0] : kandydaci[Math.floor(rng() * kandydaci.length)];
+  if (!glif) throw new Error(`nieznany glif góry: ${glifId}`);
+  const s = h / glif.h;
+  const body = `<g transform="translate(${rr(x)} ${rr(y)}) scale(${rr(s * flip)} ${rr(s)}) ` +
+    `translate(${-glif.cx} ${-glif.cy})"><path d="${glif.d}" fill="${PAL.tekst}"/></g>`;
+  // śnieg — biały ząb na grzbiecie (nad sylwetką glifa)
   const sn = snieg
-    ? `<path d="M ${rr(x + w * (pkX - 0.18))} ${rr(y - h * 0.86)} L ${rr(x + w * pkX)} ${rr(y - h)} ` +
-      `L ${rr(x + w * (pkX + 0.14))} ${rr(y - h * 0.84)} L ${rr(x + w * (pkX + 0.05))} ${rr(y - h * 0.74)} ` +
-      `L ${rr(x + w * (pkX - 0.06))} ${rr(y - h * 0.76)} Z" fill="${PAL.snieg}"/>`
+    ? `<path d="M ${rr(x - w * 0.18)} ${rr(y - h * 0.78)} L ${rr(x - w * 0.05)} ${rr(y - h * 0.88)} ` +
+      `L ${rr(x)} ${rr(y - h)} L ${rr(x + w * 0.09)} ${rr(y - h * 0.85)} ` +
+      `L ${rr(x + w * 0.17)} ${rr(y - h * 0.76)} L ${rr(x + w * 0.04)} ${rr(y - h * 0.8)} Z" fill="${PAL.snieg}"/>`
     : '';
-  return `<g class="mf-szczyt" data-x="${rr(x)}" data-y="${rr(y)}">` +
-    `<path d="${d}" fill="${c}" stroke="${c}" stroke-width="0.5" stroke-linejoin="round"/>` +
-    `<path d="${hat}" stroke="${PAL.halo}" stroke-width="0.6" fill="none" opacity="0.35"/>` +
-    sn +
-    `</g>`;
+  return `<g class="mf-szczyt" data-x="${rr(x)}" data-y="${rr(y)}">${body}${sn}</g>`;
 }
 
 /**
- * Pasmo — CZARNO-BIAŁA, ZĘBATA GRAŃ w stylu mapome: JEDEN gęsty, nakładający
- * się ciąg zębów (naprzemiennie wysokie/niskie szczyty) wzdłuż wygładzonej
- * linii grzbietu, z minimalistycznym pogórzem tylko przy dolnym brzegu.
- * Wcześniej były 2 rozdzielne rzędy „płotka" — teraz gęsta, nierówna masa.
+ * Pasmo — GĘSTE KLASTRY glifów adoptowanych wzdłuż wygładzonego grzbietu
+ * (ADR 0020). Techniki z researchu: rozmiar ważony sinusem długości grzbietu
+ * (wyżej w środku), odbicia lustrzane, jitter, hero-glify (wieloklastrowe)
+ * rzadko i tylko w środku pasma; kolejność rysowania wg DOLNEJ KRAWĘDZI
+ * (technika Azgaar) — bliższe szczyty na wierzchu. Małe, niskie pogórze pod
+ * granią. Deterministyczne (rng z hasha id, ADR 0018 pkt 3).
  */
-export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = false, przedgorze = true, maski = null, liniaGrzbietu = false } = {}) {
+export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = false, przedgorze = true, maski = null } = {}) {
   const naLadzie = (p) => !maski || !maski.length || maski.some((m) => pit(p, m));
   const rng = prng(`pasmo:${id}`);
   const grzbiet = chaikin(punkty, 3, false);
   const dl = dlugosc(grzbiet);
-  let out = liniaGrzbietu ? `<path d="${gladka(grzbiet)}" stroke="${PAL.skalaCien}" stroke-width="2" fill="none" opacity="0.3"/>` : '';
 
-  // JEDEN gęsty, nakładający się rząd: szerokie zęby (w ≈ szer) blisko siebie
-  // (rozstaw ≈ szer*0.7), naprzemienna wysokość → naturalna "zębata" grań.
-  const n = gestoscSzczytow ?? Math.max(9, Math.round(dl / (szer * 0.7)));
+  // Mega-klastery (hero) nie są wybierane losowo do pasm — tylko jawnie
+  // (szczyt(..., { glifId: 'g-016' }) w scenie dla wyjątkowego masywu).
+  const NORMALNE = GLIFY_GORY.filter((g) => !GLIFY_GORY_HERO.includes(g.id));
+  const losowyGlif = () => NORMALNE[Math.floor(rng() * NORMALNE.length)].id;
+  const instancje = [];
+
+  // Główny rząd: klastery nakładają się NIEZNACZNIE (rozstaw ≈ szer*0.8) —
+  // tak jak na mapie mapome: każdy szczyt pozostaje czytelny, a masa gór
+  // powstaje przez stopniowe gęstnienie i skalowanie, NIE przez mega-klaster
+  // (hero-glify nie wchodzą tu automatycznie — są dostępne przez `glifId`
+  // w `szczyt` do pojedynczych, zdefiniowanych w scenie masywów).
+  const n = gestoscSzczytow ?? Math.max(8, Math.round(dl / (szer * 0.8)));
   for (let i = 0; i < n; i++) {
     const t = n === 1 ? 0.5 : i / (n - 1);
     const [x, y] = punktNa(grzbiet, t);
     const waga = Math.sin(Math.PI * t);          // wyżej w środku pasma
-    const wysoki = i % 2 === 0;
-    const w = szer * (1.0 + rng() * 0.2);        // szeroka podstawa → zęby nachodzą
-    const h = szer * (wysoki ? (0.95 + waga * 0.5 + rng() * 0.15) : (0.55 + waga * 0.3 + rng() * 0.1));
-    const dx = (rng() - 0.5) * szer * 0.15;
-    const kandydat = [x + dx, y];
-    const pozycja = naLadzie(kandydat) ? kandydat : (naLadzie([x, y]) ? [x, y] : null);
-    if (pozycja) out += szczyt(pozycja[0], pozycja[1], w, h, {
-      snieg: snieg && wysoki && waga > 0.55,
-      lean: (rng() - 0.5) * 0.5,
+    const h = szer * (0.65 + waga * 0.45 + rng() * 0.2);
+    const dx = (rng() - 0.5) * szer * 0.45;
+    const dy = (rng() - 0.5) * szer * 0.22;
+    const pozycja = naLadzie([x + dx, y + dy]) ? [x + dx, y + dy]
+      : (naLadzie([x, y]) ? [x, y] : null);
+    if (!pozycja) continue;
+    instancje.push({
+      x: pozycja[0], y: pozycja[1], h,
+      w: szer * (0.9 + rng() * 0.3),
+      flip: rng() < 0.5 ? -1 : 1,
+      snieg: snieg && waga > 0.55 && rng() < 0.5,
+      glifId: losowyGlif(),
     });
   }
 
-  // Minimalistyczne pogórze przy dolnym brzegu (małe, niskie, nieliczne)
+  // Pogórze — małe, niskie, pod dolnym brzegiem grzbietu
   if (przedgorze) {
     const n2 = Math.max(4, Math.round(dl / (szer * 0.95)));
     for (let i = 0; i < n2; i++) {
       const t = (i + 0.5) / n2;
       const [x, y] = punktNa(grzbiet, t);
-      const px = x + (rng() - 0.5) * szer * 0.6;
-      const py = y + szer * 0.26;
+      const px = x + (rng() - 0.5) * szer * 0.7;
+      const py = y + szer * 0.3;
       if (!naLadzie([px, py])) continue;          // pogórze nie pływa
-      out += szczyt(px, py, szer * 0.5, szer * 0.36, {
-        lean: (rng() - 0.5) * 0.6,
+      instancje.push({
+        x: px, y: py, h: szer * (0.35 + rng() * 0.2), w: szer * 0.6,
+        flip: rng() < 0.5 ? -1 : 1, snieg: false, glifId: losowyGlif(),
       });
     }
   }
-  return out;
+
+  // Sort po dolnej krawędzi (technika Azgaar): dalej → wcześniej na mapie
+  instancje.sort((a, b) => a.y - b.y);
+  return instancje.map((s) =>
+    szczyt(s.x, s.y, s.w, s.h, { snieg: s.snieg, flip: s.flip, glifId: s.glifId })).join('\n');
 }
 
 /* ---------- wulkan (stożek z kraterem i lazem dymu) ---------- */
@@ -325,39 +333,21 @@ export function wulkan(x, y, { skala = 1, dym = true } = {}) {
     `</g>`;
 }
 
-/* ---------- rzeka (wstęga o rosnącej szerokości) ---------- */
+/* ---------- rzeka (wstęga o rosnącej szerokości; kolor akwenu — ADR 0020) ---------- */
 
 /**
- * Rzeka jako wstęga stożkowa (źródło wąskie, ujście szerokie) z opcjonalnym
- * ujściem wtapiającym się w wodę. Gdy `ujscie` jest podane, kolor wstęgi
- * przechodzi gradientem od `PAL.rzeka` (przy źródle) do koloru wody
- * (`PAL.woda` dla morza / `PAL.wodaGleb` dla jeziora) przy ujściu, przy
- * PEŁNEJ nieprzezroczystości — dzięki temu rzeka nie odcina się twardo na
- * brzegu, lecz „rozpływa się" w akwenie (feedback właściciela 2026-09-01:
- * zlewanie się, a nie ucięcie przy linii brzegowej).
+ * Rzeka jako wstęga stożkowa (źródło wąskie, ujście szerokie) w KOLORZE
+ * AKWENU (ADR 0020, decyzja właściciela 2026-09-01): ujście w morze →
+ * `PAL.woda`, ujście w jezioro → `PAL.wodaGleb`, rzeka kończąca się na lądzie
+ * → kolor morza. Brak gradientu i brak opacity — wpływając do morza rzeka
+ * ma z nim identyczny kolor, więc „rozmywa się" w nim (zlewa się, nie tnie).
  */
 export function rzeka(id, punkty, { s0 = 3, s1 = 9, zrodlo = true, ujscie = null } = {}) {
   const { d } = wstega(punkty, s0, s1);
+  const kolor = ujscie?.typ === 'jezioro' ? PAL.wodaGleb : PAL.woda;
   const pocz = punkty[0];
-  const konc = punkty[punkty.length - 1];
-  let fill = PAL.rzeka;
-  let defs = '';
-  if (ujscie) {
-    const doKolor = ujscie.typ === 'jezioro' ? PAL.wodaGleb : PAL.woda;
-    // Gradient w układzie współrzędnych mapy: od źródła do ujścia, więc
-    // kolor zanika równo z kierunkiem płynięcia (nie z kierunkiem bboxu).
-    const a = 0.62;   // początek zanikania (62% długości biegu)
-    defs = `<linearGradient id="mf-rzeka-${id}" gradientUnits="userSpaceOnUse" ` +
-      `x1="${rr(pocz[0])}" y1="${rr(pocz[1])}" x2="${rr(konc[0])}" y2="${rr(konc[1])}">` +
-      `<stop offset="0" stop-color="${PAL.rzeka}"/>` +
-      `<stop offset="${a}" stop-color="${PAL.rzeka}"/>` +
-      `<stop offset="1" stop-color="${doKolor}"/>` +
-      `</linearGradient>`;
-    fill = `url(#mf-rzeka-${id})`;
-  }
-  return (defs ? `<defs>${defs}</defs>` : '') +
-    (zrodlo ? `<circle cx="${rr(pocz[0])}" cy="${rr(pocz[1])}" r="${rr(s0 * 0.7)}" fill="${PAL.rzeka}"/>` : '') +
-    `<path d="${d}" fill="${fill}"/>`;
+  return (zrodlo ? `<circle cx="${rr(pocz[0])}" cy="${rr(pocz[1])}" r="${rr(s0 * 0.7)}" fill="${kolor}"/>` : '') +
+    `<path d="${d}" fill="${kolor}"/>`;
 }
 
 /** Dopływ — cieńsza wstęga wpadająca do rzeki głównej. */
