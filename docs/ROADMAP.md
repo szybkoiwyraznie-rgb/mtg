@@ -95,6 +95,13 @@ właściciela (see Wątki otwarte).
   (96,7% artefaktu) do OSOBNYCH plików SVG ładowanych na żądanie przy
   otwarciu planu (artefakt ~0,16 MB). Wymaga rewizji ADR 0001
   (jednoplikowy) i ADR 0009 (mapy w base64) + rozdzielenia renderowania
-  mapy (render-map.js) na ładowanie asynchroniczne. Reużywalność klocków
-  mapforge NIE rozwiązuje rozmiaru (unikalna geometria per mapa), więc to
-  jedyna droga. Pomiar i analiza: 2026-09-01.
+  mapy (render-map.js) na ładowanie asynchroniczne (mapy jako `<img src>`,
+  nie `fetch` — żeby działały po otwarciu lokalnie z `file://`).
+  Reużywalność klocków mapforge NIE rozwiązuje rozmiaru (unikalna
+  geometria per mapa), więc to jedyna droga. Pomiar i analiza: 2026-09-01.
+- **Pobieranie offline (ZIP) — gotowe (2026-09-01):** build wypuszcza
+  `dist/mtg-lore-codex.zip` (`tools/zip.mjs`, STORE bez zależności);
+  aplikacja ma link **„Pobierz archiwum (ZIP)"**. ZIP pakuje artefakt +
+  `index.html` (a po wydzieleniu map także cały `maps/**`), więc po
+  rozpakowaniu otwiera się lokalnie — zastępuje „zapisz jako" dla
+  jednopliku i zostaje funkcją także przy osobnych mapach.
