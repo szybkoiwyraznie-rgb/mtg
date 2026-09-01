@@ -3,6 +3,24 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-01 — mapforge: wspólny silnik mapowy (warsztat T4)
+
+- **Nowe narzędzie `tools/mapforge/`** (ADR 0018): deterministyczny
+  generator podkładów SVG z danych — reużywalne klocki: lasy (rozsiew
+  koron), bagna, step, lodowce, pasma górskie (szczyty z cieniem
+  i przedgórzem), wulkany, rzeki zwężające się do źródła (wstęgi),
+  dopływy, jeziora, szlaki kropkowane i drogi, miasta/ruiny/hedrony,
+  etykiety pod dowolnym kątem i po łuku (zatoki), kompas, skala,
+  ramka, poświata wybrzeży. Zero zależności; identyczna regeneracja
+  (deterministyczne „losowości" z hasha id).
+- **Demo-katalog klocków:** `maps/_warsztat/podklad.svg` (Wyspa
+  Próbna) — przechodzi audyt mapowy bez zastrzeżeń.
+- Research (ADR 0018): Azgaar FMG (MIT) to generator losowy — my
+  renderujemy kanon; techniki line-artu mapome (kropka 0,9; dyscyplina
+  grubości) wcielone w klockach.
+- 11 nowych testów silnika (81/81 w pakiecie); plan adopcji:
+  `docs/plans/PLAN_2026-09-01-mapforge.md`.
+
 ## 2026-09-01 — Pełna Pętla Jakości (LORE + mapy + metryka)
 
 - **Pogłębienie LORE obu planów:** Śródziemie zyskało akapit o Tharbad

@@ -114,6 +114,8 @@ class Mapa:
         for el in self.root.iter(NS + 'text'):
             if id(el) in self.transformowane:
                 continue
+            if el.get('x') is None:                   # etykieta po łuku (textPath)
+                continue
             txt = ''.join(el.itertext()).strip()
             if txt:
                 out.append((txt, float(el.get('x')), float(el.get('y')),

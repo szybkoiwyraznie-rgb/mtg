@@ -331,3 +331,26 @@ są pomijane w testach na-lądzie z adnotacją.
 7. **Rejestruj wszystko, co narysowane**: etykieta/marker bez wpisu
    w `kotwice`/`elementy` (i odwrotnie) to dług techniczny mapy
    ( Living Spire był rysowany, niezarejestrowany — domknięte).
+
+---
+
+## 11. mapforge — rysuj klockami, nie krzywymi (ADR 0018)
+
+Od 2026-09-01 projekt ma własny, deterministyczny silnik mapowy:
+`tools/mapforge/` (zero zależności; katalog klocków i schemat sceny —
+`tools/mapforge/README.md`; demo: `maps/_warsztat/podklad.svg`).
+
+Reguły użycia:
+
+1. **Nowy element mapy planu = klocek ze sceny**, nie ręczny `<path>`
+   (las → `las`, grzbiet → `pasmo`, rzeka → `rzeka` z `s0/s1`, szlak →
+   `droga` typ `szlak` — kropki jak w line-art mapome, zatoka →
+   `lukEtykieta`).
+2. **Determinizm przez `id`**: zmiana jednego obiektu nie przetasowuje
+   pozostałych; regeneracja daje identyczny SVG.
+3. **Po każdym renderze**: `python3 tools/map-audit.py <plan>` — 0
+   problemów obowiązkowe (oprawa jest zwolniona przez grupę
+   z transformem).
+4. **Migracja istniejących podkładów tylko wg
+   `docs/plans/PLAN_2026-09-01-mapforge.md`** (E1–E3), nigdy „przy
+   okazji" innego zadania.
