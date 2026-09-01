@@ -287,6 +287,35 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
    Stały rozmiar i ostre krawędzie w każdym przybliżeniu; klikalne,
    a sama nakładka nie blokuje panowania po mapie. */
 .mapa-nakladka { position: absolute; inset: 0; pointer-events: none; z-index: 6; }
+
+/* ── Etykiety podkładu: stały rozmiar ekranowy (nie skalują się z zoomem),
+      większa czcionka niż w SVG, halo dla czytelności, LOD od progu zoomu ── */
+.mapa-etykieta-podkladu {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 13.5px;
+  line-height: 1.25;
+  white-space: nowrap;
+  color: #4a4438;
+  text-shadow:
+    -1px -1px 0 var(--mapa-halo, rgba(255,255,255,.92)),
+     1px -1px 0 var(--mapa-halo, rgba(255,255,255,.92)),
+    -1px  1px 0 var(--mapa-halo, rgba(255,255,255,.92)),
+     1px  1px 0 var(--mapa-halo, rgba(255,255,255,.92)),
+     0 0 4px var(--mapa-halo, rgba(255,255,255,.92));
+  pointer-events: none;
+}
+.mapa-etykieta-podkladu.kursywa { font-style: italic; color: #55524a; }
+.mapa-etykieta-podkladu.tier-glowna { font-size: 15.5px; color: #33302a; }
+.mapa-etykieta-podkladu.tier-kontynent {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  color: #26231d;
+  text-transform: uppercase;
+}
+.mapa-etykieta-podkladu.poza-zasiegiem { display: none; }
 .mapa-nakladka a { pointer-events: auto; }
 
 /* Pinezka: element-kotwica 0×0 w punkcie docelowym (transform ustawia

@@ -3,6 +3,20 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-01 — Etykiety mapy o stałym rozmiarze ekranowym (LOD)
+
+- Na stronie mapy planu (podkłady własne T3/T4 — Zendikar; adoptowanych
+  T2 nie ruszamy) napisy podkładu zostały przeniesione do nakładki
+  ekranowej, jak pinezki: **większa czcionka (13,5–24 px zamiast
+  ~6 px efektywnych), halo dla czytelności i stały rozmiar przy
+  zoomowaniu** — przybliżanie powiększa mapę, nie napisy. Drobne
+  etykiety mają **LOD**: pojawiają się dopiero od przybliżenia, w którym
+  stałyby się czytelne (próg liczony z oryginalnego rozmiaru).
+- Oryginalne `<text>` w SVG dostają `visibility:hidden` (bez JS
+  nakładka pozycjonuje się procentowo — graceful degradation);
+  etykiety po łuku (textPath) zostają w podkładzie.
+  Testy UI: 83/83.
+
 ## 2026-09-01 — mapforge: wspólny silnik mapowy (warsztat T4)
 
 - **Nowe narzędzie `tools/mapforge/`** (ADR 0018): deterministyczny

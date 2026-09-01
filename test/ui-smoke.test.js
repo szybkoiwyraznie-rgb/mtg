@@ -151,6 +151,30 @@ test('UI: mapa planu z realnej bazy — podkład, pinezka, legenda', async () =>
   shim.przywroc();
 });
 
+test('UI: mapa T3 — etykiety podkładu w nakładce ekranowej (stały rozmiar, LOD)', async () => {
+  const cel = await zbuduj({ out: 'dist/test-ui-mapa-etykiety.html' });
+  const shim = wykonajArtefakt(cel);
+
+  shim.idz('#/mapa/zendikar');
+  const mapa = shim.app.innerHTML;
+  const n = (mapa.match(/data-podklad-etykieta/g) ?? []).length;
+  assert.ok(n > 60, `etykiety podkładu w nakładce: tylko ${n} (oczekiwano >60)`);
+  assert.ok(mapa.includes('data-podklad-orj="1"'), 'oryginały <text> nie są ukryte');
+  assert.ok(mapa.includes('tier-kontynent'), 'brak tieru kontynentów (większa czcionka)');
+  assert.ok((mapa.match(/tier-kontynent/g) ?? []).length >= 7, 'mniej niż 7 tytułów kontynentów');
+  assert.ok(mapa.includes('tier-szczegol'), 'brak tieru drobnych etykiet');
+  assert.ok(/data-min-k="1\.[0-9]+"/.test(mapa), 'drobne etykiety bez progu LOD (data-min-k)');
+  assert.ok(mapa.includes('data-fs='), 'etykiety bez zapamiętanego rozmiaru źródłowego (data-fs)');
+
+  // T2 (adoptowany, mapome) — typografia podkładu zostaje bez zmian
+  shim.idz('#/mapa/srodziemie');
+  const mapa2 = shim.app.innerHTML;
+  assert.ok(!mapa2.includes('data-podklad-etykieta'), 'podkład adoptowany (T2) nie może mieć przeniesionych etykiet');
+
+  fs.rmSync(cel, { force: true });
+  shim.przywroc();
+});
+
 test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () => {
   const cel = await zbuduj({ out: 'dist/test-ui-karta.html' });
   const shim = wykonajArtefakt(cel);

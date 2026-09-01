@@ -15,6 +15,13 @@
  * Dla podkładów PNG/JPG zostaje <img> (raster — nie ma czego
  * przerysowywać wektorowo). Współrzędne pinezek/regionów są
  * znormalizowane 0–1 (MA2) — silnik mnoży je przez wymiary podkładu.
+ *
+ * ETYKIETY PODKŁADU o stałym rozmiarze ekranowym (feedback właściciela):
+ * <text> z atrybutami x/y jest duplikowany do nakładki ekranowej
+ * (większa czcionka, halo, NIE skaluje się z zoomem), oryginał w SVG
+ * dostaje visibility:hidden. Etykiety bez x/y (textPath, pozycjonowane
+ * transformem — np. line-art mapome) zostają w SVG. Drobne napisy mają
+ * LOD: data-min-k — widoczne dopiero od danego przybliżenia.
  */
 
 import { escapeHtml } from './markdown.js';
@@ -33,6 +40,35 @@ function podkladSvgMarkup(dataUri) {
   } catch (e) {
     return '';
   }
+}
+
+/**
+ * Wyciąga z markupu podkładu SVG etykiety <text x="…" y="…">Treść</text>
+ * (zwykłe, pozycjonowane atrybutami — nie textPath/transformem).
+ * Zwraca { etykiety, markup } — markup z visibility:hidden na źródłach,
+ * żeby nie było podwójnych napisów (etykieta żyje w nakładce).
+ */
+function przeniesEtykietyDoNakladki(markup) {
+  const vb = /viewBox="0 0 ([\d.]+) ([\d.]+)"/.exec(markup);
+  const etykiety = [];
+  if (!vb) return { etykiety, markup };
+  const [w, h] = [parseFloat(vb[1]), parseFloat(vb[2])];
+  const out = markup.replace(/<text([^>]*)>([^<]*)<\/text>/g, (caly, atryb, tresc) => {
+    const mx = /\sx="(-?[\d.]+)"/.exec(atryb);
+    const my = /\sy="(-?[\d.]+)"/.exec(atryb);
+    if (!mx || !my || !tresc.trim()) return caly; // textPath/transform → zostaje w SVG
+    const fs = parseFloat((/font-size="([\d.]+)"/.exec(atryb) || [0, 15])[1]);
+    etykiety.push({
+      x: parseFloat(mx[1]) / w,
+      y: parseFloat(my[1]) / h,
+      fs,
+      kursywa: /font-style="italic"/.test(atryb) || /italic/.test(atryb),
+      kontynent: /tytul-kontynentu/.test(atryb),
+      tresc: tresc.trim(),
+    });
+    return `<text data-podklad-orj="1" style="visibility:hidden"${atryb}>${tresc}</text>`;
+  });
+  return { etykiety, markup: out };
 }
 
 export const POZIOMY_PEWNOSCI = {
@@ -82,6 +118,29 @@ export function renderMape(slugPlanu, query = {}) {
     </a>`;
   }).join('');
 
+  // Etykiety podkładu → nakładka ekranowa (stały rozmiar przy zoomie).
+  // Tylko T3+ (podkłady własne: ręczne/mapforge) — podkładów adoptowanych
+  // (T2, np. mapome) typografii nie ruszamy.
+  let etykietyPodkladu = [];
+  let podkladMarkup = '';
+  if (mapa.podkladData && mapa.podklad && mapa.wariant !== 'T1' && mapa.wariant !== 'T2' && /\.svg$/i.test(String(mapa.podklad))) {
+    const surowy = podkladSvgMarkup(mapa.podkladData);
+    if (surowy) {
+      const r = przeniesEtykietyDoNakladki(surowy);
+      etykietyPodkladu = r.etykiety;
+      podkladMarkup = r.markup;
+    }
+  }
+  const htmlEtykietyPodkladu = etykietyPodkladu.map((e) => {
+    // LOD: drobne napisy pokazują się od przybliżenia, w którym ich
+    // oryginalny rozmiar „urósłby" do czytelnych ~16 px ekranu
+    const prog = e.kontynent ? 0 : e.fs >= 17 ? 1 : Math.min(1.6, Math.max(1, 16 / e.fs));
+    const tier = e.kontynent ? 'tier-kontynent' : e.fs >= 17 ? 'tier-glowna' : 'tier-szczegol';
+    return `<span class="mapa-etykieta-podkladu ${tier}${e.kursywa ? ' kursywa' : ''}" data-podklad-etykieta
+      data-x="${e.x.toFixed(4)}" data-y="${e.y.toFixed(4)}" data-fs="${e.fs}" data-min-k="${prog.toFixed(2)}"
+      style="left:${(e.x * 100).toFixed(2)}%;top:${(e.y * 100).toFixed(2)}%">${e.tresc}</span>`;
+  }).join('');
+
   const htmlRegionyEtykiety = regiony.map((r) => {
     const [x0, y0, x1, y1] = r.bbox ?? [];
     if ([x0, y0, x1, y1].some((v) => typeof v !== 'number')) return '';
@@ -119,13 +178,13 @@ export function renderMape(slugPlanu, query = {}) {
       <div class="mapa-ruch" data-mapa-ruch>
         <div class="mapa-scena" style="aspect-ratio: ${szer} / ${wys}">
           ${mapa.podkladData
-            ? ((mapa.podklad && /\.svg$/i.test(String(mapa.podklad)) && podkladSvgMarkup(mapa.podkladData))
+            ? (podkladMarkup
                 || `<img class="mapa-podklad" src="${mapa.podkladData}" alt="Podkład mapy: ${escapeHtml(mapa.tytul ?? slugPlanu)}" draggable="false">`)
             : `<div class="mapa-brak-podkladu">Brak osadzonego podkładu (build nie wstrzyknął pliku — sprawdź maps/${escapeHtml(slugPlanu)}/podklad.svg).</div>`}
           <svg class="mapa-regiony" viewBox="0 0 ${szer} ${wys}" preserveAspectRatio="none" aria-hidden="true">${svgRegiony}</svg>
         </div>
       </div>
-      <div class="mapa-nakladka" data-mapa-nakladka>${htmlPinezki}${htmlRegionyEtykiety}</div>
+      <div class="mapa-nakladka" data-mapa-nakladka>${htmlEtykietyPodkladu}${htmlPinezki}${htmlRegionyEtykiety}</div>
     </div>
 
     ${pinezki.length > 0 ? `
@@ -230,6 +289,13 @@ export function zamontujMape(app, opcje = {}) {
     });
   }
 
+  // Etykiety podkładu mają bazę left/top % (działają bez JS w widoku
+  // domyślnym); po montażu przechodzą na pozycjonowanie transformem.
+  for (const el of nakladka?.querySelectorAll('[data-podklad-etykieta]') ?? []) {
+    el.style.left = '0%';
+    el.style.top = '0%';
+  }
+
   const stan = { k: 1, ox: 0, oy: 0 };
   const K_MIN = 0.4, K_MAX = 14;
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
@@ -248,11 +314,16 @@ export function zamontujMape(app, opcje = {}) {
     if (!nakladka) return;
     const w = szerokoscSceny();
     const h = wysokoscSceny();
-    for (const el of nakladka.querySelectorAll('[data-pinezka], [data-region-etykieta]')) {
+    for (const el of nakladka.querySelectorAll('[data-pinezka], [data-region-etykieta], [data-podklad-etykieta]')) {
       const x = parseFloat(el.dataset.x);
       const y = parseFloat(el.dataset.y);
       if (!Number.isFinite(x) || !Number.isFinite(y)) continue;
       el.style.transform = `translate(${(x * w * stan.k + stan.ox).toFixed(2)}px, ${(y * h * stan.k + stan.oy).toFixed(2)}px)`;
+      if (el.hasAttribute('data-podklad-etykieta')) {
+        // LOD (level of detail): drobna etykieta widoczna dopiero od swojego progu
+        const prog = parseFloat(el.dataset.minK || '1');
+        el.classList.toggle('poza-zasiegiem', stan.k + 1e-9 < prog);
+      }
     }
   };
 
