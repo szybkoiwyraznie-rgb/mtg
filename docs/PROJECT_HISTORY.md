@@ -4,6 +4,33 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-01 — sesja PR-4 c.d. 2: ADR 0016 (format Wpisu Karty) + podgląd sandboxowy
+
+**Zlecenia właściciela:** (A) uruchomienie Pages bez merge'a / podgląd;
+(B) audyt formatu Wpisu Karty wobec szablonu katalogowego właściciela
+(dwa przykłady: 1LTR, 2BFZ); doprecyzowanie: żadnej sekcji opisu
+ilustracji źródłowej (transpozycje FOT/KON inne) — obraz Scryfalla
+tylko w infoboksie; pytanie o kodowanie FOT/KON.
+
+**Wykonanie:**
+- **A:** bot nie może odpalić workflowu (brak `actions: write`);
+  właścicielowi wystarczy „Re-run all jobs" na failed runie w UI Actions
+  (workflow na main poprawny, site już włączony). Podgląd sandboxowy:
+  serwer `dist/` na porcie 8000 (live preview). Merge PR #7 i tak
+  odpali publikację automatycznie.
+- **FOT/KON:** potwierdzone zakodowane (ADR 0008): tory
+  Druk/FOT/KON + sonda `./img/<imgId>FOT|KON.png` z cichym fallbackiem;
+  działają też w warstwie karty z pinezki (B2).
+- **ADR 0016:** przyjęto z katalogu właściciela — blok danych Oracle
+  w treści (wpis samowystarczalny), kontekst setu/osi czasu, polskie
+  odczytanie nazwy, mechanika w 3 warstwach z podtypami jako warstwami,
+  flavor fraza po frazie + kontekst cytującego, podsumowanie tezami;
+  odrzucono — sekcja „Ilustracja" (zakaz), „Druk w Kolekcji" (ADR 0014),
+  numeracja liczbowa. Retrofit 1LTR + 2BFZ + fixture; asercje dymne
+  pilnują bloku danych, warstw mechaniki i zakazu sekcji ilustracyjnej.
+- Incydent: drugi reset workspace w sesji (ENVIRONMENT §2) — odtworzono
+  `reset --soft FETCH_HEAD` (drzewo przetrwało, historia na zdalnej).
+
 ## 2026-09-01 — sesja PR-4 c.d.: doprecyzowanie Pętli Jakości (ADR 0014/0015) + usunięcie „Druku w Kolekcji"
 
 **Zlecenie właściciela:** pogłębianie to **lore**, nie meta-informacje

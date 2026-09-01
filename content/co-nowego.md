@@ -25,6 +25,18 @@ ADR 0006). Najnowsze na górze.
   właściciela): strona karty to wyłącznie lore — dane wydruku (wydanie,
   rzadkość, artysta) pokazuje tylko infoboks, wprost ze snapshotu
   Scryfalla.
+- **Nowy format Wpisu Karty (ADR 0016)** — po audycie szablonu
+  katalogowego właściciela: każda Karta Katalogowa otwiera się teraz
+  **blokiem danych Oracle w treści** (koszt z rozwinięciem, typ
+  z tłumaczeniem, statystyki, zdolności, wydanie z numerem), mechanika
+  czytana jest w trzech warstwach (odczyt zasadniczy → interpretacja
+  fabularna → całość jako opowieść, podtypy jako warstwy), flavor
+  odczytywany fraza po frazie z kontekstem postaci cytującej, nazwa
+  z pełnym polskim odczytaniem („Crebainy z Dunlandu",
+  „Przewodniczka z Koralowego Hełmu"), podsumowanie tezami. Obie
+  istniejące karty przebudowane do nowego formatu. Sekcja opisu
+  ilustracji **zakazana** (transpozycje FOT/KON bywają zupełnie inne);
+  obraz Scryfalla żyje wyłącznie w infoboksie.
 - **Pogłębienie lore:** strona planu Zendikar z nową sekcją **Ludy**
   (rasy planu, rody wampirów Guul Draz, korowie-pielgrzymi, Zulaport)
   wg *Planeswalker's Guide to Zendikar*; w źródłach karty 2BFZ zniknął
