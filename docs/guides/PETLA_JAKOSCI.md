@@ -25,6 +25,24 @@ słownikiem, brak snapshotu, pinezka bez karty.
 
 Jeśli wszystko zielone — dopiero wtedy przechodzimy do treści.
 
+**Audyt poprzedniego PR (AGENTS.md §5) to nie jest raport „zielone".**
+To **dokładna weryfikacja poprawności i logiki** wszystkich zmian w
+poprzednim PR — i treści, i kodu:
+
+- **Treść:** zgodność z hierarchią kanonu (ADR 0010/0011), cytowania w
+  sekcjach Źródła (każdy fakt ma URL), brak dublowania wiedzy (wikilinki
+  zamiast kopii), kompletność sekcji szkieletu, zakaz sekcji
+  „Ilustracja"/„Druk w Kolekcji" (ADR 0014/0016), poprawność danych
+  (slugi, tagi wg słownika, snapshoty Scryfalla, pinezki z uzasadnieniem).
+- **Kod:** czy zmiana robi to, co deklaruje, czy nie łamie kontraktów
+  (sekcje/klasy/formaty), czy nie wprowadza regresji (pixelacja, kolizje
+  etykiet, cykl importów, determinizm), czy jest spójna z ADR-ami
+  (zero zależności ADR 0002; mapforge = klocek, nie ręczny `<path>`).
+  Test zielony ≠ poprawność — czytamy diff jako recenzję kodu.
+
+Wnioski i ewentualne znalezienia zapisujemy w `docs/audits/AUDYT_*.md`
+i w opisie PR; są one kolejką napraw dla bieżącej sesji.
+
 ## Krok 2 — pogłębianie (naj słabsze strony; LORE, nie meta)
 
 Pogłębianie to **uzupełnianie lore** — treści o świecie, które karta
@@ -85,6 +103,15 @@ najtańszej:
    `elementy`/`kotwice` w `map.json` (proweniencja). Zasada: pozycja
    ze źródeł, nigdy z kursora (MA4); źródło fanowskie tylko dla
    pozycji nieustalonych w kanonie — z adnotacją w `map.json`.
+
+   **Uwaga — zakres ubogacania (decyzja właściciela 2026-09-01):** nowe
+   POI i wzbogacanie podkładu dotyczą wyłącznie map **T3/T4** — czyli
+   podkładów **własnych** (rysowanych od zera, dzisiaj tylko **Zendikar**).
+   Map **T2 (podkład adoptowany**, np. Śródziemie/mapome) **nie ruszamy**:
+   ich line-artu i warstw przyrodniczo-osadniczych nie modyfikujemy pod
+   kątem zmiany geometrii/stylu — to wektor gotowy, benchmark, nie pole
+   do „ubogacania". (Wyjątkiem może być jedynie rejestracja kotwic/pinezki
+   z `map.json`, jeśli wymaga jej karta — bez zmiany samego podkładu.)
 3. **Weryfikacja dokładności istniejących wpisów:** przegląd elementów
    względem źródeł (nazwa, pozycja, status kanoniczny); korekty
    z odnotowanym źródłem; skryptowe testy kolizji i „na lądzie"
