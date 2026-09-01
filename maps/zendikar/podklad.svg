@@ -306,22 +306,23 @@
     fill="#e8dbb8" stroke="#a89468" stroke-width="3.5" />
   <path d="M 925,1175 q 40 -8 85 0 M 950,1265 q 40 8 80 0" stroke="#a89468" stroke-width="2" fill="none" opacity="0.35"/>
 
-  <!-- Skyfang / Shatterskull Mountains (pasmo) -->
-  <use href="#gora" transform="translate(945,1190) scale(0.95)"/>
-  <use href="#gora" transform="translate(1005,1170) scale(1.05)"/>
-  <use href="#gora" transform="translate(1065,1190) scale(0.9)"/>
-  <!-- Na Plateau -->
-  <use href="#gora" transform="translate(895,1200) scale(0.85)"/>
-  <!-- jaddi-trees (kepa) -->
-  <use href="#drzewo" transform="translate(1030,1210) scale(0.9)"/>
-  <use href="#drzewo" transform="translate(1046,1200) scale(0.8)"/>
-  <!-- rzeka Raimunza -->
-  <path d="M 1046,1205 C 1036,1235 1038,1260 1044,1258" stroke="#5b8ba6" stroke-width="4" fill="none" opacity="0.85"/>
+  <!-- Skyfang: od zachodniego muru w głąb wnętrza, dzieli zachodnią połowę (Guide: Murasa) -->
+  <use href="#gora" transform="translate(880,1196) scale(0.95)"/>
+  <use href="#gora" transform="translate(906,1220) scale(1.05)"/>
+  <use href="#gora" transform="translate(930,1242) scale(0.9)"/>
+  <!-- Na Plateau: wschód od środka Murasy (Guide: Murasa) -->
+  <use href="#gora" transform="translate(1015,1200) scale(1.0)"/>
+  <!-- Singing City: ruinowany labirynt w sercu Na Plateau (Guide: Murasa) -->
+  <use href="#ruina" transform="translate(1035,1213) scale(0.7)"/>
+  <!-- jaddi-trees (kepa lasu Kazandu) -->
+  <use href="#drzewo" transform="translate(975,1258) scale(0.85)"/>
+  <use href="#drzewo" transform="translate(990,1248) scale(0.75)"/>
+  <!-- rzeka Raimunza (wzdłuż wschodniego muru) -->
+  <path d="M 1078,1218 C 1074,1240 1076,1258 1080,1258" stroke="#5b8ba6" stroke-width="4" fill="none" opacity="0.85"/>
   <!-- Sunder Bay (wejście) -->
   <path d="M 868,1300 C 884,1315 902,1322 916,1315" stroke="#a89468" stroke-width="3" fill="none"/>
   <!-- Murasa Skyclave / ruiny -->
-  <use href="#ruina" transform="translate(1022,1132) scale(0.8)"/>
-  <use href="#miasto" transform="translate(906,1230) scale(0.8)"/>
+  <use href="#ruina" transform="translate(1084,1124) scale(0.8)"/>
 
   <!-- ============================================================ -->
   <!-- WZBOGACENIE szczegółowe (źródła uzupełniające — patrz map.json) -->
@@ -366,18 +367,11 @@
     <text x="1418" y="1322" font-size="15" font-style="italic" fill="#6b5d52">Lake Jast</text>
     <use href="#miasto" transform="translate(1400,1337) scale(0.85)"/>
     <text x="1400" y="1340" font-size="15" font-style="italic" fill="#6b5d52">Lulea</text>
-    <use href="#gora" transform="translate(926,1238) scale(0.85)"/>
-    <text x="946" y="1300" font-size="15" font-style="italic" fill="#6b5d52">Kazandu</text>
-    <use href="#gora" transform="translate(915,1225) scale(0.85)"/>
-    <use href="#gora" transform="translate(903,1229) scale(0.72)"/>
-    <path d="M 945,1276 C 953,1262 965,1274 973,1260" stroke="#5b8ba6" stroke-width="4" fill="none" opacity="0.85"/>
-    <text x="906" y="1252" font-size="14" font-style="italic" fill="#6b5d52">Singing City</text>
-    <use href="#gora" transform="translate(900,1272) scale(0.85)"/>
-    <use href="#gora" transform="translate(915,1250) scale(0.85)"/>
-    <path d="M 1046,1245 L 1046,1259 l 5,1 l 2,-12" stroke="#5b8ba6" stroke-width="3" fill="#b9cdd8"/>
-    <use href="#gora" transform="translate(1015,1252) scale(0.85)"/>
-    <text x="1015" y="1276" font-size="15" font-style="italic" fill="#6b5d52">Living Spire</text>
-    <use href="#ruina" transform="translate(960,1245) scale(0.8)"/>
+    <text x="955" y="1312" font-size="15" font-style="italic" fill="#6b5d52">Kazandu</text>
+    <text x="1015" y="1173" font-size="14" font-style="italic" fill="#6b5d52">Na Plateau</text>
+    <text x="1040" y="1240" font-size="14" font-style="italic" fill="#6b5d52">Singing City</text>
+    <use href="#gora" transform="translate(1060,1262) scale(0.85)"/>
+    <text x="1068" y="1286" font-size="15" font-style="italic" fill="#6b5d52">Living Spire</text>
     <use href="#gora" transform="translate(1078,176) scale(0.85)"/>
     <text x="1078" y="202" font-size="15" font-style="italic" fill="#6b5d52">Benthidrix</text>
     <use href="#ruina" transform="translate(560,1160) scale(0.8)"/>
@@ -417,8 +411,8 @@
     <use href="#drzewo" transform="translate(350,1136) scale(0.95)"/>
     <text x="350" y="1162" font-size="15" font-style="italic" fill="#6b5d52">Wolfbriar</text>
     <!-- Murasa: Blackbloom Lake (wewnętrzne jezioro lasu Kazandu) -->
-    <ellipse cx="1050" cy="1228" rx="14" ry="9" fill="#b9cdd8" stroke="#7fa0b4" stroke-width="2"/>
-    <text x="1050" y="1260" font-size="13" font-style="italic" fill="#6b5d52">Blackbloom Lake</text>
+    <ellipse cx="955" cy="1262" rx="14" ry="9" fill="#b9cdd8" stroke="#7fa0b4" stroke-width="2"/>
+    <text x="948" y="1290" font-size="13" font-style="italic" fill="#6b5d52">Blackbloom Lake</text>
   </g>
   <!-- ============================================================ -->
   <!-- ETYKIETY                                                     -->
@@ -466,9 +460,9 @@
     <text x="172" y="1342" font-size="22">Agadeem</text>
     <text x="105" y="1238" font-size="22">Beyeen</text>
     
-    <text class="tytul-kontynentu" x="1000" y="1215" font-size="42" letter-spacing="3">Murasa</text>
+    <text class="tytul-kontynentu" x="985" y="1130" font-size="42" letter-spacing="3">Murasa</text>
     
-    <text x="1012" y="1162" font-size="16" fill="#6b5d52">Skyfang</text>
+    <text x="895" y="1170" font-size="16" fill="#6b5d52">Skyfang</text>
     <text x="882" y="1340" font-size="13" fill="#6b5d52">Sunder Bay</text>
   </g>
 

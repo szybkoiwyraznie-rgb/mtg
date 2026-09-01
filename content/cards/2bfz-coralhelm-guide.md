@@ -119,9 +119,9 @@ na Tazeem wynika wprost z kanonu świata i nazwy karty.
 ## Na Mapie
 
 Karta jest osadzona w regionie **Tazeem** — niebieskim kontynencie
-merfolków, nad śródlądowym morzem Halimar, w sercu krainy Coralhelm.
-Osadzenie ma poziom pewności regionu: wybrzeża i wody Halimar,
-nie konkretny punkt.
+merfolków, nad śródlądowym morzem Halimar, w sercu krainy Coralhelm
+(szerszą geografię opisuje plan [[zendikar|Zendikar]]). Osadzenie ma
+poziom pewności regionu: wybrzeża i wody Halimar, nie konkretny punkt.
 
 ## Źródła
 

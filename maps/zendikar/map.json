@@ -238,11 +238,11 @@
     },
     {
       "nazwa": "Skyfang",
-      "x": 0.505,
-      "y": 0.829,
-      "typ": "etykieta-podkladu",
-      "notka": "góry Skyfang/Shatterskull Murasa (MTG Wiki)",
-      "pozycja_zrodlo": "mapa-fanowska"
+      "x": 0.453,
+      "y": 0.8714,
+      "typ": "pasmo-górskie",
+      "notka": "pasmo od zachodniego muru Murasy w głąb wnętrza, dzieli zachodnią połowę kontynentu (Guide: Murasa)",
+      "pozycja_zrodlo": "planeswalkers-guide"
     },
     {
       "nazwa": "Sunder Bay",
@@ -254,11 +254,11 @@
     },
     {
       "nazwa": "Kazandu",
-      "x": 0.469,
-      "y": 0.934,
+      "x": 0.4775,
+      "y": 0.9371,
       "typ": "region",
       "pozycja_zrodlo": "mapa-fanowska",
-      "notka": "sub-region płd. Murasy (opis mapy fanowskiej)"
+      "notka": "kanionowy kraj jaddi na płd.-zach. Murasy; Kazandu Splinter (elfy) (Guide: Murasa)"
     },
     {
       "nazwa": "Pillar Plains",
@@ -278,19 +278,19 @@
     },
     {
       "nazwa": "Singing City",
-      "x": 0.453,
-      "y": 0.8943,
-      "typ": "osada",
-      "pozycja_zrodlo": "mapa-fanowska",
-      "notka": "stanowisko sprzed Eldrazi na Murasie (Plane Shift: Zendikar)"
+      "x": 0.52,
+      "y": 0.8857,
+      "typ": "ruina",
+      "pozycja_zrodlo": "planeswalkers-guide",
+      "notka": "cyklopowy labirynt ruin w sercu Na Plateau; „śpiew\" z podziemi wyprawia szaleństwo poszukiwaczom (Guide: Murasa)"
     },
     {
       "nazwa": "Visimal",
       "x": 0.447,
-      "y": 0.917,
+      "y": 0.9171,
       "typ": "osada",
       "pozycja_zrodlo": "mapa-fanowska",
-      "notka": "płn. od Singing City (opis)"
+      "notka": "zachodnie wybrzeże Murasy, płn. od wejścia Sunder Bay (mapa fanowska; pozycja orientacyjna)"
     },
     {
       "nazwa": "Kazul Pass",
@@ -545,6 +545,46 @@
       "typ": "osada",
       "notka": "wspólnota portowa na wybrzeżu Beyeen (Plane Shift: Zendikar, Ondu)",
       "pozycja_zrodlo": "plane-shift"
+    },
+    {
+      "nazwa": "Na Plateau",
+      "x": 0.5075,
+      "y": 0.8571,
+      "typ": "płaskowyż",
+      "pozycja_zrodlo": "planeswalkers-guide",
+      "notka": "lesisty płaskowyż na wschód od środka Murasy, siedlisko wurmów i plemion goblinów (Guide: Murasa)"
+    },
+    {
+      "nazwa": "Thunder Gap",
+      "x": 0.5025,
+      "y": 0.7986,
+      "typ": "przejście",
+      "pozycja_zrodlo": "opis-przewodnika",
+      "notka": "przejście przez mur Murasy w rejonie Pillar Plains (Guide); pozycja orientacyjna"
+    },
+    {
+      "nazwa": "Glint Pass",
+      "x": 0.548,
+      "y": 0.875,
+      "typ": "przejście",
+      "pozycja_zrodlo": "opis-przewodnika",
+      "notka": "jedna z czterech dróg do wnętrza Murasy (Guide); pozycja orientacyjna"
+    },
+    {
+      "nazwa": "Cliffs of Kazuul",
+      "x": 0.5,
+      "y": 0.9471,
+      "typ": "przejście",
+      "pozycja_zrodlo": "opis-przewodnika",
+      "notka": "klify — droga do wnętrza Murasy od południa (Guide); pozycja orientacyjna"
+    },
+    {
+      "nazwa": "Living Spire",
+      "x": 0.534,
+      "y": 0.9186,
+      "typ": "obiekt",
+      "pozycja_zrodlo": "plane-shift",
+      "notka": "żywa iglica wyrosła po przebudzeniu Eldrazi (Plane Shift: Zendikar)"
     }
   ],
   "regiony": [],
@@ -697,13 +737,15 @@
       "nazwa": "Góry Skyfang/Shatterskull",
       "typ": "pasmo-górskie",
       "kontynent": "Murasa",
-      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+      "zrodlo": "https://magic.wizards.com/en/news/feature/a-planeswalkers-guide-to-zendikar-murasa-and-sejiri",
+      "notka": "od zachodniego wybrzeża w głąb wnętrza (Guide: Murasa)"
     },
     {
       "nazwa": "Na Plateau",
       "typ": "płaskowyż",
       "kontynent": "Murasa",
-      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+      "zrodlo": "https://magic.wizards.com/en/news/feature/a-planeswalkers-guide-to-zendikar-murasa-and-sejiri",
+      "notka": "wschód od środka Murasy (Guide: Murasa)"
     },
     {
       "nazwa": "Rzeka Raimunza",
@@ -721,7 +763,8 @@
       "nazwa": "Jaddi-trees",
       "typ": "las",
       "kontynent": "Murasa",
-      "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+      "zrodlo": "https://magic.wizards.com/en/news/feature/a-planeswalkers-guide-to-zendikar-murasa-and-sejiri",
+      "notka": "głównie lasy Kazandu (Guide: Murasa)"
     },
     {
       "nazwa": "Makindi Trenches",
@@ -796,6 +839,20 @@
       "kontynent": "Akoum",
       "notka": "superwulkan w centrum Akoum (MTG Wiki: Akoum); wcześniej błędnie przy Beyeen — poprawka 2026-09-01",
       "zrodlo": "https://mtg.fandom.com/wiki/Akoum"
+    },
+    {
+      "nazwa": "Singing City",
+      "typ": "ruina",
+      "kontynent": "Murasa",
+      "zrodlo": "https://magic.wizards.com/en/news/feature/a-planeswalkers-guide-to-zendikar-murasa-and-sejiri",
+      "notka": "labirynt ruin w sercu Na Plateau (Guide: Murasa); Plane Shift: ruiny sprzed Eldrazi"
+    },
+    {
+      "nazwa": "Living Spire",
+      "typ": "obiekt",
+      "kontynent": "Murasa",
+      "zrodlo": "plane-shift",
+      "notka": "post-Eldraziowa iglica na Murasie (Plane Shift: Zendikar)"
     }
   ],
   "pinezki": [

@@ -3,6 +3,24 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-01 — Pełna Pętla Jakości (LORE + mapy + metryka)
+
+- **Pogłębienie LORE obu planów:** Śródziemie zyskało akapit o Tharbad
+  (miasto-most na Gwathló; przeprawa Boromira w 3018 r. — Tolkien
+  Gateway), Zendikar o Murasie wg oficjalnego Planeswalker's Guide
+  (wyspa-płaskowyż, cztery wejścia, Na Plateau z Singing City, Kazandu).
+- **Sieć wikilinków:** plany odsyłają do swoich kart („Karty kolekcji"),
+  karty do planów („Na Mapie") — pierwsze połączenia grafu bazy.
+- **Pass mapowy:** kanoniczny przekład wnętrza Murasy (Skyfang od zachodu,
+  Na Plateau + Singing City na wschodzie wg Guide, Blackbloom w Kazandu),
+  nowe kotwice z cytowaniami (Zendikar: 74, Śródziemie: 11 + Dunland),
+  Living Spire domknięty w rejestrze.
+- **Nowe narzędzie warsztatu T4:** `tools/map-audit.py` — geometryczna
+  weryfikacja map (etykiety/markery/pinezki na lądzie, kolizje etykiet);
+  obie mapy przechodzą 0 problemów. Wnioski w `SKILL_MAPA_PLANU.md` §10.
+- **Metryka:** plany liczone pragmatycznie także w pinezce; completeness
+  **100% (8/8) na wszystkich czterech stronach** (było 76%).
+
 ## 2026-09-01 — FOT/KON w treści karty + poprawki mapy Zendikaru (a–j)
 
 - **Ilustracje FOT/KON rysują się same w treści karty** (wersja

@@ -107,7 +107,8 @@ na północ, w dawnym Eregionie.
 
 Karta jest osadzona w regionie **Dunland** — krainie między rzeką
 Glanduin na północy, Górami Mglistymi na wschodzie i rzeką Isen na
-południu, na północny zachód od Isengardu. Osadzenie ma poziom pewności
+południu, na północny zachód od Isengardu (geografię szerszego regionu
+opisuje plan [[srodziemie|Śródziemie]]). Osadzenie ma poziom pewności
 regionu: pinezka wskazuje środek krainy, nie konkretny punkt.
 
 ## Źródła

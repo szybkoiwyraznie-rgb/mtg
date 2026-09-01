@@ -292,3 +292,42 @@ w powiększeniu.
 - **Nie** dokładaj POI na mikro-wysepki (Beyeen/Jwar) — będzie kolizja etykiet.
 - **Nie** zostawiaj `_px.raw`, `_view.png`, `tmp-rsvg/` w repo — to artefakty
   robocze (gitignore/usuń).
+
+---
+
+## 10. Weryfikacja geomeotryczna bez renderowania (`tools/map-audit.py`)
+
+> Wniosek z audytu mapy Zendikaru 2026-09-01 (zgłoszenia właściciela a–j
+> + 7 błędów znalezionych skryptem): render-piksele (§3) są dobre do
+> smoke-testu, ale **kolizje etykiet i „nazwa w wodzie" łapie tanio
+> geometria**. Od tej pory standard passu mapowego (ADR 0015 pkt 3):
+
+```bash
+python3 tools/map-audit.py [plan] [--woda="Nazwa1,Nazwa2"]
+```
+
+Sprawdza: etykiety na lądzie (PIT po spłaszczeniu Beziera), kolizje par
+etykiet (bbox ≈ 0.62·fs·znaki), markery na lądzie, pinezki kart
+z `map.json` na lądzie; kotwice w wodzie raportuje informacyjnie.
+Kod wyjścia 1 = problemy (gotowe pod CI). Mapy liniowe (T2, adoptowane)
+są pomijane w testach na-lądzie z adnotacją.
+
+### Reguły wynikające (obowiązkowe przy rysowaniu i poprawkach)
+
+1. **Etykieta POI zawsze z markerem** — osierocona etykieta „niczego
+   się nie tyczy" (zgłoszenie i: Ikiral, Emeria).
+2. **Tytuły kontynentów (fs 40+) mają strefę ~110 px** — etykiety POI
+   nie wchodzą w pas tytułu; tytuł lepiej trzymać przy krawędzi
+   kontynentu lub nad gęstym wnętrzem.
+3. **Obiekty wodne (zatoki, rowy, głębiny, przeprawy) kursywą** — wtedy
+   „w wodzie" jest cechą, nie błędem; whitelisty w `map-audit.py`.
+4. **PIT tylko po spłaszczeniu krzywych C** — punkty kontrolne Beziera
+   dają fałszywe lądy/morza; fill bywa dziedziczony z `<g>` (wysepki!).
+5. **Markery z `opacity` = celowe dryfowanie** (hedrony Emerii) —
+   weryfikator je pomija; grupy z `transform` (legenda, kompas) też.
+6. **Pozycja kanoniczna > ładniejsza pozycja**: Na Plateau wg Guide leży
+   na wschód od środka Murasy, a Singing City w jej sercu — przekład
+   geometrii pod kanon, nie odwrotnie (proweniencja w `map.json`).
+7. **Rejestruj wszystko, co narysowane**: etykieta/marker bez wpisu
+   w `kotwice`/`elementy` (i odwrotnie) to dług techniczny mapy
+   ( Living Spire był rysowany, niezarejestrowany — domknięte).

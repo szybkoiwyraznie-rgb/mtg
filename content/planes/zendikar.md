@@ -20,9 +20,18 @@ poszukiwaczy skarbów to sposób na życie — i przemysł.
 Zendikar to siedem kontynentów, z których każdy ma „niemożliwą geografię":
 górzysta, wulkaniczna **Akoum** (z Okiem Ugina); bagienna **Bala Ged**;
 mroczna **Guul Draz**, kraina wampirów i jej miasto **Malakir**; płaskowyż
-**Murasa** (jego położenie w kanonie nieustalone); pionowa **Ondu**;
-polarna, zamarznięta **Sejiri**; oraz **Tazeem** — najgęściej zaludniony,
-niebieski kontynent merfolków.
+**Murasa**; pionowa **Ondu**; polarna, zamarznięta **Sejiri**; oraz
+**Tazeem** — najgęściej zaludniony, niebieski kontynent merfolków.
+
+**Murasa** to wyspa-płaskowyż: wnętrze kontynentu wznosi się nad morze
+nieregularnym „murem" klifów, w który wcina się największa przerwa —
+zatoka **Sunder Bay**. Do wnętrza wiodą cztery drogi: Sunder Bay, klify
+**Kazuul**, wąwóz **Thunder Gap** (przez tzw. Pillar Plains) i przełęcz
+**Glint Pass**. Za murem krajobart robi się pionowy: pasmo **Skyfang**
+(wyrasta z zachodniej strony i wspina w głąb wnętrza, dzieląc zachodnią
+połowę), lesisty płaskowyż **Na Plateau** na wschód od środka —
+w jego sercu legendarne ruiny **Singing City**, „śpiewające" z podziemi —
+oraz kanionowy kraj **Kazandu**, plątanina gigantycznych **jaddi**.
 
 **Tazeem** to trzy strefy: rozległy, poskręcany las **Oran-Rief**, głębokie,
 sztuczne morze śródlądowe **Halimar** oraz nad nim otwarte niebo z
@@ -68,6 +77,8 @@ i jej siatka zauszników.
 - **Mapa:** [mapa rekonstrukcji](#/mapa/zendikar) — oficjalna mapa planu
   nigdy nie powstała, więc podkład jest własną rekonstrukcją geografii
   z tekstów źródłowych (położenie Murasy przybliżone).
+- **Karty kolekcji:** [[2bfz-coralhelm-guide|Coralhelm Guide]] (BFZ) —
+  merfolka-przewodniczka z Coralhelm nad Halimar na Tazeem.
 
 ## Źródła
 
@@ -95,3 +106,8 @@ i jej siatka zauszników.
   <https://mtglore.com/web-articles/a-planeswalkers-guide-to-zendikar-ondu>
 - MTG Wiki, „Zendikar (plane)" — siedem kontynentów, efekty Eldrazi,
   Skyclave: <https://mtg.wiki/page/Zendikar_(plane)>
+- *A Planeswalker's Guide to Zendikar: Murasa and Sejiri* (Wizards
+  of the Coast) — Murasa jako wyspa-płaskowyż, mur klifów, cztery drogi
+  do wnętrza (Sunder Bay, Cliffs of Kazuul, Thunder Gap, Glint Pass),
+  Skyfang, Na Plateau i Singing City, Kazandu:
+  <https://magic.wizards.com/en/news/feature/a-planeswalkers-guide-to-zendikar-murasa-and-sejiri>
