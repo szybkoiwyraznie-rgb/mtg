@@ -114,6 +114,13 @@ test('UI: mapa planu z realnej bazy — podkład, pinezka, legenda', async () =>
     'mapa: brak reguł odsłaniających badge (hover + focus-visible, B1)',
   );
 
+  // B2 (feedback właściciela): warstwa karty z pinezki, zamykanie ✕/tło/Esc
+  assert.ok(mapa.includes('data-map-warstwa'), 'mapa: brak warstwy karty (B2)');
+  assert.ok(mapa.includes('role="dialog"') && mapa.includes('aria-modal="true"'), 'mapa: warstwa bez semantyki dialogu (B2)');
+  assert.ok(mapa.includes('data-map-warstwa-zamknij'), 'mapa: brak zamknięcia warstwy ✕/tło (B2)');
+  assert.ok(mapa.includes('aria-label="Zamknij i wróć do mapy"'), 'mapa: przycisk zamknięcia bez etykiety (B2)');
+  assert.ok(stylArt.includes('.mapa-warstwa[hidden] { display: none; }'), 'mapa: brak reguły ukrycia warstwy (B2)');
+
   // plan linkuje do mapy; trasa nieznanej planu → 404
   shim.idz('#/plan/srodziemie');
   assert.ok(shim.app.innerHTML.includes('#/mapa/srodziemie'), 'plan: brak linku do mapy');

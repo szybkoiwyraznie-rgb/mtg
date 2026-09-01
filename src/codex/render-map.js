@@ -128,6 +128,17 @@ export function renderMape(slugPlanu, query = {}) {
       <div class="mapa-nakladka" data-mapa-nakladka>${htmlPinezki}${htmlRegionyEtykiety}</div>
     </div>
 
+    ${pinezki.length > 0 ? `
+    <div class="mapa-warstwa" data-map-warstwa hidden role="dialog" aria-modal="true"
+      aria-label="Karta Katalogowa otwarta z mapy">
+      <div class="mapa-warstwa-tlo" data-map-warstwa-zamknij></div>
+      <div class="mapa-warstwa-panel">
+        <button type="button" class="mapa-warstwa-zamknij" data-map-warstwa-zamknij
+          aria-label="Zamknij i wróć do mapy" title="Zamknij i wróć do mapy (Esc)">✕</button>
+        <div class="mapa-warstwa-tresc" data-map-warstwa-tresc></div>
+      </div>
+    </div>` : ''}
+
     <section class="sekcja mapa-legenda">
       <h2>Legenda</h2>
       <ul class="mapa-legenda-lista">
@@ -165,8 +176,16 @@ export function renderMape(slugPlanu, query = {}) {
  * Montuje interakcje mapy (wywoływane z main.js po renderze, jak
  * zamontujToryObrazow). Bezpiecznie wychodzi, gdy mapy nie ma w DOM
  * (testy na shimie DOM).
+ *
+ * `opcje.renderKarty` (renderer Karty Katalogowej) i `opcje.zamontujKarte`
+ * (montaż torów obrazów) włączają WARSTWĘ KARTY (feedback właściciela B2):
+ * kliknięcie pinezki otwiera wpis katalogowy na zmaksymalizowanej warstwie
+ * NAD mapą (zamknięcie: ✕ / tło / Esc — powrót do mapy w tym samym
+ * stanie zoomu/pana, bo mapa nie jest odmontowywana). Bez `renderKarty`
+ * pinezka pozostaje zwykłym linkem (nawigacja #/karta/…) — progressive
+ * enhancement działające też z wyłączonym JS.
  */
-export function zamontujMape(app) {
+export function zamontujMape(app, opcje = {}) {
   const okno = app?.querySelector?.('.mapa-okno');
   if (!okno) return;
 
@@ -174,6 +193,42 @@ export function zamontujMape(app) {
   if (!ruch) return;
   const nakladka = okno.querySelector('[data-mapa-nakladka]');
   const pasek = app.querySelector('.mapa-pasek') ?? okno;
+
+  // ── Warstwa karty (B2): otwarcie z pinezki, zamknięcie z powrotem ──
+  const warstwa = app.querySelector('[data-map-warstwa]');
+  const trescWarstwy = warstwa?.querySelector?.('[data-map-warstwa-tresc]');
+  const renderKarty = opcje.renderKarty;
+
+  const zamknijWarstwe = () => {
+    if (!warstwa) return;
+    warstwa.hidden = true;
+    if (trescWarstwy) trescWarstwy.innerHTML = ''; // zwolnij pamięć
+    okno.focus?.();
+  };
+
+  if (warstwa && trescWarstwy && typeof renderKarty === 'function') {
+    const otworzKarte = (slug) => {
+      trescWarstwy.innerHTML = renderKarty(slug);
+      warstwa.hidden = false;
+      opcje.zamontujKarte?.(warstwa); // tory obrazów (Scryfall/FOT/KON)
+      warstwa.querySelector('[data-map-warstwa-zamknij]')?.focus?.();
+    };
+    for (const el of nakladka.querySelectorAll('[data-pinezka]')) {
+      el.addEventListener('click', (e) => {
+        // modyfikatory = zamiar użytkownika (nowa karta/okno) — nie standing
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+        otworzKarte(el.dataset.pinezka);
+      });
+    }
+    for (const btn of warstwa.querySelectorAll('[data-map-warstwa-zamknij]')) {
+      btn.addEventListener('click', zamknijWarstwe);
+    }
+    // Esc zamyka, dopóki fokus jest w warstwie (keydown bąbelkuje do niej)
+    warstwa.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { e.preventDefault(); zamknijWarstwe(); }
+    });
+  }
 
   const stan = { k: 1, ox: 0, oy: 0 };
   const K_MIN = 0.4, K_MAX = 14;

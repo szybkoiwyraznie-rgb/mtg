@@ -345,6 +345,27 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
 }
 .mapa-atrybucja { margin-top: 1.4rem; font-size: 0.85rem; }
 .mapa-atrybucja p { margin: 0.2rem 0; }
+
+/* ── Warstwa karty z pinezki (feedback B2) ─────────────────────────── */
+.mapa-warstwa { position: fixed; inset: 0; z-index: 60; display: flex; }
+.mapa-warstwa[hidden] { display: none; }
+.mapa-warstwa-tlo { position: absolute; inset: 0; background: rgba(24, 18, 10, 0.72); }
+.mapa-warstwa-panel {
+  position: relative; flex: 1; display: flex; flex-direction: column;
+  margin: clamp(6px, 2.5vw, 36px);
+  background: var(--tlo-karta); border: 1px solid var(--ramka);
+  border-radius: 12px; box-shadow: var(--cien); overflow: hidden;
+}
+.mapa-warstwa-zamknij {
+  position: absolute; top: 10px; right: 12px; z-index: 2;
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid var(--ramka); background: var(--tlo);
+  color: var(--tusz); font-size: 1.15rem; line-height: 1; cursor: pointer;
+  box-shadow: var(--cien);
+}
+.mapa-warstwa-zamknij:hover { background: var(--akcent); color: #f6efdf; border-color: var(--akcent); }
+.mapa-warstwa-tresc { overflow-y: auto; height: 100%; padding: 1.2rem 1.4rem 2rem; }
+.mapa-warstwa-tresc .okruszki { padding-right: 52px; }
 @media (max-width: 640px) {
   .mapa-podpowiedz { display: none; }
   .mapa-okno { height: clamp(340px, 62vh, 640px); }
