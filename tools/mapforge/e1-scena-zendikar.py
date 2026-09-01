@@ -117,6 +117,10 @@ def grupa_fill(el, rodzice):
 
 
 def main():
+    naglowek = SVG.read_text(encoding='utf-8')[:400]
+    if 'Wygenerowano tools/mapforge' in naglowek:
+        raise SystemExit('podklad.svg jest już renderem mapforge — edytuj maps/zendikar/scena.json '
+                         'i renderuj cli.mjs (E1 był jednorazową migracją)')
     svg = ET.parse(SVG).getroot()
 
     # rodzice dla dziedziczenia fill/transform

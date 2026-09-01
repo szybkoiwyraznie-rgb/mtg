@@ -1,7 +1,7 @@
 {
   "plan": "zendikar",
   "tytul": "Zendikar",
-  "wariant": "T3",
+  "wariant": "T4",
   "podklad": "podklad.svg",
   "wymiary": {
     "szerokosc": 2000,
@@ -875,5 +875,7 @@
     "plik": "zrodlo-fanowska-warianty-3-4.md",
     "url": "",
     "notka": "Dodatkowe źródła fanowskie dostarczone przez właściciela 2026-09-01 jako WARIANTY 3 i 4 układu geograficznego. Zasada użycia: kanon (Plane Shift / MTG Wiki) > wariant 2 (zrodlo-fanowska.md) > warianty 3/4. Stosować WYŁĄCZNIE, gdy ani pozycja kanoniczna, ani mapa fanowska (wariant 2) nie pozwalają poprawnie narysować danego POI — jako ostatnia deska ratunku dla miejsc NIEUSTALONYCH w kanonie. Oba warianty mają INNY układ współrzędnych i geometrię kontynentów niż podklad.svg — nie skalować 1:1, używać tylko do ustalenia względnego położenia POI. NIE zmieniają pozycji twardo kanonicznych ani układu kontynentów. Pełny opis: maps/zendikar/zrodlo-fanowska-warianty-3-4.md"
-  }
+  },
+  "scena": "scena.json",
+  "silnik": "mapforge (ADR 0018/0019); podklad-reczny.svg = archiwum ery ręcznej (T3)"
 }

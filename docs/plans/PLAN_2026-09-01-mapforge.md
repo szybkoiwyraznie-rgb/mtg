@@ -27,9 +27,12 @@
 - Render `podklad-forge.svg` z E1; `map-audit` musi przejść 0;
   porównanie z obecnym podkładem; decyzja właściciela.
 
-### E3 — Migracja podkładu Zendikaru
-- Podmiana `podklad.svg` (stary do `podklad-reczny.svg` na czas
-  oceny); korekty kolizji po audycie; build + smoke test.
+### E3 — Migracja podkładu Zendikaru ✅ 2026-09-01 (decyzja właściciela: „wdrażamy")
+- `maps/zendikar/podklad.svg` = render mapforge (atlas, ADR 0019) ze
+  `scena.json`; podkład ręczny zarchiwizowany jako `podklad-reczny.svg`;
+  `map.json`: wariant **T4** + `scena`/`silnik` (proweniencja renderu).
+- E1 dostał guard (nie regeneruje sceny z renderu forge — rekursja);
+  słownik wariantów w testach: T1–T4.
 
 ### E4 — Wzorzec dla nowych planów
 - PROCES_MAP.md: nowe mapy (T3/T4) startują od sceny + mapforge;

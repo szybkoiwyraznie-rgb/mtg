@@ -14,3 +14,5 @@ Thumbs.db
 # Pliki tymczasowe sesji (komunikaty commitów itp.)
 *.tmp
 /home/user/msg.txt
+__pycache__/
+*.pyc

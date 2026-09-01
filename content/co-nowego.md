@@ -31,6 +31,17 @@ ADR 0006). Najnowsze na górze.
   **domyślnie wyłączona**, spękania lodu tylko wewnątrz czapy;
   audyt próbuje punktów rzek i linii wzdłuż ścieżki (≥75% na lądzie).
 
+## 2026-09-01 — LIVE: mapa Zendikaru rysowana mapforge (T4)
+
+- **Wdrożone (E3):** produkcyjny podkład `maps/zendikar/podklad.svg`
+  jest teraz renderem silnika mapforge (motyw atlas, ADR 0018/0019)
+  ze sceny danych `scena.json` — 9 lądów, 6 biomów, 5 pasm (per ląd),
+  rzeki-wstęgi, 44 POI, 74 etykiety w nakładce ekranowej z LOD.
+  Podkład ery ręcznej zarchiwizowany jako `podklad-reczny.svg`;
+  `map.json` awansował do **wariantu T4** (ADR 0015: mapa T3 dojrzewa
+  do T4 wraz z warsztatem). Edycje mapy od dziś: scena → render (E1
+  chroni przed regeneracją z renderu). Audyt: 0 problemów; 86/86.
+
 ## 2026-09-01 — Etykiety mapy o stałym rozmiarze ekranowym (LOD)
 
 - Na stronie mapy planu (podkłady własne T3/T4 — Zendikar; adoptowanych
