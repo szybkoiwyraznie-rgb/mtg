@@ -1,8 +1,9 @@
 # ADR 0019: Mapy planów w motywie atlasowym — czysty czarno-biały line-art
 
-- **Status:** Zaakceptowana (doprecyzowana tego samego dnia: walor
-  tonalny w szarościach — patrz „Doprecyzowanie")
+- **Status:** Zaakceptowana
 - **Data:** 2026-09-01
+- **Doprecyzowanie:** 2026-09-01, tego samego dnia — walor tonalny
+  w szarościach (sekcja „Doprecyzowanie" niżej)
 - **Decydenci:** właściciel projektu (wybór po porównaniu A/B demo mapforge);
   agent Arena (sesja PR-7)
 - **Powiązania:** ADR 0008 (paleta pergaminu — doprecyzowana), ADR 0015
