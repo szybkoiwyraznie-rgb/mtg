@@ -96,7 +96,7 @@ if (demoIdx !== -1) {
   const outIdx = args.indexOf('-o');
   const cel = outIdx !== -1 ? args[outIdx + 1] : 'podklad.svg';
   fs.writeFileSync(cel, renderuj(scena, { styl }), 'utf8');
-  console.log(`OK — ${scena.nazwa ?? 'scena'} → ${cel} (styl: ${styl ?? 'pergamin'})`);
+  console.log(`OK — ${scena.nazwa ?? 'scena'} → ${cel} (styl: ${styl ?? scena.styl ?? 'pergamin'})`);
 } else {
   console.log('użycie: cli.mjs scena.json -o out.svg [--styl=pergamin|atlas] | cli.mjs --demo [out.svg] [--styl=…]');
   return 1;

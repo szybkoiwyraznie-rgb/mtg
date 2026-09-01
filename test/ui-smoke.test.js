@@ -165,6 +165,10 @@ test('UI: mapa T3 — etykiety podkładu w nakładce ekranowej (stały rozmiar, 
   assert.ok(mapa.includes('tier-szczegol'), 'brak tieru drobnych etykiet');
   assert.ok(/data-min-k="1\.[0-9]+"/.test(mapa), 'drobne etykiety bez progu LOD (data-min-k)');
   assert.ok(mapa.includes('data-fs='), 'etykiety bez zapamiętanego rozmiaru źródłowego (data-fs)');
+  assert.ok(mapa.includes('data-kotwica="middle"'), 'brak kotwiczenia middle (dziedziczenie text-anchor z grup SVG)');
+  assert.ok((mapa.match(/data-kotwica=/g) ?? []).length >= 60, 'mniej niż 60 etykiet z kotwicą');
+  const bey = mapa.match(/data-kotwica="(\w+)"[^>]*>Beyeen</);
+  assert.ok(bey && bey[1] === 'middle', 'Beyeen ma być kotwiczony middle (był rozjechany)');
 
   // T2 (adoptowany, mapome) — typografia podkładu zostaje bez zmian
   shim.idz('#/mapa/srodziemie');

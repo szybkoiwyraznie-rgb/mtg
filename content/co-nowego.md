@@ -3,6 +3,20 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-01 — E1+E2 mapforge na Zendikarze + naprawa kotwiczenia etykiet
+
+- **Naprawa etykiet nakładki** (feedback z podglądu): transform inline
+  nadpisywał CSS-owe centrowanie — etykiety wisiły lewym-górnym rogiem
+  na punkcie (Beyeen, Malakir, Lulea…). Teraz: dziedziczenie
+  `text-anchor` z grup SVG + kotwiczenie na baseline w jednym
+  transformie; asercja „Beyeen = middle" w testach (84/84).
+- **E1:** `maps/zendikar/scena.json` — scena danych wygenerowana
+  z ręcznego podkładu (generator: `tools/mapforge/e1-scena-zendikar.py`;
+  biomy z otoczek klastrów, grzbiety z PCA, okręgi → łuki).
+- **E2:** `maps/zendikar/podklad-forge.svg` — próbny render całego
+  Zendikaru silnikiem mapforge w motywie atlas (ADR 0019); audyt 0
+  problemów. Podkład produkcyjny niezmienny do oceny właściciela.
+
 ## 2026-09-01 — Etykiety mapy o stałym rozmiarze ekranowym (LOD)
 
 - Na stronie mapy planu (podkłady własne T3/T4 — Zendikar; adoptowanych

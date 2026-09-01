@@ -53,21 +53,47 @@ function przeniesEtykietyDoNakladki(markup) {
   const etykiety = [];
   if (!vb) return { etykiety, markup };
   const [w, h] = [parseFloat(vb[1]), parseFloat(vb[2])];
-  const out = markup.replace(/<text([^>]*)>([^<]*)<\/text>/g, (caly, atryb, tresc) => {
+  // Spacer po tokenach z transitioning dziedziczenia text-anchor (stos grup <g>):
+  // etykieta bez własnego atrybutu kotwiczy się tak, jak w podkładzie SVG
+  // (middle z grupy okalającej albo domyślne start) — inaczej nakładka
+  // rozjeżdża się z obiektem (feedback właściciela: Beyeen/Malakir/Lulea).
+  const czesci = markup.split(/(<\/g>|<g\b[^>]*>|<text\b[^>]*>[^<]*<\/text>)/);
+  const stos = ['start'];
+  let out = '';
+  for (const cz of czesci) {
+    if (!cz) continue;
+    if (cz.startsWith('</g>')) {
+      if (stos.length > 1) stos.pop();
+      out += cz;
+      continue;
+    }
+    if (/^<g\b/.test(cz)) {
+      const gm = /text-anchor="(start|middle|end)"/.exec(cz);
+      stos.push(gm ? gm[1] : stos[stos.length - 1]);
+      out += cz;
+      continue;
+    }
+    const tm = /^<text\b([^>]*)>([^<]*)<\/text>$/.exec(cz);
+    if (!tm) { out += cz; continue; }
+    const atryb = tm[1];
+    const tresc = tm[2];
     const mx = /\sx="(-?[\d.]+)"/.exec(atryb);
     const my = /\sy="(-?[\d.]+)"/.exec(atryb);
-    if (!mx || !my || !tresc.trim()) return caly; // textPath/transform → zostaje w SVG
+    if (!mx || !my || !tresc.trim()) { out += cz; continue; } // textPath/transform → zostaje w SVG
+    const kotwica = /\stext-anchor="(start|middle|end)"/.exec(atryb)?.[1]
+      ?? (/tytul-kontynentu/.test(atryb) ? 'middle' : stos[stos.length - 1]);
     const fs = parseFloat((/font-size="([\d.]+)"/.exec(atryb) || [0, 15])[1]);
     etykiety.push({
       x: parseFloat(mx[1]) / w,
       y: parseFloat(my[1]) / h,
       fs,
-      kursywa: /font-style="italic"/.test(atryb) || /italic/.test(atryb),
+      kotwica,
+      kursywa: /italic/.test(atryb),
       kontynent: /tytul-kontynentu/.test(atryb),
       tresc: tresc.trim(),
     });
-    return `<text data-podklad-orj="1" style="visibility:hidden"${atryb}>${tresc}</text>`;
-  });
+    out += `<text data-podklad-orj="1" style="visibility:hidden"${atryb}>${tresc}</text>`;
+  }
   return { etykiety, markup: out };
 }
 
@@ -138,6 +164,7 @@ export function renderMape(slugPlanu, query = {}) {
     const tier = e.kontynent ? 'tier-kontynent' : e.fs >= 17 ? 'tier-glowna' : 'tier-szczegol';
     return `<span class="mapa-etykieta-podkladu ${tier}${e.kursywa ? ' kursywa' : ''}" data-podklad-etykieta
       data-x="${e.x.toFixed(4)}" data-y="${e.y.toFixed(4)}" data-fs="${e.fs}" data-min-k="${prog.toFixed(2)}"
+      data-kotwica="${e.kotwica}"
       style="left:${(e.x * 100).toFixed(2)}%;top:${(e.y * 100).toFixed(2)}%">${e.tresc}</span>`;
   }).join('');
 
@@ -318,12 +345,22 @@ export function zamontujMape(app, opcje = {}) {
       const x = parseFloat(el.dataset.x);
       const y = parseFloat(el.dataset.y);
       if (!Number.isFinite(x) || !Number.isFinite(y)) continue;
-      el.style.transform = `translate(${(x * w * stan.k + stan.ox).toFixed(2)}px, ${(y * h * stan.k + stan.oy).toFixed(2)}px)`;
-      if (el.hasAttribute('data-podklad-etykieta')) {
-        // LOD (level of detail): drobna etykieta widoczna dopiero od swojego progu
-        const prog = parseFloat(el.dataset.minK || '1');
-        el.classList.toggle('poza-zasiegiem', stan.k + 1e-9 < prog);
+      const px = (x * w * stan.k + stan.ox).toFixed(2);
+      const py = (y * h * stan.k + stan.oy).toFixed(2);
+      if (!el.hasAttribute('data-podklad-etykieta')) {
+        el.style.transform = `translate(${px}px, ${py}px)`;
+        continue;
       }
+      // Kotwiczenie jak w SVG: poziomo wg text-anchor (middle/start/end),
+      // pionowo baseline na punkcie (typografia unosi tekst nad baseline).
+      // Uwaga: to MUSI być w jednym transformie — osobny CSS-owy translate
+      // zostałby nadpisany przez inline styl (bug: etykiety przesunięte
+      // w prawo-dół względem obiektów).
+      const dx = el.dataset.kotwica === 'start' ? '0%' : el.dataset.kotwica === 'end' ? '-100%' : '-50%';
+      el.style.transform = `translate(${px}px, ${py}px) translate(${dx}, -0.82em)`;
+      // LOD (level of detail): drobna etykieta widoczna dopiero od swojego progu
+      const prog = parseFloat(el.dataset.minK || '1');
+      el.classList.toggle('poza-zasiegiem', stan.k + 1e-9 < prog);
     }
   };
 

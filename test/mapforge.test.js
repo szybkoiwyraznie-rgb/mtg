@@ -4,6 +4,7 @@
  */
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 
 import {
   prng, hash, chaikin, gladka, prosta, pit, pole, rozrzut, wstega,
@@ -110,6 +111,18 @@ test('mapforge: POI — miasto/ruina/hedron/wulkan', () => {
   const h = hedron(0, 0, { opacity: 0.75 });
   assert.ok(h.includes('opacity="0.75"') && h.includes('mf-hedron'));
   assert.ok(wulkan(0, 0).includes('ellipse'), 'krater wulkanu');
+});
+
+test('mapforge: scena E1 Zendikaru renderuje się (atlas, z pliku)', () => {
+  const plik = new URL('../maps/zendikar/scena.json', import.meta.url);
+  if (!fs.existsSync(plik)) return t.skip('brak scena.json (E1)');
+  const scena = JSON.parse(fs.readFileSync(plik, 'utf8'));
+  const svg = renderuj(scena);
+  assert.ok(svg.includes('styl: atlas'), 'scena.deklaruje atlas');
+  assert.ok((svg.match(/<text/g) ?? []).length > 60, 'etykiety z sceny (74)');
+  assert.ok((svg.match(/mf-drzewo/g) ?? []).length > 100, 'lasy z klastrów');
+  assert.ok(svg.includes('=== PASMA GÓRSKIE ===') && svg.includes('mf-szczyt'), 'pasma');
+  assert.equal(renderuj(scena), svg, 'deterministycznie');
 });
 
 test('mapforge: motywy — atlas wymienia paletę, oba deterministyczne', () => {

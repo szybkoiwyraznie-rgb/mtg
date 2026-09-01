@@ -6,7 +6,11 @@
 
 ## Etapy (każdy = osobny commit/PR, porządek od najtańszego)
 
-### E1 — Kotwice → scena Zendikaru (dane, bez rysowania) [następny krok]
+### E1 — Kotwice → scena Zendikaru (dane, bez rysowania) ✅ 2026-09-01
+- Wykonane: `tools/mapforge/e1-scena-zendikar.py` → `maps/zendikar/scena.json`
+  (9 lądów z `d`/okręgów, 6 biomów z otoczek klastrów markerów — siatka
+  200 px, 4 pasma z PCA grzbietów, 2 rzeki, 3 jeziora, 44 POI,
+  74 etykiety z dziedziczeniem text-anchor).
 - Wygenerować `maps/zendikar/scena.json` z istniejących danych:
   wybrzeża (`d` z podkładu), biomy (las Oran-Rief, bagna Bala Ged/
   Guul Draz, step, Sejiri jako lod), pasma (Akoum, Skyfang, Ered
@@ -16,7 +20,10 @@
 - Scena w repo obok podkładu = reprezentacja danych planu niezależna
   od stylu rysowania.
 
-### E2 — Rendery próbne Zendikaru (obok, zamiast)
+### E2 — Rendery próbne Zendikaru (obok, zamiast) ✅ 2026-09-01 (ocena właściciela)
+- `maps/zendikar/podklad-forge.svg` (styl atlas, ADR 0019) renderowany
+  ze sceny; `tools/map-audit.py` → 0 problemów (audytowane OBA podkłady).
+- Produkcji nie ruszam do decyzji właściciela (E3 = podmiana).
 - Render `podklad-forge.svg` z E1; `map-audit` musi przejść 0;
   porównanie z obecnym podkładem; decyzja właściciela.
 

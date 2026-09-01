@@ -292,10 +292,12 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
       większa czcionka niż w SVG, halo dla czytelności, LOD od progu zoomu ── */
 .mapa-etykieta-podkladu {
   position: absolute;
-  transform: translate(-50%, -100%);
+  /* fallback bez JS (widok domyślny, kotwica middle); JS dokleja własny
+     transform z pozycją + Kotwiczenie SVG (patrz render-map.js) */
+  transform: translate(-50%, -0.82em);
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 13.5px;
-  line-height: 1.25;
+  line-height: 1.1;
   white-space: nowrap;
   color: #4a4438;
   text-shadow:
