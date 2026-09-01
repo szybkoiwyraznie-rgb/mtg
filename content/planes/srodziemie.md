@@ -48,6 +48,71 @@ mostu — to tam, w drodze do Rivendell (T.E. 3018), Boromir stracił konia.
 Dla świata karty znaczy to tyle, że even na mapie dziczy zostają szlaki
 i przeprawy, o których wie każdy przewodnik — i każdy zwiadowca.
 
+## Ludy
+
+Zachodnie Śródziemie jest mozaiką ludów, których tożsamość wykuły te same
+góry i te same krzywdy. Dwie nacje — **Dunlendowie** i **Rohirrim** —
+dzielą ten sam region od wieków jako sąsiedzi i wrogowie, a nad nimi
+stoi wysiłek **Sarumana**, który obie grupy wplątał w swoją wojnę.
+
+### Dunlendowie (Gwathuirim)
+
+**Dunlendowie** (sind. *Gwathuirim*, „ludzie cienia"; zwani też
+„dzikimi ludźmi Dunlandu") to potomkowie górali Białych Gór (Ered
+Nimrais), którzy w Drugiej Erze osiedlili się w krainach za Przełęczą
+Rohanu. To lud wysoki, ciemnowłosy i śniady — stąd rohańska nazwa
+(*Dunland* od staroang. *dunn* „ciemny, przydymiony"), którą nadali mu
+północni sąsiedzi, gdy zepchnięli go z żyznych równin. Od dawna gardzili
+Dúnedainami, a gdy Gondor przekazał dawne Calenardhon Rohirrimom
+(zamiast im), ich uraza stała się trwałą nienawiścią. W Trzeciej Erze
+to właśnie oni — zgorzkniali, wypchnięci za Isen do krainy **Dunland** —
+stanowili siłę, o którą zabiegał Saruman, i główną pieszą masę armii,
+która ruszyła na Rohan.
+
+Z powodu ciemnej urody i różnic językowych bywali przez Rohirrimów
+uznawani za lud prosty i barbarzyński; to oni wraz
+z Uruk-hai Sarumana walczyli pod brodami na Isenie i w Helmowym Jarze
+(Hornburgu). Tolkien świadomie wplótł w ich historię smugę niejednoznaczności:
+mieszali się pokojowo z Rohirrimami (np. pan Freca z ziem nad Adornem
+miał dunlandzką krew, a jego syn **Wulf** sięgnął w 2758 r. po tron
+Rohanu), więc granica między „dzikusem a jeźdźcem" mogła być cieńsza,
+niż twierdzili jedni i drudzy.
+
+### Rohirrim (Eorlingas)
+
+**Rohirrim** — „władcy koni", nazwa sindarińska, którą nadali im
+Gondorczycy; sami nazywali się od swego króla **Eorlingas** („lud
+Eorla") — to lud jeźdźców, który w 2510 r. Trzeciej Ery stanął po
+stronie Gondoru
+na Polu Celebrantu przeciw Balchothom. Za ten czyn ród **Eorla Młodego**
+otrzymał od namiestnika Ciriona w lenno rozległe pastwiska Calenardhonu,
+przemianowane na **Rohan** („Kraina koni"). Wywodzą się z **Éothéod**,
+północnego plemienia **Northmanów** z doliny Anduiny — „ludzi średnich"
+(ang. *Middle Men*), spokrewnionych z Edainami Pierwszej Ery, którzy nie
+odpłynęli do Númenoru; Gondor widział w nich pobratymców, a Rohirrimowie
+wzmacniali tę więź wywodem od rodu Hadora.
+
+To lud wysoki, jasnowłosy i niebieskooki, o kulturze zbudowanej wokół
+konia i hodowli; żyli w wsiach na otwartych równinach, mieli niewiele
+miast, a za stolicę — **Edoras** ze złotą salą Meduseld (gdzie
+spoczywała siedziba króla Théodena). Byli dumni i nieustępliwi, ale —
+jak mówi o nich *Dwie Wieże* — „prawdziwego serca, wspaniałomyślni
+w czynie i myśli, śmiali, choć nie okrutni". Ich mowa, wywodząca się
+od Northmanów, była archaiczna względem westronu.
+
+### Ludzie i siły Isengardu
+
+Nad oboma ludami stały czyny Sarumana, który w **Isengardzie** (Nan
+Curunír) zebrał armię własną, a częściowo tylko służącą Sauronowi:
+w dołach **Orthancu** krzyżował orków i ludzi, tworząc **Uruk-hai** —
+większych, silniejszych i odpornych na słońce orków, z białym godłem
+**Białej Ręki** na tarczach. Obok nich w jego armii szli zwykli orkowie
+Gór Mglistych, **Dunlendowie**, a także ludzie z domieszką orkowej krwi
+(„Half-orcs", „goblin-men") — pośrednie ogniwa między człowiekiem a
+Urukiem, których hobbici widzieli w szeregach Sarumana. To właśnie
+świat tej karty: zwiad w powietrzu, oczy nad regionem, i armia pod
+Białą Ręką, wysyłana przeciw Rohanowi.
+
 ## Setting w pigułce
 
 - **Era:** Trzecia Era Śródziemia (kulminacja: Wojna o Pierścień, 3018–3019 T.E.).
@@ -76,3 +141,22 @@ i przeprawy, o których wie każdy przewodnik — i każdy zwiadowca.
   upadek po powodzi T.E. 2912, brodowa przeprawa Boromira (T.E. 3018,
   utrata konia), losy Wielkiej Drogi:
   <https://tolkiengateway.net/wiki/Tharbad>
+- Tolkien Gateway, „Dunlendings" — lud zwan Gwathuirim; pochodzenie
+  (górale Białych Gór), nienawiść do Rohirrimów (dar Calenardhonu),
+  Freca i Wulf, służba Sarumanowi:
+  <https://tolkiengateway.net/wiki/Dunlendings>
+- The Encyclopedia of Arda, „Men of Dunland" — Dunlendowie jako
+  potomkowie górali Białych Gór, osadnictwo w Dunlandzie w Drugiej Erze,
+  rola w wojnie z Rohanem:
+  <https://www.encyclopedia-of-arda.com/m/menofdunland.php>
+- Tolkien Gateway, „Rohirrim" — Eorlingas; pochodzenie od Éothéod
+  (Northmanowie, Middle Men), Oath of Eorl, nadanie Calenardhonu,
+  charakter i kultura koni:
+  <https://tolkiengateway.net/wiki/Rohirrim>
+- Tolkien Gateway, „Uruk-hai" — orkowie-żołnierze Sarumana: hodowla
+  w dołach Isengardu, Biała Ręka, opór wobec słońca, bitwy pod Iseną
+  i w Hornburgu:
+  <https://tolkiengateway.net/wiki/Uruk-hai>
+- Tolkien Gateway, „Saruman" — zbieranie armii w Isengardzie (orkowie,
+  Dunlendowie, Uruk-hai), krzyżowanie orków i ludzi, Biała Ręka:
+  <https://tolkiengateway.net/wiki/Saruman>
