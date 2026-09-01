@@ -102,6 +102,18 @@ test('UI: mapa planu z realnej bazy — podkład, pinezka, legenda', async () =>
   assert.ok(!mapa.includes('left:40.6%'), 'mapa: pinezki nie mogą być pozycjonowane procentami w skalowanej warstwie');
   assert.ok(mapa.includes('mapa-przycisk'), 'mapa: brak przycisków zoomu');
 
+  // B1 (feedback właściciela): badge pinezki ukryty do najechania/fokusu
+  const stylArt = fs.readFileSync(cel, 'utf8');
+  assert.ok(
+    /\.mapa-pinezka-etykieta\s*{[^}]*opacity:\s*0/.test(stylArt),
+    'mapa: badge pinezki ma być domyślnie ukryty (B1)',
+  );
+  assert.ok(
+    stylArt.includes('.mapa-pinezka:hover .mapa-pinezka-etykieta')
+      && stylArt.includes('.mapa-pinezka:focus-visible .mapa-pinezka-etykieta'),
+    'mapa: brak reguł odsłaniających badge (hover + focus-visible, B1)',
+  );
+
   // plan linkuje do mapy; trasa nieznanej planu → 404
   shim.idz('#/plan/srodziemie');
   assert.ok(shim.app.innerHTML.includes('#/mapa/srodziemie'), 'plan: brak linku do mapy');

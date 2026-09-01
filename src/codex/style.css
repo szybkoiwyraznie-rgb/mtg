@@ -313,7 +313,13 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
   white-space: nowrap; font-size: 0.78rem; font-weight: 600;
   background: rgba(30, 24, 14, 0.82); color: #f6efdf;
   border-radius: 5px; padding: 0.1rem 0.4rem;
+  /* badge domyślnie ukryty — pokazuje się dopiero po najechaniu/fovusie
+     (feedback właściciela B1): mapa bez stałych nalepek, pinezka nadal
+     ma tooltip `title`; etykieta pozostaje dostępna z klawiatury. */
+  opacity: 0; pointer-events: none; transition: opacity 0.12s ease;
 }
+.mapa-pinezka:hover .mapa-pinezka-etykieta,
+.mapa-pinezka:focus-visible .mapa-pinezka-etykieta { opacity: 1; }
 .mapa-pinezka:hover .mapa-pinezka-etykieta { background: #2c2313; }
 
 .mapa-etykieta-regionu {
