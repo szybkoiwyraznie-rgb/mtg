@@ -195,17 +195,33 @@ export function renderuj(scena, { styl } = {}) {
       ...scena.jeziora.map((j) => jezioro(j, j.opcje ?? {})));
   }
 
+  // Ujście rzeki: rzeka, której ostatni punkt leży w wodzie (morze/jezioro),
+  // dostaje gradient wtapiający ją w akwen (feedback właściciela 2026-09-01:
+  // zlewanie się, nie ucięcie przy brzegu). Rzeka kończąca się na lądzie
+  // pozostaje jednolita (wstęga i tak zwęża się do punktu).
+  const naLadzie = (p) => !maskiLadow.length || maskiLadow.some((m) => pit(p, m));
+  const wJeziorze = (p) => (scena.jeziora ?? []).some((j) => {
+    const dx = (p[0] - j.cx) / (j.rx || 1);
+    const dy = (p[1] - j.cy) / (j.ry || 1);
+    return dx * dx + dy * dy <= 1.0;
+  });
+  const ujscie = (r) => {
+    const end = r.punkty[r.punkty.length - 1];
+    if (naLadzie(end)) return null;
+    return { typ: wJeziorze(end) ? 'jezioro' : 'morze' };
+  };
+
   if (scena.rzeki?.length) {
-    // Rzeki przycięte do lądu: ujście kończy się dokładnie na wybrzeżu
-    // (a nie „ucieka" na otwarte morze), a kolor/nieprzezroczystość stapia
-    // je z wodą — patrz uwaga (b).
-    warstwy.push(`<!-- === RZEKI (przycięte do lądu) === -->`,
-      `<g${ladowPaths.length ? ` clip-path="${klipDoLadow}"` : ''}>`);
+    // Rzeki NIE są już przycinane do lądu — ujście wpływa w morze i zlewa
+    // się z nim gradientem (pełna nieprzezroczystość, kolor wody). Dzięki
+    // temu nie ma twardego ucięcia na linii brzegowej; rzeka „rozpływa się".
+    warstwy.push(`<!-- === RZEKI (ujścia z gradientem w wodę) === -->`);
     for (const r of scena.rzeki) {
-      warstwy.push(rzeka(r.id, r.punkty, r.opcje ?? {}));
-      for (const d of r.doplywy ?? []) warstwy.push(doplyw(d.id, d.punkty, d.opcje ?? {}));
+      warstwy.push(rzeka(r.id, r.punkty, { ujscie: ujscie(r), ...(r.opcje ?? {}) }));
+      for (const d of r.doplywy ?? []) {
+        warstwy.push(doplyw(d.id, d.punkty, { ujscie: ujscie(d), ...(d.opcje ?? {}) }));
+      }
     }
-    warstwy.push(`</g>`);
   }
 
   if (scena.pasma?.length) {

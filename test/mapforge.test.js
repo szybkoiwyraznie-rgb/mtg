@@ -91,6 +91,15 @@ test('mapforge: pasmo — szczyty i przedgorze', () => {
 test('mapforge: rzeka/jezioro/droga — atrybuty stylu', () => {
   const r = rzeka('r', [[0, 0], [100, 100]], { s0: 2, s1: 6 });
   assert.ok(r.includes('fill="#5b8ba6"') && r.includes('circle'), 'wstęga + źródło');
+  // Ujście rzeki z gradientem: rzeka wtapia się w wodę (płynne zlewanie,
+  // nie ucięcie przy brzegu) — gradient od koloru rzeki do koloru morza
+  // w układzie współrzędnych mapy, pełna nieprzezroczystość.
+  const ru = rzeka('rUj', [[0, 0], [100, 100]], { s0: 2, s1: 6, ujscie: { typ: 'morze' } });
+  assert.ok(ru.includes('linearGradient'), 'ujście: gradient');
+  assert.ok(ru.includes('id="mf-rzeka-rUj"'), 'ujście: id gradientu');
+  assert.ok(ru.includes('stop-color="#5b8ba6"'), 'ujście: od koloru rzeki (pergamin)');
+  const rl = rzeka('rJz', [[0, 0], [100, 100]], { s0: 2, s1: 6, ujscie: { typ: 'jezioro' } });
+  assert.ok(rl.includes('stop-color="#b9cdd8"'), 'ujście: do koloru jeziora');
   const j = jezioro({ cx: 10, cy: 10, rx: 50, ry: 30 });
   assert.ok(j.includes('ellipse'));
   const sz = droga('d1', [[0, 0], [50, 50]], { typ: 'szlak' });

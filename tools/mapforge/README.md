@@ -56,7 +56,7 @@ przed renderem.
 | `pasmo(id, punkty, {szer, snieg, przedgorze})` | linia grzbietu | **czarno-biała, zębata grań w stylu mapome** — JEDEN gęsty, nakładający się ciąg zębów (n ≈ dl/(szer·0.7), w ≈ szer·1.0–1.2, naprzemienna wysokość) + minimalistyczne pogórze przy dolnym brzegu. Wcześniejsze 2 rzędy „płotka" czytały się jak plot, nie góry (feedback właściciela) |
 | `szczyt(x, y, w, h, {snieg, lean})` | punkt | pojedynczy ostry czarny szczyt (trójkąt kątowy z pionowym kreskowaniem cienia po prawej); `lean` = przechył wierzchołka |
 | `wulkan(x, y, {skala, dym})` | punkt | stożek z kraterem i lazem dymu |
-| `rzeka(id, punkty, {s0, s1})` | linia + szerokości | wstęga **stożkowa** (zwęża się do punktu na obu końcach — nie urywa się płasko; punkt źródła) |
+| `rzeka(id, punkty, {s0, s1, ujscie})` | linia + szerokości | wstęga **stożkowa** (zwęża się do punktu na obu końcach — nie urywa się płasko; punkt źródła). `ujscie: {typ:'morze'|'jezioro'}` dodaje **gradient wtapiający ujście** w wodę (pełna nieprzezroczystość, kolor → kolor akwenu) — rzeka „rozpływa się", nie odcina się twardo przy brzegu (feedback właściciela) |
 | `doplyw(id, punkty, {s0, s1})` | linia | cieńsza wstęga (bez źródła) |
 | `jezioro({cx, cy, rx, ry})` | elipsa | tafla + podwójny brzeg + fala |
 | `droga(id, punkty, {typ})` | linia | `szlak` — kropki (konwencja line-art mapome `0 9`); `droga` — kreski |

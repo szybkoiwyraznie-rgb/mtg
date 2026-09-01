@@ -327,16 +327,42 @@ export function wulkan(x, y, { skala = 1, dym = true } = {}) {
 
 /* ---------- rzeka (wstęga o rosnącej szerokości) ---------- */
 
-export function rzeka(id, punkty, { s0 = 3, s1 = 9, zrodlo = true } = {}) {
+/**
+ * Rzeka jako wstęga stożkowa (źródło wąskie, ujście szerokie) z opcjonalnym
+ * ujściem wtapiającym się w wodę. Gdy `ujscie` jest podane, kolor wstęgi
+ * przechodzi gradientem od `PAL.rzeka` (przy źródle) do koloru wody
+ * (`PAL.woda` dla morza / `PAL.wodaGleb` dla jeziora) przy ujściu, przy
+ * PEŁNEJ nieprzezroczystości — dzięki temu rzeka nie odcina się twardo na
+ * brzegu, lecz „rozpływa się" w akwenie (feedback właściciela 2026-09-01:
+ * zlewanie się, a nie ucięcie przy linii brzegowej).
+ */
+export function rzeka(id, punkty, { s0 = 3, s1 = 9, zrodlo = true, ujscie = null } = {}) {
   const { d } = wstega(punkty, s0, s1);
   const pocz = punkty[0];
-  return (zrodlo ? `<circle cx="${rr(pocz[0])}" cy="${rr(pocz[1])}" r="${rr(s0 * 0.7)}" fill="${PAL.rzeka}"/>` : '') +
-    `<path d="${d}" fill="${PAL.rzeka}" opacity="0.9"/>`;
+  const konc = punkty[punkty.length - 1];
+  let fill = PAL.rzeka;
+  let defs = '';
+  if (ujscie) {
+    const doKolor = ujscie.typ === 'jezioro' ? PAL.wodaGleb : PAL.woda;
+    // Gradient w układzie współrzędnych mapy: od źródła do ujścia, więc
+    // kolor zanika równo z kierunkiem płynięcia (nie z kierunkiem bboxu).
+    const a = 0.62;   // początek zanikania (62% długości biegu)
+    defs = `<linearGradient id="mf-rzeka-${id}" gradientUnits="userSpaceOnUse" ` +
+      `x1="${rr(pocz[0])}" y1="${rr(pocz[1])}" x2="${rr(konc[0])}" y2="${rr(konc[1])}">` +
+      `<stop offset="0" stop-color="${PAL.rzeka}"/>` +
+      `<stop offset="${a}" stop-color="${PAL.rzeka}"/>` +
+      `<stop offset="1" stop-color="${doKolor}"/>` +
+      `</linearGradient>`;
+    fill = `url(#mf-rzeka-${id})`;
+  }
+  return (defs ? `<defs>${defs}</defs>` : '') +
+    (zrodlo ? `<circle cx="${rr(pocz[0])}" cy="${rr(pocz[1])}" r="${rr(s0 * 0.7)}" fill="${PAL.rzeka}"/>` : '') +
+    `<path d="${d}" fill="${fill}"/>`;
 }
 
 /** Dopływ — cieńsza wstęga wpadająca do rzeki głównej. */
-export function doplyw(id, punkty, { s0 = 1.5, s1 = 3.5 } = {}) {
-  return rzeka(id, punkty, { s0, s1, zrodlo: false });
+export function doplyw(id, punkty, { s0 = 1.5, s1 = 3.5, ujscie = null } = {}) {
+  return rzeka(id, punkty, { s0, s1, zrodlo: false, ujscie });
 }
 
 /* ---------- jezioro (tafla + linia brzegowa + fale) ---------- */
