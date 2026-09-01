@@ -221,116 +221,86 @@ function punktWPoligonie(poly, rng) {
 /* ---------- pasmo górskie (grzbiet + szczyty z faseta cienia) ---------- */
 
 /**
- * Pojedynczy szczyt w duchu mapome — klasyczna, OSTRZA góra rysowana kreską:
- * trójkąt z ostrym wierzchołkiem (asymetria przez `lean`), oświetlona
- * (lewa) ściana jasna, cienista (prawa) ściana zaciemniona i GĘSTO
- * kreskowana (równoległe pociągnięcia w dół zbocza, jak na mapie mapome).
- * Wcześniejsza wersja przypominała „żagiel"/kaczkę — zastąpiona trójkątem
- * ze stopą grzbietu i kreskowaniem wypełniającym cień.
+ * Pojedynczy szczyt w duchu mapome — CZARNO-BIAŁY, predefiniowany „półprodukt":
+ * szeroki, ostry, nieregularny trójkąt (zęby z drobnymi podarciami) z czarnym
+ * wypełnieniem i pionowymi zarysowaniami cienia. Bez pustego „żagla" — ma się
+ * czytać jako zbity, rysowany kreską szczyt. `lean` przechyla wierzchołek.
  */
 export function szczyt(x, y, w, h, { snieg = false, lean = 0 } = {}) {
-  const Pk = [x + lean * w, y - h];                 // ostry wierzchołek
-  const L = [x - w, y];
-  const R = [x + w, y];
-  const Bm = [x + lean * w * 0.4, y];               // stopa grzbietu (dół cienia)
-  // lewa krawędź lekko wypukła (naturalne „rąbanie"), prawa prosta
-  const cL = [x - w * 0.82, y - h * 0.55];
-  const kontur = `M ${rr(L[0])} ${rr(L[1])} C ${rr(cL[0])} ${rr(cL[1])}, ${rr(Pk[0] - w * 0.05)} ${rr(Pk[1])}, ${rr(Pk[0])} ${rr(Pk[1])} L ${rr(R[0])} ${rr(R[1])} Z`;
-  // cienista (prawa) faseta: Pk–R–Bm — ciemna, ostro zakończona
-  const cienD = `M ${rr(Pk[0])} ${rr(Pk[1])} L ${rr(R[0])} ${rr(R[1])} L ${rr(Bm[0])} ${rr(Bm[1])} Z`;
-  // GĘSTE kreskowanie cienistej ściany: równoległe pociągnięcia w dół zbocza
-  let hach = '';
-  const NH = 6;
-  for (let i = 0; i < NH; i++) {
-    const f = (i + 0.55) / NH;
-    const ax = Pk[0] + (R[0] - Pk[0]) * f;          // u góry na prawym zboczu
-    const ay = Pk[1] + (y - Pk[1]) * f;
-    const bx = Bm[0] + (R[0] - Bm[0]) * f;          // u dołu na krawędzi podstawy
-    hach += `M ${rr(ax)} ${rr(ay)} L ${rr(bx)} ${rr(y - h * 0.02)} `;
-  }
-  // 2 jasne kreski na oświetlonej (lewej) ścianie — podkreślenie padania światła
-  let os = '';
-  for (let i = 0; i < 2; i++) {
-    const f = 0.32 + i * 0.36;
-    const ax = Pk[0] + (L[0] - Pk[0]) * f;
-    const ay = Pk[1] + (y - Pk[1]) * f;
-    os += `M ${rr(ax)} ${rr(ay)} L ${rr(ax + w * 0.04)} ${rr(ay + h * 0.14)} `;
+  const pkX = 0.5 + lean;                         // wierzchołek odchylony przez lean
+  const c = PAL.tekst;                            // czerń (atlas) / tusz (pergamin)
+  const cien = PAL.skalaCien;
+  let d = `M ${rr(x)} ${rr(y)} `;
+  d += `L ${rr(x + w * (0.12 + Math.abs(lean) * 0.1))} ${rr(y - h * 0.3)} `;
+  d += `L ${rr(x + w * pkX * 0.7)} ${rr(y - h * 0.68)} `;
+  d += `L ${rr(x + w * pkX)} ${rr(y - h)} `;
+  d += `L ${rr(x + w * (pkX + (1 - pkX) * 0.42))} ${rr(y - h * 0.72)} `;
+  d += `L ${rr(x + w * 0.85)} ${rr(y - h * 0.28)} `;
+  d += `L ${rr(x + w)} ${rr(y)} Z`;
+  // pionowe zarysowania cienia (prawe zbocze) — biała kreska na czarnym
+  let hat = '';
+  const nH = 5;
+  for (let i = 0; i < nH; i++) {
+    const f = (i + 0.6) / nH;
+    const ax = x + w * (pkX + (1 - pkX) * f);
+    const ay = y - h * (1 - f);
+    hat += `M ${rr(ax)} ${rr(ay)} L ${rr(ax)} ${rr(y)} `;
   }
   const sn = snieg
-    ? `<path d="M ${rr(Pk[0] - w * 0.2)} ${rr(Pk[1] + h * 0.14)} L ${rr(Pk[0])} ${rr(Pk[1])} ` +
-      `L ${rr(Pk[0] + w * 0.14)} ${rr(Pk[1] + h * 0.16)} L ${rr(Pk[0] + w * 0.05)} ${rr(Pk[1] + h * 0.26)} ` +
-      `L ${rr(Pk[0] - w * 0.05)} ${rr(Pk[1] + h * 0.28)} Z" fill="${PAL.snieg}"/>`
+    ? `<path d="M ${rr(x + w * (pkX - 0.18))} ${rr(y - h * 0.86)} L ${rr(x + w * pkX)} ${rr(y - h)} ` +
+      `L ${rr(x + w * (pkX + 0.14))} ${rr(y - h * 0.84)} L ${rr(x + w * (pkX + 0.05))} ${rr(y - h * 0.74)} ` +
+      `L ${rr(x + w * (pkX - 0.06))} ${rr(y - h * 0.76)} Z" fill="${PAL.snieg}"/>`
     : '';
   return `<g class="mf-szczyt" data-x="${rr(x)}" data-y="${rr(y)}">` +
-    `<path d="${kontur}" fill="${PAL.skala}" stroke="${PAL.tekst}" stroke-width="1.1" stroke-linejoin="round"/>` +
-    `<path d="${cienD}" fill="${PAL.skalaCien}" opacity="0.55"/>` +
-    `<path d="${hach}" stroke="${PAL.tekst}" stroke-width="0.85" fill="none" opacity="0.85"/>` +
-    `<path d="${os}" stroke="${PAL.halo}" stroke-width="0.8" fill="none" opacity="0.8"/>` +
+    `<path d="${d}" fill="${c}" stroke="${c}" stroke-width="0.5" stroke-linejoin="round"/>` +
+    `<path d="${hat}" stroke="${PAL.halo}" stroke-width="0.6" fill="none" opacity="0.35"/>` +
     sn +
     `</g>`;
 }
 
 /**
- * Pasmo: linia grzbietu (wygładzona) + szczyty rozmieszczone wzdłuż niej,
- * na przemian po obu stronach, wyższe w centrum, niższe na krańcach
- * (naturalny profil masywu). `przedgorze` dosypuje drobne wzgórza wokół.
+ * Pasmo — CZARNO-BIAŁA, ZĘBATA GRAŃ w stylu mapome: JEDEN gęsty, nakładający
+ * się ciąg zębów (naprzemiennie wysokie/niskie szczyty) wzdłuż wygładzonej
+ * linii grzbietu, z minimalistycznym pogórzem tylko przy dolnym brzegu.
+ * Wcześniej były 2 rozdzielne rzędy „płotka" — teraz gęsta, nierówna masa.
  */
 export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = false, przedgorze = true, maski = null, liniaGrzbietu = false } = {}) {
   const naLadzie = (p) => !maski || !maski.length || maski.some((m) => pit(p, m));
   const rng = prng(`pasmo:${id}`);
   const grzbiet = chaikin(punkty, 3, false);
   const dl = dlugosc(grzbiet);
-
-  // □□□ GĘSTE, NAKŁADAJĄCE SIĘ zęby — jak ręcznie rysowane pasmo na mapie
-  // mapome. Wcześniej (n ≈ dl/80, w ≈ 20) szczyty były RZADKIE i ODDZIELNE
-  // → „babki z piasku". Teraz: dużo małych szczytów blisko siebie (rozstaw
-  // ≈ szer*0.5, szerokość ≈ szer*0.62) z naprzemienną wysokością (zęby
-  // główne + przełęcze), tworzących ciągłą, falistą grań z dolinami.
-  const n = gestoscSzczytow ?? Math.max(6, Math.round(dl / (szer * 0.5)));
   let out = liniaGrzbietu ? `<path d="${gladka(grzbiet)}" stroke="${PAL.skalaCien}" stroke-width="2" fill="none" opacity="0.3"/>` : '';
 
-  // Tło — ciemny pas (cień masywu) pod całym grzbietem: daje masę, nie
-  // pojedyncze trójkąty. Rysowany wzdłuż grzbietu z przesunięciem w dół.
-  {
-    const sr = [];
-    for (let i = 0; i <= 20; i++) {
-      const [x, y] = punktNa(grzbiet, i / 20);
-      sr.push([x, y + szer * 0.18]);
-    }
-    out += `<path d="${gladka(chaikin(sr, 2))}" fill="${PAL.skalaCien}" opacity="0.16"/>`;
-  }
-
+  // JEDEN gęsty, nakładający się rząd: szerokie zęby (w ≈ szer) blisko siebie
+  // (rozstaw ≈ szer*0.7), naprzemienna wysokość → naturalna "zębata" grań.
+  const n = gestoscSzczytow ?? Math.max(9, Math.round(dl / (szer * 0.7)));
   for (let i = 0; i < n; i++) {
     const t = n === 1 ? 0.5 : i / (n - 1);
     const [x, y] = punktNa(grzbiet, t);
     const waga = Math.sin(Math.PI * t);          // wyżej w środku pasma
-    const zab = i % 2 === 0;                     // naprzemiennie: ząb główny / przełęcz
-    const amp = (0.5 + waga * 0.5);
-    const h = szer * (zab ? (0.85 + rng() * 0.35) : (0.5 + rng() * 0.16)) * (0.55 + amp * 0.7);
-    const w = szer * (0.6 + rng() * 0.18);
-    // małe, nieregularne przesunięcie boczne — pasmo czyta się jako wstęga,
-    // nie idealny rządek; jednocześnie zęby nachodzą na siebie (w > rozstaw*0.9)
-    const dx = (rng() - 0.5) * szer * 0.3;
-    const kandydat = [x + dx, y + Math.abs(dx) * 0.1];
+    const wysoki = i % 2 === 0;
+    const w = szer * (1.0 + rng() * 0.2);        // szeroka podstawa → zęby nachodzą
+    const h = szer * (wysoki ? (0.95 + waga * 0.5 + rng() * 0.15) : (0.55 + waga * 0.3 + rng() * 0.1));
+    const dx = (rng() - 0.5) * szer * 0.15;
+    const kandydat = [x + dx, y];
     const pozycja = naLadzie(kandydat) ? kandydat : (naLadzie([x, y]) ? [x, y] : null);
     if (pozycja) out += szczyt(pozycja[0], pozycja[1], w, h, {
-      snieg: snieg && zab && waga > 0.55,
+      snieg: snieg && wysoki && waga > 0.55,
       lean: (rng() - 0.5) * 0.5,
     });
   }
 
-  // □□□ POGÓRZE — drugi rząd mniejszych wzgórz bliżej widza (na dole),
-  // dający głębię i wypełniający podnóże; bez nich pasmo „wisi" na lądzie.
+  // Minimalistyczne pogórze przy dolnym brzegu (małe, niskie, nieliczne)
   if (przedgorze) {
-    const n2 = Math.max(4, Math.round(dl / (szer * 0.7)));
+    const n2 = Math.max(4, Math.round(dl / (szer * 0.95)));
     for (let i = 0; i < n2; i++) {
       const t = (i + 0.5) / n2;
       const [x, y] = punktNa(grzbiet, t);
-      const px = x + (rng() - 0.5) * szer * 0.5;
-      const py = y + szer * (0.22 + rng() * 0.14);   // bliżej grzbietu → zlewają się z nim
+      const px = x + (rng() - 0.5) * szer * 0.6;
+      const py = y + szer * 0.26;
       if (!naLadzie([px, py])) continue;          // pogórze nie pływa
-      out += szczyt(px, py, szer * (0.22 + rng() * 0.1), szer * (0.3 + rng() * 0.16), {
-        lean: (rng() - 0.5) * 0.7,
+      out += szczyt(px, py, szer * 0.5, szer * 0.36, {
+        lean: (rng() - 0.5) * 0.6,
       });
     }
   }

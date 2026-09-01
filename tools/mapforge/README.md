@@ -53,8 +53,8 @@ przed renderem.
 | `bagno(id, poly, {gestosc})` | wielokąt | kępki turzyc + płytka oczka wodne |
 | `step(id, poly, {gestosc})` | wielokąt | kępy traw |
 | `lod(id, poly, {pekniecia})` | wielokąt | biała nakładka + spękania |
-| `pasmo(id, punkty, {szer, snieg, przedgorze})` | linia grzbietu | **zębate, gęsto nachodzące się pasmo** (n ≈ dl/(szer·0.5), w ≈ szer·0.62) — ciągła, falista grań z przełęczami + ciemny pas cienia pod grzbietem + drugi rząd pogórza. Bez tego szczyty były rzadkie i „pływały" (feedback właściciela) |
-| `szczyt(x, y, w, h, {snieg, lean})` | punkt | pojedynczy ostry szczyt: lewa ściana jasna, prawa **gęsto kreskowana** (6 pociągnięć), 2 jasne kreski na świetle; `lean` = przechył wierzchołka |
+| `pasmo(id, punkty, {szer, snieg, przedgorze})` | linia grzbietu | **czarno-biała, zębata grań w stylu mapome** — JEDEN gęsty, nakładający się ciąg zębów (n ≈ dl/(szer·0.7), w ≈ szer·1.0–1.2, naprzemienna wysokość) + minimalistyczne pogórze przy dolnym brzegu. Wcześniejsze 2 rzędy „płotka" czytały się jak plot, nie góry (feedback właściciela) |
+| `szczyt(x, y, w, h, {snieg, lean})` | punkt | pojedynczy ostry czarny szczyt (trójkąt kątowy z pionowym kreskowaniem cienia po prawej); `lean` = przechył wierzchołka |
 | `wulkan(x, y, {skala, dym})` | punkt | stożek z kraterem i lazem dymu |
 | `rzeka(id, punkty, {s0, s1})` | linia + szerokości | wstęga **stożkowa** (zwęża się do punktu na obu końcach — nie urywa się płasko; punkt źródła) |
 | `doplyw(id, punkty, {s0, s1})` | linia | cieńsza wstęga (bez źródła) |
@@ -76,10 +76,11 @@ Glify przyrody nawiązują do line-artu mapome (benchmark, ADR 0015):
   ciemna masa cienia u podstawy, asymetryczny boczny pęd i krótka haczura
   cieniowania. Lasy są **gęste i nakładają się** (`minOdst < średnica
   korony`), więc składają się w falistą, teksturowaną masę.
-- **Góra:** pojedynczy szczyt to asymetryczny „żagiel" — lewa krawędź
-  wypukła na zewnątrz, prawa wklęsła; cień w ciemniejszej facecie po
-  prawej + haczura na ścianie; `lean` przechyla wierzchołek, a ciasny
-  rozstaw w `pasmo()` daje chwiejną, naturalną linię grzbietu.
+- **Góra:** pojedynczy szczyt to kątowy czarny trójkąt z zarysowanym
+  prawym zboczem (pionowe kreski cienia), jak w klasycznych mapach
+  line-art; `lean` przechyla wierzchołek. `pasmo()` składa je w JEDEN
+  gęsty, zębaty łańcuch o naprzemiennej wysokości — czytelna grań,
+  nie „płotek".
 
 Obie formy pozostają deterministyczne (rng z hasha id) i audytowalne
 (`data-x/y` na klocku, kontur zamknięty).

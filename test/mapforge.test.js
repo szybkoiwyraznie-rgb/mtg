@@ -85,7 +85,7 @@ test('mapforge: pasmo — szczyty i przedgorze', () => {
   assert.ok(n >= 8, `szczyty + przedgorze (${n})`);
   assert.ok(!svg.includes('opacity="0.3"'), 'bez linii grzbietu (przygaszona kreska czyta się jak droga po mapie)');
   const s = szczyt(0, 0, 20, 30, { snieg: true });
-  assert.ok(s.includes('#f6f4ec'), 'śnieg na szczycie');
+  assert.ok(s.includes('#f6f4ec'), 'śnieg na szczycie (pergamin)');
 });
 
 test('mapforge: rzeka/jezioro/droga — atrybuty stylu', () => {
@@ -189,7 +189,7 @@ test('mapforge: renderuj — deterministyczny, warstwowy, kompletny', () => {
   const s2 = renderuj(scenaDemo());
   assert.equal(s1, s2, 'regeneracja daje identyczny SVG (czysty diff)');
   for (const w of ['OCEAN', 'LĄDY', 'BIOMY', 'JEZIORA', 'RZEKI', 'PASMA GÓRSKIE', 'WULKANY', 'DROGI I SZLAKI', 'POI', 'ETYKIETY', 'WYBRZEŻA (poświata)', 'OPRAWA (kompas, skala, ramka)']) {
-    assert.ok(s1.includes(`=== ${w} ===`), `warstwa ${w}`);
+    assert.ok(s1.includes(`=== ${w}`), `warstwa ${w}`);
   }
   assert.ok(s1.startsWith('<?xml') && s1.trim().endsWith('</svg>'));
   assert.equal((s1.match(/<svg/g) ?? []).length, 1, 'dokładnie jeden <svg>');
