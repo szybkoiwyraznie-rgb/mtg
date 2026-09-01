@@ -82,6 +82,15 @@ Decyzja po obejrzeniu T1 (K3/K4). Technika: własny skrypt śledzący
 krawędzie po kwantyzacji kolorów; alternatywnie hybryda selektywna
 (wektorowe tylko wybrzeża + rzeki + granice regionów lore).
 
+## Podbicie akcji w workflowach (właściciel; wymaga uprawnienia `workflows`)
+
+Runnery GitHub wymuszają Node 24 na akcjach targetujących Node 20 —
+`ci.yml` i `pages.yml` używają `checkout@v4`/`setup-node@v4` (ostrzeżenie
+deprekacji, nie błąd). Podbić na `@v5` przy okazji pierwszej zmiany
+właściciela w `.github/`. Wariant hardeningu z sesji PR-4 (odrzucony
+push): `configure-pages@v5` z `with: enablement: true` — tworzy site
+Pages, gdyby kiedykolwiek został odrzucony/usunięty (L6).
+
 ## RSS/JSON „Co nowego"
 
 `content/co-nowego.md` + strona HTML wystarczą na start. Ewentualny kanał

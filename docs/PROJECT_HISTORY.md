@@ -4,6 +4,29 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-01 — sesja PR-4: naprawa publikacji GitHub Pages (gałąź arena/01a05bc9-mtg, PR #7)
+
+**Zlecenie właściciela:** „artefakt na pages nie działa — failed to deploy".
+
+**Diagnoza:** wszystkie 3 historyczne runy „Publikacja na GitHub Pages"
+failure; ostatni pada na `actions/configure-pages@v5` — `Get Pages site
+failed … Not Found`. Strona Pages nigdy nie została włączona
+(`GET /repos/…/pages` → 404); workflow poprawny, build/testy zielone.
+K1 („CRIT: Pages publikuje") nie było nigdy spełnione — audyt PR #6
+wykazał i zapisał to (`docs/audits/AUDYT_2026-09-01-PR6.md`).
+
+**Rozstrzygnięcie:** właściciel włączył Pages ręcznie (Settings → Pages →
+Source: GitHub Actions); auto-publikacja przy pushu do main działa
+od ręki (istniejący `on: push`). Wariant repo-side (`configure-pages:
+enablement: true`) przygotowany i zdjęty: push zmian
+w `.github/workflows/` jest odrzucany dla bota Areny (brak uprawnienia
+`workflows`) — fakt stały zapisany w ENVIRONMENT §3, wniosek w L6.
+W trakcie sesji sandbox zresetował workspace (ENVIRONMENT §2) — odzyskano
+z gałęzi zdalnej (commit planu był wypchnięty od razu, L2 zadziałała).
+
+**Stan na koniec:** re-run deployu na main → zielony, strona Pages żyje
+(szczegóły w PLAN_2026-09-01-pr4-pages-fix.md, „Wynik weryfikacji").
+
 ## 2026-08-31 — sesja PR-3 c.d.: audyt + wzbogacenie mapy wektorowej Zendikaru (gałąź arena/01a0591f-mtg, PR #6)
 
 **Zlecenie właściciela:** „...zadanie audytu mapy wektorowej Zendikaru

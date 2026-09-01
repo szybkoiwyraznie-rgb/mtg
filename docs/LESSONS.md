@@ -91,3 +91,28 @@ utrzymywała geometrię, ale nie jakość rastra.
 poza transformem — pozycja liczona w pikselach ekranu
 (`x·W·k + ox`); skalowana warstwa zawiera wyłącznie treść mapy
 (podkład, SVG regionów). To standardowy układ markerów mapowych.
+
+## L6 (2026-09-01) — GitHub Pages: `configure-pages` wymaga istniejącego site'a; deploy kładzie się na 404, nie na buildzie
+
+**Objaw:** workflow „Publikacja na GitHub Pages" kończy się failure w ~13 s
+(nawet nie dochodząc do uploadu), podczas gdy testy i build są zielone.
+Adnotacja runu: `Get Pages site failed. Please verify that the repository
+has Pages enabled… Error: Not Found`.
+
+**Przyczyna:** strona Pages **nigdy nie została włączona** dla repo
+(`GET /repos/<owner>/<repo>/pages` → 404). `actions/configure-pages@v5`
+kłada się na tym kroku, zanim `deploy-pages` zdążyłby cokolwiek
+opublikować; każdy kolejny run pada tak samo (3/3 w historii mtg).
+
+**Reguła:** przy pierwszym deploju Pages na repo najpierw upewnij się,
+że site istnieje: `gh api repos/<owner>/<repo>/pages` (200 = jest).
+Gdy 404 — albo właściciel włącza Settings → Pages → Source: „GitHub
+Actions" (jedno kliknięcie), albo workflow dostaje
+`configure-pages: with: enablement: true` (akcja sama tworzy site;
+wymaga `permissions: pages: write`). W tym projekcie zmiany plików
+`.github/workflows/` wykonuje właściciel — token bota Areny nie ma
+uprawnienia `workflows` (ENVIRONMENT §3). Po włączeniu site'a publikacja
+idzie automatycznie przy każdym pushu do main (`on: push`); pierwszą
+publikację po włączeniu odpala re-run ostatniego failed runu lub scalenie
+PR.
+

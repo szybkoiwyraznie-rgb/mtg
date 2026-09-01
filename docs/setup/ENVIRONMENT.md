@@ -56,6 +56,13 @@ testy) upewnij się, że praca jest na zdalnej gałęzi.
   push. **Nigdy nie proś o token w czacie.**
 - `gh pr edit` bywa odrzucane błędem GraphQL — obejście:
   `gh api -X PATCH repos/<owner>/<repo>/pulls/<nr> -f title=… -F body=@plik`.
+- **Token bota Areny nie ma uprawnienia `workflows`** (zweryfikowane
+  2026-09-01): push gałęzi ze zmianą w `.github/workflows/` jest odrzucany
+  (`refusing to allow a GitHub App to create or update workflow … without
+  'workflows' permission`), a `POST /repos/…/pages` zwraca 403. Konsekwencje:
+  zmiany workflowów (CI/Pages) i włączanie usług repozytorium wykonuje
+  **właściciel**; agent przygotowuje treść zmiany w docs (plan/lekka
+  łataka w backlogu), nie w `.github/`.
 - Komunikaty commitów pisz do pliku **poza repo** (np. `/home/user/msg.txt`),
   żeby nie trafiły do commita.
 - Gałąź sesji to `arena/<id>`; nigdy nie pushuj do `main` (ochrona i tak

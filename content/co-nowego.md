@@ -3,6 +3,19 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-01 — Naprawa publikacji GitHub Pages
+
+- **Strona na Pages zaczęła działać.** Przyczyna trzech nieudanych
+  publikacji (od powstania `pages.yml`): strona Pages nie była w ogóle
+  włączona dla repozytorium, więc workflow padał na kroku konfiguracji —
+  jeszcze zanim cokolwiek zdążył opublikować. Włączona przez właściciela
+  (Settings → Pages → Source: „GitHub Actions"); od teraz **każdy push
+  do `main` publikuje aktualną wersję bazy automatycznie** (dotychczasowy
+  mechanizm `on: push` w workflow — bez zmian).
+- Treść bazy (karty, plany, mapy) bez zmian — naprawa wyłącznie
+  infrastruktury publikowania.
+
+
 ## 2026-08-31 — Mapa Zendikaru: rysowanie szczegółów, czysty podkład + brak pikselozy
 
 - **Elementy fanowskie faktycznie narysowane na podkładzie SVG** (nie
