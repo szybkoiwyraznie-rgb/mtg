@@ -357,7 +357,21 @@ export function doplyw(id, punkty, { s0 = 1.5, s1 = 3.5, ujscie = null } = {}) {
 
 /* ---------- jezioro (tafla + linia brzegowa + fale) ---------- */
 
-export function jezioro({ cx, cy, rx, ry } = {}, { fale = true, obrys = 2 } = {}) {
+/**
+ * Jezioro/akwen. Dwa tryby:
+ *  - elipsa `{ cx, cy, rx, ry }` (domyślny),
+ *  - nieregularna tafla `{ d }` — własna ścieżka zamknięta (morza
+ *    śródlądowe, zatoki; Audyt 2026-09-01 — Halimar). Przy `d` współrzędne
+ *    `cx/cy/rx/ry` są opcjonalne i służą tylko do fal/dekoru (gdy podane).
+ */
+export function jezioro({ cx, cy, rx, ry, d } = {}, { fale = true, obrys = 2 } = {}) {
+  if (d) {
+    let out = `<path d="${d}" fill="${PAL.wodaGleb}" stroke="${PAL.wodaStroke}" stroke-width="${obrys}"/>`;
+    if (fale && cx != null && ry) {
+      out += `<path d="M ${rr(cx - rx * 0.35)} ${rr(cy + ry * 0.15)} q ${rr(rx * 0.15)} ${rr(-ry * 0.2)} ${rr(rx * 0.3)} 0" stroke="${PAL.wodaStroke}" stroke-width="1.4" fill="none" opacity="0.6"/>`;
+    }
+    return out;
+  }
   let out = `<ellipse cx="${rr(cx)}" cy="${rr(cy)}" rx="${rr(rx)}" ry="${rr(ry)}" fill="${PAL.wodaGleb}" stroke="${PAL.wodaStroke}" stroke-width="${obrys}"/>`;
   out += `<ellipse cx="${rr(cx)}" cy="${rr(cy)}" rx="${rr(rx * 0.82)}" ry="${rr(ry * 0.82)}" fill="none" stroke="${PAL.wodaStroke}" stroke-width="1" opacity="0.35"/>`;
   if (fale) {

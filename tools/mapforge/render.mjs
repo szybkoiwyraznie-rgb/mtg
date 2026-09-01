@@ -27,7 +27,7 @@ import {
   droga, miasto, ruina, hedron, etykieta, lukEtykieta, kompas, ramka,
   skalaLinia, drzewo,
 } from './bloki.mjs';
-import { prng, zaokr, gladka, prosta, parsujD, pit } from './geom.mjs';
+import { prng, gladka, prosta, parsujD, pit } from './geom.mjs';
 
 const BLOKI_BIOMOW = { las, bagno, step, lod };
 const BLOKI_POI = { miasto, ruina, hedron };
@@ -64,9 +64,10 @@ export function poswiataWybrzeza(d) {
  * map-audit), (3) leży na lądzie — chyba że etykieta należy do obiektu
  * wodnego (whitelist `woda`) albo jest podtytułem `(...)`/nazwą w wodzie.
  *
- * Zwraca listę `{ tekst, x, y, opcje, zakotwicz, przyDo }` — `zakotwicz`
- * to punkt obiektu, do którego rysujemy kreskę (gdy etykieta odsunięta).
- * Behawior `przyDo` (kreska + napis obok) zostaje zachowany.
+ * Zwraca listę `{ tekst, x, y, opcje, przyDo, zakotwicz }`. `przyDo` to
+ * punkt kotwiczący rozstaw (etykieta zostaje przy obiekcie); kreski
+ * łączące NIE rysujemy (decyzja właściciela 2026-09-01, pkt a) — `zakotwicz`
+ * zostaje w API dla ewentualnych użytków, render go ignoruje.
  */
 export function rozstawEtykiety(etykiety, { szer, wys, maskiLadow = [], woda = new Set() } = {}) {
   const naLadzie = (x, y) => !maskiLadow.length || maskiLadow.some((m) => pit([x, y], m));
@@ -263,12 +264,9 @@ export function renderuj(scena, { styl } = {}) {
       `<g font-family="Georgia, 'Times New Roman', serif" fill="${PAL.tekst}" ` +
       `style="paint-order: stroke; stroke: ${PAL.halo}; stroke-width: 3px; stroke-linejoin: round;">`);
     for (const e of rozstawione) {
-      // Kreska prowadząca od obiektu do odsuniętego napisu (przyDo) —
-      // czytelne zakotwiczenie zamiast „pływającej" etykiety.
-      if (e.zakotwicz) {
-        const [ax, ay] = e.zakotwicz;
-        warstwy.push(`<path d="M ${zaokr(ax)} ${zaokr(ay)} L ${zaokr(ax + (e.x - ax) * 0.55)} ${zaokr(ay + (e.y - ay) * 0.55)}" fill="none" stroke="${PAL.ital}" stroke-width="1" opacity="0.7"/>`);
-      }
+      // Decyzja właściciela (2026-09-01, pkt a): etykieta SIADAJE PRZY
+      // obiekcie — nie rysujemy już kresek łączących (przyDo służy tylko
+      // kotwiczeniu rozstawu w `rozstawEtykiety`, nie dawało linii).
       warstwy.push(etykieta(e.tekst, e.x, e.y, e.opcje));
     }
     for (const e of scena.etykietyLukowe ?? []) warstwy.push(lukEtykieta(e.id, e.punkty, e.tekst, e.opcje ?? {}));
