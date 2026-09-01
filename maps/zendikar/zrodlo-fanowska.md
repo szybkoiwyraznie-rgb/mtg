@@ -108,6 +108,13 @@ zalesiony wschodni półwysep.
 - Północ: **Guum Wilds**; południe: **Tangled Vales**. Przez środek
   **Umung River**. Najdalsze wschodnie wybrzeże: **Bojuka Bog**.
 
+## Warianty 3 i 4 (deska ratunku dla POI)
+
+Oprócz tego źródła (wariant 2) właściciel dostarczył 2026-09-01 **dwa dalsze
+opisy map fanowskich** (warianty 3 i 4). Stosować je **wyłącznie**, gdy ani
+pozycja kanoniczna, ani ten wariant 2 nie pozwalają poprawnie narysować danego
+POI. Pełne opisy: `maps/zendikar/zrodlo-fanowska-warianty-3-4.md`.
+
 ## Uwagi
 
 - Odległości na mapie bez skali są względne.
