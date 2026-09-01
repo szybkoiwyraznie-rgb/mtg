@@ -3,6 +3,25 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-01 — FOT/KON w treści karty + poprawki mapy Zendikaru (a–j)
+
+- **Ilustracje FOT/KON rysują się same w treści karty** (wersja
+  lokalna): panorama FOT otwiera główną kolumnę, bestiariusz KON
+  wchodzi pod pierwszą sekcją. Przyciski torów znikają; druk
+  Scryfalla pozostaje w infoboksie. Na Pages (bez katalogu `img/`)
+  strona wygląda jak dotychczas — cichy fallback.
+- **Mapa Zendikaru — 10 poprawek po zrzutach właściciela + 7 znalezionych
+  audytem:** Valakut wrócił na Akoum (kanon: superwulkan kontynentu,
+  MTG Wiki — stał błędnie przy Beyeen), wyspa Agadeem przestała
+  nachodzić na Ondu, Crypt of Agadeem leży na swojej wyspie, Makindi
+  Trenches w morzu (koniec kolizji z Cliffhaven), Singing City
+  na Murasie (koniec „ogonka" wybrzeża), rozsunięte Zof Marsh/Guul
+  Draz, Fort Keff/Ora Ondar/Kargan Lands, Glasspool opisany jako
+  jezioro (kanon) z etykietą obok, Ikiral i Emeria mają markery
+  (ruiny/hedrony), legenda powiększona. Pełny audyt:
+  `docs/audits/AUDYT_2026-09-01-mapa-zendikar-feedback.md`; pozycje
+  i proweniencja zsynchronizowane w `map.json` (70 kotwic).
+
 ## 2026-09-01 — Naprawa GitHub Pages + mapy (badge, warstwa karty) + porządek w Pętli Jakości
 
 - **Strona na Pages zaczęła działać.** Przyczyna trzech nieudanych
