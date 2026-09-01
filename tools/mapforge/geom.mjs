@@ -106,8 +106,11 @@ export function bbox(poly) {
 /**
  * Deterministyczny rozsiew punktów w wielokącie z minimalnym odstępem
  * (blue-noise-ish: odrzucanie kandydatów zbyt blisko istniejących).
+ * `maski` (poligony lądu) — gdy podane, punkt musi leżeć na lądzie:
+ * otoczka biomu bywa szersza niż kontynent (wypukłość nad zatoką),
+ * bez maski las „pływa" po oceanie.
  */
-export function rozrzut(poly, n, rng, minOdl = 16) {
+export function rozrzut(poly, n, rng, minOdl = 16, maski = null) {
   const { x0, x1, y0, y1 } = bbox(poly);
   const postawione = [];
   const min2 = minOdl * minOdl;
@@ -116,10 +119,58 @@ export function rozrzut(poly, n, rng, minOdl = 16) {
     proby++;
     const p = [x0 + rng() * (x1 - x0), y0 + rng() * (y1 - y0)];
     if (!pit(p, poly)) continue;
+    if (maski && maski.length && !maski.some((m) => pit(p, m))) continue;
     if (postawione.some((q) => (q[0] - p[0]) ** 2 + (q[1] - p[1]) ** 2 < min2)) continue;
     postawione.push(p);
   }
   return postawione;
+}
+
+/** Interpreter path d (M/L/C/Q/S/A/H/V/Z, małe = względne) → punkty NA ścieżce. */
+export function parsujD(d) {
+  const pts = [];
+  let cur = [0, 0];
+  let start = [0, 0];
+  const segs = d.match(/[MLCQASTHVmlcqasthvZz][^MLCQASTHVmlcqasthvZz]*/g) ?? [];
+  for (const seg of segs) {
+    const c = seg[0];
+    const args = (seg.slice(1).match(/-?[\d.]+/g) ?? []).map(Number);
+    if (c === 'M' || c === 'm') {
+      for (let j = 0; j < args.length - 1; j += 2) {
+        cur = (c === 'm' && pts.length) ? [cur[0] + args[j], cur[1] + args[j + 1]] : [args[j], args[j + 1]];
+        if (j === 0) start = [...cur];
+        pts.push([...cur]);
+      }
+    } else if (c === 'L' || c === 'l' || c === 'T' || c === 't') {
+      for (let j = 0; j < args.length - 1; j += 2) {
+        cur = (c === 'l' || c === 't') ? [cur[0] + args[j], cur[1] + args[j + 1]] : [args[j], args[j + 1]];
+        pts.push([...cur]);
+      }
+    } else if (c === 'H' || c === 'h') {
+      for (const v of args) { cur = [c === 'h' ? cur[0] + v : v, cur[1]]; pts.push([...cur]); }
+    } else if (c === 'V' || c === 'v') {
+      for (const v of args) { cur = [cur[0], c === 'v' ? cur[1] + v : v]; pts.push([...cur]); }
+    } else if (c === 'C' || c === 'c') {
+      for (let j = 0; j < args.length - 5; j += 6) {
+        cur = (c === 'c') ? [cur[0] + args[j + 4], cur[1] + args[j + 5]] : [args[j + 4], args[j + 5]];
+        pts.push([...cur]);
+      }
+    } else if (c === 'Q' || c === 'q' || c === 'S' || c === 's') {
+      for (let j = 0; j < args.length - 3; j += 4) {
+        cur = (c === 'q' || c === 's') ? [cur[0] + args[j + 2], cur[1] + args[j + 3]] : [args[j + 2], args[j + 3]];
+        pts.push([...cur]);
+      }
+    } else if (c === 'A' || c === 'a') {
+      for (let j = 0; j < args.length - 6; j += 7) {
+        cur = (c === 'a') ? [cur[0] + args[j + 5], cur[1] + args[j + 6]] : [args[j + 5], args[j + 6]];
+        pts.push([...cur]);
+      }
+    } else if (c === 'Z' || c === 'z') {
+      cur = [...start];
+      pts.push([...cur]);
+    }
+  }
+  return pts;
 }
 
 /** Długość łamanej. */

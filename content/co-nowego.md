@@ -14,8 +14,16 @@ ADR 0006). Najnowsze na górze.
   z ręcznego podkładu (generator: `tools/mapforge/e1-scena-zendikar.py`;
   biomy z otoczek klastrów, grzbiety z PCA, okręgi → łuki).
 - **E2:** `maps/zendikar/podklad-forge.svg` — próbny render całego
-  Zendikaru silnikiem mapforge w motywie atlas (ADR 0019); audyt 0
-  problemów. Podkład produkcyjny niezmienny do oceny właściciela.
+  Zendikaru silnikiem mapforge w motywie atlas (ADR 0019); podkład
+  produkcyjny niezmienny do oceny właściciela.
+- **Sprostowanie (po rzucie oka właściciela):** pierwszy render E2
+  miał biomy na oceanie — otoczki wypukłe biomów są szersze niż
+  kontynenty, a audyt nie oglądał treści mapforge. Naprawa podwójna:
+  silnik dostał **maski lądu** (rozsiew drzew/kępek i szczyty pasm
+  lądują tylko na lądzie; `parsujD` do parsera ścieżek), a audyt
+  nauczył się czytać treść `mf-*` (kotwice `data-x/y` deklarowane
+  przez klocki + interpreter komend ścieżek). Wysepki generowane
+  jako okręgi na krzywych Beziera. Testy masek i parsera: 86/86.
 
 ## 2026-09-01 — Etykiety mapy o stałym rozmiarze ekranowym (LOD)
 

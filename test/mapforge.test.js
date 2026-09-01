@@ -8,7 +8,7 @@ import fs from 'node:fs';
 
 import {
   prng, hash, chaikin, gladka, prosta, pit, pole, rozrzut, wstega,
-  punktNa, dlugosc,
+  punktNa, dlugosc, parsujD,
 } from '../tools/mapforge/geom.mjs';
 import {
   las, bagno, pasmo, rzeka, jezioro, droga, etykieta, lukEtykieta,
@@ -111,6 +111,34 @@ test('mapforge: POI — miasto/ruina/hedron/wulkan', () => {
   const h = hedron(0, 0, { opacity: 0.75 });
   assert.ok(h.includes('opacity="0.75"') && h.includes('mf-hedron'));
   assert.ok(wulkan(0, 0).includes('ellipse'), 'krater wulkanu');
+});
+
+test('mapforge: maski lądu — rozsiew biomów i pasma nie pływają po oceanie', () => {
+  const lad = parsujD('M 100,100 L 300,100 L 300,240 L 100,240 Z');
+  const hull = [[80, 80], [320, 80], [320, 260], [80, 260]];   // otoczka szersza niż ląd
+  const rng = prng('maska');
+  const pts = rozrzut(hull, 60, rng, 10, [lad]);
+  assert.ok(pts.length > 20, 'coś się zmieściło');
+  for (const p of pts) assert.ok(pit(p, lad), 'punkt rozsiewu na lądzie');
+  const svgLas = las('test-maska', hull, { maski: [lad] });
+  const kotwice = [...svgLas.matchAll(/data-x="([\d.]+)" data-y="([\d.]+)"/g)];
+  assert.ok(kotwice.length > 20, 'drzewa mają kotwice');
+  // tolerancja jak w audycie: jitter kotwicy ±1 px przy krawędzi jest legalny
+  const naLadzieTol = (p) => pit(p, lad)
+    || [[1.6, 0], [-1.6, 0], [0, 1.6], [0, -1.6]].some((d) => pit([p[0] + d[0], p[1] + d[1]], lad));
+  for (const m of kotwice) assert.ok(naLadzieTol([+m[1], +m[2]]), `drzewo (${m[1]},${m[2]}) na lądzie`);
+  const svgPasmo = pasmo('test-maska', [[110, 150], [290, 150]], { szer: 40, maski: [lad] });
+  assert.ok((svgPasmo.match(/mf-szczyt/g) ?? []).length > 0, 'pasmo się renderuje');
+});
+
+test('mapforge: parsujD — komendy M/L/C/Q/A (absolutne i względne)', () => {
+  assert.deepEqual(parsujD('M 0,0 L 10,0 L 10,10 Z').slice(0, 3), [[0, 0], [10, 0], [10, 10]]);
+  const okrag = parsujD('M 85,100 C 85,91.7 91.7,85 100,85 C 108.3,85 115,91.7 115,100 '
+    + 'C 115,108.3 108.3,115 100,115 C 91.7,115 85,108.3 85,100 Z');
+  assert.equal(okrag.length, 6, 'M + 4 końce C + Z (punkty NA ścieżce, bez kontrolnych)');
+  assert.ok(pit([100, 100], okrag), 'środek okręgu (na Bezierach) w wielokącie');
+  assert.ok(!pit([100, 84], okrag), 'punkt na zewnątrz okręgu');
+  assert.ok(parsujD('m 5,5 l 5,0 q 3,-3 6,0 a 4,4 0 0 1 8,0').length >= 4, 'małe litery i łuki');
 });
 
 test('mapforge: scena E1 Zendikaru renderuje się (atlas, z pliku)', () => {

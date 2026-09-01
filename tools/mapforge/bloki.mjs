@@ -9,7 +9,7 @@
 
 import {
   prng, zaokr, chaikin, gladka, prosta, rozrzut, pole, dlugosc,
-  punktNa, wstega,
+  punktNa, wstega, pit,
 } from './geom.mjs';
 
 /** Paleta bazowa = motyw „pergamin" (ADR 0008). */
@@ -75,14 +75,14 @@ export function drzewo(x, y, s, rng) {
   const jy = (rng() - 0.5) * 2;
   const r = s * (3.6 + rng() * 1.6);
   if (PAL.tryb === 'tusz') {
-    return `<g class="mf-drzewo">` +
+    return `<g class="mf-drzewo" data-x="${rr(x + jx)}" data-y="${rr(y + jy)}">` +
       `<path d="M ${rr(x + jx)} ${rr(y + jy)} l 0 ${rr(s * 2.4)}" stroke="${PAL.pienn}" stroke-width="${rr(s * 0.7)}"/>` +
       `<circle cx="${rr(x + jx)}" cy="${rr(y + jy - r * 0.18)}" r="${rr(r)}" fill="${PAL.drzewo}" stroke="${PAL.skalaCien}" stroke-width="1.5"/>` +
       (r > 4.5 ? `<path d="M ${rr(x + jx - r * 0.45)} ${rr(y + jy + r * 0.2)} a ${rr(r * 0.62)} ${rr(r * 0.62)} 0 0 1 ${rr(r * 0.8)} ${rr(-r * 0.25)}" ` +
         `fill="none" stroke="${PAL.skalaCien}" stroke-width="0.9" opacity="0.7"/>` : '') +
       `</g>`;
   }
-  return `<g class="mf-drzewo">` +
+  return `<g class="mf-drzewo" data-x="${rr(x + jx)}" data-y="${rr(y + jy)}">` +
     `<path d="M ${rr(x + jx)} ${rr(y + jy)} l 0 ${rr(s * 2.4)}" stroke="${PAL.pienn}" stroke-width="${rr(s * 0.7)}"/>` +
     `<circle cx="${rr(x + jx - r * 0.42)}" cy="${rr(y + jy + r * 0.22)}" r="${rr(r * 0.72)}" fill="${PAL.drzewoCien}" opacity="0.6"/>` +
     `<circle cx="${rr(x + jx)}" cy="${rr(y + jy - r * 0.18)}" r="${rr(r)}" fill="${PAL.drzewo}"/>` +
@@ -90,21 +90,21 @@ export function drzewo(x, y, s, rng) {
 }
 
 /** Las: deterministyczny rozsiew drzew w wielokącie. */
-export function las(id, poly, { gestosc = 1, skala = 1, minOdst = 15 } = {}) {
+export function las(id, poly, { gestosc = 1, skala = 1, minOdst = 15, maski = null } = {}) {
   const rng = prng(`las:${id}`);
   const n = Math.round(pole(poly) / 240 * gestosc);
-  return rozrzut(poly, n, rng, minOdst * skala)
+  return rozrzut(poly, n, rng, minOdst * skala, maski)
     .map(([x, y]) => drzewo(x, y, skala, rng)).join('\n');
 }
 
 /* ---------- biome: bagno (kępki turzyc + płytkie oczka) ---------- */
 
-export function bagno(id, poly, { gestosc = 1 } = {}) {
+export function bagno(id, poly, { gestosc = 1, maski = null } = {}) {
   const rng = prng(`bagno:${id}`);
   const n = Math.round(pole(poly) / 620 * gestosc);
-  return rozrzut(poly, n, rng, 18).map(([x, y]) => {
+  return rozrzut(poly, n, rng, 18, maski).map(([x, y]) => {
     const k = (rng() - 0.5) * 2;
-    return `<g class="mf-kepka">` +
+    return `<g class="mf-kepka" data-x="${rr(x)}" data-y="${rr(y)}">` +
       `<path d="M ${rr(x - 7)} ${rr(y)} q 3 -9 6 0 M ${rr(x - 1)} ${rr(y + k)} q 3 -10 6 0 M ${rr(x + 4)} ${rr(y - k)} q 3 -8 6 0" ` +
       `stroke="${PAL.bagno}" stroke-width="1.6" fill="none" stroke-linecap="round"/>` +
       (rng() < 0.3 ? `<ellipse cx="${rr(x + 9)}" cy="${rr(y + 5)}" rx="5" ry="2.6" fill="${PAL.wodaGleb}" opacity="0.55"${PAL.tryb === 'tusz' ? ` stroke="${PAL.wodaStroke}" stroke-width="0.9"` : ''}/>` : '') +
@@ -114,10 +114,10 @@ export function bagno(id, poly, { gestosc = 1 } = {}) {
 
 /* ---------- biome: step (krótkie kępy traw) ---------- */
 
-export function step(id, poly, { gestosc = 1 } = {}) {
+export function step(id, poly, { gestosc = 1, maski = null } = {}) {
   const rng = prng(`step:${id}`);
   const n = Math.round(pole(poly) / 700 * gestosc);
-  return rozrzut(poly, n, rng, 16).map(([x, y]) =>
+  return rozrzut(poly, n, rng, 16, maski).map(([x, y]) =>
     `<path d="M ${rr(x - 5)} ${rr(y)} l 4 -4 M ${rr(x - 1)} ${rr(y + 1)} l 4 -5 M ${rr(x + 3)} ${rr(y - 1)} l 4 -4" ` +
     `stroke="${PAL.step}" stroke-width="1.5" stroke-linecap="round" fill="none"/>`,
   ).join('\n');
@@ -152,12 +152,12 @@ export function szczyt(x, y, w, h, { snieg = false } = {}) {
       const by = y - h * (f - 0.16);
       hach += `M ${rr(ax)} ${rr(ay)} L ${rr(bx)} ${rr(by)} `;
     }
-    return `<g class="mf-szczyt">` +
+    return `<g class="mf-szczyt" data-x="${rr(x)}" data-y="${rr(y)}">` +
       `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x)} ${rr(y - h)} L ${rr(x + w)} ${rr(y)} Z" fill="${PAL.skala}" stroke="${PAL.skalaCien}" stroke-width="1.8" stroke-linejoin="round"/>` +
       `<path d="${hach}" stroke="${PAL.skalaCien}" stroke-width="1" fill="none" opacity="0.85"/>` +
       `</g>`;
   }
-  return `<g class="mf-szczyt">` +
+  return `<g class="mf-szczyt" data-x="${rr(x)}" data-y="${rr(y)}">` +
     `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x)} ${rr(y - h)} L ${rr(x + w)} ${rr(y)} Z" fill="${PAL.skala}" stroke="${PAL.skalaCien}" stroke-width="1.8" stroke-linejoin="round"/>` +
     `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x)} ${rr(y - h)} L ${rr(x - w * 0.18)} ${rr(y)} Z" fill="${PAL.skalaCien}" opacity="0.45"/>` +
     (snieg ? `<path d="M ${rr(x - w * 0.3)} ${rr(y - h * 0.68)} L ${rr(x)} ${rr(y - h)} L ${rr(x + w * 0.3)} ${rr(y - h * 0.68)} L ${rr(x + w * 0.12)} ${rr(y - h * 0.6)} L ${rr(x)} ${rr(y - h * 0.72)} L ${rr(x - w * 0.12)} ${rr(y - h * 0.58)} Z" fill="${PAL.snieg}"/>` : '') +
@@ -169,7 +169,8 @@ export function szczyt(x, y, w, h, { snieg = false } = {}) {
  * na przemian po obu stronach, wyższe w centrum, niższe na krańcach
  * (naturalny profil masywu). `przedgorze` dosypuje drobne wzgórza wokół.
  */
-export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = false, przedgorze = true } = {}) {
+export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = false, przedgorze = true, maski = null } = {}) {
+  const naLadzie = (p) => !maski || !maski.length || maski.some((m) => pit(p, m));
   const rng = prng(`pasmo:${id}`);
   const grzbiet = chaikin(punkty, 3, false);
   const n = gestoscSzczytow ?? Math.max(3, Math.round(dlugosc(grzbiet) / 80));
@@ -182,14 +183,20 @@ export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = f
     const w = szer * (0.42 + rng() * 0.18);
     const strona = i % 2 === 0 ? 1 : -1;
     const dx = strona * szer * 0.22;
-    out += szczyt(x + dx, y + Math.abs(dx) * 0.12, w, h, { snieg: snieg && waga > 0.55 });
+    // maska lądu: kandydat offsetowy, potem bez offsetu, w ostateczności brak
+    const kandydat = [x + dx, y + Math.abs(dx) * 0.12];
+    const pozycja = naLadzie(kandydat) ? kandydat : (naLadzie([x, y]) ? [x, y] : null);
+    if (pozycja) out += szczyt(pozycja[0], pozycja[1], w, h, { snieg: snieg && waga > 0.55 });
   }
   if (przedgorze) {
     for (let i = 0; i < n; i++) {
       const t = (i + 0.5) / n;
       const [x, y] = punktNa(grzbiet, t);
       const strona = i % 2 === 0 ? -1 : 1;
-      out += szczyt(x + strona * szer * (0.55 + rng() * 0.2), y + szer * 0.2, szer * 0.22, szer * (0.28 + rng() * 0.12), {});
+      const px = x + strona * szer * (0.55 + rng() * 0.2);
+      const py = y + szer * 0.2;
+      if (!naLadzie([px, py])) continue;          // przedgórze nie pływa
+      out += szczyt(px, py, szer * 0.22, szer * (0.28 + rng() * 0.12), {});
     }
   }
   return out;
@@ -200,7 +207,7 @@ export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = f
 export function wulkan(x, y, { skala = 1, dym = true } = {}) {
   const w = 20 * skala;
   const h = 26 * skala;
-  return `<g class="mf-wulkan">` +
+  return `<g class="mf-wulkan" data-x="${rr(x)}" data-y="${rr(y)}">` +
     `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x - w * 0.22)} ${rr(y - h * 0.82)} L ${rr(x)} ${rr(y - h * 0.7)} L ${rr(x + w * 0.22)} ${rr(y - h * 0.82)} L ${rr(x + w)} ${rr(y)} Z" ` +
     `fill="${PAL.skala}" stroke="${PAL.skalaCien}" stroke-width="1.8" stroke-linejoin="round"/>` +
     (PAL.tryb === 'tusz'
@@ -253,7 +260,7 @@ export function droga(id, punkty, { typ = 'szlak' } = {}) {
 /** Miasto: mur łukiem + bloki zabudowy + punkt. */
 export function miasto(x, y, { skala = 1 } = {}) {
   const s = skala;
-  return `<g class="mf-miasto">` +
+  return `<g class="mf-miasto" data-x="${rr(x)}" data-y="${rr(y)}">` +
     `<path d="M ${rr(x - 10 * s)} ${rr(y + 3 * s)} a 10 ${7 * s} 0 0 1 ${20 * s} 0" fill="${PAL.mur}" stroke="${PAL.skalaCien}" stroke-width="1.4"/>` +
     `<rect x="${rr(x - 5 * s)}" y="${rr(y - 3 * s)}" width="${rr(4.5 * s)}" height="${rr(4 * s)}" fill="${PAL.tekst}"/>` +
     `<rect x="${rr(x + 0.5 * s)}" y="${rr(y - 1 * s)}" width="${rr(4 * s)}" height="${rr(4.5 * s)}" fill="${PAL.tekst}"/>` +
@@ -265,7 +272,7 @@ export function miasto(x, y, { skala = 1 } = {}) {
 /** Ruina: przerwane mury + przewrócone kolumny. */
 export function ruina(x, y, { skala = 1 } = {}) {
   const s = skala;
-  return `<g class="mf-ruina">` +
+  return `<g class="mf-ruina" data-x="${rr(x)}" data-y="${rr(y)}">` +
     `<path d="M ${rr(x - 9 * s)} ${rr(y + 2 * s)} a 9 ${8 * s} 0 0 1 ${7 * s} -9" fill="none" stroke="${PAL.skalaCien}" stroke-width="${rr(2.2 * s)}" stroke-linecap="round"/>` +
     `<path d="M ${rr(x + 5 * s)} ${rr(y - 4 * s)} a 6 ${6 * s} 0 0 1 4 ${8 * s}" fill="none" stroke="${PAL.skalaCien}" stroke-width="${rr(2 * s)}" stroke-linecap="round"/>` +
     `<path d="M ${rr(x - 2 * s)} ${rr(y + 5 * s)} l ${rr(6 * s)} ${rr(2 * s)}" stroke="${PAL.skalaCien}" stroke-width="${rr(2 * s)}" stroke-linecap="round"/>` +
@@ -278,7 +285,7 @@ export function hedron(x, y, { skala = 1, opacity = 1 } = {}) {
   const s = skala;
   const r = 9 * s;
   const pk = (k) => `${rr(x + r * Math.cos((Math.PI / 3) * k))} ${rr(y + r * Math.sin((Math.PI / 3) * k))}`;
-  return `<g class="mf-hedron" opacity="${opacity}">` +
+  return `<g class="mf-hedron" data-x="${rr(x)}" data-y="${rr(y)}" opacity="${opacity}">` +
     `<path d="M ${[0, 1, 2, 3, 4, 5].map(pk).join(' L ')} Z" fill="${PAL.kamien}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.8 * s)}" stroke-linejoin="round"/>` +
     `<path d="M ${pk(0)} L ${pk(3)} M ${pk(1)} L ${pk(4)}" stroke="${PAL.skalaCien}" stroke-width="1" opacity="0.6"/>` +
     `</g>`;

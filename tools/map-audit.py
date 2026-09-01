@@ -123,6 +123,86 @@ class Mapa:
                             float(el.get('font-size') or 15)))
         return out
 
+    def forge_w_wodzie(self):
+        """Treść mapforge (klasy mf-*) poza lądem — drzewa/szczyty/kępki/POI.
+        Zwraca {klasa: [pozycje]} (agregacja: bywa tysiące obiektów)."""
+        out = {}
+        for el in self.root.iter():
+            kl = el.get('class') or ''
+            if not kl.startswith('mf-') or id(el) in self.transformowane:
+                continue
+            if el.get('opacity'):
+                continue                      # celowy „dryf" (hedrony Emerii)
+            # kotwica zadeklarowana przez silnik (data-x/y) > heurystyki
+            if el.get('data-x') and el.get('data-y'):
+                pos = (float(el.get('data-x')), float(el.get('data-y')))
+                if not self.na_ladzie(pos[0], pos[1], tolerancja=10):
+                    out.setdefault(kl, []).append(pos)
+                continue
+            pos = None
+            if el.tag == NS + 'circle':
+                pos = (float(el.get('cx')), float(el.get('cy')))
+            elif el.tag == NS + 'path':
+                pos = self._pozycja_z_path(el.get('d') or '')
+            elif el.tag == NS + 'g':
+                for d in el.iter(NS + 'path'):
+                    pos = self._pozycja_z_path(d.get('d') or '')
+                    break
+            if pos and not self.na_ladzie(pos[0], pos[1], tolerancja=12):
+                out.setdefault(kl, []).append(pos)
+        return out
+
+    @staticmethod
+    def _pozycja_z_path(d):
+        """Centroid punktów NA ścieżce (interpreter komend: M/L/C/Q/S/A/H/V/Z,
+        wersje małe = względne). Zbiera wyłącznie punkty leżące na krzywej —
+        parametry łuków (promienie/flagi) i punkty kontrolne NIE są
+        współrzędnymi (wcześniejsza heurystyka liczba-par dawała absurdy)."""
+        pts = []
+        cur = [0.0, 0.0]
+        start = [0.0, 0.0]
+        for c, args_s in re.findall(r'([MLCQASTHVmlcqasthvZz])([^MLCQASTHVmlcqasthvZz]*)', d):
+            args = [float(v) for v in re.findall(r'-?[\d.]+', args_s)]
+            if c in 'Mm':
+                for j in range(0, len(args) - 1, 2):
+                    if c == 'm' and pts:
+                        cur = [cur[0] + args[j], cur[1] + args[j + 1]]
+                    else:
+                        cur = [args[j], args[j + 1]]
+                    if j == 0:
+                        start = cur[:]
+                    pts.append(tuple(cur))
+            elif c in 'LlTt':
+                for j in range(0, len(args) - 1, 2):
+                    cur = [cur[0] + args[j], cur[1] + args[j + 1]] if c in 'lt' else [args[j], args[j + 1]]
+                    pts.append(tuple(cur))
+            elif c in 'Hh':
+                for v in args:
+                    cur = [cur[0] + v, cur[1]] if c == 'h' else [v, cur[1]]
+                    pts.append(tuple(cur))
+            elif c in 'Vv':
+                for v in args:
+                    cur = [cur[0], cur[1] + v] if c == 'v' else [cur[0], v]
+                    pts.append(tuple(cur))
+            elif c in 'Cc':
+                for j in range(0, len(args) - 5, 6):
+                    cur = [cur[0] + args[j + 4], cur[1] + args[j + 5]] if c == 'c' else [args[j + 4], args[j + 5]]
+                    pts.append(tuple(cur))
+            elif c in 'QqSs':
+                for j in range(0, len(args) - 3, 4):
+                    cur = [cur[0] + args[j + 2], cur[1] + args[j + 3]] if c in 'qs' else [args[j + 2], args[j + 3]]
+                    pts.append(tuple(cur))
+            elif c in 'Aa':
+                for j in range(0, len(args) - 6, 7):
+                    cur = [cur[0] + args[j + 5], cur[1] + args[j + 6]] if c == 'a' else [args[j + 5], args[j + 6]]
+                    pts.append(tuple(cur))
+            elif c in 'Zz':
+                cur = start[:]
+                pts.append(tuple(cur))
+        if len(pts) < 2:
+            return None
+        return (sum(a for a, _ in pts) / len(pts), sum(b for _, b in pts) / len(pts))
+
     def markery(self):
         out = []
         for el in self.root.iter(NS + 'use'):
@@ -182,6 +262,9 @@ def audytuj_podklad(mapa, nazwa, mjson, woda):
     for href, x, y in mapa.markery():
         if not mapa.na_ladzie(x, y):
             problemy.append(f'{nazwa}: MARKER W WODZIE: {href} @({x:.0f},{y:.0f})')
+    for kl, pozycje in sorted(mapa.forge_w_wodzie().items()):
+        przykl = ', '.join(f'({x:.0f},{y:.0f})' for x, y in pozycje[:3])
+        problemy.append(f'{nazwa}: FORGE W WODZIE: {kl} ×{len(pozycje)} (np. {przykl})')
     if mjson.exists():
         d = json.loads(mjson.read_text(encoding='utf-8'))
         for pn in d.get('pinezki', []):

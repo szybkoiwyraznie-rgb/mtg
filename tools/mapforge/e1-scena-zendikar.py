@@ -151,9 +151,15 @@ def main():
             continue
         if (grupa_fill(el, rodzice[id(el)]) or '') in FILL_LADU:
             cx, cy, r = (float(el.get(k)) for k in ('cx', 'cy', 'r'))
-            lady.append({'id': f'wyspa-{len(lady)+1}',
-                         'd': f'M {cx-r:.1f},{cy:.1f} a {r:.1f},{r:.1f} 0 1,0 {2*r:.1f},0 '
-                              f'a {r:.1f},{r:.1f} 0 1,0 {-2*r:.1f},0 Z'})
+            # okrąg na 4 krzywych Beziera (k = 4/3·(√2−1)) — łuki 'a' są
+            # pojedynczymi punktami dla parserów bez parametryzacji łuku
+            k = 0.5523 * r
+            d = (f'M {cx-r:.1f},{cy:.1f} '
+                 f'C {cx-r:.1f},{cy-k:.1f} {cx-k:.1f},{cy-r:.1f} {cx:.1f},{cy-r:.1f} '
+                 f'C {cx+k:.1f},{cy-r:.1f} {cx+r:.1f},{cy-k:.1f} {cx+r:.1f},{cy:.1f} '
+                 f'C {cx+r:.1f},{cy+k:.1f} {cx+k:.1f},{cy+r:.1f} {cx:.1f},{cy+r:.1f} '
+                 f'C {cx-k:.1f},{cy+r:.1f} {cx-r:.1f},{cy+k:.1f} {cx-r:.1f},{cy:.1f} Z')
+            lady.append({'id': f'wyspa-{len(lady)+1}', 'd': d})
 
     for el in svg.iter(NS + 'use'):
         if id(el) in transformowane:

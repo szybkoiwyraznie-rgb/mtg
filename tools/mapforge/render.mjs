@@ -27,7 +27,7 @@ import {
   droga, miasto, ruina, hedron, etykieta, lukEtykieta, kompas, ramka,
   skalaLinia, drzewo,
 } from './bloki.mjs';
-import { prng, gladka, prosta } from './geom.mjs';
+import { prng, gladka, prosta, parsujD } from './geom.mjs';
 
 const BLOKI_BIOMOW = { las, bagno, step, lod };
 const BLOKI_POI = { miasto, ruina, hedron };
@@ -70,11 +70,17 @@ export function renderuj(scena, { styl } = {}) {
         `<path d="${laczD(l)}" fill="${PAL.lad}" stroke="${PAL.ladStroke}" stroke-width="3.5"/>`));
   }
 
+  // maski lądu: biomy i pasma nie „pływają" po oceanie (otoczka biomu bywa
+  // szersza niż kontynent); parse d ręczny — parsujD patrzy tylko na punkty
+  const maskiLadow = (scena.lądy ?? [])
+    .map((l) => (l.d ? parsujD(l.d) : l.punkty))
+    .filter((m) => Array.isArray(m) && m.length > 3);
+
   if (scena.biomy?.length) {
     const grupy = {};
     for (const b of scena.biomy) {
       grupy[b.typ] = (grupy[b.typ] ?? []) + '\n' +
-        (BLOKI_BIOMOW[b.typ] ?? las)(b.id, b.punkty, b.opcje ?? {});
+        (BLOKI_BIOMOW[b.typ] ?? las)(b.id, b.punkty, { maski: maskiLadow, ...(b.opcje ?? {}) });
     }
     warstwy.push(`<!-- === BIOMY === -->`);
     for (const [typ, tresc] of Object.entries(grupy)) {
@@ -97,7 +103,7 @@ export function renderuj(scena, { styl } = {}) {
 
   if (scena.pasma?.length) {
     warstwy.push(`<!-- === PASMA GÓRSKIE === -->`,
-      ...scena.pasma.map((p) => pasmo(p.id, p.punkty, p.opcje ?? {})));
+      ...scena.pasma.map((p) => pasmo(p.id, p.punkty, { maski: maskiLadow, ...(p.opcje ?? {}) })));
   }
 
   if (scena.wulkany?.length) {
