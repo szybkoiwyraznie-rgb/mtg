@@ -73,10 +73,12 @@ Jakości (ADR 0006).
    druk Scryfalla / FOT / KON / twarz syntetyczna — z cichym fallbackiem.
 5. **Transpozycja:** lore opisuje setting podany we wpisie; mechanika, nazwa
    i flavor pochodzą z karty MtG (snapshot Scryfall, ADR 0004).
-6. **Domyślna praca bez zlecenia = Pętla Jakości** (ADR 0006): integralność
-   → pogłębianie → link-mining → pass mapowy → **doskonalenie map
-   wektorowych (krok 4b; mapy z danych tekstowych)** → co-nowego. Szczegóły
-   kroków w `docs/guides/PETLA_JAKOSCI.md`.
+6. **Domyślna praca bez zlecenia = Pętla Jakości** (ADR 0006/0015):
+   integralność → pogłębianie **lore** (bez meta-informacji o wydrukach
+   i artystach — ADR 0014) → link-mining → pass mapowy: **kompletacja
+   i jakość map** (nowe POI, weryfikacja dokładności, wspólny warsztat
+   rysowania T4) → co-nowego. Szczegóły kroków
+   w `docs/guides/PETLA_JAKOSCI.md`.
 
 ## 3. Zasady pracy z repozytorium
 

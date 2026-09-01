@@ -10,6 +10,11 @@
 >
 > **Zakres:** T3 (własny, wektorowy podkład SVG z opisu lore). Uzupełnia,
 > nie zastępuje `PROCES_MAP.md` (T1 hybryda) ani ADR 0007/0012.
+>
+> **Pamięć warsztatu T4 (ADR 0015):** ten plik jest rejestrem reużywalnych
+> metod rysowania (pasma górskie, rzeki, biomu, osady/ruiny) — każdą nową,
+> sprawdzoną metodę dopisuje się tutaj, żeby kolejne mapy powstawały
+> szybciej i w jednym stylu, dążąc jakością do mapy Śródziemia.
 
 ---
 

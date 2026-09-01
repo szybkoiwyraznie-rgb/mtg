@@ -4,6 +4,34 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-01 — sesja PR-4 c.d.: doprecyzowanie Pętli Jakości (ADR 0014/0015) + usunięcie „Druku w Kolekcji"
+
+**Zlecenie właściciela:** pogłębianie to **lore**, nie meta-informacje
+(„co mnie obchodzi, co robią artyści" — sekcja „Druk w Kolekcji"
+usunięta na jego polecenie); pass mapowy to **kompletacja i jakość map**
+(nowe POI, weryfikacja dokładności, lepsze metody rysowania wektorowego,
+wspólny silnik mapowy T4 dążący do jakości mapy Śródziemia i wyżej).
+„Dopisz to wszystko do dokumentacji Pętli."
+
+**Wykonanie:**
+- **ADR 0014** — sekcja „Druk w Kolekcji" znika ze szkieletu (9 sekcji);
+  dane wydruku tylko w infoboksie ze snapshotu; usunięta z obu kart,
+  fixture'ów, `SEKCJE_KARTY` (registry), SZKIELET_KARTY; asercje
+  ui-smoke odwrócone; ADR 0011 → „Częściowo zastąpiona". Pogłębione
+  wcześniej biografie artystów usunięte wraz z cytatami (Cook & Becker,
+  mtg.wtf, scentofagamer, viktortitov.com).
+- **ADR 0015** — Pętla Jakości v2: krok 2 = LORE (anti-lista
+  meta-informacji), krok 4 = pass mapowy scalony z dawnym 4b
+  (kompletność operacyjna → nowe POI → weryfikacja dokładności →
+  warsztat rysowania → wspólny silnik T4 → regiony haseł); definicja
+  wariantu T4. ADR 0006 → „Częściowo zastąpiona". PETLA_JAKOSCI.md
+  przepisana (kroki 2 i 4), AGENTS.md §2 pkt 6 zaktualizowany,
+  PROCES_MAP (drabina + T4), SKILL_MAPA_PLANU (pamięć warsztatu T4),
+  ROADMAP (nowy kamień K7 — warsztat mapowy T4; odświeżony wątek
+  mapy Śródziemia).
+- Nota porządkowa: commit 87d0fce objął oprócz ADR 0014 również ADR 0015
+  i statusy rejestrów (komunikat commitu nie wyczerpuje zawartości).
+
 ## 2026-09-01 — sesja PR-4: naprawa publikacji GitHub Pages (gałąź arena/01a05bc9-mtg, PR #7)
 
 **Zlecenie właściciela:** „artefakt na pages nie działa — failed to deploy".

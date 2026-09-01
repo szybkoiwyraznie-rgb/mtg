@@ -25,18 +25,29 @@ słownikiem, brak snapshotu, pinezka bez karty.
 
 Jeśli wszystko zielone — dopiero wtedy przechodzimy do treści.
 
-## Krok 2 — pogłębianie (naj słabsze strony)
+## Krok 2 — pogłębianie (naj słabsze strony; LORE, nie meta)
+
+Pogłębianie to **uzupełnianie lore** — treści o świecie, które karta
+i setting opisują: geografia i osi czasu, byty/rasy/frakcje, etymologia,
+mechanika jako opowieść, flavor i jego kontekst, transpozycja, relacje
+między encyjami (pogrubienia → przyszłe hasła).
+
+**Anti-lista** — nigdy celem pogłębiania (ADR 0014/0015): biografie
+artystów, warianty wydruków i finishe, kolekcjonerstwo, procesy
+i mechanika Codexu, meta-tekst. Dane wydruku pokazuje infoboks ze
+snapshotu — kropka.
 
 Ranking słabości (pierwsza znaleziona wygrywa):
 
 1. brakująca obowiązkowa sekcja szkieletu (SZKIELET_KARTY/HASLA);
 2. sekcja Źródła pusta lub < 2 pozycje (strona nie miała kwerendy);
 3. brak pinezki/mapy przy istniejącej mapie planu;
-4. sekcja < 3 zdania przy obowiązkowej;
-5. zero wikilinków wychodzących (strona-sierota topologiczna).
+4. sekcja < 3 zdania przy obowiązkowej — **treści lore**, więc
+   rozbudowa o wiedzę świata z cytowaniami (nie o wydruk);
+5. zero pogrubionych encji (strona nie zasiewa przyszłych haseł).
 
 Przy remisie wygrywa starsza strona (`materializacja`). Wybraną stronę
-pogłębia się kwerendą (2–5 zapytań), dopisując treść + cytowania.
+pogłębia się kwerendą lore (2–5 zapytań), dopisując treść + cytowania.
 **Jedna sesja = od 1 do 3 pogłębionych stron**, zanim przejdzie się do
 kroku 3.
 
@@ -56,55 +67,46 @@ kroku 3.
 Do 2 nowych haseł na przebieg pętli — pogłębienie ważniejsze niż
 rozrost.
 
-## Krok 4 — pass mapowy
+## Krok 4 — pass mapowy: kompletacja i jakość map (warsztat T4)
 
-- Każda karta ma pinezkę? Brakujące → ustal lokalizację z lore (research,
-  poziom pewności) i dopisz do `maps/<plan>/map.json`.
-- Plan ma ≥1 kartę i nie ma mapy → uruchom proces mapowy
-  (`PROCES_MAP.md` MA1–MA3) — to duże zadanie, zaplanuj je jako roadmapę
-  w `docs/plans/`, nie „przy okazji".
-- Hasła `geografia`/`postac` mają regiony/obwódki, jeśli mapa istnieje.
+Pass mapowy to **czynna praca nad jakością i kompletnością map**
+(ADR 0015), nie kontrola obecności. Pod-punkty w kolejności od
+najtańszej:
 
-## Krok 4b — doskonalenie map wektorowych (mapy tworzone z danych tekstowych)
+1. **Kompletność operacyjna:** każda karta ma pinezkę? Brakujące →
+   ustal lokalizację z lore (kwerenda, poziom pewności, obowiązkowe
+   uzasadnienie) i dopisz do `maps/<plan>/map.json`. Plan ma ≥1 kartę
+   i nie ma mapy → proces mapowy (PROCES_MAP MA1–MA3) jako **osobne
+   zadanie z roadmapą w `docs/plans/`**, nie „przy okazji".
+2. **Nowe POI:** kwerenda źródeł (kanon settingu > oficjalne
+   przewodniki/artykuły > wiki — zawsze z cytowaniami) o miejsca,
+   ruiny, rzeki, pasma górskie, biomu, osady, punkty orientacyjne
+   z kart → wzbogacenie `podklad.svg` (elementy graficzne) oraz
+   `elementy`/`kotwice` w `map.json` (proweniencja). Zasada: pozycja
+   ze źródeł, nigdy z kursora (MA4); źródło fanowskie tylko dla
+   pozycji nieustalonych w kanonie — z adnotacją w `map.json`.
+3. **Weryfikacja dokładności istniejących wpisów:** przegląd elementów
+   względem źródeł (nazwa, pozycja, status kanoniczny); korekty
+   z odnotowanym źródłem; skryptowe testy kolizji i „na lądzie"
+   (point-in-polygon, bbox etykiet, etykieta↔marker).
+4. **Warsztat rysowania wektorowego** (serce jakości): reużywalne
+   metody kodowania obiektów — pasma i grzbiety górskie, rzeki
+   (dopływy, ujścia, wodospady), biomu (las, bagno, step, lód,
+   pustynia), osady/ruiny/hedrony — w jednej, wspólnej palecie
+   (pergamin ADR 0008; halo `paint-order: stroke`; legenda symboli).
+   Każda nowa metoda trafia do `SKILL_MAPA_PLANU.md` (pamięć
+   warsztatu), żeby kolejne mapy rysować szybciej i spójnie.
+5. **Wspólny silnik mapowy T4:** mapy tworzone od zera (wszystkie
+   plany, aktualne i przyszłe) korzystają ze współdzielonego warsztatu
+   — dążenie: jakość mapy Śródziemia (podkład mapome, T2), docelowo
+   **wyprzedzająca** (kształty, kolory, czytelność, gęstość POI).
+   Benchmark = porównanie z mapą Śródziemia + ocena właściciela.
+6. **Regiony haseł** geograficznych (obwódki) — gdy hasła istnieją
+   (próg ≥2 kart); dopóki nie istnieją, pod-punkty 2–5 są treścią
+   passu mapowego.
 
-Dotyczy map **rekonstruowanych z tekstu** (warianty T3 — np. Zendikar,
-ADR 0012), które nie mają oficjalnego podkładu i powstają z opisów lore.
-Kryteria uruchomienia (którekolwiek):
-
-1. Mapa jest „uboga" — brak elementów przyrodniczych/osadniczych
-   (góry, lasy, rzeki, miasta, bagna, ruiny), które da się potwierdzić
-   w źródłach; to sygnał właściciela lub wynik kroku 2 (pogłębianie).
-2. Mapa ma **kolizje wizualne**: elementy/elementy lub napisy nachodzą
-   na siebie; markery lądują na wodzie (poza kontynentem); legenda/
-   podpis zasłania treść. Wykrywane wizualnie zrzutem (jak wyżej).
-3. Właściciel zleca „doskonalenie mapy" wprost (tak jak w tej sesji).
-
-Procedura:
-
-1. **Audyt stanu** (punkt 1 wyżej). Skryptowo zweryfikuj, które markery/
-   etykiety leżą **poza kontynentem** (point-in-polygon na `podklad.svg`)
-   i które **nachodzą** na siebie (bbox etykiet, etykieta↔marker). Wynik
-   zapisz w `docs/audits/AUDYT_...-mapa-<plan>.md` (konwencja PR treściowego).
-2. **Ustal pozycje ze źródeł**, nie z kursora: kontynent + sąsiedztwo
-   (MA4/PROCES_MAP). Dla pozycji **nieustalonych w kanonie** dopuszczalne
-   jest oprzeć się na najlepszej mapie fanowskiej — wtedy źródło i adnotację
-   zapisujemy w `map.json` (pole `zrodlo_fanmapa` + flaga `pozycja_zrodlo`
-   w `kotwice`/-elementach), a pozycję podpisujemy jako „rekonstrukcja,
-   nie kanon" (w podpisie podkładu SVG).
-3. **Wzbogać wektor podkładu** (`maps/<plan>/podklad.svg`): symbolika
-   (góry, wulkany, lasy, rzeki, miasta, bagna, ruiny/skyclave) w palecie
-   pergaminu ADR 0008, + **legenda symboli**; nowe elementy idą do SVG,
-   **nie** do `map.json` (tam tylko pinezki/regiony/kotwice).
-4. **Popraw kolizje**: przenieś markery na ląd, rozsuń nakładające się
-   etykiety, przenieś legendę/podpis poza obszar treści mapy; dodaj
-   „halo" pod tekstem (`paint-order: stroke`) dla czytelności nad
-   elementami przyrody.
-5. **Zweryfikuj wizualnie** (zrzut podkładu — np. rasteryzacja SVG do
-   PNG) i **udokumentuj w `map.json`**: `elementy` (nazwa, typ, kontynent,
-   URL źródła), `kotwice` (z notką źródła), `zrodlo.notka` (adnotacja
-   o rekonstrukcji). `npm build` + `npm test` zielone.
-
-Wynik każdego doskonalenia mapy wpisuje się do `content/co-nowego.md`.
+Wynik każdego passu wpisuje się do `content/co-nowego.md` (co dodane,
+co zweryfikowane, co poprawione).
 
 ## Krok 5 — co nowego + zamknięcie
 
