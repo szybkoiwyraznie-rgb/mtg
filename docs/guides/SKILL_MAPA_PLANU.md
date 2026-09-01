@@ -340,6 +340,11 @@ Od 2026-09-01 projekt ma własny, deterministyczny silnik mapowy:
 `tools/mapforge/` (zero zależności; katalog klocków i schemat sceny —
 `tools/mapforge/README.md`; demo: `maps/_warsztat/podklad.svg`).
 
+**To jest teraz domyślny sposób tworzenia map T3/T4 nowego planu (E4
+planu `PLAN_2026-09-01-mapforge.md`):** start od `scena.json` → render
+podkładu mapforgiem (motyw atlas, ADR 0019), nie ręczne pisanie
+podkładu „od zera". PROCES_MAP MA1 pkt 5 prowadzi przez ten wzorzec.
+
 Reguły użycia:
 
 1. **Nowy element mapy planu = klocek ze sceny**, nie ręczny `<path>`

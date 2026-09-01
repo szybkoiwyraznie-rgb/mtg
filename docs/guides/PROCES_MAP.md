@@ -34,6 +34,17 @@ kartę** (lub zlecenie właściciela). Pilot: Śródziemie, karta 1LTR.
    w `SKILL_MAPA_PLANU.md`; jakościowo dąży do mapy Śródziemia (T2)
    i wyżej. Mapa T3 dojrzewa do T4 wraz z warsztatem.
 
+   **E4 — nowy plan zaczyna od sceny + mapforge (od 2026-09-01, plan
+   `PLAN_2026-09-01-mapforge.md`):** dla każdego nowego planu bez mapy
+   (T3/T4) nie rysujemy już podkładu ręcznie „od zera". Najpierw budujemy
+   `maps/<plan>/scena.json` (deklaratywna scena: lądy, biomy, pasma,
+   rzeki, jeziora, POI, etykiety — przekład z map.json/kotwic), potem
+   renderujemy podkład silnikiem `tools/mapforge/` (motyw atlas,
+   ADR 0019). Katalog klocków i schemat sceny: `tools/mapforge/README.md`;
+   warstwy i metody rysowania: `SKILL_MAPA_PLANU.md` §11. Ręczne
+   `path'y` dopuszczalne tylko jako świadomy wyjątek (np. doklejenie
+   pojedynczego POI do już istniejącego, adoptowanego podkładu).
+
 ## MA2 — Struktura danych mapy
 
 `maps/<plan>/map.json`:
