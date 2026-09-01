@@ -138,18 +138,33 @@ export function las(id, poly, { gestosc = 1, skala = 1, minOdst = 8, maski = nul
     .map(([x, y]) => drzewo(x, y, skala, rng)).join('\n');
 }
 
-/* ---------- biome: bagno (kępki turzyc + płytkie oczka) ---------- */
+/* ---------- biome: bagno (sitowie + płytkie oczka) ---------- */
 
+/**
+ * Bagno w duchu mapome — nie pojedyncze „esy" (wyglądały jak rząd znaczków
+ * „JJJ"), lecz kępka SITOWIA: kilka krótkich, lekko rozchylonych pionowych
+ * kresek + co jakiś czas płytkie oczko (pozioma falka). Gęsty rozsiew
+ * (mały odstęp) składa się w teksturę mokradeł zamiast rytmicznych rzędów.
+ */
 export function bagno(id, poly, { gestosc = 1, maski = null } = {}) {
   const rng = prng(`bagno:${id}`);
-  const n = Math.round(pole(poly) / 620 * gestosc);
-  return rozrzut(poly, n, rng, 18, maski).map(([x, y]) => {
-    const k = (rng() - 0.5) * 2;
-    return `<g class="mf-kepka" data-x="${rr(x)}" data-y="${rr(y)}">` +
-      `<path d="M ${rr(x - 7)} ${rr(y)} q 3 -9 6 0 M ${rr(x - 1)} ${rr(y + k)} q 3 -10 6 0 M ${rr(x + 4)} ${rr(y - k)} q 3 -8 6 0" ` +
-      `stroke="${PAL.bagno}" stroke-width="1.6" fill="none" stroke-linecap="round"/>` +
-      (rng() < 0.3 ? `<ellipse cx="${rr(x + 9)}" cy="${rr(y + 5)}" rx="5" ry="2.6" fill="${PAL.wodaGleb}" opacity="0.55"${PAL.tryb === 'tusz' ? ` stroke="${PAL.wodaStroke}" stroke-width="0.9"` : ''}/>` : '') +
-      `</g>`;
+  const n = Math.round(pole(poly) / 480 * gestosc);
+  return rozrzut(poly, n, rng, 9, maski).map(([x, y]) => {
+    let out = `<g class="mf-kepka" data-x="${rr(x)}" data-y="${rr(y)}">`;
+    // sitowie: 3–5 krótkich pionowych kresek (rozchylonych, o różnej wys.)
+    const m = 3 + Math.floor(rng() * 3);
+    for (let i = 0; i < m; i++) {
+      const dx = (rng() - 0.5) * 10;
+      const hgt = 6 + rng() * 5;
+      out += `<path d="M ${rr(x + dx)} ${rr(y)} l ${rr((rng() - 0.5) * 1.6)} ${rr(-hgt)}" ` +
+        `stroke="${PAL.bagno}" stroke-width="1" stroke-linecap="round" fill="none"/>`;
+    }
+    // płytkie oczko: pozioma falka (jak tafla na mapie mapome)
+    if (rng() < 0.4) {
+      out += `<path d="M ${rr(x - 5)} ${rr(y + 4)} q 3 -3 6 0 q 3 3 6 0" ` +
+        `stroke="${PAL.wodaStroke}" stroke-width="1" fill="none" opacity="0.7" stroke-linecap="round"/>`;
+    }
+    return out + `</g>`;
   }).join('\n');
 }
 
@@ -204,44 +219,57 @@ function punktWPoligonie(poly, rng) {
 /* ---------- pasmo górskie (grzbiet + szczyty z faseta cienia) ---------- */
 
 /**
- * Pojedynczy szczyt w duchu mapome — asymetryczny, ręcznie rysowany „żagiel":
- * lewa krawędź wypukła na zewnątrz, prawa wklęsła (charakterystyczna
- * „rybia płetwa" gór), cień po prawej w ciemniejszej facecie i krótka
- * haczura. `lean` przesuwa wierzchołek (jitter w pasmie), dzięki czemu
- * grzbiety składają się w naturalną, chwiejną linię zamiast równych
- * trójkątów.
+ * Pojedynczy szczyt w duchu mapome — ręcznie rysowany, cieniowany „żagiel":
+ * asymetryczny wierzchołek (lewa wypukła, prawa wklęsła), ciemniejsza faseta
+ * po prawej i GĘSTE kreskowanie na cienistej ścianie (wiele krótkich,
+ * równoległych pociągnięć jak na mapie mapome) oraz parę jasnych kresek
+ * na oświetlonej (lewej) stronie. `lean` przesuwa wierzchołek (jitter
+ * w pasmie), dzięki czemu grzbiety składają się w chwiejną, naturalną linię.
  */
 export function szczyt(x, y, w, h, { snieg = false, lean = 0 } = {}) {
   const Pk = [x + lean * w, y - h];                 // wierzchołek (przesunięty)
   const L = [x - w, y];
   const R = [x + w, y];
   // lewa krawędź — wypukła na zewnątrz; prawa — wklęsła („żagiel")
-  const c1 = [x - w * 0.92, y - h * 0.58];
-  const cR = [x + w * 0.08, y - h * 0.5];
-  const cR2 = [x + w * 0.66, y - h * 0.52];
+  const c1 = [x - w * 0.9, y - h * 0.6];
+  const cR = [x + w * 0.02, y - h * 0.5];
+  const cR2 = [x + w * 0.7, y - h * 0.52];
   const kontur = `M ${rr(L[0])} ${rr(L[1])} C ${rr(c1[0])} ${rr(c1[1])}, ` +
-    `${rr(Pk[0] - w * 0.12)} ${rr(Pk[1])}, ${rr(Pk[0])} ${rr(Pk[1])} ` +
+    `${rr(Pk[0] - w * 0.1)} ${rr(Pk[1])}, ${rr(Pk[0])} ${rr(Pk[1])} ` +
     `C ${rr(cR[0])} ${rr(cR[1])}, ${rr(cR2[0])} ${rr(cR2[1])}, ${rr(R[0])} ${rr(R[1])} Z`;
   // cień: prawa połowa (od szczytu opadająca do podstawy) — ciemniejsza faseta
   const cienD = `M ${rr(Pk[0])} ${rr(Pk[1])} C ${rr(cR[0])} ${rr(cR[1])}, ` +
-    `${rr(cR2[0])} ${rr(cR2[1])}, ${rr(R[0])} ${rr(R[1])} L ${rr(Pk[0] + w * 0.06)} ${rr(y)} Z`;
-  // haczura na cienistej ścianie
+    `${rr(cR2[0])} ${rr(cR2[1])}, ${rr(R[0])} ${rr(R[1])} L ${rr(Pk[0] + w * 0.08)} ${rr(y)} Z`;
+  // GĘSTE kreskowanie na cienistej ścianie (od grzbietu do podstawy)
   let hach = '';
-  for (let i = 1; i <= 3; i++) {
-    const f = i / 4;
-    const ax = Pk[0] + (R[0] - Pk[0]) * f * 0.82;
+  const NH = 7;
+  for (let i = 0; i < NH; i++) {
+    const f = (i + 0.5) / NH;
+    const ax = Pk[0] + (R[0] - Pk[0]) * f;
     const ay = Pk[1] + (y - Pk[1]) * f;
-    hach += `M ${rr(ax)} ${rr(ay)} L ${rr(ax - w * 0.07)} ${rr(ay - h * 0.06)} `;
+    const bx = ax - w * 0.05;
+    const by = y;
+    hach += `M ${rr(ax)} ${rr(ay)} L ${rr(bx)} ${rr(by)} `;
+  }
+  // jasne kreski na oświetlonej (lewej) ścianie — podkreślają wypukłość
+  let os = '';
+  const NL = 3;
+  for (let i = 0; i < NL; i++) {
+    const f = (i + 0.5) / NL;
+    const ax = Pk[0] + (L[0] - Pk[0]) * f;
+    const ay = Pk[1] + (y - Pk[1]) * f;
+    os += `M ${rr(ax)} ${rr(ay)} L ${rr(ax + w * 0.04)} ${rr(ay + h * 0.12)} `;
   }
   const sn = snieg
-    ? `<path d="M ${rr(Pk[0] - w * 0.24)} ${rr(Pk[1] + h * 0.18)} L ${rr(Pk[0])} ${rr(Pk[1])} ` +
-      `L ${rr(Pk[0] + w * 0.18)} ${rr(Pk[1] + h * 0.2)} L ${rr(Pk[0] + w * 0.07)} ${rr(Pk[1] + h * 0.3)} ` +
-      `L ${rr(Pk[0] - w * 0.06)} ${rr(Pk[1] + h * 0.32)} Z" fill="${PAL.snieg}"/>`
+    ? `<path d="M ${rr(Pk[0] - w * 0.22)} ${rr(Pk[1] + h * 0.16)} L ${rr(Pk[0])} ${rr(Pk[1])} ` +
+      `L ${rr(Pk[0] + w * 0.16)} ${rr(Pk[1] + h * 0.18)} L ${rr(Pk[0] + w * 0.06)} ${rr(Pk[1] + h * 0.28)} ` +
+      `L ${rr(Pk[0] - w * 0.06)} ${rr(Pk[1] + h * 0.3)} Z" fill="${PAL.snieg}"/>`
     : '';
   return `<g class="mf-szczyt" data-x="${rr(x)}" data-y="${rr(y)}">` +
-    `<path d="${kontur}" fill="${PAL.skala}" stroke="${PAL.tekst}" stroke-width="1.6" stroke-linejoin="round"/>` +
-    `<path d="${cienD}" fill="${PAL.skalaCien}" opacity="0.5"/>` +
-    `<path d="${hach}" stroke="${PAL.skalaCien}" stroke-width="1" fill="none" opacity="0.85"/>` +
+    `<path d="${kontur}" fill="${PAL.skala}" stroke="${PAL.tekst}" stroke-width="1.4" stroke-linejoin="round"/>` +
+    `<path d="${cienD}" fill="${PAL.skalaCien}" opacity="0.55"/>` +
+    `<path d="${hach}" stroke="${PAL.skalaCien}" stroke-width="0.9" fill="none" opacity="0.9" stroke-linecap="round"/>` +
+    `<path d="${os}" stroke="${PAL.halo}" stroke-width="0.8" fill="none" opacity="0.8" stroke-linecap="round"/>` +
     sn +
     `</g>`;
 }

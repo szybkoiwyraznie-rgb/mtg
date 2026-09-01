@@ -332,6 +332,22 @@ export function zamontujMape(app, opcje = {}) {
   const szerokoscSceny = () => ruch.clientWidth || ruch.offsetWidth || okno.clientWidth || 800;
   const wysokoscSceny = () => szerokoscSceny() / aspekt;
 
+  // Domyślny widok = cała mapa dopasowana do okna (contain, wyśrodkowana),
+  // bez ucinania. Okno ma stałą wysokość (clamp), a scena szerokość 100% +
+  // aspect-ratio — dla wyższych map scena wychodziła poza okno i była
+  // ucinana (feedback właściciela: „ucina w 4/5 od dołu"). `dopasuj()` liczy
+  // skalę i przesunięcie tak, aby cała mapa była widoczna, potem można
+  // przybliżyć/panować. Reset też wraca do dopasowania (nie do k=1).
+  const dopasuj = () => {
+    const W = szerokoscSceny();
+    const H = okno.clientHeight || (W / aspekt);
+    const k = Math.min(1, (H * aspekt) / W);     // contain: nie powiększaj, tylko zmieść
+    stan.k = k;
+    stan.ox = (W - W * k) / 2;
+    stan.oy = (H - (W / aspekt) * k) / 2;
+    nanies();
+  };
+
   const nanies = () => {
     ruch.style.transform = `translate(${stan.ox}px, ${stan.oy}px) scale(${stan.k})`;
     // Pinezki i etykiety regionów żyją w nakładce POZA skalowaną warstwą:
@@ -372,6 +388,9 @@ export function zamontujMape(app, opcje = {}) {
     nanies();
   };
 
+  // Domyślnie dopasuj całą mapę (pin deep-link niżej nadpisze, jeśli jest)
+  dopasuj();
+
   // deep-link ?pin= — wyśrodkuj na pinezce z przybliżeniem
   const escape = globalThis.CSS?.escape ?? ((s) => String(s));
   const pinDocelowy = okno.getAttribute('data-pin');
@@ -392,7 +411,7 @@ export function zamontujMape(app, opcje = {}) {
     przycisk.addEventListener('click', () => {
       const akcja = przycisk.getAttribute('data-mapa-akcja');
       const w = okno.clientWidth || 800, h = okno.clientHeight || 600;
-      if (akcja === 'reset') { stan.k = 1; stan.ox = 0; stan.oy = 0; nanies(); }
+      if (akcja === 'reset') { dopasuj(); }
       else if (akcja === 'przybliz') zoomWokol(w / 2, h / 2, stan.k * 1.35);
       else if (akcja === 'oddal') zoomWokol(w / 2, h / 2, stan.k / 1.35);
     });
