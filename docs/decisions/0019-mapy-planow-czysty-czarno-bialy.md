@@ -1,6 +1,7 @@
 # ADR 0019: Mapy planów w motywie atlasowym — czysty czarno-biały line-art
 
-- **Status:** Zaakceptowana
+- **Status:** Zaakceptowana (doprecyzowana tego samego dnia: walor
+  tonalny w szarościach — patrz „Doprecyzowanie")
 - **Data:** 2026-09-01
 - **Decydenci:** właściciel projektu (wybór po porównaniu A/B demo mapforge);
   agent Arena (sesja PR-7)
@@ -33,6 +34,19 @@ w sepii — **czysty czarno-biały jak adoptowany podkład Śródziemia**
    wg planu adopcji ADR 0018 (E1–E3), z oceną właściciela.
 4. Paleta pergaminu z ADR 0008 pozostaje obowiązująca dla elementów
    Codexu poza mapami planów (ta decyzja nie zmienia stylu strony).
+
+## Doprecyzowanie (2026-09-01, po obejrzeniu renderu czysto
+## czarno-białego)
+
+Czysta dwubarwność (tusz + biel, „tryb tusz") okazała się zbyt płaska
+— zabiera walor, który robił wersję tonalną czytelniejszą. Właściciel:
+„połączyć monochromatyczny z sepią, ale odcienie szarego na bazie
+czystego czarnego/szarego/białego, nie sepii/brązu". Motyw `atlas`
+renderuje się więc z **walorem tonalnym w achromatycznych szarościach**:
+ląd jaśniejszy od wody, korony dwutonowe, fasety szczytów cieniowane,
+linie wody i plamy oceanu w szarościach; **test pilnuje, by każdy
+kolor wypełnienia miał R=G=B** (sepia/brąz systemowo wykluczone).
+Tryb „tusz" zostaje w silniku dla ewentualnych własnych palet.
 
 ## Konsekwencje
 

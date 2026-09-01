@@ -22,7 +22,7 @@ export const PAL = {
   bagno: '#6f8a72', step: '#b5a877',
   skala: '#d8c9a3', skalaCien: '#8a7550', skalaLinia: '#a89468',
   droga: '#8a7550',
-  lodFill: '#eef0e6', lodPek: '#c9d4d6',
+  lodFill: '#eef0e6', lodPek: '#c9d4d6', snieg: '#f6f4ec',
   krater: '#7a4a3a', dym: '#9aa3a8', mur: '#c9b98f', kamien: '#cfc4a0',
   poswiataKolor: '#b9cdd8',
   poswiata: [{ w: 12, o: 0.10 }, { w: 7, o: 0.16 }, { w: 3, o: 0.24 }],
@@ -32,25 +32,28 @@ export const PAL = {
 
 const MOTYWY = {
   pergamin: {},
-  /** Czysty czarno-biały line-art (decyzja właściciela; wzorzec: podkład
-   *  Śródziemia T2/mapome): sama kreska na białym papierze — korony
-   *  i szczyty konturem, cienie haćurą, woda biała z tuszowymi liniami.
-   *  Kolor zarezerwowany dla warstw funkcjonalnych UI (pinezki kart). */
+  /** Monochromatyczny atlas z walorem tonalnym (decyzja właściciela,
+   *  doprecyzowanie ADR 0019): odcienie wyłącznie na osi czarny–szary–
+   *  biały (achromatycznie, bez sepii/brązu) — ląd jaśniejszy od wody,
+   *  korony dwutonowe, fasety cieniowane, linie wody i plamy oceanu
+   *  w szarościach. Kolor zarezerwowany dla warstw funkcjonalnych UI
+   *  (pinezki kart). Tryb „tusz" (czysta kreska, zero wypełnień)
+   *  pozostaje dostępny dla własnych palet — tryb deklaruje motyw. */
   atlas: {
-    lad: '#ffffff', ladStroke: '#111111',
-    woda: '#ffffff', wodaGleb: '#ffffff', wodaStroke: '#111111',
-    rzeka: '#1f1f1f',
-    tekst: '#000000', ital: '#000000', halo: '#ffffff',
-    drzewo: '#ffffff', drzewoCien: '#ffffff', pienn: '#111111',
-    bagno: '#111111', step: '#555555',
-    skala: '#ffffff', skalaCien: '#111111', skalaLinia: '#111111',
-    droga: '#111111',
-    lodFill: '#ffffff', lodPek: '#aaaaaa',
-    krater: '#111111', dym: '#777777', mur: '#ffffff', kamien: '#ffffff',
-    poswiataKolor: '#111111',
-    poswiata: [{ w: 8, o: 0.20 }, { w: 4, o: 0.45 }, { w: 2, o: 0.90 }],
-    oceanPlamy: false,
-    tryb: 'tusz',
+    lad: '#f5f5f5', ladStroke: '#3f3f3f',
+    woda: '#e9e9e9', wodaGleb: '#dcdcdc', wodaStroke: '#8f8f8f',
+    rzeka: '#5a5a5a',
+    tekst: '#1c1c1c', ital: '#3f3f3f', halo: '#f5f5f5',
+    drzewo: '#dedede', drzewoCien: '#c3c3c3', pienn: '#3f3f3f',
+    bagno: '#5f5f5f', step: '#9b9b9b',
+    skala: '#eaeaea', skalaCien: '#6b6b6b', skalaLinia: '#8f8f8f',
+    droga: '#3f3f3f',
+    lodFill: '#fafafa', lodPek: '#bdbdbd', snieg: '#ffffff',
+    krater: '#4a4a4a', dym: '#909090', mur: '#d9d9d9', kamien: '#cfcfcf',
+    poswiataKolor: '#9f9f9f',
+    poswiata: [{ w: 10, o: 0.35 }, { w: 5.5, o: 0.5 }, { w: 2, o: 0.9 }],
+    oceanPlamy: true,
+    tryb: 'kolor',
   },
 };
 
@@ -157,7 +160,7 @@ export function szczyt(x, y, w, h, { snieg = false } = {}) {
   return `<g class="mf-szczyt">` +
     `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x)} ${rr(y - h)} L ${rr(x + w)} ${rr(y)} Z" fill="${PAL.skala}" stroke="${PAL.skalaCien}" stroke-width="1.8" stroke-linejoin="round"/>` +
     `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x)} ${rr(y - h)} L ${rr(x - w * 0.18)} ${rr(y)} Z" fill="${PAL.skalaCien}" opacity="0.45"/>` +
-    (snieg ? `<path d="M ${rr(x - w * 0.3)} ${rr(y - h * 0.68)} L ${rr(x)} ${rr(y - h)} L ${rr(x + w * 0.3)} ${rr(y - h * 0.68)} L ${rr(x + w * 0.12)} ${rr(y - h * 0.6)} L ${rr(x)} ${rr(y - h * 0.72)} L ${rr(x - w * 0.12)} ${rr(y - h * 0.58)} Z" fill="#f6f4ec"/>` : '') +
+    (snieg ? `<path d="M ${rr(x - w * 0.3)} ${rr(y - h * 0.68)} L ${rr(x)} ${rr(y - h)} L ${rr(x + w * 0.3)} ${rr(y - h * 0.68)} L ${rr(x + w * 0.12)} ${rr(y - h * 0.6)} L ${rr(x)} ${rr(y - h * 0.72)} L ${rr(x - w * 0.12)} ${rr(y - h * 0.58)} Z" fill="${PAL.snieg}"/>` : '') +
     `</g>`;
 }
 

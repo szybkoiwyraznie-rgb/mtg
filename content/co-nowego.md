@@ -15,11 +15,11 @@ ADR 0006). Najnowsze na górze.
   (deterministyczne „losowości" z hasha id).
 - **Demo-katalog klocków:** `maps/_warsztat/podklad.svg` (Wyspa
   Próbna) — przechodzi audyt mapowy bez zastrzeżeń.
-- **Motywy: `pergamin` i `atlas`** — po porównaniu A/B właściciel wybrał
-  **czysty czarno-biały** (ADR 0019): tryb tuszowy silnika — korony
-  i szczyty konturem, cienie haćurą, klasyczne linie wody przy wybrzeżu,
-  rzeki tuszem; kolor zarezerwowany dla pinezek i warstw funkcjonalnych.
-  Atlas jest odtąd domyślnym motywem map planów (T4).
+- **Motywy: `pergamin` i `atlas`** — po A/B właściciel wybrał monochro-
+  matyczny atlas (ADR 0019), a po renderze czysto czarno-białego
+  doprecyzował: **walor tonalny w szarościach** (czarny–szary–biały,
+  bez sepii/brązu). Test pilnuje achromatyczności wszystkich
+  wypełnień (R=G=B); atlas = domyślny motyw map planów (T4).
 - Research (ADR 0018): Azgaar FMG (MIT) to generator losowy — my
   renderujemy kanon; techniki line-artu mapome (kropka 0,9; dyscyplina
   grubości) wcielone w klockach.

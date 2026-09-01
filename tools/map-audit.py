@@ -34,7 +34,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 NS = '{http://www.w3.org/2000/svg}'
 FILLE_LADU = {'#e8dbb8', '#eef0e6',         # pergamin: ląd / lodowiec (Sejiri)
-               '#ffffff'}                    # atlas (mapforge, tryb tusz): ląd = biały papier
+               '#f5f5f5'}                    # atlas (mapforge): ląd = jasny szary papier
 MARKERY = {'gora', 'wulkan', 'drzewo', 'bagno', 'miasto', 'ruina'}
 SPODZEANE_WODY = {                           # konwencja projektu
     'Bojuka Bay', 'Sunder Bay', 'Chill Depths', 'Makindi Trenches',

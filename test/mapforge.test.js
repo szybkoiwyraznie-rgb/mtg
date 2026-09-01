@@ -117,10 +117,15 @@ test('mapforge: motywy — atlas wymienia paletę, oba deterministyczne', () => 
   const a1 = renderuj(scenaDemo(), { styl: 'atlas' });
   const a2 = renderuj(scenaDemo(), { styl: 'atlas' });
   assert.ok(p.includes('fill="#e8dbb8"'), 'pergamin: ląd pergaminowy');
-  assert.ok(a1.includes('fill="#ffffff"'), 'atlas: ląd = biały papier');
-  assert.ok(!a1.includes('fill="#e8dbb8"') && !a1.includes('fill="#ccd8d2"'), 'atlas bez palety pergaminu');
-  assert.ok((a1.match(/stroke="#111111"/g) ?? []).length > 200, 'atlas: kreska tuszowa dominuje');
-  assert.ok(a1.includes('fill="#ffffff" stroke="#111111"'), 'korony/szczyty konturem');
+  assert.ok(a1.includes('fill="#f5f5f5"'), 'atlas: ląd = jasny szary');
+  assert.ok(a1.includes('fill="#c3c3c3"'), 'atlas: walor tonalny (cień koron)');
+  assert.ok(!a1.includes('fill="#e8dbb8"') && !a1.includes('fill="#f7f2e2"'), 'bez pergaminu i bez sepii');
+  const wyp = [...a1.matchAll(/fill="#([0-9a-f]{6})"/g)].map((m) => m[1]);
+  assert.ok(wyp.length > 300, 'wypełnień do sprawdzenia');
+  for (const h of wyp) {
+    const r = parseInt(h.slice(0, 2), 16), g = parseInt(h.slice(2, 4), 16), b2 = parseInt(h.slice(4, 6), 16);
+    assert.ok(r === g && g === b2, `achromatycznie: #${h} (R=${r} G=${g} B=${b2})`);
+  }
   assert.ok(!a1.includes('ellipse') || !/plamy/.test(a1), 'atlas: ocean bez plam');
   assert.equal(a1, a2, 'atlas deterministyczny');
   assert.ok(a1.includes('styl: atlas') && p.includes('styl: pergamin'), 'styl w nagłówku');
