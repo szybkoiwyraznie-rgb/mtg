@@ -15,6 +15,11 @@ ADR 0006). Najnowsze na górze.
   (deterministyczne „losowości" z hasha id).
 - **Demo-katalog klocków:** `maps/_warsztat/podklad.svg` (Wyspa
   Próbna) — przechodzi audyt mapowy bez zastrzeżeń.
+- **Motywy: `pergamin` (domyślny) i `atlas`** — ten drugi to czarno-biały
+  line-art „tusz na papierze" z klasycznymi liniami wody przy wybrzeżu
+  (wzorzec: podkład Śródziemia); ta sama scena, inna paleta:
+  `maps/_warsztat/podklad-atlas.svg`. Wybór motywu docelowego map planów
+  — do oceny właściciela (porównanie obu wersji demo).
 - Research (ADR 0018): Azgaar FMG (MIT) to generator losowy — my
   renderujemy kanon; techniki line-artu mapome (kropka 0,9; dyscyplina
   grubości) wcielone w klockach.

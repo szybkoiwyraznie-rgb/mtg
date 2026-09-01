@@ -23,7 +23,7 @@
  */
 
 import {
-  PAL, las, bagno, step, lod, pasmo, wulkan, rzeka, doplyw, jezioro,
+  PAL, motyw, las, bagno, step, lod, pasmo, wulkan, rzeka, doplyw, jezioro,
   droga, miasto, ruina, hedron, etykieta, lukEtykieta, kompas, ramka,
   skalaLinia, drzewo,
 } from './bloki.mjs';
@@ -36,6 +36,7 @@ const BLOKI_POI = { miasto, ruina, hedron };
 export function ocean(szer, wys, { seed = 'ocean', plamy = 26 } = {}) {
   const rng = prng(seed);
   let out = `<rect x="0" y="0" width="${szer}" height="${wys}" fill="${PAL.woda}"/>`;
+  if (PAL.oceanPlamy === false) return out;   // motyw atlasowy: sterylny papier
   for (let i = 0; i < plamy; i++) {
     const x = rng() * szer;
     const y = rng() * wys;
@@ -44,14 +45,16 @@ export function ocean(szer, wys, { seed = 'ocean', plamy = 26 } = {}) {
   return out;
 }
 
-/** Poświata wybrzeża: 3 narastające obrysy w barwie wody pod lądem. */
+/** Poświata wybrzeża — wg motywu (pergamin: woda; atlas: klasyczne
+ *  „linie wody" przybrzeżne jak w dawnych atlasach). */
 export function poswiataWybrzeza(d) {
-  return [12, 7, 3].map((w, i) =>
-    `<path d="${d}" fill="none" stroke="${PAL.wodaGleb}" stroke-width="${w}" opacity="${[0.10, 0.16, 0.24][i]}"/>`,
+  return (PAL.poswiata ?? []).map(({ w, o }) =>
+    `<path d="${d}" fill="none" stroke="${PAL.poswiataKolor}" stroke-width="${w}" opacity="${o}"/>`,
   ).join('');
 }
 
-export function renderuj(scena) {
+export function renderuj(scena, { styl } = {}) {
+  motyw(styl ?? scena.styl ?? 'pergamin');
   const szer = scena.szerokosc ?? 2000;
   const wys = scena.wysokosc ?? 1400;
   const warstwy = [];
@@ -133,7 +136,7 @@ export function renderuj(scena) {
   if (oprawa.length) warstwy.push(`<!-- === OPRAWA (kompas, skala, ramka) === -->`, `<g transform="translate(0,0)">`, ...oprawa, `</g>`);
 
   return `<?xml version="1.0" encoding="utf-8"?>\n` +
-    `<!-- Wygenerowano tools/mapforge (ADR 0018); scena: ${scena.nazwa ?? '(bez nazwy)'} -->\n` +
+    `<!-- Wygenerowano tools/mapforge (ADR 0018); scena: ${scena.nazwa ?? '(bez nazwy)'}; styl: ${styl ?? scena.styl ?? 'pergamin'} -->\n` +
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${szer} ${wys}" font-family="Georgia, 'Times New Roman', serif">\n` +
     warstwy.join('\n') + '\n</svg>\n';
 }

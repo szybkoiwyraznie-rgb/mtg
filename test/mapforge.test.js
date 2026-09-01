@@ -11,7 +11,7 @@ import {
 } from '../tools/mapforge/geom.mjs';
 import {
   las, bagno, pasmo, rzeka, jezioro, droga, etykieta, lukEtykieta,
-  miasto, ruina, hedron, szczyt, wulkan,
+  miasto, ruina, hedron, szczyt, wulkan, motyw,
 } from '../tools/mapforge/bloki.mjs';
 import { renderuj, scenaDemo } from '../tools/mapforge/cli.mjs';
 
@@ -110,6 +110,20 @@ test('mapforge: POI — miasto/ruina/hedron/wulkan', () => {
   const h = hedron(0, 0, { opacity: 0.75 });
   assert.ok(h.includes('opacity="0.75"') && h.includes('mf-hedron'));
   assert.ok(wulkan(0, 0).includes('ellipse'), 'krater wulkanu');
+});
+
+test('mapforge: motywy — atlas wymienia paletę, oba deterministyczne', () => {
+  const p = renderuj(scenaDemo());
+  const a1 = renderuj(scenaDemo(), { styl: 'atlas' });
+  const a2 = renderuj(scenaDemo(), { styl: 'atlas' });
+  assert.ok(p.includes('fill="#e8dbb8"'), 'pergamin: ląd pergaminowy');
+  assert.ok(a1.includes('fill="#f7f2e2"'), 'atlas: ląd papierowy');
+  assert.ok(!a1.includes('fill="#e8dbb8"') && !a1.includes('fill="#ccd8d2"'), 'atlas bez palety pergaminu');
+  assert.ok(!a1.includes('ellipse') || !/plamy/.test(a1), 'atlas: ocean bez plam');
+  assert.equal(a1, a2, 'atlas deterministyczny');
+  assert.ok(a1.includes('styl: atlas') && p.includes('styl: pergamin'), 'styl w nagłówku');
+  assert.throws(() => renderuj(scenaDemo(), { styl: 'brak' }), /nieznany motyw/);
+  motyw('pergamin');   // przywróć paletę dla kolejnych testów
 });
 
 test('mapforge: renderuj — deterministyczny, warstwowy, kompletny', () => {

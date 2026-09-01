@@ -33,7 +33,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 NS = '{http://www.w3.org/2000/svg}'
-FILLE_LADU = {'#e8dbb8', '#eef0e6'}          # ląd / lodowiec (Sejiri)
+FILLE_LADU = {'#e8dbb8', '#eef0e6',         # pergamin: ląd / lodowiec (Sejiri)
+               '#f7f2e2', '#fbf8ee'}         # atlas (mapforge): ląd / lodowiec
 MARKERY = {'gora', 'wulkan', 'drzewo', 'bagno', 'miasto', 'ruina'}
 SPODZEANE_WODY = {                           # konwencja projektu
     'Bojuka Bay', 'Sunder Bay', 'Chill Depths', 'Makindi Trenches',
@@ -136,19 +137,31 @@ class Mapa:
 
 
 def audytuj(plan, woda_dozwolona):
+    """Audytuje wszystkie podkłady planu (podklad*.svg)."""
     problemy, info = [], []
-    svg = ROOT / 'maps' / plan / 'podklad.svg'
-    mjson = ROOT / 'maps' / plan / 'map.json'
-    try:
-        mapa = Mapa(svg)
-    except ET.ParseError as e:
-        return [f'XML niepoprawny: {e}'], []
-    if not mapa.ma_lad:
-        info.append('podkład bez poligonów lądu (mapa liniowa/T2) — '
-                    'testy na-lądzie pominięte')
-        return problemy, info
+    kat = ROOT / 'maps' / plan
+    svgi = sorted(kat.glob('podklad*.svg'))
+    if not svgi:
+        return [f'brak maps/{plan}/podklad*.svg'], []
+    for svg in svgi:
+        try:
+            mapa = Mapa(svg)
+        except ET.ParseError as e:
+            problemy.append(f'XML niepoprawny ({svg.name}): {e}')
+            continue
+        if not mapa.ma_lad:
+            info.append(f'{svg.name}: mapa liniowa/T2 (bez poligonów lądu) '
+                        '— testy na-lądzie pominięte')
+            continue
+        p2, i2 = audytuj_podklad(mapa, svg.name, kat / 'map.json',
+                                 SPODZEANE_WODY | woda_dozwolona)
+        problemy.extend(p2)
+        info.extend(i2)
+    return problemy, info
 
-    woda = SPODZEANE_WODY | woda_dozwolona
+
+def audytuj_podklad(mapa, nazwa, mjson, woda):
+    problemy, info = [], []
     ety = mapa.etykiety()
     for txt, x, y, fs in ety:
         if len(txt) < 2:                      # igła kompasu (N, S…)
@@ -156,7 +169,7 @@ def audytuj(plan, woda_dozwolona):
         if txt in woda or txt.startswith('(') or txt == 'ruiny w niebie':
             continue
         if not mapa.na_ladzie(x, y):
-            problemy.append(f'ETYKIETA W WODZIE: {txt!r} @({x:.0f},{y:.0f})')
+            problemy.append(f'{nazwa}: ETYKIETA W WODZIE: {txt!r} @({x:.0f},{y:.0f})')
     boxy = [(t, x, y, fs,
              x - len(t) * fs * 0.31, y - fs * 0.82,
              x + len(t) * fs * 0.31, y + fs * 0.24) for t, x, y, fs in ety]
@@ -164,21 +177,21 @@ def audytuj(plan, woda_dozwolona):
         for j in range(i + 1, len(boxy)):
             a, b = boxy[i], boxy[j]
             if a[4] < b[6] and b[4] < a[6] and a[5] < b[7] and b[5] < a[7]:
-                problemy.append(f'KOLIZJA ETYKIET: {a[0]!r} @({a[1]:.0f},'
+                problemy.append(f'{nazwa}: KOLIZJA ETYKIET: {a[0]!r} @({a[1]:.0f},'
                                 f'{a[2]:.0f}) × {b[0]!r} @({b[1]:.0f},{b[2]:.0f})')
     for href, x, y in mapa.markery():
         if not mapa.na_ladzie(x, y):
-            problemy.append(f'MARKER W WODZIE: {href} @({x:.0f},{y:.0f})')
+            problemy.append(f'{nazwa}: MARKER W WODZIE: {href} @({x:.0f},{y:.0f})')
     if mjson.exists():
         d = json.loads(mjson.read_text(encoding='utf-8'))
         for pn in d.get('pinezki', []):
             x, y = pn['x'] * mapa.w, pn['y'] * mapa.h
             if not mapa.na_ladzie(x, y, tolerancja=10):
-                problemy.append(f"PINEZKA W WODZIE: {pn['karta']} ({x:.0f},{y:.0f})")
+                problemy.append(f"{nazwa}: PINEZKA W WODZIE: {pn['karta']} ({x:.0f},{y:.0f})")
         for c in d.get('kotwice', []):
             x, y = c['x'] * mapa.w, c['y'] * mapa.h
             if not mapa.na_ladzie(x, y):
-                info.append(f"kotwica w wodzie (OK dla obiektów wodnych): "
+                info.append(f"{nazwa}: kotwica w wodzie (OK dla obiektów wodnych): "
                             f"{c['nazwa']} ({x:.0f},{y:.0f})")
     return problemy, info
 

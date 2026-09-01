@@ -12,6 +12,7 @@ import {
   punktNa, wstega,
 } from './geom.mjs';
 
+/** Paleta bazowa = motyw „pergamin" (ADR 0008). */
 export const PAL = {
   lad: '#e8dbb8', ladStroke: '#a89468',
   woda: '#ccd8d2', wodaGleb: '#b9cdd8', wodaStroke: '#7fa0b4',
@@ -21,7 +22,42 @@ export const PAL = {
   bagno: '#6f8a72', step: '#b5a877',
   skala: '#d8c9a3', skalaCien: '#8a7550', skalaLinia: '#a89468',
   droga: '#8a7550',
+  lodFill: '#eef0e6', lodPek: '#c9d4d6',
+  krater: '#7a4a3a', dym: '#9aa3a8', mur: '#c9b98f', kamien: '#cfc4a0',
+  poswiataKolor: '#b9cdd8',
+  poswiata: [{ w: 12, o: 0.10 }, { w: 7, o: 0.16 }, { w: 3, o: 0.24 }],
+  oceanPlamy: true,
 };
+
+const MOTYWY = {
+  pergamin: {},
+  /** Atlasowy line-art: tusz na papierze (inspiracja podkładem Śródziemia,
+   *  T2/mapome) — „czysty, sterylny" obraz; kolor zostaje warstwom
+   *  funkcjonalnym (pinezki), nie artworkowi. */
+  atlas: {
+    lad: '#f7f2e2', ladStroke: '#3a342b',
+    woda: '#efe9d8', wodaGleb: '#e4ddc8', wodaStroke: '#5a5344',
+    rzeka: '#5a5344',
+    tekst: '#262119', ital: '#4a4438', halo: '#f7f2e2',
+    drzewo: '#ece5d1', drzewoCien: '#d9d1b9', pienn: '#3a342b',
+    bagno: '#5a5344', step: '#8d846f',
+    skala: '#f2ecdb', skalaCien: '#3a342b', skalaLinia: '#5a5344',
+    droga: '#3a342b',
+    lodFill: '#fbf8ee', lodPek: '#d8d2c0',
+    krater: '#5a5344', dym: '#8d846f', mur: '#e6dfc9', kamien: '#efe9d6',
+    poswiataKolor: '#8d846f',
+    poswiata: [{ w: 10, o: 0.14 }, { w: 5.5, o: 0.22 }, { w: 2, o: 0.55 }],
+    oceanPlamy: false,
+  },
+};
+
+/** Przełącza paletę silnika (mutuje PAL; woła render przed rysowaniem). */
+export function motyw(nazwa = 'pergamin') {
+  if (!(nazwa in MOTYWY)) throw new Error(`nieznany motyw: ${nazwa} (${Object.keys(MOTYWY).join('/')})`);
+  if (!MOTYWY.__baza) MOTYWY.__baza = { ...PAL };   // pierwsza aktywacja = wartości pergaminu
+  Object.assign(PAL, MOTYWY.__baza, MOTYWY[nazwa]);
+  return PAL;
+}
 
 const rr = (v) => zaokr(v);
 
@@ -78,12 +114,12 @@ export function step(id, poly, { gestosc = 1 } = {}) {
 export function lod(id, poly, { pekniecia = 3 } = {}) {
   const rng = prng(`lod:${id}`);
   const { x0, x1, y0, y1 } = { x0: Math.min(...poly.map((p) => p[0])), x1: Math.max(...poly.map((p) => p[0])), y0: Math.min(...poly.map((p) => p[1])), y1: Math.max(...poly.map((p) => p[1])) };
-  let out = `<path d="${prosta(poly, true)}" fill="#eef0e6" stroke="${PAL.wodaStroke}" stroke-width="2"/>`;
+  let out = `<path d="${prosta(poly, true)}" fill="${PAL.lodFill}" stroke="${PAL.wodaStroke}" stroke-width="2"/>`;
   for (let i = 0; i < pekniecia; i++) {
     const a = [x0 + rng() * (x1 - x0), y0 + rng() * (y1 - y0)];
     const b = [x0 + rng() * (x1 - x0), y0 + rng() * (y1 - y0)];
     out += `<path d="${prosta(chaikin([a, [(a[0] + b[0]) / 2 + (rng() - 0.5) * 30, (a[1] + b[1]) / 2 + (rng() - 0.5) * 30], b], 2))}" ` +
-      `stroke="#c9d4d6" stroke-width="1.5" fill="none" opacity="0.8"/>`;
+      `stroke="${PAL.lodPek}" stroke-width="1.5" fill="none" opacity="0.8"/>`;
   }
   return out;
 }
@@ -139,9 +175,9 @@ export function wulkan(x, y, { skala = 1, dym = true } = {}) {
     `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x - w * 0.22)} ${rr(y - h * 0.82)} L ${rr(x)} ${rr(y - h * 0.7)} L ${rr(x + w * 0.22)} ${rr(y - h * 0.82)} L ${rr(x + w)} ${rr(y)} Z" ` +
     `fill="${PAL.skala}" stroke="${PAL.skalaCien}" stroke-width="1.8" stroke-linejoin="round"/>` +
     `<path d="M ${rr(x - w)} ${rr(y)} L ${rr(x - w * 0.22)} ${rr(y - h * 0.82)} L ${rr(x - w * 0.05)} ${rr(y)} Z" fill="${PAL.skalaCien}" opacity="0.45"/>` +
-    `<ellipse cx="${rr(x - w * 0.02)}" cy="${rr(y - h * 0.74)}" rx="${rr(w * 0.2)}" ry="${rr(skala * 1.8)}" fill="#7a4a3a"/>` +
+    `<ellipse cx="${rr(x - w * 0.02)}" cy="${rr(y - h * 0.74)}" rx="${rr(w * 0.2)}" ry="${rr(skala * 1.8)}" fill="${PAL.krater}"/>` +
     (dym ? `<path d="M ${rr(x)} ${rr(y - h * 0.86)} q ${rr(6 * skala)} ${rr(-9 * skala)} 0 ${rr(-16 * skala)} q ${rr(-6 * skala)} ${rr(-7 * skala)} ${rr(2 * skala)} ${rr(-13 * skala)}" ` +
-      `stroke="#9aa3a8" stroke-width="${rr(2.4 * skala)}" fill="none" opacity="0.65" stroke-linecap="round"/>` : '') +
+      `stroke="${PAL.dym}" stroke-width="${rr(2.4 * skala)}" fill="none" opacity="0.65" stroke-linecap="round"/>` : '') +
     `</g>`;
 }
 
@@ -186,7 +222,7 @@ export function droga(id, punkty, { typ = 'szlak' } = {}) {
 export function miasto(x, y, { skala = 1 } = {}) {
   const s = skala;
   return `<g class="mf-miasto">` +
-    `<path d="M ${rr(x - 10 * s)} ${rr(y + 3 * s)} a 10 ${7 * s} 0 0 1 ${20 * s} 0" fill="#c9b98f" stroke="${PAL.skalaCien}" stroke-width="1.4"/>` +
+    `<path d="M ${rr(x - 10 * s)} ${rr(y + 3 * s)} a 10 ${7 * s} 0 0 1 ${20 * s} 0" fill="${PAL.mur}" stroke="${PAL.skalaCien}" stroke-width="1.4"/>` +
     `<rect x="${rr(x - 5 * s)}" y="${rr(y - 3 * s)}" width="${rr(4.5 * s)}" height="${rr(4 * s)}" fill="${PAL.tekst}"/>` +
     `<rect x="${rr(x + 0.5 * s)}" y="${rr(y - 1 * s)}" width="${rr(4 * s)}" height="${rr(4.5 * s)}" fill="${PAL.tekst}"/>` +
     `<rect x="${rr(x - 8 * s)}" y="${rr(y - 0.5 * s)}" width="${rr(4 * s)}" height="${rr(3.5 * s)}" fill="${PAL.tekst}"/>` +
@@ -211,7 +247,7 @@ export function hedron(x, y, { skala = 1, opacity = 1 } = {}) {
   const r = 9 * s;
   const pk = (k) => `${rr(x + r * Math.cos((Math.PI / 3) * k))} ${rr(y + r * Math.sin((Math.PI / 3) * k))}`;
   return `<g class="mf-hedron" opacity="${opacity}">` +
-    `<path d="M ${[0, 1, 2, 3, 4, 5].map(pk).join(' L ')} Z" fill="#cfc4a0" stroke="${PAL.skalaCien}" stroke-width="${rr(1.8 * s)}" stroke-linejoin="round"/>` +
+    `<path d="M ${[0, 1, 2, 3, 4, 5].map(pk).join(' L ')} Z" fill="${PAL.kamien}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.8 * s)}" stroke-linejoin="round"/>` +
     `<path d="M ${pk(0)} L ${pk(3)} M ${pk(1)} L ${pk(4)}" stroke="${PAL.skalaCien}" stroke-width="1" opacity="0.6"/>` +
     `</g>`;
 }

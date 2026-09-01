@@ -82,20 +82,23 @@ export function scenaDemo() {
 
 export function main(argv = process.argv.slice(2)) {
   const args = argv;
+  const stylArg = args.find((a) => a.startsWith('--styl='));
+  const styl = stylArg ? stylArg.split('=')[1] : undefined;
   const demoIdx = args.indexOf('--demo');
 if (demoIdx !== -1) {
-  const cel = args[demoIdx + 1]?.endsWith('.svg') ? args[demoIdx + 1] : 'maps/_warsztat/podklad.svg';
+  const poDemo = args.slice(demoIdx + 1).filter((x) => x.endsWith('.svg') && !x.startsWith('--'));
+  const cel = poDemo[0] ?? 'maps/_warsztat/podklad.svg';
   fs.mkdirSync(path.dirname(cel), { recursive: true });
-  fs.writeFileSync(cel, renderuj(scenaDemo()), 'utf8');
-  console.log(`OK — demo zapisane: ${cel}`);
+  fs.writeFileSync(cel, renderuj(scenaDemo(), { styl }), 'utf8');
+  console.log(`OK — demo zapisane: ${cel} (styl: ${styl ?? 'pergamin'})`);
 } else if (args[0]) {
   const scena = JSON.parse(fs.readFileSync(args[0], 'utf8'));
   const outIdx = args.indexOf('-o');
   const cel = outIdx !== -1 ? args[outIdx + 1] : 'podklad.svg';
-  fs.writeFileSync(cel, renderuj(scena), 'utf8');
-  console.log(`OK — ${scena.nazwa ?? 'scena'} → ${cel}`);
+  fs.writeFileSync(cel, renderuj(scena, { styl }), 'utf8');
+  console.log(`OK — ${scena.nazwa ?? 'scena'} → ${cel} (styl: ${styl ?? 'pergamin'})`);
 } else {
-  console.log('użycie: cli.mjs scena.json -o out.svg | cli.mjs --demo [out.svg]');
+  console.log('użycie: cli.mjs scena.json -o out.svg [--styl=pergamin|atlas] | cli.mjs --demo [out.svg] [--styl=…]');
   return 1;
 }
   return 0;

@@ -26,6 +26,22 @@ python3 tools/map-audit.py <plan>               # weryfikacja geometrii wygenero
    SVG — można dokleić warstwę mapforge do istniejącego, ręcznego
    podkładu (adoptowanie stopniowe, ADR 0018).
 
+## Motywy (`--styl=pergamin|atlas`)
+
+Paleta to dane, nie kod: `motyw('atlas')` wymienia cały zestaw kolorów
+przed renderem.
+
+- **pergamin** (domyślny, ADR 0008) — barwne klocki na pergaminie;
+- **atlas** — „tusz na papierze": ląd=papier, wodę odróżniają tylko
+  klasyczne **linie wody** przy wybrzeżu, korony drzew jako blade masy
+  z tuszowymi pniami, rzeki i szlaki tuszem, ocean bez plam. Inspirowane
+  line-artem podkładu Śródziemia (T2/mapome); kolor zostaje warstwom
+  funkcjonalnym UI (np. czerwone pinezki kart), nie artworkowi.
+
+  ```bash
+  node tools/mapforge/cli.mjs --demo --styl=atlas maps/_warsztat/podklad-atlas.svg
+  ```
+
 ## Katalog klocków (`bloki.mjs`)
 
 | Klocek | Dane | Co rysuje |
