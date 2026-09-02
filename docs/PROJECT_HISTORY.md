@@ -4,6 +4,24 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-02 — sesja PR-10 (część 4): fix układu nakładki (NaN), detektor chaosu, porządki kontynentów (recenzja 4)
+
+**Zlecenie (czat):** (a) falka Halimar wraca; (b) Emeria × „ruiny
+w niebie" nachodzą; (c) porządki na pozostałych kontynentach.
+
+1. **BUG nakładki:** `stanUkladu.k = NaN` → `Math.abs(k−NaN) > próg`
+   zawsze false → układ kolizyjny NIGDY nie działał (większość etykiet
+   i tak trafiała „POD", więc wyglądało dobrze; wykryła to dopiero para
+   o wspólnej kotwicy). Lekcja: nie inicjalizować cache NaN-em.
+2. **Detektor „etykieta na cudzym POI"** (walidator, próg 20 j.) —
+   od razu wyłapał Hanging Swamp na Nimanie i Kazuul Pass na Visimal.
+3. **Porządki:** bagna Guul Draz w biom; Lulea — ikona ściśnięta między
+   Lake Jast/Malakir/brzegiem odklejała etykietę o ~90 px → pozycja
+   znaleziona SYMULACJĄ rozstawu (grid-search kandydatów z warunkiem
+   „etykieta siada w DOWN0/NAD0, poza jeziorem"); Living Spire na
+   wolne wnętrze; POI w strefach zajętych biomów (nie toną w drzewach).
+4. QA rastrowe wszystkich kontynentów; testy 90/90, audyt 0, wiązania 0.
+
 ## 2026-09-02 — sesja PR-10 (część 3): twarda zasada etykieta↔obiekt → ADR 0023 (recenzja 3)
 
 **Zlecenie (czat):** (1) dopasowanie etykiet „GENIALNIE" ✔; (2) twarda

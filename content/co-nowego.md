@@ -3,6 +3,31 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-02 — recenzja 4 preview: fix nakładki (układ kolizyjny nie startował), falka Halimar wraca, porządki kontynentów
+
+Uwagi właściciela: (a) falka Halimar może zostać (spójność jezior);
+(b) „Emeria" nachodziła na „ruiny w niebie"; (c) porządki na pozostałych
+kontynentach (labelki bez POI, chaos).
+
+- **(b) Root cause znaleziony — bug nakładki:** cache układu etykiet
+  startował z `NaN`, a `Math.abs(k − NaN) > próg` jest zawsze false —
+  układ kolizyjny nakładki NIGDY się nie uruchamiał; pary o wspólnej
+  kotwicy (Emeria + podtytuł na tym samym hedronie) kładły się jedna
+  na drugiej. Po naprawie tytuł idzie POD hedron, podtytuł NAD —
+  na każdym zoomie.
+- **(a)** falka Halimar przywrócona (spójnie z resztą jezior).
+- **(c) Porządki kontynentów** + nowy detektor w walidatorze:
+  „etykieta siedzi na cudzym POI" (próg 20 j.). Wyłapał i naprawiono:
+  Hanging Swamp na ikonie Nimany → w głąb bagna; Kazuul Pass na ikonie
+  Visimal → na zachodni mur; dodatkowo Hagra Swamp w biom bagna,
+  Lulea odsunięta znad ściśniętego wybrzeża (etykieta odklejała się
+  o ~90 px), Living Spire na wolne wnętrze wschodniej Murasy.
+- **Ikony POI nie toną w drzewach:** miasta/ruiny/hedrony dołączone do
+  stref zajętych rozsiewu biomów (Prison of Omnath znów widoczny
+  w puszczy Ondu).
+- Testy 90/90; map-audit 0; walidator wiązań 0; QA rastrowe wszystkich
+  kontynentów (Sejiri, Akoum, Bala Ged, Guul Draz, Ondu, Murasa, wyspy).
+
 ## 2026-09-02 — recenzja 3 preview: twarda zasada etykieta↔obiekt, pass wiązań Zendikaru, woda bez obwódek (ADR 0023)
 
 Uwagi właściciela: (1) etykiety przy POI wreszcie idealne ✔; (2) twarda
