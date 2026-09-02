@@ -35,19 +35,24 @@ wzdłuż wielkich arterii:
   planu: pielęgnowane place, rząd i banki. Tu leży **Tenth District
   Plaza** (grunt neutralny), wzdłuż **Plaza Avenue** kończący się przy
   **Chamber of the Guildpact** — siedzibie Żywego Paktu — oraz katedra-
-  bank **Orzhova** (Orzhov) po zachodniej stronie.
+  bank **Orzhova** (Orzhov) po zachodniej stronie placu, z **Vizkopa
+  Bank** pod nią; ciągiem obok: mieszkalne **Plaza West** i **Plaza
+  South** przy południowych bramach.
 - **Precinct Two** (południowo-wschodni) — porządek i pensje
   urzędników: rzuca weń **New Prahv**, trzykolumnowy gmach **Senatu
   Azoriusza**, główną nadzieję prawa na planie; południe to pagórkowate
   **Griffin Heights** z portem powietrznym **Augustin Station**.
-  Tu kończy się też **Forum of Azor** — meta Implicitnego Labiryntu.
+  Tu kończy się też **Forum of Azor** — meta Implicitnego Labiryntu —
+  a przy granicy z Jedenastką stoi **Statue of Agrus Kos**, pomnik
+  legendarnego wojka.
 - **Precinct Three** (północno-wschodni, „Greenbelt") — zieleń
   podporządkowana **Konklawe Selesnya**: pola i stajnie **Beast Haven**
   na zachodzie, koronowy kwartał **The Canopy** na północy, a nad nim
   **Vitu-Ghazi** — żywe drzewo-świątynia, największy pojedynczy
   organizm-punkt planu; przy nim wyniesione trakty **Great Concourse**.
   Wschód to **Concordance**, dawne miasto (**Old City**) Orzhov,
-  oplatane mchem.
+  oplatane mchem; na południu graniczne place **Plaza East**
+  i białokamienna **Whitestone**.
 - **Precinct Four** (środkowo-północny) — poparzone ulice poligonu:
   dom **Legionu Boros**, którego twierdza-koszary-świątynia **Sunhome**
   kotwiczy obronę północy; między nią a południem, gdzie nad panoramą
@@ -57,7 +62,10 @@ wzdłuż wielkich arterii:
   z najruchliwszych targów planu, względnie bezpieczny pod patrolem
   Boros. W czwórkach odbywają się rekrutacje (**Horizon Military
   Academy**), pracują więzienia (**Sawtooth Prison**) i jedyna odlewnia
-  **Mizzium Foundry**.
+  **Mizzium Foundry**. Ponad północną granicą leży **Rubblebelt**
+  (dawna czwórka Gruul): spalone dzikowisko **Red Wastes** ze
+  zgromadziskiem **Skarrg** i wisząca na łańcuchach **Millennial
+  Platform** (platforma-widowisko).
 - **Precinct Five** (północno-zachodni) — uniwersytety i archiwa:
   **Prism University**, całodobowa **Ismeri Library** (nieofiicjalny węzeł
   **Domu Dimir**), kwartał **Hightower**, a na zachodnim krańcu
@@ -70,7 +78,16 @@ wzdłuż wielkich arterii:
   **Deadbridge Chasm** — rozpadlina, przez którą **Gildia Golgari**
   wynosi na powierzchnię swój podmiejski świat (**Korozda** jest już
   pod miastem); most trasy to **Benzer's Bridge**, a ostrzegawczo wstaje
-  z głębi filar **Wayport**.
+  z głębi filar **Wayport**. Dalej w głąb: przybytek karnawału **Gore
+  House** (antresola kultu **Rakdos** — ich pałac **Rix Maadi** leży już
+  **pod** Smelting Quarter) oraz cmentarny **Medori Park** Orzhov,
+  którego path nocami chodzą nieumarli.
+
+Pod płytą biegnie **Undercity** — oddzielny, odwrócony plan. Trzy
+siedziby widać z powierzchni tylko jako miejsca, w które się nie
+zagląda: **Rix Maadi** (Rakdos, pod południową Szóstką), **Korozda &
+Svogthos** (Golgari, głębokie podziemia pod centrum) i **Nightveil &
+Duskmantle** (Dimir, w cieniu pod Dwójką).
 
 To wszystko działa pod płaszczykiem dziesięciu **gildii** — instytucji-
 prusaków, każda w parze kolorów Many: **Boros** (W/R — wojsko i
@@ -120,6 +137,14 @@ pierwszy inżynier planu.
   Griffin Heights/Augustin Station/Forum of Azor w P2, Millennial
   Platform na styku P1/P3/P4; arterie Transguild Promenade i Tin Street;
   Undercity: <https://mtg.wiki/page/Tenth_District>
+- Transkrypcja właściciela oficjalnej mapy GGR (dostawa 2026-09-03;
+  repo: `maps/ravnica/zrodlo-transkrypcja-ggr.md`) — kalibracja v2
+  geometrii 1:1: pozycje **Statue of Agrus Kos** (P2), **Vizkopa Bank**,
+  Plaza West/South (P1), **Whitestone, Plaza East, The Great Concourse**
+  (P3), **Gore House, Medori Park** (P6) oraz lokalizacje podziemne
+  **Rix Maadi** (pod Smelting Quarter), **Korozda & Svogthos** (pod P1)
+  i **Nightveil & Duskmantle** (pod P2); Millennial Platform w północnej
+  rubieży (nad Skarrg). Sam raster © WotC nieosadzany (licencja).
 - MTG Wiki, „Boros Legion" — Legion jako konstablary (Liga Wojek)
   i armia, siedziba Sunhome, parun **Razia** i kolumna anielska,
   Firefists (magowie gildii):

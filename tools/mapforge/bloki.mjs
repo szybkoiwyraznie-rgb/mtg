@@ -87,6 +87,10 @@ export function motyw(nazwa = 'pergamin') {
 
 const rr = (v) => zaokr(v);
 
+/** Minimalne escapowanie tekstu XML (etykiety mapy — np. „Korozda & Svogthos"). */
+const escXml = (s) => String(s)
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
 /* ---------- biome: las (kępy koron + pnie) ---------- */
 
 /**
@@ -522,7 +526,7 @@ export function etykieta(tekst, x, y, { kat = 0, fs = 15, ital = false, kolor = 
     ? ` data-ax="${rr(przy[0])}" data-ay="${rr(przy[1])}" data-r="${rr(przy[2])}"` +
       (przy[3] != null && przy[3] !== przy[2] ? ` data-rg="${rr(przy[3])}"` : '')
     : '';
-  return `<text x="${rr(x)}" y="${rr(y)}" font-size="${fs}"${ital ? ' font-style="italic"' : ''} fill="${fill}"${kl ? ` class="${kl}"` : ''} text-anchor="${kotwica}"${dataPrzy}${transform}>${tekst}</text>`;
+  return `<text x="${rr(x)}" y="${rr(y)}" font-size="${fs}"${ital ? ' font-style="italic"' : ''} fill="${fill}"${kl ? ` class="${kl}"` : ''} text-anchor="${kotwica}"${dataPrzy}${transform}>${escXml(tekst)}</text>`;
 }
 
 /** Etykieta po łuku ( zatoki, doliny ) — path w defs + textPath. */
@@ -531,7 +535,7 @@ export function lukEtykieta(id, punkty, tekst, { fs = 16, ital = true, kolor = n
   const fill = kolor ?? PAL.etykieta;
   return `<path id="mf-luk-${id}" d="${d}" fill="none"/>` +
     `\n<text font-size="${fs}"${ital ? ' font-style="italic"' : ''} fill="${fill}">` +
-    `<textPath href="#mf-luk-${id}" startOffset="50%" text-anchor="middle">${tekst}</textPath></text>`;
+    `<textPath href="#mf-luk-${id}" startOffset="50%" text-anchor="middle">${escXml(tekst)}</textPath></text>`;
 }
 
 /* ---------- oprawa mapy ---------- */

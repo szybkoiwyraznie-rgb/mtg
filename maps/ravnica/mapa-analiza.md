@@ -48,17 +48,40 @@ pomocą właściciela przy **transkrypcji map graficznych na opisy tekstowe**.
 
 ## Plan etapów
 
-- **v1 (ta sesja)**: scena topologiczna + 6 precyktów + 27 POI + mur
-  północny + Rubblebelt/Red Wastes + szczelina Deadbridge + Zonot Seven +
-  3 arterie + pinezka karty. Audyty: `map-audit.py` 0, `sprawdzWiazania` 0.
-- **v2 (przy pomocy właściciela)**: jego transkrypcja oficjalnej mapy GGR
-  (graf-rastrowy → opis tekstowy pozycji okręgów/zieleni/arterii) jako
-  źródło pomocnicze kalibrujące geometrię (precedens: `zrodlo-fanowska.md`
-  Zendikaru — hierarchia: kanon > transkrypcja > własny sens). Fanowskie
-  nakładki precinct-overlay z reddita można wtedy skonfrontować jako
-  drugi punkt odniesienia (też jako opis, nie jako podkład).
+- **v1 (sesja 2026-09-02)**: scena topologiczna + 6 precyktów + 27 POI +
+  mur północny + Rubblebelt/Red Wastes + szczelina Deadbridge +
+  Zonot Seven + 3 arterie + pinezka karty. Audyty: `map-audit.py` 0,
+  `sprawdzWiazania` 0.
+- **v2 (wykonane, 2026-09-03)**: właściciel dostarczył **transkrypcję
+  oficjalnej mapy GGR** wraz z układem współrzędnych kadru
+  (`zrodlo-transkrypcja-ggr.md`). Scena przebudowana na koordynatach
+  transkrypcji (transformacja kanoniczna `px = 830 + (X-0.5)·64,
+  py = 610 − (Y+1)·64`, plac → (830, 610); współrzędne źródłowe
+  utrwalone w budowniczym). Skutki:
+  - przesunięcia vs v1: Nivix 184 px w lewo, Sunhome +114 px w dół,
+    Zonot Seven +290 px w dół (v1 miał go za wysoko), Millennial Platform
+    z trójstyku na południowo-wschodni kraniec północy (raster > wiki-
+    tekst „the junction" — notatka w kotwicy map.json);
+  - nowe POI z transkrypcji: **Statue of Agrus Kos, Vizkopa Bank,
+    Whitestone, Plaza East/West/South, The Great Concourse, Gore House,
+    Medori Park** (+3 markery przekrojowe podziemi: **Rix Maadi,
+    Korozda & Svogthos, Nightveil & Duskmantle** — poświata południowa,
+    konwencja jak na rastrze GGR);
+  - Tin Street = granica P4|P5 z kolkiem wokół Blistercoils i marketu;
+    Bulwark zostaje w P4 (wiki), Kamen Fortress w P6 (para poniżej);
+  - pinezka karty przeniesiona na bruk przy Tin Street Market
+    (norm 0.3688, 0.4273) — nadal: Fabuła → „w gildii Boros albo na
+    pograniczu", pewność region;
+  - audyty po v2: budowniczy 44 pit-asserty 0, `map-audit.py` 0,
+    `sprawdzWiazania` 0, Zendikar re-render bajtowo identyczny;
+  - **naprawiony bug silnika**: `etykieta()`/`lukEtykieta()` escapują
+    teraz XML (`&`, `<`, `>`) — wcześniej etykieta z „&" psuła podkład
+    (map-audit wykrywa: „XML niepoprawny"); brak zmiany dla dotychczasowych
+    etykiet (Zendikar/Śródziemie bajtowo identyczne).
 - **v3+**: warstwy epokowe (2006 vs 2019: Parhelion I/II, Prahv→New Prahv,
-  Beacon Tower), osobny przekrój/podkład Undercity.
+  Beacon Tower), osobny przekrój/podkład Undercity (kanały P6, poziomy),
+  confrontacja z fanowską nakładką precinct-overlay (Reddit) jako drugi
+  punkt odniesienia — również wyłącznie jako opis tekstowy.
 
 ## Uwagi procesowe
 
