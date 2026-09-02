@@ -29,7 +29,7 @@ import {
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ENTRY = 'src/codex/main.js';
 
-export async function zbuduj({ out, root = ROOT, inline = false } = {}) {
+export async function zbuduj({ out, root = ROOT } = {}) {
   out = out ?? path.join(root, 'dist/mtg-lore-codex.html');
   const problemy = [];
 
@@ -136,29 +136,25 @@ export async function zbuduj({ out, root = ROOT, inline = false } = {}) {
     },
   };
 
-  // mapy: rejestr map + PODKŁADY JAKO OSOBNE PLIKI (ADR 0027 — rewizja
-  // jednoplikowości ADR 0001/0009 na decyzję właściciela 2026-09-02:
-  // przy 30+ planach base64 map rozdąłby artefakt do dziesiątek MB).
-  // Podkład kopiowany do <dist>/maps/<slug>/<plik>; artefakt niesie tylko
-  // `podkladUrl` (względny — działa na Pages i po rozpakowaniu ZIP-a).
-  // Tryb `inline` (testy shimowe / artefakt awaryjny): stary base64.
+  // mapy: rejestr map + DRZEWO STRON MAP (ADR 0027 v2 — decyzja
+  // właściciela 2026-09-02: każdy plan = osobna, samowystarczalna strona
+  // `maps/<slug>.html` osadzana w <iframe>; file:// nie blokuje iframe'ów,
+  // więc wersja offline z dysku działa w pełni, a artefakt główny nie
+  // rośnie z liczbą planów). Obok strony: surowy podkład
+  // `maps/<slug>/<plik>` dla mini-map kart (<img> działa wszędzie).
   const katalogOut = path.dirname(path.resolve(out));
+  const stronyMap = [];                          // [{ slug, mapa, plik }]
   for (const [slug, mapa] of mapy) {
     if (mapa.problem || !mapa.podklad) continue;
     const plik = path.join(root, 'maps', slug, mapa.podklad);
     if (!fs.existsSync(plik)) continue; // brak pliku wychwyci test mapy (MA2)
-    if (inline) {
-      const rozsz = path.extname(plik).toLowerCase();
-      const mime = rozsz === '.svg' ? 'image/svg+xml' : rozsz === '.png' ? 'image/png'
-        : rozsz === '.webp' ? 'image/webp' : 'image/jpeg';
-      mapa.podkladData = `data:${mime};base64,${fs.readFileSync(plik).toString('base64')}`;
-    } else {
-      const rel = `maps/${slug}/${mapa.podklad}`;
-      const celPodkladu = path.join(katalogOut, rel);
-      fs.mkdirSync(path.dirname(celPodkladu), { recursive: true });
-      fs.copyFileSync(plik, celPodkladu);
-      mapa.podkladUrl = rel;
-    }
+    const rel = `maps/${slug}/${mapa.podklad}`;
+    const celPodkladu = path.join(katalogOut, rel);
+    fs.mkdirSync(path.dirname(celPodkladu), { recursive: true });
+    fs.copyFileSync(plik, celPodkladu);
+    mapa.podkladUrl = rel;                       // mini-mapy kart (<img>)
+    mapa.stronaMapy = `maps/${slug}.html`;       // iframe w artefakcie
+    stronyMap.push({ slug, mapa, plik });
   }
   dane.mapy = Object.fromEntries(mapy.entries());
 
@@ -187,15 +183,39 @@ export async function zbuduj({ out, root = ROOT, inline = false } = {}) {
   }
   const css = fs.readFileSync(path.join(ROOT, 'src/codex/style.css'), 'utf8');
 
+  // Zbezpiecznik wstrzykiwania do <script>: jedyna sekwencja kończąca
+  // blok skryptu to '</script' — neutralizujemy ją w danych (SVG map,
+  // treści) zapisem '<\/script' (identyczny string po sparsowaniu JS).
+  const doSkryptu = (s) => s.replaceAll('</script', '<\\/script');
+
   const html = shell
     .replace('<!--STYL-->', () => `<style>\n${css}\n</style>`)
-    .replace('<!--BUNDLE-->', () => `<script>\n${daneJs}\n\n${kod}\n</script>`);
+    .replace('<!--BUNDLE-->', () => `<script>\n${doSkryptu(daneJs)}\n\n${kod}\n</script>`);
 
   const cel = path.resolve(out);
   fs.mkdirSync(path.dirname(cel), { recursive: true });
   fs.writeFileSync(cel, html);
 
-  console.log(`Zbudowano ${out}${inline ? ' (inline/offline)' : ' (split: mapy w maps/**)'}`);
+  // ── 5. Drzewo stron map (ADR 0027 v2) ────────────────────────────
+  // Każda mapa = samowystarczalny HTML: ten sam bundle + dane, plus
+  // flaga CODEX_MAPA i surowy markup SVG podkładu (bez base64 — lżej).
+  // main.js w trybie CODEX_MAPA renderuje mapę zamiast routera.
+  for (const { slug, mapa, plik } of stronyMap) {
+    const svgTekst = /\.svg$/i.test(mapa.podklad) ? fs.readFileSync(plik, 'utf8') : '';
+    const wstrzyknij = `\n// ===== TRYB STRONY MAPY (ADR 0027 v2) =====\n` +
+      `globalThis.CODEX_MAPA = ${JSON.stringify(slug)};\n` +
+      // strona mapy żyje w maps/ — URL-e podkładów względem NIEJ
+      `globalThis.CODEX_DATA.mapy[${JSON.stringify(slug)}].podkladUrl = ${JSON.stringify(`${slug}/${mapa.podklad}`)};\n` +
+      (svgTekst ? `globalThis.CODEX_DATA.mapy[${JSON.stringify(slug)}].podkladMarkup = ${JSON.stringify(svgTekst)};\n` : '');
+    const htmlMapy = shell
+      .replace('<!--STYL-->', () => `<style>\n${css}\n</style>`)
+      .replace('<!--BUNDLE-->', () => `<script>\n${doSkryptu(daneJs + wstrzyknij)}\n\n${kod}\n</script>`);
+    const celMapy = path.join(katalogOut, 'maps', `${slug}.html`);
+    fs.writeFileSync(celMapy, htmlMapy);
+    console.log(`  strona mapy: maps/${slug}.html (${(htmlMapy.length / 1024).toFixed(1)} kB)`);
+  }
+
+  console.log(`Zbudowano ${out} (artefakt + drzewo map w maps/**)`);
   console.log(`  stron w bazie: ${Object.keys(stronyDane).length} (karty: ${dane.statystyki.karty}, hasła: ${dane.statystyki.hasla}, plany: ${dane.statystyki.plany})`);
   console.log(`  modułów: ${moduly.length}`);
   console.log(`  rozmiar: ${(html.length / 1024).toFixed(1)} kB`);
@@ -224,27 +244,38 @@ function stripModuleSyntax(source) {
 }
 
 /**
- * Pakiet dystrybucyjny (ADR 0027, dwa tory — decyzja właściciela
- * 2026-09-02: wersja OFFLINE z pliku musi działać w 100%):
- *   1. `<katalog>/index.html`         — wersja SPLIT (mapy w maps/**,
- *      dociągane fetch-em): dla serwera lokalnego i GH Pages; szybka
- *      i skalowalna na dziesiątki planów.
- *   2. `<katalog>/mtg-lore-codex.html` — PEŁNY JEDNOPLIK (inline,
- *      wszystko w środku): do otwarcia z dysku (file://) w przeglądarce,
- *      bez żadnej degradacji — mapy wektorowe z pełną nakładką.
- *   3. `<katalog>/mtg-lore-codex.zip` — archiwum z jednoplikiem
- *      (samowystarczalne po rozpakowaniu; STORE, ADR 0002).
+ * Pakiet dystrybucyjny (ADR 0027 v2 — drzewo HTML, decyzja właściciela
+ * 2026-09-02): JEDNA architektura dla online i offline.
+ *   - `<katalog>/mtg-lore-codex.html` — artefakt główny (kod + treść);
+ *   - `<katalog>/index.html`           — jego kopia (wejście serwera/Pages);
+ *   - `<katalog>/maps/<plan>.html`     — samowystarczalne strony map
+ *     (iframe w artefakcie; file:// nie blokuje iframe'ów → offline OK);
+ *   - `<katalog>/maps/<plan>/<plik>`   — surowe podkłady (mini-mapy);
+ *   - `<katalog>/mtg-lore-codex.zip`   — CAŁE DRZEWO („Pobierz ZIP
+ *     Codexu"): po rozpakowaniu otwierasz index.html z dysku.
  */
 export async function zbudujPakiet({ root = ROOT, katalog } = {}) {
   katalog = katalog ?? path.join(root, 'dist');
-  await zbuduj({ root, out: path.join(katalog, 'index.html') });
-  const celInline = path.join(katalog, 'mtg-lore-codex.html');
-  await zbuduj({ root, out: celInline, inline: true });
-  const zip = napiszZip([{ path: 'mtg-lore-codex.html', data: fs.readFileSync(celInline) }]);
+  const celGlowny = path.join(katalog, 'mtg-lore-codex.html');
+  await zbuduj({ root, out: celGlowny });
+  fs.copyFileSync(celGlowny, path.join(katalog, 'index.html'));
+
+  const plikiZip = [
+    { path: 'index.html', data: fs.readFileSync(celGlowny) },
+    { path: 'mtg-lore-codex.html', data: fs.readFileSync(celGlowny) },
+  ];
+  const katalogMap = path.join(katalog, 'maps');
+  if (fs.existsSync(katalogMap)) {
+    for (const f of chodz(katalogMap)) {
+      const rel = path.relative(katalogMap, f).split(path.sep).join('/');
+      plikiZip.push({ path: `maps/${rel}`, data: fs.readFileSync(f) });
+    }
+  }
+  const zip = napiszZip(plikiZip);
   const celZip = path.join(katalog, 'mtg-lore-codex.zip');
   fs.writeFileSync(celZip, zip);
-  console.log(`  archiwum offline: ${(zip.length / 1024).toFixed(1)} kB (1 plik, jednoplikowy artefakt)`);
-  return { index: path.join(katalog, 'index.html'), offline: celInline, zip: celZip };
+  console.log(`  archiwum (drzewo): ${(zip.length / 1024).toFixed(1)} kB (${plikiZip.length} plików)`);
+  return { index: path.join(katalog, 'index.html'), glowny: celGlowny, zip: celZip };
 }
 
 const jestMain = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
@@ -253,9 +284,8 @@ if (jestMain) {
     const i = process.argv.indexOf('--out');
     return i >= 0 ? process.argv[i + 1] : undefined;
   })();
-  const inline = process.argv.includes('--inline');
-  // `--out` = pojedynczy artefakt (tak buduje pages.yml: split pod
-  // dist/index.html). Bez `--out` = pełny pakiet dystrybucyjny.
-  const praca = out ? zbuduj({ out, inline }) : zbudujPakiet({});
+  // `--out` = pojedynczy artefakt + drzewo map obok (tak buduje pages.yml
+  // pod dist/index.html). Bez `--out` = pełny pakiet z ZIP-em.
+  const praca = out ? zbuduj({ out }) : zbudujPakiet({});
   praca.catch((e) => { console.error(e.message); process.exit(1); });
 }

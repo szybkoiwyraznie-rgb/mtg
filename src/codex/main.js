@@ -14,7 +14,7 @@ import { renderPlan } from './render-plane.js';
 import { renderListeKart, zamontujFiltryKart, renderListeHasel, renderListePlanow, renderChmoreTagow, renderTag } from './render-lists.js';
 import { renderCoNowego } from './render-whatsnew.js';
 import { renderSzukanie } from './render-search.js';
-import { renderMape, zamontujMape } from './render-map.js';
+import { renderMape, renderMapeIframe, zamontujMape } from './render-map.js';
 
 function renderuj(trasa) {
   const app = globalThis.document?.getElementById('app');
@@ -32,7 +32,7 @@ function renderuj(trasa) {
     case 'haslo': html = renderHaslo(trasa.param); tytul = trasa.param ?? 'Hasło'; aktywna = 'hasla'; break;
     case 'plany': html = renderListePlanow(); tytul = 'Plany'; break;
     case 'plan': html = renderPlan(trasa.param); tytul = trasa.param ?? 'Plan'; aktywna = 'plany'; break;
-    case 'mapa': html = renderMape(trasa.param, trasa.query); tytul = trasa.param ? `Mapa: ${trasa.param}` : 'Mapa'; aktywna = 'plany'; break;
+    case 'mapa': html = renderMapeIframe(trasa.param, trasa.query); tytul = trasa.param ? `Mapa: ${trasa.param}` : 'Mapa'; aktywna = 'plany'; break;
     case 'tagi': html = renderChmoreTagow(); tytul = 'Tagi'; break;
     case 'tag': html = renderTag(trasa.param); tytul = `Tag: ${trasa.param ?? ''}`; aktywna = 'tagi'; break;
     case 'co-nowego': html = renderCoNowego(); tytul = 'Co nowego'; break;
@@ -43,13 +43,6 @@ function renderuj(trasa) {
   app.innerHTML = rama(aktywna, tytul, html);
   tytulStrony(tytul);
   zamontujToryObrazow(app);
-  zamontujMape(app, {
-    renderKarty: renderKarte,
-    zamontujKarte: zamontujToryObrazow,
-    // ADR 0027: po doładowaniu podkładu z osobnego pliku mapa prosi
-    // o ponowny render tej samej trasy (cache podkładów już pełny).
-    przerysuj: () => renderuj(trasa),
-  });
   zamontujFiltryKart(app);
 
   const tresc = app.querySelector('.tresc');
@@ -58,5 +51,27 @@ function renderuj(trasa) {
 }
 
 
-const stop = uruchomRouter(renderuj);
-if (globalThis.__CODEX_TEST__) globalThis.__CODEX_STOP__ = stop;
+// ── Tryb strony mapy (ADR 0027 v2): plik maps/<plan>.html ustawia
+// globalThis.CODEX_MAPA i dostaje pełny bundle — zamiast routera
+// renderujemy jedną mapę (deep-link ?pin=… z query) i montujemy
+// interakcje. Nawigacja treściowa idzie postMessage do rodzica.
+if (globalThis.CODEX_MAPA) {
+  const app = globalThis.document?.getElementById('app');
+  if (app) {
+    const q = new URLSearchParams(globalThis.location?.search ?? '');
+    app.innerHTML = renderMape(globalThis.CODEX_MAPA, { pin: q.get('pin') ?? '' }, { osadzona: true });
+    zamontujMape(app, {
+      renderKarty: renderKarte,
+      zamontujKarte: zamontujToryObrazow,
+      doRodzica: true,
+    });
+  }
+} else {
+  // ── Artefakt główny: router + odbiór nawigacji ze stron map w iframe.
+  globalThis.addEventListener?.('message', (e) => {
+    const hash = e?.data?.codexHash;
+    if (typeof hash === 'string' && hash.startsWith('#/')) globalThis.location.hash = hash;
+  });
+  const stop = uruchomRouter(renderuj);
+  if (globalThis.__CODEX_TEST__) globalThis.__CODEX_STOP__ = stop;
+}

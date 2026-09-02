@@ -3,6 +3,18 @@ krok 5, ADR 0006). Najnowsze na górze. BEZ nagłówka H1 i leadu: tytuł
 i opis strony daje renderer (render-whatsnew.js) — duplikat nagłówków
 był błędem (feedback właściciela 2026-09-02). -->
 
+## 2026-09-02 — architektura ostateczna: DRZEWO HTML map (pomysł właściciela, ADR 0027 v2)
+
+Jednoplik offline nie skaluje się (30+ planów ≈ 200 MB). Rozwiązanie
+właściciela: **każdy plan = osobna, samowystarczalna strona
+`maps/<plan>.html`**, osadzana w artefakcie przez `<iframe>` —
+file:// nie blokuje iframe'ów, więc **wersja offline z dysku działa
+w pełni** (wektorowe mapy, nakładka, warstwa karty), a rozmiar rośnie
+liniowo per plik. Artefakt główny: stałe ~222 kB. „Pobierz ZIP
+Codexu" = całe drzewo (index.html + maps/**). Nawigacja z mapy do
+kart/haseł wraca do rodzica przez postMessage. Tryb `--inline`
+usunięty. Testy 91/91 (strony map wykonywane w shimie wprost).
+
 ## 2026-09-02 — pakiet dwutorowy: pełny jednoplik OFFLINE wraca (uzupełnienie ADR 0027)
 
 Po pytaniu właściciela o wersję offline z dysku: `npm run build` daje

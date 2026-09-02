@@ -119,27 +119,55 @@ export const POZIOMY_PEWNOSCI = {
   przyblizona: { etykieta: 'przybliżona', kolor: '#b3392e', opis: 'rekonstrukcja — wymaga uzasadnienia' },
 };
 
-// ADR 0027: podkłady map żyją POZA artefaktem (dist/maps/**) i są
-// dociągane na żądanie przy pierwszym wejściu na mapę; cache trzyma
-// surowy markup SVG na czas sesji przeglądarki. `{ blad: true }` =
-// fetch nieudany (np. otwarcie artefaktu z dysku, file://) — mapa
-// degraduje się do <img src=url> (działa też z file://), bez nakładki
-// typograficznej.
-const PODKLADY = new Map();
+// ADR 0027 (v2 — drzewo HTML): każda mapa jest OSOBNĄ, samowystarczalną
+// stroną `maps/<plan>.html` (inline SVG + pełny silnik + dane), którą
+// główny artefakt osadza w <iframe>. file:// blokuje fetch, ale NIE
+// blokuje iframe'ów — wersja offline z dysku działa w pełni, a artefakt
+// główny pozostaje lekki niezależnie od liczby planów.
 
-/** Surowy markup podkładu SVG: z base64 (tryb inline) albo z cache
- *  pobranego pliku (ADR 0027). Pusty string = markup niedostępny. */
-function surowyMarkupPodkladu(mapa, slug) {
-  if (mapa.podkladData) return podkladSvgMarkup(mapa.podkladData);
-  const c = PODKLADY.get(slug);
-  if (c && c.markup && c.markup.includes('<svg ')) {
-    return c.markup.replace('<svg ', '<svg class="mapa-podklad" ', 1);
+/** Surowy markup podkładu SVG: wstrzyknięty markup (strona mapy) albo
+ *  base64 (dane inline). Pusty string = markup niedostępny. */
+function surowyMarkupPodkladu(mapa) {
+  if (mapa.podkladMarkup && mapa.podkladMarkup.includes('<svg ')) {
+    return mapa.podkladMarkup.replace('<svg ', '<svg class="mapa-podklad" ', 1);
   }
+  if (mapa.podkladData) return podkladSvgMarkup(mapa.podkladData);
   return '';
 }
 
+/** Widok trasy #/mapa/<plan> w artefakcie głównym: rama + <iframe> ze
+ *  stroną mapy (ADR 0027 v2). Deep-link pinezki przechodzi w query. */
+export function renderMapeIframe(slugPlanu, query = {}) {
+  const dane = dajDane();
+  const mapa = dane.mapy?.[slugPlanu];
+  if (!mapa || mapa.problem || !mapa.stronaMapy) {
+    const plan = dane.strony?.[slugPlanu];
+    if (!plan) return nieZnalesc(`mapa „${escapeHtml(String(slugPlanu ?? ''))}"`);
+    return stanPusty(
+      `Plan <strong>${escapeHtml(plan.tytul)}</strong> nie ma jeszcze mapy.`,
+      'Mapa powstaje razem z pierwszą kartą osadzoną w tym planie.',
+    );
+  }
+  const pin = query.pin ? `?pin=${encodeURIComponent(query.pin)}` : '';
+  return `
+  <nav class="okruszki">
+    <a href="#/">Codex</a> ›
+    <a href="#/plany">Plany</a> ›
+    <a href="#/plan/${escapeHtml(slugPlanu)}">${escapeHtml(mapa.tytul ?? slugPlanu)}</a> ›
+    <span>Mapa</span>
+  </nav>
+  <article class="mapa-strona">
+    <header class="mapa-naglowek">
+      <h1>Mapa: ${escapeHtml(mapa.tytul ?? slugPlanu)}</h1>
+      <p class="meta">pinezki kart: ${(mapa.pinezki ?? []).length} · regiony: ${(mapa.regiony ?? []).length}</p>
+    </header>
+    <iframe class="mapa-iframe" src="${escapeHtml(mapa.stronaMapy)}${pin}"
+      title="Mapa: ${escapeHtml(mapa.tytul ?? slugPlanu)}" loading="lazy"></iframe>
+  </article>`;
+}
+
 /** Renderuje stronę mapy planu (HTML; interakcje montuje zamontujMape). */
-export function renderMape(slugPlanu, query = {}) {
+export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
   const dane = dajDane();
   const mapa = dane.mapy?.[slugPlanu];
   if (!mapa || mapa.problem) {
@@ -187,18 +215,13 @@ export function renderMape(slugPlanu, query = {}) {
   const svgTypograficzny = mapa.podklad && mapa.wariant !== 'T1' && mapa.wariant !== 'T2'
     && /\.svg$/i.test(String(mapa.podklad));
   if (svgTypograficzny) {
-    const surowy = surowyMarkupPodkladu(mapa, slugPlanu);
+    const surowy = surowyMarkupPodkladu(mapa);
     if (surowy) {
       const r = przeniesEtykietyDoNakladki(surowy);
       etykietyPodkladu = r.etykiety;
       podkladMarkup = r.markup;
     }
   }
-  // Podkład T3+ z osobnego pliku, jeszcze nie pobrany → strona renderuje
-  // szkielet z sygnałem doładowania; zamontujMape pobierze plik i poprosi
-  // o przerysowanie (ADR 0027). Po nieudanym fetchu (file://) — <img>.
-  const czekaNaPodklad = svgTypograficzny && !podkladMarkup
-    && !mapa.podkladData && mapa.podkladUrl && !PODKLADY.get(slugPlanu)?.blad;
   const htmlEtykietyPodkladu = etykietyPodkladu.map((e) => {
     // LOD: drobne napisy pokazują się od przybliżenia, w którym ich
     // oryginalny rozmiar „urósłby" do czytelnych ~16 px ekranu
@@ -229,19 +252,18 @@ export function renderMape(slugPlanu, query = {}) {
   }).join('');
 
   return `
-  <nav class="okruszki">
+  ${osadzona ? '' : `<nav class="okruszki">
     <a href="#/">Codex</a> ›
     <a href="#/plany">Plany</a> ›
     <a href="#/plan/${escapeHtml(slugPlanu)}">${escapeHtml(mapa.tytul ?? slugPlanu)}</a> ›
     <span>Mapa</span>
-  </nav>
+  </nav>`}
 
-  <article class="mapa-strona">
-    <header class="mapa-naglowek">
+  <article class="mapa-strona${osadzona ? ' mapa-strona-osadzona' : ''}">
+    ${osadzona ? '' : `<header class="mapa-naglowek">
       <h1>Mapa: ${escapeHtml(mapa.tytul ?? slugPlanu)}</h1>
       <p class="meta">pinezki kart: ${pinezki.length} · regiony: ${regiony.length}</p>
-    </header>
-
+    </header>`}
     <div class="mapa-pasek">
       <button class="przycisk mapa-przycisk" data-mapa-akcja="oddal" aria-label="Oddal">−</button>
       <button class="przycisk mapa-przycisk" data-mapa-akcja="przybliz" aria-label="Przybliż">+</button>
@@ -255,11 +277,9 @@ export function renderMape(slugPlanu, query = {}) {
       <div class="mapa-ruch" data-mapa-ruch>
         <div class="mapa-scena" style="aspect-ratio: ${szer} / ${wys}">
           ${podkladMarkup
-            || (czekaNaPodklad
-              ? `<div class="mapa-brak-podkladu" data-mapa-doladuj="${escapeHtml(slugPlanu)}" data-podklad-url="${escapeHtml(mapa.podkladUrl)}">Ładowanie podkładu mapy…</div>`
-              : ((mapa.podkladData || mapa.podkladUrl)
-                ? `<img class="mapa-podklad" src="${mapa.podkladData ?? mapa.podkladUrl}" alt="Podkład mapy: ${escapeHtml(mapa.tytul ?? slugPlanu)}" draggable="false">`
-                : `<div class="mapa-brak-podkladu">Brak osadzonego podkładu (build nie wstrzyknął pliku — sprawdź maps/${escapeHtml(slugPlanu)}/podklad.svg).</div>`))}
+            || ((mapa.podkladData || mapa.podkladUrl)
+              ? `<img class="mapa-podklad" src="${mapa.podkladData ?? mapa.podkladUrl}" alt="Podkład mapy: ${escapeHtml(mapa.tytul ?? slugPlanu)}" draggable="false">`
+              : `<div class="mapa-brak-podkladu">Brak osadzonego podkładu (build nie wstrzyknął pliku — sprawdź maps/${escapeHtml(slugPlanu)}/podklad.svg).</div>`)}
           <svg class="mapa-regiony" viewBox="0 0 ${szer} ${wys}" preserveAspectRatio="none" aria-hidden="true">${svgRegiony}</svg>
         </div>
       </div>
@@ -327,22 +347,17 @@ export function zamontujMape(app, opcje = {}) {
   const okno = app?.querySelector?.('.mapa-okno');
   if (!okno) return;
 
-  // ── Doładowanie podkładu z osobnego pliku (ADR 0027) ──
-  // Artefakt niesie tylko `podkladUrl`; przy pierwszym wejściu na mapę
-  // pobieramy SVG, cache'ujemy i prosimy o przerysowanie trasy. Gdy
-  // fetch niedostępny/nieudany (file://, offline) — znacznik błędu
-  // w cache degraduje render do <img src=url>.
-  const doladuj = okno.querySelector('[data-mapa-doladuj]');
-  if (doladuj) {
-    const slug = doladuj.getAttribute('data-mapa-doladuj');
-    const url = doladuj.getAttribute('data-podklad-url');
-    if (typeof fetch !== 'function') return;       // shim testowy: zostaje szkielet
-    fetch(url)
-      .then((r) => (r.ok ? r.text() : Promise.reject(new Error(`HTTP ${r.status}`))))
-      .then((tekst) => PODKLADY.set(slug, { markup: tekst }))
-      .catch(() => PODKLADY.set(slug, { blad: true }))
-      .finally(() => opcje.przerysuj?.());
-    return;                                        // interakcje po przerysowaniu
+  // Strona mapy w iframe (ADR 0027 v2): nawigacja treściowa (karty,
+  // hasła, plany) musi przejść do ARTEFAKTU-RODZICA — iframe wysyła
+  // postMessage, rodzic zmienia hash. Pinezki (data-pinezka) zostają
+  // w iframe (warstwa karty działa lokalnie).
+  if (opcje.doRodzica && globalThis.parent && globalThis.parent !== globalThis) {
+    app.addEventListener('click', (e) => {
+      const a = e.target?.closest?.('a[href^="#/"]');
+      if (!a || a.hasAttribute('data-pinezka')) return;
+      e.preventDefault();
+      try { globalThis.parent.postMessage({ codexHash: a.getAttribute('href') }, '*'); } catch { /* rodzic niedostępny */ }
+    });
   }
 
   const ruch = okno.querySelector('[data-mapa-ruch]');

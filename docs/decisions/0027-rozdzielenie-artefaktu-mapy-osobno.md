@@ -39,35 +39,47 @@ oszczędza autorstwo, nie bajty. Właściciel zdecydował: rozdzielamy.
    (split) — renderery obsługują oba; test artefaktu wymaga jednego
    z nich.
 
-## Uzupełnienie (2026-09-02, po pytaniu właściciela o wersję offline)
+## Uzupełnienie v2 (2026-09-02) — DRZEWO HTML zamiast fetch i zamiast jednoplika offline
 
-Właściciel używa wersji offline otwieranej z dysku w Chrome — degradacja
-map do `<img>` na file:// była nieakceptowalna. Rozwiązanie: **dwa tory
-w pakiecie dystrybucyjnym** (`zbudujPakiet`, domyślne `npm run build`):
+Iteracje tej decyzji w jednej sesji:
 
-1. `dist/index.html` + `dist/maps/**` — wersja SPLIT (ta z pkt 1–2
-   decyzji): dla serwera lokalnego i GH Pages; artefakt ~0,2 MB.
-2. `dist/mtg-lore-codex.html` — **pełny jednoplik inline**: oficjalna
-   wersja OFFLINE, otwierana z dysku bez żadnej degradacji (mapy
-   wektorowe z pełną nakładką, wszystko w środku). Rośnie z liczbą
-   planów — świadomy koszt snapshotu offline.
-3. `dist/mtg-lore-codex.zip` — archiwum jednoplika (do pobrania).
+1. *Fetch + degradacja do `<img>` na file://* — odrzucone: właściciel
+   używa wersji offline z dysku; zdegradowana mapa to nie jest działanie.
+2. *Dwa tory (split + pełny jednoplik inline)* — odrzucone: jednoplik
+   przy 30+ planach urośnie do ~200 MB i „przeglądarka tego nie uciągnie".
+3. **OSTATECZNIE (pomysł właściciela): drzewo HTML.** Każdy plan dostaje
+   samowystarczalną stronę `maps/<plan>.html` (pełny bundle + dane +
+   surowy markup SVG podkładu, bez base64), a artefakt główny osadza ją
+   w `<iframe>`. Kluczowa własność: **file:// blokuje `fetch`, ale NIE
+   blokuje iframe'ów** — wersja offline z dysku działa w pełni
+   (wektorowe mapy, nakładka typograficzna, warstwa karty z pinezki),
+   a rozmiar rośnie liniowo per PLIK mapy, nie per artefakt.
 
-`pages.yml` buduje przez `--out dist/index.html` → na Pages ląduje tor
-split (bez zmian w workflow). Degradacja `<img>` na file:// pozostaje
-wyłącznie jako siatka bezpieczeństwa toru split — nie jest już ścieżką
-użytkową offline.
+Mechanika:
 
-## Konsekwencje
+- build: `maps/<plan>.html` (tryb `CODEX_MAPA`: main.js renderuje jedną
+  mapę zamiast routera; deep-link `?pin=`), obok surowe podkłady
+  `maps/<plan>/<plik>` dla mini-map kart (`<img>`);
+- artefakt główny: trasa `#/mapa/<plan>` = rama + `<iframe>`; nawigacja
+  treściowa z wnętrza mapy wraca do rodzica przez `postMessage`
+  (`codexHash`), pinezki otwierają warstwę karty LOKALNIE w iframe;
+- **„Pobierz ZIP Codexu"**: `mtg-lore-codex.zip` zawiera całe drzewo
+  (index.html + mtg-lore-codex.html + maps/**) — po rozpakowaniu
+  otwiera się index.html z dysku;
+- `index.html` = kopia artefaktu głównego (wejście serwera/Pages);
+  `--out` buduje pojedynczy artefakt + drzewo map obok (pages.yml bez
+  zmian); tryb `--inline` USUNIĘTY (nie ma już jednoplika z mapami).
 
-**Dodatnie:** skalowanie do dziesiątek planów bez puchnięcia artefaktu;
-szybszy start witryny (mapa ładowana leniwie); zero zmian w workflow.
-**Ujemne:** artefakt HTML sam z siebie (bez katalogu `maps/`) nie pokaże
-podkładów — dystrybucja lokalna przez ZIP; otwarcie z `file://` pokazuje
-mapy w trybie `<img>` (bez zoom-typografii nakładki, bo fetch z file://
-jest blokowany przez przeglądarki).
+## Konsekwencje## Konsekwencje
 
-**Dla sesji agentskiej:** nie wracać do base64 jako domyślnego; nowe
-zasoby ciężkie (przyszłe podkłady, ewent. grafiki) idą tą samą ścieżką
-(osobny plik + URL + degradacja); testy interakcji mapy w shimie budują
-z `inline: true`.
+**Dodatnie:** offline z dysku = pełna funkcjonalność; artefakt główny
+stały (~0,2 MB) niezależnie od liczby planów; mapa ładuje się dopiero
+przy wejściu; zero zmian w workflow. **Ujemne:** dystrybucja to katalog
+(drzewo), nie pojedynczy plik — ZIP jest formą przenośną; komunikacja
+iframe↔rodzic wymaga postMessage (file:// izoluje originy).
+
+**Dla sesji agentskiej:** nowe ciężkie zasoby = osobne strony/pliki
+w drzewie (nigdy base64 w artefakcie); strony map testuje się
+wykonując `dist/maps/<plan>.html` w shimie (czyścić globale
+CODEX_MAPA/CODEX_DATA między artefaktami!); nawigacja z iframe tylko
+przez postMessage `codexHash`.

@@ -4,6 +4,22 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-02 — sesja PR-10 (część 12): DRZEWO HTML map — architektura ostateczna (ADR 0027 v2)
+
+1. Właściciel odrzucił dwa tory (jednoplik → ~200 MB przy 30+ planach)
+   i podał lepszy pomysł: mapy jako osobne strony HTML w iframe.
+   Kluczowa własność: file:// blokuje fetch, ale NIE iframe.
+2. Implementacja: build generuje maps/<plan>.html (bundle + dane +
+   surowy SVG, tryb CODEX_MAPA w main.js); renderMapeIframe w trasie
+   #/mapa; postMessage codexHash z iframe do rodzica; mini-mapy <img>;
+   ZIP = całe drzewo; --inline usunięty; URL-e podkładów w stronie mapy
+   względem maps/ (pułapka ścieżek względnych!).
+3. Testy: strony map wykonywane w shimie WPROST (renderują się w boot);
+   pułapka wycieku globali CODEX_MAPA/CODEX_DATA między artefaktami
+   w shimie (przeglądarka izoluje strony, shim nie) — czyszczenie
+   w wykonajArtefakt; LIFO przywracania shimów.
+4. 91/91; artefakt 222 kB; strony map 2,0/3,7 MB; ZIP 11,3 MB (6 plików).
+
 ## 2026-09-02 — sesja PR-10 (część 11): dwa tory pakietu — offline jednoplik wraca (uzup. ADR 0027)
 
 Właściciel: „moja wersja offline z pliku nie będzie działać? TO ZMIENIA

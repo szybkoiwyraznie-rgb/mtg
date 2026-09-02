@@ -434,3 +434,16 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
 }
 .karta-fot img { aspect-ratio: 21 / 9; object-fit: cover; }
 .karta-kon img { aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* ── Mapa w iframe (ADR 0027 v2: strony map jako osobne pliki) ── */
+.mapa-iframe {
+  display: block;
+  width: 100%;
+  height: clamp(420px, 74vh, 980px);
+  border: 1px solid #d8d2c4;
+  border-radius: 10px;
+  background: #fff;
+}
+/* Strona mapy osadzona (maps/<plan>.html): mapa wypełnia okno iframe */
+.mapa-strona-osadzona { margin: 0; padding: 8px 10px; }
+.mapa-strona-osadzona .mapa-okno { height: calc(100vh - 74px); max-height: none; }

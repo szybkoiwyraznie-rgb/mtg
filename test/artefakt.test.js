@@ -46,21 +46,20 @@ test('build bazy repozytorium produkuję artefakt z danymi i kodem', async () =>
   fs.rmSync(cel, { force: true });
 });
 
-test('pakiet dystrybucyjny: split index.html + pełny jednoplik offline (ADR 0027)', async () => {
+test('pakiet dystrybucyjny: artefakt + drzewo map + ZIP (ADR 0027 v2)', async () => {
   // katalog tymczasowy — dist/ zostaje nietknięte
   const { zbudujPakiet } = await import('../tools/build.mjs');
   const wynik = await zbudujPakiet({ katalog: '/tmp/codex-test-pakiet' });
   const index = fs.readFileSync(wynik.index, 'utf8');
-  const offline = fs.readFileSync(wynik.offline, 'utf8');
-  // index.html = APLIKACJA w trybie split (mapy przez URL, dociągane fetch-em)
-  assert.ok(index.includes('CODEX_DATA'), 'index.html ma być aplikacją (split), nie przekierowaniem');
-  assert.ok(index.includes('"podkladUrl": "maps/'), 'index.html: rejestr map z podkladUrl');
-  assert.ok(!index.includes('data:image/svg+xml;base64'), 'index.html: bez base64 podkładów');
-  assert.ok(fs.existsSync('/tmp/codex-test-pakiet/maps/srodziemie/podklad.svg'), 'pakiet: maps/** obok index.html');
-  // mtg-lore-codex.html = PEŁNY JEDNOPLIK offline (file:// bez degradacji)
-  assert.ok(offline.includes('data:image/svg+xml;base64'), 'offline: podkłady osadzone w środku');
-  assert.ok(!offline.includes('"podkladUrl"'), 'offline: bez zależności od plików obok');
-  assert.ok(offline.length > index.length * 3, 'offline ma być pełnym (ciężkim) artefaktem');
-  assert.ok(fs.existsSync(wynik.zip), 'pakiet: archiwum zip z jednoplikiem');
+  const glowny = fs.readFileSync(wynik.glowny, 'utf8');
+  assert.equal(index, glowny, 'index.html ma być kopią artefaktu głównego');
+  assert.ok(index.includes('CODEX_DATA'), 'index.html ma być aplikacją');
+  assert.ok(index.includes('"stronaMapy": "maps/'), 'rejestr map ze stronami maps/<plan>.html');
+  assert.ok(!index.includes('data:image/svg+xml;base64'), 'artefakt bez base64 podkładów');
+  assert.ok(fs.existsSync('/tmp/codex-test-pakiet/maps/srodziemie.html'), 'pakiet: strona mapy Śródziemia');
+  assert.ok(fs.existsSync('/tmp/codex-test-pakiet/maps/zendikar.html'), 'pakiet: strona mapy Zendikaru');
+  assert.ok(fs.existsSync('/tmp/codex-test-pakiet/maps/srodziemie/podklad.svg'), 'pakiet: surowy podkład (mini-mapy)');
+  assert.ok(fs.existsSync(wynik.zip), 'pakiet: ZIP z całym drzewem');
+  assert.ok(fs.statSync(wynik.zip).size > 4 * 1024 * 1024, 'ZIP ma zawierać drzewo map (nie sam artefakt)');
   fs.rmSync('/tmp/codex-test-pakiet', { recursive: true, force: true });
 });
