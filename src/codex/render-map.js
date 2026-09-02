@@ -89,6 +89,10 @@ function przeniesEtykietyDoNakladki(markup) {
     const pax = /\sdata-ax="(-?[\d.]+)"/.exec(atryb);
     const pay = /\sdata-ay="(-?[\d.]+)"/.exec(atryb);
     const par = /\sdata-r="(-?[\d.]+)"/.exec(atryb);
+    // Kolor pisma z SVG (granat wód, zieleń biomów, czerń kontynentów —
+    // ADR 0024/0025): nakładka MUSI go przenieść, inaczej CSS klas
+    // nadpisuje warstwowe kolory mapy (feedback: „granatu nie widać").
+    const fill = /\sfill="(#[0-9a-fA-F]{3,6})"/.exec(atryb)?.[1] ?? '';
     etykiety.push({
       x: parseFloat(mx[1]) / w,
       y: parseFloat(my[1]) / h,
@@ -100,6 +104,7 @@ function przeniesEtykietyDoNakladki(markup) {
       ax: pax && pay ? parseFloat(pax[1]) / w : null,
       ay: pax && pay ? parseFloat(pay[1]) / h : null,
       r: par ? parseFloat(par[1]) / w : 0,
+      fill,
     });
     out += `<text data-podklad-orj="1" style="visibility:hidden"${atryb}>${tresc}</text>`;
   }
@@ -178,10 +183,11 @@ export function renderMape(slugPlanu, query = {}) {
       : '';
     const bx = e.ax != null ? e.ax : e.x;
     const by = e.ax != null ? e.ay : e.y;
+    const kolorPisma = e.fill ? `;color:${e.fill}` : '';
     return `<span class="mapa-etykieta-podkladu ${tier}${e.kursywa ? ' kursywa' : ''}" data-podklad-etykieta
       data-x="${e.x.toFixed(4)}" data-y="${e.y.toFixed(4)}" data-fs="${e.fs}" data-min-k="${prog.toFixed(2)}"
       data-kotwica="${e.kotwica}"${przy}
-      style="left:${(bx * 100).toFixed(2)}%;top:${(by * 100).toFixed(2)}%">${e.tresc}</span>`;
+      style="left:${(bx * 100).toFixed(2)}%;top:${(by * 100).toFixed(2)}%${kolorPisma}">${e.tresc}</span>`;
   }).join('');
 
   const htmlRegionyEtykiety = regiony.map((r) => {

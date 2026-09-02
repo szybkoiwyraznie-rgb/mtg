@@ -235,6 +235,8 @@ test('mapforge: motywy — atlas wymienia paletę, oba deterministyczne', () => 
     'd4e2ee', '6f9bc0',                      // woda (jeden kolor, przyciemniona — ADR 0023) / linie wody
     '6b1f2e', '5a1622', '4d1220',            // bordowe etykiety
     '1c3a5e',                                // granat etykiet wodnych (ADR 0024)
+    '1e4d2b',                                // zieleń etykiet biomów (ADR 0025)
+    '000000',                                // czerń tytułów kontynentów/wysp (ADR 0025)
   ]);
   const wyp = [...a1.matchAll(/fill="#([0-9a-f]{6})"/g)].map((m) => m[1]);
   assert.ok(wyp.length > 300, 'wypełnień do sprawdzenia');

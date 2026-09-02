@@ -56,10 +56,23 @@ export const ETYKIETY_WODNE_KOLOR = [
 ];
 const BLOKI_POI = {
   miasto, ruina, hedron,
-  // `iglica` — pojedyncza skalna/żywa iglica (Living Spire): samotny glif
-  // hero g-016 (jawnie, zgodnie z ADR 0020 — hero tylko przez glifId),
-  // wąski i wysoki.
-  iglica: (x, y, { skala = 1 } = {}) => szczyt(x, y, 24 * skala, 42 * skala, { glifId: 'g-016' }),
+  // `iglica` — pojedyncza smukła iglica (Living Spire): najsmuklejszy
+  // glif adoptowany g-237 (w/h≈0.69; hero — jawnie przez glifId, ADR 0020).
+  iglica: (x, y, { skala = 1 } = {}) => szczyt(x, y, 23 * skala, 34 * skala, { glifId: 'g-237' }),
+  // `wodospad` — strugi spadającej wody + rozbryzg (Roaring Falls);
+  // kolor linii wody, spójny z jeziorami/wybrzeżem (ADR 0025).
+  wodospad: (x, y, { skala = 1 } = {}) => {
+    const s = skala;
+    const r = (v) => Math.round(v * 100) / 100;
+    return `<g class="mf-wodospad" data-x="${r(x)}" data-y="${r(y)}">` +
+      `<path d="M ${r(x - 5 * s)} ${r(y - 8 * s)} L ${r(x - 5 * s)} ${r(y + 2 * s)} ` +
+      `M ${r(x)} ${r(y - 9 * s)} L ${r(x)} ${r(y + 3 * s)} ` +
+      `M ${r(x + 5 * s)} ${r(y - 8 * s)} L ${r(x + 5 * s)} ${r(y + 2 * s)}" ` +
+      `stroke="${PAL.wodaStroke}" stroke-width="${r(1.8 * s)}" stroke-linecap="round" fill="none"/>` +
+      `<path d="M ${r(x - 7 * s)} ${r(y + 5 * s)} q 3.5 -3 7 0 q 3.5 3 7 0" ` +
+      `stroke="${PAL.wodaStroke}" stroke-width="${r(1.2 * s)}" fill="none"/>` +
+      `</g>`;
+  },
 };
 
 /** Ocean: jednolity podkład. (Dawniej „plamy głębi" w kolorze jeziora —
@@ -119,7 +132,7 @@ export function rozstawEtykiety(etykiety, { szer, wys, maskiLadow = [], woda = n
   const koliduje = (b, u) => b[0] < u[2] && u[0] < b[2] && b[1] < u[3] && u[1] < b[3];
 
   // Strefa ikony POI przy kotwicy: promień pionowy ikony (jednostki mapy).
-  const PROMIEN_POI = { miasto: 14, ruina: 12, hedron: 11, wulkan: 27, iglica: 22 };
+  const PROMIEN_POI = { miasto: 14, ruina: 12, hedron: 11, wulkan: 27, iglica: 20, wodospad: 11 };
   const promienPrzy = (ax, ay) => {
     let r = 4;                                    // goły punkt (zatoka, wyspa, przełęcz)
     for (const p of poi) {
@@ -304,14 +317,9 @@ export function renderuj(scena, { styl } = {}) {
     for (const b of scena.biomy) {
       if (b.typ === 'lod') wyklucz.poligony.push(b.punkty);   // lita czapa: nic w niej nie rośnie
     }
-    // Boxy etykiet (policzone wyżej) — biomy nie zarastają napisów.
-    for (const e of rozstawione) {
-      const fs = e.opcje?.fs ?? 15;
-      wyklucz.bboxy.push([
-        e.x - e.tekst.length * fs * 0.31 - 2, e.y - fs * 0.82 - 2,
-        e.x + e.tekst.length * fs * 0.31 + 2, e.y + fs * 0.24 + 2,
-      ]);
-    }
+    // UWAGA: boxy etykiet celowo NIE są strefą zajętą — wycinały „polany"
+    // pod nazwami kontynentów (recenzja 2026-09-02: „nazwa powinna być NAD
+    // lasem, nie wycinać polany"); napisy leżą na wierzchu z halo.
     const grupy = {};
     const wczesniejsze = [];
     for (const b of scena.biomy) {
@@ -344,14 +352,23 @@ export function renderuj(scena, { styl } = {}) {
   }
 
   if (rozstawione.length || scena.etykietyLukowe?.length) {
-    // Kolor: obiekty wodne granatem (`PAL.etykietaWoda`, ADR 0024);
-    // pozycje policzone przed biomami (patrz wyżej).
+    // Kolory pisma warstwowe (ADR 0024/0025): wody granatem, fragmenty
+    // lasów/bagien ciemną zielenią (kotwica w poligonie las/bagno, o ile
+    // etykieta nie nazywa POI), kontynenty czernią (w `etykieta()`).
     const wodneKolor = new Set(scena.etykietyWodne ?? ETYKIETY_WODNE_KOLOR);
+    const lasyBagna = (scena.biomy ?? [])
+      .filter((b) => b.typ === 'las' || b.typ === 'bagno')
+      .map((b) => b.punkty);
+    const naPoi = ([ax, ay]) => (scena.poi ?? []).some((p) => Math.hypot(p.x - ax, p.y - ay) <= 6);
     warstwy.push(`<!-- === ETYKIETY (wzór: pod obiektem, konflikt => nad; ADR 0022) === -->`,
       `<g font-family="Georgia, 'Times New Roman', serif" fill="${PAL.tekst}" ` +
       `style="paint-order: stroke; stroke: ${PAL.halo}; stroke-width: 3px; stroke-linejoin: round;">`);
     for (const e of rozstawione) {
-      const kolor = e.opcje?.kolor ?? (wodneKolor.has(e.tekst) ? PAL.etykietaWoda : null);
+      let kolor = e.opcje?.kolor ?? (wodneKolor.has(e.tekst) ? PAL.etykietaWoda : null);
+      if (!kolor && !e.opcje?.duze) {
+        const kotw = e.przy ? [e.przy[0], e.przy[1]] : [e.x, e.y];
+        if (!naPoi(kotw) && lasyBagna.some((b) => pit(kotw, b))) kolor = PAL.etykietaBiom;
+      }
       warstwy.push(etykieta(e.tekst, e.x, e.y, { ...e.opcje, kolor, przy: e.przy }));
     }
     for (const e of scena.etykietyLukowe ?? []) {

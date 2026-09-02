@@ -22,7 +22,7 @@ export const PAL = {
   // pkt d: akweny mają się zlewać, bez osobnego „koloru jeziora").
   woda: '#ccd8d2', wodaStroke: '#7fa0b4',
   tekst: '#4a3a28', ital: '#6b5d52', halo: '#f4ecd8', etykieta: '#6b1f2e',
-  etykietaWoda: '#2e4d66',
+  etykietaWoda: '#2e4d66', etykietaKontynent: '#000000', etykietaBiom: '#33523a',
   drzewo: '#7a8a5a', drzewoCien: '#5c6b44', pienn: '#6b5d52',
   bagno: '#6f8a72', step: '#b5a877',
   skala: '#d8c9a3', skalaCien: '#8a7550', skalaLinia: '#a89468',
@@ -54,7 +54,9 @@ const MOTYWY = {
     tekst: '#1c1c1c', ital: '#3f3f3f', halo: '#f7f7f7', etykieta: '#6b1f2e',
     // Etykiety obiektów wodnych: ciemny granat (recenzja 2026-09-02,
     // ADR 0024) — kolor funkcyjny obok bordowych etykiet i błękitu wody.
-    etykietaWoda: '#1c3a5e',
+    // Warstwy kolorów pisma (recenzja 6, ADR 0025): kontynenty/wyspy =
+    // czerń; fragmenty lasów/bagien = ciemna zieleń.
+    etykietaWoda: '#1c3a5e', etykietaKontynent: '#000000', etykietaBiom: '#1e4d2b',
     drzewo: '#dedede', drzewoCien: '#c3c3c3', pienn: '#3f3f3f',
     bagno: '#5f5f5f', step: '#9b9b9b',
     skala: '#eaeaea', skalaCien: '#6b6b6b', skalaLinia: '#8f8f8f',
@@ -469,7 +471,8 @@ export function hedron(x, y, { skala = 1, opacity = 1 } = {}) {
 export function etykieta(tekst, x, y, { kat = 0, fs = 15, ital = false, kolor = null, duze = false, kotwica = 'middle', przy = null } = {}) {
   const transform = kat ? ` transform="rotate(${zaokr(kat, 1)} ${rr(x)} ${rr(y)})"` : '';
   const kl = duze ? 'tytul-kontynentu' : null;
-  const fill = kolor ?? PAL.etykieta;
+  // Kontynenty/wielkie tytuły: czerń (ADR 0025), reszta: bordo (ADR 0021).
+  const fill = kolor ?? (duze ? (PAL.etykietaKontynent ?? PAL.etykieta) : PAL.etykieta);
   const dataPrzy = przy ? ` data-ax="${rr(przy[0])}" data-ay="${rr(przy[1])}" data-r="${rr(przy[2])}"` : '';
   return `<text x="${rr(x)}" y="${rr(y)}" font-size="${fs}"${ital ? ' font-style="italic"' : ''} fill="${fill}"${kl ? ` class="${kl}"` : ''} text-anchor="${kotwica}"${dataPrzy}${transform}>${tekst}</text>`;
 }
