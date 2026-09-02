@@ -93,13 +93,13 @@ function wiersz(klucz, wartosc) {
 function miniMapa(karta, dane) {
   if (!karta.pinezka) return '';
   const mapa = dane.mapy?.[karta.plan];
-  if (!mapa || mapa.problem || !mapa.podkladData) return '';
+  if (!mapa || mapa.problem || !(mapa.podkladData || mapa.podkladUrl)) return '';
   const pinezka = (mapa.pinezki ?? []).find((p) => p.karta === karta.slug);
   if (!pinezka) return '';
   const kolor = (POZIOMY_PEWNOSCI[pinezka.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona).kolor;
   return `<a class="mini-mapa" href="#/mapa/${karta.plan}?pin=${karta.slug}"
     title="Pokaż na mapie planu (pewność: ${escapeHtml(POZIOMY_PEWNOSCI[pinezka.pewnosc]?.etykieta ?? pinezka.pewnosc)})">
-    <img src="${mapa.podkladData}" alt="Miniatura mapy planu: ${escapeHtml(mapa.tytul ?? karta.plan)}" loading="lazy">
+    <img src="${mapa.podkladData ?? mapa.podkladUrl}" alt="Miniatura mapy planu: ${escapeHtml(mapa.tytul ?? karta.plan)}" loading="lazy">
     <span class="mini-mapa-pinezka" style="left:${pinezka.x * 100}%; top:${pinezka.y * 100}%; background:${kolor}"></span>
     <span class="mini-mapa-podpis">📍 ${escapeHtml(mapa.tytul ?? karta.plan)} — pokaż na mapie</span>
   </a>`;

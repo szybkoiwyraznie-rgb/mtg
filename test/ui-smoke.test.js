@@ -84,7 +84,7 @@ test('UI: baza fixture renderuje kartę, hasło i plan z wikilinkami', async () 
 });
 
 test('UI: mapa planu z realnej bazy — podkład, pinezka, legenda', async () => {
-  const cel = await zbuduj({ out: 'dist/test-ui-mapa.html' });
+  const cel = await zbuduj({ out: 'dist/test-ui-mapa.html', inline: true });
   const shim = wykonajArtefakt(cel);
 
   shim.idz('#/mapa/srodziemie');
@@ -152,7 +152,7 @@ test('UI: mapa planu z realnej bazy — podkład, pinezka, legenda', async () =>
 });
 
 test('UI: mapa T3 — etykiety podkładu w nakładce ekranowej (stały rozmiar, LOD)', async () => {
-  const cel = await zbuduj({ out: 'dist/test-ui-mapa-etykiety.html' });
+  const cel = await zbuduj({ out: 'dist/test-ui-mapa-etykiety.html', inline: true });
   const shim = wykonajArtefakt(cel);
 
   shim.idz('#/mapa/zendikar');
@@ -180,7 +180,7 @@ test('UI: mapa T3 — etykiety podkładu w nakładce ekranowej (stały rozmiar, 
 });
 
 test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () => {
-  const cel = await zbuduj({ out: 'dist/test-ui-karta.html' });
+  const cel = await zbuduj({ out: 'dist/test-ui-karta.html', inline: true });
   const shim = wykonajArtefakt(cel);
 
   shim.idz('#/karta/1ltr-dunland-crebain');
@@ -261,6 +261,31 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   shim.idz('#/');
   assert.ok(shim.app.innerHTML.includes('Dunland Crebain'), 'home: brak ostatniej materializacji');
 
+  fs.rmSync(cel, { force: true });
+  shim.przywroc();
+});
+
+
+test('UI/build: mapy jako osobne pliki (ADR 0027 — rozdzielenie artefaktu)', async () => {
+  const cel = await zbuduj({ out: 'dist/test-ui-split.html' });   // domyślnie: split
+  const html = fs.readFileSync(cel, 'utf8');
+  // artefakt NIE niesie podkładów base64 — tylko względne URL-e
+  assert.ok(!html.includes('data:image/svg+xml;base64'), 'artefakt bez base64 podkładów');
+  assert.ok(html.includes('"podkladUrl": "maps/srodziemie/'), 'rejestr mapy Śródziemia z podkladUrl');
+  assert.ok(html.includes('"podkladUrl": "maps/zendikar/'), 'rejestr mapy Zendikaru z podkladUrl');
+  assert.ok(html.length < 2.5 * 1024 * 1024, `artefakt po odchudzeniu (${(html.length / 1048576).toFixed(2)} MB) ma być < 2.5 MB`);
+  // podkłady wylądowały obok artefaktu
+  assert.ok(fs.existsSync('dist/maps/srodziemie/podklad.svg'), 'dist/maps/srodziemie/podklad.svg');
+  assert.ok(fs.existsSync('dist/maps/zendikar/podklad.svg'), 'dist/maps/zendikar/podklad.svg');
+  // shim nie ma fetch → mapa T3+ renderuje szkielet doładowania (ADR 0027),
+  // a loader w kodzie artefaktu istnieje
+  const shim = wykonajArtefakt(cel);
+  shim.idz('#/mapa/zendikar');
+  assert.ok(shim.app.innerHTML.includes('data-mapa-doladuj="zendikar"'), 'mapa: sygnał doładowania podkładu');
+  assert.ok(html.includes('PODKLADY.set'), 'loader podkładów w kodzie artefaktu');
+  // T2 (Śródziemie) nie potrzebuje fetch: degraduje do <img src=url>
+  shim.idz('#/mapa/srodziemie');
+  assert.ok(shim.app.innerHTML.includes('src="maps/srodziemie/'), 'mapa T2: podkład jako <img> z URL');
   fs.rmSync(cel, { force: true });
   shim.przywroc();
 });

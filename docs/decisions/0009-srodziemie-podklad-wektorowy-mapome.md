@@ -1,6 +1,8 @@
 # ADR 0009: Śródziemie — podkład w pełni wektorowy (adopcja mapome SVG)
 
-- **Status:** Zaakceptowana
+- **Status:** Częściowo zastąpiona — osadzanie podkładu jako base64
+  w artefakcie zastępuje ADR 0027 (podkład jako osobny plik ładowany
+  na żądanie); adopcja wektorowego mapome w mocy
 - **Data:** 2026-08-31
 - **Decydenci:** właściciel projektu (propozycja mapy wektorowej zamiast rastrowej, 2026-08-31, czat); agent Arena (sesja PR-1, research i implementacja)
 

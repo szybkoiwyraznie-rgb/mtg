@@ -4,6 +4,19 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-02 — sesja PR-10 (część 10): rozdzielenie artefaktu → ADR 0027; duplikat „Co nowego"
+
+1. Decyzja właściciela: „pora na rewolucję" ze skalowania map (ROADMAP
+   2026-09-01). Build domyślnie: artefakt 219 kB + dist/maps/** ;
+   `--inline` awaryjnie. Witryna: cache PODKLADY + doładowanie w
+   zamontujMape (fetch → przerysuj trasę); degradacja file:// do <img>;
+   mini-mapy przez URL. Zip już wcześniej przewidywał katalog maps/ —
+   pakuje całość; pages.yml wysyła cały dist/ (bez zmian, sprawdzone
+   read-only). Testy: shimowe UI budują inline (brak fetch w shimie);
+   nowy test kontraktu splitu; test artefaktu przyjmuje podkladUrl.
+2. Duplikat nagłówka „Co nowego": H1+lead były i w renderze,
+   i w treści md — treść ogołocona z nagłówka (komentarz dla edytorów).
+
 ## 2026-09-02 — sesja PR-10 (część 9): Fabuły 1LTR/2BFZ zmaterializowane w kartach
 
 1. Dostawa Fabuł do obu kart (1LTR = verbatim dawna „Narracja", teraz

@@ -1,6 +1,9 @@
 # ADR 0001: Repozytorium jako jedyne źródło prawdy bazy; statyczna witryna i jednoplikowy artefakt
 
-- **Status:** Zaakceptowana
+- **Status:** Częściowo zastąpiona — jednoplikowość artefaktu w części
+  podkładów map zastępuje ADR 0027 (mapy jako osobne pliki `dist/maps/**`
+  ładowane na żądanie); repozytorium jako źródło prawdy i statyczna
+  witryna w mocy
 - **Data:** 2026-08-31
 - **Decydenci:** właściciel projektu; agent Arena (sesja PR-1)
 

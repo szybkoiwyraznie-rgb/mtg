@@ -119,6 +119,25 @@ export const POZIOMY_PEWNOSCI = {
   przyblizona: { etykieta: 'przybliżona', kolor: '#b3392e', opis: 'rekonstrukcja — wymaga uzasadnienia' },
 };
 
+// ADR 0027: podkłady map żyją POZA artefaktem (dist/maps/**) i są
+// dociągane na żądanie przy pierwszym wejściu na mapę; cache trzyma
+// surowy markup SVG na czas sesji przeglądarki. `{ blad: true }` =
+// fetch nieudany (np. otwarcie artefaktu z dysku, file://) — mapa
+// degraduje się do <img src=url> (działa też z file://), bez nakładki
+// typograficznej.
+const PODKLADY = new Map();
+
+/** Surowy markup podkładu SVG: z base64 (tryb inline) albo z cache
+ *  pobranego pliku (ADR 0027). Pusty string = markup niedostępny. */
+function surowyMarkupPodkladu(mapa, slug) {
+  if (mapa.podkladData) return podkladSvgMarkup(mapa.podkladData);
+  const c = PODKLADY.get(slug);
+  if (c && c.markup && c.markup.includes('<svg ')) {
+    return c.markup.replace('<svg ', '<svg class="mapa-podklad" ', 1);
+  }
+  return '';
+}
+
 /** Renderuje stronę mapy planu (HTML; interakcje montuje zamontujMape). */
 export function renderMape(slugPlanu, query = {}) {
   const dane = dajDane();
@@ -162,17 +181,24 @@ export function renderMape(slugPlanu, query = {}) {
 
   // Etykiety podkładu → nakładka ekranowa (stały rozmiar przy zoomie).
   // Tylko T3+ (podkłady własne: ręczne/mapforge) — podkładów adoptowanych
-  // (T2, np. mapome) typografii nie ruszamy.
+  // (T2, np. mapome) typografii nie ruszamy (T2 renderuje się jako <img>).
   let etykietyPodkladu = [];
   let podkladMarkup = '';
-  if (mapa.podkladData && mapa.podklad && mapa.wariant !== 'T1' && mapa.wariant !== 'T2' && /\.svg$/i.test(String(mapa.podklad))) {
-    const surowy = podkladSvgMarkup(mapa.podkladData);
+  const svgTypograficzny = mapa.podklad && mapa.wariant !== 'T1' && mapa.wariant !== 'T2'
+    && /\.svg$/i.test(String(mapa.podklad));
+  if (svgTypograficzny) {
+    const surowy = surowyMarkupPodkladu(mapa, slugPlanu);
     if (surowy) {
       const r = przeniesEtykietyDoNakladki(surowy);
       etykietyPodkladu = r.etykiety;
       podkladMarkup = r.markup;
     }
   }
+  // Podkład T3+ z osobnego pliku, jeszcze nie pobrany → strona renderuje
+  // szkielet z sygnałem doładowania; zamontujMape pobierze plik i poprosi
+  // o przerysowanie (ADR 0027). Po nieudanym fetchu (file://) — <img>.
+  const czekaNaPodklad = svgTypograficzny && !podkladMarkup
+    && !mapa.podkladData && mapa.podkladUrl && !PODKLADY.get(slugPlanu)?.blad;
   const htmlEtykietyPodkladu = etykietyPodkladu.map((e) => {
     // LOD: drobne napisy pokazują się od przybliżenia, w którym ich
     // oryginalny rozmiar „urósłby" do czytelnych ~16 px ekranu
@@ -228,10 +254,12 @@ export function renderMape(slugPlanu, query = {}) {
       data-plan="${escapeHtml(slugPlanu)}" data-pin="${escapeHtml(pinDocelowy)}" data-aspekt="${(szer / wys).toFixed(4)}">
       <div class="mapa-ruch" data-mapa-ruch>
         <div class="mapa-scena" style="aspect-ratio: ${szer} / ${wys}">
-          ${mapa.podkladData
-            ? (podkladMarkup
-                || `<img class="mapa-podklad" src="${mapa.podkladData}" alt="Podkład mapy: ${escapeHtml(mapa.tytul ?? slugPlanu)}" draggable="false">`)
-            : `<div class="mapa-brak-podkladu">Brak osadzonego podkładu (build nie wstrzyknął pliku — sprawdź maps/${escapeHtml(slugPlanu)}/podklad.svg).</div>`}
+          ${podkladMarkup
+            || (czekaNaPodklad
+              ? `<div class="mapa-brak-podkladu" data-mapa-doladuj="${escapeHtml(slugPlanu)}" data-podklad-url="${escapeHtml(mapa.podkladUrl)}">Ładowanie podkładu mapy…</div>`
+              : ((mapa.podkladData || mapa.podkladUrl)
+                ? `<img class="mapa-podklad" src="${mapa.podkladData ?? mapa.podkladUrl}" alt="Podkład mapy: ${escapeHtml(mapa.tytul ?? slugPlanu)}" draggable="false">`
+                : `<div class="mapa-brak-podkladu">Brak osadzonego podkładu (build nie wstrzyknął pliku — sprawdź maps/${escapeHtml(slugPlanu)}/podklad.svg).</div>`))}
           <svg class="mapa-regiony" viewBox="0 0 ${szer} ${wys}" preserveAspectRatio="none" aria-hidden="true">${svgRegiony}</svg>
         </div>
       </div>
@@ -298,6 +326,24 @@ export function renderMape(slugPlanu, query = {}) {
 export function zamontujMape(app, opcje = {}) {
   const okno = app?.querySelector?.('.mapa-okno');
   if (!okno) return;
+
+  // ── Doładowanie podkładu z osobnego pliku (ADR 0027) ──
+  // Artefakt niesie tylko `podkladUrl`; przy pierwszym wejściu na mapę
+  // pobieramy SVG, cache'ujemy i prosimy o przerysowanie trasy. Gdy
+  // fetch niedostępny/nieudany (file://, offline) — znacznik błędu
+  // w cache degraduje render do <img src=url>.
+  const doladuj = okno.querySelector('[data-mapa-doladuj]');
+  if (doladuj) {
+    const slug = doladuj.getAttribute('data-mapa-doladuj');
+    const url = doladuj.getAttribute('data-podklad-url');
+    if (typeof fetch !== 'function') return;       // shim testowy: zostaje szkielet
+    fetch(url)
+      .then((r) => (r.ok ? r.text() : Promise.reject(new Error(`HTTP ${r.status}`))))
+      .then((tekst) => PODKLADY.set(slug, { markup: tekst }))
+      .catch(() => PODKLADY.set(slug, { blad: true }))
+      .finally(() => opcje.przerysuj?.());
+    return;                                        // interakcje po przerysowaniu
+  }
 
   const ruch = okno.querySelector('[data-mapa-ruch]');
   if (!ruch) return;

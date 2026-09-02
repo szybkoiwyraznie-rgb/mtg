@@ -29,7 +29,12 @@ test('build bazy repozytorium produkuję artefakt z danymi i kodem', async () =>
   assert.ok(typeof dane.coNowegoHtml === 'string');
   for (const [slug, mapa] of Object.entries(dane.mapy ?? {})) {
     if (mapa.problem) continue;
-    assert.ok(mapa.podkladData?.startsWith('data:'), `mapa ${slug}: brak osadzonego podkładu (ADR 0009)`);
+    // ADR 0027: podkład jako osobny plik (podkladUrl) — base64 tylko
+    // w trybie awaryjnym `inline` (rewizja jednoplikowości ADR 0009).
+    assert.ok(
+      mapa.podkladData?.startsWith('data:') || /^maps\//.test(mapa.podkladUrl ?? ''),
+      `mapa ${slug}: brak podkładu (ani podkladUrl, ani base64 — ADR 0027)`,
+    );
     assert.ok(Array.isArray(mapa.pinezki), `mapa ${slug}: brak tablicy pinezek`);
   }
 

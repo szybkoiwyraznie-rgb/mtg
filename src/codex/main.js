@@ -43,7 +43,13 @@ function renderuj(trasa) {
   app.innerHTML = rama(aktywna, tytul, html);
   tytulStrony(tytul);
   zamontujToryObrazow(app);
-  zamontujMape(app, { renderKarty: renderKarte, zamontujKarte: zamontujToryObrazow });
+  zamontujMape(app, {
+    renderKarty: renderKarte,
+    zamontujKarte: zamontujToryObrazow,
+    // ADR 0027: po doładowaniu podkładu z osobnego pliku mapa prosi
+    // o ponowny render tej samej trasy (cache podkładów już pełny).
+    przerysuj: () => renderuj(trasa),
+  });
   zamontujFiltryKart(app);
 
   const tresc = app.querySelector('.tresc');

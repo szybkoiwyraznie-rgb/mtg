@@ -42,6 +42,7 @@ dziedziczona z projektu mtg-game.
 | [0024](0024-czytelnosc-map-t4.md) | Czytelność map T4: ikony miast/ruin w kołach z nieprzezroczystym tłem; granatowe etykiety wód (#1c3a5e); rozsiew biomów omija boxy etykiet; glify pasm w całości na lądzie; POI `iglica`; trakty między miastami kontynentu; reguły przejść i cieków | Częściowo zastąpiona (boxy etykiet w rozsiewie — patrz ADR 0025) |
 | [0025](0025-warstwowe-kolory-pisma-map.md) | Warstwowe kolory pisma: kontynenty/wyspy czerń, wody granat, fragmenty lasów/bagien zieleń (automat po kotwicy w biomie); nakładka przenosi kolory z SVG; napisy NAD lasem (bez polan); klocki `iglica` (g-237) i `wodospad`; kaniony rysowane; drogi bez dubli | Zaakceptowana |
 | [0026](0026-fabula-kotwica-transpozycji.md) | Fabuła wraca do dostawy materializacji (imgId · nazwa · set · plan · Fabuła) jako WIĄŻĄCA kotwica transpozycji — sekcje osadzenia karty budowane z Fabuły (spójność z ilustracjami FOT/KON); higiena: osadzenie ≠ kanon MtG, oznaczanie w Źródłach | Zaakceptowana |
+| [0027](0027-rozdzielenie-artefaktu-mapy-osobno.md) | Rozdzielenie artefaktu: kod+treść w HTML (~0,2 MB), podkłady map jako osobne pliki `dist/maps/**` ładowane na żądanie (fetch→inline SVG; degradacja do `<img>` na file://); ZIP samowystarczalny; tryb awaryjny `--inline` | Zaakceptowana |
 
 Spójnością rejestru (numeracja, statusy, tabela) pilnuje
 `test/rejestr-adr.test.js`.

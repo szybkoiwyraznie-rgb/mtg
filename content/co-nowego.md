@@ -1,7 +1,21 @@
-# Co nowego
+<!-- Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości,
+krok 5, ADR 0006). Najnowsze na górze. BEZ nagłówka H1 i leadu: tytuł
+i opis strony daje renderer (render-whatsnew.js) — duplikat nagłówków
+był błędem (feedback właściciela 2026-09-02). -->
 
-Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
-ADR 0006). Najnowsze na górze.
+## 2026-09-02 — REWOLUCJA artefaktu: mapy jako osobne pliki (ADR 0027) + porządek na „Co nowego"
+
+- **Rozdzielenie artefaktu** (decyzja właściciela — wątek otwarty
+  z ROADMAP rozstrzygnięty): HTML niesie kod+treść (**219 kB zamiast
+  ~7 MB**), podkłady map leżą w `dist/maps/<plan>/` i są dociągane
+  dopiero przy wejściu na mapę (fetch → wektorowy SVG z pełną
+  nakładką; na file:// degradacja do <img>). ZIP pakuje całość
+  (samowystarczalny); Pages publikuje cały dist/ bez zmian
+  w workflow. Tryb awaryjny `--inline` zostaje (testy, mały eksport).
+  Statusy ADR 0001/0009 zaktualizowane; +1 test kontraktu splitu.
+- **„Co nowego" bez dubli:** nagłówek i lead strony daje renderer —
+  usunięte powtórzone H1/opis z pliku treści (dublowały się na
+  stronie głównej i na karcie Co nowego).
 
 ## 2026-09-02 — Fabuły dla 1LTR i 2BFZ: karty zaktualizowane o osadzenie
 

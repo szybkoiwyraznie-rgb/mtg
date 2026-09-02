@@ -29,7 +29,7 @@ import {
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ENTRY = 'src/codex/main.js';
 
-export async function zbuduj({ out, root = ROOT } = {}) {
+export async function zbuduj({ out, root = ROOT, inline = false } = {}) {
   out = out ?? path.join(root, 'dist/mtg-lore-codex.html');
   const problemy = [];
 
@@ -136,17 +136,29 @@ export async function zbuduj({ out, root = ROOT } = {}) {
     },
   };
 
-  // mapy: rejestr map + podkłady osadzone jako data-URI (ADR 0009 —
-  // artefakt jednoplikowy; SVG w procentach base64, gzIPPowany transfer
-  // na Pages zwróci ~4–5× mniejszy strumień)
+  // mapy: rejestr map + PODKŁADY JAKO OSOBNE PLIKI (ADR 0027 — rewizja
+  // jednoplikowości ADR 0001/0009 na decyzję właściciela 2026-09-02:
+  // przy 30+ planach base64 map rozdąłby artefakt do dziesiątek MB).
+  // Podkład kopiowany do <dist>/maps/<slug>/<plik>; artefakt niesie tylko
+  // `podkladUrl` (względny — działa na Pages i po rozpakowaniu ZIP-a).
+  // Tryb `inline` (testy shimowe / artefakt awaryjny): stary base64.
+  const katalogOut = path.dirname(path.resolve(out));
   for (const [slug, mapa] of mapy) {
     if (mapa.problem || !mapa.podklad) continue;
     const plik = path.join(root, 'maps', slug, mapa.podklad);
     if (!fs.existsSync(plik)) continue; // brak pliku wychwyci test mapy (MA2)
-    const rozsz = path.extname(plik).toLowerCase();
-    const mime = rozsz === '.svg' ? 'image/svg+xml' : rozsz === '.png' ? 'image/png'
-      : rozsz === '.webp' ? 'image/webp' : 'image/jpeg';
-    mapa.podkladData = `data:${mime};base64,${fs.readFileSync(plik).toString('base64')}`;
+    if (inline) {
+      const rozsz = path.extname(plik).toLowerCase();
+      const mime = rozsz === '.svg' ? 'image/svg+xml' : rozsz === '.png' ? 'image/png'
+        : rozsz === '.webp' ? 'image/webp' : 'image/jpeg';
+      mapa.podkladData = `data:${mime};base64,${fs.readFileSync(plik).toString('base64')}`;
+    } else {
+      const rel = `maps/${slug}/${mapa.podklad}`;
+      const celPodkladu = path.join(katalogOut, rel);
+      fs.mkdirSync(path.dirname(celPodkladu), { recursive: true });
+      fs.copyFileSync(plik, celPodkladu);
+      mapa.podkladUrl = rel;
+    }
   }
   dane.mapy = Object.fromEntries(mapy.entries());
 
@@ -258,5 +270,6 @@ if (jestMain) {
     const i = process.argv.indexOf('--out');
     return i >= 0 ? process.argv[i + 1] : undefined;
   })();
-  zbuduj({ out }).catch((e) => { console.error(e.message); process.exit(1); });
+  const inline = process.argv.includes('--inline');
+  zbuduj({ out, inline }).catch((e) => { console.error(e.message); process.exit(1); });
 }
