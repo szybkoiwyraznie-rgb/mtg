@@ -408,6 +408,28 @@
  ],
  "pasma": [
   {
+   "id": "pasmo-pelakka-zachod",
+   "punkty": [
+    [1162, 1244],
+    [1180, 1272],
+    [1202, 1290]
+   ],
+   "opcje": {
+    "szer": 14
+   }
+  },
+  {
+   "id": "pasmo-pelakka-poludnie",
+   "punkty": [
+    [1292, 1242],
+    [1266, 1276],
+    [1214, 1289]
+   ],
+   "opcje": {
+    "szer": 14
+   }
+  },
+  {
    "id": "pasmo-windblast-zach",
    "punkty": [
     [1737, 478],
@@ -823,6 +845,12 @@
    "cy": 588.0,
    "rx": 26.0,
    "ry": 17.0
+  },
+  {
+   "cx": 420.0,
+   "cy": 760.0,
+   "rx": 9.0,
+   "ry": 6.0
   },
   {
    "cx": 1418.0,
@@ -1396,13 +1424,13 @@
   },
   {
    "tekst": "Hanging Swamp",
-   "x": 1290.0,
-   "y": 1230.0,
+   "x": 1158,
+   "y": 1192,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
     "ital": true,
-    "przyDo": [1290, 1230]
+    "przyDo": [1158, 1192]
    }
   },
   {
@@ -1418,8 +1446,8 @@
   },
   {
    "tekst": "Pelakka Karst",
-   "x": 1185,
-   "y": 1265,
+   "x": 1235,
+   "y": 1312,
    "opcje": {
     "fs": 14.0,
     "kotwica": "middle",

@@ -44,6 +44,7 @@ export const STREFY_WODNE_DOMYSLNE = [
   'Blackbloom Lake', 'Lake Jast', 'Roaring Falls',
   'Ior Ruin',                                  // ruiny na brzegu Glasspool — napis może zwisać nad wodą
   'Jwar Isle Refuge',                          // osada na małej wyspie Jwar — napis wisi nad cieśniną (Guide: Ondu)
+  'Sunspring',                                 // fontanna-oaza — napis przy własnej sadzawce (Lore of Zendikar)
 ];
 
 /** Etykiety, które NAZYWAJĄ wodę (morza, zatoki, jeziora, rzeki,
@@ -54,7 +55,7 @@ export const ETYKIETY_WODNE_KOLOR = [
   'Morze Zendikaru', 'Halimar', 'Bojuka Bay', 'Sunder Bay', 'Chill Depths',
   'Silundi Sea', "Serpent's Maw",
   'Umung', 'Umara', 'Blackbloom Lake', 'Lake Jast', 'Hagra Cistern',
-  'Glasspool', 'Roaring Falls', 'Magosi Wodospad',
+  'Glasspool', 'Roaring Falls', 'Magosi Wodospad', 'Sunspring',
   'Rzeka Srebrna', 'Zatoka Ciszy',                  // demo
 ];
 const BLOKI_POI = {

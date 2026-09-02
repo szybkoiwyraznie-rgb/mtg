@@ -42,6 +42,7 @@ SPODZEANE_WODY = {                           # konwencja projektu
     'Hagra Cistern', 'Morze Zendikaru',
     'Silundi Sea',                           # morze wokół Ondu (Guide: Ondu)
     "Serpent's Maw",                         # sztormowe wody wokół Jwar (Guide: Ondu)
+    'Sunspring',                             # fontanna-oaza pod Bulwarkiem — kotwica w sadzawce
     'Wyspy Jwar',                            # legacy: stara etykieta w podklad-reczny.svg (archiwalny, nie regenerowany)
     'Umung',                                 # rzeka Bala Ged — etykieta przy ujściu do Bojuka Bay
     'Blackbloom Lake', 'Lake Jast',          # jeziora — etykieta może zwisać nad wodą

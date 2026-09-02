@@ -194,7 +194,7 @@
    "y": 0.5429,
    "typ": "miejsce",
    "pozycja_zrodlo": "kanon-relacyjna",
-   "notka": "ukryta marmurowa fontanna-oaza w Calcite Flats pod Bulwarkiem, jedno z 6 miejsc sprzed Eldrazi (Lore of Zendikar: Ancient Sites of Tazeem; mtg.wiki/Tazeem)"
+   "notka": "ukryta marmurowa fontanna-oaza w Calcite Flats pod Bulwarkiem, jedno z 6 miejsc sprzed Eldrazi (Lore of Zendikar: Ancient Sites of Tazeem; mtg.wiki/Tazeem); sadzawka-oaza dorysowana w PR-11 (recenzja właściciela: etykieta bez obiektu)"
   },
   {
    "nazwa": "Calcite Flats",
@@ -206,11 +206,11 @@
   },
   {
    "nazwa": "Pelakka Karst",
-   "x": 0.5925,
-   "y": 0.9036,
+   "x": 0.6175,
+   "y": 0.9371,
    "typ": "region",
    "pozycja_zrodlo": "kanon-relacyjna",
-   "notka": "wapienny kras-badlands OTACZAJĄCY Hagra Cistern w Guul Draz (Guide: Guul Draz); etykieta na południowy zachód od cysterny"
+   "notka": "wapienny kras-badlands OTACZAJĄCY Hagra Cistern w Guul Draz (Guide: Guul Draz); etykieta na południowy zachód od cysterny; teren dorysowany w PR-11 jako pierścień skalnych żeber wokół cysterny (recenzja właściciela: etykieta bez obiektu)"
   },
   {
    "nazwa": "Silundi Sea",
@@ -695,11 +695,11 @@
   },
   {
    "nazwa": "Hanging Swamp",
-   "x": 0.665,
-   "y": 0.8986,
+   "x": 0.579,
+   "y": 0.8514,
    "typ": "bagno",
    "pozycja_zrodlo": "mapa-fanowska",
-   "notka": "bagna w centrum Guul Draz, nad Hagra Swamp (w2)"
+   "notka": "bagna w centrum Guul Draz, nad Hagra Swamp (w2); etykieta odsunięta na płn.-zach. od Hagra Cistern w PR-11 (leżała w poprzek tafli po dorysowaniu krasu)"
   },
   {
    "nazwa": "Sejiri Refuge",
