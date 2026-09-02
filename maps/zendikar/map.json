@@ -264,18 +264,27 @@
    "notka": "osada Agadeem (MTG Wiki)"
   },
   {
-   "nazwa": "Wyspy Jwar",
-   "x": 0.065,
-   "y": 0.779,
+   "nazwa": "Jwar",
+   "x": 0.3,
+   "y": 0.973,
    "typ": "etykieta-podkladu",
-   "notka": "wyspy na zachód od Ondu"
+   "notka": "mała, smagana morzem wyspa PRZY PŁD. WYBRZEŻU lądu Ondu (Guide: Ondu, MTG Wiki: Ondu — \u201etiny, sea-swept Jwar\u201d); przeniesiona z zachodu (0.065, 0.779) w PR-11 (E-geo-1) — kanon wiąże wyspy z wybrzeżem Ondu, więc w2 (\u201emiędzy Ondu a Akoum\u201d) odrzucona; nazwa z \u201eWyspy Jwar\u201d na kanoniczne \u201eJwar\u201d",
+   "pozycja_zrodlo": "kanon-relacyjna"
+  },
+  {
+   "nazwa": "Serpent's Maw",
+   "x": 0.385,
+   "y": 0.9414,
+   "typ": "morze",
+   "notka": "sztormowe wody wokół wyspy Jwar (Guide: Ondu); dodane w PR-11 (E-geo-1)",
+   "pozycja_zrodlo": "kanon-relacyjna"
   },
   {
    "nazwa": "Beyeen",
    "x": 0.0675,
    "y": 0.8857,
    "typ": "etykieta-podkladu",
-   "notka": "wyspa Ondu"
+   "notka": "wyspa Ondu \u2014 \u201esmaller, temperate Beyeen\u201d (MTG Wiki: Ondu); w PR-11 scalona z dawną wysepką Valakuta w jedną podłużną wyspę (kanon: Valakut to szczyt Crown of Talib w sercu Beyeen)"
   },
   {
    "nazwa": "Murasa",
@@ -577,7 +586,8 @@
    "x": 0.1075,
    "y": 0.8071,
    "typ": "wulkan",
-   "notka": "superwulkan w sercu Akoum (MTG Wiki: Akoum); poprawka z Beyeen 2026-09-01"
+   "notka": "Mount Valakut (\u201eMolten Pinnacle\u201d) \u2014 najwyższy szczyt pierścienia Crown of Talib W SERCU WYSPY BEYEEN (mtg.wiki/Valakut, MTG Wiki: Ondu); notka z 2026-09-01 (\u201eserce Akoum\u201d) była BŁĘDNA \u2014 naprawiona w PR-11 (E-geo-1); wysepka-satelita scalona z Beyeen, wulkan stoi teraz na Beyeen",
+   "pozycja_zrodlo": "kanon-relacyjna"
   },
   {
    "nazwa": "Zulaport",
@@ -701,8 +711,8 @@
   },
   {
    "nazwa": "Jwar Isle Refuge",
-   "x": 0.0625,
-   "y": 0.7286,
+   "x": 0.3275,
+   "y": 0.9557,
    "typ": "osada",
    "pozycja_zrodlo": "przybliżona",
    "notka": "schronienie na wyspie Jwar — kanon: karta Jwar Isle Refuge (ZEN, cykl refuge); pozycja przybliżona (ADR 0023); https://scryfall.com/search?q=!%22Jwar+Isle+Refuge%22"
@@ -952,7 +962,7 @@
    "typ": "wulkan",
    "kontynent": "Ondu",
    "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)",
-   "notka": "wyspa Ondu; port Zulaport (Plane Shift: Zendikar). Valakut przeniesiony na Akoum (MTG Wiki) — poprawka 2026-09-01"
+   "notka": "wyspa Ondu; port Zulaport (Plane Shift: Zendikar). Mount Valakut = szczyt Crown of Talib w sercu Beyeen (mtg.wiki/Valakut) — notka 2026-09-01 o przeniesieniu na Akoum była błędna, naprawiona w PR-11"
   },
   {
    "nazwa": "Jwar (Strand of Jwar)",

@@ -38,10 +38,12 @@ const BLOKI_BIOMOW = { las, bagno, step, lod };
  *  rzeki przy ujściu, podniebne ruiny). */
 export const STREFY_WODNE_DOMYSLNE = [
   'Bojuka Bay', 'Sunder Bay', 'Chill Depths', 'Makindi Trenches',
-  'Halimar', 'Beyeen', 'Agadeem', 'Wyspy Jwar', 'Emeria', 'Zulaport',
+  'Halimar', 'Beyeen', 'Agadeem', 'Jwar', 'Emeria', 'Zulaport',
   'Hagra Cistern', 'Morze Zendikaru', 'Silundi Sea', 'Umung',
+  "Serpent's Maw",                             // sztormowe wody wokół Jwar (Guide: Ondu)
   'Blackbloom Lake', 'Lake Jast', 'Roaring Falls',
   'Ior Ruin',                                  // ruiny na brzegu Glasspool — napis może zwisać nad wodą
+  'Jwar Isle Refuge',                          // osada na małej wyspie Jwar — napis wisi nad cieśniną (Guide: Ondu)
 ];
 
 /** Etykiety, które NAZYWAJĄ wodę (morza, zatoki, jeziora, rzeki,
@@ -50,7 +52,7 @@ export const STREFY_WODNE_DOMYSLNE = [
  *  ADR 0024). Scena może nadpisać przez `etykietyWodne`. */
 export const ETYKIETY_WODNE_KOLOR = [
   'Morze Zendikaru', 'Halimar', 'Bojuka Bay', 'Sunder Bay', 'Chill Depths',
-  'Silundi Sea',
+  'Silundi Sea', "Serpent's Maw",
   'Umung', 'Umara', 'Blackbloom Lake', 'Lake Jast', 'Hagra Cistern',
   'Glasspool', 'Roaring Falls', 'Magosi Wodospad',
   'Rzeka Srebrna', 'Zatoka Ciszy',                  // demo
