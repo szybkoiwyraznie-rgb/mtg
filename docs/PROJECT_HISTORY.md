@@ -4,6 +4,17 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-02 — sesja PR-10 (część 8): Fabuła wraca do dostawy → ADR 0026; drugi reset workspace
+
+1. Decyzja właściciela (czat): dostawa = imgId · nazwa · set · plan ·
+   **Fabuła** (wiążąca kotwica transpozycji; uzasadnienie: ilustracje
+   FOT/KON bazują na już transponowanym planie — podwójna transpozycja
+   groziła rozjazdem opisu i ilustracji). ADR 0026; status ADR 0011;
+   SZKIELET_KARTY zaktualizowany (format v3 + higiena osadzenia).
+2. DRUGI reset workspace w tej sesji (preview wygasł, dist zniknął,
+   reflog = świeży clone) — odzyskanie wg ENVIRONMENT §2 w 2 minuty,
+   zero strat (wszystko było wypushowane).
+
 ## 2026-09-02 — sesja PR-10 (część 7): iglica ręczna, asymetryczne strefy, podręcznik RYSOWANIE_MAPY_PLANU (recenzja 7)
 
 1. Iglica: ręcznie rysowana sylwetka (blok `iglica` w bloki.mjs) —

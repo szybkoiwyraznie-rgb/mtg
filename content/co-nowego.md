@@ -3,6 +3,17 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-02 — decyzja właściciela: Fabuła wraca do dostawy (ADR 0026)
+
+Format dostawy materializacji rozszerzony do: **imgId · nazwa · set ·
+plan · Fabuła**. Fabuła to wiążąca kotwica transpozycji — ilustracje
+FOT/KON powstają na bazie już transponowanego planu, więc osadzenie
+karty w Bazie musi pochodzić z tej samej wizji (sekcje „Transpozycja",
+„Na Mapie", „Postacie i Byty" budowane z Fabuły; oznaczenie w Źródłach;
+osadzenie ≠ kanon MtG). ADR 0011 częściowo zastąpiony; szkielet karty
+zaktualizowany. Dotychczasowe karty (1LTR, 2BFZ) bez rewizji —
+właściciel może dosłać Fabułę uzupełniającą.
+
 ## 2026-09-02 — recenzja 7 preview: iglica rysowana ręcznie, asymetryczne strefy ikon, PODRĘCZNIK map T4
 
 - **Living Spire:** iglica rysowana ręcznie (smukła turnia w języku
