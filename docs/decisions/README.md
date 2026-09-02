@@ -34,8 +34,9 @@ dziedziczona z projektu mtg-game.
 | [0016](0016-format-wpisu-karty-kanon-katalogowy.md) | Format Wpisu Karty — kanon katalogowy: blok danych Oracle w treści, warstwy mechaniki, odczyt flavoru; bez sekcji „Ilustracja" i „Druk w Kolekcji" | Zaakceptowana |
 | [0017](0017-fot-kon-w-tresci-karty.md) | FOT/KON rysują się w treści karty (FOT nad sekcjami, KON pod pierwszą) — koniec przycisków torów; zastępuje mechanikę torów ADR 0008 | Zaakceptowana |
 | [0018](0018-wspolny-silnik-mapowy-mapforge.md) | Wspólny silnik mapowy `mapforge` — deterministyczny render SVG z danych (biomy, rzeki, pasma, etykiety pod kątem); warsztat T4 | Zaakceptowana |
-| [0019](0019-mapy-planow-czysty-czarno-bialy.md) | Mapy planów w motywie atlasowym — czysty czarno-biały line-art (tusz/papier); kolor tylko dla warstw funkcjonalnych UI | Zaakceptowana |
-| [0020](0020-adopcja-wektorowych-obiektow-mapowych-mapaome-i-rzeki.md) | Adopcja wektorowych obiektów mapowych: glify gór z mapome (CC-BY-4.0) jako język rysunku T4; techniki rozsiewu z Azgaar (MIT); rzeki w kolorze morza, bez gradientu i opacity | Zaakceptowana |
+| [0019](0019-mapy-planow-czysty-czarno-bialy.md) | Mapy planów w motywie atlasowym — czysty czarno-biały line-art (tusz/papier); kolor tylko dla warstw funkcjonalnych UI | Zaakceptowana (wyjątki kolorystyczne — patrz ADR 0021) |
+| [0020](0020-adopcja-wektorowych-obiektow-mapowych-mapaome-i-rzeki.md) | Adopcja wektorowych obiektów mapowych: glify gór z mapome (CC-BY-4.0) jako język rysunku T4; techniki rozsiewu z Azgaar (MIT); rzeki w kolorze morza, bez gradientu i opacity | Częściowo zastąpiona (kolor jeziora — patrz ADR 0021) |
+| [0021](0021-styl-map-t4-po-recenzji-prototypu.md) | Styl map T4 po recenzji prototypu Zendikaru: jedna barwa wody dla wszystkich akwenów; kolory funkcjonalne motywu atlasowego (błękit wody, bordowe etykiety); wiążąca kolejność warstw; etykiety siadające przy obiektach; szare ikony osad; pasmo jako jedna bryła | Zaakceptowana |
 
 Spójnością rejestru (numeracja, statusy, tabela) pilnuje
 `test/rejestr-adr.test.js`.

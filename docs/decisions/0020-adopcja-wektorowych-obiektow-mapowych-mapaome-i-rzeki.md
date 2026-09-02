@@ -1,6 +1,8 @@
 # ADR 0020: Adopcja wektorowych obiektów mapowych — glify mapome (góry) + techniki Azgaar; rzeki w kolorze morza
 
-- **Status:** Zaakceptowana
+- **Status:** Częściowo zastąpiona — punkt 3 w części „ujście w jezioro →
+  kolor jeziora (`PAL.wodaGleb`)" zastępuje ADR 0021 (jedna barwa wody dla
+  wszystkich akwenów); adopcja glifów i pozostałe decyzje w mocy
 - **Data:** 2026-09-01
 - **Decydenci:** właściciel projektu (zlecenie 2026-09-01, czat: punkt (c) —
   „poszukanie na githubie istniejących projektów z wektorowymi obiektami do
