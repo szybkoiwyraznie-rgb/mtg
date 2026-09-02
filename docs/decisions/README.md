@@ -16,7 +16,7 @@ dziedziczona z projektu mtg-game.
 
 | ADR | Tytuł | Status |
 |---|---|---|
-| [0001](0001-repo-zrodlem-prawdy-jednoplikowy-artefakt.md) | Repozytorium jako jedyne źródło prawdy bazy; statyczna witryna i jednoplikowy artefakt | Zaakceptowana |
+| [0001](0001-repo-zrodlem-prawdy-jednoplikowy-artefakt.md) | Repozytorium jako jedyne źródło prawdy bazy; statyczna witryna i jednoplikowy artefakt | Częściowo zastąpiona (jednoplikowość — patrz ADR 0027) |
 | [0002](0002-czysty-javascript-esm-zero-zaleznosci.md) | Czysty JavaScript (ESM), zero zależności, node:test | Zaakceptowana |
 | [0003](0003-petla-jawnego-przekazywania-i-hierarchia-kanonu.md) | Pętla jawnego przekazywania kart i hierarchia kanonu | Częściowo zastąpiona (hierarchia — patrz ADR 0010) |
 | [0004](0004-snapshoty-scryfall-w-repo.md) | Snapshoty Oracle ze Scryfalla utrzymywane w repozytorium | Zaakceptowana |
@@ -24,7 +24,7 @@ dziedziczona z projektu mtg-game.
 | [0006](0006-petla-jakosci-jako-praca-domyslna.md) | Pętla Jakości jako domyślna praca sesji | Częściowo zastąpiona (kroki 2 i 4 — patrz ADR 0015) |
 | [0007](0007-mapa-t1-hybryda.md) | Mapy planów — T1 hybryda z rasterowym podkładem | Zaakceptowana |
 | [0008](0008-tory-obrazow-fot-kon.md) | Tory obrazów: brak generowanych grafik; FOT/KON lokalnie z cichym fallbackiem | Częściowo zastąpiona (przyciski torów — patrz ADR 0017) |
-| [0009](0009-srodziemie-podklad-wektorowy-mapome.md) | Śródziemie: podkład w pełni wektorowy (mapome, CC-BY-4.0) zamiast rastra; T2 przez adopcję | Zaakceptowana |
+| [0009](0009-srodziemie-podklad-wektorowy-mapome.md) | Śródziemie: podkład w pełni wektorowy (mapome, CC-BY-4.0) zamiast rastra; T2 przez adopcję | Częściowo zastąpiona (osadzanie base64 — patrz ADR 0027) |
 | [0010](0010-hierarchia-kanonu-v2-karta-i-lore-nad-narracja.md) | Hierarchia kanonu v2: karta MtG + lore świata > narracja kolekcji (kotwica osadzenia, nie kanon); zastępuje hierarchię ADR 0003 | Częściowo zastąpiona (kotwica osadzenia — patrz ADR 0011) |
 | [0011](0011-chudy-format-dostawy.md) | Chudy format dostawy: imgId · nazwa · set · plan; narracja i prompt poza pętlą i poza Kartą Katalogową (sekcja „Druk w Kolekcji") | Częściowo zastąpiona (sekcja „Druk w Kolekcji" — patrz ADR 0014) |
 | [0012](0012-zendikar-rekonstrukcja-mapy-t3.md) | Zendikar — mapa rekonstrukcji wariantu T3: podkład własny z kanonu tekstowego (brak oficjalnej mapy), Murasa oznaczona jako przybliżona | Częściowo zastąpiona (adnotacje na podkładzie — patrz ADR 0013) |

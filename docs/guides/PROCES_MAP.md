@@ -77,18 +77,21 @@ kartę** (lub zlecenie właściciela). Pilot: Śródziemie, karta 1LTR.
 Współrzędne **znormalizowane 0–1** względem podkładu — zmiana rozdzielczości
 podkładu nie psuje pinezek.
 
-## MA3 — Pipeline techniczny T1
+## MA3 — Pipeline techniczny buildu
 
-1. SVG kontener (viewBox = wymiary podkładu) + `<image>` z podkładem
-   (plik obok, osadzony w `dist/` podczas builda — patrz niżej).
-2. Warstwy wektorowe: pinezki (symbol + label), regiony (path/bbox),
-   etykiety. Ostre w każdym zoomie.
-3. Build wstrzykuje mapę do artefaktu: podkład jako base64 (rozmiar rośnie
-   o rozmiar pliku — świadomy koszt, pojedyncze MB na plan) LUB link do
-   pliku obok artefaktu w trybie lokalnym. Decyzja implementacyjna w PR
-   mapy; priorytet: artefakt ma działać z `file://` i na Pages.
-4. Pan/zoom: własny vanilla JS (pointer events, obsługa dotyku,
-   przybliżenie do pinezki deep-linkiem `#/mapa/<plan>?pin=<slug>`).
+1. Źródłowy podkład żyje w `maps/<plan>/podklad.svg|png|jpg`, a dla map
+   T3/T4 może być dodatkowo opisany sceną `maps/<plan>/scena.json`.
+2. Build kopiuje surowy podkład do `dist/maps/<plan>/<plik>` oraz buduje
+   osobną, samowystarczalną stronę `dist/maps/<plan>.html` (ADR 0027 v2).
+3. Artefakt główny (`dist/mtg-lore-codex.html` / `dist/index.html`) nie
+   niesie ciężkich podkładów inline; zamiast tego osadza stronę mapy przez
+   `<iframe>`. Dzięki temu wersja `file://` działa w pełni po rozpakowaniu
+   ZIP-a, a rozmiar artefaktu głównego nie rośnie z liczbą planów.
+4. Strona mapy renderuje podkład wektorowo inline, gdy źródłem jest SVG,
+   oraz jako `<img>` dla PNG/JPG; pan/zoom pozostaje własnym vanilla JS
+   (pointer events, dotyk, deep-link `#/mapa/<plan>?pin=<slug>`).
+5. Mini-mapy kart korzystają z tego samego surowego podkładu przez
+   względny `podkladUrl`.
 
 ## MA4 — Protokół pinezek
 

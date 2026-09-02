@@ -1,5 +1,6 @@
 /**
- * Build MTG Lore Codex — jednoplikowy artefakt (ADR 0001).
+ * Build MTG Lore Codex — artefakt główny + drzewo map + ZIP
+ * (ADR 0001/0027).
  *
  * 1. Ładuje treść (content-loader) i WALIDUJE ją (registry) — build
  *    nie wypuszcza artefaktu z martwymi wikilinkami ani złym schematem.

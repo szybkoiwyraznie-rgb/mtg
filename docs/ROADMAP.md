@@ -173,18 +173,15 @@ wymaga doprecyzowania z właścicielem, zanim powstanie kod.
      MTG: Zendikar via mtg.wiki/Tazeem) — ani centrum (w2), ani
      płd.-zach.; przemianowane i przeniesione + trakt do Coralhelm.
 
-**SKALOWANIE MAP (2026-09-01, pomiar buildu):** artefakt jednoplikowy
-(ADR 0001/0009) ma **4,45 MB, z czego 96,7% to base64 dwóch map**
-(Śródziemie 1,75 MB + Zendikar 1,54 MB raw; kod+treść+style ≈ 65 KB).
-Przy 30+ planach (30+ map, każda ~1,5–3 MB raw → ~2,1–4,1 MB base64)
-jednoplik urosłby do ~45–90 MB. Analiza: **mapforge „klocki" są reużywalne
-w kodzie, ale każda mapa ma UNIKALNĄ geometrię** (pozycje drzew, kontury,
-cień), której nie da się zdeduplikować między mapami — reużywalność
-oszczędza autorstwo/definicje stylu, NIE rozmiar. **Rozwiązanie skalowania
-= mapy jako OSOBNE pliki SVG ładowane na żądanie** (artefakt spadłby do
-~0,16 MB / gzip ~52 kB; mapy wczytywane tylko przy otwarciu planu).
-Wymaga rewizji ADR 0001/0009 (jednoplikowy artefakt / base64) — decyzja
-właściciela (see Wątki otwarte).
+**SKALOWANIE MAP (pomiar 2026-09-01 → decyzja domknięta w PR-11 / ADR 0027):**
+artefakt jednoplikowy z epoki base64 miał **4,45 MB, z czego 96,7% to
+base64 dwóch map** (Śródziemie 1,75 MB + Zendikar 1,54 MB raw;
+kod+treść+style ≈ 65 KB). Analiza była trafna: mapforge „klocki" są
+reużywalne w kodzie, ale każda mapa ma **unikalną geometrię**, więc
+reużywalność oszczędza autorstwo, nie bajty. Skutek: w PR-11 wdrożono
+**drzewo HTML map** (ADR 0027 v2) — artefakt główny spadł do ~0,25 MB,
+a mapy żyją jako osobne strony `dist/maps/<plan>.html` z surowymi
+podkładami `dist/maps/<plan>/<plik>` i ZIP-em całego drzewa.
 
 ## Wątki otwarte (czekają na decyzję właściciela)
 
@@ -203,17 +200,3 @@ właściciela (see Wątki otwarte).
   (analogia do Zendikaru z PR-3).
 - Pełny offline (cache obrazów Scryfalla w repo) — gdy korzystanie z Pages
   bez sieci będzie realnym scenariuszem.
-- **Pakowanie map (skalowanie do 30+ map):** przenieść mapy z base64
-  (96,7% artefaktu) do OSOBNYCH plików SVG ładowanych na żądanie przy
-  otwarciu planu (artefakt ~0,16 MB). Wymaga rewizji ADR 0001
-  (jednoplikowy) i ADR 0009 (mapy w base64) + rozdzielenia renderowania
-  mapy (render-map.js) na ładowanie asynchroniczne (mapy jako `<img src>`,
-  nie `fetch` — żeby działały po otwarciu lokalnie z `file://`).
-  Reużywalność klocków mapforge NIE rozwiązuje rozmiaru (unikalna
-  geometria per mapa), więc to jedyna droga. Pomiar i analiza: 2026-09-01.
-- **Pobieranie offline (ZIP) — gotowe (2026-09-01):** build wypuszcza
-  `dist/mtg-lore-codex.zip` (`tools/zip.mjs`, STORE bez zależności);
-  aplikacja ma link **„Pobierz archiwum (ZIP)"**. ZIP pakuje artefakt +
-  `index.html` (a po wydzieleniu map także cały `maps/**`), więc po
-  rozpakowaniu otwiera się lokalnie — zastępuje „zapisz jako" dla
-  jednopliku i zostaje funkcją także przy osobnych mapach.

@@ -13,6 +13,10 @@ const readme = fs.readFileSync(path.join(katalog, 'README.md'), 'utf8');
 
 const STATUSY = ['Proponowana', 'Zaakceptowana', 'Odrzucona', 'Zastąpiona', 'Częściowo zastąpiona', 'Wycofana'];
 
+function statusAdr(tresc) {
+  return tresc.match(/\*\*Status:\*\*\s*([^\n—]+)/)?.[1]?.trim() ?? null;
+}
+
 test('numeracja ADR jest ciągła od 0001', () => {
   const numery = pliki.map((f) => Number(f.slice(0, 4)));
   const oczekiwane = Array.from({ length: numery.length }, (_, i) => i + 1);
@@ -23,9 +27,9 @@ test('każdy ADR ma status z listy dozwolonych i datę', () => {
   const problemy = [];
   for (const f of pliki) {
     const tresc = fs.readFileSync(path.join(katalog, f), 'utf8');
-    const m = tresc.match(/\*\*Status:\*\*\s*([^\n—]+)/);
-    if (!m) { problemy.push(`${f}: brak pola Status`); continue; }
-    if (!STATUSY.includes(m[1].trim())) problemy.push(`${f}: status "${m[1].trim()}" poza listą`);
+    const status = statusAdr(tresc);
+    if (!status) { problemy.push(`${f}: brak pola Status`); continue; }
+    if (!STATUSY.includes(status)) problemy.push(`${f}: status "${status}" poza listą`);
     if (!/\*\*Data:\*\*\s*\d{4}-\d{2}-\d{2}/.test(tresc)) problemy.push(`${f}: brak daty YYYY-MM-DD`);
   }
   assert.deepEqual(problemy, []);
@@ -41,6 +45,28 @@ test('tabela w README rejestruje każdy ADR z poprawnym linkiem', () => {
     if (!fs.existsSync(path.join(katalog, m[2]))) problemy.push(`README: link do nieistniejącego ${m[2]}`);
   }
   assert.deepEqual(problemy, [], `Problemy rejestru ADR:\n${problemy.join('\n')}`);
+});
+
+test('status w tabeli README zgadza się ze statusem w pliku ADR', () => {
+  const wiersze = [...readme.matchAll(/^\| \[(\d{4})\]\(([^)]+)\) \| .* \| (.+) \|$/gm)];
+  const statusyZReadme = new Map(wiersze.map((m) => [m[2], m[3].trim()]));
+  const problemy = [];
+  for (const f of pliki) {
+    const statusReadme = statusyZReadme.get(f);
+    if (!statusReadme) {
+      problemy.push(`${f}: brak statusu w tabeli README`);
+      continue;
+    }
+    const statusPliku = statusAdr(fs.readFileSync(path.join(katalog, f), 'utf8'));
+    if (!statusPliku) {
+      problemy.push(`${f}: brak pola Status w pliku ADR`);
+      continue;
+    }
+    if (!statusReadme.startsWith(statusPliku)) {
+      problemy.push(`${f}: README="${statusReadme}" vs plik="${statusPliku}"`);
+    }
+  }
+  assert.deepEqual(problemy, [], `Rozjazdy statusów ADR:\n${problemy.join('\n')}`);
 });
 
 test('pliki konstytutywne istnieją (AGENTS.md wskazuje je w lekturze)', () => {

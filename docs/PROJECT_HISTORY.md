@@ -4,6 +4,16 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-02 — sesja PR-12: Pętla Jakości v2 — audyt PR-11 + domknięcie dryfu dokumentacji/map
+
+1. **Plan i PR:** przygotowano plan sesji (`PLAN_2026-09-02-pr12-petla-jakosci.md`), otwarto PR #12 i utrzymano pracę w trybie „kontynuujemy projekt" — bez nowej dostawy kart.
+2. **Audyt scalonego PR #11** (`AUDYT_2026-09-02-PR11.md`): baseline był zielony; audyt wykazał 3 kolejki napraw — Z1 `maps/zendikar/map.json`, Z2 dryf żywych dokumentów wobec ADR 0027 v2, Z3 handoff PR-11 nieoddający finalnego stanu sesji.
+3. **Naprawa Z1:** `maps/zendikar/map.json` zsynchronizowano z mapą i ADR 0013 — poprawiono notkę źródła oraz wpisy `elementy` dla Hagra Cistern (`jezioro`), Beyeen (`wyspa`), Serpent's Maw (`morze`) i Valakuta; usunięto błędny historyczny wpis „Valakut (superwulkan)” po stronie Akoum.
+4. **Naprawa Z2/Z3:** `docs/ARCHITECTURE.md`, `docs/guides/PROCES_MAP.md`, `maps/README.md`, `docs/ROADMAP.md` i `docs/setup/HANDOFF_2026-09-02-pr11.md` przepisano tak, by opisywały realny model: artefakt główny + `dist/maps/<plan>.html` + iframe + ZIP oraz finalny stan PR-11 (`101/101`, kolejka E-geo zamknięta).
+5. **Regresja ujawniona przez nowy test:** do `test/rejestr-adr.test.js` dopisano kontrolę zgodności statusów ADR między plikiem i tabelą README. Test od razu złapał ukryty dryf ADR 0008 — plik miał `Zaakceptowana`, choć po ADR 0017 powinien być `Częściowo zastąpiona`; poprawiono ADR 0008 oraz wiersze 0001/0009 w `docs/decisions/README.md`.
+6. **Porządki kontraktowe:** komentarze/testy/build opisują już pakiet HTML + mapy + ZIP zamiast starej narracji o jednopliku/base64 (`test/artefakt.test.js`, `tools/build.mjs`).
+7. **Weryfikacja końcowa:** `npm test` **102/102**, `npm run build` OK (artefakt **255.1 kB**, ZIP **11528.6 kB**), `python3 tools/map-audit.py zendikar` = 0, `python3 tools/map-audit.py srodziemie` = 0.
+
 ## 2026-09-02 — sesja PR-11: Pętla Jakości — audyt PR-10 + kolejka E-geo-5/6/7/9 + LORE
 
 1. **Audyt PR-10** (46 plików): determinizm renderu potwierdzony
