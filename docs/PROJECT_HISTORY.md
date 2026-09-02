@@ -4,6 +4,16 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-02 — sesja PR-10 (część 13): iframe v2.1 — podział ról rodzic/okno (recenzja)
+
+Feedback: iframe ma być dobrany do mapy, strona w nim statyczna (bez
+scrollbarów), sekcje w bazie, warstwa karty nad całością. Wdrożone:
+renderMape(osadzona)= pasek+okno; renderMapeIframe = okruszki+header+
+iframe(aspect)+warstwa+legenda+pinezki+atrybucja; postMessage
+codexKarta → dialog w rodzicu (fallback: nawigacja do karty);
+CSS: html/body:has(.mapa-strona-osadzona) overflow hidden, pasek
+pływający. Testy przestawione (sekcje w rodzicu, czyste okno).
+
 ## 2026-09-02 — sesja PR-10 (część 12): DRZEWO HTML map — architektura ostateczna (ADR 0027 v2)
 
 1. Właściciel odrzucił dwa tory (jednoplik → ~200 MB przy 30+ planach)

@@ -3,6 +3,16 @@ krok 5, ADR 0006). Najnowsze na górze. BEZ nagłówka H1 i leadu: tytuł
 i opis strony daje renderer (render-whatsnew.js) — duplikat nagłówków
 był błędem (feedback właściciela 2026-09-02). -->
 
+## 2026-09-02 — dopieszczenie iframe (feedback): czyste okno mapy, sekcje w bazie, warstwa nad całością
+
+- **Iframe dobrany proporcjami do mapy** (aspect-ratio z wymiarów
+  podkładu), strona w środku = czyste okno mapy bez scrollbarów
+  (pasek zoomu pływa nad mapą).
+- **Legenda, lista pinezek, atrybucja i warstwa karty** renderują się
+  w artefakcie bazowym (nie w iframe); **warstwa karty otwiera się nad
+  CAŁYM Codexem** (pinezka → postMessage `codexKarta` → dialog
+  w rodzicu). Testy 91/91.
+
 ## 2026-09-02 — architektura ostateczna: DRZEWO HTML map (pomysł właściciela, ADR 0027 v2)
 
 Jednoplik offline nie skaluje się (30+ planów ≈ 200 MB). Rozwiązanie
