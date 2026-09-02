@@ -1,5 +1,33 @@
-## 2026-09-02 — Pętla Jakości (PR-11): mapa Zendikaru +6 nazw z kanonu, LORE Tazeem/Guul Draz, audyt PR-10
+## 2026-09-02 — Pętla Jakości (PR-11): geografia Zendikaru domknięta kanonem (cała kolejka E-geo + klocek fortu)
 
+- **Druga część sesji — kolejka E-geo-1/2/3/4 i E5 wyczerpana:**
+  - **E-geo-4 (Akoum):** **Tal Terig** („Puzzle Tower") przeniesiony
+    nad kotlinę Akoum przed resztki Teeth of Akoum i przetypowany na
+    ruinę (kanon Guide: Akoum > w2); nowa osada **League of Anowon** —
+    obóz-szkoła magów-eksploratorów wampira Anowona wysoko w Teeth of
+    Akoum; trakt z Affy poprowadzony do nowej pozycji wieży.
+  - **E-geo-1 (archipelag Ondu) — kanonem, w2 odrzucona:** maleńka
+    **Jwar** z Jwar Isle Refuge przeniesiona pod PŁD. wybrzeże Ondu
+    (Guide: Ondu), wokół niej nowe wody **Serpent's Maw**; **Beyeen**
+    scalona z wysepką-satelitą w jedną podłużną wyspę — kanon stawia
+    **Mount Valakut** (szczyt Crown of Talib) w JEJ sercu, notka
+    „Valakut w sercu Akoum" z 2026-09-01 była błędna i została
+    naprawiona; Agadeem była zgodna z kanonem.
+  - **E-geo-2 (rotacja układu) — rozstrzygnięta kanonem, bez rotacji:**
+    „Ondu is located in the southwestern quadrant of Zendikar"
+    (MTG Wiki: Ondu) — nasz układ jest kanoniczny, w2 nie; rozbieżność
+    „małego morza" Akoum–Ondu odnotowana jako wątek otwarty.
+  - **E-geo-3 (detal Murasy):** wpis kolejki był nieaktualny — etykiety
+    weszły już w PR-10; zweryfikowane.
+  - **E5 (ADR 0028):** nowy klocek **fort** (mury z donżonem i bramą,
+    sylwetka w kole) — użyty na **Fort Keff** i „stone havens" Akoum
+    (**Grip Haven**, **Slab Haven**, **Ghostwatch**; przy okazji
+    rozgęszczone — zbite ikony zamalowywały się halo etykiet);
+    latarnia/wrak odrzucone (brak kanonicznego użycia), scena demo
+    z fortem.
+  - **LORE Zendikaru:** akapity o archipelagu Ondu (Jwar/Serpent's Maw,
+    Beyeen/Crown of Talib/Valakut, Agadeem) i Akoum (Tal Terig, League
+    of Anowon, stone havens) + 4 nowe źródła.
 - **Pass mapowy (kolejka E-geo-5/6/7/9 domknięta):**
   - **Pelakka Karst** — wapienny kras otaczający Hagra Cistern
     (Guide: Guul Draz) nazwany na mapie;

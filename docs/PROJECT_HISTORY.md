@@ -29,6 +29,25 @@
    miejscach + 4 źródła; link-mining: nadal < progu ≥2 kart (bez haseł).
 5. Bramki po każdym kroku: wiązania 0, map-audit 0, testy 91/91, build;
    QA rastrowe 5 wycinków (sharp poza repo).
+6. **Część 2 (właściciel: „wyczerpać kolejkę todo"): E-geo-1/2/3/4 + E5
+   domknięte.** E-geo-4: Tal Terig nad kotliną Akoum przed Teeth of
+   Akoum (Guide: Akoum > w2), przetypowany na ruinę, trakt z Affy;
+   League of Anowon jako osada wysoko w Teeth (kanon precyzuje
+   „terytorium" z w2). E-geo-1 KANONEM zamiast w2: Jwar + Refuge pod
+   płd. wybrzeże Ondu, wody Serpent's Maw, Beyeen scalona z wysepką
+   Valakuta (kanon: Mount Valakut = Crown of Talib w sercu BEYEEN;
+   notka „serce Akoum" z 2026-09-01 była błędna — naprawiona).
+   E-geo-2 bez rotacji (kanon: Ondu w SW kwadrancie); rozbieżność
+   „małego morza" Akoum–Ondu → wątek otwarty. E-geo-3: wpis kolejki
+   nieaktualny (zrobione w PR-10). E5 → ADR 0028: klocek `fort`
+   ręcznie rysowany (Fort Keff + stone havens: Grip/Slab Haven,
+   Ghostwatch — rozgęszczone, bo halo etykiet zamalowywało zbite
+   ikony); latarnia/wrak odrzucone (brak kanonicznego użycia);
+   „obwódki haseł" bez definicji → wątek otwarty.
+7. **Lekcja proweniencji:** notka kotwicy potrafi PRZECZYĆ własnym
+   współrzędnym (Valakut: notka „Akoum", kotwica na wysepce SW) —
+   przy passach czytaj oba i weryfikuj kanon na nowo, nie ufaj
+   pojedynczej notce.
 
 ## 2026-09-02 — sesja PR-10 (część 14): szlify — Narracja, mapy bez paska, czysty dziennik
 

@@ -60,6 +60,27 @@ merfolkowie wolą go obchodzić dalekimi trasami; kras jest domem
 największych rzecznych drapieżników planu. **Ondu** zaś wcina się
 w **Silundi Sea** — morze południowo-zachodniego kwadrantu planu,
 którego wirujące prądy i węże morskie strzegą wyspy **Jwar**.
+U wybrzeży Ondu leżą trzy wyspy: maleńka, smagana morzem **Jwar**
+przy południowym brzegu kontynentu — otaczają ją sztormowe wody zwane
+**Serpent's Maw**, a jedynym schronieniem podróżnych jest **Jwar Isle
+Refuge**; umiarkowana **Beyeen**, w której sercu wyrasta pierścień
+wulkanicznych gór **Crown of Talib** z najwyższym i najgroźniejszym
+szczytem **Mount Valakut** („Molten Pinnacle"), z portową, mieszaną
+rasowo wspólnotą **Zulaport** na wybrzeżu; oraz największa, wysunięta
+najdalej na południe **Agadeem**, kryjąca **Crypt of Agadeem**.
+
+**Akoum** to kraina kamienia. Nad kotliną kontynentu, przed resztkami
+pasma **Teeth of Akoum**, wznosi się **Tal Terig** — „Puzzle Tower",
+wieża z niemożliwie kątowanych głazów, która co jakiś czas przestawia
+własne wnętrze, a jej podziemia sięgają znacznie głębiej niż sama
+budowla. Wysoko w Teeth of Akoum wampir **Anowon, the Ruin Sage**
+prowadzi **League of Anowon** — obóz-szkołę magów-eksploratorów ruin,
+zwanych z przekąsem „wyzwolicielami"; do obozu w praktyce dociera się
+tylko gryfem z miasteczka **Affa**. Na pustkowiach osady kryją się
+w tzw. **stone havens** — kamiennych fortach odkopanych przez Eldrazi:
+gobliny Tuktuk zajęły **Grip Haven** i **Slab Haven**, a mieszana
+wspólnota Mul Daya i korów w **Ghostwatch** broni murów duchami
+przodków; na wschodzie, przy Eye of Ugin, stoi twierdza **Fort Keff**.
 
 Przed przebudzeniem **Eldrazi** pięć domów ekspedycyjnych (Valakut,
 Pelakka, Akoum, Murasa, Bala Ged) czyniło z Sea Gate bazę wypraw w głąb
@@ -157,7 +178,10 @@ i z prób oswajania bestii, które zwykle ich zjadają.
   <https://web.archive.org/web/20211205200148/https://magic.wizards.com/en/articles/archive/savor-flavor/planeswalker%E2%80%99s-guide-zendikar-guul-draz-2009-10-20>
 - MTG Salvation, „The World of Zendikar Part IV: Return to Zendikar" —
   Tazeem jako centrum Bitwy o Zendikar, tama Sea Gate, Coralhelm Refuge
-  jako największa osada merfolków: <https://www.mtgsalvation.com/articles/49510-the-world-of-zendikar-part-iv-return-to-zendikar>
+  jako największa osada merfolków; stone havens Akoum (kamienne forty
+  odkopane przez Eldrazi): gobliny Tuktuk w Grip Haven i Slab Haven,
+  Mul Daya i korowie broniący Ghostwatch duchami przodków:
+  <https://www.mtgsalvation.com/articles/49510-the-world-of-zendikar-part-iv-return-to-zendikar>
 - *A Planeswalker's Guide to Zendikar* (Wizards of the Coast) — hedrony,
   Roil, geografia kontynentów, Emeria:
   <https://magic.wizards.com/en/news/feature/a-planeswalkers-guide-to-zendikar>
@@ -175,6 +199,21 @@ i z prób oswajania bestii, które zwykle ich zjadają.
   Beyeen: mieszana rasowo społeczność, wampirzyca Indorel
   za lokalnym handlem:
   <https://mtglore.com/web-articles/a-planeswalkers-guide-to-zendikar-ondu>
+- MTG Wiki, „Ondu" — ląd centralny i trzy wyspy u wybrzeża: największa,
+  najdalej na południe Agadeem; mniejsza, umiarkowana Beyeen (w sercu
+  pierścień wulkaniczny Crown of Talib z Mount Valakut); maleńka,
+  smagana morzem Jwar przy południowym wybrzeżu; Ondu w płd.-zach.
+  kwadrancie planu: <https://mtg.fandom.com/wiki/Ondu>
+- mtg.wiki, „Valakut" — Mount Valakut („Molten Pinnacle", „Crown Ruby"):
+  najwyższy szczyt Crown of Talib w sercu wyspy Beyeen:
+  <https://mtg.wiki/page/Valakut>
+- web.archive.org, „A Planeswalker's Guide to Zendikar: Akoum" —
+  Tal Terig („Puzzle Tower") nad kotliną Akoum; League of Anowon:
+  obóz-szkoła magów-eksploratorów wysoko w Teeth of Akoum, dostęp
+  gryfem z Affy:
+  <https://web.archive.org/web/20211019022856/https://magic.wizards.com/en/articles/archive/savor-flavor/planeswalker%E2%80%99s-guide-zendikar-akoum-2010-01-12>
+- MTG Wiki, „Fort Keff" — twierdza przy Eye of Ugin na Akoum:
+  <https://mtg.fandom.com/wiki/Fort_Keff>
 - mtglore.com, „Gods and Monsters" (kopia artykułu Wizards, Savor the
   Flavor) — bóstwa merfolków (Emeria/nieba, Ula/głębin, Cosi/trickster),
   trójca korów (Kamsa, Mangeni, Talib), pochodzenie bóstw od wspomnienia

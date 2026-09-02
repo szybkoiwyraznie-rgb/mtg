@@ -77,8 +77,14 @@ i opacity** (decyzja właściciela). Atrybucja CC-BY-4.0 w nagłówku SVG,
 `map.json` (`zrodlo_glify`), ADR 0020, README, SKILL. Zendikar T4
 przerenderowany, audyt 0, testy 87/87. Zostaje: **ubogacanie map
 wyłącznie T3/T4** (map T2/adoptowanych nie ruszamy), dalsza kompletność
-POI i warsztat (E5 klocki: cytadela/fort, latarnia, wrak, wodospad,
-obwódki haseł — kandydat na obiekty: symbole Azgaar, MIT, z atrybucją).
+POI i warsztat. ~~E5 klocki: cytadela/fort, latarnia, wrak, wodospad~~ —
+**domknięte w PR-11 (2026-09-02, ADR 0028):** klocek `fort` rysowany
+ręcznie w języku mapy (sylwetka w kole), użyty na Fort Keff + stone
+havens Akoum (Grip/Slab Haven, Ghostwatch); `wodospad` istniał od PR-10;
+latarnia/wrak ODRZUCONE (żaden kanoniczny nazwany obiekt ich nie
+potrzebuje; adopcja symboli Azgaar odrzucona — styl fasetowany nie pasuje
+do atlasu). Z E5 zostają tylko „obwódki haseł" — bez definicji zakresu;
+wymaga doprecyzowania z właścicielem, zanim powstanie kod.
 
 **E-geo (2026-09-01) — audyt i przebudowa geografii CAŁEJ mapy Zendikaru**
 (zlecenie właściciela, pkt a/b/c uzupełniające PR-9; audyt:
@@ -102,16 +108,43 @@ obwódki haseł — kandydat na obiekty: symbole Azgaar, MIT, z atrybucją).
   - map.json: 26 kotwic zsynchronizowanych + 9 nowych + pinezka
     Coralhelm Guide przeniesiona + duplikat Living Spire usunięty.
 - **Kolejka E-geo (P2 — następne podejścia, audyt §11):**
-  1. **E-geo-1** — Archipelag Jwar/Beyeen/Agadeem: przesunięcie z płd.-zach.
-     rogu **między Ondu a Akoum** (w2 §1) + pinezki/kotwice.
-  2. **E-geo-2** — Tazeem na płd.-zachód (w2 §5) vs obecny zachód-centrum:
+  1. **E-geo-1** — ~~Archipelag Jwar/Beyeen/Agadeem: przesunięcie z płd.-zach.
+     rogu **między Ondu a Akoum** (w2 §1) + pinezki/kotwice.~~ **Domknięte
+     w PR-11 (2026-09-02) KANONEM, w2 odrzucona:** kanon wiąże wyspy
+     z wybrzeżem Ondu („one central landmass with three major islands off
+     its coast" — MTG Wiki: Ondu), więc przenosiny na środek mapy łamałyby
+     kanon. Zamiast tego archipelag naprawiony od środka: „tiny, sea-swept"
+     **Jwar** przeniesiona pod PŁD. wybrzeże lądu Ondu (Guide: Ondu) razem
+     z Jwar Isle Refuge + nowe wody **Serpent's Maw** wokół niej;
+     **Beyeen** scalona z dawną wysepką-satelitą Valakuta (kanon:
+     Mount Valakut = szczyt Crown of Talib W SERCU Beyeen —
+     mtg.wiki/Valakut; notka „Valakut w sercu Akoum" z 2026-09-01 była
+     błędna, naprawiona); **Agadeem** największa i najdalej na płd. już
+     była zgodna z kanonem.
+  2. **E-geo-2** — ~~Tazeem na płd.-zachód (w2 §5) vs obecny zachód-centrum:
      ocena rotacji układu zachodniego (decyzja z właścicielem — zmiana
-     globalna).
-  3. **E-geo-3** — Detal Murasy: Glint Pass, Thunder Gap, Roaring Falls,
-     Tumbled Palace, Visimal, Pillar Plains (kotwice istnieją, brak etykiet).
-  4. **E-geo-4** — Detal Akoum: Tal Terig płn. od Spike Fields; Anowon
-     League; ~~Ior Ruin przy Glasspool (etykieta)~~ — **etykieta Ior Ruin
-     dodana w PR-10 (2026-09-02)**; reszta otwarta.
+     globalna).~~ **Rozstrzygnięte w PR-11 (2026-09-02) KANONEM — rotacja
+     ODRZUCONA bez potrzeby decyzji:** kanon mówi wprost „Ondu is located
+     in the southwestern quadrant of Zendikar" (MTG Wiki: Ondu), a nasz
+     układ ma Ondu dokładnie tam; rotacja wg w2 (Ondu na zachód-centrum)
+     łamałaby kanon. Znana pozostała rozbieżność wobec kanonu: „a small
+     sea separates Akoum from Ondu" (MTG Wiki: Akoum) — u nas rogi
+     przeciwległe; pełna naprawa = globalna przebudowa całej mapy,
+     odnotowana jako wątek otwarty (decyzja właściciela).
+  3. **E-geo-3** — ~~Detal Murasy: Glint Pass, Thunder Gap, Roaring Falls,
+     Tumbled Palace, Visimal, Pillar Plains (kotwice istnieją, brak
+     etykiet).~~ **Wpis był NIEAKTUALNY — etykiety weszły już w PR-10
+     (commit 4d8c6f0); zweryfikowane w PR-11 (scena + podkład, wszystkie
+     6 nazw na mapie).**
+  4. **E-geo-4** — ~~Detal Akoum: Tal Terig płn. od Spike Fields; Anowon
+     League;~~ ~~Ior Ruin przy Glasspool (etykieta)~~ — **etykieta Ior Ruin
+     dodana w PR-10 (2026-09-02)**; **reszta domknięta w PR-11 KANONEM
+     (w2 skorygowana):** Tal Terig („Puzzle Tower") wg Guide: Akoum wznosi
+     się nad kotliną Akoum PRZED resztkami Teeth of Akoum — przeniesiony
+     tam i przetypowany na ruinę (nie „płn. od Spike Fields" jak w w2);
+     „Anowon League" to kanonicznie **League of Anowon** — obóz-szkoła
+     magów-eksploratorów WYSOKO w Teeth of Akoum (dostęp gryfem z Affy),
+     dodany jako osada z etykietą (nie „terytorium w centralnym Akoum").
   5. **E-geo-5** — ~~Bala Ged/Guul Draz: Pelakka Karst, Helix of Zof, nazwa
      zachodniego gulfu (bez nazwy po przeniesieniu Bojuka Bay).~~
      **Domknięte w PR-11 (2026-09-02):** Pelakka Karst na mapie (kras wokół
@@ -155,6 +188,14 @@ właściciela (see Wątki otwarte).
 
 ## Wątki otwarte (czekają na decyzję właściciela)
 
+- **Globalna geometria Zendikaru:** kanon chce „małego morza" między
+  Akoum a Ondu (MTG Wiki: Akoum — „a small sea separates Akoum from
+  Ondu"; Ondu „only a short distance away from Akoum"), a na naszej
+  mapie to przeciwległe rogi (Ondu SW — zgodnie z kanonem kwadrantu,
+  Akoum NE). Pełna naprawa = przebudowa układu wszystkich kontynentów;
+  do decyzji właściciela, czy kiedyś ją robimy (PR-11, 2026-09-02).
+- **„Obwódki haseł"** z kolejki E5 (PR-9) — hasło bez definicji zakresu;
+  wymaga doprecyzowania z właścicielem, zanim powstanie kod.
 - Grafiki dla Kart Haseł — czy, jakie, gdzie składowane (ADR 0008 zostawia
   slot; wymaga decyzji + ewentualnego ADR o storage).
 - Wzbogacenie mapy Śródziemia (T2, podkład mapome) o warstwy
