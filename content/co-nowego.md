@@ -3,6 +3,35 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-02 — recenzja preview PR-10: etykiety wg jednego wzoru (KRYTYCZNE), strefy zajęte biomów, obwódka rzek (ADR 0022)
+
+Uwagi właściciela z preview: (a) góry wreszcie dobre ✔; (b) KRYTYCZNE —
+etykiety rozjechane względem obiektów; (c) obwódka rzek; (d) biomy
+zakrywają góry (Sejiri pod lodem, Ondu pod puszczą).
+
+- **(b) Etykiety — jeden wzór (ADR 0022):** diagnoza potwierdzona w kodzie —
+  nakładka ekranowa Codexu rysuje napisy w stałym rozmiarze, a pozycje
+  strojone były w jednostkach mapy (przy zoomie odległość rosła,
+  przy oddaleniu napis zakrywał sąsiadów — stąd „Kabira na Agadeem");
+  rozstaw w SVG szukał pozycji w 16 kierunkach do 118 px od obiektu.
+  Teraz: **kotwica = punkt centralny obiektu → napis zawsze POD,
+  konflikt → zawsze NAD** (drabinka pionowa, deterministycznie);
+  silnik emituje kotwicę w `data-ax/ay/r`, a nakładka witryny liczy
+  z niej pozycję **zależną od zoomu** (odstęp = promień ikony × zoom
+  + 3 px — wizualnie „zaraz obok" przy każdym przybliżeniu).
+- **(d) Strefy zajęte:** rozsiew lasów/bagien/stepów omija bbox każdego
+  glifu góry, stożki wulkanów, jeziora i lód; kolejne biomy omijają
+  wcześniejsze. Czapa lodowa Sejiri zmniejszona do zachodu kontynentu —
+  pasmo odsłonięte; góry Ondu wolne od puszczy.
+- **(c) Obwódka rzek:** wstęgi rzek i dopływów mają obrys w kolorze
+  linii wody (ciemniejszy niebieski), jak jeziora i wybrzeża.
+- **Naprawa regresji przy okazji:** 4 wulkany sceny (w tym **Valakut**)
+  nie renderowały się od zmiany kolejności warstw w PR-9 (render czytał
+  `scena.wulkany`, scena trzyma je w `poi`) — wróciły na mapę.
+- ADR 0022 (nowy), ADR 0021 → częściowo zastąpiona; testy 89/89
+  (+2: wzór rozstawu, strefy zajęte); `map-audit.py` 0 problemów;
+  weryfikacja wzrokowa rastrów (Sejiri/Ondu/Tazeem/Agadeem/Valakut).
+
 ## 2026-09-02 — Pętla Jakości (PR-10): ADR 0021 (formalizacja stylu map T4), lore ludów Zendikaru, Prison of Omnath + Ior Ruin na mapie
 
 Sesja bez nowej dostawy → Pętla Jakości v2 (audyt + LORE + pass mapowy):

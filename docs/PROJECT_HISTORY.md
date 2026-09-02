@@ -4,6 +4,43 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-02 — sesja PR-10 (część 2): recenzja preview właściciela — etykiety (KRYTYCZNE), strefy zajęte, obwódka rzek → ADR 0022
+
+**Zlecenie (czat, recenzja preview):** (a) góry OK ✔; (b) KRYTYCZNE:
+etykiety „kompletnie rozjechane" (Kabira nad Agadeem itd.), postulat:
+jeden wzór — punkt centralny obiektu, napis zawsze pod nim, konflikt →
+zawsze tak samo (pod→nad), odległość względna do zoomu; (c) obwódka
+rzek ciemniejszym niebieskim; (d) detekcja i eliminacja nakładania
+biomów na góry/jeziora/lód (Sejiri, Ondu) przez zmniejszanie obszaru.
+
+**Przebieg:**
+1. **Diagnoza (b):** nakładka `render-map.js` renderuje etykiety
+   w stałym rozmiarze ekranowym na pozycjach strojonych w jednostkach
+   mapy + rozstaw SVG szukał pozycji w promieniach 16–118 px → dwie
+   niezależne przyczyny rozjazdu (hipoteza właściciela trafna).
+2. **(b) rozwiązanie systemowe:** `rozstawEtykiety` v3 (jeden wzór,
+   drabinka pionowa, sort deterministyczny); `etykieta()` emituje
+   `data-ax/ay/r`; nakładka Codexu pozycjonuje od EKRANOWEJ pozycji
+   kotwicy (odstęp `r·k` + 3 px, układ przeliczany przy zmianie zoomu,
+   tylko dla etykiet widocznych w LOD). Klasyfikacja: obiektowe
+   (przyDo lub fs<16) vs obszarowe (duze/kat/fs≥16 bez przyDo).
+3. **(d):** `rozrzut(..., wyklucz)` (bboxy+poligony); `pasmoInstancje`
+   wydzielone z `pasmo()` (geometria 1:1); render buduje strefy:
+   glify pasm, wulkany, jeziora (elipsa/`d`), lód, wcześniejsze biomy.
+   Czapa lodowa Sejiri zmniejszona w scenie do zachodu (lita plama —
+   rozwiązanie w danych, zgodnie z pkt d właściciela).
+4. **(c):** `rzeka()`/`doplyw()` — obrys `PAL.wodaStroke` 1,1/0,8 px.
+5. **Regresja znaleziona przy refaktorze:** wulkany w `poi` (typ
+   `wulkan`) nie renderowały się od PR-9 (warstwa czytała tylko
+   `scena.wulkany`) — Valakut i 3 stożki Akoum wróciły.
+6. **Reset workspace w trakcie sesji** (reflog: świeży clone) — commity
+   odzyskane wg ENVIRONMENT §2 (fetch + reset --hard FETCH_HEAD,
+   checkout plików z commitu backup); bez utraty pracy.
+7. **QA:** testy 89/89; map-audit 0; build OK; rastery libvips
+   (Sejiri/Ondu/Tazeem/Agadeem/Akoum/Valakut) obejrzane przed pushem.
+8. **ADR 0022** + statusy (0021 częściowo zastąpiona); co-nowego,
+   handoff, opis PR.
+
 ## 2026-09-02 — sesja PR-10: Pętla Jakości v2 (audyt PR-9 → ADR 0021; LORE ludów Zendikaru; E-geo-8/4)
 
 **Kontekst:** „kontynuujemy projekt" bez nowej dostawy → Pętla Jakości v2.

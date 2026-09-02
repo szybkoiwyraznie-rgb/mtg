@@ -1,6 +1,9 @@
 # ADR 0021: Styl map T4 po recenzji prototypu Zendikaru — jedna barwa wody, kolory funkcjonalne motywu atlasowego, wiążąca kolejność warstw, etykiety przy obiektach
 
-- **Status:** Zaakceptowana
+- **Status:** Częściowo zastąpiona — mechanikę rozstawu etykiet (pkt 4:
+  ręczne pozycje x/y + model dotyku lądu jako jedyny wymóg) zastępuje
+  jeden wzór ADR 0022 (kotwica w centrum obiektu, zawsze POD, konflikt →
+  NAD, nakładka zoom-stabilna); pozostałe decyzje w mocy
 - **Data:** 2026-09-02
 - **Decydenci:** właściciel projektu (recenzja prototypu mapy Zendikaru,
   2026-09-01/02, czat — poprawki (a)–(g); decyzja o błękicie wody
