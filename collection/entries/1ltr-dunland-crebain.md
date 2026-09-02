@@ -20,3 +20,11 @@ Dynamiczna, mroczna scena bitewna ukazująca nierozerwalny związek pomiędzy la
 ## Narracja
 
 Na skraju dunlandzkiego urwiska dwaj Uruk-hai Białej Ręki zastygają w napięciu, wypatrując znaku od swoich skrzydlatych zwiadowców. W wąwozie pod nimi formuje się cicha armia Sarumana, a kolejne pochodnie rozpalają się w miarę, jak oddziały odnajdują swoje miejsca. Nad sceną krąży stado crebainów — tych samych kruków, które z rozkazu Isengardu przeczesują ziemie na zachód od Gór Mglistych. Jeden z nich pikuje w dół, a jego krzyk zdaje się ostatnim sygnałem, na który czeka każde ostrze w mroku.
+
+## Fabuła (dostawa uzupełniająca 2026-09-02, ADR 0026)
+
+<!-- Właściciel nadał poniższemu tekstowi status FABUŁY — wiążącej
+kotwicy transpozycji (ADR 0026). Treść verbatim identyczna z „Narracją"
+z dostawy 2026-08-31 (powyżej). -->
+
+Na skraju dunlandzkiego urwiska dwaj Uruk-hai Białej Ręki zastygają w napięciu, wypatrując znaku od swoich skrzydlatych zwiadowców. W wąwozie pod nimi formuje się cicha armia Sarumana, a kolejne pochodnie rozpalają się w miarę, jak oddziały odnajdują swoje miejsca. Nad sceną krąży stado crebainów — tych samych kruków, które z rozkazu Isengardu przeczesują ziemie na zachód od Gór Mglistych. Jeden z nich pikuje w dół, a jego krzyk zdaje się ostatnim sygnałem, na który czeka każde ostrze w mroku.

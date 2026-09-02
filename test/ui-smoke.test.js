@@ -202,7 +202,11 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(!karta.includes('leykus'), 'karta: bez niekanonicznych porównań ("leykus")');
   assert.ok(!karta.includes('pierwszy mieszkaniec'), 'karta: bez meta-komentarzy o kolekcji (feedback B)');
   assert.ok(!karta.includes('zyskają własne hasła'), 'karta: bez opisu procesu link-miningu (feedback B)');
-  assert.ok(!karta.includes('Uruk-hai'), 'karta: byty z dawnej narracji/promptu nie mogą być na stronie karty (ADR 0011)');
+  // ADR 0026: Fabuła dostawy WRÓCIŁA jako wiążąca kotwica transpozycji —
+  // byty ze sceny (np. Uruk-hai) są legalne, ale wyłącznie jako oznaczone
+  // OSADZENIE kolekcji z Fabułą cytowaną w Źródłach. Prompt nadal poza pętlą.
+  assert.ok(karta.includes('Osadzenie kolekcji'), 'karta: scena Fabuły oznaczona jako osadzenie (ADR 0026)');
+  assert.ok(karta.includes('Fabuła dostawy'), 'karta: Fabuła dostawy cytowana w treści/Źródłach (ADR 0026)');
   assert.ok(!karta.includes('Narracja Koleksji') && !karta.includes('Narracja Kolekcji'), 'karta: sekcja narracji zniesiona (ADR 0011)');
   assert.ok(!karta.includes('perspektywy żabiej'), 'karta: treść promptu nie może się pojawiać (ADR 0011)');
   assert.ok(!karta.includes('ADR'), 'karta: treść nie może odsyłać do mechaniki Codexu (feedback B)');

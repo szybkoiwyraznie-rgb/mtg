@@ -3,6 +3,25 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-02 — Fabuły dla 1LTR i 2BFZ: karty zaktualizowane o osadzenie
+
+Właściciel dostarczył Fabuły do obu istniejących kart (format v3,
+ADR 0026). Zarchiwizowane verbatim w `collection/entries/`;
+zaktualizowane sekcje osadzenia:
+
+- **Dunland Crebain:** urwisko na skraju Dunlandu, dwaj Uruk-hai
+  Białej Ręki w oczekiwaniu na znak, armia Sarumana formująca się
+  w wąwozie, pikujący crebain jako sygnał — Postacie i Byty
+  (osadzenie kolekcji), Transpozycja, Na Mapie (scena przy
+  płd.-wsch. skraju krainy), Źródła.
+- **Coralhelm Guide:** zalany kanion wśród lewitujących skał,
+  eskorta balotha tajnym przejściem pod nosem patroli Eldrazi, hełm
+  z koralu i muszli (klan kartografów wybrzeża) — Postacie i Byty,
+  Mechanika (baloth jako twarz zdolności „nie może zostać
+  zablokowane"), Transpozycja, Na Mapie, Źródła (+MTG Wiki „Baloth").
+- Test dymny przestrojony u źródła: byty z Fabuły legalne jako
+  oznaczone OSADZENIE z cytowaną Fabułą; prompt nadal poza pętlą.
+
 ## 2026-09-02 — decyzja właściciela: Fabuła wraca do dostawy (ADR 0026)
 
 Format dostawy materializacji rozszerzony do: **imgId · nazwa · set ·

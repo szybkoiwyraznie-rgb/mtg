@@ -47,6 +47,17 @@ zawód przewodnika to zawód zaufania: klient oddaje życie w ręce kogoś,
 kto — jak głosi flavor karty — „zna każdy krok tego wybrzeża, nad
 powierzchnią i pod nią".
 
+**Osadzenie kolekcji (Fabuła dostawy):** przez wąski, zalany
+wodą kanion przewodniczka prowadzi potężnego **balotha** — przedstawiciela
+megafauny Zendikaru — tajnym przejściem wśród lewitujących skał. Jej
+hełm, wykuty z bladego koralu i muszli, zdradza pochodzenie z nadmorskiego
+klanu, który od pokoleń mapuje każdą szczelinę wybrzeża. Na klifach
+powyżej **patrole Eldrazi** stoją odwrócone plecami, nieświadome, że
+sojusznicy wymykają im się tuż pod stopami; jedynym dźwiękiem, który
+mógłby ich zdradzić, są fontanny wody wzbijane cielskiem bestii.
+Baloth i patrole należą do osadzenia kolekcji — spójnego z epoką
+Bitwy o Zendikar i z podtypem Ally.
+
 ## Nazwa Karty
 
 **Coralhelm** to nazwa własna — największej osady merfolków na Zendikarze,
@@ -79,6 +90,9 @@ aktywacji mówi, że to nie sztuczka, lecz manewr wymagający czasu
 i przygotowania. Rzadkość **common** dodaje: na planie przygód dobrych
 przewodników jest wielu — ale każdy jest na wagę złota. Przewodniczka
 nie walczy sama: otwiera drogę innym, potężniejszym od siebie.
+Fabuła dostawy daje tej zdolności twarz wprost: to **baloth**
+przeprowadzany zalanym kanionem obok ślepych patroli Eldrazi —
+„wskazane stworzenie", które dzięki niej „nie może zostać zablokowane".
 
 ## Flavor Text
 
@@ -116,17 +130,34 @@ Zendikar — karta nie przechodzi żadnej transpozycji: jej plan rodzinny
 i plan kolekcji to ten sam plan. Osadzenie w Coralhelm nad Halimar
 na Tazeem wynika wprost z kanonu świata i nazwy karty.
 
+**Fabuła dostawy** kotwiczy scenę konkretnie: zalany wodą
+kanion wśród lewitujących skał na wybrzeżu, eskorta balotha tajnym
+przejściem pod nosem patroli Eldrazi — czas Bitwy o Zendikar, gdy
+sojusznicy przemykają między liniami wroga. Hełm z koralu i muszli
+wiąże bohaterkę z nadmorskim klanem kartografów wybrzeża — to ta
+wizja stoi za ilustracjami FOT/KON i odczytem karty w tym wpisie.
+
 ## Na Mapie
 
 Karta jest osadzona w regionie **Tazeem** — niebieskim kontynencie
 merfolków, nad śródlądowym morzem Halimar, w sercu krainy Coralhelm
 (szerszą geografię opisuje plan [[zendikar|Zendikar]]). Osadzenie ma
 poziom pewności regionu: wybrzeża i wody Halimar, nie konkretny punkt.
+Fabuła dostawy sytuuje samą scenę w zalanym kanionie przybrzeżnym
+wśród lewitujących skał — na szlakach klanu przewodniczki wzdłuż
+wybrzeży Tazeem.
 
 ## Źródła
 
+- **Fabuła dostawy (właściciel, 2026-09-02)** — wiążące
+  osadzenie sceny: zalany kanion na wybrzeżu Tazeem, eskorta balotha,
+  patrole Eldrazi na klifach, hełm z koralu i muszli; archiwum:
+  `collection/entries/2bfz-coralhelm-guide.md`.
 - Scryfall — dane karty, typ, mechanika, flavor, artysta:
   <https://scryfall.com/card/bfz/74/coralhelm-guide>
+- MTG Wiki, „Baloth" — baloty jako megafauna Zendikaru (potężne
+  bestie, z którymi mierzą się i które eskortują ekspedycje):
+  <https://mtg.fandom.com/wiki/Baloth>
 - MTG Salvation, „The World of Zendikar Part IV: Return to Zendikar" —
   Coralhelm Refuge jako największa osada merfolków na planie, morze
   Halimar, tama Sea Gate, geografia kontynentów:

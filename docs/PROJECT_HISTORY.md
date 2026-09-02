@@ -4,6 +4,21 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-02 — sesja PR-10 (część 9): Fabuły 1LTR/2BFZ zmaterializowane w kartach
+
+1. Dostawa Fabuł do obu kart (1LTR = verbatim dawna „Narracja", teraz
+   ze statusem wiążącym; 2BFZ = nowa scena z balothem). Archiwum:
+   dopisane sekcje „Fabuła (dostawa uzupełniająca)" we wpisach
+   kolekcji (dopisanie NOWEJ dostawy nie narusza nienaruszalności —
+   archiwum rejestruje wszystko, co dostarczono).
+2. Karty: „Osadzenie kolekcji (Fabuła dostawy)" w Postaciach i Bytach;
+   Transpozycja i Na Mapie doprecyzowane sceną; Fabuła w Źródłach;
+   u 2BFZ baloth wpięty też w „Mechanika jako Opowieść" (scena = twarz
+   zdolności unblockable) + źródło MTG Wiki „Baloth".
+3. Test dymny ui-smoke przestrojony u źródła (zakaz „Uruk-hai" z ery
+   ADR 0011 → wymogi ADR 0026: znacznik osadzenia + cytowana Fabuła);
+   z treści kart usunięte odwołania „ADR" (zakaz meta-odwołań działa).
+
 ## 2026-09-02 — sesja PR-10 (część 8): Fabuła wraca do dostawy → ADR 0026; drugi reset workspace
 
 1. Decyzja właściciela (czat): dostawa = imgId · nazwa · set · plan ·
