@@ -390,11 +390,11 @@
   },
   {
    "nazwa": "Ior Ruin",
-   "x": 0.905,
-   "y": 0.425,
+   "x": 0.886,
+   "y": 0.4314,
    "typ": "ruina",
    "pozycja_zrodlo": "mapa-fanowska",
-   "notka": "ruiny w Glasspool (opis; etykieta na podkładzie od 2026-09-02 — kanon: karta Ior Ruin Expedition (ZEN 49, art Akoum), Glasspool wg Planeswalker’s Guide to Zendikar: Akoum)"
+   "notka": "ruiny w Glasspool (opis; etykieta na podkładzie od 2026-09-02 — kanon: karta Ior Ruin Expedition (ZEN 49, art Akoum), Glasspool wg Planeswalker’s Guide to Zendikar: Akoum); ruiny przeniesione NA BRZEG Glasspool (recenzja 2026-09-02: ikona w tafli myliła)"
   },
   {
    "nazwa": "Spike Fields",
@@ -470,8 +470,8 @@
   },
   {
    "nazwa": "Glass Haven",
-   "x": 0.875,
-   "y": 0.394,
+   "x": 0.861,
+   "y": 0.3893,
    "typ": "osada",
    "pozycja_zrodlo": "mapa-fanowska-wariant-3-4",
    "notka": "osada/przystań na zachód od Glasspool"

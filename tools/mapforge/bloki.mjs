@@ -22,6 +22,7 @@ export const PAL = {
   // pkt d: akweny mają się zlewać, bez osobnego „koloru jeziora").
   woda: '#ccd8d2', wodaStroke: '#7fa0b4',
   tekst: '#4a3a28', ital: '#6b5d52', halo: '#f4ecd8', etykieta: '#6b1f2e',
+  etykietaWoda: '#2e4d66',
   drzewo: '#7a8a5a', drzewoCien: '#5c6b44', pienn: '#6b5d52',
   bagno: '#6f8a72', step: '#b5a877',
   skala: '#d8c9a3', skalaCien: '#8a7550', skalaLinia: '#a89468',
@@ -51,6 +52,9 @@ const MOTYWY = {
     // ADR 0023 — w zamian za wycofaną obwódkę rzek).
     woda: '#d4e2ee', wodaStroke: '#6f9bc0',
     tekst: '#1c1c1c', ital: '#3f3f3f', halo: '#f7f7f7', etykieta: '#6b1f2e',
+    // Etykiety obiektów wodnych: ciemny granat (recenzja 2026-09-02,
+    // ADR 0024) — kolor funkcyjny obok bordowych etykiet i błękitu wody.
+    etykietaWoda: '#1c3a5e',
     drzewo: '#dedede', drzewoCien: '#c3c3c3', pienn: '#3f3f3f',
     bagno: '#5f5f5f', step: '#9b9b9b',
     skala: '#eaeaea', skalaCien: '#6b6b6b', skalaLinia: '#8f8f8f',
@@ -284,6 +288,10 @@ export function pasmoInstancje(id, punkty, { szer = 46, gestoscSzczytow = null, 
       hGlifu = szer * 1.25;
     }
     const w = hGlifu * (glif.w / glif.h);
+    // Podstawa glifu musi stać NA LĄDZIE także na skrzydłach — bez tego
+    // skrajne glify pasma „włażą na morze" (recenzja 2026-09-02: zachodni
+    // kraniec Skyfang na wodzie).
+    if (!naLadzie([x - w * 0.32, y]) || !naLadzie([x + w * 0.32, y])) continue;
     instancje.push({
       x, y, h: hGlifu, w,
       flip: rng() < 0.5 ? -1 : 1,
@@ -409,7 +417,10 @@ export function miasto(x, y, { skala = 1 } = {}) {
     [-6, 1, 3, 4], [1, -1, 3.2, 4.4], [6, 2, 2.6, 3.6],
     [-2, -6, 3.4, 4.6], [5, -6, 2.4, 3.2], [3, 5, 2.6, 3.6], [-5, 6, 2.8, 3.8],
   ];
-  let out = `<g class="mf-miasto" data-x="${rr(x)}" data-y="${rr(y)}">`;
+  // Ikona wpisana w KOŁO z nieprzezroczystym tłem (recenzja 2026-09-02:
+  // osady ginęły w rozsiewie bagien/lasów) — tło = kolor lądu.
+  let out = `<g class="mf-miasto" data-x="${rr(x)}" data-y="${rr(y)}">` +
+    `<circle cx="${rr(x)}" cy="${rr(y)}" r="${rr(12.5 * s)}" fill="${PAL.lad}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.1 * s)}"/>`;
   for (const [dx, dy, sw, wh] of ukl) out += dom(x + dx * s, y + dy * s, sw * s, wh * s);
   return out + `</g>`;
 }
@@ -425,7 +436,9 @@ export function ruina(x, y, { skala = 1 } = {}) {
     `<path d="M ${rr(bx)} ${rr(by)} L ${rr(bx)} ${rr(by - hgt)} M ${rr(bx + wdt)} ${rr(by)} L ${rr(bx + wdt)} ${rr(by - hgt)} ` +
     `M ${rr(bx)} ${rr(by - hgt)} L ${rr(bx + wdt)} ${rr(by - hgt + zlam)}" ` +
     `stroke="${PAL.skalaCien}" stroke-width="${rr(1.9 * s)}" fill="none" stroke-linecap="round"/>`;
-  let out = `<g class="mf-ruina" data-x="${rr(x)}" data-y="${rr(y)}">`;
+  // Koło z nieprzezroczystym tłem — jak miasto (ADR 0024).
+  let out = `<g class="mf-ruina" data-x="${rr(x)}" data-y="${rr(y)}">` +
+    `<circle cx="${rr(x)}" cy="${rr(y + 1.5 * s)}" r="${rr(11 * s)}" fill="${PAL.lad}" stroke="${PAL.skalaCien}" stroke-width="${rr(1 * s)}"/>`;
   out += kol(x - 7 * s, y + 3 * s, 6 * s, 2.6 * s, 3 * s);
   out += kol(x - 1 * s, y + 4 * s, 4 * s, 2.4 * s, -2.4 * s);
   out += kol(x + 5 * s, y + 3 * s, 7 * s, 2.6 * s, 2.4 * s);

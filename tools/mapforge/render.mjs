@@ -26,8 +26,8 @@
 
 import {
   PAL, motyw, las, bagno, step, lod, pasmo, pasmoInstancje, wulkan, rzeka,
-  doplyw, jezioro, droga, miasto, ruina, hedron, etykieta, lukEtykieta,
-  kompas, ramka, skalaLinia, drzewo,
+  doplyw, jezioro, droga, miasto, ruina, hedron, szczyt, etykieta,
+  lukEtykieta, kompas, ramka, skalaLinia, drzewo,
 } from './bloki.mjs';
 import { prng, gladka, prosta, parsujD, pit } from './geom.mjs';
 
@@ -41,8 +41,26 @@ export const STREFY_WODNE_DOMYSLNE = [
   'Halimar', 'Beyeen', 'Agadeem', 'Wyspy Jwar', 'Emeria', 'Zulaport',
   'Hagra Cistern', 'Morze Zendikaru', 'Umung',
   'Blackbloom Lake', 'Lake Jast', 'Roaring Falls',
+  'Ior Ruin',                                  // ruiny na brzegu Glasspool — napis może zwisać nad wodą
 ];
-const BLOKI_POI = { miasto, ruina, hedron };
+
+/** Etykiety, które NAZYWAJĄ wodę (morza, zatoki, jeziora, rzeki,
+ *  wodospady) — rysowane ciemnym granatem (`PAL.etykietaWoda`) dla
+ *  odróżnienia od nazw lądowych (decyzja właściciela 2026-09-02,
+ *  ADR 0024). Scena może nadpisać przez `etykietyWodne`. */
+export const ETYKIETY_WODNE_KOLOR = [
+  'Morze Zendikaru', 'Halimar', 'Bojuka Bay', 'Sunder Bay', 'Chill Depths',
+  'Umung', 'Umara', 'Blackbloom Lake', 'Lake Jast', 'Hagra Cistern',
+  'Glasspool', 'Roaring Falls', 'Magosi Wodospad',
+  'Rzeka Srebrna', 'Zatoka Ciszy',                  // demo
+];
+const BLOKI_POI = {
+  miasto, ruina, hedron,
+  // `iglica` — pojedyncza skalna/żywa iglica (Living Spire): samotny glif
+  // hero g-016 (jawnie, zgodnie z ADR 0020 — hero tylko przez glifId),
+  // wąski i wysoki.
+  iglica: (x, y, { skala = 1 } = {}) => szczyt(x, y, 24 * skala, 42 * skala, { glifId: 'g-016' }),
+};
 
 /** Ocean: jednolity podkład. (Dawniej „plamy głębi" w kolorze jeziora —
  *  usunięte 2026-09-02, pkt d/f: woda = jeden kolor, plamy wzmacniały
@@ -101,7 +119,7 @@ export function rozstawEtykiety(etykiety, { szer, wys, maskiLadow = [], woda = n
   const koliduje = (b, u) => b[0] < u[2] && u[0] < b[2] && b[1] < u[3] && u[1] < b[3];
 
   // Strefa ikony POI przy kotwicy: promień pionowy ikony (jednostki mapy).
-  const PROMIEN_POI = { miasto: 11, ruina: 9, hedron: 11, wulkan: 27 };
+  const PROMIEN_POI = { miasto: 14, ruina: 12, hedron: 11, wulkan: 27, iglica: 22 };
   const promienPrzy = (ax, ay) => {
     let r = 4;                                    // goły punkt (zatoka, wyspa, przełęcz)
     for (const p of poi) {
@@ -230,6 +248,14 @@ export function renderuj(scena, { styl } = {}) {
       ...scena.pasma.map((p) => pasmo(p.id, p.punkty, { maski: maskiLadow, ...(p.opcje ?? {}) })));
   }
 
+  // ETYKIETY: pozycje liczone WCZEŚNIE (przed biomami), rysowane na końcu
+  // (kolejność warstw pkt g) — dzięki temu rozsiew biomów omija boxy
+  // napisów i tytuły krain nie toną w puszczy (ADR 0024).
+  const strefyWodne = new Set(scena.strefyWodne ?? STREFY_WODNE_DOMYSLNE);
+  const rozstawione = scena.etykiety?.length
+    ? rozstawEtykiety(scena.etykiety, { szer, wys, maskiLadow, woda: strefyWodne, poi: scena.poi ?? [] })
+    : [];
+
   // WULKANY: warstwa między górami a biomami (kolejność pkt g). Scena
   // trzyma wulkany w `poi` (typ "wulkan") — tu je zbieramy; obsługujemy
   // też ewentualne `scena.wulkany` (format z nagłówka pliku). Naprawa
@@ -278,6 +304,14 @@ export function renderuj(scena, { styl } = {}) {
     for (const b of scena.biomy) {
       if (b.typ === 'lod') wyklucz.poligony.push(b.punkty);   // lita czapa: nic w niej nie rośnie
     }
+    // Boxy etykiet (policzone wyżej) — biomy nie zarastają napisów.
+    for (const e of rozstawione) {
+      const fs = e.opcje?.fs ?? 15;
+      wyklucz.bboxy.push([
+        e.x - e.tekst.length * fs * 0.31 - 2, e.y - fs * 0.82 - 2,
+        e.x + e.tekst.length * fs * 0.31 + 2, e.y + fs * 0.24 + 2,
+      ]);
+    }
     const grupy = {};
     const wczesniejsze = [];
     for (const b of scena.biomy) {
@@ -309,23 +343,21 @@ export function renderuj(scena, { styl } = {}) {
     }
   }
 
-  if (scena.etykiety?.length || scena.etykietyLukowe?.length) {
-    // Woda-dozwolona dla etykiet (obiekty wodne/bay, podtytuły `(...)`).
-    // Domyślnie lista konwencji projektu (map-audit) + etykiety zaczynające
-    // się od `(`; scena może ją nadpisać przez `strefyWodne`.
-    const strefyWodne = new Set(scena.strefyWodne ?? STREFY_WODNE_DOMYSLNE);
-    const rozstawione = rozstawEtykiety(scena.etykiety ?? [], {
-      szer, wys, maskiLadow, woda: strefyWodne, poi: scena.poi ?? [],
-    });
+  if (rozstawione.length || scena.etykietyLukowe?.length) {
+    // Kolor: obiekty wodne granatem (`PAL.etykietaWoda`, ADR 0024);
+    // pozycje policzone przed biomami (patrz wyżej).
+    const wodneKolor = new Set(scena.etykietyWodne ?? ETYKIETY_WODNE_KOLOR);
     warstwy.push(`<!-- === ETYKIETY (wzór: pod obiektem, konflikt => nad; ADR 0022) === -->`,
       `<g font-family="Georgia, 'Times New Roman', serif" fill="${PAL.tekst}" ` +
       `style="paint-order: stroke; stroke: ${PAL.halo}; stroke-width: 3px; stroke-linejoin: round;">`);
     for (const e of rozstawione) {
-      // Bez kresek łączących (decyzja właściciela 2026-09-01, pkt a);
-      // `przy` = kotwica obiektu → data-atrybuty dla nakładki ekranowej.
-      warstwy.push(etykieta(e.tekst, e.x, e.y, { ...e.opcje, przy: e.przy }));
+      const kolor = e.opcje?.kolor ?? (wodneKolor.has(e.tekst) ? PAL.etykietaWoda : null);
+      warstwy.push(etykieta(e.tekst, e.x, e.y, { ...e.opcje, kolor, przy: e.przy }));
     }
-    for (const e of scena.etykietyLukowe ?? []) warstwy.push(lukEtykieta(e.id, e.punkty, e.tekst, e.opcje ?? {}));
+    for (const e of scena.etykietyLukowe ?? []) {
+      const kolor = e.opcje?.kolor ?? (wodneKolor.has(e.tekst) ? PAL.etykietaWoda : null);
+      warstwy.push(lukEtykieta(e.id, e.punkty, e.tekst, { ...(e.opcje ?? {}), kolor }));
+    }
     warstwy.push(`</g>`);
   }
 

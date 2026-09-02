@@ -394,6 +394,18 @@ export function zamontujMape(app, opcje = {}) {
     // w kolejności (ay, ax, tekst).
     if (Math.abs(stan.k - stanUkladu.k) > 1e-3) {
       stanUkladu.k = stan.k;
+      // PRZESZKODY: widoczne etykiety NIEkotwiczone (tytuły krain/akwenów)
+      // — kotwiczone muszą je omijać także w nakładce (w SVG robi to
+      // rozstaw; bez tego „Murasa" siadała na „Thunder Gap").
+      const przeszkody = [];
+      for (const el of podkladowe) {
+        if (el.dataset.ax || el.classList.contains('poza-zasiegiem')) continue;
+        if (!el._mfW) { el._mfW = el.offsetWidth || 60; el._mfH = el.offsetHeight || 16; }
+        const x = parseFloat(el.dataset.x) * w * stan.k;
+        const y = parseFloat(el.dataset.y) * h * stan.k;
+        const dx = el.dataset.kotwica === 'start' ? 0 : el.dataset.kotwica === 'end' ? -el._mfW : -el._mfW / 2;
+        przeszkody.push([x + dx, y - el._mfH * 0.82, x + dx + el._mfW, y + el._mfH * 0.24]);
+      }
       const zakotwiczone = podkladowe
         .filter((el) => el.dataset.ax && !el.classList.contains('poza-zasiegiem'))
         .map((el) => {
@@ -406,7 +418,7 @@ export function zamontujMape(app, opcje = {}) {
         })
         .sort((a, b) => (a.ay - b.ay) || (a.ax - b.ax)
           || a.el.textContent.localeCompare(b.el.textContent, 'pl'));
-      const polozone = [];
+      const polozone = [...przeszkody];
       const koliduje = (b, u) => b[0] < u[2] && u[0] < b[2] && b[1] < u[3] && u[1] < b[3];
       const M = 3;                                 // stały margines ekranowy (px)
       for (const z of zakotwiczone) {
