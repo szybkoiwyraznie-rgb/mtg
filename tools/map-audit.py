@@ -39,7 +39,7 @@ MARKERY = {'gora', 'wulkan', 'drzewo', 'bagno', 'miasto', 'ruina'}
 SPODZEANE_WODY = {                           # konwencja projektu
     'Bojuka Bay', 'Sunder Bay', 'Chill Depths', 'Makindi Trenches',
     'Halimar', 'Beyeen', 'Agadeem', 'Wyspy Jwar', 'Emeria', 'Zulaport',
-    'Hagra Cistern',
+    'Hagra Cistern', 'Morze Zendikaru',
 }
 
 
@@ -356,7 +356,15 @@ def audytuj_podklad(mapa, nazwa, mjson, woda):
             continue
         if txt in woda or txt.startswith('(') or txt == 'ruiny w niebie':
             continue
-        if not mapa.na_ladzie(x, y):
+        # Etykieta może SIADAĆ przy wybrzeżu — wystarczy, że część napisu
+        # dotyka lądu (9 próbek bboxa; ten sam model co rozstawEtykiety w
+        # render.mjs; decyzja właściciela 2026-09-02 pkt b).
+        x1, y1, x2, y2 = (x - len(txt) * fs * 0.31, y - fs * 0.82,
+                          x + len(txt) * fs * 0.31, y + fs * 0.24)
+        mx, my = (x1 + x2) / 2, (y1 + y2) / 2
+        if not any(mapa.na_ladzie(px, py, tolerancja=2) for px, py in
+                   [(mx, my), (x1, y1), (x2, y1), (x1, y2), (x2, y2),
+                    (mx, y1), (mx, y2), (x1, my), (x2, my)]):
             problemy.append(f'{nazwa}: ETYKIETA W WODZIE: {txt!r} @({x:.0f},{y:.0f})')
     boxy = [(t, x, y, fs,
              x - len(t) * fs * 0.31, y - fs * 0.82,
