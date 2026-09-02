@@ -4,6 +4,16 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-02 — sesja PR-13: Pętla Jakości v2 — audyt PR-12 + LORE Bala Ged/Sejiri + Umungshore
+
+1. **Plan i PR:** plan sesji (`PLAN_2026-09-02-pr13-petla-jakosci.md`), otwarty PR #13; tryb „kontynuujemy projekt" bez nowej dostawy kart.
+2. **Audyt scalonego PR #12** (16 plików, `AUDYT_2026-09-02-PR12.md`): baseline identyczny z handoffem (102/102, artefakt 255.1 kB); zweryfikowano spójność map.json↔scena↔podkład dla 4 retajpowanych wpisów, logikę nowego testu statusów ADR i zgodność ARCHITECTURE z kanałami postMessage w kodzie. Jedno znalezisko (Z1, P3): najnowszy handoff mówił o PR #12 jako o otwartym — poprawione minimalnie. Obserwacja bez naprawy: część `elementy` map.json ma `zrodlo` wskazujące ogólną stronę planu, mimo że notka cytuje konkretny przewodnik (kandydat na porządkowanie źródeł przy okazji).
+3. **Pogłębienie LORE (krok 2):** strona planu Zendikar — akapity **Bala Ged** i **Sejiri** (wcześniej tylko wymienione jednym słowem w leadzie): Guum Wilds, Bojuka Bay + Bojuka Route, Umung, Tangled Vales, Makindi/Obuun, Nissa i Khalni Heart, Ulamog→pył; Sejiri: tundra-mesa, Midnight Pass, Ikiral, Chill Depths, Benthidrix, ostatni Skyclave; +4 źródła z URL w Źródłach.
+4. **Link-mining (krok 3):** bez nowych haseł — próg ≥2 kart nieosiągnięty (rozłączne plany); liczniki `docs/backlog.md` bez zmian.
+5. **Pass mapowy (krok 4):** kompletność operacyjna OK (2/2 pinezek); dodane kanoniczne POI **Umungshore** (wioska nad Bojuka Bay — MTG Wiki/Guide) jako `miasto` skala 0.8 + etykieta `przyDo`; rejestr w `map.json` (kotwica 0.836/0.6321, element). Kontrole: `sprawdzWiazania` 0 uwag, `map-audit.py` 0, determinizm podkładu potwierdzony przed zmianą (rerender = bit w bit).
+6. **QA rastrowe:** odbudowano pipeline w świeżym sandboxie — **`sharp` przez npm (prebuilt)** zamiast resvg; `cairosvg` pada na braku systemowego libcairo, ImageMagick deleguje do brakującego `rsvg-convert`. Crop regionu Umungshore zweryfikowany wizualnie (ikona na lądzie przy brzegu zatoki, etykieta bez kolizji). Notatka w `SKILL_MAPA_PLANU.md` §8.
+7. **Weryfikacja końcowa:** `npm test` **102/102**, `npm run build` OK (artefakt **261.6 kB**, ZIP **11557.6 kB**), `python3 tools/map-audit.py` zendikar/srodziemie — **0 problemów**.
+
 ## 2026-09-02 — sesja PR-12: Pętla Jakości v2 — audyt PR-11 + domknięcie dryfu dokumentacji/map
 
 1. **Plan i PR:** przygotowano plan sesji (`PLAN_2026-09-02-pr12-petla-jakosci.md`), otwarto PR #12 i utrzymano pracę w trybie „kontynuujemy projekt" — bez nowej dostawy kart.

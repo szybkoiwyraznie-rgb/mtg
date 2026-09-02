@@ -1,3 +1,32 @@
+## 2026-09-02 23:08 — Pętla Jakości: audyt PR-12, geografia Bala Ged i Sejiri, Umungshore na mapie
+
+- **Audyt scalonego PR #12** zapisany w
+  `docs/audits/AUDYT_2026-09-02-PR12.md`; jedno znalezisko (P3 —
+  przeterminowany status „PR #12 jest otwarty" w najnowszym handoffie)
+  naprawione od razu.
+- **LORE Zendikaru (strona planu):** sekcja „Geografia" domyka dwie
+  ostatnie białe plamy kontynentów — nowe akapity o **Bala Ged**
+  (dżungla Guum Wilds, topiel Bojuka Bay i słynna trasa Bojuka Route,
+  stopnie rzeki Umung, Tangled Vales, imperium Makindi, zagłada rojem
+  Ulamoga i Khalni Heart) oraz **Sejiri** (polarny płaskowyż w klifach,
+  Midnight Pass, osada Ikiral w pękniętym hedronie, Chill Depths,
+  mityczne Benthidrix i los ostatniego Skyclave).
+- **4 nowe źródła** w Źródłach planu Zendikar (MTG Wiki „Bala Ged"
+  i „Sejiri", Planeswalker's Guide: Bala Ged and Elves, Archive Trap I).
+- **Link-mining:** bez nowych haseł — próg ≥2 kart wspominających encję
+  nadal nieosiągnięty (2 karty na dwóch rozłącznych planach; liczniki
+  w `docs/backlog.md` bez zmian).
+- **Pass mapowy (Zendikar, T4):** nowy obiekt **Umungshore** —
+  kanoniczna wioska nad Bojuka Bay przy trasie Umung (MTG Wiki „Bala
+  Ged"); scena + podkład + rejestr map.json (`kotwice`/`elementy`),
+  walidator wiązań 0 uwag, `tools/map-audit.py` 0 problemów, QA
+  rastrowe cropu regionu.
+- **Warsztat mapowy:** `SKILL_MAPA_PLANU.md` dostał zweryfikowany tor
+  QA rastrowego przez `sharp` (prebuilt npm; odpowiedź na brak
+  libcairo/rsvg w sandboxie).
+- Weryfikacja: `npm test` **102/102**, `npm run build` OK,
+  `tools/map-audit.py` zendikar/srodziemie — **0 problemów**.
+
 ## 2026-09-02 22:22 — Audyt PR-11: domknięcie dryfu dokumentacji i rejestru map
 
 - **Audyt scalonego PR #11** zapisany w `docs/audits/AUDYT_2026-09-02-PR11.md`.
