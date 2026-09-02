@@ -22,6 +22,7 @@ export const PAL = {
   // pkt d: akweny mają się zlewać, bez osobnego „koloru jeziora").
   woda: '#ccd8d2', wodaStroke: '#7fa0b4',
   tekst: '#4a3a28', ital: '#6b5d52', halo: '#f4ecd8', etykieta: '#6b1f2e',
+  etykietaWoda: '#2e4d66', etykietaKontynent: '#000000', etykietaBiom: '#33523a',
   drzewo: '#7a8a5a', drzewoCien: '#5c6b44', pienn: '#6b5d52',
   bagno: '#6f8a72', step: '#b5a877',
   skala: '#d8c9a3', skalaCien: '#8a7550', skalaLinia: '#a89468',
@@ -46,9 +47,16 @@ const MOTYWY = {
     lad: '#f7f7f7', ladStroke: '#3f3f3f',
     // Woda w delikatnym niebieskim (decyzja właściciela 2026-09-01 — odstępstwo
     // od czystego achromatu z ADR 0019: kolor tylko dla wody i etykiet).
-    // Jeden kolor wody dla wszystkich akwenów (pkt d, 2026-09-02).
-    woda: '#e2ecf4', wodaStroke: '#6f9bc0',
+    // Jeden kolor wody dla wszystkich akwenów (pkt d, 2026-09-02); ton
+    // przyciemniony dla kontrastu z papierem (recenzja 2026-09-02 pkt 3,
+    // ADR 0023 — w zamian za wycofaną obwódkę rzek).
+    woda: '#d4e2ee', wodaStroke: '#6f9bc0',
     tekst: '#1c1c1c', ital: '#3f3f3f', halo: '#f7f7f7', etykieta: '#6b1f2e',
+    // Etykiety obiektów wodnych: ciemny granat (recenzja 2026-09-02,
+    // ADR 0024) — kolor funkcyjny obok bordowych etykiet i błękitu wody.
+    // Warstwy kolorów pisma (recenzja 6, ADR 0025): kontynenty/wyspy =
+    // czerń; fragmenty lasów/bagien = ciemna zieleń.
+    etykietaWoda: '#1c3a5e', etykietaKontynent: '#000000', etykietaBiom: '#1e4d2b',
     drzewo: '#dedede', drzewoCien: '#c3c3c3', pienn: '#3f3f3f',
     bagno: '#5f5f5f', step: '#9b9b9b',
     skala: '#eaeaea', skalaCien: '#6b6b6b', skalaLinia: '#8f8f8f',
@@ -133,12 +141,12 @@ export function drzewo(x, y, s, rng) {
 }
 
 /** Las: deterministyczny rozsiew drzew w wielokącie. */
-export function las(id, poly, { gestosc = 1, skala = 1, minOdst = 8, maski = null } = {}) {
+export function las(id, poly, { gestosc = 1, skala = 1, minOdst = 8, maski = null, wyklucz = null } = {}) {
   const rng = prng(`las:${id}`);
   const n = Math.round(pole(poly) / 72 * gestosc);
   // drzewa mocno zachodzą na siebie (rozstaw < średnica korony) → gęsta,
   // „ręczna" masa kęp jak mapome, zamiast rozsypanych kropek
-  return rozrzut(poly, n, rng, Math.max(3, minOdst) * 0.48, maski)
+  return rozrzut(poly, n, rng, Math.max(3, minOdst) * 0.48, maski, wyklucz)
     .map(([x, y]) => drzewo(x, y, skala, rng)).join('\n');
 }
 
@@ -150,10 +158,10 @@ export function las(id, poly, { gestosc = 1, skala = 1, minOdst = 8, maski = nul
  * kresek + co jakiś czas płytkie oczko (pozioma falka). Gęsty rozsiew
  * (mały odstęp) składa się w teksturę mokradeł zamiast rytmicznych rzędów.
  */
-export function bagno(id, poly, { gestosc = 1, maski = null } = {}) {
+export function bagno(id, poly, { gestosc = 1, maski = null, wyklucz = null } = {}) {
   const rng = prng(`bagno:${id}`);
   const n = Math.round(pole(poly) / 330 * gestosc);
-  return rozrzut(poly, n, rng, 7, maski).map(([x, y]) => {
+  return rozrzut(poly, n, rng, 7, maski, wyklucz).map(([x, y]) => {
     let out = `<g class="mf-kepka" data-x="${rr(x)}" data-y="${rr(y)}">`;
     // sitowie: 3–5 krótkich pionowych kresek (rozchylonych, o różnej wys.)
     const m = 3 + Math.floor(rng() * 3);
@@ -174,10 +182,10 @@ export function bagno(id, poly, { gestosc = 1, maski = null } = {}) {
 
 /* ---------- biome: step (krótkie kępy traw) ---------- */
 
-export function step(id, poly, { gestosc = 1, maski = null } = {}) {
+export function step(id, poly, { gestosc = 1, maski = null, wyklucz = null } = {}) {
   const rng = prng(`step:${id}`);
   const n = Math.round(pole(poly) / 700 * gestosc);
-  return rozrzut(poly, n, rng, 16, maski).map(([x, y]) =>
+  return rozrzut(poly, n, rng, 16, maski, wyklucz).map(([x, y]) =>
     `<path d="M ${rr(x - 5)} ${rr(y)} l 4 -4 M ${rr(x - 1)} ${rr(y + 1)} l 4 -5 M ${rr(x + 3)} ${rr(y - 1)} l 4 -4" ` +
     `stroke="${PAL.step}" stroke-width="1.5" stroke-linecap="round" fill="none"/>`,
   ).join('\n');
@@ -250,19 +258,13 @@ export function szczyt(x, y, w, h, { snieg = false, flip = 1, glifId = null } = 
 }
 
 /**
- * Pasmo — JEDNO LOGICZNE PASMO jako pojedyncza, spójna bryła wklejona na
- * mapę (decyzja właściciela 2026-09-02, pkt a: glify „nawsadzane góra na
- * górze, bez ładu i składu" odrzucone). Glify adoptowane (ADR 0020) układają
- * się POLEM W DŁUŻY wzdłuż wygładzonego grzbietu: bazy nachodzą na siebie
- * (~50%), więc sylwetki zlewają się w jeden ciągły, jagodowy grzbiet —
- * język mapome (mapa Śródziemia). Wielkości POBONE (szerokości baz ±~10%;
- * wysokości wynikają z naturalnych proporcji glifu, więc szczyty mają różne
- * wysokości jak w prawdziwym pasmie — bez przytłaczania większych
- * mniejszych). Bez rozrzutu pionowego i bez osobnego rzędu pogórza.
- * Mega-klastery (hero) tylko jawnie przez `szczyt(..., { glifId })`.
- * Deterministyczne (rng z hasha id, ADR 0018 pkt 3).
+ * Instancje glifów pasma — geometria rozsiewu wydzielona z `pasmo()`
+ * (ADR 0022, pkt d recenzji 2026-09-02): renderScena liczy z niej STREFY
+ * ZAJĘTE przez góry (bbox glifu), które wykluczają rozsiew biomów —
+ * lasy/bagna/stepy nie zakrywają szczytów. Zwraca listę
+ * `{ x, y, w, h, flip, snieg, glifId }` (x,y = środek dolnej krawędzi).
  */
-export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = false, maski = null } = {}) {
+export function pasmoInstancje(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = false, maski = null } = {}) {
   const naLadzie = (p) => !maski || !maski.length || maski.some((m) => pit(p, m));
   const rng = prng(`pasmo:${id}`);
   const grzbiet = chaikin(punkty, 3, false);
@@ -288,6 +290,10 @@ export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = f
       hGlifu = szer * 1.25;
     }
     const w = hGlifu * (glif.w / glif.h);
+    // Podstawa glifu musi stać NA LĄDZIE także na skrzydłach — bez tego
+    // skrajne glify pasma „włażą na morze" (recenzja 2026-09-02: zachodni
+    // kraniec Skyfang na wodzie).
+    if (!naLadzie([x - w * 0.32, y]) || !naLadzie([x + w * 0.32, y])) continue;
     instancje.push({
       x, y, h: hGlifu, w,
       flip: rng() < 0.5 ? -1 : 1,
@@ -295,9 +301,26 @@ export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = f
       glifId: glif.id,
     });
   }
+  return instancje;
+}
+
+/**
+ * Pasmo — JEDNO LOGICZNE PASMO jako pojedyncza, spójna bryła wklejona na
+ * mapę (decyzja właściciela 2026-09-02, pkt a: glify „nawsadzane góra na
+ * górze, bez ładu i składu" odrzucone). Glify adoptowane (ADR 0020) układają
+ * się POLEM W DŁUŻY wzdłuż wygładzonego grzbietu: bazy nachodzą na siebie
+ * (~50%), więc sylwetki zlewają się w jeden ciągły grzbiet — język mapome
+ * (mapa Śródziemia). Wielkości PODOBNE (szerokości baz ±~10%; wysokości
+ * wynikają z naturalnych proporcji glifu, więc szczyty mają różne wysokości
+ * jak w prawdziwym pasmie — bez przytłaczania większych mniejszych).
+ * Bez rozrzutu pionowego i bez osobnego rzędu pogórza.
+ * Mega-klastery (hero) tylko jawnie przez `szczyt(..., { glifId })`.
+ * Deterministyczne (rng z hasha id, ADR 0018 pkt 3).
+ */
+export function pasmo(id, punkty, opcje = {}) {
   // Rysujemy wzdłuż grzbietu (t rośnie) — późniejszy glif nachodzi na
   // poprzedni z jednej strony, jak kolejne partie tego samego grzbietu.
-  return instancje.map((s) =>
+  return pasmoInstancje(id, punkty, opcje).map((s) =>
     szczyt(s.x, s.y, s.w, s.h, { snieg: s.snieg, flip: s.flip, glifId: s.glifId })).join('\n');
 }
 
@@ -325,7 +348,10 @@ export function wulkan(x, y, { skala = 1, dym = true } = {}) {
  * Rzeka jako wstęga stożkowa (źródło wąskie, ujście szerokie). Jeden kolor
  * wody wszędzie (ADR 0020 + pkt d, 2026-09-02): rzeka ma identyczny kolor
  * co morze I jeziora — wpływając do akwenu „rozmywa się" w nim (zlewa się,
- * nie tnie). Brak gradientu i brak opacity.
+ * nie tnie). Brak gradientu, brak opacity i BRAK OBWÓDKI — obwódka wstęgi
+ * (pkt c) wycofana decyzją właściciela 2026-09-02: obrysowany „język"
+ * ujścia w morzu wyglądał źle; zamiast tego przyciemniono kolor wody
+ * (kontrast z papierem) — ADR 0023.
  */
 export function rzeka(id, punkty, { s0 = 3, s1 = 9, zrodlo = true } = {}) {
   const { d } = wstega(punkty, s0, s1);
@@ -393,7 +419,10 @@ export function miasto(x, y, { skala = 1 } = {}) {
     [-6, 1, 3, 4], [1, -1, 3.2, 4.4], [6, 2, 2.6, 3.6],
     [-2, -6, 3.4, 4.6], [5, -6, 2.4, 3.2], [3, 5, 2.6, 3.6], [-5, 6, 2.8, 3.8],
   ];
-  let out = `<g class="mf-miasto" data-x="${rr(x)}" data-y="${rr(y)}">`;
+  // Ikona wpisana w KOŁO z nieprzezroczystym tłem (recenzja 2026-09-02:
+  // osady ginęły w rozsiewie bagien/lasów) — tło = kolor lądu.
+  let out = `<g class="mf-miasto" data-x="${rr(x)}" data-y="${rr(y)}">` +
+    `<circle cx="${rr(x)}" cy="${rr(y)}" r="${rr(12.5 * s)}" fill="${PAL.lad}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.1 * s)}"/>`;
   for (const [dx, dy, sw, wh] of ukl) out += dom(x + dx * s, y + dy * s, sw * s, wh * s);
   return out + `</g>`;
 }
@@ -409,7 +438,9 @@ export function ruina(x, y, { skala = 1 } = {}) {
     `<path d="M ${rr(bx)} ${rr(by)} L ${rr(bx)} ${rr(by - hgt)} M ${rr(bx + wdt)} ${rr(by)} L ${rr(bx + wdt)} ${rr(by - hgt)} ` +
     `M ${rr(bx)} ${rr(by - hgt)} L ${rr(bx + wdt)} ${rr(by - hgt + zlam)}" ` +
     `stroke="${PAL.skalaCien}" stroke-width="${rr(1.9 * s)}" fill="none" stroke-linecap="round"/>`;
-  let out = `<g class="mf-ruina" data-x="${rr(x)}" data-y="${rr(y)}">`;
+  // Koło z nieprzezroczystym tłem — jak miasto (ADR 0024).
+  let out = `<g class="mf-ruina" data-x="${rr(x)}" data-y="${rr(y)}">` +
+    `<circle cx="${rr(x)}" cy="${rr(y + 1.5 * s)}" r="${rr(11 * s)}" fill="${PAL.lad}" stroke="${PAL.skalaCien}" stroke-width="${rr(1 * s)}"/>`;
   out += kol(x - 7 * s, y + 3 * s, 6 * s, 2.6 * s, 3 * s);
   out += kol(x - 1 * s, y + 4 * s, 4 * s, 2.4 * s, -2.4 * s);
   out += kol(x + 5 * s, y + 3 * s, 7 * s, 2.6 * s, 2.4 * s);
@@ -418,6 +449,24 @@ export function ruina(x, y, { skala = 1 } = {}) {
   out += `<circle cx="${rr(x + 6 * s)}" cy="${rr(y + 6 * s)}" r="${rr(1.3 * s)}" fill="${PAL.skalaCien}"/>`;
   out += `<circle cx="${rr(x - 3 * s)}" cy="${rr(y + 7 * s)}" r="${rr(1 * s)}" fill="${PAL.skalaCien}"/>`;
   return out + `</g>`;
+}
+
+/**
+ * Iglica — samotna smukła turnia (np. Living Spire na Murasie): ręcznie
+ * rysowana sylwetka w języku glifów (czarna bryła, jak góry). NIE jest to
+ * pomniejszony glif pasma — hero-glify to całe klastry i po zmniejszeniu
+ * czytały się jak „mikro-góry" (recenzja właściciela 2026-09-02, ADR 0025).
+ * Podstawa w punkcie (x, y); wysokość ~30·skala.
+ */
+export function iglica(x, y, { skala = 1 } = {}) {
+  const s = skala;
+  const p = (dx, dy) => `${rr(x + dx * s)} ${rr(y + dy * s)}`;
+  // smukła, lekko poszarpana turnia z bocznym zębem przy wierzchołku
+  const d = `M ${p(-5, 0)} L ${p(-3.2, -9)} L ${p(-4.6, -11)} L ${p(-2.2, -19)} ` +
+    `L ${p(-3.0, -21)} L ${p(-0.6, -30)} L ${p(0.9, -22)} L ${p(2.4, -24)} ` +
+    `L ${p(2.6, -14)} L ${p(4.2, -10)} L ${p(3.4, -4)} L ${p(5, 0)} Z`;
+  return `<g class="mf-iglica" data-x="${rr(x)}" data-y="${rr(y)}">` +
+    `<path d="${d}" fill="${PAL.tekst}"/></g>`;
 }
 
 /** Hedron: kamienny pierścień z rysunkiem (dryfujący — opacity). */
@@ -433,12 +482,20 @@ export function hedron(x, y, { skala = 1, opacity = 1 } = {}) {
 
 /* ---------- etykiety ---------- */
 
-/** Etykieta z halo; `kat` obraca wokół punktu (deg, zgodnie z ruchem wskazówek). */
-export function etykieta(tekst, x, y, { kat = 0, fs = 15, ital = false, kolor = null, duze = false, kotwica = 'middle' } = {}) {
+/** Etykieta z halo; `kat` obraca wokół punktu (deg, zgodnie z ruchem
+ *  wskazówek). `przy = [ax, ay, r]` (etykiety obiektowe, ADR 0022) emituje
+ *  data-atrybuty kotwicy obiektu — nakładka ekranowa Codexu liczy z nich
+ *  pozycję zależną od zoomu (stała WIZUALNA odległość od ikony). */
+export function etykieta(tekst, x, y, { kat = 0, fs = 15, ital = false, kolor = null, duze = false, kotwica = 'middle', przy = null } = {}) {
   const transform = kat ? ` transform="rotate(${zaokr(kat, 1)} ${rr(x)} ${rr(y)})"` : '';
   const kl = duze ? 'tytul-kontynentu' : null;
-  const fill = kolor ?? PAL.etykieta;
-  return `<text x="${rr(x)}" y="${rr(y)}" font-size="${fs}"${ital ? ' font-style="italic"' : ''} fill="${fill}"${kl ? ` class="${kl}"` : ''} text-anchor="${kotwica}"${transform}>${tekst}</text>`;
+  // Kontynenty/wielkie tytuły: czerń (ADR 0025), reszta: bordo (ADR 0021).
+  const fill = kolor ?? (duze ? (PAL.etykietaKontynent ?? PAL.etykieta) : PAL.etykieta);
+  const dataPrzy = przy
+    ? ` data-ax="${rr(przy[0])}" data-ay="${rr(przy[1])}" data-r="${rr(przy[2])}"` +
+      (przy[3] != null && przy[3] !== przy[2] ? ` data-rg="${rr(przy[3])}"` : '')
+    : '';
+  return `<text x="${rr(x)}" y="${rr(y)}" font-size="${fs}"${ital ? ' font-style="italic"' : ''} fill="${fill}"${kl ? ` class="${kl}"` : ''} text-anchor="${kotwica}"${dataPrzy}${transform}>${tekst}</text>`;
 }
 
 /** Etykieta po łuku ( zatoki, doliny ) — path w defs + textPath. */

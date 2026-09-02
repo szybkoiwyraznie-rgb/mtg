@@ -1,6 +1,7 @@
 # ADR 0019: Mapy planów w motywie atlasowym — czysty czarno-biały line-art
 
-- **Status:** Zaakceptowana
+- **Status:** Zaakceptowana — wyjątki kolorystyczne motywu atlasowego
+  (błękit wody, bordowe etykiety) doprecyzowuje ADR 0021
 - **Data:** 2026-09-01
 - **Doprecyzowanie:** 2026-09-01, tego samego dnia — walor tonalny
   w szarościach (sekcja „Doprecyzowanie" niżej)

@@ -1,5 +1,10 @@
 # Skill: Mapa nowego planu w ~30 minut (zamiast 5 godzin)
 
+> **UWAGA (2026-09-02):** dla map T4 (mapforge) obowiązuje nowszy,
+> kompletny podręcznik: **`RYSOWANIE_MAPY_PLANU.md`** (wnioski z rund
+> recenzji PR-9/PR-10, ADR 0018–0025). Ten plik opisuje erę T3
+> (ręczne SVG) — nadal ważne: maska pikselowa, pułapki geometrii.
+
 > **Co to jest:** wyciągnięte z sesji tworzenia mapy Zendikaru (PR-2/PR-3/PR-4)
 > wnioski operacyjne + gotowa checklista, dzięki której kolejny plan ma mapę
 > w pół godziny, bez kilkugodzinnych analiz i pułapek.

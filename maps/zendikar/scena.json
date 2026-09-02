@@ -52,6 +52,51 @@
  ],
  "biomy": [
   {
+   "id": "las-bala-polnoc",
+   "typ": "las",
+   "punkty": [
+    [1425, 700],
+    [1560, 688],
+    [1655, 700],
+    [1640, 745],
+    [1520, 752],
+    [1440, 748]
+   ],
+   "opcje": {
+    "gestosc": 0.7
+   }
+  },
+  {
+   "id": "las-bala-wschod",
+   "typ": "las",
+   "punkty": [
+    [1590, 770],
+    [1680, 748],
+    [1735, 790],
+    [1728, 852],
+    [1650, 872],
+    [1592, 840]
+   ],
+   "opcje": {
+    "gestosc": 0.75
+   }
+  },
+  {
+   "id": "las-bala-zachod",
+   "typ": "las",
+   "punkty": [
+    [1160, 735],
+    [1290, 712],
+    [1315, 795],
+    [1285, 868],
+    [1235, 900],
+    [1170, 855]
+   ],
+   "opcje": {
+    "gestosc": 0.75
+   }
+  },
+  {
    "id": "las-1",
    "typ": "las",
    "punkty": [
@@ -179,20 +224,28 @@
    "typ": "las",
    "punkty": [
     [
-     1746.0,
-     399.0
+     1735.0,
+     390.0
     ],
     [
-     1762.0,
-     394.0
+     1830.0,
+     355.0
     ],
     [
-     1778.0,
-     398.0
+     1862.0,
+     400.0
     ],
     [
-     1848.0,
-     470.0
+     1878.0,
+     468.0
+    ],
+    [
+     1830.0,
+     538.0
+    ],
+    [
+     1745.0,
+     498.0
     ]
    ],
    "opcje": {
@@ -246,64 +299,20 @@
      73.8
     ],
     [
-     760.9,
-     73.9
+     660.0,
+     86.0
     ],
     [
-     840.9,
-     72.0
+     668.0,
+     130.0
     ],
     [
-     987.5,
-     65.0
+     661.0,
+     175.0
     ],
     [
-     1084.1,
-     74.4
-    ],
-    [
-     1185.8,
-     93.1
-    ],
-    [
-     1213.1,
-     106.6
-    ],
-    [
-     1209.4,
-     132.3
-    ],
-    [
-     1150.0,
-     165.0
-    ],
-    [
-     1150.5,
-     194.6
-    ],
-    [
-     1090.5,
-     219.8
-    ],
-    [
-     1030.6,
-     220.4
-    ],
-    [
-     930.6,
-     231.2
-    ],
-    [
-     850.0,
-     235.6
-    ],
-    [
-     769.4,
-     229.8
-    ],
-    [
-     670.1,
-     220.7
+     645.0,
+     205.0
     ],
     [
      613.2,
@@ -402,6 +411,17 @@
   }
  ],
  "pasma": [
+  {
+   "id": "pasmo-makindi",
+   "punkty": [
+    [430, 1250],
+    [540, 1256],
+    [660, 1250]
+   ],
+   "opcje": {
+    "szer": 22
+   }
+  },
   {
    "id": "pasmo-1",
    "punkty": [
@@ -704,20 +724,12 @@
    "id": "rzeka-vazi",
    "punkty": [
     [
-     900,
-     1150
+     888,
+     1245
     ],
     [
-     905,
-     1180
-    ],
-    [
-     895,
-     1230
-    ],
-    [
-     880,
-     1300
+     883,
+     1295
     ],
     [
      882,
@@ -815,6 +827,46 @@
  ],
  "poi": [
   {
+   "typ": "wodospad",
+   "x": 1060,
+   "y": 1260,
+   "opcje": {
+    "skala": 1.0
+   }
+  },
+  {
+   "typ": "iglica",
+   "x": 1120,
+   "y": 1190,
+   "opcje": {
+    "skala": 0.9
+   }
+  },
+  {
+   "typ": "miasto",
+   "x": 660,
+   "y": 1104,
+   "opcje": {
+    "skala": 0.7
+   }
+  },
+  {
+   "typ": "miasto",
+   "x": 894,
+   "y": 1284,
+   "opcje": {
+    "skala": 0.7
+   }
+  },
+  {
+   "typ": "ruina",
+   "x": 870,
+   "y": 1215,
+   "opcje": {
+    "skala": 0.8
+   }
+  },
+  {
    "typ": "ruina",
    "x": 600.0,
    "y": 170.0,
@@ -823,11 +875,11 @@
    }
   },
   {
-   "typ": "ruina",
+   "typ": "miasto",
    "x": 828.0,
    "y": 220.0,
    "opcje": {
-    "skala": 0.65
+    "skala": 0.6
    }
   },
   {
@@ -840,24 +892,24 @@
   },
   {
    "typ": "wulkan",
-   "x": 1620.0,
-   "y": 430.0,
+   "x": 1655.0,
+   "y": 462.0,
    "opcje": {
     "skala": 1.3
    }
   },
   {
    "typ": "wulkan",
-   "x": 1710.0,
-   "y": 480.0,
+   "x": 1702.0,
+   "y": 483.0,
    "opcje": {
     "skala": 1.0
    }
   },
   {
    "typ": "wulkan",
-   "x": 1770.0,
-   "y": 360.0,
+   "x": 1744.0,
+   "y": 452.0,
    "opcje": {
     "skala": 0.9
    }
@@ -904,24 +956,8 @@
   },
   {
    "typ": "ruina",
-   "x": 1544.0,
-   "y": 586.0,
-   "opcje": {
-    "skala": 0.8
-   }
-  },
-  {
-   "typ": "ruina",
    "x": 1560,
    "y": 825,
-   "opcje": {
-    "skala": 0.8
-   }
-  },
-  {
-   "typ": "miasto",
-   "x": 1500.0,
-   "y": 850.0,
    "opcje": {
     "skala": 0.8
    }
@@ -940,14 +976,6 @@
    "y": 1248,
    "opcje": {
     "skala": 0.8
-   }
-  },
-  {
-   "typ": "ruina",
-   "x": 1450.0,
-   "y": 1160.0,
-   "opcje": {
-    "skala": 0.85
    }
   },
   {
@@ -1016,23 +1044,7 @@
    }
   },
   {
-   "typ": "hedron",
-   "x": 300.0,
-   "y": 1230.0,
-   "opcje": {
-    "skala": 0.8
-   }
-  },
-  {
-   "typ": "hedron",
-   "x": 340.0,
-   "y": 1215.0,
-   "opcje": {
-    "skala": 0.7
-   }
-  },
-  {
-   "typ": "ruina",
+   "typ": "miasto",
    "x": 125.0,
    "y": 1020.0,
    "opcje": {
@@ -1045,14 +1057,6 @@
    "y": 1213.0,
    "opcje": {
     "skala": 0.7
-   }
-  },
-  {
-   "typ": "ruina",
-   "x": 1084.0,
-   "y": 1124.0,
-   "opcje": {
-    "skala": 0.8
    }
   },
   {
@@ -1081,24 +1085,24 @@
   },
   {
    "typ": "miasto",
-   "x": 1750.0,
-   "y": 552.0,
+   "x": 1722,
+   "y": 545,
    "opcje": {
     "skala": 0.8
    }
   },
   {
    "typ": "ruina",
-   "x": 1810.0,
-   "y": 595.0,
+   "x": 1772.0,
+   "y": 604.0,
    "opcje": {
     "skala": 0.8
    }
   },
   {
    "typ": "miasto",
-   "x": 1480,
-   "y": 1320,
+   "x": 1424,
+   "y": 1230,
    "opcje": {
     "skala": 0.8
    }
@@ -1145,6 +1149,100 @@
   }
  ],
  "etykiety": [
+  {
+   "tekst": "Sejiri Refuge",
+   "x": 828,
+   "y": 236,
+   "opcje": {
+    "fs": 14.0,
+    "kotwica": "middle",
+    "przyDo": [828, 220]
+   }
+  },
+  {
+   "tekst": "Jwar Isle Refuge",
+   "x": 125,
+   "y": 1036,
+   "opcje": {
+    "fs": 14.0,
+    "kotwica": "middle",
+    "przyDo": [125, 1020]
+   }
+  },
+  {
+   "tekst": "Helix of Zof",
+   "x": 1350,
+   "y": 1056,
+   "opcje": {
+    "fs": 14.0,
+    "kotwica": "middle",
+    "ital": true,
+    "przyDo": [1350, 1040]
+   }
+  },
+  {
+   "tekst": "Visimal",
+   "x": 894,
+   "y": 1300,
+   "opcje": {
+    "fs": 14.0,
+    "kotwica": "middle",
+    "przyDo": [894, 1284]
+   }
+  },
+  {
+   "tekst": "Tumbled Palace",
+   "x": 870,
+   "y": 1231,
+   "opcje": {
+    "fs": 13.0,
+    "kotwica": "middle",
+    "ital": true,
+    "przyDo": [870, 1215]
+   }
+  },
+  {
+   "tekst": "Glint Pass",
+   "x": 1080,
+   "y": 1240,
+   "opcje": {
+    "fs": 13.0,
+    "kotwica": "middle",
+    "przyDo": [1080, 1225]
+   }
+  },
+  {
+   "tekst": "Thunder Gap",
+   "x": 1005,
+   "y": 1200,
+   "opcje": {
+    "fs": 13.0,
+    "kotwica": "middle",
+    "przyDo": [1005, 1185]
+   }
+  },
+  {
+   "tekst": "Roaring Falls",
+   "x": 1060,
+   "y": 1275,
+   "opcje": {
+    "fs": 12.0,
+    "kotwica": "middle",
+    "ital": true,
+    "przyDo": [1060, 1260]
+   }
+  },
+  {
+   "tekst": "Pillar Plains",
+   "x": 975,
+   "y": 1165,
+   "opcje": {
+    "fs": 13.0,
+    "kotwica": "middle",
+    "ital": true,
+    "przyDo": [975, 1150]
+   }
+  },
   {
    "tekst": "Spike Fields",
    "x": 1510.0,
@@ -1205,7 +1303,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1790, 415]
    }
   },
   {
@@ -1215,7 +1314,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1840, 425]
    }
   },
   {
@@ -1225,7 +1325,19 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1800, 588]
+   }
+  },
+  {
+   "tekst": "Ior Ruin",
+   "x": 1772.0,
+   "y": 620.0,
+   "opcje": {
+    "fs": 15.0,
+    "kotwica": "middle",
+    "ital": true,
+    "przyDo": [1772, 604]
    }
   },
   {
@@ -1240,8 +1352,8 @@
   },
   {
    "tekst": "Bojuka Bog",
-   "x": 1650,
-   "y": 910,
+   "x": 1610,
+   "y": 922,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
@@ -1250,22 +1362,24 @@
   },
   {
    "tekst": "Hanging Swamp",
-   "x": 1330.0,
-   "y": 1258.0,
+   "x": 1290.0,
+   "y": 1230.0,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1290, 1230]
    }
   },
   {
    "tekst": "Hagra Swamp",
-   "x": 1330,
-   "y": 1292,
+   "x": 1390,
+   "y": 1235,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1390, 1235]
    }
   },
   {
@@ -1292,19 +1406,19 @@
   },
   {
    "tekst": "Lulea",
-   "x": 1480,
-   "y": 1302,
+   "x": 1424,
+   "y": 1247,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
     "ital": true,
-    "przyDo": [1480, 1320]
+    "przyDo": [1424, 1230]
    }
   },
   {
    "tekst": "Tangled Vales",
-   "x": 1500,
-   "y": 920,
+   "x": 1420,
+   "y": 946,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
@@ -1313,10 +1427,10 @@
   },
   {
    "tekst": "Kazandu",
-   "x": 955.0,
-   "y": 1312.0,
+   "x": 920.0,
+   "y": 1230.0,
    "opcje": {
-    "fs": 15.0,
+    "fs": 17.0,
     "kotwica": "middle",
     "ital": true
    }
@@ -1344,12 +1458,13 @@
   },
   {
    "tekst": "Living Spire",
-   "x": 1068.0,
-   "y": 1286.0,
+   "x": 1120.0,
+   "y": 1206.0,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1120, 1190]
    }
   },
   {
@@ -1359,11 +1474,12 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1078, 176]
    }
   },
   {
-   "tekst": "Prison of Omath",
+   "tekst": "Prison of Omnath",
    "x": 645,
    "y": 1150,
    "opcje": {
@@ -1391,7 +1507,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [660, 1104]
    }
   },
   {
@@ -1401,7 +1518,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [400, 1206]
    }
   },
   {
@@ -1428,12 +1546,13 @@
   },
   {
    "tekst": "Chill Depths",
-   "x": 1162.0,
-   "y": 162.0,
+   "x": 1148.0,
+   "y": 174.0,
    "opcje": {
     "fs": 14.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1148, 158]
    }
   },
   {
@@ -1443,7 +1562,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1450, 400]
    }
   },
   {
@@ -1465,7 +1585,7 @@
     "fs": 15.0,
     "kotwica": "middle",
     "ital": true,
-    "przyDo": [1750, 552]
+    "przyDo": [1722, 545]
    }
   },
   {
@@ -1475,7 +1595,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1540, 860]
    }
   },
   {
@@ -1486,7 +1607,7 @@
     "fs": 15.0,
     "kotwica": "middle",
     "ital": true,
-    "przyDo": [1500, 850]
+    "przyDo": [1560, 825]
    }
   },
   {
@@ -1506,7 +1627,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [400, 1140]
    }
   },
   {
@@ -1514,7 +1636,7 @@
    "x": 948,
    "y": 1290,
    "opcje": {
-    "fs": 13.0,
+    "fs": 12.0,
     "kotwica": "middle",
     "ital": true,
     "przyDo": [955, 1262]
@@ -1583,7 +1705,7 @@
   {
    "tekst": "Oko Ugina",
    "x": 1608,
-   "y": 572,
+   "y": 560,
    "opcje": {
     "fs": 22.0,
     "kotwica": "middle"
@@ -1596,16 +1718,19 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1702, 483]
    }
   },
   {
    "tekst": "Windblast Gorge",
-   "x": 1820.0,
-   "y": 472.0,
+   "x": 1795.0,
+   "y": 545.0,
    "opcje": {
-    "fs": 18.0,
-    "kotwica": "middle"
+    "fs": 14.0,
+    "kotwica": "middle",
+    "ital": true,
+    "kat": 55
    }
   },
   {
@@ -1660,11 +1785,13 @@
   },
   {
    "tekst": "Umung",
-   "x": 1520,
-   "y": 955,
+   "x": 1568,
+   "y": 916,
    "opcje": {
-    "fs": 18.0,
-    "kotwica": "middle"
+    "fs": 16.0,
+    "kotwica": "middle",
+    "ital": true,
+    "kat": 30
    }
   },
   {
@@ -1821,7 +1948,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [485, 740]
    }
   },
   {
@@ -1840,7 +1968,8 @@
    "y": 466,
    "opcje": {
     "fs": 22.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "przyDo": [748, 508]
    }
   },
   {
@@ -1850,7 +1979,8 @@
    "opcje": {
     "fs": 12.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [748, 508]
    }
   },
   {
@@ -1875,12 +2005,13 @@
   },
   {
    "tekst": "Makindi Trenches",
-   "x": 560,
-   "y": 1345,
+   "x": 540,
+   "y": 1278,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [540, 1256]
    }
   },
   {
@@ -1908,7 +2039,8 @@
    "y": 1108.0,
    "opcje": {
     "fs": 22.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "kolor": "#000000"
    }
   },
   {
@@ -1917,16 +2049,18 @@
    "y": 1342.0,
    "opcje": {
     "fs": 22.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "kolor": "#000000"
    }
   },
   {
    "tekst": "Beyeen",
-   "x": 135,
-   "y": 1240,
+   "x": 104,
+   "y": 1254,
    "opcje": {
     "fs": 22.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "kolor": "#000000"
    }
   },
   {
@@ -1935,7 +2069,8 @@
    "y": 1130,
    "opcje": {
     "fs": 14.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "przyDo": [215, 1130]
    }
   },
   {
@@ -1959,12 +2094,13 @@
   },
   {
    "tekst": "Kazuul Pass",
-   "x": 905,
-   "y": 1268,
+   "x": 876,
+   "y": 1199,
    "opcje": {
     "fs": 12.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [876, 1184]
    }
   },
   {
@@ -1991,6 +2127,75 @@
  "skala": false,
  "ramka": true,
  "drogi": [
+  {
+   "id": "trakt-affa-fortkeff",
+   "punkty": [
+    [1560, 505],
+    [1592, 430],
+    [1648, 368],
+    [1690, 332]
+   ],
+   "opcje": {
+    "typ": "droga"
+   }
+  },
+  {
+   "id": "trakt-graypelt-prison",
+   "punkty": [
+    [660, 1104],
+    [600, 1118],
+    [558, 1126]
+   ],
+   "opcje": {
+    "typ": "szlak"
+   }
+  },
+  {
+   "id": "trakt-coralhelm-bulwark",
+   "punkty": [
+    [662, 507],
+    [560, 540],
+    [500, 620],
+    [472, 695]
+   ],
+   "opcje": {
+    "typ": "droga"
+   }
+  },
+  {
+   "id": "trakt-affa-glasshaven",
+   "punkty": [
+    [1560, 512],
+    [1650, 535],
+    [1748, 550]
+   ],
+   "opcje": {
+    "typ": "droga"
+   }
+  },
+  {
+   "id": "trakt-visimal-tumbled",
+   "punkty": [
+    [894, 1284],
+    [878, 1250],
+    [871, 1218]
+   ],
+   "opcje": {
+    "typ": "droga"
+   }
+  },
+  {
+   "id": "trakt-ikiral-midnight",
+   "punkty": [
+    [830, 165],
+    [755, 198],
+    [660, 196],
+    [592, 186]
+   ],
+   "opcje": {
+    "typ": "droga"
+   }
+  },
   {
    "id": "drog-tazeem",
    "punkty": [

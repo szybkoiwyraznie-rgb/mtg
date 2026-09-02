@@ -11,7 +11,7 @@ import {
   punktNa, dlugosc, parsujD,
 } from '../tools/mapforge/geom.mjs';
 import {
-  las, bagno, pasmo, rzeka, jezioro, droga, etykieta, lukEtykieta,
+  las, bagno, pasmo, pasmoInstancje, rzeka, jezioro, droga, etykieta, lukEtykieta,
   miasto, ruina, hedron, szczyt, wulkan, motyw,
 } from '../tools/mapforge/bloki.mjs';
 import { renderuj, scenaDemo } from '../tools/mapforge/cli.mjs';
@@ -107,6 +107,10 @@ test('mapforge: rzeka/jezioro/droga — atrybuty stylu', () => {
   assert.ok(r.includes('fill="#ccd8d2"') && r.includes('circle'), 'wstęga w kolorze morza + źródło (pergamin)');
   assert.ok(!r.includes('linearGradient'), 'brak gradientu');
   assert.ok(!r.includes('opacity'), 'brak opacity');
+  // Obwódka wstęgi WYCOFANA (recenzja 2026-09-02 pkt 3, ADR 0023):
+  // obrysowany „język" ujścia w morzu wyglądał źle — rzeka zlewa się
+  // z akwenem samą identycznością koloru.
+  assert.ok(!r.includes('stroke='), 'rzeka bez obwódki (ADR 0023)');
   const j = jezioro({ cx: 10, cy: 10, rx: 50, ry: 30 });
   assert.ok(j.includes('ellipse') && j.includes('fill="#ccd8d2"'), 'jezioro = kolor morza (pkt d)');
   const sz = droga('d1', [[0, 0], [50, 50]], { typ: 'szlak' });
@@ -121,6 +125,49 @@ test('mapforge: etykieta pod kątem i po łuku', () => {
   assert.ok(e.includes('font-style="italic"'));
   const lu = lukEtykieta('zatoka', [[0, 100], [100, 130], [200, 100]], 'Zatoka Ciszy');
   assert.ok(lu.includes('textPath') && lu.includes('#mf-luk-zatoka'));
+});
+
+test('mapforge: rozstaw etykiet v3 — wzór POD → NAD, kotwica w data-atrybutach (ADR 0022)', async () => {
+  const { rozstawEtykiety } = await import('../tools/mapforge/render.mjs');
+  const poi = [{ typ: 'miasto', x: 500, y: 500, opcje: { skala: 1 } }];
+  // Pojedyncza etykieta obiektowa: ZAWSZE POD kotwicą, wyśrodkowana.
+  const solo = rozstawEtykiety(
+    [{ tekst: 'Osada', x: 480, y: 470, opcje: { fs: 15, przyDo: [500, 500] } }],
+    { szer: 2000, wys: 1400, poi });
+  assert.equal(solo.length, 1);
+  assert.equal(solo[0].x, 500, 'wyśrodkowana na kotwicy (ręczny x ignorowany)');
+  assert.ok(solo[0].y > 500, 'zaczyna się POD obiektem');
+  assert.deepEqual(solo[0].przy.slice(0, 2), [500, 500], 'kotwica dla nakładki');
+  assert.ok(solo[0].przy[2] >= 11, 'promień ikony miasta w strefie');
+  // Konflikt: druga etykieta o tej samej kotwicy → przerzut NAD.
+  const dwie = rozstawEtykiety([
+    { tekst: 'Osada', x: 500, y: 500, opcje: { fs: 15, przyDo: [500, 500] } },
+    { tekst: 'Ruiny', x: 500, y: 500, opcje: { fs: 15, przyDo: [500, 500] } },
+  ], { szer: 2000, wys: 1400, poi });
+  const [a, b] = dwie;
+  assert.ok((a.y > 500) !== (b.y > 500), 'konflikt → jedna POD, druga NAD');
+  // Etykieta obszarowa (duze) zostaje na miejscu i nie dostaje kotwicy.
+  const kraina = rozstawEtykiety(
+    [{ tekst: 'KRAINA', x: 300, y: 300, opcje: { fs: 42, duze: true } }],
+    { szer: 2000, wys: 1400, poi });
+  assert.equal(kraina[0].x, 300);
+  assert.equal(kraina[0].y, 300);
+  assert.equal(kraina[0].przy, null);
+  // Determinizm niezależnie od kolejności sceny.
+  const p1 = rozstawEtykiety([
+    { tekst: 'A', x: 100, y: 100, opcje: { fs: 15, przyDo: [100, 100] } },
+    { tekst: 'B', x: 120, y: 100, opcje: { fs: 15, przyDo: [120, 100] } },
+  ], { szer: 2000, wys: 1400, poi: [] });
+  const p2 = rozstawEtykiety([
+    { tekst: 'B', x: 120, y: 100, opcje: { fs: 15, przyDo: [120, 100] } },
+    { tekst: 'A', x: 100, y: 100, opcje: { fs: 15, przyDo: [100, 100] } },
+  ], { szer: 2000, wys: 1400, poi: [] });
+  const mapuj = (w) => w.map((e) => `${e.tekst}:${e.x},${e.y}`).sort();
+  assert.deepEqual(mapuj(p1), mapuj(p2), 'kolejność sceny bez wpływu na wynik');
+  // data-atrybuty kotwicy w SVG (dla nakładki ekranowej Codexu).
+  const svg = etykieta('Osada', 500, 519, { fs: 15, przy: [500, 500, 13] });
+  assert.ok(svg.includes('data-ax="500"') && svg.includes('data-ay="500"')
+    && svg.includes('data-r="13"'), 'kotwica obiektu w data-atrybutach');
 });
 
 test('mapforge: POI — miasto/ruina/hedron/wulkan', () => {
@@ -185,8 +232,11 @@ test('mapforge: motywy — atlas wymienia paletę, oba deterministyczne', () => 
   // (Rzeka i jeziora mają kolor morza — ADR 0020 + pkt d, 2026-09-02 —
   // więc osobnego koloru rzeki/jeziora nie ma.)
   const KOLOR_FUNKCYJNY = new Set([
-    'e2ecf4', '6f9bc0',                      // woda (jeden kolor) / linie wody (błękit)
+    'd4e2ee', '6f9bc0',                      // woda (jeden kolor, przyciemniona — ADR 0023) / linie wody
     '6b1f2e', '5a1622', '4d1220',            // bordowe etykiety
+    '1c3a5e',                                // granat etykiet wodnych (ADR 0024)
+    '1e4d2b',                                // zieleń etykiet biomów (ADR 0025)
+    '000000',                                // czerń tytułów kontynentów/wysp (ADR 0025)
   ]);
   const wyp = [...a1.matchAll(/fill="#([0-9a-f]{6})"/g)].map((m) => m[1]);
   assert.ok(wyp.length > 300, 'wypełnień do sprawdzenia');
@@ -212,4 +262,50 @@ test('mapforge: renderuj — deterministyczny, warstwowy, kompletny', () => {
   assert.ok(s1.startsWith('<?xml') && s1.trim().endsWith('</svg>'));
   assert.equal((s1.match(/<svg/g) ?? []).length, 1, 'dokładnie jeden <svg>');
   assert.equal((s1.match(/<\/g>/g) ?? []).length, (s1.match(/<g[ >]/g) ?? []).length, 'domknięte grupy');
+});
+
+test('mapforge: strefy zajęte — biomy nie zakrywają gór/jezior (ADR 0022)', async () => {
+  const { rozrzut, prng: p2 } = await import('../tools/mapforge/geom.mjs');
+  const kwadrat = [[0, 0], [200, 0], [200, 200], [0, 200]];
+  const strefa = { bboxy: [[50, 50, 150, 150]], poligony: [] };
+  const pkt = rozrzut(kwadrat, 60, p2('t'), 8, null, strefa);
+  assert.ok(pkt.length > 10, 'rozsiew nadal działa poza strefą');
+  assert.ok(pkt.every(([x, y]) => !(x >= 50 && x <= 150 && y >= 50 && y <= 150)),
+    'żaden punkt w strefie zajętej (bbox)');
+  const strefaPoly = { bboxy: [], poligony: [[[0, 0], [200, 0], [200, 100], [0, 100]]] };
+  const pkt2 = rozrzut(kwadrat, 60, p2('t'), 8, null, strefaPoly);
+  assert.ok(pkt2.every(([, y]) => y >= 100), 'żaden punkt w strefie zajętej (poligon)');
+  // pasmoInstancje = ta sama geometria co pasmo() (strefy gór dla renderu)
+  const inst = pasmoInstancje('glify-test', [[0, 100], [400, 120]], { szer: 40 });
+  const svg = pasmo('glify-test', [[0, 100], [400, 120]], { szer: 40 });
+  assert.equal(inst.length, (svg.match(/mf-szczyt/g) ?? []).length,
+    'instancje 1:1 z rysowanymi szczytami');
+  assert.ok(inst.every((i) => i.w > 0 && i.h > 0), 'wymiary stref dodatnie');
+});
+
+test('mapforge: twarda zasada wiązania etykieta↔obiekt (ADR 0023)', async () => {
+  const { sprawdzWiazania } = await import('../tools/mapforge/render.mjs');
+  // Sceny repo są zgodne: 0 uwag (nie ma POI bez etykiety ani etykiet bez punktu).
+  const zendikar = JSON.parse(fs.readFileSync('maps/zendikar/scena.json', 'utf8'));
+  assert.deepEqual(sprawdzWiazania(zendikar), [], 'scena Zendikaru zgodna z ADR 0023');
+  assert.deepEqual(sprawdzWiazania(scenaDemo()), [], 'scena demo zgodna z ADR 0023');
+  // Walidator faktycznie wykrywa naruszenia.
+  const zla = {
+    lądy: [{ id: 'l', punkty: [[0, 0], [500, 0], [500, 500], [0, 500]] }],
+    poi: [{ typ: 'miasto', x: 100, y: 100 }],
+    etykiety: [{ tekst: 'Na morzu', x: 900, y: 900, opcje: { fs: 14 } }],
+  };
+  const uwagi = sprawdzWiazania(zla);
+  assert.ok(uwagi.some((u) => u.includes('POI bez etykiety')), 'wykrywa POI bez etykiety');
+  assert.ok(uwagi.some((u) => u.includes('bez twardego punktu')), 'wykrywa etykietę bez punktu');
+  // Nazwana grupa: drugi wulkan przy opisanym nie wymaga własnej etykiety.
+  const grupa = {
+    lądy: [{ id: 'l', punkty: [[0, 0], [500, 0], [500, 500], [0, 500]] }],
+    poi: [
+      { typ: 'wulkan', x: 100, y: 100 },
+      { typ: 'wulkan', x: 180, y: 140 },
+    ],
+    etykiety: [{ tekst: 'Zęby Próbne', x: 100, y: 140, opcje: { fs: 14, przyDo: [100, 100] } }],
+  };
+  assert.deepEqual(sprawdzWiazania(grupa), [], 'grupa nazwana przechodzi');
 });

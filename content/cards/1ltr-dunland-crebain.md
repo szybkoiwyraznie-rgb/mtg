@@ -45,6 +45,16 @@ o Pierścień zwiad crebain łączony jest z **Sarumanem** — dlatego sam
 widok „chmury" ptaków wystarczył, by doświadczeni wędrowcy zgasili ogień
 i cały dzień spędzili w ukryciu.
 
+**Osadzenie kolekcji (Narracja):** scena karty rozgrywa
+się na skraju dunlandzkiego urwiska. Dwaj **Uruk-hai Białej Ręki**
+zastygają w napięciu, wypatrując znaku od skrzydlatych zwiadowców;
+w wąwozie pod nimi formuje się cicha **armia Sarumana**, a kolejne
+pochodnie rozpalają się w miarę, jak oddziały odnajdują swoje miejsca.
+Nad sceną krąży stado crebainów — jeden pikuje w dół, a jego krzyk
+zdaje się ostatnim sygnałem, na który czeka każde ostrze w mroku.
+Uruk-hai i armia należą do osadzenia kolekcji, nie do treści karty —
+kanonicznie spinają się z rolą crebainów jako oczu Isengardu.
+
 ## Nazwa Karty
 
 **Crebain** to sindarińska liczba mnoga od *craban* — „kruk, wrona";
@@ -103,16 +113,29 @@ Osadzenie w Dunlandzie — ojcowiźnie stada — jest zgodne z kanonem;
 kanoniczny epizod zwiadu, przelot nad Hollin, rozgrywa się nieco
 na północ, w dawnym Eregionie.
 
+**Narracja** kotwiczy scenę precyzyjnie: urwisko na
+skraju Dunlandu, pod nim wąwóz zborny, w którym armia Sarumana czeka
+na sygnał ptasich szpiegów — moment tuż przed natarciem na zachodnie
+rubieże. To ta wizja stoi za ilustracjami FOT/KON karty i za odczytem
+sceny w tym wpisie.
+
 ## Na Mapie
 
 Karta jest osadzona w regionie **Dunland** — krainie między rzeką
 Glanduin na północy, Górami Mglistymi na wschodzie i rzeką Isen na
 południu, na północny zachód od Isengardu (geografię szerszego regionu
 opisuje plan [[srodziemie|Śródziemie]]). Osadzenie ma poziom pewności
-regionu: pinezka wskazuje środek krainy, nie konkretny punkt.
+regionu: pinezka wskazuje środek krainy, nie konkretny punkt. Narracja
+sytuuje samą scenę na urwisku nad wąwozem zbornym armii —
+w praktyce przy południowo-wschodnim skraju krainy, od strony
+Isengardu, skąd wychodzą rozkazy dla zwiadu.
 
 ## Źródła
 
+- **Narracja (dostawa właściciela, 2026-09-02)** — wiążące
+  osadzenie sceny: urwisko w Dunlandzie, zwiad Uruk-hai Białej Ręki,
+  armia Sarumana w wąwozie, pikujący crebain jako sygnał; archiwum:
+  `collection/entries/1ltr-dunland-crebain.md`.
 - Scryfall — dane karty (snapshot Oracle: mechanika, typ, flavor):
   <https://scryfall.com/card/ltr/411/dunland-crebain>
 - Tolkien Gateway, „Crebain" — siedlisko (Dunland i Las Fangorn),

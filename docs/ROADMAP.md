@@ -110,15 +110,19 @@ obwódki haseł — kandydat na obiekty: symbole Azgaar, MIT, z atrybucją).
   3. **E-geo-3** — Detal Murasy: Glint Pass, Thunder Gap, Roaring Falls,
      Tumbled Palace, Visimal, Pillar Plains (kotwice istnieją, brak etykiet).
   4. **E-geo-4** — Detal Akoum: Tal Terig płn. od Spike Fields; Anowon
-     League; Ior Ruin przy Glasspool (etykieta).
+     League; ~~Ior Ruin przy Glasspool (etykieta)~~ — **etykieta Ior Ruin
+     dodana w PR-10 (2026-09-02)**; reszta otwarta.
   5. **E-geo-5** — Bala Ged/Guul Draz: Pelakka Karst, Helix of Zof, nazwa
      zachodniego gulfu (bez nazwy po przeniesieniu Bojuka Bay).
   6. **E-geo-6** — Ondu: Nomads of Silundi Sea (płn. wybrzeże), Tikal
      Harbor (w2 §5).
   7. **E-geo-7** — Tazeem: Sunspring (płn. cypel), Calcite Flats (płd.
      cypel) — w2 §5.
-  8. **E-geo-8** — Zweryfikować w kanonie: *Prison of Omath* (spelling w2)
-     vs *Prison of Omnath* (BFZ) — ustalić nazwę.
+  8. **E-geo-8** — ~~Zweryfikować w kanonie: *Prison of Omath* (spelling w2)
+     vs *Prison of Omnath* (BFZ) — ustalić nazwę.~~ **Rozstrzygnięte
+     w PR-10 (2026-09-02): kanoniczna nazwa „Prison of Omnath"** (MTG Wiki
+     „Ondu"/„Omnath": mesa w Ondu, krąg wiążący, Ritual of Lights, Soul
+     Stair); scena/map.json/podkład przemianowane.
   9. **E-geo-9** — Hada w centrum Tazeem (w2) vs obecne płd.-zach.
 
 **SKALOWANIE MAP (2026-09-01, pomiar buildu):** artefakt jednoplikowy

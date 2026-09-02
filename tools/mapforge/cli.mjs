@@ -8,9 +8,16 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { renderuj } from './render.mjs';
+import { renderuj, sprawdzWiazania } from './render.mjs';
 
 export { renderuj };
+
+/** Wypisuje uwagi twardej zasady wiązania etykieta↔obiekt (ADR 0023). */
+function raportujWiazania(scena, nazwa) {
+  const uwagi = sprawdzWiazania(scena);
+  for (const u of uwagi) console.error(`  [wiązania] ${nazwa}: ${u}`);
+  return uwagi.length;
+}
 
 /** Scena pokazowa: „Wyspa Próbna" — katalog klocków mapforge na jednym obrazie. */
 export function scenaDemo() {
@@ -55,7 +62,7 @@ export function scenaDemo() {
       { typ: 'miasto', x: 980, y: 900 },
       { typ: 'ruina', x: 860, y: 500 },
       { typ: 'hedron', x: 1250, y: 760, opcje: { opacity: 0.75 } },
-      { typ: 'hedron', x: 1630, y: 940, opcje: { opacity: 0.6, skala: 0.8 } },
+      { typ: 'hedron', x: 1765, y: 1040, opcje: { opacity: 0.6, skala: 0.8 } },
     ],
     etykiety: [
       { tekst: 'Wyspa Próbna', x: 950, y: 748, opcje: { fs: 42, duze: true } },
@@ -65,10 +72,12 @@ export function scenaDemo() {
       { tekst: 'Step Środkowy', x: 1090, y: 790, opcje: { fs: 15, ital: true } },
       { tekst: 'Grań Burzowa', x: 1300, y: 418, opcje: { fs: 16, ital: true } },
       { tekst: 'Rzeka Srebrna', x: 1112, y: 862, opcje: { fs: 13, ital: true, kat: 70 } },
-      { tekst: 'Biały Brod', x: 520, y: 726, opcje: { fs: 14 } },
-      { tekst: 'Port Ciszy', x: 980, y: 936, opcje: { fs: 14 } },
-      { tekst: 'Ruiny Vhal', x: 860, y: 532, opcje: { fs: 14, ital: true } },
-      { tekst: 'Góra Ash', x: 1330, y: 662, opcje: { fs: 14, ital: true } },
+      { tekst: 'Biały Brod', x: 520, y: 726, opcje: { fs: 14, przyDo: [520, 690] } },
+      { tekst: 'Port Ciszy', x: 980, y: 936, opcje: { fs: 14, przyDo: [980, 900] } },
+      { tekst: 'Ruiny Vhal', x: 860, y: 532, opcje: { fs: 14, ital: true, przyDo: [860, 500] } },
+      { tekst: 'Góra Ash', x: 1330, y: 662, opcje: { fs: 14, ital: true, przyDo: [1330, 622] } },
+      { tekst: 'Hedron Czuwający', x: 1250, y: 796, opcje: { fs: 13, ital: true, przyDo: [1250, 760] } },
+      { tekst: 'Hedron Ostialski', x: 1765, y: 1076, opcje: { fs: 13, ital: true, przyDo: [1765, 1040] } },
       { tekst: 'Wyspa Ostial', x: 1766, y: 1064, opcje: { fs: 14, ital: true } },
     ],
     etykietyLukowe: [
@@ -89,13 +98,16 @@ if (demoIdx !== -1) {
   const poDemo = args.slice(demoIdx + 1).filter((x) => x.endsWith('.svg') && !x.startsWith('--'));
   const cel = poDemo[0] ?? 'maps/_warsztat/podklad.svg';
   fs.mkdirSync(path.dirname(cel), { recursive: true });
-  fs.writeFileSync(cel, renderuj(scenaDemo(), { styl }), 'utf8');
+  const demo = scenaDemo();
+  fs.writeFileSync(cel, renderuj(demo, { styl }), 'utf8');
+  raportujWiazania(demo, 'demo');
   console.log(`OK — demo zapisane: ${cel} (styl: ${styl ?? 'pergamin'})`);
 } else if (args[0]) {
   const scena = JSON.parse(fs.readFileSync(args[0], 'utf8'));
   const outIdx = args.indexOf('-o');
   const cel = outIdx !== -1 ? args[outIdx + 1] : 'podklad.svg';
   fs.writeFileSync(cel, renderuj(scena, { styl }), 'utf8');
+  raportujWiazania(scena, scena.nazwa ?? args[0]);
   console.log(`OK — ${scena.nazwa ?? 'scena'} → ${cel} (styl: ${styl ?? scena.styl ?? 'pergamin'})`);
 } else {
   console.log('użycie: cli.mjs scena.json -o out.svg [--styl=pergamin|atlas] | cli.mjs --demo [out.svg] [--styl=…]');

@@ -136,17 +136,25 @@ export async function zbuduj({ out, root = ROOT } = {}) {
     },
   };
 
-  // mapy: rejestr map + podkłady osadzone jako data-URI (ADR 0009 —
-  // artefakt jednoplikowy; SVG w procentach base64, gzIPPowany transfer
-  // na Pages zwróci ~4–5× mniejszy strumień)
+  // mapy: rejestr map + DRZEWO STRON MAP (ADR 0027 v2 — decyzja
+  // właściciela 2026-09-02: każdy plan = osobna, samowystarczalna strona
+  // `maps/<slug>.html` osadzana w <iframe>; file:// nie blokuje iframe'ów,
+  // więc wersja offline z dysku działa w pełni, a artefakt główny nie
+  // rośnie z liczbą planów). Obok strony: surowy podkład
+  // `maps/<slug>/<plik>` dla mini-map kart (<img> działa wszędzie).
+  const katalogOut = path.dirname(path.resolve(out));
+  const stronyMap = [];                          // [{ slug, mapa, plik }]
   for (const [slug, mapa] of mapy) {
     if (mapa.problem || !mapa.podklad) continue;
     const plik = path.join(root, 'maps', slug, mapa.podklad);
     if (!fs.existsSync(plik)) continue; // brak pliku wychwyci test mapy (MA2)
-    const rozsz = path.extname(plik).toLowerCase();
-    const mime = rozsz === '.svg' ? 'image/svg+xml' : rozsz === '.png' ? 'image/png'
-      : rozsz === '.webp' ? 'image/webp' : 'image/jpeg';
-    mapa.podkladData = `data:${mime};base64,${fs.readFileSync(plik).toString('base64')}`;
+    const rel = `maps/${slug}/${mapa.podklad}`;
+    const celPodkladu = path.join(katalogOut, rel);
+    fs.mkdirSync(path.dirname(celPodkladu), { recursive: true });
+    fs.copyFileSync(plik, celPodkladu);
+    mapa.podkladUrl = rel;                       // mini-mapy kart (<img>)
+    mapa.stronaMapy = `maps/${slug}.html`;       // iframe w artefakcie
+    stronyMap.push({ slug, mapa, plik });
   }
   dane.mapy = Object.fromEntries(mapy.entries());
 
@@ -175,56 +183,39 @@ export async function zbuduj({ out, root = ROOT } = {}) {
   }
   const css = fs.readFileSync(path.join(ROOT, 'src/codex/style.css'), 'utf8');
 
+  // Zbezpiecznik wstrzykiwania do <script>: jedyna sekwencja kończąca
+  // blok skryptu to '</script' — neutralizujemy ją w danych (SVG map,
+  // treści) zapisem '<\/script' (identyczny string po sparsowaniu JS).
+  const doSkryptu = (s) => s.replaceAll('</script', '<\\/script');
+
   const html = shell
     .replace('<!--STYL-->', () => `<style>\n${css}\n</style>`)
-    .replace('<!--BUNDLE-->', () => `<script>\n${daneJs}\n\n${kod}\n</script>`);
+    .replace('<!--BUNDLE-->', () => `<script>\n${doSkryptu(daneJs)}\n\n${kod}\n</script>`);
 
   const cel = path.resolve(out);
   fs.mkdirSync(path.dirname(cel), { recursive: true });
   fs.writeFileSync(cel, html);
 
-  // index.html obok artefaktu: serwer (i Pages) otwierają katalog główny
-  // od razu na Codexie — bez klikania w plik na liście katalogu.
-  // Tylko dla właściwego artefaktu (testy budują pod innymi nazwami).
-  const nazwa = path.basename(cel);
-  const katalog = path.dirname(cel);
-  if (nazwa === 'mtg-lore-codex.html') {
-  const index = `<!doctype html>
-<html lang="pl">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=${nazwa}">
-<title>MTG Lore Codex</title>
-</head>
-<body>
-<p>Przekierowanie do <a href="${nazwa}">${nazwa}</a>…</p>
-<script>location.replace('${nazwa}');</script>
-</body>
-</html>
-`;
-  fs.writeFileSync(path.join(katalog, 'index.html'), index);
-
-  // Archiwum ZIP do pobrania („pobierz online' do użycia lokalnie / na dysk).
-  // Pakuje artefakt (+ index.html) i — gdy mapy będą osobnymi plikami —
-  // cały katalog maps/**/, żeby ZIP był samowystarczalny po rozpakowaniu.
-  // Metoda STORE bez zależności (ADR 0002); patrz tools/zip.mjs.
-  const plikiZip = [];
-  plikiZip.push({ path: 'index.html', data: fs.readFileSync(path.join(katalog, 'index.html')) });
-  plikiZip.push({ path: nazwa, data: fs.readFileSync(cel) });
-  const katalogMap = path.join(katalog, 'maps');
-  if (fs.existsSync(katalogMap)) {
-    for (const f of chodz(katalogMap)) {
-      const rel = path.relative(katalogMap, f).split(path.sep).join('/');
-      plikiZip.push({ path: `maps/${rel}`, data: fs.readFileSync(f) });
-    }
-  }
-  const zip = napiszZip(plikiZip);
-  const celZip = path.join(katalog, 'mtg-lore-codex.zip');
-  fs.writeFileSync(celZip, zip);
-  console.log(`  archiwum: ${(zip.length / 1024).toFixed(1)} kB (${plikiZip.length} plików)`);
+  // ── 5. Drzewo stron map (ADR 0027 v2) ────────────────────────────
+  // Każda mapa = samowystarczalny HTML: ten sam bundle + dane, plus
+  // flaga CODEX_MAPA i surowy markup SVG podkładu (bez base64 — lżej).
+  // main.js w trybie CODEX_MAPA renderuje mapę zamiast routera.
+  for (const { slug, mapa, plik } of stronyMap) {
+    const svgTekst = /\.svg$/i.test(mapa.podklad) ? fs.readFileSync(plik, 'utf8') : '';
+    const wstrzyknij = `\n// ===== TRYB STRONY MAPY (ADR 0027 v2) =====\n` +
+      `globalThis.CODEX_MAPA = ${JSON.stringify(slug)};\n` +
+      // strona mapy żyje w maps/ — URL-e podkładów względem NIEJ
+      `globalThis.CODEX_DATA.mapy[${JSON.stringify(slug)}].podkladUrl = ${JSON.stringify(`${slug}/${mapa.podklad}`)};\n` +
+      (svgTekst ? `globalThis.CODEX_DATA.mapy[${JSON.stringify(slug)}].podkladMarkup = ${JSON.stringify(svgTekst)};\n` : '');
+    const htmlMapy = shell
+      .replace('<!--STYL-->', () => `<style>\n${css}\n</style>`)
+      .replace('<!--BUNDLE-->', () => `<script>\n${doSkryptu(daneJs + wstrzyknij)}\n\n${kod}\n</script>`);
+    const celMapy = path.join(katalogOut, 'maps', `${slug}.html`);
+    fs.writeFileSync(celMapy, htmlMapy);
+    console.log(`  strona mapy: maps/${slug}.html (${(htmlMapy.length / 1024).toFixed(1)} kB)`);
   }
 
-  console.log(`Zbudowano ${out}`);
+  console.log(`Zbudowano ${out} (artefakt + drzewo map w maps/**)`);
   console.log(`  stron w bazie: ${Object.keys(stronyDane).length} (karty: ${dane.statystyki.karty}, hasła: ${dane.statystyki.hasla}, plany: ${dane.statystyki.plany})`);
   console.log(`  modułów: ${moduly.length}`);
   console.log(`  rozmiar: ${(html.length / 1024).toFixed(1)} kB`);
@@ -252,11 +243,49 @@ function stripModuleSyntax(source) {
     .replace(/^[ \t]*export\s*\{[^}]*\};?[ \t]*$/gm, '');
 }
 
+/**
+ * Pakiet dystrybucyjny (ADR 0027 v2 — drzewo HTML, decyzja właściciela
+ * 2026-09-02): JEDNA architektura dla online i offline.
+ *   - `<katalog>/mtg-lore-codex.html` — artefakt główny (kod + treść);
+ *   - `<katalog>/index.html`           — jego kopia (wejście serwera/Pages);
+ *   - `<katalog>/maps/<plan>.html`     — samowystarczalne strony map
+ *     (iframe w artefakcie; file:// nie blokuje iframe'ów → offline OK);
+ *   - `<katalog>/maps/<plan>/<plik>`   — surowe podkłady (mini-mapy);
+ *   - `<katalog>/mtg-lore-codex.zip`   — CAŁE DRZEWO („Pobierz ZIP
+ *     Codexu"): po rozpakowaniu otwierasz index.html z dysku.
+ */
+export async function zbudujPakiet({ root = ROOT, katalog } = {}) {
+  katalog = katalog ?? path.join(root, 'dist');
+  const celGlowny = path.join(katalog, 'mtg-lore-codex.html');
+  await zbuduj({ root, out: celGlowny });
+  fs.copyFileSync(celGlowny, path.join(katalog, 'index.html'));
+
+  const plikiZip = [
+    { path: 'index.html', data: fs.readFileSync(celGlowny) },
+    { path: 'mtg-lore-codex.html', data: fs.readFileSync(celGlowny) },
+  ];
+  const katalogMap = path.join(katalog, 'maps');
+  if (fs.existsSync(katalogMap)) {
+    for (const f of chodz(katalogMap)) {
+      const rel = path.relative(katalogMap, f).split(path.sep).join('/');
+      plikiZip.push({ path: `maps/${rel}`, data: fs.readFileSync(f) });
+    }
+  }
+  const zip = napiszZip(plikiZip);
+  const celZip = path.join(katalog, 'mtg-lore-codex.zip');
+  fs.writeFileSync(celZip, zip);
+  console.log(`  archiwum (drzewo): ${(zip.length / 1024).toFixed(1)} kB (${plikiZip.length} plików)`);
+  return { index: path.join(katalog, 'index.html'), glowny: celGlowny, zip: celZip };
+}
+
 const jestMain = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
 if (jestMain) {
   const out = (() => {
     const i = process.argv.indexOf('--out');
     return i >= 0 ? process.argv[i + 1] : undefined;
   })();
-  zbuduj({ out }).catch((e) => { console.error(e.message); process.exit(1); });
+  // `--out` = pojedynczy artefakt + drzewo map obok (tak buduje pages.yml
+  // pod dist/index.html). Bez `--out` = pełny pakiet z ZIP-em.
+  const praca = out ? zbuduj({ out }) : zbudujPakiet({});
+  praca.catch((e) => { console.error(e.message); process.exit(1); });
 }

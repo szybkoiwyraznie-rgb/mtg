@@ -14,7 +14,7 @@ import { renderPlan } from './render-plane.js';
 import { renderListeKart, zamontujFiltryKart, renderListeHasel, renderListePlanow, renderChmoreTagow, renderTag } from './render-lists.js';
 import { renderCoNowego } from './render-whatsnew.js';
 import { renderSzukanie } from './render-search.js';
-import { renderMape, zamontujMape } from './render-map.js';
+import { renderMape, renderMapeIframe, zamontujMape, zamontujWarstweMapy } from './render-map.js';
 
 function renderuj(trasa) {
   const app = globalThis.document?.getElementById('app');
@@ -32,7 +32,7 @@ function renderuj(trasa) {
     case 'haslo': html = renderHaslo(trasa.param); tytul = trasa.param ?? 'Hasło'; aktywna = 'hasla'; break;
     case 'plany': html = renderListePlanow(); tytul = 'Plany'; break;
     case 'plan': html = renderPlan(trasa.param); tytul = trasa.param ?? 'Plan'; aktywna = 'plany'; break;
-    case 'mapa': html = renderMape(trasa.param, trasa.query); tytul = trasa.param ? `Mapa: ${trasa.param}` : 'Mapa'; aktywna = 'plany'; break;
+    case 'mapa': html = renderMapeIframe(trasa.param, trasa.query); tytul = trasa.param ? `Mapa: ${trasa.param}` : 'Mapa'; aktywna = 'plany'; break;
     case 'tagi': html = renderChmoreTagow(); tytul = 'Tagi'; break;
     case 'tag': html = renderTag(trasa.param); tytul = `Tag: ${trasa.param ?? ''}`; aktywna = 'tagi'; break;
     case 'co-nowego': html = renderCoNowego(); tytul = 'Co nowego'; break;
@@ -43,7 +43,7 @@ function renderuj(trasa) {
   app.innerHTML = rama(aktywna, tytul, html);
   tytulStrony(tytul);
   zamontujToryObrazow(app);
-  zamontujMape(app, { renderKarty: renderKarte, zamontujKarte: zamontujToryObrazow });
+  zamontujWarstweMapy(app);
   zamontujFiltryKart(app);
 
   const tresc = app.querySelector('.tresc');
@@ -52,5 +52,39 @@ function renderuj(trasa) {
 }
 
 
-const stop = uruchomRouter(renderuj);
-if (globalThis.__CODEX_TEST__) globalThis.__CODEX_STOP__ = stop;
+// ── Tryb strony mapy (ADR 0027 v2): plik maps/<plan>.html ustawia
+// globalThis.CODEX_MAPA i dostaje pełny bundle — zamiast routera
+// renderujemy jedną mapę (deep-link ?pin=… z query) i montujemy
+// interakcje. Nawigacja treściowa idzie postMessage do rodzica.
+if (globalThis.CODEX_MAPA) {
+  const app = globalThis.document?.getElementById('app');
+  if (app) {
+    const q = new URLSearchParams(globalThis.location?.search ?? '');
+    app.innerHTML = renderMape(globalThis.CODEX_MAPA, { pin: q.get('pin') ?? '' }, { osadzona: true });
+    // Warstwa karty i nawigacja żyją w rodzicu (postMessage) — strona
+    // mapy montuje tylko pan/zoom/nakładkę.
+    zamontujMape(app, { doRodzica: true });
+  }
+} else {
+  // ── Artefakt główny: router + odbiór komunikatów ze stron map w iframe:
+  //    codexHash  → zmiana trasy;
+  //    codexKarta → warstwa karty NAD CAŁYM Codexem (feedback właściciela).
+  globalThis.addEventListener?.('message', (e) => {
+    const d = e?.data ?? {};
+    if (typeof d.codexHash === 'string' && d.codexHash.startsWith('#/')) {
+      globalThis.location.hash = d.codexHash;
+    }
+    if (typeof d.codexKarta === 'string' && /^[a-z0-9-]+$/.test(d.codexKarta)) {
+      const app = globalThis.document?.getElementById('app');
+      const warstwa = app?.querySelector?.('[data-map-warstwa]');
+      const tresc = warstwa?.querySelector?.('[data-map-warstwa-tresc]');
+      if (!warstwa || !tresc) { globalThis.location.hash = `#/karta/${d.codexKarta}`; return; }
+      tresc.innerHTML = renderKarte(d.codexKarta);
+      warstwa.hidden = false;
+      zamontujToryObrazow(warstwa);
+      warstwa.querySelector?.('[data-map-warstwa-zamknij]')?.focus?.();
+    }
+  });
+  const stop = uruchomRouter(renderuj);
+  if (globalThis.__CODEX_TEST__) globalThis.__CODEX_STOP__ = stop;
+}

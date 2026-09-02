@@ -18,14 +18,16 @@ stronie. Sekcja mówi treścią: brak flavoru = akapit o braku flavoru.
 Karta jest w całości kanoniczna (ADR 0011): snapshot + lore świata
 z cytowaniami — nic więcej.
 
-## Format dostawy karty (właściciel → sesja; ADR 0011 „chudy")
+## Format dostawy karty (właściciel → sesja; ADR 0011 + Fabuła z ADR 0026)
 
-Wpis dostarczany w czacie lub issue, jedna linijka — cztery pola
-rozdzielone tabami (przykład realnej dostawy):
+Wpis dostarczany w czacie lub issue — cztery pola identyfikacyjne
+(taby) **plus Fabuła** (tekst dowolnej długości, zwykle osobny akapit):
 
 ```
 1LTR	Dunland Crebain	LTR	Śródziemie
 2BFZ	Coralhelm Guide	BFZ	Zendikar
+Fabuła: <tekst właściciela kotwiczący kartę w planie — osadzenie,
+scena, rola bytów; zgodny z ilustracjami FOT/KON>
 ```
 
 | Pole | Znaczenie | Przykład |
@@ -34,13 +36,20 @@ rozdzielone tabami (przykład realnej dostawy):
 | Nazwa Karty | nazwa karty MtG | `Dunland Crebain` |
 | Set | wydanie/kod | `LTR` |
 | Plan | setting, w którym karta osadza kolekcję | `Śródziemie` |
+| **Fabuła** | **wiążąca kotwica transpozycji (ADR 0026)** — na niej opierają się sekcje „Transpozycja", „Na Mapie", „Postacie i Byty" oraz pinezka | akapit prozy |
 
 Wszystko pozostałe — kolory, typ, koszt, statystyki, artysta, rama,
 flavor, rzadkość — pochodzi ze **snapshotu Scryfalla posiadanego
-printu** (ADR 0004). **Narracja i prompt NIE są dostarczane i NIE wchodzą
-do Karty Katalogowej** (ADR 0011). Historia: do 2026-08-31 dostawa
-zawierała też „Prompt" i „Narrację" — zapis tych dostaw pozostaje
-w `collection/entries/` jako archiwum.
+printu** (ADR 0004). Na Karcie Katalogowej Fabułę przywołujemy pod
+czytelniczą nazwą **„Narracja"** (decyzja właściciela 2026-09-02).
+**Prompt wizualizacyjny nie wchodzi do pętli**
+(ADR 0011). Fabuła: osadzenie opisujemy jako transpozycję kolekcji
+(nigdy jako kanon uniwersum MtG) i oznaczamy w Źródłach jako „Fabuła
+dostawy (właściciel, data)"; konflikt Fabuły z twardym kanonem świata →
+pytanie do właściciela. Historia: do 2026-08-31 dostawa zawierała
+„Prompt" i „Narrację" (archiwum w `collection/entries/`); 2026-08-31 —
+2026-09-02 obowiązywał format czteropolowy bez Fabuły (1LTR, 2BFZ) —
+właściciel może dosłać Fabułę uzupełniającą do tych kart.
 
 Sesja zapisuje wpis jako `collection/entries/<slug>.md`:
 

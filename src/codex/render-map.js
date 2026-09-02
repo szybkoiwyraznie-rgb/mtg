@@ -83,6 +83,17 @@ function przeniesEtykietyDoNakladki(markup) {
     const kotwica = /\stext-anchor="(start|middle|end)"/.exec(atryb)?.[1]
       ?? (/tytul-kontynentu/.test(atryb) ? 'middle' : stos[stos.length - 1]);
     const fs = parseFloat((/font-size="([\d.]+)"/.exec(atryb) || [0, 15])[1]);
+    // Etykieta OBIEKTOWA (mapforge, ADR 0022): data-ax/ay/r = kotwica
+    // obiektu + promień ikony (jednostki mapy) — nakładka liczy z nich
+    // pozycję zależną od zoomu (stała WIZUALNA odległość od ikony).
+    const pax = /\sdata-ax="(-?[\d.]+)"/.exec(atryb);
+    const pay = /\sdata-ay="(-?[\d.]+)"/.exec(atryb);
+    const par = /\sdata-r="(-?[\d.]+)"/.exec(atryb);
+    const parg = /\sdata-rg="(-?[\d.]+)"/.exec(atryb);
+    // Kolor pisma z SVG (granat wód, zieleń biomów, czerń kontynentów —
+    // ADR 0024/0025): nakładka MUSI go przenieść, inaczej CSS klas
+    // nadpisuje warstwowe kolory mapy (feedback: „granatu nie widać").
+    const fill = /\sfill="(#[0-9a-fA-F]{3,6})"/.exec(atryb)?.[1] ?? '';
     etykiety.push({
       x: parseFloat(mx[1]) / w,
       y: parseFloat(my[1]) / h,
@@ -91,6 +102,11 @@ function przeniesEtykietyDoNakladki(markup) {
       kursywa: /italic/.test(atryb),
       kontynent: /tytul-kontynentu/.test(atryb),
       tresc: tresc.trim(),
+      ax: pax && pay ? parseFloat(pax[1]) / w : null,
+      ay: pax && pay ? parseFloat(pay[1]) / h : null,
+      r: par ? parseFloat(par[1]) / w : 0,
+      rg: parg ? parseFloat(parg[1]) / w : (par ? parseFloat(par[1]) / w : 0),
+      fill,
     });
     out += `<text data-podklad-orj="1" style="visibility:hidden"${atryb}>${tresc}</text>`;
   }
@@ -103,11 +119,31 @@ export const POZIOMY_PEWNOSCI = {
   przyblizona: { etykieta: 'przybliżona', kolor: '#b3392e', opis: 'rekonstrukcja — wymaga uzasadnienia' },
 };
 
-/** Renderuje stronę mapy planu (HTML; interakcje montuje zamontujMape). */
-export function renderMape(slugPlanu, query = {}) {
+// ADR 0027 (v2 — drzewo HTML): każda mapa jest OSOBNĄ, samowystarczalną
+// stroną `maps/<plan>.html` (inline SVG + pełny silnik + dane), którą
+// główny artefakt osadza w <iframe>. file:// blokuje fetch, ale NIE
+// blokuje iframe'ów — wersja offline z dysku działa w pełni, a artefakt
+// główny pozostaje lekki niezależnie od liczby planów.
+
+/** Surowy markup podkładu SVG: wstrzyknięty markup (strona mapy) albo
+ *  base64 (dane inline). Pusty string = markup niedostępny. */
+function surowyMarkupPodkladu(mapa) {
+  if (mapa.podkladMarkup && mapa.podkladMarkup.includes('<svg ')) {
+    return mapa.podkladMarkup.replace('<svg ', '<svg class="mapa-podklad" ', 1);
+  }
+  if (mapa.podkladData) return podkladSvgMarkup(mapa.podkladData);
+  return '';
+}
+
+/** Widok trasy #/mapa/<plan> w artefakcie głównym (ADR 0027 v2):
+ *  <iframe> dopasowany proporcjami do mapy = czyste okno mapy; CAŁA
+ *  reszta (legenda, lista pinezek, atrybucja, warstwa karty) renderuje
+ *  się TUTAJ, w artefakcie bazowym (feedback właściciela). Warstwa
+ *  karty otwiera się nad całym Codexem (postMessage z iframe). */
+export function renderMapeIframe(slugPlanu, query = {}) {
   const dane = dajDane();
   const mapa = dane.mapy?.[slugPlanu];
-  if (!mapa || mapa.problem) {
+  if (!mapa || mapa.problem || !mapa.stronaMapy) {
     const plan = dane.strony?.[slugPlanu];
     if (!plan) return nieZnalesc(`mapa „${escapeHtml(String(slugPlanu ?? ''))}"`);
     return stanPusty(
@@ -115,69 +151,10 @@ export function renderMape(slugPlanu, query = {}) {
       'Mapa powstaje razem z pierwszą kartą osadzoną w tym planie.',
     );
   }
-
   const szer = mapa.wymiary?.szerokosc ?? 3200;
   const wys = mapa.wymiary?.wysokosc ?? 2400;
   const pinezki = mapa.pinezki ?? [];
-  const regiony = mapa.regiony ?? [];
-  const pinDocelowy = query.pin && pinezki.some((p) => p.karta === query.pin) ? query.pin : '';
-
-  const svgRegiony = regiony.map((r) => {
-    const [x0, y0, x1, y1] = r.bbox ?? [];
-    if ([x0, y0, x1, y1].some((v) => typeof v !== 'number')) return '';
-    const p = POZIOMY_PEWNOSCI[r.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
-    return `<a href="#/haslo/${escapeHtml(r.haslo)}" class="mapa-region-link" aria-label="Region: ${escapeHtml(r.haslo)}">
-      <rect class="mapa-region" x="${x0 * szer}" y="${y0 * wys}" width="${(x1 - x0) * szer}" height="${(y1 - y0) * wys}"
-        fill="${p.kolor}22" stroke="${p.kolor}" stroke-width="7" stroke-dasharray="20 14" rx="24"/>
-    </a>`;
-  }).join('');
-
-  const htmlPinezki = pinezki.map((p) => {
-    const karta = dane.strony?.[p.karta];
-    const poz = POZIOMY_PEWNOSCI[p.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
-    return `<a href="#/karta/${escapeHtml(p.karta)}" class="mapa-pinezka pewnosc-${p.pewnosc}"
-      data-pinezka="${escapeHtml(p.karta)}" data-x="${p.x}" data-y="${p.y}"
-      style="--kolor:${poz.kolor}"
-      title="${escapeHtml(karta?.tytul ?? p.karta)} — pewność: ${poz.etykieta}">
-      <span class="mapa-pinezka-glow"></span>
-      <span class="mapa-pinezka-etykieta">${escapeHtml(karta?.tytul ?? p.karta)}</span>
-    </a>`;
-  }).join('');
-
-  // Etykiety podkładu → nakładka ekranowa (stały rozmiar przy zoomie).
-  // Tylko T3+ (podkłady własne: ręczne/mapforge) — podkładów adoptowanych
-  // (T2, np. mapome) typografii nie ruszamy.
-  let etykietyPodkladu = [];
-  let podkladMarkup = '';
-  if (mapa.podkladData && mapa.podklad && mapa.wariant !== 'T1' && mapa.wariant !== 'T2' && /\.svg$/i.test(String(mapa.podklad))) {
-    const surowy = podkladSvgMarkup(mapa.podkladData);
-    if (surowy) {
-      const r = przeniesEtykietyDoNakladki(surowy);
-      etykietyPodkladu = r.etykiety;
-      podkladMarkup = r.markup;
-    }
-  }
-  const htmlEtykietyPodkladu = etykietyPodkladu.map((e) => {
-    // LOD: drobne napisy pokazują się od przybliżenia, w którym ich
-    // oryginalny rozmiar „urósłby" do czytelnych ~16 px ekranu
-    const prog = e.kontynent ? 0 : e.fs >= 17 ? 1 : Math.min(1.6, Math.max(1, 16 / e.fs));
-    const tier = e.kontynent ? 'tier-kontynent' : e.fs >= 17 ? 'tier-glowna' : 'tier-szczegol';
-    return `<span class="mapa-etykieta-podkladu ${tier}${e.kursywa ? ' kursywa' : ''}" data-podklad-etykieta
-      data-x="${e.x.toFixed(4)}" data-y="${e.y.toFixed(4)}" data-fs="${e.fs}" data-min-k="${prog.toFixed(2)}"
-      data-kotwica="${e.kotwica}"
-      style="left:${(e.x * 100).toFixed(2)}%;top:${(e.y * 100).toFixed(2)}%">${e.tresc}</span>`;
-  }).join('');
-
-  const htmlRegionyEtykiety = regiony.map((r) => {
-    const [x0, y0, x1, y1] = r.bbox ?? [];
-    if ([x0, y0, x1, y1].some((v) => typeof v !== 'number')) return '';
-    const haslo = dane.strony?.[r.haslo];
-    const poz = POZIOMY_PEWNOSCI[r.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
-    return `<a href="#/haslo/${escapeHtml(r.haslo)}" class="mapa-etykieta-regionu" data-region-etykieta
-      data-x="${(x0 + x1) / 2}" data-y="${y0}" style="--kolor:${poz.kolor}">
-      <span>${escapeHtml(haslo?.tytul ?? r.haslo)}</span></a>`;
-  }).join('');
-
+  const pin = query.pin ? `?pin=${encodeURIComponent(query.pin)}` : '';
   return `
   <nav class="okruszki">
     <a href="#/">Codex</a> ›
@@ -185,34 +162,15 @@ export function renderMape(slugPlanu, query = {}) {
     <a href="#/plan/${escapeHtml(slugPlanu)}">${escapeHtml(mapa.tytul ?? slugPlanu)}</a> ›
     <span>Mapa</span>
   </nav>
-
   <article class="mapa-strona">
     <header class="mapa-naglowek">
       <h1>Mapa: ${escapeHtml(mapa.tytul ?? slugPlanu)}</h1>
-      <p class="meta">pinezki kart: ${pinezki.length} · regiony: ${regiony.length}</p>
+      <p class="meta">pinezki kart: ${pinezki.length} · regiony: ${(mapa.regiony ?? []).length}</p>
     </header>
 
-    <div class="mapa-pasek">
-      <button class="przycisk mapa-przycisk" data-mapa-akcja="oddal" aria-label="Oddal">−</button>
-      <button class="przycisk mapa-przycisk" data-mapa-akcja="przybliz" aria-label="Przybliż">+</button>
-      <button class="przycisk mapa-przycisk" data-mapa-akcja="reset" aria-label="Reset widoku">⟲</button>
-      <span class="mapa-podpowiedz">przeciągnij, aby przesunąć · kółko / przyciski, aby przybliżyć</span>
-    </div>
-
-    <div class="mapa-okno" id="mapa-okno" tabindex="0" role="application"
-      aria-label="Mapa ${escapeHtml(mapa.tytul ?? slugPlanu)}: przeciągnij, aby przesunąć, kółko myszy, aby przybliżyć"
-      data-plan="${escapeHtml(slugPlanu)}" data-pin="${escapeHtml(pinDocelowy)}" data-aspekt="${(szer / wys).toFixed(4)}">
-      <div class="mapa-ruch" data-mapa-ruch>
-        <div class="mapa-scena" style="aspect-ratio: ${szer} / ${wys}">
-          ${mapa.podkladData
-            ? (podkladMarkup
-                || `<img class="mapa-podklad" src="${mapa.podkladData}" alt="Podkład mapy: ${escapeHtml(mapa.tytul ?? slugPlanu)}" draggable="false">`)
-            : `<div class="mapa-brak-podkladu">Brak osadzonego podkładu (build nie wstrzyknął pliku — sprawdź maps/${escapeHtml(slugPlanu)}/podklad.svg).</div>`}
-          <svg class="mapa-regiony" viewBox="0 0 ${szer} ${wys}" preserveAspectRatio="none" aria-hidden="true">${svgRegiony}</svg>
-        </div>
-      </div>
-      <div class="mapa-nakladka" data-mapa-nakladka>${htmlEtykietyPodkladu}${htmlPinezki}${htmlRegionyEtykiety}</div>
-    </div>
+    <iframe class="mapa-iframe" src="${escapeHtml(mapa.stronaMapy)}${pin}"
+      style="aspect-ratio: ${szer} / ${wys}" scrolling="no"
+      title="Mapa: ${escapeHtml(mapa.tytul ?? slugPlanu)}" loading="lazy"></iframe>
 
     ${pinezki.length > 0 ? `
     <div class="mapa-warstwa" data-map-warstwa hidden role="dialog" aria-modal="true"
@@ -258,6 +216,181 @@ export function renderMape(slugPlanu, query = {}) {
   </article>`;
 }
 
+/** Wiąże zamykanie warstwy karty (✕ / tło / Esc) w artefakcie bazowym.
+ *  Otwieranie robi nasłuch postMessage w main.js (codexKarta). */
+export function zamontujWarstweMapy(app) {
+  const warstwa = app?.querySelector?.('[data-map-warstwa]');
+  if (!warstwa) return;
+  const zamknij = () => {
+    warstwa.hidden = true;
+    const tresc = warstwa.querySelector?.('[data-map-warstwa-tresc]');
+    if (tresc) tresc.innerHTML = '';
+  };
+  for (const el of warstwa.querySelectorAll?.('[data-map-warstwa-zamknij]') ?? []) {
+    el.addEventListener?.('click', zamknij);
+  }
+  warstwa.addEventListener?.('keydown', (e) => {
+    if (e.key === 'Escape') { e.preventDefault?.(); zamknij(); }
+  });
+}
+
+/** Renderuje stronę mapy planu (HTML; interakcje montuje zamontujMape). */
+export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
+  const dane = dajDane();
+  const mapa = dane.mapy?.[slugPlanu];
+  if (!mapa || mapa.problem) {
+    const plan = dane.strony?.[slugPlanu];
+    if (!plan) return nieZnalesc(`mapa „${escapeHtml(String(slugPlanu ?? ''))}"`);
+    return stanPusty(
+      `Plan <strong>${escapeHtml(plan.tytul)}</strong> nie ma jeszcze mapy.`,
+      'Mapa powstaje razem z pierwszą kartą osadzoną w tym planie.',
+    );
+  }
+
+  const szer = mapa.wymiary?.szerokosc ?? 3200;
+  const wys = mapa.wymiary?.wysokosc ?? 2400;
+  const pinezki = mapa.pinezki ?? [];
+  const regiony = mapa.regiony ?? [];
+  const pinDocelowy = query.pin && pinezki.some((p) => p.karta === query.pin) ? query.pin : '';
+
+  const svgRegiony = regiony.map((r) => {
+    const [x0, y0, x1, y1] = r.bbox ?? [];
+    if ([x0, y0, x1, y1].some((v) => typeof v !== 'number')) return '';
+    const p = POZIOMY_PEWNOSCI[r.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
+    return `<a href="#/haslo/${escapeHtml(r.haslo)}" class="mapa-region-link" aria-label="Region: ${escapeHtml(r.haslo)}">
+      <rect class="mapa-region" x="${x0 * szer}" y="${y0 * wys}" width="${(x1 - x0) * szer}" height="${(y1 - y0) * wys}"
+        fill="${p.kolor}22" stroke="${p.kolor}" stroke-width="7" stroke-dasharray="20 14" rx="24"/>
+    </a>`;
+  }).join('');
+
+  const htmlPinezki = pinezki.map((p) => {
+    const karta = dane.strony?.[p.karta];
+    const poz = POZIOMY_PEWNOSCI[p.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
+    return `<a href="#/karta/${escapeHtml(p.karta)}" class="mapa-pinezka pewnosc-${p.pewnosc}"
+      data-pinezka="${escapeHtml(p.karta)}" data-x="${p.x}" data-y="${p.y}"
+      style="--kolor:${poz.kolor}"
+      title="${escapeHtml(karta?.tytul ?? p.karta)} — pewność: ${poz.etykieta}">
+      <span class="mapa-pinezka-glow"></span>
+      <span class="mapa-pinezka-etykieta">${escapeHtml(karta?.tytul ?? p.karta)}</span>
+    </a>`;
+  }).join('');
+
+  // Etykiety podkładu → nakładka ekranowa (stały rozmiar przy zoomie).
+  // Tylko T3+ (podkłady własne: ręczne/mapforge) — podkładów adoptowanych
+  // (T2, np. mapome) typografii nie ruszamy (T2 renderuje się jako <img>).
+  let etykietyPodkladu = [];
+  let podkladMarkup = '';
+  const svgTypograficzny = mapa.podklad && mapa.wariant !== 'T1' && mapa.wariant !== 'T2'
+    && /\.svg$/i.test(String(mapa.podklad));
+  if (svgTypograficzny) {
+    const surowy = surowyMarkupPodkladu(mapa);
+    if (surowy) {
+      const r = przeniesEtykietyDoNakladki(surowy);
+      etykietyPodkladu = r.etykiety;
+      podkladMarkup = r.markup;
+    }
+  }
+  const htmlEtykietyPodkladu = etykietyPodkladu.map((e) => {
+    // LOD: drobne napisy pokazują się od przybliżenia, w którym ich
+    // oryginalny rozmiar „urósłby" do czytelnych ~16 px ekranu
+    const prog = e.kontynent ? 0 : e.fs >= 17 ? 1 : Math.min(1.6, Math.max(1, 16 / e.fs));
+    const tier = e.kontynent ? 'tier-kontynent' : e.fs >= 17 ? 'tier-glowna' : 'tier-szczegol';
+    // Etykieta obiektowa (ADR 0022): kotwica obiektu → pozycjonowanie
+    // zoom-stabilne (zawsze POD ikoną, konflikt → NAD) w `nanies()`.
+    const przy = e.ax != null
+      ? ` data-ax="${e.ax.toFixed(4)}" data-ay="${e.ay.toFixed(4)}" data-r="${e.r.toFixed(5)}" data-rg="${e.rg.toFixed(5)}"`
+      : '';
+    const bx = e.ax != null ? e.ax : e.x;
+    const by = e.ax != null ? e.ay : e.y;
+    const kolorPisma = e.fill ? `;color:${e.fill}` : '';
+    return `<span class="mapa-etykieta-podkladu ${tier}${e.kursywa ? ' kursywa' : ''}" data-podklad-etykieta
+      data-x="${e.x.toFixed(4)}" data-y="${e.y.toFixed(4)}" data-fs="${e.fs}" data-min-k="${prog.toFixed(2)}"
+      data-kotwica="${e.kotwica}"${przy}
+      style="left:${(bx * 100).toFixed(2)}%;top:${(by * 100).toFixed(2)}%${kolorPisma}">${e.tresc}</span>`;
+  }).join('');
+
+  const htmlRegionyEtykiety = regiony.map((r) => {
+    const [x0, y0, x1, y1] = r.bbox ?? [];
+    if ([x0, y0, x1, y1].some((v) => typeof v !== 'number')) return '';
+    const haslo = dane.strony?.[r.haslo];
+    const poz = POZIOMY_PEWNOSCI[r.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
+    return `<a href="#/haslo/${escapeHtml(r.haslo)}" class="mapa-etykieta-regionu" data-region-etykieta
+      data-x="${(x0 + x1) / 2}" data-y="${y0}" style="--kolor:${poz.kolor}">
+      <span>${escapeHtml(haslo?.tytul ?? r.haslo)}</span></a>`;
+  }).join('');
+
+  return `
+  ${osadzona ? '' : `<nav class="okruszki">
+    <a href="#/">Codex</a> ›
+    <a href="#/plany">Plany</a> ›
+    <a href="#/plan/${escapeHtml(slugPlanu)}">${escapeHtml(mapa.tytul ?? slugPlanu)}</a> ›
+    <span>Mapa</span>
+  </nav>`}
+
+  <article class="mapa-strona${osadzona ? ' mapa-strona-osadzona' : ''}">
+    ${osadzona ? '' : `<header class="mapa-naglowek">
+      <h1>Mapa: ${escapeHtml(mapa.tytul ?? slugPlanu)}</h1>
+      <p class="meta">pinezki kart: ${pinezki.length} · regiony: ${regiony.length}</p>
+    </header>`}
+    <div class="mapa-okno" id="mapa-okno" tabindex="0" role="application"
+      aria-label="Mapa ${escapeHtml(mapa.tytul ?? slugPlanu)}: przeciągnij, aby przesunąć, kółko myszy, aby przybliżyć"
+      data-plan="${escapeHtml(slugPlanu)}" data-pin="${escapeHtml(pinDocelowy)}" data-aspekt="${(szer / wys).toFixed(4)}">
+      <div class="mapa-ruch" data-mapa-ruch>
+        <div class="mapa-scena" style="aspect-ratio: ${szer} / ${wys}">
+          ${podkladMarkup
+            || ((mapa.podkladData || mapa.podkladUrl)
+              ? `<img class="mapa-podklad" src="${mapa.podkladData ?? mapa.podkladUrl}" alt="Podkład mapy: ${escapeHtml(mapa.tytul ?? slugPlanu)}" draggable="false">`
+              : `<div class="mapa-brak-podkladu">Brak osadzonego podkładu (build nie wstrzyknął pliku — sprawdź maps/${escapeHtml(slugPlanu)}/podklad.svg).</div>`)}
+          <svg class="mapa-regiony" viewBox="0 0 ${szer} ${wys}" preserveAspectRatio="none" aria-hidden="true">${svgRegiony}</svg>
+        </div>
+      </div>
+      <div class="mapa-nakladka" data-mapa-nakladka>${htmlEtykietyPodkladu}${htmlPinezki}${htmlRegionyEtykiety}</div>
+    </div>
+
+    ${osadzona ? '' : `${pinezki.length > 0 ? `
+    <div class="mapa-warstwa" data-map-warstwa hidden role="dialog" aria-modal="true"
+      aria-label="Karta Katalogowa otwarta z mapy">
+      <div class="mapa-warstwa-tlo" data-map-warstwa-zamknij></div>
+      <div class="mapa-warstwa-panel">
+        <button type="button" class="mapa-warstwa-zamknij" data-map-warstwa-zamknij
+          aria-label="Zamknij i wróć do mapy" title="Zamknij i wróć do mapy (Esc)">✕</button>
+        <div class="mapa-warstwa-tresc" data-map-warstwa-tresc></div>
+      </div>
+    </div>` : ''}
+
+    <section class="sekcja mapa-legenda">
+      <h2>Legenda</h2>
+      <ul class="mapa-legenda-lista">
+        ${Object.entries(POZIOMY_PEWNOSCI).map(([klucz, p]) => `
+          <li><span class="mapa-pinezka-legenda" style="background:${p.kolor}"></span>
+            <strong>${p.etykieta}</strong> — ${p.opis}</li>`).join('')}
+        <li><span class="mapa-obwodka-legenda"></span><strong>obwódka regionu</strong> — kraina hasła geograficznego (kolor = pewność)</li>
+      </ul>
+    </section>
+
+    <section class="sekcja">
+      <h2>Pinezki kart (${pinezki.length})</h2>
+      ${pinezki.length === 0
+        ? stanPusty('Brak pinezek — mapa czeka na pierwszą kartę.',
+          'Pinezka pojawi się razem z pierwszą kartą osadzoną w tym planie.')
+        : `<ul class="lista-materializacji">${pinezki.map((p) => {
+            const karta = dane.strony?.[p.karta];
+            const poz = POZIOMY_PEWNOSCI[p.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
+            return `<li><a href="#/mapa/${escapeHtml(slugPlanu)}?pin=${escapeHtml(p.karta)}">📍</a>
+              <a href="#/karta/${escapeHtml(p.karta)}">${escapeHtml(karta?.tytul ?? p.karta)}</a>
+              <span class="typ" style="border-color:${poz.kolor}; color:${poz.kolor}">${poz.etykieta}</span>
+              <span class="meta">${escapeHtml(p.uzasadnienie ?? '')}</span></li>`;
+          }).join('')}</ul>`}
+    </section>
+
+    <footer class="mapa-atrybucja">
+      <p>Podkład: <a href="${escapeHtml(mapa.zrodlo?.url ?? '#')}" rel="noopener noreferrer" target="_blank">${escapeHtml(mapa.zrodlo?.tytul ?? 'źródło')}</a>
+      — ${escapeHtml(mapa.zrodlo?.autor ?? '?')}, licencja ${escapeHtml(mapa.zrodlo?.licencja ?? '?')}${mapa.zrodlo?.pobrano ? `, pobrano ${escapeHtml(mapa.zrodlo.pobrano)}` : ''}.</p>
+      <p class="meta">Współrzędne pinezek są znormalizowane względem podkładu; lokalizacje ustalane z lore, nie z położenia kursora.</p>
+    </footer>`}
+  </article>`;
+}
+
 /**
  * Montuje interakcje mapy (wywoływane z main.js po renderze, jak
  * zamontujToryObrazow). Bezpiecznie wychodzi, gdy mapy nie ma w DOM
@@ -275,10 +408,25 @@ export function zamontujMape(app, opcje = {}) {
   const okno = app?.querySelector?.('.mapa-okno');
   if (!okno) return;
 
+  // Strona mapy w iframe (ADR 0027 v2): warstwa karty i nawigacja
+  // treściowa żyją w ARTEFAKCIE-RODZICU — pinezka wysyła `codexKarta`
+  // (rodzic otwiera warstwę NAD CAŁYM Codexem), pozostałe linki hash
+  // wysyłają `codexHash` (rodzic zmienia trasę).
+  if (opcje.doRodzica && globalThis.parent && globalThis.parent !== globalThis) {
+    app.addEventListener('click', (e) => {
+      const a = e.target?.closest?.('a[href^="#/"]');
+      if (!a) return;
+      e.preventDefault();
+      const wiadomosc = a.hasAttribute('data-pinezka')
+        ? { codexKarta: a.getAttribute('data-pinezka') }
+        : { codexHash: a.getAttribute('href') };
+      try { globalThis.parent.postMessage(wiadomosc, '*'); } catch { /* rodzic niedostępny */ }
+    });
+  }
+
   const ruch = okno.querySelector('[data-mapa-ruch]');
   if (!ruch) return;
   const nakladka = okno.querySelector('[data-mapa-nakladka]');
-  const pasek = app.querySelector('.mapa-pasek') ?? okno;
 
   // ── Warstwa karty (B2): otwarcie z pinezki, zamknięcie z powrotem ──
   const warstwa = app.querySelector('[data-map-warstwa]');
@@ -324,6 +472,11 @@ export function zamontujMape(app, opcje = {}) {
   }
 
   const stan = { k: 1, ox: 0, oy: 0 };
+  // Cache układu etykiet (ADR 0022). UWAGA: start = -1, nie NaN —
+  // Math.abs(k - NaN) > próg jest ZAWSZE false, więc układ kolizyjny
+  // nigdy by nie wystartował (bug wykryty recenzją: „Emeria" i „ruiny
+  // w niebie" na wspólnej kotwicy kładły się jedna na drugiej).
+  const stanUkladu = { k: -1 };
   const K_MIN = 0.4, K_MAX = 14;
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 
@@ -357,7 +510,94 @@ export function zamontujMape(app, opcje = {}) {
     if (!nakladka) return;
     const w = szerokoscSceny();
     const h = wysokoscSceny();
+
+    // Pass 1 — LOD etykiet podkładu (widoczność zależy tylko od zoomu).
+    const podkladowe = [...nakladka.querySelectorAll('[data-podklad-etykieta]')];
+    for (const el of podkladowe) {
+      const prog = parseFloat(el.dataset.minK || '1');
+      el.classList.toggle('poza-zasiegiem', stan.k + 1e-9 < prog);
+    }
+
+    // Pass 2 — UKŁAD etykiet OBIEKTOWYCH (ADR 0022): przeliczany tylko przy
+    // zmianie zoomu (pan nie zmienia geometrii względnej). Wzór właściciela:
+    // napis ZAWSZE POD kotwicą obiektu, w odległości promienia ikony
+    // (skaluje się z zoomem → wizualnie stała, „zaraz obok"); konflikt →
+    // ZAWSZE przerzut NAD; dalej — drabinka pionowa. Deterministycznie,
+    // w kolejności (ay, ax, tekst).
+    if (Math.abs(stan.k - stanUkladu.k) > 1e-3) {
+      stanUkladu.k = stan.k;
+      // PRZESZKODY: widoczne etykiety NIEkotwiczone (tytuły krain/akwenów)
+      // — kotwiczone muszą je omijać także w nakładce (w SVG robi to
+      // rozstaw; bez tego „Murasa" siadała na „Thunder Gap").
+      const przeszkody = [];
+      for (const el of podkladowe) {
+        if (el.dataset.ax || el.classList.contains('poza-zasiegiem')) continue;
+        if (!el._mfW) { el._mfW = el.offsetWidth || 60; el._mfH = el.offsetHeight || 16; }
+        const x = parseFloat(el.dataset.x) * w * stan.k;
+        const y = parseFloat(el.dataset.y) * h * stan.k;
+        const dx = el.dataset.kotwica === 'start' ? 0 : el.dataset.kotwica === 'end' ? -el._mfW : -el._mfW / 2;
+        przeszkody.push([x + dx, y - el._mfH * 0.82, x + dx + el._mfW, y + el._mfH * 0.24]);
+      }
+      const zakotwiczone = podkladowe
+        .filter((el) => el.dataset.ax && !el.classList.contains('poza-zasiegiem'))
+        .map((el) => {
+          if (!el._mfW) { el._mfW = el.offsetWidth || 60; el._mfH = el.offsetHeight || 16; }
+          return {
+            el,
+            ax: parseFloat(el.dataset.ax), ay: parseFloat(el.dataset.ay),
+            r: parseFloat(el.dataset.r || '0'),
+            rg: parseFloat(el.dataset.rg || el.dataset.r || '0'),
+          };
+        })
+        .sort((a, b) => (a.ay - b.ay) || (a.ax - b.ax)
+          || a.el.textContent.localeCompare(b.el.textContent, 'pl'));
+      const polozone = [...przeszkody];
+      const koliduje = (b, u) => b[0] < u[2] && u[0] < b[2] && b[1] < u[3] && u[1] < b[3];
+      const M = 3;                                 // stały margines ekranowy (px)
+      for (const z of zakotwiczone) {
+        const sx = z.ax * w * stan.k;              // współrzędne „świata" (bez pan)
+        const sy = z.ay * h * stan.k;
+        const rDol = z.r * w * stan.k;             // prześwit POD ikoną (asymetryczny)
+        const rGora = z.rg * w * stan.k;           // prześwit NAD (sylwetka wulkanu/iglicy)
+        const bw = z.el._mfW, bh = z.el._mfH;
+        let wybor = null;
+        for (let s = 0; s < 12; s++) {
+          const pietro = Math.floor(s / 2) * (bh + 2);
+          const dol = s % 2 === 0;
+          const top = dol ? sy + rDol + M + pietro : sy - rGora - M - pietro - bh;
+          const bb = [sx - bw / 2, top, sx + bw / 2, top + bh];
+          if (polozone.some((u) => koliduje(bb, u))) continue;
+          wybor = { dol, pietro, bb };
+          break;
+        }
+        if (!wybor) {                              // ostateczność: reguła bazowa POD
+          const bb = [sx - bw / 2, sy + rDol + M, sx + bw / 2, sy + rDol + M + bh];
+          wybor = { dol: true, pietro: 0, bb };
+        }
+        polozone.push(wybor.bb);
+        z.el.dataset.mfStrona = wybor.dol ? 'd' : 'g';
+        z.el.dataset.mfPietro = String(wybor.pietro);
+      }
+    }
+
+    // Pass 3 — pozycjonowanie wszystkich markerów nakładki.
     for (const el of nakladka.querySelectorAll('[data-pinezka], [data-region-etykieta], [data-podklad-etykieta]')) {
+      if (el.dataset.ax) {
+        // Etykieta obiektowa: kotwica obiektu + strona/piętro z Pass 2.
+        const px = (parseFloat(el.dataset.ax) * w * stan.k + stan.ox).toFixed(2);
+        const pietro = parseFloat(el.dataset.mfPietro || '0');
+        const M = 3;
+        if (el.dataset.mfStrona === 'g') {
+          const rGora = parseFloat(el.dataset.rg || el.dataset.r || '0') * w * stan.k;
+          const py = (parseFloat(el.dataset.ay) * h * stan.k + stan.oy - rGora - M - pietro).toFixed(2);
+          el.style.transform = `translate(${px}px, ${py}px) translate(-50%, -100%)`;
+        } else {
+          const rDol = parseFloat(el.dataset.r || '0') * w * stan.k;
+          const py = (parseFloat(el.dataset.ay) * h * stan.k + stan.oy + rDol + M + pietro).toFixed(2);
+          el.style.transform = `translate(${px}px, ${py}px) translate(-50%, 0)`;
+        }
+        continue;
+      }
       const x = parseFloat(el.dataset.x);
       const y = parseFloat(el.dataset.y);
       if (!Number.isFinite(x) || !Number.isFinite(y)) continue;
@@ -374,9 +614,6 @@ export function zamontujMape(app, opcje = {}) {
       // w prawo-dół względem obiektów).
       const dx = el.dataset.kotwica === 'start' ? '0%' : el.dataset.kotwica === 'end' ? '-100%' : '-50%';
       el.style.transform = `translate(${px}px, ${py}px) translate(${dx}, -0.82em)`;
-      // LOD (level of detail): drobna etykieta widoczna dopiero od swojego progu
-      const prog = parseFloat(el.dataset.minK || '1');
-      el.classList.toggle('poza-zasiegiem', stan.k + 1e-9 < prog);
     }
   };
 
@@ -406,16 +643,11 @@ export function zamontujMape(app, opcje = {}) {
     }
   }
 
-  // przyciski (pasek nad mapą)
-  for (const przycisk of pasek.querySelectorAll('.mapa-przycisk')) {
-    przycisk.addEventListener('click', () => {
-      const akcja = przycisk.getAttribute('data-mapa-akcja');
-      const w = okno.clientWidth || 800, h = okno.clientHeight || 600;
-      if (akcja === 'reset') { dopasuj(); }
-      else if (akcja === 'przybliz') zoomWokol(w / 2, h / 2, stan.k * 1.35);
-      else if (akcja === 'oddal') zoomWokol(w / 2, h / 2, stan.k / 1.35);
-    });
-  }
+  // Sterowanie bez paska (decyzja właściciela 2026-09-02): zoom = kółko
+  // myszy / pinch; ESCAPE = reset widoku (dopasowanie całej mapy).
+  const naEscape = (e) => { if (e.key === 'Escape') { e.preventDefault?.(); dopasuj(); } };
+  okno.addEventListener('keydown', naEscape);
+  globalThis.document?.addEventListener?.('keydown', naEscape);
 
   // kółko myszy (zoom do kursora)
   okno.addEventListener('wheel', (e) => {

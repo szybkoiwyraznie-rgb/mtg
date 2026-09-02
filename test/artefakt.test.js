@@ -29,7 +29,12 @@ test('build bazy repozytorium produkuję artefakt z danymi i kodem', async () =>
   assert.ok(typeof dane.coNowegoHtml === 'string');
   for (const [slug, mapa] of Object.entries(dane.mapy ?? {})) {
     if (mapa.problem) continue;
-    assert.ok(mapa.podkladData?.startsWith('data:'), `mapa ${slug}: brak osadzonego podkładu (ADR 0009)`);
+    // ADR 0027: podkład jako osobny plik (podkladUrl) — base64 tylko
+    // w trybie awaryjnym `inline` (rewizja jednoplikowości ADR 0009).
+    assert.ok(
+      mapa.podkladData?.startsWith('data:') || /^maps\//.test(mapa.podkladUrl ?? ''),
+      `mapa ${slug}: brak podkładu (ani podkladUrl, ani base64 — ADR 0027)`,
+    );
     assert.ok(Array.isArray(mapa.pinezki), `mapa ${slug}: brak tablicy pinezek`);
   }
 
@@ -41,12 +46,20 @@ test('build bazy repozytorium produkuję artefakt z danymi i kodem', async () =>
   fs.rmSync(cel, { force: true });
 });
 
-test('build domyślnego artefaktu pisze index.html przekierowujący (root serwera)', async () => {
-  // domyślna nazwa pliku, ale katalog tymczasowy — dist/ zostaje nietknięte
-  const cel = await zbuduj({ out: '/tmp/codex-test-index/mtg-lore-codex.html' });
-  const index = fs.readFileSync('/tmp/codex-test-index/index.html', 'utf8');
-  assert.ok(index.includes('url=mtg-lore-codex.html'), 'index.html nie przekierowuje na artefakt');
-  assert.ok(index.includes("location.replace('mtg-lore-codex.html')"), 'index.html bez rezerwowego JS');
-  fs.rmSync('/tmp/codex-test-index', { recursive: true, force: true });
-  fs.rmSync(cel, { force: true });
+test('pakiet dystrybucyjny: artefakt + drzewo map + ZIP (ADR 0027 v2)', async () => {
+  // katalog tymczasowy — dist/ zostaje nietknięte
+  const { zbudujPakiet } = await import('../tools/build.mjs');
+  const wynik = await zbudujPakiet({ katalog: '/tmp/codex-test-pakiet' });
+  const index = fs.readFileSync(wynik.index, 'utf8');
+  const glowny = fs.readFileSync(wynik.glowny, 'utf8');
+  assert.equal(index, glowny, 'index.html ma być kopią artefaktu głównego');
+  assert.ok(index.includes('CODEX_DATA'), 'index.html ma być aplikacją');
+  assert.ok(index.includes('"stronaMapy": "maps/'), 'rejestr map ze stronami maps/<plan>.html');
+  assert.ok(!index.includes('data:image/svg+xml;base64'), 'artefakt bez base64 podkładów');
+  assert.ok(fs.existsSync('/tmp/codex-test-pakiet/maps/srodziemie.html'), 'pakiet: strona mapy Śródziemia');
+  assert.ok(fs.existsSync('/tmp/codex-test-pakiet/maps/zendikar.html'), 'pakiet: strona mapy Zendikaru');
+  assert.ok(fs.existsSync('/tmp/codex-test-pakiet/maps/srodziemie/podklad.svg'), 'pakiet: surowy podkład (mini-mapy)');
+  assert.ok(fs.existsSync(wynik.zip), 'pakiet: ZIP z całym drzewem');
+  assert.ok(fs.statSync(wynik.zip).size > 4 * 1024 * 1024, 'ZIP ma zawierać drzewo map (nie sam artefakt)');
+  fs.rmSync('/tmp/codex-test-pakiet', { recursive: true, force: true });
 });

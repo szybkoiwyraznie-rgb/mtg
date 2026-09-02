@@ -1,9 +1,10 @@
 # ADR 0011: Chudy format dostawy — karta bez narracji i promptu
 
-- **Status:** Częściowo zastąpiona — sekcję „Druk w Kolekcji" z listy
-  sekcji Karty Katalogowej znosi ADR 0014 (dane wydruku pozostają
-  w infoboksie ze snapshotu); chudy format dostawy i wyłączenie
-  narracji/promptu z pętli pozostają w mocy
+- **Status:** Częściowo zastąpiona — (1) sekcję „Druk w Kolekcji" znosi
+  ADR 0014; (2) format dostawy rozszerza ADR 0026: wraca pole **Fabuła**
+  jako wiążąca kotwica transpozycji (spójność z ilustracjami FOT/KON);
+  w mocy pozostają: brak promptu w pętli, higiena „osadzenie ≠ kanon
+  MtG" i nienaruszalność archiwum dostaw
 - **Data:** 2026-08-31
 - **Decydenci:** właściciel projektu (decyzja 2026-08-31, czat); agent Arena (sesja PR-2.1)
 - **Zastępuje:** warstwę „kotwicy osadzenia" z ADR 0010 (narracja i prompt

@@ -16,6 +16,11 @@ function wykonajArtefakt(sciezkaHtml) {
   const html = fs.readFileSync(sciezkaHtml, 'utf8');
   const js = html.match(/<script>\n([\s\S]*?)\n<\/script>/)[1];
   const shim = stworzShim();
+  // Higiena globali między artefaktami: strony map (ADR 0027 v2) ustawiają
+  // CODEX_MAPA/CODEX_DATA na globalThis — w przeglądarce każda strona ma
+  // własny zasięg, w shimie trzeba wyczyścić ręcznie.
+  delete globalThis.CODEX_MAPA;
+  delete globalThis.CODEX_DATA;
   // Kod artefaktu żyje w jednym zasięgu funkcji — jak w <script> przeglądarki
   const uruchom = new Function(js);
   uruchom();
@@ -83,32 +88,82 @@ test('UI: baza fixture renderuje kartę, hasło i plan z wikilinkami', async () 
   shim.przywroc();
 });
 
-test('UI: mapa planu z realnej bazy — podkład, pinezka, legenda', async () => {
+test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', async () => {
   const cel = await zbuduj({ out: 'dist/test-ui-mapa.html' });
-  const shim = wykonajArtefakt(cel);
 
+  // ── Artefakt główny: trasa mapy = iframe ze stroną mapy (ADR 0027 v2)
+  const shim = wykonajArtefakt(cel);
   shim.idz('#/mapa/srodziemie');
-  const mapa = shim.app.innerHTML;
-  assert.ok(mapa.includes('Mapa: Śródziemie'), 'mapa: brak tytułu');
-  assert.ok(!mapa.includes('wariant'), 'mapa: nagłówek bez danych technicznych podkładu');
+  let rama = shim.app.innerHTML;
+  assert.ok(rama.includes('Mapa: Śródziemie'), 'mapa: brak tytułu');
+  assert.ok(rama.includes('mapa-iframe') && rama.includes('src="maps/srodziemie.html"'),
+    'mapa: brak iframe ze stroną mapy (ADR 0027 v2)');
+  assert.ok(rama.includes('aspect-ratio:'), 'mapa: iframe bez proporcji dobranych do mapy');
+  // Sekcje towarzyszące żyją w ARTEFAKCIE BAZOWYM (nie w iframe):
+  assert.ok(rama.includes('Legenda'), 'mapa: brak legendy pewności (w artefakcie bazowym)');
+  assert.ok(rama.includes('dokładna'), 'mapa: brak poziomu pewności w legendzie');
+  assert.ok(rama.includes('CC-BY-4.0'), 'mapa: brak atrybucji podkładu (w artefakcie bazowym)');
+  assert.ok(rama.includes('Pinezki kart ('), 'mapa: brak listy pinezek (w artefakcie bazowym)');
+  // Warstwa karty otwiera się NAD CAŁYM Codexem — markup w rodzicu:
+  assert.ok(rama.includes('data-map-warstwa'), 'mapa: brak warstwy karty w rodzicu (B2)');
+  assert.ok(rama.includes('role="dialog"') && rama.includes('aria-modal="true"'), 'mapa: warstwa bez semantyki dialogu (B2)');
+  assert.ok(rama.includes('data-map-warstwa-zamknij'), 'mapa: brak zamknięcia warstwy ✕/tło (B2)');
+  assert.ok(rama.includes('aria-label="Zamknij i wróć do mapy"'), 'mapa: przycisk zamknięcia bez etykiety (B2)');
+  shim.idz('#/mapa/srodziemie?pin=1ltr-dunland-crebain');
+  assert.ok(shim.app.innerHTML.includes('maps/srodziemie.html?pin=1ltr-dunland-crebain'),
+    'mapa: deep-link pinezki nie przechodzi do iframe');
+  shim.idz('#/plan/srodziemie');
+  assert.ok(shim.app.innerHTML.includes('#/mapa/srodziemie'), 'plan: brak linku do mapy');
+  shim.idz('#/mapa/nieznany-plan');
+  assert.ok(shim.app.innerHTML.includes('Nie znaleziono'), 'mapa: brak 404 dla nieznanego planu');
+  shim.idz('#/mapa/zendikar');
+  assert.ok(shim.app.innerHTML.includes('Mapa: Zendikar'), 'mapa Zendikaru: brak tytułu');
+  assert.ok(shim.app.innerHTML.includes('src="maps/zendikar.html"'), 'mapa Zendikaru: brak iframe');
+  shim.idz('#/plan/zendikar');
+  assert.ok(shim.app.innerHTML.includes('#/mapa/zendikar'), 'plan Zendikaru: brak linku do mapy');
+  shim.przywroc();
+
+  // ── Strona mapy Śródziemia (samowystarczalny HTML, T2 → <img>)
+  const shim2 = wykonajArtefakt('dist/maps/srodziemie.html');
+  const mapa = shim2.app.innerHTML;
+  assert.ok(!mapa.includes('wariant'), 'mapa: bez danych technicznych podkładu');
   assert.ok(
-    mapa.includes('data:image/svg+xml;base64,') || mapa.includes('<svg class="mapa-podklad"'),
-    'mapa: brak osadzonego podkładu (ADR 0009)',
+    mapa.includes('<svg class="mapa-podklad"') || mapa.includes('src="srodziemie/'),
+    'mapa: brak podkładu na stronie mapy (ADR 0027 v2)',
   );
   assert.ok(mapa.includes('data-pinezka="1ltr-dunland-crebain"'), 'mapa: brak pinezki karty 1LTR');
   assert.ok(mapa.includes('href="#/karta/1ltr-dunland-crebain"'), 'mapa: pinezka nie linkuje karty');
-  assert.ok(mapa.includes('?pin=1ltr-dunland-crebain'), 'mapa: brak deep-linka pinezki');
-  assert.ok(mapa.includes('Legenda'), 'mapa: brak legendy pewności');
-  assert.ok(mapa.includes('dokładna'), 'mapa: brak poziomu pewności w legendzie');
-  assert.ok(mapa.includes('CC-BY-4.0'), 'mapa: brak atrybucji podkładu');
   assert.ok(!mapa.includes('Kotwice'), 'mapa: UI kotwic etykiet ma pozostać usunięte (feedback E)');
   assert.ok(mapa.includes('data-mapa-ruch'), 'mapa: brak warstwy pan/zoom');
-  assert.ok(mapa.includes('mapa-nakladka'), 'mapa: brak nakładki ekranowej dla pinezek (stały rozmiar, ostry render)');
+  assert.ok(mapa.includes('mapa-nakladka'), 'mapa: brak nakładki ekranowej dla pinezek');
   assert.ok(!mapa.includes('left:40.6%'), 'mapa: pinezki nie mogą być pozycjonowane procentami w skalowanej warstwie');
-  assert.ok(mapa.includes('mapa-przycisk'), 'mapa: brak przycisków zoomu');
+  assert.ok(!mapa.includes('mapa-przycisk'), 'mapa: pasek zoomu usunięty (kółko/pinch + Esc — decyzja właściciela)');
+  // Strona mapy = CZYSTE okno (feedback właściciela): sekcje towarzyszące
+  // i warstwa karty żyją w artefakcie bazowym, nie w iframe
+  assert.ok(mapa.includes('mapa-strona-osadzona'), 'strona mapy: brak trybu osadzonego');
+  assert.ok(!mapa.includes('Legenda'), 'strona mapy: legenda ma żyć w artefakcie bazowym');
+  assert.ok(!mapa.includes('mapa-atrybucja'), 'strona mapy: atrybucja ma żyć w artefakcie bazowym');
+  assert.ok(!mapa.includes('data-map-warstwa'), 'strona mapy: warstwa karty ma żyć w rodzicu (nad całym Codexem)');
+  assert.ok(!mapa.includes('okruszki'), 'strona mapy: bez okruszków (rama daje rodzic)');
+  shim2.przywroc();
 
-  // B1 (feedback właściciela): badge pinezki ukryty do najechania/fokusu
-  const stylArt = fs.readFileSync(cel, 'utf8');
+  // ── Strona mapy Zendikaru (T3/T4 — inline SVG + rekonstrukcja)
+  const shim3 = wykonajArtefakt('dist/maps/zendikar.html');
+  const mapaZ = shim3.app.innerHTML;
+  assert.ok(mapaZ.includes('<svg class="mapa-podklad"'), 'mapa Zendikaru: brak wektorowego podkładu inline');
+  assert.ok(mapaZ.includes('data-pinezka="2bfz-coralhelm-guide"'), 'mapa Zendikaru: brak pinezki 2BFZ');
+  shim3.przywroc();
+
+  // atrybucja rekonstrukcji i uzasadnienia pinezek — w artefakcie bazowym
+  const shim4 = wykonajArtefakt(cel);
+  shim4.idz('#/mapa/zendikar');
+  const ramaZ = shim4.app.innerHTML;
+  assert.ok(ramaZ.includes('praca własna'), 'mapa Zendikaru: brak atrybucji rekonstrukcji (T3, w rodzicu)');
+  assert.ok(ramaZ.includes('wybrzeży Halimar'), 'mapa Zendikaru: brak uzasadnienia pinezki (MA4, w rodzicu)');
+  shim4.przywroc();
+
+  // B1: badge pinezki ukryty do najechania/fokusu (CSS strony mapy)
+  const stylArt = fs.readFileSync('dist/maps/srodziemie.html', 'utf8');
   assert.ok(
     /\.mapa-pinezka-etykieta\s*{[^}]*opacity:\s*0/.test(stylArt),
     'mapa: badge pinezki ma być domyślnie ukryty (B1)',
@@ -118,44 +173,14 @@ test('UI: mapa planu z realnej bazy — podkład, pinezka, legenda', async () =>
       && stylArt.includes('.mapa-pinezka:focus-visible .mapa-pinezka-etykieta'),
     'mapa: brak reguł odsłaniających badge (hover + focus-visible, B1)',
   );
-
-  // B2 (feedback właściciela): warstwa karty z pinezki, zamykanie ✕/tło/Esc
-  assert.ok(mapa.includes('data-map-warstwa'), 'mapa: brak warstwy karty (B2)');
-  assert.ok(mapa.includes('role="dialog"') && mapa.includes('aria-modal="true"'), 'mapa: warstwa bez semantyki dialogu (B2)');
-  assert.ok(mapa.includes('data-map-warstwa-zamknij'), 'mapa: brak zamknięcia warstwy ✕/tło (B2)');
-  assert.ok(mapa.includes('aria-label="Zamknij i wróć do mapy"'), 'mapa: przycisk zamknięcia bez etykiety (B2)');
   assert.ok(stylArt.includes('.mapa-warstwa[hidden] { display: none; }'), 'mapa: brak reguły ukrycia warstwy (B2)');
 
-  // plan linkuje do mapy; trasa nieznanej planu → 404
-  shim.idz('#/plan/srodziemie');
-  assert.ok(shim.app.innerHTML.includes('#/mapa/srodziemie'), 'plan: brak linku do mapy');
-  shim.idz('#/mapa/nieznany-plan');
-  assert.ok(shim.app.innerHTML.includes('Nie znaleziono'), 'mapa: brak 404 dla nieznanego planu');
-
-  // mapa Zendikaru: własna rekonstrukcja T3 (ADR 0012, feedback G)
-  shim.idz('#/mapa/zendikar');
-  const mapaZ = shim.app.innerHTML;
-  assert.ok(mapaZ.includes('Mapa: Zendikar'), 'mapa Zendikaru: brak tytułu');
-  assert.ok(
-    mapaZ.includes('data:image/svg+xml;base64,') || mapaZ.includes('<svg class="mapa-podklad"'),
-    'mapa Zendikaru: brak osadzonego podkładu',
-  );
-  assert.ok(mapaZ.includes('data-pinezka="2bfz-coralhelm-guide"'), 'mapa Zendikaru: brak pinezki 2BFZ');
-  assert.ok(mapaZ.includes('?pin=2bfz-coralhelm-guide'), 'mapa Zendikaru: brak deep-linka pinezki');
-  assert.ok(mapaZ.includes('praca własna'), 'mapa Zendikaru: brak atrybucji rekonstrukcji (T3)');
-  assert.ok(mapaZ.includes('wybrzeży Halimar'), 'mapa Zendikaru: brak uzasadnienia pinezki (MA4)');
-  shim.idz('#/plan/zendikar');
-  assert.ok(shim.app.innerHTML.includes('#/mapa/zendikar'), 'plan Zendikaru: brak linku do mapy');
-
   fs.rmSync(cel, { force: true });
-  shim.przywroc();
 });
 
 test('UI: mapa T3 — etykiety podkładu w nakładce ekranowej (stały rozmiar, LOD)', async () => {
   const cel = await zbuduj({ out: 'dist/test-ui-mapa-etykiety.html' });
-  const shim = wykonajArtefakt(cel);
-
-  shim.idz('#/mapa/zendikar');
+  const shim = wykonajArtefakt('dist/maps/zendikar.html');
   const mapa = shim.app.innerHTML;
   const n = (mapa.match(/data-podklad-etykieta/g) ?? []).length;
   assert.ok(n > 60, `etykiety podkładu w nakładce: tylko ${n} (oczekiwano >60)`);
@@ -171,12 +196,12 @@ test('UI: mapa T3 — etykiety podkładu w nakładce ekranowej (stały rozmiar, 
   assert.ok(bey && bey[1] === 'middle', 'Beyeen ma być kotwiczony middle (był rozjechany)');
 
   // T2 (adoptowany, mapome) — typografia podkładu zostaje bez zmian
-  shim.idz('#/mapa/srodziemie');
-  const mapa2 = shim.app.innerHTML;
-  assert.ok(!mapa2.includes('data-podklad-etykieta'), 'podkład adoptowany (T2) nie może mieć przeniesionych etykiet');
+  shim.przywroc();
+  const shim2 = wykonajArtefakt('dist/maps/srodziemie.html');
+  assert.ok(!shim2.app.innerHTML.includes('data-podklad-etykieta'), 'podkład adoptowany (T2) nie może mieć przeniesionych etykiet');
 
   fs.rmSync(cel, { force: true });
-  shim.przywroc();
+  shim2.przywroc();
 });
 
 test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () => {
@@ -202,7 +227,11 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(!karta.includes('leykus'), 'karta: bez niekanonicznych porównań ("leykus")');
   assert.ok(!karta.includes('pierwszy mieszkaniec'), 'karta: bez meta-komentarzy o kolekcji (feedback B)');
   assert.ok(!karta.includes('zyskają własne hasła'), 'karta: bez opisu procesu link-miningu (feedback B)');
-  assert.ok(!karta.includes('Uruk-hai'), 'karta: byty z dawnej narracji/promptu nie mogą być na stronie karty (ADR 0011)');
+  // ADR 0026: Fabuła dostawy WRÓCIŁA jako wiążąca kotwica transpozycji —
+  // byty ze sceny (np. Uruk-hai) są legalne, ale wyłącznie jako oznaczone
+  // OSADZENIE kolekcji z Fabułą cytowaną w Źródłach. Prompt nadal poza pętlą.
+  assert.ok(karta.includes('Osadzenie kolekcji'), 'karta: scena Fabuły oznaczona jako osadzenie (ADR 0026)');
+  assert.ok(karta.includes('Narracja'), 'karta: Narracja (Fabuła dostawy) cytowana w treści/Źródłach (ADR 0026)');
   assert.ok(!karta.includes('Narracja Koleksji') && !karta.includes('Narracja Kolekcji'), 'karta: sekcja narracji zniesiona (ADR 0011)');
   assert.ok(!karta.includes('perspektywy żabiej'), 'karta: treść promptu nie może się pojawiać (ADR 0011)');
   assert.ok(!karta.includes('ADR'), 'karta: treść nie może odsyłać do mechaniki Codexu (feedback B)');
@@ -259,4 +288,24 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();
+});
+
+
+test('UI/build: drzewo HTML map (ADR 0027 v2 — iframe, offline z dysku)', async () => {
+  const cel = await zbuduj({ out: 'dist/test-ui-split.html' });
+  const html = fs.readFileSync(cel, 'utf8');
+  // artefakt główny: lekki, bez base64 podkładów; mapy przez stronaMapy
+  assert.ok(!html.includes('data:image/svg+xml;base64'), 'artefakt bez base64 podkładów');
+  assert.ok(html.includes('"stronaMapy": "maps/srodziemie.html"'), 'rejestr: strona mapy Śródziemia');
+  assert.ok(html.includes('"stronaMapy": "maps/zendikar.html"'), 'rejestr: strona mapy Zendikaru');
+  assert.ok(html.length < 2.5 * 1024 * 1024, `artefakt (${(html.length / 1048576).toFixed(2)} MB) ma być < 2.5 MB`);
+  // drzewo: strony map + surowe podkłady (mini-mapy)
+  assert.ok(fs.existsSync('dist/maps/srodziemie.html'), 'dist/maps/srodziemie.html');
+  assert.ok(fs.existsSync('dist/maps/zendikar.html'), 'dist/maps/zendikar.html');
+  assert.ok(fs.existsSync('dist/maps/zendikar/podklad.svg'), 'dist/maps/zendikar/podklad.svg (mini-mapy)');
+  const stronaMapy = fs.readFileSync('dist/maps/zendikar.html', 'utf8');
+  assert.ok(stronaMapy.includes('CODEX_MAPA'), 'strona mapy: tryb CODEX_MAPA');
+  assert.ok(stronaMapy.includes('podkladMarkup'), 'strona mapy: wstrzyknięty markup SVG');
+  assert.ok(!stronaMapy.includes('data:image/svg+xml;base64'), 'strona mapy: SVG surowy, nie base64');
+  fs.rmSync(cel, { force: true });
 });

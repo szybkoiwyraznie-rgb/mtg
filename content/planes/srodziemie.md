@@ -14,7 +14,7 @@ docelowy kart z uniwersum *Lord of the Rings: Tales of Middle-earth*
 (LTR, „Universes Beyond"): odczytywanych jako sceny i byty z Trzeciej
 Ery, z kartą MtG i pismami Tolkiena jako kanonem.
 
-## Geography
+## Geografia
 
 Zachodnie Śródziemie, o które opiera się pierwsza karta, to kraina
 pomiędzy dwoma pasmami górskimi: **Górami Mglistymi** (Hithaeglir) na
@@ -45,7 +45,7 @@ miasto-most z czasów Arnoru i Gondoru, po powodzi zniszczone i opuszczone
 (T.E. 2912), ośrodek dawnej Wielkiej Drogi Północ–Południe. W Wojnie
 o Pierścień istnieje już tylko niebezpieczna przeprawa brodem po resztkach
 mostu — to tam, w drodze do Rivendell (T.E. 3018), Boromir stracił konia.
-Dla świata karty znaczy to tyle, że even na mapie dziczy zostają szlaki
+Dla świata karty znaczy to tyle, że nawet na mapie dziczy zostają szlaki
 i przeprawy, o których wie każdy przewodnik — i każdy zwiadowca.
 
 ## Ludy

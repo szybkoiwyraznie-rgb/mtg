@@ -4,6 +4,258 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-02 — sesja PR-10 (część 14): szlify — Narracja, mapy bez paska, czysty dziennik
+
+1. Karty: „Fabuła dostawy" → **„Narracja"** (feedback: brzmienie);
+   ADR 0026/SZKIELET zachowują „Fabułę" jako nazwę pola dostawy,
+   na kartach czytelnik widzi „Narracja". Test dostosowany.
+2. Mapy: pasek zoomu usunięty (kółko/pinch); Esc = dopasuj();
+   martwe CSS paska wyczyszczone.
+3. Lekcja: renderer markdown NIE ukrywa komentarzy HTML — notki dla
+   edytorów nie mogą żyć w plikach treści (komentarz z co-nowego
+   wyświetlał się jako „developerski tekst").
+
+## 2026-09-02 — sesja PR-10 (część 13): iframe v2.1 — podział ról rodzic/okno (recenzja)
+
+Feedback: iframe ma być dobrany do mapy, strona w nim statyczna (bez
+scrollbarów), sekcje w bazie, warstwa karty nad całością. Wdrożone:
+renderMape(osadzona)= pasek+okno; renderMapeIframe = okruszki+header+
+iframe(aspect)+warstwa+legenda+pinezki+atrybucja; postMessage
+codexKarta → dialog w rodzicu (fallback: nawigacja do karty);
+CSS: html/body:has(.mapa-strona-osadzona) overflow hidden, pasek
+pływający. Testy przestawione (sekcje w rodzicu, czyste okno).
+
+## 2026-09-02 — sesja PR-10 (część 12): DRZEWO HTML map — architektura ostateczna (ADR 0027 v2)
+
+1. Właściciel odrzucił dwa tory (jednoplik → ~200 MB przy 30+ planach)
+   i podał lepszy pomysł: mapy jako osobne strony HTML w iframe.
+   Kluczowa własność: file:// blokuje fetch, ale NIE iframe.
+2. Implementacja: build generuje maps/<plan>.html (bundle + dane +
+   surowy SVG, tryb CODEX_MAPA w main.js); renderMapeIframe w trasie
+   #/mapa; postMessage codexHash z iframe do rodzica; mini-mapy <img>;
+   ZIP = całe drzewo; --inline usunięty; URL-e podkładów w stronie mapy
+   względem maps/ (pułapka ścieżek względnych!).
+3. Testy: strony map wykonywane w shimie WPROST (renderują się w boot);
+   pułapka wycieku globali CODEX_MAPA/CODEX_DATA między artefaktami
+   w shimie (przeglądarka izoluje strony, shim nie) — czyszczenie
+   w wykonajArtefakt; LIFO przywracania shimów.
+4. 91/91; artefakt 222 kB; strony map 2,0/3,7 MB; ZIP 11,3 MB (6 plików).
+
+## 2026-09-02 — sesja PR-10 (część 11): dwa tory pakietu — offline jednoplik wraca (uzup. ADR 0027)
+
+Właściciel: „moja wersja offline z pliku nie będzie działać? TO ZMIENIA
+POSTAĆ RZECZY". Lekcja: degradacja to nie to samo co działanie —
+scenariusz offline-z-dysku jest pierwszoklasowy. `zbudujPakiet`:
+index.html (split, 220 kB) + mtg-lore-codex.html (inline, 7 MB,
+offline bez degradacji) + zip; `--out` bez zmian (pages.yml buduje
+split). Test „index przekierowujący" zastąpiony testem pakietu.
+
+## 2026-09-02 — sesja PR-10 (część 10): rozdzielenie artefaktu → ADR 0027; duplikat „Co nowego"
+
+1. Decyzja właściciela: „pora na rewolucję" ze skalowania map (ROADMAP
+   2026-09-01). Build domyślnie: artefakt 219 kB + dist/maps/** ;
+   `--inline` awaryjnie. Witryna: cache PODKLADY + doładowanie w
+   zamontujMape (fetch → przerysuj trasę); degradacja file:// do <img>;
+   mini-mapy przez URL. Zip już wcześniej przewidywał katalog maps/ —
+   pakuje całość; pages.yml wysyła cały dist/ (bez zmian, sprawdzone
+   read-only). Testy: shimowe UI budują inline (brak fetch w shimie);
+   nowy test kontraktu splitu; test artefaktu przyjmuje podkladUrl.
+2. Duplikat nagłówka „Co nowego": H1+lead były i w renderze,
+   i w treści md — treść ogołocona z nagłówka (komentarz dla edytorów).
+
+## 2026-09-02 — sesja PR-10 (część 9): Fabuły 1LTR/2BFZ zmaterializowane w kartach
+
+1. Dostawa Fabuł do obu kart (1LTR = verbatim dawna „Narracja", teraz
+   ze statusem wiążącym; 2BFZ = nowa scena z balothem). Archiwum:
+   dopisane sekcje „Fabuła (dostawa uzupełniająca)" we wpisach
+   kolekcji (dopisanie NOWEJ dostawy nie narusza nienaruszalności —
+   archiwum rejestruje wszystko, co dostarczono).
+2. Karty: „Osadzenie kolekcji (Fabuła dostawy)" w Postaciach i Bytach;
+   Transpozycja i Na Mapie doprecyzowane sceną; Fabuła w Źródłach;
+   u 2BFZ baloth wpięty też w „Mechanika jako Opowieść" (scena = twarz
+   zdolności unblockable) + źródło MTG Wiki „Baloth".
+3. Test dymny ui-smoke przestrojony u źródła (zakaz „Uruk-hai" z ery
+   ADR 0011 → wymogi ADR 0026: znacznik osadzenia + cytowana Fabuła);
+   z treści kart usunięte odwołania „ADR" (zakaz meta-odwołań działa).
+
+## 2026-09-02 — sesja PR-10 (część 8): Fabuła wraca do dostawy → ADR 0026; drugi reset workspace
+
+1. Decyzja właściciela (czat): dostawa = imgId · nazwa · set · plan ·
+   **Fabuła** (wiążąca kotwica transpozycji; uzasadnienie: ilustracje
+   FOT/KON bazują na już transponowanym planie — podwójna transpozycja
+   groziła rozjazdem opisu i ilustracji). ADR 0026; status ADR 0011;
+   SZKIELET_KARTY zaktualizowany (format v3 + higiena osadzenia).
+2. DRUGI reset workspace w tej sesji (preview wygasł, dist zniknął,
+   reflog = świeży clone) — odzyskanie wg ENVIRONMENT §2 w 2 minuty,
+   zero strat (wszystko było wypushowane).
+
+## 2026-09-02 — sesja PR-10 (część 7): iglica ręczna, asymetryczne strefy, podręcznik RYSOWANIE_MAPY_PLANU (recenzja 7)
+
+1. Iglica: ręcznie rysowana sylwetka (blok `iglica` w bloki.mjs) —
+   lekcja: glify hero to KLASTRY, pomniejszanie ich na ikony zawsze da
+   „mikro-góry"; nowe obiekty rysujemy w języku mapy od zera.
+2. `PROMIEN_POI` asymetryczny {dol, gora}: etykiety siadają tuż pod
+   podstawą wulkanu/iglicy; nakładka dostała `data-rg`.
+3. **Podręcznik `docs/guides/RYSOWANIE_MAPY_PLANU.md`** (zamówienie
+   właściciela: „solidna dokumentacja wszystkiego, czego się
+   nauczyliśmy") — 10 sekcji + antywzorce + checklista; stary skill
+   T3 podlinkowany jako era ręczna.
+
+## 2026-09-02 — sesja PR-10 (część 6): warstwowe kolory pisma → ADR 0025 (recenzja 6)
+
+1. **Root cause braku granatu:** nakładka renderuje etykiety HTML-em,
+   kolor brała z CSS klas — fill z SVG był ignorowany; teraz przechodzi
+   inline (color). Lekcja: każdą cechę stylu SVG przenoszoną do
+   nakładki trzeba jawnie przepompować.
+2. Kolory warstwowe (czerń/granat/zieleń/bordo) + automat zieleni po
+   kotwicy w poligonie las/bagno (etykiety POI wyłączone).
+3. Wycofanie polan (ADR 0024 pkt 3 → 0025); iglica g-237 (właściciel
+   odrzucił g-016); klocek wodospadu; pasmo-makindi jako kaniony;
+   drogi bez dubli (drog-guul już przechodził przez Luleę — moje
+   trakty były dublami, słuszna uwaga).
+4. Bala Ged: pustki wypełnione PO OGLĘDZINACH renderu; las-4 Akoum
+   okazał się zdegenerowaną 4-punktową kreską (stąd mikro las) —
+   wymieniony na wielokąt.
+5. QA: testy 90/90 (whitelist +czerń/zieleń), audyt 0, wiązania 0.
+
+## 2026-09-02 — sesja PR-10 (część 5): czytelność map → ADR 0024 (recenzja 5, pass geograficzny)
+
+**Zlecenie:** uwagi per kontynent (Murasa/Bala/Akoum/Ondu/Sejiri) +
+generalne: więcej traktów, ikony w kołach z tłem, granatowe wody.
+
+1. **Silnik:** koła tła miast/ruin; `PAL.etykietaWoda` + lista
+   `ETYKIETY_WODNE_KOLOR`; rozstaw liczony PRZED biomami → boxy etykiet
+   w strefach zajętych; `pasmoInstancje` wymaga lądu pod skrzydłami
+   glifu; POI `iglica` (hero g-016 jawnie); nakładka: przeszkody
+   z etykiet obszarowych w układzie kotwiczonych.
+2. **Scena:** reroute rzeki Vazi; przejścia przy murze; klaster
+   wulkanów Teeth of Akoum (label pod centralnym stożkiem — wcześniej
+   odpychany przez szeroki Windblast → Windblast obrócony wzdłuż
+   wąwozu fs14); Ior Ruin na brzeg (pierwsza próba „brzegu" była
+   morzem — audyt FORGE W WODZIE wyłapał); Glass Haven odsunięte;
+   Umung kat 30 wzdłuż rzeki; +2 lasy Bala; +6 traktów; korekty
+   Makindi/Beyeen/Chill; Tangled Vales na zachód (klaster SW Bala
+   pełny — fallback kolizji).
+3. QA: testy 90/90, audyt 0, wiązania 0, rastery Murasa/Akoum.
+
+## 2026-09-02 — sesja PR-10 (część 4): fix układu nakładki (NaN), detektor chaosu, porządki kontynentów (recenzja 4)
+
+**Zlecenie (czat):** (a) falka Halimar wraca; (b) Emeria × „ruiny
+w niebie" nachodzą; (c) porządki na pozostałych kontynentach.
+
+1. **BUG nakładki:** `stanUkladu.k = NaN` → `Math.abs(k−NaN) > próg`
+   zawsze false → układ kolizyjny NIGDY nie działał (większość etykiet
+   i tak trafiała „POD", więc wyglądało dobrze; wykryła to dopiero para
+   o wspólnej kotwicy). Lekcja: nie inicjalizować cache NaN-em.
+2. **Detektor „etykieta na cudzym POI"** (walidator, próg 20 j.) —
+   od razu wyłapał Hanging Swamp na Nimanie i Kazuul Pass na Visimal.
+3. **Porządki:** bagna Guul Draz w biom; Lulea — ikona ściśnięta między
+   Lake Jast/Malakir/brzegiem odklejała etykietę o ~90 px → pozycja
+   znaleziona SYMULACJĄ rozstawu (grid-search kandydatów z warunkiem
+   „etykieta siada w DOWN0/NAD0, poza jeziorem"); Living Spire na
+   wolne wnętrze; POI w strefach zajętych biomów (nie toną w drzewach).
+4. QA rastrowe wszystkich kontynentów; testy 90/90, audyt 0, wiązania 0.
+
+## 2026-09-02 — sesja PR-10 (część 3): twarda zasada etykieta↔obiekt → ADR 0023 (recenzja 3)
+
+**Zlecenie (czat):** (1) dopasowanie etykiet „GENIALNIE" ✔; (2) twarda
+zasada: żadnych etykiet bez obiektu i POI bez etykiet; kotwica etykiety
+biomu/zatoki wewnątrz nazywanego obszaru; (3) obwódki rzek wycofać,
+przyciemnić wodę; (4a) usunąć falkę Halimar; (4b) przypiąć Emerię.
+
+**Przebieg:**
+1. **Inwentaryzacja wiązań** (skrypt): 14 POI bez etykiet, 30 etykiet
+   bez twardej kotwicy; tożsamości ustalone Z REJESTRU KOTWIC map.json
+   (Surrakar Caves d=0!) — rejestr proweniencji okazał się kluczem.
+2. **Walidator `sprawdzWiazania`** (render.mjs) + raport w CLI + test
+   „0 uwag dla scen repo"; wspólna whitelist wód `STREFY_WODNE_DOMYSLNE`
+   (render + walidator, spójna z map-audit).
+3. **Pass wiązań:** 16 przypięć przyDo; nazwy z kanonu (Sejiri/Jwar
+   Isle/Graypelt Refuge — karty ZEN; Helix of Zof — ruiny post-Eldrazi);
+   5 bezimiennych dekoracji usuniętych; błędny POI osady przy Surrakar
+   Caves usunięty; Umung = rzeka (research), nie osada — o krok od
+   dorobienia fałszywej wioski.
+4. **E-geo-3 Murasa domknięte** (6 etykiet + 2 POI); zator płd. Murasy
+   rozładowany DANYMI (Tumbled Palace i Pillar Plains na pozycje
+   zgodne z Guide/wolne, fs 12 dla drobnych wód, whitelist dla
+   Blackbloom/Roaring/Umung) — po serii replayów drabinki (debug
+   empiryczny zamiast zgadywania).
+5. **Woda:** rewert obwódek (ADR 0022 pkt 4), atlas #e2ecf4→#d4e2ee,
+   Halimar `fale:false`.
+6. **ADR 0023**; statusy 0021/0022 zaktualizowane; testy 90/90,
+   map-audit 0, build OK; QA rastrowe (Murasa, Bala Ged).
+
+## 2026-09-02 — sesja PR-10 (część 2): recenzja preview właściciela — etykiety (KRYTYCZNE), strefy zajęte, obwódka rzek → ADR 0022
+
+**Zlecenie (czat, recenzja preview):** (a) góry OK ✔; (b) KRYTYCZNE:
+etykiety „kompletnie rozjechane" (Kabira nad Agadeem itd.), postulat:
+jeden wzór — punkt centralny obiektu, napis zawsze pod nim, konflikt →
+zawsze tak samo (pod→nad), odległość względna do zoomu; (c) obwódka
+rzek ciemniejszym niebieskim; (d) detekcja i eliminacja nakładania
+biomów na góry/jeziora/lód (Sejiri, Ondu) przez zmniejszanie obszaru.
+
+**Przebieg:**
+1. **Diagnoza (b):** nakładka `render-map.js` renderuje etykiety
+   w stałym rozmiarze ekranowym na pozycjach strojonych w jednostkach
+   mapy + rozstaw SVG szukał pozycji w promieniach 16–118 px → dwie
+   niezależne przyczyny rozjazdu (hipoteza właściciela trafna).
+2. **(b) rozwiązanie systemowe:** `rozstawEtykiety` v3 (jeden wzór,
+   drabinka pionowa, sort deterministyczny); `etykieta()` emituje
+   `data-ax/ay/r`; nakładka Codexu pozycjonuje od EKRANOWEJ pozycji
+   kotwicy (odstęp `r·k` + 3 px, układ przeliczany przy zmianie zoomu,
+   tylko dla etykiet widocznych w LOD). Klasyfikacja: obiektowe
+   (przyDo lub fs<16) vs obszarowe (duze/kat/fs≥16 bez przyDo).
+3. **(d):** `rozrzut(..., wyklucz)` (bboxy+poligony); `pasmoInstancje`
+   wydzielone z `pasmo()` (geometria 1:1); render buduje strefy:
+   glify pasm, wulkany, jeziora (elipsa/`d`), lód, wcześniejsze biomy.
+   Czapa lodowa Sejiri zmniejszona w scenie do zachodu (lita plama —
+   rozwiązanie w danych, zgodnie z pkt d właściciela).
+4. **(c):** `rzeka()`/`doplyw()` — obrys `PAL.wodaStroke` 1,1/0,8 px.
+5. **Regresja znaleziona przy refaktorze:** wulkany w `poi` (typ
+   `wulkan`) nie renderowały się od PR-9 (warstwa czytała tylko
+   `scena.wulkany`) — Valakut i 3 stożki Akoum wróciły.
+6. **Reset workspace w trakcie sesji** (reflog: świeży clone) — commity
+   odzyskane wg ENVIRONMENT §2 (fetch + reset --hard FETCH_HEAD,
+   checkout plików z commitu backup); bez utraty pracy.
+7. **QA:** testy 89/89; map-audit 0; build OK; rastery libvips
+   (Sejiri/Ondu/Tazeem/Agadeem/Akoum/Valakut) obejrzane przed pushem.
+8. **ADR 0022** + statusy (0021 częściowo zastąpiona); co-nowego,
+   handoff, opis PR.
+
+## 2026-09-02 — sesja PR-10: Pętla Jakości v2 (audyt PR-9 → ADR 0021; LORE ludów Zendikaru; E-geo-8/4)
+
+**Kontekst:** „kontynuujemy projekt" bez nowej dostawy → Pętla Jakości v2.
+PR #10 (`arena/01a0612e-mtg`), plan `PLAN_2026-09-02-pr10-petla-jakosci.md`.
+
+1. **Integralność:** testy 87/87, build OK (4 strony), map-audit 0 —
+   zgodnie z handoffem PR-9.
+2. **Audyt PR #9** (`AUDYT_2026-09-02-PR9.md`): kod/dane/testy poprawne;
+   ISTOTNE znalezisko — decyzje właściciela (a)–(g) z recenzji prototypu
+   (m.in. jedna barwa wody sprzeczna z ADR 0020 pkt 3; błękit wody wbrew
+   achromatowi ADR 0019) nie były sformalizowane w ADR (wzorzec dryfu
+   jak przy ADR 0012→0013).
+3. **ADR 0021** — formalizacja stylu map T4 (jedna barwa wody; kolory
+   funkcjonalne atlasu; kolejność warstw; etykiety przy obiektach; szare
+   miasta; pasmo jako bryła); statusy ADR 0019/0020 + tabela rejestru.
+4. **Krok 2 (LORE):** plan Zendikar/„Ludy" — wiary merfolków
+   (Emeria/Ula/Cosi + prawda o Eldrazi, trójca korów), narody elfów
+   (Tajuru/Joraga/Mul Daya), plemiona goblinów (Tuktuk/Lavastep/Grotag);
+   źródła: *Plane Shift: Zendikar* (PDF Wizards, zweryfikowany
+   fetch_page) i mtglore „Gods and Monsters". Nagłówki „Geography"→
+   „Geografia" (oba plany), literówki (krajobraz/even/rodzinnym).
+5. **Krok 3 (link-mining):** brak encji z progiem ≥2 kart (2 karty na
+   2 planach) — kandydaci odnotowani w handoffie.
+6. **Krok 4 (pass mapowy, tylko T4):** E-geo-8 rozstrzygnięte —
+   kanoniczna nazwa „Prison of Omnath" (MTG Wiki Ondu/Omnath);
+   E-geo-4 częściowo — etykieta Ior Ruin przy Glasspool (kanon: karta
+   *Ior Ruin Expedition* ZEN 49). Scena edytowana chirurgicznie
+   (pierwsza próba przez json.dumps przeformatowała plik — cofnięta;
+   edycja tekstowa), podkład regenerowany (diff 2 linie), audyt 0.
+   E-geo-3 (6 etykiet w gęstej Murasie) ŚWIADOMIE odłożone — wymaga
+   wizualnego QA renderu (sharp/libvips), nie tylko map-audit.
+7. **Zamknięcie:** co-nowego, ROADMAP (E-geo-8 ✓, E-geo-4 cz.),
+   handoff `HANDOFF_2026-09-02.md`, opis PR kumulatywnie.
+
 ## 2026-09-02 — sesja (dalsze uzupełnienie PR-9): 7 poprawek właściciela (a)–(g) z recenzji prototypu
 
 **Zlecenie (czat, recenzja prototypu 39607c0):** siedem poprawek mapy,

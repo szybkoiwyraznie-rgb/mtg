@@ -253,15 +253,6 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
 /* ── Mapa planu (ADR 0009, silnik map v1) ─────────────────────────── */
 .mapa-strona h1 { margin-bottom: 0.2rem; }
 .mapa-naglowek .meta { margin: 0 0 0.8rem; }
-.mapa-pasek {
-  display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
-  margin-bottom: 0.6rem;
-}
-.mapa-przycisk {
-  min-width: 2.2rem; text-align: center; padding: 0.3rem 0.6rem;
-  font-size: 1.1rem; line-height: 1.1;
-}
-.mapa-podpowiedz { font-size: 0.8rem; color: var(--tusz-miękki); margin-left: auto; }
 .mapa-okno {
   position: relative; overflow: hidden;
   height: clamp(420px, 72vh, 880px);
@@ -394,7 +385,6 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
 .mapa-warstwa-tresc { overflow-y: auto; height: 100%; padding: 1.2rem 1.4rem 2rem; }
 .mapa-warstwa-tresc .okruszki { padding-right: 52px; }
 @media (max-width: 640px) {
-  .mapa-podpowiedz { display: none; }
   .mapa-okno { height: clamp(340px, 62vh, 640px); }
 }
 
@@ -434,3 +424,28 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
 }
 .karta-fot img { aspect-ratio: 21 / 9; object-fit: cover; }
 .karta-kon img { aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* ── Mapa w iframe (ADR 0027 v2: strony map jako osobne pliki) ──
+   Iframe dobrany proporcjami DO MAPY (aspect-ratio inline z wymiarów
+   podkładu); strona w środku wypełnia go bez własnych scrollbarów. */
+.mapa-iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #d8d2c4;
+  border-radius: 10px;
+  background: #efe9dc;
+  overflow: hidden;
+}
+/* Strona mapy osadzona (maps/<plan>.html): czyste okno mapy — wypełnia
+   cały viewport iframe'a, zero scrollbarów; pasek zoomu pływa nad mapą. */
+html:has(.mapa-strona-osadzona), body:has(.mapa-strona-osadzona) {
+  margin: 0; padding: 0; overflow: hidden; height: 100%;
+}
+.mapa-strona-osadzona { position: fixed; inset: 0; margin: 0; padding: 0; }
+.mapa-strona-osadzona .mapa-okno {
+  position: absolute; inset: 0;
+  height: auto; max-height: none;
+  border: none; border-radius: 0;
+}
+

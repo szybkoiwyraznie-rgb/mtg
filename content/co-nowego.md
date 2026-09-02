@@ -1,7 +1,261 @@
-# Co nowego
+## 2026-09-02 — szlify UI: „Narracja" na kartach, mapy bez paska, czysty dziennik
 
-Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
-ADR 0006). Najnowsze na górze.
+- Na kartach słowo **„Narracja"** zastępuje „Fabułę dostawy"
+  (terminologia widoczna dla czytelnika; format dostawy bez zmian).
+- Mapy: pasek „− + ⟲" usunięty — zoom kółkiem/pinch, **Esc = reset
+  widoku**.
+- Dziennik „Co nowego" bez komentarza technicznego na górze (renderer
+  markdown pokazywał go jako tekst na stronie głównej i karcie
+  Co nowego).
+
+## 2026-09-02 — dopieszczenie iframe (feedback): czyste okno mapy, sekcje w bazie, warstwa nad całością
+
+- **Iframe dobrany proporcjami do mapy** (aspect-ratio z wymiarów
+  podkładu), strona w środku = czyste okno mapy bez scrollbarów
+  (pasek zoomu pływa nad mapą).
+- **Legenda, lista pinezek, atrybucja i warstwa karty** renderują się
+  w artefakcie bazowym (nie w iframe); **warstwa karty otwiera się nad
+  CAŁYM Codexem** (pinezka → postMessage `codexKarta` → dialog
+  w rodzicu). Testy 91/91.
+
+## 2026-09-02 — architektura ostateczna: DRZEWO HTML map (pomysł właściciela, ADR 0027 v2)
+
+Jednoplik offline nie skaluje się (30+ planów ≈ 200 MB). Rozwiązanie
+właściciela: **każdy plan = osobna, samowystarczalna strona
+`maps/<plan>.html`**, osadzana w artefakcie przez `<iframe>` —
+file:// nie blokuje iframe'ów, więc **wersja offline z dysku działa
+w pełni** (wektorowe mapy, nakładka, warstwa karty), a rozmiar rośnie
+liniowo per plik. Artefakt główny: stałe ~222 kB. „Pobierz ZIP
+Codexu" = całe drzewo (index.html + maps/**). Nawigacja z mapy do
+kart/haseł wraca do rodzica przez postMessage. Tryb `--inline`
+usunięty. Testy 91/91 (strony map wykonywane w shimie wprost).
+
+## 2026-09-02 — pakiet dwutorowy: pełny jednoplik OFFLINE wraca (uzupełnienie ADR 0027)
+
+Po pytaniu właściciela o wersję offline z dysku: `npm run build` daje
+teraz DWA artefakty — `index.html` + `maps/**` (split: serwer/Pages,
+220 kB) oraz `mtg-lore-codex.html` (pełny jednoplik inline, ~7 MB) —
+**wersja offline otwierana z pliku w Chrome działa w 100%, bez żadnej
+degradacji**. ZIP zawiera jednoplik. Test pakietu w artefakt.test.
+
+## 2026-09-02 — REWOLUCJA artefaktu: mapy jako osobne pliki (ADR 0027) + porządek na „Co nowego"
+
+- **Rozdzielenie artefaktu** (decyzja właściciela — wątek otwarty
+  z ROADMAP rozstrzygnięty): HTML niesie kod+treść (**219 kB zamiast
+  ~7 MB**), podkłady map leżą w `dist/maps/<plan>/` i są dociągane
+  dopiero przy wejściu na mapę (fetch → wektorowy SVG z pełną
+  nakładką; na file:// degradacja do <img>). ZIP pakuje całość
+  (samowystarczalny); Pages publikuje cały dist/ bez zmian
+  w workflow. Tryb awaryjny `--inline` zostaje (testy, mały eksport).
+  Statusy ADR 0001/0009 zaktualizowane; +1 test kontraktu splitu.
+- **„Co nowego" bez dubli:** nagłówek i lead strony daje renderer —
+  usunięte powtórzone H1/opis z pliku treści (dublowały się na
+  stronie głównej i na karcie Co nowego).
+
+## 2026-09-02 — Fabuły dla 1LTR i 2BFZ: karty zaktualizowane o osadzenie
+
+Właściciel dostarczył Fabuły do obu istniejących kart (format v3,
+ADR 0026). Zarchiwizowane verbatim w `collection/entries/`;
+zaktualizowane sekcje osadzenia:
+
+- **Dunland Crebain:** urwisko na skraju Dunlandu, dwaj Uruk-hai
+  Białej Ręki w oczekiwaniu na znak, armia Sarumana formująca się
+  w wąwozie, pikujący crebain jako sygnał — Postacie i Byty
+  (osadzenie kolekcji), Transpozycja, Na Mapie (scena przy
+  płd.-wsch. skraju krainy), Źródła.
+- **Coralhelm Guide:** zalany kanion wśród lewitujących skał,
+  eskorta balotha tajnym przejściem pod nosem patroli Eldrazi, hełm
+  z koralu i muszli (klan kartografów wybrzeża) — Postacie i Byty,
+  Mechanika (baloth jako twarz zdolności „nie może zostać
+  zablokowane"), Transpozycja, Na Mapie, Źródła (+MTG Wiki „Baloth").
+- Test dymny przestrojony u źródła: byty z Fabuły legalne jako
+  oznaczone OSADZENIE z cytowaną Fabułą; prompt nadal poza pętlą.
+
+## 2026-09-02 — decyzja właściciela: Fabuła wraca do dostawy (ADR 0026)
+
+Format dostawy materializacji rozszerzony do: **imgId · nazwa · set ·
+plan · Fabuła**. Fabuła to wiążąca kotwica transpozycji — ilustracje
+FOT/KON powstają na bazie już transponowanego planu, więc osadzenie
+karty w Bazie musi pochodzić z tej samej wizji (sekcje „Transpozycja",
+„Na Mapie", „Postacie i Byty" budowane z Fabuły; oznaczenie w Źródłach;
+osadzenie ≠ kanon MtG). ADR 0011 częściowo zastąpiony; szkielet karty
+zaktualizowany. Dotychczasowe karty (1LTR, 2BFZ) bez rewizji —
+właściciel może dosłać Fabułę uzupełniającą.
+
+## 2026-09-02 — recenzja 7 preview: iglica rysowana ręcznie, asymetryczne strefy ikon, PODRĘCZNIK map T4
+
+- **Living Spire:** iglica rysowana ręcznie (smukła turnia w języku
+  glifów) — pomniejszone glify hero to klastry i czytały się jak
+  „mikro-góry"; **Teeth of Akoum:** etykieta siada tuż pod stożkami
+  dzięki ASYMETRYCZNYM strefom ikon (wulkan/iglica: mały prześwit pod
+  podstawą, duży nad sylwetką; kontrakt `data-r`/`data-rg` w nakładce).
+- **Nowy podręcznik:** `docs/guides/RYSOWANIE_MAPY_PLANU.md` — pełna
+  wiedza z rund recenzji PR-9/PR-10 dla agenta rysującego mapę nowego
+  planu od podstaw (zasady ADR 0018–0025, pipeline, bramki jakości,
+  QA rastrowe, debug rozstawu, kontrakt nakładki, antywzorce,
+  checklista).
+
+## 2026-09-02 — recenzja 6 preview: warstwowe kolory pisma, bez polan, iglica i wodospad, kaniony Makindi (ADR 0025)
+
+- **Kolory pisma warstwowe:** kontynenty/wyspy CZERŃ, wody GRANAT,
+  fragmenty lasów/bagien ZIELEŃ (automat po kotwicy w biomie), reszta
+  bordo. **Nakładka witryny przenosi teraz kolory z SVG** — to dlatego
+  granatu wcześniej nie było widać (CSS klas nadpisywał fill).
+- **Bez polan:** wykluczanie boxów etykiet z rozsiewu wycofane — napisy
+  leżą NAD lasem (halo daje czytelność).
+- **Living Spire** = najsmuklejszy glif adoptowany g-237 (zamiast
+  klastra gór); **Roaring Falls** z klockiem wodospadu (strugi
+  + rozbryzg); **Makindi Trenches** z narysowanymi kanionami
+  (niskie pasmo) i etykietą przy nich.
+- **Drogi bez dubli:** 3 usunięte (korytarze istniejących), nowe:
+  Affa–Fort Keff, Graypelt–Prison of Omnath (szlak), Coralhelm–The
+  Bulwark; **Bala Ged**: dżungla na zachodzie i północy (pustki
+  wypełnione po oględzinach renderu), las Ora Ondar/Khalni Heart
+  z kreski na pełny wielokąt.
+- Testy 90/90 · map-audit 0 · wiązania 0 · QA rastrowe.
+
+## 2026-09-02 — recenzja 5 preview: czytelność map (ADR 0024) — koła POI, granatowe wody, trakty, pass geograficzny wszystkich kontynentów
+
+Właściciel przeszedł mapę kontynent po kontynencie. Systemowo (ADR 0024):
+
+- **ikony miast/ruin w kołach z nieprzezroczystym tłem** (nie giną
+  w bagnie/lesie); **granatowe etykiety wód** (`#1c3a5e`); **rozsiew
+  biomów omija boxy napisów** (tytuły nie toną w puszczy); **glify pasm
+  w całości na lądzie** (Skyfang nie włazi na morze); nowy POI
+  **`iglica`** (Living Spire — jawny glif hero g-016); **+6 traktów**
+  (Akoum ×2, Guul Draz ×2, Murasa, Sejiri); nakładka: kotwiczone
+  etykiety omijają też tytuły krain (przeszkody obszarowe).
+
+Geografia (per kontynent): rzeka Vazi wypływa z południowego stoku
+pasma (nie przecina gór); Thunder Gap i Kazuul Pass zakotwiczone przy
+murze; wulkany Akoum zwarte w masyw **Teeth of Akoum**; Oko Ugina przy
+paśmie; **Ior Ruin na brzegu Glasspool** (nie w tafli), Glass Haven
+odsunięte; Windblast Gorge wzdłuż wąwozu (obrót); **Umung wzdłuż rzeki
+na lądzie**; dwie nowe połacie dżungli Bala Ged; Makindi Trenches poza
+lasem; Beyeen pod swoją wyspą; Chill Depths przy brzegu.
+Testy 90/90 · map-audit 0 · wiązania 0 · QA rastrowe.
+
+## 2026-09-02 — recenzja 4 preview: fix nakładki (układ kolizyjny nie startował), falka Halimar wraca, porządki kontynentów
+
+Uwagi właściciela: (a) falka Halimar może zostać (spójność jezior);
+(b) „Emeria" nachodziła na „ruiny w niebie"; (c) porządki na pozostałych
+kontynentach (labelki bez POI, chaos).
+
+- **(b) Root cause znaleziony — bug nakładki:** cache układu etykiet
+  startował z `NaN`, a `Math.abs(k − NaN) > próg` jest zawsze false —
+  układ kolizyjny nakładki NIGDY się nie uruchamiał; pary o wspólnej
+  kotwicy (Emeria + podtytuł na tym samym hedronie) kładły się jedna
+  na drugiej. Po naprawie tytuł idzie POD hedron, podtytuł NAD —
+  na każdym zoomie.
+- **(a)** falka Halimar przywrócona (spójnie z resztą jezior).
+- **(c) Porządki kontynentów** + nowy detektor w walidatorze:
+  „etykieta siedzi na cudzym POI" (próg 20 j.). Wyłapał i naprawiono:
+  Hanging Swamp na ikonie Nimany → w głąb bagna; Kazuul Pass na ikonie
+  Visimal → na zachodni mur; dodatkowo Hagra Swamp w biom bagna,
+  Lulea odsunięta znad ściśniętego wybrzeża (etykieta odklejała się
+  o ~90 px), Living Spire na wolne wnętrze wschodniej Murasy.
+- **Ikony POI nie toną w drzewach:** miasta/ruiny/hedrony dołączone do
+  stref zajętych rozsiewu biomów (Prison of Omnath znów widoczny
+  w puszczy Ondu).
+- Testy 90/90; map-audit 0; walidator wiązań 0; QA rastrowe wszystkich
+  kontynentów (Sejiri, Akoum, Bala Ged, Guul Draz, Ondu, Murasa, wyspy).
+
+## 2026-09-02 — recenzja 3 preview: twarda zasada etykieta↔obiekt, pass wiązań Zendikaru, woda bez obwódek (ADR 0023)
+
+Uwagi właściciela: (1) etykiety przy POI wreszcie idealne ✔; (2) twarda
+zasada — nie ma etykiet bez obiektu i POI bez etykiet; (3) obwódki rzek
+słabe (język w morzu) — wrócić do jednolitego koloru, przyciemnić wodę;
+(4a) falka Halimar do usunięcia; (4b) Emeria nieprzypięta do hedronu.
+
+- **Twarda zasada wiązania (ADR 0023):** każde POI ma etykietę
+  (lub należy do nazwanej grupy, jak 3 stożki Teeth of Akoum); każda
+  etykieta ma twardy punkt: POI, jezioro albo punkt wewnątrz nazywanego
+  obszaru. Egzekwuje ją walidator `sprawdzWiazania` (uwagi przy każdym
+  renderze CLI) i test wymuszający **0 naruszeń** w scenach repo.
+- **Pass wiązań Zendikaru:** przypięte m.in. Emeria + „ruiny w niebie"
+  (hedron), Valakut, Teeth of Akoum, The Bulwark, Explorers Peak,
+  Glasspool, Ora Ondar, Khalni Heart, Chill Depths, Riverroot,
+  Wolfbriar, Mosscrack, Makindi Trenches (na ląd), Surrakar Caves
+  (usunięty błędnie podpięty POI osady). **Nazwane z kanonu:** Sejiri
+  Refuge, Jwar Isle Refuge, Graypelt (karty ZEN — cykl refuge), Helix
+  of Zof (lista ruin post-Eldrazi). **Usunięte** bezimienne dekoracje
+  (3 ruiny, 2 hedrony) — bez kanonicznej nazwy nie ma obiektu.
+- **E-geo-3 domknięte (detal Murasy):** Visimal, Tumbled Palace,
+  Glint Pass, Thunder Gap, Roaring Falls, Pillar Plains (przeniesione
+  do Thunder Gap — Guide > fanmapa); Umung okazał się RZEKĄ Bala Ged
+  (nie osadą) — etykieta przy ujściu do Bojuka Bay.
+- **Woda:** obwódki rzek wycofane (rzeka znów rozpuszcza się w morzu),
+  wypełnienie wody atlasu przyciemnione (#d4e2ee), falka Halimar
+  usunięta.
+- Testy 90/90; map-audit 0; walidator wiązań 0; QA rastrowe Murasy
+  i Bala Ged.
+
+## 2026-09-02 — recenzja preview PR-10: etykiety wg jednego wzoru (KRYTYCZNE), strefy zajęte biomów, obwódka rzek (ADR 0022)
+
+Uwagi właściciela z preview: (a) góry wreszcie dobre ✔; (b) KRYTYCZNE —
+etykiety rozjechane względem obiektów; (c) obwódka rzek; (d) biomy
+zakrywają góry (Sejiri pod lodem, Ondu pod puszczą).
+
+- **(b) Etykiety — jeden wzór (ADR 0022):** diagnoza potwierdzona w kodzie —
+  nakładka ekranowa Codexu rysuje napisy w stałym rozmiarze, a pozycje
+  strojone były w jednostkach mapy (przy zoomie odległość rosła,
+  przy oddaleniu napis zakrywał sąsiadów — stąd „Kabira na Agadeem");
+  rozstaw w SVG szukał pozycji w 16 kierunkach do 118 px od obiektu.
+  Teraz: **kotwica = punkt centralny obiektu → napis zawsze POD,
+  konflikt → zawsze NAD** (drabinka pionowa, deterministycznie);
+  silnik emituje kotwicę w `data-ax/ay/r`, a nakładka witryny liczy
+  z niej pozycję **zależną od zoomu** (odstęp = promień ikony × zoom
+  + 3 px — wizualnie „zaraz obok" przy każdym przybliżeniu).
+- **(d) Strefy zajęte:** rozsiew lasów/bagien/stepów omija bbox każdego
+  glifu góry, stożki wulkanów, jeziora i lód; kolejne biomy omijają
+  wcześniejsze. Czapa lodowa Sejiri zmniejszona do zachodu kontynentu —
+  pasmo odsłonięte; góry Ondu wolne od puszczy.
+- **(c) Obwódka rzek:** wstęgi rzek i dopływów mają obrys w kolorze
+  linii wody (ciemniejszy niebieski), jak jeziora i wybrzeża.
+- **Naprawa regresji przy okazji:** 4 wulkany sceny (w tym **Valakut**)
+  nie renderowały się od zmiany kolejności warstw w PR-9 (render czytał
+  `scena.wulkany`, scena trzyma je w `poi`) — wróciły na mapę.
+- ADR 0022 (nowy), ADR 0021 → częściowo zastąpiona; testy 89/89
+  (+2: wzór rozstawu, strefy zajęte); `map-audit.py` 0 problemów;
+  weryfikacja wzrokowa rastrów (Sejiri/Ondu/Tazeem/Agadeem/Valakut).
+
+## 2026-09-02 — Pętla Jakości (PR-10): ADR 0021 (formalizacja stylu map T4), lore ludów Zendikaru, Prison of Omnath + Ior Ruin na mapie
+
+Sesja bez nowej dostawy → Pętla Jakości v2 (audyt + LORE + pass mapowy):
+
+- **Audyt PR #9** (`docs/audits/AUDYT_2026-09-02-PR9.md`): kod i dane
+  poprawne; znalezisko — decyzje właściciela (a)–(g) z recenzji
+  prototypu żyły tylko w komentarzach kodu i dzienniku, nie w ADR.
+- **ADR 0021** — formalizacja stylu map T4: jedna barwa wody dla
+  wszystkich akwenów (zastępuje kolor jeziora z ADR 0020 pkt 3),
+  kolory funkcjonalne motywu atlasowego (błękit wody, bordowe
+  etykiety — doprecyzowanie ADR 0019), wiążąca kolejność warstw,
+  etykiety siadające przy obiektach, szare ikony miast, pasmo jako
+  jedna bryła. Statusy ADR 0019/0020 zaktualizowane.
+- **Pogłębienie LORE planu Zendikar** (sekcja „Ludy", +2 źródła:
+  oficjalny *Plane Shift: Zendikar* i „Gods and Monsters"):
+  - **trzy wiary merfolków** (Emeria/nieba, Ula/głębin, Cosi/trickster;
+    wybór w dorosłości; pochodzenie bóstw od wspomnienia tytanów
+    Eldrazi, trójca korów Kamsa/Mangeni/Talib);
+  - **trzy narody elfów** (Tajuru — największy, Murasa, otwartość;
+    Joraga — Bala Ged, izolacjonizm; Mul Daya — duchy przodków,
+    tatuaże-pnącza, Kazandu);
+  - **trzy plemiona goblinów** (Tuktuk — przewodnicy po ruinach;
+    Lavastep — Akoum, wiedza geotermalna; Grotag — oswajanie bestii).
+  - Nagłówki „Geography" → „Geografia" (oba plany); literówki
+    (krajobraz, „even na mapie", „rodzinnym").
+- **Pass mapowy (Zendikar T4):**
+  - **E-geo-8 rozstrzygnięte:** kanoniczna nazwa **„Prison of Omnath"**
+    (MTG Wiki „Ondu"/„Omnath" — mesa w Ondu, krąg wiążący, Ritual of
+    Lights, Soul Stair); przemianowanie w scenie, map.json i na
+    podkładzie (spelling „Omath" pochodził ze źródła fanowskiego w2).
+  - **E-geo-4 (część):** etykieta **Ior Ruin** przy jeziorze Glasspool
+    (kotwica istniała; kanon: karta *Ior Ruin Expedition*, ZEN 49).
+  - `map-audit.py` — 0 problemów; podkład regenerowany deterministycznie
+    (diff SVG: 2 linie).
+- **Link-mining:** przy 2 kartach na 2 planach żadna encja nie osiąga
+  progu ≥2 kart — bez nowych haseł; kandydaci czekają na dostawy
+  (Dunland, Halimar/Coralhelm, merfolkowie).
 
 ## 2026-09-02 — mapa Zendikaru: 7 poprawek z recenzji prototypu (pasma gór, etykiety przy obiektach, szare miasta, jednolita woda, hedrony, morze, kolejność warstw)
 
