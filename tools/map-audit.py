@@ -339,6 +339,15 @@ def audytuj(plan, woda_dozwolona):
     svgi = sorted(kat.glob('podklad*.svg'))
     if not svgi:
         return [f'brak maps/{plan}/podklad*.svg'], []
+    # Strefy wodne zadeklarowane w scenie mapforge (T4) dokładamy do
+    # whitelisty — jedno źródło prawdy w scena.json, nie w audytorze.
+    wody = SPODZEANE_WODY | woda_dozwolona
+    scena = kat / 'scena.json'
+    if scena.exists():
+        try:
+            wody |= set(json.loads(scena.read_text(encoding='utf-8')).get('strefyWodne', []))
+        except json.JSONDecodeError:
+            problemy.append(f'{scena.name}: scena.json nieparsowalna')
     for svg in svgi:
         try:
             mapa = Mapa(svg)
@@ -349,8 +358,7 @@ def audytuj(plan, woda_dozwolona):
             info.append(f'{svg.name}: mapa liniowa/T2 (bez poligonów lądu) '
                         '— testy na-lądzie pominięte')
             continue
-        p2, i2 = audytuj_podklad(mapa, svg.name, kat / 'map.json',
-                                 SPODZEANE_WODY | woda_dozwolona)
+        p2, i2 = audytuj_podklad(mapa, svg.name, kat / 'map.json', wody)
         problemy.extend(p2)
         info.extend(i2)
     return problemy, info

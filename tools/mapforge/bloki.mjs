@@ -29,6 +29,11 @@ export const PAL = {
   droga: '#8a7550',
   lodFill: '#eef0e6', lodPek: '#c9d4d6', snieg: '#f6f4ec',
   krater: '#7a4a3a', dym: '#9aa3a8', mur: '#c9b98f', kamien: '#cfc4a0',
+  // klocki miejskie (atlas miasta — Ravnica, grudzień 2026): tkanina =
+  // mikro-bloki zabudowy, gruz = rumowisko, ink warstw = granice/mury/
+  // wnętrza szczelin; oba motywy trzymają ten sam szyk kolorystyczny.
+  tkanina: '#c4b892', gruz: '#9a8f74', brzegDzielnicy: '#8a7550',
+  murInk: '#5c4a33', szczelinaFill: '#6b6257', szczelinaInk: '#3f382f',
   poswiataKolor: '#b9cdd8',
   poswiata: [{ w: 12, o: 0.10 }, { w: 7, o: 0.16 }, { w: 3, o: 0.24 }],
   tryb: 'kolor',   // 'kolor' = wypelnienia; 'tusz' = kontur + haczura (line-art)
@@ -63,6 +68,9 @@ const MOTYWY = {
     droga: '#3f3f3f',
     lodFill: '#f4f8fb', lodPek: '#b9cfe0', snieg: '#ffffff',
     krater: '#4a4a4a', dym: '#909090', mur: '#d9d9d9', kamien: '#cfcfcf',
+    // klocki miejskie w atlasie: wyłącznie szarości (R=G=B — pilnuje test motywu)
+    tkanina: '#c9c9c9', gruz: '#9c9c9c', brzegDzielnicy: '#6e6e6e',
+    murInk: '#3f3f3f', szczelinaFill: '#5f5f5f', szczelinaInk: '#333333',
     poswiataKolor: '#9f9f9f',
     poswiata: [{ w: 10, o: 0.35 }, { w: 5.5, o: 0.5 }, { w: 2, o: 0.9 }],
     tryb: 'kolor',
@@ -554,4 +562,263 @@ export function skalaLinia(x, y, { px = 150, km = 150, segmenty = 4 } = {}) {
   }
   out += `<text x="${rr(x + px / 2)}" y="${rr(y + 20)}" font-size="13" text-anchor="middle" fill="${PAL.tekst}">${km} mil</text>`;
   return out;
+}
+
+/* ============================================================
+ * Klocki MIEJSKIE — atlas metropolii (T4, kanonicznie: Ravnica).
+ * Miasto to inna gramatyka niż przyroda: regularne granice dzielnic
+ * (arterie), ciągły zasiew zabudowy o małej ziarnistości, mury z blankami,
+ * szczeliny/wąwozy wycinające tkaninę, zabytkowe ikony POI.
+ * Wszystkie „losowe" ziarno: prng z id (determinizm = czysty diff w git).
+ * ========================================================== */
+
+/** Przyciemnia kolor hex (#rrggbb) o d na kanał — tint dzielnic względem lądu. */
+function tonuj(hex, d) {
+  const c = (i) => Math.max(0, Math.min(255, parseInt(hex.slice(i, i + 2), 16) - d));
+  const h = (v) => v.toString(16).padStart(2, '0');
+  return `#${h(c(1))}${h(c(3))}${h(c(5))}`;
+}
+
+/**
+ * Dzielnica: wypełnienie tonem (o `ton` ciemniejsze od lądu) — BEZ granicy
+ * (granice to osobna warstwa `granicaDzielnicy`, rysowana NAD tkaniną).
+ * Krawędzie proste: granice dzielnic to wielkie arterie, nie wybrzeża.
+ */
+export function dzielnica(punkty, { ton = 0 } = {}) {
+  if (!ton) return '';
+  return `<path class="mf-dzielnica" d="${prosta(punkty, true)}" fill="${tonuj(PAL.lad, ton)}"/>`;
+}
+
+/** Granica dzielnicy = obwodnica: lśniący prześwit + tuszowa kreska osi.
+ *  `zamkniete: false` — rysuj pojedynczy odcinek (dedupe krawędzi we
+ *  wspólnej warstwie, żeby granice sąsiadów nie rysowały się podwójnie). */
+export function granicaDzielnicy(punkty, { zamkniete = true } = {}) {
+  const d = prosta(punkty, zamkniete);
+  return `<path class="mf-granica-dzielnicy" d="${d}" fill="none" stroke="${PAL.halo}" stroke-width="3.8" stroke-linejoin="${zamkniete ? 'round' : 'butt'}"/>` +
+    `<path d="${d}" fill="none" stroke="${PAL.brzegDzielnicy}" stroke-width="1.9" stroke-linejoin="${zamkniete ? 'round' : 'butt'}"/>`;
+}
+
+/**
+ * Mur miejski z blankami: gruby ciemny pas + rytm krótkich kresek
+ * prostopadłych (ząbki na zewnątrz, `strona = -1` wybiera stronę łamania).
+ * Brama = po prostu przerwa między segmentami (wywołujący dzieli linię).
+ */
+export function mur(id, punkty, { strona = -1, zab = 11, kreska = 7, grubosc = 5 } = {}) {
+  const d = prosta(punkty);
+  const n = Math.max(1, Math.floor(dlugosc(punkty) / zab));
+  let blanki = '';
+  for (let k = 0; k <= n; k++) {
+    const t = k / n;
+    const p = punktNa(punkty, t);
+    const p0 = punktNa(punkty, Math.max(0, t - 0.01));
+    const p1 = punktNa(punkty, Math.min(1, t + 0.01));
+    const dx = p1[0] - p0[0], dy = p1[1] - p0[1];
+    const l = Math.hypot(dx, dy) || 1;
+    const nx = (-dy / l) * strona, ny = (dx / l) * strona;
+    blanki += `M ${rr(p[0])} ${rr(p[1])} L ${rr(p[0] + nx * kreska)} ${rr(p[1] + ny * kreska)} `;
+  }
+  return `<g class="mf-mur" data-x="${rr(punkty[0][0])}" data-y="${rr(punkty[0][1])}">` +
+    `<path d="${d}" fill="none" stroke="${PAL.murInk}" stroke-width="${rr(grubosc)}" stroke-linecap="round"/>` +
+    `<path d="${blanki}" stroke="${PAL.murInk}" stroke-width="${rr(Math.max(1, grubosc * 0.34))}" fill="none"/>` +
+    `</g>`;
+}
+
+/**
+ * Szczelina/wąwóz wycinający tkaninę (np. Deadbridge Chasm): ciemny pas
+ * o poszarpanych krawędziach + kreski „schodów/zbliz".
+
+ Rysowana NAD biomami (tkanina jej nie zasypuje), POD drogami i POI.
+ */
+export function szczelina(id, punkty, { szer = 20 } = {}) {
+  const rng = prng(`szczelina:${id}`);
+  const lewo = [], prawo = [];
+  for (let i = 0; i < punkty.length; i++) {
+    const a = punkty[Math.max(0, i - 1)], b = punkty[Math.min(punkty.length - 1, i + 1)];
+    const dx = b[0] - a[0], dy = b[1] - a[1];
+    const l = Math.hypot(dx, dy) || 1;
+    const nxs = (-dy / l), nys = (dx / l);
+    const jl = szer / 2 + (rng() - 0.5) * 5;
+    const jr = szer / 2 + (rng() - 0.5) * 5;
+    lewo.push([punkty[i][0] + nxs * jl, punkty[i][1] + nys * jl]);
+    prawo.push([punkty[i][0] - nxs * jr, punkty[i][1] - nys * jr]);
+  }
+  const pas = [...lewo, ...prawo.reverse()];
+  const c = dlugosc(punkty);
+  const ns = Math.max(2, Math.floor(c / 15));
+  let schody = '';
+  for (let k = 1; k < ns; k++) {
+    const t = k / ns;
+    const p = punktNa(punkty, t);
+    const p0 = punktNa(punkty, Math.max(0, t - 0.01));
+    const p1 = punktNa(punkty, Math.min(1, t + 0.01));
+    const dx = p1[0] - p0[0], dy = p1[1] - p0[1];
+    const l = Math.hypot(dx, dy) || 1;
+    const nx = (-dy / l), ny = (dx / l);
+    const w = (szer * (0.26 + rng() * 0.2));
+    const sz = (rng() - 0.5) * 6;
+    schody += `M ${rr(p[0] - nx * w + dx / l * sz)} ${rr(p[1] - ny * w + dy / l * sz)} L ${rr(p[0] + nx * w + dx / l * sz)} ${rr(p[1] + ny * w + dy / l * sz)} `;
+  }
+  return `<g class="mf-szczelina" data-x="${rr(punkty[0][0])}" data-y="${rr(punkty[0][1])}">` +
+    `<path d="${prosta(pas, true)}" fill="${PAL.szczelinaFill}" stroke="${PAL.szczelinaInk}" stroke-width="1.4" stroke-linejoin="round"/>` +
+    `<path d="${schody}" stroke="${PAL.kamien}" stroke-width="1.1" fill="none" opacity="0.8"/>` +
+    `</g>`;
+}
+
+/**
+ * Tkanina miejska: rozsiew mikro-bloków zabudowy (prostokąciki i „kąty"
+ * ulic) — m leta, jednolita faktura miasta. Biomowa (używa maski lądu i
+ * stref zajętych jak las), więc nie toną pod POI ani nie wypływają poza
+ * obręb. `gestosc` skaluje liczbę bloków (Greenbelt ma mniej, Precinct
+ * Six — więcej).
+ */
+export function tkanina(id, punkty, { gestosc = 1, maski = null, wyklucz = null } = {}) {
+  const rng = prng(`tkanina:${id}`);
+  const n = Math.round(pole(punkty) / 380 * gestosc);
+  const pts = rozrzut(punkty, n, rng, 5.2, maski, wyklucz, () => true);
+  let out = `<g class="mf-tkanina">`;
+  for (const [x, y] of pts) {
+    const w = 2.6 + rng() * 2.4, h = 1.8 + rng() * 1.8;
+    const a = (Math.floor(rng() * 5) - 2) * 22.5;
+    const k = rng();
+    if (k < 0.5) {
+      // prostokącik działki
+      const c = Math.cos(a * Math.PI / 180), s = Math.sin(a * Math.PI / 180);
+      const T = (dx, dy) => `${rr(x + dx * c - dy * s)} ${rr(y + dx * s + dy * c)}`;
+      out += `<path d="M ${T(-w, -h)} L ${T(w, -h)} L ${T(w, h)} L ${T(-w, h)} Z" fill="none" stroke="${PAL.tkanina}" stroke-width="0.9"/>`;
+    } else if (k < 0.75) {
+      // linia ulicy z krawężnikiem
+      const c = Math.cos(a * Math.PI / 180), s = Math.sin(a * Math.PI / 180);
+      out += `<path d="M ${rr(x - c * w * 1.5)} ${rr(y - s * w * 1.5)} L ${rr(x + c * w * 1.5)} ${rr(y + s * w * 1.5)} M ${rr(x - c * w)} ${rr(y - s * w + 2.2)} L ${rr(x + c * w)} ${rr(y + s * w + 2.2)}" stroke="${PAL.tkanina}" stroke-width="0.8" fill="none"/>`;
+    } else {
+      out += `<circle cx="${rr(x)}" cy="${rr(y)}" r="0.9" fill="${PAL.tkanina}"/>`;
+    }
+  }
+  return out + `</g>`;
+}
+
+/**
+ * Gruz/rumowisko (Rubblebelt): rozsiew połamanych narożników i drobinek —
+ * miasto po grabieżach Gruul. Jaśniejsza kreska niż tułów zabudowy.
+ */
+export function gruz(id, punkty, { gestosc = 1, maski = null, wyklucz = null } = {}) {
+  const rng = prng(`gruz:${id}`);
+  const n = Math.round(pole(punkty) / 460 * gestosc);
+  const pts = rozrzut(punkty, n, rng, 6.5, maski, wyklucz, () => true);
+  let out = `<g class="mf-gruz">`;
+  for (const [x, y] of pts) {
+    const w = 3 + rng() * 2.8, h = 2.2 + rng() * 2;
+    const pochyl = (rng() - 0.5) * 50;
+    const zlam = (rng() - 0.5) * h * 1.4;
+    out += `<g transform="rotate(${rr(pochyl)} ${rr(x)} ${rr(y)})">` +
+      `<path d="M ${rr(x - w)} ${rr(y + h)} L ${rr(x - w)} ${rr(y - h * 0.4)} L ${rr(x + w * 0.4)} ${rr(y - h + zlam)} L ${rr(x + w)} ${rr(y - h * 0.3)} L ${rr(x + w)} ${rr(y + h)}" fill="none" stroke="${PAL.gruz}" stroke-width="1.1" stroke-linejoin="round"/>` +
+      (rng() < 0.45 ? `<circle cx="${rr(x + w * 0.4)}" cy="${rr(y + h + 1.4)}" r="0.8" fill="${PAL.gruz}"/>` : '') +
+      `</g>`;
+  }
+  return out + `</g>`;
+}
+
+/* ---------- POI miejskie (koło z tłem lądu = ta sama konwencja co miasto) ---------- */
+
+function poiKolko(x, y, r, skala = 1) {
+  return `<circle cx="${rr(x)}" cy="${rr(y)}" r="${rr(r * skala)}" fill="${PAL.lad}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.1 * skala)}"/>`;
+}
+
+/** Plac/forum: otwarty rynek — pierścień bruku z promieniami. */
+export function plac(x, y, { skala = 1 } = {}) {
+  const s = skala;
+  let out = `<g class="mf-plac" data-x="${rr(x)}" data-y="${rr(y)}">` + poiKolko(x, y, 12, s);
+  out += `<circle cx="${rr(x)}" cy="${rr(y)}" r="${rr(8 * s)}" fill="none" stroke="${PAL.skalaCien}" stroke-width="${rr(1.3 * s)}" stroke-dasharray="${rr(3 * s)} ${rr(2.2 * s)}"/>`;
+  for (const k of [0, 1, 2, 3]) {
+    const a = (Math.PI / 2) * k + Math.PI / 4;
+    out += `<path d="M ${rr(x + Math.cos(a) * 2.6 * s)} ${rr(y + Math.sin(a) * 2.6 * s)} L ${rr(x + Math.cos(a) * 5.6 * s)} ${rr(y + Math.sin(a) * 5.6 * s)}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.1 * s)}"/>`;
+  }
+  out += `<circle cx="${rr(x)}" cy="${rr(y)}" r="${rr(1.4 * s)}" fill="${PAL.skalaCien}"/>`;
+  return out + `</g>`;
+}
+
+/** Świątynia prawa (kolumny + architraw) — np. trzykolumnowe New Prahv. */
+export function kolumny(x, y, { skala = 1 } = {}) {
+  const s = skala;
+  const P = (dx, dy) => `${rr(x + dx * s)} ${rr(y + dy * s)}`;
+  let out = `<g class="mf-kolumny" data-x="${rr(x)}" data-y="${rr(y)}">` + poiKolko(x, y, 12.5, s);
+  out += `<path d="M ${P(-8, 6.5)} L ${P(8, 6.5)} M ${P(-7, 4.5)} L ${P(7, 4.5)}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.5 * s)}"/>`;
+  for (const dx of [-4.6, 0, 4.6]) {
+    out += `<path d="M ${P(dx - 1.1, 4.5)} L ${P(dx - 1.1, -3.4)} M ${P(dx + 1.1, 4.5)} L ${P(dx + 1.1, -3.4)}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.2 * s)}"/>`;
+  }
+  out += `<path d="M ${P(-6.4, -3.4)} L ${P(6.4, -3.4)} L ${P(5.2, -5.4)} L ${P(-5.2, -5.4)} Z" fill="${PAL.skalaCien}"/>`;
+  return out + `</g>`;
+}
+
+/** Kopuła rotundy (Izba Paktu) — półkula na bębnie + stopnie + iglica. */
+export function kopula(x, y, { skala = 1 } = {}) {
+  const s = skala;
+  const P = (dx, dy) => `${rr(x + dx * s)} ${rr(y + dy * s)}`;
+  let out = `<g class="mf-kopula" data-x="${rr(x)}" data-y="${rr(y)}">` + poiKolko(x, y, 12, s);
+  out += `<path d="M ${P(-6.4, 1.5)} A ${rr(6.4 * s)} ${rr(6.4 * s)} 0 0 1 ${P(6.4, 1.5)}" fill="${PAL.skalaCien}"/>` +
+    `<path d="M ${P(-6.4, 1.5)} L ${P(-6.4, 3.4)} M ${P(6.4, 1.5)} L ${P(6.4, 3.4)}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.3 * s)}"/>` +
+    `<path d="M ${P(-8, 5.6)} L ${P(8, 5.6)} M ${P(-6.8, 3.6)} L ${P(6.8, 3.6)}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.4 * s)}"/>` +
+    `<path d="M ${P(0, -4.6)} L ${P(0, -7.2)}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.2 * s)}"/>` +
+    `<circle cx="${rr(x)}" cy="${rr(y - 7.8 * s)}" r="${rr(1 * s)}" fill="${PAL.skalaCien}"/>`;
+  return out + `</g>`;
+}
+
+/** Platforma zawieszona na łańcuchach (Millennial Platform). */
+export function platforma(x, y, { skala = 1 } = {}) {
+  const s = skala;
+  const P = (dx, dy) => `${rr(x + dx * s)} ${rr(y + dy * s)}`;
+  let out = `<g class="mf-platforma" data-x="${rr(x)}" data-y="${rr(y)}">` + poiKolko(x, y, 12, s);
+  out += `<rect x="${rr(x - 7.5 * s)}" y="${rr(y + 0.5 * s)}" width="${rr(15 * s)}" height="${rr(4 * s)}" rx="${rr(1.5 * s)}" fill="${PAL.skalaCien}"/>`;
+  for (const dx of [-5, 0, 5]) {
+    out += `<path d="M ${P(dx, 0.5)} L ${P(dx, -2.8)}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.1 * s)}"/>`;
+  }
+  out += `<path d="M ${P(-6.5, 0.4)} L ${P(-9.5, -8)} M ${P(6.5, 0.4)} L ${P(9.5, -8)}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.2 * s)}" stroke-dasharray="${rr(2.2 * s)} ${rr(1.3 * s)}"/>`;
+  out += `<path d="M ${P(0, 4.6)} L ${P(0, 8)}" stroke="${PAL.skalaCien}" stroke-width="${rr(1 * s)}" stroke-dasharray="${rr(1.8 * s)} ${rr(1.3 * s)}"/>`;
+  return out + `</g>`;
+}
+
+/** Koło wodne/młyn (Blistercoils) — wieńce ponad wodą zonotu. */
+export function kolowrot(x, y, { skala = 1 } = {}) {
+  const s = skala;
+  let out = `<g class="mf-kolowrot" data-x="${rr(x)}" data-y="${rr(y)}">` + poiKolko(x, y, 11.5, s);
+  out += `<circle cx="${rr(x)}" cy="${rr(y - 1 * s)}" r="${rr(6.4 * s)}" fill="none" stroke="${PAL.skalaCien}" stroke-width="${rr(1.5 * s)}"/>`;
+  for (let k = 0; k < 8; k++) {
+    const a = (Math.PI / 4) * k;
+    out += `<path d="M ${rr(x)} ${rr(y - 1 * s)} L ${rr(x + Math.cos(a) * 6.4 * s)} ${rr(y - 1 * s + Math.sin(a) * 6.4 * s)}" stroke="${PAL.skalaCien}" stroke-width="${rr(0.9 * s)}"/>`;
+  }
+  out += `<circle cx="${rr(x)}" cy="${rr(y - 1 * s)}" r="${rr(1.5 * s)}" fill="${PAL.skalaCien}"/>` +
+    `<path d="M ${rr(x - 7 * s)} ${rr(y + 7.6 * s)} q ${rr(3.5 * s)} ${rr(-2.4 * s)} ${rr(7 * s)} 0 q ${rr(3.5 * s)} ${rr(2.4 * s)} ${rr(7 * s)} 0" stroke="${PAL.wodaStroke}" stroke-width="${rr(1.1 * s)}" fill="none"/>`;
+  return out + `</g>`;
+}
+
+/** Most nad szczeliną (Benzer's Bridge) — pomost, balustrada, łuk. */
+export function most(x, y, { skala = 1, kat = 0 } = {}) {
+  const s = skala;
+  const P = (dx, dy) => `${rr(dx * s)} ${rr(dy * s)}`;
+  let glyph = `<path d="M ${P(-8, 0)} L ${P(8, 0)} M ${P(-8, -2.2)} L ${P(8, -2.2)}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.3 * s)}"/>` +
+    `<path d="M ${P(-6.4, 2.2)} Q 0 ${rr(-4.4 * s)} ${P(6.4, 2.2)}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.2 * s)}" fill="none"/>` +
+    `<path d="M ${P(-8, 0)} L ${P(-8, 2.6)} M ${P(8, 0)} L ${P(8, 2.6)}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.3 * s)}"/>`;
+  return `<g class="mf-most" data-x="${rr(x)}" data-y="${rr(y)}">` + poiKolko(x, y, 11, s) +
+    (kat ? `<g transform="rotate(${rr(kat)} ${rr(x)} ${rr(y)})"><g transform="translate(${rr(x)} ${rr(y)})">${glyph}</g></g>`
+      : `<g transform="translate(${rr(x)} ${rr(y)})">${glyph}</g>`) +
+    `</g>`;
+}
+
+/** Ognisko zgromadzenia (Skarrg) — wieczny ogień Gruul w ruinach. */
+export function ognisko(x, y, { skala = 1 } = {}) {
+  const s = skala;
+  const P = (dx, dy) => `${rr(x + dx * s)} ${rr(y + dy * s)}`;
+  let out = `<g class="mf-ognisko" data-x="${rr(x)}" data-y="${rr(y)}">` + poiKolko(x, y, 11, s);
+  out += `<path d="M ${P(-5.4, 4.4)} L ${P(5.4, 2.2)} M ${P(-5.4, 2.2)} L ${P(5.4, 4.4)}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.6 * s)}" stroke-linecap="round"/>`;
+  out += `<path d="M ${P(0, -7.6)} C ${P(3.6, -2.6)} ${P(3.4, 0.4)} ${P(0, 2.4)} C ${P(-3.4, 0.4)} ${P(-3.6, -2.6)} ${P(0, -7.6)} Z" fill="${PAL.skalaCien}"/>`;
+  out += `<circle cx="${rr(x + 2.8 * s)}" cy="${rr(y - 9.8 * s)}" r="${rr(0.9 * s)}" fill="${PAL.skalaCien}"/>`;
+  return out + `</g>`;
+}
+
+/** Wielkie drzewo-pomnik (Vitu-Ghazi) — hero-korona z własnym ziarnem. */
+export function drzewoPoi(x, y, { skala = 2 } = {}) {
+  const rng = prng(`drzewo-poi:${rr(x)}:${rr(y)}`);
+  return `<g class="mf-drzewo-poi" data-x="${rr(x)}" data-y="${rr(y)}">` +
+    poiKolko(x, y, skala * 7.2, 1) +
+    drzewo(x, y, skala, rng) +
+    `</g>`;
 }

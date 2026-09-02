@@ -62,7 +62,18 @@ przed renderem.
 | `droga(id, punkty, {typ})` | linia | `szlak` — kropki (konwencja line-art mapome `0 9`); `droga` — kreski |
 | `miasto(x, y, {skala})` | punkt | zwarta gromadka domków z dwuspadowym dachem (osada) |
 | `ruina(x, y, {skala})` | punkt | 3 złamane kolumny + przewrócona belka i gruz |
+| `fort(x, y, {skala})` | punkt | warownia z blankami i bramą (twierdze) |
+| `iglica(x, y, {skala})` | punkt | smukła turnia/gmach (wolne iglice, Nivix) |
 | `hedron(x, y, {skala, opacity})` | punkt | kamienny pierścień (dryf = opacity) |
+| **klocki miejskie (T4 — atlas metropolii, Ravnica)** | | |
+| `dzielnica(punkty, {ton})` | wielokąt | tint panowania (kaseta `dzielnice` w scenie; ton = przyciemnienie lądu) |
+| `granicaDzielnicy(punkty, {zamkniete})` | łamana | granica-arteria (prześwit + tusz); render dedyka każdą krawędź RAZ |
+| `mur(id, punkty, {strona, zab})` | łamana | mur miejski z blankami (kaseta `mury`; brama = przerwa między segmentami) |
+| `szczelina(id, punkty, {szer})` | łamana | ciemny pas wąwozu miejskiego z poszarpanymi krawędziami i schodami (kaseta `szczeliny`; strefa zajęta dla biomów) |
+| `tkanina(id, punkty, {gestosc})` | wielokąt | **biom**: mikro-bloki zabudowy / ulice (ziarno `prng(id)`, respektuje maski i strefy zajęte) |
+| `gruz(id, punkty, {gestosc})` | wielokąt | **biom**: rumowisko (połamane narożniki) — rubblebelty |
+| `plac / kolumny / kopula / platforma / kolowrot / most / ognisko` | punkt | POI miejskie: rynek, kolumnada, rotunda, platforma na łańcuchach, koło wodne, most, ognisko-zgromadzenie (w duchu mapome, koło z tłem lądu) |
+| `drzewo` (POI) | punkt | wielkie drzewo-pomnik (Vitu-Ghazi) — hero-korona z własnym ziarnem |
 | `etykieta(tekst, x, y, {kat, fs, ital})` | tekst | halo + obrót wokół punktu (`kat` w stopniach); `przyDo:[x,y]` kotwiczy napis obok obiektu + kreska |
 | `lukEtykieta(id, punkty, tekst, {fs})` | łuk | etykieta po łuku (textPath) — zatoki, doliny |
 | `kompas / ramka / skalaLinia` | — | oprawa mapy |
