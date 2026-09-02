@@ -332,13 +332,6 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
       <h1>Mapa: ${escapeHtml(mapa.tytul ?? slugPlanu)}</h1>
       <p class="meta">pinezki kart: ${pinezki.length} · regiony: ${regiony.length}</p>
     </header>`}
-    <div class="mapa-pasek">
-      <button class="przycisk mapa-przycisk" data-mapa-akcja="oddal" aria-label="Oddal">−</button>
-      <button class="przycisk mapa-przycisk" data-mapa-akcja="przybliz" aria-label="Przybliż">+</button>
-      <button class="przycisk mapa-przycisk" data-mapa-akcja="reset" aria-label="Reset widoku">⟲</button>
-      <span class="mapa-podpowiedz">przeciągnij, aby przesunąć · kółko / przyciski, aby przybliżyć</span>
-    </div>
-
     <div class="mapa-okno" id="mapa-okno" tabindex="0" role="application"
       aria-label="Mapa ${escapeHtml(mapa.tytul ?? slugPlanu)}: przeciągnij, aby przesunąć, kółko myszy, aby przybliżyć"
       data-plan="${escapeHtml(slugPlanu)}" data-pin="${escapeHtml(pinDocelowy)}" data-aspekt="${(szer / wys).toFixed(4)}">
@@ -434,7 +427,6 @@ export function zamontujMape(app, opcje = {}) {
   const ruch = okno.querySelector('[data-mapa-ruch]');
   if (!ruch) return;
   const nakladka = okno.querySelector('[data-mapa-nakladka]');
-  const pasek = app.querySelector('.mapa-pasek') ?? okno;
 
   // ── Warstwa karty (B2): otwarcie z pinezki, zamknięcie z powrotem ──
   const warstwa = app.querySelector('[data-map-warstwa]');
@@ -651,16 +643,11 @@ export function zamontujMape(app, opcje = {}) {
     }
   }
 
-  // przyciski (pasek nad mapą)
-  for (const przycisk of pasek.querySelectorAll('.mapa-przycisk')) {
-    przycisk.addEventListener('click', () => {
-      const akcja = przycisk.getAttribute('data-mapa-akcja');
-      const w = okno.clientWidth || 800, h = okno.clientHeight || 600;
-      if (akcja === 'reset') { dopasuj(); }
-      else if (akcja === 'przybliz') zoomWokol(w / 2, h / 2, stan.k * 1.35);
-      else if (akcja === 'oddal') zoomWokol(w / 2, h / 2, stan.k / 1.35);
-    });
-  }
+  // Sterowanie bez paska (decyzja właściciela 2026-09-02): zoom = kółko
+  // myszy / pinch; ESCAPE = reset widoku (dopasowanie całej mapy).
+  const naEscape = (e) => { if (e.key === 'Escape') { e.preventDefault?.(); dopasuj(); } };
+  okno.addEventListener('keydown', naEscape);
+  globalThis.document?.addEventListener?.('keydown', naEscape);
 
   // kółko myszy (zoom do kursora)
   okno.addEventListener('wheel', (e) => {

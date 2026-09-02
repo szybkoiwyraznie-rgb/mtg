@@ -1,7 +1,12 @@
-<!-- Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości,
-krok 5, ADR 0006). Najnowsze na górze. BEZ nagłówka H1 i leadu: tytuł
-i opis strony daje renderer (render-whatsnew.js) — duplikat nagłówków
-był błędem (feedback właściciela 2026-09-02). -->
+## 2026-09-02 — szlify UI: „Narracja" na kartach, mapy bez paska, czysty dziennik
+
+- Na kartach słowo **„Narracja"** zastępuje „Fabułę dostawy"
+  (terminologia widoczna dla czytelnika; format dostawy bez zmian).
+- Mapy: pasek „− + ⟲" usunięty — zoom kółkiem/pinch, **Esc = reset
+  widoku**.
+- Dziennik „Co nowego" bez komentarza technicznego na górze (renderer
+  markdown pokazywał go jako tekst na stronie głównej i karcie
+  Co nowego).
 
 ## 2026-09-02 — dopieszczenie iframe (feedback): czyste okno mapy, sekcje w bazie, warstwa nad całością
 

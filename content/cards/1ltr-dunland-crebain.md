@@ -45,7 +45,7 @@ o Pierścień zwiad crebain łączony jest z **Sarumanem** — dlatego sam
 widok „chmury" ptaków wystarczył, by doświadczeni wędrowcy zgasili ogień
 i cały dzień spędzili w ukryciu.
 
-**Osadzenie kolekcji (Fabuła dostawy):** scena karty rozgrywa
+**Osadzenie kolekcji (Narracja):** scena karty rozgrywa
 się na skraju dunlandzkiego urwiska. Dwaj **Uruk-hai Białej Ręki**
 zastygają w napięciu, wypatrując znaku od skrzydlatych zwiadowców;
 w wąwozie pod nimi formuje się cicha **armia Sarumana**, a kolejne
@@ -113,7 +113,7 @@ Osadzenie w Dunlandzie — ojcowiźnie stada — jest zgodne z kanonem;
 kanoniczny epizod zwiadu, przelot nad Hollin, rozgrywa się nieco
 na północ, w dawnym Eregionie.
 
-**Fabuła dostawy** kotwiczy scenę precyzyjnie: urwisko na
+**Narracja** kotwiczy scenę precyzyjnie: urwisko na
 skraju Dunlandu, pod nim wąwóz zborny, w którym armia Sarumana czeka
 na sygnał ptasich szpiegów — moment tuż przed natarciem na zachodnie
 rubieże. To ta wizja stoi za ilustracjami FOT/KON karty i za odczytem
@@ -125,14 +125,14 @@ Karta jest osadzona w regionie **Dunland** — krainie między rzeką
 Glanduin na północy, Górami Mglistymi na wschodzie i rzeką Isen na
 południu, na północny zachód od Isengardu (geografię szerszego regionu
 opisuje plan [[srodziemie|Śródziemie]]). Osadzenie ma poziom pewności
-regionu: pinezka wskazuje środek krainy, nie konkretny punkt. Fabuła
-dostawy sytuuje samą scenę na urwisku nad wąwozem zbornym armii —
+regionu: pinezka wskazuje środek krainy, nie konkretny punkt. Narracja
+sytuuje samą scenę na urwisku nad wąwozem zbornym armii —
 w praktyce przy południowo-wschodnim skraju krainy, od strony
 Isengardu, skąd wychodzą rozkazy dla zwiadu.
 
 ## Źródła
 
-- **Fabuła dostawy (właściciel, 2026-09-02)** — wiążące
+- **Narracja (dostawa właściciela, 2026-09-02)** — wiążące
   osadzenie sceny: urwisko w Dunlandzie, zwiad Uruk-hai Białej Ręki,
   armia Sarumana w wąwozie, pikujący crebain jako sygnał; archiwum:
   `collection/entries/1ltr-dunland-crebain.md`.

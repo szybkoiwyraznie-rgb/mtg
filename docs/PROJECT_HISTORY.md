@@ -4,6 +4,17 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-02 — sesja PR-10 (część 14): szlify — Narracja, mapy bez paska, czysty dziennik
+
+1. Karty: „Fabuła dostawy" → **„Narracja"** (feedback: brzmienie);
+   ADR 0026/SZKIELET zachowują „Fabułę" jako nazwę pola dostawy,
+   na kartach czytelnik widzi „Narracja". Test dostosowany.
+2. Mapy: pasek zoomu usunięty (kółko/pinch); Esc = dopasuj();
+   martwe CSS paska wyczyszczone.
+3. Lekcja: renderer markdown NIE ukrywa komentarzy HTML — notki dla
+   edytorów nie mogą żyć w plikach treści (komentarz z co-nowego
+   wyświetlał się jako „developerski tekst").
+
 ## 2026-09-02 — sesja PR-10 (część 13): iframe v2.1 — podział ról rodzic/okno (recenzja)
 
 Feedback: iframe ma być dobrany do mapy, strona w nim statyczna (bez

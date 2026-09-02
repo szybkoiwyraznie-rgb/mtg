@@ -137,7 +137,7 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   assert.ok(mapa.includes('data-mapa-ruch'), 'mapa: brak warstwy pan/zoom');
   assert.ok(mapa.includes('mapa-nakladka'), 'mapa: brak nakładki ekranowej dla pinezek');
   assert.ok(!mapa.includes('left:40.6%'), 'mapa: pinezki nie mogą być pozycjonowane procentami w skalowanej warstwie');
-  assert.ok(mapa.includes('mapa-przycisk'), 'mapa: brak przycisków zoomu');
+  assert.ok(!mapa.includes('mapa-przycisk'), 'mapa: pasek zoomu usunięty (kółko/pinch + Esc — decyzja właściciela)');
   // Strona mapy = CZYSTE okno (feedback właściciela): sekcje towarzyszące
   // i warstwa karty żyją w artefakcie bazowym, nie w iframe
   assert.ok(mapa.includes('mapa-strona-osadzona'), 'strona mapy: brak trybu osadzonego');
@@ -231,7 +231,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   // byty ze sceny (np. Uruk-hai) są legalne, ale wyłącznie jako oznaczone
   // OSADZENIE kolekcji z Fabułą cytowaną w Źródłach. Prompt nadal poza pętlą.
   assert.ok(karta.includes('Osadzenie kolekcji'), 'karta: scena Fabuły oznaczona jako osadzenie (ADR 0026)');
-  assert.ok(karta.includes('Fabuła dostawy'), 'karta: Fabuła dostawy cytowana w treści/Źródłach (ADR 0026)');
+  assert.ok(karta.includes('Narracja'), 'karta: Narracja (Fabuła dostawy) cytowana w treści/Źródłach (ADR 0026)');
   assert.ok(!karta.includes('Narracja Koleksji') && !karta.includes('Narracja Kolekcji'), 'karta: sekcja narracji zniesiona (ADR 0011)');
   assert.ok(!karta.includes('perspektywy żabiej'), 'karta: treść promptu nie może się pojawiać (ADR 0011)');
   assert.ok(!karta.includes('ADR'), 'karta: treść nie może odsyłać do mechaniki Codexu (feedback B)');

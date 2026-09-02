@@ -40,7 +40,9 @@ scena, rola bytów; zgodny z ilustracjami FOT/KON>
 
 Wszystko pozostałe — kolory, typ, koszt, statystyki, artysta, rama,
 flavor, rzadkość — pochodzi ze **snapshotu Scryfalla posiadanego
-printu** (ADR 0004). **Prompt wizualizacyjny nie wchodzi do pętli**
+printu** (ADR 0004). Na Karcie Katalogowej Fabułę przywołujemy pod
+czytelniczą nazwą **„Narracja"** (decyzja właściciela 2026-09-02).
+**Prompt wizualizacyjny nie wchodzi do pętli**
 (ADR 0011). Fabuła: osadzenie opisujemy jako transpozycję kolekcji
 (nigdy jako kanon uniwersum MtG) i oznaczamy w Źródłach jako „Fabuła
 dostawy (właściciel, data)"; konflikt Fabuły z twardym kanonem świata →
