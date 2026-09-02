@@ -14,7 +14,7 @@ import { renderPlan } from './render-plane.js';
 import { renderListeKart, zamontujFiltryKart, renderListeHasel, renderListePlanow, renderChmoreTagow, renderTag } from './render-lists.js';
 import { renderCoNowego } from './render-whatsnew.js';
 import { renderSzukanie } from './render-search.js';
-import { renderMape, renderMapeIframe, zamontujMape } from './render-map.js';
+import { renderMape, renderMapeIframe, zamontujMape, zamontujWarstweMapy } from './render-map.js';
 
 function renderuj(trasa) {
   const app = globalThis.document?.getElementById('app');
@@ -43,6 +43,7 @@ function renderuj(trasa) {
   app.innerHTML = rama(aktywna, tytul, html);
   tytulStrony(tytul);
   zamontujToryObrazow(app);
+  zamontujWarstweMapy(app);
   zamontujFiltryKart(app);
 
   const tresc = app.querySelector('.tresc');
@@ -60,17 +61,29 @@ if (globalThis.CODEX_MAPA) {
   if (app) {
     const q = new URLSearchParams(globalThis.location?.search ?? '');
     app.innerHTML = renderMape(globalThis.CODEX_MAPA, { pin: q.get('pin') ?? '' }, { osadzona: true });
-    zamontujMape(app, {
-      renderKarty: renderKarte,
-      zamontujKarte: zamontujToryObrazow,
-      doRodzica: true,
-    });
+    // Warstwa karty i nawigacja żyją w rodzicu (postMessage) — strona
+    // mapy montuje tylko pan/zoom/nakładkę.
+    zamontujMape(app, { doRodzica: true });
   }
 } else {
-  // ── Artefakt główny: router + odbiór nawigacji ze stron map w iframe.
+  // ── Artefakt główny: router + odbiór komunikatów ze stron map w iframe:
+  //    codexHash  → zmiana trasy;
+  //    codexKarta → warstwa karty NAD CAŁYM Codexem (feedback właściciela).
   globalThis.addEventListener?.('message', (e) => {
-    const hash = e?.data?.codexHash;
-    if (typeof hash === 'string' && hash.startsWith('#/')) globalThis.location.hash = hash;
+    const d = e?.data ?? {};
+    if (typeof d.codexHash === 'string' && d.codexHash.startsWith('#/')) {
+      globalThis.location.hash = d.codexHash;
+    }
+    if (typeof d.codexKarta === 'string' && /^[a-z0-9-]+$/.test(d.codexKarta)) {
+      const app = globalThis.document?.getElementById('app');
+      const warstwa = app?.querySelector?.('[data-map-warstwa]');
+      const tresc = warstwa?.querySelector?.('[data-map-warstwa-tresc]');
+      if (!warstwa || !tresc) { globalThis.location.hash = `#/karta/${d.codexKarta}`; return; }
+      tresc.innerHTML = renderKarte(d.codexKarta);
+      warstwa.hidden = false;
+      zamontujToryObrazow(warstwa);
+      warstwa.querySelector?.('[data-map-warstwa-zamknij]')?.focus?.();
+    }
   });
   const stop = uruchomRouter(renderuj);
   if (globalThis.__CODEX_TEST__) globalThis.__CODEX_STOP__ = stop;

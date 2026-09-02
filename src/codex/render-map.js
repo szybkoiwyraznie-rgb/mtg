@@ -135,8 +135,11 @@ function surowyMarkupPodkladu(mapa) {
   return '';
 }
 
-/** Widok trasy #/mapa/<plan> w artefakcie głównym: rama + <iframe> ze
- *  stroną mapy (ADR 0027 v2). Deep-link pinezki przechodzi w query. */
+/** Widok trasy #/mapa/<plan> w artefakcie głównym (ADR 0027 v2):
+ *  <iframe> dopasowany proporcjami do mapy = czyste okno mapy; CAŁA
+ *  reszta (legenda, lista pinezek, atrybucja, warstwa karty) renderuje
+ *  się TUTAJ, w artefakcie bazowym (feedback właściciela). Warstwa
+ *  karty otwiera się nad całym Codexem (postMessage z iframe). */
 export function renderMapeIframe(slugPlanu, query = {}) {
   const dane = dajDane();
   const mapa = dane.mapy?.[slugPlanu];
@@ -148,6 +151,9 @@ export function renderMapeIframe(slugPlanu, query = {}) {
       'Mapa powstaje razem z pierwszą kartą osadzoną w tym planie.',
     );
   }
+  const szer = mapa.wymiary?.szerokosc ?? 3200;
+  const wys = mapa.wymiary?.wysokosc ?? 2400;
+  const pinezki = mapa.pinezki ?? [];
   const pin = query.pin ? `?pin=${encodeURIComponent(query.pin)}` : '';
   return `
   <nav class="okruszki">
@@ -159,11 +165,73 @@ export function renderMapeIframe(slugPlanu, query = {}) {
   <article class="mapa-strona">
     <header class="mapa-naglowek">
       <h1>Mapa: ${escapeHtml(mapa.tytul ?? slugPlanu)}</h1>
-      <p class="meta">pinezki kart: ${(mapa.pinezki ?? []).length} · regiony: ${(mapa.regiony ?? []).length}</p>
+      <p class="meta">pinezki kart: ${pinezki.length} · regiony: ${(mapa.regiony ?? []).length}</p>
     </header>
+
     <iframe class="mapa-iframe" src="${escapeHtml(mapa.stronaMapy)}${pin}"
+      style="aspect-ratio: ${szer} / ${wys}" scrolling="no"
       title="Mapa: ${escapeHtml(mapa.tytul ?? slugPlanu)}" loading="lazy"></iframe>
+
+    ${pinezki.length > 0 ? `
+    <div class="mapa-warstwa" data-map-warstwa hidden role="dialog" aria-modal="true"
+      aria-label="Karta Katalogowa otwarta z mapy">
+      <div class="mapa-warstwa-tlo" data-map-warstwa-zamknij></div>
+      <div class="mapa-warstwa-panel">
+        <button type="button" class="mapa-warstwa-zamknij" data-map-warstwa-zamknij
+          aria-label="Zamknij i wróć do mapy" title="Zamknij i wróć do mapy (Esc)">✕</button>
+        <div class="mapa-warstwa-tresc" data-map-warstwa-tresc></div>
+      </div>
+    </div>` : ''}
+
+    <section class="sekcja mapa-legenda">
+      <h2>Legenda</h2>
+      <ul class="mapa-legenda-lista">
+        ${Object.entries(POZIOMY_PEWNOSCI).map(([klucz, p]) => `
+          <li><span class="mapa-pinezka-legenda" style="background:${p.kolor}"></span>
+            <strong>${p.etykieta}</strong> — ${p.opis}</li>`).join('')}
+        <li><span class="mapa-obwodka-legenda"></span><strong>obwódka regionu</strong> — kraina hasła geograficznego (kolor = pewność)</li>
+      </ul>
+    </section>
+
+    <section class="sekcja">
+      <h2>Pinezki kart (${pinezki.length})</h2>
+      ${pinezki.length === 0
+        ? stanPusty('Brak pinezek — mapa czeka na pierwszą kartę.',
+          'Pinezka pojawi się razem z pierwszą kartą osadzoną w tym planie.')
+        : `<ul class="lista-materializacji">${pinezki.map((p) => {
+            const karta = dane.strony?.[p.karta];
+            const poz = POZIOMY_PEWNOSCI[p.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
+            return `<li><a href="#/mapa/${escapeHtml(slugPlanu)}?pin=${escapeHtml(p.karta)}">📍</a>
+              <a href="#/karta/${escapeHtml(p.karta)}">${escapeHtml(karta?.tytul ?? p.karta)}</a>
+              <span class="typ" style="border-color:${poz.kolor}; color:${poz.kolor}">${poz.etykieta}</span>
+              <span class="meta">${escapeHtml(p.uzasadnienie ?? '')}</span></li>`;
+          }).join('')}</ul>`}
+    </section>
+
+    <footer class="mapa-atrybucja">
+      <p>Podkład: <a href="${escapeHtml(mapa.zrodlo?.url ?? '#')}" rel="noopener noreferrer" target="_blank">${escapeHtml(mapa.zrodlo?.tytul ?? 'źródło')}</a>
+      — ${escapeHtml(mapa.zrodlo?.autor ?? '?')}, licencja ${escapeHtml(mapa.zrodlo?.licencja ?? '?')}${mapa.zrodlo?.pobrano ? `, pobrano ${escapeHtml(mapa.zrodlo.pobrano)}` : ''}.</p>
+      <p class="meta">Współrzędne pinezek są znormalizowane względem podkładu; lokalizacje ustalane z lore, nie z położenia kursora.</p>
+    </footer>
   </article>`;
+}
+
+/** Wiąże zamykanie warstwy karty (✕ / tło / Esc) w artefakcie bazowym.
+ *  Otwieranie robi nasłuch postMessage w main.js (codexKarta). */
+export function zamontujWarstweMapy(app) {
+  const warstwa = app?.querySelector?.('[data-map-warstwa]');
+  if (!warstwa) return;
+  const zamknij = () => {
+    warstwa.hidden = true;
+    const tresc = warstwa.querySelector?.('[data-map-warstwa-tresc]');
+    if (tresc) tresc.innerHTML = '';
+  };
+  for (const el of warstwa.querySelectorAll?.('[data-map-warstwa-zamknij]') ?? []) {
+    el.addEventListener?.('click', zamknij);
+  }
+  warstwa.addEventListener?.('keydown', (e) => {
+    if (e.key === 'Escape') { e.preventDefault?.(); zamknij(); }
+  });
 }
 
 /** Renderuje stronę mapy planu (HTML; interakcje montuje zamontujMape). */
@@ -286,7 +354,7 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
       <div class="mapa-nakladka" data-mapa-nakladka>${htmlEtykietyPodkladu}${htmlPinezki}${htmlRegionyEtykiety}</div>
     </div>
 
-    ${pinezki.length > 0 ? `
+    ${osadzona ? '' : `${pinezki.length > 0 ? `
     <div class="mapa-warstwa" data-map-warstwa hidden role="dialog" aria-modal="true"
       aria-label="Karta Katalogowa otwarta z mapy">
       <div class="mapa-warstwa-tlo" data-map-warstwa-zamknij></div>
@@ -326,7 +394,7 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
       <p>Podkład: <a href="${escapeHtml(mapa.zrodlo?.url ?? '#')}" rel="noopener noreferrer" target="_blank">${escapeHtml(mapa.zrodlo?.tytul ?? 'źródło')}</a>
       — ${escapeHtml(mapa.zrodlo?.autor ?? '?')}, licencja ${escapeHtml(mapa.zrodlo?.licencja ?? '?')}${mapa.zrodlo?.pobrano ? `, pobrano ${escapeHtml(mapa.zrodlo.pobrano)}` : ''}.</p>
       <p class="meta">Współrzędne pinezek są znormalizowane względem podkładu; lokalizacje ustalane z lore, nie z położenia kursora.</p>
-    </footer>
+    </footer>`}
   </article>`;
 }
 
@@ -347,16 +415,19 @@ export function zamontujMape(app, opcje = {}) {
   const okno = app?.querySelector?.('.mapa-okno');
   if (!okno) return;
 
-  // Strona mapy w iframe (ADR 0027 v2): nawigacja treściowa (karty,
-  // hasła, plany) musi przejść do ARTEFAKTU-RODZICA — iframe wysyła
-  // postMessage, rodzic zmienia hash. Pinezki (data-pinezka) zostają
-  // w iframe (warstwa karty działa lokalnie).
+  // Strona mapy w iframe (ADR 0027 v2): warstwa karty i nawigacja
+  // treściowa żyją w ARTEFAKCIE-RODZICU — pinezka wysyła `codexKarta`
+  // (rodzic otwiera warstwę NAD CAŁYM Codexem), pozostałe linki hash
+  // wysyłają `codexHash` (rodzic zmienia trasę).
   if (opcje.doRodzica && globalThis.parent && globalThis.parent !== globalThis) {
     app.addEventListener('click', (e) => {
       const a = e.target?.closest?.('a[href^="#/"]');
-      if (!a || a.hasAttribute('data-pinezka')) return;
+      if (!a) return;
       e.preventDefault();
-      try { globalThis.parent.postMessage({ codexHash: a.getAttribute('href') }, '*'); } catch { /* rodzic niedostępny */ }
+      const wiadomosc = a.hasAttribute('data-pinezka')
+        ? { codexKarta: a.getAttribute('data-pinezka') }
+        : { codexHash: a.getAttribute('href') };
+      try { globalThis.parent.postMessage(wiadomosc, '*'); } catch { /* rodzic niedostępny */ }
     });
   }
 

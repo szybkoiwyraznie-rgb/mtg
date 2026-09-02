@@ -435,15 +435,32 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
 .karta-fot img { aspect-ratio: 21 / 9; object-fit: cover; }
 .karta-kon img { aspect-ratio: 16 / 9; object-fit: cover; }
 
-/* ── Mapa w iframe (ADR 0027 v2: strony map jako osobne pliki) ── */
+/* ── Mapa w iframe (ADR 0027 v2: strony map jako osobne pliki) ──
+   Iframe dobrany proporcjami DO MAPY (aspect-ratio inline z wymiarów
+   podkładu); strona w środku wypełnia go bez własnych scrollbarów. */
 .mapa-iframe {
   display: block;
   width: 100%;
-  height: clamp(420px, 74vh, 980px);
+  height: auto;
   border: 1px solid #d8d2c4;
   border-radius: 10px;
-  background: #fff;
+  background: #efe9dc;
+  overflow: hidden;
 }
-/* Strona mapy osadzona (maps/<plan>.html): mapa wypełnia okno iframe */
-.mapa-strona-osadzona { margin: 0; padding: 8px 10px; }
-.mapa-strona-osadzona .mapa-okno { height: calc(100vh - 74px); max-height: none; }
+/* Strona mapy osadzona (maps/<plan>.html): czyste okno mapy — wypełnia
+   cały viewport iframe'a, zero scrollbarów; pasek zoomu pływa nad mapą. */
+html:has(.mapa-strona-osadzona), body:has(.mapa-strona-osadzona) {
+  margin: 0; padding: 0; overflow: hidden; height: 100%;
+}
+.mapa-strona-osadzona { position: fixed; inset: 0; margin: 0; padding: 0; }
+.mapa-strona-osadzona .mapa-okno {
+  position: absolute; inset: 0;
+  height: auto; max-height: none;
+  border: none; border-radius: 0;
+}
+.mapa-strona-osadzona .mapa-pasek {
+  position: absolute; top: 10px; left: 10px; z-index: 40;
+  margin: 0; padding: 6px 10px;
+  background: #f4ecd8e6; border: 1px solid #d8d2c4; border-radius: 10px;
+  box-shadow: 0 1px 6px #0002;
+}
