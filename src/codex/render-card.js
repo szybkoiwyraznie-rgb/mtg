@@ -11,7 +11,7 @@
 
 import { escapeHtml, manaIkony } from './markdown.js';
 import { dajStrone, dajDane, backlinki } from './data.js';
-import { stanPusty, chipsyTagow, kropkiKolorow, nieZnalesc } from './render.js';
+import { stanPusty, chipsyTagow, kropkiKolorow, nieZnalesc, stopkaCzasu } from './render.js';
 import { POZIOMY_PEWNOSCI } from './render-map.js';
 
 export function renderKarte(slug) {
@@ -67,6 +67,7 @@ export function renderKarte(slug) {
         </figure>
         ${wstawKon(karta.html ?? '', karta)}
         ${sekcjaLinkujacychKarty(linkujace)}
+        ${stopkaCzasu(karta.czas)}
       </div>
     </div>
   </article>`;

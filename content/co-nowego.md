@@ -1,4 +1,19 @@
-## 2026-09-02 — Pętla Jakości (PR-11): geografia Zendikaru domknięta kanonem (cała kolejka E-geo + klocek fortu)
+## 2026-09-02 22:08 — Recenzja aplikacji: ZIP na Pages naprawiony, dziennik z godzinami + archiwum, stopki czasu stron (ADR 0029)
+
+- **„Pobierz archiwum (ZIP)" na Pages działa** (po merge): pages.yml buduje
+  przez `--out`, a ten tryb CLI pomijał ZIP — teraz CLI zawsze buduje pełny
+  pakiet; test kontraktu odtwarza dokładnie wywołanie z workflow.
+- **Dziennik „Co nowego" wg ADR 0029:** każdy wpis ma datę i **godzinę
+  publikacji** (nagłówek `## RRRR-MM-DD HH:MM — tytuł`; historia
+  backfillowana z gita), strona główna pokazuje zwięzłą listę 5 najnowszych,
+  `#/co-nowego` — 5 pełnych wpisów + **archiwum podzielone miesiącami**
+  (`#/co-nowego/<RRRR-MM>`).
+- **Stopki czasu:** karty, hasła i strony map kończą się datą+godziną
+  utworzenia i ostatniej aktualizacji (z historii gita; na Pages wymaga
+  `fetch-depth: 0` w checkout — zmiana po stronie właściciela).
+- Mapa: etykieta **Pelakka Karst** dosunięta do łuku krasu.
+
+## 2026-09-02 20:46 — Pętla Jakości (PR-11): geografia Zendikaru domknięta kanonem (cała kolejka E-geo + klocek fortu)
 
 - **Druga część sesji — kolejka E-geo-1/2/3/4 i E5 wyczerpana:**
   - **E-geo-4 (Akoum):** **Tal Terig** („Puzzle Tower") przeniesiony
@@ -61,7 +76,7 @@
 - Link-mining: nadal poniżej progu ≥2 kart dla wspólnych encji
   (2 karty w bazie, plany rozłączne) — bez nowych haseł.
 
-## 2026-09-02 — szlify UI: „Narracja" na kartach, mapy bez paska, czysty dziennik
+## 2026-09-02 18:42 — szlify UI: „Narracja" na kartach, mapy bez paska, czysty dziennik
 
 - Na kartach słowo **„Narracja"** zastępuje „Fabułę dostawy"
   (terminologia widoczna dla czytelnika; format dostawy bez zmian).
@@ -71,7 +86,7 @@
   markdown pokazywał go jako tekst na stronie głównej i karcie
   Co nowego).
 
-## 2026-09-02 — dopieszczenie iframe (feedback): czyste okno mapy, sekcje w bazie, warstwa nad całością
+## 2026-09-02 18:42 — dopieszczenie iframe (feedback): czyste okno mapy, sekcje w bazie, warstwa nad całością
 
 - **Iframe dobrany proporcjami do mapy** (aspect-ratio z wymiarów
   podkładu), strona w środku = czyste okno mapy bez scrollbarów
@@ -81,7 +96,7 @@
   CAŁYM Codexem** (pinezka → postMessage `codexKarta` → dialog
   w rodzicu). Testy 91/91.
 
-## 2026-09-02 — architektura ostateczna: DRZEWO HTML map (pomysł właściciela, ADR 0027 v2)
+## 2026-09-02 18:42 — architektura ostateczna: DRZEWO HTML map (pomysł właściciela, ADR 0027 v2)
 
 Jednoplik offline nie skaluje się (30+ planów ≈ 200 MB). Rozwiązanie
 właściciela: **każdy plan = osobna, samowystarczalna strona
@@ -93,7 +108,7 @@ Codexu" = całe drzewo (index.html + maps/**). Nawigacja z mapy do
 kart/haseł wraca do rodzica przez postMessage. Tryb `--inline`
 usunięty. Testy 91/91 (strony map wykonywane w shimie wprost).
 
-## 2026-09-02 — pakiet dwutorowy: pełny jednoplik OFFLINE wraca (uzupełnienie ADR 0027)
+## 2026-09-02 18:42 — pakiet dwutorowy: pełny jednoplik OFFLINE wraca (uzupełnienie ADR 0027)
 
 Po pytaniu właściciela o wersję offline z dysku: `npm run build` daje
 teraz DWA artefakty — `index.html` + `maps/**` (split: serwer/Pages,
@@ -101,7 +116,7 @@ teraz DWA artefakty — `index.html` + `maps/**` (split: serwer/Pages,
 **wersja offline otwierana z pliku w Chrome działa w 100%, bez żadnej
 degradacji**. ZIP zawiera jednoplik. Test pakietu w artefakt.test.
 
-## 2026-09-02 — REWOLUCJA artefaktu: mapy jako osobne pliki (ADR 0027) + porządek na „Co nowego"
+## 2026-09-02 18:42 — REWOLUCJA artefaktu: mapy jako osobne pliki (ADR 0027) + porządek na „Co nowego"
 
 - **Rozdzielenie artefaktu** (decyzja właściciela — wątek otwarty
   z ROADMAP rozstrzygnięty): HTML niesie kod+treść (**219 kB zamiast
@@ -115,7 +130,7 @@ degradacji**. ZIP zawiera jednoplik. Test pakietu w artefakt.test.
   usunięte powtórzone H1/opis z pliku treści (dublowały się na
   stronie głównej i na karcie Co nowego).
 
-## 2026-09-02 — Fabuły dla 1LTR i 2BFZ: karty zaktualizowane o osadzenie
+## 2026-09-02 18:42 — Fabuły dla 1LTR i 2BFZ: karty zaktualizowane o osadzenie
 
 Właściciel dostarczył Fabuły do obu istniejących kart (format v3,
 ADR 0026). Zarchiwizowane verbatim w `collection/entries/`;
@@ -134,7 +149,7 @@ zaktualizowane sekcje osadzenia:
 - Test dymny przestrojony u źródła: byty z Fabuły legalne jako
   oznaczone OSADZENIE z cytowaną Fabułą; prompt nadal poza pętlą.
 
-## 2026-09-02 — decyzja właściciela: Fabuła wraca do dostawy (ADR 0026)
+## 2026-09-02 18:42 — decyzja właściciela: Fabuła wraca do dostawy (ADR 0026)
 
 Format dostawy materializacji rozszerzony do: **imgId · nazwa · set ·
 plan · Fabuła**. Fabuła to wiążąca kotwica transpozycji — ilustracje
@@ -145,7 +160,7 @@ osadzenie ≠ kanon MtG). ADR 0011 częściowo zastąpiony; szkielet karty
 zaktualizowany. Dotychczasowe karty (1LTR, 2BFZ) bez rewizji —
 właściciel może dosłać Fabułę uzupełniającą.
 
-## 2026-09-02 — recenzja 7 preview: iglica rysowana ręcznie, asymetryczne strefy ikon, PODRĘCZNIK map T4
+## 2026-09-02 18:42 — recenzja 7 preview: iglica rysowana ręcznie, asymetryczne strefy ikon, PODRĘCZNIK map T4
 
 - **Living Spire:** iglica rysowana ręcznie (smukła turnia w języku
   glifów) — pomniejszone glify hero to klastry i czytały się jak
@@ -158,7 +173,7 @@ właściciel może dosłać Fabułę uzupełniającą.
   QA rastrowe, debug rozstawu, kontrakt nakładki, antywzorce,
   checklista).
 
-## 2026-09-02 — recenzja 6 preview: warstwowe kolory pisma, bez polan, iglica i wodospad, kaniony Makindi (ADR 0025)
+## 2026-09-02 18:42 — recenzja 6 preview: warstwowe kolory pisma, bez polan, iglica i wodospad, kaniony Makindi (ADR 0025)
 
 - **Kolory pisma warstwowe:** kontynenty/wyspy CZERŃ, wody GRANAT,
   fragmenty lasów/bagien ZIELEŃ (automat po kotwicy w biomie), reszta
@@ -177,7 +192,7 @@ właściciel może dosłać Fabułę uzupełniającą.
   z kreski na pełny wielokąt.
 - Testy 90/90 · map-audit 0 · wiązania 0 · QA rastrowe.
 
-## 2026-09-02 — recenzja 5 preview: czytelność map (ADR 0024) — koła POI, granatowe wody, trakty, pass geograficzny wszystkich kontynentów
+## 2026-09-02 18:42 — recenzja 5 preview: czytelność map (ADR 0024) — koła POI, granatowe wody, trakty, pass geograficzny wszystkich kontynentów
 
 Właściciel przeszedł mapę kontynent po kontynencie. Systemowo (ADR 0024):
 
@@ -198,7 +213,7 @@ na lądzie**; dwie nowe połacie dżungli Bala Ged; Makindi Trenches poza
 lasem; Beyeen pod swoją wyspą; Chill Depths przy brzegu.
 Testy 90/90 · map-audit 0 · wiązania 0 · QA rastrowe.
 
-## 2026-09-02 — recenzja 4 preview: fix nakładki (układ kolizyjny nie startował), falka Halimar wraca, porządki kontynentów
+## 2026-09-02 18:42 — recenzja 4 preview: fix nakładki (układ kolizyjny nie startował), falka Halimar wraca, porządki kontynentów
 
 Uwagi właściciela: (a) falka Halimar może zostać (spójność jezior);
 (b) „Emeria" nachodziła na „ruiny w niebie"; (c) porządki na pozostałych
@@ -223,7 +238,7 @@ kontynentach (labelki bez POI, chaos).
 - Testy 90/90; map-audit 0; walidator wiązań 0; QA rastrowe wszystkich
   kontynentów (Sejiri, Akoum, Bala Ged, Guul Draz, Ondu, Murasa, wyspy).
 
-## 2026-09-02 — recenzja 3 preview: twarda zasada etykieta↔obiekt, pass wiązań Zendikaru, woda bez obwódek (ADR 0023)
+## 2026-09-02 18:42 — recenzja 3 preview: twarda zasada etykieta↔obiekt, pass wiązań Zendikaru, woda bez obwódek (ADR 0023)
 
 Uwagi właściciela: (1) etykiety przy POI wreszcie idealne ✔; (2) twarda
 zasada — nie ma etykiet bez obiektu i POI bez etykiet; (3) obwódki rzek
@@ -253,7 +268,7 @@ słabe (język w morzu) — wrócić do jednolitego koloru, przyciemnić wodę;
 - Testy 90/90; map-audit 0; walidator wiązań 0; QA rastrowe Murasy
   i Bala Ged.
 
-## 2026-09-02 — recenzja preview PR-10: etykiety wg jednego wzoru (KRYTYCZNE), strefy zajęte biomów, obwódka rzek (ADR 0022)
+## 2026-09-02 18:42 — recenzja preview PR-10: etykiety wg jednego wzoru (KRYTYCZNE), strefy zajęte biomów, obwódka rzek (ADR 0022)
 
 Uwagi właściciela z preview: (a) góry wreszcie dobre ✔; (b) KRYTYCZNE —
 etykiety rozjechane względem obiektów; (c) obwódka rzek; (d) biomy
@@ -282,7 +297,7 @@ zakrywają góry (Sejiri pod lodem, Ondu pod puszczą).
   (+2: wzór rozstawu, strefy zajęte); `map-audit.py` 0 problemów;
   weryfikacja wzrokowa rastrów (Sejiri/Ondu/Tazeem/Agadeem/Valakut).
 
-## 2026-09-02 — Pętla Jakości (PR-10): ADR 0021 (formalizacja stylu map T4), lore ludów Zendikaru, Prison of Omnath + Ior Ruin na mapie
+## 2026-09-02 18:42 — Pętla Jakości (PR-10): ADR 0021 (formalizacja stylu map T4), lore ludów Zendikaru, Prison of Omnath + Ior Ruin na mapie
 
 Sesja bez nowej dostawy → Pętla Jakości v2 (audyt + LORE + pass mapowy):
 
@@ -320,7 +335,7 @@ Sesja bez nowej dostawy → Pętla Jakości v2 (audyt + LORE + pass mapowy):
   progu ≥2 kart — bez nowych haseł; kandydaci czekają na dostawy
   (Dunland, Halimar/Coralhelm, merfolkowie).
 
-## 2026-09-02 — mapa Zendikaru: 7 poprawek z recenzji prototypu (pasma gór, etykiety przy obiektach, szare miasta, jednolita woda, hedrony, morze, kolejność warstw)
+## 2026-09-02 10:14 — mapa Zendikaru: 7 poprawek z recenzji prototypu (pasma gór, etykiety przy obiektach, szare miasta, jednolita woda, hedrony, morze, kolejność warstw)
 
 Zlecenie właściciela (recenzja prototypu z 2026-09-01) — siedem poprawek
 **przed** kolejką E-geo: (a) glify gór łączone w logiczne pasma,
@@ -390,7 +405,7 @@ miasta/ruiny → labelki na szczycie.
   między Ondu a Akoum, Tazeem SW (2/7), Murasa, Akoum, BG/GD, Ondu,
   Omath, Hada.
 
-## 2026-09-01 — geografia mapy Zendikaru: audyt całości + przebudowa Tazeem, cieśnina Akoum/Bala Ged–Guul Draz, drogi-trakty, etykiety bez kresek
+## 2026-09-02 10:14 — geografia mapy Zendikaru: audyt całości + przebudowa Tazeem, cieśnina Akoum/Bala Ged–Guul Draz, drogi-trakty, etykiety bez kresek
 
 Zlecenie właściciela (uzupełnienie PR-9): (a) „labelki niektórych POI są
 odsunięte od samych miejsc i rysowana jest linia łącząca — nie lepiej bliżej
@@ -450,7 +465,7 @@ Tazeem. Prototyp do oceny wdrożenia wystawiony w sandboxie (port 4173).
 - Weryfikacja: testy 87/87; `map-audit.py` 0; build OK; kontrola wizualna
   PNG (3 korekty pozycji etykiet po przeglądzie).
 
-## 2026-09-01 — PR-9: mapforge — adopcja glifów gór z mapome + rzeki w kolorze morza (ADR 0020)
+## 2026-09-02 10:14 — PR-9: mapforge — adopcja glifów gór z mapome + rzeki w kolorze morza (ADR 0020)
 
 - **Góry wyglądają jak na mapie Śródziemia** (decyzja właściciela:
   obecne glify odrzucone — „masakryczne", benchmark = mapome). Zgodnie
@@ -480,7 +495,7 @@ Tazeem. Prototyp do oceny wdrożenia wystawiony w sandboxie (port 4173).
   góry Azgaar nie pasowały do benchmarku (jasne/techniczne), techniki
   rozsiewu wdrożone.
 
-## 2026-09-01 — PR-5: mapforge — glify „hand-drawn" (las kępa, góra żagiel) + warsztat
+## 2026-09-01 21:38 — PR-5: mapforge — glify „hand-drawn" (las kępa, góra żagiel) + warsztat
 
 - **Przebudowa glifów mapforge** (zgłoszenie właściciela: obiekty
   generowane przez mapforge wyglądają „strasznie generycznie i dziecinnie";
@@ -512,7 +527,7 @@ Tazeem. Prototyp do oceny wdrożenia wystawiony w sandboxie (port 4173).
 - Testy: `npm test` 86/86; `npm run build` OK (4 strony, 14 modułów;
   artefakt ~4,6 MB — koszt świadomy z ADR 0009).
 
-## 2026-09-01 — PR-5: Pętla Jakości v2 — pogłębienie LORE Śródziemia + domknięcie E4
+## 2026-09-01 21:38 — PR-5: Pętla Jakości v2 — pogłębienie LORE Śródziemia + domknięcie E4
 
 - **Pogłębienie LORE (krok 2):** plan **Śródziemie** (dotąd niepogłębiany
   w PR-4) dostał nową sekcję **„Ludy"** — na wzór analogicznej sekcji
@@ -536,7 +551,7 @@ Tazeem. Prototyp do oceny wdrożenia wystawiony w sandboxie (port 4173).
   z różnych planów, licznik wzmianek od kart (nie planów). Backlog aktualny.
 - Testy: `npm test` 86/86; `npm run build` OK (4 strony, 14 modułów).
 
-## 2026-09-01 — E1+E2 mapforge na Zendikarze + naprawa kotwiczenia etykiet
+## 2026-09-01 15:30 — E1+E2 mapforge na Zendikarze + naprawa kotwiczenia etykiet
 
 - **Naprawa etykiet nakładki** (feedback z podglądu): transform inline
   nadpisywał CSS-owe centrowanie — etykiety wisiły lewym-górnym rogiem
@@ -564,7 +579,7 @@ Tazeem. Prototyp do oceny wdrożenia wystawiony w sandboxie (port 4173).
   **domyślnie wyłączona**, spękania lodu tylko wewnątrz czapy;
   audyt próbuje punktów rzek i linii wzdłuż ścieżki (≥75% na lądzie).
 
-## 2026-09-01 — LIVE: mapa Zendikaru rysowana mapforge (T4)
+## 2026-09-01 15:30 — LIVE: mapa Zendikaru rysowana mapforge (T4)
 
 - **Wdrożone (E3):** produkcyjny podkład `maps/zendikar/podklad.svg`
   jest teraz renderem silnika mapforge (motyw atlas, ADR 0018/0019)
@@ -575,7 +590,7 @@ Tazeem. Prototyp do oceny wdrożenia wystawiony w sandboxie (port 4173).
   do T4 wraz z warsztatem). Edycje mapy od dziś: scena → render (E1
   chroni przed regeneracją z renderu). Audyt: 0 problemów; 86/86.
 
-## 2026-09-01 — Etykiety mapy o stałym rozmiarze ekranowym (LOD)
+## 2026-09-01 15:30 — Etykiety mapy o stałym rozmiarze ekranowym (LOD)
 
 - Na stronie mapy planu (podkłady własne T3/T4 — Zendikar; adoptowanych
   T2 nie ruszamy) napisy podkładu zostały przeniesione do nakładki
@@ -589,7 +604,7 @@ Tazeem. Prototyp do oceny wdrożenia wystawiony w sandboxie (port 4173).
   etykiety po łuku (textPath) zostają w podkładzie.
   Testy UI: 83/83.
 
-## 2026-09-01 — mapforge: wspólny silnik mapowy (warsztat T4)
+## 2026-09-01 15:30 — mapforge: wspólny silnik mapowy (warsztat T4)
 
 - **Nowe narzędzie `tools/mapforge/`** (ADR 0018): deterministyczny
   generator podkładów SVG z danych — reużywalne klocki: lasy (rozsiew
@@ -612,7 +627,7 @@ Tazeem. Prototyp do oceny wdrożenia wystawiony w sandboxie (port 4173).
 - 11 nowych testów silnika (81/81 w pakiecie); plan adopcji:
   `docs/plans/PLAN_2026-09-01-mapforge.md`.
 
-## 2026-09-01 — Pełna Pętla Jakości (LORE + mapy + metryka)
+## 2026-09-01 15:30 — Pełna Pętla Jakości (LORE + mapy + metryka)
 
 - **Pogłębienie LORE obu planów:** Śródziemie zyskało akapit o Tharbad
   (miasto-most na Gwathló; przeprawa Boromira w 3018 r. — Tolkien
@@ -630,7 +645,7 @@ Tazeem. Prototyp do oceny wdrożenia wystawiony w sandboxie (port 4173).
 - **Metryka:** plany liczone pragmatycznie także w pinezce; completeness
   **100% (8/8) na wszystkich czterech stronach** (było 76%).
 
-## 2026-09-01 — FOT/KON w treści karty + poprawki mapy Zendikaru (a–j)
+## 2026-09-01 15:30 — FOT/KON w treści karty + poprawki mapy Zendikaru (a–j)
 
 - **Ilustracje FOT/KON rysują się same w treści karty** (wersja
   lokalna): panorama FOT otwiera główną kolumnę, bestiariusz KON
@@ -649,7 +664,7 @@ Tazeem. Prototyp do oceny wdrożenia wystawiony w sandboxie (port 4173).
   `docs/audits/AUDYT_2026-09-01-mapa-zendikar-feedback.md`; pozycje
   i proweniencja zsynchronizowane w `map.json` (70 kotwic).
 
-## 2026-09-01 — Naprawa GitHub Pages + mapy (badge, warstwa karty) + porządek w Pętli Jakości
+## 2026-09-01 15:30 — Naprawa GitHub Pages + mapy (badge, warstwa karty) + porządek w Pętli Jakości
 
 - **Strona na Pages zaczęła działać.** Przyczyna trzech nieudanych
   publikacji (od powstania `pages.yml`): strona Pages nie była w ogóle
@@ -689,7 +704,7 @@ Tazeem. Prototyp do oceny wdrożenia wystawiony w sandboxie (port 4173).
   wpis „wiedza ogólna bez URL-a" — każdy fakt ma cytat.
 
 
-## 2026-08-31 — Mapa Zendikaru: rysowanie szczegółów, czysty podkład + brak pikselozy
+## 2026-09-01 09:05 — Mapa Zendikaru: rysowanie szczegółów, czysty podkład + brak pikselozy
 
 - **Elementy fanowskie faktycznie narysowane na podkładzie SVG** (nie
   tylko odnotowane w `map.json`): ~31 nowych symboli/etykiet — Akoum
@@ -777,7 +792,7 @@ Tazeem. Prototyp do oceny wdrożenia wystawiony w sandboxie (port 4173).
 - Testy: 70/70; `npm run build` = OK (podkład osadzony, PIN 2BFZ
   na Tazeem/Halimar bez zmian).
 
-## 2026-08-31 — Pętla Jakości operacyjna + K5 (PR-3)
+## 2026-09-01 09:05 — Pętla Jakości operacyjna + K5 (PR-3)
 
 - **K5 — `tools/wiki-stats.mjs`**: completeness score stron wg wzoru
   z `docs/guides/PETLA_JAKOSCI.md` (sekcje 3 + źródła 2 + wikilinki 1 +
@@ -802,7 +817,7 @@ Tazeem. Prototyp do oceny wdrożenia wystawiony w sandboxie (port 4173).
 - **Integralność**: `npm test` = 70/70 (nowy `test/wiki-stats.test.js`),
   `npm run build` = OK. Karty pozostały nietknięte.
 
-## 2026-08-31 — Pierwsza karta! Mapa Śródziemia + kanon v2 (PR-2, w toku)
+## 2026-08-31 20:38 — Pierwsza karta! Mapa Śródziemia + kanon v2 (PR-2, w toku)
 
 - **Mapa Zendikaru — rekonstrukcja T3** (`#/mapa/zendikar`, ADR 0012):
   podkład własny (SVG) z układem kontynentów z kanonu tekstowego,
@@ -862,7 +877,7 @@ Tazeem. Prototyp do oceny wdrożenia wystawiony w sandboxie (port 4173).
   baza"; statusy ADR „Częściowo zastąpiona"; pilnowanie kanonu karty
   i chudego formatu dostawy).
 
-## 2026-08-31 — Fundamenty (PR-1)
+## 2026-08-31 20:38 — Fundamenty (PR-1)
 
 - Założenie projektu **MTG Lore Codex**: struktura repozytorium, dokumenty
   konstytutywne (AGENTS.md, PRODUCT, ARCHITECTURE, WORKFLOW, ROADMAP,

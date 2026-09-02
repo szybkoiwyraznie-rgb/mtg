@@ -44,6 +44,7 @@ dziedziczona z projektu mtg-game.
 | [0026](0026-fabula-kotwica-transpozycji.md) | Fabuła wraca do dostawy materializacji (imgId · nazwa · set · plan · Fabuła) jako WIĄŻĄCA kotwica transpozycji — sekcje osadzenia karty budowane z Fabuły (spójność z ilustracjami FOT/KON); higiena: osadzenie ≠ kanon MtG, oznaczanie w Źródłach | Zaakceptowana |
 | [0027](0027-rozdzielenie-artefaktu-mapy-osobno.md) | Rozdzielenie artefaktu (v2 — drzewo HTML): artefakt główny ~0,2 MB + samowystarczalne strony map `maps/<plan>.html` w `<iframe>` (file:// nie blokuje iframe — offline z dysku działa w pełni); nawigacja z iframe przez postMessage; ZIP = całe drzewo | Zaakceptowana |
 | [0028](0028-klocek-fort.md) | Klocek `fort` — warownie jako osobny typ POI (domknięcie E5): ręcznie rysowana sylwetka w kole (nie Azgaar); użycie: Fort Keff + stone havens Akoum; latarnia/wrak z E5 odrzucone (brak kanonicznego użycia) | Zaakceptowana |
+| [0029](0029-dziennik-godziny-archiwum-stopki-czasu.md) | Dziennik z godziną publikacji (`## RRRR-MM-DD HH:MM — tytuł`, backfill z gita), limit 5 wpisów na SG i w „Co nowego" + archiwum miesiącami (`#/co-nowego/<RRRR-MM>`), stopki kart/haseł/map z datą utworzenia i aktualizacji z historii gita (CI wymaga fetch-depth: 0) | Zaakceptowana |
 
 Spójnością rejestru (numeracja, statusy, tabela) pilnuje
 `test/rejestr-adr.test.js`.

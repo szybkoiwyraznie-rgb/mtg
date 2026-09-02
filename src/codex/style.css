@@ -449,3 +449,16 @@ html:has(.mapa-strona-osadzona), body:has(.mapa-strona-osadzona) {
   border: none; border-radius: 0;
 }
 
+/* „Co nowego" — wpisy z datą publikacji, archiwum miesiącami (ADR 0029). */
+.wpis-co-nowego { margin: 0 0 1.6rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ramka); }
+.wpis-co-nowego:last-child { border-bottom: none; }
+.wpis-co-nowego h2 { margin: 1.2rem 0 0.1rem; }
+.wpis-publikacja { margin: 0 0 0.6rem; }
+.lista-archiwum { list-style: none; padding: 0; margin: 0.4rem 0; }
+.lista-archiwum li { padding: 0.25rem 0; }
+.lista-co-nowego-skrot { list-style: none; padding: 0; margin: 0.4rem 0; }
+.lista-co-nowego-skrot li { padding: 0.25rem 0; }
+.lista-co-nowego-skrot .meta { margin-left: 0.4rem; }
+
+/* Stopka czasu strony (ADR 0029): utworzono / ostatnia aktualizacja. */
+.stopka-czasu { margin-top: 2rem; padding-top: 0.6rem; border-top: 1px solid var(--ramka); }

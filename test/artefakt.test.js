@@ -27,7 +27,18 @@ test('build bazy repozytorium produkuję artefakt z danymi i kodem', async () =>
   const KLUCZE = { karta: 'karty', haslo: 'hasla', plan: 'plany' };
   for (const s of Object.values(dane.strony)) naliczone[KLUCZE[s.typ]]++;
   assert.deepEqual(dane.statystyki, naliczone, 'statystyki niezgodne ze stronami');
-  assert.ok(typeof dane.coNowegoHtml === 'string');
+  // ADR 0029: dziennik jako wpisy z datą i godziną publikacji
+  assert.ok(Array.isArray(dane.coNowego), 'coNowego ma być tablicą wpisów (ADR 0029)');
+  for (const w of dane.coNowego) {
+    assert.match(w.data, /^\d{4}-\d{2}-\d{2}$/, `wpis „${w.tytul}": zła data`);
+    assert.match(w.godzina ?? '', /^\d{2}:\d{2}$/, `wpis „${w.tytul}": brak godziny publikacji`);
+    assert.equal(w.miesiac, w.data.slice(0, 7));
+  }
+  // ADR 0029: każda strona ma metadane czasu (stopki kart/haseł)
+  for (const s of Object.values(dane.strony)) {
+    assert.match(s.czas?.utworzono ?? '', /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/, `${s.slug}: brak czasu utworzenia`);
+    assert.match(s.czas?.zaktualizowano ?? '', /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/, `${s.slug}: brak czasu aktualizacji`);
+  }
   for (const [slug, mapa] of Object.entries(dane.mapy ?? {})) {
     if (mapa.problem) continue;
     // ADR 0027: podkład jako osobny plik (podkladUrl) — base64 tylko
@@ -37,6 +48,8 @@ test('build bazy repozytorium produkuję artefakt z danymi i kodem', async () =>
       `mapa ${slug}: brak podkładu (ani podkladUrl, ani base64 — ADR 0027)`,
     );
     assert.ok(Array.isArray(mapa.pinezki), `mapa ${slug}: brak tablicy pinezek`);
+    assert.match(mapa.czas?.zaktualizowano ?? '', /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/,
+      `mapa ${slug}: brak metadanych czasu (stopka strony mapy — ADR 0029)`);
   }
 
   // składnia wstrzykniętego JS jest poprawna (node --check)

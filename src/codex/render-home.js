@@ -4,13 +4,14 @@
  */
 
 import { escapeHtml } from './markdown.js';
-import { dajDane, listaPlanow, listaKart, ostatnieMaterializacje } from './data.js';
+import { dajDane, listaPlanow, listaKart, ostatnieMaterializacje, wpisyCoNowego } from './data.js';
 import { stanPusty, kropkiKolorow, chipsyTagow } from './render.js';
 
 export function renderGlowna() {
   const dane = dajDane();
   const plany = listaPlanow();
   const ostatnie = ostatnieMaterializacje(5);
+  const najnowszeWpisy = wpisyCoNowego().slice(0, 5); // limit — ADR 0029
 
   return `
   <section class="hero">
@@ -45,9 +46,12 @@ export function renderGlowna() {
 
   <section class="sekcja">
     <h2>Co nowego</h2>
-    ${dane.coNowegoHtml
-      ? `<div class="co-nowego-skrot">${dane.coNowegoHtml}</div><p class="meta"><a href="#/co-nowego">Pełna historia zmian →</a></p>`
-      : stanPusty('Historia zmian jest pusta.', 'Wpisy powstają na koniec każdej sesji (Pętla Jakości, krok 5).')}
+    ${najnowszeWpisy.length === 0
+      ? stanPusty('Historia zmian jest pusta.', 'Wpisy powstają na koniec każdej sesji (Pętla Jakości, krok 5).')
+      : `<ul class="lista-co-nowego-skrot">${najnowszeWpisy.map((w) => `
+          <li><a href="#/co-nowego">${escapeHtml(w.tytul)}</a>
+            <span class="meta">${escapeHtml(w.data)}${w.godzina ? ` · ${escapeHtml(w.godzina)}` : ''}</span></li>`).join('')}</ul>
+        <p class="meta"><a href="#/co-nowego">Wszystkie wpisy i archiwum →</a></p>`}
   </section>`;
 }
 

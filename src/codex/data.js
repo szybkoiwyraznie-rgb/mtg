@@ -14,7 +14,7 @@ export function dajDane() {
     plany: [],
     tagi: {},
     backlinki: {},
-    coNowegoHtml: '',
+    coNowego: [],
     statystyki: { karty: 0, hasla: 0, plany: 0 },
   };
 }
@@ -41,6 +41,20 @@ export function ostatnieMaterializacje(n = 5) {
 
 export function backlinki(slug) {
   return dajDane().backlinki[slug] ?? [];
+}
+
+/** Wpisy „Co nowego" (ADR 0029) — najnowsze pierwsze (kolejność dziennika). */
+export function wpisyCoNowego() {
+  return dajDane().coNowego ?? [];
+}
+
+/** Miesiące archiwum „Co nowego": [{ miesiac: 'RRRR-MM', liczba }] malejąco. */
+export function miesiaceCoNowego() {
+  const licznik = new Map();
+  for (const w of wpisyCoNowego()) licznik.set(w.miesiac, (licznik.get(w.miesiac) ?? 0) + 1);
+  return [...licznik.entries()]
+    .sort((a, b) => (a[0] < b[0] ? 1 : -1))
+    .map(([miesiac, liczba]) => ({ miesiac, liczba }));
 }
 
 export function statystyki() {

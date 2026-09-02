@@ -128,3 +128,35 @@ export function wczytajCoNowego({ root = '.' } = {}) {
   const p = path.resolve(root, 'content/co-nowego.md');
   return fs.existsSync(p) ? fs.readFileSync(p, 'utf8') : null;
 }
+
+/**
+ * Parsuje dziennik „Co nowego" na wpisy (ADR 0029). Konwencja nagłówka:
+ * `## RRRR-MM-DD HH:MM — tytuł` (data i godzina PUBLIKACJI; starszy
+ * format bez godziny jest tolerowany — godzina wtedy null).
+ * Zwraca wpisy w kolejności pliku (najnowsze pierwsze) jako
+ * `{ data, godzina, miesiac, tytul, cialo }`; linie przed pierwszym
+ * nagłówkiem są pomijane (lead pliku).
+ */
+export function parsujWpisyCoNowego(surowy) {
+  if (!surowy) return [];
+  const wpisy = [];
+  let biezacy = null;
+  for (const linia of String(surowy).split(/\r?\n/)) {
+    const m = linia.match(/^##\s+(\d{4}-\d{2}-\d{2})(?:\s+(\d{2}:\d{2}))?\s+—\s+(.+)$/);
+    if (m) {
+      if (biezacy) wpisy.push(biezacy);
+      biezacy = {
+        data: m[1],
+        godzina: m[2] ?? null,
+        miesiac: m[1].slice(0, 7),
+        tytul: m[3].trim(),
+        cialo: [],
+      };
+      continue;
+    }
+    if (biezacy) biezacy.cialo.push(linia);
+  }
+  if (biezacy) wpisy.push(biezacy);
+  for (const w of wpisy) w.cialo = w.cialo.join('\n').trim();
+  return wpisy;
+}
