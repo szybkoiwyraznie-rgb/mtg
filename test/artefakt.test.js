@@ -46,12 +46,21 @@ test('build bazy repozytorium produkuję artefakt z danymi i kodem', async () =>
   fs.rmSync(cel, { force: true });
 });
 
-test('build domyślnego artefaktu pisze index.html przekierowujący (root serwera)', async () => {
-  // domyślna nazwa pliku, ale katalog tymczasowy — dist/ zostaje nietknięte
-  const cel = await zbuduj({ out: '/tmp/codex-test-index/mtg-lore-codex.html' });
-  const index = fs.readFileSync('/tmp/codex-test-index/index.html', 'utf8');
-  assert.ok(index.includes('url=mtg-lore-codex.html'), 'index.html nie przekierowuje na artefakt');
-  assert.ok(index.includes("location.replace('mtg-lore-codex.html')"), 'index.html bez rezerwowego JS');
-  fs.rmSync('/tmp/codex-test-index', { recursive: true, force: true });
-  fs.rmSync(cel, { force: true });
+test('pakiet dystrybucyjny: split index.html + pełny jednoplik offline (ADR 0027)', async () => {
+  // katalog tymczasowy — dist/ zostaje nietknięte
+  const { zbudujPakiet } = await import('../tools/build.mjs');
+  const wynik = await zbudujPakiet({ katalog: '/tmp/codex-test-pakiet' });
+  const index = fs.readFileSync(wynik.index, 'utf8');
+  const offline = fs.readFileSync(wynik.offline, 'utf8');
+  // index.html = APLIKACJA w trybie split (mapy przez URL, dociągane fetch-em)
+  assert.ok(index.includes('CODEX_DATA'), 'index.html ma być aplikacją (split), nie przekierowaniem');
+  assert.ok(index.includes('"podkladUrl": "maps/'), 'index.html: rejestr map z podkladUrl');
+  assert.ok(!index.includes('data:image/svg+xml;base64'), 'index.html: bez base64 podkładów');
+  assert.ok(fs.existsSync('/tmp/codex-test-pakiet/maps/srodziemie/podklad.svg'), 'pakiet: maps/** obok index.html');
+  // mtg-lore-codex.html = PEŁNY JEDNOPLIK offline (file:// bez degradacji)
+  assert.ok(offline.includes('data:image/svg+xml;base64'), 'offline: podkłady osadzone w środku');
+  assert.ok(!offline.includes('"podkladUrl"'), 'offline: bez zależności od plików obok');
+  assert.ok(offline.length > index.length * 3, 'offline ma być pełnym (ciężkim) artefaktem');
+  assert.ok(fs.existsSync(wynik.zip), 'pakiet: archiwum zip z jednoplikiem');
+  fs.rmSync('/tmp/codex-test-pakiet', { recursive: true, force: true });
 });

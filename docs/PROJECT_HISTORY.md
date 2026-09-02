@@ -4,6 +4,15 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-02 — sesja PR-10 (część 11): dwa tory pakietu — offline jednoplik wraca (uzup. ADR 0027)
+
+Właściciel: „moja wersja offline z pliku nie będzie działać? TO ZMIENIA
+POSTAĆ RZECZY". Lekcja: degradacja to nie to samo co działanie —
+scenariusz offline-z-dysku jest pierwszoklasowy. `zbudujPakiet`:
+index.html (split, 220 kB) + mtg-lore-codex.html (inline, 7 MB,
+offline bez degradacji) + zip; `--out` bez zmian (pages.yml buduje
+split). Test „index przekierowujący" zastąpiony testem pakietu.
+
 ## 2026-09-02 — sesja PR-10 (część 10): rozdzielenie artefaktu → ADR 0027; duplikat „Co nowego"
 
 1. Decyzja właściciela: „pora na rewolucję" ze skalowania map (ROADMAP

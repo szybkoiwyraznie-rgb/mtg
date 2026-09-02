@@ -39,6 +39,25 @@ oszczędza autorstwo, nie bajty. Właściciel zdecydował: rozdzielamy.
    (split) — renderery obsługują oba; test artefaktu wymaga jednego
    z nich.
 
+## Uzupełnienie (2026-09-02, po pytaniu właściciela o wersję offline)
+
+Właściciel używa wersji offline otwieranej z dysku w Chrome — degradacja
+map do `<img>` na file:// była nieakceptowalna. Rozwiązanie: **dwa tory
+w pakiecie dystrybucyjnym** (`zbudujPakiet`, domyślne `npm run build`):
+
+1. `dist/index.html` + `dist/maps/**` — wersja SPLIT (ta z pkt 1–2
+   decyzji): dla serwera lokalnego i GH Pages; artefakt ~0,2 MB.
+2. `dist/mtg-lore-codex.html` — **pełny jednoplik inline**: oficjalna
+   wersja OFFLINE, otwierana z dysku bez żadnej degradacji (mapy
+   wektorowe z pełną nakładką, wszystko w środku). Rośnie z liczbą
+   planów — świadomy koszt snapshotu offline.
+3. `dist/mtg-lore-codex.zip` — archiwum jednoplika (do pobrania).
+
+`pages.yml` buduje przez `--out dist/index.html` → na Pages ląduje tor
+split (bez zmian w workflow). Degradacja `<img>` na file:// pozostaje
+wyłącznie jako siatka bezpieczeństwa toru split — nie jest już ścieżką
+użytkową offline.
+
 ## Konsekwencje
 
 **Dodatnie:** skalowanie do dziesiątek planów bez puchnięcia artefaktu;

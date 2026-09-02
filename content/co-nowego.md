@@ -3,6 +3,14 @@ krok 5, ADR 0006). Najnowsze na górze. BEZ nagłówka H1 i leadu: tytuł
 i opis strony daje renderer (render-whatsnew.js) — duplikat nagłówków
 był błędem (feedback właściciela 2026-09-02). -->
 
+## 2026-09-02 — pakiet dwutorowy: pełny jednoplik OFFLINE wraca (uzupełnienie ADR 0027)
+
+Po pytaniu właściciela o wersję offline z dysku: `npm run build` daje
+teraz DWA artefakty — `index.html` + `maps/**` (split: serwer/Pages,
+220 kB) oraz `mtg-lore-codex.html` (pełny jednoplik inline, ~7 MB) —
+**wersja offline otwierana z pliku w Chrome działa w 100%, bez żadnej
+degradacji**. ZIP zawiera jednoplik. Test pakietu w artefakt.test.
+
 ## 2026-09-02 — REWOLUCJA artefaktu: mapy jako osobne pliki (ADR 0027) + porządek na „Co nowego"
 
 - **Rozdzielenie artefaktu** (decyzja właściciela — wątek otwarty

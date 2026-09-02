@@ -195,48 +195,7 @@ export async function zbuduj({ out, root = ROOT, inline = false } = {}) {
   fs.mkdirSync(path.dirname(cel), { recursive: true });
   fs.writeFileSync(cel, html);
 
-  // index.html obok artefaktu: serwer (i Pages) otwierają katalog główny
-  // od razu na Codexie — bez klikania w plik na liście katalogu.
-  // Tylko dla właściwego artefaktu (testy budują pod innymi nazwami).
-  const nazwa = path.basename(cel);
-  const katalog = path.dirname(cel);
-  if (nazwa === 'mtg-lore-codex.html') {
-  const index = `<!doctype html>
-<html lang="pl">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=${nazwa}">
-<title>MTG Lore Codex</title>
-</head>
-<body>
-<p>Przekierowanie do <a href="${nazwa}">${nazwa}</a>…</p>
-<script>location.replace('${nazwa}');</script>
-</body>
-</html>
-`;
-  fs.writeFileSync(path.join(katalog, 'index.html'), index);
-
-  // Archiwum ZIP do pobrania („pobierz online' do użycia lokalnie / na dysk).
-  // Pakuje artefakt (+ index.html) i — gdy mapy będą osobnymi plikami —
-  // cały katalog maps/**/, żeby ZIP był samowystarczalny po rozpakowaniu.
-  // Metoda STORE bez zależności (ADR 0002); patrz tools/zip.mjs.
-  const plikiZip = [];
-  plikiZip.push({ path: 'index.html', data: fs.readFileSync(path.join(katalog, 'index.html')) });
-  plikiZip.push({ path: nazwa, data: fs.readFileSync(cel) });
-  const katalogMap = path.join(katalog, 'maps');
-  if (fs.existsSync(katalogMap)) {
-    for (const f of chodz(katalogMap)) {
-      const rel = path.relative(katalogMap, f).split(path.sep).join('/');
-      plikiZip.push({ path: `maps/${rel}`, data: fs.readFileSync(f) });
-    }
-  }
-  const zip = napiszZip(plikiZip);
-  const celZip = path.join(katalog, 'mtg-lore-codex.zip');
-  fs.writeFileSync(celZip, zip);
-  console.log(`  archiwum: ${(zip.length / 1024).toFixed(1)} kB (${plikiZip.length} plików)`);
-  }
-
-  console.log(`Zbudowano ${out}`);
+  console.log(`Zbudowano ${out}${inline ? ' (inline/offline)' : ' (split: mapy w maps/**)'}`);
   console.log(`  stron w bazie: ${Object.keys(stronyDane).length} (karty: ${dane.statystyki.karty}, hasła: ${dane.statystyki.hasla}, plany: ${dane.statystyki.plany})`);
   console.log(`  modułów: ${moduly.length}`);
   console.log(`  rozmiar: ${(html.length / 1024).toFixed(1)} kB`);
@@ -264,6 +223,30 @@ function stripModuleSyntax(source) {
     .replace(/^[ \t]*export\s*\{[^}]*\};?[ \t]*$/gm, '');
 }
 
+/**
+ * Pakiet dystrybucyjny (ADR 0027, dwa tory — decyzja właściciela
+ * 2026-09-02: wersja OFFLINE z pliku musi działać w 100%):
+ *   1. `<katalog>/index.html`         — wersja SPLIT (mapy w maps/**,
+ *      dociągane fetch-em): dla serwera lokalnego i GH Pages; szybka
+ *      i skalowalna na dziesiątki planów.
+ *   2. `<katalog>/mtg-lore-codex.html` — PEŁNY JEDNOPLIK (inline,
+ *      wszystko w środku): do otwarcia z dysku (file://) w przeglądarce,
+ *      bez żadnej degradacji — mapy wektorowe z pełną nakładką.
+ *   3. `<katalog>/mtg-lore-codex.zip` — archiwum z jednoplikiem
+ *      (samowystarczalne po rozpakowaniu; STORE, ADR 0002).
+ */
+export async function zbudujPakiet({ root = ROOT, katalog } = {}) {
+  katalog = katalog ?? path.join(root, 'dist');
+  await zbuduj({ root, out: path.join(katalog, 'index.html') });
+  const celInline = path.join(katalog, 'mtg-lore-codex.html');
+  await zbuduj({ root, out: celInline, inline: true });
+  const zip = napiszZip([{ path: 'mtg-lore-codex.html', data: fs.readFileSync(celInline) }]);
+  const celZip = path.join(katalog, 'mtg-lore-codex.zip');
+  fs.writeFileSync(celZip, zip);
+  console.log(`  archiwum offline: ${(zip.length / 1024).toFixed(1)} kB (1 plik, jednoplikowy artefakt)`);
+  return { index: path.join(katalog, 'index.html'), offline: celInline, zip: celZip };
+}
+
 const jestMain = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
 if (jestMain) {
   const out = (() => {
@@ -271,5 +254,8 @@ if (jestMain) {
     return i >= 0 ? process.argv[i + 1] : undefined;
   })();
   const inline = process.argv.includes('--inline');
-  zbuduj({ out, inline }).catch((e) => { console.error(e.message); process.exit(1); });
+  // `--out` = pojedynczy artefakt (tak buduje pages.yml: split pod
+  // dist/index.html). Bez `--out` = pełny pakiet dystrybucyjny.
+  const praca = out ? zbuduj({ out, inline }) : zbudujPakiet({});
+  praca.catch((e) => { console.error(e.message); process.exit(1); });
 }
