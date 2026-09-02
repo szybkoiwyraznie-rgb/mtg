@@ -11,7 +11,7 @@ import {
   punktNa, dlugosc, parsujD,
 } from '../tools/mapforge/geom.mjs';
 import {
-  las, bagno, pasmo, rzeka, jezioro, droga, etykieta, lukEtykieta,
+  las, bagno, pasmo, pasmoInstancje, rzeka, jezioro, droga, etykieta, lukEtykieta,
   miasto, ruina, hedron, szczyt, wulkan, motyw,
 } from '../tools/mapforge/bloki.mjs';
 import { renderuj, scenaDemo } from '../tools/mapforge/cli.mjs';
@@ -107,6 +107,8 @@ test('mapforge: rzeka/jezioro/droga — atrybuty stylu', () => {
   assert.ok(r.includes('fill="#ccd8d2"') && r.includes('circle'), 'wstęga w kolorze morza + źródło (pergamin)');
   assert.ok(!r.includes('linearGradient'), 'brak gradientu');
   assert.ok(!r.includes('opacity'), 'brak opacity');
+  // Obwódka wstęgi w kolorze linii wody (pkt c recenzji 2026-09-02, ADR 0022).
+  assert.ok(r.includes('stroke="#7fa0b4"'), 'obwódka rzeki w kolorze linii wody');
   const j = jezioro({ cx: 10, cy: 10, rx: 50, ry: 30 });
   assert.ok(j.includes('ellipse') && j.includes('fill="#ccd8d2"'), 'jezioro = kolor morza (pkt d)');
   const sz = droga('d1', [[0, 0], [50, 50]], { typ: 'szlak' });
@@ -255,4 +257,23 @@ test('mapforge: renderuj — deterministyczny, warstwowy, kompletny', () => {
   assert.ok(s1.startsWith('<?xml') && s1.trim().endsWith('</svg>'));
   assert.equal((s1.match(/<svg/g) ?? []).length, 1, 'dokładnie jeden <svg>');
   assert.equal((s1.match(/<\/g>/g) ?? []).length, (s1.match(/<g[ >]/g) ?? []).length, 'domknięte grupy');
+});
+
+test('mapforge: strefy zajęte — biomy nie zakrywają gór/jezior (ADR 0022)', async () => {
+  const { rozrzut, prng: p2 } = await import('../tools/mapforge/geom.mjs');
+  const kwadrat = [[0, 0], [200, 0], [200, 200], [0, 200]];
+  const strefa = { bboxy: [[50, 50, 150, 150]], poligony: [] };
+  const pkt = rozrzut(kwadrat, 60, p2('t'), 8, null, strefa);
+  assert.ok(pkt.length > 10, 'rozsiew nadal działa poza strefą');
+  assert.ok(pkt.every(([x, y]) => !(x >= 50 && x <= 150 && y >= 50 && y <= 150)),
+    'żaden punkt w strefie zajętej (bbox)');
+  const strefaPoly = { bboxy: [], poligony: [[[0, 0], [200, 0], [200, 100], [0, 100]]] };
+  const pkt2 = rozrzut(kwadrat, 60, p2('t'), 8, null, strefaPoly);
+  assert.ok(pkt2.every(([, y]) => y >= 100), 'żaden punkt w strefie zajętej (poligon)');
+  // pasmoInstancje = ta sama geometria co pasmo() (strefy gór dla renderu)
+  const inst = pasmoInstancje('glify-test', [[0, 100], [400, 120]], { szer: 40 });
+  const svg = pasmo('glify-test', [[0, 100], [400, 120]], { szer: 40 });
+  assert.equal(inst.length, (svg.match(/mf-szczyt/g) ?? []).length,
+    'instancje 1:1 z rysowanymi szczytami');
+  assert.ok(inst.every((i) => i.w > 0 && i.h > 0), 'wymiary stref dodatnie');
 });

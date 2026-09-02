@@ -109,17 +109,27 @@ export function bbox(poly) {
  * `maski` (poligony lądu) — gdy podane, punkt musi leżeć na lądzie:
  * otoczka biomu bywa szersza niż kontynent (wypukłość nad zatoką),
  * bez maski las „pływa" po oceanie.
+ * `wyklucz` (ADR 0022, pkt d recenzji 2026-09-02): strefy zajęte przez
+ * inne warstwy — `{ bboxy: [[x0,y0,x1,y1],…], poligony: [poly,…] }`;
+ * punkt w strefie jest odrzucany, dzięki czemu biomy NIE nakładają się
+ * na góry/wulkany/jeziora/lód ani na wcześniejsze biomy.
  */
-export function rozrzut(poly, n, rng, minOdl = 16, maski = null) {
+export function rozrzut(poly, n, rng, minOdl = 16, maski = null, wyklucz = null) {
   const { x0, x1, y0, y1 } = bbox(poly);
   const postawione = [];
   const min2 = minOdl * minOdl;
+  const zajete = (p) => {
+    if (!wyklucz) return false;
+    if ((wyklucz.bboxy ?? []).some((b) => p[0] >= b[0] && p[0] <= b[2] && p[1] >= b[1] && p[1] <= b[3])) return true;
+    return (wyklucz.poligony ?? []).some((w) => pit(p, w));
+  };
   let proby = 0;
   while (postawione.length < n && proby < n * 60) {
     proby++;
     const p = [x0 + rng() * (x1 - x0), y0 + rng() * (y1 - y0)];
     if (!pit(p, poly)) continue;
     if (maski && maski.length && !maski.some((m) => pit(p, m))) continue;
+    if (zajete(p)) continue;
     if (postawione.some((q) => (q[0] - p[0]) ** 2 + (q[1] - p[1]) ** 2 < min2)) continue;
     postawione.push(p);
   }

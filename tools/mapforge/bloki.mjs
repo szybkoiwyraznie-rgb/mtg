@@ -133,12 +133,12 @@ export function drzewo(x, y, s, rng) {
 }
 
 /** Las: deterministyczny rozsiew drzew w wielokącie. */
-export function las(id, poly, { gestosc = 1, skala = 1, minOdst = 8, maski = null } = {}) {
+export function las(id, poly, { gestosc = 1, skala = 1, minOdst = 8, maski = null, wyklucz = null } = {}) {
   const rng = prng(`las:${id}`);
   const n = Math.round(pole(poly) / 72 * gestosc);
   // drzewa mocno zachodzą na siebie (rozstaw < średnica korony) → gęsta,
   // „ręczna" masa kęp jak mapome, zamiast rozsypanych kropek
-  return rozrzut(poly, n, rng, Math.max(3, minOdst) * 0.48, maski)
+  return rozrzut(poly, n, rng, Math.max(3, minOdst) * 0.48, maski, wyklucz)
     .map(([x, y]) => drzewo(x, y, skala, rng)).join('\n');
 }
 
@@ -150,10 +150,10 @@ export function las(id, poly, { gestosc = 1, skala = 1, minOdst = 8, maski = nul
  * kresek + co jakiś czas płytkie oczko (pozioma falka). Gęsty rozsiew
  * (mały odstęp) składa się w teksturę mokradeł zamiast rytmicznych rzędów.
  */
-export function bagno(id, poly, { gestosc = 1, maski = null } = {}) {
+export function bagno(id, poly, { gestosc = 1, maski = null, wyklucz = null } = {}) {
   const rng = prng(`bagno:${id}`);
   const n = Math.round(pole(poly) / 330 * gestosc);
-  return rozrzut(poly, n, rng, 7, maski).map(([x, y]) => {
+  return rozrzut(poly, n, rng, 7, maski, wyklucz).map(([x, y]) => {
     let out = `<g class="mf-kepka" data-x="${rr(x)}" data-y="${rr(y)}">`;
     // sitowie: 3–5 krótkich pionowych kresek (rozchylonych, o różnej wys.)
     const m = 3 + Math.floor(rng() * 3);
@@ -174,10 +174,10 @@ export function bagno(id, poly, { gestosc = 1, maski = null } = {}) {
 
 /* ---------- biome: step (krótkie kępy traw) ---------- */
 
-export function step(id, poly, { gestosc = 1, maski = null } = {}) {
+export function step(id, poly, { gestosc = 1, maski = null, wyklucz = null } = {}) {
   const rng = prng(`step:${id}`);
   const n = Math.round(pole(poly) / 700 * gestosc);
-  return rozrzut(poly, n, rng, 16, maski).map(([x, y]) =>
+  return rozrzut(poly, n, rng, 16, maski, wyklucz).map(([x, y]) =>
     `<path d="M ${rr(x - 5)} ${rr(y)} l 4 -4 M ${rr(x - 1)} ${rr(y + 1)} l 4 -5 M ${rr(x + 3)} ${rr(y - 1)} l 4 -4" ` +
     `stroke="${PAL.step}" stroke-width="1.5" stroke-linecap="round" fill="none"/>`,
   ).join('\n');
@@ -250,19 +250,13 @@ export function szczyt(x, y, w, h, { snieg = false, flip = 1, glifId = null } = 
 }
 
 /**
- * Pasmo — JEDNO LOGICZNE PASMO jako pojedyncza, spójna bryła wklejona na
- * mapę (decyzja właściciela 2026-09-02, pkt a: glify „nawsadzane góra na
- * górze, bez ładu i składu" odrzucone). Glify adoptowane (ADR 0020) układają
- * się POLEM W DŁUŻY wzdłuż wygładzonego grzbietu: bazy nachodzą na siebie
- * (~50%), więc sylwetki zlewają się w jeden ciągły, jagodowy grzbiet —
- * język mapome (mapa Śródziemia). Wielkości POBONE (szerokości baz ±~10%;
- * wysokości wynikają z naturalnych proporcji glifu, więc szczyty mają różne
- * wysokości jak w prawdziwym pasmie — bez przytłaczania większych
- * mniejszych). Bez rozrzutu pionowego i bez osobnego rzędu pogórza.
- * Mega-klastery (hero) tylko jawnie przez `szczyt(..., { glifId })`.
- * Deterministyczne (rng z hasha id, ADR 0018 pkt 3).
+ * Instancje glifów pasma — geometria rozsiewu wydzielona z `pasmo()`
+ * (ADR 0022, pkt d recenzji 2026-09-02): renderScena liczy z niej STREFY
+ * ZAJĘTE przez góry (bbox glifu), które wykluczają rozsiew biomów —
+ * lasy/bagna/stepy nie zakrywają szczytów. Zwraca listę
+ * `{ x, y, w, h, flip, snieg, glifId }` (x,y = środek dolnej krawędzi).
  */
-export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = false, maski = null } = {}) {
+export function pasmoInstancje(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = false, maski = null } = {}) {
   const naLadzie = (p) => !maski || !maski.length || maski.some((m) => pit(p, m));
   const rng = prng(`pasmo:${id}`);
   const grzbiet = chaikin(punkty, 3, false);
@@ -295,9 +289,26 @@ export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = f
       glifId: glif.id,
     });
   }
+  return instancje;
+}
+
+/**
+ * Pasmo — JEDNO LOGICZNE PASMO jako pojedyncza, spójna bryła wklejona na
+ * mapę (decyzja właściciela 2026-09-02, pkt a: glify „nawsadzane góra na
+ * górze, bez ładu i składu" odrzucone). Glify adoptowane (ADR 0020) układają
+ * się POLEM W DŁUŻY wzdłuż wygładzonego grzbietu: bazy nachodzą na siebie
+ * (~50%), więc sylwetki zlewają się w jeden ciągły grzbiet — język mapome
+ * (mapa Śródziemia). Wielkości PODOBNE (szerokości baz ±~10%; wysokości
+ * wynikają z naturalnych proporcji glifu, więc szczyty mają różne wysokości
+ * jak w prawdziwym pasmie — bez przytłaczania większych mniejszych).
+ * Bez rozrzutu pionowego i bez osobnego rzędu pogórza.
+ * Mega-klastery (hero) tylko jawnie przez `szczyt(..., { glifId })`.
+ * Deterministyczne (rng z hasha id, ADR 0018 pkt 3).
+ */
+export function pasmo(id, punkty, opcje = {}) {
   // Rysujemy wzdłuż grzbietu (t rośnie) — późniejszy glif nachodzi na
   // poprzedni z jednej strony, jak kolejne partie tego samego grzbietu.
-  return instancje.map((s) =>
+  return pasmoInstancje(id, punkty, opcje).map((s) =>
     szczyt(s.x, s.y, s.w, s.h, { snieg: s.snieg, flip: s.flip, glifId: s.glifId })).join('\n');
 }
 
@@ -325,19 +336,21 @@ export function wulkan(x, y, { skala = 1, dym = true } = {}) {
  * Rzeka jako wstęga stożkowa (źródło wąskie, ujście szerokie). Jeden kolor
  * wody wszędzie (ADR 0020 + pkt d, 2026-09-02): rzeka ma identyczny kolor
  * co morze I jeziora — wpływając do akwenu „rozmywa się" w nim (zlewa się,
- * nie tnie). Brak gradientu i brak opacity.
+ * nie tnie). Brak gradientu i brak opacity. Wstęga ma OBWÓDKĘ w kolorze
+ * linii wody (`PAL.wodaStroke` — ciemniejszy niebieski), jak obrys jezior
+ * i wybrzeży (pkt c recenzji 2026-09-02, ADR 0022).
  */
-export function rzeka(id, punkty, { s0 = 3, s1 = 9, zrodlo = true } = {}) {
+export function rzeka(id, punkty, { s0 = 3, s1 = 9, zrodlo = true, obrys = 1.1 } = {}) {
   const { d } = wstega(punkty, s0, s1);
   const kolor = PAL.woda;
   const pocz = punkty[0];
-  return (zrodlo ? `<circle cx="${rr(pocz[0])}" cy="${rr(pocz[1])}" r="${rr(s0 * 0.7)}" fill="${kolor}"/>` : '') +
-    `<path d="${d}" fill="${kolor}"/>`;
+  return (zrodlo ? `<circle cx="${rr(pocz[0])}" cy="${rr(pocz[1])}" r="${rr(s0 * 0.7)}" fill="${kolor}" stroke="${PAL.wodaStroke}" stroke-width="${rr(Math.min(obrys, 0.8))}"/>` : '') +
+    `<path d="${d}" fill="${kolor}" stroke="${PAL.wodaStroke}" stroke-width="${rr(obrys)}" stroke-linejoin="round"/>`;
 }
 
 /** Dopływ — cieńsza wstęga wpadająca do rzeki głównej. */
 export function doplyw(id, punkty, { s0 = 1.5, s1 = 3.5 } = {}) {
-  return rzeka(id, punkty, { s0, s1, zrodlo: false });
+  return rzeka(id, punkty, { s0, s1, zrodlo: false, obrys: 0.8 });
 }
 
 /* ---------- jezioro (tafla + linia brzegowa + fale) ---------- */

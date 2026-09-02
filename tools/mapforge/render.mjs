@@ -25,9 +25,9 @@
  */
 
 import {
-  PAL, motyw, las, bagno, step, lod, pasmo, wulkan, rzeka, doplyw, jezioro,
-  droga, miasto, ruina, hedron, etykieta, lukEtykieta, kompas, ramka,
-  skalaLinia, drzewo,
+  PAL, motyw, las, bagno, step, lod, pasmo, pasmoInstancje, wulkan, rzeka,
+  doplyw, jezioro, droga, miasto, ruina, hedron, etykieta, lukEtykieta,
+  kompas, ramka, skalaLinia, drzewo,
 } from './bloki.mjs';
 import { prng, gladka, prosta, parsujD, pit } from './geom.mjs';
 
@@ -220,21 +220,56 @@ export function renderuj(scena, { styl } = {}) {
       ...scena.pasma.map((p) => pasmo(p.id, p.punkty, { maski: maskiLadow, ...(p.opcje ?? {}) })));
   }
 
-  if (scena.wulkany?.length) {
+  // WULKANY: warstwa między górami a biomami (kolejność pkt g). Scena
+  // trzyma wulkany w `poi` (typ "wulkan") — tu je zbieramy; obsługujemy
+  // też ewentualne `scena.wulkany` (format z nagłówka pliku). Naprawa
+  // regresji PR-9: po zmianie kolejności warstw render czytał wyłącznie
+  // `scena.wulkany`, więc wulkany z poi (w tym Valakut) znikały z mapy.
+  const wulkany = [
+    ...(scena.wulkany ?? []),
+    ...(scena.poi ?? []).filter((p) => p.typ === 'wulkan')
+      .map((p) => ({ x: p.x, y: p.y, opcje: p.opcje })),
+  ];
+  if (wulkany.length) {
     warstwy.push(`<!-- === WULKANY === -->`,
-      ...scena.wulkany.map((w) => wulkan(w.x, w.y, w.opcje ?? {})));
+      ...wulkany.map((w) => wulkan(w.x, w.y, w.opcje ?? {})));
   }
 
   // Kolejność warstw (decyzja właściciela 2026-09-02, pkt g): morza → lądy →
   // jeziora → rzeki → góry/wulkany → lasy/bagna/stepy NAD górami → drogi →
   // miasta/ruiny → etykiety na samym szczycie.
   if (scena.biomy?.length) {
-    const grupy = {};
-    for (const b of scena.biomy) {
-      grupy[b.typ] = (grupy[b.typ] ?? []) + '\n' +
-        (BLOKI_BIOMOW[b.typ] ?? las)(b.id, b.punkty, { maski: maskiLadow, ...(b.opcje ?? {}) });
+    // STREFY ZAJĘTE (pkt d recenzji 2026-09-02, ADR 0022): rozsiew biomów
+    // omija góry (bbox każdego glifu pasma), wulkany, jeziora i lód —
+    // biomy NIE zakrywają rzeźby ani akwenów. Kolejne biomy sceny omijają
+    // też poligony wcześniejszych (nakład dwóch biomów należy do pierwszego).
+    const wyklucz = { bboxy: [], poligony: [] };
+    for (const p of scena.pasma ?? []) {
+      for (const i of pasmoInstancje(p.id, p.punkty, { maski: maskiLadow, ...(p.opcje ?? {}) })) {
+        wyklucz.bboxy.push([i.x - i.w / 2 - 4, i.y - i.h - 4, i.x + i.w / 2 + 4, i.y + 4]);
+      }
     }
-    warstwy.push(`<!-- === BIOMY === -->`);
+    for (const w of wulkany) {
+      const s = w.opcje?.skala ?? 1;
+      wyklucz.bboxy.push([w.x - 24 * s, w.y - 30 * s, w.x + 24 * s, w.y + 6 * s]);
+    }
+    for (const j of scena.jeziora ?? []) {
+      if (j.d) wyklucz.poligony.push(parsujD(j.d));
+      else if (j.cx != null) wyklucz.bboxy.push([j.cx - j.rx, j.cy - j.ry, j.cx + j.rx, j.cy + j.ry]);
+    }
+    for (const b of scena.biomy) {
+      if (b.typ === 'lod') wyklucz.poligony.push(b.punkty);   // lita czapa: nic w niej nie rośnie
+    }
+    const grupy = {};
+    const wczesniejsze = [];
+    for (const b of scena.biomy) {
+      const strefa = b.typ === 'lod' ? undefined
+        : { bboxy: wyklucz.bboxy, poligony: [...wyklucz.poligony, ...wczesniejsze] };
+      grupy[b.typ] = (grupy[b.typ] ?? '') + '\n' +
+        (BLOKI_BIOMOW[b.typ] ?? las)(b.id, b.punkty, { maski: maskiLadow, wyklucz: strefa, ...(b.opcje ?? {}) });
+      if (b.typ !== 'lod') wczesniejsze.push(b.punkty);
+    }
+    warstwy.push(`<!-- === BIOMY (strefy zajęte: góry/wulkany/jeziora/lód — ADR 0022) === -->`);
     for (const [typ, tresc] of Object.entries(grupy)) {
       warstwy.push(`<g id="biom-${typ}">${tresc}</g>`);
     }
