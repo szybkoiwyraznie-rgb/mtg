@@ -468,23 +468,23 @@
    "y": 0.3657,
    "typ": "osada",
    "pozycja_zrodlo": "mapa-fanowska",
-   "notka": "forteca w Spike Fields (opis)"
+   "notka": "osada goblinów Tuktuk w kamiennym forcie (\u201estone haven\u201d) odkopanym przez Eldrazi \u2014 The Art of MTG: Zendikar via MTG Salvation \u201eWorld of Zendikar IV\u201d (https://www.mtgsalvation.com/articles/49510-the-world-of-zendikar-part-iv-return-to-zendikar); typ na mapie: fort (ADR 0028); pozycja w Spike Fields wg w2"
   },
   {
    "nazwa": "Slab Haven",
-   "x": 0.7425,
-   "y": 0.35,
+   "x": 0.7475,
+   "y": 0.4057,
    "typ": "osada",
    "pozycja_zrodlo": "mapa-fanowska",
-   "notka": "forteca płd. od Grip Haven (opis)"
+   "notka": "osada goblinów Tuktuk w kamiennym forcie (\u201estone haven\u201d) \u2014 jak Grip Haven (World of Zendikar IV); typ na mapie: fort (ADR 0028); pozycja płd. od Grip Haven wg w2; przesunięty NA PŁD. od Grip Haven w PR-11 (le\u017ca\u0142 na płn.-zach. wbrew własnej notce, a halo etykiet zamalowywało zbite ikony)"
   },
   {
    "nazwa": "Ghostwatch",
-   "x": 0.745,
-   "y": 0.3914,
+   "x": 0.7225,
+   "y": 0.4179,
    "typ": "osada",
    "pozycja_zrodlo": "mapa-fanowska",
-   "notka": "w górach płd.-zach. Akoum (opis)"
+   "notka": "wspólnota Mul Daya i Kor broniąca duchami przodków kamiennych fortów (\u201estone havens\u201d) \u2014 World of Zendikar IV; typ na mapie: fort (ADR 0028); pozycja w górach płd.-zach. Akoum wg w2; rozgęszczenie PR-11 (dalej na płd.-zach., zgodnie z opisem)"
   },
   {
    "nazwa": "Kargan Lands",
@@ -524,7 +524,7 @@
    "y": 0.236,
    "typ": "osada",
    "pozycja_zrodlo": "mapa-fanowska-wariant-3-4",
-   "notka": "twierdza u wschodnich podnóży Teeth of Akoum"
+   "notka": "twierdza u wschodnich podnóży Teeth of Akoum, blisko Eye of Ugin (https://mtg.fandom.com/wiki/Fort_Keff); typ na mapie: fort (ADR 0028)"
   },
   {
    "nazwa": "Glass Haven",

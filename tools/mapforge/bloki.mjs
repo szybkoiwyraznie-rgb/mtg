@@ -458,6 +458,25 @@ export function ruina(x, y, { skala = 1 } = {}) {
  * czytały się jak „mikro-góry" (recenzja właściciela 2026-09-02, ADR 0025).
  * Podstawa w punkcie (x, y); wysokość ~30·skala.
  */
+/** Fort / warownia — kamienna wieża z blankami w kole (jak miasto/ruina,
+ *  ADR 0024/0028). Rysowany ręcznie w języku mapy (czarna sylwetka),
+ *  nie adoptowany glif. Użycie: kanoniczne forty (Fort Keff, stone
+ *  havens Akoum — Grip Haven, Slab Haven, Ghostwatch). */
+export function fort(x, y, { skala = 1 } = {}) {
+  const s = skala;
+  const P = (dx, dy) => `${rr(x + dx * s)} ${rr(y + dy * s)}`;
+  let out = `<g class="mf-fort" data-x="${rr(x)}" data-y="${rr(y)}">` +
+    `<circle cx="${rr(x)}" cy="${rr(y)}" r="${rr(12.5 * s)}" fill="${PAL.lad}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.1 * s)}"/>`;
+  // mury + donżon z dwoma blankami (jedna sylwetka)
+  out += `<path d="M ${P(-8, 6)} L ${P(-8, 0)} L ${P(-4, 0)} L ${P(-4, -3)} ` +
+    `L ${P(-2.6, -3)} L ${P(-2.6, -5.4)} L ${P(-0.9, -5.4)} L ${P(-0.9, -3)} ` +
+    `L ${P(0.9, -3)} L ${P(0.9, -5.4)} L ${P(2.6, -5.4)} L ${P(2.6, -3)} ` +
+    `L ${P(4, -3)} L ${P(4, 0)} L ${P(8, 0)} L ${P(8, 6)} Z" fill="${PAL.skalaCien}"/>`;
+  // brama (łuk w kolorze lądu)
+  out += `<path d="M ${P(-1.3, 6)} L ${P(-1.3, 3.4)} Q ${P(0, 1.8)} ${P(1.3, 3.4)} L ${P(1.3, 6)} Z" fill="${PAL.lad}"/>`;
+  return out + `</g>`;
+}
+
 export function iglica(x, y, { skala = 1 } = {}) {
   const s = skala;
   const p = (dx, dy) => `${rr(x + dx * s)} ${rr(y + dy * s)}`;

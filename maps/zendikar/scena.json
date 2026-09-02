@@ -919,7 +919,7 @@
    }
   },
   {
-   "typ": "miasto",
+   "typ": "fort",
    "x": 1505.0,
    "y": 512.0,
    "opcje": {
@@ -927,17 +927,17 @@
    }
   },
   {
-   "typ": "miasto",
-   "x": 1485.0,
-   "y": 490.0,
+   "typ": "fort",
+   "x": 1495.0,
+   "y": 568.0,
    "opcje": {
     "skala": 0.85
    }
   },
   {
-   "typ": "miasto",
-   "x": 1490.0,
-   "y": 548.0,
+   "typ": "fort",
+   "x": 1445.0,
+   "y": 585.0,
    "opcje": {
     "skala": 0.85
    }
@@ -1088,7 +1088,7 @@
    }
   },
   {
-   "typ": "miasto",
+   "typ": "fort",
    "x": 1690.0,
    "y": 330.0,
    "opcje": {
@@ -1278,24 +1278,24 @@
   },
   {
    "tekst": "Slab Haven",
-   "x": 1429,
-   "y": 495,
+   "x": 1495,
+   "y": 584,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
     "ital": true,
-    "przyDo": [1485, 490]
+    "przyDo": [1495, 568]
    }
   },
   {
    "tekst": "Ghostwatch",
-   "x": 1547,
-   "y": 553,
+   "x": 1445,
+   "y": 601,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
     "ital": true,
-    "przyDo": [1490, 548]
+    "przyDo": [1445, 585]
    }
   },
   {

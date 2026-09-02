@@ -26,7 +26,7 @@
 
 import {
   PAL, motyw, las, bagno, step, lod, pasmo, pasmoInstancje, wulkan, rzeka,
-  doplyw, jezioro, droga, miasto, ruina, hedron, iglica, szczyt, etykieta,
+  doplyw, jezioro, droga, miasto, ruina, fort, hedron, iglica, szczyt, etykieta,
   lukEtykieta, kompas, ramka, skalaLinia, drzewo,
 } from './bloki.mjs';
 import { prng, gladka, prosta, parsujD, pit } from './geom.mjs';
@@ -58,7 +58,7 @@ export const ETYKIETY_WODNE_KOLOR = [
   'Rzeka Srebrna', 'Zatoka Ciszy',                  // demo
 ];
 const BLOKI_POI = {
-  miasto, ruina, hedron, iglica,
+  miasto, ruina, fort, hedron, iglica,
   // `wodospad` — strugi spadającej wody + rozbryzg (Roaring Falls);
   // kolor linii wody, spójny z jeziorami/wybrzeżem (ADR 0025).
   wodospad: (x, y, { skala = 1 } = {}) => {
@@ -137,6 +137,7 @@ export function rozstawEtykiety(etykiety, { szer, wys, maskiLadow = [], woda = n
   // recenzja 2026-09-02: „Teeth of Akoum za daleko od wulkanów".
   const PROMIEN_POI = {
     miasto: { dol: 13, gora: 13 }, ruina: { dol: 13, gora: 11 },
+    fort: { dol: 13, gora: 13 },
     hedron: { dol: 10, gora: 10 }, wulkan: { dol: 4, gora: 29 },
     iglica: { dol: 4, gora: 31 }, wodospad: { dol: 6, gora: 10 },
   };

@@ -43,6 +43,7 @@ dziedziczona z projektu mtg-game.
 | [0025](0025-warstwowe-kolory-pisma-map.md) | Warstwowe kolory pisma: kontynenty/wyspy czerń, wody granat, fragmenty lasów/bagien zieleń (automat po kotwicy w biomie); nakładka przenosi kolory z SVG; napisy NAD lasem (bez polan); klocki `iglica` (g-237) i `wodospad`; kaniony rysowane; drogi bez dubli | Zaakceptowana |
 | [0026](0026-fabula-kotwica-transpozycji.md) | Fabuła wraca do dostawy materializacji (imgId · nazwa · set · plan · Fabuła) jako WIĄŻĄCA kotwica transpozycji — sekcje osadzenia karty budowane z Fabuły (spójność z ilustracjami FOT/KON); higiena: osadzenie ≠ kanon MtG, oznaczanie w Źródłach | Zaakceptowana |
 | [0027](0027-rozdzielenie-artefaktu-mapy-osobno.md) | Rozdzielenie artefaktu (v2 — drzewo HTML): artefakt główny ~0,2 MB + samowystarczalne strony map `maps/<plan>.html` w `<iframe>` (file:// nie blokuje iframe — offline z dysku działa w pełni); nawigacja z iframe przez postMessage; ZIP = całe drzewo | Zaakceptowana |
+| [0028](0028-klocek-fort.md) | Klocek `fort` — warownie jako osobny typ POI (domknięcie E5): ręcznie rysowana sylwetka w kole (nie Azgaar); użycie: Fort Keff + stone havens Akoum; latarnia/wrak z E5 odrzucone (brak kanonicznego użycia) | Zaakceptowana |
 
 Spójnością rejestru (numeracja, statusy, tabela) pilnuje
 `test/rejestr-adr.test.js`.
