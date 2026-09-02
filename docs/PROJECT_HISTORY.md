@@ -4,6 +4,18 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-02 — sesja PR-10 (część 7): iglica ręczna, asymetryczne strefy, podręcznik RYSOWANIE_MAPY_PLANU (recenzja 7)
+
+1. Iglica: ręcznie rysowana sylwetka (blok `iglica` w bloki.mjs) —
+   lekcja: glify hero to KLASTRY, pomniejszanie ich na ikony zawsze da
+   „mikro-góry"; nowe obiekty rysujemy w języku mapy od zera.
+2. `PROMIEN_POI` asymetryczny {dol, gora}: etykiety siadają tuż pod
+   podstawą wulkanu/iglicy; nakładka dostała `data-rg`.
+3. **Podręcznik `docs/guides/RYSOWANIE_MAPY_PLANU.md`** (zamówienie
+   właściciela: „solidna dokumentacja wszystkiego, czego się
+   nauczyliśmy") — 10 sekcji + antywzorce + checklista; stary skill
+   T3 podlinkowany jako era ręczna.
+
 ## 2026-09-02 — sesja PR-10 (część 6): warstwowe kolory pisma → ADR 0025 (recenzja 6)
 
 1. **Root cause braku granatu:** nakładka renderuje etykiety HTML-em,

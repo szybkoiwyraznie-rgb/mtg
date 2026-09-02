@@ -3,6 +3,19 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-02 — recenzja 7 preview: iglica rysowana ręcznie, asymetryczne strefy ikon, PODRĘCZNIK map T4
+
+- **Living Spire:** iglica rysowana ręcznie (smukła turnia w języku
+  glifów) — pomniejszone glify hero to klastry i czytały się jak
+  „mikro-góry"; **Teeth of Akoum:** etykieta siada tuż pod stożkami
+  dzięki ASYMETRYCZNYM strefom ikon (wulkan/iglica: mały prześwit pod
+  podstawą, duży nad sylwetką; kontrakt `data-r`/`data-rg` w nakładce).
+- **Nowy podręcznik:** `docs/guides/RYSOWANIE_MAPY_PLANU.md` — pełna
+  wiedza z rund recenzji PR-9/PR-10 dla agenta rysującego mapę nowego
+  planu od podstaw (zasady ADR 0018–0025, pipeline, bramki jakości,
+  QA rastrowe, debug rozstawu, kontrakt nakładki, antywzorce,
+  checklista).
+
 ## 2026-09-02 — recenzja 6 preview: warstwowe kolory pisma, bez polan, iglica i wodospad, kaniony Makindi (ADR 0025)
 
 - **Kolory pisma warstwowe:** kontynenty/wyspy CZERŃ, wody GRANAT,
