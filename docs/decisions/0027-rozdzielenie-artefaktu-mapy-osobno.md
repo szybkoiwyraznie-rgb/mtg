@@ -67,8 +67,11 @@ Mechanika:
   (index.html + mtg-lore-codex.html + maps/**) — po rozpakowaniu
   otwiera się index.html z dysku;
 - `index.html` = kopia artefaktu głównego (wejście serwera/Pages);
-  `--out` buduje pojedynczy artefakt + drzewo map obok (pages.yml bez
-  zmian); tryb `--inline` USUNIĘTY (nie ma już jednoplika z mapami).
+  tryb `--inline` USUNIĘTY (nie ma już jednoplika z mapami).
+- *Aktualizacja 2026-09-02:* CLI z `--out` również buduje pełny pakiet
+  (z ZIP-em) w katalogu celu — wcześniej pomijał ZIP, przez co link
+  „Pobierz archiwum (ZIP)" na GitHub Pages dawał 404 (pages.yml buduje
+  przez `--out dist/index.html`).
 
 ## Konsekwencje
 

@@ -3,6 +3,7 @@
  * Wywołuje zbuduj() wprost (bez podprocesu) na realnej bazie repo.
  */
 import fs from 'node:fs';
+import { spawnSync } from 'node:child_process';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { zbuduj } from '../tools/build.mjs';
@@ -62,4 +63,17 @@ test('pakiet dystrybucyjny: artefakt + drzewo map + ZIP (ADR 0027 v2)', async ()
   assert.ok(fs.existsSync(wynik.zip), 'pakiet: ZIP z całym drzewem');
   assert.ok(fs.statSync(wynik.zip).size > 4 * 1024 * 1024, 'ZIP ma zawierać drzewo map (nie sam artefakt)');
   fs.rmSync('/tmp/codex-test-pakiet', { recursive: true, force: true });
+});
+
+test('CLI --out buduje pełny pakiet z ZIP-em (kontrakt pages.yml)', () => {
+  // Regresja: `node tools/build.mjs --out dist/index.html` (dokładnie tak
+  // woła pages.yml) pomijał ZIP → 404 na „Pobierz archiwum (ZIP)" na Pages.
+  const katalog = '/tmp/codex-test-cli';
+  fs.rmSync(katalog, { recursive: true, force: true });
+  const wynik = spawnSync(process.execPath, ['tools/build.mjs', '--out', `${katalog}/index.html`], { encoding: 'utf8' });
+  assert.equal(wynik.status, 0, `build CLI ma przejść: ${wynik.stderr}`);
+  assert.ok(fs.existsSync(`${katalog}/index.html`), 'CLI: index.html');
+  assert.ok(fs.existsSync(`${katalog}/mtg-lore-codex.zip`), 'CLI: ZIP musi powstać (link w stopce artefaktu)');
+  assert.ok(fs.statSync(`${katalog}/mtg-lore-codex.zip`).size > 4 * 1024 * 1024, 'CLI: ZIP z drzewem map');
+  fs.rmSync(katalog, { recursive: true, force: true });
 });

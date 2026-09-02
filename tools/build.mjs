@@ -9,7 +9,9 @@
  *    detekcja cykli i kolizji nazw (tools/module-graph.mjs).
  * 4. Wstrzykuje styl, dane (CODEX_DATA) i kod do szkieletu index.html.
  *
- * Uruchomienie: node tools/build.mjs [--out dist/mtg-lore-codex.html]
+ * Uruchomienie: node tools/build.mjs [--out dist/index.html]
+ * CLI zawsze buduje pełny pakiet (artefakt + maps/** + ZIP); `--out`
+ * wskazuje katalog docelowy (katalog pliku z argumentu).
  */
 
 import fs from 'node:fs';
@@ -284,8 +286,10 @@ if (jestMain) {
     const i = process.argv.indexOf('--out');
     return i >= 0 ? process.argv[i + 1] : undefined;
   })();
-  // `--out` = pojedynczy artefakt + drzewo map obok (tak buduje pages.yml
-  // pod dist/index.html). Bez `--out` = pełny pakiet z ZIP-em.
-  const praca = out ? zbuduj({ out }) : zbudujPakiet({});
+  // CLI buduje ZAWSZE pełny pakiet (artefakt + drzewo map + ZIP) —
+  // `--out <plik>` wskazuje tylko katalog docelowy (pages.yml podaje
+  // dist/index.html). Wcześniej `--out` pomijał ZIP, przez co link
+  // „Pobierz archiwum (ZIP)" na GitHub Pages kończył się 404.
+  const praca = zbudujPakiet(out ? { katalog: path.dirname(path.resolve(out)) } : {});
   praca.catch((e) => { console.error(e.message); process.exit(1); });
 }
