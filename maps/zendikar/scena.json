@@ -1004,6 +1004,14 @@
   },
   {
    "typ": "miasto",
+   "x": 878,
+   "y": 618,
+   "opcje": {
+    "skala": 0.6
+   }
+  },
+  {
+   "typ": "miasto",
    "x": 660,
    "y": 505,
    "opcje": {
@@ -1020,8 +1028,8 @@
   },
   {
    "typ": "miasto",
-   "x": 470.0,
-   "y": 700.0,
+   "x": 540,
+   "y": 425,
    "opcje": {
     "skala": 0.75
    }
@@ -1380,6 +1388,16 @@
     "kotwica": "middle",
     "ital": true,
     "przyDo": [1390, 1235]
+   }
+  },
+  {
+   "tekst": "Pelakka Karst",
+   "x": 1185,
+   "y": 1265,
+   "opcje": {
+    "fs": 14.0,
+    "kotwica": "middle",
+    "ital": true
    }
   },
   {
@@ -1902,6 +1920,16 @@
    }
   },
   {
+   "tekst": "Tikal Harborage",
+   "x": 878,
+   "y": 634,
+   "opcje": {
+    "fs": 14.0,
+    "kotwica": "middle",
+    "przyDo": [878, 618]
+   }
+  },
+  {
    "tekst": "Sea Gate",
    "x": 970,
    "y": 665,
@@ -1939,6 +1967,27 @@
     "fs": 14.0,
     "kotwica": "middle",
     "przyDo": [570, 640]
+   }
+  },
+  {
+   "tekst": "Sunspring",
+   "x": 420,
+   "y": 774,
+   "opcje": {
+    "fs": 13.0,
+    "kotwica": "middle",
+    "ital": true,
+    "przyDo": [420, 760]
+   }
+  },
+  {
+   "tekst": "Calcite Flats",
+   "x": 560,
+   "y": 820,
+   "opcje": {
+    "fs": 14.0,
+    "kotwica": "middle",
+    "ital": true
    }
   },
   {
@@ -1984,13 +2033,13 @@
    }
   },
   {
-   "tekst": "Hadatown",
-   "x": 462,
-   "y": 706,
+   "tekst": "North Hada",
+   "x": 540,
+   "y": 441,
    "opcje": {
     "fs": 16.0,
     "kotwica": "middle",
-    "przyDo": [470, 700]
+    "przyDo": [540, 425]
    }
   },
   {
@@ -2113,6 +2162,16 @@
    }
   },
   {
+   "tekst": "Silundi Sea",
+   "x": 345,
+   "y": 1358,
+   "opcje": {
+    "fs": 20.0,
+    "kotwica": "middle",
+    "ital": true
+   }
+  },
+  {
    "tekst": "Morze Zendikaru",
    "x": 190,
    "y": 720,
@@ -2127,6 +2186,10 @@
  "skala": false,
  "ramka": true,
  "drogi": [
+  {
+   "id": "trakt-northhada-coralhelm",
+   "punkty": [[540, 425], [575, 455], [620, 482], [660, 505]]
+  },
   {
    "id": "trakt-affa-fortkeff",
    "punkty": [

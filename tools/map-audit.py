@@ -40,6 +40,7 @@ SPODZEANE_WODY = {                           # konwencja projektu
     'Bojuka Bay', 'Sunder Bay', 'Chill Depths', 'Makindi Trenches',
     'Halimar', 'Beyeen', 'Agadeem', 'Wyspy Jwar', 'Emeria', 'Zulaport',
     'Hagra Cistern', 'Morze Zendikaru',
+    'Silundi Sea',                           # morze wokół Ondu (Guide: Ondu)
     'Umung',                                 # rzeka Bala Ged — etykieta przy ujściu do Bojuka Bay
     'Blackbloom Lake', 'Lake Jast',          # jeziora — etykieta może zwisać nad wodą
     'Roaring Falls',                         # wodospady na klifach wschodniej Murasy

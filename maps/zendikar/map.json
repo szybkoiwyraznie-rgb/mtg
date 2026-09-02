@@ -173,11 +173,52 @@
    "notka": "ruiny w niebie nad Tazeem"
   },
   {
-   "nazwa": "Hadatown",
-   "x": 0.235,
-   "y": 0.509,
+   "nazwa": "Tikal Harborage",
+   "x": 0.439,
+   "y": 0.4414,
+   "typ": "osada",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "osada merfolków Thady Adel, na wpół zanurzona w rozlewisku w górze kanału od Sea Gate (The Art of MTG: Zendikar, Lore of Zendikar: Life in Tazeem; MTG Salvation: World of Zendikar IV)"
+  },
+  {
+   "nazwa": "Sunspring",
+   "x": 0.21,
+   "y": 0.5429,
+   "typ": "miejsce",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "ukryta marmurowa fontanna-oaza w Calcite Flats pod Bulwarkiem, jedno z 6 miejsc sprzed Eldrazi (Lore of Zendikar: Ancient Sites of Tazeem; mtg.wiki/Tazeem)"
+  },
+  {
+   "nazwa": "Calcite Flats",
+   "x": 0.28,
+   "y": 0.5857,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon",
+   "notka": "kalcytowe ławice otaczają CAŁE wybrzeże Tazeem (Guide: Tazeem, mtg.wiki); etykieta na południowym odcinku (spójnie z w2)"
+  },
+  {
+   "nazwa": "Pelakka Karst",
+   "x": 0.5925,
+   "y": 0.9036,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "wapienny kras-badlands OTACZAJĄCY Hagra Cistern w Guul Draz (Guide: Guul Draz); etykieta na południowy zachód od cysterny"
+  },
+  {
+   "nazwa": "Silundi Sea",
+   "x": 0.1725,
+   "y": 0.97,
+   "typ": "morze",
+   "pozycja_zrodlo": "kanon",
+   "notka": "morze, w które wcina się Ondu (płd.-zach. kwadrant planu); wody wokół Jwar (Guide: Ondu)"
+  },
+  {
+   "nazwa": "North Hada",
+   "x": 0.27,
+   "y": 0.3036,
    "typ": "etykieta-podkladu",
-   "notka": "miasto złodziei Tazeem (MTG Wiki)"
+   "pozycja_zrodlo": "kanon",
+   "notka": "kanoniczna nazwa i pozycja: North Hada — bezprawny posterunek w północnych wyżynach przy źródle Umary (The Art of MTG: Zendikar via mtg.wiki/Tazeem); E-geo-9 rozstrzygnięte kanonem, nie w2 (2026-09-02; wcześniej Hadatown 0.235/0.509 przy Bulwarku)"
   },
   {
    "nazwa": "Ondu",
@@ -734,7 +775,7 @@
    "zrodlo": "https://mtg.fandom.com/wiki/Tazeem"
   },
   {
-   "nazwa": "Hadatown",
+   "nazwa": "North Hada",
    "typ": "miasto",
    "kontynent": "Tazeem",
    "zrodlo": "https://mtg.fandom.com/wiki/Tazeem"

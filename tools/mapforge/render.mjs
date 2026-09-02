@@ -39,7 +39,7 @@ const BLOKI_BIOMOW = { las, bagno, step, lod };
 export const STREFY_WODNE_DOMYSLNE = [
   'Bojuka Bay', 'Sunder Bay', 'Chill Depths', 'Makindi Trenches',
   'Halimar', 'Beyeen', 'Agadeem', 'Wyspy Jwar', 'Emeria', 'Zulaport',
-  'Hagra Cistern', 'Morze Zendikaru', 'Umung',
+  'Hagra Cistern', 'Morze Zendikaru', 'Silundi Sea', 'Umung',
   'Blackbloom Lake', 'Lake Jast', 'Roaring Falls',
   'Ior Ruin',                                  // ruiny na brzegu Glasspool — napis może zwisać nad wodą
 ];
@@ -50,6 +50,7 @@ export const STREFY_WODNE_DOMYSLNE = [
  *  ADR 0024). Scena może nadpisać przez `etykietyWodne`. */
 export const ETYKIETY_WODNE_KOLOR = [
   'Morze Zendikaru', 'Halimar', 'Bojuka Bay', 'Sunder Bay', 'Chill Depths',
+  'Silundi Sea',
   'Umung', 'Umara', 'Blackbloom Lake', 'Lake Jast', 'Hagra Cistern',
   'Glasspool', 'Roaring Falls', 'Magosi Wodospad',
   'Rzeka Srebrna', 'Zatoka Ciszy',                  // demo
