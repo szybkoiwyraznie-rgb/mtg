@@ -3,6 +3,27 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-02 — recenzja 5 preview: czytelność map (ADR 0024) — koła POI, granatowe wody, trakty, pass geograficzny wszystkich kontynentów
+
+Właściciel przeszedł mapę kontynent po kontynencie. Systemowo (ADR 0024):
+
+- **ikony miast/ruin w kołach z nieprzezroczystym tłem** (nie giną
+  w bagnie/lesie); **granatowe etykiety wód** (`#1c3a5e`); **rozsiew
+  biomów omija boxy napisów** (tytuły nie toną w puszczy); **glify pasm
+  w całości na lądzie** (Skyfang nie włazi na morze); nowy POI
+  **`iglica`** (Living Spire — jawny glif hero g-016); **+6 traktów**
+  (Akoum ×2, Guul Draz ×2, Murasa, Sejiri); nakładka: kotwiczone
+  etykiety omijają też tytuły krain (przeszkody obszarowe).
+
+Geografia (per kontynent): rzeka Vazi wypływa z południowego stoku
+pasma (nie przecina gór); Thunder Gap i Kazuul Pass zakotwiczone przy
+murze; wulkany Akoum zwarte w masyw **Teeth of Akoum**; Oko Ugina przy
+paśmie; **Ior Ruin na brzegu Glasspool** (nie w tafli), Glass Haven
+odsunięte; Windblast Gorge wzdłuż wąwozu (obrót); **Umung wzdłuż rzeki
+na lądzie**; dwie nowe połacie dżungli Bala Ged; Makindi Trenches poza
+lasem; Beyeen pod swoją wyspą; Chill Depths przy brzegu.
+Testy 90/90 · map-audit 0 · wiązania 0 · QA rastrowe.
+
 ## 2026-09-02 — recenzja 4 preview: fix nakładki (układ kolizyjny nie startował), falka Halimar wraca, porządki kontynentów
 
 Uwagi właściciela: (a) falka Halimar może zostać (spójność jezior);

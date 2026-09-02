@@ -4,6 +4,26 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-02 — sesja PR-10 (część 5): czytelność map → ADR 0024 (recenzja 5, pass geograficzny)
+
+**Zlecenie:** uwagi per kontynent (Murasa/Bala/Akoum/Ondu/Sejiri) +
+generalne: więcej traktów, ikony w kołach z tłem, granatowe wody.
+
+1. **Silnik:** koła tła miast/ruin; `PAL.etykietaWoda` + lista
+   `ETYKIETY_WODNE_KOLOR`; rozstaw liczony PRZED biomami → boxy etykiet
+   w strefach zajętych; `pasmoInstancje` wymaga lądu pod skrzydłami
+   glifu; POI `iglica` (hero g-016 jawnie); nakładka: przeszkody
+   z etykiet obszarowych w układzie kotwiczonych.
+2. **Scena:** reroute rzeki Vazi; przejścia przy murze; klaster
+   wulkanów Teeth of Akoum (label pod centralnym stożkiem — wcześniej
+   odpychany przez szeroki Windblast → Windblast obrócony wzdłuż
+   wąwozu fs14); Ior Ruin na brzeg (pierwsza próba „brzegu" była
+   morzem — audyt FORGE W WODZIE wyłapał); Glass Haven odsunięte;
+   Umung kat 30 wzdłuż rzeki; +2 lasy Bala; +6 traktów; korekty
+   Makindi/Beyeen/Chill; Tangled Vales na zachód (klaster SW Bala
+   pełny — fallback kolizji).
+3. QA: testy 90/90, audyt 0, wiązania 0, rastery Murasa/Akoum.
+
 ## 2026-09-02 — sesja PR-10 (część 4): fix układu nakładki (NaN), detektor chaosu, porządki kontynentów (recenzja 4)
 
 **Zlecenie (czat):** (a) falka Halimar wraca; (b) Emeria × „ruiny
