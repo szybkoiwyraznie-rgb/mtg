@@ -18,7 +18,9 @@ import { GLIFY_GORY, GLIFY_GORY_HERO } from './glify-mapaome.mjs';
  *  (ADR 0020, decyzja właściciela 2026-09-01). */
 export const PAL = {
   lad: '#e8dbb8', ladStroke: '#a89468',
-  woda: '#ccd8d2', wodaGleb: '#b9cdd8', wodaStroke: '#7fa0b4',
+  // Woda = JEDEN kolor (morze/jeziora/rzeka — decja właściciela 2026-09-02,
+  // pkt d: akweny mają się zlewać, bez osobnego „koloru jeziora").
+  woda: '#ccd8d2', wodaStroke: '#7fa0b4',
   tekst: '#4a3a28', ital: '#6b5d52', halo: '#f4ecd8', etykieta: '#6b1f2e',
   drzewo: '#7a8a5a', drzewoCien: '#5c6b44', pienn: '#6b5d52',
   bagno: '#6f8a72', step: '#b5a877',
@@ -28,7 +30,6 @@ export const PAL = {
   krater: '#7a4a3a', dym: '#9aa3a8', mur: '#c9b98f', kamien: '#cfc4a0',
   poswiataKolor: '#b9cdd8',
   poswiata: [{ w: 12, o: 0.10 }, { w: 7, o: 0.16 }, { w: 3, o: 0.24 }],
-  oceanPlamy: true,
   tryb: 'kolor',   // 'kolor' = wypelnienia; 'tusz' = kontur + haczura (line-art)
 };
 
@@ -45,7 +46,8 @@ const MOTYWY = {
     lad: '#f7f7f7', ladStroke: '#3f3f3f',
     // Woda w delikatnym niebieskim (decyzja właściciela 2026-09-01 — odstępstwo
     // od czystego achromatu z ADR 0019: kolor tylko dla wody i etykiet).
-    woda: '#e2ecf4', wodaGleb: '#cbdced', wodaStroke: '#6f9bc0',
+    // Jeden kolor wody dla wszystkich akwenów (pkt d, 2026-09-02).
+    woda: '#e2ecf4', wodaStroke: '#6f9bc0',
     tekst: '#1c1c1c', ital: '#3f3f3f', halo: '#f7f7f7', etykieta: '#6b1f2e',
     drzewo: '#dedede', drzewoCien: '#c3c3c3', pienn: '#3f3f3f',
     bagno: '#5f5f5f', step: '#9b9b9b',
@@ -55,7 +57,6 @@ const MOTYWY = {
     krater: '#4a4a4a', dym: '#909090', mur: '#d9d9d9', kamien: '#cfcfcf',
     poswiataKolor: '#9f9f9f',
     poswiata: [{ w: 10, o: 0.35 }, { w: 5.5, o: 0.5 }, { w: 2, o: 0.9 }],
-    oceanPlamy: true,
     tryb: 'kolor',
   },
 };
@@ -249,68 +250,53 @@ export function szczyt(x, y, w, h, { snieg = false, flip = 1, glifId = null } = 
 }
 
 /**
- * Pasmo — GĘSTE KLASTRY glifów adoptowanych wzdłuż wygładzonego grzbietu
- * (ADR 0020). Techniki z researchu: rozmiar ważony sinusem długości grzbietu
- * (wyżej w środku), odbicia lustrzane, jitter, hero-glify (wieloklastrowe)
- * rzadko i tylko w środku pasma; kolejność rysowania wg DOLNEJ KRAWĘDZI
- * (technika Azgaar) — bliższe szczyty na wierzchu. Małe, niskie pogórze pod
- * granią. Deterministyczne (rng z hasha id, ADR 0018 pkt 3).
+ * Pasmo — JEDNO LOGICZNE PASMO jako pojedyncza, spójna bryła wklejona na
+ * mapę (decyzja właściciela 2026-09-02, pkt a: glify „nawsadzane góra na
+ * górze, bez ładu i składu" odrzucone). Glify adoptowane (ADR 0020) układają
+ * się POLEM W DŁUŻY wzdłuż wygładzonego grzbietu: bazy nachodzą na siebie
+ * (~50%), więc sylwetki zlewają się w jeden ciągły, jagodowy grzbiet —
+ * język mapome (mapa Śródziemia). Wielkości POBONE (szerokości baz ±~10%;
+ * wysokości wynikają z naturalnych proporcji glifu, więc szczyty mają różne
+ * wysokości jak w prawdziwym pasmie — bez przytłaczania większych
+ * mniejszych). Bez rozrzutu pionowego i bez osobnego rzędu pogórza.
+ * Mega-klastery (hero) tylko jawnie przez `szczyt(..., { glifId })`.
+ * Deterministyczne (rng z hasha id, ADR 0018 pkt 3).
  */
-export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = false, przedgorze = true, maski = null } = {}) {
+export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = false, maski = null } = {}) {
   const naLadzie = (p) => !maski || !maski.length || maski.some((m) => pit(p, m));
   const rng = prng(`pasmo:${id}`);
   const grzbiet = chaikin(punkty, 3, false);
   const dl = dlugosc(grzbiet);
-
-  // Mega-klastery (hero) nie są wybierane losowo do pasm — tylko jawnie
-  // (szczyt(..., { glifId: 'g-016' }) w scenie dla wyjątkowego masywu).
   const NORMALNE = GLIFY_GORY.filter((g) => !GLIFY_GORY_HERO.includes(g.id));
-  const losowyGlif = () => NORMALNE[Math.floor(rng() * NORMALNE.length)].id;
-  const instancje = [];
 
-  // Główny rząd: klastery nakładają się NIEZNACZNIE (rozstaw ≈ szer*0.8) —
-  // tak jak na mapie mapome: każdy szczyt pozostaje czytelny, a masa gór
-  // powstaje przez stopniowe gęstnienie i skalowanie, NIE przez mega-klaster
-  // (hero-glify nie wchodzą tu automatycznie — są dostępne przez `glifId`
-  // w `szczyt` do pojedynczych, zdefiniowanych w scenie masywów).
-  const n = gestoscSzczytow ?? Math.max(8, Math.round(dl / (szer * 0.8)));
+  // Liczba glifów i jednolita skala szerokościowych: krok wzdłuż grzbietu
+  // ≈ dl/n; szerokość glifu ≈ 1.8×kroku (nachodzenie baz ~50%) — pasmo jest
+  // ciągiem, nie kolekcją osobnych klastrów. Minimum 3 glify (krótkie pasma
+  // to zwarty kłąb 3–4 szczytów, nie ściana nachodzących glifów).
+  const n = gestoscSzczytow ?? Math.max(3, Math.round(dl / (szer * 0.8)));
+  const krok = dl / Math.max(1, n - 1);
+  const instancje = [];
   for (let i = 0; i < n; i++) {
     const t = n === 1 ? 0.5 : i / (n - 1);
     const [x, y] = punktNa(grzbiet, t);
-    const waga = Math.sin(Math.PI * t);          // wyżej w środku pasma
-    const h = szer * (0.65 + waga * 0.45 + rng() * 0.2);
-    const dx = (rng() - 0.5) * szer * 0.45;
-    const dy = (rng() - 0.5) * szer * 0.22;
-    const pozycja = naLadzie([x + dx, y + dy]) ? [x + dx, y + dy]
-      : (naLadzie([x, y]) ? [x, y] : null);
-    if (!pozycja) continue;
+    if (!naLadzie([x, y])) continue;              // pasmo nie pływa
+    const waga = Math.sin(Math.PI * t);           // środek pasma: najszersze
+    const glif = NORMALNE[Math.floor(rng() * NORMALNE.length)];
+    const wGlifu = krok * 1.8 * (0.92 + waga * 0.16 + (rng() - 0.5) * 0.12);
+    let hGlifu = wGlifu / (glif.w / glif.h);      // naturalne proporcje glifu
+    if (hGlifu > szer * 1.25) {                   // pułap: pasmo nie rozjeżdża
+      hGlifu = szer * 1.25;
+    }
+    const w = hGlifu * (glif.w / glif.h);
     instancje.push({
-      x: pozycja[0], y: pozycja[1], h,
-      w: szer * (0.9 + rng() * 0.3),
+      x, y, h: hGlifu, w,
       flip: rng() < 0.5 ? -1 : 1,
-      snieg: snieg && waga > 0.55 && rng() < 0.5,
-      glifId: losowyGlif(),
+      snieg: snieg && waga > 0.55 && rng() < 0.4,
+      glifId: glif.id,
     });
   }
-
-  // Pogórze — małe, niskie, pod dolnym brzegiem grzbietu
-  if (przedgorze) {
-    const n2 = Math.max(4, Math.round(dl / (szer * 0.95)));
-    for (let i = 0; i < n2; i++) {
-      const t = (i + 0.5) / n2;
-      const [x, y] = punktNa(grzbiet, t);
-      const px = x + (rng() - 0.5) * szer * 0.7;
-      const py = y + szer * 0.3;
-      if (!naLadzie([px, py])) continue;          // pogórze nie pływa
-      instancje.push({
-        x: px, y: py, h: szer * (0.35 + rng() * 0.2), w: szer * 0.6,
-        flip: rng() < 0.5 ? -1 : 1, snieg: false, glifId: losowyGlif(),
-      });
-    }
-  }
-
-  // Sort po dolnej krawędzi (technika Azgaar): dalej → wcześniej na mapie
-  instancje.sort((a, b) => a.y - b.y);
+  // Rysujemy wzdłuż grzbietu (t rośnie) — późniejszy glif nachodzi na
+  // poprzedni z jednej strony, jak kolejne partie tego samego grzbietu.
   return instancje.map((s) =>
     szczyt(s.x, s.y, s.w, s.h, { snieg: s.snieg, flip: s.flip, glifId: s.glifId })).join('\n');
 }
@@ -336,23 +322,22 @@ export function wulkan(x, y, { skala = 1, dym = true } = {}) {
 /* ---------- rzeka (wstęga o rosnącej szerokości; kolor akwenu — ADR 0020) ---------- */
 
 /**
- * Rzeka jako wstęga stożkowa (źródło wąskie, ujście szerokie) w KOLORZE
- * AKWENU (ADR 0020, decyzja właściciela 2026-09-01): ujście w morze →
- * `PAL.woda`, ujście w jezioro → `PAL.wodaGleb`, rzeka kończąca się na lądzie
- * → kolor morza. Brak gradientu i brak opacity — wpływając do morza rzeka
- * ma z nim identyczny kolor, więc „rozmywa się" w nim (zlewa się, nie tnie).
+ * Rzeka jako wstęga stożkowa (źródło wąskie, ujście szerokie). Jeden kolor
+ * wody wszędzie (ADR 0020 + pkt d, 2026-09-02): rzeka ma identyczny kolor
+ * co morze I jeziora — wpływając do akwenu „rozmywa się" w nim (zlewa się,
+ * nie tnie). Brak gradientu i brak opacity.
  */
-export function rzeka(id, punkty, { s0 = 3, s1 = 9, zrodlo = true, ujscie = null } = {}) {
+export function rzeka(id, punkty, { s0 = 3, s1 = 9, zrodlo = true } = {}) {
   const { d } = wstega(punkty, s0, s1);
-  const kolor = ujscie?.typ === 'jezioro' ? PAL.wodaGleb : PAL.woda;
+  const kolor = PAL.woda;
   const pocz = punkty[0];
   return (zrodlo ? `<circle cx="${rr(pocz[0])}" cy="${rr(pocz[1])}" r="${rr(s0 * 0.7)}" fill="${kolor}"/>` : '') +
     `<path d="${d}" fill="${kolor}"/>`;
 }
 
 /** Dopływ — cieńsza wstęga wpadająca do rzeki głównej. */
-export function doplyw(id, punkty, { s0 = 1.5, s1 = 3.5, ujscie = null } = {}) {
-  return rzeka(id, punkty, { s0, s1, zrodlo: false, ujscie });
+export function doplyw(id, punkty, { s0 = 1.5, s1 = 3.5 } = {}) {
+  return rzeka(id, punkty, { s0, s1, zrodlo: false });
 }
 
 /* ---------- jezioro (tafla + linia brzegowa + fale) ---------- */
@@ -366,13 +351,13 @@ export function doplyw(id, punkty, { s0 = 1.5, s1 = 3.5, ujscie = null } = {}) {
  */
 export function jezioro({ cx, cy, rx, ry, d } = {}, { fale = true, obrys = 2 } = {}) {
   if (d) {
-    let out = `<path d="${d}" fill="${PAL.wodaGleb}" stroke="${PAL.wodaStroke}" stroke-width="${obrys}"/>`;
+    let out = `<path d="${d}" fill="${PAL.woda}" stroke="${PAL.wodaStroke}" stroke-width="${obrys}"/>`;
     if (fale && cx != null && ry) {
       out += `<path d="M ${rr(cx - rx * 0.35)} ${rr(cy + ry * 0.15)} q ${rr(rx * 0.15)} ${rr(-ry * 0.2)} ${rr(rx * 0.3)} 0" stroke="${PAL.wodaStroke}" stroke-width="1.4" fill="none" opacity="0.6"/>`;
     }
     return out;
   }
-  let out = `<ellipse cx="${rr(cx)}" cy="${rr(cy)}" rx="${rr(rx)}" ry="${rr(ry)}" fill="${PAL.wodaGleb}" stroke="${PAL.wodaStroke}" stroke-width="${obrys}"/>`;
+  let out = `<ellipse cx="${rr(cx)}" cy="${rr(cy)}" rx="${rr(rx)}" ry="${rr(ry)}" fill="${PAL.woda}" stroke="${PAL.wodaStroke}" stroke-width="${obrys}"/>`;
   out += `<ellipse cx="${rr(cx)}" cy="${rr(cy)}" rx="${rr(rx * 0.82)}" ry="${rr(ry * 0.82)}" fill="none" stroke="${PAL.wodaStroke}" stroke-width="1" opacity="0.35"/>`;
   if (fale) {
     out += `<path d="M ${rr(cx - rx * 0.4)} ${rr(cy + ry * 0.15)} q ${rr(rx * 0.15)} ${rr(-ry * 0.18)} ${rr(rx * 0.3)} 0" stroke="${PAL.wodaStroke}" stroke-width="1.4" fill="none" opacity="0.6"/>`;
@@ -394,14 +379,16 @@ export function droga(id, punkty, { typ = 'szlak' } = {}) {
 
 /**
  * Miasto (osada) w duchu mapome — nie „sześciany na łuku", lecz zwarta
- * gromadka małych domków z dwuspadowym dachem (czarnym), tworząca
- * czytelną osadę na tle mapy. Kilka budynków w nieregularnym szyku.
+ * gromadka małych domków z dwuspadowym dachem, tworząca czytelną osadę
+ * na tle mapy. Kilka budynków w nieregularnym szyku.
+ * Kolor = `PAL.skalaCien` (SZARY, jak ruiny) — decyzja właściciela
+ * 2026-09-02 pkt c: czarne miasto „zlewa się" z czarnymi górami.
  */
 export function miasto(x, y, { skala = 1 } = {}) {
   const s = skala;
   const dom = (hx, hy, sw, wh) =>
     `<path d="M ${rr(hx - sw)} ${rr(hy + wh * 0.4)} L ${rr(hx - sw)} ${rr(hy - wh * 0.6)} ` +
-    `L ${rr(hx)} ${rr(hy - wh)} L ${rr(hx + sw)} ${rr(hy - wh * 0.6)} L ${rr(hx + sw)} ${rr(hy + wh * 0.4)} Z" fill="${PAL.tekst}"/>`;
+    `L ${rr(hx)} ${rr(hy - wh)} L ${rr(hx + sw)} ${rr(hy - wh * 0.6)} L ${rr(hx + sw)} ${rr(hy + wh * 0.4)} Z" fill="${PAL.skalaCien}"/>`;
   const ukl = [
     [-6, 1, 3, 4], [1, -1, 3.2, 4.4], [6, 2, 2.6, 3.6],
     [-2, -6, 3.4, 4.6], [5, -6, 2.4, 3.2], [3, 5, 2.6, 3.6], [-5, 6, 2.8, 3.8],
