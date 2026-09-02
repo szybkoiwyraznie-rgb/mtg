@@ -4,7 +4,7 @@
 
 import { escapeHtml } from './markdown.js';
 import { dajStrone, dajDane, backlinki } from './data.js';
-import { chipsyTagow, nieZnalesc } from './render.js';
+import { chipsyTagow, nieZnalesc, stopkaCzasu } from './render.js';
 
 const ETYKIETY_KLAS = {
   geografia: 'Geografia', fauna: 'Fauna', flora: 'Flora', spolecznosc: 'Społeczność',
@@ -45,6 +45,7 @@ export function renderHaslo(slug) {
           <ul>${kartyKolekcji.map((k) => `<li><a href="#/karta/${k.slug}">${escapeHtml(k.tytul)}</a></li>`).join('')}</ul>
         </section>` : ''}
         ${sekcjaLinkujacychHasla(linkujace.filter((s) => s.typ !== 'karta'))}
+        ${stopkaCzasu(haslo.czas)}
       </div>
       <aside class="infoboks haslo-infoboks">
         ${chipsyTagow(haslo.tagi)}

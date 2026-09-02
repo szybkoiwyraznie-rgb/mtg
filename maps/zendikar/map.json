@@ -71,15 +71,23 @@
    "x": 0.9,
    "y": 0.318,
    "typ": "etykieta-podkladu",
-   "notka": "wąwóz/żleb Akoum (MTG Wiki)"
+   "notka": "Windblast Gorge / Drake Ravine \u2014 niebezpieczne przejście w góry Akoum, wyżłobione przejściem Zhulodoka, znane z drapieżnych draków i wiszącego mostu (MTG Wiki: Akoum; Awakenings); na mapie: dolina rzeki spływającej do Glasspool, ściany kanionu dorysowane jako pasma w PR-11 (recenzja właściciela: etykieta bez obiektu)"
   },
   {
    "nazwa": "Tal Terig",
-   "x": 0.72,
-   "y": 0.4,
+   "x": 0.805,
+   "y": 0.3429,
    "typ": "etykieta-podkladu",
-   "notka": "osada Akoum (MTG Wiki)",
-   "pozycja_zrodlo": "nieustalone-w-kanonie"
+   "notka": "ruina \u201ePuzzle Tower\u201d \u2014 wg kanonu wznosi si\u0119 nad kotlin\u0105 Akoum przed resztkami pasma Teeth of Akoum (Guide: Akoum); przeniesiona z (0.72, 0.4) i przetypowana z miasta na ruin\u0119 w PR-11 (E-geo-4); w2 lokowa\u0142a szczyt na p\u0142n. od Spike Fields \u2014 kanon wygrywa",
+   "pozycja_zrodlo": "kanon-relacyjna"
+  },
+  {
+   "nazwa": "League of Anowon",
+   "x": 0.85,
+   "y": 0.3143,
+   "typ": "etykieta-podkladu",
+   "notka": "ob\u00f3z-szko\u0142a mag\u00f3w-eksplorator\u00f3w za\u0142o\u017cony przez wampira Anowona, Ruin Sage \u2014 wysoko w Teeth of Akoum, dost\u0119pny gryfem z Affy (Guide: Akoum); w2 m\u00f3wi\u0142a o \u201eterytorium\u201d w centralnym Akoum \u2014 kanon precyzuje: osada w pa\u015bmie; CELOWO bez drogi \u2014 kanon: \u201ereaching the camp is no small task, and usually involves taking a griffin from the town of Affa below\u201d (recenzja 2026-09-02)",
+   "pozycja_zrodlo": "kanon-relacyjna"
   },
   {
    "nazwa": "Bala Ged",
@@ -173,11 +181,52 @@
    "notka": "ruiny w niebie nad Tazeem"
   },
   {
-   "nazwa": "Hadatown",
-   "x": 0.235,
-   "y": 0.509,
+   "nazwa": "Tikal Harborage",
+   "x": 0.439,
+   "y": 0.4414,
+   "typ": "osada",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "osada merfolków Thady Adel, na wpół zanurzona w rozlewisku w górze kanału od Sea Gate (The Art of MTG: Zendikar, Lore of Zendikar: Life in Tazeem; MTG Salvation: World of Zendikar IV)"
+  },
+  {
+   "nazwa": "Sunspring",
+   "x": 0.21,
+   "y": 0.5429,
+   "typ": "miejsce",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "ukryta marmurowa fontanna-oaza w Calcite Flats pod Bulwarkiem, jedno z 6 miejsc sprzed Eldrazi (Lore of Zendikar: Ancient Sites of Tazeem; mtg.wiki/Tazeem); sadzawka-oaza dorysowana w PR-11 (recenzja właściciela: etykieta bez obiektu)"
+  },
+  {
+   "nazwa": "Calcite Flats",
+   "x": 0.28,
+   "y": 0.5857,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon",
+   "notka": "kalcytowe ławice otaczają CAŁE wybrzeże Tazeem (Guide: Tazeem, mtg.wiki); etykieta na południowym odcinku (spójnie z w2)"
+  },
+  {
+   "nazwa": "Pelakka Karst",
+   "x": 0.6175,
+   "y": 0.9371,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "wapienny kras-badlands OTACZAJĄCY Hagra Cistern w Guul Draz (Guide: Guul Draz); etykieta na południowy zachód od cysterny; teren dorysowany w PR-11 jako pierścień skalnych żeber wokół cysterny (recenzja właściciela: etykieta bez obiektu)"
+  },
+  {
+   "nazwa": "Silundi Sea",
+   "x": 0.1725,
+   "y": 0.97,
+   "typ": "morze",
+   "pozycja_zrodlo": "kanon",
+   "notka": "morze, w które wcina się Ondu (płd.-zach. kwadrant planu); wody wokół Jwar (Guide: Ondu)"
+  },
+  {
+   "nazwa": "North Hada",
+   "x": 0.27,
+   "y": 0.3036,
    "typ": "etykieta-podkladu",
-   "notka": "miasto złodziei Tazeem (MTG Wiki)"
+   "pozycja_zrodlo": "kanon",
+   "notka": "kanoniczna nazwa i pozycja: North Hada — bezprawny posterunek w północnych wyżynach przy źródle Umary (The Art of MTG: Zendikar via mtg.wiki/Tazeem); E-geo-9 rozstrzygnięte kanonem, nie w2 (2026-09-02; wcześniej Hadatown 0.235/0.509 przy Bulwarku)"
   },
   {
    "nazwa": "Ondu",
@@ -215,18 +264,27 @@
    "notka": "osada Agadeem (MTG Wiki)"
   },
   {
-   "nazwa": "Wyspy Jwar",
-   "x": 0.065,
-   "y": 0.779,
+   "nazwa": "Jwar",
+   "x": 0.3,
+   "y": 0.973,
    "typ": "etykieta-podkladu",
-   "notka": "wyspy na zachód od Ondu"
+   "notka": "mała, smagana morzem wyspa PRZY PŁD. WYBRZEŻU lądu Ondu (Guide: Ondu, MTG Wiki: Ondu — \u201etiny, sea-swept Jwar\u201d); przeniesiona z zachodu (0.065, 0.779) w PR-11 (E-geo-1) — kanon wiąże wyspy z wybrzeżem Ondu, więc w2 (\u201emiędzy Ondu a Akoum\u201d) odrzucona; nazwa z \u201eWyspy Jwar\u201d na kanoniczne \u201eJwar\u201d",
+   "pozycja_zrodlo": "kanon-relacyjna"
+  },
+  {
+   "nazwa": "Serpent's Maw",
+   "x": 0.385,
+   "y": 0.9414,
+   "typ": "morze",
+   "notka": "sztormowe wody wokół wyspy Jwar (Guide: Ondu); dodane w PR-11 (E-geo-1)",
+   "pozycja_zrodlo": "kanon-relacyjna"
   },
   {
    "nazwa": "Beyeen",
    "x": 0.0675,
    "y": 0.8857,
    "typ": "etykieta-podkladu",
-   "notka": "wyspa Ondu"
+   "notka": "wyspa Ondu \u2014 \u201esmaller, temperate Beyeen\u201d (MTG Wiki: Ondu); w PR-11 scalona z dawną wysepką Valakuta w jedną podłużną wyspę (kanon: Valakut to szczyt Crown of Talib w sercu Beyeen)"
   },
   {
    "nazwa": "Murasa",
@@ -410,23 +468,23 @@
    "y": 0.3657,
    "typ": "osada",
    "pozycja_zrodlo": "mapa-fanowska",
-   "notka": "forteca w Spike Fields (opis)"
+   "notka": "osada goblinów Tuktuk w kamiennym forcie (\u201estone haven\u201d) odkopanym przez Eldrazi \u2014 The Art of MTG: Zendikar via MTG Salvation \u201eWorld of Zendikar IV\u201d (https://www.mtgsalvation.com/articles/49510-the-world-of-zendikar-part-iv-return-to-zendikar); typ na mapie: fort (ADR 0028); pozycja w Spike Fields wg w2"
   },
   {
    "nazwa": "Slab Haven",
-   "x": 0.7425,
-   "y": 0.35,
+   "x": 0.7475,
+   "y": 0.4057,
    "typ": "osada",
    "pozycja_zrodlo": "mapa-fanowska",
-   "notka": "forteca płd. od Grip Haven (opis)"
+   "notka": "osada goblinów Tuktuk w kamiennym forcie (\u201estone haven\u201d) \u2014 jak Grip Haven (World of Zendikar IV); typ na mapie: fort (ADR 0028); pozycja płd. od Grip Haven wg w2; przesunięty NA PŁD. od Grip Haven w PR-11 (le\u017ca\u0142 na płn.-zach. wbrew własnej notce, a halo etykiet zamalowywało zbite ikony)"
   },
   {
    "nazwa": "Ghostwatch",
-   "x": 0.745,
-   "y": 0.3914,
+   "x": 0.7225,
+   "y": 0.4179,
    "typ": "osada",
    "pozycja_zrodlo": "mapa-fanowska",
-   "notka": "w górach płd.-zach. Akoum (opis)"
+   "notka": "wspólnota Mul Daya i Kor broniąca duchami przodków kamiennych fortów (\u201estone havens\u201d) \u2014 World of Zendikar IV; typ na mapie: fort (ADR 0028); pozycja w górach płd.-zach. Akoum wg w2; rozgęszczenie PR-11 (dalej na płd.-zach., zgodnie z opisem)"
   },
   {
    "nazwa": "Kargan Lands",
@@ -466,7 +524,7 @@
    "y": 0.236,
    "typ": "osada",
    "pozycja_zrodlo": "mapa-fanowska-wariant-3-4",
-   "notka": "twierdza u wschodnich podnóży Teeth of Akoum"
+   "notka": "twierdza u wschodnich podnóży Teeth of Akoum, blisko Eye of Ugin (https://mtg.fandom.com/wiki/Fort_Keff); typ na mapie: fort (ADR 0028)"
   },
   {
    "nazwa": "Glass Haven",
@@ -528,7 +586,8 @@
    "x": 0.1075,
    "y": 0.8071,
    "typ": "wulkan",
-   "notka": "superwulkan w sercu Akoum (MTG Wiki: Akoum); poprawka z Beyeen 2026-09-01"
+   "notka": "Mount Valakut (\u201eMolten Pinnacle\u201d) \u2014 najwyższy szczyt pierścienia Crown of Talib W SERCU WYSPY BEYEEN (mtg.wiki/Valakut, MTG Wiki: Ondu); notka z 2026-09-01 (\u201eserce Akoum\u201d) była BŁĘDNA \u2014 naprawiona w PR-11 (E-geo-1); wysepka-satelita scalona z Beyeen, wulkan stoi teraz na Beyeen",
+   "pozycja_zrodlo": "kanon-relacyjna"
   },
   {
    "nazwa": "Zulaport",
@@ -620,11 +679,11 @@
   },
   {
    "nazwa": "Tangled Vales",
-   "x": 0.76,
-   "y": 0.725,
+   "x": 0.71,
+   "y": 0.676,
    "typ": "region",
    "pozycja_zrodlo": "mapa-fanowska",
-   "notka": "prowincja Bala Ged na południe od Guum Wilds (w2)"
+   "notka": "prowincja Bala Ged na południe od Guum Wilds (w2); kotwica przesunięta na ląd pod etykietę (audyt PR-10, 2026-09-02 — poprzednia 0.76/0.725 wskazywała morze)"
   },
   {
    "nazwa": "Hagra Cistern",
@@ -636,11 +695,11 @@
   },
   {
    "nazwa": "Hanging Swamp",
-   "x": 0.665,
-   "y": 0.8986,
+   "x": 0.579,
+   "y": 0.8514,
    "typ": "bagno",
    "pozycja_zrodlo": "mapa-fanowska",
-   "notka": "bagna w centrum Guul Draz, nad Hagra Swamp (w2)"
+   "notka": "bagna w centrum Guul Draz, nad Hagra Swamp (w2); etykieta odsunięta na płn.-zach. od Hagra Cistern w PR-11 (leżała w poprzek tafli po dorysowaniu krasu)"
   },
   {
    "nazwa": "Sejiri Refuge",
@@ -652,8 +711,8 @@
   },
   {
    "nazwa": "Jwar Isle Refuge",
-   "x": 0.0625,
-   "y": 0.7286,
+   "x": 0.3275,
+   "y": 0.9557,
    "typ": "osada",
    "pozycja_zrodlo": "przybliżona",
    "notka": "schronienie na wyspie Jwar — kanon: karta Jwar Isle Refuge (ZEN, cykl refuge); pozycja przybliżona (ADR 0023); https://scryfall.com/search?q=!%22Jwar+Isle+Refuge%22"
@@ -734,7 +793,7 @@
    "zrodlo": "https://mtg.fandom.com/wiki/Tazeem"
   },
   {
-   "nazwa": "Hadatown",
+   "nazwa": "North Hada",
    "typ": "miasto",
    "kontynent": "Tazeem",
    "zrodlo": "https://mtg.fandom.com/wiki/Tazeem"
@@ -777,9 +836,15 @@
   },
   {
    "nazwa": "Tal Terig",
+   "typ": "ruina",
+   "kontynent": "Akoum",
+   "zrodlo": "https://web.archive.org/web/20211019022856/https://magic.wizards.com/en/articles/archive/savor-flavor/planeswalker%E2%80%99s-guide-zendikar-akoum-2010-01-12"
+  },
+  {
+   "nazwa": "League of Anowon",
    "typ": "miasto",
    "kontynent": "Akoum",
-   "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+   "zrodlo": "https://web.archive.org/web/20211019022856/https://magic.wizards.com/en/articles/archive/savor-flavor/planeswalker%E2%80%99s-guide-zendikar-akoum-2010-01-12"
   },
   {
    "nazwa": "Tangled Vale (dżungla)",
@@ -897,7 +962,7 @@
    "typ": "wulkan",
    "kontynent": "Ondu",
    "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)",
-   "notka": "wyspa Ondu; port Zulaport (Plane Shift: Zendikar). Valakut przeniesiony na Akoum (MTG Wiki) — poprawka 2026-09-01"
+   "notka": "wyspa Ondu; port Zulaport (Plane Shift: Zendikar). Mount Valakut = szczyt Crown of Talib w sercu Beyeen (mtg.wiki/Valakut) — notka 2026-09-01 o przeniesieniu na Akoum była błędna, naprawiona w PR-11"
   },
   {
    "nazwa": "Jwar (Strand of Jwar)",

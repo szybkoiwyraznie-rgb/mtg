@@ -9,16 +9,19 @@
  *    detekcja cykli i kolizji nazw (tools/module-graph.mjs).
  * 4. Wstrzykuje styl, dane (CODEX_DATA) i kod do szkieletu index.html.
  *
- * Uruchomienie: node tools/build.mjs [--out dist/mtg-lore-codex.html]
+ * Uruchomienie: node tools/build.mjs [--out dist/index.html]
+ * CLI zawsze buduje pełny pakiet (artefakt + maps/** + ZIP); `--out`
+ * wskazuje katalog docelowy (katalog pliku z argumentu).
  */
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { collectModules, assertNoNameCollisions } from './module-graph.mjs';
 import {
   wczytajStrony, wczytajTaxonomie, wczytajKolekcje, wczytajScryfall,
-  wczytajMapy, wczytajCoNowego,
+  wczytajMapy, wczytajCoNowego, parsujWpisyCoNowego,
 } from './content-loader.mjs';
 import { renderMarkdown } from '../src/codex/markdown.js';
 import { napiszZip } from './zip.mjs';
@@ -27,6 +30,42 @@ import {
 } from '../src/codex/registry.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+
+// ── Metadane czasu stron (ADR 0029) ─────────────────────────────────
+// Daty utworzenia/aktualizacji pochodzą z historii gita pliku źródłowego
+// (moment commita = moment publikacji treści; strefa Europe/Warsaw).
+// UWAGA dla CI: przy płytkim klonie (fetch-depth: 1) git widzi tylko
+// ostatni commit i daty byłyby fałszywe — build ostrzega na stderr.
+
+let ostrzezonoPlytki = false;
+function ostrzezPlytkiKlon() {
+  if (ostrzezonoPlytki) return;
+  ostrzezonoPlytki = true;
+  try {
+    const shallow = execFileSync('git', ['rev-parse', '--is-shallow-repository'], { cwd: ROOT, encoding: 'utf8' }).trim();
+    if (shallow === 'true') {
+      console.warn('UWAGA: płytki klon gita — daty „utworzono" stron będą błędne. W workflow ustaw actions/checkout z fetch-depth: 0.');
+    }
+  } catch { /* poza repozytorium gita — fallback na mtime */ }
+}
+
+/** Daty pierwszego i ostatniego commita ścieżki: { utworzono, zaktualizowano }
+ *  w formacie „RRRR-MM-DD HH:MM" (Europe/Warsaw). Fallback: mtime pliku. */
+function datyGit(sciezka) {
+  ostrzezPlytkiKlon();
+  try {
+    const wyjscie = execFileSync('git',
+      ['log', '--format=%ad', '--date=format-local:%Y-%m-%d %H:%M', '--', sciezka],
+      { cwd: ROOT, encoding: 'utf8', env: { ...process.env, TZ: 'Europe/Warsaw' } });
+    const daty = wyjscie.split('\n').filter(Boolean);
+    if (daty.length > 0) return { utworzono: daty[daty.length - 1], zaktualizowano: daty[0] };
+  } catch { /* git niedostępny / ścieżka poza repo */ }
+  try {
+    const st = fs.statSync(path.resolve(ROOT, sciezka));
+    const f = (d) => new Date(d).toLocaleString('sv-SE', { timeZone: 'Europe/Warsaw' }).slice(0, 16);
+    return { utworzono: f(st.mtime), zaktualizowano: f(st.mtime) };
+  } catch { return { utworzono: null, zaktualizowano: null }; }
+}
 const ENTRY = 'src/codex/main.js';
 
 export async function zbuduj({ out, root = ROOT } = {}) {
@@ -87,6 +126,7 @@ export async function zbuduj({ out, root = ROOT } = {}) {
       plan: s.plan ?? null,
       tagi: s.tagi ?? [],
       materializacja: s.materializacja ?? null,
+      czas: datyGit(path.relative(ROOT, path.resolve(root, s.plik))),
       html: r.html,
       linki: r.linki,
       ...(s.typ === 'karta' ? {
@@ -118,9 +158,15 @@ export async function zbuduj({ out, root = ROOT } = {}) {
     };
   }
 
-  const coNowegoHtml = coNowego
-    ? renderMarkdown(coNowego, { resolveLink: resolver }).html
-    : '';
+  // „Co nowego" (ADR 0029): dziennik parsowany na wpisy z datą i godziną
+  // publikacji — widoki limitują listę i grupują archiwum miesiącami.
+  const wpisyCoNowego = parsujWpisyCoNowego(coNowego).map((w) => ({
+    data: w.data,
+    godzina: w.godzina,
+    miesiac: w.miesiac,
+    tytul: w.tytul,
+    html: renderMarkdown(w.cialo, { resolveLink: resolver }).html,
+  }));
 
   const dane = {
     zbudowano: new Date().toISOString().slice(0, 16).replace('T', ' '),
@@ -128,7 +174,7 @@ export async function zbuduj({ out, root = ROOT } = {}) {
     plany: strony.filter((s) => s.typ === 'plan').map((s) => s.slug).sort(),
     tagi: policzTagi(strony.map((s) => ({ ...s, tagi: s.tagi ?? [], linki: wyrenderowane.get(s.slug)?.linki ?? [] }))),
     backlinki: policzBacklinki(strony.map((s) => ({ ...s, linki: wyrenderowane.get(s.slug)?.linki ?? [] }))),
-    coNowegoHtml,
+    coNowego: wpisyCoNowego,
     statystyki: {
       karty: strony.filter((s) => s.typ === 'karta').length,
       hasla: strony.filter((s) => s.typ === 'haslo').length,
@@ -154,6 +200,8 @@ export async function zbuduj({ out, root = ROOT } = {}) {
     fs.copyFileSync(plik, celPodkladu);
     mapa.podkladUrl = rel;                       // mini-mapy kart (<img>)
     mapa.stronaMapy = `maps/${slug}.html`;       // iframe w artefakcie
+    // stopka strony mapy (ADR 0029): czas z historii całego katalogu planu
+    mapa.czas = datyGit(path.relative(ROOT, path.join(root, 'maps', slug)));
     stronyMap.push({ slug, mapa, plik });
   }
   dane.mapy = Object.fromEntries(mapy.entries());
@@ -284,8 +332,10 @@ if (jestMain) {
     const i = process.argv.indexOf('--out');
     return i >= 0 ? process.argv[i + 1] : undefined;
   })();
-  // `--out` = pojedynczy artefakt + drzewo map obok (tak buduje pages.yml
-  // pod dist/index.html). Bez `--out` = pełny pakiet z ZIP-em.
-  const praca = out ? zbuduj({ out }) : zbudujPakiet({});
+  // CLI buduje ZAWSZE pełny pakiet (artefakt + drzewo map + ZIP) —
+  // `--out <plik>` wskazuje tylko katalog docelowy (pages.yml podaje
+  // dist/index.html). Wcześniej `--out` pomijał ZIP, przez co link
+  // „Pobierz archiwum (ZIP)" na GitHub Pages kończył się 404.
+  const praca = zbudujPakiet(out ? { katalog: path.dirname(path.resolve(out)) } : {});
   praca.catch((e) => { console.error(e.message); process.exit(1); });
 }

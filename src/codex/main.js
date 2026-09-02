@@ -35,7 +35,7 @@ function renderuj(trasa) {
     case 'mapa': html = renderMapeIframe(trasa.param, trasa.query); tytul = trasa.param ? `Mapa: ${trasa.param}` : 'Mapa'; aktywna = 'plany'; break;
     case 'tagi': html = renderChmoreTagow(); tytul = 'Tagi'; break;
     case 'tag': html = renderTag(trasa.param); tytul = `Tag: ${trasa.param ?? ''}`; aktywna = 'tagi'; break;
-    case 'co-nowego': html = renderCoNowego(); tytul = 'Co nowego'; break;
+    case 'co-nowego': html = renderCoNowego(trasa.param); tytul = 'Co nowego'; break;
     case 'szukaj': html = renderSzukanie(trasa.query.q); tytul = 'Szukaj'; break;
     default: html = nieZnalesc(trasa.param ?? 'strona'); break;
   }

@@ -26,7 +26,7 @@
 
 import { escapeHtml } from './markdown.js';
 import { dajDane } from './data.js';
-import { nieZnalesc, stanPusty } from './render.js';
+import { nieZnalesc, stanPusty, stopkaCzasu } from './render.js';
 
 /** Dekoduje base64 data-URI SVG do surowego znacznika (inline). */
 function podkladSvgMarkup(dataUri) {
@@ -213,6 +213,7 @@ export function renderMapeIframe(slugPlanu, query = {}) {
       — ${escapeHtml(mapa.zrodlo?.autor ?? '?')}, licencja ${escapeHtml(mapa.zrodlo?.licencja ?? '?')}${mapa.zrodlo?.pobrano ? `, pobrano ${escapeHtml(mapa.zrodlo.pobrano)}` : ''}.</p>
       <p class="meta">Współrzędne pinezek są znormalizowane względem podkładu; lokalizacje ustalane z lore, nie z położenia kursora.</p>
     </footer>
+    ${stopkaCzasu(mapa.czas)}
   </article>`;
 }
 

@@ -150,7 +150,9 @@ handoff sesji. Nie duplikuj statusu w wielu miejscach.
 1. `npm test` + `npm run build` zielone; `git status` czysty; wszystko
    wypchnięte.
 2. `docs/setup/HANDOFF_<data>.md` — stan, kolejka, decyzje, pułapki.
-3. Wpis w `content/co-nowego.md` (co się zmieniło w bazie).
+3. Wpis w `content/co-nowego.md` (co się zmieniło w bazie); nagłówek wg
+   ADR 0029: `## RRRR-MM-DD HH:MM — tytuł` (data i godzina publikacji,
+   Europe/Warsaw).
 4. Opis PR zaktualizowany kumulatywnie; PR pozostaje do scalenia przez
    właściciela (Squash and merge).
 5. W czacie: blok przekazania projektu dla następnej sesji.

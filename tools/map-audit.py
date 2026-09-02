@@ -38,8 +38,12 @@ FILLE_LADU = {'#e8dbb8', '#eef0e6',         # pergamin: ląd / lodowiec (Sejiri)
 MARKERY = {'gora', 'wulkan', 'drzewo', 'bagno', 'miasto', 'ruina'}
 SPODZEANE_WODY = {                           # konwencja projektu
     'Bojuka Bay', 'Sunder Bay', 'Chill Depths', 'Makindi Trenches',
-    'Halimar', 'Beyeen', 'Agadeem', 'Wyspy Jwar', 'Emeria', 'Zulaport',
+    'Halimar', 'Beyeen', 'Agadeem', 'Jwar', 'Emeria', 'Zulaport',
     'Hagra Cistern', 'Morze Zendikaru',
+    'Silundi Sea',                           # morze wokół Ondu (Guide: Ondu)
+    "Serpent's Maw",                         # sztormowe wody wokół Jwar (Guide: Ondu)
+    'Sunspring',                             # fontanna-oaza pod Bulwarkiem — kotwica w sadzawce
+    'Wyspy Jwar',                            # legacy: stara etykieta w podklad-reczny.svg (archiwalny, nie regenerowany)
     'Umung',                                 # rzeka Bala Ged — etykieta przy ujściu do Bojuka Bay
     'Blackbloom Lake', 'Lake Jast',          # jeziora — etykieta może zwisać nad wodą
     'Roaring Falls',                         # wodospady na klifach wschodniej Murasy

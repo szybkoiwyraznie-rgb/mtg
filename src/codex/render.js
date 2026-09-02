@@ -91,9 +91,30 @@ export function sekcjaBacklinkow(slug) {
   </section>`;
 }
 
-function odmiana(n, [jeden, kilka, wiele]) {
+export function odmiana(n, [jeden, kilka, wiele]) {
   if (n === 1) return jeden;
   const reszta = n % 10; const setki = n % 100;
   if (reszta >= 2 && reszta <= 4 && !(setki >= 12 && setki <= 14)) return kilka;
   return wiele;
+}
+
+/** Stopka strony z metadanymi czasu (ADR 0029): data+godzina utworzenia
+ *  i ostatniej aktualizacji źródła strony (z historii gita, build). */
+export function stopkaCzasu(czas) {
+  if (!czas || (!czas.utworzono && !czas.zaktualizowano)) return '';
+  const czesci = [];
+  if (czas.utworzono) czesci.push(`Utworzono ${escapeHtml(czas.utworzono)}`);
+  if (czas.zaktualizowano && czas.zaktualizowano !== czas.utworzono) {
+    czesci.push(`ostatnia aktualizacja ${escapeHtml(czas.zaktualizowano)}`);
+  }
+  return `<footer class="stopka-czasu meta">${czesci.join(' · ')}</footer>`;
+}
+
+/** Polska nazwa miesiąca dla klucza „RRRR-MM" (archiwum Co nowego). */
+export function nazwaMiesiaca(miesiac) {
+  const NAZWY = ['styczeń', 'luty', 'marzec', 'kwiecień', 'maj', 'czerwiec',
+    'lipiec', 'sierpień', 'wrzesień', 'październik', 'listopad', 'grudzień'];
+  const m = String(miesiac ?? '').match(/^(\d{4})-(\d{2})$/);
+  if (!m) return String(miesiac ?? '');
+  return `${NAZWY[Number(m[2]) - 1] ?? m[2]} ${m[1]}`;
 }

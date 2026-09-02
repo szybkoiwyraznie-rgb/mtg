@@ -26,7 +26,7 @@
 
 import {
   PAL, motyw, las, bagno, step, lod, pasmo, pasmoInstancje, wulkan, rzeka,
-  doplyw, jezioro, droga, miasto, ruina, hedron, iglica, szczyt, etykieta,
+  doplyw, jezioro, droga, miasto, ruina, fort, hedron, iglica, szczyt, etykieta,
   lukEtykieta, kompas, ramka, skalaLinia, drzewo,
 } from './bloki.mjs';
 import { prng, gladka, prosta, parsujD, pit } from './geom.mjs';
@@ -38,10 +38,13 @@ const BLOKI_BIOMOW = { las, bagno, step, lod };
  *  rzeki przy ujściu, podniebne ruiny). */
 export const STREFY_WODNE_DOMYSLNE = [
   'Bojuka Bay', 'Sunder Bay', 'Chill Depths', 'Makindi Trenches',
-  'Halimar', 'Beyeen', 'Agadeem', 'Wyspy Jwar', 'Emeria', 'Zulaport',
-  'Hagra Cistern', 'Morze Zendikaru', 'Umung',
+  'Halimar', 'Beyeen', 'Agadeem', 'Jwar', 'Emeria', 'Zulaport',
+  'Hagra Cistern', 'Morze Zendikaru', 'Silundi Sea', 'Umung',
+  "Serpent's Maw",                             // sztormowe wody wokół Jwar (Guide: Ondu)
   'Blackbloom Lake', 'Lake Jast', 'Roaring Falls',
   'Ior Ruin',                                  // ruiny na brzegu Glasspool — napis może zwisać nad wodą
+  'Jwar Isle Refuge',                          // osada na małej wyspie Jwar — napis wisi nad cieśniną (Guide: Ondu)
+  'Sunspring',                                 // fontanna-oaza — napis przy własnej sadzawce (Lore of Zendikar)
 ];
 
 /** Etykiety, które NAZYWAJĄ wodę (morza, zatoki, jeziora, rzeki,
@@ -50,12 +53,13 @@ export const STREFY_WODNE_DOMYSLNE = [
  *  ADR 0024). Scena może nadpisać przez `etykietyWodne`. */
 export const ETYKIETY_WODNE_KOLOR = [
   'Morze Zendikaru', 'Halimar', 'Bojuka Bay', 'Sunder Bay', 'Chill Depths',
+  'Silundi Sea', "Serpent's Maw",
   'Umung', 'Umara', 'Blackbloom Lake', 'Lake Jast', 'Hagra Cistern',
-  'Glasspool', 'Roaring Falls', 'Magosi Wodospad',
+  'Glasspool', 'Roaring Falls', 'Magosi Wodospad', 'Sunspring',
   'Rzeka Srebrna', 'Zatoka Ciszy',                  // demo
 ];
 const BLOKI_POI = {
-  miasto, ruina, hedron, iglica,
+  miasto, ruina, fort, hedron, iglica,
   // `wodospad` — strugi spadającej wody + rozbryzg (Roaring Falls);
   // kolor linii wody, spójny z jeziorami/wybrzeżem (ADR 0025).
   wodospad: (x, y, { skala = 1 } = {}) => {
@@ -134,6 +138,7 @@ export function rozstawEtykiety(etykiety, { szer, wys, maskiLadow = [], woda = n
   // recenzja 2026-09-02: „Teeth of Akoum za daleko od wulkanów".
   const PROMIEN_POI = {
     miasto: { dol: 13, gora: 13 }, ruina: { dol: 13, gora: 11 },
+    fort: { dol: 13, gora: 13 },
     hedron: { dol: 10, gora: 10 }, wulkan: { dol: 4, gora: 29 },
     iglica: { dol: 4, gora: 31 }, wodospad: { dol: 6, gora: 10 },
   };

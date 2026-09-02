@@ -4,6 +4,51 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-02 — sesja PR-11: Pętla Jakości — audyt PR-10 + kolejka E-geo-5/6/7/9 + LORE
+
+1. **Audyt PR-10** (46 plików): determinizm renderu potwierdzony
+   (rerender sceny = commitowany podkład bit w bit), treść/kod zgodne
+   z ADR 0021–0027; 3 znaleziska P3 naprawione w sesji (kotwica rejestru
+   Tangled Vales na morzu → na ląd pod etykietę; „## Konsekwencje##
+   Konsekwencje" w ADR 0027; zdanie SZKIELET_KARTY o oznaczaniu Fabuły
+   w Źródłach ujednolicone z praktyką „Narracja (dostawa właściciela,
+   data)").
+2. **Pass mapowy — kolejka E-geo domknięta** (research kanonu przed
+   każdą nazwą): Pelakka Karst (Guide: Guul Draz — kras WOKÓŁ Hagra
+   Cistern), Silundi Sea (Guide: Ondu), Tikal Harborage (Art of MTG:
+   Zendikar — TAZEEM, rozlewisko w górze kanału od Sea Gate; w2 błędnie
+   dawał Ondu), Sunspring + Calcite Flats (ławice wokół CAŁEGO wybrzeża,
+   oaza pod Bulwarkiem — nie płn. cypel z w2), Hadatown → **North Hada**
+   przy źródle Umary (E-geo-9 rozstrzygnięte kanonem) + trakt do
+   Coralhelm. Zachodnia zatoka: kanon nie nazywa → bez etykiety.
+3. **Warsztat:** pierwsza pozycja North Hada (505,442) dawała etykietę
+   +106 j. pod ikoną (drabinka konfliktów Sky Rock/Umara/Oran-Rief) —
+   pozycję znaleziono SYMULACJĄ rozstawu na wariantach (540,425 → Δ+26);
+   wzorzec „testuj pozycje rerenderem do /tmp, czytaj y etykiety z SVG".
+4. **LORE planu Zendikar:** akapity Tazeem/Guul Draz/Ondu o nowych
+   miejscach + 4 źródła; link-mining: nadal < progu ≥2 kart (bez haseł).
+5. Bramki po każdym kroku: wiązania 0, map-audit 0, testy 91/91, build;
+   QA rastrowe 5 wycinków (sharp poza repo).
+6. **Część 2 (właściciel: „wyczerpać kolejkę todo"): E-geo-1/2/3/4 + E5
+   domknięte.** E-geo-4: Tal Terig nad kotliną Akoum przed Teeth of
+   Akoum (Guide: Akoum > w2), przetypowany na ruinę, trakt z Affy;
+   League of Anowon jako osada wysoko w Teeth (kanon precyzuje
+   „terytorium" z w2). E-geo-1 KANONEM zamiast w2: Jwar + Refuge pod
+   płd. wybrzeże Ondu, wody Serpent's Maw, Beyeen scalona z wysepką
+   Valakuta (kanon: Mount Valakut = Crown of Talib w sercu BEYEEN;
+   notka „serce Akoum" z 2026-09-01 była błędna — naprawiona).
+   E-geo-2 bez rotacji (kanon: Ondu w SW kwadrancie); rozbieżność
+   „małego morza" Akoum–Ondu → wątek otwarty. E-geo-3: wpis kolejki
+   nieaktualny (zrobione w PR-10). E5 → ADR 0028: klocek `fort`
+   ręcznie rysowany (Fort Keff + stone havens: Grip/Slab Haven,
+   Ghostwatch — rozgęszczone, bo halo etykiet zamalowywało zbite
+   ikony); latarnia/wrak odrzucone (brak kanonicznego użycia);
+   „obwódki haseł" bez definicji → wątek otwarty.
+7. **Lekcja proweniencji:** notka kotwicy potrafi PRZECZYĆ własnym
+   współrzędnym (Valakut: notka „Akoum", kotwica na wysepce SW) —
+   przy passach czytaj oba i weryfikuj kanon na nowo, nie ufaj
+   pojedynczej notce.
+
 ## 2026-09-02 — sesja PR-10 (część 14): szlify — Narracja, mapy bez paska, czysty dziennik
 
 1. Karty: „Fabuła dostawy" → **„Narracja"** (feedback: brzmienie);

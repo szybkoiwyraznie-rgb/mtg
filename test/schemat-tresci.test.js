@@ -39,3 +39,17 @@ test('co-nowego.md (jeśli istnieje) parsuje się jako markdown', async () => {
   const { html } = renderMarkdown(md, { resolveLink: () => null });
   assert.ok(typeof html === 'string' && html.length >= 0);
 });
+
+test('co-nowego.md: każdy wpis wg konwencji „## RRRR-MM-DD HH:MM — tytuł" (ADR 0029)', async () => {
+  const { wczytajCoNowego, parsujWpisyCoNowego } = await import('../tools/content-loader.mjs');
+  const md = wczytajCoNowego();
+  if (md === null) return;
+  const naglowki = md.split(/\r?\n/).filter((l) => l.startsWith('## '));
+  for (const l of naglowki) {
+    assert.match(l, /^## \d{4}-\d{2}-\d{2} \d{2}:\d{2} — .+$/,
+      `nagłówek wpisu bez daty+godziny publikacji: „${l.slice(0, 70)}"`);
+  }
+  const wpisy = parsujWpisyCoNowego(md);
+  assert.equal(wpisy.length, naglowki.length, 'parser ma rozpoznać każdy nagłówek wpisu');
+});
+
