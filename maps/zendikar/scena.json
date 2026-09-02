@@ -408,6 +408,28 @@
  ],
  "pasma": [
   {
+   "id": "pasmo-windblast-zach",
+   "punkty": [
+    [1737, 478],
+    [1757, 520],
+    [1768, 558]
+   ],
+   "opcje": {
+    "szer": 16
+   }
+  },
+  {
+   "id": "pasmo-windblast-wsch",
+   "punkty": [
+    [1789, 466],
+    [1809, 508],
+    [1820, 548]
+   ],
+   "opcje": {
+    "szer": 16
+   }
+  },
+  {
    "id": "pasmo-makindi",
    "punkty": [
     [430, 1250],
@@ -1601,8 +1623,8 @@
   },
   {
    "tekst": "Glass Haven",
-   "x": 1815,
-   "y": 562,
+   "x": 1722,
+   "y": 561,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
@@ -2323,6 +2345,18 @@
    ],
    "opcje": {
     "typ": "droga"
+   }
+  },
+  {
+   "id": "trakt-havens",
+   "punkty": [
+    [1470, 470],
+    [1505, 512],
+    [1495, 568],
+    [1445, 585]
+   ],
+   "opcje": {
+    "typ": "szlak"
    }
   },
   {

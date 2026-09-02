@@ -28,6 +28,12 @@
   - **LORE Zendikaru:** akapity o archipelagu Ondu (Jwar/Serpent's Maw,
     Beyeen/Crown of Talib/Valakut, Agadeem) i Akoum (Tal Terig, League
     of Anowon, stone havens) + 4 nowe źródła.
+  - **Recenzja właściciela (preview):** Windblast Gorge dostał ściany
+    kanionu (dwa pasma wzdłuż rzeki do Glasspool — kanon: „Drake
+    Ravine", przejście w góry wyżłobione przez Zhulodoka); nowy szlak
+    z traktu Goma Fada–Affa do stone havens (Grip → Slab → Ghostwatch);
+    League of Anowon celowo bez drogi — wg kanonu do obozu dociera się
+    tylko gryfem z Affy.
 - **Pass mapowy (kolejka E-geo-5/6/7/9 domknięta):**
   - **Pelakka Karst** — wapienny kras otaczający Hagra Cistern
     (Guide: Guul Draz) nazwany na mapie;
