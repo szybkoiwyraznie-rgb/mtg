@@ -32,6 +32,16 @@ import {
 import { prng, gladka, prosta, parsujD, pit } from './geom.mjs';
 
 const BLOKI_BIOMOW = { las, bagno, step, lod };
+
+/** Etykiety obiektów wodnych (konwencja projektu — spójna z map-audit):
+ *  mogą stać/zwisać nad wodą, którą nazywają (zatoki, jeziora, wodospady,
+ *  rzeki przy ujściu, podniebne ruiny). */
+export const STREFY_WODNE_DOMYSLNE = [
+  'Bojuka Bay', 'Sunder Bay', 'Chill Depths', 'Makindi Trenches',
+  'Halimar', 'Beyeen', 'Agadeem', 'Wyspy Jwar', 'Emeria', 'Zulaport',
+  'Hagra Cistern', 'Morze Zendikaru', 'Umung',
+  'Blackbloom Lake', 'Lake Jast', 'Roaring Falls',
+];
 const BLOKI_POI = { miasto, ruina, hedron };
 
 /** Ocean: jednolity podkład. (Dawniej „plamy głębi" w kolorze jeziora —
@@ -295,10 +305,7 @@ export function renderuj(scena, { styl } = {}) {
     // Woda-dozwolona dla etykiet (obiekty wodne/bay, podtytuły `(...)`).
     // Domyślnie lista konwencji projektu (map-audit) + etykiety zaczynające
     // się od `(`; scena może ją nadpisać przez `strefyWodne`.
-    const strefyWodne = new Set(scena.strefyWodne ??
-      ['Bojuka Bay', 'Sunder Bay', 'Chill Depths', 'Makindi Trenches',
-        'Halimar', 'Beyeen', 'Agadeem', 'Wyspy Jwar', 'Emeria', 'Zulaport',
-        'Morze Zendikaru']);
+    const strefyWodne = new Set(scena.strefyWodne ?? STREFY_WODNE_DOMYSLNE);
     const rozstawione = rozstawEtykiety(scena.etykiety ?? [], {
       szer, wys, maskiLadow, woda: strefyWodne, poi: scena.poi ?? [],
     });
@@ -330,3 +337,64 @@ export function renderuj(scena, { styl } = {}) {
 }
 
 export { drzewo };
+
+/**
+ * TWARDA ZASADA WIĄZANIA etykieta ↔ obiekt (decyzja właściciela
+ * 2026-09-02, recenzja 2 preview PR-10; ADR 0023):
+ *
+ *   - NIE MA POI BEZ ETYKIETY: każde POI (miasto/ruina/hedron/wulkan) ma
+ *     etykietę zakotwiczoną w nim (`przyDo` ≤ 6 j.), ALBO należy do
+ *     NAZWANEJ GRUPY — w promieniu 160 j. istnieje POI tego samego typu
+ *     z etykietą (np. stożki „Teeth of Akoum", pola hedronowe Emerii).
+ *   - NIE MA ETYKIETY BEZ TWARDEGO PUNKTU: kotwica etykiety obiektowej
+ *     (przyDo lub własny punkt) musi trafiać w POI, w jezioro (elipsa/
+ *     tafla `d`) albo leżeć NA LĄDZIE wewnątrz nazywanego obszaru
+ *     (biomy/regiony/przełęcze); etykiety akwenów (whitelist `strefyWodne`,
+ *     podtytuły `(...)`) kotwiczą się w wodzie, którą nazywają.
+ *
+ * Zwraca listę uwag (pusta = scena zgodna). CLI wypisuje uwagi na stderr;
+ * test integracyjny pilnuje, by sceny repo miały 0 uwag.
+ */
+export function sprawdzWiazania(scena) {
+  const uwagi = [];
+  const poi = scena.poi ?? [];
+  const ety = scena.etykiety ?? [];
+  const maski = (scena.lądy ?? [])
+    .map((l) => (l.d ? parsujD(l.d) : l.punkty))
+    .filter((m) => Array.isArray(m) && m.length > 3);
+  const naLadzie = (x, y) => maski.some((m) => pit([x, y], m));
+  const strefyWodne = new Set(scena.strefyWodne ?? STREFY_WODNE_DOMYSLNE);
+  const wodna = (t) => strefyWodne.has(t) || t.startsWith('(') || t === 'ruiny w niebie';
+  const wJeziorze = (x, y) => (scena.jeziora ?? []).some((j) => {
+    if (j.d) return pit([x, y], parsujD(j.d));
+    if (j.cx == null) return false;
+    const dx = (x - j.cx) / (j.rx || 1);
+    const dy = (y - j.cy) / (j.ry || 1);
+    return dx * dx + dy * dy <= 1.1;
+  });
+  const kotwice = ety
+    .map((e) => e.opcje?.przyDo)
+    .filter(Boolean);
+  const maEtykiete = (p) => kotwice.some(([ax, ay]) => Math.hypot(ax - p.x, ay - p.y) <= 6);
+
+  // 1) POI bez etykiety (z wyjątkiem członków nazwanej grupy).
+  for (const p of poi) {
+    if (maEtykiete(p)) continue;
+    const wGrupie = poi.some((q) => q !== p && q.typ === p.typ
+      && Math.hypot(q.x - p.x, q.y - p.y) <= 160 && maEtykiete(q));
+    if (!wGrupie) uwagi.push(`POI bez etykiety: ${p.typ} (${p.x},${p.y})`);
+  }
+
+  // 2) Etykieta obiektowa bez twardego punktu odniesienia.
+  for (const e of ety) {
+    const op = e.opcje ?? {};
+    const obiektowa = op.przyDo || (!op.duze && !op.kat && (op.fs ?? 15) < 16);
+    if (!obiektowa) continue;
+    const [ax, ay] = op.przyDo ?? [e.x, e.y];
+    if (wodna(e.tekst)) continue;                     // akweny kotwiczą w wodzie
+    const wPoi = poi.some((p) => Math.hypot(p.x - ax, p.y - ay) <= 6);
+    if (wPoi || wJeziorze(ax, ay) || naLadzie(ax, ay)) continue;
+    uwagi.push(`etykieta bez twardego punktu: "${e.tekst}" kotwica (${ax},${ay}) poza lądem/obiektem`);
+  }
+  return uwagi;
+}

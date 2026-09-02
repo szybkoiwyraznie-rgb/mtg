@@ -262,11 +262,11 @@
   },
   {
    "nazwa": "Pillar Plains",
-   "x": 0.466,
-   "y": 0.918,
+   "x": 0.4875,
+   "y": 0.8214,
    "typ": "region",
-   "pozycja_zrodlo": "mapa-fanowska",
-   "notka": "równiny wokół Vazi River (opis)"
+   "pozycja_zrodlo": "opis-przewodnika",
+   "notka": "równiny przy Thunder Gap — Guide: Murasa (wąwóz Thunder Gap przez Pillar Plains); przeniesione z pozycji fanowskiej (0.466,0.918) w PR-10 (hierarchia: Guide > fanmapa)"
   },
   {
    "nazwa": "Vazi River",
@@ -310,11 +310,11 @@
   },
   {
    "nazwa": "Tumbled Palace",
-   "x": 0.475,
-   "y": 0.895,
+   "x": 0.435,
+   "y": 0.8679,
    "typ": "ruina",
    "pozycja_zrodlo": "mapa-fanowska",
-   "notka": "ruiny w głębi lądu, przy Sunder Bay (opis)"
+   "notka": "ruiny w głębi lądu, przy Sunder Bay (opis); pozycja orientacyjna w2 — odsunięta w głąb lądu przy Sunder Bay w PR-10 (rozgęszczenie etykiet płd. Murasy)"
   },
   {
    "nazwa": "Zof Marsh",
@@ -572,11 +572,11 @@
   },
   {
    "nazwa": "Living Spire",
-   "x": 0.534,
+   "x": 0.522,
    "y": 0.9186,
    "typ": "obiekt",
    "pozycja_zrodlo": "plane-shift",
-   "notka": "żywa iglica wyrosła po przebudzeniu Eldrazi (Plane Shift: Zendikar)"
+   "notka": "żywa iglica wyrosła po przebudzeniu Eldrazi (Plane Shift: Zendikar); kotwica fanowska wskazywała morze — dosunięta do brzegu SE Murasy w PR-10 (ADR 0023: twardy punkt na lądzie)"
   },
   {
    "nazwa": "Coralhelm",
@@ -641,6 +641,38 @@
    "typ": "bagno",
    "pozycja_zrodlo": "mapa-fanowska",
    "notka": "bagna w centrum Guul Draz, nad Hagra Swamp (w2)"
+  },
+  {
+   "nazwa": "Sejiri Refuge",
+   "x": 0.414,
+   "y": 0.1571,
+   "typ": "osada",
+   "pozycja_zrodlo": "przybliżona",
+   "notka": "schronienie na Sejiri — kanon: karta Sejiri Refuge (ZEN, cykl refuge); pozycja przybliżona (dawna bezimienna dekoracja przemianowana w PR-10 wg twardej zasady etykieta-obiekt, ADR 0023); https://scryfall.com/search?q=!%22Sejiri+Refuge%22"
+  },
+  {
+   "nazwa": "Jwar Isle Refuge",
+   "x": 0.0625,
+   "y": 0.7286,
+   "typ": "osada",
+   "pozycja_zrodlo": "przybliżona",
+   "notka": "schronienie na wyspie Jwar — kanon: karta Jwar Isle Refuge (ZEN, cykl refuge); pozycja przybliżona (ADR 0023); https://scryfall.com/search?q=!%22Jwar+Isle+Refuge%22"
+  },
+  {
+   "nazwa": "Graypelt",
+   "x": 0.33,
+   "y": 0.7886,
+   "typ": "osada",
+   "pozycja_zrodlo": "mapa-fanowska",
+   "notka": "obóz korów w Turntimber (Ondu) — kanon: karta Graypelt Refuge (ZEN); pozycja wg w2; POI dorysowany w PR-10 (etykieta istniała bez obiektu — ADR 0023); https://scryfall.com/search?q=!%22Graypelt+Refuge%22"
+  },
+  {
+   "nazwa": "Helix of Zof",
+   "x": 0.675,
+   "y": 0.7429,
+   "typ": "ruina",
+   "pozycja_zrodlo": "przybliżona",
+   "notka": "ruina post-Eldrazi w Guul Draz (lista ruin: Plane Shift: Zendikar / The Art of MTG—Zendikar; kopia: https://dnd5e.wikidot.com/zendikar:world); pozycja przybliżona przy Zof Marsh (E-geo-5 częściowo, PR-10)"
   },
   {
    "nazwa": "Prison of Omnath",

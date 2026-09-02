@@ -107,8 +107,10 @@ test('mapforge: rzeka/jezioro/droga — atrybuty stylu', () => {
   assert.ok(r.includes('fill="#ccd8d2"') && r.includes('circle'), 'wstęga w kolorze morza + źródło (pergamin)');
   assert.ok(!r.includes('linearGradient'), 'brak gradientu');
   assert.ok(!r.includes('opacity'), 'brak opacity');
-  // Obwódka wstęgi w kolorze linii wody (pkt c recenzji 2026-09-02, ADR 0022).
-  assert.ok(r.includes('stroke="#7fa0b4"'), 'obwódka rzeki w kolorze linii wody');
+  // Obwódka wstęgi WYCOFANA (recenzja 2026-09-02 pkt 3, ADR 0023):
+  // obrysowany „język" ujścia w morzu wyglądał źle — rzeka zlewa się
+  // z akwenem samą identycznością koloru.
+  assert.ok(!r.includes('stroke='), 'rzeka bez obwódki (ADR 0023)');
   const j = jezioro({ cx: 10, cy: 10, rx: 50, ry: 30 });
   assert.ok(j.includes('ellipse') && j.includes('fill="#ccd8d2"'), 'jezioro = kolor morza (pkt d)');
   const sz = droga('d1', [[0, 0], [50, 50]], { typ: 'szlak' });
@@ -230,7 +232,7 @@ test('mapforge: motywy — atlas wymienia paletę, oba deterministyczne', () => 
   // (Rzeka i jeziora mają kolor morza — ADR 0020 + pkt d, 2026-09-02 —
   // więc osobnego koloru rzeki/jeziora nie ma.)
   const KOLOR_FUNKCYJNY = new Set([
-    'e2ecf4', '6f9bc0',                      // woda (jeden kolor) / linie wody (błękit)
+    'd4e2ee', '6f9bc0',                      // woda (jeden kolor, przyciemniona — ADR 0023) / linie wody
     '6b1f2e', '5a1622', '4d1220',            // bordowe etykiety
   ]);
   const wyp = [...a1.matchAll(/fill="#([0-9a-f]{6})"/g)].map((m) => m[1]);
@@ -276,4 +278,31 @@ test('mapforge: strefy zajęte — biomy nie zakrywają gór/jezior (ADR 0022)',
   assert.equal(inst.length, (svg.match(/mf-szczyt/g) ?? []).length,
     'instancje 1:1 z rysowanymi szczytami');
   assert.ok(inst.every((i) => i.w > 0 && i.h > 0), 'wymiary stref dodatnie');
+});
+
+test('mapforge: twarda zasada wiązania etykieta↔obiekt (ADR 0023)', async () => {
+  const { sprawdzWiazania } = await import('../tools/mapforge/render.mjs');
+  // Sceny repo są zgodne: 0 uwag (nie ma POI bez etykiety ani etykiet bez punktu).
+  const zendikar = JSON.parse(fs.readFileSync('maps/zendikar/scena.json', 'utf8'));
+  assert.deepEqual(sprawdzWiazania(zendikar), [], 'scena Zendikaru zgodna z ADR 0023');
+  assert.deepEqual(sprawdzWiazania(scenaDemo()), [], 'scena demo zgodna z ADR 0023');
+  // Walidator faktycznie wykrywa naruszenia.
+  const zla = {
+    lądy: [{ id: 'l', punkty: [[0, 0], [500, 0], [500, 500], [0, 500]] }],
+    poi: [{ typ: 'miasto', x: 100, y: 100 }],
+    etykiety: [{ tekst: 'Na morzu', x: 900, y: 900, opcje: { fs: 14 } }],
+  };
+  const uwagi = sprawdzWiazania(zla);
+  assert.ok(uwagi.some((u) => u.includes('POI bez etykiety')), 'wykrywa POI bez etykiety');
+  assert.ok(uwagi.some((u) => u.includes('bez twardego punktu')), 'wykrywa etykietę bez punktu');
+  // Nazwana grupa: drugi wulkan przy opisanym nie wymaga własnej etykiety.
+  const grupa = {
+    lądy: [{ id: 'l', punkty: [[0, 0], [500, 0], [500, 500], [0, 500]] }],
+    poi: [
+      { typ: 'wulkan', x: 100, y: 100 },
+      { typ: 'wulkan', x: 180, y: 140 },
+    ],
+    etykiety: [{ tekst: 'Zęby Próbne', x: 100, y: 140, opcje: { fs: 14, przyDo: [100, 100] } }],
+  };
+  assert.deepEqual(sprawdzWiazania(grupa), [], 'grupa nazwana przechodzi');
 });

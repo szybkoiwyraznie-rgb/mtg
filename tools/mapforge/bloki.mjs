@@ -46,8 +46,10 @@ const MOTYWY = {
     lad: '#f7f7f7', ladStroke: '#3f3f3f',
     // Woda w delikatnym niebieskim (decyzja właściciela 2026-09-01 — odstępstwo
     // od czystego achromatu z ADR 0019: kolor tylko dla wody i etykiet).
-    // Jeden kolor wody dla wszystkich akwenów (pkt d, 2026-09-02).
-    woda: '#e2ecf4', wodaStroke: '#6f9bc0',
+    // Jeden kolor wody dla wszystkich akwenów (pkt d, 2026-09-02); ton
+    // przyciemniony dla kontrastu z papierem (recenzja 2026-09-02 pkt 3,
+    // ADR 0023 — w zamian za wycofaną obwódkę rzek).
+    woda: '#d4e2ee', wodaStroke: '#6f9bc0',
     tekst: '#1c1c1c', ital: '#3f3f3f', halo: '#f7f7f7', etykieta: '#6b1f2e',
     drzewo: '#dedede', drzewoCien: '#c3c3c3', pienn: '#3f3f3f',
     bagno: '#5f5f5f', step: '#9b9b9b',
@@ -336,21 +338,22 @@ export function wulkan(x, y, { skala = 1, dym = true } = {}) {
  * Rzeka jako wstęga stożkowa (źródło wąskie, ujście szerokie). Jeden kolor
  * wody wszędzie (ADR 0020 + pkt d, 2026-09-02): rzeka ma identyczny kolor
  * co morze I jeziora — wpływając do akwenu „rozmywa się" w nim (zlewa się,
- * nie tnie). Brak gradientu i brak opacity. Wstęga ma OBWÓDKĘ w kolorze
- * linii wody (`PAL.wodaStroke` — ciemniejszy niebieski), jak obrys jezior
- * i wybrzeży (pkt c recenzji 2026-09-02, ADR 0022).
+ * nie tnie). Brak gradientu, brak opacity i BRAK OBWÓDKI — obwódka wstęgi
+ * (pkt c) wycofana decyzją właściciela 2026-09-02: obrysowany „język"
+ * ujścia w morzu wyglądał źle; zamiast tego przyciemniono kolor wody
+ * (kontrast z papierem) — ADR 0023.
  */
-export function rzeka(id, punkty, { s0 = 3, s1 = 9, zrodlo = true, obrys = 1.1 } = {}) {
+export function rzeka(id, punkty, { s0 = 3, s1 = 9, zrodlo = true } = {}) {
   const { d } = wstega(punkty, s0, s1);
   const kolor = PAL.woda;
   const pocz = punkty[0];
-  return (zrodlo ? `<circle cx="${rr(pocz[0])}" cy="${rr(pocz[1])}" r="${rr(s0 * 0.7)}" fill="${kolor}" stroke="${PAL.wodaStroke}" stroke-width="${rr(Math.min(obrys, 0.8))}"/>` : '') +
-    `<path d="${d}" fill="${kolor}" stroke="${PAL.wodaStroke}" stroke-width="${rr(obrys)}" stroke-linejoin="round"/>`;
+  return (zrodlo ? `<circle cx="${rr(pocz[0])}" cy="${rr(pocz[1])}" r="${rr(s0 * 0.7)}" fill="${kolor}"/>` : '') +
+    `<path d="${d}" fill="${kolor}"/>`;
 }
 
 /** Dopływ — cieńsza wstęga wpadająca do rzeki głównej. */
 export function doplyw(id, punkty, { s0 = 1.5, s1 = 3.5 } = {}) {
-  return rzeka(id, punkty, { s0, s1, zrodlo: false, obrys: 0.8 });
+  return rzeka(id, punkty, { s0, s1, zrodlo: false });
 }
 
 /* ---------- jezioro (tafla + linia brzegowa + fale) ---------- */

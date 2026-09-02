@@ -742,7 +742,10 @@
    "cx": 725,
    "cy": 665,
    "rx": 145,
-   "ry": 135
+   "ry": 135,
+   "opcje": {
+    "fale": false
+   }
   },
   {
    "cx": 1800.0,
@@ -771,6 +774,30 @@
  ],
  "poi": [
   {
+   "typ": "miasto",
+   "x": 660,
+   "y": 1104,
+   "opcje": {
+    "skala": 0.7
+   }
+  },
+  {
+   "typ": "miasto",
+   "x": 894,
+   "y": 1284,
+   "opcje": {
+    "skala": 0.7
+   }
+  },
+  {
+   "typ": "ruina",
+   "x": 870,
+   "y": 1215,
+   "opcje": {
+    "skala": 0.8
+   }
+  },
+  {
    "typ": "ruina",
    "x": 600.0,
    "y": 170.0,
@@ -779,11 +806,11 @@
    }
   },
   {
-   "typ": "ruina",
+   "typ": "miasto",
    "x": 828.0,
    "y": 220.0,
    "opcje": {
-    "skala": 0.65
+    "skala": 0.6
    }
   },
   {
@@ -860,24 +887,8 @@
   },
   {
    "typ": "ruina",
-   "x": 1544.0,
-   "y": 586.0,
-   "opcje": {
-    "skala": 0.8
-   }
-  },
-  {
-   "typ": "ruina",
    "x": 1560,
    "y": 825,
-   "opcje": {
-    "skala": 0.8
-   }
-  },
-  {
-   "typ": "miasto",
-   "x": 1500.0,
-   "y": 850.0,
    "opcje": {
     "skala": 0.8
    }
@@ -896,14 +907,6 @@
    "y": 1248,
    "opcje": {
     "skala": 0.8
-   }
-  },
-  {
-   "typ": "ruina",
-   "x": 1450.0,
-   "y": 1160.0,
-   "opcje": {
-    "skala": 0.85
    }
   },
   {
@@ -972,23 +975,7 @@
    }
   },
   {
-   "typ": "hedron",
-   "x": 300.0,
-   "y": 1230.0,
-   "opcje": {
-    "skala": 0.8
-   }
-  },
-  {
-   "typ": "hedron",
-   "x": 340.0,
-   "y": 1215.0,
-   "opcje": {
-    "skala": 0.7
-   }
-  },
-  {
-   "typ": "ruina",
+   "typ": "miasto",
    "x": 125.0,
    "y": 1020.0,
    "opcje": {
@@ -1001,14 +988,6 @@
    "y": 1213.0,
    "opcje": {
     "skala": 0.7
-   }
-  },
-  {
-   "typ": "ruina",
-   "x": 1084.0,
-   "y": 1124.0,
-   "opcje": {
-    "skala": 0.8
    }
   },
   {
@@ -1102,6 +1081,100 @@
  ],
  "etykiety": [
   {
+   "tekst": "Sejiri Refuge",
+   "x": 828,
+   "y": 236,
+   "opcje": {
+    "fs": 14.0,
+    "kotwica": "middle",
+    "przyDo": [828, 220]
+   }
+  },
+  {
+   "tekst": "Jwar Isle Refuge",
+   "x": 125,
+   "y": 1036,
+   "opcje": {
+    "fs": 14.0,
+    "kotwica": "middle",
+    "przyDo": [125, 1020]
+   }
+  },
+  {
+   "tekst": "Helix of Zof",
+   "x": 1350,
+   "y": 1056,
+   "opcje": {
+    "fs": 14.0,
+    "kotwica": "middle",
+    "ital": true,
+    "przyDo": [1350, 1040]
+   }
+  },
+  {
+   "tekst": "Visimal",
+   "x": 894,
+   "y": 1300,
+   "opcje": {
+    "fs": 14.0,
+    "kotwica": "middle",
+    "przyDo": [894, 1284]
+   }
+  },
+  {
+   "tekst": "Tumbled Palace",
+   "x": 870,
+   "y": 1231,
+   "opcje": {
+    "fs": 13.0,
+    "kotwica": "middle",
+    "ital": true,
+    "przyDo": [870, 1215]
+   }
+  },
+  {
+   "tekst": "Glint Pass",
+   "x": 1080,
+   "y": 1240,
+   "opcje": {
+    "fs": 13.0,
+    "kotwica": "middle",
+    "przyDo": [1080, 1225]
+   }
+  },
+  {
+   "tekst": "Thunder Gap",
+   "x": 1005,
+   "y": 1133,
+   "opcje": {
+    "fs": 13.0,
+    "kotwica": "middle",
+    "przyDo": [1005, 1118]
+   }
+  },
+  {
+   "tekst": "Roaring Falls",
+   "x": 1060,
+   "y": 1275,
+   "opcje": {
+    "fs": 12.0,
+    "kotwica": "middle",
+    "ital": true,
+    "przyDo": [1060, 1260]
+   }
+  },
+  {
+   "tekst": "Pillar Plains",
+   "x": 975,
+   "y": 1165,
+   "opcje": {
+    "fs": 13.0,
+    "kotwica": "middle",
+    "ital": true,
+    "przyDo": [975, 1150]
+   }
+  },
+  {
    "tekst": "Spike Fields",
    "x": 1510.0,
    "y": 460.0,
@@ -1161,7 +1234,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1790, 415]
    }
   },
   {
@@ -1171,7 +1245,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1840, 425]
    }
   },
   {
@@ -1181,7 +1256,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1800, 588]
    }
   },
   {
@@ -1280,10 +1356,10 @@
   },
   {
    "tekst": "Kazandu",
-   "x": 955.0,
-   "y": 1312.0,
+   "x": 920.0,
+   "y": 1230.0,
    "opcje": {
-    "fs": 15.0,
+    "fs": 17.0,
     "kotwica": "middle",
     "ital": true
    }
@@ -1311,12 +1387,13 @@
   },
   {
    "tekst": "Living Spire",
-   "x": 1068.0,
-   "y": 1286.0,
+   "x": 1044.0,
+   "y": 1302.0,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1044, 1286]
    }
   },
   {
@@ -1326,7 +1403,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1078, 176]
    }
   },
   {
@@ -1358,7 +1436,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [660, 1104]
    }
   },
   {
@@ -1368,7 +1447,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [400, 1206]
    }
   },
   {
@@ -1400,7 +1480,8 @@
    "opcje": {
     "fs": 14.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1160, 132]
    }
   },
   {
@@ -1410,7 +1491,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1450, 400]
    }
   },
   {
@@ -1442,7 +1524,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1540, 860]
    }
   },
   {
@@ -1453,7 +1536,7 @@
     "fs": 15.0,
     "kotwica": "middle",
     "ital": true,
-    "przyDo": [1500, 850]
+    "przyDo": [1560, 825]
    }
   },
   {
@@ -1473,7 +1556,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [400, 1140]
    }
   },
   {
@@ -1481,7 +1565,7 @@
    "x": 948,
    "y": 1290,
    "opcje": {
-    "fs": 13.0,
+    "fs": 12.0,
     "kotwica": "middle",
     "ital": true,
     "przyDo": [955, 1262]
@@ -1563,7 +1647,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1710, 480]
    }
   },
   {
@@ -1627,8 +1712,8 @@
   },
   {
    "tekst": "Umung",
-   "x": 1520,
-   "y": 955,
+   "x": 1612,
+   "y": 985,
    "opcje": {
     "fs": 18.0,
     "kotwica": "middle"
@@ -1788,7 +1873,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [485, 740]
    }
   },
   {
@@ -1807,7 +1893,8 @@
    "y": 466,
    "opcje": {
     "fs": 22.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "przyDo": [748, 508]
    }
   },
   {
@@ -1817,7 +1904,8 @@
    "opcje": {
     "fs": 12.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [748, 508]
    }
   },
   {
@@ -1847,7 +1935,8 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [560, 1220]
    }
   },
   {
@@ -1902,7 +1991,8 @@
    "y": 1130,
    "opcje": {
     "fs": 14.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "przyDo": [215, 1130]
    }
   },
   {
