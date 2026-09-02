@@ -111,7 +111,7 @@ przez dowództwo wypraw.
 
 ## Transpozycja
 
-*Battle for Zendikar* to wydanie osadzone wprost na rodzinym planie
+*Battle for Zendikar* to wydanie osadzone wprost na rodzinnym planie
 Zendikar — karta nie przechodzi żadnej transpozycji: jej plan rodzinny
 i plan kolekcji to ten sam plan. Osadzenie w Coralhelm nad Halimar
 na Tazeem wynika wprost z kanonu świata i nazwy karty.
