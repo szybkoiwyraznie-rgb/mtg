@@ -2215,93 +2215,93 @@
 <g class="mf-ruina" data-x="170" data-y="1290"><path d="M 165.1 1292.1 L 165.1 1287.9 M 166.9 1292.1 L 166.9 1287.9 M 165.1 1287.9 L 166.9 1290" stroke="#6b6b6b" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M 169.3 1292.8 L 169.3 1290 M 171 1292.8 L 171 1290 M 169.3 1290 L 171 1288.3" stroke="#6b6b6b" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M 173.5 1292.1 L 173.5 1287.2 M 175.3 1292.1 L 175.3 1287.2 M 173.5 1287.2 L 175.3 1288.9" stroke="#6b6b6b" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M 163.7 1294.2 l 10.5 -0.7" stroke="#6b6b6b" stroke-width="1.4" stroke-linecap="round"/><circle cx="174.2" cy="1294.2" r="0.9" fill="#6b6b6b"/><circle cx="167.9" cy="1294.9" r="0.7" fill="#6b6b6b"/></g>
 <g class="mf-miasto" data-x="105" data-y="1200"><path d="M 99.6 1201.6 L 99.6 1199.2 L 101.4 1198.2 L 103.2 1199.2 L 103.2 1201.6 Z" fill="#6b6b6b"/><path d="M 103.7 1200.5 L 103.7 1197.8 L 105.6 1196.8 L 107.5 1197.8 L 107.5 1200.5 Z" fill="#6b6b6b"/><path d="M 107 1202.1 L 107 1199.9 L 108.6 1199 L 110.2 1199.9 L 110.2 1202.1 Z" fill="#6b6b6b"/><path d="M 101.8 1197.5 L 101.8 1194.7 L 103.8 1193.6 L 105.8 1194.7 L 105.8 1197.5 Z" fill="#6b6b6b"/><path d="M 106.6 1197.2 L 106.6 1195.2 L 108 1194.5 L 109.4 1195.2 L 109.4 1197.2 Z" fill="#6b6b6b"/><path d="M 105.2 1203.9 L 105.2 1201.7 L 106.8 1200.8 L 108.4 1201.7 L 108.4 1203.9 Z" fill="#6b6b6b"/><path d="M 100.3 1204.5 L 100.3 1202.2 L 102 1201.3 L 103.7 1202.2 L 103.7 1204.5 Z" fill="#6b6b6b"/></g>
 <g class="mf-miasto" data-x="195" data-y="1330"><path d="M 188.7 1331.8 L 188.7 1329 L 190.8 1327.9 L 192.9 1329 L 192.9 1331.8 Z" fill="#6b6b6b"/><path d="M 193.5 1330.5 L 193.5 1327.5 L 195.7 1326.2 L 197.9 1327.5 L 197.9 1330.5 Z" fill="#6b6b6b"/><path d="M 197.4 1332.4 L 197.4 1329.9 L 199.2 1328.9 L 201 1329.9 L 201 1332.4 Z" fill="#6b6b6b"/><path d="M 191.2 1327.1 L 191.2 1323.9 L 193.6 1322.6 L 196 1323.9 L 196 1327.1 Z" fill="#6b6b6b"/><path d="M 196.8 1326.7 L 196.8 1324.5 L 198.5 1323.6 L 200.2 1324.5 L 200.2 1326.7 Z" fill="#6b6b6b"/><path d="M 195.3 1334.5 L 195.3 1332 L 197.1 1331 L 198.9 1332 L 198.9 1334.5 Z" fill="#6b6b6b"/><path d="M 189.5 1335.3 L 189.5 1332.6 L 191.5 1331.5 L 193.5 1332.6 L 193.5 1335.3 Z" fill="#6b6b6b"/></g>
-<!-- === ETYKIETY (bez kolizji) === -->
+<!-- === ETYKIETY (wzór: pod obiektem, konflikt => nad; ADR 0022) === -->
 <g font-family="Georgia, 'Times New Roman', serif" fill="#1c1c1c" style="paint-order: stroke; stroke: #f7f7f7; stroke-width: 3px; stroke-linejoin: round;">
-<text x="1655" y="400" font-size="46" fill="#6b1f2e" class="tytul-kontynentu" text-anchor="middle">Akoum</text>
-<text x="1430" y="795" font-size="42" fill="#6b1f2e" class="tytul-kontynentu" text-anchor="middle">Bala Ged</text>
-<text x="1300" y="1165" font-size="42" fill="#6b1f2e" class="tytul-kontynentu" text-anchor="middle">Guul Draz</text>
-<text x="985" y="1130" font-size="42" fill="#6b1f2e" class="tytul-kontynentu" text-anchor="middle">Murasa</text>
-<text x="490" y="1120" font-size="44" fill="#6b1f2e" class="tytul-kontynentu" text-anchor="middle">Ondu</text>
 <text x="800" y="118" font-size="44" fill="#6b1f2e" class="tytul-kontynentu" text-anchor="middle">Sejiri</text>
-<text x="640" y="420" font-size="46" fill="#6b1f2e" class="tytul-kontynentu" text-anchor="middle">Tazeem</text>
-<text x="1430" y="832" font-size="22" font-style="italic" fill="#6b1f2e" text-anchor="middle">(dżungla i bagna)</text>
-<text x="1300" y="1202" font-size="22" font-style="italic" fill="#6b1f2e" text-anchor="middle">(mokradła, wampiry)</text>
-<text x="1655" y="436" font-size="22" font-style="italic" fill="#6b1f2e" text-anchor="middle">(wulkaniczny)</text>
 <text x="800" y="150" font-size="22" font-style="italic" fill="#6b1f2e" text-anchor="middle">(zmrożony step)</text>
-<text x="1560" y="489" font-size="18" fill="#6b1f2e" text-anchor="middle">Affa</text>
+<text x="1655" y="400" font-size="46" fill="#6b1f2e" class="tytul-kontynentu" text-anchor="middle">Akoum</text>
+<text x="1655" y="436" font-size="22" font-style="italic" fill="#6b1f2e" text-anchor="middle">(wulkaniczny)</text>
+<text x="1608" y="572" font-size="22" fill="#6b1f2e" text-anchor="middle">Oko Ugina</text>
+<text x="1820" y="472" font-size="18" fill="#6b1f2e" text-anchor="middle">Windblast Gorge</text>
+<text x="1430" y="795" font-size="42" fill="#6b1f2e" class="tytul-kontynentu" text-anchor="middle">Bala Ged</text>
+<text x="1430" y="832" font-size="22" font-style="italic" fill="#6b1f2e" text-anchor="middle">(dżungla i bagna)</text>
+<text x="1520" y="955" font-size="18" fill="#6b1f2e" text-anchor="middle">Umung</text>
+<text x="1800" y="920" font-size="18" fill="#6b1f2e" text-anchor="middle">Bojuka Bay</text>
+<text x="1300" y="1165" font-size="42" fill="#6b1f2e" class="tytul-kontynentu" text-anchor="middle">Guul Draz</text>
+<text x="1300" y="1202" font-size="22" font-style="italic" fill="#6b1f2e" text-anchor="middle">(mokradła, wampiry)</text>
+<text x="640" y="420" font-size="46" fill="#6b1f2e" class="tytul-kontynentu" text-anchor="middle">Tazeem</text>
+<text x="470" y="512" font-size="20" font-style="italic" fill="#6b1f2e" text-anchor="middle">Oran-Rief</text>
+<text x="725" y="655" font-size="26" font-style="italic" fill="#6b1f2e" text-anchor="middle">Halimar</text>
+<text x="560" y="480" font-size="16" fill="#6b1f2e" text-anchor="middle">Umara</text>
+<text x="745" y="466" font-size="22" fill="#6b1f2e" text-anchor="middle">Emeria</text>
+<text x="490" y="1120" font-size="44" fill="#6b1f2e" class="tytul-kontynentu" text-anchor="middle">Ondu</text>
+<text x="448" y="1172" font-size="17" fill="#6b1f2e" text-anchor="middle">Turntimber</text>
+<text x="140" y="1108" font-size="22" fill="#6b1f2e" text-anchor="middle">Wyspy Jwar</text>
 <text x="172" y="1342" font-size="22" fill="#6b1f2e" text-anchor="middle">Agadeem</text>
 <text x="135" y="1240" font-size="22" fill="#6b1f2e" text-anchor="middle">Beyeen</text>
-<text x="1800" y="920" font-size="18" fill="#6b1f2e" text-anchor="middle">Bojuka Bay</text>
-<text x="745" y="466" font-size="22" fill="#6b1f2e" text-anchor="middle">Emeria</text>
-<text x="1457" y="442" font-size="18" fill="#6b1f2e" text-anchor="middle">Goma Fada</text>
-<text x="725" y="655" font-size="26" font-style="italic" fill="#6b1f2e" text-anchor="middle">Halimar</text>
-<text x="830" y="181" font-size="18" fill="#6b1f2e" text-anchor="middle">Ikiral</text>
-<text x="195" y="1306" font-size="18" fill="#6b1f2e" text-anchor="middle">Kabira</text>
-<text x="1567" y="1240" font-size="24" fill="#6b1f2e" text-anchor="middle">Malakir</text>
-<text x="683" y="175" font-size="18" fill="#6b1f2e" text-anchor="middle">Midnight Pass</text>
-<text x="190" y="720" font-size="20" font-style="italic" fill="#6b1f2e" text-anchor="middle">Morze Zendikaru</text>
-<text x="1361" y="1248" font-size="18" fill="#6b1f2e" text-anchor="middle">Nimana</text>
-<text x="1608" y="572" font-size="22" fill="#6b1f2e" text-anchor="middle">Oko Ugina</text>
-<text x="470" y="512" font-size="20" font-style="italic" fill="#6b1f2e" text-anchor="middle">Oran-Rief</text>
-<text x="970" y="665" font-size="24" fill="#6b1f2e" text-anchor="middle">Sea Gate</text>
-<text x="1378" y="565" font-size="18" fill="#6b1f2e" text-anchor="middle">Tal Terig</text>
-<text x="1520" y="955" font-size="18" fill="#6b1f2e" text-anchor="middle">Umung</text>
-<text x="1820" y="472" font-size="18" fill="#6b1f2e" text-anchor="middle">Windblast Gorge</text>
-<text x="140" y="1108" font-size="22" fill="#6b1f2e" text-anchor="middle">Wyspy Jwar</text>
-<text x="1078" y="202" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Benthidrix</text>
-<text x="948" y="1290" font-size="13" font-style="italic" fill="#6b1f2e" text-anchor="middle">Blackbloom Lake</text>
-<text x="1650" y="910" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Bojuka Bog</text>
-<text x="1162" y="162" font-size="14" font-style="italic" fill="#6b1f2e" text-anchor="middle">Chill Depths</text>
-<text x="677" y="1055" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Cliffhaven</text>
-<text x="715" y="510" font-size="16" fill="#6b1f2e" text-anchor="middle">Coralhelm</text>
-<text x="186" y="1282" font-size="14" font-style="italic" fill="#6b1f2e" text-anchor="middle">Crypt of Agadeem</text>
-<text x="465" y="565" font-size="14" fill="#6b1f2e" text-anchor="middle">Enclave</text>
-<text x="1385" y="420" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Explorers Peak</text>
-<text x="1742" y="335" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Fort Keff</text>
-<text x="1506" y="548" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Ghostwatch</text>
-<text x="1815" y="562" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Glass Haven</text>
-<text x="1800" y="536" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Glasspool</text>
-<text x="660" y="1104" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Graypelt</text>
-<text x="1453" y="517" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Grip Haven</text>
-<text x="1560" y="890" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Guum Wilds</text>
-<text x="462" y="706" font-size="16" fill="#6b1f2e" text-anchor="middle">Hadatown</text>
-<text x="1240" y="1222" font-size="13" font-style="italic" fill="#6b1f2e" text-anchor="middle">Hagra Cistern</text>
-<text x="1330" y="1292" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Hagra Swamp</text>
-<text x="1330" y="1274" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Hanging Swamp</text>
-<text x="1832" y="612" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Ior Ruin</text>
-<text x="1568" y="344" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Kargan Lands</text>
-<text x="955" y="1312" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Kazandu</text>
-<text x="905" y="1268" font-size="12" font-style="italic" fill="#6b1f2e" text-anchor="middle">Kazuul Pass</text>
-<text x="1848" y="498" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Khalni Heart</text>
-<text x="1418" y="1322" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Lake Jast</text>
-<text x="1068" y="1286" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Living Spire</text>
-<text x="1480" y="1302" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Lulea</text>
-<text x="575" y="556" font-size="14" fill="#6b1f2e" text-anchor="middle">Magosi Wodospad</text>
-<text x="560" y="1345" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Makindi Trenches</text>
-<text x="365" y="1206" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Mosscrack</text>
-<text x="1015" y="1173" font-size="14" font-style="italic" fill="#6b1f2e" text-anchor="middle">Na Plateau</text>
-<text x="1795" y="388" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Ora Ondar</text>
-<text x="645" y="1150" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Prison of Omnath</text>
-<text x="1710" y="880" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Riverroot</text>
-<text x="750" y="484" font-size="12" font-style="italic" fill="#6b1f2e" text-anchor="middle">ruiny w niebie</text>
-<text x="1093" y="1218" font-size="14" font-style="italic" fill="#6b1f2e" text-anchor="middle">Singing City</text>
-<text x="450" y="452" font-size="16" fill="#6b1f2e" text-anchor="middle">Sky Rock</text>
+<text x="985" y="1130" font-size="42" fill="#6b1f2e" class="tytul-kontynentu" text-anchor="middle">Murasa</text>
 <text x="895" y="1170" font-size="16" fill="#6b1f2e" text-anchor="middle">Skyfang</text>
-<text x="1429" y="495" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Slab Haven</text>
-<text x="1510" y="460" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Spike Fields</text>
-<text x="882" y="1340" font-size="13" fill="#6b1f2e" text-anchor="middle">Sunder Bay</text>
-<text x="1575" y="855" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Surrakar Caves</text>
-<text x="1500" y="920" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Tangled Vales</text>
-<text x="1700" y="505" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Teeth of Akoum</text>
-<text x="1340" y="930" font-size="14" font-style="italic" fill="#6b1f2e" text-anchor="middle">The Border Mire</text>
-<text x="455" y="732" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">The Bulwark</text>
-<text x="448" y="1172" font-size="17" fill="#6b1f2e" text-anchor="middle">Turntimber</text>
-<text x="517" y="645" font-size="14" fill="#6b1f2e" text-anchor="middle">Ula Temple</text>
-<text x="560" y="480" font-size="16" fill="#6b1f2e" text-anchor="middle">Umara</text>
-<text x="170" y="1130" font-size="14" fill="#6b1f2e" text-anchor="middle">Valakut</text>
-<text x="350" y="1162" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Wolfbriar</text>
-<text x="1230" y="1090" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle">Zof Marsh</text>
-<text x="150" y="1205" font-size="14" font-style="italic" fill="#6b1f2e" text-anchor="middle">Zulaport</text>
+<text x="190" y="720" font-size="20" font-style="italic" fill="#6b1f2e" text-anchor="middle">Morze Zendikaru</text>
+<text x="1162" y="178.6" font-size="14" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1162" data-ay="162" data-r="4">Chill Depths</text>
+<text x="830" y="192" font-size="18" fill="#6b1f2e" text-anchor="middle" data-ax="830" data-ay="165" data-r="10.8">Ikiral</text>
+<text x="600" y="195.4" font-size="18" fill="#6b1f2e" text-anchor="middle" data-ax="600" data-ay="170" data-r="9.2">Midnight Pass</text>
+<text x="1078" y="155.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1078" data-ay="202" data-r="4">Benthidrix</text>
+<text x="1690" y="354.3" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1690" data-ay="330" data-r="10.8">Fort Keff</text>
+<text x="1568" y="335.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1568" data-ay="344" data-r="4">Kargan Lands</text>
+<text x="1795" y="405.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1795" data-ay="388" data-r="4">Ora Ondar</text>
+<text x="450" y="446.3" font-size="16" fill="#6b1f2e" text-anchor="middle" data-ax="450" data-ay="420" data-r="11.9">Sky Rock</text>
+<text x="1385" y="444.3" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1385" data-ay="420" data-r="10.8">Explorers Peak</text>
+<text x="1395" y="467" font-size="18" fill="#6b1f2e" text-anchor="middle" data-ax="1395" data-ay="440" data-r="10.8">Goma Fada</text>
+<text x="1510" y="477.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1510" data-ay="460" data-r="4">Spike Fields</text>
+<text x="750" y="498.8" font-size="12" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="750" data-ay="484" data-r="4">ruiny w niebie</text>
+<text x="1485" y="514.9" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1485" data-ay="490" data-r="11.4">Slab Haven</text>
+<text x="1848" y="515.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1848" data-ay="498" data-r="4">Khalni Heart</text>
+<text x="660" y="530.2" font-size="16" fill="#6b1f2e" text-anchor="middle" data-ax="660" data-ay="505" data-r="10.8">Coralhelm</text>
+<text x="1560" y="532.6" font-size="18" fill="#6b1f2e" text-anchor="middle" data-ax="1560" data-ay="505" data-r="11.4">Affa</text>
+<text x="1700" y="522.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1700" data-ay="505" data-r="4">Teeth of Akoum</text>
+<text x="1505" y="496.2" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1505" data-ay="512" data-r="11.4">Grip Haven</text>
+<text x="1800" y="553.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1800" data-ay="536" data-r="4">Glasspool</text>
+<text x="1490" y="572.9" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1490" data-ay="548" data-r="11.4">Ghostwatch</text>
+<text x="1750" y="576.3" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1750" data-ay="552" data-r="10.8">Glass Haven</text>
+<text x="575" y="572.6" font-size="14" fill="#6b1f2e" text-anchor="middle" data-ax="575" data-ay="556" data-r="4">Magosi Wodospad</text>
+<text x="505" y="546.1" font-size="14" fill="#6b1f2e" text-anchor="middle" data-ax="505" data-ay="560" data-r="9.7">Enclave</text>
+<text x="1440" y="543.3" font-size="18" fill="#6b1f2e" text-anchor="middle" data-ax="1440" data-ay="560" data-r="11.4">Tal Terig</text>
+<text x="1810" y="617.7" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1810" data-ay="595" data-r="9.2">Ior Ruin</text>
+<text x="570" y="660.9" font-size="14" fill="#6b1f2e" text-anchor="middle" data-ax="570" data-ay="640" data-r="8.3">Ula Temple</text>
+<text x="900" y="694.6" font-size="24" fill="#6b1f2e" text-anchor="middle" data-ax="900" data-ay="660" data-r="13">Sea Gate</text>
+<text x="470" y="724.7" font-size="16" fill="#6b1f2e" text-anchor="middle" data-ax="470" data-ay="700" data-r="10.3">Hadatown</text>
+<text x="455" y="749.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="455" data-ay="732" data-r="4">The Bulwark</text>
+<text x="1500" y="874.3" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1500" data-ay="850" data-r="10.8">Surrakar Caves</text>
+<text x="1710" y="897.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1710" data-ay="880" data-r="4">Riverroot</text>
+<text x="1560" y="907.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1560" data-ay="890" data-r="4">Guum Wilds</text>
+<text x="1650" y="927.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1650" data-ay="910" data-r="4">Bojuka Bog</text>
+<text x="1500" y="854.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1500" data-ay="920" data-r="4">Tangled Vales</text>
+<text x="1340" y="946.6" font-size="14" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1340" data-ay="930" data-r="4">The Border Mire</text>
+<text x="620" y="1074.9" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="620" data-ay="1050" data-r="11.4">Cliffhaven</text>
+<text x="1230" y="1107.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1230" data-ay="1090" data-r="4">Zof Marsh</text>
+<text x="660" y="1121.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="660" data-ay="1104" data-r="4">Graypelt</text>
+<text x="170" y="1146.6" font-size="14" fill="#6b1f2e" text-anchor="middle" data-ax="170" data-ay="1130" data-r="4">Valakut</text>
+<text x="555" y="1152.7" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="555" data-ay="1130" data-r="9.2">Prison of Omnath</text>
+<text x="350" y="1179.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="350" data-ay="1162" data-r="4">Wolfbriar</text>
+<text x="1015" y="1189.6" font-size="14" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1015" data-ay="1173" data-r="4">Na Plateau</text>
+<text x="105" y="1187.2" font-size="14" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="105" data-ay="1200" data-r="8.6">Zulaport</text>
+<text x="365" y="1223.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="365" data-ay="1206" data-r="4">Mosscrack</text>
+<text x="1035" y="1233.9" font-size="14" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1035" data-ay="1213" data-r="8.3">Singing City</text>
+<text x="1505" y="1268.5" font-size="24" fill="#6b1f2e" text-anchor="middle" data-ax="1505" data-ay="1235" data-r="11.9">Malakir</text>
+<text x="1240" y="1255.7" font-size="13" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1240" data-ay="1240" data-r="4">Hagra Cistern</text>
+<text x="1345" y="1275" font-size="18" fill="#6b1f2e" text-anchor="middle" data-ax="1345" data-ay="1248" data-r="10.8">Nimana</text>
+<text x="1330" y="1301.3" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1330" data-ay="1258" data-r="10.8">Hanging Swamp</text>
+<text x="955" y="1277.7" font-size="13" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="955" data-ay="1262" data-r="4">Blackbloom Lake</text>
+<text x="905" y="1260.4" font-size="12" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="905" data-ay="1268" data-r="4">Kazuul Pass</text>
+<text x="1068" y="1303.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1068" data-ay="1286" data-r="4">Living Spire</text>
+<text x="1418" y="1324.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1418" data-ay="1288" data-r="4">Lake Jast</text>
+<text x="170" y="1310.9" font-size="14" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="170" data-ay="1290" data-r="8.3">Crypt of Agadeem</text>
+<text x="1330" y="1347.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1330" data-ay="1292" data-r="4">Hagra Swamp</text>
+<text x="955" y="1329.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="955" data-ay="1312" data-r="4">Kazandu</text>
+<text x="1480" y="1304.7" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="1480" data-ay="1320" data-r="10.8">Lulea</text>
+<text x="195" y="1292.9" font-size="18" fill="#6b1f2e" text-anchor="middle" data-ax="195" data-ay="1330" data-r="9.7">Kabira</text>
+<text x="882" y="1355.7" font-size="13" fill="#6b1f2e" text-anchor="middle" data-ax="882" data-ay="1340" data-r="4">Sunder Bay</text>
+<text x="560" y="1362.5" font-size="15" font-style="italic" fill="#6b1f2e" text-anchor="middle" data-ax="560" data-ay="1345" data-r="4">Makindi Trenches</text>
 </g>
 <!-- === OPRAWA (kompas, skala, ramka) === -->
 <g transform="translate(0,0)">

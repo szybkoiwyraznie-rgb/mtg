@@ -50,29 +50,30 @@ export function poswiataWybrzeza(d) {
 }
 
 /**
- * Rozstaw etykiet bez kolizji (uwaga mapy E1 / feedback właściciela (e)).
+ * Rozstaw etykiet v3 — JEDEN WZÓR dla całej mapy (decyzja właściciela
+ * 2026-09-02, recenzja preview PR-10; zastępuje wyszukiwanie pozycji
+ * w promieniach/kierunkach):
  *
- * Deterministyczny, zachłanny algorytm: etykiety przetwarzamy w kolejności
- * „wielka/miasto → drobne", a każdą kładziemy w pierwszym wolnym miejscu
- * z deterministycznej listy kandydatów (wokół `przyDo`, gdy jest — inaczej
- * wokół jej `x,y`). Kandydat jest dobry, gdy (1) mieści się w mapie,
- * (2) nie koliduje z już położonymi etykietami (ten sam model bboxu co
- * map-audit), (3) DOTYKA lądu (9 punktów bboxa) — decyzja właściciela
- * 2026-09-02 pkt b: labelka może stać tuż przy wybrzeżu (część napisu nad
- * wodą) — chyba że etykieta należy do obiektu wodnego (whitelist `woda`)
- * albo jest podtytułem `(...)`/nazwą w wodzie.
+ *   1. Etykieta OBIEKTOWA (fs < 16, bez `duze`/`kat`) kotwiczy się w PUNKCIE
+ *      CENTRALNYM obiektu (`przyDo`, a bez niego — własny x/y etykiety)
+ *      i zaczyna się ZAWSZE POD nim, w minimalnym odstępie `r` (strefa
+ *      ikony POI + margines), wyśrodkowana (text-anchor middle).
+ *   2. Konflikt (kolizja bboxów albo napis w wodzie) → ZAWSZE ta sama
+ *      reakcja: przerzut z „pod" na „NAD". Dalsze konflikty → drabinka
+ *      pionowa (pod niżej / nad wyżej), nigdy w bok.
+ *   3. Etykiety OBSZAROWE (fs >= 16, `duze`, obrócone `kat`) to typografia
+ *      krain/akwenów — zostają dokładnie tam, gdzie ustawia je scena
+ *      (rejestrują tylko bbox, żeby obiektowe je omijały).
  *
- * Zwraca listę `{ tekst, x, y, opcje, przyDo, zakotwicz }`. `przyDo` to
- * punkt kotwiczący rozstaw (etykieta zostaje przy obiekcie); kreski
- * łączące NIE rysujemy (decyzja właściciela 2026-09-01, pkt a) — `zakotwicz`
- * zostaje w API dla ewentualnych użytków, render go ignoruje.
+ * Zwraca listę `{ tekst, x, y, opcje, przy }`; `przy = [ax, ay, r]` dla
+ * etykiet obiektowych — `etykieta()` emituje je jako data-atrybuty, z
+ * których nakładka ekranowa Codexu liczy pozycję ZALEŻNĄ OD ZOOMU
+ * (stała odległość WIZUALNA od ikony przy każdym przybliżeniu).
  */
-export function rozstawEtykiety(etykiety, { szer, wys, maskiLadow = [], woda = new Set() } = {}) {
+export function rozstawEtykiety(etykiety, { szer, wys, maskiLadow = [], woda = new Set(), poi = [] } = {}) {
   const naLadzie = (x, y) => !maskiLadow.length || maskiLadow.some((m) => pit([x, y], m));
-  // Etykieta może STAĆ PRZY wybrzeżu: wystarcza, że jej bok dotyka lądu
-  // (próbkowanie 9 punktów bboxa) — decyzja właściciela 2026-09-02 pkt b:
-  // labelki miast/ruin SIADAJĄ TUŻ PRZY ikonie, nawet gdy część napisu
-  // wystaje nad wodę (jak na mapach mapome).
+  // Etykieta może STAĆ PRZY wybrzeżu — wystarczy, że jej bok dotyka lądu
+  // (9 punktów bboxa; decyzja właściciela 2026-09-02 pkt b).
   const stykaLad = (bb) => {
     const [x1, y1, x2, y2] = bb;
     const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
@@ -89,65 +90,74 @@ export function rozstawEtykiety(etykiety, { szer, wys, maskiLadow = [], woda = n
   ];
   const koliduje = (b, u) => b[0] < u[2] && u[0] < b[2] && b[1] < u[3] && u[1] < b[3];
 
-  // Kolejność: najpierw duże napisy (tytuły kontynentów) i miasta, potem
-  // drobne POI; w obrębie tej samej klasy — wg tekstu (determinizm).
-  const waga = (e) => {
-    const op = e.opcje ?? {};
-    if (op.duze) return 0;
-    if (op.fs >= 18) return 1;
-    return 2;
+  // Strefa ikony POI przy kotwicy: promień pionowy ikony (jednostki mapy).
+  const PROMIEN_POI = { miasto: 11, ruina: 9, hedron: 11, wulkan: 27 };
+  const promienPrzy = (ax, ay) => {
+    let r = 4;                                    // goły punkt (zatoka, wyspa, przełęcz)
+    for (const p of poi) {
+      if (Math.hypot(p.x - ax, p.y - ay) > 24) continue;
+      const rp = (PROMIEN_POI[p.typ] ?? 9) * (p.opcje?.skala ?? 1) + 2;
+      if (rp > r) r = rp;
+    }
+    return r;
   };
-  const kolejnosc = [...etykiety].sort((a, b) => {
-    const wa = waga(a), wb = waga(b);
-    if (wa !== wb) return wa - wb;
-    return a.tekst.localeCompare(b.tekst, 'pl');
-  });
 
-  // Deterministyczne kierunki kandydatów: najpierw boki, potem rogi,
-  // potem coraz dalej (zgodnie z ruchem wskazówek). `offset` rośnie, dzięki
-  // czemu ciasne skupiska miast (Akoum, Guul Dráz) rozsuwają się na bok.
-  const kierunki = [];
-  for (const r of [16, 26, 38, 52, 70, 92, 118]) {
-    kierunki.push([r, 0], [-r, 0], [0, -r], [0, r],
-      [r, -r], [r, r], [-r, -r], [-r, r],
-      [r, -r / 2], [r, r / 2], [-r, -r / 2], [-r, r / 2],
-      [r / 2, -r], [r / 2, r], [-r / 2, -r], [-r / 2, r]);
-  }
+  const obszarowa = (e) => {
+    const op = e.opcje ?? {};
+    if (op.przyDo) return false;                  // kotwica obiektu = zawsze obiektowa
+    return op.duze || (op.fs ?? 15) >= 16 || !!op.kat;
+  };
 
   const polozone = [];       // bboxy już ułożonych
   const wynik = [];
-  for (const e of kolejnosc) {
+
+  // 1) Obszarowe najpierw (rejestrują teren), pozycja nienaruszona.
+  for (const e of etykiety.filter(obszarowa)) {
     const op = e.opcje ?? {};
-    const fs = op.fs ?? 15;
+    polozone.push(bbox(e.tekst, e.x, e.y, op.fs ?? 18));
+    wynik.push({ tekst: e.tekst, x: e.x, y: e.y, opcje: op, przy: null });
+  }
+
+  // 2) Obiektowe wg (ay, ax, tekst) — stabilnie, niezależnie od kolejności sceny.
+  const obiektowe = etykiety.filter((e) => !obszarowa(e)).map((e) => {
+    const op = e.opcje ?? {};
     const ax = op.przyDo ? op.przyDo[0] : e.x;
     const ay = op.przyDo ? op.przyDo[1] : e.y;
-    const wodaEty = wWodzie(e.tekst);
-    let wybrany = null;
+    return { e, op, ax, ay, r: promienPrzy(ax, ay) };
+  }).sort((a, b) => (a.ay - b.ay) || (a.ax - b.ax) || a.e.tekst.localeCompare(b.e.tekst, 'pl'));
 
-    // Właściwa (oryginalna) pozycja ma pierwszeństwo, o ile sensowna.
-    const kandydaci = [[e.x, e.y], ...kierunki.map(([dx, dy]) => [ax + dx, ay + dy])];
+  for (const { e, op, ax, ay, r } of obiektowe) {
+    const fs = op.fs ?? 15;
+    const wodaEty = wWodzie(e.tekst);
+    // Drabinka: pod → nad → pod niżej → nad wyżej … (zawsze ta sama).
+    const kandydaci = [];
+    for (let s = 0; s < 12; s++) {
+      const pietro = Math.floor(s / 2) * (fs + 4);
+      kandydaci.push(s % 2 === 0
+        ? [ax, ay + r + fs * 0.9 + pietro]        // POD (baseline pod ikoną)
+        : [ax, ay - r - fs * 0.3 - pietro]);      // NAD
+    }
+    let wybrany = null;
     for (const [cx, cy] of kandydaci) {
       if (cx < 6 || cx > szer - 6 || cy < 6 || cy > wys - 6) continue;
       const bb = bbox(e.tekst, cx, cy, fs);
       if (polozone.some((u) => koliduje(bb, u))) continue;
-      if (!wodaEty && !stykaLad(bb)) continue;       // lądowe etykiety nie mogą „pływać"
+      if (!wodaEty && !stykaLad(bb)) continue;    // lądowe etykiety nie „pływają"
       wybrany = { x: cx, y: cy, bb };
       break;
     }
-    // Ostateczność: oryginalna pozycja (żeby nic nie zniknęło).
+    // Ostateczność: pozycja „pod" (reguła bazowa) — nic nie znika.
     if (!wybrany) {
-      const bb = bbox(e.tekst, e.x, e.y, fs);
-      wybrany = { x: e.x, y: e.y, bb };
+      const [cx, cy] = kandydaci[0];
+      wybrany = { x: cx, y: cy, bb: bbox(e.tekst, cx, cy, fs) };
     }
     polozone.push(wybrany.bb);
     wynik.push({
       tekst: e.tekst,
       x: wybrany.x,
       y: wybrany.y,
-      opcje: op,
-      przyDo: op.przyDo ?? null,
-      // kreskę rysujemy, gdy napis odsunięty od obiektu o > 10 px
-      zakotwicz: op.przyDo && Math.hypot(wybrany.x - ax, wybrany.y - ay) > 10 ? [ax, ay] : null,
+      opcje: { ...op, kotwica: 'middle' },        // wzór: zawsze wyśrodkowana pod/nad
+      przy: [ax, ay, r],
     });
   }
   return wynik;
@@ -255,16 +265,15 @@ export function renderuj(scena, { styl } = {}) {
         'Halimar', 'Beyeen', 'Agadeem', 'Wyspy Jwar', 'Emeria', 'Zulaport',
         'Morze Zendikaru']);
     const rozstawione = rozstawEtykiety(scena.etykiety ?? [], {
-      szer, wys, maskiLadow, woda: strefyWodne,
+      szer, wys, maskiLadow, woda: strefyWodne, poi: scena.poi ?? [],
     });
-    warstwy.push(`<!-- === ETYKIETY (bez kolizji) === -->`,
+    warstwy.push(`<!-- === ETYKIETY (wzór: pod obiektem, konflikt => nad; ADR 0022) === -->`,
       `<g font-family="Georgia, 'Times New Roman', serif" fill="${PAL.tekst}" ` +
       `style="paint-order: stroke; stroke: ${PAL.halo}; stroke-width: 3px; stroke-linejoin: round;">`);
     for (const e of rozstawione) {
-      // Decyzja właściciela (2026-09-01, pkt a): etykieta SIADAJE PRZY
-      // obiekcie — nie rysujemy już kresek łączących (przyDo służy tylko
-      // kotwiczeniu rozstawu w `rozstawEtykiety`, nie dawało linii).
-      warstwy.push(etykieta(e.tekst, e.x, e.y, e.opcje));
+      // Bez kresek łączących (decyzja właściciela 2026-09-01, pkt a);
+      // `przy` = kotwica obiektu → data-atrybuty dla nakładki ekranowej.
+      warstwy.push(etykieta(e.tekst, e.x, e.y, { ...e.opcje, przy: e.przy }));
     }
     for (const e of scena.etykietyLukowe ?? []) warstwy.push(lukEtykieta(e.id, e.punkty, e.tekst, e.opcje ?? {}));
     warstwy.push(`</g>`);

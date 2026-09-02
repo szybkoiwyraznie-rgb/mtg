@@ -123,6 +123,49 @@ test('mapforge: etykieta pod kątem i po łuku', () => {
   assert.ok(lu.includes('textPath') && lu.includes('#mf-luk-zatoka'));
 });
 
+test('mapforge: rozstaw etykiet v3 — wzór POD → NAD, kotwica w data-atrybutach (ADR 0022)', async () => {
+  const { rozstawEtykiety } = await import('../tools/mapforge/render.mjs');
+  const poi = [{ typ: 'miasto', x: 500, y: 500, opcje: { skala: 1 } }];
+  // Pojedyncza etykieta obiektowa: ZAWSZE POD kotwicą, wyśrodkowana.
+  const solo = rozstawEtykiety(
+    [{ tekst: 'Osada', x: 480, y: 470, opcje: { fs: 15, przyDo: [500, 500] } }],
+    { szer: 2000, wys: 1400, poi });
+  assert.equal(solo.length, 1);
+  assert.equal(solo[0].x, 500, 'wyśrodkowana na kotwicy (ręczny x ignorowany)');
+  assert.ok(solo[0].y > 500, 'zaczyna się POD obiektem');
+  assert.deepEqual(solo[0].przy.slice(0, 2), [500, 500], 'kotwica dla nakładki');
+  assert.ok(solo[0].przy[2] >= 11, 'promień ikony miasta w strefie');
+  // Konflikt: druga etykieta o tej samej kotwicy → przerzut NAD.
+  const dwie = rozstawEtykiety([
+    { tekst: 'Osada', x: 500, y: 500, opcje: { fs: 15, przyDo: [500, 500] } },
+    { tekst: 'Ruiny', x: 500, y: 500, opcje: { fs: 15, przyDo: [500, 500] } },
+  ], { szer: 2000, wys: 1400, poi });
+  const [a, b] = dwie;
+  assert.ok((a.y > 500) !== (b.y > 500), 'konflikt → jedna POD, druga NAD');
+  // Etykieta obszarowa (duze) zostaje na miejscu i nie dostaje kotwicy.
+  const kraina = rozstawEtykiety(
+    [{ tekst: 'KRAINA', x: 300, y: 300, opcje: { fs: 42, duze: true } }],
+    { szer: 2000, wys: 1400, poi });
+  assert.equal(kraina[0].x, 300);
+  assert.equal(kraina[0].y, 300);
+  assert.equal(kraina[0].przy, null);
+  // Determinizm niezależnie od kolejności sceny.
+  const p1 = rozstawEtykiety([
+    { tekst: 'A', x: 100, y: 100, opcje: { fs: 15, przyDo: [100, 100] } },
+    { tekst: 'B', x: 120, y: 100, opcje: { fs: 15, przyDo: [120, 100] } },
+  ], { szer: 2000, wys: 1400, poi: [] });
+  const p2 = rozstawEtykiety([
+    { tekst: 'B', x: 120, y: 100, opcje: { fs: 15, przyDo: [120, 100] } },
+    { tekst: 'A', x: 100, y: 100, opcje: { fs: 15, przyDo: [100, 100] } },
+  ], { szer: 2000, wys: 1400, poi: [] });
+  const mapuj = (w) => w.map((e) => `${e.tekst}:${e.x},${e.y}`).sort();
+  assert.deepEqual(mapuj(p1), mapuj(p2), 'kolejność sceny bez wpływu na wynik');
+  // data-atrybuty kotwicy w SVG (dla nakładki ekranowej Codexu).
+  const svg = etykieta('Osada', 500, 519, { fs: 15, przy: [500, 500, 13] });
+  assert.ok(svg.includes('data-ax="500"') && svg.includes('data-ay="500"')
+    && svg.includes('data-r="13"'), 'kotwica obiektu w data-atrybutach');
+});
+
 test('mapforge: POI — miasto/ruina/hedron/wulkan', () => {
   assert.ok(miasto(0, 0).includes('mf-miasto'));
   assert.ok(ruina(0, 0).includes('mf-ruina'));

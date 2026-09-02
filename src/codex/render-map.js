@@ -83,6 +83,12 @@ function przeniesEtykietyDoNakladki(markup) {
     const kotwica = /\stext-anchor="(start|middle|end)"/.exec(atryb)?.[1]
       ?? (/tytul-kontynentu/.test(atryb) ? 'middle' : stos[stos.length - 1]);
     const fs = parseFloat((/font-size="([\d.]+)"/.exec(atryb) || [0, 15])[1]);
+    // Etykieta OBIEKTOWA (mapforge, ADR 0022): data-ax/ay/r = kotwica
+    // obiektu + promień ikony (jednostki mapy) — nakładka liczy z nich
+    // pozycję zależną od zoomu (stała WIZUALNA odległość od ikony).
+    const pax = /\sdata-ax="(-?[\d.]+)"/.exec(atryb);
+    const pay = /\sdata-ay="(-?[\d.]+)"/.exec(atryb);
+    const par = /\sdata-r="(-?[\d.]+)"/.exec(atryb);
     etykiety.push({
       x: parseFloat(mx[1]) / w,
       y: parseFloat(my[1]) / h,
@@ -91,6 +97,9 @@ function przeniesEtykietyDoNakladki(markup) {
       kursywa: /italic/.test(atryb),
       kontynent: /tytul-kontynentu/.test(atryb),
       tresc: tresc.trim(),
+      ax: pax && pay ? parseFloat(pax[1]) / w : null,
+      ay: pax && pay ? parseFloat(pay[1]) / h : null,
+      r: par ? parseFloat(par[1]) / w : 0,
     });
     out += `<text data-podklad-orj="1" style="visibility:hidden"${atryb}>${tresc}</text>`;
   }
@@ -162,10 +171,17 @@ export function renderMape(slugPlanu, query = {}) {
     // oryginalny rozmiar „urósłby" do czytelnych ~16 px ekranu
     const prog = e.kontynent ? 0 : e.fs >= 17 ? 1 : Math.min(1.6, Math.max(1, 16 / e.fs));
     const tier = e.kontynent ? 'tier-kontynent' : e.fs >= 17 ? 'tier-glowna' : 'tier-szczegol';
+    // Etykieta obiektowa (ADR 0022): kotwica obiektu → pozycjonowanie
+    // zoom-stabilne (zawsze POD ikoną, konflikt → NAD) w `nanies()`.
+    const przy = e.ax != null
+      ? ` data-ax="${e.ax.toFixed(4)}" data-ay="${e.ay.toFixed(4)}" data-r="${e.r.toFixed(5)}"`
+      : '';
+    const bx = e.ax != null ? e.ax : e.x;
+    const by = e.ax != null ? e.ay : e.y;
     return `<span class="mapa-etykieta-podkladu ${tier}${e.kursywa ? ' kursywa' : ''}" data-podklad-etykieta
       data-x="${e.x.toFixed(4)}" data-y="${e.y.toFixed(4)}" data-fs="${e.fs}" data-min-k="${prog.toFixed(2)}"
-      data-kotwica="${e.kotwica}"
-      style="left:${(e.x * 100).toFixed(2)}%;top:${(e.y * 100).toFixed(2)}%">${e.tresc}</span>`;
+      data-kotwica="${e.kotwica}"${przy}
+      style="left:${(bx * 100).toFixed(2)}%;top:${(by * 100).toFixed(2)}%">${e.tresc}</span>`;
   }).join('');
 
   const htmlRegionyEtykiety = regiony.map((r) => {
@@ -324,6 +340,7 @@ export function zamontujMape(app, opcje = {}) {
   }
 
   const stan = { k: 1, ox: 0, oy: 0 };
+  const stanUkladu = { k: NaN };                   // cache układu etykiet (ADR 0022)
   const K_MIN = 0.4, K_MAX = 14;
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 
@@ -357,7 +374,79 @@ export function zamontujMape(app, opcje = {}) {
     if (!nakladka) return;
     const w = szerokoscSceny();
     const h = wysokoscSceny();
+
+    // Pass 1 — LOD etykiet podkładu (widoczność zależy tylko od zoomu).
+    const podkladowe = [...nakladka.querySelectorAll('[data-podklad-etykieta]')];
+    for (const el of podkladowe) {
+      const prog = parseFloat(el.dataset.minK || '1');
+      el.classList.toggle('poza-zasiegiem', stan.k + 1e-9 < prog);
+    }
+
+    // Pass 2 — UKŁAD etykiet OBIEKTOWYCH (ADR 0022): przeliczany tylko przy
+    // zmianie zoomu (pan nie zmienia geometrii względnej). Wzór właściciela:
+    // napis ZAWSZE POD kotwicą obiektu, w odległości promienia ikony
+    // (skaluje się z zoomem → wizualnie stała, „zaraz obok"); konflikt →
+    // ZAWSZE przerzut NAD; dalej — drabinka pionowa. Deterministycznie,
+    // w kolejności (ay, ax, tekst).
+    if (Math.abs(stan.k - stanUkladu.k) > 1e-3) {
+      stanUkladu.k = stan.k;
+      const zakotwiczone = podkladowe
+        .filter((el) => el.dataset.ax && !el.classList.contains('poza-zasiegiem'))
+        .map((el) => {
+          if (!el._mfW) { el._mfW = el.offsetWidth || 60; el._mfH = el.offsetHeight || 16; }
+          return {
+            el,
+            ax: parseFloat(el.dataset.ax), ay: parseFloat(el.dataset.ay),
+            r: parseFloat(el.dataset.r || '0'),
+          };
+        })
+        .sort((a, b) => (a.ay - b.ay) || (a.ax - b.ax)
+          || a.el.textContent.localeCompare(b.el.textContent, 'pl'));
+      const polozone = [];
+      const koliduje = (b, u) => b[0] < u[2] && u[0] < b[2] && b[1] < u[3] && u[1] < b[3];
+      const M = 3;                                 // stały margines ekranowy (px)
+      for (const z of zakotwiczone) {
+        const sx = z.ax * w * stan.k;              // współrzędne „świata" (bez pan)
+        const sy = z.ay * h * stan.k;
+        const rpx = z.r * w * stan.k;
+        const bw = z.el._mfW, bh = z.el._mfH;
+        let wybor = null;
+        for (let s = 0; s < 12; s++) {
+          const pietro = Math.floor(s / 2) * (bh + 2);
+          const dol = s % 2 === 0;
+          const top = dol ? sy + rpx + M + pietro : sy - rpx - M - pietro - bh;
+          const bb = [sx - bw / 2, top, sx + bw / 2, top + bh];
+          if (polozone.some((u) => koliduje(bb, u))) continue;
+          wybor = { dol, pietro, bb };
+          break;
+        }
+        if (!wybor) {                              // ostateczność: reguła bazowa POD
+          const bb = [sx - bw / 2, sy + rpx + M, sx + bw / 2, sy + rpx + M + bh];
+          wybor = { dol: true, pietro: 0, bb };
+        }
+        polozone.push(wybor.bb);
+        z.el.dataset.mfStrona = wybor.dol ? 'd' : 'g';
+        z.el.dataset.mfPietro = String(wybor.pietro);
+      }
+    }
+
+    // Pass 3 — pozycjonowanie wszystkich markerów nakładki.
     for (const el of nakladka.querySelectorAll('[data-pinezka], [data-region-etykieta], [data-podklad-etykieta]')) {
+      if (el.dataset.ax) {
+        // Etykieta obiektowa: kotwica obiektu + strona/piętro z Pass 2.
+        const px = (parseFloat(el.dataset.ax) * w * stan.k + stan.ox).toFixed(2);
+        const rpx = parseFloat(el.dataset.r || '0') * w * stan.k;
+        const pietro = parseFloat(el.dataset.mfPietro || '0');
+        const M = 3;
+        if (el.dataset.mfStrona === 'g') {
+          const py = (parseFloat(el.dataset.ay) * h * stan.k + stan.oy - rpx - M - pietro).toFixed(2);
+          el.style.transform = `translate(${px}px, ${py}px) translate(-50%, -100%)`;
+        } else {
+          const py = (parseFloat(el.dataset.ay) * h * stan.k + stan.oy + rpx + M + pietro).toFixed(2);
+          el.style.transform = `translate(${px}px, ${py}px) translate(-50%, 0)`;
+        }
+        continue;
+      }
       const x = parseFloat(el.dataset.x);
       const y = parseFloat(el.dataset.y);
       if (!Number.isFinite(x) || !Number.isFinite(y)) continue;
@@ -374,9 +463,6 @@ export function zamontujMape(app, opcje = {}) {
       // w prawo-dół względem obiektów).
       const dx = el.dataset.kotwica === 'start' ? '0%' : el.dataset.kotwica === 'end' ? '-100%' : '-50%';
       el.style.transform = `translate(${px}px, ${py}px) translate(${dx}, -0.82em)`;
-      // LOD (level of detail): drobna etykieta widoczna dopiero od swojego progu
-      const prog = parseFloat(el.dataset.minK || '1');
-      el.classList.toggle('poza-zasiegiem', stan.k + 1e-9 < prog);
     }
   };
 

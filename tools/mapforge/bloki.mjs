@@ -433,12 +433,16 @@ export function hedron(x, y, { skala = 1, opacity = 1 } = {}) {
 
 /* ---------- etykiety ---------- */
 
-/** Etykieta z halo; `kat` obraca wokół punktu (deg, zgodnie z ruchem wskazówek). */
-export function etykieta(tekst, x, y, { kat = 0, fs = 15, ital = false, kolor = null, duze = false, kotwica = 'middle' } = {}) {
+/** Etykieta z halo; `kat` obraca wokół punktu (deg, zgodnie z ruchem
+ *  wskazówek). `przy = [ax, ay, r]` (etykiety obiektowe, ADR 0022) emituje
+ *  data-atrybuty kotwicy obiektu — nakładka ekranowa Codexu liczy z nich
+ *  pozycję zależną od zoomu (stała WIZUALNA odległość od ikony). */
+export function etykieta(tekst, x, y, { kat = 0, fs = 15, ital = false, kolor = null, duze = false, kotwica = 'middle', przy = null } = {}) {
   const transform = kat ? ` transform="rotate(${zaokr(kat, 1)} ${rr(x)} ${rr(y)})"` : '';
   const kl = duze ? 'tytul-kontynentu' : null;
   const fill = kolor ?? PAL.etykieta;
-  return `<text x="${rr(x)}" y="${rr(y)}" font-size="${fs}"${ital ? ' font-style="italic"' : ''} fill="${fill}"${kl ? ` class="${kl}"` : ''} text-anchor="${kotwica}"${transform}>${tekst}</text>`;
+  const dataPrzy = przy ? ` data-ax="${rr(przy[0])}" data-ay="${rr(przy[1])}" data-r="${rr(przy[2])}"` : '';
+  return `<text x="${rr(x)}" y="${rr(y)}" font-size="${fs}"${ital ? ' font-style="italic"' : ''} fill="${fill}"${kl ? ` class="${kl}"` : ''} text-anchor="${kotwica}"${dataPrzy}${transform}>${tekst}</text>`;
 }
 
 /** Etykieta po łuku ( zatoki, doliny ) — path w defs + textPath. */
