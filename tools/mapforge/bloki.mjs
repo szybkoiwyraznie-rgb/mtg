@@ -451,6 +451,24 @@ export function ruina(x, y, { skala = 1 } = {}) {
   return out + `</g>`;
 }
 
+/**
+ * Iglica — samotna smukła turnia (np. Living Spire na Murasie): ręcznie
+ * rysowana sylwetka w języku glifów (czarna bryła, jak góry). NIE jest to
+ * pomniejszony glif pasma — hero-glify to całe klastry i po zmniejszeniu
+ * czytały się jak „mikro-góry" (recenzja właściciela 2026-09-02, ADR 0025).
+ * Podstawa w punkcie (x, y); wysokość ~30·skala.
+ */
+export function iglica(x, y, { skala = 1 } = {}) {
+  const s = skala;
+  const p = (dx, dy) => `${rr(x + dx * s)} ${rr(y + dy * s)}`;
+  // smukła, lekko poszarpana turnia z bocznym zębem przy wierzchołku
+  const d = `M ${p(-5, 0)} L ${p(-3.2, -9)} L ${p(-4.6, -11)} L ${p(-2.2, -19)} ` +
+    `L ${p(-3.0, -21)} L ${p(-0.6, -30)} L ${p(0.9, -22)} L ${p(2.4, -24)} ` +
+    `L ${p(2.6, -14)} L ${p(4.2, -10)} L ${p(3.4, -4)} L ${p(5, 0)} Z`;
+  return `<g class="mf-iglica" data-x="${rr(x)}" data-y="${rr(y)}">` +
+    `<path d="${d}" fill="${PAL.tekst}"/></g>`;
+}
+
 /** Hedron: kamienny pierścień z rysunkiem (dryfujący — opacity). */
 export function hedron(x, y, { skala = 1, opacity = 1 } = {}) {
   const s = skala;
@@ -473,7 +491,10 @@ export function etykieta(tekst, x, y, { kat = 0, fs = 15, ital = false, kolor = 
   const kl = duze ? 'tytul-kontynentu' : null;
   // Kontynenty/wielkie tytuły: czerń (ADR 0025), reszta: bordo (ADR 0021).
   const fill = kolor ?? (duze ? (PAL.etykietaKontynent ?? PAL.etykieta) : PAL.etykieta);
-  const dataPrzy = przy ? ` data-ax="${rr(przy[0])}" data-ay="${rr(przy[1])}" data-r="${rr(przy[2])}"` : '';
+  const dataPrzy = przy
+    ? ` data-ax="${rr(przy[0])}" data-ay="${rr(przy[1])}" data-r="${rr(przy[2])}"` +
+      (przy[3] != null && przy[3] !== przy[2] ? ` data-rg="${rr(przy[3])}"` : '')
+    : '';
   return `<text x="${rr(x)}" y="${rr(y)}" font-size="${fs}"${ital ? ' font-style="italic"' : ''} fill="${fill}"${kl ? ` class="${kl}"` : ''} text-anchor="${kotwica}"${dataPrzy}${transform}>${tekst}</text>`;
 }
 

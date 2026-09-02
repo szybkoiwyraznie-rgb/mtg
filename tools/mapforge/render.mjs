@@ -26,7 +26,7 @@
 
 import {
   PAL, motyw, las, bagno, step, lod, pasmo, pasmoInstancje, wulkan, rzeka,
-  doplyw, jezioro, droga, miasto, ruina, hedron, szczyt, etykieta,
+  doplyw, jezioro, droga, miasto, ruina, hedron, iglica, szczyt, etykieta,
   lukEtykieta, kompas, ramka, skalaLinia, drzewo,
 } from './bloki.mjs';
 import { prng, gladka, prosta, parsujD, pit } from './geom.mjs';
@@ -55,10 +55,7 @@ export const ETYKIETY_WODNE_KOLOR = [
   'Rzeka Srebrna', 'Zatoka Ciszy',                  // demo
 ];
 const BLOKI_POI = {
-  miasto, ruina, hedron,
-  // `iglica` — pojedyncza smukła iglica (Living Spire): najsmuklejszy
-  // glif adoptowany g-237 (w/h≈0.69; hero — jawnie przez glifId, ADR 0020).
-  iglica: (x, y, { skala = 1 } = {}) => szczyt(x, y, 23 * skala, 34 * skala, { glifId: 'g-237' }),
+  miasto, ruina, hedron, iglica,
   // `wodospad` — strugi spadającej wody + rozbryzg (Roaring Falls);
   // kolor linii wody, spójny z jeziorami/wybrzeżem (ADR 0025).
   wodospad: (x, y, { skala = 1 } = {}) => {
@@ -131,14 +128,22 @@ export function rozstawEtykiety(etykiety, { szer, wys, maskiLadow = [], woda = n
   ];
   const koliduje = (b, u) => b[0] < u[2] && u[0] < b[2] && b[1] < u[3] && u[1] < b[3];
 
-  // Strefa ikony POI przy kotwicy: promień pionowy ikony (jednostki mapy).
-  const PROMIEN_POI = { miasto: 14, ruina: 12, hedron: 11, wulkan: 27, iglica: 20, wodospad: 11 };
+  // Strefa ikony POI przy kotwicy — ASYMETRYCZNA (jedn. mapy): ikony
+  // rysowane od podstawy w górę (wulkan, iglica) mają mały prześwit POD
+  // punktem (etykieta siada tuż pod bryłą) i duży NAD (sylwetka+dym) —
+  // recenzja 2026-09-02: „Teeth of Akoum za daleko od wulkanów".
+  const PROMIEN_POI = {
+    miasto: { dol: 13, gora: 13 }, ruina: { dol: 13, gora: 11 },
+    hedron: { dol: 10, gora: 10 }, wulkan: { dol: 4, gora: 29 },
+    iglica: { dol: 4, gora: 31 }, wodospad: { dol: 6, gora: 10 },
+  };
   const promienPrzy = (ax, ay) => {
-    let r = 4;                                    // goły punkt (zatoka, wyspa, przełęcz)
+    let r = { dol: 4, gora: 4 };                  // goły punkt (zatoka, wyspa, przełęcz)
     for (const p of poi) {
       if (Math.hypot(p.x - ax, p.y - ay) > 24) continue;
-      const rp = (PROMIEN_POI[p.typ] ?? 9) * (p.opcje?.skala ?? 1) + 2;
-      if (rp > r) r = rp;
+      const baza = PROMIEN_POI[p.typ] ?? { dol: 10, gora: 10 };
+      const s = p.opcje?.skala ?? 1;
+      r = { dol: Math.max(r.dol, baza.dol * s + 2), gora: Math.max(r.gora, baza.gora * s + 2) };
     }
     return r;
   };
@@ -175,8 +180,8 @@ export function rozstawEtykiety(etykiety, { szer, wys, maskiLadow = [], woda = n
     for (let s = 0; s < 12; s++) {
       const pietro = Math.floor(s / 2) * (fs + 4);
       kandydaci.push(s % 2 === 0
-        ? [ax, ay + r + fs * 0.9 + pietro]        // POD (baseline pod ikoną)
-        : [ax, ay - r - fs * 0.3 - pietro]);      // NAD
+        ? [ax, ay + r.dol + fs * 0.9 + pietro]    // POD (baseline pod ikoną)
+        : [ax, ay - r.gora - fs * 0.3 - pietro]); // NAD (nad sylwetką)
     }
     let wybrany = null;
     for (const [cx, cy] of kandydaci) {
@@ -198,7 +203,7 @@ export function rozstawEtykiety(etykiety, { szer, wys, maskiLadow = [], woda = n
       x: wybrany.x,
       y: wybrany.y,
       opcje: { ...op, kotwica: 'middle' },        // wzór: zawsze wyśrodkowana pod/nad
-      przy: [ax, ay, r],
+      przy: [ax, ay, r.dol, r.gora],
     });
   }
   return wynik;

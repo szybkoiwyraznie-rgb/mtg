@@ -89,6 +89,7 @@ function przeniesEtykietyDoNakladki(markup) {
     const pax = /\sdata-ax="(-?[\d.]+)"/.exec(atryb);
     const pay = /\sdata-ay="(-?[\d.]+)"/.exec(atryb);
     const par = /\sdata-r="(-?[\d.]+)"/.exec(atryb);
+    const parg = /\sdata-rg="(-?[\d.]+)"/.exec(atryb);
     // Kolor pisma z SVG (granat wód, zieleń biomów, czerń kontynentów —
     // ADR 0024/0025): nakładka MUSI go przenieść, inaczej CSS klas
     // nadpisuje warstwowe kolory mapy (feedback: „granatu nie widać").
@@ -104,6 +105,7 @@ function przeniesEtykietyDoNakladki(markup) {
       ax: pax && pay ? parseFloat(pax[1]) / w : null,
       ay: pax && pay ? parseFloat(pay[1]) / h : null,
       r: par ? parseFloat(par[1]) / w : 0,
+      rg: parg ? parseFloat(parg[1]) / w : (par ? parseFloat(par[1]) / w : 0),
       fill,
     });
     out += `<text data-podklad-orj="1" style="visibility:hidden"${atryb}>${tresc}</text>`;
@@ -179,7 +181,7 @@ export function renderMape(slugPlanu, query = {}) {
     // Etykieta obiektowa (ADR 0022): kotwica obiektu → pozycjonowanie
     // zoom-stabilne (zawsze POD ikoną, konflikt → NAD) w `nanies()`.
     const przy = e.ax != null
-      ? ` data-ax="${e.ax.toFixed(4)}" data-ay="${e.ay.toFixed(4)}" data-r="${e.r.toFixed(5)}"`
+      ? ` data-ax="${e.ax.toFixed(4)}" data-ay="${e.ay.toFixed(4)}" data-r="${e.r.toFixed(5)}" data-rg="${e.rg.toFixed(5)}"`
       : '';
     const bx = e.ax != null ? e.ax : e.x;
     const by = e.ax != null ? e.ay : e.y;
@@ -420,6 +422,7 @@ export function zamontujMape(app, opcje = {}) {
             el,
             ax: parseFloat(el.dataset.ax), ay: parseFloat(el.dataset.ay),
             r: parseFloat(el.dataset.r || '0'),
+            rg: parseFloat(el.dataset.rg || el.dataset.r || '0'),
           };
         })
         .sort((a, b) => (a.ay - b.ay) || (a.ax - b.ax)
@@ -430,20 +433,21 @@ export function zamontujMape(app, opcje = {}) {
       for (const z of zakotwiczone) {
         const sx = z.ax * w * stan.k;              // współrzędne „świata" (bez pan)
         const sy = z.ay * h * stan.k;
-        const rpx = z.r * w * stan.k;
+        const rDol = z.r * w * stan.k;             // prześwit POD ikoną (asymetryczny)
+        const rGora = z.rg * w * stan.k;           // prześwit NAD (sylwetka wulkanu/iglicy)
         const bw = z.el._mfW, bh = z.el._mfH;
         let wybor = null;
         for (let s = 0; s < 12; s++) {
           const pietro = Math.floor(s / 2) * (bh + 2);
           const dol = s % 2 === 0;
-          const top = dol ? sy + rpx + M + pietro : sy - rpx - M - pietro - bh;
+          const top = dol ? sy + rDol + M + pietro : sy - rGora - M - pietro - bh;
           const bb = [sx - bw / 2, top, sx + bw / 2, top + bh];
           if (polozone.some((u) => koliduje(bb, u))) continue;
           wybor = { dol, pietro, bb };
           break;
         }
         if (!wybor) {                              // ostateczność: reguła bazowa POD
-          const bb = [sx - bw / 2, sy + rpx + M, sx + bw / 2, sy + rpx + M + bh];
+          const bb = [sx - bw / 2, sy + rDol + M, sx + bw / 2, sy + rDol + M + bh];
           wybor = { dol: true, pietro: 0, bb };
         }
         polozone.push(wybor.bb);
@@ -457,14 +461,15 @@ export function zamontujMape(app, opcje = {}) {
       if (el.dataset.ax) {
         // Etykieta obiektowa: kotwica obiektu + strona/piętro z Pass 2.
         const px = (parseFloat(el.dataset.ax) * w * stan.k + stan.ox).toFixed(2);
-        const rpx = parseFloat(el.dataset.r || '0') * w * stan.k;
         const pietro = parseFloat(el.dataset.mfPietro || '0');
         const M = 3;
         if (el.dataset.mfStrona === 'g') {
-          const py = (parseFloat(el.dataset.ay) * h * stan.k + stan.oy - rpx - M - pietro).toFixed(2);
+          const rGora = parseFloat(el.dataset.rg || el.dataset.r || '0') * w * stan.k;
+          const py = (parseFloat(el.dataset.ay) * h * stan.k + stan.oy - rGora - M - pietro).toFixed(2);
           el.style.transform = `translate(${px}px, ${py}px) translate(-50%, -100%)`;
         } else {
-          const py = (parseFloat(el.dataset.ay) * h * stan.k + stan.oy + rpx + M + pietro).toFixed(2);
+          const rDol = parseFloat(el.dataset.r || '0') * w * stan.k;
+          const py = (parseFloat(el.dataset.ay) * h * stan.k + stan.oy + rDol + M + pietro).toFixed(2);
           el.style.transform = `translate(${px}px, ${py}px) translate(-50%, 0)`;
         }
         continue;
