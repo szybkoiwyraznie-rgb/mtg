@@ -340,7 +340,11 @@ export function zamontujMape(app, opcje = {}) {
   }
 
   const stan = { k: 1, ox: 0, oy: 0 };
-  const stanUkladu = { k: NaN };                   // cache układu etykiet (ADR 0022)
+  // Cache układu etykiet (ADR 0022). UWAGA: start = -1, nie NaN —
+  // Math.abs(k - NaN) > próg jest ZAWSZE false, więc układ kolizyjny
+  // nigdy by nie wystartował (bug wykryty recenzją: „Emeria" i „ruiny
+  // w niebie" na wspólnej kotwicy kładły się jedna na drugiej).
+  const stanUkladu = { k: -1 };
   const K_MIN = 0.4, K_MAX = 14;
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 

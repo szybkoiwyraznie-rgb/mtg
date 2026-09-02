@@ -263,6 +263,14 @@ export function renderuj(scena, { styl } = {}) {
       const s = w.opcje?.skala ?? 1;
       wyklucz.bboxy.push([w.x - 24 * s, w.y - 30 * s, w.x + 24 * s, w.y + 6 * s]);
     }
+    // Ikony POI (miasta/ruiny/hedrony) też są strefą zajętą — inaczej
+    // toną w rozsiewie drzew/sitowia (recenzja 2026-09-02: Prison of
+    // Omnath ledwo widoczny w puszczy Ondu).
+    for (const p of scena.poi ?? []) {
+      if (p.typ === 'wulkan') continue;             // już wyżej
+      const s = p.opcje?.skala ?? 1;
+      wyklucz.bboxy.push([p.x - 14 * s, p.y - 14 * s, p.x + 14 * s, p.y + 10 * s]);
+    }
     for (const j of scena.jeziora ?? []) {
       if (j.d) wyklucz.poligony.push(parsujD(j.d));
       else if (j.cx != null) wyklucz.bboxy.push([j.cx - j.rx, j.cy - j.ry, j.cx + j.rx, j.cy + j.ry]);
@@ -395,6 +403,21 @@ export function sprawdzWiazania(scena) {
     const wPoi = poi.some((p) => Math.hypot(p.x - ax, p.y - ay) <= 6);
     if (wPoi || wJeziorze(ax, ay) || naLadzie(ax, ay)) continue;
     uwagi.push(`etykieta bez twardego punktu: "${e.tekst}" kotwica (${ax},${ay}) poza lądem/obiektem`);
+  }
+
+  // 3) Etykieta siedząca na CUDZYM POI (chaos wizualny — recenzja
+  //    2026-09-02 pkt c: „labelki nie wiadomo do czego"): kotwica bliżej
+  //    niż 20 j. od POI, którego etykieta nie nazywa (i nie jest wodą
+  //    ani nazwą jeziora zawierającego ten POI).
+  for (const e of ety) {
+    const op = e.opcje ?? {};
+    const obiektowa = op.przyDo || (!op.duze && !op.kat && (op.fs ?? 15) < 16);
+    if (!obiektowa || wodna(e.tekst)) continue;
+    const [ax, ay] = op.przyDo ?? [e.x, e.y];
+    if (poi.some((p) => Math.hypot(p.x - ax, p.y - ay) <= 6)) continue;   // własny POI
+    if (wJeziorze(ax, ay)) continue;                  // nazwa akwenu (np. Glasspool z ruiną w tafli)
+    const obcy = poi.find((p) => Math.hypot(p.x - ax, p.y - ay) <= 20);
+    if (obcy) uwagi.push(`etykieta "${e.tekst}" siedzi na cudzym POI ${obcy.typ} (${obcy.x},${obcy.y}) — odsunąć kotwicę`);
   }
   return uwagi;
 }

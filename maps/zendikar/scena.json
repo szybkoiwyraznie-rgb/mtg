@@ -742,10 +742,7 @@
    "cx": 725,
    "cy": 665,
    "rx": 145,
-   "ry": 135,
-   "opcje": {
-    "fale": false
-   }
+   "ry": 135
   },
   {
    "cx": 1800.0,
@@ -1032,8 +1029,8 @@
   },
   {
    "typ": "miasto",
-   "x": 1480,
-   "y": 1320,
+   "x": 1424,
+   "y": 1230,
    "opcje": {
     "skala": 0.8
    }
@@ -1293,22 +1290,24 @@
   },
   {
    "tekst": "Hanging Swamp",
-   "x": 1330.0,
-   "y": 1258.0,
+   "x": 1290.0,
+   "y": 1230.0,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1290, 1230]
    }
   },
   {
    "tekst": "Hagra Swamp",
-   "x": 1330,
-   "y": 1292,
+   "x": 1390,
+   "y": 1235,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1390, 1235]
    }
   },
   {
@@ -1335,13 +1334,13 @@
   },
   {
    "tekst": "Lulea",
-   "x": 1480,
-   "y": 1302,
+   "x": 1424,
+   "y": 1247,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
     "ital": true,
-    "przyDo": [1480, 1320]
+    "przyDo": [1424, 1230]
    }
   },
   {
@@ -1387,13 +1386,13 @@
   },
   {
    "tekst": "Living Spire",
-   "x": 1044.0,
-   "y": 1302.0,
+   "x": 1120.0,
+   "y": 1206.0,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
     "ital": true,
-    "przyDo": [1044, 1286]
+    "przyDo": [1120, 1190]
    }
   },
   {
@@ -2016,8 +2015,8 @@
   },
   {
    "tekst": "Kazuul Pass",
-   "x": 905,
-   "y": 1268,
+   "x": 885,
+   "y": 1235,
    "opcje": {
     "fs": 12.0,
     "kotwica": "middle",

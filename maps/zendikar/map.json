@@ -342,11 +342,11 @@
   },
   {
    "nazwa": "Lulea",
-   "x": 0.74,
-   "y": 0.9429,
+   "x": 0.712,
+   "y": 0.8786,
    "typ": "osada",
    "pozycja_zrodlo": "mapa-fanowska",
-   "notka": "płd.-wsch. od jeziora (opis)"
+   "notka": "płd.-wsch. od jeziora (opis); pozycja orientacyjna w2 — odsunięta znad wybrzeża między Nimanę a Lake Jast w PR-10 (ikona ściśnięta między jeziorem, Malakirem i brzegiem odklejała etykietę)"
   },
   {
    "nazwa": "Guum Wilds",
@@ -572,8 +572,8 @@
   },
   {
    "nazwa": "Living Spire",
-   "x": 0.522,
-   "y": 0.9186,
+   "x": 0.56,
+   "y": 0.85,
    "typ": "obiekt",
    "pozycja_zrodlo": "plane-shift",
    "notka": "żywa iglica wyrosła po przebudzeniu Eldrazi (Plane Shift: Zendikar); kotwica fanowska wskazywała morze — dosunięta do brzegu SE Murasy w PR-10 (ADR 0023: twardy punkt na lądzie)"
