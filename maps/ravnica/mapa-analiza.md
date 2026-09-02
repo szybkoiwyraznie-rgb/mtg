@@ -17,6 +17,12 @@ pomocą właściciela przy **transkrypcji map graficznych na opisy tekstowe**.
 
 ## Co kanon daje twardo (transkrypcja źródeł z 2026-09-02)
 
+> **Stan: spis miał charakter v1.** Od v2 (2026-09-03) źródłem
+> pozycyjnym jest transkrypcja właściciela GGR
+> (`zrodlo-transkrypcja-ggr.md`) — poniższy spis pozostaje jako
+> fundament **merytoryczny** (co istnieje, jak się nazywa, przynależność
+> do precyktu), nie jako źródło współrzędnych.
+
 - **Graf sąsiedztw precyktów** (rzetelny, wprost opisany na stronach
   „Precinct N"): P4 graniczy z P1(S)+P3(E)+P5(W)+P6(SW), bez P2;
   P1 z P2(E)+P3(NE)+P4(N)+P6(W), bez P5; P2 tylko z P1+P3;
@@ -90,5 +96,10 @@ pomocą właściciela przy **transkrypcji map graficznych na opisy tekstowe**.
   (2018) — płyta zatem odczytuje geograficzny „rezultat trwały", analogia
   do mieszającej epokę mapy Zendikaru; fakt udokumentowany w `zrodlo.notka`
   i scenie (`opis`).
+- Orientacja płótna v2 = **N u góry** (konwencja atlasu; róża wiatrów
+  z rastra była pochylona — stosujemy naszą). Transformacja transkrypcji
+  jest izometryczna (bez obrotu): współrzędne Y<0 idą w dół płótna,
+  X>0 w prawo — zachowuje kształty i układ oryginału linia po linii.
 - Współrzędne pinezki: Fabuła kotwiczy scenę w terenie Boros
-  → Precinct Four, ulice przy Bulwark/Tin Street; `pewnosc: region`.
+  → Precinct Four, bruk przy Tin Street Market; `pewnosc: region`;
+  v2 przeniosła punkcik z (0.4375, 0.3982) na **(0.3688, 0.4273)**.

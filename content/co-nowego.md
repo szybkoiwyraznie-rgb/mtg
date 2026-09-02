@@ -1,3 +1,18 @@
+## 2026-09-03 00:43 — Ravnica v2: geometria skalibrowana 1:1 pod oficjalną mapę GGR (transkrypcja właściciela)
+
+Właściciel spisał oficjalną mapę Dziesiątego Dystryktu z *Guildmasters'
+Guide to Ravnica* w układ współrzędnych — i Codex przebudował scenę
+atlaskową na tych koordynatach (kanoniczna transformacja 64 px/j.,
+serce na placu Dziesiątki). Nivix przesunął się na zachód, Zonot Seven
+w dół, Millennial Platform nad Skarrg; doszły **Statue of Agrus Kos,
+Vizkopa Bank, Whitestone, place Plaza East/West/South, Great Concourse,
+Gore House i Medori Park**, a pod południową poświatą stanęły markery
+podziemi: **Rix Maadi, Korozda & Svogthos, Nightveil & Duskmantle**.
+55 kotwic map.json, pinezka Withstanda przy Tin Street Market;
+strona planu dopowiada Undercity. Pozycyjnie: 1:1 z kanonem GGR;
+rysunkowo: własne dłuto mapforge (raster WotC nadal licencyjnie
+nieosadzalny — baza to tekstowa transkrypcja).
+
 ## 2026-09-03 00:12 — Dostawa 137GPT Withstand: Ravnica wchodzi do Atlasu jako pierwszy plan-miasto (mapa T4)
 
 Trzecia karta Kolekcji: **Withstand** (Guildpact, 2006) — biała tarcza

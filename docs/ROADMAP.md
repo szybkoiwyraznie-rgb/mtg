@@ -182,11 +182,18 @@ klocki: `dzielnice` + `granicaDzielnicy` (z dedupe krawędzi
 współdzielonych w rendererze), `mury` (blanki + brama), `szczeliny`
 (z mostem), `duchy-tkaniny` (miasto poza ramką), `gruz` (rubblebelt),
 POI miejskie, drzewo hero; plus plan `content/planes/ravnica.md` i karta
-3. Zendikar po zmianach re-renderuje się bajtowo identycznie. **Otwarty
-krok v2 (pomoc właściciela):** transkrypcja oficjalnej mapy GGR na
-opis tekstowy → kalibracja geometrii precyktów (szczegóły:
-`maps/ravnica/mapa-analiza.md` i `maps/ravnica/map.json`
-→ `otwarte_na_kolejne_przejscia`).
+3. Zendikar po zmianach re-renderuje się bajtowo identycznie.
+
+**PR-13 sesja 3 (2026-09-03) — wykonany krok v2 (transkrypcja GGR):**
+właściciel dostarczył transkrypcję tekstową oficjalnej mapy „The Tenth
+District" (GGR) w układzie kartezjańskim kadru → scena przebudowana na
+koordynatach transkrypcji (transformacja 64 px/j., plac → (830, 610));
+55 kotwic map.json (12 nowych: Statue of Agrus Kos, Vizkopa Bank,
+Whitestone, Plaza East/West/South, Great Concourse, Gore House, Medori
+Park + 3 markery podziemi z warstwą „podziemie"); pinezka karty przy
+Tin Street Market; fix silnika (escapowanie XML w etykietach — „&").
+**Zostaje (v3):** warstwy epokowe, pełny przekrój Undercity, drugi punkt
+odniesienia (opis fanowskiej nakładki) — szczegóły `mapa-analiza.md`.
 
 **SKALOWANIE MAP (pomiar 2026-09-01 → decyzja domknięta w PR-11 / ADR 0027):**
 artefakt jednoplikowy z epoki base64 miał **4,45 MB, z czego 96,7% to

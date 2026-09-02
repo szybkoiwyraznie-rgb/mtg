@@ -4,6 +4,49 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-03 — sesja PR-13 (mapa v2): transkrypcja GGR od właściciela → kalibracja 1:1
+
+1. **Wejście:** właściciel dostarczył załącznik `TenthDistrict.png` (oficjalny
+   raster GGR, © WotC — poza repo, nieosadzalny) i **pełną tekstową transkrypcję**
+   w układzie kartezjańskim kadru (±10; początek ~plac Dziesiątki; 33 POI +
+   arterie + podział na 6 precyktów + Undercity). PR #13 wciąż otwarty → praca
+   dokleja się do niego (bez audytu wejściowego — dotyczy tylko scalonych PR).
+2. **Analiza dopasowania v1↔transkrypcja:** afiniczne LSQ na 22 wspólnych
+   kotwicach dało RMS 634 px — v1 (z kanonu tekstowego wiki) i geometria
+   oficjalna różnią się istotnie (m.in. Zonot za nisko założony, Nivix za
+   daleko na wschód) → v2 jako **przebudowa koordynatów**, nie korekta.
+   Ze sceny v1 zachowane: projekt terenu (płyta, mur z bramą, rubblebelt,
+   duchy-tkaniny, szczelina z mostem), identyfikatory i wiązania.
+3. **Budowniczy v2:** transformacja kanoniczna `px = 830 + (X−0.5)·64,
+   py = 610 − (Y+1)·64`; 44 pit-asserty; poligony przebudowane z zachowaniem
+   grafu sąsiedztw z v1 (tri-styki: J_A=(945,555), J_B=(660,625),
+   J_C=(980,605), J_D=(510,510) na Tin Street); granica P4|P5 = Tin Street
+   kolkiem obok Blistercoils (P5!) i Tin Street Market (P4); Bulwark w P4
+   (wiki), Kamen w P6; Plaza East jako korytarz (odsunięta 35 j. od linii).
+   Nowe POI z rastra: **Statue of Agrus Kos, Vizkopa Bank, Whitestone,
+   Plaza East/West/South, The Great Concourse, Gore House, Medori Park**;
+   markery przekrojowe podziemi (**Rix Maadi, Korozda & Svogthos,
+   Nightveil & Duskmantle**) przy południowej poświacie — konwencja
+   przekrojowa rastra (komentarz w budowniczym).
+4. **Fix silnika przy okazji:** `etykieta()`/`lukEtykieta()` escapują XML
+   (`&` w „Nightveil & Duskmantle" psuło podkład — wykryte przez
+   map-audit „XML niepoprawny"). Regresja: Zendikar/S rodziemie renderują
+   się bajtowo identycznie.
+5. **map.json v2:** 55 kotwic (pozycje przemapowane skryptem, 3 stare
+   nazwy („Concordance (Old City)", „Great Concourse", „Mur północny
+   (Boros side)") poprawione ręcznie); blok `kalibracja{}` z plikiem źródła
+   i transformacją; pinezka 137GPT przesunięta na bruk przy Tin Street
+   Market (0.3688, 0.4273); lista otwartych skrócona o wykonane zadanie.
+6. **Treść:** Geografia planu Ravnica dopowiada nowe POI + akapit Undercity;
+   w Źródłach odnośnik do pliku transkrypcji. Analiza mapy: rozdział v2
+   (przesunięcia, nowe POI, fix, autydy) + korekta uwag (N u góry, nowa
+   pinezka).
+7. **Zamknięcie:** testy 102/102, build zielony (artefakt 306.6 kB, ZIP
+   12.75 MB, `maps/ravnica.html` przebudowany), map-audit ravnica 0,
+   sprawdzWiazania 0; komit atomowy `51935ae` pushnięty; co-nowego (00:43),
+   ROADMAP (K7), ten dziennik, handoff `HANDOFF_2026-09-03-pr13-mapa-v2.md`,
+   opis PR #13 rozszerzony o „Sesję 3".
+
 ## 2026-09-03 — sesja PR-13 (cd.): dostawa 137GPT Withstand — mapa Ravnicy T4 + plan Ravnica + karta 3
 
 1. **Audyt scalonego PR #12 na wejściu** (protokół): baseline zielony, brak znalezisk materialnych → rejestr audytów uzupełniony wcześniej tego dnia (AUDYT_2026-09-02-PR12.md).
