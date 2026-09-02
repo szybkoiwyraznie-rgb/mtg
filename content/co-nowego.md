@@ -3,6 +3,44 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-02 — Pętla Jakości (PR-10): ADR 0021 (formalizacja stylu map T4), lore ludów Zendikaru, Prison of Omnath + Ior Ruin na mapie
+
+Sesja bez nowej dostawy → Pętla Jakości v2 (audyt + LORE + pass mapowy):
+
+- **Audyt PR #9** (`docs/audits/AUDYT_2026-09-02-PR9.md`): kod i dane
+  poprawne; znalezisko — decyzje właściciela (a)–(g) z recenzji
+  prototypu żyły tylko w komentarzach kodu i dzienniku, nie w ADR.
+- **ADR 0021** — formalizacja stylu map T4: jedna barwa wody dla
+  wszystkich akwenów (zastępuje kolor jeziora z ADR 0020 pkt 3),
+  kolory funkcjonalne motywu atlasowego (błękit wody, bordowe
+  etykiety — doprecyzowanie ADR 0019), wiążąca kolejność warstw,
+  etykiety siadające przy obiektach, szare ikony miast, pasmo jako
+  jedna bryła. Statusy ADR 0019/0020 zaktualizowane.
+- **Pogłębienie LORE planu Zendikar** (sekcja „Ludy", +2 źródła:
+  oficjalny *Plane Shift: Zendikar* i „Gods and Monsters"):
+  - **trzy wiary merfolków** (Emeria/nieba, Ula/głębin, Cosi/trickster;
+    wybór w dorosłości; pochodzenie bóstw od wspomnienia tytanów
+    Eldrazi, trójca korów Kamsa/Mangeni/Talib);
+  - **trzy narody elfów** (Tajuru — największy, Murasa, otwartość;
+    Joraga — Bala Ged, izolacjonizm; Mul Daya — duchy przodków,
+    tatuaże-pnącza, Kazandu);
+  - **trzy plemiona goblinów** (Tuktuk — przewodnicy po ruinach;
+    Lavastep — Akoum, wiedza geotermalna; Grotag — oswajanie bestii).
+  - Nagłówki „Geography" → „Geografia" (oba plany); literówki
+    (krajobraz, „even na mapie", „rodzinnym").
+- **Pass mapowy (Zendikar T4):**
+  - **E-geo-8 rozstrzygnięte:** kanoniczna nazwa **„Prison of Omnath"**
+    (MTG Wiki „Ondu"/„Omnath" — mesa w Ondu, krąg wiążący, Ritual of
+    Lights, Soul Stair); przemianowanie w scenie, map.json i na
+    podkładzie (spelling „Omath" pochodził ze źródła fanowskiego w2).
+  - **E-geo-4 (część):** etykieta **Ior Ruin** przy jeziorze Glasspool
+    (kotwica istniała; kanon: karta *Ior Ruin Expedition*, ZEN 49).
+  - `map-audit.py` — 0 problemów; podkład regenerowany deterministycznie
+    (diff SVG: 2 linie).
+- **Link-mining:** przy 2 kartach na 2 planach żadna encja nie osiąga
+  progu ≥2 kart — bez nowych haseł; kandydaci czekają na dostawy
+  (Dunland, Halimar/Coralhelm, merfolkowie).
+
 ## 2026-09-02 — mapa Zendikaru: 7 poprawek z recenzji prototypu (pasma gór, etykiety przy obiektach, szare miasta, jednolita woda, hedrony, morze, kolejność warstw)
 
 Zlecenie właściciela (recenzja prototypu z 2026-09-01) — siedem poprawek

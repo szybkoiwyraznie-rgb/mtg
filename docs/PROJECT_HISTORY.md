@@ -4,6 +4,40 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-02 — sesja PR-10: Pętla Jakości v2 (audyt PR-9 → ADR 0021; LORE ludów Zendikaru; E-geo-8/4)
+
+**Kontekst:** „kontynuujemy projekt" bez nowej dostawy → Pętla Jakości v2.
+PR #10 (`arena/01a0612e-mtg`), plan `PLAN_2026-09-02-pr10-petla-jakosci.md`.
+
+1. **Integralność:** testy 87/87, build OK (4 strony), map-audit 0 —
+   zgodnie z handoffem PR-9.
+2. **Audyt PR #9** (`AUDYT_2026-09-02-PR9.md`): kod/dane/testy poprawne;
+   ISTOTNE znalezisko — decyzje właściciela (a)–(g) z recenzji prototypu
+   (m.in. jedna barwa wody sprzeczna z ADR 0020 pkt 3; błękit wody wbrew
+   achromatowi ADR 0019) nie były sformalizowane w ADR (wzorzec dryfu
+   jak przy ADR 0012→0013).
+3. **ADR 0021** — formalizacja stylu map T4 (jedna barwa wody; kolory
+   funkcjonalne atlasu; kolejność warstw; etykiety przy obiektach; szare
+   miasta; pasmo jako bryła); statusy ADR 0019/0020 + tabela rejestru.
+4. **Krok 2 (LORE):** plan Zendikar/„Ludy" — wiary merfolków
+   (Emeria/Ula/Cosi + prawda o Eldrazi, trójca korów), narody elfów
+   (Tajuru/Joraga/Mul Daya), plemiona goblinów (Tuktuk/Lavastep/Grotag);
+   źródła: *Plane Shift: Zendikar* (PDF Wizards, zweryfikowany
+   fetch_page) i mtglore „Gods and Monsters". Nagłówki „Geography"→
+   „Geografia" (oba plany), literówki (krajobraz/even/rodzinnym).
+5. **Krok 3 (link-mining):** brak encji z progiem ≥2 kart (2 karty na
+   2 planach) — kandydaci odnotowani w handoffie.
+6. **Krok 4 (pass mapowy, tylko T4):** E-geo-8 rozstrzygnięte —
+   kanoniczna nazwa „Prison of Omnath" (MTG Wiki Ondu/Omnath);
+   E-geo-4 częściowo — etykieta Ior Ruin przy Glasspool (kanon: karta
+   *Ior Ruin Expedition* ZEN 49). Scena edytowana chirurgicznie
+   (pierwsza próba przez json.dumps przeformatowała plik — cofnięta;
+   edycja tekstowa), podkład regenerowany (diff 2 linie), audyt 0.
+   E-geo-3 (6 etykiet w gęstej Murasie) ŚWIADOMIE odłożone — wymaga
+   wizualnego QA renderu (sharp/libvips), nie tylko map-audit.
+7. **Zamknięcie:** co-nowego, ROADMAP (E-geo-8 ✓, E-geo-4 cz.),
+   handoff `HANDOFF_2026-09-02.md`, opis PR kumulatywnie.
+
 ## 2026-09-02 — sesja (dalsze uzupełnienie PR-9): 7 poprawek właściciela (a)–(g) z recenzji prototypu
 
 **Zlecenie (czat, recenzja prototypu 39607c0):** siedem poprawek mapy,
