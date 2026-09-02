@@ -1010,6 +1010,14 @@
   },
   {
    "typ": "miasto",
+   "x": 1672,
+   "y": 885,
+   "opcje": {
+    "skala": 0.8
+   }
+  },
+  {
+   "typ": "miasto",
    "x": 1505,
    "y": 1235,
    "opcje": {
@@ -1680,6 +1688,17 @@
     "kotwica": "middle",
     "ital": true,
     "przyDo": [1560, 825]
+   }
+  },
+  {
+   "tekst": "Umungshore",
+   "x": 1672,
+   "y": 861,
+   "opcje": {
+    "fs": 15.0,
+    "kotwica": "middle",
+    "ital": true,
+    "przyDo": [1672, 885]
    }
   },
   {
