@@ -70,7 +70,7 @@ Mechanika:
   `--out` buduje pojedynczy artefakt + drzewo map obok (pages.yml bez
   zmian); tryb `--inline` USUNIĘTY (nie ma już jednoplika z mapami).
 
-## Konsekwencje## Konsekwencje
+## Konsekwencje
 
 **Dodatnie:** offline z dysku = pełna funkcjonalność; artefakt główny
 stały (~0,2 MB) niezależnie od liczby planów; mapa ładuje się dopiero

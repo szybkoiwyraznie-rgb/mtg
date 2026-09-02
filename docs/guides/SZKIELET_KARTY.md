@@ -44,8 +44,9 @@ printu** (ADR 0004). Na Karcie Katalogowej Fabułę przywołujemy pod
 czytelniczą nazwą **„Narracja"** (decyzja właściciela 2026-09-02).
 **Prompt wizualizacyjny nie wchodzi do pętli**
 (ADR 0011). Fabuła: osadzenie opisujemy jako transpozycję kolekcji
-(nigdy jako kanon uniwersum MtG) i oznaczamy w Źródłach jako „Fabuła
-dostawy (właściciel, data)"; konflikt Fabuły z twardym kanonem świata →
+(nigdy jako kanon uniwersum MtG) i oznaczamy w Źródłach nazwą
+czytelniczą — „Narracja (dostawa właściciela, data)" — z odesłaniem
+do archiwum w `collection/entries/`; konflikt Fabuły z twardym kanonem świata →
 pytanie do właściciela. Historia: do 2026-08-31 dostawa zawierała
 „Prompt" i „Narrację" (archiwum w `collection/entries/`); 2026-08-31 —
 2026-09-02 obowiązywał format czteropolowy bez Fabuły (1LTR, 2BFZ) —

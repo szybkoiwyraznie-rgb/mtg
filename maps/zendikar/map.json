@@ -620,11 +620,11 @@
   },
   {
    "nazwa": "Tangled Vales",
-   "x": 0.76,
-   "y": 0.725,
+   "x": 0.71,
+   "y": 0.676,
    "typ": "region",
    "pozycja_zrodlo": "mapa-fanowska",
-   "notka": "prowincja Bala Ged na południe od Guum Wilds (w2)"
+   "notka": "prowincja Bala Ged na południe od Guum Wilds (w2); kotwica przesunięta na ląd pod etykietę (audyt PR-10, 2026-09-02 — poprzednia 0.76/0.725 wskazywała morze)"
   },
   {
    "nazwa": "Hagra Cistern",
