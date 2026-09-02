@@ -4,6 +4,35 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-02 — sesja PR-10 (część 3): twarda zasada etykieta↔obiekt → ADR 0023 (recenzja 3)
+
+**Zlecenie (czat):** (1) dopasowanie etykiet „GENIALNIE" ✔; (2) twarda
+zasada: żadnych etykiet bez obiektu i POI bez etykiet; kotwica etykiety
+biomu/zatoki wewnątrz nazywanego obszaru; (3) obwódki rzek wycofać,
+przyciemnić wodę; (4a) usunąć falkę Halimar; (4b) przypiąć Emerię.
+
+**Przebieg:**
+1. **Inwentaryzacja wiązań** (skrypt): 14 POI bez etykiet, 30 etykiet
+   bez twardej kotwicy; tożsamości ustalone Z REJESTRU KOTWIC map.json
+   (Surrakar Caves d=0!) — rejestr proweniencji okazał się kluczem.
+2. **Walidator `sprawdzWiazania`** (render.mjs) + raport w CLI + test
+   „0 uwag dla scen repo"; wspólna whitelist wód `STREFY_WODNE_DOMYSLNE`
+   (render + walidator, spójna z map-audit).
+3. **Pass wiązań:** 16 przypięć przyDo; nazwy z kanonu (Sejiri/Jwar
+   Isle/Graypelt Refuge — karty ZEN; Helix of Zof — ruiny post-Eldrazi);
+   5 bezimiennych dekoracji usuniętych; błędny POI osady przy Surrakar
+   Caves usunięty; Umung = rzeka (research), nie osada — o krok od
+   dorobienia fałszywej wioski.
+4. **E-geo-3 Murasa domknięte** (6 etykiet + 2 POI); zator płd. Murasy
+   rozładowany DANYMI (Tumbled Palace i Pillar Plains na pozycje
+   zgodne z Guide/wolne, fs 12 dla drobnych wód, whitelist dla
+   Blackbloom/Roaring/Umung) — po serii replayów drabinki (debug
+   empiryczny zamiast zgadywania).
+5. **Woda:** rewert obwódek (ADR 0022 pkt 4), atlas #e2ecf4→#d4e2ee,
+   Halimar `fale:false`.
+6. **ADR 0023**; statusy 0021/0022 zaktualizowane; testy 90/90,
+   map-audit 0, build OK; QA rastrowe (Murasa, Bala Ged).
+
 ## 2026-09-02 — sesja PR-10 (część 2): recenzja preview właściciela — etykiety (KRYTYCZNE), strefy zajęte, obwódka rzek → ADR 0022
 
 **Zlecenie (czat, recenzja preview):** (a) góry OK ✔; (b) KRYTYCZNE:

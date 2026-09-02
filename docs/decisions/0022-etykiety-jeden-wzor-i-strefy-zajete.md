@@ -1,6 +1,9 @@
 # ADR 0022: Etykiety wg jednego wzoru (pod obiektem, konflikt → nad; kotwica zoom-stabilna w nakładce) + zakaz nakładania warstw rzeźby/biomów + obwódka rzek
 
-- **Status:** Zaakceptowana
+- **Status:** Częściowo zastąpiona — obwódkę rzek (pkt 4) wycofuje
+  ADR 0023 (po recenzji preview: obrysowany „język" ujścia; w zamian
+  ciemniejsza woda); pozostałe decyzje (wzór etykiet, strefy zajęte)
+  w mocy
 - **Data:** 2026-09-02
 - **Decydenci:** właściciel projektu (recenzja preview PR-10, 2026-09-02,
   czat — uwagi (b) KRYTYCZNE, (c), (d); diagnoza „skalowanie napisów vs

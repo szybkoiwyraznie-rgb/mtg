@@ -3,6 +3,36 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-02 — recenzja 3 preview: twarda zasada etykieta↔obiekt, pass wiązań Zendikaru, woda bez obwódek (ADR 0023)
+
+Uwagi właściciela: (1) etykiety przy POI wreszcie idealne ✔; (2) twarda
+zasada — nie ma etykiet bez obiektu i POI bez etykiet; (3) obwódki rzek
+słabe (język w morzu) — wrócić do jednolitego koloru, przyciemnić wodę;
+(4a) falka Halimar do usunięcia; (4b) Emeria nieprzypięta do hedronu.
+
+- **Twarda zasada wiązania (ADR 0023):** każde POI ma etykietę
+  (lub należy do nazwanej grupy, jak 3 stożki Teeth of Akoum); każda
+  etykieta ma twardy punkt: POI, jezioro albo punkt wewnątrz nazywanego
+  obszaru. Egzekwuje ją walidator `sprawdzWiazania` (uwagi przy każdym
+  renderze CLI) i test wymuszający **0 naruszeń** w scenach repo.
+- **Pass wiązań Zendikaru:** przypięte m.in. Emeria + „ruiny w niebie"
+  (hedron), Valakut, Teeth of Akoum, The Bulwark, Explorers Peak,
+  Glasspool, Ora Ondar, Khalni Heart, Chill Depths, Riverroot,
+  Wolfbriar, Mosscrack, Makindi Trenches (na ląd), Surrakar Caves
+  (usunięty błędnie podpięty POI osady). **Nazwane z kanonu:** Sejiri
+  Refuge, Jwar Isle Refuge, Graypelt (karty ZEN — cykl refuge), Helix
+  of Zof (lista ruin post-Eldrazi). **Usunięte** bezimienne dekoracje
+  (3 ruiny, 2 hedrony) — bez kanonicznej nazwy nie ma obiektu.
+- **E-geo-3 domknięte (detal Murasy):** Visimal, Tumbled Palace,
+  Glint Pass, Thunder Gap, Roaring Falls, Pillar Plains (przeniesione
+  do Thunder Gap — Guide > fanmapa); Umung okazał się RZEKĄ Bala Ged
+  (nie osadą) — etykieta przy ujściu do Bojuka Bay.
+- **Woda:** obwódki rzek wycofane (rzeka znów rozpuszcza się w morzu),
+  wypełnienie wody atlasu przyciemnione (#d4e2ee), falka Halimar
+  usunięta.
+- Testy 90/90; map-audit 0; walidator wiązań 0; QA rastrowe Murasy
+  i Bala Ged.
+
 ## 2026-09-02 — recenzja preview PR-10: etykiety wg jednego wzoru (KRYTYCZNE), strefy zajęte biomów, obwódka rzek (ADR 0022)
 
 Uwagi właściciela z preview: (a) góry wreszcie dobre ✔; (b) KRYTYCZNE —
