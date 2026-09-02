@@ -75,11 +75,19 @@
   },
   {
    "nazwa": "Tal Terig",
-   "x": 0.72,
-   "y": 0.4,
+   "x": 0.805,
+   "y": 0.3429,
    "typ": "etykieta-podkladu",
-   "notka": "osada Akoum (MTG Wiki)",
-   "pozycja_zrodlo": "nieustalone-w-kanonie"
+   "notka": "ruina \u201ePuzzle Tower\u201d \u2014 wg kanonu wznosi si\u0119 nad kotlin\u0105 Akoum przed resztkami pasma Teeth of Akoum (Guide: Akoum); przeniesiona z (0.72, 0.4) i przetypowana z miasta na ruin\u0119 w PR-11 (E-geo-4); w2 lokowa\u0142a szczyt na p\u0142n. od Spike Fields \u2014 kanon wygrywa",
+   "pozycja_zrodlo": "kanon-relacyjna"
+  },
+  {
+   "nazwa": "League of Anowon",
+   "x": 0.85,
+   "y": 0.3143,
+   "typ": "etykieta-podkladu",
+   "notka": "ob\u00f3z-szko\u0142a mag\u00f3w-eksplorator\u00f3w za\u0142o\u017cony przez wampira Anowona, Ruin Sage \u2014 wysoko w Teeth of Akoum, dost\u0119pny gryfem z Affy (Guide: Akoum); w2 m\u00f3wi\u0142a o \u201eterytorium\u201d w centralnym Akoum \u2014 kanon precyzuje: osada w pa\u015bmie",
+   "pozycja_zrodlo": "kanon-relacyjna"
   },
   {
    "nazwa": "Bala Ged",
@@ -818,9 +826,15 @@
   },
   {
    "nazwa": "Tal Terig",
+   "typ": "ruina",
+   "kontynent": "Akoum",
+   "zrodlo": "https://web.archive.org/web/20211019022856/https://magic.wizards.com/en/articles/archive/savor-flavor/planeswalker%E2%80%99s-guide-zendikar-akoum-2010-01-12"
+  },
+  {
+   "nazwa": "League of Anowon",
    "typ": "miasto",
    "kontynent": "Akoum",
-   "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+   "zrodlo": "https://web.archive.org/web/20211019022856/https://magic.wizards.com/en/articles/archive/savor-flavor/planeswalker%E2%80%99s-guide-zendikar-akoum-2010-01-12"
   },
   {
    "nazwa": "Tangled Vale (dżungla)",

@@ -1076,11 +1076,19 @@
    }
   },
   {
-   "typ": "miasto",
-   "x": 1440,
-   "y": 560,
+   "typ": "ruina",
+   "x": 1610,
+   "y": 480,
    "opcje": {
-    "skala": 0.85
+    "skala": 0.8
+   }
+  },
+  {
+   "typ": "miasto",
+   "x": 1700,
+   "y": 440,
+   "opcje": {
+    "skala": 0.7
    }
   },
   {
@@ -1773,12 +1781,24 @@
   },
   {
    "tekst": "Tal Terig",
-   "x": 1378,
-   "y": 565,
+   "x": 1610,
+   "y": 496,
    "opcje": {
-    "fs": 18.0,
+    "fs": 15.0,
     "kotwica": "middle",
-    "przyDo": [1440, 560]
+    "ital": true,
+    "przyDo": [1610, 480]
+   }
+  },
+  {
+   "tekst": "League of Anowon",
+   "x": 1700,
+   "y": 424,
+   "opcje": {
+    "fs": 15.0,
+    "kotwica": "middle",
+    "ital": true,
+    "przyDo": [1700, 440]
    }
   },
   {
@@ -2315,12 +2335,8 @@
      505
     ],
     [
-     1500,
-     535
-    ],
-    [
-     1440,
-     560
+     1610,
+     480
     ]
    ],
    "opcje": {
