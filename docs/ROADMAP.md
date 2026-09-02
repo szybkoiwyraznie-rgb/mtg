@@ -173,6 +173,21 @@ wymaga doprecyzowania z właścicielem, zanim powstanie kod.
      MTG: Zendikar via mtg.wiki/Tazeem) — ani centrum (w2), ani
      płd.-zach.; przemianowane i przeniesione + trakt do Coralhelm.
 
+**PR-13 (2026-09-03) — klocki T4 „miasto", pierwszy plan-miasto:** dostawa
+137GPT wymusiła mapę Ravnicy; research (MA1) odrzucił T1 (oficjalne rastry
+WotC **nieosadzalne licencyjnie**) i potwierdził brak T2/T3 → **mapa T4
+z kanonu tekstowego** (MTG Wiki / GGR 2019: graf sąsiedztw 6 precyktów
+Dziesiątki, arterie, POI — spójny bez dojścia do geometrii 1:1). Nowe
+klocki: `dzielnice` + `granicaDzielnicy` (z dedupe krawędzi
+współdzielonych w rendererze), `mury` (blanki + brama), `szczeliny`
+(z mostem), `duchy-tkaniny` (miasto poza ramką), `gruz` (rubblebelt),
+POI miejskie, drzewo hero; plus plan `content/planes/ravnica.md` i karta
+3. Zendikar po zmianach re-renderuje się bajtowo identycznie. **Otwarty
+krok v2 (pomoc właściciela):** transkrypcja oficjalnej mapy GGR na
+opis tekstowy → kalibracja geometrii precyktów (szczegóły:
+`maps/ravnica/mapa-analiza.md` i `maps/ravnica/map.json`
+→ `otwarte_na_kolejne_przejscia`).
+
 **SKALOWANIE MAP (pomiar 2026-09-01 → decyzja domknięta w PR-11 / ADR 0027):**
 artefakt jednoplikowy z epoki base64 miał **4,45 MB, z czego 96,7% to
 base64 dwóch map** (Śródziemie 1,75 MB + Zendikar 1,54 MB raw;

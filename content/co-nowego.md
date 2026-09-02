@@ -1,3 +1,20 @@
+## 2026-09-03 00:12 — Dostawa 137GPT Withstand: Ravnica wchodzi do Atlasu jako pierwszy plan-miasto (mapa T4)
+
+Trzecia karta Kolekcji: **Withstand** (Guildpact, 2006) — biała tarcza
+pierwotna z głosem Alovneka, maga gildii Boros — w pełnym szkielecie
+dziewięciu sekcji, z pinezką na bruku przy Tin Street w Precykcie
+Czwartym, pod samym Sunhome. Razem z nią Codex dostaje **plan Ravnica**
+i pierwszą w Atlasie mapę miasta: Dziesiąty Dystrykt narysowany
+własną ręką silnika mapforge w warianie T4 — sześć precyktów ułożonych
+według kanonicznych sąsiedztw z *Guildmasters' Guide to Ravnica*, mur
+północny z blankami, za którym czają się Skarrg i Czerwone Pustkowia,
+szczelina Deadbridge z mostem Benzera, Zonot Siedem z Blisttercoils,
+Transguild Promenade z rubblebeltem i tłem duchów miasta, które „trwa
+dalej poza ramką". Oficjalnych rastrów map celowo nie osadzamy
+(licencja WotC); geometria to rekonstrukcja — jeśli oficjalna mapa GGR
+zostanie kiedyś przepisana na tekst (pomoc właściciela), v2 skalibruje
+kształty 1:1. Szczegóły: `maps/ravnica/mapa-analiza.md`.
+
 ## 2026-09-02 23:08 — Pętla Jakości: audyt PR-12, geografia Bala Ged i Sejiri, Umungshore na mapie
 
 - **Audyt scalonego PR #12** zapisany w

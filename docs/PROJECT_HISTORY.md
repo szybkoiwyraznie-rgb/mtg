@@ -4,6 +4,16 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-03 — sesja PR-13 (cd.): dostawa 137GPT Withstand — mapa Ravnicy T4 + plan Ravnica + karta 3
+
+1. **Audyt scalonego PR #12 na wejściu** (protokół): baseline zielony, brak znalezisk materialnych → rejestr audytów uzupełniony wcześniej tego dnia (AUDYT_2026-09-02-PR12.md).
+2. **Nowa dostawa właściciela (format v3, ADR 0026):** `137GPT · Withstand · GPT · Ravnica · FABUŁA` — wpis verbatim w `collection/entries/137gpt-withstand.md`, snapshot Scryfall `scryfall/137gpt-withstand.json`. Plan Ravnica był **nowy** → priorytet: solidny research mapowy przed kartą.
+3. **Research mapowy (MA1):** przegląd torów T1/T2/T3 — odrzucone: oficjalne rastry (Tenth District map, GGR) są własnością WotC i **nieosadzalne licencyjnie** w repo; brak wektorowych źródeł reużywalnych. Decyzja: **T4 z kanonu tekstowego** — MTG Wiki (hasła Tenth District, Precinct 1–6, dziedziczące treść z Guildmasters' Guide to Ravnica 2019) dało kanoniczny **graf sąsiedztw 6 precyktów** (spójny: wierzchołki trójstykowe P1-P3-P4, P1-P4-P6, P4-P5-P6, P1-P2-P3 zamykają się bez sprzeczności), arterie (Transguild Promenade, Tin Street, Gnat Alley), POI per precykt i wydarzenia WotS/Inwazja. Właściciel zaoferował transkrypcję map graficznych → zapisane jako otwarty krok v2 (kalibracja geometrii pod mapę GGR).
+4. **Silnik mapforge — klocki T4 „miasto":** `dzielnice` (poligoniowe z etykietami), `granicaDzielnicy` z parametrem `zamkniete` + **dedupe krawędzi współdzielonych** w rendererze (każda para wierzchołków rysowana raz — likwidacja podwójnych sztabów typu J_C→A3), `mury` z blankami i bramą, `szczeliny` z mostem, `duchy-tkaniny` (budynki mgliście nalane poza płytę), `gruz` (rubblebelt), POI miejskie, drzewo hero (Vitu-Ghazi) z wykluczeniem Pokrycia POI. Zendikar po zmianach re-renderuje się **bajtowo identycznie** (regresja wykluczona).
+5. **Mapa Ravnicy v1:** `maps/ravnica/` (scena 1600×1100, podkład, map.json 44 kotwice — pozycje klasy kanon/kanon-relacyjna, `rekonstrukcja:true`, `zrodlo`, `otwarte_na_kolejne_przejscia`), `mapa-analiza.md` z werdyktami MA1 i planem v1→v3. `map-audit.py ravnica` = 0; sprawdzWiazania = 0. Pełny raster zweryfikowany wizualnie (kilkoma cropami 150 dpi przez sharp).
+6. **Strona planu + karta:** `content/planes/ravnica.md` (szablon planu: Geografia/Ludy/Setting/Źródła z URL; notka o świadomej mieszance epok kanonu), `content/cards/137gpt-withstand.md` (9 sekcji; etykieta „Wytrzymaj!"; Alovnek udokumentowany jako persona **flavor-only** — Scryfall `flavor:alovnek`: Withstand/Condemn/Boros Locket; pinezka region na P4 przy Tin Street). Test ui-smoke: licznik listy kart 2→3.
+7. **Domknięcie:** `npm test` 102/102, `npm run build` OK (strona `maps/ravnica.html` w drzewie map, artefakt 300.5 kB, ZIP 12527.4 kB); commit atomowy Ravniki + push; wpis co-nowego (00:12), ROADMAP, handoff, opis PR #13.
+
 ## 2026-09-02 — sesja PR-13: Pętla Jakości v2 — audyt PR-12 + LORE Bala Ged/Sejiri + Umungshore
 
 1. **Plan i PR:** plan sesji (`PLAN_2026-09-02-pr13-petla-jakosci.md`), otwarty PR #13; tryb „kontynuujemy projekt" bez nowej dostawy kart.
