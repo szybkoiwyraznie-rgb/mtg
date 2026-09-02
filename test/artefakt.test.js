@@ -1,6 +1,7 @@
 /**
- * Test artefaktu: build produkuje kompletny jednoplikowy HTML (ADR 0001).
- * Wywołuje zbuduj() wprost (bez podprocesu) na realnej bazie repo.
+ * Test artefaktu: build produkuje kompletny pakiet HTML + mapy + ZIP
+ * (ADR 0001/0027). Wywołuje zbuduj() wprost (bez podprocesu)
+ * na realnej bazie repo.
  */
 import fs from 'node:fs';
 import { spawnSync } from 'node:child_process';
@@ -41,11 +42,11 @@ test('build bazy repozytorium produkuję artefakt z danymi i kodem', async () =>
   }
   for (const [slug, mapa] of Object.entries(dane.mapy ?? {})) {
     if (mapa.problem) continue;
-    // ADR 0027: podkład jako osobny plik (podkladUrl) — base64 tylko
-    // w trybie awaryjnym `inline` (rewizja jednoplikowości ADR 0009).
+    // ADR 0027: podkład powinien być dostępny jako plik w drzewie map;
+    // `podkladData` zostaje tylko jako wstecznie kompatybilny fallback.
     assert.ok(
       mapa.podkladData?.startsWith('data:') || /^maps\//.test(mapa.podkladUrl ?? ''),
-      `mapa ${slug}: brak podkładu (ani podkladUrl, ani base64 — ADR 0027)`,
+      `mapa ${slug}: brak podkładu (ani podkladUrl, ani fallback inline — ADR 0027)`,
     );
     assert.ok(Array.isArray(mapa.pinezki), `mapa ${slug}: brak tablicy pinezek`);
     assert.match(mapa.czas?.zaktualizowano ?? '', /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/,

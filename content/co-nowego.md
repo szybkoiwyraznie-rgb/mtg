@@ -1,3 +1,22 @@
+## 2026-09-02 22:22 — Audyt PR-11: domknięcie dryfu dokumentacji i rejestru map
+
+- **Audyt scalonego PR #11** zapisany w `docs/audits/AUDYT_2026-09-02-PR11.md`.
+- **Zendikar / `maps/zendikar/map.json`** dosynchronizowany z aktualną
+  mapą i ADR 0013: notka źródłowa nie mówi już o przerywanej Murasie;
+  w rejestrze elementów poprawione typy/proweniencja **Hagra Cistern**,
+  **Beyeen**, **Serpent's Maw** i **Valakut** (usunięte błędne,
+  historyczne przypisanie Valakuta do Akoum).
+- **Żywe dokumenty** zsynchronizowane z architekturą ADR 0027 v2:
+  `docs/ARCHITECTURE.md`, `docs/guides/PROCES_MAP.md`, `maps/README.md`,
+  `docs/ROADMAP.md` oraz najnowszy handoff PR-11.
+- **Rejestr ADR** dostał dodatkową straż: test sprawdza teraz, czy status
+  w `docs/decisions/README.md` zgadza się ze statusem w samym pliku ADR.
+  Przy okazji ujawnił i naprawił realny dryf: ADR **0008** miał w pliku
+  status „Zaakceptowana", choć po ADR 0017 jest tylko **częściowo
+  zastąpiona**.
+- Weryfikacja: `npm test` **102/102**, `npm run build` OK,
+  `tools/map-audit.py` — 0 problemów.
+
 ## 2026-09-02 22:08 — Recenzja aplikacji: ZIP na Pages naprawiony, dziennik z godzinami + archiwum, stopki czasu stron (ADR 0029)
 
 - **„Pobierz archiwum (ZIP)" na Pages działa** (po merge): pages.yml buduje

@@ -1,6 +1,8 @@
 # ADR 0008: Tory obrazów — brak generowanych grafik; FOT/KON lokalnie z cichym fallbackiem
 
-- **Status:** Zaakceptowana
+- **Status:** Częściowo zastąpiona — mechanikę przycisków torów zastępuje
+  ADR 0017; zakaz generowanych grafik, `img/` poza gitem i cichy fallback
+  pozostają w mocy
 - **Data:** 2026-08-31
 - **Decydenci:** właściciel projektu (decyzja 2026-08-31)
 
