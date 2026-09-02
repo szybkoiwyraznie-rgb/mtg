@@ -4,6 +4,66 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-02 — sesja (dalsze uzupełnienie PR-9): 7 poprawek właściciela (a)–(g) z recenzji prototypu
+
+**Zlecenie (czat, recenzja prototypu 39607c0):** siedem poprawek mapy,
+**PIERWSZE, przed kolejką E-geo-1..9**:
+(a) glify gór łączone w logiczne pasma, wklejane pojedynczo na mapę,
+podobne wielkości szczytów, eliminacja zlewania się (stacking klastrów);
+(b) labelka musi SIADAĆ przy badge'u — 24–28 px to „za daleko"
+(„właściwie wszystkie": Cliffhaven, Prison of Omath, Ula Temple,
+Enclave); (c) ikony miast = szare jak ruiny, nie czarne (zlewały się
+z górami); (d) jeziora = dokładnie ten sam kolor co rzeki/morza
+(zlewanie się akwenów); (e) przenoszenie POI obejmuje WSZYSTKIE jego
+ikony (hedrony Emeri pozostały w starym miejscu); (f) etykieta oceanu
+na otwartym morzu + usunięcie wodnej kieszeni, którą pozornie
+nazywała; (g) kolejność warstw WIĄŻĄCA: morza → lądy → rzeki → góry
+→ lasy/bagna/stepy → miasta/ruiny → labelki na szczycie.
+
+**Przebieg:**
+1. **Silnik (a/c/d/g)** — `render.mjs` + `bloki.mjs`:
+   - (a) `pasmo`: JEDNA połączona linia szczytów (glify wzdłuż
+     wygładzonego grzbietu); minimum 3 glify **hardkodowane** w
+     `pasmo()` (`Math.max(3, …)`) — krótkie pasma zamiast 1–2 glifów
+     dają zwarty kłąb szczytów; szerokość glifu = krok wzdłuż
+     grzbietu ×1.8 (±~10%) → wierzchołki zbliżonej wielkości, bazy
+     nachodzą ~50% = ciągła formacja (język mapome); bez pogórza i
+     bez rozrzutu pionowego.
+   - (c) `miasto()` — monolityczny szary fill `PAL.skalaCien`
+     (atlas: #6b6b6b; poprzednio `PAL.tekst` = czarny); `ruina()`
+     bez zmian (jaśniejszy fill + szary obrys).
+   - (d) `wodaGleb` usunięty z palet (pergamin + atlas) —
+     `rzeka()`/`jezioro()` (w tym tryb `d` — Halimar) = `PAL.woda`
+     jak morze; parametr `ujscie` usunięty z `rzeka()`/`doplyw()`;
+     `ocean()` — bez plam głębi (jednolite wypełnienie).
+   - (g) kolejność warstw: ocean → wybrzeża → ląd → JEZIORA → RZEKI
+     → PASMA → WULKANY → BIOMY (NAD górami) → drogi → MIASTA/RUINY
+     → ETYKIETY na samym szczycie (wcześniej biomy po górach).
+   - Testy: uaktualnione testy stylu (rzeka/jezioro = kolor morza,
+     bez `ujscie`; paleta achromatyczna bez odrębnego koloru
+     jeziora) → 87/87.
+2. **Audyt** — `tools/map-audit.py`: check etykiet `na_ladzie`
+   (model środka) → 9-punktowy model dotyku (narożniki + środki boków
+   + środek bboxa, tolerancja 2 px) — reguła (b) wymaga labelek
+   dotykających obiektu, więc część labelki może wisieć nad wodą;
+   etykiety oceaniczne (Morze Zendikaru, Makindi, Sunder Bay, Bojuka
+   Bay, Wybrzeża Halimar, Chill Depths) w białej liście z komentarzem.
+3. **Scena (b/e/f)** — `scena.json` (44× x/y etykiet + 29 `przyDo`
+   kotwic rozstawu; hedrony Emeri (748,508) przy labelce; kanał
+   Sea Gate →(1010,660); krawędzie Tazeem/Bala Ged odsunięte od
+   cieśniny; Tal Terig = nowe miasto + pinezka map.json). Transformacja
+   wykonana skryptem z assertami (pojedyncze wystąpienia wzorców) +
+   weryfikacją JSON; backup pre-transformacji `/home/user/tmp`.
+   Weryfikacja wizualna: render całości (full.png) + wycinki
+   (slice.mjs) — kadry: całość, Morze west, cieśnina, Tazeem/Emeria,
+   Akoum (pasma), Ondu, Agadeem, Guul Draz.
+4. **Rezultaty:** testy **87/87**, `npm run build` OK (4 strony,
+   14 modułów, ~5.81 MB), `map-audit.py` **0 problemów** (wszystkie
+   mapy), podgląd 4173 odświeżony (dist z nowym podkładem).
+5. **Następna kolejka (po (a)–(g)):** E-geo-1..9: 1 archipelag między
+   Ondu a Akoum; 2/7 Tazeem SW (Oran-Rief/step); 3 Murasa; 4 Akoum;
+   5 BG/GD; 6 Ondu; 8 Omath; 9 Hada.
+
 ## 2026-09-01 — sesja (uzupełnienie PR-9): audyt + przebudowa geografii CAŁEJ mapy Zendikaru
 
 **Zlecenie właściciela (czat, po raporcie PR-9):** „Wystaw mi prototyp
