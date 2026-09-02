@@ -15,11 +15,11 @@
   },
   {
    "id": "lad-bala-guul",
-   "d": "M 1162,790 L 1172,745 C 1190,715 1220,700 1265,690 L 1330,688 L 1400,705 L 1450,690 L 1500,700 L 1560,672 L 1640,678 L 1720,668 L 1800,655 L 1830,660 L 1850,695 L 1830,735 L 1785,765 L 1755,805 L 1745,850 L 1700,905 C 1660,930 1600,940 1550,950 L 1470,965 L 1400,950 L 1360,955 L 1345,985 L 1330,1015 L 1385,1045 L 1470,1080 L 1530,1120 C 1560,1150 1580,1180 1585,1210 L 1560,1270 C 1520,1320 1470,1340 1400,1352 L 1330,1352 L 1240,1338 L 1170,1300 C 1120,1270 1085,1230 1080,1180 L 1085,1090 C 1090,1055 1115,1040 1145,1040 L 1220,1012 L 1275,988 L 1290,955 C 1275,940 1250,935 1225,930 L 1185,895 C 1160,860 1150,830 1162,790 Z"
+   "d": "M 1090,790 L 1100,745 C 1120,715 1150,700 1195,690 L 1330,688 L 1400,705 L 1450,690 L 1500,700 L 1560,672 L 1640,678 L 1720,668 L 1800,655 L 1830,660 L 1850,695 L 1830,735 L 1785,765 L 1755,805 L 1745,850 L 1700,905 C 1660,930 1600,940 1550,950 L 1470,965 L 1400,950 L 1360,955 L 1345,985 L 1330,1015 L 1385,1045 L 1470,1080 L 1530,1120 C 1560,1150 1580,1180 1585,1210 L 1560,1270 C 1520,1320 1470,1340 1400,1352 L 1330,1352 L 1240,1338 L 1170,1300 C 1120,1270 1085,1230 1080,1180 L 1085,1090 C 1090,1055 1115,1040 1145,1040 L 1220,1012 L 1275,988 L 1290,955 C 1275,940 1250,935 1225,930 L 1105,895 C 1090,860 1080,830 1090,790 Z"
   },
   {
    "id": "lad-3",
-   "d": "M 380,420 C 430,360 540,350 620,380 C 700,350 800,370 850,420 C 910,450 940,520 930,590 C 960,650 920,720 870,740 C 890,800 840,850 780,840 C 720,880 630,870 580,830 C 500,850 420,820 400,760 C 350,720 340,650 370,600 C 340,550 350,470 380,420 Z"
+   "d": "M 380,420 C 430,360 540,350 620,380 C 700,350 800,370 850,420 C 915,450 950,520 945,590 C 1015,650 975,720 925,745 C 935,800 885,855 825,845 C 720,880 630,870 580,830 C 500,850 420,820 400,760 C 350,720 340,650 370,600 C 340,550 350,470 380,420 Z"
   },
   {
    "id": "lad-4",
@@ -770,7 +770,7 @@
      660
     ],
     [
-     933,
+     1010,
      660
     ]
    ],
@@ -1000,34 +1000,8 @@
   },
   {
    "typ": "hedron",
-   "x": 880.0,
-   "y": 285.0,
-   "opcje": {
-    "skala": 1.15
-   }
-  },
-  {
-   "typ": "hedron",
-   "x": 916.0,
-   "y": 262.0,
-   "opcje": {
-    "skala": 0.8,
-    "opacity": 0.75
-   }
-  },
-  {
-   "typ": "hedron",
-   "x": 844.0,
-   "y": 248.0,
-   "opcje": {
-    "skala": 0.65,
-    "opacity": 0.6
-   }
-  },
-  {
-   "typ": "hedron",
-   "x": 735,
-   "y": 620,
+   "x": 748,
+   "y": 508,
    "opcje": {
     "skala": 0.9,
     "opacity": 0.75
@@ -1087,6 +1061,14 @@
    "y": 440,
    "opcje": {
     "skala": 0.8
+   }
+  },
+  {
+   "typ": "miasto",
+   "x": 1440,
+   "y": 560,
+   "opcje": {
+    "skala": 0.85
    }
   },
   {
@@ -1175,32 +1157,35 @@
   },
   {
    "tekst": "Grip Haven",
-   "x": 1505.0,
-   "y": 538.0,
+   "x": 1453,
+   "y": 517,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1505, 512]
    }
   },
   {
    "tekst": "Slab Haven",
-   "x": 1485.0,
-   "y": 516.0,
+   "x": 1429,
+   "y": 495,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1485, 490]
    }
   },
   {
    "tekst": "Ghostwatch",
-   "x": 1490.0,
-   "y": 574.0,
+   "x": 1547,
+   "y": 553,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1490, 548]
    }
   },
   {
@@ -1235,8 +1220,8 @@
   },
   {
    "tekst": "Glasspool",
-   "x": 1800.0,
-   "y": 556.0,
+   "x": 1800,
+   "y": 536,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
@@ -1245,8 +1230,8 @@
   },
   {
    "tekst": "Guum Wilds",
-   "x": 1560.0,
-   "y": 866.0,
+   "x": 1560,
+   "y": 890,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
@@ -1255,8 +1240,8 @@
   },
   {
    "tekst": "Bojuka Bog",
-   "x": 1642.0,
-   "y": 890.0,
+   "x": 1650,
+   "y": 910,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
@@ -1286,21 +1271,23 @@
   {
    "tekst": "Hagra Cistern",
    "x": 1240,
-   "y": 1268,
+   "y": 1222,
    "opcje": {
     "fs": 13.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1240, 1240]
    }
   },
   {
    "tekst": "Lake Jast",
-   "x": 1418.0,
-   "y": 1322.0,
+   "x": 1418,
+   "y": 1322,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1418, 1288]
    }
   },
   {
@@ -1310,13 +1297,14 @@
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1480, 1320]
    }
   },
   {
    "tekst": "Tangled Vales",
-   "x": 1520,
-   "y": 1015,
+   "x": 1500,
+   "y": 920,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
@@ -1345,12 +1333,13 @@
   },
   {
    "tekst": "Singing City",
-   "x": 1040.0,
-   "y": 1240.0,
+   "x": 1093,
+   "y": 1218,
    "opcje": {
     "fs": 14.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1035, 1213]
    }
   },
   {
@@ -1375,22 +1364,24 @@
   },
   {
    "tekst": "Prison of Omath",
-   "x": 555,
-   "y": 1156,
+   "x": 645,
+   "y": 1150,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [555, 1130]
    }
   },
   {
    "tekst": "Cliffhaven",
-   "x": 620.0,
-   "y": 1076.0,
+   "x": 677,
+   "y": 1055,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [620, 1050]
    }
   },
   {
@@ -1415,22 +1406,24 @@
   },
   {
    "tekst": "Crypt of Agadeem",
-   "x": 170.0,
-   "y": 1318.0,
+   "x": 170,
+   "y": 1272,
    "opcje": {
     "fs": 14.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [170, 1290]
    }
   },
   {
    "tekst": "Zulaport",
-   "x": 128.0,
-   "y": 1180.0,
+   "x": 150,
+   "y": 1205,
    "opcje": {
     "fs": 14.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [105, 1200]
    }
   },
   {
@@ -1445,8 +1438,8 @@
   },
   {
    "tekst": "Explorers Peak",
-   "x": 1450.0,
-   "y": 426.0,
+   "x": 1385,
+   "y": 420,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
@@ -1455,28 +1448,30 @@
   },
   {
    "tekst": "Fort Keff",
-   "x": 1690.0,
-   "y": 356.0,
+   "x": 1742,
+   "y": 335,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1690, 330]
    }
   },
   {
    "tekst": "Glass Haven",
-   "x": 1750.0,
-   "y": 580.0,
+   "x": 1815,
+   "y": 562,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1750, 552]
    }
   },
   {
    "tekst": "Riverroot",
-   "x": 1600,
-   "y": 900,
+   "x": 1710,
+   "y": 880,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
@@ -1485,18 +1480,19 @@
   },
   {
    "tekst": "Surrakar Caves",
-   "x": 1560,
-   "y": 852,
+   "x": 1575,
+   "y": 855,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [1500, 850]
    }
   },
   {
    "tekst": "The Border Mire",
-   "x": 1420,
-   "y": 990,
+   "x": 1340,
+   "y": 930,
    "opcje": {
     "fs": 14.0,
     "kotwica": "middle",
@@ -1515,18 +1511,19 @@
   },
   {
    "tekst": "Blackbloom Lake",
-   "x": 948.0,
-   "y": 1290.0,
+   "x": 948,
+   "y": 1290,
    "opcje": {
     "fs": 13.0,
     "kotwica": "middle",
-    "ital": true
+    "ital": true,
+    "przyDo": [955, 1262]
    }
   },
   {
    "tekst": "Sejiri",
-   "x": 850.0,
-   "y": 150.0,
+   "x": 800,
+   "y": 118,
    "opcje": {
     "fs": 44.0,
     "kotwica": "middle",
@@ -1535,8 +1532,8 @@
   },
   {
    "tekst": "(zmrożony step)",
-   "x": 850.0,
-   "y": 186.0,
+   "x": 800,
+   "y": 150,
    "opcje": {
     "fs": 22.0,
     "kotwica": "middle",
@@ -1545,20 +1542,22 @@
   },
   {
    "tekst": "Midnight Pass",
-   "x": 672.0,
-   "y": 208.0,
+   "x": 683,
+   "y": 175,
    "opcje": {
     "fs": 18.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "przyDo": [600, 170]
    }
   },
   {
    "tekst": "Ikiral",
-   "x": 880.0,
-   "y": 224.0,
+   "x": 874,
+   "y": 170,
    "opcje": {
     "fs": 18.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "przyDo": [830, 165]
    }
   },
   {
@@ -1612,28 +1611,31 @@
   {
    "tekst": "Affa",
    "x": 1560,
-   "y": 481,
+   "y": 489,
    "opcje": {
     "fs": 18.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "przyDo": [1560, 505]
    }
   },
   {
    "tekst": "Goma Fada",
-   "x": 1395,
-   "y": 468,
+   "x": 1457,
+   "y": 442,
    "opcje": {
     "fs": 18.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "przyDo": [1395, 440]
    }
   },
   {
    "tekst": "Tal Terig",
-   "x": 1440.0,
-   "y": 594.0,
+   "x": 1378,
+   "y": 565,
    "opcje": {
     "fs": 18.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "przyDo": [1440, 560]
    }
   },
   {
@@ -1658,8 +1660,8 @@
   },
   {
    "tekst": "Umung",
-   "x": 1555,
-   "y": 945,
+   "x": 1520,
+   "y": 955,
    "opcje": {
     "fs": 18.0,
     "kotwica": "middle"
@@ -1667,8 +1669,8 @@
   },
   {
    "tekst": "Bojuka Bay",
-   "x": 1755,
-   "y": 905,
+   "x": 1800,
+   "y": 920,
    "opcje": {
     "fs": 18.0,
     "kotwica": "middle"
@@ -1706,11 +1708,12 @@
   },
   {
    "tekst": "Malakir",
-   "x": 1505,
-   "y": 1264,
+   "x": 1567,
+   "y": 1240,
    "opcje": {
     "fs": 24.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "przyDo": [1505, 1235]
    }
   },
   {
@@ -1719,7 +1722,8 @@
    "y": 1222,
    "opcje": {
     "fs": 18.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "przyDo": [1345, 1248]
    }
   },
   {
@@ -1754,8 +1758,8 @@
   },
   {
    "tekst": "Umara",
-   "x": 548,
-   "y": 500,
+   "x": 560,
+   "y": 480,
    "opcje": {
     "fs": 16.0,
     "kotwica": "middle"
@@ -1772,44 +1776,48 @@
   },
   {
    "tekst": "Sea Gate",
-   "x": 898,
-   "y": 686,
+   "x": 970,
+   "y": 665,
    "opcje": {
     "fs": 24.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "przyDo": [900, 660]
    }
   },
   {
    "tekst": "Coralhelm",
-   "x": 660,
-   "y": 479,
+   "x": 715,
+   "y": 510,
    "opcje": {
     "fs": 16.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "przyDo": [660, 505]
    }
   },
   {
    "tekst": "Enclave",
-   "x": 505,
-   "y": 536,
+   "x": 465,
+   "y": 565,
    "opcje": {
     "fs": 14.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "przyDo": [505, 560]
    }
   },
   {
    "tekst": "Ula Temple",
-   "x": 552,
-   "y": 612,
+   "x": 517,
+   "y": 645,
    "opcje": {
     "fs": 14.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "przyDo": [570, 640]
    }
   },
   {
    "tekst": "The Bulwark",
    "x": 455,
-   "y": 720,
+   "y": 732,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
@@ -1819,10 +1827,11 @@
   {
    "tekst": "Sky Rock",
    "x": 450,
-   "y": 446,
+   "y": 452,
    "opcje": {
     "fs": 16.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "przyDo": [450, 420]
    }
   },
   {
@@ -1846,11 +1855,12 @@
   },
   {
    "tekst": "Hadatown",
-   "x": 462.0,
-   "y": 716.0,
+   "x": 462,
+   "y": 706,
    "opcje": {
     "fs": 16.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "przyDo": [470, 700]
    }
   },
   {
@@ -1866,7 +1876,7 @@
   {
    "tekst": "Makindi Trenches",
    "x": 560,
-   "y": 1180,
+   "y": 1345,
    "opcje": {
     "fs": 15.0,
     "kotwica": "middle",
@@ -1888,7 +1898,8 @@
    "y": 1306,
    "opcje": {
     "fs": 18.0,
-    "kotwica": "middle"
+    "kotwica": "middle",
+    "przyDo": [195, 1330]
    }
   },
   {
@@ -1920,8 +1931,8 @@
   },
   {
    "tekst": "Valakut",
-   "x": 215,
-   "y": 1100,
+   "x": 170,
+   "y": 1130,
    "opcje": {
     "fs": 14.0,
     "kotwica": "middle"
@@ -1967,8 +1978,8 @@
   },
   {
    "tekst": "Morze Zendikaru",
-   "x": 1050,
-   "y": 750,
+   "x": 190,
+   "y": 720,
    "opcje": {
     "fs": 20.0,
     "kotwica": "middle",
