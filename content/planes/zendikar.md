@@ -40,7 +40,26 @@ unoszącymi się kamieniami i ruinami **Emeria, the Sky Ruin**. Rzeka
 nad Halimar wznosi się **Sea Gate** — największe miasto Tazeem i centralny
 punkt handlu i kultury całego planu. Nad Halimar i wybrzeżami żyją
 merfolkowie, których wielkim domem jest **Coralhelm Refuge**, największa
-osada tego ludu.
+osada tego ludu; mniejszą, na wpół zanurzoną w rozlewisku w górze rzeki
+od Sea Gate, jest **Tikal Harborage** — osada prowadzona przez
+poszukiwaczkę **Thadę Adel**, gdzie merfolkowie zakotwiczyli ściągnięte
+z Emerii hedrony i ich mocą odpychają Eldrazi. Wybrzeża całego kontynentu
+otaczają zdradliwe, białe ławice kalcytu — **Calcite Flats** — po których
+wędrują nomadzi zbierający spadłe hedrony; w odludnej części ławic, pod
+skalnym wałem **Bulwarku** (który na północnym krańcu daje początek
+Umarze), kryje się **Sunspring** — marmurowa fontanna-oaza o wodach
+podobno uzdrawiających, jedno z sześciu znanych miejsc sprzed epoki
+Eldrazi. W północnych wyżynach przy źródle Umary leży **North Hada** —
+bezprawny posterunek złodziei i handlarzy, w którym nomadzi z ławic
+i grabieżcy z Bulwarku wymieniają towar.
+
+**Guul Draz** poza Malakirem i wolnym miastem **Nimana** ma też swoją
+„ziemię niczyją": **Pelakka Karst** — wapienny kraj lejów, żlebów
+i jaskiń otaczający prastarą **Hagra Cistern**, tak zdradliwy, że nawet
+merfolkowie wolą go obchodzić dalekimi trasami; kras jest domem
+największych rzecznych drapieżników planu. **Ondu** zaś wcina się
+w **Silundi Sea** — morze południowo-zachodniego kwadrantu planu,
+którego wirujące prądy i węże morskie strzegą wyspy **Jwar**.
 
 Przed przebudzeniem **Eldrazi** pięć domów ekspedycyjnych (Valakut,
 Pelakka, Akoum, Murasa, Bala Ged) czyniło z Sea Gate bazę wypraw w głąb
@@ -119,8 +138,23 @@ i z prób oswajania bestii, które zwykle ich zjadają.
 
 - MTG Wiki, „Tazeem" — trzy strefy kontynentu, Halimar (głębokie, sztuczne
   morze, mur 500+ stóp), Sea Gate na murze, Oran-Rief, rzeka Umara,
-  Emeria, domy ekspedycyjne:
+  Emeria, domy ekspedycyjne; Calcite Flats (ławice kalcytu wokół wybrzeży,
+  nomadzi zbierający hedrony), Sunspring (fontanna-oaza pod Bulwarkiem,
+  jedno z 6 miejsc sprzed Eldrazi), North Hada (bezprawny posterunek przy
+  źródle Umary), Bulwark rodzący Umarę na północnym krańcu:
   <https://mtg.fandom.com/wiki/Tazeem>
+- The Lore of Zendikar: „Life in Tazeem" (cytaty z *The Art of Magic:
+  The Gathering — Zendikar*) — Tikal Harborage: osada na wpół zanurzona
+  w rozlewisku w górze rzeki od Sea Gate, hedrony ściągnięte z Emerii
+  odpychają Eldrazi, przywódczyni Thada Adel:
+  <https://bacejelerenvorthos.tumblr.com/post/182810357029/tazeem-offers-a-few-bastions-of-stability-that>
+- MTG Wiki, „Thada Adel" — merfolczyni, przywódczyni Tikal Harborage:
+  <https://mtg.fandom.com/wiki/Thada_Adel>
+- mtglore.com / web.archive.org, „A Planeswalker's Guide to Zendikar:
+  Guul Draz" — Pelakka Karst: wapienne żleby, leje i jaskinie wokół
+  Hagra Cistern, omijany nawet przez merfolków, dom największych
+  rzecznych drapieżników:
+  <https://web.archive.org/web/20211205200148/https://magic.wizards.com/en/articles/archive/savor-flavor/planeswalker%E2%80%99s-guide-zendikar-guul-draz-2009-10-20>
 - MTG Salvation, „The World of Zendikar Part IV: Return to Zendikar" —
   Tazeem jako centrum Bitwy o Zendikar, tama Sea Gate, Coralhelm Refuge
   jako największa osada merfolków: <https://www.mtgsalvation.com/articles/49510-the-world-of-zendikar-part-iv-return-to-zendikar>
@@ -136,7 +170,9 @@ i z prób oswajania bestii, które zwykle ich zjadają.
   w ruchu"):
   <https://mtglore.com/web-articles/a-planeswalkers-guide-to-zendikar/>
 - mtglore.com, „A Planeswalker's Guide to Zendikar: Ondu" (kopia) —
-  Zulaport na Beyeen: mieszana rasowo społeczność, wampirzyca Indorel
+  Ondu wcina się w Silundi Sea (płd.-zach. kwadrant planu); wyspa Jwar
+  otoczona wirującymi prądami Silundi i wężami morskimi; Zulaport na
+  Beyeen: mieszana rasowo społeczność, wampirzyca Indorel
   za lokalnym handlem:
   <https://mtglore.com/web-articles/a-planeswalkers-guide-to-zendikar-ondu>
 - mtglore.com, „Gods and Monsters" (kopia artykułu Wizards, Savor the
