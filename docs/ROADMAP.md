@@ -112,18 +112,33 @@ obwódki haseł — kandydat na obiekty: symbole Azgaar, MIT, z atrybucją).
   4. **E-geo-4** — Detal Akoum: Tal Terig płn. od Spike Fields; Anowon
      League; ~~Ior Ruin przy Glasspool (etykieta)~~ — **etykieta Ior Ruin
      dodana w PR-10 (2026-09-02)**; reszta otwarta.
-  5. **E-geo-5** — Bala Ged/Guul Draz: Pelakka Karst, Helix of Zof, nazwa
-     zachodniego gulfu (bez nazwy po przeniesieniu Bojuka Bay).
-  6. **E-geo-6** — Ondu: Nomads of Silundi Sea (płn. wybrzeże), Tikal
-     Harbor (w2 §5).
-  7. **E-geo-7** — Tazeem: Sunspring (płn. cypel), Calcite Flats (płd.
-     cypel) — w2 §5.
+  5. **E-geo-5** — ~~Bala Ged/Guul Draz: Pelakka Karst, Helix of Zof, nazwa
+     zachodniego gulfu (bez nazwy po przeniesieniu Bojuka Bay).~~
+     **Domknięte w PR-11 (2026-09-02):** Pelakka Karst na mapie (kras wokół
+     Hagra Cistern — Guide: Guul Draz); Helix of Zof był na mapie od PR-10;
+     zachodnia zatoka: kanon jej NIE nazywa → zostaje bez etykiety
+     (nie zmyślamy nazw, ADR 0010/0023).
+  6. **E-geo-6** — ~~Ondu: Nomads of Silundi Sea (płn. wybrzeże), Tikal
+     Harbor (w2 §5).~~ **Domknięte w PR-11:** Silundi Sea jako morze przy
+     Ondu (Guide: Ondu; „nomadzi Silundi" to lud, nie POI); **Tikal
+     Harborage** kanonicznie leży na TAZEEM (rozlewisko w górze kanału od
+     Sea Gate — Art of MTG: Zendikar), nie na Ondu jak w w2 → dodany na
+     Tazeem (kanon > fanmapa).
+  7. **E-geo-7** — ~~Tazeem: Sunspring (płn. cypel), Calcite Flats (płd.
+     cypel) — w2 §5.~~ **Domknięte w PR-11:** kanon — Calcite Flats
+     otaczają CAŁE wybrzeże (etykieta na płd. odcinku, spójnie z w2),
+     Sunspring w ławicach POD Bulwarkiem (nie płn. cypel; Lore of
+     Zendikar: Ancient Sites of Tazeem).
   8. **E-geo-8** — ~~Zweryfikować w kanonie: *Prison of Omath* (spelling w2)
      vs *Prison of Omnath* (BFZ) — ustalić nazwę.~~ **Rozstrzygnięte
      w PR-10 (2026-09-02): kanoniczna nazwa „Prison of Omnath"** (MTG Wiki
      „Ondu"/„Omnath": mesa w Ondu, krąg wiążący, Ritual of Lights, Soul
      Stair); scena/map.json/podkład przemianowane.
-  9. **E-geo-9** — Hada w centrum Tazeem (w2) vs obecne płd.-zach.
+  9. **E-geo-9** — ~~Hada w centrum Tazeem (w2) vs obecne płd.-zach.~~
+     **Domknięte w PR-11 (2026-09-02) kanonem:** kanoniczna nazwa
+     **North Hada**, pozycja: północne wyżyny przy źródle Umary (Art of
+     MTG: Zendikar via mtg.wiki/Tazeem) — ani centrum (w2), ani
+     płd.-zach.; przemianowane i przeniesione + trakt do Coralhelm.
 
 **SKALOWANIE MAP (2026-09-01, pomiar buildu):** artefakt jednoplikowy
 (ADR 0001/0009) ma **4,45 MB, z czego 96,7% to base64 dwóch map**

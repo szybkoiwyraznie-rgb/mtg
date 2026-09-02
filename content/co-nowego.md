@@ -1,3 +1,32 @@
+## 2026-09-02 — Pętla Jakości (PR-11): mapa Zendikaru +6 nazw z kanonu, LORE Tazeem/Guul Draz, audyt PR-10
+
+- **Pass mapowy (kolejka E-geo-5/6/7/9 domknięta):**
+  - **Pelakka Karst** — wapienny kras otaczający Hagra Cistern
+    (Guide: Guul Draz) nazwany na mapie;
+  - **Silundi Sea** — morze, w które wcina się Ondu (Guide: Ondu),
+    etykieta na wodach między Ondu a Agadeem;
+  - **Tikal Harborage** — osada merfolków Thady Adel w górze kanału
+    od Sea Gate; kanon lokuje ją na TAZEEM, nie na Ondu jak fanmapa
+    (kanon > w2);
+  - **Sunspring** i **Calcite Flats** — oaza sprzed epoki Eldrazi
+    w kalcytowych ławicach pod Bulwarkiem + pas ławic na południowym
+    wybrzeżu Tazeem;
+  - **Hadatown → North Hada** — kanoniczna nazwa i pozycja (północne
+    wyżyny przy źródle Umary) zamiast pozycji fanowskiej; nowy trakt
+    North Hada–Coralhelm;
+  - zachodnia zatoka Bala Ged/Guul Draz zostaje **bez nazwy** — kanon
+    jej nie nazywa, a nazw nie zmyślamy.
+- **LORE strony planu Zendikar:** akapity o nowych miejscach Tazeem
+  (Tikal Harborage, Calcite Flats, Sunspring, North Hada), krasie
+  Pelakka i morzu Silundi — z cytowaniami (4 nowe źródła).
+- **Audyt PR-10** (`docs/audits/AUDYT_2026-09-02-PR10.md`): determinizm
+  renderu potwierdzony bit w bit, treść i kod zgodne z ADR 0021–0027;
+  3 drobne znaleziska naprawione (kotwica rejestru Tangled Vales
+  wskazywała morze; zdublowany nagłówek w ADR 0027; zdanie gidu
+  o oznaczaniu Fabuły w Źródłach ujednolicone z praktyką).
+- Link-mining: nadal poniżej progu ≥2 kart dla wspólnych encji
+  (2 karty w bazie, plany rozłączne) — bez nowych haseł.
+
 ## 2026-09-02 — szlify UI: „Narracja" na kartach, mapy bez paska, czysty dziennik
 
 - Na kartach słowo **„Narracja"** zastępuje „Fabułę dostawy"
