@@ -1,6 +1,8 @@
 # ADR 0024: Czytelność map T4 — ikony POI w kołach, granatowe etykiety wód, biomy omijają napisy, więcej traktów
 
-- **Status:** Zaakceptowana
+- **Status:** Częściowo zastąpiona — pkt 3 (rozsiew biomów omija boxy
+  etykiet) wycofany przez ADR 0025 (wycinanie polan pod tytułami;
+  napis leży NAD lasem z halo); pozostałe decyzje w mocy
 - **Data:** 2026-09-02
 - **Decydenci:** właściciel projektu (recenzja 5 preview PR-10, czat:
   uwagi per kontynent + trzy uwagi generalne); agent Arena (sesja PR-10)

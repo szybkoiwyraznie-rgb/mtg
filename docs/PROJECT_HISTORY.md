@@ -4,6 +4,23 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-02 — sesja PR-10 (część 6): warstwowe kolory pisma → ADR 0025 (recenzja 6)
+
+1. **Root cause braku granatu:** nakładka renderuje etykiety HTML-em,
+   kolor brała z CSS klas — fill z SVG był ignorowany; teraz przechodzi
+   inline (color). Lekcja: każdą cechę stylu SVG przenoszoną do
+   nakładki trzeba jawnie przepompować.
+2. Kolory warstwowe (czerń/granat/zieleń/bordo) + automat zieleni po
+   kotwicy w poligonie las/bagno (etykiety POI wyłączone).
+3. Wycofanie polan (ADR 0024 pkt 3 → 0025); iglica g-237 (właściciel
+   odrzucił g-016); klocek wodospadu; pasmo-makindi jako kaniony;
+   drogi bez dubli (drog-guul już przechodził przez Luleę — moje
+   trakty były dublami, słuszna uwaga).
+4. Bala Ged: pustki wypełnione PO OGLĘDZINACH renderu; las-4 Akoum
+   okazał się zdegenerowaną 4-punktową kreską (stąd mikro las) —
+   wymieniony na wielokąt.
+5. QA: testy 90/90 (whitelist +czerń/zieleń), audyt 0, wiązania 0.
+
 ## 2026-09-02 — sesja PR-10 (część 5): czytelność map → ADR 0024 (recenzja 5, pass geograficzny)
 
 **Zlecenie:** uwagi per kontynent (Murasa/Bala/Akoum/Ondu/Sejiri) +

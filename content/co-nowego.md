@@ -3,6 +3,25 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-02 — recenzja 6 preview: warstwowe kolory pisma, bez polan, iglica i wodospad, kaniony Makindi (ADR 0025)
+
+- **Kolory pisma warstwowe:** kontynenty/wyspy CZERŃ, wody GRANAT,
+  fragmenty lasów/bagien ZIELEŃ (automat po kotwicy w biomie), reszta
+  bordo. **Nakładka witryny przenosi teraz kolory z SVG** — to dlatego
+  granatu wcześniej nie było widać (CSS klas nadpisywał fill).
+- **Bez polan:** wykluczanie boxów etykiet z rozsiewu wycofane — napisy
+  leżą NAD lasem (halo daje czytelność).
+- **Living Spire** = najsmuklejszy glif adoptowany g-237 (zamiast
+  klastra gór); **Roaring Falls** z klockiem wodospadu (strugi
+  + rozbryzg); **Makindi Trenches** z narysowanymi kanionami
+  (niskie pasmo) i etykietą przy nich.
+- **Drogi bez dubli:** 3 usunięte (korytarze istniejących), nowe:
+  Affa–Fort Keff, Graypelt–Prison of Omnath (szlak), Coralhelm–The
+  Bulwark; **Bala Ged**: dżungla na zachodzie i północy (pustki
+  wypełnione po oględzinach renderu), las Ora Ondar/Khalni Heart
+  z kreski na pełny wielokąt.
+- Testy 90/90 · map-audit 0 · wiązania 0 · QA rastrowe.
+
 ## 2026-09-02 — recenzja 5 preview: czytelność map (ADR 0024) — koła POI, granatowe wody, trakty, pass geograficzny wszystkich kontynentów
 
 Właściciel przeszedł mapę kontynent po kontynencie. Systemowo (ADR 0024):
