@@ -3,6 +3,166 @@
 Dziennik zmian bazy — po jednym wpisie na sesję (Pętla Jakości, krok 5,
 ADR 0006). Najnowsze na górze.
 
+## 2026-09-02 — mapa Zendikaru: 7 poprawek z recenzji prototypu (pasma gór, etykiety przy obiektach, szare miasta, jednolita woda, hedrony, morze, kolejność warstw)
+
+Zlecenie właściciela (recenzja prototypu z 2026-09-01) — siedem poprawek
+**przed** kolejką E-geo: (a) glify gór łączone w logiczne pasma,
+wklejane pojedynczo, podobne wielkości, eliminacja zlewania;
+(b) labelka musi SIADAĆ przy badge'u; (c) ikony miast szare jak ruiny,
+nie czarne; (d) jeziora dokładnie tym kolorem co rzeki/morza;
+(e) przenoszenie POI obejmuje WSZYSTKIE jego ikony; (f) etykieta oceanu
+na otwartym morzu + usunięcie wodnej kieszeni; (g) kolejność warstw
+WIĄŻĄCA: morza → lądy → rzeki → góry → lasy/bagna/stepy →
+miasta/ruiny → labelki na szczycie.
+
+- **Silnik mapforge (a/c/d/g):**
+  - (a) `pasmo` rysowane jako JEDNO logiczne pasmo wklejane na mapę
+    (wcześniej: osobne, rozrzucone klasterki); minimum 3 glify na
+    pasmo (wcześniej krótkie pasma rysowały 1–2 glify); szerokość
+    glifu = krok wzdłuż grzbietu ×1.8 (±~10%) → wierzchołki
+    zbliżonej wielkości, bazy nachodzą ~50% = ciągły grzbiet
+    (język mapome).
+  - (c) ikony miast = monolitycznie szare (atlas: #6b6b6b —
+    poprzednio czarne, zlewały się z górami); ruiny bez zmian
+    (jaśniejsze, z szarym obrysem).
+  - (d) JEDEN kolor wody w palecie (pergamin + atlas): rzeki,
+    kanały i jeziora (w tym Halimar i Glasspool) = dokładnie kolor
+    morza (usunięty odrębny „kolor jeziora"); jeziora z bursztynową
+    krawędzią jak akweny; ocean bez niebieskich plam głębi
+    (wcześniej podpowiadały „akweny" w środku morza).
+  - (g) kolejność warstw odwrócona zgodnie z zleceniem: morza → lądy →
+    jeziora → rzeki → góry (pasma) → wulkany → lasy/bagna/stepy →
+    miasta/ruiny → labelki na samym szczycie (wcześniej biomy na
+    górach).
+- **Etykiety (b) — cała mapa:** wszystkie etykiety POI siadają przy
+  badge'u (reguła ~<30 px od środka obiektu; strona dobierana tak, by
+  labelka krawędzią dotykała obiektu). Wpływa na: Cliffhaven,
+  Prison of Omath, Ula Temple, Enclave, Sky Rock, The Bulwark, Morosi,
+  Umara, Hadatown, Coralhelm, Emeria, Sea Gate, Goma Fada, Affa,
+  Slab/Grip/Ghost Haven, Tal Terig (nowe miasto w kanonie — dodane
+  + pinezka), Fort Keff, Ora Ondar, Khalni Heart, Windblast Gorge,
+  Glass Haven, Zof Marsh, Umung, The Border Mire, Tangled Vales,
+  Surrakar Caves, Bojuka Bog, Guum Wilds, Nimana, Malakir, Lulea,
+  Hagra Cistern, Lake Jast, Hanging/Hagra Swamp, Skyfang, Kazuul Pass,
+  Blackbloom Lake, Singing City, Living Spire, Kazandu, Wolfbriar,
+  Turntimber, Mosscrack, Graypelt, Crypt of Agadeem, Kabira,
+  Midnight Pass, Ikifal, Benthidrix, Chill Depths, Wybrzeża Halimar,
+  Makindi Trenches, Sunder Bay, Bojuka Bay, Wyspy Jwar, Valakut,
+  Beyeen, Agadeem.
+- **Geografia (e/f):**
+  - (e) hedrony Emeri przeniesione razem z POI (wcześniej dryfowały
+    w starym miejscu — w Halimarze i na Halimaru); teraz przy
+    „Emeria (ruiny w niebie)".
+  - (f) „Morze Zendikaru" — labelka przeniesiona na otwarte morze
+    zachodnie (wcześniej dryfowała nad wodną kieszenią Tazeem);
+    kieszeń połączona z otwartym morzem (krawędzie Tazeem i Bala Ged
+    odsunięte — cieśnina Tazeem→Bala Ged jest teraz wyraźnie cieśniną,
+    otwartą na północ i południe); kanał Sea Gate wyprowadza
+    morze dalej w ocean (1010,660).
+- **Audyt (`map-audit.py`):** reguła „etykieta na lądzie" rozluźniona
+  z modelu środka do 9-punktowego modelu dotyku (środki: narożniki +
+  środki boków + środek etykiety; tolerancja 2 px) — uzasadnienie:
+  właścicielska zasada (b) wymaga labelek SIADAJĄCYCH przy obiekcie,
+  czyli częściowo nad wodą (wybrzeże Halimar, porty); etykiety
+  oceaniczne w białej liście.
+- **Testy:** `test/mapforge.test.js` — uaktualnione testy stylu
+  (rzeka = jezioro = morze = jeden kolor; paleta achromatyczna bez
+  odrębnego koloru jeziora), cała suita **87/87**; `npm run build`
+  OK; `map-audit.py` — **0 problemów** (wszystkie mapy).
+- **Następna kolejka:** E-geo-1..9 (kolejność z audytu): archipelag
+  między Ondu a Akoum, Tazeem SW (2/7), Murasa, Akoum, BG/GD, Ondu,
+  Omath, Hada.
+
+## 2026-09-01 — geografia mapy Zendikaru: audyt całości + przebudowa Tazeem, cieśnina Akoum/Bala Ged–Guul Draz, drogi-trakty, etykiety bez kresek
+
+Zlecenie właściciela (uzupełnienie PR-9): (a) „labelki niektórych POI są
+odsunięte od samych miejsc i rysowana jest linia łącząca — nie lepiej bliżej
+dać tą labelkę?"; (b) „drogi rozrzucone losowo, nie prowadzą nigdzie
+sensownie — powinny być traktami między największymi miastami/POI";
+(c) „geografia jest z dupy — wymaga POWAŻNEGO AUDYTU… solidnie, w jednym
+albo kilku podejściach" — doprecyzowane: **audyt CAŁEJ mapy**, nie tylko
+Tazeem. Prototyp do oceny wdrożenia wystawiony w sandboxie (port 4173).
+
+- **Audyt całości** (`docs/audits/AUDYT_2026-09-01-geografia-zendikaru.md`):
+  podsłuch geometryczny (scena.json + SVG→PNG) vs hierarchia kanon > mapa
+  fanowska v2 > warianty 3/4. Trzy problemy systemowe: (1) ludy rysowane
+  w sprzeczności z treścią — najgorzej Tazeem (Halimar = step bez wody,
+  brak Coralhelm, Sea Gate na płd.-wsch. wybrzeżu zamiast na murze);
+  (2) topologia — jeden ląd łączył trzy kontynenty (Akoum+Bala Ged+Guul
+  Draz); (3) POI „dekoracyjne" (Bojuka na zachodzie, Malakir na zachodzie,
+  Valakut w Akoum zamiast na Beyeen…).
+- **Tazeem przebudowany (P0)** — mapa zgodna z treścią planu i kartą
+  *Coralhelm Guide*: **Halimar = morze śródlądowe** (nowy tryb `jezioro.d`
+  w mapforge — nieregularna tafla), **Sea Gate (900,660) na murze** nad
+  kanałem-tamą wyprowadzającym morze w ocean, **Coralhelm (660,505) na
+  północnym brzegu** (+ pinezka karty przeniesiona), rzeka Umara do Halimar
+  (Magosi Wodospad), druga rzeka = wypływ z płn. brzegu, Oran-Rief = pas
+  lasu zachód od morza, Enclave w lesie, Ula Temple na brzegu, The Bulwark
+  (pasmo zachód→południe), Emeria + hedron nad taflą (opacity = dryf),
+  Sky Rock NW.
+- **Cieśnina Akoum / Bala Ged–Guul Draz (P0):** `lad-2` rozdzielony na
+  `lad-akoum` + `lad-bala-guul` — cieśnina od gulfu do otwartego oceanu.
+  Guul Draz ↔ Bala Ged zostają połączone (w2/w3), odgraniczone The Border
+  Mire. Bojuka = najdalszy wschód: „Bojuka Bay" przeniesiona na wsch.
+  wybrzeże przy Bojuka Bog.
+- **POI (P1):** Goma Fada → zachodni cypl, Affa → centrum kotliny, Malakir
+  → wschodnia stolica / Nimana → zachód od Lake Jast (były zamienione
+  stronami), Lulea → płd.-wsch., Surrakar → dżungla, Zof Marsh → NW,
+  Kabira → wyspa Agadeem, Prison of Omath → centrum kotliny Ondu, Makindi
+  Trenches → centrum; nowe: **wysepka Valakut z wulkanem** (Beyeen —
+  „Mt. Valakut" usunięta z Akoum), Oko Ugina = pasmo (nie dryfujący
+  hedron), Teeth of Akoum (etykieta przy klastrze wulkanów), Tangled
+  Vales, Hanging Swamp + Hagra Swamp + Hagra Cistern (nowe jezioro),
+  Ula Temple, Enclave, Coralhelm, Kazuul Pass.
+- **Drogi = trakty (pkt b):** 5 losowych przerywanych linii → trasy
+  między największymi miastami: Hadatown→Sea Gate (Tazeem),
+  Goma Fada→Affa→Tal Terig (Akoum), Cliffhaven→Graypelt→Mosscrack (Ondu),
+  Singing City→Sunder Bay (Murasa), Malakir→Nimana (Guul Draz).
+- **Etykiety przy obiektach, bez kresek (pkt a):** silnik `render.mjs` nie
+  rysuje już linii łączących (`zakotwicz`); 16 etykiet z liniami
+  przysuniętych do obiektów w scenie.
+- **Spójność:** `map.json` — 26 kotwic zsynchronizowanych z nowymi
+  pozycjami, 9 nowych (Coralhelm, Ula Temple, Merfolk Enclave, The
+  Bulwark, Teeth of Akoum, Tangled Vales, Hagra Cistern, Hanging Swamp,
+  Prison of Omath), pinezka *Coralhelm Guide* → Coralhelm, duplikat
+  kotwicy Living Spire usunięty; `map-audit.py` — „Hagra Cistern" do
+  SPODZEANE_WODY.
+- **Reszta (P2) → ROADMAP, kolejka E-geo-1..9** (m.in. archipelag
+  Jwar/Beyeen/Agadeem między Ondu a Akoum wg w2, Tazeem na płd.-zachód,
+  detale Murasy/Akoum/Guul Draz/Ondu, Omath vs Omnath).
+- Weryfikacja: testy 87/87; `map-audit.py` 0; build OK; kontrola wizualna
+  PNG (3 korekty pozycji etykiet po przeglądzie).
+
+## 2026-09-01 — PR-9: mapforge — adopcja glifów gór z mapome + rzeki w kolorze morza (ADR 0020)
+
+- **Góry wyglądają jak na mapie Śródziemia** (decyzja właściciela:
+  obecne glify odrzucone — „masakryczne", benchmark = mapome). Zgodnie
+  z zaleceniem właściciela („nie ma sensu odkrywać koła na nowo")
+  wykonane research GitHubu i **adopcja wektorowych obiektów**
+  (ADR 0020, research w `docs/plans/PLAN_2026-09-01-glify-mapaowe-i-rzeki.md`):
+  - **Glify gór adoptowane z mapome** (CC-BY-4.0 — github.com/k1tesurfen/
+    mapome; to JEST mapa-benchmark w repo): 30 ręcznie rysowanych sylwetek
+    klastrów 1–3 szczytów + 3 mega-klastery, wycięte z podkładu
+    Śródziemia w repo → `tools/mapforge/glify-mapaome.mjs` (dane, nie
+    kod — zero zależności, ADR 0002).
+  - `szczyt()`/`pasmo()` rysują wyłącznie glifami adoptowanymi: rozsiew
+    wzdłuż grzbietu (rozmiar ważony sinusem, odbicia, jitter), kolejność
+    wg dolnej krawędzi — bliższe szczyty na wierzchu (technika z
+    researchu). Mega-klastery do jawnego użycia w scenie (`glifId`).
+- **Rzeki = kolor morza, bez gradientu i opacity** (decyzja właściciela
+  2026-09-01: rzeka „rozmywała się" w morzu, a nie twardo w niego
+  wpadała): ujście w morze → kolor morza, ujście w jezioro → kolor
+  jeziora, na lądzie → kolor morza. Gradient znany z PR-5 usunięty.
+- **Proweniencja (ADR 0013):** atrybucja CC-BY-4.0 w nagłówku każdego
+  generowanego SVG + `maps/zendikar/map.json` (pole `zrodlo_glify`) +
+  ADR 0020 + README mapforge + SKILL_MAPA_PLANU.
+- **Zendikar (T4) i demo-warsztat wyrenderowane na nowo**;
+  `map-audit.py` → 0; testy 87/87; build OK (4 strony, 14 modułów).
+- **Azgaar/Fantasy-Map-Generator (MIT)** — zapisany kandydat na kolejne
+  klocki (E5: cytadela/fort, latarnia, wrak, wodospad, obwódki haseł);
+  góry Azgaar nie pasowały do benchmarku (jasne/techniczne), techniki
+  rozsiewu wdrożone.
+
 ## 2026-09-01 — PR-5: mapforge — glify „hand-drawn" (las kępa, góra żagiel) + warsztat
 
 - **Przebudowa glifów mapforge** (zgłoszenie właściciela: obiekty

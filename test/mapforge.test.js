@@ -88,20 +88,27 @@ test('mapforge: pasmo — szczyty i przedgorze', () => {
   assert.ok(s.includes('#f6f4ec'), 'śnieg na szczycie (pergamin)');
 });
 
+test('mapforge: pasmo — glify adoptowane z mapome (ADR 0020)', () => {
+  const a = pasmo('glify-test', [[0, 100], [400, 120]], { szer: 40 });
+  const b = pasmo('glify-test', [[0, 100], [400, 120]], { szer: 40 });
+  assert.ok((a.match(/mf-szczyt/g) ?? []).length >= 8, 'gęste klastery szczytów');
+  assert.ok(a.includes('translate(-'), 'glif w ramce lokalnej (transform z biblioteki)');
+  assert.equal(a, b, 'deterministycznie');
+  // kotwice dla map-auditu
+  const kotwice = [...a.matchAll(/data-x="[-\d.]+" data-y="[-\d.]+"/g)];
+  assert.ok(kotwice.length >= 8, 'kotwice data-x/y na każdym szczycie');
+});
+
 test('mapforge: rzeka/jezioro/droga — atrybuty stylu', () => {
+  // ADR 0020 + pkt d (decyzja właściciela 2026-09-02): JEDEN kolor wody —
+  // morze, rzeki i jeziora mają identyczny kolor (akweny się zlewają),
+  // bez gradientu i bez opacity.
   const r = rzeka('r', [[0, 0], [100, 100]], { s0: 2, s1: 6 });
-  assert.ok(r.includes('fill="#5b8ba6"') && r.includes('circle'), 'wstęga + źródło');
-  // Ujście rzeki z gradientem: rzeka wtapia się w wodę (płynne zlewanie,
-  // nie ucięcie przy brzegu) — gradient od koloru rzeki do koloru morza
-  // w układzie współrzędnych mapy, pełna nieprzezroczystość.
-  const ru = rzeka('rUj', [[0, 0], [100, 100]], { s0: 2, s1: 6, ujscie: { typ: 'morze' } });
-  assert.ok(ru.includes('linearGradient'), 'ujście: gradient');
-  assert.ok(ru.includes('id="mf-rzeka-rUj"'), 'ujście: id gradientu');
-  assert.ok(ru.includes('stop-color="#5b8ba6"'), 'ujście: od koloru rzeki (pergamin)');
-  const rl = rzeka('rJz', [[0, 0], [100, 100]], { s0: 2, s1: 6, ujscie: { typ: 'jezioro' } });
-  assert.ok(rl.includes('stop-color="#b9cdd8"'), 'ujście: do koloru jeziora');
+  assert.ok(r.includes('fill="#ccd8d2"') && r.includes('circle'), 'wstęga w kolorze morza + źródło (pergamin)');
+  assert.ok(!r.includes('linearGradient'), 'brak gradientu');
+  assert.ok(!r.includes('opacity'), 'brak opacity');
   const j = jezioro({ cx: 10, cy: 10, rx: 50, ry: 30 });
-  assert.ok(j.includes('ellipse'));
+  assert.ok(j.includes('ellipse') && j.includes('fill="#ccd8d2"'), 'jezioro = kolor morza (pkt d)');
   const sz = droga('d1', [[0, 0], [50, 50]], { typ: 'szlak' });
   const dr = droga('d2', [[0, 0], [50, 50]], { typ: 'droga' });
   assert.ok(sz.includes('0 9'), 'szlak kropkowany (konwencja mapome)');
@@ -175,8 +182,10 @@ test('mapforge: motywy — atlas wymienia paletę, oba deterministyczne', () => 
   // Achromatyczność z wyjątkiem KOLORU WODY i ETYKIET (decyzja właściciela
   // 2026-09-01: kolor tylko dla wody — morza/rzeki/jeziora — i granatowych
   // napisów; reszta mapy pozostaje czarno-biało-szara wg ADR 0019).
+  // (Rzeka i jeziora mają kolor morza — ADR 0020 + pkt d, 2026-09-02 —
+  // więc osobnego koloru rzeki/jeziora nie ma.)
   const KOLOR_FUNKCYJNY = new Set([
-    'e2ecf4', 'cbdced', '6f9bc0', '6f9cc6',   // woda / jezioro / rzeka (błękit)
+    'e2ecf4', '6f9bc0',                      // woda (jeden kolor) / linie wody (błękit)
     '6b1f2e', '5a1622', '4d1220',            // bordowe etykiety
   ]);
   const wyp = [...a1.matchAll(/fill="#([0-9a-f]{6})"/g)].map((m) => m[1]);

@@ -11,12 +11,16 @@ import {
   prng, zaokr, chaikin, gladka, prosta, rozrzut, pole, dlugosc,
   punktNa, wstega, pit,
 } from './geom.mjs';
+import { GLIFY_GORY, GLIFY_GORY_HERO } from './glify-mapaome.mjs';
 
-/** Paleta bazowa = motyw „pergamin" (ADR 0008). */
+/** Paleta bazowa = motyw „pergamin" (ADR 0008).
+ *  UWAGA: kolor rzeki nie istnieje w palecie — rzeka ma kolor akwenu
+ *  (ADR 0020, decyzja właściciela 2026-09-01). */
 export const PAL = {
   lad: '#e8dbb8', ladStroke: '#a89468',
-  woda: '#ccd8d2', wodaGleb: '#b9cdd8', wodaStroke: '#7fa0b4',
-  rzeka: '#5b8ba6',
+  // Woda = JEDEN kolor (morze/jeziora/rzeka — decja właściciela 2026-09-02,
+  // pkt d: akweny mają się zlewać, bez osobnego „koloru jeziora").
+  woda: '#ccd8d2', wodaStroke: '#7fa0b4',
   tekst: '#4a3a28', ital: '#6b5d52', halo: '#f4ecd8', etykieta: '#6b1f2e',
   drzewo: '#7a8a5a', drzewoCien: '#5c6b44', pienn: '#6b5d52',
   bagno: '#6f8a72', step: '#b5a877',
@@ -26,7 +30,6 @@ export const PAL = {
   krater: '#7a4a3a', dym: '#9aa3a8', mur: '#c9b98f', kamien: '#cfc4a0',
   poswiataKolor: '#b9cdd8',
   poswiata: [{ w: 12, o: 0.10 }, { w: 7, o: 0.16 }, { w: 3, o: 0.24 }],
-  oceanPlamy: true,
   tryb: 'kolor',   // 'kolor' = wypelnienia; 'tusz' = kontur + haczura (line-art)
 };
 
@@ -43,8 +46,8 @@ const MOTYWY = {
     lad: '#f7f7f7', ladStroke: '#3f3f3f',
     // Woda w delikatnym niebieskim (decyzja właściciela 2026-09-01 — odstępstwo
     // od czystego achromatu z ADR 0019: kolor tylko dla wody i etykiet).
-    woda: '#e2ecf4', wodaGleb: '#cbdced', wodaStroke: '#6f9bc0',
-    rzeka: '#6f9cc6',
+    // Jeden kolor wody dla wszystkich akwenów (pkt d, 2026-09-02).
+    woda: '#e2ecf4', wodaStroke: '#6f9bc0',
     tekst: '#1c1c1c', ital: '#3f3f3f', halo: '#f7f7f7', etykieta: '#6b1f2e',
     drzewo: '#dedede', drzewoCien: '#c3c3c3', pienn: '#3f3f3f',
     bagno: '#5f5f5f', step: '#9b9b9b',
@@ -54,7 +57,6 @@ const MOTYWY = {
     krater: '#4a4a4a', dym: '#909090', mur: '#d9d9d9', kamien: '#cfcfcf',
     poswiataKolor: '#9f9f9f',
     poswiata: [{ w: 10, o: 0.35 }, { w: 5.5, o: 0.5 }, { w: 2, o: 0.9 }],
-    oceanPlamy: true,
     tryb: 'kolor',
   },
 };
@@ -218,93 +220,85 @@ function punktWPoligonie(poly, rng) {
   return null;
 }
 
-/* ---------- pasmo górskie (grzbiet + szczyty z faseta cienia) ---------- */
+/* ---------- pasmo górskie (glify adoptowane z mapome, ADR 0020) ---------- */
+
+const POGLIFY = new Map(GLIFY_GORY.map((g) => [g.id, g]));
 
 /**
- * Pojedynczy szczyt w duchu mapome — CZARNO-BIAŁY, predefiniowany „półprodukt":
- * szeroki, ostry, nieregularny trójkąt (zęby z drobnymi podarciami) z czarnym
- * wypełnieniem i pionowymi zarysowaniami cienia. Bez pustego „żagla" — ma się
- * czytać jako zbity, rysowany kreską szczyt. `lean` przechyla wierzchołek.
+ * Pojedynczy szczyt — GLIF ADOPTOWANY z mapome (ADR 0020): ręcznie rysowana
+ * sylwetka klastra 1–3 szczytów (język rysunku wzorcowego, mapa Śródziemia —
+ * benchmark ADR 0015). Jednolita skala po wysokości `h`, środek dolnej
+ * krawędzi bboxa glifa w punkcie (x, y); `flip = -1` odbija lustro. `w` to
+ * okna szerokościowa dla snowcapu i audytu (faktyczna szerokość wynika z
+ * proporcji glifa). Klasa `mf-szczyt` i kotwice data-x/y bez zmian (map-audit).
  */
-export function szczyt(x, y, w, h, { snieg = false, lean = 0 } = {}) {
-  const pkX = 0.5 + lean;                         // wierzchołek odchylony przez lean
-  const c = PAL.tekst;                            // czerń (atlas) / tusz (pergamin)
-  const cien = PAL.skalaCien;
-  let d = `M ${rr(x)} ${rr(y)} `;
-  d += `L ${rr(x + w * (0.12 + Math.abs(lean) * 0.1))} ${rr(y - h * 0.3)} `;
-  d += `L ${rr(x + w * pkX * 0.7)} ${rr(y - h * 0.68)} `;
-  d += `L ${rr(x + w * pkX)} ${rr(y - h)} `;
-  d += `L ${rr(x + w * (pkX + (1 - pkX) * 0.42))} ${rr(y - h * 0.72)} `;
-  d += `L ${rr(x + w * 0.85)} ${rr(y - h * 0.28)} `;
-  d += `L ${rr(x + w)} ${rr(y)} Z`;
-  // pionowe zarysowania cienia (prawe zbocze) — biała kreska na czarnym
-  let hat = '';
-  const nH = 5;
-  for (let i = 0; i < nH; i++) {
-    const f = (i + 0.6) / nH;
-    const ax = x + w * (pkX + (1 - pkX) * f);
-    const ay = y - h * (1 - f);
-    hat += `M ${rr(ax)} ${rr(ay)} L ${rr(ax)} ${rr(y)} `;
-  }
+export function szczyt(x, y, w, h, { snieg = false, flip = 1, glifId = null } = {}) {
+  const rng = prng(`szczyt:${rr(x)}:${rr(y)}:${rr(h)}:${glifId ?? 'los'}`);
+  const kandydaci = glifId ? [POGLIFY.get(glifId)] : GLIFY_GORY.filter((g) => !GLIFY_GORY_HERO.includes(g.id));
+  const glif = glifId ? kandydaci[0] : kandydaci[Math.floor(rng() * kandydaci.length)];
+  if (!glif) throw new Error(`nieznany glif góry: ${glifId}`);
+  const s = h / glif.h;
+  const body = `<g transform="translate(${rr(x)} ${rr(y)}) scale(${rr(s * flip)} ${rr(s)}) ` +
+    `translate(${-glif.cx} ${-glif.cy})"><path d="${glif.d}" fill="${PAL.tekst}"/></g>`;
+  // śnieg — biały ząb na grzbiecie (nad sylwetką glifa)
   const sn = snieg
-    ? `<path d="M ${rr(x + w * (pkX - 0.18))} ${rr(y - h * 0.86)} L ${rr(x + w * pkX)} ${rr(y - h)} ` +
-      `L ${rr(x + w * (pkX + 0.14))} ${rr(y - h * 0.84)} L ${rr(x + w * (pkX + 0.05))} ${rr(y - h * 0.74)} ` +
-      `L ${rr(x + w * (pkX - 0.06))} ${rr(y - h * 0.76)} Z" fill="${PAL.snieg}"/>`
+    ? `<path d="M ${rr(x - w * 0.18)} ${rr(y - h * 0.78)} L ${rr(x - w * 0.05)} ${rr(y - h * 0.88)} ` +
+      `L ${rr(x)} ${rr(y - h)} L ${rr(x + w * 0.09)} ${rr(y - h * 0.85)} ` +
+      `L ${rr(x + w * 0.17)} ${rr(y - h * 0.76)} L ${rr(x + w * 0.04)} ${rr(y - h * 0.8)} Z" fill="${PAL.snieg}"/>`
     : '';
-  return `<g class="mf-szczyt" data-x="${rr(x)}" data-y="${rr(y)}">` +
-    `<path d="${d}" fill="${c}" stroke="${c}" stroke-width="0.5" stroke-linejoin="round"/>` +
-    `<path d="${hat}" stroke="${PAL.halo}" stroke-width="0.6" fill="none" opacity="0.35"/>` +
-    sn +
-    `</g>`;
+  return `<g class="mf-szczyt" data-x="${rr(x)}" data-y="${rr(y)}">${body}${sn}</g>`;
 }
 
 /**
- * Pasmo — CZARNO-BIAŁA, ZĘBATA GRAŃ w stylu mapome: JEDEN gęsty, nakładający
- * się ciąg zębów (naprzemiennie wysokie/niskie szczyty) wzdłuż wygładzonej
- * linii grzbietu, z minimalistycznym pogórzem tylko przy dolnym brzegu.
- * Wcześniej były 2 rozdzielne rzędy „płotka" — teraz gęsta, nierówna masa.
+ * Pasmo — JEDNO LOGICZNE PASMO jako pojedyncza, spójna bryła wklejona na
+ * mapę (decyzja właściciela 2026-09-02, pkt a: glify „nawsadzane góra na
+ * górze, bez ładu i składu" odrzucone). Glify adoptowane (ADR 0020) układają
+ * się POLEM W DŁUŻY wzdłuż wygładzonego grzbietu: bazy nachodzą na siebie
+ * (~50%), więc sylwetki zlewają się w jeden ciągły, jagodowy grzbiet —
+ * język mapome (mapa Śródziemia). Wielkości POBONE (szerokości baz ±~10%;
+ * wysokości wynikają z naturalnych proporcji glifu, więc szczyty mają różne
+ * wysokości jak w prawdziwym pasmie — bez przytłaczania większych
+ * mniejszych). Bez rozrzutu pionowego i bez osobnego rzędu pogórza.
+ * Mega-klastery (hero) tylko jawnie przez `szczyt(..., { glifId })`.
+ * Deterministyczne (rng z hasha id, ADR 0018 pkt 3).
  */
-export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = false, przedgorze = true, maski = null, liniaGrzbietu = false } = {}) {
+export function pasmo(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = false, maski = null } = {}) {
   const naLadzie = (p) => !maski || !maski.length || maski.some((m) => pit(p, m));
   const rng = prng(`pasmo:${id}`);
   const grzbiet = chaikin(punkty, 3, false);
   const dl = dlugosc(grzbiet);
-  let out = liniaGrzbietu ? `<path d="${gladka(grzbiet)}" stroke="${PAL.skalaCien}" stroke-width="2" fill="none" opacity="0.3"/>` : '';
+  const NORMALNE = GLIFY_GORY.filter((g) => !GLIFY_GORY_HERO.includes(g.id));
 
-  // JEDEN gęsty, nakładający się rząd: szerokie zęby (w ≈ szer) blisko siebie
-  // (rozstaw ≈ szer*0.7), naprzemienna wysokość → naturalna "zębata" grań.
-  const n = gestoscSzczytow ?? Math.max(9, Math.round(dl / (szer * 0.7)));
+  // Liczba glifów i jednolita skala szerokościowych: krok wzdłuż grzbietu
+  // ≈ dl/n; szerokość glifu ≈ 1.8×kroku (nachodzenie baz ~50%) — pasmo jest
+  // ciągiem, nie kolekcją osobnych klastrów. Minimum 3 glify (krótkie pasma
+  // to zwarty kłąb 3–4 szczytów, nie ściana nachodzących glifów).
+  const n = gestoscSzczytow ?? Math.max(3, Math.round(dl / (szer * 0.8)));
+  const krok = dl / Math.max(1, n - 1);
+  const instancje = [];
   for (let i = 0; i < n; i++) {
     const t = n === 1 ? 0.5 : i / (n - 1);
     const [x, y] = punktNa(grzbiet, t);
-    const waga = Math.sin(Math.PI * t);          // wyżej w środku pasma
-    const wysoki = i % 2 === 0;
-    const w = szer * (1.0 + rng() * 0.2);        // szeroka podstawa → zęby nachodzą
-    const h = szer * (wysoki ? (0.95 + waga * 0.5 + rng() * 0.15) : (0.55 + waga * 0.3 + rng() * 0.1));
-    const dx = (rng() - 0.5) * szer * 0.15;
-    const kandydat = [x + dx, y];
-    const pozycja = naLadzie(kandydat) ? kandydat : (naLadzie([x, y]) ? [x, y] : null);
-    if (pozycja) out += szczyt(pozycja[0], pozycja[1], w, h, {
-      snieg: snieg && wysoki && waga > 0.55,
-      lean: (rng() - 0.5) * 0.5,
+    if (!naLadzie([x, y])) continue;              // pasmo nie pływa
+    const waga = Math.sin(Math.PI * t);           // środek pasma: najszersze
+    const glif = NORMALNE[Math.floor(rng() * NORMALNE.length)];
+    const wGlifu = krok * 1.8 * (0.92 + waga * 0.16 + (rng() - 0.5) * 0.12);
+    let hGlifu = wGlifu / (glif.w / glif.h);      // naturalne proporcje glifu
+    if (hGlifu > szer * 1.25) {                   // pułap: pasmo nie rozjeżdża
+      hGlifu = szer * 1.25;
+    }
+    const w = hGlifu * (glif.w / glif.h);
+    instancje.push({
+      x, y, h: hGlifu, w,
+      flip: rng() < 0.5 ? -1 : 1,
+      snieg: snieg && waga > 0.55 && rng() < 0.4,
+      glifId: glif.id,
     });
   }
-
-  // Minimalistyczne pogórze przy dolnym brzegu (małe, niskie, nieliczne)
-  if (przedgorze) {
-    const n2 = Math.max(4, Math.round(dl / (szer * 0.95)));
-    for (let i = 0; i < n2; i++) {
-      const t = (i + 0.5) / n2;
-      const [x, y] = punktNa(grzbiet, t);
-      const px = x + (rng() - 0.5) * szer * 0.6;
-      const py = y + szer * 0.26;
-      if (!naLadzie([px, py])) continue;          // pogórze nie pływa
-      out += szczyt(px, py, szer * 0.5, szer * 0.36, {
-        lean: (rng() - 0.5) * 0.6,
-      });
-    }
-  }
-  return out;
+  // Rysujemy wzdłuż grzbietu (t rośnie) — późniejszy glif nachodzi na
+  // poprzedni z jednej strony, jak kolejne partie tego samego grzbietu.
+  return instancje.map((s) =>
+    szczyt(s.x, s.y, s.w, s.h, { snieg: s.snieg, flip: s.flip, glifId: s.glifId })).join('\n');
 }
 
 /* ---------- wulkan (stożek z kraterem i lazem dymu) ---------- */
@@ -325,50 +319,45 @@ export function wulkan(x, y, { skala = 1, dym = true } = {}) {
     `</g>`;
 }
 
-/* ---------- rzeka (wstęga o rosnącej szerokości) ---------- */
+/* ---------- rzeka (wstęga o rosnącej szerokości; kolor akwenu — ADR 0020) ---------- */
 
 /**
- * Rzeka jako wstęga stożkowa (źródło wąskie, ujście szerokie) z opcjonalnym
- * ujściem wtapiającym się w wodę. Gdy `ujscie` jest podane, kolor wstęgi
- * przechodzi gradientem od `PAL.rzeka` (przy źródle) do koloru wody
- * (`PAL.woda` dla morza / `PAL.wodaGleb` dla jeziora) przy ujściu, przy
- * PEŁNEJ nieprzezroczystości — dzięki temu rzeka nie odcina się twardo na
- * brzegu, lecz „rozpływa się" w akwenie (feedback właściciela 2026-09-01:
- * zlewanie się, a nie ucięcie przy linii brzegowej).
+ * Rzeka jako wstęga stożkowa (źródło wąskie, ujście szerokie). Jeden kolor
+ * wody wszędzie (ADR 0020 + pkt d, 2026-09-02): rzeka ma identyczny kolor
+ * co morze I jeziora — wpływając do akwenu „rozmywa się" w nim (zlewa się,
+ * nie tnie). Brak gradientu i brak opacity.
  */
-export function rzeka(id, punkty, { s0 = 3, s1 = 9, zrodlo = true, ujscie = null } = {}) {
+export function rzeka(id, punkty, { s0 = 3, s1 = 9, zrodlo = true } = {}) {
   const { d } = wstega(punkty, s0, s1);
+  const kolor = PAL.woda;
   const pocz = punkty[0];
-  const konc = punkty[punkty.length - 1];
-  let fill = PAL.rzeka;
-  let defs = '';
-  if (ujscie) {
-    const doKolor = ujscie.typ === 'jezioro' ? PAL.wodaGleb : PAL.woda;
-    // Gradient w układzie współrzędnych mapy: od źródła do ujścia, więc
-    // kolor zanika równo z kierunkiem płynięcia (nie z kierunkiem bboxu).
-    const a = 0.62;   // początek zanikania (62% długości biegu)
-    defs = `<linearGradient id="mf-rzeka-${id}" gradientUnits="userSpaceOnUse" ` +
-      `x1="${rr(pocz[0])}" y1="${rr(pocz[1])}" x2="${rr(konc[0])}" y2="${rr(konc[1])}">` +
-      `<stop offset="0" stop-color="${PAL.rzeka}"/>` +
-      `<stop offset="${a}" stop-color="${PAL.rzeka}"/>` +
-      `<stop offset="1" stop-color="${doKolor}"/>` +
-      `</linearGradient>`;
-    fill = `url(#mf-rzeka-${id})`;
-  }
-  return (defs ? `<defs>${defs}</defs>` : '') +
-    (zrodlo ? `<circle cx="${rr(pocz[0])}" cy="${rr(pocz[1])}" r="${rr(s0 * 0.7)}" fill="${PAL.rzeka}"/>` : '') +
-    `<path d="${d}" fill="${fill}"/>`;
+  return (zrodlo ? `<circle cx="${rr(pocz[0])}" cy="${rr(pocz[1])}" r="${rr(s0 * 0.7)}" fill="${kolor}"/>` : '') +
+    `<path d="${d}" fill="${kolor}"/>`;
 }
 
 /** Dopływ — cieńsza wstęga wpadająca do rzeki głównej. */
-export function doplyw(id, punkty, { s0 = 1.5, s1 = 3.5, ujscie = null } = {}) {
-  return rzeka(id, punkty, { s0, s1, zrodlo: false, ujscie });
+export function doplyw(id, punkty, { s0 = 1.5, s1 = 3.5 } = {}) {
+  return rzeka(id, punkty, { s0, s1, zrodlo: false });
 }
 
 /* ---------- jezioro (tafla + linia brzegowa + fale) ---------- */
 
-export function jezioro({ cx, cy, rx, ry } = {}, { fale = true, obrys = 2 } = {}) {
-  let out = `<ellipse cx="${rr(cx)}" cy="${rr(cy)}" rx="${rr(rx)}" ry="${rr(ry)}" fill="${PAL.wodaGleb}" stroke="${PAL.wodaStroke}" stroke-width="${obrys}"/>`;
+/**
+ * Jezioro/akwen. Dwa tryby:
+ *  - elipsa `{ cx, cy, rx, ry }` (domyślny),
+ *  - nieregularna tafla `{ d }` — własna ścieżka zamknięta (morza
+ *    śródlądowe, zatoki; Audyt 2026-09-01 — Halimar). Przy `d` współrzędne
+ *    `cx/cy/rx/ry` są opcjonalne i służą tylko do fal/dekoru (gdy podane).
+ */
+export function jezioro({ cx, cy, rx, ry, d } = {}, { fale = true, obrys = 2 } = {}) {
+  if (d) {
+    let out = `<path d="${d}" fill="${PAL.woda}" stroke="${PAL.wodaStroke}" stroke-width="${obrys}"/>`;
+    if (fale && cx != null && ry) {
+      out += `<path d="M ${rr(cx - rx * 0.35)} ${rr(cy + ry * 0.15)} q ${rr(rx * 0.15)} ${rr(-ry * 0.2)} ${rr(rx * 0.3)} 0" stroke="${PAL.wodaStroke}" stroke-width="1.4" fill="none" opacity="0.6"/>`;
+    }
+    return out;
+  }
+  let out = `<ellipse cx="${rr(cx)}" cy="${rr(cy)}" rx="${rr(rx)}" ry="${rr(ry)}" fill="${PAL.woda}" stroke="${PAL.wodaStroke}" stroke-width="${obrys}"/>`;
   out += `<ellipse cx="${rr(cx)}" cy="${rr(cy)}" rx="${rr(rx * 0.82)}" ry="${rr(ry * 0.82)}" fill="none" stroke="${PAL.wodaStroke}" stroke-width="1" opacity="0.35"/>`;
   if (fale) {
     out += `<path d="M ${rr(cx - rx * 0.4)} ${rr(cy + ry * 0.15)} q ${rr(rx * 0.15)} ${rr(-ry * 0.18)} ${rr(rx * 0.3)} 0" stroke="${PAL.wodaStroke}" stroke-width="1.4" fill="none" opacity="0.6"/>`;
@@ -390,14 +379,16 @@ export function droga(id, punkty, { typ = 'szlak' } = {}) {
 
 /**
  * Miasto (osada) w duchu mapome — nie „sześciany na łuku", lecz zwarta
- * gromadka małych domków z dwuspadowym dachem (czarnym), tworząca
- * czytelną osadę na tle mapy. Kilka budynków w nieregularnym szyku.
+ * gromadka małych domków z dwuspadowym dachem, tworząca czytelną osadę
+ * na tle mapy. Kilka budynków w nieregularnym szyku.
+ * Kolor = `PAL.skalaCien` (SZARY, jak ruiny) — decyzja właściciela
+ * 2026-09-02 pkt c: czarne miasto „zlewa się" z czarnymi górami.
  */
 export function miasto(x, y, { skala = 1 } = {}) {
   const s = skala;
   const dom = (hx, hy, sw, wh) =>
     `<path d="M ${rr(hx - sw)} ${rr(hy + wh * 0.4)} L ${rr(hx - sw)} ${rr(hy - wh * 0.6)} ` +
-    `L ${rr(hx)} ${rr(hy - wh)} L ${rr(hx + sw)} ${rr(hy - wh * 0.6)} L ${rr(hx + sw)} ${rr(hy + wh * 0.4)} Z" fill="${PAL.tekst}"/>`;
+    `L ${rr(hx)} ${rr(hy - wh)} L ${rr(hx + sw)} ${rr(hy - wh * 0.6)} L ${rr(hx + sw)} ${rr(hy + wh * 0.4)} Z" fill="${PAL.skalaCien}"/>`;
   const ukl = [
     [-6, 1, 3, 4], [1, -1, 3.2, 4.4], [6, 2, 2.6, 3.6],
     [-2, -6, 3.4, 4.6], [5, -6, 2.4, 3.2], [3, 5, 2.6, 3.6], [-5, 6, 2.8, 3.8],

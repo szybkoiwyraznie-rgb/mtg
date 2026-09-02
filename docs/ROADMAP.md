@@ -49,7 +49,7 @@ Batche materializacji (10–20 kart/sesję wg dostaw), nowi agenci-wyzwania:
 drugi plan i mapa (proces mapowy od nowa), taxonomia tagów w praktyce,
 wyszukiwarka fuzzy (backlog).
 
-## K7 — Warsztat mapowy T4: wspólny silnik rysowania map — **w toku (kierunek; glify przebudowane)**
+## K7 — Warsztat mapowy T4: wspólny silnik rysowania map — **w toku (kierunek; ADR 0020: glify adoptowane)**
 
 Kierunek z doprecyzowania Pętli Jakości (ADR 0015, właściciel 2026-09-01):
 reużywalne metody rysowania obiektów (pasma/grzbiety górskie, rzeki
@@ -64,10 +64,62 @@ i docelowo ją wyprzedzają; benchmark = porównanie z mapą Śródziemia
 **PR-5 (2026-09-01) — glify „hand-drawn":** las = kępa-chmurka (łuki,
 cień, haczura), gęsta i nakładająca się; góra = „żagiel" (wklęsło-wypukła,
 cień, haczura, `lean`); `pasmo()` ciasno z jitterem. Zendikar T4
-przerenderowany; `map-audit.py` 0. Zostaje: **ubogacanie map wyłącznie
-T3/T4** (map T2/adoptowanych nie ruszamy), dalsza kompletność POI
-i warsztat (E5 klocki: cytadela/fort, latarnia, wrak, wodospad,
-obwódki haseł).
+przerenderowany; `map-audit.py` 0.
+
+**PR-9 (2026-09-01) — ADR 0020: adopcja wektorowych obiektów** (zlecenie
+właściciela: „nie odkrywać koła"): research GitHub (mapome CC-BY-4.0,
+Azgaar MIT i in.) → góry rysują **glify adoptowane z mapome**
+(`tools/mapforge/glify-mapaome.mjs`, 30 sylwetek + 3 mega-klastery,
+ekstrakcja z podkładu Śródziemia w repo — to JEST benchmark ADR 0015);
+`pasmo()` = rozsiew glifów (sinus grzbietu, flip, jitter, sort po dolnej
+krawędzi — technika Azgaar); **rzeki w kolorze akwenu, bez gradientu
+i opacity** (decyzja właściciela). Atrybucja CC-BY-4.0 w nagłówku SVG,
+`map.json` (`zrodlo_glify`), ADR 0020, README, SKILL. Zendikar T4
+przerenderowany, audyt 0, testy 87/87. Zostaje: **ubogacanie map
+wyłącznie T3/T4** (map T2/adoptowanych nie ruszamy), dalsza kompletność
+POI i warsztat (E5 klocki: cytadela/fort, latarnia, wrak, wodospad,
+obwódki haseł — kandydat na obiekty: symbole Azgaar, MIT, z atrybucją).
+
+**E-geo (2026-09-01) — audyt i przebudowa geografii CAŁEJ mapy Zendikaru**
+(zlecenie właściciela, pkt a/b/c uzupełniające PR-9; audyt:
+`docs/audits/AUDYT_2026-09-01-geografia-zendikaru.md`):
+- **Wykonane w tej sesji (P0/P1):**
+  - Tazeem — mapa dopasowana do treści planu i karty Coralhelm Guide:
+    Halimar = **morze śródlądowe** (akwen `jezioro.d`), Sea Gate na murze
+    nad kanałem-tamą, Coralhelm na płn. brzegu, Oran-Rief = pas lasu,
+    Enclave, Ula Temple, The Bulwark, Emeria nad taflą, rzeki do/wy Halimar.
+  - **Cieśnina** Akoum / Bala Ged–Guul Draz (lad-2 rozdzielony na
+    `lad-akoum` + `lad-bala-guul`); Bojuka = najdalszy wschód (Bojuka Bay
+    przeniesiona na wsch. wybrzeże).
+  - POI wg w2: Goma Fada (zach. cypl), Affa (centrum), Malakir/Nimana
+    (zamiana stron), Lulea, Surrakar, Zof Marsh, Kabira (wyspa Agadeem),
+    Prison of Omath (centrum Ondu), Makindi Trenches; nowe: wysepka
+    Valakut z wulkanem (Mt. Valakut usunięta z Akoum), Oko Ugina = pasmo,
+    Teeth of Akoum, Tangled Vales, Hanging Swamp + Hagra Cistern.
+  - **Drogi = trakty** między największymi miastami/POI (5 dróg zastąpione;
+    pkt b). **Etykiety przy obiektach, bez kresek** (silnik nie rysuje już
+    `zakotwicz`; 16 etykiet z liniami przysuniętych; pkt a).
+  - map.json: 26 kotwic zsynchronizowanych + 9 nowych + pinezka
+    Coralhelm Guide przeniesiona + duplikat Living Spire usunięty.
+- **Kolejka E-geo (P2 — następne podejścia, audyt §11):**
+  1. **E-geo-1** — Archipelag Jwar/Beyeen/Agadeem: przesunięcie z płd.-zach.
+     rogu **między Ondu a Akoum** (w2 §1) + pinezki/kotwice.
+  2. **E-geo-2** — Tazeem na płd.-zachód (w2 §5) vs obecny zachód-centrum:
+     ocena rotacji układu zachodniego (decyzja z właścicielem — zmiana
+     globalna).
+  3. **E-geo-3** — Detal Murasy: Glint Pass, Thunder Gap, Roaring Falls,
+     Tumbled Palace, Visimal, Pillar Plains (kotwice istnieją, brak etykiet).
+  4. **E-geo-4** — Detal Akoum: Tal Terig płn. od Spike Fields; Anowon
+     League; Ior Ruin przy Glasspool (etykieta).
+  5. **E-geo-5** — Bala Ged/Guul Draz: Pelakka Karst, Helix of Zof, nazwa
+     zachodniego gulfu (bez nazwy po przeniesieniu Bojuka Bay).
+  6. **E-geo-6** — Ondu: Nomads of Silundi Sea (płn. wybrzeże), Tikal
+     Harbor (w2 §5).
+  7. **E-geo-7** — Tazeem: Sunspring (płn. cypel), Calcite Flats (płd.
+     cypel) — w2 §5.
+  8. **E-geo-8** — Zweryfikować w kanonie: *Prison of Omath* (spelling w2)
+     vs *Prison of Omnath* (BFZ) — ustalić nazwę.
+  9. **E-geo-9** — Hada w centrum Tazeem (w2) vs obecne płd.-zach.
 
 **SKALOWANIE MAP (2026-09-01, pomiar buildu):** artefakt jednoplikowy
 (ADR 0001/0009) ma **4,45 MB, z czego 96,7% to base64 dwóch map**
