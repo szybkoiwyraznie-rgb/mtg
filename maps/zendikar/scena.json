@@ -1229,6 +1229,17 @@
    }
   },
   {
+   "tekst": "Ior Ruin",
+   "x": 1832.0,
+   "y": 612.0,
+   "opcje": {
+    "fs": 15.0,
+    "kotwica": "middle",
+    "ital": true,
+    "przyDo": [1810, 595]
+   }
+  },
+  {
    "tekst": "Guum Wilds",
    "x": 1560,
    "y": 890,
@@ -1363,7 +1374,7 @@
    }
   },
   {
-   "tekst": "Prison of Omath",
+   "tekst": "Prison of Omnath",
    "x": 645,
    "y": 1150,
    "opcje": {

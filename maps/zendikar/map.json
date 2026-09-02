@@ -394,7 +394,7 @@
    "y": 0.425,
    "typ": "ruina",
    "pozycja_zrodlo": "mapa-fanowska",
-   "notka": "ruiny w Glasspool (opis)"
+   "notka": "ruiny w Glasspool (opis; etykieta na podkładzie od 2026-09-02 — kanon: karta Ior Ruin Expedition (ZEN 49, art Akoum), Glasspool wg Planeswalker’s Guide to Zendikar: Akoum)"
   },
   {
    "nazwa": "Spike Fields",
@@ -643,12 +643,12 @@
    "notka": "bagna w centrum Guul Draz, nad Hagra Swamp (w2)"
   },
   {
-   "nazwa": "Prison of Omath",
+   "nazwa": "Prison of Omnath",
    "x": 0.2775,
    "y": 0.8071,
    "typ": "ruina",
    "pozycja_zrodlo": "mapa-fanowska",
-   "notka": "więzienie w centrum kotliny Ondu (w2; spelling — patrz E-geo-8)"
+   "notka": "więzienie Omnatha na wysokiej mesie (pozycja wg w2; nazwa kanoniczna „Prison of Omnath\" wg MTG Wiki „Ondu\"/„Omnath\" — E-geo-8 rozstrzygnięte 2026-09-02, zrodla: https://mtg.fandom.com/wiki/Ondu , https://mtg.fandom.com/wiki/Omnath)"
   }
  ],
  "regiony": [],
