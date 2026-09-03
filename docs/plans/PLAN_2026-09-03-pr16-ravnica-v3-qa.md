@@ -54,8 +54,15 @@ bez sceny mapforge/T4. Ravnica pozostaje nie-bramkowana w CI przez
 
 ## Kolejność (inkrementalne commity, każdy = zielone `npm test` + `npm run build`)
 
-- **S1** Odzysk + PR na starcie. Wgryzienie odzyskanego `podklad.svg`
-  + `map-audit.py` jako rescuer baseline (osobny commit „rescue”).
+- **S1 ✅** (commit `26797ce`) Odzysk + PR-16 na starcie: rescue `podklad.svg`
+  + `map-audit.py` (poprawka rotacji pasa Undercity). PR: #16.
+- **S3 ✅** (ten commit) Rekonsyliacja etykiet z main: przywrócenie
+  TIN STREET (1877,1917) i PLAZA AVENUE (3802,3272) do pozycji
+  rozstrzygnietych w main (usuwa 4 kolizje wprowadzone przez dryf w patch-6:
+  GORE/HOUSE/PRECINCT SIX × TIN, ORZHOVA/TENTH DISTRICT × PLAZA) oraz
+  przywrocenie zgubionego napisu FOUNDRY STREET. Audyt poprawiony:
+  7 -> 3 pozostałe kolizje (SKARRG×promenada i BLISTERCOILS×TIN obecne
+  takze w scalonym main; DEADBRIDGE×BENZER wg rozstawu agenta z wizja).
 - **S2** Analiza strukturalna podkładu: etykiety vs kotwice, markery vs POI,
   kolizje; render referencyjny do porównania (resvg → PNG).
 - **S3** Naprawa dryfu etykiet dróg: przywrócenie pozycji TIN STREET (1877,1917),
