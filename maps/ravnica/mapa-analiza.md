@@ -140,3 +140,63 @@ Wynik: `otwarte_na_kolejne_przejscia` (map.json) odświeżone w tym
 rozdziale — trzy pozycje „do dopytania" zamienione na notatki
 zweryfikowane z cytowaniem; lista geometrycznie otwartych nie
 skurczyła się (żadna z trzech nie daje współrzędnych do v2).
+
+---
+
+## v3 — finalizacja wektoryzacji T2+ (2026-09-03, PR-15)
+
+**Decyzja właściciela (nadrzędna wobec wcześniejszego planu T4):** v3 = **T2+
+podkład adoptowany** — czysty, ręcznie wektoryzowany SVG (sylwetka, granice,
+arterie, teren, znaczniki, tekst) + `map.json` v3 z przeliczonymi kotwicami
+i pinezką, w stylu mapy Śródziemia (T2). Ścieżka **T4/mapforge-render jest
+odrzucona**; `scena.json` z odzyskanego WIP została usunięta (scena T4
+niespójna z ADR 0023 — 29 uwag — i rzędu 36 MB po renderze).
+
+### Co dostarczyła wektoryzacja (recovered agent, `/home/user/workbench`)
+
+Geometria 1:1 ze źródła (3 warstwy a/b/c, 6849×5292, ADR 0031): sylwetka
+miasta (164 pkt), wyspa Millennial Platform (21 pkt), pas Undercity
+(215 pkt), ~24 poligony terenu (pierścienie Zonot, heksagony Great
+Concourse, strefa szczeliny, ciemny rdzeń Canopy), 4 osie dróg, 7 łańcuchów
+granic precyktów, most Benzer'a (52 pkt), 52 etykiety POI + 6 etykiet
+PRECINCT, markery (20 kolorowych + 6 ciemnych), pinezka 137gpt (bruk przy
+Tin Street, zachodni skraj P4).
+
+### Poprawki finalizacyjne (ta sesja)
+
+1. **Paleta lądu:** sylwetka miasta i wyspa `#f2f2f2` → `#f7f7f7`
+   (whitelista lądu `map-audit` = atlasowy jasny szary papier). To usunęło
+   66 z 72 problemów audytu (wcześniej audytor widział tylko baner
+   `#f7f7f7` jako „ląd" i wszystkie etykiety miasta raportował „w wodzie").
+2. **Kolizje etykiet (6 → 0):**
+   - `UNDERCITY` x 1250→1115 (odsuwa się od MEDORI PARK)
+   - `SKARRG` y 994→940 (odsuwa się od TRANS-GUILD PROMENADE)
+   - `THE BLISTERCOILS` y 1942→1976 (odsuwa się od TIN STREET)
+   - `ORZHOVA` x 3400→3350→3260, y 2950→2940 (czyści TENTH DISTRICT
+     i VIZKOPA BANK)
+   - `BENZER'S BRIDGE` y 3965→3980 (odsuwa się od DEADBRIDGE CHASM)
+3. **`map.json`:** `wariant` T4→**T2**, `rekonstrukcja` true→**false**,
+   usunięte `scena` i opis sygnowany T4; `silnik` opisuje T2+ (bez T4).
+4. **Usunięty `scena.json`** (artefakt T4; backup w sandboxie).
+
+### Werdykty kontroli (ta sesja)
+
+- `python3 tools/map-audit.py ravnica` → **0 problemów** (4 notki
+  informacyjne: kotwice w wodzie Rix Maadi / Korozda & Svogthos /
+  Nightveil & Duskmantle / Mur północny — celowo obiekty wodne/poza sylwetką)
+  i **0 problemów** bez `scena.json`.
+- `npm test` = **102/102**; `npm run test:all` = **102/102**.
+- `npm run build` → zielone; `maps/ravnica.html` = **346 KB**
+  (budżet ADR 0007); bez sceny T4 (ryzyko wcześniej zgłaszane: ~36 MB).
+- Geometria potwierdzona wizualnie nakładką własnego rasteryzatora (PIL)
+  na `c.png` (6× downscale) — sylwetka, precynkty, arterie, teren, markery
+  i etykiety pokrywają się ze źródłem.
+
+### Uwagi końcowe
+
+- Źródło rastra pozostaje poza gitem (ADR 0031); `zrodlo-fanowska-wektoryzacja.md`
+  i `map.json` niosą pełną proweniencję.
+- Literówka źródła „THE BLISTERCOIS" → etykieta SVG „THE BLISTERCOILS",
+  kotwica kanoniczna „Blistercoils" (notka w map.json).
+- Etykieta źródła „STEFARI LIBRARY" → SVG wg źródła; kotwica kanoniczna v2
+  „Ismeri Library" + notka o wariancie pisowni.

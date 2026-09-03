@@ -41,14 +41,18 @@ z ADR-ami (0007/0013/0015/0018/0021/0022/0023/0026/0031), przeszła `map-audit`
   nie jest bramkowana przez `mapforge.test.js` (tylko Zendikar+demo) ani przez `map-audit`
   (nie jest w `ci.yml`). **To maskuje stan, nie oznacza poprawności.**
 
-## Wariant wynikowy: **T4 (scena mapforge → render)**
+## Wariant wynikowy: **T2+ (podkład adoptowany, czysty SVG)** — decyzja właściciela
 
-Uzasadnienie: pipeline projektu renderuje `podklad.svg` ze `scena.json` (mapforge,
-ADR 0018). Etykiety/POI tylko wtedy działają (nakładka + `data-ax/ay`, ADR 0022),
-gdy podkład pochodzi z renderu sceny. Odzyskany `podklad.svg` (38 KB) to ślad
-bezpośredniego trace'u rastra — **nie** jest dokumentem źródłowym geometrii i
-nie niesie POI/labelek. Dlatego finalizacja = naprawienie `scena.json` do pełnej,
-spójnej sceny T4 i **wyrenderowanie** podkładu silnikiem.
+Uzasadnienie: właściciel zdecydował (dalej: „chcę mapę jak najbliższą
+oryginałowi, czyli raczej T2 w stylu Śródziemia") — v3 = **T2+ podkład
+adoptowany**: czysty, ręcznie wektoryzowany SVG (sylwetka, granice,
+arterie, teren, znaczniki, tekst) + `map.json` v3 z przeliczonymi
+kotwicami i pinezką. **Ścieżka T4/mapforge-render jest odrzucona.**
+Odzyskany `podklad.svg` (38 KB) to w pełni wektorowy podkład ze
+wszystkimi POI/labelkami — dokładnie kształt T2+ (jak Śródziemie:
+`podklad.svg` + `map.json`, bez `scena.json`). `scena.json` z WIP
+została usunięta (scena T4 niespójna z ADR 0023 — 29 uwag — i rzędu
+36 MB po renderze).
 
 ## Kolejność (inkrementalne commity, każdy = zielone testy+build)
 
@@ -56,15 +60,14 @@ spójnej sceny T4 i **wyrenderowanie** podkładu silnikiem.
   stan WIP, udokumentowany) — żeby praca już nie wisiała tylko w sandboxie.
 - **S2** Analiza luk: porównanie POI/labelek z `c.png` vs `scena.json`; spis
   brakujących elementów (zadanie z pytania właściciela).
-- **S3** Naprawa `scena.json`: paleta atlasowa (`lad #f7f7f7`, woda `#d4e2ee`,
-  etykiety wg ADR 0021/0024/0025); przywrócenie etykiet do POI (`przyDo`, ADR 0022);
-  usunięcie POI bez etykiety (ADR 0023 — tylko jeśli brak nazwy kanonicznej);
-  poprawa kolizji etykiet; synchronizacja z `map.json` (kotwice, pinezka 137gpt
-  przeliczona, `pozycja_zrodlo`).
-- **S4** Regeneracja `podklad.svg` z `scena.json` (mapforge CLI); dopasowanie
-  rozmiaru/renderu (unikać 36 MB — ograniczyć rozsiew/kępki, jak przy Zendikarze).
-- **S5** QA: `map-audit.py ravnica` = 0 problemów; `sprawdzWiazania` = 0 uwag;
-  `npm test` + `npm run build` zielone; porównanie wizualne z `c.png` (zrzuty).
+- **S3** Finalizacja T2+ adoptowanego podkładu: normalizacja palety atlasowej
+  (ląd lądowy `#f7f7f7` — zgodny z whitelistą `map-audit`; baner/kompas bez
+  zmian); poprawa kolizji etykiet (6 kolizji rozdzielonych przesunięciem kotwic);
+  `map.json` v3 → `wariant: T2`, `rekonstrukcja: false`, bez `scena`; usunięcie
+  T4 `scena.json`.
+- **S4** (nie dotyczy — brak regenracji sceny; podkład T2+ wektorowy już gotowy).
+- **S5** QA: `map-audit.py ravnica` = 0 problemów; `npm test` + `npm run build`
+  zielone; porównanie wizualne z `c.png` (rasteryzacja własna, geometria).
 - **S6** Dokumentacja: `mapa-analiza.md` (rozdział v3, różnice vs źródło/c.png),
   `map.json` (proweniencja ADR 0031), `content/co-nowego.md`, ROADMAP,
   `PROJECT_HISTORY.md`, handoff sesji. Opis PR kumulatywny.
@@ -72,22 +75,24 @@ spójnej sceny T4 i **wyrenderowanie** podkładu silnikiem.
 ## Kryteria gotowości (definition of done)
 
 1. `python3 tools/map-audit.py ravnica` → **0 problemów**.
-2. `sprawdzWiazania(scena)` dla Ravnicy → **0 uwag**.
+2. (T2+ nie ma sceny) `sprawdzWiazania` dotyczy tylko scen T3/T4; dla T2+
+   analog = `map-audit` (pkt 1) — brak `scena.json` w katalogu.
 3. `npm test` (102/102) + `npm run build` zielone.
-4. `maps/ravnica/podklad.svg` wyrenderowany z `scena.json` (spójny pipeline).
-5. `map.json` v3: `wariant: T4`, `zrodlo` = źródło fanowskie + ADR 0031,
-   `wymiary` zgodne z kanwą, pinezka 137gpt przeliczona, kotwice wg nowej geometrii.
+4. `maps/ravnica/podklad.svg` = w pełni wektorowy podkład T2+ (czysty SVG,
+   bez rastra i bez sceny T4).
+5. `map.json` v3: `wariant: T2`, `rekonstrukcja: false`, `zrodlo` = źródło
+   fanowskie + ADR 0031, `wymiary` zgodne z kanwą, pinezka 137gpt przeliczona,
+   kotwice wg nowej geometrii.
 6. v3 **zastępuje** v2 (v2 nie może zostać "na_pastw" — AGENTS §6).
 7. Dokumentacja sesji kompletna; PR gotowy do Squash and merge przez właściciela.
 
-## Ryzyka
+## Ryzyka (zaktualizowane do T2+)
 
-- Odzyskany `scena.json` może być dużym odchyleniem od poprawnej struktury T4 —
-  S3 może wymagać istotnej przebudowy (normalizacja punktów do kanwy 6849×5292,
-  uporządkowanie `lądy`/`dzielnice`/`biomy`).
-- Render 36 MB oznacza, że scena nie jest przystosowana do rozmiaru — przy
-  regeneracji trzeba ograniczyć elementy dekoracyjne, by `maps/ravnica.html`
-  pozostał w budżecie (obecnie 346 KB; Zendikar 3,8 MB — budżet ADR 0007).
-- Właściciel zaznaczył, że decyzja T2+ vs T4 miała zapaść na porównaniu wizualnym;
-  wybieram T4 ze względu na spójność pipeline'u i brakujące POI w śladzie 38 KB.
-  Zostawiam w `mapa-analiza.md` notkę o rozważeniu alternatywy na oglądzie.
+- Podkład T2+ wektorowy jest gotowy i zwalidowany (`map-audit` = 0, geometria
+  potwierdzona nakładką na `c.png`). `podklad.svg` = 38 KB — daleko poniżej
+  budżetu ADR 0007 (`maps/ravnica.html` = 346 KB).
+- Rasteryzacja SVG do QA była ograniczona (brak rsvg/cairo w sandboxie) —
+  użyto własnego rasteryzatora PIL (bez `<text>`); finalne pismo weryfikowane
+  w przeglądarce (preview na żywo).
+- Wariant T2+ jest niezgodny z pierwotnym planem T4 — udokumentowane w
+  `mapa-analiza.md` (rozdział v3) i w PR (decyzja właściciela).

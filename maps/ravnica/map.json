@@ -1,7 +1,7 @@
 {
  "plan": "ravnica",
  "tytul": "Ravnica",
- "wariant": "T4",
+ "wariant": "T2",
  "podklad": "podklad.svg",
  "wymiary": {
   "szerokosc": 6849,
@@ -15,7 +15,7 @@
   "pobrano": "2026-09-03",
   "notka": "v3: geometria 1:1 z warstw źródłowych (sylwetka, wyspa, pas Undercity, teren, drogi, granice, POI, etykiety — marching squares + osie + komponenty; skrypty w workbenche, poza gitem). Raster źródłowy NIGDY w gicie (ADR 0031; udokumentowane odstępstwo dostawy na gałęzi roboczej, gałąź do usunięcia po v3 — zrodlo-fanowska-wektoryzacja.md). Kotwice kanoniczne bez odpowiednika w źródle (Horizon Academy itd.) zachowują pozycje v2 (normalizowane; topologia precyktów zgodna w obu ujęciach). Epoki mieszane: scena karty 137GPT żyje w 2006 (Guildpact), struktura precyktów GGR (2018) — jak v2."
  },
- "rekonstrukcja": true,
+ "rekonstrukcja": false,
  "kotwice": [
   {
    "nazwa": "Precinct One",
@@ -475,7 +475,6 @@
    "uzasadnienie": "Fabuła: „Na ravnickim bruku… w gildii Boros albo na pograniczu z nią” (dostawa właściciela 2026-09-02). v3: bruk przy Tin Street na zachodnim skraju P4 (oś drogi z warstwy a; ADR 0031); pewność region."
   }
  ],
- "scena": "scena.json",
  "otwarte_na_kolejne_przejscia": [
   "Parhelion II (epoka WotS) — świadomie pominięty (era pierwotnego bloku); ewentualny dodatek w warstwie epokowej",
   "Guildpact Square + Pillar of the Paruns — osadzone przy Chamber of the Guildpact (decyzja właściciela 2026-09-03); rozbieżność wiki (fandom: Forum of Azor w P2) udokumentowana w notce kotwicy",
@@ -483,7 +482,7 @@
   "Undercity: pas w v3 istnieje jako geometria (warstwa b); pełny przekrój (poziomy, kanały P6, wejścia) — ewentualna osobna warstwa/scena",
   "Gnat Alley — kanon: najdłuższa ulica planu (mtg.fandom Ravnica; DIS #63), ale źródło fanowskie jej nie pokazuje — bez geometrii do kolejnego źródła"
  ],
- "silnik": "v3: podkład z wektoryzacji rastrowego źródła fanowskiego (skrypty pracy w workbenche, poza gitem — ADR 0031): marching squares (kontury), osie dróg (para najdalszych punktów + resampling), komponenty terenowe (maski luminancji b), etykiety (maska c−a + odczyt wizualny), markery (maska kolorów c); scena.json = synchronizacja schematu",
+ "silnik": "v3: podkład z wektoryzacji rastrowego źródła fanowskiego (skrypty pracy w workbenche, poza gitem — ADR 0031): marching squares (kontury), osie dróg (para najdalszych punktów + resampling), komponenty terenowe (maski luminancji b), etykiety (maska c−a + odczyt wizualny), markery (maska kolorów c). Wariant T2+ (podkład adoptowany, czysty SVG) — bez sceny mapforge/T4 (ADR 0031: kierunek jak Śródziemie); scena.json z odzyskanego WIP usunięta (niespójna z ADR 0023 i rzędu 36 MB)",
  "kalibracja": {
   "wersja": "v3",
   "data": "2026-09-03",
