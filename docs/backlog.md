@@ -33,6 +33,22 @@ mówiące o encji **w treści** (nie samym tagiem):
 | Roil | koncepcja | 2bfz-coralhelm-guide, plan zendikar | licznik od kart, nie planów |
 | Eldrazi | koncepcja | 2bfz-coralhelm-guide, plan zendikar | licznik od kart, nie planów |
 
+## Kolejka link-miningu: encje czekające na drugą kartę (Ravnica)
+
+Sesja PR-14 (2026-09-03) — link-mining po dostawie 137GPT: encje
+Rawnicy są już wspólnym mianownikiem karty, planu i mapy, ale licznik
+progowy idzie od KART (zasada właściciela 2026-08-31) — hasła ruszą
+przy drugiej karcie planu.
+
+| Encja | Klasa (docelowa) | Karty wspominające | Do hasła brakuje |
+|---|---|---|---|
+| Boros | spolecznosc | 137gpt-withstand | 1 karta |
+| Legion Boros | spolecznosc | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
+| Dziesiąty Dystrykt | geografia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
+| Sunhome | geografia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
+| Tin Street | geografia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
+| Pakt Gildii | magia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
+
 ## Mapa Zendikaru — WYKONANA (ADR 0012)
 
 Zrobione 2026-08-31 (feedback G właściciela): **rekonstrukcja własna

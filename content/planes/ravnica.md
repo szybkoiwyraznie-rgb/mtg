@@ -134,7 +134,7 @@ w erze Paktu nocami z Medori Park chodzą procesje nieumarłych.
 - Topos: **ekumenopolis** — miasto jako cały świat, dzielnice jako
   prowincje; „poza miastem" to tylko bardziej uszkodzone miasto.
 - Porządek: **dziesięć gildii** spina funkcje cywilizacji; każda ma
-  swój teren, biurokrację, magię i własne granatowe sajgonki.
+  swój teren, biurokrację, magię i własny język ulicy.
 - Meta: **Pakt Gildii** (magiczny kontrakt prawny) — blokuje wojnę
   otwartą, kierując konflikt w intrygę, podatek i pojedynek prawny.
 - Era Kolekcji: pierwotny blok Ravnica (Ravnica: City of Guilds,
@@ -143,6 +143,8 @@ w erze Paktu nocami z Medori Park chodzą procesje nieumarłych.
 - Ton: utopia procedury nad przepaścią — pokój jest możliwy, ale kruchy;
   wojna toczy się kontraktami, strażą i linią murów, nie jednym polem
   bitwy.
+- **Karty kolekcji:** [[137gpt-withstand|Withstand]] (GPT) — linia
+  tarcz Legionu Boros na bruku Dziesiątego Dystryktu.
 
 ## Źródła
 
