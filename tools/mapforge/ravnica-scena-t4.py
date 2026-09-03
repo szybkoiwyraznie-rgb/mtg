@@ -197,29 +197,13 @@ POZ_Mizzium = (700, 505)
 POZ_Forum = (1112, 738)
 POZ_Bridge = (692, 868)
 
-# ── Lokacje kanoniczne DODANE POZA złotym źródłem (PR-17 C, 2026-09-03) ──
-# Źródło: mtg.wiki (Tenth District), mtg.fandom (Ravnica) — NIE z
-# transkrypcji a/b/c (ADR 0031); dodawane świadomą decyzją właściciela
-# („Akceptuje A+B+C”). Układ relatywny (wiki), nie punktowy z rastra.
-#   • Pillar of the Paruns — obelisk 9 pieczęci gildii (bez Dimir), P1
-#   • Guildpact Square — plac podpisania Paktu Gildii, P1
-#   • Guildmages' Forum — płyta z 10 symbolami gildii, P1
-#   • Beacon Tower — Interplanar Beacon (wieża Azorius), P2
-#   • Gnat Alley — najdłuższa ulica Miasta, trasa Gruul (etykieta łuku)
-POZ_Pillar = (755, 815)
-POZ_GpSquare = (855, 868)
-POZ_GmForum = (925, 815)
-POZ_Beacon = (1201, 712)      # t(6.3,-2.6)
-
 w_obrebie(P4, [POZ_Sunhome, POZ_Nivix, POZ_Horizon, POZ_Sawtooth,
                POZ_TinMarket, POZ_Mizzium, POZ_Bulwark])
 w_obrebie(P3, [POZ_Vitu, POZ_Canopy, POZ_Concourse, POZ_Concordance,
                POZ_Beast, POZ_Whitestone, POZ_PlazaE])
-w_obrebie(P2, [POZ_Prahv, POZ_StatuaKos, POZ_Augustin, POZ_Forum,
-               POZ_Beacon])
+w_obrebie(P2, [POZ_Prahv, POZ_StatuaKos, POZ_Augustin, POZ_Forum])
 w_obrebie(P1, [POZ_Plaza, POZ_Orzhova, POZ_Vizkopa, POZ_Chamber,
-               POZ_PlazaW, POZ_PlazaS, POZ_Pillar, POZ_GpSquare,
-               POZ_GmForum])
+               POZ_PlazaW, POZ_PlazaS])
 w_obrebie(P5, [POZ_Blister, POZ_Ismeri, POZ_Prism, POZ_Hightower])
 w_obrebie(P6, [POZ_Smelting, POZ_Gore, POZ_Kamen, POZ_Medori,
                POZ_Bridge, POZ_Wayport])
@@ -237,14 +221,6 @@ zx, zy, zrx, zry = round(t(-6.5, -0.2)[0]), round(t(-6.5, -0.2)[1]), 46, 56
 for p in [(zx - zrx, zy), (zx + zrx, zy), (zx, zy - zry), (zx, zy + zry)]:
     assert pit(p[0], p[1], P5), f'zonot wystaje poza P5: {p}'
 sprawdzenia.append((zx, zy))
-
-# Zameck — ratusz Simic na Zonot Seven (kanon GGR: Zameck = siedziba
-# Konklawe na Zonot Seven); odznaka gildii w wodzie studni (obiekt
-# wodny), w POŁUDNIOWO-ZACHODNIEJ części studni: wschód zajmuje wlot
-# Tin Street (392,600), środek — napis „Zonot Seven".
-POZ_Zameck = (356, 588)
-assert pit(POZ_Zameck[0], POZ_Zameck[1], P5), 'Zameck poza P5'
-sprawdzenia.append(POZ_Zameck)
 
 # Skarrg i Millennial Platform — w pasie rubblebeltu poza murami (kanon)
 for p in (POZ_Skarrg, POZ_Millennial):
@@ -357,17 +333,15 @@ scena = {
     ],
     'poi': [
         # ── Precinct Four (Boros/Izzet) ──
-        # Herby gildii (PR-17 B): barwne odznaki z białym glifem na
-        # siedzibach dziesięciu gildii (kanon GGR/wikipedia).
-        poi('fort', POZ_Sunhome, 1.35, gildia='boros'),
+        poi('fort', POZ_Sunhome, 1.35),
         poi('fort', POZ_Horizon, 0.8),
         poi('miasto', POZ_Bulwark, 1.0),
         poi('fort', POZ_Sawtooth, 0.7),
         poi('miasto', POZ_TinMarket, 1.15),
-        poi('iglica', POZ_Nivix, 1.5, gildia='izzet'),
+        poi('iglica', POZ_Nivix, 1.5),
         poi('miasto', POZ_Mizzium, 0.7),
         # ── Precinct Three (Selesnya) ──
-        poi('drzewo', POZ_Vitu, 4.2, gildia='selesnya'),
+        poi('drzewo', POZ_Vitu, 4.2),
         poi('miasto', POZ_Canopy, 0.7),
         poi('miasto', POZ_Beast, 0.8),
         poi('plac', POZ_Concourse, 0.9),
@@ -375,25 +349,19 @@ scena = {
         poi('miasto', POZ_Whitestone, 0.6),
         poi('plac', POZ_PlazaE, 0.8),
         # ── Precinct Two (Azorius) ──
-        poi('kolumny', POZ_Prahv, 1.35, gildia='azorius'),
+        poi('kolumny', POZ_Prahv, 1.35),
         poi('kolumny', POZ_StatuaKos, 0.55),
         poi('miasto', POZ_Augustin, 0.75),
         poi('plac', POZ_Forum, 0.9),
-        poi('iglica', POZ_Beacon, 0.95),         # Beacon Tower (Interplanar Beacon)
         # ── Precinct One (centrum) ──
         poi('plac', POZ_Plaza, 1.5),
-        poi('iglica', POZ_Orzhova, 1.2, gildia='orzhov'),
+        poi('iglica', POZ_Orzhova, 1.2),
         poi('miasto', POZ_Vizkopa, 0.7),
         poi('kopula', POZ_Chamber, 1.2),
         poi('plac', POZ_PlazaW, 0.8),
         poi('plac', POZ_PlazaS, 0.85),
-        # kanon poza transkrypcją (PR-17 C, źródło wiki/fandom)
-        poi('iglica', POZ_Pillar, 0.7),          # Pillar of the Paruns
-        poi('plac', POZ_GpSquare, 0.75),         # Guildpact Square
-        poi('plac', POZ_GmForum, 0.75),          # Guildmages' Forum
         # ── Precinct Five (Simic/nauka) ──
-        poi('kolowrot', POZ_Blister, 0.95, gildia='izzet'),
-        poi('herb', POZ_Zameck, 1.0, gildia='simic'),
+        poi('kolowrot', POZ_Blister, 0.95),
         poi('miasto', POZ_Ismeri, 0.8),
         poi('miasto', POZ_Prism, 0.9),
         poi('miasto', POZ_Hightower, 0.7),
@@ -405,12 +373,12 @@ scena = {
         poi('most', POZ_Bridge, 0.9, kat=-75),
         poi('iglica', POZ_Wayport, 0.55),
         # ── północne pustkowie (poza murami) ──
-        poi('ognisko', POZ_Skarrg, 0.9, gildia='gruul'),
+        poi('ognisko', POZ_Skarrg, 0.9),
         poi('platforma', POZ_Millennial, 1.1),
         # ── podziemia (przekrój przy południowej poświacie) ──
-        poi('ruina', POZ_Rix, 0.9, gildia='rakdos'),
-        poi('ruina', POZ_Svogthos, 0.9, gildia='golgari'),
-        poi('ruina', POZ_Duskmantle, 0.9, gildia='dimir'),
+        poi('ruina', POZ_Rix, 0.9),
+        poi('ruina', POZ_Svogthos, 0.9),
+        poi('ruina', POZ_Duskmantle, 0.9),
     ],
     'etykiety': [
         # nazwy precyktów (obszarowe)
@@ -447,7 +415,6 @@ scena = {
         et('Augustin Station', POZ_Augustin, 12, przy_poz=POZ_Augustin),
         et('Forum of Azor', POZ_Forum, 12.5, przy_poz=POZ_Forum),
         et('Griffin Heights', (1208, 815), 12.5, ital=True),
-        et('Beacon Tower', POZ_Beacon, 12, przy_poz=POZ_Beacon, ital=True),
         # P1
         et('Tenth District Plaza', POZ_Plaza, 13.5, przy_poz=POZ_Plaza),
         et('Orzhova', POZ_Orzhova, 13, przy_poz=POZ_Orzhova, ital=True),
@@ -455,13 +422,9 @@ scena = {
         et('Chamber of the Guildpact', POZ_Chamber, 13.5, przy_poz=POZ_Chamber),
         et('Plaza West', POZ_PlazaW, 11.5, przy_poz=POZ_PlazaW, ital=True),
         et('Plaza South', POZ_PlazaS, 11.5, przy_poz=POZ_PlazaS, ital=True),
-        # kanon poza transkrypcją (PR-17 C)
-        et('Pillar of the Paruns', POZ_Pillar, 11.5, przy_poz=POZ_Pillar, ital=True),
-        et('Guildpact Square', POZ_GpSquare, 11.5, przy_poz=POZ_GpSquare, ital=True),
-        et("Guildmages' Forum", POZ_GmForum, 11.5, przy_poz=POZ_GmForum, ital=True),
         # P5
         et('Zonot Seven', (382, 545), 14, ital=True),
-        et('Zameck', POZ_Zameck, 11, przy_poz=POZ_Zameck, ital=True),
+        et('Zameck', (382, 567), 11, ital=True),
         et('Blistercoils', POZ_Blister, 12, przy_poz=POZ_Blister),
         et('Ismeri Library', POZ_Ismeri, 12.5, przy_poz=POZ_Ismeri),
         et('Prism University', POZ_Prism, 12.5, przy_poz=POZ_Prism),
@@ -497,12 +460,6 @@ scena = {
         {'id': 'luk-plaza-avenue',
          'punkty': [[855, 665], [885, 720], [918, 775]],
          'tekst': 'Plaza Avenue', 'opcje': {'fs': 11.5, 'ital': True}},
-        # Gnat Alley — najdłuższa ulica Miasta (trasa Gruul), PR-17 C;
-        # wiki nie podaje współrzędnych → bieg przybliżony przez rubieże
-        # P6 ku Deadbridge (źródło: mtg.wiki Tenth District / battle-mapy).
-        {'id': 'luk-gnat-alley',
-         'punkty': [[210, 905], [300, 935], [420, 945], [530, 930]],
-         'tekst': 'Gnat Alley', 'opcje': {'fs': 11, 'ital': True}},
     ],
     'kompas': {'x': 1490, 'y': 126, 'r': 30},
     'skala': False,
