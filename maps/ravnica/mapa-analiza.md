@@ -200,3 +200,45 @@ Tin Street, zachodni skraj P4).
   kotwica kanoniczna „Blistercoils" (notka w map.json).
 - Etykieta źródła „STEFARI LIBRARY" → SVG wg źródła; kotwica kanoniczna v2
   „Ismeri Library" + notka o wariancie pisowni.
+
+## v4 — QA jakości z oglądem obrazów (2026-09-03, PR-17)
+
+Sesja jako pierwsza dysponuje **wizją (vision)** — poprzednie agenty
+pracowały bez oglądu obrazów, tylko programistycznie. Złoty standard to
+trzy warstwy źródłowe `a/b/c.png` (6849×5292, dostawa właściciela; raster
+poza gitem, ADR 0031). Usterki właściciela (1)–(7) zamknięte z bezpośrednim
+porównaniem wzrokowym:
+
+1. **Granice dzielnic (usterka 1):** w warstwie `a` ciągła sieć
+   przerywanych linii dzieli całość na 6 Precinctów; w podkładzie były
+   tylko fragmenty. Odtworzona pełna, połączona sieć (7 odcinków) z
+   oglądu `a.png` z siatką współrzędnych; styl `#4a4a4a`, dasharray
+   58/46, spójny ze stylem mapy.
+2. **Markery i etykiety wg `c.png` (usterki 2–4, 6):** warstwy markerów
+   i etykiet przebudowane względem złotego standardu — etykiety POI
+   **czarne** (białe tylko na ciemnym pasie Undercity), zawsze **pod**
+   markerem ze szczeliną (duże gildie ~90–110 px), nazwy geograficzne
+   (ulice, place, Bulwark, Wayport, Benzer's Bridge…) **bez kółek**,
+   przylepione do miejsca; ~15 fałszywych markerów usuniętych, brakujące
+   dodane (podwójne Blistercoils, czarny Medori), rekolor Skarrg (Gruul:
+   zielony dysk + czerwony pierścień) i Nivix (Izzet: granat + czerwień).
+3. **Centrum:** mały marker VIZKOPA BANK opuszczony z tekstu ORZHOVA
+   (porządek pionowy dysk → ORZHOVA → Vizkopa → Plaza West, jak w źródle).
+4. **Konektor Millennial Platform (usterka 5):** długa jasnoszara
+   przerywana linia od spodu lewitującej platformy w dół przez cień do
+   węzła granic (zastępuje krótki, urwany odcinek przy drodze).
+5. **Granice vs etykiety:** P6/P1 przesunięta na wschód (biegnie na
+   wschód od KAMEN FORTRESS, nie przez nią — Kamen zostaje w Precinct
+   Six); SMELTING QUARTER opuszczona pod górną granicę; usunięta martwa
+   bezstylowa ścieżka drogi.
+6. **Narzędzie audytu:** model kolizji etykiet zmieniony z AABB na
+   **OBB/SAT** (Separating Axis Theorem) — przestaje fałszywie zgłaszać
+   długie ukośne etykiety dróg; Ravnica 0, Śródziemie 0, Zendikar
+   4→2 (reszta pre-existing, poza zakresem).
+
+**Werdykty:** `map-audit ravnica` = **0 problemów**; `npm test` 102/102;
+build zielony (`maps/ravnica.html` ~348 KB). Pełna kontrola wzrokowa
+kadrami 1:1 (north/center/p6/south/west) + nakładki granic/markerów na
+warstwy źródłowe. Różnica od źródła: markery to nasza prosta konstrukcja
+koncentrycznych kół (bez białych emblematów gildii) — świadomy wybór
+stylu, nie zgłoszony przez właściciela.

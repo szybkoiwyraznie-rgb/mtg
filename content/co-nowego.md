@@ -1,3 +1,26 @@
+## 2026-09-03 19:45 — Mapa Ravnicy v4: domknięcie do złotego standardu (pierwsza sesja z wizją)
+
+Mapa Dziesiątego Dystryktu (`maps/ravnica/podklad.svg`, T2+) domknięta
+wzrokowo do prywatnej fan-made mapy źródłowej właściciela (warstwy
+a/b/c, ADR 0031) — **pierwsza sesja z oglądem obrazów (vision)**, więc
+poprawki szły z bezpośrednim porównaniem render↔źródło, nie tylko
+programistycznie:
+
+- **Granice dzielnic wróciły:** ciągła sieć przerywanych linii dzieli
+  całość na 6 Precinctów (wcześniej tylko fragmenty) — usterka (1).
+- **Etykiety POI czarne i pod markerami**, nazwy ulic/placów bez kółek
+  (są geograficzne, nie punktami), markerów tylko tam, gdzie w źródle
+  kolorowe okręgi — usterki (2)–(4), (6); ~15 fałszywych markerów
+  usuniętych, brakujące dodane, kolory gildii poprawione.
+- **Millennial Platform:** długa, jasnoszara przerywana linia-kotwica
+  od lewitującej skały do lądu (wcześniej urwana) — usterka (5).
+- **Centrum:** marker Vizkopy zdjąty z tekstu ORZHOVA; granica P6/P1
+  nie tnie już KAMEN FORTRESS; SMELTING QUARTER pod granicą.
+- **Narzędzie `map-audit`:** test kolizji etykiet AABB → **OBB/SAT**
+  (mniej fałszywych alarmów dla ukośnych etykiet dróg).
+
+`map-audit ravnica` = 0 problemów; testy 102/102; build zielony.
+
 ## 2026-09-03 11:29 — Ravnica: pogłębiona, zweryfikowana i gotowa na wektoryzację v3
 
 Sesja jakościowa nad Rawnicą (PR-14). Po audycie scalonego PR-13
