@@ -1065,6 +1065,14 @@
    }
   },
   {
+   "typ": "iglica",
+   "x": 940,
+   "y": 588,
+   "opcje": {
+    "skala": 0.8
+   }
+  },
+  {
    "typ": "miasto",
    "x": 660,
    "y": 505,
@@ -2023,6 +2031,17 @@
     "fs": 24.0,
     "kotwica": "middle",
     "przyDo": [900, 660]
+   }
+  },
+  {
+   "tekst": "The Lighthouse",
+   "x": 940,
+   "y": 560,
+   "opcje": {
+    "fs": 14.0,
+    "kotwica": "middle",
+    "ital": true,
+    "przyDo": [940, 588]
    }
   },
   {

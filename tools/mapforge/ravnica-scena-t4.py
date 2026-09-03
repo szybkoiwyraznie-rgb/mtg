@@ -197,13 +197,29 @@ POZ_Mizzium = (700, 505)
 POZ_Forum = (1112, 738)
 POZ_Bridge = (692, 868)
 
+# ── Lokacje kanoniczne DODANE POZA złotym źródłem (PR-17 C, 2026-09-03) ──
+# Źródło: mtg.wiki (Tenth District), mtg.fandom (Ravnica) — NIE z
+# transkrypcji a/b/c (ADR 0031); dodawane świadomą decyzją właściciela
+# („Akceptuje A+B+C”). Układ relatywny (wiki), nie punktowy z rastra.
+#   • Pillar of the Paruns — obelisk 9 pieczęci gildii (bez Dimir), P1
+#   • Guildpact Square — plac podpisania Paktu Gildii, P1
+#   • Guildmages' Forum — płyta z 10 symbolami gildii, P1
+#   • Beacon Tower — Interplanar Beacon (wieża Azorius), P2
+#   • Gnat Alley — najdłuższa ulica Miasta, trasa Gruul (etykieta łuku)
+POZ_Pillar = (755, 815)
+POZ_GpSquare = (855, 868)
+POZ_GmForum = (925, 815)
+POZ_Beacon = (1201, 712)      # t(6.3,-2.6)
+
 w_obrebie(P4, [POZ_Sunhome, POZ_Nivix, POZ_Horizon, POZ_Sawtooth,
                POZ_TinMarket, POZ_Mizzium, POZ_Bulwark])
 w_obrebie(P3, [POZ_Vitu, POZ_Canopy, POZ_Concourse, POZ_Concordance,
                POZ_Beast, POZ_Whitestone, POZ_PlazaE])
-w_obrebie(P2, [POZ_Prahv, POZ_StatuaKos, POZ_Augustin, POZ_Forum])
+w_obrebie(P2, [POZ_Prahv, POZ_StatuaKos, POZ_Augustin, POZ_Forum,
+               POZ_Beacon])
 w_obrebie(P1, [POZ_Plaza, POZ_Orzhova, POZ_Vizkopa, POZ_Chamber,
-               POZ_PlazaW, POZ_PlazaS])
+               POZ_PlazaW, POZ_PlazaS, POZ_Pillar, POZ_GpSquare,
+               POZ_GmForum])
 w_obrebie(P5, [POZ_Blister, POZ_Ismeri, POZ_Prism, POZ_Hightower])
 w_obrebie(P6, [POZ_Smelting, POZ_Gore, POZ_Kamen, POZ_Medori,
                POZ_Bridge, POZ_Wayport])
@@ -363,6 +379,7 @@ scena = {
         poi('kolumny', POZ_StatuaKos, 0.55),
         poi('miasto', POZ_Augustin, 0.75),
         poi('plac', POZ_Forum, 0.9),
+        poi('iglica', POZ_Beacon, 0.95),         # Beacon Tower (Interplanar Beacon)
         # ── Precinct One (centrum) ──
         poi('plac', POZ_Plaza, 1.5),
         poi('iglica', POZ_Orzhova, 1.2, gildia='orzhov'),
@@ -370,6 +387,10 @@ scena = {
         poi('kopula', POZ_Chamber, 1.2),
         poi('plac', POZ_PlazaW, 0.8),
         poi('plac', POZ_PlazaS, 0.85),
+        # kanon poza transkrypcją (PR-17 C, źródło wiki/fandom)
+        poi('iglica', POZ_Pillar, 0.7),          # Pillar of the Paruns
+        poi('plac', POZ_GpSquare, 0.75),         # Guildpact Square
+        poi('plac', POZ_GmForum, 0.75),          # Guildmages' Forum
         # ── Precinct Five (Simic/nauka) ──
         poi('kolowrot', POZ_Blister, 0.95, gildia='izzet'),
         poi('herb', POZ_Zameck, 1.0, gildia='simic'),
@@ -426,6 +447,7 @@ scena = {
         et('Augustin Station', POZ_Augustin, 12, przy_poz=POZ_Augustin),
         et('Forum of Azor', POZ_Forum, 12.5, przy_poz=POZ_Forum),
         et('Griffin Heights', (1208, 815), 12.5, ital=True),
+        et('Beacon Tower', POZ_Beacon, 12, przy_poz=POZ_Beacon, ital=True),
         # P1
         et('Tenth District Plaza', POZ_Plaza, 13.5, przy_poz=POZ_Plaza),
         et('Orzhova', POZ_Orzhova, 13, przy_poz=POZ_Orzhova, ital=True),
@@ -433,6 +455,10 @@ scena = {
         et('Chamber of the Guildpact', POZ_Chamber, 13.5, przy_poz=POZ_Chamber),
         et('Plaza West', POZ_PlazaW, 11.5, przy_poz=POZ_PlazaW, ital=True),
         et('Plaza South', POZ_PlazaS, 11.5, przy_poz=POZ_PlazaS, ital=True),
+        # kanon poza transkrypcją (PR-17 C)
+        et('Pillar of the Paruns', POZ_Pillar, 11.5, przy_poz=POZ_Pillar, ital=True),
+        et('Guildpact Square', POZ_GpSquare, 11.5, przy_poz=POZ_GpSquare, ital=True),
+        et("Guildmages' Forum", POZ_GmForum, 11.5, przy_poz=POZ_GmForum, ital=True),
         # P5
         et('Zonot Seven', (382, 545), 14, ital=True),
         et('Zameck', POZ_Zameck, 11, przy_poz=POZ_Zameck, ital=True),
@@ -471,6 +497,12 @@ scena = {
         {'id': 'luk-plaza-avenue',
          'punkty': [[855, 665], [885, 720], [918, 775]],
          'tekst': 'Plaza Avenue', 'opcje': {'fs': 11.5, 'ital': True}},
+        # Gnat Alley — najdłuższa ulica Miasta (trasa Gruul), PR-17 C;
+        # wiki nie podaje współrzędnych → bieg przybliżony przez rubieże
+        # P6 ku Deadbridge (źródło: mtg.wiki Tenth District / battle-mapy).
+        {'id': 'luk-gnat-alley',
+         'punkty': [[210, 905], [300, 935], [420, 945], [530, 930]],
+         'tekst': 'Gnat Alley', 'opcje': {'fs': 11, 'ital': True}},
     ],
     'kompas': {'x': 1490, 'y': 126, 'r': 30},
     'skala': False,
