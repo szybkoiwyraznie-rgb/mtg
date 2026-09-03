@@ -105,3 +105,38 @@ pomocą właściciela przy **transkrypcji map graficznych na opisy tekstowe**.
 - Współrzędne pinezki: Fabuła kotwiczy scenę w terenie Boros
   → Precinct Four, bruk przy Tin Street Market; `pewnosc: region`;
   v2 przeniosła punkcik z (0.4375, 0.3982) na **(0.3688, 0.4273)**.
+
+## Weryfikacja pozycji otwartych (PR-14, 2026-09-03 — pass mapowy, krok 4.3)
+
+Kwerenda kanonu nad `otwarte_na_kolejne_przejscia` (map.json); geometria
+v2 NIE ruszona (własność wektoryzacji v3).
+
+1. **Guildpact Square + Pillar of the Paruns** — kanon TWARDY:
+   mtg.wiki „Tenth District" (Locations → Plazas): Guildpact Square =
+   plac w miejscu podpisania Paktu; The Pillar of the Paruns =
+   obelisk w centrum placu z pieczęciami **dziewięciu** gildii
+   (w odróżnieniu od Guildmages' Forum, które niesie wszystkie dziesięć).
+   Rozbieżność lokalizacji między wiki: fandom „Ravnica" zakotwicza
+   Słupa u Forum of Azor (P2), mtg.wiki „Tenth District" — u Chamber
+   of the Guildpact (P1); społeczność graczy podaje, że karty nigdy nie
+   ukazały Słupa przy Forum of Azor. → **v3: osadzić przy Chamber
+   (P1) z notką o rozbieżności** (P1 i tak ma Chamber + plac — to
+   naturalna pozycja „miejsca podpisania").
+2. **Beacon Tower** — kanon TWARDY, epoka NIE: mtg.fandom „Ravnica"
+   (Tenth District → Azorius territory): Griffin Heights, więzienie
+   Udzec, budowana twierdza Exner i **Beacon Tower, housing the
+   Interplanar Beacon** (P2). W pierwotnym bloku (era karty, 2006)
+   latarnia planarna nie potwierdzona → pozostaje poza mapą do
+   znalezienia źródła epokowego (kandydat: warstwa epokowa Parhelion).
+3. **Gnat Alley** — kanon TWARDY jako fakty, NIE jako geometria:
+   mtg.fandom „Ravnica" (Tenth District): „najdłuższa ciągła ulica
+   Ravnicy; tunelowa aleja, jedna z najbardziej zaufanych tras Gruul
+   przez eleganckie dzielnice"; flavor Gnat Alley Creeper (DIS #63):
+   „najdłuższa ulica Ravnicy … jak pasożyt przemyka między szerszymi,
+   bezpieczniejszymi traktami". Współrzędne kanon nie daje → geometria
+   dopiero w v3, jeśli wektoryzowane źródło ją pokaże.
+
+Wynik: `otwarte_na_kolejne_przejscia` (map.json) odświeżone w tym
+rozdziale — trzy pozycje „do dopytania" zamienione na notatki
+zweryfikowane z cytowaniem; lista geometrycznie otwartych nie
+skurczyła się (żadna z trzech nie daje współrzędnych do v2).
