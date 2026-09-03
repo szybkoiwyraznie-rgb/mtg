@@ -94,3 +94,50 @@ bez sceny mapforge/T4. Ravnica pozostaje nie-bramkowana w CI przez
   z uzasadnieniem, nie silnikiem rozstawu.
 - Rozmiar/struktura podkładu: cel 0 problemów audytu bez zmiany geometrii
   (sylwetka, teren, drogi, granice, baner).
+
+## Stan na zamknięcie sesji 2026-09-03 (handoff)
+
+### Wykonane (commity S1, S3 — wypchnięte, PR #16)
+
+- **S1** `26797ce` — rescue odzyskanego podkładu z patch-6 + poprawionego
+  `tools/map-audit.py` + plan + audyt PR-15. Parytety:
+  - `podklad.svg`: dodane etykiety pasa Undercity (RIX MAADI, KOROZDA &
+    SVOGTHOS, NIGHTVEIL & DUSKMANTLE, WAYPORT, ZONOT/ZAMECK, GORE HOUSE,
+    SMELTING QUARTER) → domyka usterkę właściciela **#4** (brakujące etykiety);
+    TRANS-GUILD PROMENADE `rotate(145)`→`rotate(-27)` → usterka **#3** (promenada
+    odwrócona); UNDERCITY zdeduplikowane → usterka **#2**.
+  - `map-audit.py`: `#575757` pas podziemi uznany za ląd + skrzynki etykiet
+    obrot-aware. **Niezbędne** — stary audyt zgłasza nowe etykiety Undercity
+    jako „w wodzie” (8 problemów na tym podkładzie).
+- **S3** `3215c40` — rekonsyliacja etykiet dróg z main (usuwa dryf patch-6):
+  przywrócone TIN STREET (1877,1917) i PLAZA AVENUE (3802,3272) oraz
+  **zgubiony napis FOUNDRY STREET**. `npm test` 102/102 + `npm run build` zielone.
+- Audyt poprawiony: patch-6 7 kolizji → obecnie **3** (żadnej nie wprowadziła
+  ta sesja; wszystkie wspólne ze scalonym main lub z rozstawem agenta-z-wizją).
+
+### Pozostałe zadania (dla sesji z wizją — właściciel: nie kontynuować bez wizji)
+
+1. **3 kolizje etykiet AABB** (audyt poprawiony): SKARRG×TRANS-GUILD
+   PROMENADE @(4019,993)/(4161,1149) — model skrzynki po rotacji przeszacowuje
+   długi ukośny napis (glify faktycznie >160 px od SKARRG → prawdopodobnie
+   fałszywy pozytyw); BLISTERCOILS×TIN STREET @(1622,1957)/(1877,1917);
+   DEADBRIDGE CHASM×BENZER'S BRIDGE @(2816,3912)/(3057,4074) wg rozstawu
+   agenta. Rozwiązać wzrokowo; unikać pod-pikselowych ustawień (próbowano:
+   nietrwałe) i przesunięć >150 px.
+2. **Usterka #5** — przerywane drogi urwane kończące się „na niczym”;
+   w źródle prowadzą i łączą się. Nieweryfikowane (wymaga wizji/geometrii).
+3. **Usterka #1** — markery/doczepianie POI: 6 markerów na main bez pobliskiej
+   kotwicy map.json (>120 px). Zweryfikować, czy odzyskany podkład już je
+   doczepił; dopiąć brakujące.
+4. **Duplikat w scalonym main** (nowe ustalenie): scalony main ma
+   TRANS-GUILD PROMENADE DWA RAZY (nałożone). Odzyskany podkład ma 1 (fix).
+   Sprawdzić przy domykaniu — w tym PR-16 nie ma osobnego commitu.
+5. **Usprawnienie audytu — model rotacji**: AABB czterech obróconych narożników
+   przeszacowuje dla długich ukośnych etykiet (powoduje część powyższych
+   kolizji). Rozważyć model pasma glifów zamiast pełnego AABB.
+
+### Artefakty do oceny wzrokowej (poza gitem, /home/user/qawork/)
+
+- `s3_ravnica_full.png` — pełny render S3 (0,5×).
+- `crop_skarrg_promenade.png`, `crop_tin_foundry.png`, `crop_plaza.png`,
+  `crop_undercity.png`, `crop_wayport.png` — kadry 1,0× rejonów zmiany.
