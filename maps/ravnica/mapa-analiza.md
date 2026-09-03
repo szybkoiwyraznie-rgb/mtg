@@ -11,7 +11,7 @@ pomocą właściciela przy **transkrypcji map graficznych na opisy tekstowe**.
 | Tor | Kandydat | Werdykt |
 |---|---|---|
 | T1 | Oficjalna mapa Dziesiątego Dystryktu z *Guildmasters' Guide to Ravnica* (WotC, D&D 2018, skan) | **ODRZUCONY (licencja)** — rastrowa grafika książkowa WotC, brak wolnej licencji; osadzenie w Codexie łamałoby ADR 0007 §3 |
-| T2 | Fanowskie przeróbki/wektoryzacje GGR (r/RavnicaDMs: idealne nakładki precyktów, mapy Inkarnate, wersje 'merged') | **ODRZUCONY (licencja+proweniencja)** — brak jawnych licencji; część to przeróbki chronionej mapy WotC (wtórnie nielegalne); użyteczne jako *referencja* przy kalibracji v2 |
+| T2 | Fanowskie przeróbki/wektoryzacje GGR (r/RavnicaDMs: idealne nakładki precyktów, mapy Inkarnate, wersje 'merged') | **KANDYDAT v3 po decyzji właściciela 2026-09-03 (ADR 0031)** — prywatne źródło fan-made dostarczone przez właściciela może być wektoryzowane jako dokładniejszy podkład; raster źródłowy poza gitem, wynik z proweniencją i QA |
 | T3 | Proceduralny/deklaratywny podkład z opisów lore (jak Zendikar w wersji dawniejszej) | wchłonięty przez T4 (warsztat) |
 | **T4** | **Rekonstrukcja scena → mapforge na kanonie tekstowym** (MTG Wiki: Tenth District, Precinct One…Six — pobrane 2026-09-02) | **WYBRANY** |
 
@@ -84,10 +84,12 @@ pomocą właściciela przy **transkrypcji map graficznych na opisy tekstowe**.
     teraz XML (`&`, `<`, `>`) — wcześniej etykieta z „&" psuła podkład
     (map-audit wykrywa: „XML niepoprawny"); brak zmiany dla dotychczasowych
     etykiet (Zendikar/Śródziemie bajtowo identyczne).
-- **v3+**: warstwy epokowe (2006 vs 2019: Parhelion I/II, Prahv→New Prahv,
-  Beacon Tower), osobny przekrój/podkład Undercity (kanały P6, poziomy),
-  confrontacja z fanowską nakładką precinct-overlay (Reddit) jako drugi
-  punkt odniesienia — również wyłącznie jako opis tekstowy.
+- **v3+**: wektoryzacja dostarczonej przez właściciela fan-made mapy
+  Dziesiątego Dystryktu (ADR 0031) jako dokładniejszego podkładu T2/T2+
+  albo matrycy T4; warstwy epokowe (2006 vs 2019: Parhelion I/II,
+  Prahv→New Prahv, Beacon Tower); osobny przekrój/podkład Undercity
+  (kanały P6, poziomy); konfrontacja z fanowską nakładką precinct-overlay
+  jako drugim punktem odniesienia.
 
 ## Uwagi procesowe
 

@@ -1,6 +1,6 @@
 # ADR 0016: Format Wpisu Karty — kanon katalogowy (adopcja standardów katalogu właściciela)
 
-- **Status:** Zaakceptowana
+- **Status:** Częściowo zastąpiona — układ LORE-first, metrykę tylko w infoboksie i mechanikę przy końcu wprowadza ADR 0030
 - **Data:** 2026-09-01
 - **Decydenci:** właściciel projektu (przekazanie szablonu katalogu
   i decyzje: „warto ściągnąć conieco" + zakaz sekcji ilustracyjnej,

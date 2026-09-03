@@ -192,8 +192,11 @@ koordynatach transkrypcji (transformacja 64 px/j., plac → (830, 610));
 Whitestone, Plaza East/West/South, Great Concourse, Gore House, Medori
 Park + 3 markery podziemi z warstwą „podziemie"); pinezka karty przy
 Tin Street Market; fix silnika (escapowanie XML w etykietach — „&").
-**Zostaje (v3):** warstwy epokowe, pełny przekrój Undercity, drugi punkt
-odniesienia (opis fanowskiej nakładki) — szczegóły `mapa-analiza.md`.
+**Zostaje (v3):** wektoryzacja dostarczonej przez właściciela fan-made
+mapy Dziesiątego Dystryktu jako dokładniejszego podkładu (jeśli plik
+źródłowy będzie dostępny w sandboxie; bez commitowania rastra źródłowego),
+warstwy epokowe, pełny przekrój Undercity, drugi punkt odniesienia
+(opis fanowskiej nakładki) — szczegóły `mapa-analiza.md`.
 
 **SKALOWANIE MAP (pomiar 2026-09-01 → decyzja domknięta w PR-11 / ADR 0027):**
 artefakt jednoplikowy z epoki base64 miał **4,45 MB, z czego 96,7% to

@@ -1,3 +1,16 @@
+## 2026-09-03 09:36 — Karty Katalogowe przechodzą na LORE-first; Ravnica dostaje kierunek wektoryzacji fan-made
+
+Po feedbacku właściciela zmienia się standard kart: główna treść nie zaczyna
+się już od kosztu, typu, wydania ani historii publikacji. Nowy ADR 0030
+ustawia **Kronikę Lore** jako otwarcie, a dane techniczne zostawia w
+infoboksie i w krótkiej sekcji **Mechanika jako Opowieść** pod koniec.
+Wszystkie trzy obecne karty — **Dunland Crebain**, **Coralhelm Guide** i
+**Withstand** — zostały przepisane w tym duchu: więcej świata i sceny,
+mniej metryki MtG. Dodatkowo ADR 0031 zapisuje, że prywatne fan-made mapy
+dostarczone przez właściciela mogą być źródłem wektoryzacji; dla Ravniki
+powstał kandydat v3 oparty o `TenthDistrict.png` (raster roboczy poza
+repo, wynik docelowo jako SVG/scena z proweniencją i QA).
+
 ## 2026-09-03 00:43 — Ravnica v2: geometria skalibrowana 1:1 pod oficjalną mapę GGR (transkrypcja właściciela)
 
 Właściciel spisał oficjalną mapę Dziesiątego Dystryktu z *Guildmasters'

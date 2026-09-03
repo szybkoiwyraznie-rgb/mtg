@@ -14,15 +14,9 @@ pinezka:
   pewnosc: region
 ---
 
-## Metryka i Kontekst Świata
+## Kronika Lore
 
-- **Koszt:** {1}{U} — jeden mana dowolnego koloru i jeden niebieski
-- **Typ:** Creature — Bird Scout (stworzenie — ptak, zwiadowca)
-- **Statystyki:** 1/1
-- **Zdolności:** Flying (latanie)
-- **Wydanie:** Testowy Set (TST), nr 1, common
-
-Testowa karta fixture'a: scena testowego świata, [testlandia](#/plan/testlandia).
+Testowa karta fixture'a: scena testowego świata, [testlandia](#/plan/testlandia). Dane techniczne żyją w infoboksie; treść zaczyna się od lore.
 
 ## Postacie i Byty
 
@@ -32,13 +26,9 @@ Na karcie występuje [[testowy-ptak|testowy ptak]] — encja wspólna dla haseł
 
 Nazwa testowa; etymologia: zwiadowca od zwiadu.
 
-## Mechanika jako Opowieść
-
-Kolor B i koszt {2}{B} opowiadają o szpiegostwie; lot o zwiadzie powietrznym.
-
 ## Flavor Text
 
-> „Testowy cytat flavor." — Testowy Autor
+> „Testowy cytat flavor.” — Testowy Autor
 
 ## Transpozycja
 
@@ -48,9 +38,13 @@ Karta-źródło pochodzi z planu testowego; transpozycja pełna.
 
 Pinezka regionowa w testlandii (pewnosc: region).
 
+## Mechanika jako Opowieść
+
+Kolor B i koszt {2}{B} opowiadają o szpiegostwie; lot o zwiadzie powietrznym.
+
 ## Źródła
 
-- „wiedza ogólna" — fixture bez kwerendy.
+- „wiedza ogólna” — fixture bez kwerendy.
 
 ## Podsumowanie Lore
 

@@ -71,9 +71,16 @@ Jakości (ADR 0006).
 4. **Zero generowanych grafik** (ADR 0008, decyzja właściciela 2026-08-31).
    Zakaz wywoływania generatorów obrazów do odwołania; tory obrazów:
    druk Scryfalla / FOT / KON / twarz syntetyczna — z cichym fallbackiem.
-5. **Transpozycja:** lore opisuje setting podany we wpisie; mechanika, nazwa
+5. **Karty LORE-first (ADR 0030):** główna treść karty zaczyna się kroniką
+   świata, nie blokiem Oracle/metadanych; koszt, typ, wydanie, rzadkość
+   i artysta żyją w infoboksie. Mechanika jako opowieść stoi pod koniec,
+   przed Źródłami, jako krótka interpretacja reguł.
+6. **Transpozycja:** lore opisuje setting podany we wpisie; mechanika, nazwa
    i flavor pochodzą z karty MtG (snapshot Scryfall, ADR 0004).
-6. **Domyślna praca bez zlecenia = Pętla Jakości** (ADR 0006/0015):
+7. **Prywatne źródła fanowskie map (ADR 0031):** gdy właściciel dostarcza
+   mapę i dopuszcza jej użycie, wolno ją wektoryzować jako źródło geometrii;
+   raster źródłowy domyślnie poza gitem, wynik z proweniencją i QA.
+8. **Domyślna praca bez zlecenia = Pętla Jakości** (ADR 0006/0015):
    integralność → pogłębianie **lore** (bez meta-informacji o wydrukach
    i artystach — ADR 0014) → link-mining → pass mapowy: **kompletacja
    i jakość map** (nowe POI, weryfikacja dokładności, wspólny warsztat

@@ -4,6 +4,28 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-03 — sesja PR-13 (feedback właściciela): Karty Katalogowe LORE-first + kierunek wektoryzacji mapy Ravniki
+
+1. **Korekta kierunku kart:** właściciel odrzucił układ, w którym wpis zaczyna
+   się metryką Oracle, historią dodatku i szczegółami wydawniczymi. Decyzja:
+   Codex ma być LORE-first; technikalia żyją w infoboksie i w krótkiej sekcji
+   „Mechanika jako Opowieść” pod koniec.
+2. **ADR 0030:** zapisano nowy wiążący szkielet kart: `Kronika Lore` jako
+   otwarcie, potem byty/nazwa/flavor/transpozycja/mapa, dopiero następnie
+   mechanika i źródła. ADR 0016 oznaczony jako częściowo zastąpiony.
+3. **Migracja trzech kart:** `Dunland Crebain`, `Coralhelm Guide` i
+   `Withstand` przepisane od początku w tonie niezależnego kronikarza;
+   usunięto otwierające listy koszt/typ/wydanie, komentarze o procesie
+   publikacji i dominację technikaliów. Dane Scryfall zostają w infoboksie.
+4. **Testy i kontrakty:** `SEKCJE_KARTY`, fixture’y i ui-smoke pilnują teraz
+   `Kronika Lore`, braku sekcji „Metryka i Kontekst Świata” oraz pozycji
+   „Mechanika jako Opowieść” po mapie/transpozycji i przed Źródłami.
+5. **Mapa Ravniki — decyzja źródłowa:** właściciel dopuścił prywatne źródła
+   fan-made do wektoryzacji. ADR 0031 formalizuje tor: raster poza gitem,
+   wynik SVG/scena z proweniencją i QA. Ravnica v3 dostała kolejkę
+   wektoryzacji `TenthDistrict.png`, ale w tej sesji plik nie był widoczny
+   dla narzędzi pod `/home/user/uploads/`.
+
 ## 2026-09-03 — sesja PR-13 (mapa v2): transkrypcja GGR od właściciela → kalibracja 1:1
 
 1. **Wejście:** właściciel dostarczył załącznik `TenthDistrict.png` (oficjalny

@@ -13,181 +13,158 @@ pinezka:
   pewnosc: region
 ---
 
-## Metryka i Kontekst Świata
+## Kronika Lore
 
-- **Koszt:** {1}{U} — jeden mana dowolnego koloru i jeden niebieski
-- **Typ:** Creature — Merfolk Scout Ally (stworzenie — merfolk,
-  zwiadowca, sojusznik)
-- **Statystyki:** 2/1
-- **Zdolność:** {4}{U}: wskazane stworzenie nie może zostać
-  zablokowane w tej turze (aktywowana)
-- **Wydanie:** Battle for Zendikar (BFZ), nr 74/274, common
+Na Zendikarze mapa nigdy nie jest tylko rysunkiem. Brzeg potrafi zmienić
+kształt, skała może oderwać się od ziemi, a ścieżka bezpieczna o świcie
+wieczorem prowadzi już pod zęby drapieżnika albo cień Eldrazi. Dlatego
+**Coralhelm Guide** nie opowiada o wojowniczce pierwszego szeregu. Opowiada
+o kimś cenniejszym: o osobie, która wie, którędy przejść, gdy wszystkie
+proste drogi przestały istnieć.
 
-Karta pokazuje merfolkę-przewodniczkę: zwiadowczynię, która prowadzi
-wyprawy wzdłuż wybrzeża. Pochodzi z **Coralhelm**, największej osady
-merfolków na planie, położonej nad śródlądowym morzem **Halimar**
-na kontynencie **Tazeem**.
+Coralhelm leży na Tazeem, nad wodami Halimar. Dla merfolków jest więcej niż
+osadą — to punkt pamięci wybrzeża, port, schronienie i szkoła patrzenia na
+świat w dwóch warstwach naraz: nad powierzchnią i pod nią. Przewodniczka z
+takiego miejsca zna nie tylko linię brzegu. Zna wnętrze brzegu: jaskinie,
+zalane korytarze, kryjówki pod klifami, prądy, które niosą ciszej niż marsz
+po kamieniu.
 
-W osi czasu świata jest to okres **Bitwy o Zendikar**: po przebudzeniu
-**Eldrazi** kontynenty toną w zagładzie, Sea Gate staje się bastionem
-ocalonych, a ci, którzy wciąż muszą przebywać dziki kraj — kupcy,
-uchodźcy, poszukiwacze — płacą każdą cenę ludziom, którzy znają drogę.
+W epoce wojny z **Eldrazi** taka wiedza staje się formą oporu. Zendikar nie
+broni się wyłącznie wielkimi czarami i ostrzami. Broni się także dzięki
+ludziom i ludom, którzy potrafią przeprowadzić innych przez szczelinę w
+świecie — tam, gdzie patrol patrzy za wysoko, a droga biegnie pod wodą.
 
 ## Postacie i Byty
 
-Jedynym bytem karty jest **merfolka-przewodniczka** — Scout i Ally
-w jednym, tytułowa przewodniczka z Coralhelm.
+Na karcie obecna jest **merfolka-przewodniczka** z Coralhelm: zwiadowczyni,
+która łączy znajomość wybrzeża z praktyką ekspedycji. Jej wartość nie
+wynika z siły ramienia, lecz z pamięci terenu. W świecie Roilu taka pamięć
+nie jest biernym wspomnieniem; musi być stale odnawiana, bo Zendikar zmusza
+każde pokolenie do ponownego uczenia się tej samej drogi.
 
-Merfolkowie to lud cywilizacji Tazeem: niebieski naród żeglarzy,
-zwiadowców i uczonych, żyjący nad Halimar i wybrzeżami. Ich największa
-osada, **Coralhelm**, jest jednocześnie portem i punktem wyjścia
-ekspedycji w głąb niebezpiecznego interioru. Na planie, gdzie żywioł
-**Roil** przebudowuje krajobraz, a ruiny strzegą skarbów i bestii,
-zawód przewodnika to zawód zaufania: klient oddaje życie w ręce kogoś,
-kto — jak głosi flavor karty — „zna każdy krok tego wybrzeża, nad
-powierzchnią i pod nią".
+Merfolkowie Tazeem są naturalnymi gospodarzami takiej opowieści. Woda nie
+jest dla nich przeszkodą, tylko drugą stroną mapy. To, co dla kupca albo
+uciekiniera wygląda jak urwany brzeg, dla przewodniczki może być wejściem
+do trasy pod powierzchnią. To, co dla patroli Eldrazi jest pustym kanionem,
+może być korytarzem ukrytego przejścia.
 
-**Osadzenie kolekcji (Narracja):** przez wąski, zalany
-wodą kanion przewodniczka prowadzi potężnego **balotha** — przedstawiciela
-megafauny Zendikaru — tajnym przejściem wśród lewitujących skał. Jej
-hełm, wykuty z bladego koralu i muszli, zdradza pochodzenie z nadmorskiego
-klanu, który od pokoleń mapuje każdą szczelinę wybrzeża. Na klifach
-powyżej **patrole Eldrazi** stoją odwrócone plecami, nieświadome, że
-sojusznicy wymykają im się tuż pod stopami; jedynym dźwiękiem, który
-mógłby ich zdradzić, są fontanny wody wzbijane cielskiem bestii.
-Baloth i patrole należą do osadzenia kolekcji — spójnego z epoką
-Bitwy o Zendikar i z podtypem Ally.
+Fabuła dostawy właściciela dopowiada, że przewodniczka prowadzi przez
+zalany kanion potężnego **balotha**. Ten szczegół dobrze podkreśla jej rolę:
+nie chodzi o samotne wymknięcie się wąską szczeliną, lecz o otwarcie drogi
+nawet dla czegoś dużego, ciężkiego i pozornie niemożliwego do ukrycia.
 
 ## Nazwa Karty
 
-**Coralhelm** to nazwa własna — największej osady merfolków na Zendikarze,
-nad morzem Halimar na Tazeem („koralowy hełm"). **Guide** to zawód:
-przewodniczka wypraw. Pełne polskie odczytanie tytułu:
-**„Przewodniczka z Koralowego Hełmu"** — osoba, nie pojęcie.
+**Coralhelm** można czytać dosłownie jako „Koralowy Hełm”, ale w Kodeksie
+to przede wszystkim nazwa miejsca: merfolcza osada nad Halimar, zakorzeniona
+w wodnym krajobrazie Tazeem. **Guide** oznacza przewodniczkę — kogoś, kto
+nie tylko zna trasę, ale bierze odpowiedzialność za tych, którzy idą za nią.
 
-## Mechanika jako Opowieść
-
-**Odczyt zasadniczy.** {1}{U} przywołuje 2/1. Aktywowana zdolność
-{4}{U} ma cel (wskazane stworzenie) i działa do końca tury: wybrane
-stworzenie nie może zostać zablokowane — cokolwiek przeciwnik wystawi
-na jego drodze.
-
-**Interpretacja fabularna.** Statystyki 2/1 za dwa many to cenna
-szybkość i krucha konstrukcja: przewodniczka jest efektywna wcześnie,
-ale nie jest stworzona do otwartej walki — jej wartość leży w czymś
-innym. Niebieski kolor to w filozofii Magic: The Gathering wiedza,
-spryt i przebiegłość: kapitał, z którego żyje. Każdy podtyp to warstwa:
-**Merfolk** — zna wodę, wybrzeże nad powierzchnią i pod nią;
-**Scout** — rekonesans to jej fach; **Ally** — w Battle for Zendikar
-sojusznicy różnych ras wzmacniają się nawzajem, gdy przybywają kolejni
-(rally), więc przewodniczka rośnie w siłę razem z ekspedycją.
-
-**Całość jako opowieść.** Aktywowana zdolność jest mechaniczną
-kwintesencją zawodu: klient płaci {4}{U}, przewodniczka znajduje
-sekretne przejście — podwodny tunel, ścieżkę za wodospadem — i grupa
-przechodzi tam, gdzie przeciwnik nie zdoła jej zatrzymać. Wysoki koszt
-aktywacji mówi, że to nie sztuczka, lecz manewr wymagający czasu
-i przygotowania. Rzadkość **common** dodaje: na planie przygód dobrych
-przewodników jest wielu — ale każdy jest na wagę złota. Przewodniczka
-nie walczy sama: otwiera drogę innym, potężniejszym od siebie.
-Narracja daje tej zdolności twarz wprost: to **baloth**
-przeprowadzany zalanym kanionem obok ślepych patroli Eldrazi —
-„wskazane stworzenie", które dzięki niej „nie może zostać zablokowane".
+Pełne polskie odczytanie tytułu: **„Przewodniczka z Koralowego Hełmu”**.
+Brzmi jak imię funkcji i pochodzenia jednocześnie: osoba jest tym, skąd
+przychodzi, bo jej wiedza została wyhodowana przez wybrzeże.
 
 ## Flavor Text
 
-> „Zna każdy krok tego wybrzeża, nad powierzchnią i pod nią, i ma
-> kryjówki po całej drodze. Ona cię tam doprowadzi."
-> — **Jori En**, przewodniczka wyprawy
+> „She knows every step of this coastline, both above and below the surface,
+> and she has hideouts all along the way. She will get you there.”
+> —Jori En, expedition leader
 
-W oryginale: *"She knows every step of this coastline, both above and
-below the surface, and she has hideouts all along the way. She will get
-you there."*
+Tłumaczenie robocze: „Zna każdy krok tego wybrzeża, nad powierzchnią i pod
+nią, i ma kryjówki po całej drodze. Ona cię tam doprowadzi.”
 
 Odczyt fraza po frazie:
 
-- **„Zna każdy krok tego wybrzeża, nad powierzchnią i pod nią"** —
-  mistrzowska znajomość terenu, domena przewodnika; merfolkia natura
-  czyni z wody drugą połowę mapy.
-- **„Kryjówki po całej drodze"** — bezpośrednie wyjaśnienie mechaniki:
-  to właśnie sieć sekretnych kryjówek i przejść czyni wskazane
-  stworzenie nieblokowalnym.
-- **„Ona cię tam doprowadzi"** — pewność i niezawodność; obietnica,
-  nie przechwałka.
+- **„She knows every step of this coastline”** — źródłem autorytetu jest
+  znajomość konkretnego terenu. Nie ogólna odwaga, tylko topografia
+  przeżyta stopa po stopie.
+- **„both above and below the surface”** — zdanie natychmiast ujawnia
+  merfolczą podwójność mapy. Wybrzeże ma część widzialną i część zanurzoną;
+  przewodniczka zna obie.
+- **„she has hideouts all along the way”** — droga nie jest jedną ścieżką,
+  lecz siecią kryjówek. Bezpieczeństwo bierze się z przygotowania, nie z
+  przypadku.
+- **„She will get you there”** — Jori En nie mówi „może”. Daje gwarancję.
+  W czasie zagłady taka pewność jest niemal formą magii.
 
-Cytat nie jest anonimowy: **Jori En** to merfolka i uczona, badaczka
-hedronów, która po zagładzie rodzinnej Bala Ged działała na Tazeem
-i prowadziła wyprawy w kampanii Bitwy o Zendikar — towarzyszyła m.in.
-Jace'owi Belerenowi w drodze na Akoum. Gdy ktoś taki wystawia
-przewodniczce referencje, to opinia eksperta — i umiejscowienie karty
-w konkretnej fabule: specjalistka, której umiejętności są cenione
-przez dowództwo wypraw.
+Autorką słów jest **Jori En**, przywódczyni wypraw i badaczka hedronów.
+Jej poręczenie ma wagę, bo pochodzi od kogoś, kto sam przeżył podróże po
+Zendikarze w czasie katastrofy i wie, czym różni się przewodnik od osoby,
+która tylko zna kierunek.
 
 ## Transpozycja
 
-*Battle for Zendikar* to wydanie osadzone wprost na rodzinnym planie
-Zendikar — karta nie przechodzi żadnej transpozycji: jej plan rodzinny
-i plan kolekcji to ten sam plan. Osadzenie w Coralhelm nad Halimar
-na Tazeem wynika wprost z kanonu świata i nazwy karty.
+Karta jest rodzima dla Zendikaru. Nie trzeba przenosić jej do innego świata;
+trzeba tylko czytać ją z perspektywy planu, na którym geografia jest żywą
+siłą. Coralhelm, Halimar, Tazeem, Roil i wojna z Eldrazi układają się w
+jedną opowieść o wiedzy terenowej jako narzędziu przetrwania.
 
-**Narracja** kotwiczy scenę konkretnie: zalany wodą
-kanion wśród lewitujących skał na wybrzeżu, eskorta balotha tajnym
-przejściem pod nosem patroli Eldrazi — czas Bitwy o Zendikar, gdy
-sojusznicy przemykają między liniami wroga. Hełm z koralu i muszli
-wiąże bohaterkę z nadmorskim klanem kartografów wybrzeża — to ta
-wizja stoi za ilustracjami FOT/KON i odczytem karty w tym wpisie.
+Materializacja kolekcji skupia tę opowieść w zalanym kanionie. Baloth
+przechodzi tajnym korytarzem, patrole Eldrazi stoją na klifach odwrócone
+plecami, a przewodniczka prowadzi wszystkich przez miejsce, którego wróg
+nie umie przeczytać. To precyzyjna scena kolekcji, ale jej sens wypływa
+wprost z kanonu karty: przeprowadzić kogoś tam, gdzie nie zostanie
+zatrzymany.
 
 ## Na Mapie
 
-Karta jest osadzona w regionie **Tazeem** — niebieskim kontynencie
-merfolków, nad śródlądowym morzem Halimar, w sercu krainy Coralhelm
-(szerszą geografię opisuje plan [[zendikar|Zendikar]]). Osadzenie ma
-poziom pewności regionu: wybrzeża i wody Halimar, nie konkretny punkt.
-Narracja sytuuje samą scenę w zalanym kanionie przybrzeżnym
-wśród lewitujących skał — na szlakach klanu przewodniczki wzdłuż
-wybrzeży Tazeem.
+Pinezka wskazuje region **Tazeem** na [[zendikar|Zendikarze]], przy wodach
+Halimar i Coralhelm. Poziom pewności: **region**. Nazwa karty i flavor
+wiążą przewodniczkę z wybrzeżem Coralhelm; Fabuła dostawy dodaje zalany
+kanion i lewitujące skały, czyli pejzaż zgodny z tazeemskim, roilowym
+charakterem planu.
+
+Pinezka: `#/mapa/zendikar?pin=2bfz-coralhelm-guide`.
+
+## Mechanika jako Opowieść
+
+W regułach gry przewodniczka jest stworzeniem 2/1 za {1}{U} z aktywowaną
+zdolnością {4}{U}: wskazane stworzenie nie może zostać zablokowane w tej
+turze. Mechanika jest niemal dosłowna. Kto płaci za jej wiedzę, dostaje
+przejście tam, gdzie przeciwnik nie potrafi ustawić straży.
+
+Niebieska mana opowiada o sprycie, rozpoznaniu i przewadze informacji.
+Statystyki 2/1 pokazują, że przewodniczka nie jest murem ani bestią bojową;
+jej ciało jest kruche, ale tempo i rozum pracują za nią. Podtypy układają
+się w trzy warstwy: **Merfolk** daje jej wodną mapę świata, **Scout** czyni
+z niej zawodową zwiadowczynię, a **Ally** wiąże ją z siecią ludzi i ludów,
+które w wojnie z Eldrazi przeżywają dzięki wzajemnemu wsparciu.
+
+Wysoki koszt aktywacji jest fabularnie trafny: ukryta trasa nie pojawia się
+za darmo. Trzeba czasu, przygotowania, zaufania i właściwego momentu. Wtedy
+nawet baloth może przejść kanionem tak, jakby zniknął z pola widzenia
+wroga.
 
 ## Źródła
 
-- **Narracja (dostawa właściciela, 2026-09-02)** — wiążące
-  osadzenie sceny: zalany kanion na wybrzeżu Tazeem, eskorta balotha,
-  patrole Eldrazi na klifach, hełm z koralu i muszli; archiwum:
-  `collection/entries/2bfz-coralhelm-guide.md`.
-- Scryfall — dane karty, typ, mechanika, flavor, artysta:
+- Fabuła dostawy właściciela (2026-09-02) — zalany kanion na wybrzeżu
+  Tazeem, baloth prowadzony tajnym przejściem, patrole Eldrazi na klifach,
+  hełm z koralu i muszli.
+- Scryfall, *Coralhelm Guide* — tekst Oracle i flavor Jori En:
   <https://scryfall.com/card/bfz/74/coralhelm-guide>
-- MTG Wiki, „Baloth" — baloty jako megafauna Zendikaru (potężne
-  bestie, z którymi mierzą się i które eskortują ekspedycje):
-  <https://mtg.fandom.com/wiki/Baloth>
-- MTG Salvation, „The World of Zendikar Part IV: Return to Zendikar" —
-  Coralhelm Refuge jako największa osada merfolków na planie, morze
-  Halimar, tama Sea Gate, geografia kontynentów:
+- MTG Salvation, „The World of Zendikar Part IV: Return to Zendikar” —
+  Coralhelm jako największa osada merfolków, Halimar i geografia Tazeem:
   <https://www.mtgsalvation.com/articles/49510-the-world-of-zendikar-part-iv-return-to-zendikar>
-- MTG Wiki, „Zendikar (plane)" — siedem kontynentów planu, hedrony,
-  Roil: <https://mtg.wiki/page/Zendikar_(plane)>
-- MTG Wiki, „Jori En" — biografia: Bala Ged, badania hedronów, rola
-  w kampanii Bitwy o Zendikar:
-  <https://mtg.fandom.com/wiki/Jori_En>
-- Wizards of the Coast, „Battle for Zendikar Mechanics" — zdolności
-  Sojuszników (Rally): wyzwalane, gdy Sojusznik wchodzi na pole
-  bitwy pod twoją kontrolą:
+- MTG Wiki, „Zendikar (plane)” — kontynenty, hedrony i Roil:
+  <https://mtg.wiki/page/Zendikar_(plane)>
+- MTG Wiki, „Jori En” — Jori En jako merfolcza badaczka i przywódczyni
+  wypraw: <https://mtg.fandom.com/wiki/Jori_En>
+- MTG Wiki, „Baloth” — balothy jako potężna fauna Zendikaru:
+  <https://mtg.fandom.com/wiki/Baloth>
+- Wizards of the Coast, „Battle for Zendikar Mechanics” — funkcja podtypu
+  Ally w epoce wojny z Eldrazi:
   <https://magic.wizards.com/en/news/feature/battle-for-zendikar-mechanics>
-- MTG Wiki, „Blue" — filozofia koloru niebieskiego (wiedza, spryt,
-  przebiegłość): <https://mtg.fandom.com/wiki/Blue>
 
 ## Podsumowanie Lore
 
-*Coralhelm Guide* to opowieść o cichej bohaterce czasów zagłady:
+- **Wiedza terenowa jest bronią Zendikaru.** Przewodniczka wygrywa nie
+  siłą, lecz rozumieniem wybrzeża w miejscach, gdzie obcy widzi tylko mur.
+- **Merfolkowie czytają dwie mapy naraz.** Powierzchnia i głębia są dla nich
+  jedną przestrzenią ruchu, co flavor karty ujmuje wprost.
+- **Sojusz potrzebuje przejść, nie tylko wojowników.** W epoce Eldrazi ktoś,
+  kto potrafi przeprowadzić innych niezablokowaną drogą, jest częścią
+  obrony planu.
 
-- **Wiedza terenowa jest najtwardszą walutą Zendikaru** — na planie,
-  gdzie ziemia sama się buntuje, przeżycie zależy od tych, którzy znają
-  drogę.
-- **Nie każdy bohater walczy na pierwszej linii** — 2/1 za {1}{U}
-  nie wygra bitwy, ale za {4}{U} przeprowadzi kogokolwiek obok całej
-  linii obrony wroga.
-- **Sojusz to mechanika i morał zarazem** — podtyp Ally wplata
-  przewodniczkę w sieć wzajemnego wsparcia, którą ludy Zendikaru
-  przeciwstawiają Eldrazi.
-
-Spryt, wiedza i współpraca wobec niepojętej siły — dokładnie to, czym
-Zendikar broni się przed zagładą; przewodniczka z Koralowego Hełmu
-ucieleśnia tę ideę jedną zdolnością: otworzyć drogę.
+*Coralhelm Guide* jest kroniką cichej specjalistki: osoby, dzięki której
+wielka historia katastrofy może ominąć patrol, zejść pod wodę i wyjść po
+drugiej stronie brzegu.

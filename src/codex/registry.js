@@ -24,20 +24,21 @@ export const POZIOMY_PEWNOSCI = ['dokladna', 'region', 'przyblizona'];
 export const TYPY_IP = ['plan-mtg', 'zewnetrzne', 'custom'];
 
 /** Kanoniczne sekcje h2 — Karta Katalogowa (SZKIELET_KARTY.md; wszystkie obowiązkowe).
- * ADR 0011 (chudy format dostawy): karta jest w całości kanoniczna —
- * nie ma sekcji narracji ani alternatywnej koncepcji wizualnej.
+ * ADR 0030: karta jest LORE-first — metryka techniczna żyje w infoboksie,
+ * a główna kolumna zaczyna się kroniką świata; mechanika wraca dopiero
+ * pod koniec jako interpretacja opowieści.
  * ADR 0014: sekcji „Druk w Kolekcji" nie ma — dane wydruku pokazuje
  * wyłącznie infoboks ze snapshotu; strona karty to tylko lore.
  * Wątki i powiązania NIE są osobną sekcją: kluczowe encje są pogrubione
  * w treści, a wikilink dostają dopiero istniejące hasła (próg ≥2 kart). */
 export const SEKCJE_KARTY = [
-  'Metryka i Kontekst Świata',
+  'Kronika Lore',
   'Postacie i Byty',
   'Nazwa Karty',
-  'Mechanika jako Opowieść',
   'Flavor Text',
   'Transpozycja',
   'Na Mapie',
+  'Mechanika jako Opowieść',
   'Źródła',
   'Podsumowanie Lore',
 ];

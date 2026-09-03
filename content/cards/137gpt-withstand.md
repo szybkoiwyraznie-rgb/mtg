@@ -13,184 +13,152 @@ pinezka:
   pewnosc: region
 ---
 
-## Metryka i Kontekst Świata
+## Kronika Lore
 
-- **Koszt:** {2}{W} — dwie many twarde (dowolny kolor) i jedna biała
-- **Typ:** Instant (chwila)
-- **Zdolność (Oracle):** „Prevent the next 3 damage that would be dealt
-  to any target this turn. Draw a card." — w tej turze odparte zostają
-  następne 3 punkty obrażeń, które miałyby paść na dowolny cel,
-  a następnie dobierasz kartę.
-- **Wydanie:** Guildpact (GPT), nr 21/165, common — 3 lutego 2006
-  (dane ze snapshotu Scryfall posiadanego printu; artysta Ron Spears,
-  rama z 2003 r.)
+Na Ravnicy wojna rzadko zaczyna się na pustym polu. Zaczyna się na bruku:
+między fasadą koszar, targowym przejściem, kolumną mostu i linią ludzi,
+która musi wytrzymać pierwszy napór, zanim ktokolwiek pomyśli o zwycięstwie.
+*Withstand* zapisuje właśnie taką chwilę — nie triumf, lecz moment, w którym
+uderzenie nie przechodzi dalej.
 
-*Withstand* pochodzi z **Guildpact** — drugiego dodatku pierwotnego
-bloku Ravnica; towarzysząca mu powieść Cory'ego Herndona prowadzi
-ku spiskowi Teysy Karlov i stworzeniu Schizmy, przez którą **Pakt
-Gildii** ostatecznie się rozpadnie. W rolach głównych tego dodatku są Orzhov, Izzet i Gruul, ale sama
-karta jest czysto biała i ponadgildyjna — a skoro obronę na Ravnicy
-niesie **Legion Boros**, scena i cytat flavor nadają jej właśnie
-głos Legionu. Na osi czasu planu jest to
-schyłek dziesiątego tysiąclecia ery Paktu: długo po kontrakcie
-podpisanym na początku historii miasta, tuż przed Decamillennium,
-na którym uporządkowany świat się załamie (Dissension).
+W Dziesiątym Dystrykcie za tę sztukę odpowiada przede wszystkim **Legion
+Boros**. Jego żołnierz nie jest tu samotnym bohaterem odciętym od armii,
+lecz jednym z kamieni w murze: stal, złote okucia, wieżowa tarcza i znak
+płonącego słońca składają się na publiczną obietnicę, że porządek miasta
+ma jeszcze kogoś, kto stanie między mieszkańcem a przemocą. Ogień może
+obejść krawędzie tarczy, dym może zasłonić twarz, ale sens sceny pozostaje
+prosty: linia nie pęka.
+
+Ta karta mówi o Boros w najczystszej, obronnej postaci. Legion bywa
+narzędziem przymusu, armią i konstabularią, ale w tej scenie jego władza
+nie polega na szarży. Polega na odmowie cofnięcia się. W mieście gildii,
+gdzie każda ulica jest czyjąś granicą wpływu, tarcza ma rangę znaku
+politycznego: ktoś bierze na siebie pierwszy cios, żeby wspólnota za nim
+mogła nadal istnieć.
 
 ## Postacie i Byty
 
-Na karcie występuje jeden byt — **żołnierz Legionu Boros** (człowiek
-ciężkiej piechoty) z wieżową tarczą wycelowaną pod impet nadlatującego
-czaru.
-Legion to siłowy filar planu: formalnie konstablary **Ligi Wojek**
-i armia polowa; siedzibą gildii jest twierdza-koszary-świątynia
-**Sunhome** w Czwartym Precykcie Dziesiątego Dystryktu, a władzę
-sprawują **anioły**, których parun — archanioł **Razia** — jest
-zarazem ikoną Legionu.
+Na pierwszym planie stoi **żołnierz Legionu Boros** — ciężkozbrojny
+obrońca, którego ciało jest niemal przedłużeniem tarczy. Nie trzeba znać
+jego imienia; w tej opowieści ważniejsze jest to, że działa jako część
+formacji. Boros nie przedstawia tu indywidualnej brawury, tylko dyscyplinę:
+człowiek w szeregu ma dokładnie tyle znaczenia, ile nacisku potrafi
+zatrzymać dla innych.
 
-Głos karty (cytat flavor) należy do **Alovneka, maga gildii Boros**
-(*Boros guildmage*). W starym porządku Legionu magowie gildii,
-nazywani **Firefists**, byli jedynym śmiertelnym ogniwem łączności
-z aniołami.
-Imię Alovneka utrwaliło się wyłącznie we flavorach: poza tą kartą
-mówi jeszcze w *Condemn* (Dissension, 2006) i *Boros Locket* (Guilds
-of Ravnica, 2018), gdzie sentencja o „przekazywaniu oznaczeń
-towarzyszom" ma taki sam pozornie gospodarczy, a w istocie rycerski
-ton. Alovnek nie ma własnej karty; kanon mówi o nim tylko tyle —
-i Codex niczego nie dopowiada.
+Za żołnierzem stoi struktura gildii: **Sunhome**, twierdza-świątynia
+Legionu w Czwartym Precykcie; wojskowa tradycja **Wojek**; anielska
+wyobraźnia sprawiedliwości, której symbolem jest **Razia**. Tarcza ze
+słońcem nie jest ozdobą. To znak przynależności do porządku, który widzi
+walkę jako służbę — ostrze i tarcza są narzędziami tej samej przysięgi.
+
+Głos flavoru należy do **Alovneka**, maga gildii Boros. Jego sentencja nie
+brzmi jak rozkaz bitewny, lecz jak lekcja przekazywana rekrutom: wojna to
+nie tylko pchnięcie mieczem, ale także umiejętność utrzymania pozycji.
+Dlatego Alovnek jest w tym wpisie ważny nie jako rozbudowana postać, lecz
+jako świadek doktryny Legionu.
 
 ## Nazwa Karty
 
-*Withstand* — czasownik (czasem rozkaz): od staroangielskiego
-*wiþstandan*, dosłownie „stać naprzeciw" (*wiþ-* — przeciw, *-standan* —
-stać). To proste słowo globalne gry, nie ravnickie imię własne. Sens
-na karcie: postawić się ciałem i stalą temu, co nadciąga.
+*Withstand* znaczy „wytrzymać”, „oprzeć się”, dosłownie: stać naprzeciw
+czemuś, co napiera. To nie jest nazwa miejsca ani zaklęcia własnego, tylko
+czasownik graniczny — słowo dla chwili, w której ciało, tarcza i wola
+przestają być osobnymi rzeczami.
 
-**Polskie odczytanie nazwy w Kolekcji: „Wytrzymaj!"** — rozkaz
-dowodzącego w szeregu tarcz. Znaczy dwojako: polecenie („stój!")
-i obietnicę („wyjdziesz z tego, jeśli staniesz").
-
-## Mechanika jako Opowieść
-
-**Odczyt zasadniczy.** „Prevent the next 3 damage…" — biała, klasyczna
-tarcza pierwotna: do 3 następnych obrażeń, które miałyby w tej turze
-trafić **dowolny cel** (ciebie, twojego sojusznika, kartę przeciwnika,
-jeśli zechcesz odpędzić coś od niego), zamienia się w nic. „Draw
-a card" — po zatrzymaniu impetu wyciągasz z rękawa lekcję: karta
-zastępuje samą siebie (cantrip), więc obrona nie przechudza ręki:
-zagrywasz tarczę i od razu dobierasz zastępstwo.
-
-**Interpretacja fabularna.** Aura ognia, dym i iskry opływają wieżową
-tarczę i nie docierają do ciała żołnierza — mechanikę zapobiegania
-fabuła czyta dosłownie: złote runy i wytłoczone słońce zamieniają
-skierowaną ku celowi energię w rozgrzane powietrze. Dowolność celu to
-postawa strażnika: nadstawiasz się za brata po lewej i za brata po
-prawej. Dobranie karty to odzyskana inicjatywa: kto przetrwał dyktat
-wroga, ma drugą wolność ruchu.
-
-**Całość jako opowieść.** Trzy many ({2}{W}) to cena postawienia
-ciężkiej piechoty w ogniu; trzy punkty tarczy to impet jednego
-uderzenia wroga; zwrócona ręka to lekcja wyniesiona z przetrwania.
-To opowieść o dyscyplinie borosijskiego muru tarcz: impet nie wygrywa
-wojny — wstrzymanie go dopiero ją zaczyna na nowo.
+Pełne polskie odczytanie nazwy w Kodeksie: **„Wytrzymaj!”**. Najlepiej
+brzmi jako komenda z linii tarcz: krótka, bez ozdobników, wypowiadana nie
+po to, by podnieść morale, lecz po to, by ocalić metr bruku.
 
 ## Flavor Text
 
 > „Defense is as much a part of war as offense, the shield as important
-> a tool as the sword."
+> a tool as the sword.”
 > —Alovnek, Boros guildmage
 
-**Zdanie po zdaniu:**
+Tłumaczenie robocze: „Obrona jest taką samą częścią wojny jak natarcie;
+tarcza jest narzędziem równie ważnym jak miecz.”
 
-- *„Defense is as much a part of war as offense…"* — obrona jest taką
-  samą częścią wojny, jak zaczep: jawna oś doktryny Legionu, wedle
-  której pole Boros nie jest czystym placem broni, lecz linią, której
-  nikt nie przekroczy.
-- *„…the shield as important a tool as the sword."* — tarcza jest
-  tak samo ważnym *narzędziem*, jak miecz. Słowo „tool" robi tu
-  ciężar: wojna Boros to rzemiosło, a kolekcję narzędziową otwiera
-  tarcza, nie miecz.
+Odczyt fraza po frazie:
 
-Kontekst postaci: cytat wygłasza **maga gildii** — Firefist, nie
-szeregowy; mówi do wojennych młodszych, by przetrwali dyktat i doszli
-do wieczora. Związek z mechaniką jest 1:1: szkolące zdanie flavoru to
-zarazem trzy punkty zapobieżenia i lekcja (dobranie karty) wyniesiona
-z przetrwania.
+- **„Defense is as much a part of war as offense”** — Alovnek odwraca
+  najprostszy odruch wojownika. Natarcie nie jest pełnią wojny; jest tylko
+  jedną jej połową. Druga połowa to zdolność utrzymania granicy, gdy wróg
+  próbuje narzucić tempo.
+- **„the shield as important a tool as the sword”** — tarcza zostaje nazwana
+  narzędziem, nie symbolem. W ustach Boros to istotne: wojna jest rzemiosłem
+  służby, a rzemiosło wymaga właściwego narzędzia do właściwej pracy.
+
+Cytat dobrze tłumaczy, dlaczego scena jest spokojniejsza niż typowy obraz
+szarży Legionu. Oś karty nie biegnie od gniewu do zwycięstwa, lecz od
+uderzenia do przetrwania. Dopiero człowiek, którego nie złamano, może
+odpowiedzieć.
 
 ## Transpozycja
 
-Karta jest natywna — *Guildpact* (2006) osadza ją wprost na rodzinnym
-planie Ravnica, a Kolekcja nie transponuje jej w inny świat.
+*Withstand* jest kartą rodzimą dla Ravnicy, więc Kodeks nie przenosi jej
+między światami. Praca transpozycyjna polega tutaj na zawężeniu sceny:
+z ogólnej borosijskiej doktryny do konkretnego bruku Dziesiątego Dystryktu,
+w okolicę, gdzie obecność Legionu jest najgęstsza i najbardziej naturalna.
 
-**Narracja** właściciela kotwiczy scenę konkretnie na ravnickim bruku:
-ciężka zbroja stali ze złotymi okuciami, wieżowa tarcza z wytłoczonym
-płonącym słońcem (emblemat Domu Boros), żółto-pomarańczowa aura ognia
-myjąca krawędzie pancerza bez dojścia do ciała, złote runy na brzegu
-tarczy, gęsty dym i świetliste iskry. To ta wizja stoi za ilustracjami
-FOT/KON oraz odczytem mechaniki w całym wpisie.
+Fabuła dostawy właściciela dopowiada materializację: ciężka stalowa zbroja,
+złote okucia, wieżowa tarcza z płonącym słońcem, żółto-pomarańczowa aura
+ognia i złote runy na brzegu tarczy. To nadal nie jest nowy kanon Ravnicy,
+lecz precyzyjna scena kolekcji: jeden żołnierz Boros na ravnickim bruku,
+w gildii albo na jej pograniczu, w chwili zatrzymanego uderzenia.
 
 ## Na Mapie
 
-Osadzenie w terenie: **Dziesiąty Dystrykt** planu [[ravnica|Ravnicy]],
-precykt **Precinct Four** — poparzone bruki poligonu pod **Sunhome**,
-wokół arterii **Tin Street** i blokowiska **The Bulwark**. Poziom
-pewności: **region** — Fabuła lokuje scenę „w gildii Boros albo na
-pograniczu z nią", a kanon (*Guildmasters' Guide to Ravnica*; MTG Wiki)
-wskazuje Czwarty Precykt jako dom Legionu; konkretnego bruku nie znamy.
+Najlepszym miejscem dla tej sceny jest **Precinct Four** Dziesiątego
+Dystryktu [[ravnica|Ravnicy]] — obszar Sunhome, The Bulwark i Tin Street.
+Pinezka wskazuje zachodni skraj borosijskiej strefy przy Tin Street Market,
+nie konkretny kamień uliczny. Poziom pewności: **region**. Fabuła daje
+Boros i ravnicki bruk; kanon geograficzny dopowiada, że właśnie Czwarty
+Precykt jest naturalnym zapleczem Legionu.
+
 Pinezka: `#/mapa/ravnica?pin=137gpt-withstand`.
+
+## Mechanika jako Opowieść
+
+W języku reguł *Withstand* jest chwilą za {2}{W}: zapobiega następnym
+3 obrażeniom, które w tej turze miałyby zostać zadane dowolnemu celowi,
+a potem pozwala dobrać kartę. Technicznie to niewielka tarcza i odzyskany
+oddech; fabularnie — dokładnie tyle czasu, ile potrzeba, by linia nie
+rozsypała się po pierwszym ciosie.
+
+Biała mana nadaje temu gestowi sens wspólnotowy: ochrona nie jest prywatnym
+unikiem, lecz działaniem dla kogoś. „Dowolny cel” brzmi w opowieści jak
+borosijska gotowość wejścia między przemoc a ofiarę — czasem dla siebie,
+czasem dla towarzysza, czasem dla pozycji, której nie wolno oddać. Trzy
+obrażenia to nie wielka bitwa, tylko pojedynczy impet. Ale wojny w mieście
+często rozstrzygają się właśnie na takich małych progach.
+
+Dobranie karty jest najważniejszym dopowiedzeniem. Obrona nie zużywa całej
+przyszłości obrońcy. Kto wytrzymał, zachowuje inicjatywę; kto utrzymał
+tarczę, może wykonać następny ruch.
 
 ## Źródła
 
-- **Narracja (dostawa właściciela, 2026-09-02)** — wiążące osadzenie
-  sceny FOT/KON: bruk Ravnicy, stalowa zbroja ze złotymi okuciami,
-  wieżowa tarcza z płonącym słońcem, żółto-pomarańczowa aura ognia,
-  złote runy, dym i iskry, „w gildii Boros albo na pograniczu z nią";
-  archiwum: `collection/entries/137gpt-withstand.md`.
-- Scryfall — dane karty (koszt, typ, mechanika, flavor, artysta, data,
-  nr, rzadkość): <https://scryfall.com/card/gpt/21/withstand>
-  (snapshot w repo: `scryfall/137gpt-withstand.json`).
-- Scryfall, zapytanie `flavor:alovnek` (unique=prints) — trzy unikatowe
-  karty z cytatami Alovneka: *Withstand* (GPT), *Condemn* (DIS),
-  *Boros Locket* (GRN); Alovnek nie ma własnej karty:
-  <https://scryfall.com/search?q=flavor%3Aalovnek&unique=prints>
-- MTG Wiki, „Boros Legion" — Legion jako konstablary (Liga Wojek)
-  i armia; parun Razia i kolumna anielska; stary porządek magów gildii
-  (Firefists); siedziba Sunhome:
+- Fabuła dostawy właściciela (2026-09-02) — ravnicki bruk, żołnierz Boros,
+  zbroja ze złotymi okuciami, wieżowa tarcza ze znakiem płonącego słońca,
+  aura ognia, runy, dym i iskry.
+- Scryfall, *Withstand* — tekst Oracle i flavor Alovneka:
+  <https://scryfall.com/card/gpt/21/withstand>
+- MTG Wiki, „Boros Legion” — Legion jako siła wojskowa/konstabularna,
+  Sunhome, Razia i struktura gildii:
   <https://mtg.fandom.com/wiki/Boros_Legion>
-- MTG Wiki, „Tenth District" i „Precinct Four" — sześć precyktów
-  Dziesiątki, ich granice, Sunhome kotwiczące obronę północy P4, mur
-  północny (Skarrg poza murami), Bulwark między Sunhome a Nivix,
-  Tin Street Market:
+- MTG Wiki, „Tenth District” i „Precinct Four” — układ precyktów,
+  Sunhome, Tin Street Market i The Bulwark:
   <https://mtg.wiki/page/Tenth_District> ·
   <https://mtg.wiki/page/Precinct_Four>
-- MTG Wiki, „Guildpact" — premiera 3 lutego 2006, drugi dodatek bloku
-  Ravnica, gildie Orzhov/Izzet/Gruul, hybryda many, 165 kart:
-  <https://mtg.wiki/page/Guildpact>
-- MTG Wiki, „Guildpact (novel)" — powieść Cory'ego Herndona (styczeń
-  2006); kontekst fabularny bloku: „Creation of the Schism":
-  <https://mtg.wiki/page/Guildpact_(novel)>
-- MTG Wiki, „White" — filozofia białej many (porządek, ochrona,
-  wspólnota) tłem interpretacji karty:
-  <https://mtg.fandom.com/wiki/White>
 
 ## Podsumowanie Lore
 
-*Withstand* to opowieść o hamulcu wojny — i to w dodatku, którego
-gildie na afiszu (kościół-bank Orzhov, warsztaty Izzet, zbory Gruul)
-najpewniej ciągną tylko naprzód:
+- **Tarcza jest doktryną Boros, nie dodatkiem do miecza.** Karta stawia
+  obronę w centrum wojny i pokazuje Legion jako formację utrzymującą
+  granicę.
+- **Ravnica sprowadza heroizm do bruku.** Najważniejsza walka to czasem
+  jeden krok, którego żołnierz nie oddaje na ulicy Dziesiątego Dystryktu.
+- **Alovnek mówi językiem rzemiosła wojennego.** Jego flavor nie romantyzuje
+  przemocy; uczy, że przetrwanie linii jest taktyką równie realną jak atak.
 
-- **Obrona jest równorzędną częścią wojny** — trzy punkty odparte
-  wieżową tarczą z płonącym słońcem są w tym dodatku retoryczną
-  przeciwwagą dla łaknienia (bloodthirst) i nawiedzeń (haunt).
-- **Kto przetrwa dyktat, zyskuje inicjatywę** — dobranie karty za
-  zatrzymany impet to moralny budżet Boros: dyscyplina zwraca się
-  z zyskiem.
-- **Armia i konstablary dzielą jedną tarczę** — Legion w Czwartym
-  Precykcie strzeże i murów północnych (Skarrg zaczyna się za nimi),
-  i targów Tin Street; karta jest motto tego systemu.
-- **Najprostszą prawdę Guildpact ujął najkrócej Alovnek** — doktryna
-  Legionu w jednym zwrocie szkoleniowym, który kanon nadrukował
-  potem jeszcze dwukrotnie (*Condemn*, *Boros Locket*).
-
-Karta godzi trzy ciężary naraz: tarcza z wizerunkiem gildii, runy
-z białej many, cytat dowódcy w szeregu — trzy punkty, trzy many,
-jedna lekcja wyniesiona z przetrwania.
+*Withstand* jest małą kartą o wielkiej zasadzie: zanim Legion ruszy naprzód,
+ktoś musi przyjąć na tarczę to, co miało złamać wspólnotę za jego plecami.
