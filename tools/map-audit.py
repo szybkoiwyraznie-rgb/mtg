@@ -26,6 +26,7 @@ Użycie:
 Kod wyjścia: 0 = bez problemów, 1 = są problemy (do CI).
 """
 import json
+import math
 import re
 import sys
 import xml.etree.ElementTree as ET
@@ -34,7 +35,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 NS = '{http://www.w3.org/2000/svg}'
 FILLE_LADU = {'#e8dbb8', '#eef0e6',         # pergamin: ląd / lodowiec (Sejiri)
-               '#f7f7f7'}                    # atlas (mapforge): ląd = jasny szary papier
+               '#f7f7f7',                   # atlas (mapforge): ląd = jasny szary papier
+               '#575757'}                   # Ravnica: ciemny pas podziemi (Undercity) = ląd
 MARKERY = {'gora', 'wulkan', 'drzewo', 'bagno', 'miasto', 'ruina'}
 SPODZEANE_WODY = {                           # konwencja projektu
     'Bojuka Bay', 'Sunder Bay', 'Chill Depths', 'Makindi Trenches',
@@ -132,8 +134,17 @@ class Mapa:
                 continue
             txt = ''.join(el.itertext()).strip()
             if txt:
+                # Kąt obrotu etykiety (SVG rotate(a cx cy) na transform) —
+                # inaczej audyt liczy prostokąt AABB nieobróconego tekstu
+                # i fałszywie zgłasza kolizje (np. MEDORI PARK × UNDERCITY,
+                # TIN STREET × THE BLISTERCOILS).
+                rot = 0.0
+                tr = el.get('transform') or ''
+                m = re.search(r'rotate\(([-0-9.]+)', tr)
+                if m:
+                    rot = float(m.group(1))
                 out.append((txt, float(el.get('x')), float(el.get('y')),
-                            float(el.get('font-size') or 15)))
+                            float(el.get('font-size') or 15), rot))
         return out
 
     def forge_w_wodzie(self):
@@ -364,10 +375,29 @@ def audytuj(plan, woda_dozwolona):
     return problemy, info
 
 
+def _etykieta_box(txt, x, y, fs, rot=0.0):
+    """AABB etykiety tekstowej z uwzględnieniem obrotu SVG.
+
+    Zwraca (x1, y1, x2, y2). Bez obrotu = model z rozstawEtykiety
+    (szer. ~0.31*fs/znak, wys. od y-0.82*fs do y+0.24*fs). Przy obrocie
+    obraca 4 narożniki wokół (x, y) i bierze ich AABB.
+    """
+    w = len(txt) * fs * 0.31
+    h_top, h_bot = fs * 0.82, fs * 0.24
+    c = ((x - w, y - h_top), (x + w, y - h_top), (x + w, y + h_bot), (x - w, y + h_bot))
+    if rot:
+        a = math.radians(rot)
+        ca, sa = math.cos(a), math.sin(a)
+        c = [(x + (px - x) * ca - (py - y) * sa,
+              y + (px - x) * sa + (py - y) * ca) for px, py in c]
+    xs = [p[0] for p in c]; ys = [p[1] for p in c]
+    return (min(xs), min(ys), max(xs), max(ys))
+
+
 def audytuj_podklad(mapa, nazwa, mjson, woda):
     problemy, info = [], []
     ety = mapa.etykiety()
-    for txt, x, y, fs in ety:
+    for txt, x, y, fs, rot in ety:
         if len(txt) < 2:                      # igła kompasu (N, S…)
             continue
         if txt in woda or txt.startswith('(') or txt == 'ruiny w niebie':
@@ -375,16 +405,14 @@ def audytuj_podklad(mapa, nazwa, mjson, woda):
         # Etykieta może SIADAĆ przy wybrzeżu — wystarczy, że część napisu
         # dotyka lądu (9 próbek bboxa; ten sam model co rozstawEtykiety w
         # render.mjs; decyzja właściciela 2026-09-02 pkt b).
-        x1, y1, x2, y2 = (x - len(txt) * fs * 0.31, y - fs * 0.82,
-                          x + len(txt) * fs * 0.31, y + fs * 0.24)
+        x1, y1, x2, y2 = _etykieta_box(txt, x, y, fs, rot)
         mx, my = (x1 + x2) / 2, (y1 + y2) / 2
         if not any(mapa.na_ladzie(px, py, tolerancja=2) for px, py in
                    [(mx, my), (x1, y1), (x2, y1), (x1, y2), (x2, y2),
                     (mx, y1), (mx, y2), (x1, my), (x2, my)]):
             problemy.append(f'{nazwa}: ETYKIETA W WODZIE: {txt!r} @({x:.0f},{y:.0f})')
-    boxy = [(t, x, y, fs,
-             x - len(t) * fs * 0.31, y - fs * 0.82,
-             x + len(t) * fs * 0.31, y + fs * 0.24) for t, x, y, fs in ety]
+    boxy = [(t, x, y, fs, *(_etykieta_box(t, x, y, fs, rot)))
+            for t, x, y, fs, rot in ety]
     for i in range(len(boxy)):
         for j in range(i + 1, len(boxy)):
             a, b = boxy[i], boxy[j]
