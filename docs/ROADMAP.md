@@ -198,6 +198,19 @@ mapy Dziesiątego Dystryktu jako dokładniejszego podkładu (jeśli plik
 warstwy epokowe, pełny przekrój Undercity, drugi punkt odniesienia
 (opis fanowskiej nakładki) — szczegóły `mapa-analiza.md`.
 
+**PR-14 (2026-09-03) — audyt PR-13 + Pętla Jakości + przygotowanie v3:**
+audyt scalonego PR-13 (spójny z ADR-ami; 5 drobnych pozycji →
+obsłużone); pogłębienie planu Rawnicy („Ludy” + 2 cytowania);
+kolejka link-miningu Rawnicy w backlogu (próg = 2 karty); pass mapowy
+— 3 pozycje otwarte zweryfikowane kanonem (Guildpact Square + Pillar
+of the Paruns, Beacon Tower, Gnat Alley — bez współrzędnych do v3).
+**v3 — BLOKOWANE ŚRODOWISKOWO:** właściciel dostarczył fan-made mapę
+w 3 warstwach (a/b/c) + link Drive, ale rastery nie dotarły do sandboxa
+(załącznik UI niewidoczny; egress zablokowany; fetch_page na Drive →
+500). Procedura wektoryzacji gotowa w
+`maps/ravnica/zrodlo-fanowska-wektoryzacja.md` — odpalenie w chwili,
+gdy pliki będą dostępne.
+
 **SKALOWANIE MAP (pomiar 2026-09-01 → decyzja domknięta w PR-11 / ADR 0027):**
 artefakt jednoplikowy z epoki base64 miał **4,45 MB, z czego 96,7% to
 base64 dwóch map** (Śródziemie 1,75 MB + Zendikar 1,54 MB raw;

@@ -474,10 +474,10 @@
  "otwarte_na_kolejne_przejscia": [
   "Wektoryzacja prywatnej fan-made mapy TenthDistrict.png (dostawa właściciela 2026-09-03, ADR 0031) — kandydat v3/T2+; raster źródłowy poza gitem, potrzebny realny plik w sandboxie",
   "Parhelion II (epoka WotS) — świadomie pominięty na v1/v2 (era pierwotnego bloku); ewentualny dodatek w warstwie epokowej",
-  "Guildpact Square + Pillar of the Paruns (wiki: przy Chamber; brak na rastrze GGR) — dopytać w kanonie przed v3",
-  "Beacon Tower (P2; zapis z 2019 może nie żyć w erze karty 2006) — pominięty świadomie",
+  "Guildpact Square + Pillar of the Paruns — zweryfikowane kanonem (mtg.wiki Tenth District: plac w miejscu podpisania Paktu; obelisk z pieczęciami dziewięciu gildii); rozbieżność wiki co do lokalizacji (fandom: przy Forum of Azor w P2; Tenth District: przy Chamber of the Guildpact) — w v3 osadzić przy Chamber (P1) z notką o rozbieżności",
+  "Beacon Tower — zweryfikowane kanonem (mtg.fandom Ravnica: P2, terytorium Azorius, mieści Interplanar Beacon); epoka w pierwotnym bloku niepotwierdzona (karta z 2006) — zostaje poza mapą do znalezienia źródła epokowego",
   "Undercity: pełny przekrój (poziomy, kanały P6, wejścia) — ewentualna osobna warstwa/scena v3; na v2 markery przekrojowe Rix Maadi / Korozda & Svogthos / Nightveil & Duskmantle",
-  "Gnat Alley (najdłuższa ulica planu, Gruul) — brak twardych pozycji w transkrypcji; przy najbliższym poczytnym źródle"
+  "Gnat Alley — zweryfikowane kanonem jako najdłuższa ulica planu i trasa infiltracji Gruul (mtg.fandom Ravnica; flavor Gnat Alley Creeper, DIS #63), ale kanon nie daje współrzędnych — geometria dopiero w v3, gdy źródło to pokaże"
  ],
  "silnik": "mapforge (scena → podkład); budowniczy sceny: tools/mapforge/ravnica-scena-t4.py (geometria + walidacje pit w precyktach)",
  "kalibracja": {

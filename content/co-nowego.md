@@ -1,3 +1,32 @@
+## 2026-09-03 11:29 — Ravnica: pogłębiona, zweryfikowana i gotowa na wektoryzację v3
+
+Sesja jakościowa nad Rawnicą (PR-14). Po audycie scalonego PR-13
+(spójny z ADR-ami; znalazło się 5 drobnych pozycji — wszystkie
+obsłużone):
+
+- **Plan Ravnica** dostaje rozpisane „Ludy”: pochodzenie megalizny
+  (miasta zrosły się w jeden organizm), roster ras ery Paktu
+  (Erstwhile w Umerilek, Vedalken, Loxodon, Viashino) i warstwa
+  martwych (Rada Obzedat, „Niesmiertelni”, dzielnica Agyrem jako
+  późniejsze wyjaśnienie anomalii planu) + dwa nowe cytowania.
+- **Link-mining**: encje Rawnicy (Boros, Legion Boros, Dziesiąty
+  Dystrykt, Sunhome, Tin Street, Pakt Gildii) lądują w kolejce
+  link-miningu — hasła powstaną przy drugiej karcie planu (próg
+  liczy się od kart); plan dostaje item „Karty kolekcji” z linkiem
+  do *Withstand*. Baza po raz pierwszy 100% kompletności (6/6 stron).
+- **Pass mapowy**: trzy pozycje otwarte mapy zweryfikowane kanonem —
+  Guildpact Square ze Słupem Parunów (obelisk z dziewięciu pieczęciami,
+  przy Chamber of the Guildpact — rozbieżność wiki opisana), Beacon
+  Tower (P2, Azorius, epoka bloku niepotwierdzona) i Gnat Alley
+  (najdłuższa ulica planu, trasa infiltracji Gruul — kanon bez
+  współrzędnych).
+- **Mapa v3 — prawie gotowa**: właściciel dostarczył fan-made mapę
+  Dziesiątego Dystryktu w trzech warstwach (granice / + teren / + POI
+  i labelki) plus link Drive. Rastery nie dotarły jednak do sandboxa
+  (załącznik niewidoczny dla narzędzi, sieć zablokowana) — procedura
+  wektoryzacji jest opisana krok po kroku i czeka na pliki.
+- Drobiazgi: dwie literówki w dzienniku (wariantie, Blistercoils)
+  i usunięty bezkanoniczny fragment z „Setting w pigułce”.
 ## 2026-09-03 09:36 — Karty Katalogowe przechodzą na LORE-first; Ravnica dostaje kierunek wektoryzacji fan-made
 
 Po feedbacku właściciela zmienia się standard kart: główna treść nie zaczyna
@@ -33,10 +62,10 @@ pierwotna z głosem Alovneka, maga gildii Boros — w pełnym szkielecie
 dziewięciu sekcji, z pinezką na bruku przy Tin Street w Precykcie
 Czwartym, pod samym Sunhome. Razem z nią Codex dostaje **plan Ravnica**
 i pierwszą w Atlasie mapę miasta: Dziesiąty Dystrykt narysowany
-własną ręką silnika mapforge w warianie T4 — sześć precyktów ułożonych
+własną ręką silnika mapforge w wariancie T4 — sześć precyktów ułożonych
 według kanonicznych sąsiedztw z *Guildmasters' Guide to Ravnica*, mur
 północny z blankami, za którym czają się Skarrg i Czerwone Pustkowia,
-szczelina Deadbridge z mostem Benzera, Zonot Siedem z Blisttercoils,
+szczelina Deadbridge z mostem Benzera, Zonot Siedem z Blistercoils,
 Transguild Promenade z rubblebeltem i tłem duchów miasta, które „trwa
 dalej poza ramką". Oficjalnych rastrów map celowo nie osadzamy
 (licencja WotC); geometria to rekonstrukcja — jeśli oficjalna mapa GGR

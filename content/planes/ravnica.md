@@ -99,23 +99,42 @@ magii), **Gruul** (R/G — klany dziczy), **Golgari** (B/G — rozkład jako
 
 ## Ludy
 
-Ravnica jest kosmopolityczna jak żaden inny plan: ludzie prowadzą
-instytucje i służą we wszystkich gildiach; patrole **Ligi Wojek**
-i kompanie **Armii Boros** pilnują porządku ulic; **Vedalkenowie Simic**
-projektują kombinaty; elfy **Selesnyi** i **Devkarin Golgari** żyją
-w lasach i podziemiach; **Loxodoni** niosą kolumny Selesnyi;
-**Viashino** i **gobliny** (bracia Shattergang na Tin Street!) ciągną
-ku bogactwu Rakdos i Gruul; sfinksy, ogry, wurmy i setki hybryd
-z laboratoriów Simic trafiają w ulice; nad nimi — **anioły Boros**,
-duchy **Obzedat**, a wśród nich smoki pragmatyczne jak **Niv-Mizzet**,
-pierwszy inżynier planu.
+Ravnica nie ma „ludności” w ziemskim sensie — ma mieszkańców jednego
+organizmu. Tysiąclecia temu miasta pokrywały powierzchnię planu
+osobno, po czym rosły, aż zrosły się w jedną megaliznę; to czyni
+Rawnicę jednym z najgęściej zaludnionych planów Multiversum i
+tłumaczy jej kosmopolityzm: każdy, kto ma co sprzedać, co ukraść
+albo co bronić, ma tu swój kawałek bruku.
+
+Rasy osiadły tu jak warstwy kamienia. Ludzie są ludem wszystkich
+dziesięciu gildii — od rekruta **Armii Boros** i patrolu **Ligi
+Wojek** po kupców Orzhov; elfy żyją podwójnie: pasterskie elfy
+**Selesnyi** w Canopy i nekromantyczne **Devkarin** w trumnach
+pod Medori Park, a przed nimi — **Erstwhile**, wysublimowany ród
+elfów uśpionych w mauzoleum **Umerilek**; **Vedalken** projektują
+prawo (Azorius) i kombinaty (Simic); **Loxodoni** niosą kolumny
+Selesnyi; wojenni **Viashino** służą Boros, Rakdos i Izzet, a
+gobliny (w tym bracia Shattergang z Tin Street) wchodzą we wszystkie
+czerwone gildie; centaury i minotaurowie Gruul, ogry, sfinksy,
+wurmy oraz smoki pragmatyczne jak **Niv-Mizzet** — pierwszy
+inżynier planu — uzupełniają uliczny bestiariusz; z laboratoriów
+Simic wykraczają się setki hybryd, a niebem nad Czwórką suną
+anioły Boros.
+
+Martwi są tu drugą obywatelską warstwą. Jeszcze przed podpisaniem
+Paktu Orzhov ustanowił **Radę Obzedat** — „Niesmiertelnych”, duchy
+dawnych patriarchów i matriarchów gildii, które przez tysiąclecia
+rządziły syndykatem z głębi Orzhova; umarli Rawnicy ogólnie nie
+odchodzą łatwo — późniejsze epoki wyjaśniły to anomalią planu
+(pęcherz eteru uwięził ich w Dzielnicy Duchów **Agyrem**), ale już
+w erze Paktu nocami z Medori Park chodzą procesje nieumarłych.
 
 ## Setting w pigułce
 
 - Topos: **ekumenopolis** — miasto jako cały świat, dzielnice jako
   prowincje; „poza miastem" to tylko bardziej uszkodzone miasto.
 - Porządek: **dziesięć gildii** spina funkcje cywilizacji; każda ma
-  swój teren, biurokrację, magię i własne granatowe sajgonki.
+  swój teren, biurokrację, magię i własny język ulicy.
 - Meta: **Pakt Gildii** (magiczny kontrakt prawny) — blokuje wojnę
   otwartą, kierując konflikt w intrygę, podatek i pojedynek prawny.
 - Era Kolekcji: pierwotny blok Ravnica (Ravnica: City of Guilds,
@@ -124,6 +143,8 @@ pierwszy inżynier planu.
 - Ton: utopia procedury nad przepaścią — pokój jest możliwy, ale kruchy;
   wojna toczy się kontraktami, strażą i linią murów, nie jednym polem
   bitwy.
+- **Karty kolekcji:** [[137gpt-withstand|Withstand]] (GPT) — linia
+  tarcz Legionu Boros na bruku Dziesiątego Dystryktu.
 
 ## Źródła
 
@@ -149,6 +170,17 @@ pierwszy inżynier planu.
   i armia, siedziba Sunhome, parun **Razia** i kolumna anielska,
   Firefists (magowie gildii):
   <https://mtg.fandom.com/wiki/Boros_Legion>
+- MTG Wiki, „Ravnica" — opis planu (ekumenopolis, jeden z najgęściej
+  zaludnionych planów), Historia („przez tysiąclecia miasta pokrywały
+  powierzchnię planu, aż zrosły się w jedną megaliznę"),
+  „Ravnica and the Multiverse" (izolacja planu jako „mikroszard",
+  pęcherz eteru i Dzielnica Duchów Agyrem, zanik anomalii po
+  Naprawieniu, przedłużona żywotność Rawnickich), Demografia
+  (roster gildii i mieszkańców): <https://mtg.wiki/page/Ravnica>
+- MTG Wiki, „Obzedat" — Ghost Council of Orzhova: duchy dawnych
+  patriarchów i matriarchów Orzhov („Niesmiertelni"), ustanowione
+  przed podpisaniem Paktu, rezydujące w głębi dzielnicy Orzhov:
+  <https://mtg.wiki/page/Obzedat>
 - MTG Wiki, „Guildpact" — drugi dodatek pierwotnego bloku Ravnica
   (luty 2006; gildie Orzhov/Izzet/Gruul; hybryda many; 165 kart);
   towarzysząca powieść *Guildpact* Cory J. Herndona (styczeń 2006),
