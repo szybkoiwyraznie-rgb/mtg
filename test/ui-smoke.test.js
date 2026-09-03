@@ -221,17 +221,16 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(karta.includes('mini-mapa'), 'karta: brak miniatury mapy w infoboksie (feedback C)');
   assert.ok(karta.includes('Podsumowanie Lore'), 'karta: brak sekcji podsumowania');
   assert.ok(!karta.includes('Wątki i Powiązania'), 'karta: wątki mają żyć w treści (pogrubienia), nie w osobnej sekcji');
-  assert.ok(karta.includes('<strong>crebain</strong>'), 'karta: brak pogrubionych encji lore w treści');
-  assert.ok(karta.includes('Jedynym bytem karty'), 'karta: Postacie i Byty mają zaczynać się od tego, co jest na karcie (kanon)');
+  assert.ok(karta.includes('<strong>Crebain</strong>') || karta.includes('<strong>crebain</strong>'), 'karta: brak pogrubionych encji lore w treści');
+  assert.ok(karta.includes('Na karcie obecne jest'), 'karta: Postacie i Byty mają zaczynać się od tego, co jest na karcie (kanon)');
   assert.ok(!karta.includes('Armia Isengardu'), 'karta: byty z narracji/promptu nie mogą być listowane jako byty karty');
   assert.ok(!karta.includes('leykus'), 'karta: bez niekanonicznych porównań ("leykus")');
   assert.ok(!karta.includes('pierwszy mieszkaniec'), 'karta: bez meta-komentarzy o kolekcji (feedback B)');
   assert.ok(!karta.includes('zyskają własne hasła'), 'karta: bez opisu procesu link-miningu (feedback B)');
-  // ADR 0026: Fabuła dostawy WRÓCIŁA jako wiążąca kotwica transpozycji —
-  // byty ze sceny (np. Uruk-hai) są legalne, ale wyłącznie jako oznaczone
-  // OSADZENIE kolekcji z Fabułą cytowaną w Źródłach. Prompt nadal poza pętlą.
-  assert.ok(karta.includes('Osadzenie kolekcji'), 'karta: scena Fabuły oznaczona jako osadzenie (ADR 0026)');
-  assert.ok(karta.includes('Narracja'), 'karta: Narracja (Fabuła dostawy) cytowana w treści/Źródłach (ADR 0026)');
+  // ADR 0026/0030: Fabuła dostawy wraca jako kotwica osadzenia, ale
+  // widoczna treść karty pozostaje LORE-first, bez sekcji narracyjnej/procesowej.
+  assert.ok(karta.includes('Fabuła dostawy'), 'karta: Fabuła dostawy cytowana w treści/Źródłach (ADR 0026)');
+  assert.ok(karta.includes('<h2>Kronika Lore</h2>'), 'karta: brak otwarcia LORE-first (ADR 0030)');
   assert.ok(!karta.includes('Narracja Koleksji') && !karta.includes('Narracja Kolekcji'), 'karta: sekcja narracji zniesiona (ADR 0011)');
   assert.ok(!karta.includes('perspektywy żabiej'), 'karta: treść promptu nie może się pojawiać (ADR 0011)');
   assert.ok(!karta.includes('ADR'), 'karta: treść nie może odsyłać do mechaniki Codexu (feedback B)');
@@ -241,7 +240,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (2)'), 'lista kart: brak 2 kart');
+  assert.ok(lista.includes('Karty Katalogowe (3)'), 'lista kart: brak 3 kart');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
   assert.ok(!lista.includes('>srodziemie<'), 'lista kart: slug planu nie może być widoczny jako tekst (feedback G)');
   assert.ok(lista.indexOf('Coralhelm Guide') < lista.indexOf('Dunland Crebain'), 'lista kart: brak sortowania alfabetycznego (feedback E)');
@@ -251,25 +250,30 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(lista.includes('data-tagi='), 'lista kart: brak tagów w wierszach tabeli (feedback E)');
   assert.ok(!lista.includes('materializowana jawnie'), 'lista kart: bez meta-tekstu ADR 0003 (feedback F)');
 
-  // ADR 0016: format Wpisu Karty — blok danych Oracle w treści, warstwy mechaniki,
-  // polskie odczytanie nazwy; sekcje „Ilustracja"/„Druk w Kolekcji" nie istnieją
+  // ADR 0030: format Karty Katalogowej jest LORE-first — technikalia w infoboksie,
+  // mechanika jako opowieść dopiero pod koniec; sekcje „Ilustracja"/„Druk w Kolekcji" nie istnieją
   shim.idz('#/karta/1ltr-dunland-crebain');
   const karta1 = shim.app.innerHTML;
-  assert.ok(karta1.includes('dwa many dowolnego koloru'), 'karta 1LTR: brak bloku danych Oracle (ADR 0016)');
-  assert.ok(karta1.includes('Odczyt zasadniczy') && karta1.includes('Całość jako opowieść'), 'karta 1LTR: brak warstw mechaniki (ADR 0016)');
-  assert.ok(karta1.includes('Crebainy z Dunlandu'), 'karta 1LTR: brak polskiego odczytania nazwy (ADR 0016)');
-  assert.ok(!karta1.includes('<h2>Ilustracja'), 'karta 1LTR: sekcja ilustracyjna zakazana (ADR 0016)');
+  assert.ok(karta1.includes('<h2>Kronika Lore</h2>'), 'karta 1LTR: brak sekcji Kronika Lore (ADR 0030)');
+  assert.ok(!karta1.includes('<h2>Metryka i Kontekst Świata</h2>'), 'karta 1LTR: metryka nie może otwierać treści (ADR 0030)');
+  assert.ok(karta1.includes('Crebainy z Dunlandu'), 'karta 1LTR: brak polskiego odczytania nazwy');
+  assert.ok(karta1.indexOf('<h2>Na Mapie</h2>') < karta1.indexOf('<h2>Mechanika jako Opowieść</h2>'), 'karta 1LTR: mechanika ma być po mapie/transpozycji (ADR 0030)');
+  assert.ok(karta1.indexOf('<h2>Mechanika jako Opowieść</h2>') < karta1.indexOf('<h2>Źródła</h2>'), 'karta 1LTR: mechanika ma stać bezpośrednio przed źródłami (ADR 0030)');
+  assert.ok(!karta1.includes('<h2>Ilustracja'), 'karta 1LTR: sekcja ilustracyjna zakazana');
   assert.ok(!karta1.includes('<h2>Druk w Kolekcji'), 'karta 1LTR: sekcja druku zniesiona (ADR 0014)');
 
   // druga karta: chudy format dostawy (ADR 0011) — czysty kanon
   shim.idz('#/karta/2bfz-coralhelm-guide');
   const karta2 = shim.app.innerHTML;
   assert.ok(karta2.includes('Coralhelm Guide'), 'karta 2BFZ: brak tytułu');
-  assert.ok(karta2.includes('Merfolk Scout Ally'), 'karta 2BFZ: brak typu ze snapshotu');
-  assert.ok(karta2.includes('jeden mana dowolnego koloru'), 'karta 2BFZ: brak bloku danych Oracle (ADR 0016)');
-  assert.ok(karta2.includes('Przewodniczka z Koralowego Hełmu'), 'karta 2BFZ: brak polskiego odczytania nazwy (ADR 0016)');
-  assert.ok(karta2.includes('Odczyt fraza po frazie'), 'karta 2BFZ: brak odczytu flavoru fraza po frazie (ADR 0016)');
-  assert.ok(!karta2.includes('<h2>Ilustracja'), 'karta 2BFZ: sekcja ilustracyjna zakazana (ADR 0016)');
+  assert.ok(karta2.includes('Merfolk Scout Ally'), 'karta 2BFZ: brak typu ze snapshotu w infoboksie');
+  assert.ok(karta2.includes('<h2>Kronika Lore</h2>'), 'karta 2BFZ: brak sekcji Kronika Lore (ADR 0030)');
+  assert.ok(!karta2.includes('<h2>Metryka i Kontekst Świata</h2>'), 'karta 2BFZ: metryka nie może otwierać treści (ADR 0030)');
+  assert.ok(karta2.includes('Przewodniczka z Koralowego Hełmu'), 'karta 2BFZ: brak polskiego odczytania nazwy');
+  assert.ok(karta2.includes('Odczyt fraza po frazie'), 'karta 2BFZ: brak odczytu flavoru fraza po frazie');
+  assert.ok(karta2.indexOf('<h2>Na Mapie</h2>') < karta2.indexOf('<h2>Mechanika jako Opowieść</h2>'), 'karta 2BFZ: mechanika ma być po mapie/transpozycji (ADR 0030)');
+  assert.ok(karta2.indexOf('<h2>Mechanika jako Opowieść</h2>') < karta2.indexOf('<h2>Źródła</h2>'), 'karta 2BFZ: mechanika ma stać przed źródłami (ADR 0030)');
+  assert.ok(!karta2.includes('<h2>Ilustracja'), 'karta 2BFZ: sekcja ilustracyjna zakazana');
   assert.ok(karta2.includes('Viktor Titov'), 'karta 2BFZ: brak artysty posiadanego wydruku');
   assert.ok(karta2.includes('Jori En'), 'karta 2BFZ: brak flavoru ze snapshotu');
   assert.ok(!karta2.includes('Druk w Kolekcji'), 'karta 2BFZ: sekcja „Druk w Kolekcji" zniesiona (ADR 0014)');
@@ -283,6 +287,15 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   // mapa planu istnieje (ADR 0012): infoboks z mini-mapą i deep-linkiem pinezki
   assert.ok(karta2.includes('#/mapa/zendikar?pin=2bfz-coralhelm-guide'), 'karta 2BFZ: brak deep-linka pinezki');
   assert.ok(karta2.includes('mini-mapa'), 'karta 2BFZ: brak miniatury mapy w infoboksie');
+
+  shim.idz('#/karta/137gpt-withstand');
+  const karta3 = shim.app.innerHTML;
+  assert.ok(karta3.includes('<h2>Kronika Lore</h2>'), 'karta 137GPT: brak sekcji Kronika Lore (ADR 0030)');
+  assert.ok(karta3.includes('Legion Boros'), 'karta 137GPT: brak ciężaru lore Boros');
+  assert.ok(!karta3.includes('Cory') && !karta3.includes('nr 21/165'), 'karta 137GPT: nie może epatować procesem wydawniczym');
+  assert.ok(karta3.indexOf('<h2>Na Mapie</h2>') < karta3.indexOf('<h2>Mechanika jako Opowieść</h2>'), 'karta 137GPT: mechanika ma być po mapie/transpozycji');
+  assert.ok(karta3.indexOf('<h2>Mechanika jako Opowieść</h2>') < karta3.indexOf('<h2>Źródła</h2>'), 'karta 137GPT: mechanika ma stać przed źródłami');
+
   shim.idz('#/');
   assert.ok(shim.app.innerHTML.includes('Dunland Crebain'), 'home: brak ostatniej materializacji');
 

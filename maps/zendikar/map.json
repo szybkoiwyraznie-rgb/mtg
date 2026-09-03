@@ -551,6 +551,14 @@
    "notka": "jaskinie na płd.-zach. wybrzeżu Bala Ged"
   },
   {
+   "nazwa": "Umungshore",
+   "x": 0.836,
+   "y": 0.6321,
+   "typ": "osada",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "wioska nad brzegiem Bojuka Bay, na trasie rzeki Umung (MTG Wiki „Bala Ged”); osady pomocnicze przy bystrzach i wodospadach Umung — Planeswalker's Guide: Bala Ged and Elves; dokładny punkt niewyznaczony w kanonie — osadzona na płn. brzegu zatoki (dodane w PR-13)"
+  },
+  {
    "nazwa": "The Border Mire",
    "x": 0.704,
    "y": 0.659,
@@ -863,6 +871,13 @@
    "typ": "zatoka",
    "kontynent": "Bala Ged",
    "zrodlo": "https://mtg.fandom.com/wiki/Zendikar_(plane)"
+  },
+  {
+   "nazwa": "Umungshore",
+   "typ": "osada",
+   "kontynent": "Bala Ged",
+   "zrodlo": "https://mtg.fandom.com/wiki/Bala_Ged",
+   "notka": "wioska nad Bojuka Bay przy rzece Umung — jedna z osad pomocniczych dla podróżnych mijających bystrza (MTG Wiki „Bala Ged”; Guide: Bala Ged and Elves); dodana do mapy w PR-13"
   },
   {
    "nazwa": "Bordermire (bagna)",

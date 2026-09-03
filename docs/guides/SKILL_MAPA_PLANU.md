@@ -266,6 +266,26 @@ Sandbox nie trzyma `node_modules` między sesjami — zainstaluj na nowo:
 mkdir -p tmp-rsvg && cd tmp-rsvg && npm init -y && npm install @resvg/resvg-js
 ```
 
+Alternatywa (zweryfikowana w sesji PR-13): `sharp` — też prebuilt, a jej
+`extract({left,top,width,height})` robi crop regionu wprost (bez ręcznego
+PNG po surowych pikselach):
+
+```bash
+mkdir -p /home/user/tmp/render && cd /home/user/tmp/render && npm init -y && npm install sharp
+```
+
+```js
+const s=require('sharp');
+s('maps/zendikar/podklad.svg').resize(4000).png().toFile('/tmp/mapa-big.png');
+// crop prostokąta mapy (1530..1770)×(780..950) przy renderze ×2:
+s('maps/zendikar/podklad.svg').resize(4000).extract({left:3060, top:1560, width:480, height:340}).png().toFile('/tmp/crop.png');
+```
+
+Uwaga na późniejszy fallback: w sandboxie PR-13 `pip install cairosvg`
+działało (pypi osiągalne), ale brak systemowego `libcairo` blokuje render;
+ImageMagick `convert` deleguje do brakującego `rsvg-convert`. Node/prebuilt
+(resvg/sharp) to jedyna pewną ścieżka.
+
 `render.js` (PNG podgląd):
 ```js
 const { Resvg } = require('@resvg/resvg-js'); const fs=require('fs');

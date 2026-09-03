@@ -5,7 +5,10 @@
  *   {
  *     nazwa, szerokosc, wysokosc,
  *     lądy: [{ id, d | punkty }]           // wybrzeża (d = gotowa ścieżka)
- *     biomy: [{ id, typ: 'las'|'bagno'|'step'|'lod', punkty, opcje }]
+ *     dzielnice: [{ id, punkty, opcje: { ton } }]     // atlas miasta: tinty
+ *     szczeliny: [{ id, punkty, opcje: { szer } }]    // wąwozy miejskie
+ *     mury: [{ id, punkty, opcje }]                   // mury z blankami
+ *     biomy: [{ id, typ: 'las'|'bagno'|'step'|'lod'|'tkanina'|'gruz', punkty, opcje }]
  *     pasma: [{ id, punkty, opcje }]
  *     wulkany: [{ x, y, opcje }]
  *     rzeki: [{ id, punkty, s0, s1, doplywy: [{ id, punkty }] }]
@@ -28,10 +31,25 @@ import {
   PAL, motyw, las, bagno, step, lod, pasmo, pasmoInstancje, wulkan, rzeka,
   doplyw, jezioro, droga, miasto, ruina, fort, hedron, iglica, szczyt, etykieta,
   lukEtykieta, kompas, ramka, skalaLinia, drzewo,
+  dzielnica, granicaDzielnicy, mur, szczelina, tkanina, gruz,
+  plac, kolumny, kopula, platforma, kolowrot, most, ognisko, drzewoPoi,
 } from './bloki.mjs';
 import { prng, gladka, prosta, parsujD, pit } from './geom.mjs';
 
-const BLOKI_BIOMOW = { las, bagno, step, lod };
+const BLOKI_BIOMOW = { las, bagno, step, lod, tkanina, gruz };
+
+/** Bufor wokół łamanej (pas szer. 2·p) — np. strefa zajęta szczeliny. */
+function buforPas(punkty, p) {
+  const lewo = [], prawo = [];
+  for (let i = 0; i < punkty.length; i++) {
+    const a = punkty[Math.max(0, i - 1)], b = punkty[Math.min(punkty.length - 1, i + 1)];
+    const dx = b[0] - a[0], dy = b[1] - a[1];
+    const l = Math.hypot(dx, dy) || 1;
+    lewo.push([punkty[i][0] + (-dy / l) * p, punkty[i][1] + (dx / l) * p]);
+    prawo.push([punkty[i][0] - (-dy / l) * p, punkty[i][1] - (dx / l) * p]);
+  }
+  return [...lewo, ...prawo.reverse()];
+}
 
 /** Etykiety obiektów wodnych (konwencja projektu — spójna z map-audit):
  *  mogą stać/zwisać nad wodą, którą nazywają (zatoki, jeziora, wodospady,
@@ -60,6 +78,11 @@ export const ETYKIETY_WODNE_KOLOR = [
 ];
 const BLOKI_POI = {
   miasto, ruina, fort, hedron, iglica,
+  // POI miejskie (atlas metropolii — T4, Ravnica): plac/forum, kolumnada
+  // (gildie prawa), kopuła (rotundy pałacowe), platforma na łańcuchach,
+  // kołowrót nad wodą, most nad szczeliną, ognisko-zgromadzenie, wielkie
+  // drzewo-pomnik (Vitu-Ghazi).
+  plac, kolumny, kopula, platforma, kolowrot, most, ognisko, drzewo: drzewoPoi,
   // `wodospad` — strugi spadającej wody + rozbryzg (Roaring Falls);
   // kolor linii wody, spójny z jeziorami/wybrzeżem (ADR 0025).
   wodospad: (x, y, { skala = 1 } = {}) => {
@@ -78,9 +101,10 @@ const BLOKI_POI = {
 
 /** Ocean: jednolity podkład. (Dawniej „plamy głębi" w kolorze jeziora —
  *  usunięte 2026-09-02, pkt d/f: woda = jeden kolor, plamy wzmacniały
- *  wrażenie „akwenów" w środku oceanu.) */
-export function ocean(szer, wys, { seed = 'ocean' } = {}) {
-  return `<rect x="0" y="0" width="${szer}" height="${wys}" fill="${PAL.woda}"/>`;
+ *  wrażenie „akwenów" w środku oceanu.) `kolor` w scenie nadpisuje wodę
+ *  (atlas metropolii: tło arkusza to papier, nie morze — Ravnica). */
+export function ocean(szer, wys, { seed = 'ocean', kolor = null } = {}) {
+  return `<rect x="0" y="0" width="${szer}" height="${wys}" fill="${kolor ?? PAL.woda}"/>`;
 }
 
 /** Poświata wybrzeża — wg motywu (pergamin: woda; atlas: klasyczne
@@ -141,6 +165,11 @@ export function rozstawEtykiety(etykiety, { szer, wys, maskiLadow = [], woda = n
     fort: { dol: 13, gora: 13 },
     hedron: { dol: 10, gora: 10 }, wulkan: { dol: 4, gora: 29 },
     iglica: { dol: 4, gora: 31 }, wodospad: { dol: 6, gora: 10 },
+    // POI miejskie (Ravnica): koła o promieniu ~11–13 · skala
+    plac: { dol: 13, gora: 13 }, kolumny: { dol: 13, gora: 14 },
+    kopula: { dol: 13, gora: 13 }, platforma: { dol: 13, gora: 20 },
+    kolowrot: { dol: 13, gora: 13 }, most: { dol: 12, gora: 12 },
+    ognisko: { dol: 12, gora: 14 }, drzewo: { dol: 8, gora: 8 },
   };
   const promienPrzy = (ax, ay) => {
     let r = { dol: 4, gora: 4 };                  // goły punkt (zatoka, wyspa, przełęcz)
@@ -243,6 +272,13 @@ export function renderuj(scena, { styl } = {}) {
     }</clipPath></defs>`);
   }
 
+  // DZIELNICE (tinty): subtelne odcienie panowań gildii — POD biomami
+  // i POD granicami-arteriami (te rysowane później, nad tkaniną).
+  if (scena.dzielnice?.length) {
+    warstwy.push(`<!-- === DZIELNICE (tinty panowań) === -->`,
+      ...scena.dzielnice.map((z) => dzielnica(z.punkty, z.opcje ?? {})));
+  }
+
   // maski lądu: biomy i pasma nie „pływają" po oceanie (otoczka biomu bywa
   // szersza niż kontynent); parse d ręczny — parsujD patrzy tylko na punkty
   const maskiLadow = (scena.lądy ?? [])
@@ -324,6 +360,10 @@ export function renderuj(scena, { styl } = {}) {
       if (j.d) wyklucz.poligony.push(parsujD(j.d));
       else if (j.cx != null) wyklucz.bboxy.push([j.cx - j.rx, j.cy - j.ry, j.cx + j.rx, j.cy + j.ry]);
     }
+    for (const sz of scena.szczeliny ?? []) {
+      // wąwóz/szczelina jest strefą zajętą — tkanina miejska nie zasypuje pęknięcia
+      wyklucz.poligony.push(buforPas(sz.punkty, (sz.opcje?.szer ?? 20) / 2 + 7));
+    }
     for (const b of scena.biomy) {
       if (b.typ === 'lod') wyklucz.poligony.push(b.punkty);   // lita czapa: nic w niej nie rośnie
     }
@@ -343,6 +383,33 @@ export function renderuj(scena, { styl } = {}) {
     for (const [typ, tresc] of Object.entries(grupy)) {
       warstwy.push(`<g id="biom-${typ}">${tresc}</g>`);
     }
+  }
+
+  // SZCZELINY → granice dzielnic → mury: liniowe struktury miasta NAD
+  // biomami (tkanina ich nie zagarnia), POD drogami/POI.
+  if (scena.szczeliny?.length) {
+    warstwy.push(`<!-- === SZCZELINY (wąwozy miejskie) === -->`,
+      ...scena.szczeliny.map((sz) => szczelina(sz.id, sz.punkty, sz.opcje ?? {})));
+  }
+  if (scena.dzielnice?.length) {
+    // Każda współdzielona krawędź rysowana RAZ (dedupe po parze
+    // wierzchołków) — inaczej granice sąsiednich dzielnic nakładają się
+    // i robią ciemne, podwójne sztaby.
+    const unikalne = new Map();
+    for (const z of scena.dzielnice) {
+      const p = z.punkty;
+      for (let i = 0; i < p.length; i++) {
+        const a = p[i], b = p[(i + 1) % p.length];
+        const klucz = [a, b].map((v) => v.map((c) => +c.toFixed(1)).join(',')).sort().join('|');
+        if (!unikalne.has(klucz)) unikalne.set(klucz, [a, b]);
+      }
+    }
+    warstwy.push(`<!-- === DZIELNICE (granice-arterie, każda raz) === -->`,
+      ...[...unikalne.values()].map((para) => granicaDzielnicy(para, { zamkniete: false })));
+  }
+  if (scena.mury?.length) {
+    warstwy.push(`<!-- === MURY MIEJSKIE === -->`,
+      ...scena.mury.map((m) => mur(m.id, m.punkty, m.opcje ?? {})));
   }
 
   if (scena.drogi?.length) {

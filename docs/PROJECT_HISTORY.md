@@ -4,6 +4,91 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-03 — sesja PR-13 (feedback właściciela): Karty Katalogowe LORE-first + kierunek wektoryzacji mapy Ravniki
+
+1. **Korekta kierunku kart:** właściciel odrzucił układ, w którym wpis zaczyna
+   się metryką Oracle, historią dodatku i szczegółami wydawniczymi. Decyzja:
+   Codex ma być LORE-first; technikalia żyją w infoboksie i w krótkiej sekcji
+   „Mechanika jako Opowieść” pod koniec.
+2. **ADR 0030:** zapisano nowy wiążący szkielet kart: `Kronika Lore` jako
+   otwarcie, potem byty/nazwa/flavor/transpozycja/mapa, dopiero następnie
+   mechanika i źródła. ADR 0016 oznaczony jako częściowo zastąpiony.
+3. **Migracja trzech kart:** `Dunland Crebain`, `Coralhelm Guide` i
+   `Withstand` przepisane od początku w tonie niezależnego kronikarza;
+   usunięto otwierające listy koszt/typ/wydanie, komentarze o procesie
+   publikacji i dominację technikaliów. Dane Scryfall zostają w infoboksie.
+4. **Testy i kontrakty:** `SEKCJE_KARTY`, fixture’y i ui-smoke pilnują teraz
+   `Kronika Lore`, braku sekcji „Metryka i Kontekst Świata” oraz pozycji
+   „Mechanika jako Opowieść” po mapie/transpozycji i przed Źródłami.
+5. **Mapa Ravniki — decyzja źródłowa:** właściciel dopuścił prywatne źródła
+   fan-made do wektoryzacji. ADR 0031 formalizuje tor: raster poza gitem,
+   wynik SVG/scena z proweniencją i QA. Ravnica v3 dostała kolejkę
+   wektoryzacji `TenthDistrict.png`, ale w tej sesji plik nie był widoczny
+   dla narzędzi pod `/home/user/uploads/`.
+
+## 2026-09-03 — sesja PR-13 (mapa v2): transkrypcja GGR od właściciela → kalibracja 1:1
+
+1. **Wejście:** właściciel dostarczył załącznik `TenthDistrict.png` (oficjalny
+   raster GGR, © WotC — poza repo, nieosadzalny) i **pełną tekstową transkrypcję**
+   w układzie kartezjańskim kadru (±10; początek ~plac Dziesiątki; 33 POI +
+   arterie + podział na 6 precyktów + Undercity). PR #13 wciąż otwarty → praca
+   dokleja się do niego (bez audytu wejściowego — dotyczy tylko scalonych PR).
+2. **Analiza dopasowania v1↔transkrypcja:** afiniczne LSQ na 22 wspólnych
+   kotwicach dało RMS 634 px — v1 (z kanonu tekstowego wiki) i geometria
+   oficjalna różnią się istotnie (m.in. Zonot za nisko założony, Nivix za
+   daleko na wschód) → v2 jako **przebudowa koordynatów**, nie korekta.
+   Ze sceny v1 zachowane: projekt terenu (płyta, mur z bramą, rubblebelt,
+   duchy-tkaniny, szczelina z mostem), identyfikatory i wiązania.
+3. **Budowniczy v2:** transformacja kanoniczna `px = 830 + (X−0.5)·64,
+   py = 610 − (Y+1)·64`; 44 pit-asserty; poligony przebudowane z zachowaniem
+   grafu sąsiedztw z v1 (tri-styki: J_A=(945,555), J_B=(660,625),
+   J_C=(980,605), J_D=(510,510) na Tin Street); granica P4|P5 = Tin Street
+   kolkiem obok Blistercoils (P5!) i Tin Street Market (P4); Bulwark w P4
+   (wiki), Kamen w P6; Plaza East jako korytarz (odsunięta 35 j. od linii).
+   Nowe POI z rastra: **Statue of Agrus Kos, Vizkopa Bank, Whitestone,
+   Plaza East/West/South, The Great Concourse, Gore House, Medori Park**;
+   markery przekrojowe podziemi (**Rix Maadi, Korozda & Svogthos,
+   Nightveil & Duskmantle**) przy południowej poświacie — konwencja
+   przekrojowa rastra (komentarz w budowniczym).
+4. **Fix silnika przy okazji:** `etykieta()`/`lukEtykieta()` escapują XML
+   (`&` w „Nightveil & Duskmantle" psuło podkład — wykryte przez
+   map-audit „XML niepoprawny"). Regresja: Zendikar/S rodziemie renderują
+   się bajtowo identycznie.
+5. **map.json v2:** 55 kotwic (pozycje przemapowane skryptem, 3 stare
+   nazwy („Concordance (Old City)", „Great Concourse", „Mur północny
+   (Boros side)") poprawione ręcznie); blok `kalibracja{}` z plikiem źródła
+   i transformacją; pinezka 137GPT przesunięta na bruk przy Tin Street
+   Market (0.3688, 0.4273); lista otwartych skrócona o wykonane zadanie.
+6. **Treść:** Geografia planu Ravnica dopowiada nowe POI + akapit Undercity;
+   w Źródłach odnośnik do pliku transkrypcji. Analiza mapy: rozdział v2
+   (przesunięcia, nowe POI, fix, autydy) + korekta uwag (N u góry, nowa
+   pinezka).
+7. **Zamknięcie:** testy 102/102, build zielony (artefakt 306.6 kB, ZIP
+   12.75 MB, `maps/ravnica.html` przebudowany), map-audit ravnica 0,
+   sprawdzWiazania 0; komit atomowy `51935ae` pushnięty; co-nowego (00:43),
+   ROADMAP (K7), ten dziennik, handoff `HANDOFF_2026-09-03-pr13-mapa-v2.md`,
+   opis PR #13 rozszerzony o „Sesję 3".
+
+## 2026-09-03 — sesja PR-13 (cd.): dostawa 137GPT Withstand — mapa Ravnicy T4 + plan Ravnica + karta 3
+
+1. **Audyt scalonego PR #12 na wejściu** (protokół): baseline zielony, brak znalezisk materialnych → rejestr audytów uzupełniony wcześniej tego dnia (AUDYT_2026-09-02-PR12.md).
+2. **Nowa dostawa właściciela (format v3, ADR 0026):** `137GPT · Withstand · GPT · Ravnica · FABUŁA` — wpis verbatim w `collection/entries/137gpt-withstand.md`, snapshot Scryfall `scryfall/137gpt-withstand.json`. Plan Ravnica był **nowy** → priorytet: solidny research mapowy przed kartą.
+3. **Research mapowy (MA1):** przegląd torów T1/T2/T3 — odrzucone: oficjalne rastry (Tenth District map, GGR) są własnością WotC i **nieosadzalne licencyjnie** w repo; brak wektorowych źródeł reużywalnych. Decyzja: **T4 z kanonu tekstowego** — MTG Wiki (hasła Tenth District, Precinct 1–6, dziedziczące treść z Guildmasters' Guide to Ravnica 2019) dało kanoniczny **graf sąsiedztw 6 precyktów** (spójny: wierzchołki trójstykowe P1-P3-P4, P1-P4-P6, P4-P5-P6, P1-P2-P3 zamykają się bez sprzeczności), arterie (Transguild Promenade, Tin Street, Gnat Alley), POI per precykt i wydarzenia WotS/Inwazja. Właściciel zaoferował transkrypcję map graficznych → zapisane jako otwarty krok v2 (kalibracja geometrii pod mapę GGR).
+4. **Silnik mapforge — klocki T4 „miasto":** `dzielnice` (poligoniowe z etykietami), `granicaDzielnicy` z parametrem `zamkniete` + **dedupe krawędzi współdzielonych** w rendererze (każda para wierzchołków rysowana raz — likwidacja podwójnych sztabów typu J_C→A3), `mury` z blankami i bramą, `szczeliny` z mostem, `duchy-tkaniny` (budynki mgliście nalane poza płytę), `gruz` (rubblebelt), POI miejskie, drzewo hero (Vitu-Ghazi) z wykluczeniem Pokrycia POI. Zendikar po zmianach re-renderuje się **bajtowo identycznie** (regresja wykluczona).
+5. **Mapa Ravnicy v1:** `maps/ravnica/` (scena 1600×1100, podkład, map.json 44 kotwice — pozycje klasy kanon/kanon-relacyjna, `rekonstrukcja:true`, `zrodlo`, `otwarte_na_kolejne_przejscia`), `mapa-analiza.md` z werdyktami MA1 i planem v1→v3. `map-audit.py ravnica` = 0; sprawdzWiazania = 0. Pełny raster zweryfikowany wizualnie (kilkoma cropami 150 dpi przez sharp).
+6. **Strona planu + karta:** `content/planes/ravnica.md` (szablon planu: Geografia/Ludy/Setting/Źródła z URL; notka o świadomej mieszance epok kanonu), `content/cards/137gpt-withstand.md` (9 sekcji; etykieta „Wytrzymaj!"; Alovnek udokumentowany jako persona **flavor-only** — Scryfall `flavor:alovnek`: Withstand/Condemn/Boros Locket; pinezka region na P4 przy Tin Street). Test ui-smoke: licznik listy kart 2→3.
+7. **Domknięcie:** `npm test` 102/102, `npm run build` OK (strona `maps/ravnica.html` w drzewie map, artefakt 300.5 kB, ZIP 12527.4 kB); commit atomowy Ravniki + push; wpis co-nowego (00:12), ROADMAP, handoff, opis PR #13.
+
+## 2026-09-02 — sesja PR-13: Pętla Jakości v2 — audyt PR-12 + LORE Bala Ged/Sejiri + Umungshore
+
+1. **Plan i PR:** plan sesji (`PLAN_2026-09-02-pr13-petla-jakosci.md`), otwarty PR #13; tryb „kontynuujemy projekt" bez nowej dostawy kart.
+2. **Audyt scalonego PR #12** (16 plików, `AUDYT_2026-09-02-PR12.md`): baseline identyczny z handoffem (102/102, artefakt 255.1 kB); zweryfikowano spójność map.json↔scena↔podkład dla 4 retajpowanych wpisów, logikę nowego testu statusów ADR i zgodność ARCHITECTURE z kanałami postMessage w kodzie. Jedno znalezisko (Z1, P3): najnowszy handoff mówił o PR #12 jako o otwartym — poprawione minimalnie. Obserwacja bez naprawy: część `elementy` map.json ma `zrodlo` wskazujące ogólną stronę planu, mimo że notka cytuje konkretny przewodnik (kandydat na porządkowanie źródeł przy okazji).
+3. **Pogłębienie LORE (krok 2):** strona planu Zendikar — akapity **Bala Ged** i **Sejiri** (wcześniej tylko wymienione jednym słowem w leadzie): Guum Wilds, Bojuka Bay + Bojuka Route, Umung, Tangled Vales, Makindi/Obuun, Nissa i Khalni Heart, Ulamog→pył; Sejiri: tundra-mesa, Midnight Pass, Ikiral, Chill Depths, Benthidrix, ostatni Skyclave; +4 źródła z URL w Źródłach.
+4. **Link-mining (krok 3):** bez nowych haseł — próg ≥2 kart nieosiągnięty (rozłączne plany); liczniki `docs/backlog.md` bez zmian.
+5. **Pass mapowy (krok 4):** kompletność operacyjna OK (2/2 pinezek); dodane kanoniczne POI **Umungshore** (wioska nad Bojuka Bay — MTG Wiki/Guide) jako `miasto` skala 0.8 + etykieta `przyDo`; rejestr w `map.json` (kotwica 0.836/0.6321, element). Kontrole: `sprawdzWiazania` 0 uwag, `map-audit.py` 0, determinizm podkładu potwierdzony przed zmianą (rerender = bit w bit).
+6. **QA rastrowe:** odbudowano pipeline w świeżym sandboxie — **`sharp` przez npm (prebuilt)** zamiast resvg; `cairosvg` pada na braku systemowego libcairo, ImageMagick deleguje do brakującego `rsvg-convert`. Crop regionu Umungshore zweryfikowany wizualnie (ikona na lądzie przy brzegu zatoki, etykieta bez kolizji). Notatka w `SKILL_MAPA_PLANU.md` §8.
+7. **Weryfikacja końcowa:** `npm test` **102/102**, `npm run build` OK (artefakt **261.6 kB**, ZIP **11557.6 kB**), `python3 tools/map-audit.py` zendikar/srodziemie — **0 problemów**.
+
 ## 2026-09-02 — sesja PR-12: Pętla Jakości v2 — audyt PR-11 + domknięcie dryfu dokumentacji/map
 
 1. **Plan i PR:** przygotowano plan sesji (`PLAN_2026-09-02-pr12-petla-jakosci.md`), otwarto PR #12 i utrzymano pracę w trybie „kontynuujemy projekt" — bez nowej dostawy kart.

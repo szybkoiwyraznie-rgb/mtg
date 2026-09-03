@@ -69,6 +69,38 @@ szczytem **Mount Valakut** („Molten Pinnacle"), z portową, mieszaną
 rasowo wspólnotą **Zulaport** na wybrzeżu; oraz największa, wysunięta
 najdalej na południe **Agadeem**, kryjąca **Crypt of Agadeem**.
 
+**Bala Ged** to pierwotny subkontynent, który urósł własnym wilgotnym
+powietrzem: fetor, gęsta roślinność, zatorzone algami mokradła
+i pokryte pleśnią zagajniki — kraina „zaciągnięta w czasie", pamiątka
+Zendikaru sprzed epok. Od Guul Draz oddziela go wielomilowe bagno
+**The Border Mire** (siedziba krokodyli nema), a z Akoum łączą go
+rzeki podziemne — tak że te trzy lądy tworzą w praktyce jeden organizm
+geograficzny. Pod bagnistą powierzchnią biegnie sieć wapiennych jaskiń
+i tuneli z katakumbami, ołtarzami ofiarnymi i pokrytymi runami
+komnatami pełnymi skarbów — to domena gadzich **surrakarów**
+i pradawnych potworów. Większość subkontynentu pokrywa dżungla **Guum
+Wilds**, najbogatsze na planie skupisko roślin mięsożernych i trujących
+(krwiste ciernie bloodbriar, zabójczy grzyb cut-fungus): wśród jej
+wielkich drzew Mul Daya budują wioski (m.in. **Riverroot**), w głębi
+leżą wapienne **Surrakar Caves**, gniazdo surrakarów, a na jej skraju
+rozsiada się **Bojuka Bay** — mniej zatoka, bardziej wielka topiel
+władana przez bagienne trolle i gobliny **Grotag**. Słynna trasa morska
+do zatoki, **Bojuka Route**, otwarta po dwudziestu latach przygotowań,
+zamknęła się już po jednym roku działania. Jedyną pewniejszą drogą
+w głąb lądu jest rzeka **Umung**, schodząca z interioru stopniami
+bystrzy i wodospadów, przy których stoją wioski-przenosiny ludzi
+i Joraga (m.in. **Umungshore**). Na południu falują **Tangled Vales** —
+powiązane doliny dżungli między stromymi pagórami, ojcowizna klanów
+Joraga, którzy swych dróg bronią wysadzaną dokoła agresywną florą;
+grzybniaste pagóry są żerowiskami latających gomazoa. Bala Ged
+należała niegdyś do imperium **Makindi** — to jej elfy pod wodzą
+Obuuna obaliły panowanie korów i własny Skyclave, to tu w zdewastowanej
+głębi **Nissa Revane** odnalazła **Khalni Heart** — wyrast duszy
+Zendikaru. I to Bala Ged jako pierwsza legła pod rojem **Ulamoga**,
+który zamienił dżungle i kaskady rzek w pył; dziś, po użyciu mocy
+Lithoform Core (era *Zendikar Rising*), subkontynent powoli się
+odradza.
+
 **Akoum** to kraina kamienia. Nad kotliną kontynentu, przed resztkami
 pasma **Teeth of Akoum**, wznosi się **Tal Terig** — „Puzzle Tower",
 wieża z niemożliwie kątowanych głazów, która co jakiś czas przestawia
@@ -81,6 +113,27 @@ w tzw. **stone havens** — kamiennych fortach odkopanych przez Eldrazi:
 gobliny Tuktuk zajęły **Grip Haven** i **Slab Haven**, a mieszana
 wspólnota Mul Daya i korów w **Ghostwatch** broni murów duchami
 przodków; na wschodzie, przy Eye of Ugin, stoi twierdza **Fort Keff**.
+
+**Sejiri** to polarna czapa planu: niemal ogromny płaskowyż tundry
+wiecznej zmarzliny, okolony „niemożliwie wysokimi" klifami, które
+zamykają kontynent jak mury fortecy. Wiatry smagają stepy i pasma
+górskie, a w śnieżnych pustkowiach mieszkają felidary, gryfy, wilki,
+yeti i śnieżne roki, a nawet sfinksy. Nad głowami wędrowców czają się
+unoszące, kamienne „urny" zrzucające na nieostrożnych lawiny lodu
+i śniegu, a pod tundrą kryją się ruiny, dla których poszukiwacze
+skarbów znoszą wieczny mróz. Jedyną realną bramę kontynentu stanowi
+**Midnight Pass**: cieśnina, w którą z nadzieją na powodzenie wpłynie
+wyłącznie jednostka prowadzona przez merfolkiego nawigatora;
+z przystani w głębi przesmyku zaczyna się wolna i niebezpieczna
+wspinaczka na płaskowyż tundry. W ruinach potężnego, pękniętego
+hedronu ukrywa się **Ikiral** — osada i punkt handlowy; merfolkowie
+utrzymują tu enklawę **Chill Depths**, a podania wspominają
+**Benthidrix** — mityczne podwodne sanktuarium zaginionej kultury
+lodowych merfolków. Gdy tytanowie Eldrazi zostali zwabieni na Zendikar
+i uwięzieni, jeden z nich bezmyślnym ruchem macki strącił tu ostatni
+Skyclave, a jego odłamki pochował polarny lód; w dwa lata po
+ostatecznym uwolnieniu Eldrazi cały kontynent legł w gruzach. Dziś,
+po użyciu mocy Lithoform Core, Sejiri powoli się regeneruje.
 
 Przed przebudzeniem **Eldrazi** pięć domów ekspedycyjnych (Valakut,
 Pelakka, Akoum, Murasa, Bala Ged) czyniło z Sea Gate bazę wypraw w głąb
@@ -234,3 +287,33 @@ i z prób oswajania bestii, które zwykle ich zjadają.
   do wnętrza (Sunder Bay, Cliffs of Kazuul, Thunder Gap, Glint Pass),
   Skyfang, Na Plateau i Singing City, Kazandu:
   <https://magic.wizards.com/en/news/feature/a-planeswalkers-guide-to-zendikar-murasa-and-sejiri>
+- MTG Wiki, „Bala Ged" — subkontynent i jego połączenia (bagno od Guul
+  Draz, rzeki podziemne do Akoum), Guum Wilds (bloodbriar, cut-fungus,
+  wioska Mul Daya Riverroot), Surrakar Caves, Bojuka Bay (Bojuka Route:
+  20 lat przygotowań, rok działania), rzeka Umung (stopnie bystrzy,
+  wioski-przenosiny, Umungshore), Tangled Vales (Joraga, gomazoa),
+  imperium Makindi i bunt elfów Obuuna (strącenie Skyclave), zniszczenie
+  rojem Ulamoga w BFZ, Khalni Heart odnalezione przez Nissę Revane,
+  powrót Skyclave i odradzanie po Lithoform Core (ZNR):
+  <https://mtg.fandom.com/wiki/Bala_Ged>
+- mtglore.com, „A Planeswalker's Guide to Zendikar: Bala Ged and Elves"
+  (kopia artykułu Wizards, Savor the Flavor) — opis subkontynentu
+  (mgła, algowce, surrakarowie), Bordermire i krokodyle nema, Guum
+  Wilds (największy wybór roślin mięsożernych planu), Surrakar Caves
+  (wapienne wzgórza-gniazda), Bojuka Bay (topiel, bagienne trolle,
+  Grotag, przemowa kapitana Jin Kalau), Umung (stopnie, przenoski,
+  wioski ludzi i Joraga), Tangled Vales (obrona agresywną florą):
+  <https://mtglore.com/web-articles/a-planeswalkers-guide-to-zendikar-bala-ged-and-elves/>
+- MTG Salvation, „Archive Trap: The World of Zendikar Part I" — Bala Ged
+  jako bagnisty subkontynent połączony z Akoum rzekami podziemnymi
+  (trzy lądy = w praktyce jeden), ojczyzna Nissy Revane, jeden
+  z pierwszych obszarów straconych po uwolnieniu Eldrazi:
+  <https://www.mtgsalvation.com/articles/46870-archive-trap-the-world-of-zendikar-part-i>
+- MTG Wiki, „Sejiri" — tundra-mesa w klifach na biegunie (permafrost,
+  fauna: felidary, gryfy, yeti, śnieżne roki, sfinksy), unoszące urny
+  lawinowe, ruiny pod tundrą, Midnight Pass (jedyny dostęp; merfolk
+  nawigator), Ikiral (osada w pękniętym hedronie), Chill Depths
+  (enklawa merfolków), Benthidrix (mityczne podwodne sanktuarium
+  lodowych merfolków), strącenie ostatniego Skyclave przez tytana
+  i zniszczenie kontynentu po uwolnieniu Eldrazi:
+  <https://mtg.fandom.com/wiki/Sejiri>

@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { ocenStrone, raport, MAKS } from '../tools/wiki-stats.mjs';
 
-/** Modelowa Karta Katalogowa — kompletna (10 sekcji, źródła, pinezka). */
+/** Modelowa Karta Katalogowa — kompletna (9 sekcji, źródła, pinezka). */
 const pelnaKarta = {
   typ: 'karta',
   slug: '1tst-testowy-zwiadowca',
@@ -10,13 +10,13 @@ const pelnaKarta = {
   plan: 'testlandia',
   pinezka: { mapa: 'testlandia', pewnosc: 'region' },
   body: [
-    '## Metryka i Kontekst Świata', 'Tekst.',
+    '## Kronika Lore', 'Tekst.',
     '## Postacie i Byty', 'Tekst.',
     '## Nazwa Karty', 'Tekst.',
-    '## Mechanika jako Opowieść', 'Tekst.',
     '## Flavor Text', 'Tekst.',
     '## Transpozycja', 'Tekst.',
     '## Na Mapie', 'Tekst.',
+    '## Mechanika jako Opowieść', 'Tekst.',
     '## Źródła', '- <https://example.com/a> — źródło A', '- <https://example.com/b> — źródło B',
     '## Podsumowanie Lore', 'Tekst.',
   ].join('\n'),
@@ -47,13 +47,13 @@ test('wiki-stats: brak źródła i pinezki obniża wynik', () => {
     tytul: 'Ubogi',
     plan: 'testlandia',
     body: [
-      '## Metryka i Kontekst Świata', 'Tekst.',
+      '## Kronika Lore', 'Tekst.',
       '## Postacie i Byty', 'Tekst.',
       '## Nazwa Karty', 'Tekst.',
-      '## Mechanika jako Opowieść', 'Tekst.',
       '## Flavor Text', 'Tekst.',
       '## Transpozycja', 'Tekst.',
-        '## Na Mapie', 'Tekst.',
+      '## Na Mapie', 'Tekst.',
+      '## Mechanika jako Opowieść', 'Tekst.',
       '## Źródła', '',
       '## Podsumowanie Lore', 'Tekst.',
     ].join('\n'),

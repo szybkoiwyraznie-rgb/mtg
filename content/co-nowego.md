@@ -1,3 +1,77 @@
+## 2026-09-03 09:36 — Karty Katalogowe przechodzą na LORE-first; Ravnica dostaje kierunek wektoryzacji fan-made
+
+Po feedbacku właściciela zmienia się standard kart: główna treść nie zaczyna
+się już od kosztu, typu, wydania ani historii publikacji. Nowy ADR 0030
+ustawia **Kronikę Lore** jako otwarcie, a dane techniczne zostawia w
+infoboksie i w krótkiej sekcji **Mechanika jako Opowieść** pod koniec.
+Wszystkie trzy obecne karty — **Dunland Crebain**, **Coralhelm Guide** i
+**Withstand** — zostały przepisane w tym duchu: więcej świata i sceny,
+mniej metryki MtG. Dodatkowo ADR 0031 zapisuje, że prywatne fan-made mapy
+dostarczone przez właściciela mogą być źródłem wektoryzacji; dla Ravniki
+powstał kandydat v3 oparty o `TenthDistrict.png` (raster roboczy poza
+repo, wynik docelowo jako SVG/scena z proweniencją i QA).
+
+## 2026-09-03 00:43 — Ravnica v2: geometria skalibrowana 1:1 pod oficjalną mapę GGR (transkrypcja właściciela)
+
+Właściciel spisał oficjalną mapę Dziesiątego Dystryktu z *Guildmasters'
+Guide to Ravnica* w układ współrzędnych — i Codex przebudował scenę
+atlaskową na tych koordynatach (kanoniczna transformacja 64 px/j.,
+serce na placu Dziesiątki). Nivix przesunął się na zachód, Zonot Seven
+w dół, Millennial Platform nad Skarrg; doszły **Statue of Agrus Kos,
+Vizkopa Bank, Whitestone, place Plaza East/West/South, Great Concourse,
+Gore House i Medori Park**, a pod południową poświatą stanęły markery
+podziemi: **Rix Maadi, Korozda & Svogthos, Nightveil & Duskmantle**.
+55 kotwic map.json, pinezka Withstanda przy Tin Street Market;
+strona planu dopowiada Undercity. Pozycyjnie: 1:1 z kanonem GGR;
+rysunkowo: własne dłuto mapforge (raster WotC nadal licencyjnie
+nieosadzalny — baza to tekstowa transkrypcja).
+
+## 2026-09-03 00:12 — Dostawa 137GPT Withstand: Ravnica wchodzi do Atlasu jako pierwszy plan-miasto (mapa T4)
+
+Trzecia karta Kolekcji: **Withstand** (Guildpact, 2006) — biała tarcza
+pierwotna z głosem Alovneka, maga gildii Boros — w pełnym szkielecie
+dziewięciu sekcji, z pinezką na bruku przy Tin Street w Precykcie
+Czwartym, pod samym Sunhome. Razem z nią Codex dostaje **plan Ravnica**
+i pierwszą w Atlasie mapę miasta: Dziesiąty Dystrykt narysowany
+własną ręką silnika mapforge w warianie T4 — sześć precyktów ułożonych
+według kanonicznych sąsiedztw z *Guildmasters' Guide to Ravnica*, mur
+północny z blankami, za którym czają się Skarrg i Czerwone Pustkowia,
+szczelina Deadbridge z mostem Benzera, Zonot Siedem z Blisttercoils,
+Transguild Promenade z rubblebeltem i tłem duchów miasta, które „trwa
+dalej poza ramką". Oficjalnych rastrów map celowo nie osadzamy
+(licencja WotC); geometria to rekonstrukcja — jeśli oficjalna mapa GGR
+zostanie kiedyś przepisana na tekst (pomoc właściciela), v2 skalibruje
+kształty 1:1. Szczegóły: `maps/ravnica/mapa-analiza.md`.
+
+## 2026-09-02 23:08 — Pętla Jakości: audyt PR-12, geografia Bala Ged i Sejiri, Umungshore na mapie
+
+- **Audyt scalonego PR #12** zapisany w
+  `docs/audits/AUDYT_2026-09-02-PR12.md`; jedno znalezisko (P3 —
+  przeterminowany status „PR #12 jest otwarty" w najnowszym handoffie)
+  naprawione od razu.
+- **LORE Zendikaru (strona planu):** sekcja „Geografia" domyka dwie
+  ostatnie białe plamy kontynentów — nowe akapity o **Bala Ged**
+  (dżungla Guum Wilds, topiel Bojuka Bay i słynna trasa Bojuka Route,
+  stopnie rzeki Umung, Tangled Vales, imperium Makindi, zagłada rojem
+  Ulamoga i Khalni Heart) oraz **Sejiri** (polarny płaskowyż w klifach,
+  Midnight Pass, osada Ikiral w pękniętym hedronie, Chill Depths,
+  mityczne Benthidrix i los ostatniego Skyclave).
+- **4 nowe źródła** w Źródłach planu Zendikar (MTG Wiki „Bala Ged"
+  i „Sejiri", Planeswalker's Guide: Bala Ged and Elves, Archive Trap I).
+- **Link-mining:** bez nowych haseł — próg ≥2 kart wspominających encję
+  nadal nieosiągnięty (2 karty na dwóch rozłącznych planach; liczniki
+  w `docs/backlog.md` bez zmian).
+- **Pass mapowy (Zendikar, T4):** nowy obiekt **Umungshore** —
+  kanoniczna wioska nad Bojuka Bay przy trasie Umung (MTG Wiki „Bala
+  Ged"); scena + podkład + rejestr map.json (`kotwice`/`elementy`),
+  walidator wiązań 0 uwag, `tools/map-audit.py` 0 problemów, QA
+  rastrowe cropu regionu.
+- **Warsztat mapowy:** `SKILL_MAPA_PLANU.md` dostał zweryfikowany tor
+  QA rastrowego przez `sharp` (prebuilt npm; odpowiedź na brak
+  libcairo/rsvg w sandboxie).
+- Weryfikacja: `npm test` **102/102**, `npm run build` OK,
+  `tools/map-audit.py` zendikar/srodziemie — **0 problemów**.
+
 ## 2026-09-02 22:22 — Audyt PR-11: domknięcie dryfu dokumentacji i rejestru map
 
 - **Audyt scalonego PR #11** zapisany w `docs/audits/AUDYT_2026-09-02-PR11.md`.

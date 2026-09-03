@@ -31,7 +31,7 @@ dziedziczona z projektu mtg-game.
 | [0013](0013-zendikar-mapa-bez-adnotacji-rekonstrukcyjnych.md) | Zendikar — mapa bez adnotacji rekonstrukcyjnych na podkładzie; proweniencja w map.json i treści strony planu | Zaakceptowana |
 | [0014](0014-karta-bez-sekcji-druk-w-kolekcji.md) | Karta Katalogowa bez sekcji „Druk w Kolekcji" — dane wydruku tylko w infoboksie; pogłębianie = lore, nie meta | Zaakceptowana |
 | [0015](0015-petla-jakosci-v2-lore-i-warsztat-mapowy.md) | Pętla Jakości v2 — krok 2: pogłębianie LORE; krok 4: kompletacja i jakość map (POI, weryfikacja, wspólny warsztat rysowania T4) | Zaakceptowana |
-| [0016](0016-format-wpisu-karty-kanon-katalogowy.md) | Format Wpisu Karty — kanon katalogowy: blok danych Oracle w treści, warstwy mechaniki, odczyt flavoru; bez sekcji „Ilustracja" i „Druk w Kolekcji" | Zaakceptowana |
+| [0016](0016-format-wpisu-karty-kanon-katalogowy.md) | Format Wpisu Karty — kanon katalogowy: blok danych Oracle w treści, warstwy mechaniki, odczyt flavoru; bez sekcji „Ilustracja" i „Druk w Kolekcji" | Częściowo zastąpiona (układ LORE-first — patrz ADR 0030) |
 | [0017](0017-fot-kon-w-tresci-karty.md) | FOT/KON rysują się w treści karty (FOT nad sekcjami, KON pod pierwszą) — koniec przycisków torów; zastępuje mechanikę torów ADR 0008 | Zaakceptowana |
 | [0018](0018-wspolny-silnik-mapowy-mapforge.md) | Wspólny silnik mapowy `mapforge` — deterministyczny render SVG z danych (biomy, rzeki, pasma, etykiety pod kątem); warsztat T4 | Zaakceptowana |
 | [0019](0019-mapy-planow-czysty-czarno-bialy.md) | Mapy planów w motywie atlasowym — czysty czarno-biały line-art (tusz/papier); kolor tylko dla warstw funkcjonalnych UI | Zaakceptowana (wyjątki kolorystyczne — patrz ADR 0021) |
@@ -45,6 +45,8 @@ dziedziczona z projektu mtg-game.
 | [0027](0027-rozdzielenie-artefaktu-mapy-osobno.md) | Rozdzielenie artefaktu (v2 — drzewo HTML): artefakt główny ~0,2 MB + samowystarczalne strony map `maps/<plan>.html` w `<iframe>` (file:// nie blokuje iframe — offline z dysku działa w pełni); nawigacja z iframe przez postMessage; ZIP = całe drzewo | Zaakceptowana |
 | [0028](0028-klocek-fort.md) | Klocek `fort` — warownie jako osobny typ POI (domknięcie E5): ręcznie rysowana sylwetka w kole (nie Azgaar); użycie: Fort Keff + stone havens Akoum; latarnia/wrak z E5 odrzucone (brak kanonicznego użycia) | Zaakceptowana |
 | [0029](0029-dziennik-godziny-archiwum-stopki-czasu.md) | Dziennik z godziną publikacji (`## RRRR-MM-DD HH:MM — tytuł`, backfill z gita), limit 5 wpisów na SG i w „Co nowego" + archiwum miesiącami (`#/co-nowego/<RRRR-MM>`), stopki kart/haseł/map z datą utworzenia i aktualizacji z historii gita (CI wymaga fetch-depth: 0) | Zaakceptowana |
+| [0030](0030-karta-katalogowa-lore-first.md) | Karta Katalogowa LORE-first: metryka techniczna tylko w infoboksie, główna treść głosem kronikarza, „Mechanika jako Opowieść" przy końcu przed Źródłami | Zaakceptowana |
+| [0031](0031-prywatne-zrodla-fanowskie-do-wektoryzacji-map.md) | Prywatne źródła fanowskie dostarczone przez właściciela mogą być bazą wektoryzacji map; raster źródłowy poza gitem, wynik z jawną proweniencją i QA | Zaakceptowana |
 
 Spójnością rejestru (numeracja, statusy, tabela) pilnuje
 `test/rejestr-adr.test.js`.

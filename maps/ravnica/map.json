@@ -1,0 +1,489 @@
+{
+ "plan": "ravnica",
+ "tytul": "Ravnica",
+ "wariant": "T4",
+ "podklad": "podklad.svg",
+ "wymiary": {
+  "szerokosc": 1600,
+  "wysokosc": 1100
+ },
+ "zrodlo": {
+  "url": "https://mtg.wiki/page/Tenth_District",
+  "tytul": "Ravnica — rekonstrukcja Dziesiątego Dystryktu wg kanonu tekstowego (MTG Wiki: Tenth District, Precinct One…Six; kanon Guildmasters' Guide to Ravnica)",
+  "autor": "MTG Lore Codex (praca własna, scena → mapforge)",
+  "licencja": "praca własna na kanonie tekstowym",
+  "pobrano": "2026-09-02",
+  "notka": "Oficjalna mapa wyâboru 10-ego Dystryktu istnieje wyłącznie jako rastrowy obraz w 'Guildmasters' Guide to Ravnica' (WotC, D&D, 2018) — osadzenie jej w Codexie naruszałoby prawa WotC, wariant T1 odrzucony licencyjnie (ADR 0007 §3 bez wyjątku dla rastrowej mapy książkowej). Podkład jest własną rekonstrukcją T4: TOPOLOGIA sąsiedztw precyktów z transkrypcji tekstowej MTG Wiki (pobrane 2026-09-02; Precinct Four graniczy z P1/P3/P5/P6, nie z P2 itd.), położenia relacyjne punktów = 'kanon-relacyjna' (np. Sunhome 'kotwiczy obronę' północy P4; Millennial Platform wisi NA potrójnym styku P1/P3/P4 — jedyny twardy punkt topologiczny, 'kanon'). Wymiar/silhouette dzielnicy = schemat autorski (mapa jest zbiorem topologii, nie skali). Epocowo: scena Fabuły karty żyje w 2006 (Guildpact), ale struktura precyktów pochodzi z kanonu GGR (2018) — jak mapa Zendikaru mieszającego epoki (notka w opisie sceny). Właściciel zaoferował pomoc w transkrypcji graficznej oficjalnej mapy — przyszłe iteracje geometryczne (v2: proporcje okręgów, zieleń P3, arterie) mogą ją wykorzystać jako źródło pomocnicze (jak w2 Zendikaru), bez zmian pozycji kanonicznych."
+ },
+ "rekonstrukcja": true,
+ "kotwice": [
+  {
+   "nazwa": "Precinct One",
+   "x": 0.5188,
+   "y": 0.6364,
+   "typ": "poligon-dzielnicy",
+   "pozycja_zrodlo": "kanon",
+   "notka": "centralno-południowy precykt (Guildpact Precinct); graf sąsiedztw = kanon (MTG Wiki: Precinct One)"
+  },
+  {
+   "nazwa": "Precinct Two",
+   "x": 0.675,
+   "y": 0.7273,
+   "typ": "poligon-dzielnicy",
+   "pozycja_zrodlo": "kanon",
+   "notka": "południowo-wschodni precykt (Azorius)"
+  },
+  {
+   "nazwa": "Precinct Three",
+   "x": 0.6787,
+   "y": 0.38,
+   "typ": "poligon-dzielnicy",
+   "pozycja_zrodlo": "kanon",
+   "notka": "północno-wschodni Greenbelt (Selesnya)"
+  },
+  {
+   "nazwa": "Precinct Four",
+   "x": 0.4188,
+   "y": 0.2636,
+   "typ": "poligon-dzielnicy",
+   "pozycja_zrodlo": "kanon",
+   "notka": "środkowo-północny precykt turmoli (Boros/Gruul/Izzet) — terytorium Boros"
+  },
+  {
+   "nazwa": "Precinct Five",
+   "x": 0.2387,
+   "y": 0.4345,
+   "typ": "poligon-dzielnicy",
+   "pozycja_zrodlo": "kanon",
+   "notka": "północno-zachodni precykt uczony (Simic)"
+  },
+  {
+   "nazwa": "Precinct Six",
+   "x": 0.3387,
+   "y": 0.6418,
+   "typ": "poligon-dzielnicy",
+   "pozycja_zrodlo": "kanon",
+   "notka": "południowo-zachodnia dzielnica magazynów i kuźni"
+  },
+  {
+   "nazwa": "Sunhome",
+   "x": 0.5387,
+   "y": 0.3218,
+   "typ": "forteca",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "siedziba/koszary/świątynia Boros, 'kotwiczy obronę' P4 przed północnym Rubblebeltem (MTG Wiki: Precinct Four)"
+  },
+  {
+   "nazwa": "Horizon Military Academy",
+   "x": 0.5875,
+   "y": 0.3745,
+   "typ": "forteca",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "siedziba Teatru Rekrutacji Boros (pozycja w P4 niesprecyzowana w źródłach)"
+  },
+  {
+   "nazwa": "The Bulwark",
+   "x": 0.4269,
+   "y": 0.5491,
+   "typ": "osada",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "umocnione blokowiska MIĘDZY Sunhome a Nivix (MTG Wiki: Precinct Four)"
+  },
+  {
+   "nazwa": "Sawtooth Prison",
+   "x": 0.3594,
+   "y": 0.3227,
+   "typ": "forteca",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "więzienie w P4 (pozycja wewnątrz niesprecyzowana)"
+  },
+  {
+   "nazwa": "Tin Street Market",
+   "x": 0.3406,
+   "y": 0.4318,
+   "typ": "osada",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "jeden z najruchliwszych targów Ravnicy na Tin Street w P4 (MTG Wiki: Tenth District/Precinct Four); u Boros strefa względnie bezpieczna"
+  },
+  {
+   "nazwa": "Nivix",
+   "x": 0.3987,
+   "y": 0.4091,
+   "typ": "iglica",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "Aerie of the Firemind — wieża Izzet dominująca POŁUDNIOWĄ panoramę P4 (MTG Wiki)"
+  },
+  {
+   "nazwa": "Mizzium Foundry",
+   "x": 0.4375,
+   "y": 0.4591,
+   "typ": "osada",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "jedyne miejsce produkcji mizzium (MTG Wiki: Precinct Four)"
+  },
+  {
+   "nazwa": "Millennial Platform",
+   "x": 0.6469,
+   "y": 0.0891,
+   "typ": "obiekt",
+   "pozycja_zrodlo": "kanon",
+   "notka": "wisi na łańcuchach dokładnie NA STYKU P1/P3/P4 (GGR) — jedyny twardy punkt topologiczny mapy"
+  },
+  {
+   "nazwa": "Vitu-Ghazi",
+   "x": 0.6906,
+   "y": 0.2055,
+   "typ": "obiekt",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "żywa świątynia Selesnyi przy PÓŁNOCNYM krańcu P3 (MTG Wiki: Precinct Three)"
+  },
+  {
+   "nazwa": "The Canopy",
+   "x": 0.7706,
+   "y": 0.2345,
+   "typ": "dzielnica",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "północny kwartał P3 — domy w koronach drzew"
+  },
+  {
+   "nazwa": "Beast Haven",
+   "x": 0.6306,
+   "y": 0.2755,
+   "typ": "dzielnica",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "stajnie/padoki na ZACHODZIE P3 (GGR)"
+  },
+  {
+   "nazwa": "Concordance (Old City)",
+   "x": 0.7106,
+   "y": 0.3682,
+   "typ": "ruina",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "WSCHÓD P3 — opuszczone gmachy Orzhov oplatane zielenią (GGR)"
+  },
+  {
+   "nazwa": "Great Concourse",
+   "x": 0.7306,
+   "y": 0.2927,
+   "typ": "droga",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "wyniesione trakty łączące wspólnoty przy Vitu-Ghazi (GGR)"
+  },
+  {
+   "nazwa": "New Prahv",
+   "x": 0.7388,
+   "y": 0.5545,
+   "typ": "obiekt",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "trzy kolumny Senatu Azoriusza przy WSCHODNIEJ krawędzi P2; epoka Return (2012+) — na mapie ze sceny Fabuły 2006 dopisek epokowy (patrz notka źródła)"
+  },
+  {
+   "nazwa": "Forum of Azor",
+   "x": 0.695,
+   "y": 0.6709,
+   "typ": "plac",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "punkt końcowy Implicitnego Labiryntu; pozycja w P2 niesprecyzowana"
+  },
+  {
+   "nazwa": "Augustin Station",
+   "x": 0.6188,
+   "y": 0.6709,
+   "typ": "osada",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "port powietrzny na ZACHODNIM końcu Griffin Heights (GGR)"
+  },
+  {
+   "nazwa": "Griffin Heights",
+   "x": 0.755,
+   "y": 0.7409,
+   "typ": "dzielnica",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "pofałdowane południe P2 (GGR)"
+  },
+  {
+   "nazwa": "Tenth District Plaza",
+   "x": 0.5188,
+   "y": 0.5709,
+   "typ": "plac",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "neutralny grunt w P1, z niego Plaza Avenue na południe do Izby (GGR)"
+  },
+  {
+   "nazwa": "Chamber of the Guildpact",
+   "x": 0.5706,
+   "y": 0.6882,
+   "typ": "obiekt",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "siedziba Żywego Paktu przy Gateway Plaza; odbudowywana po 2019 (GGR/MKM)"
+  },
+  {
+   "nazwa": "Orzhova",
+   "x": 0.4906,
+   "y": 0.5836,
+   "typ": "iglica",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "katedra Orzhov na ZACHODNIM skraju placu (GGR)"
+  },
+  {
+   "nazwa": "Zonot Seven",
+   "x": 0.2387,
+   "y": 0.5082,
+   "typ": "woda",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "studnia Simic — jedyny zonot w Murach Miasta, na ZACHODNIM krańcu P5; w środku Zameck"
+  },
+  {
+   "nazwa": "Zameck",
+   "x": 0.2387,
+   "y": 0.5082,
+   "typ": "obiekt",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "siedziba Simic w obrębie Zonot Seven (GGR)"
+  },
+  {
+   "nazwa": "Blistercoils",
+   "x": 0.2988,
+   "y": 0.3918,
+   "typ": "obiekt",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "koła wodne Izzet przy PÓŁNOCNYM krańcu Zonot Seven (GGR)"
+  },
+  {
+   "nazwa": "Ismeri Library",
+   "x": 0.1787,
+   "y": 0.4727,
+   "typ": "osada",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "biblioteka całodobowa w P5; ukryty hub Dimir (GGR)"
+  },
+  {
+   "nazwa": "Prism University",
+   "x": 0.1988,
+   "y": 0.4264,
+   "typ": "osada",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "neutralna uczelnia magii (GGR)"
+  },
+  {
+   "nazwa": "Hightower",
+   "x": 0.2188,
+   "y": 0.38,
+   "typ": "dzielnica",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "zachodni kwartał szkół i zigguratów (GGR)"
+  },
+  {
+   "nazwa": "Smelting Quarter",
+   "x": 0.3469,
+   "y": 0.5082,
+   "typ": "dzielnica",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "przemysłowe serce P6; ul. Foundry Street (GGR)"
+  },
+  {
+   "nazwa": "Foundry Street",
+   "x": 0.3344,
+   "y": 0.5618,
+   "typ": "droga",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "główna wytwórcza oś; terytorium goblinów Krenka (powieści/GGR)"
+  },
+  {
+   "nazwa": "Kamen Fortress",
+   "x": 0.4269,
+   "y": 0.6127,
+   "typ": "forteca",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "garnizon Boros czuwający nad kultem Rakdos w P6 (GGR)"
+  },
+  {
+   "nazwa": "Deadbridge Chasm",
+   "x": 0.42,
+   "y": 0.8,
+   "typ": "szczelina",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "szczelina-brama do podziemi Golgari (Korozda pod miastem); pozycja w P6 niesprecyzowana (GGR)"
+  },
+  {
+   "nazwa": "Benzer's Bridge",
+   "x": 0.4325,
+   "y": 0.7891,
+   "typ": "obiekt",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "kluczowa trasa towarowa ze straganymi — nad szczeliną (GGR)"
+  },
+  {
+   "nazwa": "Wayport",
+   "x": 0.4387,
+   "y": 0.7291,
+   "typ": "obiekt",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "filar-ostrzeżenie w głębi Deadbridge Chasm (GGR)"
+  },
+  {
+   "nazwa": "Skarrg",
+   "x": 0.5706,
+   "y": 0.1009,
+   "typ": "ruina",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "ognisko-zgromadzenie Gruul w sercu Red Wastes; TECHNICZNIE poza murami miasta (GGR)"
+  },
+  {
+   "nazwa": "Red Wastes",
+   "x": 0.4813,
+   "y": 0.0836,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "północny Rubblebelt — pole ruin sięgające murów P4 (GGR)"
+  },
+  {
+   "nazwa": "Mur północny (Boros side)",
+   "x": 0.4719,
+   "y": 0.1382,
+   "typ": "mur",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "mur miasta nad P4; brama w przesmyku Promenady (Skarrg 'poza murami' → mur istnieje na N skraju)"
+  },
+  {
+   "nazwa": "Tin Street",
+   "x": 0.2988,
+   "y": 0.4318,
+   "typ": "droga",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "główna oś targowa: wejście od zachodu do P6, targi w P4 (GGR/powieści); wciąga wzrok w stronę Vitu-Ghazi"
+  },
+  {
+   "nazwa": "Transguild Promenade",
+   "x": 0.6038,
+   "y": 0.3818,
+   "typ": "droga",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "gildio-neutralny łuk od rubblebeltowego krańca P4 do południowych bram P1 (GGR)"
+  },
+  {
+   "nazwa": "Plaza Avenue",
+   "x": 0.5706,
+   "y": 0.6864,
+   "typ": "droga",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "Tenth District Plaza → Chamber of the Guildpact (GGR)"
+  },
+  {
+   "nazwa": "Statue of Agrus Kos",
+   "x": 0.6587,
+   "y": 0.6245,
+   "typ": "obiekt",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "pomnik wojka w P2 — pozycja z transkrypcji mapy GGR (2026-09-03)"
+  },
+  {
+   "nazwa": "Vizkopa Bank",
+   "x": 0.5069,
+   "y": 0.6364,
+   "typ": "obiekt",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "bank Orzhov przy placu — pozycja z transkrypcji GGR"
+  },
+  {
+   "nazwa": "Whitestone",
+   "x": 0.6506,
+   "y": 0.5082,
+   "typ": "dzielnica",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "białokamienna dzielnica na styku P3|P2 — transkrypcja GGR"
+  },
+  {
+   "nazwa": "Plaza East",
+   "x": 0.6012,
+   "y": 0.4909,
+   "typ": "plac",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "korytarz stykowy P1|P3|P4 — transkrypcja GGR (odsunięta 35 j. od linii granicznej)"
+  },
+  {
+   "nazwa": "Plaza West",
+   "x": 0.5106,
+   "y": 0.6882,
+   "typ": "plac",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "plac mieszkalny P1 na zachód od Chamber — transkrypcja GGR"
+  },
+  {
+   "nazwa": "Plaza South",
+   "x": 0.5587,
+   "y": 0.8336,
+   "typ": "plac",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "południowy plac P1 przy bramach — transkrypcja GGR"
+  },
+  {
+   "nazwa": "Gore House",
+   "x": 0.3869,
+   "y": 0.5782,
+   "typ": "obiekt",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "przybytek kultu Rakdosa w P6 — transkrypcja GGR"
+  },
+  {
+   "nazwa": "Medori Park",
+   "x": 0.2787,
+   "y": 0.7173,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "park Orzhov w P6 (nocą nieumarli) — transkrypcja GGR"
+  },
+  {
+   "nazwa": "Rix Maadi",
+   "x": 0.3312,
+   "y": 0.8436,
+   "typ": "ruina",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "pałac Rozkoszy Rakdosa — «pod Smelting Quarter»; marker przekrojowy przy południowej poświacie (GGR)",
+   "warstwa": "podziemie"
+  },
+  {
+   "nazwa": "Korozda & Svogthos",
+   "x": 0.5656,
+   "y": 0.8955,
+   "typ": "ruina",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "siedziba Roju Golgari — głębokie podziemia pod P1; marker przekrojowy (GGR)",
+   "warstwa": "podziemie"
+  },
+  {
+   "nazwa": "Nightveil & Duskmantle",
+   "x": 0.7,
+   "y": 0.8345,
+   "typ": "ruina",
+   "pozycja_zrodlo": "kanon-relacyjna",
+   "notka": "zapomniana siedziba Domu Dimir — pod P2; marker przekrojowy (GGR)",
+   "warstwa": "podziemie"
+  }
+ ],
+ "pinezki": [
+  {
+   "karta": "137gpt-withstand",
+   "x": 0.3688,
+   "y": 0.4273,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła: „Na ravnickim bruku… w gildii Boros albo na pograniczu z nią” (dostawa właściciela 2026-09-02). Scena w terytorium Boros — Precinct Four (Sunhome/Bulwark, GGR/MTG Wiki). Pozycja v2 (kalibracja GGR, 2026-09-03): bruk przy Tin Street Market, zachodni skraj P4; pewność region."
+  }
+ ],
+ "scena": "scena.json",
+ "otwarte_na_kolejne_przejscia": [
+  "Wektoryzacja prywatnej fan-made mapy TenthDistrict.png (dostawa właściciela 2026-09-03, ADR 0031) — kandydat v3/T2+; raster źródłowy poza gitem, potrzebny realny plik w sandboxie",
+  "Parhelion II (epoka WotS) — świadomie pominięty na v1/v2 (era pierwotnego bloku); ewentualny dodatek w warstwie epokowej",
+  "Guildpact Square + Pillar of the Paruns (wiki: przy Chamber; brak na rastrze GGR) — dopytać w kanonie przed v3",
+  "Beacon Tower (P2; zapis z 2019 może nie żyć w erze karty 2006) — pominięty świadomie",
+  "Undercity: pełny przekrój (poziomy, kanały P6, wejścia) — ewentualna osobna warstwa/scena v3; na v2 markery przekrojowe Rix Maadi / Korozda & Svogthos / Nightveil & Duskmantle",
+  "Gnat Alley (najdłuższa ulica planu, Gruul) — brak twardych pozycji w transkrypcji; przy najbliższym poczytnym źródle"
+ ],
+ "silnik": "mapforge (scena → podkład); budowniczy sceny: tools/mapforge/ravnica-scena-t4.py (geometria + walidacje pit w precyktach)",
+ "kalibracja": {
+  "wersja": "v2",
+  "data": "2026-09-03",
+  "zrodlo": "maps/ravnica/zrodlo-transkrypcja-ggr.md (transkrypcja właściciela oficjalnej mapy „The Tenth District of Ravnica”, GGR)",
+  "transformacja": "px = 830 + (X-0.5)*64, py = 610 - (Y+1)*64  [układ transkrypcji X,Y ±10 → płótno 1600×1100]"
+ }
+}
