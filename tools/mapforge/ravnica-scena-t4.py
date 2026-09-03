@@ -222,6 +222,14 @@ for p in [(zx - zrx, zy), (zx + zrx, zy), (zx, zy - zry), (zx, zy + zry)]:
     assert pit(p[0], p[1], P5), f'zonot wystaje poza P5: {p}'
 sprawdzenia.append((zx, zy))
 
+# Zameck — ratusz Simic na Zonot Seven (kanon GGR: Zameck = siedziba
+# Konklawe na Zonot Seven); odznaka gildii w wodzie studni (obiekt
+# wodny), w POŁUDNIOWO-ZACHODNIEJ części studni: wschód zajmuje wlot
+# Tin Street (392,600), środek — napis „Zonot Seven".
+POZ_Zameck = (356, 588)
+assert pit(POZ_Zameck[0], POZ_Zameck[1], P5), 'Zameck poza P5'
+sprawdzenia.append(POZ_Zameck)
+
 # Skarrg i Millennial Platform — w pasie rubblebeltu poza murami (kanon)
 for p in (POZ_Skarrg, POZ_Millennial):
     assert pit(p[0], p[1], rubblebelt) or pit(p[0], p[1], POLE_MIEJSKIE)
@@ -333,15 +341,17 @@ scena = {
     ],
     'poi': [
         # ── Precinct Four (Boros/Izzet) ──
-        poi('fort', POZ_Sunhome, 1.35),
+        # Herby gildii (PR-17 B): barwne odznaki z białym glifem na
+        # siedzibach dziesięciu gildii (kanon GGR/wikipedia).
+        poi('fort', POZ_Sunhome, 1.35, gildia='boros'),
         poi('fort', POZ_Horizon, 0.8),
         poi('miasto', POZ_Bulwark, 1.0),
         poi('fort', POZ_Sawtooth, 0.7),
         poi('miasto', POZ_TinMarket, 1.15),
-        poi('iglica', POZ_Nivix, 1.5),
+        poi('iglica', POZ_Nivix, 1.5, gildia='izzet'),
         poi('miasto', POZ_Mizzium, 0.7),
         # ── Precinct Three (Selesnya) ──
-        poi('drzewo', POZ_Vitu, 4.2),
+        poi('drzewo', POZ_Vitu, 4.2, gildia='selesnya'),
         poi('miasto', POZ_Canopy, 0.7),
         poi('miasto', POZ_Beast, 0.8),
         poi('plac', POZ_Concourse, 0.9),
@@ -349,19 +359,20 @@ scena = {
         poi('miasto', POZ_Whitestone, 0.6),
         poi('plac', POZ_PlazaE, 0.8),
         # ── Precinct Two (Azorius) ──
-        poi('kolumny', POZ_Prahv, 1.35),
+        poi('kolumny', POZ_Prahv, 1.35, gildia='azorius'),
         poi('kolumny', POZ_StatuaKos, 0.55),
         poi('miasto', POZ_Augustin, 0.75),
         poi('plac', POZ_Forum, 0.9),
         # ── Precinct One (centrum) ──
         poi('plac', POZ_Plaza, 1.5),
-        poi('iglica', POZ_Orzhova, 1.2),
+        poi('iglica', POZ_Orzhova, 1.2, gildia='orzhov'),
         poi('miasto', POZ_Vizkopa, 0.7),
         poi('kopula', POZ_Chamber, 1.2),
         poi('plac', POZ_PlazaW, 0.8),
         poi('plac', POZ_PlazaS, 0.85),
         # ── Precinct Five (Simic/nauka) ──
-        poi('kolowrot', POZ_Blister, 0.95),
+        poi('kolowrot', POZ_Blister, 0.95, gildia='izzet'),
+        poi('herb', POZ_Zameck, 1.0, gildia='simic'),
         poi('miasto', POZ_Ismeri, 0.8),
         poi('miasto', POZ_Prism, 0.9),
         poi('miasto', POZ_Hightower, 0.7),
@@ -373,12 +384,12 @@ scena = {
         poi('most', POZ_Bridge, 0.9, kat=-75),
         poi('iglica', POZ_Wayport, 0.55),
         # ── północne pustkowie (poza murami) ──
-        poi('ognisko', POZ_Skarrg, 0.9),
+        poi('ognisko', POZ_Skarrg, 0.9, gildia='gruul'),
         poi('platforma', POZ_Millennial, 1.1),
         # ── podziemia (przekrój przy południowej poświacie) ──
-        poi('ruina', POZ_Rix, 0.9),
-        poi('ruina', POZ_Svogthos, 0.9),
-        poi('ruina', POZ_Duskmantle, 0.9),
+        poi('ruina', POZ_Rix, 0.9, gildia='rakdos'),
+        poi('ruina', POZ_Svogthos, 0.9, gildia='golgari'),
+        poi('ruina', POZ_Duskmantle, 0.9, gildia='dimir'),
     ],
     'etykiety': [
         # nazwy precyktów (obszarowe)
@@ -424,7 +435,7 @@ scena = {
         et('Plaza South', POZ_PlazaS, 11.5, przy_poz=POZ_PlazaS, ital=True),
         # P5
         et('Zonot Seven', (382, 545), 14, ital=True),
-        et('Zameck', (382, 567), 11, ital=True),
+        et('Zameck', POZ_Zameck, 11, przy_poz=POZ_Zameck, ital=True),
         et('Blistercoils', POZ_Blister, 12, przy_poz=POZ_Blister),
         et('Ismeri Library', POZ_Ismeri, 12.5, przy_poz=POZ_Ismeri),
         et('Prism University', POZ_Prism, 12.5, przy_poz=POZ_Prism),

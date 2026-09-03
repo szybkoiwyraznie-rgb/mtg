@@ -33,6 +33,7 @@ import {
   lukEtykieta, kompas, ramka, skalaLinia, drzewo,
   dzielnica, granicaDzielnicy, mur, szczelina, tkanina, gruz,
   plac, kolumny, kopula, platforma, kolowrot, most, ognisko, drzewoPoi,
+  herb, HERBY_GILDII,
 } from './bloki.mjs';
 import { prng, gladka, prosta, parsujD, pit } from './geom.mjs';
 
@@ -83,6 +84,8 @@ const BLOKI_POI = {
   // kołowrót nad wodą, most nad szczeliną, ognisko-zgromadzenie, wielkie
   // drzewo-pomnik (Vitu-Ghazi).
   plac, kolumny, kopula, platforma, kolowrot, most, ognisko, drzewo: drzewoPoi,
+  // `herb` — barwna odznaka gildii (Ravnica T4): barwny dysk + biały glif.
+  herb,
   // `wodospad` — strugi spadającej wody + rozbryzg (Roaring Falls);
   // kolor linii wody, spójny z jeziorami/wybrzeżem (ADR 0025).
   wodospad: (x, y, { skala = 1 } = {}) => {
@@ -170,6 +173,7 @@ export function rozstawEtykiety(etykiety, { szer, wys, maskiLadow = [], woda = n
     kopula: { dol: 13, gora: 13 }, platforma: { dol: 13, gora: 20 },
     kolowrot: { dol: 13, gora: 13 }, most: { dol: 12, gora: 12 },
     ognisko: { dol: 12, gora: 14 }, drzewo: { dol: 8, gora: 8 },
+    herb: { dol: 12, gora: 12 },
   };
   const promienPrzy = (ax, ay) => {
     let r = { dol: 4, gora: 4 };                  // goły punkt (zatoka, wyspa, przełęcz)
@@ -177,7 +181,10 @@ export function rozstawEtykiety(etykiety, { szer, wys, maskiLadow = [], woda = n
       if (Math.hypot(p.x - ax, p.y - ay) > 24) continue;
       const baza = PROMIEN_POI[p.typ] ?? { dol: 10, gora: 10 };
       const s = p.opcje?.skala ?? 1;
-      r = { dol: Math.max(r.dol, baza.dol * s + 2), gora: Math.max(r.gora, baza.gora * s + 2) };
+      // iglica z herbem: turnia wyrasta z dysku odznaki — etykieta „pod”
+      // musi ominąć dysk (nie tylko goły szpic).
+      const b = (p.typ === 'iglica' && p.opcje?.gildia) ? { dol: 12, gora: baza.gora } : baza;
+      r = { dol: Math.max(r.dol, b.dol * s + 2), gora: Math.max(r.gora, b.gora * s + 2) };
     }
     return r;
   };
@@ -423,8 +430,34 @@ export function renderuj(scena, { styl } = {}) {
   if (scena.poi?.length) {
     warstwy.push(`<!-- === POI === -->`);
     for (const p of scena.poi) {
+      const op = p.opcje ?? {};
+      const r1 = (v) => Math.round(v * 10) / 10;
+      if (op.gildia) {
+        // Sygnet gildii (PR-17 B): barwny dysk + biały glif.
+        if (p.typ === 'iglica') {
+          // wieża-siedziba (Nivix/Izzet, Orzhova/Orzhov): turnia wyrasta
+          // z barwnego medalu; glif zsunięty w DOLNY łuk dysku (szpic
+          // zasłania środek — dolna część glifu pozostaje widoczna).
+          const ms = (op.skala ?? 1) * 0.85;
+          warstwy.push(herb(p.x, p.y, { skala: ms, gildia: op.gildia, glifDy: 4.2 * ms }));
+          warstwy.push(iglica(p.x, p.y, { skala: op.skala ?? 1 }));
+        } else if (p.typ === 'drzewo') {
+          // Vitu-Ghazi (Selesnya): hero-drzewo na zielonym dysku —
+          // samo drzewo jest glifem herbu.
+          const s = op.skala ?? 2;
+          const h = HERBY_GILDII[op.gildia];
+          const rng = prng(`drzewo-poi:${r1(p.x)}:${r1(p.y)}`);
+          warstwy.push(`<g class="mf-herb" data-x="${r1(p.x)}" data-y="${r1(p.y)}" data-gildia="${op.gildia}">` +
+            `<circle cx="${r1(p.x)}" cy="${r1(p.y)}" r="${r1(s * 7.8)}" fill="${PAL.lad}"/>` +
+            `<circle cx="${r1(p.x)}" cy="${r1(p.y)}" r="${r1(s * 7.4)}" fill="${h.kolor}"/>` +
+            `</g>` + drzewo(p.x, p.y, s, rng));
+        } else {
+          warstwy.push(herb(p.x, p.y, { skala: op.skala ?? 1, gildia: op.gildia }));
+        }
+        continue;
+      }
       const blok = BLOKI_POI[p.typ];
-      if (blok) warstwy.push(blok(p.x, p.y, p.opcje ?? {}));
+      if (blok) warstwy.push(blok(p.x, p.y, op));
     }
   }
 
