@@ -4,6 +4,48 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-03 — sesja PR-14: audyt PR-13, Pętla Jakości Rawnicy, przygotowanie wektoryzacji v3
+
+1. **Wejście:** „kontynuujemy projekt” + załącznik właściciela: fan-made
+   mapa Dziesiątego Dystryktu w 3 warstwach (a = granice, b = + teren,
+   c = + POI i labelki) + link Drive (fallback). Punkt wyjścia:
+   scalony PR-13 (`72d6bac`).
+2. **Blokada środowiskowa:** rastery NIE dotarły do sandboxa —
+   `/home/user/uploads/` nie istnieje mimo załącznika w UI (ten sam
+   objaw co w sesji 09-03 lore-first); egress zablokowany (curl → 000);
+   `fetch_page` na linku Drive → HTTP 500 (2 warianty URL). Wektoryzacja
+   v3 przełożona; pozostała praca wykonana w całości.
+3. **Audyt PR #13** (43 pliki, 3 warstwy sesji): treść i kod spójne
+   z ADR-ami (0026/0030/0031/0004/0013/0018); integralność zgodna
+   z handoffem (102/102, build OK). Znalezione Z1–Z5 → kolejka S3–S6
+   (`docs/audits/AUDYT_2026-09-03-PR13.md`).
+4. **Pętla Jakości:**
+   - krok 2: plan Ravnica (najsłabszy, 7/8) — sekcja „Ludy” rozpisana
+     (megalizna, roster ras GPT-era: Erstwhile/Umerilek, Vedalken,
+     Loxodon, Viashino; warstwa martwych: Rada Obzedat, Agyrem) + 2
+     cytowania (MTG Wiki: Ravnica, Obzedat);
+   - krok 3: encje Rawnicy poniżej progu haseł (2 KARTY) → kolejka
+     link-miningu w `docs/backlog.md` (Boros, Legion Boros, Dziesiąty
+     Dystrykt, Sunhome, Tin Street, Pakt Gildii); plan dostaje item
+     „Karty kolekcji” z wikilinkiem do 137GPT → wiki-stats 6/6 stron
+     8/8 (po raz pierwszy 100% bazy);
+   - krok 4 (pod-punkt 3): weryfikacja 3 pozycji otwartych mapy
+     kanonem — Guildpact Square + Pillar of the Paruns (obelisk z
+     9 pieczęciami; rozbieżność wiki P1 vs P2 → v3 przy Chamber),
+     Beacon Tower (P2/Azorius; epoka bloku niepotwierdzona), Gnat Alley
+     (najdłuższa ulica planu, trasa Gruul; kanon bez współrzędnych);
+     `otwarte_na_kolejne_przejscia` odświeżone, nowy rozdział w
+     `mapa-analiza.md`; geometria v2 nienaruszona.
+5. **Przygotowanie v3 (ADR 0031):** `zrodlo-fanowska-wektoryzacja.md`
+   przepisane pod faktyczną dostawę (3 warstwy + Drive link + opis
+   zawartości warstw + gotowa procedura ekstrakcji/QA); docelowy
+   wariant T2+ (podkład adoptowany — kierunek z kontekstu ADR 0031),
+   alternatywa: geometria jako matryca T4.
+6. **Drobiazgi (audyt Z3/Z4):** literówki w dzienniku („w warianie T4”
+   → „w wariancie”, „Blisttercoils” → „Blistercoils”); usunięty
+   bezkanoniczny fragment („własne granatowe sajgonki”) z „Setting
+   w pigułce” planu Rawnica.
+
 ## 2026-09-03 — sesja PR-13 (feedback właściciela): Karty Katalogowe LORE-first + kierunek wektoryzacji mapy Ravniki
 
 1. **Korekta kierunku kart:** właściciel odrzucił układ, w którym wpis zaczyna
