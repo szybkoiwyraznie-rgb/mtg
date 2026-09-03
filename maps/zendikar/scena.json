@@ -922,8 +922,8 @@
   },
   {
    "typ": "miasto",
-   "x": 828.0,
-   "y": 220.0,
+   "x": 770.0,
+   "y": 190.0,
    "opcje": {
     "skala": 0.6
    }
@@ -1221,12 +1221,12 @@
  "etykiety": [
   {
    "tekst": "Sejiri Refuge",
-   "x": 828,
-   "y": 236,
+   "x": 770,
+   "y": 212,
    "opcje": {
     "fs": 14.0,
     "kotwica": "middle",
-    "przyDo": [828, 220]
+    "przyDo": [770, 190]
    }
   },
   {
@@ -1735,8 +1735,8 @@
   },
   {
    "tekst": "Sejiri",
-   "x": 800,
-   "y": 118,
+   "x": 600,
+   "y": 108,
    "opcje": {
     "fs": 44.0,
     "kotwica": "middle",
@@ -1745,8 +1745,8 @@
   },
   {
    "tekst": "(zmrożony step)",
-   "x": 800,
-   "y": 150,
+   "x": 600,
+   "y": 140,
    "opcje": {
     "fs": 22.0,
     "kotwica": "middle",
@@ -1815,13 +1815,14 @@
   },
   {
    "tekst": "Windblast Gorge",
-   "x": 1795.0,
-   "y": 545.0,
+   "x": 1822.0,
+   "y": 508.0,
    "opcje": {
     "fs": 14.0,
     "kotwica": "middle",
     "ital": true,
-    "kat": 55
+    "kat": 72,
+    "kolor": "#6b1f2e"
    }
   },
   {
