@@ -1,3 +1,28 @@
+## 2026-09-03 22:10 — Ravnica: herby gildii i lokacje na PRAWDZIWEJ mapie (T2+/v3) + naprawa podkładu
+
+**Korekta ważna:** poprawny podkład Ravnicy to wektoryzacja fanowska
+**v3 (wariant T2+, 6849×5292, ADR 0031)** — nie rekonstrukcja mapforge
+T4 (1600×1100). Eksperyment T4 był odrzucony; w trakcie PR-17 omyłkowo
+nadpisał podkład v3 (przywrócono w commicie FIX). Poniższe dodatki
+trafiają już na właściwy v3.
+
+- **Herby 10 gildii** — wypełnione barwne tarcze siedzib z białym
+  glifem (wektoryzacja odzyskała kolorowe celowniki, ale utraciła
+  glify): Gruul (Skarrg), Boros (Sunhome), Selesnya (Vitu-Ghazi),
+  Izzet (Nivix), Simic (Zonot Seven/Zameck), Azorius (New Prahv),
+  Orzhov (Orzhova), Rakdos (Rix Maadi), Golgari (Korozda & Svogthos),
+  Dimir (Nightveil & Duskmantle). Millennial Platform neutralny — bez.
+- **Lokacje kanoniczne** (świadome uchylenie wcześniejszych decyzji z
+  map.json, za zgodą właściciela): Beacon Tower (mały niebieski marker
+  w P2), Gnat Alley (kropkowana trasa + szara etykieta w P6),
+  Guildmages' Forum / Guildpact Square / Pillar of the Paruns (małe
+  czarne etykiety w gildyjnym rdzeniu P1).
+- Odtwarzalne, idempotentne warstwy SVG: `tools/mapforge/ravnica-v3-herby.py`
+  i `tools/mapforge/ravnica-v3-lokacje.py` (raster źródła pozostaje poza
+  gitem — ADR 0031).
+- Zaktualizowana dokumentacja: `map.json` (kotwice + zmiany decyzji),
+  `mapa-analiza.md` (notka korygująca T4 → T2+/v3).
+
 ## 2026-09-03 19:45 — Mapa Ravnicy v4: domknięcie do złotego standardu (pierwsza sesja z wizją)
 
 Mapa Dziesiątego Dystryktu (`maps/ravnica/podklad.svg`, T2+) domknięta

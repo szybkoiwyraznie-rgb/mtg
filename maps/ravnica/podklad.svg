@@ -109,4 +109,14 @@
 <circle cx="5054" cy="3976" r="31.3" fill="rgb(30,169,234)"/>
 <g transform="translate(5054 3976) scale(0.272)"><path d="M-82,0 Q0,-66 82,0 Q0,66 -82,0 Z" fill="#ffffff"/><circle cx="0" cy="0" r="26" fill="rgb(30,169,234)"/></g>
 </g>
+<g id="lokacje-kanoniczne">
+<circle cx="5820" cy="3045" r="36.5" fill="rgb(45,188,255)" opacity="0.12"/><circle cx="5820" cy="3045" r="26.3" fill="none" stroke="rgb(45,188,255)" stroke-width="9.5"/><circle cx="5820" cy="3045" r="11" fill="rgb(45,188,255)"/>
+<text x="5820" y="3280" font-size="44" text-anchor="middle" fill="rgb(45,188,255)" letter-spacing="2">BEACON</text>
+<text x="5820" y="3332" font-size="44" text-anchor="middle" fill="rgb(45,188,255)" letter-spacing="2">TOWER</text>
+<polyline points="1980,3470 2180,3455 2400,3470 2620,3485" fill="none" stroke="#3a3a3a" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 18" opacity="0.55"/>
+<text x="2350" y="3470" font-size="46" text-anchor="middle" fill="#3a3a3a" letter-spacing="3">GNAT ALLEY</text>
+<text x="4290" y="2690" font-size="32" text-anchor="middle" fill="rgb(43,43,43)" letter-spacing="1">GUILDMAGES' FORUM</text>
+<text x="3320" y="3370" font-size="30" text-anchor="middle" fill="rgb(43,43,43)" letter-spacing="1">GUILDPACT SQUARE</text>
+<text x="4360" y="3680" font-size="27" text-anchor="middle" fill="rgb(43,43,43)" letter-spacing="1">PILLAR OF THE PARUNS</text>
+</g>
 </svg>

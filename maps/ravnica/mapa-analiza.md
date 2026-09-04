@@ -1,6 +1,21 @@
 # Ravnica — analiza wariantów mapy (MA1, krok 3 PROCES_MAP)
 
-Data: 2026-09-02 · decyzja: **wariant T4** (rekonstrukcja na warsztacie mapforge).
+> **AKTUALIZACJA 2026-09-03 (korekta decyzji):** ostatecznym podkładem
+> Ravnicy jest **wariant T2+ — wektoryzacja prywatnej fan-made mapy
+> właściciela (v3), płótno 6849×5292**, NIE rekonstrukcja mapforge T4
+> (1600×1100). T4 był eksperymentem i został odrzucony (zob. `map.json`
+> → `silnik`/`kalibracja: v3`, ADR 0031; scenka T4 „bez sceny
+> mapforge/T4”). W PR-17 warstwa T4 omyłkowo nadpisała podkład v3 —
+> przywrócono (commit FIX 3272372). Herby gildii i lokacje kanoniczne
+> doszyto do właściwego v3 jako odtwarzalne warstwy SVG:
+> `tools/mapforge/ravnica-v3-herby.py` (`<g id="herby-gildii">`) i
+> `tools/mapforge/ravnica-v3-lokacje.py` (`<g id="lokacje-kanoniczne">`).
+> Poniższy tekst opisuje pierwotny proces (T4 jako ówczesny wybór) i
+> zostaje jako dziennik; czytać go z uwzględnieniem tej zmiany.
+
+Data: 2026-09-02 · decyzja: ~~wariant T4~~ **→ skorygowano do T2+/v3
+(patrz notka powyżej).** Pierwotnie: wariant T4 (rekonstrukcja na
+warsztacie mapforge).
 Kontekst: karta 137GPT Withstand (per Fabuły: „na ravnickim bruku… w gildii Boros").
 Właściciel: mapa Ravnicy = „wieloetapowy proces wymagający solidnego researchu";
 najpierw źródła reużywalne (T2/T3), a gdy ich nie ma — prace T4 z możliwą
