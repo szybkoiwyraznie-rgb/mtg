@@ -54,10 +54,10 @@ LOKACJE = [
     # Gildyjny rdzeń (P1) — czarne etykiety cywilne, mały font
     dict(lines=["GUILDMAGES' FORUM"], x=4290, y=2690, color='rgb(43,43,43)',
          fs=32, rot=0, marker=None, ls=1, line=None),
-    dict(lines=['GUILDPACT SQUARE'], x=3320, y=3370, color='rgb(43,43,43)',
-         fs=30, rot=0, marker=None, ls=1, line=None),
-    dict(lines=['PILLAR OF THE PARUNS'], x=4360, y=3680, color='rgb(43,43,43)',
-         fs=27, rot=0, marker=None, ls=1, line=None),
+    dict(lines=['GUILDPACT SQUARE'], x=4010, y=3190, color='rgb(43,43,43)',
+         fs=28, rot=0, marker=None, ls=1, line=None),
+    dict(lines=['PILLAR OF THE PARUNS'], x=4560, y=3475, color='rgb(43,43,43)',
+         fs=24, rot=0, marker=None, ls=1, line=None),
 ]
 
 
