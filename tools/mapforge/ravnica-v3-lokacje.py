@@ -43,7 +43,7 @@ GRUPA = 'lokacje-kanoniczne'
 LOKACJE = [
     # Beacon Tower (P2, Azorius) — wolne pole na wschód od New Prahv;
     # marker w głąb lądu (nie na granicy), etykieta pod nim
-    dict(lines=['BEACON', 'TOWER'], x=5820, y=3280, color='rgb(45,188,255)',
+    dict(lines=['BEACON', 'TOWER'], x=5820, y=3168, color='rgb(45,188,255)',
          fs=44, rot=0, marker=(5820, 3045, 'rgb(45,188,255)'), ls=2,
          line=None),
     # Gnat Alley — szara etykieta ulicy w wolnym polu P6 (między Foundry
