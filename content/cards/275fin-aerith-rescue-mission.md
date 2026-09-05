@@ -68,7 +68,7 @@ Karta z kolekcji właściciela (275FIN; FIN/5 wg Scryfall) **nie ma
 flavor textu** — i to też jest
 wymowne: scena nie potrzebuje cytatu, bo cały jej ciężar niesie obraz
 schodów, na których drużyna pcha siebie nawzajem w górę. Cisza
-flavoru zostawia miejsce na fabułę dostawy: „w Midgarze sama Shinra
+flavoru zostawia miejsce na Fabułę: „w Midgarze sama Shinra
 zbudowała drogę, po której po raz pierwszy AVALANCHE pójdzie w górę,
 nie w dół”.
 
@@ -78,7 +78,7 @@ Karta przenosi do Kodeksu pojedynczą, kanoniczną scenę FFVII —
 infiltrację budynku Shinra w celu odbicia Aerith z rąk Turks —
 i kotwiczy ją w geografii planu [[final-fantasy|Final Fantasy]],
 w Midgarze: slumsy pod talerzami jako punkt
-startu, wieża w hubie sektora 0 jako cel. Fabuła dostawy (ADR 0026)
+startu, wieża w hubie sektora 0 jako cel. Fabuła właściciela
 jest wiążącą kotwicą transpozycji: to ona ustanawia ujęcie „szybu
 schodowego” i temat „w górę, nie w dół”, który mapa Midgaru niesie
 w samym swoim kształcie (talery nad slumsami). Kanon FFVII pozostaje
@@ -115,6 +115,9 @@ ochrony swoich, determinacji, która nie pyta o zysk.
 
 ## Źródła
 
+- Fabuła właściciela (2026-09-05) — szyb schodowy budynku Shinra,
+  drużyna Avalanche (Cloud, Tifa, Barret), uwięziona Aerith pod strażą
+  Tsenga; motyw „w górę, nie w dół".
 - Scryfall, Aerith Rescue Mission (FIN/5) — dane karty, oracle text,
   brak flavor textu: https://scryfall.com/card/fin/5/aerith-rescue-mission
 - Fandom, hasło Midgar — radialny układ sektorów, slumsy pod
