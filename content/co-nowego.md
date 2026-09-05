@@ -1,3 +1,30 @@
+## 2026-09-05 17:05 — sesja jakości: naprawa kompasu Ravniki, „Fabuła" w ADR, warsztat bez kolizji
+
+Sesja Pętli Jakości po audycie PR-17 — zmiany w bazie i narzędziach:
+
+- **Kompas mapy Ravniki naprawiony:** litery N/E/S/W róży kierunków miały
+  ukrytą wadę jeszcze z czasu wektoryzacji v3 (uszkodzony atrybut
+  pozycji — przeglądarka rysowała obie litery N i S w środku róży, jedna
+  na drugiej). Teraz litery stoją prawidłowo wokół róży (N nad iglicą,
+  S pod nią, E/W po bokach).
+- **Nowa zapora audytu map:** pliki map z „śmieciowymi" wartościami
+  atrybutów (`undefined`/`NaN`/`null`) będą odtąd wykrywane automatycznie
+  — to ta klasa błędu co kompas.
+- **Termin „Fabuła" bez dopisku „dostawy"** (decyzja właściciela
+  z 2026-09-05, widoczna już wtedy na kartach) zapisany formalnie
+  w ADR 0026 — rejestr decyzji dogoniony ze stanem bazy.
+- **Warsztat map bez kolizji:** na demie „Wyspa Próbna" etykieta „Rzeka
+  Srebrna" zachodziła na „Step Środkowy" (odsłonił to dokładniejszy model
+  kolizji z poprzedniej sesji) — napis rzeki przesunięty w dół biegu.
+  Demo dostało też brakujący fort (Fort Graniczny) — był w scenie od
+  września, ale przerysowania warsztatu go nie pokazywały. Wszystkie mapy
+  łącznie z warsztatem audytują się teraz na zero problemów.
+- **Skrypty warstw Ravniki (herby gildii, lokacje) naprawione:** przy
+  ponownym uruchomieniu skrypt herbów potrafił zdublować warstwę zamiast
+  ją wymienić; teraz oba skrypty są bajtowo powtarzalne.
+- Drobna korekta numeracji ADR w dwóch opisach (drzewo HTML map to
+  ADR 0027).
+
 ## 2026-09-05 09:30 — codex: pakiet offline (ZIP), ilustracje FOT/KON z dysku, termin „Fabuła"
 
 - **Fabuła, bez dopiska „dostawy"** (decyzja właściciela 2026-09-05):

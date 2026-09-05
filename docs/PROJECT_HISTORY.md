@@ -4,6 +4,49 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-05 — sesja PR-18: audyt PR-17 + Pętla Jakości (naprawa kompasu Ravniki, doprecyzowanie ADR 0026, warsztat 0 kolizji)
+
+1. **Wejście:** „kontynuujemy projekt". Punkt wyjścia: scalony PR-17
+   (`bd6ac14`, squash 18 commitów sesji z wizją). Lektura obowiązkowa
+   pełna (AGENTS.md, ADR-y 0001–0031, LESSONS L1–L6, ENVIRONMENT, PR-17,
+   handoff PR-17); klon pogłębiony do pełnej historii (był shallow —
+   istotne dla stopek czasu ADR 0029).
+2. **Audyt PR-17** (`docs/audits/AUDYT_2026-09-05-PR17.md`): integralność
+   zgodna z handoffem (102/102, build, map-audit 0 dla trzech planów);
+   treść i kod spójne z ADR 0002/0008/0017/0027/0031 (ZIP bez duplikatu,
+   sonda FOT/KON po liście kandydatów, termin „Fabuła", kotwice 5 nowych
+   lokacji, OBB/SAT, warstwy herby/lokacje). Znaleziska Z1–Z8.
+3. **Kolejka napraw (kompletna):**
+   - **Z1:** kompas „rosea" Ravniki — 4× `y="undefined"` (wada generatora
+     od PR-15; N i S nakładały się w środku róży). Przywrócone pozycje
+     pętli kierunków (N 0,−235 / E 235,0 / S 0,235 / W −235,0) + zapora
+     w map-audit na `undefined/NaN/null` w atrybutach;
+   - **Z2:** doprecyzowanie ADR 0026 (widoczny termin „Fabuła" bez
+     dopisku „dostawy" — decyzja właściciela 2026-09-05 wdrożona w PR-17,
+     spisana w ADR teraz) + rejestr;
+   - **Z3:** numeracja ADR 0028→0027 (drzewo HTML map) w co-nowego
+     i komentarzu build.mjs;
+   - **Z4:** WYCOFANE po weryfikacji kodu (modele AABB/OBB audytu spójne
+     — oba wyśrodkowane w kotwicy);
+   - **Z5:** demo warsztatu bez kolizji („Rzeka Srebrna" przesunięta
+     w dół biegu) + świeży render z fortem (scena i ADR 0028 miały go
+     od PR-11, commitowane SVG — nie);
+   - **Z6/Z7:** nieaktualna notka o „markerach bez emblematów"
+     w mapa-analiza.md + literówki docstringów;
+   - **Z8 (nowe, z próby uruchomienia):** `ravnica-v3-herby.py` usuwał
+     warstwę non-greedy regexem urywającym na zagnieżdżonym `</g>` →
+     duplikacja glifów + wiszące `</g>`. Naprawa: licznik głębokości;
+     oba skrypty warstw bajtowo idempotentne (git diff pusty). Lekcja L7.
+4. **Pętla Jakości:** krok 1 zielony; krok 2 — brak kandydatów
+   (wszystkie strony 8/8, Źródła ≥2, sekcje kompletne); krok 3 — brak
+   encji ≥2 kart (3 karty w 3 planach; hasła Ravniki czekają na 2. kartę);
+   krok 4 — naprawy Z1/Z5 + przegląd kompletności operacyjnej (pinezki
+   3/3, mapy 3/3 planów z kartami, kotwice zweryfikowane audytem);
+   krok 5 — wpis co-nowego 17:05 + ten handoff.
+5. **Proces:** PR #18 otwarty po commicie audytu i planu (reguła 1);
+   commity S1–S7 pushowane na bieżąco (reguła 3); pełna historia gita
+   przywrócona lokalnie (`fetch --unshallow`).
+
 ## 2026-09-03 — sesja PR-14: audyt PR-13, Pętla Jakości Rawnicy, przygotowanie wektoryzacji v3
 
 1. **Wejście:** „kontynuujemy projekt” + załącznik właściciela: fan-made
