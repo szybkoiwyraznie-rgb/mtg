@@ -47,13 +47,16 @@ sam Maelstrom powstał przeciw najeźdźcy.
 
 ## Mapa
 
-`maps/alara/` — wariant **T4** (rekonstrukcja kanoniczna): pięć
-regionów jako sektory w cyklu many wokół centralnego Maelstromu
-(kanoniczna topologia złączenia), obeliski przy szwach regionów
-(stabilizowały shardy; pozycje reprezentatywne), miejsca kanoniczne
-(Valeron, Jhess, Akrasa, Sedraxis, Antali) jako pozycje
-reprezentatywne wewnątrz regionów — brak kanonicznych współrzędnych,
-proweniencja w `map.json`.
+`maps/alara/` — wariant **T3**: transkrypcja topologii z fanowskich
+referencji dostarczonych przez właściciela (ADR 0031; rastry poza
+gitem) — pięć zrośniętych kontynentów-regionów w kanonicznym cyklu
+many (Bant u góry, Naya na zachodzie, Jund i Grixis na południu,
+Esper z morzami wewnętrznymi na wschodzie) wokół **Maelstromu** —
+plamy w punkcie złączenia shardów. Nazwy wyłącznie kanoniczne
+(MTG Wiki, Category:Alara locations): Topa, Valeron, Akrasa, Jhess,
+Eos i Sun-Dappled Court w Bant; Sacellum i ruiny Antali w Naya;
+Sanctum Arcanum na Esper; Sedraxis na Grixis. Scena wygenerowana
+w silniku mapforge (`scena.json`), proweniencja w `map.json`.
 
 ## Źródła
 

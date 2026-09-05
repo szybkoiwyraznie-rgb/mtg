@@ -31,7 +31,7 @@ import {
   PAL, motyw, las, bagno, step, lod, pasmo, pasmoInstancje, wulkan, rzeka,
   doplyw, jezioro, droga, miasto, ruina, fort, hedron, iglica, szczyt, etykieta,
   lukEtykieta, kompas, ramka, skalaLinia, drzewo,
-  dzielnica, granicaDzielnicy, mur, szczelina, tkanina, gruz,
+  dzielnica, granicaDzielnicy, granicaRegionu, mur, szczelina, tkanina, gruz,
   plac, kolumny, kopula, platforma, kolowrot, most, ognisko, drzewoPoi,
   herb, HERBY_GILDII,
 } from './bloki.mjs';
@@ -265,6 +265,15 @@ export function renderuj(scena, { styl } = {}) {
     warstwy.push(`<!-- === LĄDY === -->`,
       ...scena.lądy.map((l) =>
         `<path d="${laczD(l)}" fill="${PAL.lad}" stroke="${PAL.ladStroke}" stroke-width="3.5"/>`));
+    // Scalone plany (Conflux Alary): kontynenty nachodzą na siebie, więc
+    // wewnętrzne wybrzeża przecinałyby ląd. Drugi pass samych wypełnień
+    // po konturach przykrywa wewnętrzne kreski sąsiednim lądem — zostaje
+    // tylko zewnętrzna linia brzegowa (połowa szerokości + poświata).
+    if (scena.zrośnięte) {
+      warstwy.push(`<!-- === LĄDY SCALONE (wypełnienia kryjące) === -->`,
+        ...scena.lądy.map((l) =>
+          `<path d="${laczD(l)}" fill="${PAL.lad}" stroke="none"/>`));
+    }
   }
 
   // Maska lądu (unia wszystkich kontynentów): drogi i rzeki przycinamy do
@@ -417,6 +426,10 @@ export function renderuj(scena, { styl } = {}) {
   if (scena.mury?.length) {
     warstwy.push(`<!-- === MURY MIEJSKIE === -->`,
       ...scena.mury.map((m) => mur(m.id, m.punkty, m.opcje ?? {})));
+  }
+  if (scena.granice?.length) {
+    warstwy.push(`<!-- === GRANICE REGIONÓW (scalone plany) === -->`,
+      ...scena.granice.map((g) => granicaRegionu(g.punkty)));
   }
 
   if (scena.drogi?.length) {

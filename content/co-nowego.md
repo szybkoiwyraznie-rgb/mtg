@@ -1,3 +1,19 @@
+## 2026-09-05 22:15 — mapa Alary od nowa: T3 z referencji fanowskich
+
+Właściciel odrzucił radialną mapę Alary („to nie jest Midgar — to pięć
+światów-kontynentów, które się połączyły”) i dostarczył prywatne
+fanowskie mapy jako wzorzec (ADR 0031). Redo w silniku mapforge:
+scena `maps/alara/scena.json` — pięć zrośniętych kontynentów
+(Bant u góry, Naya zachód, Jund i Grixis południe, Esper z morzami
+wewnętrznymi wschód) wokół Maelstromu-plamy w punkcie złączenia;
+biomy (las Naya, stepy, wulkany Jund), szwy regionów nowym klockiem
+`granicaRegionu`, Maelstrom jako tint na lądzie (pinezka 305ARB zostaje
+na lądzie). Nazwy wyłącznie kanoniczne (MTG Wiki): +Topa, Valeron,
+Akrasa, Jhess, Eos, Sun-Dappled Court, Sacellum, Sanctum Arcanum,
+Sedraxis, ruiny Antali; wariant T3, 19 kotwic. Silnik mapforge dostał
+systemową opcję `zrośnięte` (wewnętrzne wybrzeża kryte wypełnieniami).
+Testy i audit zielone.
+
 ## 2026-09-05 21:30 — pakiet Alara: 305ARB Illusory Demon + mapa T4
 
 Nowa karta właściciela: **305ARB Illusory Demon** (Alara Reborn) —

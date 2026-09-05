@@ -1,4 +1,4 @@
-# PLAN PR-20: pakiet Alara — 305ARB Illusory Demon + mapa scalonej Alary (T4)
+# PLAN PR-20: pakiet Alara — 305ARB Illusory Demon + mapa scalonej Alary (T3 po redo)
 
 Data: 2026-09-05. Branch: `arena/01a07207-mtg` (pakiet jedzie w otwartym PR #18).
 
@@ -37,10 +37,10 @@ wyglądająca jak demon.
 - `content/cards/305arb-illusory-demon.md` — karta LORE-first,
   9 sekcji (ADR 0030); pinezka dokładna: Maelstrom.
 - `content/planes/alara.md` — plan: historia epok, regiony, Maelstrom.
-- `maps/alara/{podklad.svg,map.json}` — T4; 16 kotwic (Maelstrom,
-  5 regionów, 5 obelisków przy szwach — pozycje reprezentatywne
-  z proweniencją, 5 miejsc kanonicznych — pozycje reprezentatywne);
-  paleta w granicach whitelisty ADR 0021 (achromat + bordowe etykiety).
+- `maps/alara/{scena.json,podklad.svg,map.json}` — T3 po redo; 19
+  kotwic kanonicznych (Maelstrom, 5 regionów, 10 POI z wiki, 3 akweny
+  z topologii referencji); silnik mapforge + nowe klocki `zrośnięte
+  lądy` i `granicaRegionu`; paleta w granicach whitelisty ADR 0021.
 - `docs/decisions/0033-…md` — decyzja epok.
 - `test/ui-smoke.test.js` — asercje: plan Alary → mapa, tytuł/iframe,
   karta 305ARB (imgId, tytuł, deep-link pinezki).

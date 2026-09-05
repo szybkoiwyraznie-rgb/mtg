@@ -44,7 +44,7 @@ Maelstrom.
 
 ## Konsekwencje
 
-- `content/planes/alara.md` ma `mapa: alara` (jedna mapa, wariant T4,
+- `content/planes/alara.md` ma `mapa: alara` (jedna mapa, wariant T3 — transkrypcja fanowskiej topologii (ADR 0031);
   geografia post-Conflux z Maelstromem w centrum).
 - Karta 305ARB (scena w Maelstrom, era ARB) pinuje dokładnie
   w Maelstrom; przyszłe karty ALA pinują do swoich regionów.
