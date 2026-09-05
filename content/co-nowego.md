@@ -1,3 +1,19 @@
+## 2026-09-05 19:50 — Final Fantasy w Kodeksie: plan-franczyza (ADR 0032), mapa Midgaru (T3), karta 5FIN
+
+Dostawa właściciela: **Aerith Rescue Mission** (scena ratunku Aerith
+w budynku Shinra). Decyzje właściciela: jeden plan `final-fantasy`
+z mapą per część sagi — NIE kontynenty światów na jednej mapie i NIE
+osobne plany per gra (ADR 0032); mapa Midgaru jako T3 z płaskiego
+schematu MMTS (ReverendRyu) jako prywatnej referencji poza gitem.
+Silnik dostał klucz rejestru `plan/podmapa` (strony map, router,
+pinezki, ZIP, audit); Midgar narysowany w stylu atlasowym (8 sektorów,
+hub z budynkiem Shinra, pierścienie MMTS, mur, pustkowie) z kotwicami
+kanonicznymi; karta z 9 sekcjami i pinezką `dokladna` na budynku
+Shinra. Uwaga porządkowa: numer z dostawy „275FIN” to wg Scryfall
+Clive’s Hideaway — karta Aerith ma collector number **5** (5FIN);
+rozjazd udokumentowany w snapshotcie. Werdykty: 104/104 testów,
+build zielony, map-audit 0, wiki-stats 100% (8/8).
+
 ## 2026-09-05 18:25 — porządki w kolejce: trzy „otwarte wątki" zamknięte i skasowane
 
 Decyzja właściciela: wątki „globalna geometria Zendikaru (Akoum–Ondu)",

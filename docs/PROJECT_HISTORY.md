@@ -4,6 +4,36 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-05 — sesja PR-18, pakiet FF („PR-19” wewnętrznie): Final Fantasy — plan-franczyza, Midgar T3, karta 5FIN
+
+1. **Zlecenie:** czwarta karta — dostawa właściciela „275FIN Aerith
+   Rescue Mission” + pytanie o model sagi. Research: brak gotowego
+   wektora (T2) w sieci; wybór właściciela: jeden plan `final-fantasy`
+   z mapą per część sagi (NIE kontynenty, NIE plany per gra) → **ADR
+   0032**; Midgar T3 z płaskiego schematu MMTS (ReverendRyu,
+   CC BY-NC-ND 3.0, raster poza gitem), fallback T4 niepotrzebny.
+2. **Rozjazd numeracji:** 275FIN wg Scryfall = Clive’s Hideaway;
+   Aerith Rescue Mission = **FIN/5**. Snapshot z metadaną `source`
+   dokumentującą rozjazd; nazwa i fabuła jednoznaczne.
+3. **Silnik (P2):** klucz rejestru `plan/podmapa` — content-loader,
+   build (strony `maps/<plan>/<podmapa>.html`, względne URL-e, ZIP),
+   map-audit (dwa poziomy), router (parametr złożony), render-card/
+   plane (pinezka.mapa/plan.mapa), registry (walidacja podmap),
+   wiki-stats (pinezki planu z podmap), ui-smoke (4 karty).
+4. **Mapa Midgaru (P3):** radialna transkrypcja kanonu (8 sektorów,
+   hub + budynek Shinra, pierścienie MMTS, mur, pustkowie), kotwice:
+   Shinra, slumsy 7/5, Wall Market, Cmentarzysko Pociągów, mur; styl
+   atlasowy; QA: map-audit 0 + vision (scratch-rasterizer poza repo —
+   sandbox nie ma delegata SVG dla ImageMagick).
+5. **Karta (P4):** snapshot + wpis + 9 sekcji ADR 0030 + pinezka
+   `dokladna`; plan `final-fantasy` (Setting w pigułce, wikilinki).
+6. **Domknięcie (P5):** co-nowego 19:50, ten wpis, handoff update;
+   opis PR #18 kumulatywny (GitHub: jedno otwarte PR na gałąź sesji —
+   pakiet FF jedzie w PR-18).
+7. **Werdykty:** 104/104, build zielony (ZIP 9 plików), map-audit 0,
+   wiki-stats 100% (8/8). Commity: P1 `49f9e5f`, fix `8328a8c`,
+   P2 `34b7466`, P3 `be0a939`, P4 `39ab545`, P5 (ten).
+
 ## 2026-09-05 — sesja PR-18: audyt PR-17 + Pętla Jakości (naprawa kompasu Ravniki, doprecyzowanie ADR 0026, warsztat 0 kolizji)
 
 1. **Wejście:** „kontynuujemy projekt". Punkt wyjścia: scalony PR-17
