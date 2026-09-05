@@ -48,7 +48,7 @@ uciekiniera wygląda jak urwany brzeg, dla przewodniczki może być wejściem
 do trasy pod powierzchnią. To, co dla patroli Eldrazi jest pustym kanionem,
 może być korytarzem ukrytego przejścia.
 
-Fabuła dostawy właściciela dopowiada, że przewodniczka prowadzi przez
+Fabuła właściciela dopowiada, że przewodniczka prowadzi przez
 zalany kanion potężnego **balotha**. Ten szczegół dobrze podkreśla jej rolę:
 nie chodzi o samotne wymknięcie się wąską szczeliną, lecz o otwarcie drogi
 nawet dla czegoś dużego, ciężkiego i pozornie niemożliwego do ukrycia.
@@ -110,7 +110,7 @@ zatrzymany.
 
 Pinezka wskazuje region **Tazeem** na [[zendikar|Zendikarze]], przy wodach
 Halimar i Coralhelm. Poziom pewności: **region**. Nazwa karty i flavor
-wiążą przewodniczkę z wybrzeżem Coralhelm; Fabuła dostawy dodaje zalany
+wiążą przewodniczkę z wybrzeżem Coralhelm; Fabuła dodaje zalany
 kanion i lewitujące skały, czyli pejzaż zgodny z tazeemskim, roilowym
 charakterem planu.
 
@@ -137,7 +137,7 @@ wroga.
 
 ## Źródła
 
-- Fabuła dostawy właściciela (2026-09-02) — zalany kanion na wybrzeżu
+- Fabuła właściciela (2026-09-02) — zalany kanion na wybrzeżu
   Tazeem, baloth prowadzony tajnym przejściem, patrole Eldrazi na klifach,
   hełm z koralu i muszli.
 - Scryfall, *Coralhelm Guide* — tekst Oracle i flavor Jori En:

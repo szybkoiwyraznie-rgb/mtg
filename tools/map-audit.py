@@ -380,7 +380,8 @@ def _etykieta_box(txt, x, y, fs, rot=0.0):
 
     Zwraca (x1, y1, x2, y2). Bez obrotu = model z rozstawEtykiety
     (szer. ~0.31*fs/znak, wys. od y-0.82*fs do y+0.24*fs). Przy obrocie
-    obraca 4 narożniki wokół (x, y) i bierze ich AABB.
+    obraca 4 narożniki wokół kotwicy i bierze ich AABB. Używane do testu
+    „na lądzie” (9 próbek) — konserwatywny AABB jest tam OK.
     """
     w = len(txt) * fs * 0.31
     h_top, h_bot = fs * 0.82, fs * 0.24
@@ -392,6 +393,51 @@ def _etykieta_box(txt, x, y, fs, rot=0.0):
               y + (px - x) * sa + (py - y) * ca) for px, py in c]
     xs = [p[0] for p in c]; ys = [p[1] for p in c]
     return (min(xs), min(ys), max(xs), max(ys))
+
+
+def _etykieta_obb(txt, x, y, fs, rot=0.0):
+    """OBB (zorientowany prostokąt) etykiety: (cx, cy, pół-szer, pół-wys, kąt rad).
+
+    Model geometryczny jak _etykieta_box, ale zamiast AABB po rotacji zwraca
+    środek, pół-rozmiary i kąt — do dokładnego testu kolizji SAT (bez
+    przeszacowania, które dla długich ukośnych etykiet dróg dawało fałszywe
+    kolizje — plan PR-16, usterka modelu rotacji).
+    """
+    hw = len(txt) * fs * 0.31
+    h_top, h_bot = fs * 0.82, fs * 0.24
+    hh = (h_top + h_bot) / 2.0
+    cy = y + (h_bot - h_top) / 2.0
+    return (x, cy, hw, hh, math.radians(rot or 0.0))
+
+
+def _obb_rogi(obb):
+    cx, cy, hw, hh, ang = obb
+    ca, sa = math.cos(ang), math.sin(ang)
+    rog = []
+    for dx, dy in ((-hw, -hh), (hw, -hh), (hw, hh), (-hw, hh)):
+        rog.append((cx + dx * ca - dy * sa, cy + dx * sa + dy * ca))
+    return rog
+
+
+def _obb_nachodza(a, b):
+    """Kolizja dwóch OBB przez Separating Axis Theorem.
+
+    Dwie skrzynki są rozdzielne, gdy na którejś z 4 osi krawędziowych
+    (2 z każdego prostokąta) rzuty się nie nakładają. Brak osi rozdzielającej
+    = kolizja. Dokładne dla obrotu (w przeciwieństwie do AABB).
+    """
+    axes = []
+    for obb in (a, b):
+        ang = obb[4]
+        axes.append((math.cos(ang), math.sin(ang)))
+        axes.append((-math.sin(ang), math.cos(ang)))
+    rogi = (_obb_rogi(a), _obb_rogi(b))
+    for ax, ay in axes:
+        p0 = [px * ax + py * ay for px, py in rogi[0]]
+        p1 = [px * ax + py * ay for px, py in rogi[1]]
+        if max(p0) <= min(p1) or max(p1) <= min(p0):
+            return False
+    return True
 
 
 def audytuj_podklad(mapa, nazwa, mjson, woda):
@@ -411,14 +457,17 @@ def audytuj_podklad(mapa, nazwa, mjson, woda):
                    [(mx, my), (x1, y1), (x2, y1), (x1, y2), (x2, y2),
                     (mx, y1), (mx, y2), (x1, my), (x2, my)]):
             problemy.append(f'{nazwa}: ETYKIETA W WODZIE: {txt!r} @({x:.0f},{y:.0f})')
-    boxy = [(t, x, y, fs, *(_etykieta_box(t, x, y, fs, rot)))
+    # Kolizje etykiet: test OBB (SAT) — dokładny przy obrocie; AABB po
+    # rotacji przeszacowywał długie ukośne napisy dróg i dawał fałszywe alarmy.
+    boxy = [(t, x, y, _etykieta_obb(t, x, y, fs, rot))
             for t, x, y, fs, rot in ety]
     for i in range(len(boxy)):
         for j in range(i + 1, len(boxy)):
-            a, b = boxy[i], boxy[j]
-            if a[4] < b[6] and b[4] < a[6] and a[5] < b[7] and b[5] < a[7]:
-                problemy.append(f'{nazwa}: KOLIZJA ETYKIET: {a[0]!r} @({a[1]:.0f},'
-                                f'{a[2]:.0f}) × {b[0]!r} @({b[1]:.0f},{b[2]:.0f})')
+            ta, xa, ya, oba = boxy[i]
+            tb, xb, yb, obb = boxy[j]
+            if _obb_nachodza(oba, obb):
+                problemy.append(f'{nazwa}: KOLIZJA ETYKIET: {ta!r} @({xa:.0f},'
+                                f'{ya:.0f}) × {tb!r} @({xb:.0f},{yb:.0f})')
     for href, x, y in mapa.markery():
         if not mapa.na_ladzie(x, y):
             problemy.append(f'{nazwa}: MARKER W WODZIE: {href} @({x:.0f},{y:.0f})')

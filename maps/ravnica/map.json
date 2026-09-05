@@ -464,6 +464,46 @@
    "typ": "mur",
    "pozycja_zrodlo": "kanon (v2)",
    "notka": "brak w źródle fanowskim — pozycja v2 (krawędź sylwetki = mur)"
+  },
+  {
+   "nazwa": "Beacon Tower",
+   "x": 0.8498,
+   "y": 0.5754,
+   "typ": "obiekt",
+   "pozycja_zrodlo": "kanon (wiki), dodane 2026-09-03",
+   "notka": "Interplanar Beacon (Azorius); wczesniej celowo pominięty (brak źródła epokowego) — dodany za świadomą decyzją właściciela 2026-09-03; wolne pole P2 na wschód od New Prahv"
+  },
+  {
+   "nazwa": "Gnat Alley",
+   "x": 0.3431,
+   "y": 0.6557,
+   "typ": "droga",
+   "pozycja_zrodlo": "kanon (wiki), dodane 2026-09-03",
+   "notka": "najdłuższa ulica planu (trasa Gruul); źródło fanowskie jej nie pokazuje — przybliżony bieg w P6 jako kropkowana trasa, decyzja właściciela 2026-09-03"
+  },
+  {
+   "nazwa": "Guildmages' Forum",
+   "x": 0.6264,
+   "y": 0.5083,
+   "typ": "plac",
+   "pozycja_zrodlo": "kanon (wiki), dodane 2026-09-03",
+   "notka": "płyta z 10 symbolami gildii; kanon mtg.wiki Tenth District; mała etykieta w gildyjnym rdzeniu P1"
+  },
+  {
+   "nazwa": "Guildpact Square",
+   "x": 0.4847,
+   "y": 0.6368,
+   "typ": "plac",
+   "pozycja_zrodlo": "kanon (wiki), dodane 2026-09-03",
+   "notka": "plac podpisania Paktu Gildii; etykieta przy Tenth District Plaza/Plaza West (decyzja osadzenia przy rdzeniu, 2026-09-03)"
+  },
+  {
+   "nazwa": "Pillar of the Paruns",
+   "x": 0.6366,
+   "y": 0.6954,
+   "typ": "obiekt",
+   "pozycja_zrodlo": "kanon (wiki), dodane 2026-09-03",
+   "notka": "obelisk 9 pieczęci gildii (bez Dimir); etykieta przy Chamber of the Guildpact (osadzenie w rdzeniu, 2026-09-03)"
   }
  ],
  "pinezki": [
@@ -477,12 +517,12 @@
  ],
  "otwarte_na_kolejne_przejscia": [
   "Parhelion II (epoka WotS) — świadomie pominięty (era pierwotnego bloku); ewentualny dodatek w warstwie epokowej",
-  "Guildpact Square + Pillar of the Paruns — osadzone przy Chamber of the Guildpact (decyzja właściciela 2026-09-03); rozbieżność wiki (fandom: Forum of Azor w P2) udokumentowana w notce kotwicy",
-  "Beacon Tower — poza mapą do znalezienia źródła epokowego (decyzja właściciela)",
-  "Undercity: pas w v3 istnieje jako geometria (warstwa b); pełny przekrój (poziomy, kanały P6, wejścia) — ewentualna osobna warstwa/scena",
-  "Gnat Alley — kanon: najdłuższa ulica planu (mtg.fandom Ravnica; DIS #63), ale źródło fanowskie jej nie pokazuje — bez geometrii do kolejnego źródła"
+  "Guildpact Square + Pillar of the Paruns + Guildmages' Forum — DODANE 2026-09-03 jako małe etykiety w gildyjnym rdzeniu (przy Tenth District Plaza / Chamber); kanon mtg.wiki Tenth District (decyzja właściciela; rozbieżność fandom Forum of Azor w P2 udokumentowana)",
+  "Beacon Tower — DODANY 2026-09-03 (mały niebieski marker + etykieta w P2); uchylono wcześniejsze 'poza mapą do źródła epokowego' na prośbę właściciela",
+  "Gnat Alley — DODANA 2026-09-03 jako kropkowana trasa + szara etykieta w P6 (bieg przybliżony, źródło fanowskie jej nie pokazuje); uchylono wcześniejsze 'bez geometrii'",
+  "Undercity: pas w v3 istnieje jako geometria (warstwa b); pełny przekrój (poziomy, kanały P6, wejścia) — ewentualna osobna warstwa/scena"
  ],
- "silnik": "v3: podkład z wektoryzacji rastrowego źródła fanowskiego (skrypty pracy w workbenche, poza gitem — ADR 0031): marching squares (kontury), osie dróg (para najdalszych punktów + resampling), komponenty terenowe (maski luminancji b), etykiety (maska c−a + odczyt wizualny), markery (maska kolorów c). Wariant T2+ (podkład adoptowany, czysty SVG) — bez sceny mapforge/T4 (ADR 0031: kierunek jak Śródziemie); scena.json z odzyskanego WIP usunięta (niespójna z ADR 0023 i rzędu 36 MB)",
+ "silnik": "v3: podkład z wektoryzacji rastrowego źródła fanowskiego (skrypty pracy w workbenche, poza gitem — ADR 0031): marching squares (kontury), osie dróg (para najdalszych punktów + resampling), komponenty terenowe (maski luminancji b), etykiety (maska c−a + odczyt wizualny), markery (maska kolorów c). Wariant T2+ (podkład adoptowany, czysty SVG) — bez sceny mapforge/T4 (ADR 0031: kierunek jak Śródziemie); scena.json z odzyskanego WIP usunięta (niespójna z ADR 0023 i rzędu 36 MB) Herby 10 gildii (warstwa <g id=herby-gildii>, tools/mapforge/ravnica-v3-herby.py) oraz lokacje kanoniczne (warstwa <g id=lokacje-kanoniczne>, tools/mapforge/ravnica-v3-lokacje.py) doszyte do v3 jako odtwarzalne, idempotentne warstwy SVG.",
  "kalibracja": {
   "wersja": "v3",
   "data": "2026-09-03",

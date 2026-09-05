@@ -61,7 +61,7 @@ export function renderKarte(slug) {
 
       <div class="karta-tresc">
         <figure class="karta-fot" data-fot hidden>
-          <img data-fot-img src="./img/${escapeHtml(karta.imgId)}FOT.png"
+          <img data-fot-img data-zrodla="${escapeHtml(kandydaciObrazow(karta.imgId, 'FOT'))}"
             alt="Panorama FOT — wizualizacja właściciela: ${escapeHtml(karta.tytul)}"
             decoding="async">
         </figure>
@@ -73,11 +73,27 @@ export function renderKarte(slug) {
   </article>`;
 }
 
+/**
+ * Lista względnych ścieżek sondowania dla pliku FOT/KON (ADR 0008).
+ * Kolejność plików właściciela w katalogu img/ bywa różna — od samego
+ * numeru materializacji (1FOT.png) po pełny imgId (1LTRFOT.png).
+ * Dajemy NAJPIERW krótki wariant (sam leading numer), potem pełny imgId —
+ * sonda bierze pierwszą ścieżkę, która się załaduje.
+ */
+function kandydaciObrazow(imgId, tor) {
+  const id = String(imgId ?? '');
+  const num = id.match(/^\d+/)?.[0] ?? '';
+  const warianty = [];
+  if (num) warianty.push(`${num}${tor}.png`);      // 1FOT.png / 2KON.png
+  warianty.push(`${id}${tor}.png`);                 // 1LTRFOT.png / 2BFZKON.png
+  return warianty.map((w) => `./img/${w}`).join('|');
+}
+
 /** Slot KON (bestiariusz) wpleciony pod pierwszą sekcją treści (ADR 0017). */
 function wstawKon(html, karta) {
   const kon = `
         <figure class="karta-kon" data-kon hidden>
-          <img data-kon-img src="./img/${escapeHtml(karta.imgId)}KON.png"
+          <img data-kon-img data-zrodla="${escapeHtml(kandydaciObrazow(karta.imgId, 'KON'))}"
             alt="Bestiariusz KON — wizualizacja właściciela: ${escapeHtml(karta.tytul)}"
             decoding="async">
         </figure>`;
@@ -126,16 +142,26 @@ function toryObrazow(karta, sc) {
 
 /** Sondowanie torów FOT/KON + podmiana obrazu (montowane przez main.js). */
 export function zamontujToryObrazow(kontener) {
-  // Sonda slotów FOT/KON (ADR 0017): slot rysuje się w treści karty,
-  // gdy plik istnieje; nieudane ładowanie usuwa slot bez śladu
+  // Sonda slotów FOT/KON (ADR 0008/0017): slot rysuje się w treści karty,
+  // gdy plik istnieje w względnym ./img/ obok artefaktu (np.
+  // c:\mtg\index.html + c:\mtg\img\1FOT.png). Każdy slot ma listę
+  // kandydackich ścieżek (data-zrodla, '|'-rozdzielona) — sonda idzie po
+  // kolei i pokazuje slot przy pierwszym, który się załaduje. Gdy żaden
+  // nie zadziała (Pages bez katalogu img/), slot znika bez śladu
   // (cichy fallback — na Pages slotów nie widać).
   for (const slot of kontener?.querySelectorAll?.('[data-fot], [data-kon]') ?? []) {
     const img = slot.querySelector('img');
     if (!img) continue;
+    const zrodla = (img.getAttribute('data-zrodla') || img.getAttribute('src') || '')
+      .split('|').map((s) => s.trim()).filter(Boolean);
+    let i = 0;
+    const probuj = () => {
+      if (i >= zrodla.length) { slot.remove(); return; }
+      img.src = zrodla[i++];
+    };
     img.onload = () => { slot.hidden = false; };
-    img.onerror = () => { slot.remove(); };
-    // próba załadowania (slot ukryty do skutku)
-    img.src = img.getAttribute('src');
+    img.onerror = () => { probuj(); };
+    probuj();
   }
 }
 

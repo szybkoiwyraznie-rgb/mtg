@@ -1,3 +1,74 @@
+## 2026-09-05 09:30 — codex: pakiet offline (ZIP), ilustracje FOT/KON z dysku, termin „Fabuła"
+
+- **Fabuła, bez dopiska „dostawy"** (decyzja właściciela 2026-09-05):
+  w widocznej treści kart usunięto „Fabuła dostawy" — brzmiało jak
+  „palety w sklepie na zapleczu". Zostało samo „Fabuła" (np. „Fabuła
+  właściciela dopowiada…"). Dotyczy 3 kart (137GPT, 1LTR, 2BFZ);
+  zaktualizowano test UI-smoke. Mechaniczny format dostawy i archiwum
+  pozostają bez zmian.
+- **ZIP bez duplikatu HTML:** po przejściu na mapy w `<iframe>`
+  (ADR 0028) artefakt otwiera się zawsze jako `index.html` — w
+  archiwum pobieranym ze stopki nie pakujemy już drugiej, identycznej
+  kopii `mtg-lore-codex.html` (były dwa pliki tej samej wielkości).
+  Plik `mtg-lore-codex.html` na Pages zostaje (stabilny adres linku).
+- **Ilustracje FOT/KON z lokalnego `img/` (ADR 0008/0017):** wypakowany
+  z ZIP kodeks czyta panoramy/bestiariusze z katalogu `img/` obok
+  `index.html` (np. `c:\mtg\index.html` + `c:\mtg\img\1FOT.png`).
+  Sonda obrazów próbowała tylko `./img/<pełny imgId>FOT.png`
+  (np. `1LTRFOT.png`), a pliki właściciela nazywają się numerem
+  materializacji (`1FOT.png`, `2KON.png`) — sloty cicho znikały.
+  Teraz sonda idzie po liście kandydatów: najpierw krótki wariant
+  (sam leading numer), potem pełny imgId. Pliki FOT/KON NIE trafiają do
+  ZIP ani do gita (prywatny zasób); na Pages sonda dalej cicho pada.
+
+## 2026-09-03 22:10 — Ravnica: herby gildii i lokacje na PRAWDZIWEJ mapie (T2+/v3) + naprawa podkładu
+
+**Korekta ważna:** poprawny podkład Ravnicy to wektoryzacja fanowska
+**v3 (wariant T2+, 6849×5292, ADR 0031)** — nie rekonstrukcja mapforge
+T4 (1600×1100). Eksperyment T4 był odrzucony; w trakcie PR-17 omyłkowo
+nadpisał podkład v3 (przywrócono w commicie FIX). Poniższe dodatki
+trafiają już na właściwy v3.
+
+- **Herby 10 gildii** — wypełnione barwne tarcze siedzib z białym
+  glifem (wektoryzacja odzyskała kolorowe celowniki, ale utraciła
+  glify): Gruul (Skarrg), Boros (Sunhome), Selesnya (Vitu-Ghazi),
+  Izzet (Nivix), Simic (Zonot Seven/Zameck), Azorius (New Prahv),
+  Orzhov (Orzhova), Rakdos (Rix Maadi), Golgari (Korozda & Svogthos),
+  Dimir (Nightveil & Duskmantle). Millennial Platform neutralny — bez.
+- **Lokacje kanoniczne** (świadome uchylenie wcześniejszych decyzji z
+  map.json, za zgodą właściciela): Beacon Tower (mały niebieski marker
+  w P2), Gnat Alley (kropkowana trasa + szara etykieta w P6),
+  Guildmages' Forum / Guildpact Square / Pillar of the Paruns (małe
+  czarne etykiety w gildyjnym rdzeniu P1).
+- Odtwarzalne, idempotentne warstwy SVG: `tools/mapforge/ravnica-v3-herby.py`
+  i `tools/mapforge/ravnica-v3-lokacje.py` (raster źródła pozostaje poza
+  gitem — ADR 0031).
+- Zaktualizowana dokumentacja: `map.json` (kotwice + zmiany decyzji),
+  `mapa-analiza.md` (notka korygująca T4 → T2+/v3).
+
+## 2026-09-03 19:45 — Mapa Ravnicy v4: domknięcie do złotego standardu (pierwsza sesja z wizją)
+
+Mapa Dziesiątego Dystryktu (`maps/ravnica/podklad.svg`, T2+) domknięta
+wzrokowo do prywatnej fan-made mapy źródłowej właściciela (warstwy
+a/b/c, ADR 0031) — **pierwsza sesja z oglądem obrazów (vision)**, więc
+poprawki szły z bezpośrednim porównaniem render↔źródło, nie tylko
+programistycznie:
+
+- **Granice dzielnic wróciły:** ciągła sieć przerywanych linii dzieli
+  całość na 6 Precinctów (wcześniej tylko fragmenty) — usterka (1).
+- **Etykiety POI czarne i pod markerami**, nazwy ulic/placów bez kółek
+  (są geograficzne, nie punktami), markerów tylko tam, gdzie w źródle
+  kolorowe okręgi — usterki (2)–(4), (6); ~15 fałszywych markerów
+  usuniętych, brakujące dodane, kolory gildii poprawione.
+- **Millennial Platform:** długa, jasnoszara przerywana linia-kotwica
+  od lewitującej skały do lądu (wcześniej urwana) — usterka (5).
+- **Centrum:** marker Vizkopy zdjąty z tekstu ORZHOVA; granica P6/P1
+  nie tnie już KAMEN FORTRESS; SMELTING QUARTER pod granicą.
+- **Narzędzie `map-audit`:** test kolizji etykiet AABB → **OBB/SAT**
+  (mniej fałszywych alarmów dla ukośnych etykiet dróg).
+
+`map-audit ravnica` = 0 problemów; testy 102/102; build zielony.
+
 ## 2026-09-03 11:29 — Ravnica: pogłębiona, zweryfikowana i gotowa na wektoryzację v3
 
 Sesja jakościowa nad Rawnicą (PR-14). Po audycie scalonego PR-13

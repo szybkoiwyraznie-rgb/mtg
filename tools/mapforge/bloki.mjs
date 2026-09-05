@@ -826,3 +826,79 @@ export function drzewoPoi(x, y, { skala = 2 } = {}) {
     drzewo(x, y, skala, rng) +
     `</g>`;
 }
+
+/* ======================= HERBY GILDII (Ravnica T4, PR-17 B) =======================
+ * Barwna odznaka z BIAŁYM glifem gildii — sygnet na siedzibie gildii.
+ * Glify rysowane ręcznie w języku mapy (proste sylwetki), dysk r≈11.
+ * Paleta: wyciszone barwy gildii (kontrast bieli), w tonie atlasu. */
+export const HERBY_GILDII = {
+  azorius: { kolor: '#33517e', glif: 'waga' },
+  boros:   { kolor: '#b3242f', glif: 'pieszcz' },
+  dimir:   { kolor: '#22304a', glif: 'oko' },
+  golgari: { kolor: '#3c5a2e', glif: 'czaszka-kosci' },
+  gruul:   { kolor: '#c1531b', glif: 'plomien' },
+  izzet:   { kolor: '#7a3fb2', glif: 'blyskawica' },
+  orzhov:  { kolor: '#555063', glif: 'slonce' },
+  rakdos:  { kolor: '#8c1f33', glif: 'rogi' },
+  selesnya:{ kolor: '#2f8f6b', glif: 'drzewo-b' },
+  simic:   { kolor: '#1f7a86', glif: 'fale' },
+};
+
+function glifGildii(nazwa, kolor) {
+  const B = '#fff';
+  switch (nazwa) {
+    case 'waga':  // Azorius — szala sprawiedliwości
+      return `<path d="M0 7.6 L0 -6.6 M-6.2 -4.8 L6.2 -4.8 M-3 7.6 L3 7.6" stroke="${B}" stroke-width="1.5" fill="none" stroke-linecap="round"/>` +
+        `<path d="M-6.2 -4.8 L-7.9 -0.5 Q-6.2 1.5 -4.5 -0.5 Z" fill="${B}"/>` +
+        `<path d="M6.2 -4.8 L4.5 -0.5 Q6.2 1.5 7.9 -0.5 Z" fill="${B}"/>` +
+        `<circle cx="0" cy="-6.8" r="0.9" fill="${B}"/>`;
+    case 'pieszcz':  // Boros — pięść w promieniach
+      return `<rect x="-4.4" y="-3.6" width="8.8" height="6.2" rx="1.3" fill="${B}"/>` +
+        `<rect x="-3.3" y="-7.4" width="2.1" height="4.2" rx="0.7" fill="${B}"/>` +
+        `<rect x="-1.05" y="-8" width="2.1" height="4.8" rx="0.7" fill="${B}"/>` +
+        `<rect x="1.2" y="-7.4" width="2.1" height="4.2" rx="0.7" fill="${B}"/>` +
+        `<path d="M-5.2 3.5 L5.2 3.5 M-7.2 -0.6 L-5.6 0.9 M7.2 -0.6 L5.6 0.9 M-6.4 -4.5 L-4.8 -3.2 M6.4 -4.5 L4.8 -3.2" stroke="${B}" stroke-width="1.2" stroke-linecap="round"/>`;
+    case 'oko':  // Dimir — oko (tajemnica)
+      return `<path d="M-8 0 Q0 -6.9 8 0 Q0 6.9 -8 0 Z" fill="${B}"/>` +
+        `<circle cx="0" cy="0" r="2.3" fill="${kolor}"/>`;
+    case 'czaszka-kosci':  // Golgari — czaszka i piszczele
+      return `<path d="M-6.6 6.5 L6.6 0.3 M-6.6 0.3 L6.6 6.5" stroke="${B}" stroke-width="1.7" stroke-linecap="round"/>` +
+        `<path d="M0 -7.4 C4 -7.4 5.6 -4.6 5.6 -1.8 L5.6 1.2 L4 1.2 L4 3.9 L-4 3.9 L-4 1.2 L-5.6 1.2 L-5.6 -1.8 C-5.6 -4.6 -4 -7.4 0 -7.4 Z" fill="${B}"/>` +
+        `<circle cx="-2" cy="-1.6" r="1.05" fill="${kolor}"/>` +
+        `<circle cx="2" cy="-1.6" r="1.05" fill="${kolor}"/>` +
+        `<path d="M-1.4 1.5 L1.4 1.5" stroke="${kolor}" stroke-width="0.9" stroke-linecap="round"/>`;
+    case 'plomien':  // Gruul — płomień
+      return `<path d="M0 -8.6 C3.1 -4.6 4.6 -3.1 3.4 0.6 C2.8 3.4 1.2 5.5 0 6.2 C-1.2 5.5 -2.8 3.4 -3.4 0.6 C-4.6 -3.1 -3.1 -4.6 0 -8.6 Z" fill="${B}"/>` +
+        `<path d="M0 -4.6 C1.5 -2.2 1.8 -0.9 1.2 0.9 C0.6 2.8 -0.6 3.7 0 4.3 C-1.5 3.1 -1.8 1.2 -1.2 -0.9 C-0.6 -2.8 0.3 -3.4 0 -4.6 Z" fill="${kolor}"/>`;
+    case 'blyskawica':  // Izzet — błyskawica
+      return `<path d="M2 -8.4 L-4.2 0.8 L-0.4 0.8 L-2 8.4 L4.2 -1.2 L0.6 -1.2 Z" fill="${B}"/>`;
+    case 'slonce':  // Orzhov — słońce/orb z promieniami
+      return `<circle cx="0" cy="0" r="3.3" fill="${B}"/>` +
+        `<path d="M0 -7.9 L0 -5.1 M0 5.1 L0 7.9 M-7.9 0 L-5.1 0 M5.1 0 L7.9 0 M-5.6 -5.6 L-3.7 -3.7 M5.6 -5.6 L3.7 -3.7 M-5.6 5.6 L-3.7 3.7 M5.6 5.6 L3.7 3.7" stroke="${B}" stroke-width="1.35" stroke-linecap="round"/>`;
+    case 'rogi':  // Rakdos — demonia czaszka z rogami
+      return `<path d="M-7.2 -3.6 C-8.2 -7.4 -5.6 -8.8 -3 -6.2 C-2 -5.4 -1 -5 0 -5 C1 -5 2 -5.4 3 -6.2 C5.6 -8.8 8.2 -7.4 7.2 -3.6 C6.6 -1.4 4.6 -0.4 4.6 1.8 L4.6 4.6 L-4.6 4.6 L-4.6 1.8 C-4.6 -0.4 -6.6 -1.4 -7.2 -3.6 Z" fill="${B}"/>` +
+        `<circle cx="-2.1" cy="-1.8" r="1.15" fill="${kolor}"/>` +
+        `<circle cx="2.1" cy="-1.8" r="1.15" fill="${kolor}"/>` +
+        `<path d="M-2.4 2.8 L2.4 2.8" stroke="${kolor}" stroke-width="1" stroke-linecap="round"/>`;
+    case 'drzewo-b':  // Selesnya — drzewo
+      return `<path d="M0 -8.8 L4 -3.2 L1.9 -3.2 L4.5 1.7 L2.1 1.7 L3 5.2 L-3 5.2 L-2.1 1.7 L-4.5 1.7 L-1.9 -3.2 L-4 -3.2 Z" fill="${B}"/>` +
+        `<rect x="-0.95" y="4.4" width="1.9" height="3.2" fill="${B}"/>`;
+    case 'fale':  // Simic — trzy fale
+      return `<path d="M-7.2 -3.2 Q-3.6 -6.2 0 -3.2 Q3.6 -0.2 7.2 -3.2 M-7.2 0.8 Q-3.6 -2.2 0 0.8 Q3.6 3.8 7.2 0.8 M-7.2 4.8 Q-3.6 1.8 0 4.8 Q3.6 7.8 7.2 4.8" fill="none" stroke="${B}" stroke-width="1.7" stroke-linecap="round"/>`;
+    default:
+      return '';
+  }
+}
+
+/** Odznaka gildii: barwny dysk + biały glif (sygnet siedziby).
+ *  glif=false — sam dysk (np. gdy z dysku wyrasta turnia-iglisz). */
+export function herb(x, y, { skala = 1, gildia = null, glif = true, glifDy = 0 } = {}) {
+  const s = skala;
+  const h = HERBY_GILDII[gildia];
+  if (!h) return '';
+  return `<g class="mf-herb" data-x="${rr(x)}" data-y="${rr(y)}" data-gildia="${gildia}">` +
+    `<circle cx="${rr(x)}" cy="${rr(y)}" r="${rr(12.8 * s)}" fill="${PAL.lad}" stroke="${h.kolor}" stroke-width="${rr(0.8 * s)}"/>` +
+    `<circle cx="${rr(x)}" cy="${rr(y)}" r="${rr(11.2 * s)}" fill="${h.kolor}"/>` +
+    (glif ? `<g transform="translate(${rr(x)} ${rr(y + glifDy)}) scale(${rr(s)})">${glifGildii(h.glif, h.kolor)}</g>` : '') +
+    `</g>`;
+}
