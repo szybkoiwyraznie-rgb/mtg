@@ -88,7 +88,8 @@ export function walidujStrone(strona, ctx) {
     if (strona.pinezka) {
       // Współrzędne NIE żyją tu — jedyny źródło prawdy to maps/<plan>/map.json
       // (PROCES_MAP.md MA2). Frontmatter deklaruje istnienie pinezki i pewność.
-      if (strona.pinezka.mapa !== strona.plan) p.push(`${gdzie}: pinezka.mapa "${strona.pinezka.mapa}" ≠ plan "${strona.plan}"`);
+      // ADR 0032: pinezka może wskazywać podmapę `<plan>/<podmapa>`
+      if (strona.pinezka.mapa !== strona.plan && !String(strona.pinezka.mapa).startsWith(`${strona.plan}/`)) p.push(`${gdzie}: pinezka.mapa "${strona.pinezka.mapa}" ≠ plan "${strona.plan}"`);
       if (!POZIOMY_PEWNOSCI.includes(strona.pinezka.pewnosc)) {
         p.push(`${gdzie}: pinezka.pewnosc "${strona.pinezka.pewnosc}" poza ${POZIOMY_PEWNOSCI.join('/')}`);
       }

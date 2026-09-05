@@ -66,7 +66,14 @@
    "notka": "pierścień obronny miasta"
   }
  ],
- "pinezki": [],
+ "pinezki": [
+  {
+   "karta": "5fin-aerith-rescue-mission",
+   "x": 0.5,
+   "y": 0.5,
+   "pewnosc": "dokladna"
+  }
+ ],
  "otwarte_na_kolejne_przejscia": [
   "DODANE 2026-09-05: podmapa części sagi FFVII (ADR 0032); kolejne podmapy FF (np. świat Gai poza Midgarem) powstaną dopiero z kartami, które ich potrzebują."
  ]

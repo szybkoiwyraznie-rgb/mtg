@@ -242,7 +242,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (3)'), 'lista kart: brak 3 kart');
+  assert.ok(lista.includes('Karty Katalogowe (4)'), 'lista kart: brak 4 kart');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
   assert.ok(!lista.includes('>srodziemie<'), 'lista kart: slug planu nie może być widoczny jako tekst (feedback G)');
   assert.ok(lista.indexOf('Coralhelm Guide') < lista.indexOf('Dunland Crebain'), 'lista kart: brak sortowania alfabetycznego (feedback E)');

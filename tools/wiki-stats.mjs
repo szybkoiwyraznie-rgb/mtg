@@ -132,8 +132,15 @@ export function ocenStrone(strona) {
 export function raport(strony, mapyPlanow = null) {
   // Plany nie mają pinezki we frontmatter (pinezki noszą karty) — pragmatycznie:
   // plan „ma pinezkę", gdy mapa planu (maps/<plan>/map.json) pinezkuje choć jedną kartę.
+  const pinezkiPlanu = (slug) => {
+    let n = 0;
+    for (const [k, m] of mapyPlanow ?? []) {
+      if ((k === slug || String(k).startsWith(`${slug}/`)) && m?.pinezki?.length) n += m.pinezki.length;
+    }
+    return n;
+  };
   const udekorowane = strony.map((s) => (
-    s.typ === 'plan' && mapyPlanow?.get?.(s.slug)?.pinezki?.length
+    s.typ === 'plan' && pinezkiPlanu(s.slug) > 0
       ? { ...s, pinezka: { mapa: s.slug } }
       : s
   ));
