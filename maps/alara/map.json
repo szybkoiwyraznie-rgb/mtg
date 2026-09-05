@@ -1,0 +1,160 @@
+{
+ "plan": "alara",
+ "tytul": "Alara",
+ "wariant": "T4",
+ "podklad": "podklad.svg",
+ "wymiary": {
+  "szerokosc": 1600,
+  "wysokosc": 1600
+ },
+ "zrodlo": {
+  "url": "https://mtg.wiki/page/Alara",
+  "tytul": "MTG Wiki: Alara + Maelstrom (kanon regionów, cyklu many, Conflux i złączenia shardów)",
+  "autor": "MTG Lore Codex (praca własna — rekonstrukcja kanoniczna)",
+  "licencja": "praca własna",
+  "pobrano": "2026-09-05",
+  "notka": "T4: stan planu POST-CONFLUX (ADR 0033) — pięć regionów w kanonicznym cyklu many (sąsiedzi dzielą dwa kolory: Bant–Esper–Grixis–Jund–Naya–Bant) wokół Maelstromu w punkcie złączenia pięciu shardów (kanon: mtg.wiki/Maelstrom). Obeliski przy szwach: funkcja stabilizacji shardów ⇒ pozycje reprezentatywne na szwach. Miejsca (Valeron, Jhess, Akrasa, Sedraxis, Antali): kanoniczne nazwy (mtg.wiki), pozycje reprezentatywne wewnątrz regionów — brak kanonicznych współrzędnych. Sceny z epoki shardów (ALA) pinuje się do regionów tej mapy (ADR 0033)."
+ },
+ "rekonstrukcja": true,
+ "kotwice": [
+  {
+   "nazwa": "Maelstrom",
+   "x": 0.5,
+   "y": 0.5,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Maelstrom w punkcie złączenia pięciu shardów)",
+   "notka": "scena 305ARB: wir błędów światła; środek geometryczny planu"
+  },
+  {
+   "nazwa": "Bant",
+   "x": 0.5,
+   "y": 0.2063,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (region G/W/U; cykl many)",
+   "notka": "łąki, zamki, anioły; Valeron, Jhess, Akrasa"
+  },
+  {
+   "nazwa": "Esper",
+   "x": 0.7794,
+   "y": 0.4093,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (region W/U/B; cykl many)",
+   "notka": "etherium, kasta magów i sfinksów"
+  },
+  {
+   "nazwa": "Grixis",
+   "x": 0.6727,
+   "y": 0.7376,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (region U/B/R; cykl many)",
+   "notka": "nekropolia po Vithii; Sedraxis"
+  },
+  {
+   "nazwa": "Jund",
+   "x": 0.3273,
+   "y": 0.7376,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (region B/R/G; cykl many)",
+   "notka": "wulkaniczny łańcuch pokarmowy smoków"
+  },
+  {
+   "nazwa": "Naya",
+   "x": 0.2206,
+   "y": 0.4093,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (region R/G/W; cykl many)",
+   "notka": "las-piętro, Anima; Antali"
+  },
+  {
+   "nazwa": "Obelisk szwu Bant–Esper",
+   "x": 0.6727,
+   "y": 0.2624,
+   "typ": "poi",
+   "pozycja_zrodlo": "rekonstrukcja: obeliski stabilizowały shardy ⇒ szew regionów (pozycja reprezentatywna)",
+   "notka": "Bolas kierował manę obelisków w Maelstrom"
+  },
+  {
+   "nazwa": "Obelisk szwu Esper–Grixis",
+   "x": 0.7794,
+   "y": 0.5908,
+   "typ": "poi",
+   "pozycja_zrodlo": "rekonstrukcja: obeliski stabilizowały shardy ⇒ szew regionów (pozycja reprezentatywna)",
+   "notka": "Bolas kierował manę obelisków w Maelstrom"
+  },
+  {
+   "nazwa": "Obelisk szwu Grixis–Jund",
+   "x": 0.5,
+   "y": 0.7938,
+   "typ": "poi",
+   "pozycja_zrodlo": "rekonstrukcja: obeliski stabilizowały shardy ⇒ szew regionów (pozycja reprezentatywna)",
+   "notka": "Bolas kierował manę obelisków w Maelstrom"
+  },
+  {
+   "nazwa": "Obelisk szwu Jund–Naya",
+   "x": 0.2206,
+   "y": 0.5908,
+   "typ": "poi",
+   "pozycja_zrodlo": "rekonstrukcja: obeliski stabilizowały shardy ⇒ szew regionów (pozycja reprezentatywna)",
+   "notka": "Bolas kierował manę obelisków w Maelstrom"
+  },
+  {
+   "nazwa": "Obelisk szwu Naya–Bant",
+   "x": 0.3273,
+   "y": 0.2624,
+   "typ": "poi",
+   "pozycja_zrodlo": "rekonstrukcja: obeliski stabilizowały shardy ⇒ szew regionów (pozycja reprezentatywna)",
+   "notka": "Bolas kierował manę obelisków w Maelstrom"
+  },
+  {
+   "nazwa": "Valeron",
+   "x": 0.4094,
+   "y": 0.1619,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Valeron w Bant; Dwanaście Drzew); pozycja reprezentatywna w regionie",
+   "notka": "rycerski Bant"
+  },
+  {
+   "nazwa": "Jhess",
+   "x": 0.5906,
+   "y": 0.1619,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Jhess w Bant); pozycja reprezentatywna w regionie",
+   "notka": "Bant"
+  },
+  {
+   "nazwa": "Akrasa",
+   "x": 0.5,
+   "y": 0.1125,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Akrasa w Bant); pozycja reprezentatywna w regionie",
+   "notka": "Bant"
+  },
+  {
+   "nazwa": "Sedraxis",
+   "x": 0.7681,
+   "y": 0.725,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: nekropolis Sedraxis, lich Sedris); pozycja reprezentatywna w regionie Grixis",
+   "notka": "Grixis"
+  },
+  {
+   "nazwa": "Antali",
+   "x": 0.1671,
+   "y": 0.3919,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Antali w Naya); pozycja reprezentatywna w regionie",
+   "notka": "Naya"
+  }
+ ],
+ "pinezki": [
+  {
+   "karta": "305arb-illusory-demon",
+   "x": 0.5,
+   "y": 0.5,
+   "pewnosc": "dokladna"
+  }
+ ],
+ "otwarte_na_kolejne_przejscia": [
+  "DODANE 2026-09-05: mapa scalonego planu (ADR 0033) uniesie kolejne karty Alary — regiony przyjmą sceny z epoki shardów (ALA); podmapa pre-Conflux (pięć odłamów w Blind Eternities) powstanie wyłącznie, gdy karta będzie miała scenę niereprezentowalną na mapie scalonej."
+ ]
+}

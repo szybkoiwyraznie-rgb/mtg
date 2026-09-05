@@ -1,3 +1,19 @@
+## 2026-09-05 21:30 — pakiet Alara: 305ARB Illusory Demon + mapa T4
+
+Nowa karta właściciela: **305ARB Illusory Demon** (Alara Reborn) —
+scena w Maelstromie, wirze many zrodzonym w Conflux. Kanon rozstrzygnął
+pytanie o epoki: Maelstrom nie istniał przed Conflux, a regiony
+zachowały tożsamość po scaleniu, więc Kodeks rysuje **jedną mapę
+scalonej Alary (post-Conflux)** — ADR 0033: sceny z epoki shardów
+pinuje się do regionów. Mapa T4 (rekonstrukcja kanoniczna, w sieci
+brak wektora i rastra kartograficznego): pięć regionów w cyklu many
+wokół centralnego Maelstromu, obeliski przy szwach, miejsca kanoniczne
+(Valeron, Jhess, Akrasa, Sedraxis, Antali) — 16 kotwic. Karta LORE-first
+(9 sekcji): flavor „a trick of the light can feast on human flesh”
+i mechanika „when you cast a spell, sacrifice this creature” grają
+tę samą tezę — iluzja trwa, dopóki nikt nie zaświeci. Testy i audit
+zielone.
+
 ## 2026-09-05 20:51 — plany wielomapowe systemowo + bogatszy Midgar
 
 Feedback właściciela po obejrzeniu preview: strona planu Final Fantasy
