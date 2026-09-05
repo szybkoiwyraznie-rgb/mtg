@@ -1,0 +1,9 @@
+{
+  "plan": "galia/midgar",
+  "wariant": "T3",
+  "rekonstrukcja": true,
+  "zrodlo": { "url": "https://example.invalid/mmts", "pobrano": "2026-09-05" },
+  "wymiary": { "szerokosc": 100, "wysokosc": 100 },
+  "podklad": "podklad.svg",
+  "pinezki": []
+}

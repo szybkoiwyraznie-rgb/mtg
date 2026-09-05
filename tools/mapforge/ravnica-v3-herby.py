@@ -3,13 +3,13 @@
 
 Wariant v4 (na bazie S7): tarcze siedzib są już narysowane w <g id="markery">
 (biala obwodka r104 + kolorowy dysk r96 + bialy pierscien r70 + maly rdzen r30).
-Ten skrypt dodaaje TYLKO biale glify herbow w srodek kazdej tarczy (na wierzchu),
+Ten skrypt dodaje TYLKO biale glify herbow w srodek kazdej tarczy (na wierzchu),
 ktore zakrywaja maly rdzen i wypelniaja wnetrze pierscienia — dokladnie styl
 zatwierdzonego prototypu.
 
 Glify: geometrycznie autorskie, inspirowane symbolika gildii (bez zastrzezonego
-kluczowego elementu), w sielatce [-50,50], wstawiane przez transform.
-Idempotentny: sa.woe z <g id="herby-gildii">.
+kluczowego elementu), w siatce [-50,50], wstawiane przez transform.
+Idempotentny: wymienia wlasna warstwe <g id="herby-gildii">.
 """
 import re, sys, math
 
@@ -192,10 +192,38 @@ HERBY = {"Boros":boros,"Selesnya":selesnya,"Dimir":dimir,"Izzet":izzet,
          "Rakdos":rakdos,"Golgari":golgari,"Azorius":azorius,"Orzhov":orzhov,
          "Gruul":gruul,"Simic":simic}
 
+def usun_grupe(svg, gid):
+    """Usuwa <g id="...">…</g> ZAGNIEŻDŻONĄ (licznik głębokości).
+
+    Poprzednia wersja używała re.sub(r'…<g id=...>.*?</g>…', flags=re.S) —
+    non-greedy urywał na PIERWSZYM zagnieżdżonym </g> (herb-gruul), więc
+    „idempotentny” skrypt doklejał drugą kopię 9 glifów i zostawiał wiszące
+    </g> (wykrył audyt PR-18 po próbie uruchomienia na zacommitowanym pliku).
+    """
+    marker = f'<g id="{gid}">'
+    i = svg.find(marker)
+    if i < 0:
+        return svg
+    depth, j = 0, i
+    tok = re.compile(r'<g[\s>]|</g>')
+    while True:
+        m = tok.search(svg, j)
+        if not m:
+            return svg            # niepoczyniona grupa — nie ruszamy
+        if m.group(0).startswith('</g'):
+            depth -= 1
+            j = m.end()
+            if depth == 0:
+                przod = svg[:i].rstrip('\n')
+                return przod + '\n' + svg[j:].lstrip('\n')
+        else:
+            depth += 1
+            j = m.end()
+
+
 def main():
     svg=open(P,encoding="utf-8").read()
-    if 'id="herby-gildii"' in svg:
-        svg=re.sub(r'\n<g id="herby-gildii">.*?</g>\n','\n',svg,flags=re.S)
+    svg=usun_grupe(svg, 'herby-gildii')
     # dyski siedzib r=96 w <g id="markery">
     seg=re.search(r'(<g id="markery">.*?</g>)',svg,re.S).group(1)
     disks=re.findall(r'<circle cx="([\d.]+)" cy="([\d.]+)" r="96"',seg)

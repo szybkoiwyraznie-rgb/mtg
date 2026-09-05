@@ -253,8 +253,9 @@ export async function zbuduj({ out, root = ROOT } = {}) {
     const svgTekst = /\.svg$/i.test(mapa.podklad) ? fs.readFileSync(plik, 'utf8') : '';
     const wstrzyknij = `\n// ===== TRYB STRONY MAPY (ADR 0027 v2) =====\n` +
       `globalThis.CODEX_MAPA = ${JSON.stringify(slug)};\n` +
-      // strona mapy żyje w maps/ — URL-e podkładów względem NIEJ
-      `globalThis.CODEX_DATA.mapy[${JSON.stringify(slug)}].podkladUrl = ${JSON.stringify(`${slug}/${mapa.podklad}`)};\n` +
+      // strona mapy żyje w maps/ (płaska) lub maps/<plan>/ (podmapa,
+      // ADR 0032) — URL podkładu liczony względem katalogu strony
+      `globalThis.CODEX_DATA.mapy[${JSON.stringify(slug)}].podkladUrl = ${JSON.stringify(path.posix.relative(path.posix.dirname(slug), `${slug}/${mapa.podklad}`))};\n` +
       (svgTekst ? `globalThis.CODEX_DATA.mapy[${JSON.stringify(slug)}].podkladMarkup = ${JSON.stringify(svgTekst)};\n` : '');
     const htmlMapy = shell
       .replace('<!--STYL-->', () => `<style>\n${css}\n</style>`)
@@ -309,7 +310,7 @@ export async function zbudujPakiet({ root = ROOT, katalog } = {}) {
   await zbuduj({ root, out: celGlowny });
   fs.copyFileSync(celGlowny, path.join(katalog, 'index.html'));
 
-  // ADR 0028 (rejestr): mapy idą przez <iframe> (maps/<slug>.html), więc
+  // ADR 0027 (rejestr): mapy idą przez <iframe> (maps/<slug>.html), więc
   // artefakt otwiera się zawsze jako index.html — w archiwum ZIP wystarczy
   // JEDEN plik kodeksu (wcześniej pakowaliśmy dwie identyczne kopie:
   // index.html + mtg-lore-codex.html, bez różnicy w treści). Plik

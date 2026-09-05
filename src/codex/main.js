@@ -31,7 +31,14 @@ function renderuj(trasa) {
     case 'hasla': html = renderListeHasel(); tytul = 'Hasła'; break;
     case 'haslo': html = renderHaslo(trasa.param); tytul = trasa.param ?? 'Hasło'; aktywna = 'hasla'; break;
     case 'plany': html = renderListePlanow(); tytul = 'Plany'; break;
-    case 'plan': html = renderPlan(trasa.param); tytul = trasa.param ?? 'Plan'; aktywna = 'plany'; break;
+    case 'plan':
+      // ADR 0032: #/plan/<plan>/<podmapa> = alias trasy mapy podmapy
+      if (String(trasa.param ?? '').includes('/')) {
+        html = renderMapeIframe(trasa.param, trasa.query); tytul = `Mapa: ${trasa.param}`; aktywna = 'plany';
+      } else {
+        html = renderPlan(trasa.param); tytul = trasa.param ?? 'Plan'; aktywna = 'plany';
+      }
+      break;
     case 'mapa': html = renderMapeIframe(trasa.param, trasa.query); tytul = trasa.param ? `Mapa: ${trasa.param}` : 'Mapa'; aktywna = 'plany'; break;
     case 'tagi': html = renderChmoreTagow(); tytul = 'Tagi'; break;
     case 'tag': html = renderTag(trasa.param); tytul = `Tag: ${trasa.param ?? ''}`; aktywna = 'tagi'; break;

@@ -159,7 +159,7 @@ export function renderMapeIframe(slugPlanu, query = {}) {
   <nav class="okruszki">
     <a href="#/">Codex</a> ›
     <a href="#/plany">Plany</a> ›
-    <a href="#/plan/${escapeHtml(slugPlanu)}">${escapeHtml(mapa.tytul ?? slugPlanu)}</a> ›
+    <a href="#/plan/${escapeHtml(String(slugPlanu).split('/')[0])}">${escapeHtml(dane.strony?.[String(slugPlanu).split('/')[0]]?.tytul ?? String(slugPlanu).split('/')[0])}</a> ›
     <span>Mapa</span>
   </nav>
   <article class="mapa-strona">
@@ -324,7 +324,7 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
   ${osadzona ? '' : `<nav class="okruszki">
     <a href="#/">Codex</a> ›
     <a href="#/plany">Plany</a> ›
-    <a href="#/plan/${escapeHtml(slugPlanu)}">${escapeHtml(mapa.tytul ?? slugPlanu)}</a> ›
+    <a href="#/plan/${escapeHtml(String(slugPlanu).split('/')[0])}">${escapeHtml(dane.strony?.[String(slugPlanu).split('/')[0]]?.tytul ?? String(slugPlanu).split('/')[0])}</a> ›
     <span>Mapa</span>
   </nav>`}
 

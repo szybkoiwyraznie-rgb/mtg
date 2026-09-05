@@ -442,6 +442,16 @@ def _obb_nachodza(a, b):
 
 def audytuj_podklad(mapa, nazwa, mjson, woda):
     problemy, info = [], []
+    # Zapora na „śmieciowe" wartości atrybutów (undefined/NaN/null): XML jest
+    # wtedy poprawny i audyt przechodzi, a przeglądarka rysuje wartość
+    # domyślną (np. 0). Regresja wykryta audytem PR-18: kompas „rosea"
+    # Ravniki z PR-15 miał 4× y="undefined" — litery N i S nakładały się
+    # w środku róży, E/W po bokach.
+    for el in mapa.root.iter():
+        for k, v in el.attrib.items():
+            if v in ('undefined', 'NaN', 'null'):
+                problemy.append(f'{nazwa}: NIEPRAWIDŁOWY ATRYBUT: '
+                                f'{el.tag.split("}")[-1]}[{k}={v!r}]')
     ety = mapa.etykiety()
     for txt, x, y, fs, rot in ety:
         if len(txt) < 2:                      # igła kompasu (N, S…)
@@ -496,8 +506,14 @@ def main(argv):
     for a in argv:
         if a.startswith('--woda='):
             woda = {s.strip() for s in a.split('=', 1)[1].split(',') if s.strip()}
-    plany = args or sorted(p.parent.name for p in
-                           (ROOT / 'maps').glob('*/podklad.svg'))
+    if args:
+        plany = args
+    else:
+        # ADR 0032: podmapy części sagi żyją w maps/<plan>/<podmapa>/
+        sciezki = sorted((ROOT / 'maps').glob('*/podklad.svg')) + sorted(
+            (ROOT / 'maps').glob('*/*/podklad.svg'))
+        plany = sorted(
+            p.parent.relative_to(ROOT / 'maps').as_posix() for p in sciezki)
     problemy_calka = 0
     for plan in plany:
         print(f'=== {plan} ===')

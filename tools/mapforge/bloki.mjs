@@ -593,6 +593,13 @@ export function dzielnica(punkty, { ton = 0 } = {}) {
   return `<path class="mf-dzielnica" d="${prosta(punkty, true)}" fill="${tonuj(PAL.lad, ton)}"/>`;
 }
 
+/** Granica regionu na mapie scalonego planu (Alara po Conflux):
+ *  subtelna szara kreska kreskowana — czytelny szew między regionami,
+ *  bez miejskiego halo (to nie arteria). Achromat (ADR 0019/0021). */
+export function granicaRegionu(punkty) {
+  return `<path class="mf-granica-regionu" d="${prosta(punkty)}" fill="none" stroke="#8a8a8a" stroke-width="2.5" stroke-dasharray="10 8"/>`;
+}
+
 /** Granica dzielnicy = obwodnica: lśniący prześwit + tuszowa kreska osi.
  *  `zamkniete: false` — rysuj pojedynczy odcinek (dedupe krawędzi we
  *  wspólnej warstwie, żeby granice sąsiadów nie rysowały się podwójnie). */

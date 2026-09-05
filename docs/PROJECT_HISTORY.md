@@ -4,6 +4,89 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-05 — sesja PR-18, pakiet FF („PR-19” wewnętrznie): Final Fantasy — plan-franczyza, Midgar T3, karta 5FIN
+
+1. **Zlecenie:** czwarta karta — dostawa właściciela „275FIN Aerith
+   Rescue Mission” + pytanie o model sagi. Research: brak gotowego
+   wektora (T2) w sieci; wybór właściciela: jeden plan `final-fantasy`
+   z mapą per część sagi (NIE kontynenty, NIE plany per gra) → **ADR
+   0032**; Midgar T3 z płaskiego schematu MMTS (ReverendRyu,
+   CC BY-NC-ND 3.0, raster poza gitem), fallback T4 niepotrzebny.
+2. **Numeracja (doprecyzowane po feedbacku właściciela):** `imgId 275FIN`
+   to numer kolekcji właściciela — klucz prywatnych torów FOT/KON
+   (ADR 0008), element Karty Katalogowej; collector_number Scryfall = 5
+   to osobny system (wyłącznie infoboks). Sesja początkowo błędnie
+   „skorygowała” imgId na 5FIN (275FIN wg Scryfall = Clive’s Hideaway) —
+   wycofane w P6, lekcja L8.
+3. **Silnik (P2):** klucz rejestru `plan/podmapa` — content-loader,
+   build (strony `maps/<plan>/<podmapa>.html`, względne URL-e, ZIP),
+   map-audit (dwa poziomy), router (parametr złożony), render-card/
+   plane (pinezka.mapa/plan.mapa), registry (walidacja podmap),
+   wiki-stats (pinezki planu z podmap), ui-smoke (4 karty).
+4. **Mapa Midgaru (P3):** radialna transkrypcja kanonu (8 sektorów,
+   hub + budynek Shinra, pierścienie MMTS, mur, pustkowie), kotwice:
+   Shinra, slumsy 7/5, Wall Market, Cmentarzysko Pociągów, mur; styl
+   atlasowy; QA: map-audit 0 + vision (scratch-rasterizer poza repo —
+   sandbox nie ma delegata SVG dla ImageMagick).
+5. **Karta (P4):** snapshot + wpis + 9 sekcji ADR 0030 + pinezka
+   `dokladna`; plan `final-fantasy` (Setting w pigułce, wikilinki).
+6. **Domknięcie (P5):** co-nowego 19:50, ten wpis, handoff update;
+   opis PR #18 kumulatywny (GitHub: jedno otwarte PR na gałąź sesji —
+   pakiet FF jedzie w PR-18).
+7. **Werdykty:** 104/104, build zielony (ZIP 9 plików), map-audit 0,
+   wiki-stats 100% (8/8). Commity: P1 `49f9e5f`, fix `8328a8c`,
+   P2 `34b7466`, P3 `be0a939`, P4 `39ab545`, P5 (ten).
+
+## 2026-09-05 — sesja PR-18: audyt PR-17 + Pętla Jakości (naprawa kompasu Ravniki, doprecyzowanie ADR 0026, warsztat 0 kolizji)
+
+1. **Wejście:** „kontynuujemy projekt". Punkt wyjścia: scalony PR-17
+   (`bd6ac14`, squash 18 commitów sesji z wizją). Lektura obowiązkowa
+   pełna (AGENTS.md, ADR-y 0001–0031, LESSONS L1–L6, ENVIRONMENT, PR-17,
+   handoff PR-17); klon pogłębiony do pełnej historii (był shallow —
+   istotne dla stopek czasu ADR 0029).
+2. **Audyt PR-17** (`docs/audits/AUDYT_2026-09-05-PR17.md`): integralność
+   zgodna z handoffem (102/102, build, map-audit 0 dla trzech planów);
+   treść i kod spójne z ADR 0002/0008/0017/0027/0031 (ZIP bez duplikatu,
+   sonda FOT/KON po liście kandydatów, termin „Fabuła", kotwice 5 nowych
+   lokacji, OBB/SAT, warstwy herby/lokacje). Znaleziska Z1–Z8.
+3. **Kolejka napraw (kompletna):**
+   - **Z1:** kompas „rosea" Ravniki — 4× `y="undefined"` (wada generatora
+     od PR-15; N i S nakładały się w środku róży). Przywrócone pozycje
+     pętli kierunków (N 0,−235 / E 235,0 / S 0,235 / W −235,0) + zapora
+     w map-audit na `undefined/NaN/null` w atrybutach;
+   - **Z2:** doprecyzowanie ADR 0026 (widoczny termin „Fabuła" bez
+     dopisku „dostawy" — decyzja właściciela 2026-09-05 wdrożona w PR-17,
+     spisana w ADR teraz) + rejestr;
+   - **Z3:** numeracja ADR 0028→0027 (drzewo HTML map) w co-nowego
+     i komentarzu build.mjs;
+   - **Z4:** WYCOFANE po weryfikacji kodu (modele AABB/OBB audytu spójne
+     — oba wyśrodkowane w kotwicy);
+   - **Z5:** demo warsztatu bez kolizji („Rzeka Srebrna" przesunięta
+     w dół biegu) + świeży render z fortem (scena i ADR 0028 miały go
+     od PR-11, commitowane SVG — nie);
+   - **Z6/Z7:** nieaktualna notka o „markerach bez emblematów"
+     w mapa-analiza.md + literówki docstringów;
+   - **Z8 (nowe, z próby uruchomienia):** `ravnica-v3-herby.py` usuwał
+     warstwę non-greedy regexem urywającym na zagnieżdżonym `</g>` →
+     duplikacja glifów + wiszące `</g>`. Naprawa: licznik głębokości;
+     oba skrypty warstw bajtowo idempotentne (git diff pusty). Lekcja L7.
+4. **Pętla Jakości:** krok 1 zielony; krok 2 — brak kandydatów
+   (wszystkie strony 8/8, Źródła ≥2, sekcje kompletne); krok 3 — brak
+   encji ≥2 kart (3 karty w 3 planach; hasła Ravniki czekają na 2. kartę);
+   krok 4 — naprawy Z1/Z5 + przegląd kompletności operacyjnej (pinezki
+   3/3, mapy 3/3 planów z kartami, kotwice zweryfikowane audytem);
+   krok 5 — wpis co-nowego 17:05 + ten handoff.
+5. **Proces:** PR #18 otwarty po commicie audytu i planu (reguła 1);
+   commity S1–S7 pushowane na bieżąco (reguła 3); pełna historia gita
+   przywrócona lokalnie (`fetch --unshallow`). W trakcie sesji workspace
+   zresetowany — odzysk bez strat wg ENVIRONMENT §2 (praca bezpieczna na
+   zdalnej gałęzi).
+6. **Feedback właściciela (18:25):** trzy „otwarte wątki" (geometria
+   Akoum–Ondu, obwódki haseł E5, rozszerzenia Ravniki poza złoty
+   standard) skasowane z ROADMAP/planu/handoffu/map.json — właściciel
+   ich nie zamawiał i nie chce; w ROADMAP notka „nie odtwarzać"
+   (commit S8).
+
 ## 2026-09-03 — sesja PR-14: audyt PR-13, Pętla Jakości Rawnicy, przygotowanie wektoryzacji v3
 
 1. **Wejście:** „kontynuujemy projekt” + załącznik właściciela: fan-made

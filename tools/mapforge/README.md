@@ -68,6 +68,7 @@ przed renderem.
 | **klocki miejskie (T4 — atlas metropolii, Ravnica)** | | |
 | `dzielnica(punkty, {ton})` | wielokąt | tint panowania (kaseta `dzielnice` w scenie; ton = przyciemnienie lądu) |
 | `granicaDzielnicy(punkty, {zamkniete})` | łamana | granica-arteria (prześwit + tusz); render dedyka każdą krawędź RAZ |
+| `granicaRegionu(punkty)` | łamana | subtelny szary szew (dashed) między regionami scalonych planów — achromat |
 | `mur(id, punkty, {strona, zab})` | łamana | mur miejski z blankami (kaseta `mury`; brama = przerwa między segmentami) |
 | `szczelina(id, punkty, {szer})` | łamana | ciemny pas wąwozu miejskiego z poszarpanymi krawędziami i schodami (kaseta `szczeliny`; strefa zajęta dla biomów) |
 | `tkanina(id, punkty, {gestosc})` | wielokąt | **biom**: mikro-bloki zabudowy / ulice (ziarno `prng(id)`, respektuje maski i strefy zajęte) |

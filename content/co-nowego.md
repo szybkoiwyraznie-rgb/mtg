@@ -1,3 +1,111 @@
+## 2026-09-05 22:15 — mapa Alary od nowa: T3 z referencji fanowskich
+
+Właściciel odrzucił radialną mapę Alary („to nie jest Midgar — to pięć
+światów-kontynentów, które się połączyły”) i dostarczył prywatne
+fanowskie mapy jako wzorzec (ADR 0031). Redo w silniku mapforge:
+scena `maps/alara/scena.json` — pięć zrośniętych kontynentów
+(Bant u góry, Naya zachód, Jund i Grixis południe, Esper z morzami
+wewnętrznymi wschód) wokół Maelstromu-plamy w punkcie złączenia;
+biomy (las Naya, stepy, wulkany Jund), szwy regionów nowym klockiem
+`granicaRegionu`, Maelstrom jako tint na lądzie (pinezka 305ARB zostaje
+na lądzie). Nazwy wyłącznie kanoniczne (MTG Wiki): +Topa, Valeron,
+Akrasa, Jhess, Eos, Sun-Dappled Court, Sacellum, Sanctum Arcanum,
+Sedraxis, ruiny Antali; wariant T3, 19 kotwic. Silnik mapforge dostał
+systemową opcję `zrośnięte` (wewnętrzne wybrzeża kryte wypełnieniami).
+Testy i audit zielone.
+
+## 2026-09-05 21:30 — pakiet Alara: 305ARB Illusory Demon + mapa T4
+
+Nowa karta właściciela: **305ARB Illusory Demon** (Alara Reborn) —
+scena w Maelstromie, wirze many zrodzonym w Conflux. Kanon rozstrzygnął
+pytanie o epoki: Maelstrom nie istniał przed Conflux, a regiony
+zachowały tożsamość po scaleniu, więc Kodeks rysuje **jedną mapę
+scalonej Alary (post-Conflux)** — ADR 0033: sceny z epoki shardów
+pinuje się do regionów. Mapa T4 (rekonstrukcja kanoniczna, w sieci
+brak wektora i rastra kartograficznego): pięć regionów w cyklu many
+wokół centralnego Maelstromu, obeliski przy szwach, miejsca kanoniczne
+(Valeron, Jhess, Akrasa, Sedraxis, Antali) — 16 kotwic. Karta LORE-first
+(9 sekcji): flavor „a trick of the light can feast on human flesh”
+i mechanika „when you cast a spell, sacrifice this creature” grają
+tę samą tezę — iluzja trwa, dopóki nikt nie zaświeci. Testy i audit
+zielone.
+
+## 2026-09-05 20:51 — plany wielomapowe systemowo + bogatszy Midgar
+
+Feedback właściciela po obejrzeniu preview: strona planu Final Fantasy
+miała tylko „Otwórz mapę planu”, a okruszek z podmapy prowadził do
+nieistniejącego `#/plan/final-fantasy/midgar`. Teraz: strona planu
+z podmapami pokazuje przycisk per podmapa („Otwórz mapę: Midgar
+(Final Fantasy VII)”), okruszki z podmapy wracają do planu, a trasa
+`#/plan/<plan>/<podmapa>` jest aliasem mapy (stare linki nie dają 404).
+Mapa Midgaru wzbogacona o kanoniczne POI i biomy: naprzemienne kliny
+sektorów, pierścień ośmiu reaktorów mako przy krawędzi talerza,
+Seventh Heaven, kościół Aerith (zielony marker — kwiaty), dom Aerith,
+Loveless Avenue; łącznie 18 kotwic. Testy 104/104, map-audit 0.
+
+## 2026-09-05 20:09 — korekta: imgId 275FIN wraca z dostawy (to numer kolekcji, nie collector Scryfall)
+
+Feedback właściciela: `275FIN` to numer z jego kolekcji — klucz do
+prywatnych ilustracji `<id>FOT.png`/`<id>KON.png` (tory FOT/KON,
+ADR 0008), a odwołania do tych plików są elementem Karty Katalogowej.
+Sesja błędnie „skorygowała” imgId do collector number Scryfall (5FIN);
+wycofane: slug i wpisy znów `275fin-aerith-rescue-mission` /
+`imgId: 275FIN`, pinezka i wikilinki zaktualizowane, w snapshotcie
+`notka_numery` o dwóch niezależnych systemach numeracji. Lekcja L8:
+imgId wyłącznie z dostawy właściciela, Scryfall nie koryguje numerów
+kolekcji.
+
+## 2026-09-05 19:50 — Final Fantasy w Kodeksie: plan-franczyza (ADR 0032), mapa Midgaru (T3), karta 5FIN
+
+Dostawa właściciela: **Aerith Rescue Mission** (scena ratunku Aerith
+w budynku Shinra). Decyzje właściciela: jeden plan `final-fantasy`
+z mapą per część sagi — NIE kontynenty światów na jednej mapie i NIE
+osobne plany per gra (ADR 0032); mapa Midgaru jako T3 z płaskiego
+schematu MMTS (ReverendRyu) jako prywatnej referencji poza gitem.
+Silnik dostał klucz rejestru `plan/podmapa` (strony map, router,
+pinezki, ZIP, audit); Midgar narysowany w stylu atlasowym (8 sektorów,
+hub z budynkiem Shinra, pierścienie MMTS, mur, pustkowie) z kotwicami
+kanonicznymi; karta z 9 sekcjami i pinezką `dokladna` na budynku
+Shinra. `imgId 275FIN` = numer kolekcji właściciela (tory FOT/KON),
+collector number Scryfall = 5 — dwa systemy (doprecyzowane wpisem
+20:09 po feedbackzie). Werdykty: 104/104 testów,
+build zielony, map-audit 0, wiki-stats 100% (8/8).
+
+## 2026-09-05 18:25 — porządki w kolejce: trzy „otwarte wątki" zamknięte i skasowane
+
+Decyzja właściciela: wątki „globalna geometria Zendikaru (Akoum–Ondu)",
+„obwódki haseł" (E5) i „rozszerzenia mapy Ravniki poza złoty standard
+a/b/c" nie są zadaniami — zostały skasowane z ROADMAP-y, planu sesji,
+handoffu i notek `map.json` Ravniki. W ROADMAP-ie zostaje tylko krótka
+notka „nie odtwarzać", żeby przyszłe sesje nie wracały do tematu.
+
+## 2026-09-05 17:05 — sesja jakości: naprawa kompasu Ravniki, „Fabuła" w ADR, warsztat bez kolizji
+
+Sesja Pętli Jakości po audycie PR-17 — zmiany w bazie i narzędziach:
+
+- **Kompas mapy Ravniki naprawiony:** litery N/E/S/W róży kierunków miały
+  ukrytą wadę jeszcze z czasu wektoryzacji v3 (uszkodzony atrybut
+  pozycji — przeglądarka rysowała obie litery N i S w środku róży, jedna
+  na drugiej). Teraz litery stoją prawidłowo wokół róży (N nad iglicą,
+  S pod nią, E/W po bokach).
+- **Nowa zapora audytu map:** pliki map z „śmieciowymi" wartościami
+  atrybutów (`undefined`/`NaN`/`null`) będą odtąd wykrywane automatycznie
+  — to ta klasa błędu co kompas.
+- **Termin „Fabuła" bez dopisku „dostawy"** (decyzja właściciela
+  z 2026-09-05, widoczna już wtedy na kartach) zapisany formalnie
+  w ADR 0026 — rejestr decyzji dogoniony ze stanem bazy.
+- **Warsztat map bez kolizji:** na demie „Wyspa Próbna" etykieta „Rzeka
+  Srebrna" zachodziła na „Step Środkowy" (odsłonił to dokładniejszy model
+  kolizji z poprzedniej sesji) — napis rzeki przesunięty w dół biegu.
+  Demo dostało też brakujący fort (Fort Graniczny) — był w scenie od
+  września, ale przerysowania warsztatu go nie pokazywały. Wszystkie mapy
+  łącznie z warsztatem audytują się teraz na zero problemów.
+- **Skrypty warstw Ravniki (herby gildii, lokacje) naprawione:** przy
+  ponownym uruchomieniu skrypt herbów potrafił zdublować warstwę zamiast
+  ją wymienić; teraz oba skrypty są bajtowo powtarzalne.
+- Drobna korekta numeracji ADR w dwóch opisach (drzewo HTML map to
+  ADR 0027).
+
 ## 2026-09-05 09:30 — codex: pakiet offline (ZIP), ilustracje FOT/KON z dysku, termin „Fabuła"
 
 - **Fabuła, bez dopiska „dostawy"** (decyzja właściciela 2026-09-05):
@@ -7,7 +115,7 @@
   zaktualizowano test UI-smoke. Mechaniczny format dostawy i archiwum
   pozostają bez zmian.
 - **ZIP bez duplikatu HTML:** po przejściu na mapy w `<iframe>`
-  (ADR 0028) artefakt otwiera się zawsze jako `index.html` — w
+  (ADR 0027) artefakt otwiera się zawsze jako `index.html` — w
   archiwum pobieranym ze stopki nie pakujemy już drugiej, identycznej
   kopii `mtg-lore-codex.html` (były dwa pliki tej samej wielkości).
   Plik `mtg-lore-codex.html` na Pages zostaje (stabilny adres linku).

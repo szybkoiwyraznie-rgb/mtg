@@ -72,7 +72,7 @@ export function scenaDemo() {
       { tekst: 'Mokradła Południowe', x: 1000, y: 1160, opcje: { fs: 15, ital: true, kat: 3 } },
       { tekst: 'Step Środkowy', x: 1090, y: 790, opcje: { fs: 15, ital: true } },
       { tekst: 'Grań Burzowa', x: 1300, y: 418, opcje: { fs: 16, ital: true } },
-      { tekst: 'Rzeka Srebrna', x: 1112, y: 862, opcje: { fs: 13, ital: true, kat: 70 } },
+      { tekst: 'Rzeka Srebrna', x: 1075, y: 940, opcje: { fs: 13, ital: true, kat: 70 } },
       { tekst: 'Biały Brod', x: 520, y: 726, opcje: { fs: 14, przyDo: [520, 690] } },
       { tekst: 'Port Ciszy', x: 980, y: 936, opcje: { fs: 14, przyDo: [980, 900] } },
       { tekst: 'Ruiny Vhal', x: 860, y: 532, opcje: { fs: 14, ital: true, przyDo: [860, 500] } },

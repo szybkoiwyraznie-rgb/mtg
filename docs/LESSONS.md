@@ -116,3 +116,39 @@ idzie automatycznie przy każdym pushu do main (`on: push`); pierwszą
 publikację po włączeniu odpala re-run ostatniego failed runu lub scalenie
 PR.
 
+## L7 (2026-09-05) — non-greedy regex nie usuwa grup SVG z zagnieżdżonymi `<g>` — idempotentność skryptów warstw testuje się na zacommitowanym pliku
+
+**Objaw:** skrypt `ravnica-v3-herby.py` deklarował idempotentność, a po
+uruchomieniu na zacommitowanym podkładzie dokleił drugą kopię 9 glifów
+herbowych i zostawił wiszące `</g>` (plik przestałby być poprawnym XML,
+gdyby wynik zacommitować).
+
+**Przyczyna:** usuwanie warstwy przez
+`re.sub(r'\n<g id="…">.*?</g>\n', …, flags=re.S)` — non-greedy `.*?`
+kończy się na PIERWSZYM `</g>`, czyli na zamknięciu zagnieżdżonej
+podgrupy (`herb-gruul`), nie całej warstwy.
+
+**Reguła:** grupy z zagnieżdżonymi `<g>` usuwa się licznikiem głębokości
+(skanner `<g[\s>]` / `</g>`) albo parserem XML, nigdy single-`.*?`
+regexem. Idempotentność skryptów doszywających warstwy sprawdza się
+EMPIRYCZNIE: uruchomić na zacommitowanym pliku → `git diff` ma być
+pusty → dopiero wtedy commit (audyt PR-18, Z8).
+
+## L8 (2026-09-05) — imgId to numer kolekcji właściciela (tory FOT/KON), NIE collector number Scryfall
+
+**Objaw:** przy materializacji karty FF agent „skonfrontował” numer
+dostawy `275FIN` z API Scryfall (gdzie 275 = Clive’s Hideaway) i uznał
+dostawę za błędną, nadpisując imgId na `5FIN` wg collector_number
+Scryfall — czym odciąłby tory FOT/KON właściciela (sonda
+`./img/<imgId>FOT.png`, ADR 0008).
+
+**Przyczyna:** dwa niezależne systemy numeracji: `imgId` = klucz
+prywatnych ilustracji właściciela na jego dysku (element Karty
+Katalogowej), `collector_number` = dane wydruku w snapshotcie
+(wyłącznie infoboks, ADR 0014). Zbieżność numerów przy wcześniejszych
+kartach (137GPT, 2BFZ) była przypadkowa.
+
+**Reguła:** imgId i slug karty bierze się WYŁĄCZNIE z dostawy
+właściciela (ADR 0011); Scryfall dostarcza metadanych wydruku, nie
+klucza kolekcji. Nie „korygować” numerów dostawy na podstawie Scryfalla
+— najwyżej udokumentować oba numery w snapshotcie (`notka_numery`).

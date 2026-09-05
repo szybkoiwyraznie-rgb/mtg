@@ -88,7 +88,8 @@ export function walidujStrone(strona, ctx) {
     if (strona.pinezka) {
       // Współrzędne NIE żyją tu — jedyny źródło prawdy to maps/<plan>/map.json
       // (PROCES_MAP.md MA2). Frontmatter deklaruje istnienie pinezki i pewność.
-      if (strona.pinezka.mapa !== strona.plan) p.push(`${gdzie}: pinezka.mapa "${strona.pinezka.mapa}" ≠ plan "${strona.plan}"`);
+      // ADR 0032: pinezka może wskazywać podmapę `<plan>/<podmapa>`
+      if (strona.pinezka.mapa !== strona.plan && !String(strona.pinezka.mapa).startsWith(`${strona.plan}/`)) p.push(`${gdzie}: pinezka.mapa "${strona.pinezka.mapa}" ≠ plan "${strona.plan}"`);
       if (!POZIOMY_PEWNOSCI.includes(strona.pinezka.pewnosc)) {
         p.push(`${gdzie}: pinezka.pewnosc "${strona.pinezka.pewnosc}" poza ${POZIOMY_PEWNOSCI.join('/')}`);
       }
@@ -118,7 +119,10 @@ export function walidujStrone(strona, ctx) {
   if (strona.typ === 'plan') {
     if (!TYPY_IP.includes(strona.typIP)) p.push(`${gdzie}: typIP "${strona.typIP}" poza ${TYPY_IP.join('/')}`);
     if (strona.mapa !== undefined && strona.mapa !== null && strona.mapa !== 'pending') {
-      if (strona.mapa !== strona.slug) p.push(`${gdzie}: mapa "${strona.mapa}" musi równać się slugowi planu albo "pending"`);
+      // ADR 0032: plan-franczyza może wskazać podmapę `<slug>/<podmapa>`
+      if (strona.mapa !== strona.slug && !String(strona.mapa).startsWith(`${strona.slug}/`)) {
+        p.push(`${gdzie}: mapa "${strona.mapa}" musi równać się slugowi planu, podmapie "<slug>/…" albo "pending"`);
+      }
     }
   }
 

@@ -121,6 +121,34 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   assert.ok(shim.app.innerHTML.includes('src="maps/zendikar.html"'), 'mapa Zendikaru: brak iframe');
   shim.idz('#/plan/zendikar');
   assert.ok(shim.app.innerHTML.includes('#/mapa/zendikar'), 'plan Zendikaru: brak linku do mapy');
+
+  // ADR 0032: plan wielomapowy — podmapy na stronie planu, okruszki do planu,
+  // alias #/plan/<plan>/<podmapa>
+  shim.idz('#/plan/final-fantasy');
+  const ff = shim.app.innerHTML;
+  assert.ok(ff.includes('#/mapa/final-fantasy/midgar'), 'plan FF: brak linku podmapy');
+  assert.ok(ff.includes('Otwórz mapę: Midgar (Final Fantasy VII)'), 'plan FF: brak przycisku podmapy z tytułem');
+  shim.idz('#/mapa/final-fantasy/midgar');
+  const ffm = shim.app.innerHTML;
+  assert.ok(ffm.includes('maps/final-fantasy/midgar.html'), 'podmapa Midgar: brak iframe');
+  assert.ok(ffm.includes('href="#/plan/final-fantasy"'), 'podmapa Midgar: okruszek nie wraca do planu');
+  shim.idz('#/plan/final-fantasy/midgar');
+  assert.ok(shim.app.innerHTML.includes('maps/final-fantasy/midgar.html'),
+    'trasa #/plan/<plan>/<podmapa> nie jest aliasem mapy');
+
+  // ADR 0033: Alara — jedna mapa scalonego planu; pinezka 305ARB w Maelstrom
+  shim.idz('#/plan/alara');
+  assert.ok(shim.app.innerHTML.includes('#/mapa/alara'), 'plan Alary: brak linku do mapy');
+  shim.idz('#/mapa/alara');
+  const al = shim.app.innerHTML;
+  assert.ok(al.includes('Mapa: Alara'), 'mapa Alary: brak tytułu');
+  assert.ok(al.includes('src="maps/alara.html"'), 'mapa Alary: brak iframe');
+  shim.idz('#/karta/305arb-illusory-demon');
+  const karta3 = shim.app.innerHTML;
+  assert.ok(karta3.includes('305ARB'), 'karta 305ARB: brak imgId');
+  assert.ok(karta3.includes('Illusory Demon'), 'karta 305ARB: brak tytułu');
+  assert.ok(karta3.includes('#/mapa/alara?pin=305arb-illusory-demon'),
+    'karta 305ARB: brak deep-linka pinezki');
   shim.przywroc();
 
   // ── Strona mapy Śródziemia (samowystarczalny HTML, T2 → <img>)
@@ -242,7 +270,9 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (3)'), 'lista kart: brak 3 kart');
+  assert.ok(lista.includes('Karty Katalogowe (5)'), 'lista kart: brak 5 kart');
+  assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
+    'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
   assert.ok(!lista.includes('>srodziemie<'), 'lista kart: slug planu nie może być widoczny jako tekst (feedback G)');
   assert.ok(lista.indexOf('Coralhelm Guide') < lista.indexOf('Dunland Crebain'), 'lista kart: brak sortowania alfabetycznego (feedback E)');

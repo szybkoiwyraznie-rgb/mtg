@@ -254,6 +254,11 @@ porównaniem wzrokowym:
 **Werdykty:** `map-audit ravnica` = **0 problemów**; `npm test` 102/102;
 build zielony (`maps/ravnica.html` ~348 KB). Pełna kontrola wzrokowa
 kadrami 1:1 (north/center/p6/south/west) + nakładki granic/markerów na
-warstwy źródłowe. Różnica od źródła: markery to nasza prosta konstrukcja
-koncentrycznych kół (bez białych emblematów gildii) — świadomy wybór
-stylu, nie zgłoszony przez właściciela.
+warstwy źródłowe.
+
+**Aktualizacja (jeszcze PR-17, po S7):** pierwotna różnica względem
+źródła — markery jako proste koncentryczne koła bez białych emblematów
+gildii — została DOMKNIĘTA w krokach S12/FIX2: białe glify herbowe 10
+gildii weszły na tarcze siedzib jako warstwa `<g id="herby-gildii">`
+(`tools/mapforge/ravnica-v3-herby.py`). Powyższy opis v4 dokumentuje
+stan na moment pisania (S7), nie stan końcowy PR.

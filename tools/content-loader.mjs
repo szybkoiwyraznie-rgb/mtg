@@ -106,18 +106,37 @@ export function wczytajScryfall({ root = '.' } = {}) {
   return mapa;
 }
 
-/** Rejestry map: maps/<plan>/map.json → Map(plan → obiekt). */
+/**
+ * Rejestry map: maps/<plan>/map.json → Map(plan → obiekt).
+ * ADR 0032 (plan-franczyza): plan może też mieć podmapy części sagi —
+ * maps/<plan>/<podmapa>/map.json trafia do rejestru pod kluczem
+ * `<plan>/<podmapa>` (karta wskazuje ją przez `pinezka.mapa`).
+ */
 export function wczytajMapy({ root = '.' } = {}) {
   const mapa = new Map();
   const katalog = path.resolve(root, 'maps');
   if (!fs.existsSync(katalog)) return mapa;
   for (const plan of fs.readdirSync(katalog).sort()) {
-    const plik = path.join(katalog, plan, 'map.json');
-    if (!fs.existsSync(plik)) continue;
-    try {
-      mapa.set(plan, JSON.parse(fs.readFileSync(plik, 'utf8')));
-    } catch (e) {
-      mapa.set(plan, { problem: `nieparsowalny map.json: ${e.message}` });
+    const dirPlan = path.join(katalog, plan);
+    if (!fs.statSync(dirPlan).isDirectory()) continue;
+    const plik = path.join(dirPlan, 'map.json');
+    if (fs.existsSync(plik)) {
+      try {
+        mapa.set(plan, JSON.parse(fs.readFileSync(plik, 'utf8')));
+      } catch (e) {
+        mapa.set(plan, { problem: `nieparsowalny map.json: ${e.message}` });
+      }
+      continue;
+    }
+    for (const sub of fs.readdirSync(dirPlan).sort()) {
+      const plikSub = path.join(dirPlan, sub, 'map.json');
+      if (!fs.existsSync(plikSub)) continue;
+      const klucz = `${plan}/${sub}`;
+      try {
+        mapa.set(klucz, JSON.parse(fs.readFileSync(plikSub, 'utf8')));
+      } catch (e) {
+        mapa.set(klucz, { problem: `nieparsowalny map.json: ${e.message}` });
+      }
     }
   }
   return mapa;

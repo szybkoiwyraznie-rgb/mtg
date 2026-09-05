@@ -17,7 +17,9 @@ export function parsujHash(hash) {
   }
 
   if (segmenty.length === 0) return { nazwa: 'glowna', param: null, query };
-  const [nazwa, param] = segmenty;
+  const [nazwa, ...reszta] = segmenty;
+  // ADR 0032: parametr może być złożony (podmapa `#/mapa/plan/podmapa`)
+  const param = reszta.length > 0 ? reszta.join('/') : null;
 
   const dozwolone = [
     'glowna', 'karty', 'karta', 'hasla', 'haslo', 'plany', 'plan',

@@ -1,0 +1,176 @@
+{
+ "plan": "final-fantasy/midgar",
+ "tytul": "Midgar (Final Fantasy VII)",
+ "wariant": "T3",
+ "podklad": "podklad.svg",
+ "wymiary": {
+  "szerokosc": 1600,
+  "wysokosc": 1600
+ },
+ "zrodlo": {
+  "url": "https://www.deviantart.com/reverendryu/art/Final-Fantasy-VII-Midgar-Mass-Transit-System-Map-361170637",
+  "tytul": "Final Fantasy VII – Midgar Mass Transit System Map (ReverendRyu); topologia radialna 8 sektorów + hub 0 zgodna z kanonem układu miasta",
+  "autor": "MTG Lore Codex (praca własna — samodzielna transkrypcja kanonicznej topologii)",
+  "licencja": "praca własna; referencja fanowska CC BY-NC-ND 3.0 użyta prywatnie poza gitem, bez redistribucji rastra (ADR 0031/0032)",
+  "pobrano": "2026-09-05",
+  "notka": "T3: schemat MMTS jest referencją TOPOLOGII (radialne 8 sektorów wokół huba Shinra, pierścienie MMTS, mur zewnętrzny, pustkowie). Nie dziedziczymy proporcji ani fanowskich nazw stacji — wyłącznie nazwy kanoniczne (Fandom: Midgar). Scena karty 275FIN = budynek Shinra."
+ },
+ "rekonstrukcja": true,
+ "kotwice": [
+  {
+   "nazwa": "Budynek Shinra",
+   "x": 0.5,
+   "y": 0.5,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (hub sektora 0 / MMTS „ShinRa Central”)",
+   "notka": "scena ratunku Aerith (275FIN): szyb schodowy wieży"
+  },
+  {
+   "nazwa": "Slumsy Sektora 7",
+   "x": 0.1766,
+   "y": 0.3661,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (Fandom: Midgar — Sector 7 slums, Seventh Heaven, baza Avalanche)",
+   "notka": "pod talerzem sektora 7"
+  },
+  {
+   "nazwa": "Slumsy Sektora 5",
+   "x": 0.3613,
+   "y": 0.8349,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (Fandom: dom Aerith i kościół w slumsach sektora 5)",
+   "notka": "pod talerzem sektora 5"
+  },
+  {
+   "nazwa": "Wall Market",
+   "x": 0.1651,
+   "y": 0.6387,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (Fandom: Wall Market w sektorze 6)",
+   "notka": "slumsy sektora 6"
+  },
+  {
+   "nazwa": "Cmentarzysko Pociągów",
+   "x": 0.1641,
+   "y": 0.1641,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (Fandom: Train Graveyard na pustkowiu za murem, kierunek sektora 7/8)",
+   "notka": "poza murem zewnętrznym"
+  },
+  {
+   "nazwa": "Mur Zewnętrzny",
+   "x": 0.8049,
+   "y": 0.8049,
+   "typ": "linia",
+   "pozycja_zrodlo": "kanon (Fandom: Midgar otoczone murem z bramami)",
+   "notka": "pierścień obronny miasta"
+  },
+  {
+   "nazwa": "Seventh Heaven",
+   "x": 0.2186,
+   "y": 0.3375,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (Fandom: bar Tify i baza Avalanche w slumsach sektora 7)",
+   "notka": "slumsy sektora 7"
+  },
+  {
+   "nazwa": "Kościół Aerith",
+   "x": 0.4159,
+   "y": 0.8139,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (Fandom: kościół z kwiatami w slumsach sektora 5)",
+   "notka": "zielony marker — jedyne miejsce w Midgarze, gdzie rosną kwiaty"
+  },
+  {
+   "nazwa": "Dom Aerith",
+   "x": 0.3375,
+   "y": 0.7814,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (Fandom: dom Aerith i mamy Gainsborough w slumsach sektora 5)",
+   "notka": "slumsy sektora 5"
+  },
+  {
+   "nazwa": "Loveless Avenue",
+   "x": 0.3541,
+   "y": 0.1478,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (Fandom/Crisis Core: aleja w sektorze 8, miejsce spotkań Zacka i Aerith)",
+   "notka": "śródmieście sektora 8"
+  },
+  {
+   "nazwa": "Reaktor Mako 1",
+   "x": 0.6531,
+   "y": 0.1304,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (FFVII: pierwsza misja Avalanche — wysadzenie reaktora 1)",
+   "notka": "krawędź talerza sektora 1"
+  },
+  {
+   "nazwa": "Reaktor Mako 5",
+   "x": 0.3469,
+   "y": 0.8696,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (FFVII: druga misja Avalanche — reaktor 5)",
+   "notka": "krawędź talerza sektora 5"
+  },
+  {
+   "nazwa": "Reaktor Mako 2",
+   "x": 0.8696,
+   "y": 0.3469,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (FFVII: osiem reaktorów mako, po jednym na sektor)",
+   "notka": "krawędź talerza sektora 2"
+  },
+  {
+   "nazwa": "Reaktor Mako 3",
+   "x": 0.8696,
+   "y": 0.6531,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (FFVII: osiem reaktorów mako, po jednym na sektor)",
+   "notka": "krawędź talerza sektora 3"
+  },
+  {
+   "nazwa": "Reaktor Mako 4",
+   "x": 0.6531,
+   "y": 0.8696,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (FFVII: osiem reaktorów mako, po jednym na sektor)",
+   "notka": "krawędź talerza sektora 4"
+  },
+  {
+   "nazwa": "Reaktor Mako 6",
+   "x": 0.1304,
+   "y": 0.6531,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (FFVII: osiem reaktorów mako, po jednym na sektor)",
+   "notka": "krawędź talerza sektora 6"
+  },
+  {
+   "nazwa": "Reaktor Mako 7",
+   "x": 0.1304,
+   "y": 0.3469,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (FFVII: osiem reaktorów mako, po jednym na sektor)",
+   "notka": "krawędź talerza sektora 7"
+  },
+  {
+   "nazwa": "Reaktor Mako 8",
+   "x": 0.3469,
+   "y": 0.1304,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (FFVII: osiem reaktorów mako, po jednym na sektor)",
+   "notka": "krawędź talerza sektora 8"
+  }
+ ],
+ "pinezki": [
+  {
+   "karta": "275fin-aerith-rescue-mission",
+   "x": 0.5,
+   "y": 0.5,
+   "pewnosc": "dokladna"
+  }
+ ],
+ "otwarte_na_kolejne_przejscia": [
+  "DODANE 2026-09-05: podmapa części sagi FFVII (ADR 0032); kolejne podmapy FF (np. świat Gai poza Midgarem) powstaną dopiero z kartami, które ich potrzebują."
+ ]
+}
