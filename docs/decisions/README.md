@@ -47,6 +47,7 @@ dziedziczona z projektu mtg-game.
 | [0029](0029-dziennik-godziny-archiwum-stopki-czasu.md) | Dziennik z godziną publikacji (`## RRRR-MM-DD HH:MM — tytuł`, backfill z gita), limit 5 wpisów na SG i w „Co nowego" + archiwum miesiącami (`#/co-nowego/<RRRR-MM>`), stopki kart/haseł/map z datą utworzenia i aktualizacji z historii gita (CI wymaga fetch-depth: 0) | Zaakceptowana |
 | [0030](0030-karta-katalogowa-lore-first.md) | Karta Katalogowa LORE-first: metryka techniczna tylko w infoboksie, główna treść głosem kronikarza, „Mechanika jako Opowieść" przy końcu przed Źródłami | Zaakceptowana |
 | [0031](0031-prywatne-zrodla-fanowskie-do-wektoryzacji-map.md) | Prywatne źródła fanowskie dostarczone przez właściciela mogą być bazą wektoryzacji map; raster źródłowy poza gitem, wynik z jawną proweniencją i QA | Zaakceptowana |
+| [0032](0032-final-fantasy-plan-franczyza-mapy-wg-czesci-sagi.md) | Final Fantasy jako plan-franczyza; mapa per część sagi (klucz `plan/podmapa`), światy bez łączenia przestrzennego; Midgar T3 z referencji ReverendRyu | Zaakceptowana |
 
 Spójnością rejestru (numeracja, statusy, tabela) pilnuje
 `test/rejestr-adr.test.js`.

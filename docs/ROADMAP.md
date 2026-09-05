@@ -221,6 +221,16 @@ reużywalność oszczędza autorstwo, nie bajty. Skutek: w PR-11 wdrożono
 a mapy żyją jako osobne strony `dist/maps/<plan>.html` z surowymi
 podkładami `dist/maps/<plan>/<plik>` i ZIP-em całego drzewa.
 
+**PR-19 (2026-09-05, w toku) — Final Fantasy: plan-franczyza + Midgar + karta 275FIN:**
+czwarta karta (dostawa właściciela: `275FIN Aerith Rescue Mission`)
+wprowadza sagę Final Fantasy. Decyzje właściciela: jeden plan
+`final-fantasy` z mapą per część sagi (ADR 0032 — NIE kontynenty na
+jednej mapie, NIE osobne plany per świat); mapa Midgaru T3 z płaskiego
+schematu MMTS (ReverendRyu) jako prywatnej referencji poza gitem,
+fallback T4. Kroki P1–P5 w
+`docs/plans/PLAN_2026-09-05-pr19-final-fantasy-midgar.md`; rozbudowa
+silnika o klucz rejestru `plan/podmapa`.
+
 ## Wątki otwarte (czekają na decyzję właściciela)
 
 > **Zamknięte decyzją właściciela 2026-09-05 — NIE wracać do nich:**
