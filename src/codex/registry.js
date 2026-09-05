@@ -118,7 +118,10 @@ export function walidujStrone(strona, ctx) {
   if (strona.typ === 'plan') {
     if (!TYPY_IP.includes(strona.typIP)) p.push(`${gdzie}: typIP "${strona.typIP}" poza ${TYPY_IP.join('/')}`);
     if (strona.mapa !== undefined && strona.mapa !== null && strona.mapa !== 'pending') {
-      if (strona.mapa !== strona.slug) p.push(`${gdzie}: mapa "${strona.mapa}" musi równać się slugowi planu albo "pending"`);
+      // ADR 0032: plan-franczyza może wskazać podmapę `<slug>/<podmapa>`
+      if (strona.mapa !== strona.slug && !String(strona.mapa).startsWith(`${strona.slug}/`)) {
+        p.push(`${gdzie}: mapa "${strona.mapa}" musi równać się slugowi planu, podmapie "<slug>/…" albo "pending"`);
+      }
     }
   }
 

@@ -31,7 +31,7 @@ układu miasta; wzorzec pseudo-3D (VGCartography) właściciel odrzucił.
 ## Decyzja
 
 1. **Plan-franczyza:** w Kodeksie istnieje jeden plan `final-fantasy`
-   (tytuł „Final Fantasy”, `typIP: final-fantasy`) obejmujący całą sagę.
+   (tytuł „Final Fantasy”, `typIP: zewnetrzne`) obejmujący całą sagę.
    Poszczególne światy gier NIE są osobnymi planami — mają **osobne mapy**
    wewnątrz tego planu (pierwsza: `midgar`).
 2. **Inkrementalne mapy części:** mapa danej części sagi (miasto/region/
