@@ -64,6 +64,102 @@
    "typ": "linia",
    "pozycja_zrodlo": "kanon (Fandom: Midgar otoczone murem z bramami)",
    "notka": "pierścień obronny miasta"
+  },
+  {
+   "nazwa": "Seventh Heaven",
+   "x": 0.2186,
+   "y": 0.3375,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (Fandom: bar Tify i baza Avalanche w slumsach sektora 7)",
+   "notka": "slumsy sektora 7"
+  },
+  {
+   "nazwa": "Kościół Aerith",
+   "x": 0.4159,
+   "y": 0.8139,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (Fandom: kościół z kwiatami w slumsach sektora 5)",
+   "notka": "zielony marker — jedyne miejsce w Midgarze, gdzie rosną kwiaty"
+  },
+  {
+   "nazwa": "Dom Aerith",
+   "x": 0.3375,
+   "y": 0.7814,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (Fandom: dom Aerith i mamy Gainsborough w slumsach sektora 5)",
+   "notka": "slumsy sektora 5"
+  },
+  {
+   "nazwa": "Loveless Avenue",
+   "x": 0.3541,
+   "y": 0.1478,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (Fandom/Crisis Core: aleja w sektorze 8, miejsce spotkań Zacka i Aerith)",
+   "notka": "śródmieście sektora 8"
+  },
+  {
+   "nazwa": "Reaktor Mako 1",
+   "x": 0.6531,
+   "y": 0.1304,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (FFVII: pierwsza misja Avalanche — wysadzenie reaktora 1)",
+   "notka": "krawędź talerza sektora 1"
+  },
+  {
+   "nazwa": "Reaktor Mako 5",
+   "x": 0.3469,
+   "y": 0.8696,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (FFVII: druga misja Avalanche — reaktor 5)",
+   "notka": "krawędź talerza sektora 5"
+  },
+  {
+   "nazwa": "Reaktor Mako 2",
+   "x": 0.8696,
+   "y": 0.3469,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (FFVII: osiem reaktorów mako, po jednym na sektor)",
+   "notka": "krawędź talerza sektora 2"
+  },
+  {
+   "nazwa": "Reaktor Mako 3",
+   "x": 0.8696,
+   "y": 0.6531,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (FFVII: osiem reaktorów mako, po jednym na sektor)",
+   "notka": "krawędź talerza sektora 3"
+  },
+  {
+   "nazwa": "Reaktor Mako 4",
+   "x": 0.6531,
+   "y": 0.8696,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (FFVII: osiem reaktorów mako, po jednym na sektor)",
+   "notka": "krawędź talerza sektora 4"
+  },
+  {
+   "nazwa": "Reaktor Mako 6",
+   "x": 0.1304,
+   "y": 0.6531,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (FFVII: osiem reaktorów mako, po jednym na sektor)",
+   "notka": "krawędź talerza sektora 6"
+  },
+  {
+   "nazwa": "Reaktor Mako 7",
+   "x": 0.1304,
+   "y": 0.3469,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (FFVII: osiem reaktorów mako, po jednym na sektor)",
+   "notka": "krawędź talerza sektora 7"
+  },
+  {
+   "nazwa": "Reaktor Mako 8",
+   "x": 0.3469,
+   "y": 0.1304,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (FFVII: osiem reaktorów mako, po jednym na sektor)",
+   "notka": "krawędź talerza sektora 8"
   }
  ],
  "pinezki": [

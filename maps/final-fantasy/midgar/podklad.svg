@@ -8,6 +8,11 @@
 <rect x="0" y="0" width="1600" height="1600" fill="#ececec"/>
 <!-- === MIASTO (wnętrze muru) === -->
 <circle cx="800" cy="800" r="690" fill="#ffffff" stroke="none"/>
+<!-- === BIOMY SEKTORÓW (naprzemienne kliny talerza) === -->
+<path d="M 800,800 L 800,160 A 640 640 0 0 1 1252.6,347.4 Z" fill="#f7f7f7" stroke="none"/>
+<path d="M 800,800 L 1440,800 A 640 640 0 0 1 1252.6,1252.6 Z" fill="#f7f7f7" stroke="none"/>
+<path d="M 800,800 L 800,1440 A 640 640 0 0 1 347.4,1252.6 Z" fill="#f7f7f7" stroke="none"/>
+<path d="M 800,800 L 160,800 A 640 640 0 0 1 347.4,347.4 Z" fill="#f7f7f7" stroke="none"/>
 <!-- === MUR ZEWNĘTRZNY === -->
 <circle cx="800" cy="800" r="690" fill="none" stroke="#1c1c1c" stroke-width="6"/>
 <!-- === TALERZE (krawędź płyt sektorowych) === -->
@@ -39,6 +44,22 @@
 <!-- === HUB: BUDYNEK SHINRA (sektor 0) === -->
 <circle cx="800" cy="800" r="18" fill="#1c1c1c"/>
 <rect x="792" y="742" width="16" height="40" fill="#1c1c1c"/>
+<!-- === REAKTORY MAKO (pierścień przy krawędzi talerza, po jednym na sektor) === -->
+<g fill="#1c1c1c">
+<circle cx="1044.9" cy="208.7" r="5"/>
+<circle cx="1391.3" cy="555.1" r="5"/>
+<circle cx="1391.3" cy="1044.9" r="5"/>
+<circle cx="1044.9" cy="1391.3" r="5"/>
+<circle cx="555.1" cy="1391.3" r="5"/>
+<circle cx="208.7" cy="1044.9" r="5"/>
+<circle cx="208.7" cy="555.1" r="5"/>
+<circle cx="555.1" cy="208.7" r="5"/>
+</g>
+<!-- === POI: SLUMSY I MIASTO === -->
+<circle cx="349.7" cy="540" r="6" fill="#1c1c1c"/>
+<circle cx="665.4" cy="1302.3" r="7" fill="#1e4d2b"/>
+<circle cx="540" cy="1250.3" r="6" fill="#1c1c1c"/>
+<circle cx="566.6" cy="236.4" r="6" fill="#1c1c1c"/>
 <!-- === NUMERY SEKTORÓW (dekoracyjne) === -->
 <g fill="#b5b5b5" font-size="60" text-anchor="middle" paint-order="stroke" stroke="#ffffff" stroke-width="8">
 <text x="983.7" y="377.5">1</text>
@@ -59,6 +80,12 @@
 <text x="264.1" y="1060" font-size="24">Wall Market</text>
 <text x="262.6" y="262.6" font-size="24">Cmentarzysko Pociągów</text>
 <text x="1316.2" y="1316.2" font-size="22">Mur Zewnętrzny</text>
+<text x="349.7" y="516" font-size="24">Seventh Heaven</text>
+<text x="688" y="1310" font-size="24" text-anchor="start">Kościół Aerith</text>
+<text x="516" y="1256" font-size="24" text-anchor="end">Dom Aerith</text>
+<text x="532" y="212" font-size="24" text-anchor="end">Loveless Avenue</text>
+<text x="1044.9" y="184" font-size="22">Reaktor Mako 1</text>
+<text x="585" y="1400" font-size="22" text-anchor="start">Reaktor Mako 5</text>
 </g>
 <text x="1420" y="140" font-size="26" fill="#9f9f9f" text-anchor="middle" paint-order="stroke" stroke="#ffffff" stroke-width="6">Pustkowie</text>
 <text x="70" y="100" font-size="56" fill="#1c1c1c">MIDGAR</text>

@@ -93,7 +93,11 @@ Midgaru. Pewność pełna: cała scena dzieje się w wieży (szyb schodowy,
 piętra, laboratorium), a kotwica „Budynek Shinra” istnieje w
 `maps/final-fantasy/midgar/map.json`. Fabuła i kanon gry wskazują
 to samo miejsce; slumsy Sektora 7 (start Avalanche) i Sektora 5
-(Aerith) leżą na tej samej mapie jako kotwice kontekstu.
+(Aerith) leżą na tej samej mapie jako kotwice kontekstu. Mapa niesie
+też szerszy kontekst misji: Seventh Heaven (bara Avalanche), kościół
+i dom Aerith, Loveless Avenue w Sektorze 8 oraz pierścień ośmiu
+reaktorów mako przy krawędzi talerza — cel wcześniejszych i późniejszych
+operacji Avalanche.
 
 ## Mechanika jako Opowieść
 

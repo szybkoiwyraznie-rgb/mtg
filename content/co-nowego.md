@@ -1,3 +1,16 @@
+## 2026-09-05 20:51 — plany wielomapowe systemowo + bogatszy Midgar
+
+Feedback właściciela po obejrzeniu preview: strona planu Final Fantasy
+miała tylko „Otwórz mapę planu”, a okruszek z podmapy prowadził do
+nieistniejącego `#/plan/final-fantasy/midgar`. Teraz: strona planu
+z podmapami pokazuje przycisk per podmapa („Otwórz mapę: Midgar
+(Final Fantasy VII)”), okruszki z podmapy wracają do planu, a trasa
+`#/plan/<plan>/<podmapa>` jest aliasem mapy (stare linki nie dają 404).
+Mapa Midgaru wzbogacona o kanoniczne POI i biomy: naprzemienne kliny
+sektorów, pierścień ośmiu reaktorów mako przy krawędzi talerza,
+Seventh Heaven, kościół Aerith (zielony marker — kwiaty), dom Aerith,
+Loveless Avenue; łącznie 18 kotwic. Testy 104/104, map-audit 0.
+
 ## 2026-09-05 20:09 — korekta: imgId 275FIN wraca z dostawy (to numer kolekcji, nie collector Scryfall)
 
 Feedback właściciela: `275FIN` to numer z jego kolekcji — klucz do
