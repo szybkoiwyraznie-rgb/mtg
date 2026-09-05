@@ -12,9 +12,12 @@
    z mapą per część sagi (NIE kontynenty, NIE plany per gra) → **ADR
    0032**; Midgar T3 z płaskiego schematu MMTS (ReverendRyu,
    CC BY-NC-ND 3.0, raster poza gitem), fallback T4 niepotrzebny.
-2. **Rozjazd numeracji:** 275FIN wg Scryfall = Clive’s Hideaway;
-   Aerith Rescue Mission = **FIN/5**. Snapshot z metadaną `source`
-   dokumentującą rozjazd; nazwa i fabuła jednoznaczne.
+2. **Numeracja (doprecyzowane po feedbacku właściciela):** `imgId 275FIN`
+   to numer kolekcji właściciela — klucz prywatnych torów FOT/KON
+   (ADR 0008), element Karty Katalogowej; collector_number Scryfall = 5
+   to osobny system (wyłącznie infoboks). Sesja początkowo błędnie
+   „skorygowała” imgId na 5FIN (275FIN wg Scryfall = Clive’s Hideaway) —
+   wycofane w P6, lekcja L8.
 3. **Silnik (P2):** klucz rejestru `plan/podmapa` — content-loader,
    build (strony `maps/<plan>/<podmapa>.html`, względne URL-e, ZIP),
    map-audit (dwa poziomy), router (parametr złożony), render-card/

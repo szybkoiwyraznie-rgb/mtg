@@ -1,5 +1,5 @@
 ---
-imgId: 5FIN
+imgId: 275FIN
 nazwa: Aerith Rescue Mission
 wydanie: FIN
 plan: final-fantasy

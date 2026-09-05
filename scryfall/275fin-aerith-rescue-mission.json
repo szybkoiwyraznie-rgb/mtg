@@ -76,7 +76,8 @@
     "eur_foil": "0.13",
     "tix": "0.03"
   },
-  "source": "https://api.scryfall.com/cards/search?q=%21%22Aerith+Rescue+Mission%22&unique=prints (dostawa właściciela wskazywała numer 275FIN; collector_number wg Scryfall = 5 — 275FIN to Clive's Hideaway; nazwa i fabuła jednoznaczne)",
+  "source": "https://api.scryfall.com/cards/search?q=%21%22Aerith+Rescue+Mission%22&unique=prints",
   "pobrano": "2026-09-05",
-  "slug": "5fin-aerith-rescue-mission"
+  "slug": "275fin-aerith-rescue-mission",
+  "notka_numery": "imgId 275FIN = numer kolekcji właściciela (klucz torów FOT/KON na prywatnym dysku, ADR 0008); collector_number Scryfall = 5 — to dwa niezależne systemy numeracji, nie rozjazd"
 }

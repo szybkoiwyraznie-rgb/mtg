@@ -1,3 +1,15 @@
+## 2026-09-05 20:09 — korekta: imgId 275FIN wraca z dostawy (to numer kolekcji, nie collector Scryfall)
+
+Feedback właściciela: `275FIN` to numer z jego kolekcji — klucz do
+prywatnych ilustracji `<id>FOT.png`/`<id>KON.png` (tory FOT/KON,
+ADR 0008), a odwołania do tych plików są elementem Karty Katalogowej.
+Sesja błędnie „skorygowała” imgId do collector number Scryfall (5FIN);
+wycofane: slug i wpisy znów `275fin-aerith-rescue-mission` /
+`imgId: 275FIN`, pinezka i wikilinki zaktualizowane, w snapshotcie
+`notka_numery` o dwóch niezależnych systemach numeracji. Lekcja L8:
+imgId wyłącznie z dostawy właściciela, Scryfall nie koryguje numerów
+kolekcji.
+
 ## 2026-09-05 19:50 — Final Fantasy w Kodeksie: plan-franczyza (ADR 0032), mapa Midgaru (T3), karta 5FIN
 
 Dostawa właściciela: **Aerith Rescue Mission** (scena ratunku Aerith
@@ -9,9 +21,9 @@ Silnik dostał klucz rejestru `plan/podmapa` (strony map, router,
 pinezki, ZIP, audit); Midgar narysowany w stylu atlasowym (8 sektorów,
 hub z budynkiem Shinra, pierścienie MMTS, mur, pustkowie) z kotwicami
 kanonicznymi; karta z 9 sekcjami i pinezką `dokladna` na budynku
-Shinra. Uwaga porządkowa: numer z dostawy „275FIN” to wg Scryfall
-Clive’s Hideaway — karta Aerith ma collector number **5** (5FIN);
-rozjazd udokumentowany w snapshotcie. Werdykty: 104/104 testów,
+Shinra. `imgId 275FIN` = numer kolekcji właściciela (tory FOT/KON),
+collector number Scryfall = 5 — dwa systemy (doprecyzowane wpisem
+20:09 po feedbackzie). Werdykty: 104/104 testów,
 build zielony, map-audit 0, wiki-stats 100% (8/8).
 
 ## 2026-09-05 18:25 — porządki w kolejce: trzy „otwarte wątki" zamknięte i skasowane

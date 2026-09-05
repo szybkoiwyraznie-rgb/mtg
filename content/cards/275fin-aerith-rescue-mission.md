@@ -1,8 +1,8 @@
 ---
 typ: karta
-slug: 5fin-aerith-rescue-mission
+slug: 275fin-aerith-rescue-mission
 nazwa: Aerith Rescue Mission
-imgId: 5FIN
+imgId: 275FIN
 wydanie: FIN
 plan: final-fantasy
 kolory: [W]
@@ -64,7 +64,8 @@ rzecz, którą trzeba zrobić razem.
 
 ## Flavor Text
 
-Posiadany wydruk (FIN/5) **nie ma flavor textu** — i to też jest
+Karta z kolekcji właściciela (275FIN; FIN/5 wg Scryfall) **nie ma
+flavor textu** — i to też jest
 wymowne: scena nie potrzebuje cytatu, bo cały jej ciężar niesie obraz
 schodów, na których drużyna pcha siebie nawzajem w górę. Cisza
 flavoru zostawia miejsce na fabułę dostawy: „w Midgarze sama Shinra
@@ -86,7 +87,7 @@ są zgodne z oryginalną sekwencją gry.
 
 ## Na Mapie
 
-Pinezka **dokładna**: `#/mapa/final-fantasy/midgar?pin=5fin-aerith-rescue-mission`
+Pinezka **dokładna**: `#/mapa/final-fantasy/midgar?pin=275fin-aerith-rescue-mission`
 — **budynek Shinra**, hub sektora 0, geometryczny środek radialnego
 Midgaru. Pewność pełna: cała scena dzieje się w wieży (szyb schodowy,
 piętra, laboratorium), a kotwica „Budynek Shinra” istnieje w

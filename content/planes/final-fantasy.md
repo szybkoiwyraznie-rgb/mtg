@@ -22,7 +22,7 @@ Saga-antologia światów: od industrialnego Midgaru FFVII (mako, Shinra,
 Avalanche) po Spirę i Ivalice. Wspólny mianownik — bohaterowie
 i drużyny, które idą razem; w Kodeksie każda część sagi dostaje własną
 mapę, gdy tylko pojawi się jej karta (pierwsza:
-[[5fin-aerith-rescue-mission|Aerith Rescue Mission]]).
+[[275fin-aerith-rescue-mission|Aerith Rescue Mission]]).
 
 ## Pierwsza podmapa: Midgar (FFVII)
 

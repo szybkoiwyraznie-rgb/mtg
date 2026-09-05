@@ -80,6 +80,8 @@ Wyzwalacz: jawna dostawa właściciela (ADR 0003/0011) — czwarta karta:
 
 ## Źródła
 
-- Scryfall (snapshot 275FIN): https://scryfall.com/card/FIN/275/aerith-rescue-mission
+- Scryfall (dane wydruku; collector_number 5 — imgId 275FIN to numer
+  kolekcji właściciela, patrz L8):
+  https://scryfall.com/card/fin/5/aerith-rescue-mission
 - ReverendRyu MMTS (referencja T3): jak wyżej.
 - Fandom, hasło Midgar: jak wyżej.
