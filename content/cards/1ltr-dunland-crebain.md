@@ -49,7 +49,7 @@ w informację: kto rozpalił ogień, kto idzie otwartą drogą, kto nie zdąży�
 zejść z grani. Strach przed nimi nie wynika z dzioba ani pazurów, lecz z
 pytania, komu właśnie donoszą.
 
-Fabuła dostawy właściciela umieszcza pod ich lotem dwóch **Uruk-hai Białej
+Fabuła właściciela umieszcza pod ich lotem dwóch **Uruk-hai Białej
 Ręki** i cichą armię formującą się w wąwozie. To scena kolekcji, nie nowy
 epizod dopisany Tolkienowi, ale dobrze rozumie kanon: ptaki są sygnałem,
 a siła zbrojna rusza dopiero wtedy, gdy oczy z nieba potwierdzą drogę.
@@ -96,7 +96,7 @@ zastosowana bliżej dunlandzkiej ojcowizny stada.
 Pinezka wskazuje **Dunland** w [[srodziemie|Śródziemiu]] — region między
 Isenem, Górami Mglistymi i zachodnimi rubieżami Rohanu. Poziom pewności:
 **region**. Kanon daje ojcowiznę ptaków i epizod ich zwiadowczego użycia;
-Fabuła dostawy dopowiada urwisko oraz wąwóz zborny armii, ale nie nazywa
+Fabuła dopowiada urwisko oraz wąwóz zborny armii, ale nie nazywa
 konkretnego punktu na mapie.
 
 Pinezka: `#/mapa/srodziemie?pin=1ltr-dunland-crebain`.
@@ -121,7 +121,7 @@ pierwszą fazę bitwy. Wystarczy, że wskaże cel.
 
 ## Źródła
 
-- Fabuła dostawy właściciela (2026-09-02) — urwisko w Dunlandzie,
+- Fabuła właściciela (2026-09-02) — urwisko w Dunlandzie,
   Uruk-hai Białej Ręki, armia Sarumana w wąwozie i pikujący crebain jako
   sygnał.
 - Scryfall, *Dunland Crebain* — typ, tekst Oracle i informacja o braku

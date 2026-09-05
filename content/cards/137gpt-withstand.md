@@ -99,7 +99,7 @@ między światami. Praca transpozycyjna polega tutaj na zawężeniu sceny:
 z ogólnej borosijskiej doktryny do konkretnego bruku Dziesiątego Dystryktu,
 w okolicę, gdzie obecność Legionu jest najgęstsza i najbardziej naturalna.
 
-Fabuła dostawy właściciela dopowiada materializację: ciężka stalowa zbroja,
+Fabuła właściciela dopowiada materializację: ciężka stalowa zbroja,
 złote okucia, wieżowa tarcza z płonącym słońcem, żółto-pomarańczowa aura
 ognia i złote runy na brzegu tarczy. To nadal nie jest nowy kanon Ravnicy,
 lecz precyzyjna scena kolekcji: jeden żołnierz Boros na ravnickim bruku,
@@ -137,7 +137,7 @@ tarczę, może wykonać następny ruch.
 
 ## Źródła
 
-- Fabuła dostawy właściciela (2026-09-02) — ravnicki bruk, żołnierz Boros,
+- Fabuła właściciela (2026-09-02) — ravnicki bruk, żołnierz Boros,
   zbroja ze złotymi okuciami, wieżowa tarcza ze znakiem płonącego słońca,
   aura ognia, runy, dym i iskry.
 - Scryfall, *Withstand* — tekst Oracle i flavor Alovneka:

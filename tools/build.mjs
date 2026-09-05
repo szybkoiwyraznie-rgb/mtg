@@ -309,9 +309,14 @@ export async function zbudujPakiet({ root = ROOT, katalog } = {}) {
   await zbuduj({ root, out: celGlowny });
   fs.copyFileSync(celGlowny, path.join(katalog, 'index.html'));
 
+  // ADR 0028 (rejestr): mapy idą przez <iframe> (maps/<slug>.html), więc
+  // artefakt otwiera się zawsze jako index.html — w archiwum ZIP wystarczy
+  // JEDEN plik kodeksu (wcześniej pakowaliśmy dwie identyczne kopie:
+  // index.html + mtg-lore-codex.html, bez różnicy w treści). Plik
+  // mtg-lore-codex.html na dysku/Pages zostaje (stabilny URL linku
+  // „Pobierz ZIP"), ale do ZIP trafia już tylko index.html.
   const plikiZip = [
     { path: 'index.html', data: fs.readFileSync(celGlowny) },
-    { path: 'mtg-lore-codex.html', data: fs.readFileSync(celGlowny) },
   ];
   const katalogMap = path.join(katalog, 'maps');
   if (fs.existsSync(katalogMap)) {
@@ -320,6 +325,11 @@ export async function zbudujPakiet({ root = ROOT, katalog } = {}) {
       plikiZip.push({ path: `maps/${rel}`, data: fs.readFileSync(f) });
     }
   }
+  // UWAGA: ilustracje FOT/KON właściciela NIE trafiają do ZIP (prywatny
+  // zasób ~10 GB, gitignorowany, ADR 0008). Wypakowany index.html sonduje
+  // względne ./img/<id>FOT|KON.png obok siebie (np. c:\mtg\img\) — gdy
+  // katalog istnieje, sloty się pokazują; gdy nie (Pages), cicho znikają.
+
   const zip = napiszZip(plikiZip);
   const celZip = path.join(katalog, 'mtg-lore-codex.zip');
   fs.writeFileSync(celZip, zip);

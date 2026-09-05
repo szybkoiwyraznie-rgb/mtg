@@ -1,3 +1,26 @@
+## 2026-09-05 09:30 — codex: pakiet offline (ZIP), ilustracje FOT/KON z dysku, termin „Fabuła"
+
+- **Fabuła, bez dopiska „dostawy"** (decyzja właściciela 2026-09-05):
+  w widocznej treści kart usunięto „Fabuła dostawy" — brzmiało jak
+  „palety w sklepie na zapleczu". Zostało samo „Fabuła" (np. „Fabuła
+  właściciela dopowiada…"). Dotyczy 3 kart (137GPT, 1LTR, 2BFZ);
+  zaktualizowano test UI-smoke. Mechaniczny format dostawy i archiwum
+  pozostają bez zmian.
+- **ZIP bez duplikatu HTML:** po przejściu na mapy w `<iframe>`
+  (ADR 0028) artefakt otwiera się zawsze jako `index.html` — w
+  archiwum pobieranym ze stopki nie pakujemy już drugiej, identycznej
+  kopii `mtg-lore-codex.html` (były dwa pliki tej samej wielkości).
+  Plik `mtg-lore-codex.html` na Pages zostaje (stabilny adres linku).
+- **Ilustracje FOT/KON z lokalnego `img/` (ADR 0008/0017):** wypakowany
+  z ZIP kodeks czyta panoramy/bestiariusze z katalogu `img/` obok
+  `index.html` (np. `c:\mtg\index.html` + `c:\mtg\img\1FOT.png`).
+  Sonda obrazów próbowała tylko `./img/<pełny imgId>FOT.png`
+  (np. `1LTRFOT.png`), a pliki właściciela nazywają się numerem
+  materializacji (`1FOT.png`, `2KON.png`) — sloty cicho znikały.
+  Teraz sonda idzie po liście kandydatów: najpierw krótki wariant
+  (sam leading numer), potem pełny imgId. Pliki FOT/KON NIE trafiają do
+  ZIP ani do gita (prywatny zasób); na Pages sonda dalej cicho pada.
+
 ## 2026-09-03 22:10 — Ravnica: herby gildii i lokacje na PRAWDZIWEJ mapie (T2+/v3) + naprawa podkładu
 
 **Korekta ważna:** poprawny podkład Ravnicy to wektoryzacja fanowska

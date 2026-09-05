@@ -227,9 +227,11 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(!karta.includes('leykus'), 'karta: bez niekanonicznych porównań ("leykus")');
   assert.ok(!karta.includes('pierwszy mieszkaniec'), 'karta: bez meta-komentarzy o kolekcji (feedback B)');
   assert.ok(!karta.includes('zyskają własne hasła'), 'karta: bez opisu procesu link-miningu (feedback B)');
-  // ADR 0026/0030: Fabuła dostawy wraca jako kotwica osadzenia, ale
-  // widoczna treść karty pozostaje LORE-first, bez sekcji narracyjnej/procesowej.
-  assert.ok(karta.includes('Fabuła dostawy'), 'karta: Fabuła dostawy cytowana w treści/Źródłach (ADR 0026)');
+  // Fabuła to kotwica osadzenia właściciela (ADR 0026), ale w widocznej
+  // treści czytamy po prostu „Fabuła” — bez dopisku „dostawy”
+  // (decyzja właściciela 2026-09-05: „palety w sklepie na zapleczu”).
+  assert.ok(karta.includes('Fabuła'), 'karta: Fabuła cytowana w treści/Źródłach (ADR 0026)');
+  assert.ok(!karta.includes('Fabuła dostawy'), 'karta: termin „Fabuła dostawy” zastąpiony samym „Fabuła” (decyzja właściciela 2026-09-05)');
   assert.ok(karta.includes('<h2>Kronika Lore</h2>'), 'karta: brak otwarcia LORE-first (ADR 0030)');
   assert.ok(!karta.includes('Narracja Koleksji') && !karta.includes('Narracja Kolekcji'), 'karta: sekcja narracji zniesiona (ADR 0011)');
   assert.ok(!karta.includes('perspektywy żabiej'), 'karta: treść promptu nie może się pojawiać (ADR 0011)');
