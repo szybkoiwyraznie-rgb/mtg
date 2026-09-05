@@ -7,7 +7,7 @@
   zaktualizowano test UI-smoke. Mechaniczny format dostawy i archiwum
   pozostają bez zmian.
 - **ZIP bez duplikatu HTML:** po przejściu na mapy w `<iframe>`
-  (ADR 0028) artefakt otwiera się zawsze jako `index.html` — w
+  (ADR 0027) artefakt otwiera się zawsze jako `index.html` — w
   archiwum pobieranym ze stopki nie pakujemy już drugiej, identycznej
   kopii `mtg-lore-codex.html` (były dwa pliki tej samej wielkości).
   Plik `mtg-lore-codex.html` na Pages zostaje (stabilny adres linku).

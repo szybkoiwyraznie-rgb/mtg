@@ -309,7 +309,7 @@ export async function zbudujPakiet({ root = ROOT, katalog } = {}) {
   await zbuduj({ root, out: celGlowny });
   fs.copyFileSync(celGlowny, path.join(katalog, 'index.html'));
 
-  // ADR 0028 (rejestr): mapy idą przez <iframe> (maps/<slug>.html), więc
+  // ADR 0027 (rejestr): mapy idą przez <iframe> (maps/<slug>.html), więc
   // artefakt otwiera się zawsze jako index.html — w archiwum ZIP wystarczy
   // JEDEN plik kodeksu (wcześniej pakowaliśmy dwie identyczne kopie:
   // index.html + mtg-lore-codex.html, bez różnicy w treści). Plik
