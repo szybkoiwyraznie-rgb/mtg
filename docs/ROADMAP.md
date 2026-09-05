@@ -32,9 +32,9 @@ PR-4: badge pinezki ukryty do najechania (hover/focus) oraz **warstwa
 karty** — kliknięcie pinezki otwiera Kartę Katalogową na zmaksymalizowanej
 warstwie nad mapą, zamykanej ✕/tłem/Esc z powrotem do mapy w tym samym
 stanie zoomu (progressive enhancement: bez JS pinezka jest zwykłym
-linkiem). Zostaje: **regiony/obwódki haseł geograficznych** (wymagają
-istnienia haseł — przed osiągnięciem progu ≥2 kart), dalszy rozwój po
-dostawach kolejnych kart.
+linkiem). Regiony/obwódki haseł geograficznych NIE są zadaniem (wątek
+zamknięty decyzją właściciela 2026-09-05); dalszy rozwój po dostawach
+kolejnych kart.
 
 ## K5 — Pętla Jakości operacyjna — **domknięte (PR-3, 2026-08-31)**
 
@@ -83,8 +83,8 @@ ręcznie w języku mapy (sylwetka w kole), użyty na Fort Keff + stone
 havens Akoum (Grip/Slab Haven, Ghostwatch); `wodospad` istniał od PR-10;
 latarnia/wrak ODRZUCONE (żaden kanoniczny nazwany obiekt ich nie
 potrzebuje; adopcja symboli Azgaar odrzucona — styl fasetowany nie pasuje
-do atlasu). Z E5 zostają tylko „obwódki haseł" — bez definicji zakresu;
-wymaga doprecyzowania z właścicielem, zanim powstanie kod.
+do atlasu). E5 domknięte w całości: „obwódki haseł" odrzucone decyzją
+właściciela 2026-09-05 (nie są zadaniem).
 
 **E-geo (2026-09-01) — audyt i przebudowa geografii CAŁEJ mapy Zendikaru**
 (zlecenie właściciela, pkt a/b/c uzupełniające PR-9; audyt:
@@ -223,14 +223,12 @@ podkładami `dist/maps/<plan>/<plik>` i ZIP-em całego drzewa.
 
 ## Wątki otwarte (czekają na decyzję właściciela)
 
-- **Globalna geometria Zendikaru:** kanon chce „małego morza" między
-  Akoum a Ondu (MTG Wiki: Akoum — „a small sea separates Akoum from
-  Ondu"; Ondu „only a short distance away from Akoum"), a na naszej
-  mapie to przeciwległe rogi (Ondu SW — zgodnie z kanonem kwadrantu,
-  Akoum NE). Pełna naprawa = przebudowa układu wszystkich kontynentów;
-  do decyzji właściciela, czy kiedyś ją robimy (PR-11, 2026-09-02).
-- **„Obwódki haseł"** z kolejki E5 (PR-9) — hasło bez definicji zakresu;
-  wymaga doprecyzowania z właścicielem, zanim powstanie kod.
+> **Zamknięte decyzją właściciela 2026-09-05 — NIE wracać do nich:**
+> globalna geometria Zendikaru (układ Akoum–Ondu), „obwódki haseł" (E5)
+> oraz rozszerzenia mapy Ravniki poza złoty standard a/b/c. Właściciel:
+> „ja tego nie wymyśliłem, nie chcę tych zadań". Wpisy skasowane;
+> ta notka istnieje tylko po to, żeby przyszłe sesje ich nie odtwarzały.
+
 - Grafiki dla Kart Haseł — czy, jakie, gdzie składowane (ADR 0008 zostawia
   slot; wymaga decyzji + ewentualnego ADR o storage).
 - Wzbogacenie mapy Śródziemia (T2, podkład mapome) o warstwy

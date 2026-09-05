@@ -516,11 +516,9 @@
   }
  ],
  "otwarte_na_kolejne_przejscia": [
-  "Parhelion II (epoka WotS) — świadomie pominięty (era pierwotnego bloku); ewentualny dodatek w warstwie epokowej",
   "Guildpact Square + Pillar of the Paruns + Guildmages' Forum — DODANE 2026-09-03 jako małe etykiety w gildyjnym rdzeniu (przy Tenth District Plaza / Chamber); kanon mtg.wiki Tenth District (decyzja właściciela; rozbieżność fandom Forum of Azor w P2 udokumentowana)",
   "Beacon Tower — DODANY 2026-09-03 (mały niebieski marker + etykieta w P2); uchylono wcześniejsze 'poza mapą do źródła epokowego' na prośbę właściciela",
-  "Gnat Alley — DODANA 2026-09-03 jako kropkowana trasa + szara etykieta w P6 (bieg przybliżony, źródło fanowskie jej nie pokazuje); uchylono wcześniejsze 'bez geometrii'",
-  "Undercity: pas w v3 istnieje jako geometria (warstwa b); pełny przekrój (poziomy, kanały P6, wejścia) — ewentualna osobna warstwa/scena"
+  "Gnat Alley — DODANA 2026-09-03 jako kropkowana trasa + szara etykieta w P6 (bieg przybliżony, źródło fanowskie jej nie pokazuje); uchylono wcześniejsze 'bez geometrii'"
  ],
  "silnik": "v3: podkład z wektoryzacji rastrowego źródła fanowskiego (skrypty pracy w workbenche, poza gitem — ADR 0031): marching squares (kontury), osie dróg (para najdalszych punktów + resampling), komponenty terenowe (maski luminancji b), etykiety (maska c−a + odczyt wizualny), markery (maska kolorów c). Wariant T2+ (podkład adoptowany, czysty SVG) — bez sceny mapforge/T4 (ADR 0031: kierunek jak Śródziemie); scena.json z odzyskanego WIP usunięta (niespójna z ADR 0023 i rzędu 36 MB) Herby 10 gildii (warstwa <g id=herby-gildii>, tools/mapforge/ravnica-v3-herby.py) oraz lokacje kanoniczne (warstwa <g id=lokacje-kanoniczne>, tools/mapforge/ravnica-v3-lokacje.py) doszyte do v3 jako odtwarzalne, idempotentne warstwy SVG.",
  "kalibracja": {

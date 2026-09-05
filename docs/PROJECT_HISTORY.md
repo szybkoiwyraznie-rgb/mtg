@@ -45,7 +45,14 @@
    krok 5 — wpis co-nowego 17:05 + ten handoff.
 5. **Proces:** PR #18 otwarty po commicie audytu i planu (reguła 1);
    commity S1–S7 pushowane na bieżąco (reguła 3); pełna historia gita
-   przywrócona lokalnie (`fetch --unshallow`).
+   przywrócona lokalnie (`fetch --unshallow`). W trakcie sesji workspace
+   zresetowany — odzysk bez strat wg ENVIRONMENT §2 (praca bezpieczna na
+   zdalnej gałęzi).
+6. **Feedback właściciela (18:25):** trzy „otwarte wątki" (geometria
+   Akoum–Ondu, obwódki haseł E5, rozszerzenia Ravniki poza złoty
+   standard) skasowane z ROADMAP/planu/handoffu/map.json — właściciel
+   ich nie zamawiał i nie chce; w ROADMAP notka „nie odtwarzać"
+   (commit S8).
 
 ## 2026-09-03 — sesja PR-14: audyt PR-13, Pętla Jakości Rawnicy, przygotowanie wektoryzacji v3
 

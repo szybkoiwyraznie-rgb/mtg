@@ -1,3 +1,11 @@
+## 2026-09-05 18:25 — porządki w kolejce: trzy „otwarte wątki" zamknięte i skasowane
+
+Decyzja właściciela: wątki „globalna geometria Zendikaru (Akoum–Ondu)",
+„obwódki haseł" (E5) i „rozszerzenia mapy Ravniki poza złoty standard
+a/b/c" nie są zadaniami — zostały skasowane z ROADMAP-y, planu sesji,
+handoffu i notek `map.json` Ravniki. W ROADMAP-ie zostaje tylko krótka
+notka „nie odtwarzać", żeby przyszłe sesje nie wracały do tematu.
+
 ## 2026-09-05 17:05 — sesja jakości: naprawa kompasu Ravniki, „Fabuła" w ADR, warsztat bez kolizji
 
 Sesja Pętli Jakości po audycie PR-17 — zmiany w bazie i narzędziach:

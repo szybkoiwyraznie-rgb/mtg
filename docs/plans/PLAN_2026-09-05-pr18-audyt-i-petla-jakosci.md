@@ -35,10 +35,9 @@ Każdy samodzielnie zielony krok (`npm test` + `npm run build` +
 4. **Pass mapowy** — po naprawach Z1/Z4/Z5: przegląd kompletności
    operacyjnej (pinezki: 3/3; mapy: 3 plany z kartami mają mapy;
    kotwice ravniki zweryfikowane z warstwą SVG przy audycie). Nowe POI:
-   Zendikar gęsty (43 POI), Ravnica T2+ = złoty standard a/b/c
-   (rozszerzenia tylko za decyzją właściciela — 5 kanonicznych już
-   dodane w PR-17). Wątki blokowane decyzjami właściciela zostają
-   w ROADMAP (geometria Akoum/Ondu, obwódki haseł).
+   Zendikar gęsty (43 POI), Ravnica T2+ = złoty standard a/b/c.
+   Wątki „Akoum/Ondu" i „obwódki haseł" zamknięte decyzją właściciela
+   2026-09-05 — usunięte z ROADMAP (nie są zadaniami).
 5. **Co nowego** — wpis sesji (format ADR 0029: `## RRRR-MM-DD HH:MM —
    tytuł`, Europe/Warsaw).
 
