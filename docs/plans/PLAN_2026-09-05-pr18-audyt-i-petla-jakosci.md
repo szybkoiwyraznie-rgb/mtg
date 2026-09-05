@@ -16,6 +16,7 @@ obowiązkowym audytem PR-17 (AGENTS.md §5) — wykonany:
 | Z5 | Kolizja etykiet demo „Wyspa Próbna" (oba motywy) | `maps/_warsztat/` |
 | Z6 | Nieaktualna notka „markery bez emblematów" | `maps/ravnica/mapa-analiza.md` |
 | Z7 | Literówki docstringów | `tools/mapforge/ravnica-v3-herby.py` |
+| Z8 | (dodane w trakcie) pozorna idempotentność skryptu herbów — usuwanie warstwy licznikiem głębokości + lekcja L7 | `tools/mapforge/ravnica-v3-herby.py` |
 
 Każdy samodzielnie zielony krok (`npm test` + `npm run build` +
 `map-audit`) = osobny commit, od razu push (reguła 3 sesji).

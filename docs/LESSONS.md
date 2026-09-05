@@ -116,3 +116,20 @@ idzie automatycznie przy każdym pushu do main (`on: push`); pierwszą
 publikację po włączeniu odpala re-run ostatniego failed runu lub scalenie
 PR.
 
+## L7 (2026-09-05) — non-greedy regex nie usuwa grup SVG z zagnieżdżonymi `<g>` — idempotentność skryptów warstw testuje się na zacommitowanym pliku
+
+**Objaw:** skrypt `ravnica-v3-herby.py` deklarował idempotentność, a po
+uruchomieniu na zacommitowanym podkładzie dokleił drugą kopię 9 glifów
+herbowych i zostawił wiszące `</g>` (plik przestałby być poprawnym XML,
+gdyby wynik zacommitować).
+
+**Przyczyna:** usuwanie warstwy przez
+`re.sub(r'\n<g id="…">.*?</g>\n', …, flags=re.S)` — non-greedy `.*?`
+kończy się na PIERWSZYM `</g>`, czyli na zamknięciu zagnieżdżonej
+podgrupy (`herb-gruul`), nie całej warstwy.
+
+**Reguła:** grupy z zagnieżdżonymi `<g>` usuwa się licznikiem głębokości
+(skanner `<g[\s>]` / `</g>`) albo parserem XML, nigdy single-`.*?`
+regexem. Idempotentność skryptów doszywających warstwy sprawdza się
+EMPIRYCZNIE: uruchomić na zacommitowanym pliku → `git diff` ma być
+pusty → dopiero wtedy commit (audyt PR-18, Z8).
