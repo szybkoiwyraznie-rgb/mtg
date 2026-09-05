@@ -7,6 +7,7 @@
  * innerHTML, querySelector(All) zwracające null/pustkę, hashchange, scrollTo.
  */
 import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { zbuduj } from '../tools/build.mjs';
@@ -327,6 +328,25 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(!karta3.includes('Cory') && !karta3.includes('nr 21/165'), 'karta 137GPT: nie może epatować procesem wydawniczym');
   assert.ok(karta3.indexOf('<h2>Na Mapie</h2>') < karta3.indexOf('<h2>Mechanika jako Opowieść</h2>'), 'karta 137GPT: mechanika ma być po mapie/transpozycji');
   assert.ok(karta3.indexOf('<h2>Mechanika jako Opowieść</h2>') < karta3.indexOf('<h2>Źródła</h2>'), 'karta 137GPT: mechanika ma stać przed źródłami');
+
+  // Z3 (audyt PR-18): zasady treści kart obowiązują KAŻDĄ kartę, nie tylko
+  // 1LTR/2BFZ — termin „Fabuła dostawy" (ADR 0026 doprecyzowanie) i odsyłacze
+  // do mechaniki Codexu / etykiety procesowe są zabronione w widocznej treści.
+  const katalogKart = fileURLToPath(new URL('../content/cards/', import.meta.url));
+  const slugiKart = fs.readdirSync(katalogKart)
+    .filter((f) => f.endsWith('.md') && f !== 'README.md')
+    .map((f) => f.replace(/\.md$/, ''));
+  assert.ok(slugiKart.length >= 5, 'oczekiwano ≥5 kart w content/cards');
+  for (const slug of slugiKart) {
+    shim.idz(`#/karta/${slug}`);
+    const html = shim.app.innerHTML;
+    assert.ok(!html.includes('Fabuła dostawy'),
+      `karta ${slug}: termin „Fabuła dostawy" zabroniony (ADR 0026) — ma być samo „Fabuła"`);
+    assert.ok(!html.includes('ADR'),
+      `karta ${slug}: treść nie może odsyłać do mechaniki Codexu (feedback B)`);
+    assert.ok(!html.includes('verbatim'),
+      `karta ${slug}: treść bez etykiet procesowych (feedback B)`);
+  }
 
   shim.idz('#/');
   assert.ok(shim.app.innerHTML.includes('Dunland Crebain'), 'home: brak ostatniej materializacji');
