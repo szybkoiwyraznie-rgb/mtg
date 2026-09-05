@@ -506,8 +506,14 @@ def main(argv):
     for a in argv:
         if a.startswith('--woda='):
             woda = {s.strip() for s in a.split('=', 1)[1].split(',') if s.strip()}
-    plany = args or sorted(p.parent.name for p in
-                           (ROOT / 'maps').glob('*/podklad.svg'))
+    if args:
+        plany = args
+    else:
+        # ADR 0032: podmapy części sagi żyją w maps/<plan>/<podmapa>/
+        sciezki = sorted((ROOT / 'maps').glob('*/podklad.svg')) + sorted(
+            (ROOT / 'maps').glob('*/*/podklad.svg'))
+        plany = sorted(
+            p.parent.relative_to(ROOT / 'maps').as_posix() for p in sciezki)
     problemy_calka = 0
     for plan in plany:
         print(f'=== {plan} ===')

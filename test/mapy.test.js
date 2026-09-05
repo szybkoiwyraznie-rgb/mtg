@@ -16,7 +16,8 @@ const mapy = wczytajMapy();
 const POZIOMY = ['dokladna', 'region', 'przyblizona'];
 
 test('każdy katalog maps/<plan> odpowiada stronie planu', () => {
-  const sieroty = [...mapy.keys()].filter((p) => !plany.has(p));
+  // ADR 0032: podmapa `<plan>/<podmapa>` wymaga strony planu `<plan>`
+  const sieroty = [...mapy.keys()].filter((p) => !plany.has(p.split('/')[0]));
   assert.deepEqual(sieroty, [], `Mapy bez strony planu: ${sieroty.join(', ')}`);
 });
 

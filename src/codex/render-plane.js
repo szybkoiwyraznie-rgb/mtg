@@ -34,7 +34,7 @@ export function renderPlan(slug) {
     </header>
 
     ${plan.mapa && plan.mapa !== 'pending'
-      ? `<p class="mapa-link"><a class="przycisk" href="#/mapa/${plan.slug}">🗺️ Otwórz mapę planu</a></p>`
+      ? `<p class="mapa-link"><a class="przycisk" href="#/mapa/${plan.mapa ?? plan.slug}">🗺️ Otwórz mapę planu</a></p>`
       : plan.mapa === 'pending'
         ? `<p class="meta mapa-pending">Mapa planu: w przygotowaniu.</p>`
         : ''}
