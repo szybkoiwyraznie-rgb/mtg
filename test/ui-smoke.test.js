@@ -121,6 +121,20 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   assert.ok(shim.app.innerHTML.includes('src="maps/zendikar.html"'), 'mapa Zendikaru: brak iframe');
   shim.idz('#/plan/zendikar');
   assert.ok(shim.app.innerHTML.includes('#/mapa/zendikar'), 'plan Zendikaru: brak linku do mapy');
+
+  // ADR 0032: plan wielomapowy — podmapy na stronie planu, okruszki do planu,
+  // alias #/plan/<plan>/<podmapa>
+  shim.idz('#/plan/final-fantasy');
+  const ff = shim.app.innerHTML;
+  assert.ok(ff.includes('#/mapa/final-fantasy/midgar'), 'plan FF: brak linku podmapy');
+  assert.ok(ff.includes('Otwórz mapę: Midgar (Final Fantasy VII)'), 'plan FF: brak przycisku podmapy z tytułem');
+  shim.idz('#/mapa/final-fantasy/midgar');
+  const ffm = shim.app.innerHTML;
+  assert.ok(ffm.includes('maps/final-fantasy/midgar.html'), 'podmapa Midgar: brak iframe');
+  assert.ok(ffm.includes('href="#/plan/final-fantasy"'), 'podmapa Midgar: okruszek nie wraca do planu');
+  shim.idz('#/plan/final-fantasy/midgar');
+  assert.ok(shim.app.innerHTML.includes('maps/final-fantasy/midgar.html'),
+    'trasa #/plan/<plan>/<podmapa> nie jest aliasem mapy');
   shim.przywroc();
 
   // ── Strona mapy Śródziemia (samowystarczalny HTML, T2 → <img>)

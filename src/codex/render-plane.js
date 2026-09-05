@@ -33,11 +33,26 @@ export function renderPlan(slug) {
       <p class="meta">${ETYKIETY_IP[plan.typIP] ?? plan.typIP}${plan.materializacja ? ` · w bazie od ${escapeHtml(plan.materializacja)}` : ''}</p>
     </header>
 
-    ${plan.mapa && plan.mapa !== 'pending'
-      ? `<p class="mapa-link"><a class="przycisk" href="#/mapa/${plan.mapa ?? plan.slug}">🗺️ Otwórz mapę planu</a></p>`
-      : plan.mapa === 'pending'
-        ? `<p class="meta mapa-pending">Mapa planu: w przygotowaniu.</p>`
-        : ''}
+    ${(() => {
+      // ADR 0032: plan-franczyza może mieć wiele podmap — przycisk per podmapa
+      const podmapy = Object.entries(dane.mapy ?? {})
+        .filter(([k]) => String(k).startsWith(`${slug}/`))
+        .map(([k, m]) => ({ klucz: k, tytul: m.tytul ?? k }))
+        .sort((a, b) => a.klucz.localeCompare(b.klucz));
+      const przycisk = (klucz, etykieta) =>
+        `<a class="przycisk" href="#/mapa/${klucz}">🗺️ ${escapeHtml(etykieta)}</a>`;
+      if (podmapy.length > 0) {
+        const plaska = plan.mapa && plan.mapa !== 'pending' && !String(plan.mapa).includes('/')
+          ? przycisk(plan.mapa, 'Otwórz mapę planu') : '';
+        return `<p class="mapa-link">${plaska}${podmapy
+          .map((p) => przycisk(p.klucz, `Otwórz mapę: ${p.tytul}`)).join('')}</p>`;
+      }
+      return plan.mapa && plan.mapa !== 'pending'
+        ? `<p class="mapa-link">${przycisk(plan.mapa, 'Otwórz mapę planu')}</p>`
+        : plan.mapa === 'pending'
+          ? `<p class="meta mapa-pending">Mapa planu: w przygotowaniu.</p>`
+          : '';
+    })()}
 
     ${plan.html ? `<div class="plan-opis">${plan.html}</div>` : ''}
 
