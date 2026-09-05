@@ -12,7 +12,7 @@ obowiązkowym audytem PR-17 (AGENTS.md §5) — wykonany:
 | Z1 | Kompas Ravniki: litery N/E/S/W z `y="undefined"` + zapora w map-audit na `undefined/NaN/null` w atrybutach numerycznych | `maps/ravnica/podklad.svg`, `tools/map-audit.py` |
 | Z2 | Doprecyzowanie ADR 0026 (termin „Fabuła", decyzja właściciela 2026-09-05) + rejestr | `docs/decisions/0026-*.md`, `docs/decisions/README.md` |
 | Z3 | Korekta numeracji ADR 0028 → 0027 (iframe map) | `content/co-nowego.md`, `tools/build.mjs` |
-| Z4 | Ujednolicenie modelu „na lądzie" map-audytu z OBB | `tools/map-audit.py` |
+| ~~Z4~~ | WYCOFANE (fałszywy alarm — modele spójne, patrz audyt) | — |
 | Z5 | Kolizja etykiet demo „Wyspa Próbna" (oba motywy) | `maps/_warsztat/` |
 | Z6 | Nieaktualna notka „markery bez emblematów" | `maps/ravnica/mapa-analiza.md` |
 | Z7 | Literówki docstringów | `tools/mapforge/ravnica-v3-herby.py` |

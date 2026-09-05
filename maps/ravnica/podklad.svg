@@ -111,10 +111,10 @@
 <g id="rosea" transform="translate(5930 4410)">
 <path d="M 37 15.3 L 190 0 L 37 -15.3 Z" fill="#2b2b2b"/><path d="M 15.3 37 L 77.8 77.8 L 37 15.3 Z" fill="#8a8a8a"/><path d="M -15.3 37 L 0 190 L 15.3 37 Z" fill="#2b2b2b"/><path d="M -37 15.3 L -77.8 77.8 L -15.3 37 Z" fill="#8a8a8a"/><path d="M -37 -15.3 L -190 0 L -37 15.3 Z" fill="#2b2b2b"/><path d="M -15.3 -37 L -77.8 -77.8 L -37 -15.3 Z" fill="#8a8a8a"/><path d="M 15.3 -37 L 0 -190 L -15.3 -37 Z" fill="#2b2b2b"/><path d="M 37 -15.3 L 77.8 -77.8 L 15.3 -37 Z" fill="#8a8a8a"/>
 <circle r="26" fill="#f2f2f2" stroke="#2b2b2b" stroke-width="5"/>
-<text x="0" y="undefined" font-size="64" text-anchor="middle" fill="#1c1c1c">N</text>
-<text x="235" y="undefined" font-size="64" text-anchor="middle" fill="#1c1c1c">E</text>
-<text x="0" y="undefined" font-size="64" text-anchor="middle" fill="#1c1c1c">S</text>
-<text x="-235" y="undefined" font-size="64" text-anchor="middle" fill="#1c1c1c">W</text>
+<text x="0" y="-235" font-size="64" text-anchor="middle" fill="#1c1c1c">N</text>
+<text x="235" y="0" font-size="64" text-anchor="middle" fill="#1c1c1c">E</text>
+<text x="0" y="235" font-size="64" text-anchor="middle" fill="#1c1c1c">S</text>
+<text x="-235" y="0" font-size="64" text-anchor="middle" fill="#1c1c1c">W</text>
 </g>
 <g id="lokacje-kanoniczne">
 <circle cx="5820" cy="3045" r="36.5" fill="rgb(45,188,255)" opacity="0.12"/><circle cx="5820" cy="3045" r="26.3" fill="none" stroke="rgb(45,188,255)" stroke-width="9.5"/><circle cx="5820" cy="3045" r="11" fill="rgb(45,188,255)"/>

@@ -442,6 +442,16 @@ def _obb_nachodza(a, b):
 
 def audytuj_podklad(mapa, nazwa, mjson, woda):
     problemy, info = [], []
+    # Zapora na „śmieciowe" wartości atrybutów (undefined/NaN/null): XML jest
+    # wtedy poprawny i audyt przechodzi, a przeglądarka rysuje wartość
+    # domyślną (np. 0). Regresja wykryta audytem PR-18: kompas „rosea"
+    # Ravniki z PR-15 miał 4× y="undefined" — litery N i S nakładały się
+    # w środku róży, E/W po bokach.
+    for el in mapa.root.iter():
+        for k, v in el.attrib.items():
+            if v in ('undefined', 'NaN', 'null'):
+                problemy.append(f'{nazwa}: NIEPRAWIDŁOWY ATRYBUT: '
+                                f'{el.tag.split("}")[-1]}[{k}={v!r}]')
     ety = mapa.etykiety()
     for txt, x, y, fs, rot in ety:
         if len(txt) < 2:                      # igła kompasu (N, S…)
