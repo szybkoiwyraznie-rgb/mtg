@@ -39,12 +39,14 @@ PROJECT_HISTORY; ROADMAP), lekcja L9, handoff. Sprawdzić:
 
 - [x] Lektura obowiązkowa (AGENTS.md §0) — komplet.
 - [x] Krok 0: integralność (npm test, build, map-audit, stats).
-- [ ] PR sesji otwarty (roadmapa w docs/plans/ — ten plik).
-- [ ] Audyt PR-20 → `docs/audits/AUDYT_2026-09-06-PR20.md` (+ ewentualna
-      kolejka napraw).
-- [ ] Kolejka napraw z audytu (jeśli powstanie) — każda jako osobny,
-      zielony commit.
-- [ ] Pętla Jakości:
+- [x] PR sesji otwarty (roadmapa w docs/plans/ — ten plik) — #21.
+- [x] Audyt PR-20 → `docs/audits/AUDYT_2026-09-06-PR20.md` (kolejka:
+      W1–W3, B1, B2).
+- [x] Kolejka napraw z audytu — osobne zielone commity: W1–W3 `e5f0d8b`,
+      B1 `2c09978`, B2 `b90d101`.
+- [x] Pętla Jakości (krok 2: Alara „Odłamy i ludy” `e8eb18c`; krok 3:
+      brak encji w ≥2 kartach — potwierdzone skryptem; krok 4: recenzja
+      wizualna + W1–W3 + B2):
   - krok 2 (pogłębianie): ranking słabości wg PETLA_JAKOSCI — w PR-20
     brak kandydatów (10/10 stron 8/8); zweryfikować ponownie po audycie;
   - krok 3 (link-mining): 5 kart w 5 planach — próg ≥2 kart nieosiągnięty
@@ -55,10 +57,10 @@ PROJECT_HISTORY; ROADMAP), lekcja L9, handoff. Sprawdzić:
     przez agenta), Zendikar, Ravnica, Midgar; wnioski → korekty sceny
     (tylko z uzasadnieniem w kanonie/ADR) lub zapis w audycie/backlogu.
     Map T2 (Śródziemie) nie ruszamy (decyzja właściciela 2026-09-01).
-- [ ] `docs/setup/ENVIRONMENT.md`: pomiar tej sesji — narzędzia
+- [x] `docs/setup/ENVIRONMENT.md` §1a (`5a958c3`): pomiar tej sesji — narzędzia
       rasteryzacji SVG w sandboxie (ImageMagick bez delegata rsvg; resvg-js
       przez npm poza repo działa) + fakt, że wizja bywa dostępna.
-- [ ] Domknięcie: co-nowego (wpis tej sesji, `## RRRR-MM-DD HH:MM — …`),
+- [x] Domknięcie: co-nowego (wpis tej sesji, `## RRRR-MM-DD HH:MM — …`),
       handoff, PROJECT_HISTORY, opis PR kumulatywny po każdym commicie (L9),
       `npm test` + `npm run build` zielone, push.
 

@@ -1,3 +1,31 @@
+## 2026-09-06 17:30 — PR-21: audyt PR-20 z pierwszą recenzją wizualną map + pogłębienie Alary
+
+Sesja domyślna (audyt poprzedniego scalonego PR + Pętla Jakości), po raz
+pierwszy z oglądem obrazów przez agenta:
+
+- **Audyt PR-20** (`docs/audits/AUDYT_2026-09-06-PR20.md`): naprawy A1–A4
+  poprawne (strona Alary 1:1 ze sceną v2), L9 zastosowana; **recenzja
+  wizualna** podkładów Alary, Zendikaru, Midgaru i Ravniki (raster poza
+  repo) — Alara v2 dobra co do topologii, ale trzy tytuły regionów leżały
+  na obiektach.
+- **Mapa Alary v3 (typografia):** tytuły **Jund**, **Grixis** i **Naya**
+  przesunięte na wolny ląd — dotąd „Jund” zakrywał fort Hellkite's Pass
+  i grzbiet, „Grixis” szlak i pasmo Kości, „Naya” wschodnie pasmo i rzekę.
+  Pozycje ze skanu geometrii i potwierdzone na wycinkach 4k.
+- **Weryfikator map** (`tools/map-audit.py`): nowa reguła **TYTUŁ NA
+  OBIEKCIE** (tytuł regionu nie może zakrywać ikony ani szczytu; las pod
+  napisem jest OK) — na starej Alarze łapie dokładnie te trzy usterki,
+  na pozostałych mapach 0 fałszywych alarmów; **map-audit wchodzi do
+  `npm test`** (`test/map-audit.test.js`).
+- **Pogłębienie LORE (krok 2):** plan **Alara** dostał sekcję **„Odłamy
+  i ludy”** — po akapicie na każdy shard: kasty i sigile Bantu, etherium
+  i Ethersworn Esper, vis i nekromancja Grixis, łańcuch pokarmowy Jundu,
+  gargantuany, elfy Cylian i nacatl Nai (mtg.wiki, URL w Źródłach).
+  Kolejka link-miningu Alary w backlogu czeka na drugą kartę planu.
+- **Dokumentacja:** wpis sesji PR-20 w PROJECT_HISTORY i ROADMAP;
+  ENVIRONMENT §1a (rasteryzacja i ogląd map); lekcja L10 (geometria nie
+  zastępuje oka — każdą mapę T3/T4 raz obejrzeć jako raster).
+
 ## 2026-09-06 15:50 — PR-20: audyt PR-19 + strona planu Alary do stanu mapy v2
 
 Sesja domyślna (audyt poprzedniego scalonego PR + kolejka napraw):
@@ -16,6 +44,7 @@ Sesja domyślna (audyt poprzedniego scalonego PR + kolejka napraw):
   (co-nowego 15:30), wpis w PROJECT_HISTORY o sesji PR-19, aktualizacja
   ROADMAP (PR-18/PR-19 scalone), lekcja L9 (opis PR aktualizowany
   kumulatywnie po każdym commicie).
+
 ## 2026-09-06 15:30 — PR-19: naprawy Z1–Z5 z audytu PR-18 + rewamp mapy Alary v2
 
 Sesja audytowa PR-19 domknęła zaległości z audytu PR-18 i poprawiła mapę
@@ -37,6 +66,7 @@ Alary po recenzji właściciela:
   **równoprawny region-węzeł** z nowym pseudo-biomem `wir` w mapforge,
   fraktalne linie brzegowe, ~28 kanonicznych POI; pinezka 305ARB
   zweryfikowana w środku wiru.
+
 ## 2026-09-05 22:15 — mapa Alary od nowa: T3 z referencji fanowskich
 
 Właściciel odrzucił radialną mapę Alary („to nie jest Midgar — to pięć
@@ -245,6 +275,7 @@ obsłużone):
   wektoryzacji jest opisana krok po kroku i czeka na pliki.
 - Drobiazgi: dwie literówki w dzienniku (wariantie, Blistercoils)
   i usunięty bezkanoniczny fragment z „Setting w pigułce”.
+
 ## 2026-09-03 09:36 — Karty Katalogowe przechodzą na LORE-first; Ravnica dostaje kierunek wektoryzacji fan-made
 
 Po feedbacku właściciela zmienia się standard kart: główna treść nie zaczyna

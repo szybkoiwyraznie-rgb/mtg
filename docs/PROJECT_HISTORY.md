@@ -4,6 +4,29 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-06 — sesja PR-21: audyt PR-20 z pierwszą recenzją wizualną map + Pętla Jakości
+
+Sesja `arena/01a0770f-mtg` (PR #21, otwarty). Tryb: „Kontynuuj zgodnie
+z AGENTS” — bez dostawy materializacji. **Pierwsza sesja z oglądem
+obrazów przez agenta** (rastry map przez resvg poza repo).
+
+1. **Audyt PR-20** (`docs/audits/AUDYT_2026-09-06-PR20.md`): A1–A4
+   poprawne i kompletne, L9 zastosowana; recenzja wizualna Alary,
+   Zendikaru, Midgaru, Ravniki — Alara v2 dobra co do topologii, ale
+   trzy tytuły regionów na obiektach (W1–W3); B1 brak wpisu PR-20
+   w PROJECT_HISTORY/ROADMAP; B2 luka `map-audit` (tytuł↔ikona).
+2. **Naprawy:** W1–W3 — tytuły Jund/Grixis/Naya przesunięte w
+   `scena.json` (e5f0d8b); B1 — wpisy PR-20 (2c09978); B2 — reguła
+   `TYTUŁ NA OBIEKCIE` w `tools/map-audit.py` + `test/map-audit.test.js`
+   (map-audit w `npm test`; b90d101).
+3. **Pętla Jakości:** krok 2 — `content/planes/alara.md` sekcja „Odłamy
+   i ludy” (mtg.wiki: Bant/Esper/Grixis/Jund/Naya; e8eb18c) + kolejka
+   link-miningu Alary w backlogu; krok 3 — brak encji w ≥2 kartach;
+   krok 4 — recenzja wizualna + W1–W3 + B2.
+4. **Dokumentacja trwała:** ENVIRONMENT §1a (rasteryzacja i ogląd map),
+   LESSONS L10 (geometria nie zastępuje oka), SKILL_MAPA_PLANU §10.
+   Handoff: `docs/setup/HANDOFF_2026-09-06-pr21.md`.
+
 ## 2026-09-06 — sesja PR-20: audyt PR-19 + kolejka napraw A1–A4 + lekcja L9
 
 Sesja `arena/01a076ea-mtg` (PR #20, squash `bbe6d34`, scalony 2026-09-06
