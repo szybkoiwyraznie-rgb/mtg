@@ -546,6 +546,28 @@ export function hedron(x, y, { skala = 1, opacity = 1 } = {}) {
     `</g>`;
 }
 
+/** Lacuna (Mirrodin, T4): kolisty SZYB w metalowej płycie — tunel do
+ *  pustego jądra planu, którym wystrzeliło słońce. Pierścień obrzeża
+ *  w kolorze kamienia, ciemniejące wnętrze (zejście w dół), krótkie
+ *  szczeble-nacięcia na obwodzie (magia grawitacyjna: po ścianach się
+ *  schodzi). Odróżnia się od `hedron` (zendikarski sześciokąt-monolit). */
+export function lacuna(x, y, { skala = 1 } = {}) {
+  const s = skala;
+  const r = 9 * s;
+  const gl = `${PAL.skalaCien}`;
+  const naciecia = [0, 1, 2, 3, 4, 5, 6, 7].map((k) => {
+    const a = (Math.PI / 4) * k + Math.PI / 8;
+    return `M ${rr(x + r * 0.62 * Math.cos(a))} ${rr(y + r * 0.62 * Math.sin(a))} ` +
+      `L ${rr(x + r * 0.92 * Math.cos(a))} ${rr(y + r * 0.92 * Math.sin(a))}`;
+  }).join(' ');
+  return `<g class="mf-lacuna" data-x="${rr(x)}" data-y="${rr(y)}">` +
+    `<circle cx="${rr(x)}" cy="${rr(y)}" r="${rr(r)}" fill="${PAL.kamien}" stroke="${gl}" stroke-width="${rr(1.8 * s)}"/>` +
+    `<circle cx="${rr(x)}" cy="${rr(y)}" r="${rr(r * 0.62)}" fill="${gl}" opacity="0.55"/>` +
+    `<circle cx="${rr(x)}" cy="${rr(y)}" r="${rr(r * 0.3)}" fill="${gl}"/>` +
+    `<path d="${naciecia}" stroke="${gl}" stroke-width="${rr(1.1 * s)}" opacity="0.7" stroke-linecap="round"/>` +
+    `</g>`;
+}
+
 /* ---------- etykiety ---------- */
 
 /** Etykieta z halo; `kat` obraca wokół punktu (deg, zgodnie z ruchem

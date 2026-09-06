@@ -92,20 +92,41 @@ Relacje przyjęte w scenie (źródło → konsekwencja):
   i skali — sfera bez biegunów; obwód w adnotacji) jest decyzją
   kartograficzną Kodeksu, nie kanonem.
 
-## Epoka (ADR 0033 §2)
+## Epoka (ADR 0033; decyzja właściciela 2026-09-06)
 
-Mapa przedstawia powierzchnię z ery *Mirrodin*–*Scars of Mirrodin*,
-**przed kompleacją**. Po *New Phyrexia* plan ma dziewięć sfer (Glorious
-Facade, Mirrex = dawna powierzchnia, Autonomous Furnace, Hunter Maze,
-Surgical Bay, Dross Pits, Fair Basilica, Mycosynth Gardens, Seedcore);
-Quicksilver Sea zostaje spuszczone do Surgical Bay, lasy przeniesione
-do Hunter Maze. Taka topologia nie mieści się na tej mapie — sceny
-z ery New Phyrexia/ONE wymagają osobnego podkładu (§2 ADR 0033).
+Jedna mapa powierzchni Mirrodinu obsługuje **całą historię planu od
+Argentum po wojnę o New Phyrexię** (*Mirrodin*, *Darksteel*, *Fifth
+Dawn*, *Scars of Mirrodin*, *Mirrodin Besieged*, *New Phyrexia*):
+Phyrexia zajmuje i psuje regiony (Dross rozlewa się na Tangle i Razor
+Fields, pod powierzchnią rośnie Furnace Layer), ale topologia pięciu
+regionów wokół Glimmervoid nie zmienia się — sceny z tej ery pinują się
+tutaj, a epokę niesie karta (ADR 0033 §1). Pierwotny dopisek „przed
+kompleacją” był źle postawioną granicą: właściwa granica to późniejsza
+**przebudowa planu w dziewięć koncentrycznych sfer** (*Phyrexia: All
+Will Be One*): Tangle przeniesione do Hunter Maze, Quicksilver Sea
+spuszczone do Surgical Bay, dawna powierzchnia = jałowy Mirrex.
+Ta topologia (przekrój kuli, pierścienie) nie mieści się na mapie
+półkuli — osobna mapa powstanie wyłącznie, gdy przyjdzie karta, która
+jej wymaga (ADR 0033 §2). Karta z Mirrexu pinowałaby się nawet tutaj.
+
+## Lacuny — dlaczego własny glif
+
+Lacuny (MTG Wiki „Lacunae”) to gigantyczne **tunele do pustego jądra
+planu**, którymi z Rdzenia wystrzeliło pięć słońc (Cave of Light /
+Bringer, Pool of Knowledge / Eye of Doom, Ish Sah / Ingle, Kuldotha /
+Sky Tyrant, Radix / Lyese); magia grawitacyjna pozwala schodzić po ich
+ścianach. Watermark Mirran ze *Scars of Mirrodin* to stylizowany rysunek
+pięciu lacun. Pierwsza wersja mapy oznaczała je zendikarskim glifem
+`hedron` (sześciokąt) — po uwadze właściciela mapforge dostał glif
+`lacuna` (kolisty szyb w płycie z ciemnym wnętrzem i nacięciami), bo
+hedrony na Mirrodinie nie występują.
 
 ## Źródła (URL)
 
 - https://mtg.wiki/page/New_Phyrexia_(plane) — plan, sfery, słońca,
   „Locations on Mirrodin” (pełna lista POI z przynależnością).
+- https://mtg.wiki/page/Lacunae — lacuny jako tunele do jądra, pięć par
+  lacuna–słońce, watermark Mirran; stan lacun po przebudowie planu.
 - https://mtg.wiki/page/Tangle · https://mtg.wiki/page/Mephidross ·
   https://mtg.wiki/page/Glimmervoid · https://mtg.wiki/page/Oxidda_Chain ·
   https://mtg.wiki/page/Quicksilver_Sea · https://mtg.wiki/page/Razor_Fields ·

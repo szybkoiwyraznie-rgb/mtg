@@ -14,10 +14,10 @@
   "autor": "MTG Lore Codex (praca własna — scena mapforge maps/mirrodin/scena.json z generatora tools/mapforge/mirrodin-scena-t4.py)",
   "licencja": "praca własna na kanonie tekstowym; glify gór mapome CC-BY-4.0 (ADR 0020)",
   "pobrano": "2026-09-06",
-  "notka": "T4 (rekonstrukcja kanoniczna): oficjalna mapa Mirrodinu nigdy nie powstała (MTG Wiki), w sieci brak wektora (T2) i rastra (T3) — research 2026-09-06 w zrodlo-research.md. Rzut: JEDNA TARCZA = widoczna półkula metalowej sfery (obwód ≈ 1400 km); poza tarczą papier arkusza — plan nie ma oceanu, jedynym akwenem jest Quicksilver Sea (jezioro rtęci). Epoka: powierzchnia z ery MRD–SOM PRZED kompleacją (ADR 0033 §2 — po New Phyrexia plan ma dziewięć sfer, a powierzchnia staje się Mirrexem; taka scena wymagałaby osobnego podkładu). Topologia: Glimmervoid centralny; pięć regionów w wycinkach po 72° w kolejności cyklu fastlandów SOM (Razor Fields N → Quicksilver Sea ENE → Mephidross SSE → Oxidda SSW → Tangle WSW); Copperline Gorge = wąski pas Glimmervoid między Tangle a Oxiddą; Rey-Goor = pas bagien przy krawędzi za końcem gór. Pozycje POI wewnątrz regionów są RELACYJNE (kanon podaje przynależność i sąsiedztwa, nie współrzędne) — pole pozycja_zrodlo każdej kotwicy. Raster fanowski (np. inkarnate „Mirrodin”, John Ruder) nie był dostępny; gdy właściciel go dostarczy, posłuży wyłącznie jako źródło pomocnicze dla pozycji nieustalonych, nigdy jako zamiennik kanonu (decyzja właściciela 2026-09-06)."
+  "notka": "T4 (rekonstrukcja kanoniczna): oficjalna mapa Mirrodinu nigdy nie powstała (MTG Wiki), w sieci brak wektora (T2) i rastra (T3) — research 2026-09-06 w zrodlo-research.md. Rzut: JEDNA TARCZA = widoczna półkula metalowej sfery (obwód ≈ 1400 km); poza tarczą papier arkusza — plan nie ma oceanu, jedynym akwenem jest Quicksilver Sea (jezioro rtęci). Epoka (ADR 0033, decyzja właściciela 2026-09-06): JEDNA mapa powierzchni od Argentum przez całą wojnę o New Phyrexię (MRD/DST/5DN/SOM/MBS/NPH) — Phyrexia zajmuje i psuje regiony, ale nie zmienia ich topologii. Granicą jest dopiero przebudowa planu w dziewięć koncentrycznych sfer (Phyrexia: All Will Be One): Tangle → Hunter Maze, Quicksilver Sea → Surgical Bay, powierzchnia → Mirrex; taka scena dostanie osobną mapę wyłącznie, gdy przyjdzie karta, która jej wymaga. Topologia: Glimmervoid centralny; pięć regionów w wycinkach po 72° w kolejności cyklu fastlandów SOM (Razor Fields N → Quicksilver Sea ENE → Mephidross SSE → Oxidda SSW → Tangle WSW); Copperline Gorge = wąski pas Glimmervoid między Tangle a Oxiddą; Rey-Goor = pas bagien przy krawędzi za końcem gór. Pozycje POI wewnątrz regionów są RELACYJNE (kanon podaje przynależność i sąsiedztwa, nie współrzędne) — pole pozycja_zrodlo każdej kotwicy. Raster fanowski (np. inkarnate „Mirrodin”, John Ruder) nie był dostępny; gdy właściciel go dostarczy, posłuży wyłącznie jako źródło pomocnicze dla pozycji nieustalonych, nigdy jako zamiennik kanonu (decyzja właściciela 2026-09-06)."
  },
  "rekonstrukcja": true,
- "epoka": "MRD–SOM (powierzchnia przed kompleacją; ADR 0033 §2)",
+ "epoka": "powierzchnia Mirrodinu od Argentum po wojnę o New Phyrexię (MRD/DST/5DN/SOM/MBS/NPH); przebudowa planu w dziewięć sfer (ONE) = osobna mapa na żądanie karty (ADR 0033)",
  "kotwice": [
   {
    "nazwa": "Glimmervoid",
@@ -81,7 +81,7 @@
    "y": 0.2949,
    "typ": "poi",
    "pozycja_zrodlo": "kanon (mtg.wiki: pod Taj-Nar; White Lacuna = Great Deep)",
-   "notka": "biała lacuna — zejście do jądra"
+   "notka": "biała lacuna — gigantyczny tunel do pustego jądra planu, którym wystrzeliło białe słońce (Bringer)"
   },
   {
    "nazwa": "Bladehold",
@@ -113,7 +113,7 @@
    "y": 0.4081,
    "typ": "poi",
    "pozycja_zrodlo": "kanon (mtg.wiki: w Lumengrid; Blue Lacuna wewnątrz basenu)",
-   "notka": "niebieska lacuna"
+   "notka": "niebieska lacuna (Eye of Doom) — tunel do jądra w basenie Lumengrid"
   },
   {
    "nazwa": "Medev",
@@ -153,7 +153,7 @@
    "y": 0.7919,
    "typ": "poi",
    "pozycja_zrodlo": "kanon (mtg.wiki: pod Ish Sah)",
-   "notka": "czarna lacuna"
+   "notka": "czarna lacuna (Ingle) — tunel do jądra pod Ish Sah"
   },
   {
    "nazwa": "wioski Moriok",
@@ -177,7 +177,7 @@
    "y": 0.8047,
    "typ": "poi",
    "pozycja_zrodlo": "kanon (mtg.wiki: Womb of the Steel Mother, przy Great Furnace)",
-   "notka": "czerwona lacuna"
+   "notka": "czerwona lacuna (Sky Tyrant) — „Łono Stalowej Matki” przy Wielkiej Kuźni"
   },
   {
    "nazwa": "Oxidagg",
@@ -201,7 +201,7 @@
    "y": 0.4189,
    "typ": "poi",
    "pozycja_zrodlo": "kanon (mtg.wiki Tangle: w samym środku Tangle; Araneas Altar zbudowany na jego miejscu; Green Lacuna)",
-   "notka": "krąg miedzi 100 stóp; Panopticon dokładnie pod nim (jądro)"
+   "notka": "krąg miedzi 100 stóp; zielona lacuna (Lyese, ostatnia — Piąty Świt); Panopticon dokładnie pod nim w jądrze"
   },
   {
    "nazwa": "Tel-Jilad",
@@ -336,10 +336,11 @@
  ],
  "scena": "scena.json",
  "generator": "tools/mapforge/mirrodin-scena-t4.py",
- "silnik": "mapforge (ADR 0018/0019/0020/0022/0023); styl atlas; kompas i skala wyłączone (sfera bez biegunów, skala w adnotacji)",
+ "silnik": "mapforge (ADR 0018/0019/0020/0022/0023); styl atlas; glif `lacuna` (szyb do jądra) dodany dla tej mapy; kompas i skala wyłączone (sfera bez biegunów, skala w adnotacji)",
  "zrodlo_fanmapa": null,
  "otwarte_na_kolejne_przejscia": [
   "DODANE 2026-09-06 (PR-21, pakiet 2): mapa T4 pre-kompleacyjna. Nierozstrzygnięte w kanonie: (a) wiki mówi, że Tangle graniczy też z Quicksilver Sea, a „Moons of Mirrodin” — że morze leży „za górami od Tangle”; na jednej półkuli z cyklem fastlandów obu naraz spełnić się nie da — przyjęto cykl fastlandów (karty drukowane), kontakt Tangle↔morze możliwy poza widoczną półkulą; (b) Titan Forge, Medev, Oxidagg, Wailing Cairns, Temple Might, Cambree Garden, Outer Altar — pozycje wewnątrz regionów symboliczne. Raster fanowski od właściciela może je doprecyzować (tylko pozycje nieustalone).",
-  "Kolejne karty Mirrodinu: sceny z MRD–5DN–SOM–MBS pinują na tej mapie; sceny New Phyrexia (sfery) / Mirrex / ONE wymagają osobnego podkładu (ADR 0033 §2)."
+  "Kolejne karty Mirrodinu: sceny z MRD/DST/5DN/SOM/MBS/NPH (i Planechase/Commander z tej ery) pinują na tej mapie; sceny z przebudowanego planu (ONE/MOM — dziewięć sfer, Mirrex) wymagają osobnej mapy, tworzonej dopiero na żądanie karty (ADR 0033).",
+  "2026-09-06 (po recenzji właściciela): lacuny przeniesione z glifu hedron na własny glif `lacuna`; etykieta Rey-Goor/(Black Bayou) rozsunięta; epoka mapy rozszerzona na całą wojnę o New Phyrexię."
  ]
 }

@@ -13,9 +13,12 @@ o promieniu R wokół środka C). Poza tarczą jest „papier arkusza” (ocean
 = kolor tła, jak atlas Ravniki) — Mirrodin nie ma oceanu; jedynym
 akwenem jest Quicksilver Sea (jezioro rtęci wewnątrz tarczy).
 
-Epoka: powierzchnia z ery MRD–SOM, PRZED kompleacją (ADR 0033 §2) —
-po *New Phyrexia* plan ma dziewięć sfer, a powierzchnia staje się
-Mirrexem (topologia nieprzedstawialna na tej mapie).
+Epoka (ADR 0033 §1–2, decyzja właściciela 2026-09-06): JEDNA mapa
+powierzchni Mirrodinu od Argentum przez wojnę o New Phyrexię włącznie
+(MRD/DST/5DN/SOM/MBS/NPH) — wojna psuje regiony, ale nie zmienia ich
+topologii. Granicą jest dopiero późniejsza przebudowa planu w dziewięć
+sfer (ONE): Tangle → Hunter Maze, morze → Surgical Bay, powierzchnia →
+Mirrex; taka scena dostanie osobną mapę, gdy przyjdzie karta.
 
 Topologia (kanon relacyjny — bez współrzędnych źródłowych):
   * Glimmervoid CENTRALNY (heksagonalne płyty; cztery Ur-Golem Towers);
@@ -38,10 +41,11 @@ Topologia (kanon relacyjny — bez współrzędnych źródłowych):
     „morze leży za górami od Tangle” — nierozstrzygalne z cyklem
     fastlandów na jednej półkuli; przyjęto cykl (karty-fastlandy = kanon
     drukowany), rozbieżność opisana w zrodlo-research.md.
-  * Lacuny (zejścia do jądra, po jednej na region) = glif `hedron`
-    (pierścień w płycie): Cave of Light (biała), Pool of Knowledge
-    (niebieska), Black Lacuna, Red Lacuna (Womb of the Steel Mother),
-    Radix (zielona).
+  * Lacuny (gigantyczne tunele do pustego jądra planu, którymi wystrzeliły
+    słońca; po jednej na region) = glif `lacuna` (kolisty szyb w płycie
+    z ciemnym wnętrzem): Cave of Light (biała), Pool of Knowledge
+    (niebieska), Black Lacuna pod Ish Sah, Red Lacuna przy Kuldocie
+    (Womb of the Steel Mother), Radix (zielona).
 
 Kąty w stopniach w układzie SVG (0° = wschód, 90° = południe/dół,
 180° = zachód, 270° = północ/góra); punkt = C + r·(cos a, sin a).
@@ -136,12 +140,12 @@ POI = [
     ('iglica', [1050, 755], 'ur-golem-4', {'skala': 0.9}),
     # Razor Fields (N): Taj-Nar w środku Pól, Cave of Light obok (biała lacuna)
     ('fort', P(270, 330), 'taj-nar', {'skala': 1.1}),
-    ('hedron', P(262, 300), 'cave-of-light', {}),
+    ('lacuna', P(262, 300), 'cave-of-light', {}),
     ('miasto', P(250, 470), 'bladehold', {}),
     ('miasto', P(290, 470), 'ten-shields', {'skala': 0.8}),
     # Quicksilver Sea (ENE): Lumengrid przy brzegu, Medev na brzegu Darkslick
     ('miasto', P(-20, 250), 'lumengrid', {'skala': 1.2}),
-    ('hedron', P(-36, 236), 'pool-of-knowledge', {}),
+    ('lacuna', P(-36, 236), 'pool-of-knowledge', {}),
     ('miasto', P(18, 380), 'medev', {'skala': 0.8}),
     ('iglica', P(-30, 380), 'spire-1', {'skala': 0.9}),
     ('iglica', P(-12, 440), 'spire-2', {'skala': 0.9}),
@@ -149,15 +153,15 @@ POI = [
     ('fort', P(-40, 470), 'titan-forge', {'skala': 0.9}),
     # Mephidross (SSE): Ish Sah — wielki komin w sercu bagien
     ('iglica', P(54, 430), 'ish-sah', {'skala': 1.4}),
-    ('hedron', P(58, 470), 'black-lacuna', {}),
+    ('lacuna', P(58, 470), 'black-lacuna', {}),
     ('miasto', P(34, 390), 'moriok', {'skala': 0.7}),
     # Oxidda Chain (SSW): Kuldotha u zewnętrznego końca głównego grzbietu
     ('wulkan', P(140, 548), 'kuldotha', {'skala': 1.15}),
-    ('hedron', P(131, 552), 'red-lacuna', {}),
+    ('lacuna', P(131, 552), 'red-lacuna', {}),
     ('miasto', P(134, 400), 'oxidagg', {'skala': 0.75}),
     ('ruina', P(104, 470), 'wailing-cairns', {'skala': 0.9}),
     # Tangle (WSW): Radix w samym środku lasu, Tel-Jilad i Viridia obok
-    ('hedron', P(198, 400), 'radix', {}),
+    ('lacuna', P(198, 400), 'radix', {}),
     ('drzewo', P(211, 470), 'tel-jilad', {'skala': 2}),
     ('miasto', P(199, 486), 'viridia', {'skala': 0.9}),
     ('kolumny', P(224, 420), 'temple-might', {'skala': 0.9}),
@@ -251,8 +255,8 @@ ETYKIETY = [
     obszar('Manka Run', P(262, 500), fs=13, kat=-30),
     obszar('Glistening Dunes', P(40, 280), fs=16),
     obszar('Krark-Home', P(122, 420), fs=13, kat=wzdluz(122)),
-    obszar('Rey-Goor', P(150, 562), fs=14, kat=wzdluz(150 + 90)),
-    obszar('(Black Bayou)', P(150, 578), fs=11, kat=wzdluz(150 + 90)),
+    obszar('Rey-Goor', P(163, 548), fs=14, kat=wzdluz(163 + 90)),
+    obszar('(Black Bayou)', P(163, 570), fs=11, kat=wzdluz(163 + 90)),
     # --- pogranicza (pięć fastlandów SOM) wzdłuż szwów wycinków
     obszar('Seachrome Coast', P(306, 490), fs=13, kat=wzdluz(306), kolor='#6b1f2e'),
     obszar('Darkslick Shores', P(18, 500), fs=13, kat=wzdluz(18), kolor='#6b1f2e'),
@@ -266,7 +270,7 @@ ETYKIETY = [
     nota('(Sky Tyrant — czerwone słońce)', 560, 1252),
     nota('(Lyese — zielone słońce)', 250, 500),
     nota('(rzut widocznej półkuli metalowej sfery Mirrodinu, obwód ≈ 1400 km — '
-         'powierzchnia przed kompleacją)', 640, 1342, fs=13),
+         'powierzchnia planu od Argentum po wojnę o New Phyrexię)', 640, 1342, fs=13),
 ]
 
 SCENA = {
@@ -275,15 +279,15 @@ SCENA = {
     'wysokosc': 1400,
     'styl': 'atlas',
     'opis': (
-        'Mirrodin T4 (rekonstrukcja kanoniczna, epoka MRD–SOM przed kompleacją, '
-        'ADR 0033 §2): jedna tarcza = widoczna półkula metalowej sfery, poza nią '
+        'Mirrodin T4 (rekonstrukcja kanoniczna; jedna mapa powierzchni od Argentum '
+        'po wojnę o New Phyrexię — ADR 0033): jedna tarcza = widoczna półkula metalowej sfery, poza nią '
         'papier arkusza (plan bez oceanu). Glimmervoid centralny; pięć regionów '
         'w pięciu wycinkach po 72° w kolejności cyklu fastlandów SOM: Razor Fields '
         '(N) → Quicksilver Sea (ENE, jedyny akwen — jezioro rtęci) → Mephidross '
         '(SSE) → Oxidda Chain (SSW) → Tangle (WSW). Copperline Gorge = wąski pas '
         'Glimmervoid między lasem a głównym grzbietem Oxiddy; Rey-Goor (Black '
         'Bayou) = pas bagien przy krawędzi tarczy łączący Dross z Tangle za '
-        'zewnętrznym końcem gór. Lacuny = hedron. Kompas i skala wyłączone: sfera '
+        'zewnętrznym końcem gór. Lacuny = glif lacuna (szyb do jądra). Kompas i skala wyłączone: sfera '
         'bez biegunów; skala w adnotacji (obwód 1400 km).'
     ),
     'ocean': {'kolor': '#e9e9e9'},

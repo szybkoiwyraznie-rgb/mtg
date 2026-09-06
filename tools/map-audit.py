@@ -14,7 +14,7 @@ Sprawdza podsłuchem geometrii (bez oglądania obrazu):
   6. kotwice map.json w wodzie (raport informacyjny),
   7. tytuły regionów (class tytul-kontynentu lub font-size ≥ 40) leżące na
      glifach obiektów mapforge (fort/miasto/ruina/iglica/wulkan/szczyt/
-     hedron/wodospad/herb) — napis nad biomem jest OK (ADR 0025), napis
+     hedron/lacuna/wodospad/herb) — napis nad biomem jest OK (ADR 0025), napis
      zakrywający ikonę lub grzbiet nie (audyt PR-20: „Jund" na forcie
      Hellkite's Pass, „Grixis" na paśmie Kości, „Naya" na grzbiecie).
 
@@ -48,7 +48,7 @@ MARKERY = {'gora', 'wulkan', 'drzewo', 'bagno', 'miasto', 'ruina'}
 # biomy (mf-drzewo/mf-kepka) i wir celowo poza listą — napis nad lasem
 # czy nad wirem jest cechą (ADR 0025), nie błędem.
 OBIEKTY_MF = {'mf-fort', 'mf-miasto', 'mf-ruina', 'mf-iglica', 'mf-wulkan',
-              'mf-szczyt', 'mf-hedron', 'mf-wodospad', 'mf-herb'}
+              'mf-szczyt', 'mf-hedron', 'mf-lacuna', 'mf-wodospad', 'mf-herb'}
 TYTUL_MIN_FS = 40                            # próg „tytułu" dla SVG bez klasy
 SPODZEANE_WODY = {                           # konwencja projektu
     'Bojuka Bay', 'Sunder Bay', 'Chill Depths', 'Makindi Trenches',

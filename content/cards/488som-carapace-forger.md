@@ -118,11 +118,10 @@ z Mephidrossu, Rey-Goor jako miejsce, gdzie Dross wchodzi w las,
 i sam flavor karty jako wyznanie tej przemiany. Fabuła dodaje obraz
 „skorupy zasilanej trzema artefaktami” — dokładny przekład reguły
 Metalcraft na język świata — oraz ocenę: że to **ostatnia linia
-obrony**. Scena osadzona jest w epoce *Scars of Mirrodin*, na
-powierzchni planu **przed kompleacją**, i dlatego pinuje się na mapie
+obrony**. Scena osadzona jest w epoce *Scars of Mirrodin* — na początku
+wojny, gdy Phyrexia dopiero wychodzi z bagien — i pinuje się na mapie
 [[mirrodin|Mirrodinu]] w jego klasycznej postaci pięciu regionów wokół
-Glimmervoid; scenę z ery New Phyrexii trzeba by rysować na innym
-podkładzie.
+Glimmervoid, wspólnej dla całej ery powierzchni planu.
 
 ## Na Mapie
 

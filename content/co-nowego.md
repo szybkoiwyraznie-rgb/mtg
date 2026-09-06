@@ -18,9 +18,14 @@ w całości z kanonu tekstowego:
   płyt między lasem a górami, Rey-Goor jako bagno na styku Drossu
   i Tangle; lacuny jako pierścienie w płycie; pięć słońc jako adnotacje
   nad swoimi regionami. 28 POI, 38 kotwic z proweniencją relacyjną,
-  kompas i skala wyłączone (sfera bez biegunów). Epoka: powierzchnia
-  przed kompleacją. Podkład obejrzany jako raster (całość + wycinki),
-  `map-audit` 0 problemów.
+  kompas i skala wyłączone (sfera bez biegunów). Jedna mapa dla całej
+  ery powierzchni planu — od Argentum po wojnę o New Phyrexię (osobna
+  mapa dziewięciu sfer dopiero przy karcie, która jej wymaga). Podkład
+  obejrzany jako raster (całość + wycinki), `map-audit` 0 problemów.
+- **Po recenzji właściciela:** lacuny dostały własny znak w mapforge
+  (`lacuna` — kolisty szyb do jądra planu; wcześniej pożyczony hedron
+  z Zendikaru), rozsunięte etykiety Rey-Goor / (Black Bayou), dopisek
+  epoki na arkuszu poprawiony.
 - **Strona planu `mirrodin`:** setting, geografia pięciu regionów, ludy,
   epoki przed i po kompleacji, opis mapy.
 - **Karta 488SOM (LORE-first):** Kronika łuczników Tangle, którzy

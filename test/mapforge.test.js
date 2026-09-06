@@ -12,7 +12,7 @@ import {
 } from '../tools/mapforge/geom.mjs';
 import {
   las, bagno, pasmo, pasmoInstancje, rzeka, jezioro, droga, etykieta, lukEtykieta,
-  miasto, ruina, hedron, szczyt, wulkan, motyw,
+  miasto, ruina, hedron, lacuna, szczyt, wulkan, motyw,
 } from '../tools/mapforge/bloki.mjs';
 import { renderuj, scenaDemo } from '../tools/mapforge/cli.mjs';
 
@@ -175,6 +175,10 @@ test('mapforge: POI — miasto/ruina/hedron/wulkan', () => {
   assert.ok(ruina(0, 0).includes('mf-ruina'));
   const h = hedron(0, 0, { opacity: 0.75 });
   assert.ok(h.includes('opacity="0.75"') && h.includes('mf-hedron'));
+  // lacuna (Mirrodin): szyb do jądra — własna klasa, data-kotwica, bez sześciokąta hedronu
+  const la = lacuna(100, 50, { skala: 1 });
+  assert.ok(la.includes('mf-lacuna') && la.includes('data-x="100"') && la.includes('data-y="50"'));
+  assert.ok((la.match(/<circle/g) ?? []).length === 3, 'lacuna: pierścień + wnętrze + dno');
   assert.ok(wulkan(0, 0).includes('ellipse'), 'krater wulkanu');
 });
 

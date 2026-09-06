@@ -16,9 +16,9 @@ oleju, przemianował świat na cześć Mirari i zaczął porywać istoty
 z innych planów, by go zaludnić. Tak powstał świat, w którym trawa
 tnie jak brzytwa, lasy są z miedzi, morze płynie rtęcią, a każde żywe
 stworzenie nosi w ciele metal. Kodeks rysuje Mirrodin w jego
-klasycznej postaci — powierzchnię z ery *Mirrodin*–*Scars of
-Mirrodin*, **przed kompleacją** — bo to na tej powierzchni rozgrywają
-się sceny kart Mirran.
+klasycznej postaci — powierzchnię pięciu regionów wokół Glimmervoid,
+która trwa od Argentum przez całą wojnę o New Phyrexię — bo to na tej
+powierzchni rozgrywają się sceny kart Mirran i Phyrexian tamtej wojny.
 
 ## Setting w pigułce
 
@@ -28,8 +28,10 @@ Pięć regionów, pięć kolorów, pięć słońc. Nad każdą krainą wschodzi
 nad **Mephidrossem**, **Sky Tyrant** (czerwone) nad **Oxidda Chain**,
 a **Lyese** (zielone) nad **Tangle** — to ostatnie wyszło z jądra
 dopiero w Piątym Świcie. Słońca wydostały się na powierzchnię przez
-**lacuny**, tunele prowadzące do pustego wnętrza planu, w którego
-środku pulsuje Rdzeń Many, a nad nim Memnarch zbudował **Panopticon**.
+**lacuny** — gigantyczne tunele prowadzące do pustego wnętrza planu,
+po których ścianach dzięki magii grawitacyjnej można zejść do jądra;
+w jego środku pulsuje Rdzeń Many, a nad nim Memnarch zbudował
+**Panopticon**.
 Pośrodku powierzchni leży **Glimmervoid** — srebrna równina
 heksagonalnych płyt, którą trzeba przejść, by dostać się z jednego
 regionu do drugiego. Świat jest niewielki (obwód około 1400 km),
@@ -105,20 +107,24 @@ ich panem jest Geth. Wszędzie kręcą się **myr** — srebrne konstrukty
 Memnarcha — i **blinkmothy**, a każda żywa istota nosi w ciele metal
 wszczepiony przez grzyb **mycosynth**.
 
-## Epoki: przed i po kompleacji
+## Epoki: jedna powierzchnia, potem dziewięć sfer
 
 Historia planu to trzy fazy. **Argentum** Karna — pusty świat golemów.
 **Mirrodin Memnarcha** — porwane ludy, cztery, potem pięć słońc, wojna
 Glissy z Memnarchem, Piąty Świt i Zniknięcie (wielu mieszkańców wróciło
-na rodzime plany). **Blizny** — Phyrexianie, zrodzeni z oleju, który
-Karn nieświadomie przyniósł do jądra, wyszli na powierzchnię przez
-Mephidross (*Scars of Mirrodin*), zdobyli plan (*Mirrodin Besieged*,
-*New Phyrexia*) i przebudowali go w dziewięciosferową **New Phyrexię**:
-dawna powierzchnia stała się jałowym **Mirrexem**, lasy przeniesiono do
-Hunter Maze, Quicksilver Sea spuszczono do Surgical Bay. Ta ostatnia
-topologia nie mieści się na mapie powierzchni — dlatego Kodeks pinuje
-tu sceny z ery *Mirrodin*–*Scars of Mirrodin*, a New Phyrexia
-dostanie osobny podkład, gdy przyjdzie karta z taką sceną.
+na rodzime plany). **Blizny i wojna** — Phyrexianie, zrodzeni z oleju,
+który Karn nieświadomie przyniósł do jądra, wyszli na powierzchnię przez
+Mephidross (*Scars of Mirrodin*), oblegli plan (*Mirrodin Besieged*)
+i zdobyli go (*New Phyrexia*). Przez wszystkie te fazy geografia
+powierzchni jest ta sama: Dross rozlewa się na sąsiednie krainy, pod
+ziemią rośnie Warstwa Pieców Urabraska, ale pięć regionów wokół
+Glimmervoid stoi tam, gdzie stało — dlatego jedna mapa obsługuje karty
+całej tej ery. Dopiero później zwycięzcy **przebudowali plan
+w dziewięć koncentrycznych sfer** (*Phyrexia: All Will Be One*): dawna
+powierzchnia stała się jałowym **Mirrexem**, lasy przeniesiono do Hunter
+Maze, Quicksilver Sea spuszczono do Surgical Bay. Ta topologia nie
+mieści się na mapie powierzchni — New Phyrexia dostanie osobną mapę,
+gdy przyjdzie karta z taką sceną.
 
 ## Mapa
 
@@ -127,12 +133,14 @@ nigdy nie powstała, więc podkład powstał w silniku mapforge wyłącznie
 z kanonu tekstowego (MTG Wiki, „Moons of Mirrodin”, *Mirrodin Player's
 Guide*). Rzut to jedna tarcza — widoczna półkula metalowej sfery, poza
 nią papier arkusza (plan nie ma oceanu; jedynym akwenem jest
-Quicksilver Sea). Glimmervoid leży w środku, a pięć regionów układa się
+Quicksilver Sea). Mapa obejmuje całą erę powierzchni — od Argentum po
+wojnę o New Phyrexię. Glimmervoid leży w środku, a pięć regionów układa się
 wokół niego w kolejności cyklu pograniczy ze *Scars of Mirrodin*:
 Razor Fields (Seachrome Coast) Quicksilver Sea (Darkslick Shores)
 Mephidross (Blackcleave Cliffs) Oxidda Chain (Copperline Gorge) Tangle
-(Razorverge Thicket). Lacuny oznaczono pierścieniami w płycie, pięć
-słońc — adnotacjami poza tarczą, nad swoimi regionami. Pozycje
+(Razorverge Thicket). Lacuny oznaczono znakiem szybu w płycie — koliste
+zejścia do jądra — a pięć słońc adnotacjami poza tarczą, nad swoimi
+regionami. Pozycje
 wewnątrz regionów są relacyjne (kanon podaje przynależność
 i sąsiedztwa, nie współrzędne); proweniencja każdej kotwicy
 w `map.json`, werdykt researchu w `zrodlo-research.md`.
@@ -143,6 +151,9 @@ w `map.json`, werdykt researchu w `zrodlo-research.md`.
   o obwodzie 1400 km, pięć słońc i lacuny, pełna lista lokacji
   z przynależnością do regionów, sfery New Phyrexii:
   https://mtg.wiki/page/New_Phyrexia_(plane)
+- MTG Wiki, hasło Lacunae — tunele do jądra planu, pięć par
+  lacuna–słońce, magia grawitacyjna, watermark Mirran:
+  https://mtg.wiki/page/Lacunae
 - MTG Wiki, hasło Tangle — miedziany las, Tel-Jilad, Viridia, Radix,
   sąsiedztwa: https://mtg.wiki/page/Tangle
 - MTG Wiki, hasło Mephidross — bagno nekrogenowe, Ish Sah, Geth,

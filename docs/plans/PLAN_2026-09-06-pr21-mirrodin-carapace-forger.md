@@ -25,13 +25,13 @@ zaraza, na którą „łuki i bicze” już nie wystarczają.
    tylko jako źródło pomocnicze dla pozycji nieustalonych w kanonie,
    nigdy jako zamiennik kanonu. Pole `zrodlo_fanmapa` w `map.json`
    pozostaje zarezerwowane (puste).
-2. **Epoka mapy (ADR 0033 §2):** powierzchnia Mirrodinu z ery
-   MRD–SOM, **przed kompleacją** (pięć regionów wokół Glimmervoid,
-   pięć słońc/lacun). Po *New Phyrexia* plan ma dziewięć sfer,
-   a powierzchnia staje się Mirrex — topologia nieprzedstawialna na tej
-   mapie; ewentualna mapa sfer New Phyrexii powstanie jako osobny
-   podkład dopiero przy karcie z taką sceną. Bez nowego ADR — to
-   zastosowanie §2 ADR 0033 (zapis w `zrodlo.notka`).
+2. **Epoka mapy (ADR 0033 §1–2):** ~~powierzchnia z ery MRD–SOM „przed
+   kompleacją”~~ → **skorygowane po recenzji właściciela 2026-09-06:**
+   jedna mapa powierzchni od Argentum po całą wojnę o New Phyrexię
+   (MRD/DST/5DN/SOM/MBS/NPH) — wojna nie zmienia topologii regionów.
+   Granicą jest dopiero przebudowa planu w dziewięć sfer (ONE); osobna
+   mapa powstanie na żądanie karty z taką sceną. Decyzja właściciela
+   dopisana do ADR 0033 (uzupełnienie), zapis w `zrodlo.notka`.
 3. **Numery:** imgId właściciela `488SOM` (klucz FOT/KON) ≠ collector
    number Scryfall `114` (SOM/114). Oba w snapshocie (`notka_numery`,
    LESSONS L8) — nigdy nie nadpisywać jednego drugim. Uwaga: URL
@@ -104,13 +104,13 @@ z pinezką w Tangle; wpis co-nowego; handoff i opis PR zaktualizowane.
 
 ## Kroki
 
-- [x] Roadmapa (ten plik); opis PR #21 rozszerzony o pakiet 2 — **czeka na
-      przywrócenie połączenia z GitHub** (token sesji wygasł po odświeżeniu
-      środowiska; treść bloku w HANDOFF).
+- [x] Roadmapa (ten plik); opis PR #21 rozszerzony o pakiet 2 (L9).
 - [x] Wpis kolekcji (verbatim) + snapshot Scryfall → `npm test` (7e1f8a1).
 - [x] Mapa: `scena.json` → `cli.mjs` (0 uwag wiązań) → `map.json`
       + `zrodlo-research.md` → rasteryzacja i ogląd → `map-audit` 0 (7e1f8a1).
 - [x] Strona planu + karta LORE-first + asercje smoke → `npm test` 107/107,
       `npm run build` 12 stron (6c038d0).
-- [x] Domknięcie: co-nowego, handoff, PROJECT_HISTORY; opis PR i push —
-      **zablokowane** do czasu przywrócenia połączenia z GitHub (patrz HANDOFF).
+- [x] Domknięcie: co-nowego, handoff, PROJECT_HISTORY, opis PR, push
+      (po odzyskaniu tokena: rebase --onto 4ba8173, push fast-forward).
+- [x] Recenzja właściciela: glif `lacuna` (zamiast hedronu), kolizja
+      Rey-Goor/(Black Bayou), epoka mapy = cała era powierzchni (ADR 0033).

@@ -54,3 +54,26 @@ Maelstrom.
   shardami w Blind Eternities”).
 - Proweniencja epoki w `map.json`: pole `zrodlo.notka` explicite
   niesie stan planu, który mapa przedstawia.
+
+## Uzupełnienie 2026-09-06 — Mirrodin / New Phyrexia (decyzja właściciela)
+
+Kontekst: pakiet 2 PR-21 (karta 488SOM, mapa `maps/mirrodin/` T4).
+Mirrodin ma trzy stany: Argentum → Mirrodin (MRD/DST/5DN) → wojna
+o New Phyrexię (SOM/MBS/NPH) → przebudowa planu w dziewięć sfer (ONE).
+Pierwsza wersja mapy stawiała granicę „przed kompleacją”.
+
+Właściciel (czat 2026-09-06): „Na razie jedna mapa, a jak przyjdzie
+karta wymagająca kompletnie przebudowanej geografii, to zrobimy nową
+mapę.” Zastosowanie §1–2 do Mirrodinu:
+
+1. **Jedna mapa powierzchni** obsługuje wszystkie sceny od Argentum po
+   koniec wojny o New Phyrexię włącznie — wojna psuje regiony, ale nie
+   zmienia ich topologii (kryterium §2 nie jest spełnione).
+2. Granicą jest dopiero **przebudowa planu w dziewięć koncentrycznych
+   sfer** (Tangle → Hunter Maze, morze → Surgical Bay, powierzchnia →
+   Mirrex): topologia nieprzedstawialna na mapie półkuli. Osobna mapa
+   sfer powstanie wyłącznie na żądanie karty z taką sceną (§2, ADR 0015);
+   karta osadzona na Mirrexie pinuje się nadal na mapie powierzchni.
+3. Wzorzec ogólny: „przed/po” nie liczy się od wydarzenia fabularnego
+   (kompleacja, Conflux), lecz od **zmiany topologii** — dopisek epoki
+   w `zrodlo.notka` ma nazywać erę mapy w tych kategoriach.

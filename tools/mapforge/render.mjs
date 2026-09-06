@@ -14,7 +14,7 @@
  *     rzeki: [{ id, punkty, s0, s1, doplywy: [{ id, punkty }] }]
  *     jeziora: [{ cx, cy, rx, ry }]
  *     drogi: [{ id, punkty, typ }]
- *     poi: [{ typ: 'miasto'|'ruina'|'hedron', x, y, opcje }]
+ *     poi: [{ typ: 'miasto'|'ruina'|'hedron'|'lacuna'|…, x, y, opcje }]
  *     etykiety: [{ tekst, x, y, kat?, fs?, ital? }]
  *     etykietyLukowe: [{ id, punkty, tekst, fs? }]
  *     kompas: { x, y, r } | false,
@@ -29,7 +29,7 @@
 
 import {
   PAL, motyw, las, bagno, step, lod, wir, pasmo, pasmoInstancje, wulkan, rzeka,
-  doplyw, jezioro, droga, miasto, ruina, fort, hedron, iglica, szczyt, etykieta,
+  doplyw, jezioro, droga, miasto, ruina, fort, hedron, lacuna, iglica, szczyt, etykieta,
   lukEtykieta, kompas, ramka, skalaLinia, drzewo,
   dzielnica, granicaDzielnicy, granicaRegionu, mur, szczelina, tkanina, gruz,
   plac, kolumny, kopula, platforma, kolowrot, most, ognisko, drzewoPoi,
@@ -79,6 +79,8 @@ export const ETYKIETY_WODNE_KOLOR = [
 ];
 const BLOKI_POI = {
   miasto, ruina, fort, hedron, iglica,
+  // `lacuna` — szyb do jądra planu (Mirrodin): pierścień + ciemne wnętrze.
+  lacuna,
   // POI miejskie (atlas metropolii — T4, Ravnica): plac/forum, kolumnada
   // (gildie prawa), kopuła (rotundy pałacowe), platforma na łańcuchach,
   // kołowrót nad wodą, most nad szczeliną, ognisko-zgromadzenie, wielkie
@@ -166,7 +168,7 @@ export function rozstawEtykiety(etykiety, { szer, wys, maskiLadow = [], woda = n
   const PROMIEN_POI = {
     miasto: { dol: 13, gora: 13 }, ruina: { dol: 13, gora: 11 },
     fort: { dol: 13, gora: 13 },
-    hedron: { dol: 10, gora: 10 }, wulkan: { dol: 4, gora: 29 },
+    hedron: { dol: 10, gora: 10 }, lacuna: { dol: 10, gora: 10 }, wulkan: { dol: 4, gora: 29 },
     iglica: { dol: 4, gora: 31 }, wodospad: { dol: 6, gora: 10 },
     // POI miejskie (Ravnica): koła o promieniu ~11–13 · skala
     plac: { dol: 13, gora: 13 }, kolumny: { dol: 13, gora: 14 },
