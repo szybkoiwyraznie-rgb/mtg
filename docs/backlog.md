@@ -49,6 +49,23 @@ przy drugiej karcie planu.
 | Tin Street | geografia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
 | Pakt Gildii | magia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
 
+## Kolejka link-miningu: encje czekające na drugą kartę (Alara)
+
+Sesja PR-21 (2026-09-06) — pogłębienie strony planu Alary (sekcja
+„Odłamy i ludy”, mtg.wiki) zasiało encje wspólne dla karty 305ARB
+i planu; licznik progowy idzie od KART, więc hasła ruszą przy drugiej
+karcie Alary.
+
+| Encja | Klasa (docelowa) | Karty wspominające | Do hasła brakuje |
+|---|---|---|---|
+| Maelstrom | geografia | 305arb-illusory-demon, plan alara | 1 karta |
+| Nicol Bolas | postac | 305arb-illusory-demon, plan alara | 1 karta |
+| Ajani Goldmane | postac | 305arb-illusory-demon, plan alara | 1 karta |
+| Conflux / Sundering | historia | 305arb-illusory-demon, plan alara | 1 karta |
+| Grixis (Sedraxis, Vithia) | geografia | plan alara | 2 karty |
+| Etherium / Ethersworn | magia | plan alara | 2 karty |
+| Nacatl (Coil, Claws of Marisi) | spolecznosc | plan alara | 2 karty |
+
 ## Mapa Zendikaru — WYKONANA (ADR 0012)
 
 Zrobione 2026-08-31 (feedback G właściciela): **rekonstrukcja własna
