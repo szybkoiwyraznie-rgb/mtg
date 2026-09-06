@@ -48,7 +48,7 @@
   "border_color": "black",
   "frame": "2003",
   "digital": false,
-  "source": "https://api.scryfall.com/cards/search?q=%21%22Illusory+Demon%22+set%3Aarb&unique=prints",
+  "source": "https://api.scryfall.com/cards/named?exact=Illusory+Demon&set=arb",
   "slug": "305arb-illusory-demon",
   "pobrano": "2026-09-05",
   "notka_numery": "imgId właściciela = 305ARB (klucz plików FOT/KON na dysku właściciela, LESSONS L8); collector_number Scryfall = 21. Dwa niezależne systemy numeracji — nigdy nie nadpisywać jednego drugim."

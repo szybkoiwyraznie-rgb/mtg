@@ -71,15 +71,15 @@ Jedno zdanie, które jest całym lore karty. „Trick of the light” —
 błąd załamania, omam — jest podmiotem czasownika „feast”. Flavor nie
 mówi „wygląda jak demon”: mówi, że iluzja JE. Horror karty nie polega
 na tym, że coś udaje drapieżnika, tylko na tym, że drapieżność
-nie wymaga ciała. Fabuła dostawy powtarza to obrazem: istota, której
+nie wymaga ciała. Fabuła właściciela powtarza to obrazem: istota, której
 ręka i ogon rozsypują się w świetliste drobiny, „jakby sama obecność
 była nietrwała” — i która mimo to poluje.
 
 ## Transpozycja
 
 Karta przenosi do Kodeksu scenę polowania błędu światła w Maelstromie
-i kotwiczy ją w geografii planu [[alara|Alara]] (ADR 0033: jedna mapa
-scalnego planu). Fabuła dostawy (ADR 0026) jest wiążącą kotwicą:
+i kotwiczy ją w geografii planu [[alara|Alara]] — jednej mapie
+scalnego planu. Fabuła właściciela jest wiążącą kotwicą:
 to ona ustanawia paletę wiru (fiolety, róże, błękity, bursztyny),
 anatomię nietrwałości (skrzydła z cienia, rozsypujące się krawędzie)
 i tezę „Maelstrom nie rodzi demonów — rodzi błędy światła”. Era sceny
@@ -97,7 +97,7 @@ pięć regionów w cyklu many (Bant, Esper, Grixis, Jund, Naya) wokół
 wiru, obeliski przy szwach regionów — pomniki epoki, gdy Bolas
 kierował ich maną w burzę — oraz kanoniczne miejsca regionów
 (Valeron, Jhess, Akrasa, Sedraxis, Antali) jako kotwice przyszłych
-kart, także tych z epoki shardów (ADR 0033).
+kart, także tych z epoki shardów.
 
 ## Mechanika jako Opowieść
 
@@ -114,6 +114,9 @@ U/B to dokładny przepis na „błąd światła, który ucztuje”.
 
 ## Źródła
 
+- Fabuła właściciela (2026-09-05) — wir Maelstromu w fioletach, różach,
+  błękitach i bursztynach; demoniczna istota o nietrwałych, rozpływających
+  się krawędziach; teza „Maelstrom rodzi błędy światła, nie demony".
 - Scryfall, Illusory Demon (ARB/21) — dane karty, oracle text,
   flavor text: https://scryfall.com/card/arb/21/illusory-demon
 - MTG Wiki, hasło Maelstrom — burza many powstała w Conflux
@@ -140,7 +143,7 @@ U/B to dokładny przepis na „błąd światła, który ucztuje”.
   tamtej wojny, które plan rodzi do dziś.
 - **Jedna mapa, dwie epoki.** Alara po Conflux jest jednym planem;
   karta pinuje w Maelstrom, a regiony mapy uniosą też przyszłe sceny
-  z epoki shardów (ADR 0033).
+  z epoki shardów.
 
 Karta domyka w Kodeksie pierwszy portret Alary: nie region i nie
 bohatera, lecz samo serce burzy — miejsce, w którym pięć światów

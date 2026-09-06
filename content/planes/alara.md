@@ -14,7 +14,7 @@ potem — po **Sundering** — pięć odłamów-shardów dryfujących osobno,
 każdy odcięty od dwóch kolorów many i wykrzywiony w własną kulturę
 i ekologię; wreszcie, po **Conflux**, znów jeden plan: scalony,
 z **Maelstromem** — burzą many wszystkich pięciu shardów — w punkcie
-złączenia. Kodeks rysuje Alarę w stanie scalonym (ADR 0033): regiony
+złączenia. Kodeks rysuje Alarę w stanie scalonym: regiony
 zachowały tożsamość, więc jedna mapa niesie i sceny post-Conflux,
 i — przez regiony — sceny z epoki shardów.
 
@@ -47,9 +47,9 @@ sam Maelstrom powstał przeciw najeźdźcy.
 
 ## Mapa
 
-`maps/alara/` — wariant **T3**: transkrypcja topologii z fanowskich
-referencji dostarczonych przez właściciela (ADR 0031; rastry poza
-gitem) — pięć zrośniętych kontynentów-regionów w kanonicznym cyklu
+`maps/alara/` — mapa rekonstrukcji: transkrypcja topologii z fanowskich
+referencji dostarczonych przez właściciela (rastry poza repozytorium) —
+pięć zrośniętych kontynentów-regionów w kanonicznym cyklu
 many (Bant u góry, Naya na zachodzie, Jund i Grixis na południu,
 Esper z morzami wewnętrznymi na wschodzie) wokół **Maelstromu** —
 plamy w punkcie złączenia shardów. Nazwy wyłącznie kanoniczne
@@ -66,6 +66,3 @@ w silniku mapforge (`scena.json`), proweniencja w `map.json`.
   w punkcie złączenia shardów; istoty zrodzone z burzy:
   https://mtg.wiki/page/Maelstrom
 - Scryfall, set ARB (Alara Reborn): https://scryfall.com/sets/arb
-- ADR 0033 (jedna mapa aktualnego stanu kanonicznego planu) —
-  dokument własny repo:
-  `docs/decisions/0033-mapy-planow-jedna-mapa-aktualnego-stanu-kanonicznego.md`

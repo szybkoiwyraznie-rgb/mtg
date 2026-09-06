@@ -12,7 +12,7 @@ Final Fantasy w Kodeksie to **saga wielu światów**, nie jeden świat: każda
 numerowana część ma własną geografię (Gaia z Midgarem z FFVII, Spira
 z FFX, Ivalice z Tactics…), a między światami sagi nie ma kanonicznych
 relacji przestrzennych. Dlatego plan `final-fantasy` jest
-**planem-franczyzą** (ADR 0032): światy gier nie są osobnymi planami ani
+**planem-franczyzą**: światy gier nie są osobnymi planami ani
 kontynentami jednej mapy — każda część sagi dostaje własną mapę dopiero,
 gdy materializuje się karta, która jej potrzebuje.
 
@@ -47,5 +47,3 @@ w `map.json`).
   https://scryfall.com/sets/FIN
 - Fandom, hasło Midgar (kanon kotwic):
   https://finalfantasy.fandom.com/wiki/Midgar
-- ADR 0032 (plan-franczyza, mapa per część sagi) — dokument własny repo:
-  `docs/decisions/0032-final-fantasy-plan-franczyza-mapy-wg-czesci-sagi.md`
