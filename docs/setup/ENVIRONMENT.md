@@ -60,6 +60,45 @@ Jeśli po resecie zacommitowałeś na `main`: `git branch backup-<opis>
 sprawdź `git log --oneline -1`; przed długą operacją (duży build, pełne
 testy) upewnij się, że praca jest na zdalnej gałęzi.
 
+### 2a. Wariant „pełne odświeżenie sandboxa” (pomiar 2026-09-06, sesja PR-21)
+
+Inny objaw niż reset HEAD: środowisko wraca jako **świeży, PŁYTKI klon**
+(`git rev-parse --is-shallow-repository` → `true`) z gałęzią sesji
+wskazującą na commit bazowy `main`, bez historii commitów sesji;
+`/tmp` i pliki poza repo znikają; `GH_TOKEN` bywa **nieważny**
+(`gh auth status` → „token is no longer valid”, `git fetch/push` →
+brak uwierzytelnienia). Token wraca po jakimś czasie / po ponownym
+połączeniu przez właściciela.
+
+Skutki płytkiego klonu, które łatwo przeoczyć:
+
+- **Stopki „Utworzono / ostatnia aktualizacja” są fałszywe** — `datyGit`
+  w `tools/build.mjs` liczy je z historii pliku, a płytki klon widzi
+  jeden commit: „utworzono” = dziś, wiersz aktualizacji znika (równy
+  utworzeniu). Build ostrzega na stderr („UWAGA: płytki klon gita…”) —
+  **nie filtruj wyjścia builda do jednej linijki**, bo ostrzeżenie
+  przepada. Podgląd zbudowany w tym stanie pokazuje właścicielowi
+  nieprawdziwe daty (tak wyglądała „awaria stopki” Coralhelm Guide
+  2026-09-06 — kod był poprawny, klon płytki).
+- Lokalne commity na odtworzonej bazie mają inne SHA niż origin, choć
+  drzewo jest identyczne — **nie pushuj ich wprost** (rozjazd historii).
+
+Procedura:
+
+```bash
+git rev-parse --is-shallow-repository            # true → najpierw to napraw
+gh auth status                                   # token ważny?
+# token ważny:
+git fetch --unshallow origin                     # pełna historia (daty stopek)
+git fetch origin arena/<slug-sesji>              # stan zdalny gałęzi
+git rebase --onto FETCH_HEAD <commit-odtworzenia> arena/<slug-sesji>
+git push origin arena/<slug-sesji>               # fast-forward, bez force
+# token nieważny:
+#   commituj LOKALNIE po każdym kroku (nie czekaj na token), nie buduj
+#   podglądu dla właściciela z płytkiego klonu, poinformuj właściciela
+#   o blokadzie; po powrocie tokena — kroki jak wyżej.
+```
+
 ## 3. Git i GitHub
 
 - **Praca istnieje dopiero po `git push`** (L2). Nowa sesja widzi tylko
@@ -113,6 +152,9 @@ przekroczy ~5 s samodzielnie, trafia do manifestu slow
 
 ## 6. Checklista startu sesji
 
+0. `git rev-parse --is-shallow-repository` — jeśli `true`, natychmiast
+   `git fetch --unshallow origin` (inaczej stopki dat w buildzie kłamią,
+   §2a). Powtórz po każdym wykrytym odświeżeniu środowiska.
 1. `git log --oneline -3` i `git status` — gdzie jestem, czy czysto.
 2. Lektura obowiązkowa (AGENTS.md §0) — CAŁA, w kolejności.
 3. Otwórz PR sesji (nawet jeśli na starcie zawiera tylko roadmapę w
@@ -124,7 +166,10 @@ przekroczy ~5 s samodzielnie, trafia do manifestu slow
 
 ## 7. Checklista przed końcem sesji
 
-1. `npm test` i `npm run build` zielone.
+1. `npm test` i `npm run build` zielone — build **bez ostrzeżenia
+   o płytkim klonie** na stderr; podgląd dla właściciela zbudowany
+   z pełnej historii (sprawdź jedną starą kartę: „Utworzono” ma być
+   sprzed dni, nie z dziś).
 2. Wszystko zacommitowane **i wypchnięte** (`git status` czysty).
 3. `docs/setup/HANDOFF_<data>.md` opisuje stan; `content/co-nowego.md`
    ma wpis sesji; opis PR zaktualizowany kumulatywnie.

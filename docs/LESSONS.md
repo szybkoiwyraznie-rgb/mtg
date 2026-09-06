@@ -196,3 +196,29 @@ w `map-audit` **tylko jeśli** na pozostałych mapach daje 0 fałszywych
 alarmów (tak powstała `TYTUŁ NA OBIEKCIE` z marginesem 6) — reszta
 zostaje w checkliście oka.
 
+## L11 (2026-09-06) — po odświeżeniu sandboxa commituj natychmiast, a podgląd buduj tylko z pełnego klonu
+
+**Objaw:** w sesji PR-21 środowisko odświeżyło się w trakcie pracy
+(płytki klon, `/tmp` pusty, token GitHub nieważny). Przez ~2 godziny
+powstały mapa, karta i strona planu bez ani jednego commita (czekanie
+„aż wróci token”), a podgląd dla właściciela został zbudowany z płytkiego
+klonu — stopki pokazywały fałszywe daty utworzenia (Coralhelm Guide
+„utworzono dziś”) i bez wiersza aktualizacji, a najnowszy wpis „Co
+nowego” nie był w nim widoczny, bo build był starszy niż wpis.
+Właściciel zgłosił obie rzeczy jako regresje; kod był poprawny.
+
+**Przyczyna:** dwa błędy nawyku, nie kodu. (1) Utożsamienie „nie mogę
+pushować” z „nie warto commitować” — lokalne commity są tanie i
+odtwarzalne, a ich brak czyni pracę niewidoczną i nieodporną na kolejny
+reset. (2) Budowanie i wystawianie podglądu bez sprawdzenia stanu
+repozytorium; ostrzeżenie builda o płytkim klonie zniknęło, bo wyjście
+filtrowano do jednego wiersza.
+
+**Reguła:** po wykryciu odświeżenia środowiska najpierw
+`git rev-parse --is-shallow-repository` → `git fetch --unshallow`
+(ENVIRONMENT §2a), dopiero potem build i podgląd. Commit lokalny po
+każdym kroku merytorycznym niezależnie od dostępności GitHuba; push
+gdy tylko token wróci (`rebase --onto` na stan zdalny, bez force).
+Przed wystawieniem podglądu właścicielowi: świeży build **po** ostatniej
+zmianie treści i kontrola jednej starej strony (data utworzenia sprzed
+dni). Nie filtruj stderr builda.
