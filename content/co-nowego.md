@@ -1,3 +1,21 @@
+## 2026-09-06 15:50 — PR-20: audyt PR-19 + strona planu Alary do stanu mapy v2
+
+Sesja domyślna (audyt poprzedniego scalonego PR + kolejka napraw):
+
+- **Audyt PR-19** (`docs/audits/AUDYT_2026-09-06-PR19.md`): naprawy Z1–Z5
+  z audytu PR-18 wykonane poprawnie i systemowo (pętla ui-smoke pilnuje
+  wszystkich kart); rewamp mapy Alary v2 zgodny z ADR 0031/0033 i kanonem
+  nazw; pinezka 305ARB zweryfikowana geometrycznie w środku wiru
+  Maelstromu. Integralność: 104/104, build, map-audit 0.
+- **Strona planu Alary** (`content/planes/alara.md`) przestawiona na stan
+  mapy v2: Esper jako **archipelag wysp na Morzu Esper** (kanoniczne
+  akweny Dwindling Sea, Sea of Stars, Inkwell), Maelstrom jako
+  **równoprawny region-węzeł**, pełna lista ~28 kanonicznych POI
+  (wcześniej strona opisywała mapę v1: „morza wewnętrzne", Maelstrom-plamę).
+- **Dokumentacja procesu domknięta**: wpis dziennika o scalonym PR-19
+  (co-nowego 15:30), wpis w PROJECT_HISTORY o sesji PR-19, aktualizacja
+  ROADMAP (PR-18/PR-19 scalone), lekcja L9 (opis PR aktualizowany
+  kumulatywnie po każdym commicie).
 ## 2026-09-06 15:30 — PR-19: naprawy Z1–Z5 z audytu PR-18 + rewamp mapy Alary v2
 
 Sesja audytowa PR-19 domknęła zaległości z audytu PR-18 i poprawiła mapę
