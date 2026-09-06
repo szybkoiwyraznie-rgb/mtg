@@ -240,6 +240,22 @@ Maelstrom jako równoprawny węzeł (pseudo-biom `wir`), ~28 kanonicznych POI.
 Wynik i kolejka: `docs/audits/AUDYT_2026-09-05-PR18.md`;
 `docs/audits/AUDYT_2026-09-06-PR19.md`.
 
+**PR-20 (2026-09-06, scalony 2026-09-06 16:11) — audyt PR-19:**
+audyt potwierdził naprawy Z1–Z5 i rewamp Alary v2 (ADR 0031/0033, pinezka
+305ARB point-in-polygon) i wyłonił kolejkę A1–A4 — same niedomknięcia
+sesji PR-19 (strona Alary za mapą v2, brak wpisów co-nowego /
+PROJECT_HISTORY, ROADMAP bez statusu scalenia). Wykonane w tym PR: A1–A4
+oraz **lekcja L9** (opis PR kumulatywnie po każdym commicie). Pętla
+Jakości bez kandydatów do pogłębiania i link-miningu. Wynik:
+`docs/audits/AUDYT_2026-09-06-PR19.md`.
+
+**PR-21 (2026-09-06, otwarty) — audyt PR-20:** pierwszy audyt z recenzją
+wizualną podkładów (raster poza repo, SKILL_MAPA_PLANU §8): PR-20 bez wad;
+usterki typograficzne mapy Alary W1–W3 (tytuły Jund/Grixis/Naya na ikonach
+i pasmach — poprawione w danych sceny), B1 (brak wpisu PR-20 tu i w
+PROJECT_HISTORY — uzupełnione), B2 (propozycja kontroli tytuł↔obiekt
+w `map-audit`). Wynik: `docs/audits/AUDYT_2026-09-06-PR20.md`.
+
 ## Wątki otwarte (czekają na decyzję właściciela)
 
 > **Zamknięte decyzją właściciela 2026-09-05 — NIE wracać do nich:**

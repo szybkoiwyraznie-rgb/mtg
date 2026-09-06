@@ -4,6 +4,34 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-06 — sesja PR-20: audyt PR-19 + kolejka napraw A1–A4 + lekcja L9
+
+Sesja `arena/01a076ea-mtg` (PR #20, squash `bbe6d34`, scalony 2026-09-06
+16:11). Tryb: „AGENTS i robisz dokładnie to co masz tam napisane” — bez
+nowej dostawy materializacji; osiem commitów na gałęzi.
+
+1. **Audyt PR-19** (`docs/audits/AUDYT_2026-09-06-PR19.md`): naprawy Z1–Z5
+   poprawne i kompletne; rewamp Alary v2 zgodny z ADR 0031/0033 i kanonem
+   nazw (28 POI, 40 kotwic, klocek `wir`); pinezka 305ARB zweryfikowana
+   point-in-polygon w środku wiru. Znaleziska A1–A4 = niedomknięcia sesji
+   PR-19 (strona Alary za mapą v2, brak wpisów co-nowego / PROJECT_HISTORY,
+   ROADMAP bez statusu scalenia).
+2. **Naprawy A1–A4:** `content/planes/alara.md` doprowadzony 1:1 do stanu
+   mapy v2 (Esper = archipelag na Morzu Esper, Maelstrom = region-węzeł,
+   pełna lista POI, Źródła); wpis co-nowego o scalonym PR-19; wpis
+   PROJECT_HISTORY o sesji PR-19; ROADMAP — PR-18/PR-19 oznaczone jako
+   scalone.
+3. **Lekcja L9** (`docs/LESSONS.md`): opis PR aktualizowany kumulatywnie
+   po każdym commicie merytorycznym (w PR-19 opis wymieniał tylko commit
+   audytowy, reszta zakresu scaliła się „po cichu”).
+4. **Pętla Jakości:** krok 1 zielony (104/104, build, map-audit 0); krok 2
+   bez kandydatów (10 stron 8/8); krok 3 bez encji z ≥2 kartami w planie;
+   krok 4 pinezki 5/5 i mapy 5/5. Handoff:
+   `docs/setup/HANDOFF_2026-09-06-pr20.md`.
+5. **Niedomknięcie sesji PR-20** (wykryte audytem PR-21): brak wpisu
+   o samej sesji PR-20 w PROJECT_HISTORY i ROADMAP — uzupełnione w sesji
+   PR-21 (B1).
+
 ## 2026-09-06 — sesja PR-19: audyt PR-18 + naprawy Z1–Z5 + rewamp mapy Alary v2
 
 Sesja `arena/01a0737d-mtg` (PR #19, squash `2a26531`, scalony 2026-09-06
