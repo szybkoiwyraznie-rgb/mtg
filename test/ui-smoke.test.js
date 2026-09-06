@@ -140,6 +140,10 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   // ADR 0033: Alara — jedna mapa scalonego planu; pinezka 305ARB w Maelstrom
   shim.idz('#/plan/alara');
   assert.ok(shim.app.innerHTML.includes('#/mapa/alara'), 'plan Alary: brak linku do mapy');
+  // Stopka czasu (ADR 0029) obowiązuje KAŻDY typ strony — plany też
+  // (zgłoszenie właściciela 2026-09-06: karty i mapy miały stopkę, plany nie).
+  assert.ok(shim.app.innerHTML.includes('class="stopka-czasu meta"') && shim.app.innerHTML.includes('Utworzono '),
+    'plan Alary: brak stopki „Utworzono / ostatnia aktualizacja” (ADR 0029)');
   shim.idz('#/mapa/alara');
   const al = shim.app.innerHTML;
   assert.ok(al.includes('Mapa: Alara'), 'mapa Alary: brak tytułu');
