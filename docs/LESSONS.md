@@ -173,3 +173,26 @@ mapy, testy) aktualizować go kumulatywnie `gh pr edit` (przy błędzie
 GraphQL: `gh api -X PATCH … -F body=@plik`, ENVIRONMENT §3) — zanim
 przyjdzie kolejna sesja i będzie musiała zgadywać, co PR faktycznie
 scalił.
+
+## L10 (2026-09-06) — geometria nie zastępuje oka: każdą mapę T3/T4 trzeba raz obejrzeć jako raster
+
+**Objaw:** mapa Alary v2 przeszła `map-audit` z wynikiem 0, `sprawdzWiazania`
+0 i recenzję danych sceny w audycie PR-19 — a przy pierwszym oglądzie
+rastru (PR-21) trzy z sześciu tytułów regionów leżały na forcie, paśmie
+i szlaku. Handoff PR-20 sam odnotował, że rewampu „nikt nie oglądał”.
+
+**Przyczyna:** weryfikator liczył kolizje wyłącznie tekst×tekst
+i „na lądzie”; relacja tytuł↔ikona/rzeźba nie była modelowana, a scena
+była poprawna semantycznie (etykiety zarejestrowane, wiązania POI OK).
+Audyt kodu i danych nie widzi kompozycji — to inna klasa błędu niż
+integralność.
+
+**Reguła:** po każdej zmianie tytułów, POI lub pasm w scenie
+(i przy audycie PR, który taką zmianę scalił) rasteryzuj podkład poza
+repo (ENVIRONMENT §1a, SKILL_MAPA_PLANU §8) i obejrzyj całość + cropy
+regionów; wnioski zapisuj w audycie/handoffie, bo raster znika z sesją.
+Każdą usterkę, którą złapało oko, przełóż na regułę geometryczną
+w `map-audit` **tylko jeśli** na pozostałych mapach daje 0 fałszywych
+alarmów (tak powstała `TYTUŁ NA OBIEKCIE` z marginesem 6) — reszta
+zostaje w checkliście oka.
+

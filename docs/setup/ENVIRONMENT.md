@@ -23,6 +23,20 @@ Reguła L1: przed poleganiem na ograniczeniu/braku ograniczenia — zmierz.
 Fakty wyżej obowiązują do odwołania (aktualizacja tylko z pomiarem
 i datą).
 
+### 1a. Obraz: rasteryzacja SVG i ogląd (pomiar 2026-09-06, sesja PR-21)
+
+| Co | Stan | Konsekwencja praktyczna |
+|---|---|---|
+| ImageMagick `convert` 6.9 | jest, ale **bez delegata SVG** (`rsvg-convert` brak) | `convert mapa.svg x.png` nie działa; `convert -crop WxH+X+Y +repage` na PNG działa — dobre do wycinków |
+| `@resvg/resvg-js@2` przez npm **poza repo** (`/tmp/rast`) | **działa** (prebuilt, ~5 s instalacji) | jedyna pewna ścieżka SVG→PNG; skrypt `render.js` z SKILL_MAPA_PLANU §8; zero zależności w repo (ADR 0002) |
+| Ogląd obrazów przez agenta (`read_file` PNG) | **dostępny** w tej sesji | recenzja wizualna map T3/T4 jest wykonalna: raster 1800 px na całość + cropy z 4000 px na regiony; `/tmp` znika z sesją — wnioski zapisuj w audycie |
+
+Wizja bywa zależna od modelu/sesji — na starcie sprawdź jednym
+`read_file` na dowolnym PNG, zanim zaplanujesz recenzję wizualną.
+Mapa, której nikt nie oglądał, może mieć usterki niewidoczne dla
+`map-audit` (audyt PR-20: tytuły na ikonach — dziś reguła `TYTUŁ NA
+OBIEKCIE`, ale kompozycję nadal sprawdza tylko oko).
+
 ## 2. Sandbox potrafi zresetować workspace w trakcie sesji
 
 **Objaw:** `HEAD` nagle wskazuje `main`, commity sesji „znikają",
