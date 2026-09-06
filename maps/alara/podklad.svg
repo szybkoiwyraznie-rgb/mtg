@@ -2129,9 +2129,9 @@
 <!-- === ETYKIETY (wzór: pod obiektem, konflikt => nad; ADR 0022) === -->
 <g font-family="Georgia, 'Times New Roman', serif" fill="#1c1c1c" style="paint-order: stroke; stroke: #f7f7f7; stroke-width: 3px; stroke-linejoin: round;">
 <text x="900" y="245" font-size="66" fill="#000000" class="tytul-kontynentu" text-anchor="middle">Bant</text>
-<text x="430" y="700" font-size="66" fill="#000000" class="tytul-kontynentu" text-anchor="middle">Naya</text>
-<text x="620" y="1190" font-size="66" fill="#000000" class="tytul-kontynentu" text-anchor="middle">Jund</text>
-<text x="1260" y="1090" font-size="66" fill="#000000" class="tytul-kontynentu" text-anchor="middle">Grixis</text>
+<text x="285" y="580" font-size="66" fill="#000000" class="tytul-kontynentu" text-anchor="middle">Naya</text>
+<text x="800" y="1040" font-size="66" fill="#000000" class="tytul-kontynentu" text-anchor="middle">Jund</text>
+<text x="1320" y="1230" font-size="66" fill="#000000" class="tytul-kontynentu" text-anchor="middle">Grixis</text>
 <text x="1560" y="555" font-size="66" fill="#000000" class="tytul-kontynentu" text-anchor="middle">Esper</text>
 <text x="990" y="610" font-size="66" fill="#000000" class="tytul-kontynentu" text-anchor="middle">The Maelstrom</text>
 <text x="1300" y="640" font-size="16" font-style="italic" fill="#1c3a5e" text-anchor="middle">Dwindling Sea</text>
@@ -2158,10 +2158,10 @@
 <text x="1240" y="947.6" font-size="14" fill="#6b1f2e" text-anchor="middle" data-ax="1240" data-ay="920" data-r="15" data-rg="13">The Boneheaps</text>
 <text x="330" y="960.4" font-size="16" fill="#6b1f2e" text-anchor="middle" data-ax="330" data-ay="940" data-r="6" data-rg="33">The Sacellum</text>
 <text x="1180" y="1001.6" font-size="14" font-style="italic" fill="#1e4d2b" text-anchor="middle" data-ax="1180" data-ay="985" data-r="4">The Dregscape</text>
-<text x="1260" y="974.8" font-size="14" fill="#6b1f2e" text-anchor="middle" data-ax="1260" data-ay="1030" data-r="15">Torchlight</text>
+<text x="1260" y="1057.6" font-size="14" fill="#6b1f2e" text-anchor="middle" data-ax="1260" data-ay="1030" data-r="15">Torchlight</text>
 <text x="1760" y="1046.6" font-size="14" font-style="italic" fill="#1c3a5e" text-anchor="middle" data-ax="1760" data-ay="1030" data-r="4">Inkwell</text>
 <text x="650" y="1118.6" font-size="14" fill="#6b1f2e" text-anchor="middle" data-ax="650" data-ay="1100" data-r="6" data-rg="31">The Boiling Slopes</text>
-<text x="585" y="1094.8" font-size="14" fill="#6b1f2e" text-anchor="middle" data-ax="585" data-ay="1150" data-r="15">Hellkite's Pass</text>
+<text x="585" y="1177.6" font-size="14" fill="#6b1f2e" text-anchor="middle" data-ax="585" data-ay="1150" data-r="15">Hellkite's Pass</text>
 <text x="1140" y="1187.6" font-size="14" fill="#6b1f2e" text-anchor="middle" data-ax="1140" data-ay="1160" data-r="15" data-rg="13">Unx</text>
 <text x="760" y="1217.3" font-size="13" fill="#6b1f2e" text-anchor="middle" data-ax="760" data-ay="1200" data-r="5.6" data-rg="28.1">The Sweltering Cauldron</text>
 <text x="460" y="1229.4" font-size="14" fill="#6b1f2e" text-anchor="middle" data-ax="460" data-ay="1210" data-r="6.8" data-rg="36.8">Mount Jhal</text>
