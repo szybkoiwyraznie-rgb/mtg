@@ -1,3 +1,24 @@
+## 2026-09-06 15:30 — PR-19: naprawy Z1–Z5 z audytu PR-18 + rewamp mapy Alary v2
+
+Sesja audytowa PR-19 domknęła zaległości z audytu PR-18 i poprawiła mapę
+Alary po recenzji właściciela:
+
+- **Termin „Fabuła"** (doprecyzowanie ADR 0026): w kartach 275FIN
+  i 305ARB „Fabuła dostawy (ADR …)" zastąpione przez „Fabuła właściciela";
+  w sekcjach Źródła obu kart dodane wpisy kotwicy Fabuły. Usunięte
+  odsyłacze do mechaniki Codexu z treści kart (275FIN, 305ARB) i stron
+  planów alara/final-fantasy (feedback B).
+- **Test ui-smoke systemowo pilnuje treści kart**: pętla po wszystkich
+  kartach `content/cards/` z asercjami zakazu „Fabuła dostawy"/„ADR"/
+  „verbatim" — luka pokrycia (dotąd tylko 1LTR/2BFZ) zamknięta.
+- **Snapshoty Scryfall**: source 275FIN/305ARB ujednolicone do
+  `cards/named?exact=` (ADR 0004).
+- **Mapa Alary v2** (rewamp po recenzji właściciela): Esper jako
+  **archipelag wysp na Morzu Esper** (akweny Dwindling Sea, Sea of
+  Stars, Inkwell — kanoniczna geografia shardu), Maelstrom jako
+  **równoprawny region-węzeł** z nowym pseudo-biomem `wir` w mapforge,
+  fraktalne linie brzegowe, ~28 kanonicznych POI; pinezka 305ARB
+  zweryfikowana w środku wiru.
 ## 2026-09-05 22:15 — mapa Alary od nowa: T3 z referencji fanowskich
 
 Właściciel odrzucił radialną mapę Alary („to nie jest Midgar — to pięć
