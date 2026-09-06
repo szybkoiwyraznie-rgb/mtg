@@ -14,7 +14,7 @@
   "autor": "MTG Lore Codex (praca własna — transkrypcja topologii w silniku mapforge, scena maps/alara/scena.json)",
   "licencja": "praca własna; rastry fanowskie użyte prywatnie jako referencja topologii poza gitem, bez redistribucji (ADR 0031)",
   "pobrano": "2026-09-05",
-  "notka": "T3: z referencji dziedziczymy TOPOLOGIĘ (Bant u góry, Naya zachód, Jund południowy zachód, Grixis południe/południowy wschód, Esper wschód z morzami wewnętrznymi; Maelstrom = plama w punkcie złączenia). NIE dziedziczymy fanowskich nazw spoza kanonu: etykiety i kotwice wyłącznie z MTG Wiki (Category:Alara locations). Stan planu: post-Conflux (ADR 0033); sceny z epoki shardów pinuje się do regionów. Scena mapforge: zrośnięte lądy (wewnętrzne wybrzeża kryte wypełnieniami), szwy regionów = granicaRegionu, Maelstrom = tint dzielnicy na lądzie (pinezka na lądzie)."
+  "notka": "T3: z referencji dziedziczymy TOPOLOGIĘ (Bant u góry, Naya zachód, Jund południowy zachód, Grixis południe/południowy wschód, Esper na wschodzie jako ARCHIPELAG wysp na Morzu Esper; Maelstrom = węzeł w punkcie złączenia, równoprawny shard). NIE dziedziczymy fanowskich nazw spoza kanonu: etykiety i kotwice wyłącznie z MTG Wiki (Category:Alara locations). Stan planu: post-Conflux (ADR 0033). Scena mapforge: nieregularne wybrzeża fraktalne (styl Zendikaru, redo 2026-09-06); granice shardów = zatoki morskie (jeden styl: woda); góry krótkie i zróżnicowane; biomy wypełniają kontynenty; rzeki płyną do morza; drogi i szlaki łączą osady; ~28 kanonicznych POI."
  },
  "rekonstrukcja": true,
  "kotwice": [
@@ -29,39 +29,39 @@
   {
    "nazwa": "Bant",
    "x": 0.45,
-   "y": 0.1643,
+   "y": 0.175,
    "typ": "region",
    "pozycja_zrodlo": "kanon (region G/W/U; topologia wg referencji fanowskiej)",
    "notka": "łąki, zamki, anioły; Topa, Valeron, Akrasa, Jhess, Eos"
   },
   {
    "nazwa": "Esper",
-   "x": 0.825,
-   "y": 0.5571,
+   "x": 0.78,
+   "y": 0.3964,
    "typ": "region",
    "pozycja_zrodlo": "kanon (region W/U/B; topologia wg referencji fanowskiej)",
-   "notka": "etherium, kasta magów; Sanctum Arcanum; morza wewnętrzne"
+   "notka": "etherium, kasta magów; archipelag wysp na Morzu Esper (Dwindling Sea, Sea of Stars, Inkwell); Sanctum Arcanum, Vectis, Palandius, The Glass Dunes"
   },
   {
    "nazwa": "Grixis",
-   "x": 0.59,
-   "y": 0.7143,
+   "x": 0.63,
+   "y": 0.7786,
    "typ": "region",
    "pozycja_zrodlo": "kanon (region U/B/R; topologia wg referencji fanowskiej)",
    "notka": "nekropolia po Vithii; Sedraxis"
   },
   {
    "nazwa": "Jund",
-   "x": 0.235,
-   "y": 0.8214,
+   "x": 0.31,
+   "y": 0.85,
    "typ": "region",
    "pozycja_zrodlo": "kanon (region B/R/G; topologia wg referencji fanowskiej)",
    "notka": "wulkaniczny łańcuch pokarmowy smoków"
   },
   {
    "nazwa": "Naya",
-   "x": 0.125,
-   "y": 0.4714,
+   "x": 0.215,
+   "y": 0.5,
    "typ": "region",
    "pozycja_zrodlo": "kanon (region R/G/W; topologia wg referencji fanowskiej)",
    "notka": "las-piętro, Anima; Sacellum, ruiny Antali"
@@ -85,23 +85,23 @@
   {
    "nazwa": "Akrasa",
    "x": 0.5,
-   "y": 0.2214,
+   "y": 0.2143,
    "typ": "poi",
    "pozycja_zrodlo": "kanon (mtg.wiki: Akrasa w Bant)",
    "notka": "Bant"
   },
   {
    "nazwa": "Jhess",
-   "x": 0.72,
-   "y": 0.2714,
+   "x": 0.695,
+   "y": 0.2071,
    "typ": "poi",
    "pozycja_zrodlo": "kanon (mtg.wiki: Jhess w Bant)",
    "notka": "Bant"
   },
   {
    "nazwa": "Eos",
-   "x": 0.3,
-   "y": 0.2286,
+   "x": 0.305,
+   "y": 0.2143,
    "typ": "poi",
    "pozycja_zrodlo": "kanon (mtg.wiki: Eos w Bant)",
    "notka": "Bant"
@@ -109,38 +109,38 @@
   {
    "nazwa": "Sun-Dappled Court",
    "x": 0.59,
-   "y": 0.2143,
+   "y": 0.2,
    "typ": "poi",
    "pozycja_zrodlo": "kanon (mtg.wiki: Sun-Dappled Court w Bant; olbrzymie tuje)",
    "notka": "Bant"
   },
   {
    "nazwa": "Sacellum",
-   "x": 0.15,
+   "x": 0.165,
    "y": 0.6714,
    "typ": "poi",
-   "pozycja_zrodlo": "kanon (mtg.wiki: Sacellum w Naya)",
+   "pozycja_zrodlo": "kanon (mtg.wiki: The Sacellum — dżunglowa świątynia Animy, żywa katedra z korzeni)",
    "notka": "Naya"
   },
   {
    "nazwa": "Ruiny Antali",
-   "x": 0.165,
-   "y": 0.3429,
+   "x": 0.24,
+   "y": 0.3714,
    "typ": "poi",
    "pozycja_zrodlo": "kanon (mtg.wiki: Antali w Naya)",
    "notka": "Naya"
   },
   {
    "nazwa": "Sanctum Arcanum",
-   "x": 0.8,
-   "y": 0.6286,
+   "x": 0.7575,
+   "y": 0.4357,
    "typ": "poi",
    "pozycja_zrodlo": "kanon (mtg.wiki: Sanctum Arcanum na Esper)",
    "notka": "Esper"
   },
   {
    "nazwa": "Sedraxis",
-   "x": 0.525,
+   "x": 0.53,
    "y": 0.8714,
    "typ": "poi",
    "pozycja_zrodlo": "kanon (mtg.wiki: nekropolis Sedraxis, lich Sedris)",
@@ -148,27 +148,195 @@
   },
   {
    "nazwa": "Dwindling Sea",
-   "x": 0.725,
-   "y": 0.5143,
+   "x": 0.65,
+   "y": 0.4571,
    "typ": "akwen",
    "pozycja_zrodlo": "topologia wg referencji fanowskiej (morze wewnętrzne Esper)",
    "notka": "Esper"
   },
   {
    "nazwa": "Sea of Stars",
-   "x": 0.93,
-   "y": 0.4357,
+   "x": 0.91,
+   "y": 0.1786,
    "typ": "akwen",
    "pozycja_zrodlo": "topologia wg referencji fanowskiej (wschodnie morze Esper)",
    "notka": "Esper"
   },
   {
    "nazwa": "Inkwell",
-   "x": 0.925,
-   "y": 0.6786,
+   "x": 0.88,
+   "y": 0.7357,
    "typ": "akwen",
    "pozycja_zrodlo": "topologia wg referencji fanowskiej (południowe morze Esper)",
    "notka": "Esper"
+  },
+  {
+   "nazwa": "Mount Jhal",
+   "x": 0.23,
+   "y": 0.8643,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Mount Jhal — wulkan, kryjówka Malactotha)",
+   "notka": "Jund"
+  },
+  {
+   "nazwa": "The Boiling Slopes",
+   "x": 0.325,
+   "y": 0.7857,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: The Boiling Slopes — wulkaniczne wzgórza)",
+   "notka": "Jund"
+  },
+  {
+   "nazwa": "The Sweltering Cauldron",
+   "x": 0.38,
+   "y": 0.8571,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: The Sweltering Cauldron — wulkan)",
+   "notka": "Jund"
+  },
+  {
+   "nazwa": "Vectis",
+   "x": 0.81,
+   "y": 0.6286,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Vectis — największa osada ludzi na Esper)",
+   "notka": "Esper"
+  },
+  {
+   "nazwa": "Palandius",
+   "x": 0.8825,
+   "y": 0.2571,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Palandius — największe miasto vedalken)",
+   "notka": "Esper"
+  },
+  {
+   "nazwa": "The Glass Dunes",
+   "x": 0.78,
+   "y": 0.4571,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: The Glass Dunes — największy ląd Esperu, biała szklana pustynia)",
+   "notka": "Esper"
+  },
+  {
+   "nazwa": "Unx",
+   "x": 0.57,
+   "y": 0.8286,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Unx — nekropolia wokół starożytnej areny, gigantyczny szkielet smoka)",
+   "notka": "Grixis"
+  },
+  {
+   "nazwa": "Torchlight",
+   "x": 0.63,
+   "y": 0.7357,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Torchlight — górska forteca, największa pustelnia żywych)",
+   "notka": "Grixis"
+  },
+  {
+   "nazwa": "The Boneheaps",
+   "x": 0.62,
+   "y": 0.6571,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: The Boneheaps — wysypisko kości kathari)",
+   "notka": "Grixis"
+  },
+  {
+   "nazwa": "Kederekt",
+   "x": 0.69,
+   "y": 0.925,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Kederekt — nadbrzeżna nekropolia, na wpół zatopione dwory)",
+   "notka": "Grixis"
+  },
+  {
+   "nazwa": "The Dregscape",
+   "x": 0.59,
+   "y": 0.7036,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: The Dregscape — bagna zbutwiałych zwłok)",
+   "notka": "Grixis"
+  },
+  {
+   "nazwa": "The Droning Isles",
+   "x": 0.8975,
+   "y": 0.9214,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: The Droning Isles — kruszące się wieże, ule banewasps)",
+   "notka": "Grixis"
+  },
+  {
+   "nazwa": "Qasal",
+   "x": 0.2275,
+   "y": 0.55,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Qasal — ostatnia warownia Cloud Nacatl, wysoko w górach)",
+   "notka": "Naya"
+  },
+  {
+   "nazwa": "Etlan",
+   "x": 0.1475,
+   "y": 0.4929,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Etlan — miejsce Obelisku Naya, po zburzeniu Wieży Qasal)",
+   "notka": "Naya"
+  },
+  {
+   "nazwa": "The Summoning Root",
+   "x": 0.26,
+   "y": 0.4429,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: The Summoning Root — podstawa największego drzewa nizin)",
+   "notka": "Naya"
+  },
+  {
+   "nazwa": "Serul Cove",
+   "x": 0.79,
+   "y": 0.1536,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Serul Cove — nadbrzeżne miasto, handel kradzionymi sigilami)",
+   "notka": "Bant"
+  },
+  {
+   "nazwa": "Fort Dawnray",
+   "x": 0.45,
+   "y": 0.2571,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Fort Dawnray — miasto w Akrasie)",
+   "notka": "Bant"
+  },
+  {
+   "nazwa": "The Obelisk of Bant",
+   "x": 0.525,
+   "y": 0.2571,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Obelisk of Bant — biały monolit w miejscu Giltspire Castle)",
+   "notka": "Bant"
+  },
+  {
+   "nazwa": "The Cathedral of Bliss",
+   "x": 0.55,
+   "y": 0.1071,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Cathedral of Bliss — lewitująca świątynia aniołów Ashy)",
+   "notka": "Bant"
+  },
+  {
+   "nazwa": "Tidehollow",
+   "x": 0.8175,
+   "y": 0.4679,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Tidehollow — system jaskiń pod największymi wyspami Esperu)",
+   "notka": "Esper"
+  },
+  {
+   "nazwa": "Hellkite's Pass",
+   "x": 0.2925,
+   "y": 0.8214,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Hellkite's Pass — przełęcz w górach Jundu)",
+   "notka": "Jund"
   }
  ],
  "pinezki": [

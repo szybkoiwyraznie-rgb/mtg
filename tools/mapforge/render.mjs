@@ -8,7 +8,7 @@
  *     dzielnice: [{ id, punkty, opcje: { ton } }]     // atlas miasta: tinty
  *     szczeliny: [{ id, punkty, opcje: { szer } }]    // wąwozy miejskie
  *     mury: [{ id, punkty, opcje }]                   // mury z blankami
- *     biomy: [{ id, typ: 'las'|'bagno'|'step'|'lod'|'tkanina'|'gruz', punkty, opcje }]
+ *     biomy: [{ id, typ: 'las'|'bagno'|'step'|'lod'|'wir'|'tkanina'|'gruz', punkty, opcje }]
  *     pasma: [{ id, punkty, opcje }]
  *     wulkany: [{ x, y, opcje }]
  *     rzeki: [{ id, punkty, s0, s1, doplywy: [{ id, punkty }] }]
@@ -28,7 +28,7 @@
  */
 
 import {
-  PAL, motyw, las, bagno, step, lod, pasmo, pasmoInstancje, wulkan, rzeka,
+  PAL, motyw, las, bagno, step, lod, wir, pasmo, pasmoInstancje, wulkan, rzeka,
   doplyw, jezioro, droga, miasto, ruina, fort, hedron, iglica, szczyt, etykieta,
   lukEtykieta, kompas, ramka, skalaLinia, drzewo,
   dzielnica, granicaDzielnicy, granicaRegionu, mur, szczelina, tkanina, gruz,
@@ -37,7 +37,7 @@ import {
 } from './bloki.mjs';
 import { prng, gladka, prosta, parsujD, pit } from './geom.mjs';
 
-const BLOKI_BIOMOW = { las, bagno, step, lod, tkanina, gruz };
+const BLOKI_BIOMOW = { las, bagno, step, lod, wir, tkanina, gruz };
 
 /** Bufor wokół łamanej (pas szer. 2·p) — np. strefa zajęta szczeliny. */
 function buforPas(punkty, p) {

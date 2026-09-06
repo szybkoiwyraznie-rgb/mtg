@@ -203,6 +203,41 @@ export function step(id, poly, { gestosc = 1, maski = null, wyklucz = null } = {
   ).join('\n');
 }
 
+/* ---------- biom: wir (Maelstrom — pseudo-biom, spirala zasysania) ---------- */
+
+/**
+ * Wir jako „pseudo-biom" — koncentryczne, przerywane pierścienie + spirala
+ * Archimedesa wpisane w bbox poligonu (środek = centroid). Używany dla
+ * Maelstromu na Alarze: graficzny znak burzy-wiru na całym węźle centralnym,
+ * zamiast zwykłego rozsiewu. Achromatyczny (PAL.tekst) — zgodny z motywem
+ * atlas (ADR 0019). Nie rozsiewa punktów, więc maski/wyklucz są ignorowane.
+ */
+export function wir(id, poly, { pierscienie = 4, obroty = 2.6, opc = null } = {}) {
+  const xs = poly.map((p) => p[0]);
+  const ys = poly.map((p) => p[1]);
+  const cx = (Math.min(...xs) + Math.max(...xs)) / 2;
+  const cy = (Math.min(...ys) + Math.max(...ys)) / 2;
+  const r = Math.min(Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys)) / 2 * 0.82;
+  const kolor = PAL.tekst;
+  let out = `<g class="mf-wir" data-x="${rr(cx)}" data-y="${rr(cy)}">`;
+  for (let i = 1; i <= pierscienie; i++) {
+    const rr0 = r * i / pierscienie;
+    out += `<circle cx="${rr(cx)}" cy="${rr(cy)}" r="${rr(rr0)}" fill="none" ` +
+      `stroke="${kolor}" stroke-width="1.3" ` +
+      `stroke-dasharray="${rr(rr0 * 0.42)} ${rr(rr0 * 0.2)}" opacity="${rr(0.72 - i * 0.12)}"/>`;
+  }
+  const n = 100;
+  let d = '';
+  for (let i = 0; i <= n; i++) {
+    const t = i / n;
+    const a = t * obroty * Math.PI * 2;
+    const rad = r * (0.05 + 0.95 * t);
+    d += `${i === 0 ? 'M' : 'L'} ${rr(cx + Math.cos(a) * rad)} ${rr(cy + Math.sin(a) * rad)} `;
+  }
+  out += `<path d="${d}" fill="none" stroke="${kolor}" stroke-width="1.6" stroke-linecap="round" opacity="0.85"/>`;
+  return out + `</g>`;
+}
+
 /* ---------- biom: lodowiec (biała nakładka + spękania) ---------- */
 
 export function lod(id, poly, { pekniecia = 3 } = {}) {
