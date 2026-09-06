@@ -221,15 +221,24 @@ reużywalność oszczędza autorstwo, nie bajty. Skutek: w PR-11 wdrożono
 a mapy żyją jako osobne strony `dist/maps/<plan>.html` z surowymi
 podkładami `dist/maps/<plan>/<plik>` i ZIP-em całego drzewa.
 
-**PR-19 (2026-09-05, w toku) — Final Fantasy: plan-franczyza + Midgar + karta 275FIN:**
-czwarta karta (dostawa właściciela: `275FIN Aerith Rescue Mission`)
-wprowadza sagę Final Fantasy. Decyzje właściciela: jeden plan
-`final-fantasy` z mapą per część sagi (ADR 0032 — NIE kontynenty na
-jednej mapie, NIE osobne plany per świat); mapa Midgaru T3 z płaskiego
-schematu MMTS (ReverendRyu) jako prywatnej referencji poza gitem,
-fallback T4. Kroki P1–P5 w
-`docs/plans/PLAN_2026-09-05-pr19-final-fantasy-midgar.md`; rozbudowa
-silnika o klucz rejestru `plan/podmapa`.
+**Pakiet Final Fantasy (scalony w PR-18, 2026-09-05; plan w
+`docs/plans/PLAN_2026-09-05-pr19-final-fantasy-midgar.md`):** czwarta karta
+(dostawa właściciela: `275FIN Aerith Rescue Mission`) wprowadziła sagę
+Final Fantasy. Decyzje właściciela: jeden plan `final-fantasy` z mapą per
+część sagi (ADR 0032 — NIE kontynenty na jednej mapie, NIE osobne plany
+per świat); mapa Midgaru T3 z płaskiego schematu MMTS (ReverendRyu) jako
+prywatnej referencji poza gitem; rozbudowa silnika o klucz rejestru
+`plan/podmapa`. Pakiet domknięty wraz z Alarą (305ARB, ADR 0033) w PR-18.
+
+**PR-19 (2026-09-05/06, scalony 2026-09-06 15:30) — audyt PR-18:**
+audyt wykazał zgodność z ADR (integralność 104/104, map-audit 0) i wyłonił
+kolejkę Z1–Z5 (dryf terminu „Fabuła dostawy" wobec ADR 0026, odsyłacze ADR
+w treści kart, luka pokrycia ui-smoke, source snapshotów, plany cytujące
+ADR). Wykonane w tym PR: naprawy Z1–Z5 (deb7cc51) + **rewamp mapy Alary v2**
+po recenzji właściciela (b1904dd8): Esper jako archipelag na Morzu Esper,
+Maelstrom jako równoprawny węzeł (pseudo-biom `wir`), ~28 kanonicznych POI.
+Wynik i kolejka: `docs/audits/AUDYT_2026-09-05-PR18.md`;
+`docs/audits/AUDYT_2026-09-06-PR19.md`.
 
 ## Wątki otwarte (czekają na decyzję właściciela)
 

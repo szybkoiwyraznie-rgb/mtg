@@ -152,3 +152,24 @@ kartach (137GPT, 2BFZ) była przypadkowa.
 właściciela (ADR 0011); Scryfall dostarcza metadanych wydruku, nie
 klucza kolekcji. Nie „korygować” numerów dostawy na podstawie Scryfalla
 — najwyżej udokumentować oba numery w snapshotcie (`notka_numery`).
+
+## L9 (2026-09-06) — opis PR aktualizuje się kumulatywnie po każdym commicie merytorycznym, nie „na końcu”
+
+**Objaw:** PR-19 (audyt PR-18) zaciągnął na gałąź trzy commity — audyt,
+naprawy Z1–Z5 i rewamp mapy Alary v2 — a jego opis na GitHubie do
+momentu scalenia wymieniał tylko pierwszy z nich („kolejka czeka na
+zlecenie”). Kolejna sesja (audyt PR-20) musiała rekonstruować zakres
+PR-19 z `git log` i diffów, a zmiany nie trafiły do co-nowego/historii
+przed scaleniem.
+
+**Przyczyna:** opis PR traktowany jak element „domknięcia sesji”, a nie
+bieżący stan gałęzi; commity merytoryczne wchodziły bez aktualizacji
+opisu, więc dokument rozjechał się z rzeczywistością — dokładnie ten sam
+wzorzec dryfu co treść↔ADR (Z1 w PR-18/PR-19), tylko w warstwie procesu.
+
+**Reguła:** opis PR to żywy dokument gałęzi (AGENTS.md §7 pkt 4): po
+każdym wypchniętym commicie zmieniającym zakres (nowa treść, naprawy,
+mapy, testy) aktualizować go kumulatywnie `gh pr edit` (przy błędzie
+GraphQL: `gh api -X PATCH … -F body=@plik`, ENVIRONMENT §3) — zanim
+przyjdzie kolejna sesja i będzie musiała zgadywać, co PR faktycznie
+scalił.

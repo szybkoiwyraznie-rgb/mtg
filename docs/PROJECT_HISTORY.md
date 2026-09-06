@@ -4,6 +4,33 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-06 — sesja PR-19: audyt PR-18 + naprawy Z1–Z5 + rewamp mapy Alary v2
+
+Sesja `arena/01a0737d-mtg` (PR #19, squash `2a26531`, scalony 2026-09-06
+15:30). Trzy commity na gałęzi: audyt PR-18 (`fe5675f1`), naprawy Z1–Z5
+(`deb7cc51`), rewamp mapy Alary po recenzji właściciela (`b1904dd8`).
+
+1. **Audyt PR-18** (`docs/audits/AUDYT_2026-09-05-PR18.md`): integralność
+   104/104, build zielony, map-audit 0; treści LORE-first zgodne z ADR,
+   snapshoty i mapy z czystą proweniencją. Znaleziska Z1–Z5 (dryf terminu
+   „Fabuła dostawy" wobec ADR 0026, odsyłacze ADR w treści kart, luka
+   pokrycia ui-smoke, source snapshotów, plany cytujące ADR).
+2. **Naprawy Z1–Z5** (deb7cc51): termin „Fabuła właściciela" w kartach
+   275FIN/305ARB + wpisy kotwicy w Źródłach; usunięcie odsyłaczy do
+   mechaniki Codexu z kart i stron planów alara/final-fantasy; pętla
+   ui-smoke po wszystkich kartach (zakaz „Fabuła dostawy"/„ADR"/„verbatim");
+   snapshoty ujednolicone do `cards/named?exact=`.
+3. **Rewamp mapy Alary v2** (b1904dd8, po recenzji właściciela — wcześniejsza
+   wersja z PR-18 nie przeszła odbioru): Esper jako **archipelag wysp na
+   Morzu Esper** (kanoniczna geografia — Dwindling Sea, Sea of Stars,
+   Inkwell), Maelstrom jako **równoprawny region-węzeł** (nowy pseudo-biom
+   `wir` w mapforge), fraktalne linie brzegowe w stylu Zendikaru,
+   ~28 kanonicznych POI; pinezka 305ARB w środku wiru (point-in-polygon).
+4. **Niedomknięcia sesji PR-19** (wykryte audytem PR-20): opis PR nie
+   aktualizowany kumulatywnie (obejmuje tylko commit 1); brak wpisu
+   w `content/co-nowego.md`, brak wpisu w PROJECT_HISTORY i brak handoffu
+   — uzupełnione w sesji PR-20 (A2/A3).
+
 ## 2026-09-05 — sesja PR-18, pakiet FF („PR-19” wewnętrznie): Final Fantasy — plan-franczyza, Midgar T3, karta 5FIN
 
 1. **Zlecenie:** czwarta karta — dostawa właściciela „275FIN Aerith
