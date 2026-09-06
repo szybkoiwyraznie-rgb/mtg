@@ -333,9 +333,20 @@ python3 tools/map-audit.py [plan] [--woda="Nazwa1,Nazwa2"]
 
 Sprawdza: etykiety na lądzie (PIT po spłaszczeniu Beziera), kolizje par
 etykiet (bbox ≈ 0.62·fs·znaki), markery na lądzie, pinezki kart
-z `map.json` na lądzie; kotwice w wodzie raportuje informacyjnie.
-Kod wyjścia 1 = problemy (gotowe pod CI). Mapy liniowe (T2, adoptowane)
-są pomijane w testach na-lądzie z adnotacją.
+z `map.json` na lądzie, **tytuły regionów na glifach obiektów** (od PR-21:
+`TYTUŁ NA OBIEKCIE` — box tytułu `tytul-kontynentu`/fs ≥ 40 + margines 6
+nie może zawierać kotwicy `mf-fort/miasto/ruina/iglica/wulkan/szczyt/
+hedron/wodospad/herb`; las, kępki i wir pod napisem są OK — ADR 0025);
+kotwice w wodzie raportuje informacyjnie. Kod wyjścia 1 = problemy;
+`test/map-audit.test.js` uruchamia skrypt w `npm test`, więc czerwony
+audyt = czerwony pakiet. Mapy liniowe (T2, adoptowane) są pomijane
+w testach na-lądzie z adnotacją.
+
+> Czego audyt NADAL nie widzi (audyt PR-20, recenzja rastrów): tytuł nad
+> **drogą/rzeką** (cienka wstęga — zwykle akceptowalne) i ogólna
+> kompozycja („napis wygląda obco”). To sprawdza tylko oko — raster
+> poza repo wg §8 i `read_file` PNG; obowiązkowe po każdej zmianie
+> tytułów lub POI.
 
 ### Reguły wynikające (obowiązkowe przy rysowaniu i poprawkach)
 

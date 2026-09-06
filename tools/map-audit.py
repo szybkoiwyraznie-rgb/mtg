@@ -11,7 +11,12 @@ Sprawdza podsłuchem geometrii (bez oglądania obrazu):
      (pomija hedrony dryfujące — opacity; pomija grupy z transformem,
      np. legendę i kompas),
   5. pinezki kart z maps/<plan>/map.json na lądzie,
-  6. kotwice map.json w wodzie (raport informacyjny).
+  6. kotwice map.json w wodzie (raport informacyjny),
+  7. tytuły regionów (class tytul-kontynentu lub font-size ≥ 40) leżące na
+     glifach obiektów mapforge (fort/miasto/ruina/iglica/wulkan/szczyt/
+     hedron/wodospad/herb) — napis nad biomem jest OK (ADR 0025), napis
+     zakrywający ikonę lub grzbiet nie (audyt PR-20: „Jund" na forcie
+     Hellkite's Pass, „Grixis" na paśmie Kości, „Naya" na grzbiecie).
 
 Ląd = <path> z fill lądu (#e8dbb8, #eef0e6) o ≥16 punktach + wysepki
 z <circle>/<path> w <g fill="#e8dbb8">. Krzywe Beziera są spłaszczane
@@ -23,6 +28,7 @@ Użycie:
   tools/map-audit.py                      # wszystkie maps/*/podklad.svg
   tools/map-audit.py zendikar             # jeden plan
   tools/map-audit.py zendikar --woda "Halimar,Bojuka Bay"
+  tools/map-audit.py /abs/katalog          # katalog spoza maps/ (fixtury testów)
 Kod wyjścia: 0 = bez problemów, 1 = są problemy (do CI).
 """
 import json
@@ -38,6 +44,12 @@ FILLE_LADU = {'#e8dbb8', '#eef0e6',         # pergamin: ląd / lodowiec (Sejiri)
                '#f7f7f7',                   # atlas (mapforge): ląd = jasny szary papier
                '#575757'}                   # Ravnica: ciemny pas podziemi (Undercity) = ląd
 MARKERY = {'gora', 'wulkan', 'drzewo', 'bagno', 'miasto', 'ruina'}
+# Glify mapforge, których tytuł regionu nie może zakrywać (ikony i rzeźba);
+# biomy (mf-drzewo/mf-kepka) i wir celowo poza listą — napis nad lasem
+# czy nad wirem jest cechą (ADR 0025), nie błędem.
+OBIEKTY_MF = {'mf-fort', 'mf-miasto', 'mf-ruina', 'mf-iglica', 'mf-wulkan',
+              'mf-szczyt', 'mf-hedron', 'mf-wodospad', 'mf-herb'}
+TYTUL_MIN_FS = 40                            # próg „tytułu" dla SVG bez klasy
 SPODZEANE_WODY = {                           # konwencja projektu
     'Bojuka Bay', 'Sunder Bay', 'Chill Depths', 'Makindi Trenches',
     'Halimar', 'Beyeen', 'Agadeem', 'Jwar', 'Emeria', 'Zulaport',
@@ -145,6 +157,35 @@ class Mapa:
                     rot = float(m.group(1))
                 out.append((txt, float(el.get('x')), float(el.get('y')),
                             float(el.get('font-size') or 15), rot))
+        return out
+
+    def tytuly(self):
+        """Tytuły regionów: <text class="tytul-kontynentu"> lub font-size ≥ 40
+        (ręczne podkłady bez klasy). Pomija grupy z transformem (oprawa)."""
+        out = []
+        for el in self.root.iter(NS + 'text'):
+            if id(el) in self.transformowane or el.get('x') is None:
+                continue
+            fs = float(el.get('font-size') or 15)
+            if el.get('class') != 'tytul-kontynentu' and fs < TYTUL_MIN_FS:
+                continue
+            txt = ''.join(el.itertext()).strip()
+            if txt:
+                out.append((txt, float(el.get('x')), float(el.get('y')), fs))
+        return out
+
+    def glify_obiektow(self):
+        """Kotwice (data-x/y) glifów mapforge z OBIEKTY_MF: ikony POI, szczyty
+        pasm, wulkany, hedrony. Pomija oprawę (transform) i celowy dryf
+        (opacity — hedrony Emerii)."""
+        out = []
+        for el in self.root.iter(NS + 'g'):
+            kl = el.get('class') or ''
+            if kl not in OBIEKTY_MF or id(el) in self.transformowane:
+                continue
+            if el.get('opacity') or not (el.get('data-x') and el.get('data-y')):
+                continue
+            out.append((kl, float(el.get('data-x')), float(el.get('data-y'))))
         return out
 
     def forge_w_wodzie(self):
@@ -440,6 +481,28 @@ def _obb_nachodza(a, b):
     return True
 
 
+def tytuly_na_obiektach(mapa, margines=6):
+    """Tytuły regionów zakrywające glify obiektów mapforge.
+
+    Model: AABB tytułu (jak _etykieta_box: ±0.31·fs/znak, −0.82·fs…+0.24·fs)
+    poszerzony o `margines`; konflikt = kotwica glifu wewnątrz. Margines 6
+    (jak tolerancja na_ladzie) — na Zendikarze v2 i Alarze v3 daje 0
+    zgłoszeń, na Alarze v2 łapał W1–W3 z audytu PR-20 już przy 0.
+    Zwraca [(tytuł, x, y, {klasa: [pozycje]})].
+    """
+    glify = mapa.glify_obiektow()
+    out = []
+    for txt, x, y, fs in mapa.tytuly():
+        x1, y1, x2, y2 = _etykieta_box(txt, x, y, fs)
+        trafienia = {}
+        for kl, gx, gy in glify:
+            if x1 - margines <= gx <= x2 + margines and y1 - margines <= gy <= y2 + margines:
+                trafienia.setdefault(kl, []).append((gx, gy))
+        if trafienia:
+            out.append((txt, x, y, trafienia))
+    return out
+
+
 def audytuj_podklad(mapa, nazwa, mjson, woda):
     problemy, info = [], []
     # Zapora na „śmieciowe" wartości atrybutów (undefined/NaN/null): XML jest
@@ -478,6 +541,14 @@ def audytuj_podklad(mapa, nazwa, mjson, woda):
             if _obb_nachodza(oba, obb):
                 problemy.append(f'{nazwa}: KOLIZJA ETYKIET: {ta!r} @({xa:.0f},'
                                 f'{ya:.0f}) × {tb!r} @({xb:.0f},{yb:.0f})')
+    # Tytuł regionu na ikonie/grzbiecie: map-audit do PR-20 tego nie widział
+    # (kolizje liczył tylko tekst×tekst) — trzy tytuły Alary v2 leżały na
+    # forcie, paśmie i szlaku, a audyt raportował 0 (znalezisko B2).
+    for txt, x, y, trafienia in tytuly_na_obiektach(mapa):
+        opis = ' + '.join(
+            f'{kl} @({poz[0][0]:.0f},{poz[0][1]:.0f})' + (f' ×{len(poz)}' if len(poz) > 1 else '')
+            for kl, poz in sorted(trafienia.items()))
+        problemy.append(f'{nazwa}: TYTUŁ NA OBIEKCIE: {txt!r} @({x:.0f},{y:.0f}) × {opis}')
     for href, x, y in mapa.markery():
         if not mapa.na_ladzie(x, y):
             problemy.append(f'{nazwa}: MARKER W WODZIE: {href} @({x:.0f},{y:.0f})')
