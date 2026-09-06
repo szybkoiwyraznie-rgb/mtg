@@ -293,6 +293,19 @@ const r=new Resvg(fs.readFileSync(process.argv[2]),{fitTo:{mode:'width',value:+p
 fs.writeFileSync(process.argv[3], r.render().asPng());
 ```
 
+`crop.js` (wycinek regionu przez resvg, sesja PR-21 — bez `sharp`):
+**nie podmieniaj `viewBox` na wycinek** (resvg-js 2.x panikuje
+`Option::unwrap() on a None value`); użyj opcji `crop` przy renderze
+z zoomem — współrzędne mapy × skala:
+```js
+const { Resvg } = require('@resvg/resvg-js'); const fs=require('fs');
+const [inp,out,x,y,w,h,s=2]=process.argv.slice(2).map((v,i)=>i<2?v:+v);
+const r=new Resvg(fs.readFileSync(inp,'utf8'),{fitTo:{mode:'zoom',value:s},
+  crop:{left:x*s,top:y*s,right:(x+w)*s,bottom:(y+h)*s},font:{loadSystemFonts:true}});
+fs.writeFileSync(out, r.render().asPng());
+// node crop.js maps/mirrodin/podklad.svg /tmp/sw.png 400 880 620 400 2
+```
+
 `px.js` (surowa maska):
 ```js
 const {Resvg}=require('@resvg/resvg-js'); const fs=require('fs');
