@@ -1,0 +1,345 @@
+{
+ "plan": "mirrodin",
+ "tytul": "Mirrodin",
+ "wariant": "T4",
+ "podklad": "podklad.svg",
+ "wymiary": {
+  "szerokosc": 2000,
+  "wysokosc": 1400
+ },
+ "zrodlo": {
+  "url": "https://mtg.wiki/page/New_Phyrexia_(plane)",
+  "url2": "https://www.mtgsalvation.com/articles/49606-the-world-of-mirrodin-i-moons-of-mirrodin",
+  "tytul": "Mirrodin — rekonstrukcja układu regionów wg kanonu tekstowego (MTG Wiki: New Phyrexia (plane), Tangle, Mephidross, Glimmervoid, Oxidda Chain, Quicksilver Sea, Razor Fields, Rey-Goor; Vorthos Guide „Moons of Mirrodin”; Mirrodin Player's Guide 2003)",
+  "autor": "MTG Lore Codex (praca własna — scena mapforge maps/mirrodin/scena.json z generatora tools/mapforge/mirrodin-scena-t4.py)",
+  "licencja": "praca własna na kanonie tekstowym; glify gór mapome CC-BY-4.0 (ADR 0020)",
+  "pobrano": "2026-09-06",
+  "notka": "T4 (rekonstrukcja kanoniczna): oficjalna mapa Mirrodinu nigdy nie powstała (MTG Wiki), w sieci brak wektora (T2) i rastra (T3) — research 2026-09-06 w zrodlo-research.md. Rzut: JEDNA TARCZA = widoczna półkula metalowej sfery (obwód ≈ 1400 km); poza tarczą papier arkusza — plan nie ma oceanu, jedynym akwenem jest Quicksilver Sea (jezioro rtęci). Epoka: powierzchnia z ery MRD–SOM PRZED kompleacją (ADR 0033 §2 — po New Phyrexia plan ma dziewięć sfer, a powierzchnia staje się Mirrexem; taka scena wymagałaby osobnego podkładu). Topologia: Glimmervoid centralny; pięć regionów w wycinkach po 72° w kolejności cyklu fastlandów SOM (Razor Fields N → Quicksilver Sea ENE → Mephidross SSE → Oxidda SSW → Tangle WSW); Copperline Gorge = wąski pas Glimmervoid między Tangle a Oxiddą; Rey-Goor = pas bagien przy krawędzi za końcem gór. Pozycje POI wewnątrz regionów są RELACYJNE (kanon podaje przynależność i sąsiedztwa, nie współrzędne) — pole pozycja_zrodlo każdej kotwicy. Raster fanowski (np. inkarnate „Mirrodin”, John Ruder) nie był dostępny; gdy właściciel go dostarczy, posłuży wyłącznie jako źródło pomocnicze dla pozycji nieustalonych, nigdy jako zamiennik kanonu (decyzja właściciela 2026-09-06)."
+ },
+ "rekonstrukcja": true,
+ "epoka": "MRD–SOM (powierzchnia przed kompleacją; ADR 0033 §2)",
+ "kotwice": [
+  {
+   "nazwa": "Glimmervoid",
+   "x": 0.5,
+   "y": 0.5071,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (mtg.wiki: centralna równina heksagonalnych płyt; Moons of Mirrodin: „Glimmervoid is central to the plane”)",
+   "notka": "srebrna równina; cztery Ur-Golem Towers; Glistening Dunes; przechodzi się przez nią między każdą parą regionów"
+  },
+  {
+   "nazwa": "Razor Fields",
+   "x": 0.5,
+   "y": 0.2,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Razor Fields = część Glimmervoid; W); pozycja N = wybór rekonstrukcji (cykl fastlandów: Seachrome Coast → Quicksilver Sea, Razorverge Thicket → Tangle)",
+   "notka": "pola razorgrass; Auriok i leonin; Taj-Nar, Bladehold, Ten Shields, Liet Field, Manka Run"
+  },
+  {
+   "nazwa": "Quicksilver Sea",
+   "x": 0.7045,
+   "y": 0.4122,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (mtg.wiki: jedyny ocean planu, rtęć; graniczy z Mephidross — Darkslick — i Glimmervoid/Razor Fields — Seachrome)",
+   "notka": "morze rtęci; vedalken (Synod) i Neurok; Lumengrid, Medev, Quicksilver Spires, Titan Forge"
+  },
+  {
+   "nazwa": "Mephidross",
+   "x": 0.6381,
+   "y": 0.7787,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (mtg.wiki: bagno nekrogenowe; graniczy z Oxiddą — Blackcleave — i Quicksilver Sea — Darkslick; wkracza na Tangle przez Rey-Goor)",
+   "notka": "nim, Moriok, Geth; Ish Sah / Vault of Whispers, Black Lacuna"
+  },
+  {
+   "nazwa": "Oxidda Chain",
+   "x": 0.3736,
+   "y": 0.7556,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (mtg.wiki: góry planu; graniczy z Glimmervoid; Moons of Mirrodin: blisko Tangle przez wąski pas Glimmervoid — Copperline Gorge)",
+   "notka": "rdzawe góry; gobliny, Vulshok, klan Krark; Kuldotha / Great Furnace, Krark-Home, Oxidagg, Wailing Cairns"
+  },
+  {
+   "nazwa": "Tangle",
+   "x": 0.2955,
+   "y": 0.4122,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (mtg.wiki: miedziany las; graniczy z Glimmervoid i — wg wiki — Quicksilver Sea; Moons of Mirrodin: blisko Oxiddy)",
+   "notka": "scena 488SOM: viridiańscy zbrojmistrzowie; Viridia, Tel-Jilad, Radix, Temple Might, Cambree Garden, Outer Altar"
+  },
+  {
+   "nazwa": "Taj-Nar",
+   "x": 0.5,
+   "y": 0.2714,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki Razor_Fields: Ancient Den w centrum Pól; stolica leonin)",
+   "notka": "Kha leonin; Cave of Light obok"
+  },
+  {
+   "nazwa": "Cave of Light",
+   "x": 0.4791,
+   "y": 0.2949,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: pod Taj-Nar; White Lacuna = Great Deep)",
+   "notka": "biała lacuna — zejście do jądra"
+  },
+  {
+   "nazwa": "Bladehold",
+   "x": 0.4196,
+   "y": 0.1916,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: największa osada Auriok, na Manka Run)",
+   "notka": "handel i rzemiosło Aurioków"
+  },
+  {
+   "nazwa": "Ten Shields",
+   "x": 0.5804,
+   "y": 0.1916,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: osada Auriok/leonin na Manka Run)",
+   "notka": "wieś wybita przez Phyrexian (SOM)"
+  },
+  {
+   "nazwa": "Lumengrid",
+   "x": 0.6175,
+   "y": 0.4461,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki Quicksilver_Sea: Seat of the Synod na spirze przy brzegu)",
+   "notka": "stolica vedalken; Grand Assembly Chamber"
+  },
+  {
+   "nazwa": "Pool of Knowledge",
+   "x": 0.5955,
+   "y": 0.4081,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: w Lumengrid; Blue Lacuna wewnątrz basenu)",
+   "notka": "niebieska lacuna"
+  },
+  {
+   "nazwa": "Medev",
+   "x": 0.6807,
+   "y": 0.591,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: wioska Neurok na brzegu morza); pozycja przy Darkslick = rekonstrukcja",
+   "notka": "cynowe osady Neurok"
+  },
+  {
+   "nazwa": "Quicksilver Spires",
+   "x": 0.7152,
+   "y": 0.4418,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: kryształowe iglice-mosty przez morze)",
+   "notka": "sieć dróg vedalken i Neurok"
+  },
+  {
+   "nazwa": "Titan Forge",
+   "x": 0.68,
+   "y": 0.2914,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki Quicksilver_Sea: w kręgu nieruchomej rtęci); pozycja w morzu = rekonstrukcja",
+   "notka": "kuźnia tytanów"
+  },
+  {
+   "nazwa": "Ish Sah",
+   "x": 0.6264,
+   "y": 0.7556,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (Moons of Mirrodin: Vault of Whispers w sercu Mephidrossu — największy komin)",
+   "notka": "Geth i Moriok; Black Lacuna pod nim"
+  },
+  {
+   "nazwa": "Black Lacuna",
+   "x": 0.6245,
+   "y": 0.7919,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: pod Ish Sah)",
+   "notka": "czarna lacuna"
+  },
+  {
+   "nazwa": "wioski Moriok",
+   "x": 0.6616,
+   "y": 0.6629,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: rozproszone osady ludzkie na bagnach); pozycja symboliczna",
+   "notka": "nekromanci Moriok"
+  },
+  {
+   "nazwa": "Kuldotha",
+   "x": 0.2901,
+   "y": 0.7587,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki Oxidda_Chain: Great Furnace, stolica goblinów; Red Lacuna obok)",
+   "notka": "Steel Mother; scena 488SOM nie dotyczy"
+  },
+  {
+   "nazwa": "Red Lacuna",
+   "x": 0.319,
+   "y": 0.8047,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Womb of the Steel Mother, przy Great Furnace)",
+   "notka": "czerwona lacuna"
+  },
+  {
+   "nazwa": "Oxidagg",
+   "x": 0.3611,
+   "y": 0.7126,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: wioska Vulshok w górach); pozycja w paśmie = rekonstrukcja",
+   "notka": "Vulshok; Alderok/Vektro"
+  },
+  {
+   "nazwa": "Wailing Cairns",
+   "x": 0.4431,
+   "y": 0.8329,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: iglice z czaszek, leże Azax-Azoga); pozycja przy Blackcleave = rekonstrukcja",
+   "notka": "demon Azax-Azog"
+  },
+  {
+   "nazwa": "Radix",
+   "x": 0.3098,
+   "y": 0.4189,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki Tangle: w samym środku Tangle; Araneas Altar zbudowany na jego miejscu; Green Lacuna)",
+   "notka": "krąg miedzi 100 stóp; Panopticon dokładnie pod nim (jądro)"
+  },
+  {
+   "nazwa": "Tel-Jilad",
+   "x": 0.2986,
+   "y": 0.3342,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Tree of Tales, dom trolli; Moons of Mirrodin: główny hub Tangle, Viridia obok)",
+   "notka": "historia planu wyryta w pniu"
+  },
+  {
+   "nazwa": "Viridia",
+   "x": 0.2702,
+   "y": 0.3941,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (Moons of Mirrodin: osada elfów wokół Tel-Jilad; Trial Terrace, Prison Tree)",
+   "notka": "scena 488SOM: viridiańscy zbrojmistrzowie"
+  },
+  {
+   "nazwa": "Temple Might",
+   "x": 0.3489,
+   "y": 0.2987,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: świątynia Sylvok archdruida Benzira); pozycja w lesie = rekonstrukcja",
+   "notka": "Sylvok"
+  },
+  {
+   "nazwa": "Cambree Garden",
+   "x": 0.2601,
+   "y": 0.4951,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: ufortyfikowany ogród elfów w koronie drzewa); pozycja = rekonstrukcja",
+   "notka": "gelfruit"
+  },
+  {
+   "nazwa": "Outer Altar",
+   "x": 0.3019,
+   "y": 0.5469,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: sanktuarium Sylvok); pozycja na skraju lasu = rekonstrukcja",
+   "notka": "Sylvok"
+  },
+  {
+   "nazwa": "Ur-Golem Towers",
+   "x": 0.525,
+   "y": 0.5393,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki Glimmervoid: cztery wieże potępiające Memnarcha); pozycja wokół środka = rekonstrukcja",
+   "notka": "cztery filary (glify: 4 iglice)"
+  },
+  {
+   "nazwa": "Rey-Goor",
+   "x": 0.2532,
+   "y": 0.7107,
+   "typ": "pogranicze",
+   "pozycja_zrodlo": "kanon (mtg.wiki Rey-Goor: Black Bayou między Mephidross a Tangle — las nasiąka olejem i przechodzi w bagno)",
+   "notka": "pas bagien przy krawędzi tarczy za końcem Oxiddy — kontakt Dross↔Tangle; klan wampirów Bleak Coven"
+  },
+  {
+   "nazwa": "Seachrome Coast",
+   "x": 0.644,
+   "y": 0.224,
+   "typ": "pogranicze",
+   "pozycja_zrodlo": "kanon (fastland SOM: Razor Fields / Quicksilver Sea)",
+   "notka": "W/U"
+  },
+  {
+   "nazwa": "Darkslick Shores",
+   "x": 0.7378,
+   "y": 0.6175,
+   "typ": "pogranicze",
+   "pozycja_zrodlo": "kanon (mtg.wiki Darkslick: Mephidross / Quicksilver Sea)",
+   "notka": "U/B; zatrute wody"
+  },
+  {
+   "nazwa": "Blackcleave Cliffs",
+   "x": 0.5,
+   "y": 0.8429,
+   "typ": "pogranicze",
+   "pozycja_zrodlo": "kanon (mtg.wiki Blackcleave: Mephidross / Oxidda Chain; Dross wkracza na góry)",
+   "notka": "B/R"
+  },
+  {
+   "nazwa": "Copperline Gorge",
+   "x": 0.3036,
+   "y": 0.6321,
+   "typ": "pogranicze",
+   "pozycja_zrodlo": "kanon (fastland SOM; Moons of Mirrodin: Tangle i Oxidda blisko, przez wąski pas Glimmervoid)",
+   "notka": "R/G — wąski pas płyt między lasem a grzbietem"
+  },
+  {
+   "nazwa": "Razorverge Thicket",
+   "x": 0.3531,
+   "y": 0.2182,
+   "typ": "pogranicze",
+   "pozycja_zrodlo": "kanon (fastland SOM: Tangle / Razor Fields)",
+   "notka": "G/W"
+  },
+  {
+   "nazwa": "Liet Field",
+   "x": 0.5,
+   "y": 0.1929,
+   "typ": "kraina",
+   "pozycja_zrodlo": "kanon (mtg.wiki: pole razorgrass wzdłuż Manka Run)",
+   "notka": "Razor Fields"
+  },
+  {
+   "nazwa": "Glistening Dunes",
+   "x": 0.6072,
+   "y": 0.6357,
+   "typ": "kraina",
+   "pozycja_zrodlo": "kanon (mtg.wiki Glimmervoid: Glistening Dunes); pozycja przy Dross = rekonstrukcja",
+   "notka": "Glimmervoid"
+  },
+  {
+   "nazwa": "Krark-Home",
+   "x": 0.3887,
+   "y": 0.7616,
+   "typ": "kraina",
+   "pozycja_zrodlo": "kanon (mtg.wiki Oxidda_Chain: góra klanu Krark)",
+   "notka": "tunele klanu Krark"
+  }
+ ],
+ "regiony": [],
+ "pinezki": [
+  {
+   "karta": "488som-carapace-forger",
+   "x": 0.2837,
+   "y": 0.376,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła: „w sercu miedzianego lasu Tangle” — viridiańscy zbrojmistrzowie bez nazwanego miejsca; pinezka w sercu Tangle między Viridią (osada elfów) a Tel-Jilad, z dala od Rey-Goor, skąd nadciąga zaraza Mephidrossu."
+  }
+ ],
+ "scena": "scena.json",
+ "generator": "tools/mapforge/mirrodin-scena-t4.py",
+ "silnik": "mapforge (ADR 0018/0019/0020/0022/0023); styl atlas; kompas i skala wyłączone (sfera bez biegunów, skala w adnotacji)",
+ "zrodlo_fanmapa": null,
+ "otwarte_na_kolejne_przejscia": [
+  "DODANE 2026-09-06 (PR-21, pakiet 2): mapa T4 pre-kompleacyjna. Nierozstrzygnięte w kanonie: (a) wiki mówi, że Tangle graniczy też z Quicksilver Sea, a „Moons of Mirrodin” — że morze leży „za górami od Tangle”; na jednej półkuli z cyklem fastlandów obu naraz spełnić się nie da — przyjęto cykl fastlandów (karty drukowane), kontakt Tangle↔morze możliwy poza widoczną półkulą; (b) Titan Forge, Medev, Oxidagg, Wailing Cairns, Temple Might, Cambree Garden, Outer Altar — pozycje wewnątrz regionów symboliczne. Raster fanowski od właściciela może je doprecyzować (tylko pozycje nieustalone).",
+  "Kolejne karty Mirrodinu: sceny z MRD–5DN–SOM–MBS pinują na tej mapie; sceny New Phyrexia (sfery) / Mirrex / ONE wymagają osobnego podkładu (ADR 0033 §2)."
+ ]
+}
