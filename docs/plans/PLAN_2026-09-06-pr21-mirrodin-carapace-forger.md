@@ -104,10 +104,13 @@ z pinezką w Tangle; wpis co-nowego; handoff i opis PR zaktualizowane.
 
 ## Kroki
 
-- [ ] Roadmapa (ten plik) + opis PR #21 rozszerzony o pakiet 2.
-- [ ] Wpis kolekcji (verbatim) + snapshot Scryfall → `npm test`.
-- [ ] Mapa: `scena.json` → `cli.mjs` (0 uwag wiązań) → `map.json`
-      + `zrodlo-research.md` → rasteryzacja i ogląd → `map-audit` 0.
-- [ ] Strona planu + karta LORE-first + asercje smoke → `npm test`,
-      `npm run build`.
-- [ ] Domknięcie: co-nowego, handoff, PROJECT_HISTORY, opis PR, push.
+- [x] Roadmapa (ten plik); opis PR #21 rozszerzony o pakiet 2 — **czeka na
+      przywrócenie połączenia z GitHub** (token sesji wygasł po odświeżeniu
+      środowiska; treść bloku w HANDOFF).
+- [x] Wpis kolekcji (verbatim) + snapshot Scryfall → `npm test` (7e1f8a1).
+- [x] Mapa: `scena.json` → `cli.mjs` (0 uwag wiązań) → `map.json`
+      + `zrodlo-research.md` → rasteryzacja i ogląd → `map-audit` 0 (7e1f8a1).
+- [x] Strona planu + karta LORE-first + asercje smoke → `npm test` 107/107,
+      `npm run build` 12 stron (6c038d0).
+- [x] Domknięcie: co-nowego, handoff, PROJECT_HISTORY; opis PR i push —
+      **zablokowane** do czasu przywrócenia połączenia z GitHub (patrz HANDOFF).

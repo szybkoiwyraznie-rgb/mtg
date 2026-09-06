@@ -1,3 +1,37 @@
+## 2026-09-06 23:20 — PR-21 (pakiet 2): 488SOM Carapace Forger + nowy plan Mirrodin z mapą T4
+
+Dostawa właściciela: **488SOM · Carapace Forger · SOM · Mirrodin** wraz
+z Fabułą — pierwsza karta szóstego planu i pierwsza mapa narysowana
+w całości z kanonu tekstowego:
+
+- **Research mapy T2→T3→T4:** oficjalna mapa Mirrodinu nigdy nie
+  powstała (MTG Wiki), w sieci brak wektora i rastra kartograficznego;
+  raport przed rysowaniem, decyzja właściciela: T4 od razu z kanonu,
+  ewentualny raster fanowski później — tylko jako źródło pomocnicze.
+  Werdykt i cytaty w `maps/mirrodin/zrodlo-research.md`.
+- **Mapa Mirrodinu (mapforge, styl atlas):** jedna tarcza = widoczna
+  półkula metalowej sfery, poza nią papier arkusza (plan bez oceanu;
+  jedynym akwenem morze rtęci). Glimmervoid w środku z czterema wieżami
+  ur-golemów; pięć regionów w wycinkach po 72° w kolejności cyklu
+  fastlandów *Scars of Mirrodin* (Razor Fields → Quicksilver Sea →
+  Mephidross → Oxidda Chain → Tangle); Copperline Gorge jako wąski pas
+  płyt między lasem a górami, Rey-Goor jako bagno na styku Drossu
+  i Tangle; lacuny jako pierścienie w płycie; pięć słońc jako adnotacje
+  nad swoimi regionami. 28 POI, 38 kotwic z proweniencją relacyjną,
+  kompas i skala wyłączone (sfera bez biegunów). Epoka: powierzchnia
+  przed kompleacją. Podkład obejrzany jako raster (całość + wycinki),
+  `map-audit` 0 problemów.
+- **Strona planu `mirrodin`:** setting, geografia pięciu regionów, ludy,
+  epoki przed i po kompleacji, opis mapy.
+- **Karta 488SOM (LORE-first):** Kronika łuczników Tangle, którzy
+  odkładają łuki i kują sobie skorupy; odczyt flavoru fraza po frazie
+  („Bows and whips cannot save us…”), Metalcraft jako trzy artefakty
+  zasilające pancerz; pinezka **region** w sercu Tangle między Viridią
+  a Tel-Jilad. Nowe tagi: `elfy`, `phyrexia`, `rzemioslo`.
+- **Kontrola:** `npm test` 107/107 (asercje planu, mapy i karty
+  Mirrodinu; lista kart 6), build 12 stron, generator sceny
+  `tools/mapforge/mirrodin-scena-t4.py` deterministyczny.
+
 ## 2026-09-06 17:30 — PR-21: audyt PR-20 z pierwszą recenzją wizualną map + pogłębienie Alary
 
 Sesja domyślna (audyt poprzedniego scalonego PR + Pętla Jakości), po raz
