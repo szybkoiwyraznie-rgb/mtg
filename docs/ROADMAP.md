@@ -255,6 +255,12 @@ usterki typograficzne mapy Alary W1–W3 (tytuły Jund/Grixis/Naya na ikonach
 i pasmach — poprawione w danych sceny), B1 (brak wpisu PR-20 tu i w
 PROJECT_HISTORY — uzupełnione), B2 (propozycja kontroli tytuł↔obiekt
 w `map-audit`). Wynik: `docs/audits/AUDYT_2026-09-06-PR20.md`.
+**Pakiet 2 tego samego PR (zlecenie właściciela):** 488SOM Carapace
+Forger + nowy plan **Mirrodin** z mapą **T4** (rekonstrukcja kanoniczna
+w mapforge: tarcza-półkula metalowej sfery, pięć regionów wg cyklu
+fastlandów SOM, epoka przed kompleacją; `maps/mirrodin/`), strona planu,
+karta LORE-first z pinezką `region` w Tangle. Roadmapa:
+`docs/plans/PLAN_2026-09-06-pr21-mirrodin-carapace-forger.md`.
 
 ## Wątki otwarte (czekają na decyzję właściciela)
 

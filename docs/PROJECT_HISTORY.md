@@ -26,6 +26,21 @@ obrazów przez agenta** (rastry map przez resvg poza repo).
 4. **Dokumentacja trwała:** ENVIRONMENT §1a (rasteryzacja i ogląd map),
    LESSONS L10 (geometria nie zastępuje oka), SKILL_MAPA_PLANU §10.
    Handoff: `docs/setup/HANDOFF_2026-09-06-pr21.md`.
+5. **Pakiet 2 (zlecenie właściciela w tej samej sesji):** dostawa
+   **488SOM · Carapace Forger · SOM · Mirrodin** + Fabuła — szósta karta
+   i szósty plan. Research mapy T2→T3→T4 (brak oficjalnej mapy planu,
+   brak wektora i rastra); decyzje właściciela: T4 od razu z kanonu,
+   raster fanowski ewentualnie później jako źródło pomocnicze, pakiet
+   w PR #21. Mapa `maps/mirrodin/` (mapforge, generator
+   `tools/mapforge/mirrodin-scena-t4.py`): tarcza-półkula metalowej
+   sfery, Glimmervoid centralny, pięć regionów wg cyklu fastlandów SOM,
+   lacuny jako hedron, słońca jako adnotacje; 28 POI, 38 kotwic
+   relacyjnych, epoka przed kompleacją; ogląd rastra (L10) → trzy
+   poprawki typografii; `map-audit` 0. Strona planu `mirrodin`, karta
+   LORE-first z pinezką `region` w sercu Tangle, tagi `elfy`/`phyrexia`/
+   `rzemioslo`, asercje smoke (107/107, build 12 stron). Incydent:
+   odświeżenie sandboxa i utrata tokena GitHub na ~2 h — praca lokalna,
+   potem `rebase --onto` na `4ba8173` i push fast-forward.
 
 ## 2026-09-06 — sesja PR-20: audyt PR-19 + kolejka napraw A1–A4 + lekcja L9
 
