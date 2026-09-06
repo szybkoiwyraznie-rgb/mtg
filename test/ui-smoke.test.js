@@ -150,6 +150,22 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   assert.ok(karta3.includes('Illusory Demon'), 'karta 305ARB: brak tytułu');
   assert.ok(karta3.includes('#/mapa/alara?pin=305arb-illusory-demon'),
     'karta 305ARB: brak deep-linka pinezki');
+
+  // PR-21 pakiet 2: Mirrodin — mapa T4 (rekonstrukcja kanoniczna, tarcza-półkula);
+  // pinezka 488SOM w sercu Tangle (pewność „region”)
+  shim.idz('#/plan/mirrodin');
+  assert.ok(shim.app.innerHTML.includes('#/mapa/mirrodin'), 'plan Mirrodinu: brak linku do mapy');
+  shim.idz('#/mapa/mirrodin');
+  const mi = shim.app.innerHTML;
+  assert.ok(mi.includes('Mapa: Mirrodin'), 'mapa Mirrodinu: brak tytułu');
+  assert.ok(mi.includes('src="maps/mirrodin.html"'), 'mapa Mirrodinu: brak iframe');
+  shim.idz('#/karta/488som-carapace-forger');
+  const karta4 = shim.app.innerHTML;
+  assert.ok(karta4.includes('488SOM'), 'karta 488SOM: brak imgId');
+  assert.ok(karta4.includes('Carapace Forger'), 'karta 488SOM: brak tytułu');
+  assert.ok(karta4.includes('<h2>Kronika Lore</h2>'), 'karta 488SOM: brak otwarcia LORE-first');
+  assert.ok(karta4.includes('#/mapa/mirrodin?pin=488som-carapace-forger'),
+    'karta 488SOM: brak deep-linka pinezki');
   shim.przywroc();
 
   // ── Strona mapy Śródziemia (samowystarczalny HTML, T2 → <img>)
@@ -271,7 +287,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (5)'), 'lista kart: brak 5 kart');
+  assert.ok(lista.includes('Karty Katalogowe (6)'), 'lista kart: brak 6 kart');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
     'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
@@ -336,7 +352,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   const slugiKart = fs.readdirSync(katalogKart)
     .filter((f) => f.endsWith('.md') && f !== 'README.md')
     .map((f) => f.replace(/\.md$/, ''));
-  assert.ok(slugiKart.length >= 5, 'oczekiwano ≥5 kart w content/cards');
+  assert.ok(slugiKart.length >= 6, 'oczekiwano ≥6 kart w content/cards');
   for (const slug of slugiKart) {
     shim.idz(`#/karta/${slug}`);
     const html = shim.app.innerHTML;
@@ -349,7 +365,9 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   }
 
   shim.idz('#/');
-  assert.ok(shim.app.innerHTML.includes('Dunland Crebain'), 'home: brak ostatniej materializacji');
+  // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — przy ≥6 kartach
+  // najstarsza (1LTR) wypada z listy, więc sprawdzamy najnowszą (488SOM, 2026-09-06).
+  assert.ok(shim.app.innerHTML.includes('Carapace Forger'), 'home: brak ostatniej materializacji');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();
