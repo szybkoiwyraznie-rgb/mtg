@@ -84,13 +84,41 @@ QA resvg i Chromium 149 poza repo. Wady wykryte mimo zielonych bram.
 
 ### C. Pętla Jakości (ADR 0006/0015)
 
-- [ ] Jawny ranking słabości stron; pogłębienie 1–3 stron LORE
+- [x] Jawny ranking słabości stron; pogłębienie 1–3 stron LORE
   z kwerendą i cytowaniami, bez meta-informacji o wydrukach.
+  Wykonane: Aerith Rescue Mission (motywacje, Hojo/Cetra, ostrożny
+  opis przeszłości Clouda i rozróżnienie sceny od sekwencji gry) oraz
+  Mirrodin (pamięć Tel-Jilad, Zniknięcie, Kemba i rozłam leonin).
+  Flavor Aerith pozostaje jawnie nieobecny; numery, dostawy i pinezki bez zmian.
 - [ ] Link-mining: wspólne encje tylko przy progu ≥2 kart; brak
   kwalifikujących się encji odnotowany, bez tworzenia haseł na zapas.
 - [x] Pass mapowy: kompletność, dokładność i czytelność map własnych;
   naprawy map z audytu mogą stanowić jego wynik. T2 bez ingerencji
   w adoptowany line-art; T1 Tarkiru pozostaje źródłowym rastrem.
+
+#### Ranking i wybór stron (po A1–A6)
+
+Kontrola 130/130: wszystkie karty mają obowiązkowe sekcje, ≥2 źródła,
+mapę/pinezkę i pogrubione encje. Kryteria 1–3 i 5 gidu nie wyłaniają
+braków. Przy kryterium 4 oceniamy treść, nie samą interpunkcję:
+
+1. **Aerith Rescue Mission** (2026-09-05): „Postacie i Byty” to dwa
+   długie zdania wyliczające sylwetki, bez rozwinięcia relacji, długu
+   wobec Aerith i celu badań Shinry. Pogłębić motywacje; Cloud jako
+   deklarujący przeszłość SOLDIER, nie bezkrytyczne powtórzenie tej
+   deklaracji. Flavor nie istnieje — nie wymyślać go dla długości sekcji.
+2. **Mirrodin** (2026-09-06): jedyna strona 7/8, brak wychodzących
+   wikilinków. Uzupełnić społeczny sens pamięci/Rebuking i Zniknięcia,
+   rozdzielając porządek czasów Memnarcha od społeczeństwa epoki Scars;
+   połączyć z istniejącą kartą Carapace Forger, bez kopiowania jej analizy.
+3. Pozostałe strony: brak wyższego priorytetu wg kolejki; Tarkir został
+   już merytorycznie poprawiony w A1. W tej części **2 pogłębienia**,
+   nie rozszerzanie wszystkich stron ani dokładanie wydrukowych metadanych.
+
+Kwerendy: 2 zapytania FFVII (ratunek Shinra, Cloud/SOLDIER), 2 zapytania
+Mirrodinu (Rebuking/Vanishing, nonhuman cultures); rozwinięcie właściwych
+sekcji źródeł (oryginalne FFVII, nie sklejanie scen z Remake). Oddzielna
+kwerenda Nowej Phyrexii do oceny link-miningu. URL-e w treści stron.
 
 ### D. Zamknięcie
 

@@ -89,10 +89,10 @@ Thicket**.
 
 ## Ludy
 
-**Elfy Viridian** i **trolle** Tangle żyją w symbiozie: trolle strzegą
-pamięci w Tel-Jilad, elfy raz na rok w czasie konwergencji słońc
-przechodzą przy Radiksie Rebuking — rytuał wymazania bolesnych
-wspomnień, które trolle wpisują do Drzewa. Elfy są łucznikami
+W czasach Memnarcha **elfy Viridian** i **trolle** Tangle łączyła
+szczególna więź: trolle strzegły pamięci w Tel-Jilad, a elfy podczas
+konwergencji słońc przechodziły przy Radiksie **Rebuking** — rytuał
+usuwania bolesnych wspomnień, zapisywanych potem przez trolle w Drzewie. Elfy są łucznikami
 i myśliwymi lasu; ich zbrojmistrzowie kują w miedzi. **Sylvok** —
 zieloni ludzie Tangle — słuchają druidów. **Leonin** Razor Fields
 odpowiadają przed Kha, wojownikiem-wodzem z Taj-Nar; obok nich żyją
@@ -106,6 +106,40 @@ nekromanci władający **nim** — zombie wylęgłymi z toksycznych mgieł;
 ich panem jest Geth. Wszędzie kręcą się **myr** — srebrne konstrukty
 Memnarcha — i **blinkmothy**, a każda żywa istota nosi w ciele metal
 wszczepiony przez grzyb **mycosynth**.
+
+## Cena pamięci i Zniknięcie
+
+**Tel-Jilad** nie było tylko archiwum. Elfy oddawały trollom wspomnienia,
+których same nie potrafiły znieść; bez Rebuking nawiedzały je obezwładniające
+wizje przeszłości. Rytuał niósł ulgę, lecz tworzył zależność: trolle znały
+więcej z historii ludu niż ci, których ta historia dotyczyła. Publiczne
+zapisy obejmowały tylko część przeszłości, a dawne dzieje skrywano.
+Nieufność **Glissy** wobec wymazywania wspomnień wyrasta więc z samego
+porządku życia Tangle, nie wyłącznie z osobistego uporu.
+[5](https://www.mtgsalvation.com/articles/49606-the-world-of-mirrodin-i-moons-of-mirrodin)
+
+Zniszczenie pułapek dusz Memnarcha przyniosło **Zniknięcie** (*Vanishing*).
+Wielu porwanych mogło wrócić na swoje plany, lecz dla pozostających
+wyglądało to jak nagła utrata krewnych, nauczycieli i przywódców.
+W Tangle zniknęli niemal wszyscy pozostali trolle, połowa elfów i część
+ludzi. Zwycięstwo nad strażnikiem świata nie odbudowało automatycznie
+wspólnot: przerwało także ciągłość ich pamięci. Viridianie, pozbawieni
+dawnego oparcia, zaczęli szukać nowego porządku; **Resurgenci Ezuriego**
+widzieli go w odrzuceniu techniki i dawnej hierarchii.
+
+Inną odpowiedź wybrali leonin. Po zniknięciu **Rakshy Golden Cuba**
+**Kemba** nie przyjęła jego tytułu kha: ogłosiła się regentką,
+podtrzymując możliwość powrotu dawnego przywódcy. Odbudowa Taj-Nar
+miała przywrócić godność i poczucie ciągłości, ale nie zatrzymała rozłamu.
+**Kha-Tal** uznawali dawny ład, podczas gdy **Obu-Tal** pod wodzą
+**Juryana** chcieli nowego społeczeństwa. Mirrodin wkraczał w epokę
+Blizn nie jako jeden zjednoczony lud, lecz jako społeczności rozdarte
+różnymi odpowiedziami na tę samą stratę.
+
+Na takim tle zwrot łuczników ku ciężkiemu orężowi w
+[[488som-carapace-forger|Carapace Forger]] nabiera dodatkowego znaczenia:
+las broni nie tylko ciał mieszkańców, ale kultury, która już raz
+utraciła znaczną część swoich strażników pamięci.
 
 ## Epoki: jedna powierzchnia, potem dziewięć sfer
 
@@ -146,6 +180,11 @@ i sąsiedztwa, nie współrzędne); proweniencja każdej kotwicy
 w `map.json`, werdykt researchu w `zrodlo-research.md`.
 
 ## Źródła
+
+- Doug Beyer, The Nonhuman Cultures of Mirrodin (2010), sekcje Leonin
+  i Elves — skutki Zniknięcia, Kemba jako regentka, rozłam Kha-Tal/
+  Obu-Tal, Juryan i Resurgenci Ezuriego:
+  https://web.archive.org/web/20220129053004/https://magic.wizards.com/en/articles/archive/savor-flavor/nonhuman-cultures-mirrodin-2010-12-07
 
 - MTG Wiki, hasło New Phyrexia (plane) — Argentum/Mirrodin, sfera
   o obwodzie 1400 km, pięć słońc i lacuny, pełna lista lokacji
