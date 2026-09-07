@@ -290,6 +290,14 @@ Raport: `docs/audits/AUDYT_2026-09-07-PR21.md`; podsumowanie i ograniczenia:
 `docs/setup/HANDOFF_2026-09-07-pr22.md`. Surowe stats 98% wynikają z braku
 nieobowiązkowej pinezki hasła społecznego, nie z brakujących sekcji lore.
 
+**Rozszerzenie PR-22 — 605SHM Consign to Dream / Lorwyn:**
+research i rekomendacja przed materializacją zakończone. Jeden plan,
+dwa klasyczne oblicza epoki Oony, domyślny Shadowmoor; para Varghedina
+jako kandydat T1/T1, zależnie od pełnego QA i zgody właściciela.
+Raport: `docs/research/RESEARCH_2026-09-07-lorwyn-shadowmoor.md`.
+Karta/plan/mapa nie zostały jeszcze dodane; oczekujemy na decyzję
+oraz oryginały rastrów (sandbox pobrał jedynie miniatury).
+
 ## Wątki otwarte (czekają na decyzję właściciela)
 
 > **Zamknięte decyzją właściciela 2026-09-05 — NIE wracać do nich:**

@@ -48,6 +48,21 @@ wtedy pogłębianie i link-mining pozostawały niewykonane.
 Praca gotowa do recenzji w PR #22; scalenie pozostaje decyzją właściciela.
 Szczegóły i ograniczenia w `docs/setup/HANDOFF_2026-09-07-pr22.md`.
 
+### Nowe zlecenie po Pętli — research 605SHM / Lorwyn–Shadowmoor
+
+Właściciel przekazał 605SHM Consign to Dream (SHM, Lorwyn) z Fabułą
+Glen Elendra/Oony i poprosił o rekomendację obsługi dwóch wcieleń oraz
+możliwych map, przed rysowaniem. Roadmapa `ca232ff` zachowuje oczekującą
+Fabułę verbatim; archiwum kolekcji i baza nie zostały rozszerzone.
+
+Sprawdzono SHM/32, klasyczną epokę Oony, niezmienność Glen w Wielkiej
+Zorzy oraz inny stan świata z Lorwyn Eclipsed (przewodnik i finał).
+Znaleziono parę map Varghedina i alternatywy; metadane oryginałów
+potwierdzone, ale lokalnie obejrzano tylko miniatury (TLS blokuje pełne
+JPG). Raport i warunkowa rekomendacja T1/T1 w `docs/research/`.
+Implementacja czeka na akceptację kierunku i pliki do rzeczywistego QA,
+nie na automatyczne uznanie fanowskiej kartografii za kanon.
+
 ## 2026-09-06 — sesja PR-21: audyt PR-20 z pierwszą recenzją wizualną map + Pętla Jakości
 
 Sesja `arena/01a0770f-mtg` (PR #21, scalony 2026-09-07 20:47,

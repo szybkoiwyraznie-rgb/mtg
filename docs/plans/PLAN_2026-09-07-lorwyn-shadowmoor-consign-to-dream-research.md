@@ -40,12 +40,12 @@ przenieść Fabułę verbatim do archiwum, nie zastępować jej syntezą researc
 - [x] Sprawdzenie repo/PR: #22 otwarty, drzewo czyste, pełna historia;
   nie powtarzać zakończonego audytu PR #21.
 - [x] Lektura obowiązujących ADR 0026/0033/0035 i procedury map.
-- [ ] Research kanonu, epok i dokładnego druku Scryfalla.
-- [ ] Lista kandydatów map z URL-ami; obejrzenie dostępnych podkładów
+- [x] Research kanonu, epok i dokładnego druku Scryfalla.
+- [x] Lista kandydatów map z URL-ami; obejrzenie dostępnych podkładów
   i uczciwe oznaczenie materiałów niedostępnych/niezweryfikowanych.
-- [ ] Raport w `docs/research/` z rekomendacją, wariantami i decyzjami
+- [x] Raport w `docs/research/` z rekomendacją, wariantami i decyzjami
   wymagającymi potwierdzenia właściciela; powrót do właściciela przed wdrożeniem.
-- [ ] Zielone testy/build, commit/push, kumulatywne rozszerzenie PR
+- [x] Zielone testy/build, commit/push, kumulatywne rozszerzenie PR
   oraz handoff o oczekującym pakiecie.
 
 ## Granice
@@ -53,3 +53,21 @@ przenieść Fabułę verbatim do archiwum, nie zastępować jej syntezą researc
 Bez nowych kart/planów/map w bazie na etapie researchu, bez zmiany
 istniejącego archiwum, binariów źródłowych w Git, generowanych ilustracji,
 nowych zależności, zmian workflow, scalania ani force pusha.
+
+## Wynik i stan przekazania
+
+Raport: `docs/research/RESEARCH_2026-09-07-lorwyn-shadowmoor.md`.
+Rekomendacja: jeden plan Lorwyn–Shadowmoor (`lorwyn`), klasyczne oblicza
+epoki Oony, domyślny Shadowmoor dla 605SHM, jedna regionalna pinezka
+Glen Elendra. Najlepszy kandydat podkładów: para Varghedina (T1/T1),
+T4 rezerwowo. Współczesnego Eclipsed nie mylić z dawnym globalnym cyklem.
+
+Potwierdzono druk **SHM/32**, `{2}{U}`, Instant, flavor Oony.
+Nie zmieniono dostawy ani nie opublikowano jeszcze materializacji.
+
+**Oczekuje na decyzję właściciela:** model epoki/oblicz oraz akceptacja
+konkretnych rastrów i ich commitowania. Do pełnego QA potrzebne oba
+oryginały: lokalnie tylko miniatury 250/120 px, bezpośrednie pobranie
+plików z files.mtg.wiki nie powiodło się (TLS). Deklarowane 2341×2341
+potwierdza strona pliku, nie lokalny odczyt oryginału. Nie zapisano
+fikcyjnych współrzędnych ani kalibracji.
