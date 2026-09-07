@@ -145,13 +145,27 @@ Scryfall — czym odciąłby tory FOT/KON właściciela (sonda
 **Przyczyna:** dwa niezależne systemy numeracji: `imgId` = klucz
 prywatnych ilustracji właściciela na jego dysku (element Karty
 Katalogowej), `collector_number` = dane wydruku w snapshotcie
-(wyłącznie infoboks, ADR 0014). Zbieżność numerów przy wcześniejszych
-kartach (137GPT, 2BFZ) była przypadkowa.
+(wyłącznie metadane wydruku, ADR 0014). Nie wolno zakładać zgodności
+obu numeracji, nawet jeśli przy którymś wydruku numery się pokrywają.
 
 **Reguła:** imgId i slug karty bierze się WYŁĄCZNIE z dostawy
 właściciela (ADR 0011); Scryfall dostarcza metadanych wydruku, nie
 klucza kolekcji. Nie „korygować” numerów dostawy na podstawie Scryfalla
 — najwyżej udokumentować oba numery w snapshotcie (`notka_numery`).
+
+**Doprecyzowanie właściciela 2026-09-07 (605SHM, ADR 0036):**
+605 jest i pozostaje numerem kolekcji, `605SHM` pozostaje imgId,
+`605shm-consign-to-dream` pozostaje slugiem. Sonda FOT/KON szuka
+`./img/605FOT.png` / `./img/605KON.png` (potem pełnego imgId).
+**Nigdy nie zmieniać numerów podawanych przez właściciela.** Zewnętrzny
+collector_number jest wyłącznie metadaną Scryfalla.
+
+W researchu PR-22 agent ponownie użył zwrotu brzmiącego jak „poprawienie”
+605, choć nie przemianował plików. To też błąd: nie przeciwstawiać obu
+numerów formułą „nie ten, tylko tamten”. Nazywać jawnie dwa pola i nigdy
+nie kwestionować numeru kolekcji przy weryfikacji druku. Regresja
+`test/img-id-kolekcji.test.js` pilnuje nagłówka i ścieżek FOT/KON także
+po zmianie zewnętrznego numeru. Reguła formalna: ADR 0036.
 
 ## L9 (2026-09-06) — opis PR aktualizuje się kumulatywnie po każdym commicie merytorycznym, nie „na końcu”
 

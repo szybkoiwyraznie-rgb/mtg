@@ -5,6 +5,16 @@ Roadmapa i Fabuła verbatim:
 `docs/plans/PLAN_2026-09-07-lorwyn-shadowmoor-consign-to-dream-research.md`.
 Nie dodano jeszcze karty, planu, archiwalnego wpisu kolekcji ani mapy.
 
+> **Rozstrzygnięcie właściciela po researchu (2026-09-07): rekomendacja
+> T1 odrzucona.** Varghedin i pozostałe znalezione mapy nie spełniają
+> wymaganego poziomu jakości. Obowiązuje **ADR 0037: T4, wspólna geometria,
+> przełączane nazwy Lorwyn/Shadowmoor, te same pinezki**. Eclipsed czeka
+> na kartę, która tego wymaga. Poniżej historyczny research, nie aktualne
+> zlecenie adopcji rastrów; nie oczekujemy już na ich przesłanie.
+>
+> **605 to niezmienny numer kolekcji, imgId = 605SHM (ADR 0036).**
+> Metadane katalogu Scryfall nie są propozycją zmiany tej numeracji.
+
 ## Rekomendacja w skrócie
 
 **Jeden plan w bazie, dwa przełączane oblicza mapy, jedna karta i jedna

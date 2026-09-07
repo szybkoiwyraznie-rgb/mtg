@@ -71,3 +71,11 @@ oryginały: lokalnie tylko miniatury 250/120 px, bezpośrednie pobranie
 plików z files.mtg.wiki nie powiodło się (TLS). Deklarowane 2341×2341
 potwierdza strona pliku, nie lokalny odczyt oryginału. Nie zapisano
 fikcyjnych współrzędnych ani kalibracji.
+
+## Decyzja właściciela po raporcie — 2026-09-07
+
+Rekomendacja T1 odrzucona. Obowiązuje ADR 0037: T4 z jednym wspólnym
+układem i przełączanymi nazwami Lorwyn/Shadowmoor, pinezki na obu.
+Nie czekamy na Varghedina ani inne rastry; Eclipsed odłożone do właściwej
+karty. Numer kolekcji **605**, imgId **605SHM** są niezmienne (ADR 0036).
+Dalsze wykonanie: `PLAN_2026-09-07-605shm-lorwyn-shadowmoor-t4.md`.
