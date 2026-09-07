@@ -15,10 +15,10 @@ w pełni uformowane bestie. Wokół tego faktu obraca się cała historia
 świata inspirowanego stepami i górami Azji Środkowej i Wschodniej: pięć
 klanów wojowników, każdy czczący inny aspekt smoka, walczy o skrawki
 kontynentu bez oceanu, od pustyń przez stepy i tropikalną deltę po
-subarktyczne góry. Kodeks rysuje Tarkir w jego pierwszej postaci —
-**epoce khanów** z *Khans of Tarkir* — bo z tej epoki pochodzi karta,
-która plan otworzyła; topografia jest jednak wspólna dla wszystkich
-linii czasowych planu.
+subarktyczne góry. W oryginalnym „teraz” **Khans of Tarkir** smoki są
+już wymarłe, a ich miejsce zajmują khanowie. To nie jest najdawniejsza
+postać świata: w jego przeszłości klany i smoki walczyły ze sobą, zanim
+podróż Sarkhana rozdzieliła historię na dwie linie czasowe.
 
 ## Setting w pigułce
 
@@ -34,8 +34,10 @@ z których klany robią namioty, łuki, harfy i trony. Ta epoka kończy się,
 gdy Sarkhan Vol cofa się w czasie i ratuje Ugina — w nowej linii czasowej
 smoki przetrwały, klany stały się smoczymi rodami (*Dragons of Tarkir*),
 a po wiekach obaliły smoczych lordów w Rytuale Stormnexus (*Tarkir:
-Dragonstorm*). Zmieniają się władcy i nazwy osad — góry, rzeki i step
-zostają na miejscu.
+Dragonstorm*). Zmieniają się nie tylko władcy i nazwy osad: rządy
+Atarki przynoszą roztopy w Qal Sisma, a późniejsze dragonstormy odsłaniają podziemne
+krasy. Wielkie regiony pozwalają rozpoznać Tarkir, lecz nie wszystkie
+miejsca mają odpowiednik w drugim „teraz”.
 
 ## Geografia
 
@@ -117,19 +119,34 @@ z **rakshasami**, trzymając armię nieumarłych **sibsig**. Nad wszystkimi
 klanami unosi się pamięć smoków — od tronu z czaszki po szepty
 przodków, których Temur słuchają przez poroże.
 
-## Epoki: jedna topografia, trzy Tarkiry
+## Epoki: dawna przeszłość i dwa różne „teraz”
 
-Historia planu to trzy stany. **Epoka khanów** (*Khans of Tarkir*,
-*Fate Reforged*) — świat bez smoków, pięć klanów, pięciu khanów. **Epoka
-smoczych lordów** (*Dragons of Tarkir*) — po tym, jak Sarkhan ocalił
-Ugina, burze nie ustały, smoki przetrwały, a klany stały się rodami
-Dromoki, Ojutaia, Silumgara, Kolaghana i Atarki; Sage-Eye stało się
-Dragon's Eye, Karakyk — Ayagor, Riverwheel — Icefall. **Tarkir:
-Dragonstorm** — po inwazji Phyrexii i Rytuale Stormnexus klany wróciły do
-dawnych imion, a plan zaludniły nowe osady (Qatros Karst, Mistrise,
-ruchome miasta dalkovan). Przez wszystkie trzy stany geografia jest ta
-sama — dlatego jedna mapa obsługuje sceny każdej z epok, a różnice
-niosą nazwy w kartach, nie osobne geometrie.
+**Dawny Tarkir** (*Fate Reforged*) to czas, gdy klany żyją pod ciągłym
+naporem smoków. Sarkhan przybywa do tej odległej przeszłości z epoki
+khanów i ocala Ugina. Ta interwencja zmienia przyszłość — nie jest
+kolejnym wydarzeniem w nieprzerwanym życiu pięciu khanów z KTK.
+
+**Oryginalne „teraz”** (*Khans of Tarkir*) jest światem bez żywych
+smoków. Pięć klanów zachowuje ich aspekty i stare kości, a przewodzą im
+Anafenza, Narset, Sidisi, Zurgo i Surrak. Z tej linii pochodzą zimowe
+łowy opisane w [[509ktk-highland-game|Highland Game]].
+
+**Zmienione „teraz”** (*Dragons of Tarkir*) należy do smoczych lordów.
+Burze zasilane przez ocalonego Ugina umożliwiły smokom zwycięstwo
+w Khanfall. Nie wszystkie różnice są przemianowaniami: **Sage-Eye**
+nosi nazwę **Dragon's Eye**, ale cyrk **Karakyk Valley** z oryginalnej
+historii w tej linii nie istnieje. **Ayagor, Dragon's Bowl**, to inne
+miejsce — dolina zgromadzeń i uczt Atarki, której lód stopniał.
+**Melting Wilds** wiąże się właśnie z tym ociepleniem i gwałtownymi
+powodziami, nie z bezsmoczym światem KTK.
+
+**Odrodzone klany** (*Tarkir: Dragonstorm*) należą do tej zmienionej
+linii, po inwazji Phyrexii i Rytuale Stormnexus. Dawne Ayagor jest teraz
+**Summer Landing**, miejscem świętowania przetrwania Temur. Przewodnik
+wymienia osobno **Karakyk Glacial Settlement**, zimową osadę w dolinie
+lodowcowej — nie jest to kolejna nazwa Summer Landing. Także pustynie
+się zmieniają: **Dusyut** jest podziemnym lasem odsłoniętym niedawno
+przez zapadlisko, nie zwykłym odwiecznym lasem na powierzchni.
 
 ## Mapa
 
@@ -147,7 +164,7 @@ w oknie mapy (ADR 0035):
   Tarkiru nigdy nie powstała, więc podkład powstał z kanonu tekstowego
   obu Planeswalker's Guide (2014, 2025) i MTG Wiki, na geometrii
   przeniesionej z tego samego rastra. Etykiety w nazwach **epoki
-  khanów** (Sage-Eye Stronghold, Ayagor, Karakyk Valley, Tomb of the
+  khanów** (Sage-Eye Stronghold, Karakyk Valley, Tomb of the
   Spirit Dragon, Wingthrone); jedną relację poprawiono wobec rastra:
   Temur nie graniczy z Abzanem (klin Mardu sięga zachodniej krawędzi).
 
@@ -156,12 +173,20 @@ północy, Tiansun na wschodzie, Shifting Wastes na zachodzie, delta Gudul
 nad południowym morzem śródlądowym, Salt Road jako spinający trakt.
 Pinezki kart mają **jeden zestaw współrzędnych** (złoty standard =
 raster T1) i po przełączeniu epoki nie zmieniają miejsca — scena z KTK
-i scena z TDM leżą na tej samej górze niezależnie od tego, jak ta góra
-w danej epoce się nazywa. Osady istniejące dopiero w późniejszych
-epokach są wymienione w `map.json` (`poza_epoka`); proweniencja każdej
-kotwicy — tamże, werdykt researchu i kalibracja — w `zrodlo-research.md`.
+i scena z TDM mogą odwołać się do tego samego regionu. Jest to umowna
+siatka rekonstrukcji, nie dowód identyczności każdej góry i osady
+pomiędzy liniami czasu. T4 nie przenosi do KTK Ayagor, Melting Wilds,
+Aerie of the Unfettered ani odsłoniętego Dusyut. **First Tree** jest
+przedstawione przy Arashin zgodnie z kanonem KTK, nie jako późniejsza
+oaza Anafenzy. Proweniencja i ograniczenia są zapisane w `map.json`
+i `zrodlo-research.md`.
 
 ## Źródła
+
+- Planeswalker's Guide to Dragons of Tarkir, Part 2 (2015) — brak
+  cyrku Karakyk w zmienionej linii, Ayagor i Melting Wilds za Atarki,
+  Aerie of the Unfettered jako osada smoków:
+  https://magic.wizards.com/en/news/magic-story/planeswalkers-guide-dragons-tarkir-part-2-2015-03-18
 
 - Planeswalker's Guide to Khans of Tarkir, Part 1 (2014) — Abzan, Jeskai,
   Sultai; Arashin, Sandsteppe Gateway, Lookout Roost, twierdze Jeskai,

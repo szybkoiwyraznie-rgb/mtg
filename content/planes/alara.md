@@ -132,8 +132,8 @@ klany ruszają czasem na samobójczy **Life Hunt**, a pięćdziesiątka to
 wiek niemal niespotykany. Miejsca Jundu: **Bloodhall**, jaskinia
 sangrytu, w której zbiera się Life Hunt (podczas Conflux zagarnięta
 przez Grixis); **Cicatrice**, „ziemie blizn” między dwiema dolinami
-ryftowymi, gniazdo najpotężniejszej czerwonej smoczycy; **the Rip**,
-najgłębsza szrama (dwie mile w dół); **the Seethe**, smołowe doły
+ryftowymi, gniazdo jednej z najpotężniejszych czerwonych smoczyc;
+**the Rip**, najgłębsza szrama (dwie mile w dół); **the Seethe**, smołowe doły
 viashino Pitch Thrash; **Mount Jhal**, gdzie w leżu smoka
 **Malactotha** szamanka **Rakka Mar** odsłoniła Obelisk Jundu
 z czystego sangrytu; **Worldheart Chalice**, wulkaniczna kryjówka

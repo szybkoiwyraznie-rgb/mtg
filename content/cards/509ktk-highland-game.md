@@ -80,9 +80,10 @@ młodego **Sarkhana Vola** o wizjach i smokach i to on wskazał Sarkhanowi
 
 **Arel** — adresatka rytuału z flavoru: młoda szamanka Temur, świeżo
 inicjowana. W epoce khanów pojawia się jako „Arel, the Whisperer”;
-w późniejszej linii czasowej stanie się „Arel, Unseen Whisperer”,
-dysydentką wśród rodu Atarki, przekonaną, że smoczy lordowie są tyranami.
-Na tej karcie jest jeszcze tą, której zakłada się pierwsze poroże.
+w zmienionym „teraz” jej odpowiedniczką jest „Arel, Unseen Whisperer”,
+dysydentka wśród rodu Atarki, przekonana, że smoczy lordowie są tyranami.
+Nie są to kolejne etapy jednej biografii: karta pokazuje Arel z oryginalnej
+linii czasowej, podczas inicjacji.
 
 **Traper** z Fabuły kolekcji — doświadczony łowca, którego karta nie
 nazywa, ale którego łowy widzimy: ciche podejście, jedno trofeum, powrót
@@ -131,9 +132,10 @@ nazywają swoich szamanów „tkaczami trzech przeznaczeń” (przeszłości,
 wpleciona w tkaninę czasu; po raz pierwszy zakłada się jej nakrycie
 głowy, które od tej chwili zasłoni jej oczy na zawsze.
 
-Cytat zamyka scenę karty w jednym zdaniu: łowy z Fabuły kolekcji
-i rytuał z kanonu to jedno wydarzenie widziane z dwóch stron — z pola
-i z kręgu ognia.
+Łowy i inicjację można czytać jako dwie strony tej samej praktyki:
+zwierzę karmi rodzinę, a jego poroże służy szeptaczom. Flavor wskazuje
+Arel; scena łowów nie nazywa odbiorczyni trofeum, więc nie rozstrzyga,
+że właśnie ten jeleń posłużył do jej inicjacji.
 
 ## Transpozycja
 
@@ -147,10 +149,10 @@ nazywa Chianula i inicjację Arel. Fabuła dodaje do tego obraz
 żywotność” — to dokładnie ta wymiana, którą reguła karty zapisuje jako
 zysk życia po śmierci stworzenia. Scena osadzona jest w epoce khanów
 (*Khans of Tarkir*), przed tym, jak Sarkhan Vol zmienił bieg czasu;
-w późniejszych liniach czasowych te same góry należą do rodu Atarki,
-a Arel jest w nich dysydentką — ale łowy, zima i poroże pozostają takie
-same, dlatego karta pinuje się na jednej mapie [[tarkir|Tarkiru]]
-wspólnej dla wszystkich epok planu.
+w zmienionym „teraz” Qal Sisma jest ziemią Atarki, a inna Arel działa
+wśród jej poddanych jako dysydentka. Nie jest to dalszy ciąg opisanej
+tu inicjacji. Łowy z tej karty należą do dawnego świata Temur na
+[[tarkir|Tarkirze]], nie do uczt smoczego lorda.
 
 ## Na Mapie
 
@@ -166,11 +168,12 @@ i pewność „region”, nie „dokładna”. Mapa niesie resztę kontekstu:
 których trafi poroże; **The Scour** i step **Mardu** na południu, skąd
 przychodzą napaści, na które Temur odpowiadają rajdami; **Whisperwood**
 i **Rainveil Forest** — letnie łowiska niższych stoków. Mapa ma dwa
-podkłady pod przełącznikiem: raster **Dragonstorm** (nazwy epoki po
-Stormnexus — ta sama dolina to tu okolica Summer Landing) i
-rekonstrukcję **Khans** z nazwami epoki karty; pinezka na obu leży w tym
-samym miejscu, bo góry nie zmieniają się od zmiany khana. Tarkir nie ma
-oficjalnej mapy, a pozycje wewnątrz regionów są relacyjne.
+podkłady pod przełącznikiem: raster **Dragonstorm** (po Stormnexus)
+i rekonstrukcję **Khans** z nazwami epoki karty. Wspólny punkt oznacza
+region łowów, nie tożsamość nazwanych dolin między liniami czasu:
+**Summer Landing** to dawne **Ayagor** z epoki Atarki, a nie Karakyk
+Valley. W TDM istnieje osobno Karakyk Glacial Settlement. Tarkir nie ma
+oficjalnej mapy, a pozycje wewnątrz regionów są rekonstrukcją relacyjną.
 
 ## Mechanika jako Opowieść
 
@@ -187,6 +190,13 @@ nakarmić. Nawet flavor idzie tym torem: rozkaz Chianula zaczyna się od
 zwierzęciu zostaje.
 
 ## Źródła
+
+- Planeswalker's Guide to Dragons of Tarkir, Part 2 (2015) — Ayagor,
+  brak cyrku Karakyk w zmienionym „teraz”, Arel Unseen Whisperer:
+  https://magic.wizards.com/en/news/magic-story/planeswalkers-guide-dragons-tarkir-part-2-2015-03-18
+- Planeswalker's Guide to Tarkir: Dragonstorm, Part 2 (2025) — Summer
+  Landing i Karakyk Glacial Settlement to odrębne lokacje Temur:
+  https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-tarkir-dragonstorm-part-2
 
 - Fabuła właściciela (2026-09-07) — zimowe łowy klanu Temur w Qal Sisma,
   olbrzymi jeleń jako trofeum, traper, poroże do rytualnego słuchania

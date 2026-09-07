@@ -48,8 +48,10 @@ oraz najnowszy handoff) i uruchomienie podglądu, bez zmian w repo.
 
 #### Kolejka z raportu (stan audytu: przed naprawami)
 
-- [ ] **A1 (P1):** epoki Tarkiru i tożsamość miejsc — korekta źródeł,
+- [x] **A1 (P1):** epoki Tarkiru i tożsamość miejsc — korekta źródeł,
   generatora/sceny/mapy i treści; T1 oraz pinezka karty bez zmian.
+  Wynik: 118/118 testów, 23 POI/61 etykiet/14 biomów, determinizm,
+  map-audit i wiązania 0; ogląd całości, północy i Arashin.
 - [ ] **A2 (P2) + E1:** pełne snapshoty Scryfall i test obciętego JSON-a;
   E1 to analogiczny dług trzech starszych snapshotów, nie regresja PR #21.
 - [ ] **A3 (P2):** limit zoomu w układzie złotym, regresje zachowania
