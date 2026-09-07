@@ -106,5 +106,11 @@ handoff i opis PR zaktualizowane.
 - [x] Push po odzyskaniu tokena (środowisko wróciło jako płytki klon
       z patchsetem — łańcuch commitów odtworzony wg ENVIRONMENT §2a,
       push po każdym) + opis PR #21 (sekcja pakietu 3).
-- [ ] Recenzja właściciela mapy Tarkiru (podgląd :8000) — poprawki
-      w generatorze, weryfikacja rastrem.
+- [x] Recenzja właściciela mapy Tarkiru — 4 uwagi (ramka na treści,
+      Scour jako „rura”, lód na paśmie, rzeki w polu) → poprawki
+      w generatorze + 4 reguły silnika (ramka passe-partout, klocek
+      `rozpadlina`, pasma omijają lód, walidator hydrologii), rastery,
+      map-audit 0, testy 113/113; ADR 0034, L12, SKILL §4/#6 i §7
+      (`aa76360`, `cd186ad`, co-nowego 14:05).
+- [ ] Potwierdzenie epoki etykiet (nazwy khanów — ADR 0033 uzupełnienie)
+      przy kolejnej recenzji.

@@ -1,3 +1,39 @@
+## 2026-09-07 14:05 — PR-21: mapa Tarkiru po recenzji właściciela (cztery uwagi → cztery reguły silnika)
+
+Właściciel obejrzał pierwszą wersję mapy Tarkiru („jak na pierwszą wersję
+nieźle”) i wskazał cztery wady. Każda została naprawiona **w generatorze
+i w silniku mapforge**, nie ręcznie w SVG, i zapisana jako reguła
+(ADR 0034), żeby nie wróciła na kolejnej mapie:
+
+- **Ramka nachodziła na treść** — Tarkir to pierwsza mapa *full-bleed*
+  (kontynent na całym arkuszu). Nowy tryb ramki **passe-partout**: pas
+  papieru poza oknem zasłania treść pod linią, jak w atlasie.
+- **The Scour wyglądał jak „pogięta rura”** — bo był narysowany miejskim
+  klockiem `szczelina` (wąwozy Ravniki). Nowy klocek **`rozpadlina`**:
+  dwie poszarpane kreski klifów zbiegające się na końcach, szraf dna,
+  osuwiska — kanion w języku kreski grzbietów, bez wypełnienia; nie
+  wchodzi już na góry.
+- **Lądolód zasłaniał pasmo Qal Sisma** — czapa Melting Wilds przeniesiona
+  w niecke między grzbietami, a silnik od teraz **nie stawia glifów gór
+  pod lodem** (pasma omijają poligony `lod` jak morze).
+- **Rzeki znikąd donikąd** — decyzja właściciela: *„NIE MA RZEK, KTÓRE
+  KOŃCZĄ SIĘ W POLU”*. Tarkir ma teraz pełną sieć: górna Marang z roztopów
+  Tiansun → Dirgur Lake → odpływ stepem (zbiera Sandsteppe River na
+  bagnach Screamreach) → przełęcz z Marang River Fortress → Molderfang
+  Falls → Bloomvine (przyjmuje Niraj) → delta Gudul i Morze Południowe.
+  Nowy walidator **`sprawdzHydrologie`** (w `sprawdzWiazania`) pilnuje,
+  by każda rzeka i dopływ uchodziły do morza, jeziora albo innej rzeki,
+  a odpływy zaczynały się w tafli. Ten sam walidator od razu wyłapał
+  tę wadę na **Zendikarze** (bezimienna rzeka Bala Ged — teraz wpada do
+  Umung) i w scenie demo (Srebrna — teraz do morza).
+
+Weryfikacja: rastery całości i czterech wycinków (północ, Scour,
+Dirgur–Screamreach, delta), `map-audit` 0 dla wszystkich map, wiązania 0,
+`npm test` 113/113 (+4 testy nowych reguł). Dokumenty: ADR 0034, LESSONS
+L12 („walidator pilnuje tylko tego, co zna”), SKILL_MAPA_PLANU pułapka #6
++ checklista, README mapforge (zasady 5–6, klocek `rozpadlina`, ramka
+passe-partout). Nadal otwarte: potwierdzenie epoki etykiet (nazwy khanów).
+
 ## 2026-09-07 02:50 — PR-21 (pakiet 3): 509KTK Highland Game + nowy plan Tarkir z mapą T4
 
 Dostawa właściciela: **509KTK · Highland Game · KTK · Tarkir** wraz
