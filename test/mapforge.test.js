@@ -11,7 +11,7 @@ import {
   punktNa, dlugosc, parsujD,
 } from '../tools/mapforge/geom.mjs';
 import {
-  las, bagno, pasmo, pasmoInstancje, rzeka, jezioro, droga, etykieta, lukEtykieta,
+  las, bagno, step, pustynia, pasmo, pasmoInstancje, rzeka, jezioro, droga, etykieta, lukEtykieta,
   miasto, ruina, hedron, lacuna, szczyt, wulkan, motyw,
 } from '../tools/mapforge/bloki.mjs';
 import { renderuj, scenaDemo } from '../tools/mapforge/cli.mjs';
@@ -180,6 +180,37 @@ test('mapforge: POI — miasto/ruina/hedron/wulkan', () => {
   assert.ok(la.includes('mf-lacuna') && la.includes('data-x="100"') && la.includes('data-y="50"'));
   assert.ok((la.match(/<circle/g) ?? []).length === 3, 'lacuna: pierścień + wnętrze + dno');
   assert.ok(wulkan(0, 0).includes('ellipse'), 'krater wulkanu');
+});
+
+test('mapforge: biom pustynia — wydmy rzadsze niż step, deterministyczne, z kotwicami', () => {
+  // Klocek dodany dla Shifting Wastes Tarkiru (PR-21, pakiet 3): pustynia ma
+  // być „pusta” — rzadszy rozsiew niż step; każda wydma ma kotwicę data-x/y
+  // (map-audit: FORGE W WODZIE) i klasę mf-wydma (biom, nie obiekt).
+  const kwadrat = [[0, 0], [600, 0], [600, 400], [0, 400]];
+  const a = pustynia('wastes', kwadrat);
+  const b = pustynia('wastes', kwadrat);
+  assert.equal(a, b, 'pustynia deterministyczna');
+  const wydmy = (a.match(/class="mf-wydma"/g) ?? []).length;
+  const trawy = (step('wastes', kwadrat).match(/<path/g) ?? []).length;
+  assert.ok(wydmy > 40, `rozsiew wydm (${wydmy})`);
+  assert.ok(wydmy < trawy, `pustynia rzadsza niż step (${wydmy} < ${trawy})`);
+  const kotwice = [...a.matchAll(/data-x="([\d.]+)" data-y="([\d.]+)"/g)];
+  assert.equal(kotwice.length, wydmy, 'każda wydma ma kotwicę');
+  for (const m of kotwice) assert.ok(pit([+m[1], +m[2]], kwadrat), 'wydma wewnątrz poligonu');
+  assert.ok(a.includes(' Q '), 'wydma = łuk kwadratowy (sierp), nie kreska');
+  assert.notEqual(pustynia('inna', kwadrat), a, 'inny id = inny rozsiew');
+});
+
+test('mapforge: POI typu szczyt (święty szczyt) renderuje glif mapome z kotwicą', () => {
+  const scena = { nazwa: 't', szerokosc: 400, wysokosc: 300, styl: 'atlas',
+    lądy: [{ id: 'l', punkty: [[10, 10], [390, 10], [390, 290], [10, 290]] }],
+    poi: [{ typ: 'szczyt', x: 200, y: 150, opcje: { skala: 1.2 } }],
+    etykiety: [{ tekst: 'Eternal Ice', x: 200, y: 150, opcje: { fs: 14, przyDo: [200, 150] } }],
+    kompas: false, skala: false, ramka: false };
+  const svg = renderuj(scena);
+  assert.ok(svg.includes('class="mf-szczyt" data-x="200" data-y="150"'), 'glif szczytu z kotwicą');
+  assert.ok(svg.includes('>Eternal Ice<'), 'etykieta obiektu');
+  motyw('pergamin');
 });
 
 test('mapforge: maski lądu — rozsiew biomów i pasma nie pływają po oceanie', () => {

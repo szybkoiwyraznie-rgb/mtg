@@ -5,16 +5,16 @@
  *   {
  *     nazwa, szerokosc, wysokosc,
  *     lądy: [{ id, d | punkty }]           // wybrzeża (d = gotowa ścieżka)
- *     dzielnice: [{ id, punkty, opcje: { ton } }]     // atlas miasta: tinty
+ *     dzielnice: [{ id, punkty, opcje: { ton, bezGranicy? } }]  // tinty (bezGranicy = tylko tint)
  *     szczeliny: [{ id, punkty, opcje: { szer } }]    // wąwozy miejskie
  *     mury: [{ id, punkty, opcje }]                   // mury z blankami
- *     biomy: [{ id, typ: 'las'|'bagno'|'step'|'lod'|'wir'|'tkanina'|'gruz', punkty, opcje }]
+ *     biomy: [{ id, typ: 'las'|'bagno'|'step'|'pustynia'|'lod'|'wir'|'tkanina'|'gruz', punkty, opcje }]
  *     pasma: [{ id, punkty, opcje }]
  *     wulkany: [{ x, y, opcje }]
  *     rzeki: [{ id, punkty, s0, s1, doplywy: [{ id, punkty }] }]
  *     jeziora: [{ cx, cy, rx, ry }]
  *     drogi: [{ id, punkty, typ }]
- *     poi: [{ typ: 'miasto'|'ruina'|'hedron'|'lacuna'|…, x, y, opcje }]
+ *     poi: [{ typ: 'miasto'|'ruina'|'hedron'|'lacuna'|'szczyt'|…, x, y, opcje }]
  *     etykiety: [{ tekst, x, y, kat?, fs?, ital? }]
  *     etykietyLukowe: [{ id, punkty, tekst, fs? }]
  *     kompas: { x, y, r } | false,
@@ -28,7 +28,7 @@
  */
 
 import {
-  PAL, motyw, las, bagno, step, lod, wir, pasmo, pasmoInstancje, wulkan, rzeka,
+  PAL, motyw, las, bagno, step, pustynia, lod, wir, pasmo, pasmoInstancje, wulkan, rzeka,
   doplyw, jezioro, droga, miasto, ruina, fort, hedron, lacuna, iglica, szczyt, etykieta,
   lukEtykieta, kompas, ramka, skalaLinia, drzewo,
   dzielnica, granicaDzielnicy, granicaRegionu, mur, szczelina, tkanina, gruz,
@@ -37,7 +37,7 @@ import {
 } from './bloki.mjs';
 import { prng, gladka, prosta, parsujD, pit } from './geom.mjs';
 
-const BLOKI_BIOMOW = { las, bagno, step, lod, wir, tkanina, gruz };
+const BLOKI_BIOMOW = { las, bagno, step, pustynia, lod, wir, tkanina, gruz };
 
 /** Bufor wokół łamanej (pas szer. 2·p) — np. strefa zajęta szczeliny. */
 function buforPas(punkty, p) {
@@ -81,6 +81,9 @@ const BLOKI_POI = {
   miasto, ruina, fort, hedron, iglica,
   // `lacuna` — szyb do jądra planu (Mirrodin): pierścień + ciemne wnętrze.
   lacuna,
+  // `szczyt` — pojedynczy święty/nazwany szczyt jako POI (Eternal Ice na
+  // Tarkirze): jeden glif mapome ze śniegiem; kotwica = środek podstawy.
+  szczyt: (x, y, { skala = 1, snieg = true } = {}) => szczyt(x, y, 44 * skala, 38 * skala, { snieg }),
   // POI miejskie (atlas metropolii — T4, Ravnica): plac/forum, kolumnada
   // (gildie prawa), kopuła (rotundy pałacowe), platforma na łańcuchach,
   // kołowrót nad wodą, most nad szczeliną, ognisko-zgromadzenie, wielkie
@@ -169,7 +172,7 @@ export function rozstawEtykiety(etykiety, { szer, wys, maskiLadow = [], woda = n
     miasto: { dol: 13, gora: 13 }, ruina: { dol: 13, gora: 11 },
     fort: { dol: 13, gora: 13 },
     hedron: { dol: 10, gora: 10 }, lacuna: { dol: 10, gora: 10 }, wulkan: { dol: 4, gora: 29 },
-    iglica: { dol: 4, gora: 31 }, wodospad: { dol: 6, gora: 10 },
+    iglica: { dol: 4, gora: 31 }, wodospad: { dol: 6, gora: 10 }, szczyt: { dol: 4, gora: 40 },
     // POI miejskie (Ravnica): koła o promieniu ~11–13 · skala
     plac: { dol: 13, gora: 13 }, kolumny: { dol: 13, gora: 14 },
     kopula: { dol: 13, gora: 13 }, platforma: { dol: 13, gora: 20 },
@@ -414,7 +417,9 @@ export function renderuj(scena, { styl } = {}) {
     // wierzchołków) — inaczej granice sąsiednich dzielnic nakładają się
     // i robią ciemne, podwójne sztaby.
     const unikalne = new Map();
-    for (const z of scena.dzielnice) {
+    // `opcje.bezGranicy`: sam tint, bez arterii (terytoria klanów Tarkiru —
+    // granice regionów rysuje osobna warstwa `granice`, nie mur miejski).
+    for (const z of scena.dzielnice.filter((z) => !z.opcje?.bezGranicy)) {
       const p = z.punkty;
       for (let i = 0; i < p.length; i++) {
         const a = p[i], b = p[(i + 1) % p.length];

@@ -24,7 +24,7 @@ export const PAL = {
   tekst: '#4a3a28', ital: '#6b5d52', halo: '#f4ecd8', etykieta: '#6b1f2e',
   etykietaWoda: '#2e4d66', etykietaKontynent: '#000000', etykietaBiom: '#33523a',
   drzewo: '#7a8a5a', drzewoCien: '#5c6b44', pienn: '#6b5d52',
-  bagno: '#6f8a72', step: '#b5a877',
+  bagno: '#6f8a72', step: '#b5a877', wydma: '#b8a67a',
   skala: '#d8c9a3', skalaCien: '#8a7550', skalaLinia: '#a89468',
   droga: '#8a7550',
   lodFill: '#eef0e6', lodPek: '#c9d4d6', snieg: '#f6f4ec',
@@ -63,7 +63,7 @@ const MOTYWY = {
     // czerń; fragmenty lasów/bagien = ciemna zieleń.
     etykietaWoda: '#1c3a5e', etykietaKontynent: '#000000', etykietaBiom: '#1e4d2b',
     drzewo: '#dedede', drzewoCien: '#c3c3c3', pienn: '#3f3f3f',
-    bagno: '#5f5f5f', step: '#9b9b9b',
+    bagno: '#5f5f5f', step: '#9b9b9b', wydma: '#8f8f8f',
     skala: '#eaeaea', skalaCien: '#6b6b6b', skalaLinia: '#8f8f8f',
     droga: '#3f3f3f',
     lodFill: '#f4f8fb', lodPek: '#b9cfe0', snieg: '#ffffff',
@@ -201,6 +201,33 @@ export function step(id, poly, { gestosc = 1, maski = null, wyklucz = null } = {
     `<path d="M ${rr(x - 5)} ${rr(y)} l 4 -4 M ${rr(x - 1)} ${rr(y + 1)} l 4 -5 M ${rr(x + 3)} ${rr(y - 1)} l 4 -4" ` +
     `stroke="${PAL.step}" stroke-width="1.5" stroke-linecap="round" fill="none"/>`,
   ).join('\n');
+}
+
+/* ---------- biom: pustynia (wydmy — sierpowate łuki) ---------- */
+
+/**
+ * Pustynia w konwencji atlasowej: rozsiew krótkich, płaskich łuków wydm
+ * (sierp z lekką asymetrią po stronie zawietrznej) + co jakiś czas druga,
+ * krótsza wydma „w cieniu” pierwszej. Rzadszy rozsiew niż step (pustynia
+ * ma być pusta), kotwica data-x/y jak w innych klockach (map-audit:
+ * FORGE W WODZIE). Dodane dla Shifting Wastes Tarkiru (PR-21, pakiet 3).
+ */
+export function pustynia(id, poly, { gestosc = 1, maski = null, wyklucz = null } = {}) {
+  const rng = prng(`pustynia:${id}`);
+  const n = Math.round(pole(poly) / 1100 * gestosc);
+  return rozrzut(poly, n, rng, 20, maski, wyklucz).map(([x, y]) => {
+    const w = 11 + rng() * 9;                 // rozpiętość wydmy
+    const h = 2.2 + rng() * 2.2;              // wysokość łuku
+    const k = (rng() - 0.5) * 0.5;            // asymetria grzbietu
+    const cx = x + w * k * 0.5;
+    let d = `M ${rr(x - w / 2)} ${rr(y)} Q ${rr(cx)} ${rr(y - h * 2)} ${rr(x + w / 2)} ${rr(y)}`;
+    if (rng() < 0.45) {                       // druga wydma w cieniu
+      const w2 = w * 0.55, y2 = y + 3.5 + rng() * 2, x2 = x + (rng() - 0.5) * w * 0.5;
+      d += ` M ${rr(x2 - w2 / 2)} ${rr(y2)} Q ${rr(x2)} ${rr(y2 - h * 1.4)} ${rr(x2 + w2 / 2)} ${rr(y2)}`;
+    }
+    return `<path class="mf-wydma" data-x="${rr(x)}" data-y="${rr(y)}" d="${d}" ` +
+      `stroke="${PAL.wydma}" stroke-width="1.3" stroke-linecap="round" fill="none"/>`;
+  }).join('\n');
 }
 
 /* ---------- biom: wir (Maelstrom — pseudo-biom, spirala zasysania) ---------- */

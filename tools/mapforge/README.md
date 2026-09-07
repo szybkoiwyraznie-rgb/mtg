@@ -52,10 +52,12 @@ przed renderem.
 | `las(id, poly, {gestosc, skala})` | wielokąt zasięgu | **kępy liści** (nieregularne „chmurki" z haczurą), nakładające się w gęstą masę — jak mapome |
 | `bagno(id, poly, {gestosc})` | wielokąt | kępki turzyc + płytka oczka wodne |
 | `step(id, poly, {gestosc})` | wielokąt | kępy traw |
+| `pustynia(id, poly, {gestosc})` | wielokąt | **wydmy**: rzadki rozsiew sierpowatych łuków (druga wydma „w cieniu” co ~2.) — pustynie (Shifting Wastes Tarkiru); klasa `mf-wydma` z kotwicą data-x/y |
 | `lod(id, poly, {pekniecia})` | wielokąt | biała nakładka + spękania |
 | `pasmo(id, punkty, {szer, snieg, przedgorze})` | linia grzbietu | **gęste klastery glifów adoptowanych z mapome** (ADR 0020) — n ≈ dl/(szer·0.8), rozmiar ważony sinusem długości grzbietu (wyżej w środku), flip lustrzany, jitter; kolejność rysowania wg dolnej krawędzi (bliżej = na wierzchu — technika Azgaar) + niskie pogórze pod granią. Klastery nakładają się nieznacznie: każdy szczyt pozostaje czytelny (benchmark mapome, ADR 0015) |
 | `szczyt(x, y, w, h, {snieg, flip, glifId})` | punkt | **jeden glif z `glify-mapaome.mjs`** (ADR 0020) — ręcznie rysowana sylwetka klastra 1–3 szczytów mapome, jednolita skala po `h`, środek podstawy w (x, y); `flip=-1` odbicie; `glifId` wybiera sylwetkę (mega-klastery `g-016/g-237/g-270` do masywów zdefiniowanych w scenie); bez `glifId` — deterministyczny wybór z pozostałych 27 |
 | `wulkan(x, y, {skala, dym})` | punkt | stożek z kraterem i lazem dymu |
+| `szczyt` jako POI (`{typ:'szczyt', opcje:{skala, snieg}}`) | punkt | pojedynczy nazwany/święty szczyt (glif mapome ze śniegiem) — Eternal Ice na Tarkirze; etykieta kotwiczy się pod podstawą |
 | `rzeka(id, punkty, {s0, s1, ujscie})` | linia + szerokości | wstęga **stożkowa** (zwęża się do punktu na obu końcach — nie urywa się płasko; punkt źródła) w **kolorze akwenu** (ADR 0020, decyzja właściciela 2026-09-01): `ujscie:{typ:'morze'}` → kolor morza, `ujscie:{typ:'jezioro'}` → kolor jeziora, brak ujścia → kolor morza. **Bez gradientu i bez opacity** — wpływając do morza rzeka ma z nim identyczny kolor i zlewa się z nim, nie tnie |
 | `doplyw(id, punkty, {s0, s1})` | linia | cieńsza wstęga (bez źródła) |
 | `jezioro({cx, cy, rx, ry})` | elipsa | tafla + podwójny brzeg + fala |
