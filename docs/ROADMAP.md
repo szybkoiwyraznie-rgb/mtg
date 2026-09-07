@@ -240,6 +240,44 @@ Maelstrom jako równoprawny węzeł (pseudo-biom `wir`), ~28 kanonicznych POI.
 Wynik i kolejka: `docs/audits/AUDYT_2026-09-05-PR18.md`;
 `docs/audits/AUDYT_2026-09-06-PR19.md`.
 
+**PR-20 (2026-09-06, scalony 2026-09-06 16:11) — audyt PR-19:**
+audyt potwierdził naprawy Z1–Z5 i rewamp Alary v2 (ADR 0031/0033, pinezka
+305ARB point-in-polygon) i wyłonił kolejkę A1–A4 — same niedomknięcia
+sesji PR-19 (strona Alary za mapą v2, brak wpisów co-nowego /
+PROJECT_HISTORY, ROADMAP bez statusu scalenia). Wykonane w tym PR: A1–A4
+oraz **lekcja L9** (opis PR kumulatywnie po każdym commicie). Pętla
+Jakości bez kandydatów do pogłębiania i link-miningu. Wynik:
+`docs/audits/AUDYT_2026-09-06-PR19.md`.
+
+**PR-21 (2026-09-06, otwarty) — audyt PR-20:** pierwszy audyt z recenzją
+wizualną podkładów (raster poza repo, SKILL_MAPA_PLANU §8): PR-20 bez wad;
+usterki typograficzne mapy Alary W1–W3 (tytuły Jund/Grixis/Naya na ikonach
+i pasmach — poprawione w danych sceny), B1 (brak wpisu PR-20 tu i w
+PROJECT_HISTORY — uzupełnione), B2 (propozycja kontroli tytuł↔obiekt
+w `map-audit`). Wynik: `docs/audits/AUDYT_2026-09-06-PR20.md`.
+**Pakiet 2 tego samego PR (zlecenie właściciela):** 488SOM Carapace
+Forger + nowy plan **Mirrodin** z mapą **T4** (rekonstrukcja kanoniczna
+w mapforge: tarcza-półkula metalowej sfery, pięć regionów wg cyklu
+fastlandów SOM, epoka przed kompleacją; `maps/mirrodin/`), strona planu,
+karta LORE-first z pinezką `region` w Tangle. Roadmapa:
+`docs/plans/PLAN_2026-09-06-pr21-mirrodin-carapace-forger.md`.
+**Pakiet 3 tego samego PR (2026-09-07, zlecenie właściciela):** 509KTK
+Highland Game + nowy plan **Tarkir** z mapą **T4** (mapforge na geometrii
+fanowskiej mapy Lore Café dostarczonej przez właściciela — ADR 0031;
+epoka khanów na wspólnej topografii trzech epok — ADR 0033 uzupełnienie;
+`maps/tarkir/`), strona planu, karta LORE-first z pinezką `region`
+w Qal Sisma; nowe klocki mapforge `pustynia` i `szczyt`. Roadmapa:
+`docs/plans/PLAN_2026-09-07-pr21-tarkir-highland-game.md`. Recenzja
+mapy przez właściciela → ADR 0034 (hydrologia, lód↔pasma, rozpadlina,
+ramka full-bleed). **Decyzja właściciela po recenzji: T1 dla Tarkiru** —
+raster Lore Café w repo jako podkład epoki Dragonstorm, T4 jako epoka
+khanów, **przełącznik epok** na stronie mapy, **jeden układ współrzędnych
+(złoty = raster T1)**, T1 bez etykiet Codexu → ADR 0035; silnik map
+obsługuje `warianty[]` dla każdej mapy (K3 T1 wraca do gry: precedens
+PR-13 „T1 odrzucony licencyjnie” nie blokuje projektu prywatnego).
+PR #21 pozostaje otwarty do końca sesji (decyzja właściciela — scalenie
+odcięłoby agenta od GitHuba).
+
 ## Wątki otwarte (czekają na decyzję właściciela)
 
 > **Zamknięte decyzją właściciela 2026-09-05 — NIE wracać do nich:**

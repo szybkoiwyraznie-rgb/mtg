@@ -201,6 +201,22 @@ oddalonych kresek; tama nie dotykająca linii brzegowej).
 podłącz do linii brzegowej (przedłuż do styku z wodą). Samotny odcinek
 bez kontekstu usuń albo połącz.
 
+### Pułapka #6 — rzeki „znikąd donikąd” i biomy jeden na drugim (ADR 0034)
+
+**Objaw (recenzja Tarkiru 2026-09-07):** rzeka urywa się w stepie 60 j.
+przed jeziorem; odpływ jeziora zaczyna się poza taflą; czapa lodu leży na
+grzbiecie i zasłania połowę glifów; kanion narysowany miejską `szczeliną`
+wygląda jak „pogięta rura”.
+
+**Reguła:** **NIE MA RZEK, KTÓRE KOŃCZĄ SIĘ W POLU** — ostatni punkt
+w morzu, w jeziorze albo na osi innej rzeki; odpływ (`zrodlo:false`)
+zaczyna się w tafli. Raster fanowski z urwaną rzeką to luka do domknięcia,
+nie wzór. Czapa `lod` idzie **obok** grzbietu (silnik i tak nie postawi
+glifu pod lodem). Kanion w krajobrazie = klocek `rozpadlina`; `szczelina`
+tylko w mieście. Mapa full-bleed (ląd na całym arkuszu) = `ramka:
+{passePartout:true}`. Walidator: `node tools/mapforge/cli.mjs` wypisuje
+`[wiązania] … kończy się w polu` — 0 uwag przed podglądem.
+
 ---
 
 ## 5. Koordynaty „zero-cośtam" (wirtualny układ współrzędnych)
@@ -251,6 +267,8 @@ Nie próbuj przeliczać X↔piksele liniowo — układy bywają różnie zorient
 - [ ] Jeziora wewnętrzne w 100% otoczone lądem (nie łączą się z oceanem)?
 - [ ] Etykiety nie nachodzą (renderowany crop, nie w pamięci)?
 - [ ] Brak samotnych segmentów/belek (kaniony scalone, tama przy brzegu)?
+- [ ] Każda rzeka/dopływ uchodzi (morze / jezioro / inna rzeka), odpływy zaczynają się w tafli — CLI bez uwag `[wiązania]` (ADR 0034)?
+- [ ] Żadna czapa lodu na grzbiecie pasma; kanion = `rozpadlina`, nie `szczelina`; full-bleed = ramka passe-partout (ADR 0034)?
 - [ ] `dist/` **bez** `will-change`/`translate3d`/`backface` w `.mapa-ruch`?
 - [ ] Build wstrzykuje inline SVG (zdekodowany data-URI zawiera nowy znacznik)?
 - [ ] `npm test` + `npm run build` zielone?
@@ -293,6 +311,19 @@ const r=new Resvg(fs.readFileSync(process.argv[2]),{fitTo:{mode:'width',value:+p
 fs.writeFileSync(process.argv[3], r.render().asPng());
 ```
 
+`crop.js` (wycinek regionu przez resvg, sesja PR-21 — bez `sharp`):
+**nie podmieniaj `viewBox` na wycinek** (resvg-js 2.x panikuje
+`Option::unwrap() on a None value`); użyj opcji `crop` przy renderze
+z zoomem — współrzędne mapy × skala:
+```js
+const { Resvg } = require('@resvg/resvg-js'); const fs=require('fs');
+const [inp,out,x,y,w,h,s=2]=process.argv.slice(2).map((v,i)=>i<2?v:+v);
+const r=new Resvg(fs.readFileSync(inp,'utf8'),{fitTo:{mode:'zoom',value:s},
+  crop:{left:x*s,top:y*s,right:(x+w)*s,bottom:(y+h)*s},font:{loadSystemFonts:true}});
+fs.writeFileSync(out, r.render().asPng());
+// node crop.js maps/mirrodin/podklad.svg /tmp/sw.png 400 880 620 400 2
+```
+
 `px.js` (surowa maska):
 ```js
 const {Resvg}=require('@resvg/resvg-js'); const fs=require('fs');
@@ -333,9 +364,20 @@ python3 tools/map-audit.py [plan] [--woda="Nazwa1,Nazwa2"]
 
 Sprawdza: etykiety na lądzie (PIT po spłaszczeniu Beziera), kolizje par
 etykiet (bbox ≈ 0.62·fs·znaki), markery na lądzie, pinezki kart
-z `map.json` na lądzie; kotwice w wodzie raportuje informacyjnie.
-Kod wyjścia 1 = problemy (gotowe pod CI). Mapy liniowe (T2, adoptowane)
-są pomijane w testach na-lądzie z adnotacją.
+z `map.json` na lądzie, **tytuły regionów na glifach obiektów** (od PR-21:
+`TYTUŁ NA OBIEKCIE` — box tytułu `tytul-kontynentu`/fs ≥ 40 + margines 6
+nie może zawierać kotwicy `mf-fort/miasto/ruina/iglica/wulkan/szczyt/
+hedron/wodospad/herb`; las, kępki i wir pod napisem są OK — ADR 0025);
+kotwice w wodzie raportuje informacyjnie. Kod wyjścia 1 = problemy;
+`test/map-audit.test.js` uruchamia skrypt w `npm test`, więc czerwony
+audyt = czerwony pakiet. Mapy liniowe (T2, adoptowane) są pomijane
+w testach na-lądzie z adnotacją.
+
+> Czego audyt NADAL nie widzi (audyt PR-20, recenzja rastrów): tytuł nad
+> **drogą/rzeką** (cienka wstęga — zwykle akceptowalne) i ogólna
+> kompozycja („napis wygląda obco”). To sprawdza tylko oko — raster
+> poza repo wg §8 i `read_file` PNG; obowiązkowe po każdej zmianie
+> tytułów lub POI.
 
 ### Reguły wynikające (obowiązkowe przy rysowaniu i poprawkach)
 
@@ -409,3 +451,48 @@ Nowe glify = ekstrakt z podkładu mapome w repo (patrz nagłówek
 (Azgaar, MIT — ADR 0020) z atrybucją. Zmiana układu/gęstości = edycja
 `tools/mapforge/bloki.mjs` (`pasmo`, `szczyt`) + regeneracja
 `maps/<plan>/podklad.svg` i `maps/_warsztat/podklad*.svg` + testy.
+
+## 12. Raster T1 obok rekonstrukcji — warianty podkładu i układ złoty (ADR 0035)
+
+Gdy właściciel dostarczy raster (fanowski lub oficjalny) i zdecyduje o
+commicie, mapa dostaje **dwa podkłady** zamiast wymiany jednego na drugi:
+
+1. **Pliki:** `maps/<plan>/podklad-t1.jpg` (pełna rozdzielczość — właściciel
+   zoomuje do detalu) + `podklad-t1-mini.jpg` (~1200 px, `convert … -resize
+   1200x -quality 82 -strip`) do mini-map kart. Rekonstrukcja zostaje jako
+   `podklad.svg`.
+2. **`map.json.warianty[]`** — po jednym wpisie na podkład: `id`, `tytul`
+   (np. „T1 · Dragonstorm”), `epoka`, `wariant` (T1–T4), `podklad`,
+   `miniatura`, `wymiary`, `etykiety` (**raster = `false`**: Codex nie
+   dokłada napisów na cudzą kartografię), `kalibracja`, `zrodlo` (pełna
+   proweniencja i licencja — pokazuje ją atrybucja strony mapy). Dokładnie
+   jeden wariant ma `domyslny: true` — **to on jest układem złotym**
+   współrzędnych i MUSI mieć kalibrację tożsamościową.
+3. **Kalibracja** innych wariantów to afiniczne, osiowe odwzorowanie
+   złoty → wariant: `x' = ox + sx·x`, `y' = oy + sy·y`. Nie zgaduj jej —
+   wyprowadź z generatora (Tarkir: `R(px,py)` podglądu 1568×1208 na
+   płótno 2000×1400, pełny raster = podgląd × 2.7468) i **zweryfikuj na
+   ≥ 20 POI zmierzonych na pełnym rasterze**. Wynik zapisz w
+   `kalibracja_notka` i w `zrodlo-research.md` (tabela pomiarów).
+4. **Pomiar na rasterze** — wycinek 1:1 z siatką co 50 px i podpisanymi
+   liniami co 100 (ImageMagick: `convert podklad-t1.jpg -crop WxH+X+Y
+   +repage -draw "line …"`; czcionka `DejaVu-Sans-Bold`), oglądany jako
+   obraz. Pierścienie osad można znaleźć automatycznie: skan w skali
+   szarości maksymalizujący `(jasność r=6–8) − (jasność r=12–16)` daje
+   środek pierścienia z dokładnością ±3 px. Zmierzone POI wpisz do
+   generatora funkcją `P(X, Y)` (odczyt pełny), nie `R` — wtedy obiekt
+   w rekonstrukcji leży dokładnie tam, gdzie pinezka na rastrze.
+5. **Kotwice i pinezki w `map.json` są w układzie złotym.** Nowa pinezka
+   = odczyt `X, Y` na pełnym rasterze → `x = X/W, y = Y/H`. Kotwica ma
+   `px_t1` (pomiar) i `uklad` (skąd współrzędne). `map-audit.py` sam
+   przelicza kalibracją na audytowany SVG.
+6. **Silnik robi resztę:** przełącznik w oknie mapy, `?epoka=<id>` w
+   deep-linku, zachowanie widoku przy przełączeniu, etykiety tylko
+   aktywnego wariantu, atrybucja per podkład. Test smoke sprawdza, że
+   wariant domyślny startuje, drugi jest ukryty, a w wariancie bez
+   etykiet wszystkie `data-podklad-etykieta` mają `poza-epoka`.
+7. **Czego nie robić:** nie dublować pinezek per wariant; nie trzymać
+   współrzędnych w układzie rekonstrukcji, gdy jest raster (raster jest
+   złoty, bo to on jest źródłem geometrii); nie rysować etykiet Codexu
+   na rastrze; nie commitować rastra bez decyzji właściciela (ADR 0031 §2).
+

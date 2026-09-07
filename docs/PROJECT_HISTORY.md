@@ -4,6 +4,111 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-06 — sesja PR-21: audyt PR-20 z pierwszą recenzją wizualną map + Pętla Jakości
+
+Sesja `arena/01a0770f-mtg` (PR #21, otwarty). Tryb: „Kontynuuj zgodnie
+z AGENTS” — bez dostawy materializacji. **Pierwsza sesja z oglądem
+obrazów przez agenta** (rastry map przez resvg poza repo).
+
+1. **Audyt PR-20** (`docs/audits/AUDYT_2026-09-06-PR20.md`): A1–A4
+   poprawne i kompletne, L9 zastosowana; recenzja wizualna Alary,
+   Zendikaru, Midgaru, Ravniki — Alara v2 dobra co do topologii, ale
+   trzy tytuły regionów na obiektach (W1–W3); B1 brak wpisu PR-20
+   w PROJECT_HISTORY/ROADMAP; B2 luka `map-audit` (tytuł↔ikona).
+2. **Naprawy:** W1–W3 — tytuły Jund/Grixis/Naya przesunięte w
+   `scena.json` (e5f0d8b); B1 — wpisy PR-20 (2c09978); B2 — reguła
+   `TYTUŁ NA OBIEKCIE` w `tools/map-audit.py` + `test/map-audit.test.js`
+   (map-audit w `npm test`; b90d101).
+3. **Pętla Jakości:** krok 2 — `content/planes/alara.md` sekcja „Odłamy
+   i ludy” (mtg.wiki: Bant/Esper/Grixis/Jund/Naya; e8eb18c) + kolejka
+   link-miningu Alary w backlogu; krok 3 — brak encji w ≥2 kartach;
+   krok 4 — recenzja wizualna + W1–W3 + B2.
+4. **Dokumentacja trwała:** ENVIRONMENT §1a (rasteryzacja i ogląd map),
+   LESSONS L10 (geometria nie zastępuje oka), SKILL_MAPA_PLANU §10.
+   Handoff: `docs/setup/HANDOFF_2026-09-06-pr21.md`.
+5. **Pakiet 2 (zlecenie właściciela w tej samej sesji):** dostawa
+   **488SOM · Carapace Forger · SOM · Mirrodin** + Fabuła — szósta karta
+   i szósty plan. Research mapy T2→T3→T4 (brak oficjalnej mapy planu,
+   brak wektora i rastra); decyzje właściciela: T4 od razu z kanonu,
+   raster fanowski ewentualnie później jako źródło pomocnicze, pakiet
+   w PR #21. Mapa `maps/mirrodin/` (mapforge, generator
+   `tools/mapforge/mirrodin-scena-t4.py`): tarcza-półkula metalowej
+   sfery, Glimmervoid centralny, pięć regionów wg cyklu fastlandów SOM,
+   lacuny jako hedron, słońca jako adnotacje; 28 POI, 38 kotwic
+   relacyjnych, epoka przed kompleacją; ogląd rastra (L10) → trzy
+   poprawki typografii; `map-audit` 0. Strona planu `mirrodin`, karta
+   LORE-first z pinezką `region` w sercu Tangle, tagi `elfy`/`phyrexia`/
+   `rzemioslo`, asercje smoke (107/107, build 12 stron). Incydent:
+   odświeżenie sandboxa i utrata tokena GitHub na ~2 h — praca lokalna,
+   potem `rebase --onto` na `4ba8173` i push fast-forward.
+6. **Pakiet 3 (2026-09-07, zlecenie właściciela w tej samej sesji):**
+   dostawa **509KTK · Highland Game · KTK · Tarkir** + Fabuła — siódma
+   karta i siódmy plan. Research mapy T2→T3→T4 (Tarkir bez oficjalnej
+   mapy — oba Planeswalker's Guide to opisy); raport w czacie →
+   właściciel wybrał **T4** i dostarczył fanowską mapę **Lore Café /
+   MTG Wiki Italia (3d4, 2025)** jako źródło pomocnicze geometrii
+   (ADR 0031; raster poza repo, plik nie dotarł do sandboxa — odczyt
+   z UI). Mapa `maps/tarkir/` (generator `tools/mapforge/tarkir-scena-t4.py`,
+   współrzędne z rastra przez `R(px, py)`): kontynent bez oceanu,
+   morze południowe z deltą Gudul, pięć terytoriów klanów (tinty +
+   szwy), Salt Road, Scour, 26 POI w nazwach epoki khanów, 52 kotwice;
+   jedna korekta kanoniczna wobec rastra (Temur–Abzan nie graniczą).
+   Nowe klocki mapforge: biom `pustynia`, POI `szczyt`, dzielnice bez
+   arterii. Strona planu `tarkir`, karta LORE-first z pinezką `region`
+   w łowiskach Temur (Karakyk Valley ↔ Staircase of Bones), tagi
+   `szamanizm`/`lowy`/`klany-tarkiru`; ADR 0033 uzupełnienie (Tarkir:
+   jedna topografia, etykiety epoki pierwszej karty planu); 109/109,
+   build 14 stron, `map-audit` 0. Wcześniej w tej sesji: L11 +
+   ENVIRONMENT §2a (płytki klon po odświeżeniu sandboxa = fałszywe
+   stopki dat) i naprawa stopki czasu stron planów (`e533ff6`). Token
+   GitHub wygasł ponownie w trakcie pakietu 3 — praca na lokalnych
+   commitach; po odświeżeniu tokena środowisko wróciło jako płytki klon
+   z patchsetem (§2a) — łańcuch odtworzony i wypchnięty commit po
+   commicie (`e7b633d` → `442ee98` → `b1431ed` → `395f0f4` → dokumenty).
+7. **Recenzja mapy Tarkiru (2026-09-07 ~14:00):** cztery uwagi
+   właściciela → cztery reguły silnika (ADR 0034: ramka passe-partout,
+   klocek `rozpadlina`, pasma omijają lód, walidator hydrologii);
+   113/113, map-audit 0.
+8. **T1 dla Tarkiru (2026-09-07, po recenzji — decyzja właściciela):**
+   raster Lore Café wchodzi do repo jako podkład **T1 · Dragonstorm**
+   (właściciel wgrał plik commitem `f1b0057`; `maps/tarkir/podklad-t1.jpg`
+   4307×3293 + miniatura), T4 zostaje jako **Khans**; silnik map dostał
+   **warianty podkładu** (przełącznik epok w oknie mapy, sceny per
+   wariant, kalibracja afiniczna, `?epoka=`), **jeden układ współrzędnych
+   = raster T1** (kotwice i pinezka przeliczone, 26 POI generatora
+   domierzonych na pełnym rasterze), **T1 bez etykiet Codexu** (czysty
+   raster + pinezki). ADR 0035 (+ dopiski 0007/0031/0033), testy
+   114/114, symulacja DOM: pinezka nie drga po przełączeniu. Token
+   GitHub wygasł czwarty raz — commity lokalne od `981f8ae`.
+
+## 2026-09-06 — sesja PR-20: audyt PR-19 + kolejka napraw A1–A4 + lekcja L9
+
+Sesja `arena/01a076ea-mtg` (PR #20, squash `bbe6d34`, scalony 2026-09-06
+16:11). Tryb: „AGENTS i robisz dokładnie to co masz tam napisane” — bez
+nowej dostawy materializacji; osiem commitów na gałęzi.
+
+1. **Audyt PR-19** (`docs/audits/AUDYT_2026-09-06-PR19.md`): naprawy Z1–Z5
+   poprawne i kompletne; rewamp Alary v2 zgodny z ADR 0031/0033 i kanonem
+   nazw (28 POI, 40 kotwic, klocek `wir`); pinezka 305ARB zweryfikowana
+   point-in-polygon w środku wiru. Znaleziska A1–A4 = niedomknięcia sesji
+   PR-19 (strona Alary za mapą v2, brak wpisów co-nowego / PROJECT_HISTORY,
+   ROADMAP bez statusu scalenia).
+2. **Naprawy A1–A4:** `content/planes/alara.md` doprowadzony 1:1 do stanu
+   mapy v2 (Esper = archipelag na Morzu Esper, Maelstrom = region-węzeł,
+   pełna lista POI, Źródła); wpis co-nowego o scalonym PR-19; wpis
+   PROJECT_HISTORY o sesji PR-19; ROADMAP — PR-18/PR-19 oznaczone jako
+   scalone.
+3. **Lekcja L9** (`docs/LESSONS.md`): opis PR aktualizowany kumulatywnie
+   po każdym commicie merytorycznym (w PR-19 opis wymieniał tylko commit
+   audytowy, reszta zakresu scaliła się „po cichu”).
+4. **Pętla Jakości:** krok 1 zielony (104/104, build, map-audit 0); krok 2
+   bez kandydatów (10 stron 8/8); krok 3 bez encji z ≥2 kartami w planie;
+   krok 4 pinezki 5/5 i mapy 5/5. Handoff:
+   `docs/setup/HANDOFF_2026-09-06-pr20.md`.
+5. **Niedomknięcie sesji PR-20** (wykryte audytem PR-21): brak wpisu
+   o samej sesji PR-20 w PROJECT_HISTORY i ROADMAP — uzupełnione w sesji
+   PR-21 (B1).
+
 ## 2026-09-06 — sesja PR-19: audyt PR-18 + naprawy Z1–Z5 + rewamp mapy Alary v2
 
 Sesja `arena/01a0737d-mtg` (PR #19, squash `2a26531`, scalony 2026-09-06

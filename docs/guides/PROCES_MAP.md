@@ -77,6 +77,15 @@ kartę** (lub zlecenie właściciela). Pilot: Śródziemie, karta 1LTR.
 Współrzędne **znormalizowane 0–1** względem podkładu — zmiana rozdzielczości
 podkładu nie psuje pinezek.
 
+**Warianty podkładu (ADR 0035).** Mapa może mieć kilka podkładów (np.
+raster epoki Dragonstorm + rekonstrukcja epoki khanów) w tablicy
+`warianty[]`; współrzędne pinezek i kotwic są wtedy w układzie
+**złotym** (wariant `domyslny: true`, kalibracja tożsamościowa), a każdy
+inny wariant niesie `kalibracja {sx, sy, ox, oy}` (`x' = ox + sx·x`).
+Raster ma `etykiety: false` — Codex pokazuje na nim wyłącznie pinezki.
+Przełącznik i `?epoka=<id>` obsługuje silnik. Szczegóły i pomiar
+kalibracji: `SKILL_MAPA_PLANU.md` §12.
+
 ## MA3 — Pipeline techniczny buildu
 
 1. Źródłowy podkład żyje w `maps/<plan>/podklad.svg|png|jpg`, a dla map
@@ -118,3 +127,8 @@ Po pierwszym pełnym przejrzeniu mapy z pinezkami (zoom na region, etykiety,
 mobile) sesja opisuje w PR: co wygląda źle w głębokim zoomie, ile linii
 wymagałoby wektoryzacji; właściciel decyduje o T2 dla tej mapy
 (ADR 0007 §2). Nie wektoryzuje się „na zapas".
+
+Od ADR 0035 drabina działa też **w drugą stronę**: gdy plan ma już
+rekonstrukcję T3/T4, a właściciel dostarczy raster i zdecyduje o commicie,
+raster nie wypiera rekonstrukcji — staje się drugim podkładem tej samej
+mapy (wariant T1 pod przełącznikiem), a jego układ staje się złotym.

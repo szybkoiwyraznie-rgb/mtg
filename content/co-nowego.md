@@ -1,3 +1,174 @@
+## 2026-09-07 18:45 — PR-21: Tarkir dostaje dwie mapy epok — raster Dragonstorm (T1) i rekonstrukcja Khans (T4) pod jednym przełącznikiem
+
+Właściciel obejrzał rekonstrukcję T4 obok ręcznie rysowanej mapy fanowskiej
+Lore Café i zdecydował: **raster wchodzi do Codexu jako podkład T1**, a
+T4 zostaje jako mapa epoki khanów. Na stronie mapy Tarkiru jest teraz
+przełącznik **T1 · Dragonstorm ↔ T4 · Khans** (ADR 0035):
+
+- **T1 · Dragonstorm** (domyślny) — pełna rozdzielczość rastra
+  (4307×3293), nazwy epoki po Stormnexus: Dragon's Eye, Summer Landing,
+  Dalkovan Cities, Qatros Karst, Mistrise, Kishla… Codex **nie dokłada tu
+  żadnych własnych etykiet** — raster ma swoje, a widoczne są wyłącznie
+  pinezki kart.
+- **T4 · Khans** — rekonstrukcja mapforge z etykietami epoki khanów
+  (Sage-Eye Stronghold, Ayagor, Tomb of the Spirit Dragon, Wingthrone);
+  pozycje 26 obiektów **domierzone na pełnym rasterze**, więc twierdza
+  w T4 stoi dokładnie tam, gdzie jej pierścień na rastrze.
+- **Jeden zestaw współrzędnych.** Złoty standard = raster T1; T4 dostaje
+  te same pinezki przez kalibrację (proporcje obu podkładów są różne —
+  1.31 vs 1.43 — a mimo to pinezka 509KTK *Highland Game* po przełączeniu
+  nie drgnie o piksel). Kolejne karty Tarkiru — z KTK, DTK czy TDM —
+  pinują raz, a epokę wybiera się przyciskiem.
+- Przełącznik zachowuje widok: punkt pod środkiem okna i przybliżenie
+  zostają, zmienia się tylko podkład. Deep-link `?epoka=t4` otwiera od
+  razu mapę khanów.
+
+Przy okazji: atrybucja strony mapy wymienia teraz **każdy podkład
+osobno** (Lore Café / MTG Wiki Italia, grafika 3d4, All Rights Reserved —
+użytek prywatny; rekonstrukcja — praca własna), a karta 509KTK w sekcji
+„Na Mapie” tłumaczy, czemu jej pinezka leży w tym samym miejscu na obu
+mapach epok.
+
+## 2026-09-07 14:05 — PR-21: mapa Tarkiru po recenzji właściciela (cztery uwagi → cztery reguły silnika)
+
+Właściciel obejrzał pierwszą wersję mapy Tarkiru („jak na pierwszą wersję
+nieźle”) i wskazał cztery wady. Każda została naprawiona **w generatorze
+i w silniku mapforge**, nie ręcznie w SVG, i zapisana jako reguła
+(ADR 0034), żeby nie wróciła na kolejnej mapie:
+
+- **Ramka nachodziła na treść** — Tarkir to pierwsza mapa *full-bleed*
+  (kontynent na całym arkuszu). Nowy tryb ramki **passe-partout**: pas
+  papieru poza oknem zasłania treść pod linią, jak w atlasie.
+- **The Scour wyglądał jak „pogięta rura”** — bo był narysowany miejskim
+  klockiem `szczelina` (wąwozy Ravniki). Nowy klocek **`rozpadlina`**:
+  dwie poszarpane kreski klifów zbiegające się na końcach, szraf dna,
+  osuwiska — kanion w języku kreski grzbietów, bez wypełnienia; nie
+  wchodzi już na góry.
+- **Lądolód zasłaniał pasmo Qal Sisma** — czapa Melting Wilds przeniesiona
+  w niecke między grzbietami, a silnik od teraz **nie stawia glifów gór
+  pod lodem** (pasma omijają poligony `lod` jak morze).
+- **Rzeki znikąd donikąd** — decyzja właściciela: *„NIE MA RZEK, KTÓRE
+  KOŃCZĄ SIĘ W POLU”*. Tarkir ma teraz pełną sieć: górna Marang z roztopów
+  Tiansun → Dirgur Lake → odpływ stepem (zbiera Sandsteppe River na
+  bagnach Screamreach) → przełęcz z Marang River Fortress → Molderfang
+  Falls → Bloomvine (przyjmuje Niraj) → delta Gudul i Morze Południowe.
+  Nowy walidator **`sprawdzHydrologie`** (w `sprawdzWiazania`) pilnuje,
+  by każda rzeka i dopływ uchodziły do morza, jeziora albo innej rzeki,
+  a odpływy zaczynały się w tafli. Ten sam walidator od razu wyłapał
+  tę wadę na **Zendikarze** (bezimienna rzeka Bala Ged — teraz wpada do
+  Umung) i w scenie demo (Srebrna — teraz do morza).
+
+Weryfikacja: rastery całości i czterech wycinków (północ, Scour,
+Dirgur–Screamreach, delta), `map-audit` 0 dla wszystkich map, wiązania 0,
+`npm test` 113/113 (+4 testy nowych reguł). Dokumenty: ADR 0034, LESSONS
+L12 („walidator pilnuje tylko tego, co zna”), SKILL_MAPA_PLANU pułapka #6
++ checklista, README mapforge (zasady 5–6, klocek `rozpadlina`, ramka
+passe-partout). Nadal otwarte: potwierdzenie epoki etykiet (nazwy khanów).
+
+## 2026-09-07 02:50 — PR-21 (pakiet 3): 509KTK Highland Game + nowy plan Tarkir z mapą T4
+
+Dostawa właściciela: **509KTK · Highland Game · KTK · Tarkir** wraz
+z Fabułą — pierwsza karta siódmego planu i pierwsza mapa narysowana
+na geometrii mapy fanowskiej wskazanej przez właściciela:
+
+- **Research mapy T2→T3→T4:** Tarkir nie ma oficjalnej mapy — oba
+  Planeswalker's Guide (*Khans of Tarkir* 2014, *Tarkir: Dragonstorm*
+  2025) to same opisy, MTG Wiki nie ma kategorii map planu. Raport
+  przed rysowaniem; właściciel wybrał **T4** i dostarczył fanowską mapę
+  **Lore Café / MTG Wiki Italia (3d4, 2025)** — użytą jako źródło
+  pomocnicze geometrii, nie kanonu. Werdykt w `maps/tarkir/zrodlo-research.md`.
+- **Mapa Tarkiru (mapforge, styl atlas), epoka khanów:** kontynent bez
+  oceanu z południowym morzem śródlądowym i deltą Gudul; pięć terytoriów
+  jako tinty z kreskowanymi szwami — Sandsteppe (Mardu) w środku, Qal
+  Sisma (Temur) na północy, Tiansun (Jeskai) na wschodzie, Shifting
+  Wastes (Abzan) na zachodzie, Gudul (Sultai) na południu; Salt Road,
+  The Scour, Marang i Niraj, jeziora Dirgur i Glintglaze; 26 POI
+  w nazwach epoki khanów (Karakyk Valley, Wingthrone, Sage-Eye, Arashin,
+  Kheru Temple…), 52 kotwice z proweniencją. Jedna relacja poprawiona
+  wobec rastra: Temur nie graniczy z Abzanem (kanon TDM). Osady
+  późniejszych epok wymienione w `map.json` jako `poza_epoka`.
+- **Nowe klocki mapforge:** biom **`pustynia`** (sierpowate wydmy —
+  Shifting Wastes) i POI **`szczyt`** (pojedynczy święty szczyt — Eternal
+  Ice); opcja dzielnic bez arterii (terytoria klanów). Testy silnika.
+  `map-audit` 0 problemów; podkład obejrzany jako raster (całość
+  + wycinki N, NE, SE, W).
+- **Strona planu `tarkir`:** setting (smoki z burz, Ugin, pięć aspektów
+  smoka), geografia pięciu terytoriów, ludy, trzy epoki na jednej
+  topografii, opis mapy, źródła.
+- **Karta 509KTK Highland Game (LORE-first):** zimowe łowy Temur w Qal
+  Sisma, Chianul Who Whispers Twice, inicjacja Arel („weaving”), poroże
+  jako narzędzie szeptu, Hunt Caller; pinezka o pewności „region”
+  w łowiskach między Karakyk Valley a Staircase of Bones. Nowe tagi:
+  szamanizm, łowy, klany Tarkiru.
+- Testy 109 (plan/mapa/karta Tarkiru, licznik 7 kart, home).
+
+## 2026-09-06 23:20 — PR-21 (pakiet 2): 488SOM Carapace Forger + nowy plan Mirrodin z mapą T4
+
+Dostawa właściciela: **488SOM · Carapace Forger · SOM · Mirrodin** wraz
+z Fabułą — pierwsza karta szóstego planu i pierwsza mapa narysowana
+w całości z kanonu tekstowego:
+
+- **Research mapy T2→T3→T4:** oficjalna mapa Mirrodinu nigdy nie
+  powstała (MTG Wiki), w sieci brak wektora i rastra kartograficznego;
+  raport przed rysowaniem, decyzja właściciela: T4 od razu z kanonu,
+  ewentualny raster fanowski później — tylko jako źródło pomocnicze.
+  Werdykt i cytaty w `maps/mirrodin/zrodlo-research.md`.
+- **Mapa Mirrodinu (mapforge, styl atlas):** jedna tarcza = widoczna
+  półkula metalowej sfery, poza nią papier arkusza (plan bez oceanu;
+  jedynym akwenem morze rtęci). Glimmervoid w środku z czterema wieżami
+  ur-golemów; pięć regionów w wycinkach po 72° w kolejności cyklu
+  fastlandów *Scars of Mirrodin* (Razor Fields → Quicksilver Sea →
+  Mephidross → Oxidda Chain → Tangle); Copperline Gorge jako wąski pas
+  płyt między lasem a górami, Rey-Goor jako bagno na styku Drossu
+  i Tangle; lacuny jako pierścienie w płycie; pięć słońc jako adnotacje
+  nad swoimi regionami. 28 POI, 38 kotwic z proweniencją relacyjną,
+  kompas i skala wyłączone (sfera bez biegunów). Jedna mapa dla całej
+  ery powierzchni planu — od Argentum po wojnę o New Phyrexię (osobna
+  mapa dziewięciu sfer dopiero przy karcie, która jej wymaga). Podkład
+  obejrzany jako raster (całość + wycinki), `map-audit` 0 problemów.
+- **Po recenzji właściciela:** lacuny dostały własny znak w mapforge
+  (`lacuna` — kolisty szyb do jądra planu; wcześniej pożyczony hedron
+  z Zendikaru), rozsunięte etykiety Rey-Goor / (Black Bayou), dopisek
+  epoki na arkuszu poprawiony.
+- **Strona planu `mirrodin`:** setting, geografia pięciu regionów, ludy,
+  epoki przed i po kompleacji, opis mapy.
+- **Karta 488SOM (LORE-first):** Kronika łuczników Tangle, którzy
+  odkładają łuki i kują sobie skorupy; odczyt flavoru fraza po frazie
+  („Bows and whips cannot save us…”), Metalcraft jako trzy artefakty
+  zasilające pancerz; pinezka **region** w sercu Tangle między Viridią
+  a Tel-Jilad. Nowe tagi: `elfy`, `phyrexia`, `rzemioslo`.
+- **Kontrola:** `npm test` 107/107 (asercje planu, mapy i karty
+  Mirrodinu; lista kart 6), build 12 stron, generator sceny
+  `tools/mapforge/mirrodin-scena-t4.py` deterministyczny.
+
+## 2026-09-06 17:30 — PR-21: audyt PR-20 z pierwszą recenzją wizualną map + pogłębienie Alary
+
+Sesja domyślna (audyt poprzedniego scalonego PR + Pętla Jakości), po raz
+pierwszy z oglądem obrazów przez agenta:
+
+- **Audyt PR-20** (`docs/audits/AUDYT_2026-09-06-PR20.md`): naprawy A1–A4
+  poprawne (strona Alary 1:1 ze sceną v2), L9 zastosowana; **recenzja
+  wizualna** podkładów Alary, Zendikaru, Midgaru i Ravniki (raster poza
+  repo) — Alara v2 dobra co do topologii, ale trzy tytuły regionów leżały
+  na obiektach.
+- **Mapa Alary v3 (typografia):** tytuły **Jund**, **Grixis** i **Naya**
+  przesunięte na wolny ląd — dotąd „Jund” zakrywał fort Hellkite's Pass
+  i grzbiet, „Grixis” szlak i pasmo Kości, „Naya” wschodnie pasmo i rzekę.
+  Pozycje ze skanu geometrii i potwierdzone na wycinkach 4k.
+- **Weryfikator map** (`tools/map-audit.py`): nowa reguła **TYTUŁ NA
+  OBIEKCIE** (tytuł regionu nie może zakrywać ikony ani szczytu; las pod
+  napisem jest OK) — na starej Alarze łapie dokładnie te trzy usterki,
+  na pozostałych mapach 0 fałszywych alarmów; **map-audit wchodzi do
+  `npm test`** (`test/map-audit.test.js`).
+- **Pogłębienie LORE (krok 2):** plan **Alara** dostał sekcję **„Odłamy
+  i ludy”** — po akapicie na każdy shard: kasty i sigile Bantu, etherium
+  i Ethersworn Esper, vis i nekromancja Grixis, łańcuch pokarmowy Jundu,
+  gargantuany, elfy Cylian i nacatl Nai (mtg.wiki, URL w Źródłach).
+  Kolejka link-miningu Alary w backlogu czeka na drugą kartę planu.
+- **Dokumentacja:** wpis sesji PR-20 w PROJECT_HISTORY i ROADMAP;
+  ENVIRONMENT §1a (rasteryzacja i ogląd map); lekcja L10 (geometria nie
+  zastępuje oka — każdą mapę T3/T4 raz obejrzeć jako raster).
+
 ## 2026-09-06 15:50 — PR-20: audyt PR-19 + strona planu Alary do stanu mapy v2
 
 Sesja domyślna (audyt poprzedniego scalonego PR + kolejka napraw):
@@ -16,6 +187,7 @@ Sesja domyślna (audyt poprzedniego scalonego PR + kolejka napraw):
   (co-nowego 15:30), wpis w PROJECT_HISTORY o sesji PR-19, aktualizacja
   ROADMAP (PR-18/PR-19 scalone), lekcja L9 (opis PR aktualizowany
   kumulatywnie po każdym commicie).
+
 ## 2026-09-06 15:30 — PR-19: naprawy Z1–Z5 z audytu PR-18 + rewamp mapy Alary v2
 
 Sesja audytowa PR-19 domknęła zaległości z audytu PR-18 i poprawiła mapę
@@ -37,6 +209,7 @@ Alary po recenzji właściciela:
   **równoprawny region-węzeł** z nowym pseudo-biomem `wir` w mapforge,
   fraktalne linie brzegowe, ~28 kanonicznych POI; pinezka 305ARB
   zweryfikowana w środku wiru.
+
 ## 2026-09-05 22:15 — mapa Alary od nowa: T3 z referencji fanowskich
 
 Właściciel odrzucił radialną mapę Alary („to nie jest Midgar — to pięć
@@ -245,6 +418,7 @@ obsłużone):
   wektoryzacji jest opisana krok po kroku i czeka na pliki.
 - Drobiazgi: dwie literówki w dzienniku (wariantie, Blistercoils)
   i usunięty bezkanoniczny fragment z „Setting w pigułce”.
+
 ## 2026-09-03 09:36 — Karty Katalogowe przechodzą na LORE-first; Ravnica dostaje kierunek wektoryzacji fan-made
 
 Po feedbacku właściciela zmienia się standard kart: główna treść nie zaczyna

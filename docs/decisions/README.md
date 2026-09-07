@@ -49,6 +49,8 @@ dziedziczona z projektu mtg-game.
 | [0031](0031-prywatne-zrodla-fanowskie-do-wektoryzacji-map.md) | Prywatne źródła fanowskie dostarczone przez właściciela mogą być bazą wektoryzacji map; raster źródłowy poza gitem, wynik z jawną proweniencją i QA | Zaakceptowana |
 | [0032](0032-final-fantasy-plan-franczyza-mapy-wg-czesci-sagi.md) | Final Fantasy jako plan-franczyza; mapa per część sagi (klucz `plan/podmapa`), światy bez łączenia przestrzennego; Midgar T3 z referencji ReverendRyu | Zaakceptowana |
 | [0033](0033-mapy-planow-jedna-mapa-aktualnego-stanu-kanonicznego.md) | Jedna mapa planu = aktualny stan kanoniczny (Alara: post-Conflux); sceny z innych epok pinowane do regionów; osobne mapy epok tylko przy zmianie topologii | Zaakceptowana |
+| [0034](0034-hydrologia-map-i-krajobraz-full-bleed.md) | Hydrologia map: żadna rzeka nie kończy się w polu (walidator `sprawdzHydrologie`); pasma omijają czapy lodu; kanion w krajobrazie = klocek `rozpadlina` (nie miejska `szczelina`); mapy full-bleed z ramką passe-partout — recenzja właściciela mapy Tarkiru | Zaakceptowana |
+| [0035](0035-warianty-podkladu-t1-raster-fanowski-w-repo-i-uklad-zloty.md) | Warianty podkładu jednej mapy: raster fanowski T1 w repo (decyzja właściciela per plan), przełącznik epok T1 Dragonstorm ↔ T4 Khans, JEDEN układ współrzędnych (złoty = raster T1, kalibracja afiniczna dla innych podkładów), wariant bez etykiet Codexu — Tarkir | Zaakceptowana |
 
 Spójnością rejestru (numeracja, statusy, tabela) pilnuje
 `test/rejestr-adr.test.js`.

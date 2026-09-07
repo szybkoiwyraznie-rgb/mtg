@@ -50,8 +50,9 @@ export function scenaDemo() {
       { cx: 1000, cy: 1120, rx: 26, ry: 14 },
     ],
     rzeki: [
-      { id: 'srebrna', punkty: [[1182, 590], [1150, 680], [1122, 780], [1082, 880], [1062, 990], [1078, 1100], [1086, 1178]], opcje: { s0: 3, s1: 9 },
-        doplywy: [{ id: 'zachodni', punkty: [[648, 822], [800, 862], [950, 902], [1058, 905]] }] },
+      // hydrologia (2026-09-07): Srebrna uchodzi do morza, dopływ zachodni wpada w jej oś
+      { id: 'srebrna', punkty: [[1182, 590], [1150, 680], [1122, 780], [1082, 880], [1062, 990], [1078, 1100], [1086, 1178], [1090, 1212]], opcje: { s0: 3, s1: 9 },
+        doplywy: [{ id: 'zachodni', punkty: [[648, 822], [800, 862], [950, 902], [1075, 921]] }] },
     ],
     drogi: [
       { id: 'szlak-ruiny', punkty: [[545, 688], [680, 622], [780, 562], [848, 515]], opcje: { typ: 'szlak' } },

@@ -173,3 +173,96 @@ mapy, testy) aktualizować go kumulatywnie `gh pr edit` (przy błędzie
 GraphQL: `gh api -X PATCH … -F body=@plik`, ENVIRONMENT §3) — zanim
 przyjdzie kolejna sesja i będzie musiała zgadywać, co PR faktycznie
 scalił.
+
+## L10 (2026-09-06) — geometria nie zastępuje oka: każdą mapę T3/T4 trzeba raz obejrzeć jako raster
+
+**Objaw:** mapa Alary v2 przeszła `map-audit` z wynikiem 0, `sprawdzWiazania`
+0 i recenzję danych sceny w audycie PR-19 — a przy pierwszym oglądzie
+rastru (PR-21) trzy z sześciu tytułów regionów leżały na forcie, paśmie
+i szlaku. Handoff PR-20 sam odnotował, że rewampu „nikt nie oglądał”.
+
+**Przyczyna:** weryfikator liczył kolizje wyłącznie tekst×tekst
+i „na lądzie”; relacja tytuł↔ikona/rzeźba nie była modelowana, a scena
+była poprawna semantycznie (etykiety zarejestrowane, wiązania POI OK).
+Audyt kodu i danych nie widzi kompozycji — to inna klasa błędu niż
+integralność.
+
+**Reguła:** po każdej zmianie tytułów, POI lub pasm w scenie
+(i przy audycie PR, który taką zmianę scalił) rasteryzuj podkład poza
+repo (ENVIRONMENT §1a, SKILL_MAPA_PLANU §8) i obejrzyj całość + cropy
+regionów; wnioski zapisuj w audycie/handoffie, bo raster znika z sesją.
+Każdą usterkę, którą złapało oko, przełóż na regułę geometryczną
+w `map-audit` **tylko jeśli** na pozostałych mapach daje 0 fałszywych
+alarmów (tak powstała `TYTUŁ NA OBIEKCIE` z marginesem 6) — reszta
+zostaje w checkliście oka.
+
+## L11 (2026-09-06) — po odświeżeniu sandboxa commituj natychmiast, a podgląd buduj tylko z pełnego klonu
+
+**Objaw:** w sesji PR-21 środowisko odświeżyło się w trakcie pracy
+(płytki klon, `/tmp` pusty, token GitHub nieważny). Przez ~2 godziny
+powstały mapa, karta i strona planu bez ani jednego commita (czekanie
+„aż wróci token”), a podgląd dla właściciela został zbudowany z płytkiego
+klonu — stopki pokazywały fałszywe daty utworzenia (Coralhelm Guide
+„utworzono dziś”) i bez wiersza aktualizacji, a najnowszy wpis „Co
+nowego” nie był w nim widoczny, bo build był starszy niż wpis.
+Właściciel zgłosił obie rzeczy jako regresje; kod był poprawny.
+
+**Przyczyna:** dwa błędy nawyku, nie kodu. (1) Utożsamienie „nie mogę
+pushować” z „nie warto commitować” — lokalne commity są tanie i
+odtwarzalne, a ich brak czyni pracę niewidoczną i nieodporną na kolejny
+reset. (2) Budowanie i wystawianie podglądu bez sprawdzenia stanu
+repozytorium; ostrzeżenie builda o płytkim klonie zniknęło, bo wyjście
+filtrowano do jednego wiersza.
+
+**Reguła:** po wykryciu odświeżenia środowiska najpierw
+`git rev-parse --is-shallow-repository` → `git fetch --unshallow`
+(ENVIRONMENT §2a), dopiero potem build i podgląd. Commit lokalny po
+każdym kroku merytorycznym niezależnie od dostępności GitHuba; push
+gdy tylko token wróci (`rebase --onto` na stan zdalny, bez force).
+Przed wystawieniem podglądu właścicielowi: świeży build **po** ostatniej
+zmianie treści i kontrola jednej starej strony (data utworzenia sprzed
+dni). Nie filtruj stderr builda.
+
+## L12 (2026-09-07) — walidator pilnuje tylko tego, co zna: reguły z recenzji wchodzą do `sprawdzWiazania`, nie do pamięci agenta
+
+**Objaw:** mapa Tarkiru przeszła `map-audit` (0) i wiązania (0), a
+właściciel w pierwszej minucie recenzji wskazał cztery wady: rzeki
+kończące się w polu, lód na grzbiecie, kanion narysowany klockiem
+miejskim, ramka na treści full-bleed. Trzy z czterech istniały już
+wcześniej na Zendikarze i w scenie demo — niezauważone przez trzy PR-y.
+
+**Przyczyna:** walidatory znały etykiety, POI i ląd/wodę, ale nie znały
+**relacji między obiektami sceny** (rzeka↔akwen, pasmo↔lód). Reguły
+„oczywiste” dla kartografa (rzeka gdzieś uchodzi) nie były nigdzie
+zapisane maszynowo, więc obowiązywały tylko tam, gdzie agent akurat o nich
+pamiętał. Raster L10 pomaga zobaczyć, ale oko agenta też omija to, czego
+nie szuka.
+
+**Lekcja:** każda uwaga recenzyjna, którą da się wyrazić geometrycznie,
+trafia w tej samej sesji do walidatora (`sprawdzWiazania` / `map-audit`)
+z testem na WSZYSTKICH scenach repo — wtedy naprawa Tarkiru od razu
+wyłapuje Zendikar i demo. Uwaga, której nie da się zautomatyzować, idzie
+do checklisty SKILL_MAPA_PLANU §7 jako pytanie TAK/NIE. ADR 0034.
+
+## L13 (2026-09-07) — geometria „z podglądu” ma inny błąd niż geometria „z pliku”: zanim dwa podkłady dostaną wspólne współrzędne, zmierz kalibrację na obiektach, nie na proporcjach
+
+**Co się stało.** Mapa T4 Tarkiru była rysowana z odczytów rastra
+oglądanego w UI czatu (1568×1208), bo plik nie dotarł do sandboxa.
+Gdy właściciel wgrał pełny raster (4307×3293) i zapadła decyzja o JEDNYM
+układzie współrzędnych dla obu podkładów, pierwszy odruch — przeliczyć
+wszystko stosunkiem szerokości — dawał kalibrację „na oko” z błędem do
+~90 px na pełnym rasterze: proporcje obu obrazów różniły się o 0,8 %
+(podgląd był przycięty o kilka pikseli, nie przeskalowany), a odczyty
+z podglądu miały własny rozrzut ±40 px.
+
+**Reguła.** Kalibrację między podkładami wyprowadza się z generatora
+(znane odwzorowanie) i **weryfikuje na ≥ 20 obiektach zmierzonych na
+docelowym pliku** (pierścienie osad, glify twierdz — środek, nie napis).
+Obiekty, które mają być „w tym samym miejscu” w obu widokach, dostają
+w generatorze pozycję z pomiaru pełnego (`P(X,Y)`), a nie przeliczoną
+z podglądu. Wynik pomiarów trafia do `zrodlo-research.md` (tabela px),
+kalibracja do `map.json`, a test smoke pilnuje, że pinezka po
+przełączeniu nie zmienia piksela ekranu (symulacja DOM w sesji: 453.86 px
+przed i po). Podgląd z UI jest dobry do rysowania relacji, nie do
+współrzędnych, które mają przetrwać zmianę podkładu.
+

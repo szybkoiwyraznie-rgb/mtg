@@ -1,6 +1,10 @@
 # ADR 0007: Mapy planów — T1 hybryda z rasterowym podkładem
 
 - **Status:** Zaakceptowana
+- **Uzupełnienie 2026-09-07 (ADR 0035):** T1 dopuszcza także raster FANOWSKI
+  dostarczony przez właściciela (nie tylko oficjalny), a jedna mapa może mieć
+  kilka podkładów-wariantów o różnych proporcjach z JEDNYM układem
+  współrzędnych pinezek (złoty = wariant domyślny + kalibracja afiniczna)
 - **Data:** 2026-08-31
 - **Decydenci:** właściciel projektu (wybór T1 na start, 2026-08-31); agent Arena (sesja PR-1)
 

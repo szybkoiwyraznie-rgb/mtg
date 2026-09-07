@@ -348,6 +348,7 @@
   }
  ],
  "otwarte_na_kolejne_przejscia": [
-  "DODANE 2026-09-05 (redo T3): mapa scalonego planu (ADR 0033) uniesie kolejne karty Alary — regiony przyjmą sceny z epoki shardów (ALA); podmapa pre-Conflux (pięć wysp w Blind Eternities, referencja 2) powstanie wyłącznie, gdy karta będzie miała scenę niereprezentowalną na mapie scalonej."
+  "DODANE 2026-09-05 (redo T3): mapa scalonego planu (ADR 0033) uniesie kolejne karty Alary — regiony przyjmą sceny z epoki shardów (ALA); podmapa pre-Conflux (pięć wysp w Blind Eternities, referencja 2) powstanie wyłącznie, gdy karta będzie miała scenę niereprezentowalną na mapie scalonej.",
+  "KOREKTA 2026-09-06 (PR-21, pierwsza recenzja wizualna po rasteryzacji): tytuły regionów Jund/Grixis/Naya przesunięte w scena.json na wolny ląd (Jund 620/1190→800/1040 — napis zakrywał fort Hellkite's Pass i grzbiet; Grixis 1260/1090→1320/1230 — napis leżał na szlaku i paśmie Kości; Naya 430/700→285/580 — napis ciął wschodnie pasmo i rzekę). Kotwice regionów (pinezki) bez zmian — wskazują środki lądów, nie typografię."
  ]
 }

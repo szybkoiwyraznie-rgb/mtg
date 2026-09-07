@@ -4,7 +4,7 @@
 
 import { escapeHtml } from './markdown.js';
 import { dajStrone, dajDane, listaKart, listaHasel } from './data.js';
-import { stanPusty, chipsyTagow, nieZnalesc } from './render.js';
+import { stanPusty, chipsyTagow, nieZnalesc, stopkaCzasu } from './render.js';
 
 const ETYKIETY_IP = {
   'plan-mtg': 'Plan Magic: The Gathering',
@@ -77,6 +77,7 @@ export function renderPlan(slug) {
     </section>
 
     ${sekcjaTagowPlanu(karty, hasla)}
+    ${stopkaCzasu(plan.czas)}
   </article>`;
 }
 

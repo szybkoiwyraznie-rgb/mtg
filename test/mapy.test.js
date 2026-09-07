@@ -71,3 +71,42 @@ test('karty z pinezką w frontmatterze mają ją też w map.json (jedno źródł
   }
   assert.deepEqual(problemy, []);
 });
+
+test('warianty podkładu (ADR 0035): pliki istnieją, dokładnie jeden domyślny, kalibracja liczbowa, T1 bez etykiet Codexu', () => {
+  const problemy = [];
+  for (const [plan, mapa] of mapy) {
+    if (mapa.problem || !Array.isArray(mapa.warianty)) continue;
+    const w = mapa.warianty;
+    if (w.length < 2) problemy.push(`${plan}: warianty[] ma sens od dwóch podkładów (jest ${w.length})`);
+    if (w.filter((x) => x.domyslny).length !== 1) problemy.push(`${plan}: dokładnie jeden wariant domyślny (układ złoty)`);
+    const idy = new Set();
+    for (const x of w) {
+      if (!x.id || idy.has(x.id)) problemy.push(`${plan}: wariant bez unikalnego id`);
+      idy.add(x.id);
+      if (!['T1', 'T2', 'T3', 'T4'].includes(x.wariant)) problemy.push(`${plan}/${x.id}: wariant "${x.wariant}"`);
+      for (const plik of [x.podklad, x.miniatura].filter(Boolean)) {
+        if (!fs.existsSync(path.join('maps', plan, String(plik)))) problemy.push(`${plan}/${x.id}: brak pliku ${plik}`);
+      }
+      if (!x.wymiary?.szerokosc || !x.wymiary?.wysokosc) problemy.push(`${plan}/${x.id}: brak wymiarów`);
+      if (!x.zrodlo?.url || !x.zrodlo?.pobrano) problemy.push(`${plan}/${x.id}: brak źródła podkładu (MA1)`);
+      const k = x.kalibracja ?? {};
+      for (const klucz of ['sx', 'sy', 'ox', 'oy']) {
+        if (typeof k[klucz] !== 'number' || !Number.isFinite(k[klucz])) problemy.push(`${plan}/${x.id}: kalibracja.${klucz} nie jest liczbą`);
+      }
+      if (x.domyslny && !(k.sx === 1 && k.sy === 1 && k.ox === 0 && k.oy === 0)) {
+        problemy.push(`${plan}/${x.id}: wariant domyślny MUSI mieć kalibrację tożsamościową (to on jest układem złotym)`);
+      }
+      if (x.wariant === 'T1' && x.etykiety !== false) problemy.push(`${plan}/${x.id}: raster T1 bez etykiet Codexu (etykiety:false — ADR 0035 §4)`);
+    }
+    // pinezki po kalibracji każdego wariantu nadal w [0,1]
+    for (const x of w) {
+      const k = x.kalibracja ?? {};
+      for (const pin of mapa.pinezki ?? []) {
+        const px = k.ox + k.sx * pin.x; const py = k.oy + k.sy * pin.y;
+        if (!(px >= 0 && px <= 1 && py >= 0 && py <= 1)) problemy.push(`${plan}/${x.id}: pinezka ${pin.karta} po kalibracji poza [0,1] (${px.toFixed(3)},${py.toFixed(3)})`);
+      }
+    }
+  }
+  assert.deepEqual(problemy, [], `Wadliwe warianty podkładu:\n${problemy.join('\n')}`);
+});
+

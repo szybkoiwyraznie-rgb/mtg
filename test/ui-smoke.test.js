@@ -140,6 +140,10 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   // ADR 0033: Alara — jedna mapa scalonego planu; pinezka 305ARB w Maelstrom
   shim.idz('#/plan/alara');
   assert.ok(shim.app.innerHTML.includes('#/mapa/alara'), 'plan Alary: brak linku do mapy');
+  // Stopka czasu (ADR 0029) obowiązuje KAŻDY typ strony — plany też
+  // (zgłoszenie właściciela 2026-09-06: karty i mapy miały stopkę, plany nie).
+  assert.ok(shim.app.innerHTML.includes('class="stopka-czasu meta"') && shim.app.innerHTML.includes('Utworzono '),
+    'plan Alary: brak stopki „Utworzono / ostatnia aktualizacja” (ADR 0029)');
   shim.idz('#/mapa/alara');
   const al = shim.app.innerHTML;
   assert.ok(al.includes('Mapa: Alara'), 'mapa Alary: brak tytułu');
@@ -150,6 +154,39 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   assert.ok(karta3.includes('Illusory Demon'), 'karta 305ARB: brak tytułu');
   assert.ok(karta3.includes('#/mapa/alara?pin=305arb-illusory-demon'),
     'karta 305ARB: brak deep-linka pinezki');
+
+  // PR-21 pakiet 2: Mirrodin — mapa T4 (rekonstrukcja kanoniczna, tarcza-półkula);
+  // pinezka 488SOM w sercu Tangle (pewność „region”)
+  shim.idz('#/plan/mirrodin');
+  assert.ok(shim.app.innerHTML.includes('#/mapa/mirrodin'), 'plan Mirrodinu: brak linku do mapy');
+  shim.idz('#/mapa/mirrodin');
+  const mi = shim.app.innerHTML;
+  assert.ok(mi.includes('Mapa: Mirrodin'), 'mapa Mirrodinu: brak tytułu');
+  assert.ok(mi.includes('src="maps/mirrodin.html"'), 'mapa Mirrodinu: brak iframe');
+  shim.idz('#/karta/488som-carapace-forger');
+  const karta4 = shim.app.innerHTML;
+  assert.ok(karta4.includes('488SOM'), 'karta 488SOM: brak imgId');
+  assert.ok(karta4.includes('Carapace Forger'), 'karta 488SOM: brak tytułu');
+  assert.ok(karta4.includes('<h2>Kronika Lore</h2>'), 'karta 488SOM: brak otwarcia LORE-first');
+  assert.ok(karta4.includes('#/mapa/mirrodin?pin=488som-carapace-forger'),
+    'karta 488SOM: brak deep-linka pinezki');
+
+  // PR-21 pakiet 3: Tarkir — mapa T4 (epoka khanów, geometria z rastra fanowskiego);
+  // pinezka 509KTK w łowiskach Temur (pewność „region”)
+  shim.idz('#/plan/tarkir');
+  assert.ok(shim.app.innerHTML.includes('#/mapa/tarkir'), 'plan Tarkiru: brak linku do mapy');
+  assert.ok(shim.app.innerHTML.includes('class="stopka-czasu meta"'), 'plan Tarkiru: brak stopki czasu');
+  shim.idz('#/mapa/tarkir');
+  const ta = shim.app.innerHTML;
+  assert.ok(ta.includes('Mapa: Tarkir'), 'mapa Tarkiru: brak tytułu');
+  assert.ok(ta.includes('src="maps/tarkir.html"'), 'mapa Tarkiru: brak iframe');
+  shim.idz('#/karta/509ktk-highland-game');
+  const karta5 = shim.app.innerHTML;
+  assert.ok(karta5.includes('509KTK'), 'karta 509KTK: brak imgId');
+  assert.ok(karta5.includes('Highland Game'), 'karta 509KTK: brak tytułu');
+  assert.ok(karta5.includes('<h2>Kronika Lore</h2>'), 'karta 509KTK: brak otwarcia LORE-first');
+  assert.ok(karta5.includes('#/mapa/tarkir?pin=509ktk-highland-game'),
+    'karta 509KTK: brak deep-linka pinezki');
   shim.przywroc();
 
   // ── Strona mapy Śródziemia (samowystarczalny HTML, T2 → <img>)
@@ -181,7 +218,27 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   const mapaZ = shim3.app.innerHTML;
   assert.ok(mapaZ.includes('<svg class="mapa-podklad"'), 'mapa Zendikaru: brak wektorowego podkładu inline');
   assert.ok(mapaZ.includes('data-pinezka="2bfz-coralhelm-guide"'), 'mapa Zendikaru: brak pinezki 2BFZ');
+  assert.ok(!mapaZ.includes('mapa-epoki'), 'mapa Zendikaru: jeden podkład — bez przełącznika epok');
   shim3.przywroc();
+
+  // ── Strona mapy Tarkiru (ADR 0035: dwa podkłady-warianty, układ złoty = raster T1)
+  const shim3b = wykonajArtefakt('dist/maps/tarkir.html');
+  const mapaT = shim3b.app.innerHTML;
+  assert.ok(mapaT.includes('class="mapa-epoki"'), 'mapa Tarkiru: brak przełącznika epok');
+  assert.match(mapaT, /data-epoka-przelacz="t1"\s+aria-pressed="true"/, 'mapa Tarkiru: T1 (raster) ma być domyślny');
+  assert.match(mapaT, /data-epoka-przelacz="t4"\s+aria-pressed="false"/, 'mapa Tarkiru: T4 jako drugi wariant');
+  assert.ok(mapaT.includes('<img class="mapa-podklad" src="tarkir/podklad-t1.jpg"'), 'mapa Tarkiru: raster T1 jako <img> (pełna rozdzielczość)');
+  assert.ok(mapaT.includes('<svg class="mapa-podklad"'), 'mapa Tarkiru: scena T4 z inline SVG (ukryta do przełączenia)');
+  assert.match(mapaT, /<div class="mapa-scena" data-scena data-epoka="t4"[^>]*\shidden/, 'mapa Tarkiru: scena T4 startuje ukryta');
+  assert.doesNotMatch(mapaT, /<div class="mapa-scena" data-scena data-epoka="t1"[^>]*\shidden/, 'mapa Tarkiru: scena T1 widoczna');
+  // T1 = czysty raster: ŻADNA etykieta Codexu nie jest aktywna, pinezka jest
+  const etykietyT = mapaT.match(/data-podklad-etykieta/g) ?? [];
+  const pozaEpoka = mapaT.match(/poza-epoka/g) ?? [];
+  assert.ok(etykietyT.length > 40, 'mapa Tarkiru: etykiety T4 obecne w nakładce (do przełączenia)');
+  assert.equal(pozaEpoka.length, etykietyT.length, 'mapa Tarkiru: w T1 wszystkie etykiety podkładu wyłączone (poza-epoka)');
+  assert.ok(mapaT.includes('data-pinezka="509ktk-highland-game" data-x="0.4496" data-y="0.1846"'),
+    'mapa Tarkiru: pinezka 509KTK w układzie złotym (raster T1)');
+  shim3b.przywroc();
 
   // atrybucja rekonstrukcji i uzasadnienia pinezek — w artefakcie bazowym
   const shim4 = wykonajArtefakt(cel);
@@ -189,6 +246,14 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   const ramaZ = shim4.app.innerHTML;
   assert.ok(ramaZ.includes('praca własna'), 'mapa Zendikaru: brak atrybucji rekonstrukcji (T3, w rodzicu)');
   assert.ok(ramaZ.includes('wybrzeży Halimar'), 'mapa Zendikaru: brak uzasadnienia pinezki (MA4, w rodzicu)');
+  // Tarkir (ADR 0035): atrybucja KAŻDEGO podkładu + legenda przełącznika; iframe w proporcjach T1
+  shim4.idz('#/mapa/tarkir');
+  const ramaT = shim4.app.innerHTML;
+  assert.ok(ramaT.includes('Lore Café'), 'mapa Tarkiru: brak atrybucji rastra T1 (Lore Café)');
+  assert.ok(ramaT.includes('All Rights Reserved'), 'mapa Tarkiru: licencja rastra fanowskiego musi być widoczna');
+  assert.ok(ramaT.includes('praca własna'), 'mapa Tarkiru: brak atrybucji rekonstrukcji T4');
+  assert.ok(ramaT.includes('przełącznik epok'), 'mapa Tarkiru: legenda bez opisu przełącznika');
+  assert.ok(ramaT.includes('aspect-ratio: 4307 / 3293'), 'mapa Tarkiru: iframe w proporcjach rastra T1 (wariant domyślny)');
   shim4.przywroc();
 
   // B1: badge pinezki ukryty do najechania/fokusu (CSS strony mapy)
@@ -271,7 +336,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (5)'), 'lista kart: brak 5 kart');
+  assert.ok(lista.includes('Karty Katalogowe (7)'), 'lista kart: brak 7 kart');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
     'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
@@ -336,7 +401,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   const slugiKart = fs.readdirSync(katalogKart)
     .filter((f) => f.endsWith('.md') && f !== 'README.md')
     .map((f) => f.replace(/\.md$/, ''));
-  assert.ok(slugiKart.length >= 5, 'oczekiwano ≥5 kart w content/cards');
+  assert.ok(slugiKart.length >= 6, 'oczekiwano ≥6 kart w content/cards');
   for (const slug of slugiKart) {
     shim.idz(`#/karta/${slug}`);
     const html = shim.app.innerHTML;
@@ -349,7 +414,9 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   }
 
   shim.idz('#/');
-  assert.ok(shim.app.innerHTML.includes('Dunland Crebain'), 'home: brak ostatniej materializacji');
+  // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — przy ≥6 kartach
+  // najstarsza (1LTR) wypada z listy, więc sprawdzamy najnowszą (488SOM, 2026-09-06).
+  assert.ok(shim.app.innerHTML.includes('Highland Game'), 'home: brak ostatniej materializacji');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();

@@ -25,6 +25,15 @@ python3 tools/map-audit.py <plan>               # weryfikacja geometrii wygenero
 4. **Klocki samodzielne:** każda funkcja z `bloki.mjs` zwraca fragment
    SVG — można dokleić warstwę mapforge do istniejącego, ręcznego
    podkładu (adoptowanie stopniowe, ADR 0018).
+5. **Hydrologia (decyzja właściciela 2026-09-07):** NIE MA RZEK, KTÓRE
+   KOŃCZĄ SIĘ W POLU. Ostatni punkt rzeki/dopływu leży w morzu (poza
+   lądem), w jeziorze albo na osi innej rzeki (≤ 12 j.); odpływ jeziora
+   (`zrodlo:false`) zaczyna się w tafli. Pilnuje `sprawdzWiazania`
+   (uwaga `[wiązania]` w CLI, test na scenach repo).
+6. **Jeden biom na miejsce — lód nad górami zakazany:** czapa `lod` jest
+   litą nakładką, więc pasma omijają jej poligony (glif nie staje pod
+   lodem podstawą ani szczytem), a biomy rozsiewane omijają lód jak
+   dotąd. Grzbiet ma iść OBOK czapy, nie pod nią.
 
 ## Motywy (`--styl=pergamin|atlas`)
 
@@ -52,10 +61,12 @@ przed renderem.
 | `las(id, poly, {gestosc, skala})` | wielokąt zasięgu | **kępy liści** (nieregularne „chmurki" z haczurą), nakładające się w gęstą masę — jak mapome |
 | `bagno(id, poly, {gestosc})` | wielokąt | kępki turzyc + płytka oczka wodne |
 | `step(id, poly, {gestosc})` | wielokąt | kępy traw |
+| `pustynia(id, poly, {gestosc})` | wielokąt | **wydmy**: rzadki rozsiew sierpowatych łuków (druga wydma „w cieniu” co ~2.) — pustynie (Shifting Wastes Tarkiru); klasa `mf-wydma` z kotwicą data-x/y |
 | `lod(id, poly, {pekniecia})` | wielokąt | biała nakładka + spękania |
 | `pasmo(id, punkty, {szer, snieg, przedgorze})` | linia grzbietu | **gęste klastery glifów adoptowanych z mapome** (ADR 0020) — n ≈ dl/(szer·0.8), rozmiar ważony sinusem długości grzbietu (wyżej w środku), flip lustrzany, jitter; kolejność rysowania wg dolnej krawędzi (bliżej = na wierzchu — technika Azgaar) + niskie pogórze pod granią. Klastery nakładają się nieznacznie: każdy szczyt pozostaje czytelny (benchmark mapome, ADR 0015) |
 | `szczyt(x, y, w, h, {snieg, flip, glifId})` | punkt | **jeden glif z `glify-mapaome.mjs`** (ADR 0020) — ręcznie rysowana sylwetka klastra 1–3 szczytów mapome, jednolita skala po `h`, środek podstawy w (x, y); `flip=-1` odbicie; `glifId` wybiera sylwetkę (mega-klastery `g-016/g-237/g-270` do masywów zdefiniowanych w scenie); bez `glifId` — deterministyczny wybór z pozostałych 27 |
 | `wulkan(x, y, {skala, dym})` | punkt | stożek z kraterem i lazem dymu |
+| `szczyt` jako POI (`{typ:'szczyt', opcje:{skala, snieg}}`) | punkt | pojedynczy nazwany/święty szczyt (glif mapome ze śniegiem) — Eternal Ice na Tarkirze; etykieta kotwiczy się pod podstawą |
 | `rzeka(id, punkty, {s0, s1, ujscie})` | linia + szerokości | wstęga **stożkowa** (zwęża się do punktu na obu końcach — nie urywa się płasko; punkt źródła) w **kolorze akwenu** (ADR 0020, decyzja właściciela 2026-09-01): `ujscie:{typ:'morze'}` → kolor morza, `ujscie:{typ:'jezioro'}` → kolor jeziora, brak ujścia → kolor morza. **Bez gradientu i bez opacity** — wpływając do morza rzeka ma z nim identyczny kolor i zlewa się z nim, nie tnie |
 | `doplyw(id, punkty, {s0, s1})` | linia | cieńsza wstęga (bez źródła) |
 | `jezioro({cx, cy, rx, ry})` | elipsa | tafla + podwójny brzeg + fala |
@@ -65,19 +76,21 @@ przed renderem.
 | `fort(x, y, {skala})` | punkt | warownia z blankami i bramą (twierdze) |
 | `iglica(x, y, {skala})` | punkt | smukła turnia/gmach (wolne iglice, Nivix) |
 | `hedron(x, y, {skala, opacity})` | punkt | kamienny pierścień (dryf = opacity) |
+| `lacuna(x, y, {skala})` | punkt | kolisty szyb w płycie z ciemnym wnętrzem i nacięciami-szczeblami — tunel do jądra planu (Mirrodin: pięć lacun, którymi wyszły słońca) |
 | **klocki miejskie (T4 — atlas metropolii, Ravnica)** | | |
 | `dzielnica(punkty, {ton})` | wielokąt | tint panowania (kaseta `dzielnice` w scenie; ton = przyciemnienie lądu) |
 | `granicaDzielnicy(punkty, {zamkniete})` | łamana | granica-arteria (prześwit + tusz); render dedyka każdą krawędź RAZ |
 | `granicaRegionu(punkty)` | łamana | subtelny szary szew (dashed) między regionami scalonych planów — achromat |
 | `mur(id, punkty, {strona, zab})` | łamana | mur miejski z blankami (kaseta `mury`; brama = przerwa między segmentami) |
 | `szczelina(id, punkty, {szer})` | łamana | ciemny pas wąwozu miejskiego z poszarpanymi krawędziami i schodami (kaseta `szczeliny`; strefa zajęta dla biomów) |
+| `rozpadlina(id, punkty, {szer, osuwiska})` | łamana | **kanion w krajobrazie** (The Scour na Tarkirze): dwie niezależnie poszarpane kreski klifów zbiegające się na końcach (wrzeciono), szraf dna, kreski osuwisk — BEZ wypełnienia. Kaseta `rozpadliny`; strefa zajęta dla biomów. `szczelina` to klocek miejski — w krajobrazie czyta się jak rura (recenzja 2026-09-07) |
 | `tkanina(id, punkty, {gestosc})` | wielokąt | **biom**: mikro-bloki zabudowy / ulice (ziarno `prng(id)`, respektuje maski i strefy zajęte) |
 | `gruz(id, punkty, {gestosc})` | wielokąt | **biom**: rumowisko (połamane narożniki) — rubblebelty |
 | `plac / kolumny / kopula / platforma / kolowrot / most / ognisko` | punkt | POI miejskie: rynek, kolumnada, rotunda, platforma na łańcuchach, koło wodne, most, ognisko-zgromadzenie (w duchu mapome, koło z tłem lądu) |
 | `drzewo` (POI) | punkt | wielkie drzewo-pomnik (Vitu-Ghazi) — hero-korona z własnym ziarnem |
 | `etykieta(tekst, x, y, {kat, fs, ital})` | tekst | halo + obrót wokół punktu (`kat` w stopniach); `przyDo:[x,y]` kotwiczy napis obok obiektu + kreska |
 | `lukEtykieta(id, punkty, tekst, {fs})` | łuk | etykieta po łuku (textPath) — zatoki, doliny |
-| `kompas / ramka / skalaLinia` | — | oprawa mapy |
+| `kompas / ramka / skalaLinia` | — | oprawa mapy; `ramka: {margines, passePartout:true}` dla map **full-bleed** (kontynent na całym arkuszu — Tarkir): pas papieru poza oknem zasłania treść pod linią ramki |
 
 ### Język rysowania glifów (styl „hand-drawn" jak mapome)
 
