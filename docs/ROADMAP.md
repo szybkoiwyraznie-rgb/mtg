@@ -249,22 +249,24 @@ oraz **lekcja L9** (opis PR kumulatywnie po każdym commicie). Pętla
 Jakości bez kandydatów do pogłębiania i link-miningu. Wynik:
 `docs/audits/AUDYT_2026-09-06-PR19.md`.
 
-**PR-21 (2026-09-06, otwarty) — audyt PR-20:** pierwszy audyt z recenzją
+**PR-21 (2026-09-06–07, scalony 2026-09-07 20:47, `6bf2fba`) — audyt PR-20:** pierwszy audyt z recenzją
 wizualną podkładów (raster poza repo, SKILL_MAPA_PLANU §8): PR-20 bez wad;
 usterki typograficzne mapy Alary W1–W3 (tytuły Jund/Grixis/Naya na ikonach
 i pasmach — poprawione w danych sceny), B1 (brak wpisu PR-20 tu i w
-PROJECT_HISTORY — uzupełnione), B2 (propozycja kontroli tytuł↔obiekt
-w `map-audit`). Wynik: `docs/audits/AUDYT_2026-09-06-PR20.md`.
+PROJECT_HISTORY — uzupełnione), B2 (wdrożona kontrola tytuł↔obiekt
+w `map-audit`, z fixturą regresyjną i bramą w `npm test`). Wynik: `docs/audits/AUDYT_2026-09-06-PR20.md`.
 **Pakiet 2 tego samego PR (zlecenie właściciela):** 488SOM Carapace
 Forger + nowy plan **Mirrodin** z mapą **T4** (rekonstrukcja kanoniczna
 w mapforge: tarcza-półkula metalowej sfery, pięć regionów wg cyklu
-fastlandów SOM, epoka przed kompleacją; `maps/mirrodin/`), strona planu,
+fastlandów SOM, powierzchnia od Argentum po wojnę o New Phyrexię;
+`maps/mirrodin/`), strona planu,
 karta LORE-first z pinezką `region` w Tangle. Roadmapa:
 `docs/plans/PLAN_2026-09-06-pr21-mirrodin-carapace-forger.md`.
 **Pakiet 3 tego samego PR (2026-09-07, zlecenie właściciela):** 509KTK
 Highland Game + nowy plan **Tarkir** z mapą **T4** (mapforge na geometrii
 fanowskiej mapy Lore Café dostarczonej przez właściciela — ADR 0031;
-epoka khanów na wspólnej topografii trzech epok — ADR 0033 uzupełnienie;
+epoka khanów na wspólnej siatce regionów — ADR 0033/0035;
+różnice kanonu i tożsamości miejsc skorygowane audytem PR-22;
 `maps/tarkir/`), strona planu, karta LORE-first z pinezką `region`
 w Qal Sisma; nowe klocki mapforge `pustynia` i `szczyt`. Roadmapa:
 `docs/plans/PLAN_2026-09-07-pr21-tarkir-highland-game.md`. Recenzja
@@ -275,8 +277,16 @@ khanów, **przełącznik epok** na stronie mapy, **jeden układ współrzędnych
 (złoty = raster T1)**, T1 bez etykiet Codexu → ADR 0035; silnik map
 obsługuje `warianty[]` dla każdej mapy (K3 T1 wraca do gry: precedens
 PR-13 „T1 odrzucony licencyjnie” nie blokuje projektu prywatnego).
-PR #21 pozostaje otwarty do końca sesji (decyzja właściciela — scalenie
-odcięłoby agenta od GitHuba).
+PR #21 pozostawał otwarty podczas pracy nad pakietami; po zakończeniu
+sesji został scalony przez właściciela.
+
+**PR-22 (2026-09-07, w toku) — audyt PR-21 i naprawy A1–A6/E1:**
+pełny przegląd 61 plików, korekta kanonu Tarkiru, pięć pełnych snapshotów,
+regresje przełączania map, poprawki mobile i usunięcie duplikatu SVG.
+130 testów; HTML Tarkiru po A5 mniejszy o około 47% względem A1–A4.
+Raport: `docs/audits/AUDYT_2026-09-07-PR21.md`. **Pogłębianie lore
+w Pętli Jakości i link-mining pozostają do wykonania**; punkt kontrolny:
+`docs/setup/HANDOFF_2026-09-07-pr22.md`.
 
 ## Wątki otwarte (czekają na decyzję właściciela)
 

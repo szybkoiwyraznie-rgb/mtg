@@ -1,3 +1,24 @@
+## 2026-09-07 22:17 — PR-22: audyt i naprawy map oraz danych kart
+
+Audyt poprzedniego PR objął 61 plików. Wykonane poprawki:
+
+- **[[tarkir|Tarkir]]:** KTK, FRF i linia smoczych lordów są rozdzielone;
+  Karakyk nie jest Ayagor, a First Tree należy do Arashin. T4 nie
+  przenosi już późniejszych lokacji jako kanonu epoki khanów.
+- **Przełącznik T1/T4** zachowuje skalę również na obu granicach zoomu.
+  Pinezka [[509ktk-highland-game|Highland Game]] jest klikalna na małym
+  ekranie; szczegółowe podpisy map pojawiają się dopiero po przybliżeniu.
+- **Lżejszy HTML mapy Tarkiru:** usunięta nieużywana druga kopia SVG —
+  około 47% mniej niż po wcześniejszych naprawach tej sesji.
+- **Pięć snapshotów Scryfalla** odzyskało pełne odpowiedzi API. Reguły
+  kart nie zostały zmienione; nowa brama wykrywa obcięte struktury.
+- **130 testów**, kontrola map i przeglądarki; bez nowych kart,
+  zmian dostaw, źródłowego rastra T1 ani współrzędnych pinezki 509KTK.
+
+To punkt kontrolny po odnowieniu połączenia GitHub i wypchnięciu
+napraw. Pogłębianie lore i link-mining w Pętli Jakości pozostają
+**do wykonania**; PR #22 nie został scalony.
+
 ## 2026-09-07 18:45 — PR-21: Tarkir dostaje dwie mapy epok — raster Dragonstorm (T1) i rekonstrukcja Khans (T4) pod jednym przełącznikiem
 
 Właściciel obejrzał rekonstrukcję T4 obok ręcznie rysowanej mapy fanowskiej

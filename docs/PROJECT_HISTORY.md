@@ -4,9 +4,36 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-07 — PR-22: audyt PR-21 i naprawy (punkt kontrolny)
+
+Sesja `arena/01a07d33-mtg`, PR #22 otwarty przed pracą (`2188033`).
+Audyt `bbe6d34` → `6bf2fba` obejmuje wszystkie 61 plików; raport
+z dowodami i kolejką A1–A6/E1 zapisano osobno (`2db0c56`).
+
+- `68331ce` — A1: epoki Tarkiru, First Tree przy Arashin, dobór nazw T4;
+  errata faktograficzna ADR 0033 bez zmiany modelu mapy z ADR 0035.
+- `a362672` — A2/E1: naprawa pełności pięciu snapshotów i brama struktury;
+  bez zmiany reguł gry. W starszym FIN odtworzono również poprawne
+  `set_id` i `resource_id` z API; ID karty/Oracle i kod wydania pozostały.
+- `37b2a8f` — A3: złota skala na granicach zoomu, test montażu i zdarzeń;
+  precyzyjny opis zakresu smoke w L13/gidzie (część A6).
+- `6a3622d` — A4: klikalna pinezka mobile, LOD zależny od szerokości,
+  mniejsze tytuły i kontrola krawędzi. Chromium: 10/10 kliknięć w T1/T4
+  na pięciu szerokościach. Push chwilowo zablokowany wygasłą autoryzacją;
+  wypchnięty po odnowieniu połączenia przez właściciela.
+- `1d2d4fd` — A5: usunięcie nieużywanego SVG z toru wariantów;
+  HTML Tarkiru 8 482 236 → 4 516 019 bajtów, około −47%.
+- A6: aktualizacja statusu PR #21, wykonania B2, epoki Mirrodinu;
+  checkpoint „Co nowego”, roadmapa i handoff bieżącej pracy.
+
+Stan po naprawach: 130 testów, build 14 stron, 7 map, 0 haseł.
+**To nie koniec Pętli Jakości**: pogłębianie lore i link-mining są
+niewykonane. Kolejka i ograniczenia w bieżącej roadmapie/handoffie.
+
 ## 2026-09-06 — sesja PR-21: audyt PR-20 z pierwszą recenzją wizualną map + Pętla Jakości
 
-Sesja `arena/01a0770f-mtg` (PR #21, otwarty). Tryb: „Kontynuuj zgodnie
+Sesja `arena/01a0770f-mtg` (PR #21, scalony 2026-09-07 20:47,
+squash `6bf2fba`). Tryb: „Kontynuuj zgodnie
 z AGENTS” — bez dostawy materializacji. **Pierwsza sesja z oglądem
 obrazów przez agenta** (rastry map przez resvg poza repo).
 

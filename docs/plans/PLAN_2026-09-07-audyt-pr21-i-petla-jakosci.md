@@ -40,10 +40,10 @@ oraz najnowszy handoff) i uruchomienie podglądu, bez zmian w repo.
 
 ### B. Naprawy z audytu
 
-- [ ] Usterki naprawiane u przyczyny, każda spójna grupa z regresyjnym
+- [x] Usterki naprawiane u przyczyny, każda spójna grupa z regresyjnym
   testem, kontrolą diffu oraz osobnym zielonym commitem i pushem.
-- [ ] Zmiany map tylko w źródłach/generatorach, następnie render i ogląd.
-- [ ] Rozstrzygnięcia wykraczające poza istniejące ADR-y → decyzja
+- [x] Zmiany map tylko w źródłach/generatorach, następnie render i ogląd.
+- [x] Rozstrzygnięcia wykraczające poza istniejące ADR-y → decyzja
   właściciela przed implementacją; żadnych cichych zmian kontraktu.
 
 #### Kolejka z raportu (stan audytu: przed naprawami)
@@ -74,8 +74,9 @@ oraz najnowszy handoff) i uruchomienie podglądu, bez zmian w repo.
   (−3 966 217, około 47%). Regresja odrzuca płaską kopię markupu,
   zachowuje pełny SVG wariantu T4 i miniaturę T1. 130/130 testów;
   Chromium HTTP/`file://`: T1/T4, pinezka, skala i powrót poprawne.
-- [ ] **A6 (P3):** precyzyjny opis testów w L13/gidzie; status PR #21
-  i zakresy roadmapy aktualne przy domknięciu sesji.
+- [x] **A6 (P3):** precyzyjny opis testów w L13/gidzie; status PR #21
+  i zakresy roadmapy aktualne w punkcie kontrolnym po puszu A4/A5.
+  Dodano historię, „Co nowego” i handoff; Pętla nadal jawnie otwarta.
 
 Dowody: `docs/audits/AUDYT_2026-09-07-PR21.md` (rejestr 61/61 plików).
 Bazowe 114 testów, determinizm 5 SVG i 2 generatorów, map-audit 0;
@@ -87,7 +88,7 @@ QA resvg i Chromium 149 poza repo. Wady wykryte mimo zielonych bram.
   z kwerendą i cytowaniami, bez meta-informacji o wydrukach.
 - [ ] Link-mining: wspólne encje tylko przy progu ≥2 kart; brak
   kwalifikujących się encji odnotowany, bez tworzenia haseł na zapas.
-- [ ] Pass mapowy: kompletność, dokładność i czytelność map własnych;
+- [x] Pass mapowy: kompletność, dokładność i czytelność map własnych;
   naprawy map z audytu mogą stanowić jego wynik. T2 bez ingerencji
   w adoptowany line-art; T1 Tarkiru pozostaje źródłowym rastrem.
 
@@ -99,6 +100,14 @@ QA resvg i Chromium 149 poza repo. Wady wykryte mimo zielonych bram.
 - [ ] Czyste drzewo i wszystkie commity wypchnięte; opis PR aktualizowany
   kumulatywnie po każdym kroku merytorycznym. PR pozostaje do scalenia
   przez właściciela (Squash and merge).
+
+## Punkt kontrolny po odnowieniu GitHuba
+
+Właściciel wznowił połączenie i polecił wypchnąć zmiany. A4 (`6a3622d`)
+i A5 (`1d2d4fd`) są na gałęzi sesji; opis PR aktualizowany kumulatywnie.
+Dalsze zadanie to **C: pogłębianie i link-mining**, nie ponowienie audytu
+ani odtwarzanie wykonanych napraw. Końcowe zamknięcie D po tej części.
+Handoff: `docs/setup/HANDOFF_2026-09-07-pr22.md`.
 
 ## Poza zakresem
 
