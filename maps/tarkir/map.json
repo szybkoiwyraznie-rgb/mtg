@@ -1,0 +1,484 @@
+{
+ "plan": "tarkir",
+ "tytul": "Tarkir",
+ "wariant": "T4",
+ "podklad": "podklad.svg",
+ "wymiary": {
+  "szerokosc": 2000,
+  "wysokosc": 1400
+ },
+ "zrodlo": {
+  "url": "https://magic.wizards.com/en/news/feature/planeswalkers-guide-khans-tarkir-part-2-2014-09-10",
+  "url2": "https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-tarkir-dragonstorm-part-2",
+  "url3": "https://www.reddit.com/r/mtgvorthos/comments/1jqv1su/tarkir_dragonstorm_handcrafted_map/",
+  "tytul": "Tarkir — rekonstrukcja układu terytoriów pięciu klanów wg kanonu tekstowego (Planeswalker's Guide to Khans of Tarkir cz. 1–2, 2014; Planeswalker's Guide to Tarkir: Dragonstorm cz. 1–2, 2025; MTG Wiki: Tarkir, Qal Sisma, Tiansun, Sandsteppe, Shifting Wastes, Gudul delta) z geometrią przeniesioną z rastra fanowskiego „Tarkir Map 2025 (EN)” Lore Café / MTG Wiki Italia (grafika 3d4)",
+  "autor": "MTG Lore Codex (praca własna — scena mapforge maps/tarkir/scena.json z generatora tools/mapforge/tarkir-scena-t4.py); układ i pozycje względne wg mapy fanowskiej Lore Café (3d4), dostarczonej przez właściciela 2026-09-07",
+  "licencja": "praca własna na kanonie tekstowym; geometria wzorowana na prywatnie dostarczonym rastrze fanowskim (Lore Café, „All Rights Reserved” — raster NIE jest w repo, użyty wyłącznie jako matryca pozycji, ADR 0031); glify gór mapome CC-BY-4.0 (ADR 0020)",
+  "pobrano": "2026-09-07",
+  "notka": "T4 (rekonstrukcja kanoniczna): oficjalna mapa Tarkiru nigdy nie powstała — oba Planeswalker's Guide to opisy; MTG Wiki bez kategorii map Tarkiru (research 2026-09-07, zrodlo-research.md). Właściciel wybrał T4 i dostarczył raster fanowski Lore Café (2025) jako źródło pomocnicze geometrii. Zgodność rastra z kanonem sprawdzona relacja po relacji; JEDNA korekta kanoniczna wobec rastra: na rasterze Temur styka się z Abzanem na zachodzie, a wg TDM Temur graniczy tylko z Mardu i Jeskai, Abzan tylko z Mardu i Sultai — klin Mardu poprowadzono do zachodniej krawędzi (Stormplains i Sandsteppe Gateway po stronie Abzan). EPOKA (ADR 0033 §1–2): jedna mapa fizyczna Tarkiru z etykietami osad EPOKI KHANÓW (KTK — linia czasowa przed Khanfall; karta 509KTK). Topografia jest wspólna dla obu linii czasowych; osady poświadczone tylko w linii smoczych lordów / po Stormnexus są poza mapą (pole poza_epoka), a obiekty czysto fizyczne znane tylko z TDM (jeziora, lasy, rzeki) — dopuszczone. Kontynent bez oceanu (Sarkhan): ląd full-bleed, jedyny wielki akwen to południowe morze śródlądowe (nazwa robocza „Morze Południowe” — niekanoniczna) z deltą Gudul. Nowe klocki mapforge dla tej mapy: biom `pustynia` (wydmy) i POI `szczyt` (Eternal Ice)."
+ },
+ "rekonstrukcja": true,
+ "epoka": "Tarkir epoki khanów (KTK/FRF — linia czasowa przed Khanfall); topografia wspólna z linią smoczych lordów (DTK) i z Tarkir: Dragonstorm — osobna mapa tylko przy zmianie topologii (ADR 0033)",
+ "kotwice": [
+  {
+   "nazwa": "Qal Sisma",
+   "x": 0.5556,
+   "y": 0.1059,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (TDM: Temur „northern climate”, Qal Sisma = góry Temur; KTK: wysoki płaskowyż granitowo-wapienny) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "góry Temur Frontier; Karakyk Valley, Staircase of Bones, Dragon's Throat, Eternal Ice, Melting Wilds"
+  },
+  {
+   "nazwa": "Tiansun",
+   "x": 0.8454,
+   "y": 0.1614,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (TDM: „eastern Tiansun mountain range”) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "góry i jeziora Jeskai Way; cztery twierdze, Salt Road przez Purugir"
+  },
+  {
+   "nazwa": "Sandsteppe",
+   "x": 0.347,
+   "y": 0.3766,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (TDM: „central steppe … touching the borders of all the other clans”) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "step Mardu Horde; Wingthrone, Goldengrave, Screamreach, The Scour"
+  },
+  {
+   "nazwa": "Shifting Wastes",
+   "x": 0.1442,
+   "y": 0.8775,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (KTK: pustynie Abzan; TDM: graniczy tylko z Mardu i Sultai → zachód) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "pustynia Abzan Houses; Arashin, Sandsteppe Gateway, Lookout Roost, Kavah"
+  },
+  {
+   "nazwa": "Gudul delta",
+   "x": 0.6831,
+   "y": 0.9023,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (TDM: „located in the south of the continent”) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "delta Sultai Brood; Kheru, Qarsi, Ukud, Gurmag, Marang"
+  },
+  {
+   "nazwa": "Temur Frontier",
+   "x": 0.2196,
+   "y": 0.2359,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (KTK cz. 2) — tytuł terytorium klanu",
+   "notka": "klan Temur (GUR), khan Surrak Dragonclaw; łowiska rodzin między Karakyk Valley a Staircase of Bones"
+  },
+  {
+   "nazwa": "Jeskai Way",
+   "x": 0.854,
+   "y": 0.3874,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (KTK cz. 1) — tytuł terytorium klanu",
+   "notka": "klan Jeskai (URW), khan Narset; Sage-Eye Stronghold jako nexus"
+  },
+  {
+   "nazwa": "Mardu Horde",
+   "x": 0.5209,
+   "y": 0.5298,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (KTK cz. 2) — tytuł terytorium klanu",
+   "notka": "klan Mardu (RWB), khan Zurgo Helmsmasher; Wingthrone"
+  },
+  {
+   "nazwa": "Abzan Houses",
+   "x": 0.2949,
+   "y": 0.7699,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (KTK cz. 1) — tytuł terytorium klanu",
+   "notka": "klan Abzan (WBG), khan Anafenza; Arashin"
+  },
+  {
+   "nazwa": "Sultai Brood",
+   "x": 0.602,
+   "y": 0.952,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon (KTK cz. 1) — tytuł terytorium klanu",
+   "notka": "klan Sultai (BGU), khan Sidisi; Kheru Temple"
+  },
+  {
+   "nazwa": "Karakyk Valley",
+   "x": 0.4224,
+   "y": 0.12,
+   "typ": "osada",
+   "pozycja_zrodlo": "kanon (KTK cz. 2: cyrk lodowcowy, zimowe leże całego klanu; TDM: Karakyk Glacial Settlement) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "permanentne zimowe schronienia w jaskiniach; zgromadzenia klanu, wyzwania Dragonclaw"
+  },
+  {
+   "nazwa": "Eternal Ice",
+   "x": 0.3006,
+   "y": 0.1241,
+   "typ": "szczyt",
+   "pozycja_zrodlo": "kanon (TDM: święty szczyt szeptaczy) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "stały śnieżnik; ceremonie szeptaczy — obiekt fizyczny, dopuszczony w epoce khanów"
+  },
+  {
+   "nazwa": "Staircase of Bones",
+   "x": 0.4861,
+   "y": 0.2608,
+   "typ": "miejsce",
+   "pozycja_zrodlo": "kanon (KTK cz. 2: zaokrąglone wzgórze „w centralnym położeniu między łowiskami rodzin”) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "zgromadzenia przed kampanią; nazwa od bitwy Surraka z Mardu"
+  },
+  {
+   "nazwa": "Tomb of the Spirit Dragon",
+   "x": 0.121,
+   "y": 0.1573,
+   "typ": "ruina",
+   "pozycja_zrodlo": "kanon (KTK: Ugin zabity przez Bolasa, „left to die in an icy chasm”; mtg.wiki Qal Sisma: Tomb/Valley of the Spirit Dragon) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031) (raster: „Crucible of the Spirit Dragon”)",
+   "notka": "w epoce khanów — lodowa rozpadlina-grób; w linii smoków — Krucybel hibernacji Ugina"
+  },
+  {
+   "nazwa": "Ayagor (Dragon's Bowl)",
+   "x": 0.3384,
+   "y": 0.2384,
+   "typ": "miejsce",
+   "pozycja_zrodlo": "kanon (mtg.wiki Qal Sisma: Ayagor — Dragon's Bowl, w TDM Summer Landing) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "polana w przedgórzu; w epoce khanów nazwa Ayagor"
+  },
+  {
+   "nazwa": "Qadat, the Fire Rim",
+   "x": 0.6715,
+   "y": 0.1366,
+   "typ": "wulkan",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: niedostępne wulkaniczne pasmo poza Jeskai, ojczyzna efreetów; TDM: między Jeskai a Temur) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "wulkanizm; styk N/E terytoriów"
+  },
+  {
+   "nazwa": "Sage-Eye Stronghold",
+   "x": 0.8558,
+   "y": 0.2996,
+   "typ": "twierdza",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: zbocze góry nad zatoką otoczoną górami, dostęp od wody) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031) (raster: „Dragon's Eye” — nazwa z linii smoków)",
+   "notka": "nexus Jeskai, siedziba Narset, Annals of the Sage Eye"
+  },
+  {
+   "nazwa": "Riverwheel Stronghold",
+   "x": 0.777,
+   "y": 0.2798,
+   "typ": "twierdza",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: biała forteca w klifie z wodospadem; DTK: Icefall) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "koła wodne w wodospadzie"
+  },
+  {
+   "nazwa": "Dirgur Stronghold",
+   "x": 0.7498,
+   "y": 0.3891,
+   "typ": "twierdza",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: wyspa na wielkim jeziorze, pływająca wioska, „near the crossroads of the Salt Road”) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "najdostępniejsza twierdza; bloodfire"
+  },
+  {
+   "nazwa": "Purugir",
+   "x": 0.7381,
+   "y": 0.4304,
+   "typ": "osada",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: największa faktoria Jeskai przy Salt Road, kanion pod nawisem) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "handel bronią z obcymi"
+  },
+  {
+   "nazwa": "Cori Mountain Stronghold",
+   "x": 0.8337,
+   "y": 0.2525,
+   "typ": "twierdza",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: zalana kaldera, szkielet smoka jako płot) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "tradycja smoka; wulkan jako glif"
+  },
+  {
+   "nazwa": "Highspire Stronghold",
+   "x": 0.8917,
+   "y": 0.1366,
+   "typ": "twierdza",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: odosobniona, jeźdźcy modliszek) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "modliszki ze szczytów"
+  },
+  {
+   "nazwa": "Initiate's Stair",
+   "x": 0.7005,
+   "y": 0.2359,
+   "typ": "miejsce",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: biały pinakl, 1578 stopni na rękach) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "rytuał dojrzałości Jeskai"
+  },
+  {
+   "nazwa": "Wingthrone",
+   "x": 0.4745,
+   "y": 0.4636,
+   "typ": "twierdza",
+   "pozycja_zrodlo": "kanon (KTK cz. 2: klify, gdzie zginął smok piorunów; tron z czaszki) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031) (raster: Dalkovan City w tym miejscu — epoka TDM)",
+   "notka": "stolica Zurgo; w epoce khanów jedyna stała twierdza Mardu"
+  },
+  {
+   "nazwa": "Sandsteppe Gateway",
+   "x": 0.1789,
+   "y": 0.4801,
+   "typ": "twierdza",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: most-forteca między dwiema górami nad rzeką z ziem Abzan, granica Abzan–Mardu) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "w TDM zdobyte przez Mardu (Sandsteppe Gate)"
+  },
+  {
+   "nazwa": "Goldengrave",
+   "x": 0.4166,
+   "y": 0.5795,
+   "typ": "kraina",
+   "pozycja_zrodlo": "kanon (KTK cz. 2: trawiasta równina bitew niedaleko Wingthrone) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "chasm shamans; pochówki"
+  },
+  {
+   "nazwa": "Screamreach",
+   "x": 0.5266,
+   "y": 0.7036,
+   "typ": "kraina",
+   "pozycja_zrodlo": "kanon (KTK cz. 2: bagna łączące niziny Wingthrone z łąkami naprzeciw Sandsteppe Gate; TDM: styk Abzan/Mardu/Sultai) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "orkowie i ogry bagienne, krzyczące kruki"
+  },
+  {
+   "nazwa": "The Scour",
+   "x": 0.2311,
+   "y": 0.3518,
+   "typ": "kraina",
+   "pozycja_zrodlo": "kanon (KTK cz. 2: rozpadlina z Qal Sisma „jak blizna w ziemie Mardu”, wiatr z czarnym pyłem) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "klocek szczelina"
+  },
+  {
+   "nazwa": "Arashin",
+   "x": 0.1789,
+   "y": 0.5795,
+   "typ": "miasto",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: skaliste wzgórze w sercu ziem Abzan, Mer-Ek Fortress, First Tree, Amber Throne) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "centrum administracyjne; wszystkie szlaki Shifting Wastes"
+  },
+  {
+   "nazwa": "First Tree",
+   "x": 0.2427,
+   "y": 0.6126,
+   "typ": "miejsce",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: święte drzewo w Plaza of the First Tree pod Mer-Ek) — na mapie symbol obok Arashin",
+   "notka": "kin-tree założycielskie; w TDM „Anafenza's Kin-Tree” w okolicy"
+  },
+  {
+   "nazwa": "Kavah",
+   "x": 0.1153,
+   "y": 0.654,
+   "typ": "osada",
+   "pozycja_zrodlo": "kanon (mtg.wiki Shifting Wastes: osada dwa dni od Arashin) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031) (raster: Khava)",
+   "notka": "pisownia wg wiki: Kavah"
+  },
+  {
+   "nazwa": "Lookout Roost",
+   "x": 0.4456,
+   "y": 0.8361,
+   "typ": "wieża",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: wieża 400 stóp z czerwonawego kamienia, między ziemiami Abzan a górami granicznymi z Sultai) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "vulture-aven Anafenzy"
+  },
+  {
+   "nazwa": "Aerie of the Unfettered",
+   "x": 0.4166,
+   "y": 0.9189,
+   "typ": "ruina",
+   "pozycja_zrodlo": "kanon (TDM: „abandoned ancient structure”) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "pradawna budowla — obiekt fizyczny dopuszczony w epoce khanów jako ruina"
+  },
+  {
+   "nazwa": "Stormplains",
+   "x": 0.1268,
+   "y": 0.4884,
+   "typ": "kraina",
+   "pozycja_zrodlo": "kanon (mtg.wiki Shifting Wastes: trawiasta równina) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "fizyczna kraina (nazwa z TDM)"
+  },
+  {
+   "nazwa": "Dusyut Forest",
+   "x": 0.3702,
+   "y": 0.8444,
+   "typ": "kraina",
+   "pozycja_zrodlo": "kanon (TDM: podziemny las odsłonięty przez zapadlisko) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "na mapie jako zielona plama w pustyni"
+  },
+  {
+   "nazwa": "Brine Lake",
+   "x": 0.1095,
+   "y": 0.6001,
+   "typ": "akwen",
+   "pozycja_zrodlo": "raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "nazwa tylko na rasterze (brak w wiki/przewodnikach) — obiekt fizyczny, pozycja fanowska"
+  },
+  {
+   "nazwa": "Kheru Temple",
+   "x": 0.6107,
+   "y": 0.8692,
+   "typ": "miasto",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: centrum kultu, siedziba Sidisi, w dżungli na kanałach delty) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "w TDM Kheru City"
+  },
+  {
+   "nazwa": "Qarsi Palace",
+   "x": 0.5846,
+   "y": 0.8609,
+   "typ": "pałac",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: pałac rozkoszy na kanałach, barki) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "Kirada; obok Kheru"
+  },
+  {
+   "nazwa": "Ukud Necropolis",
+   "x": 0.8454,
+   "y": 0.6623,
+   "typ": "ruina",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: w bagnach Gurmag; Feyomsi i rakshasa) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "grobowce przodków"
+  },
+  {
+   "nazwa": "Marang River Fortress",
+   "x": 0.6542,
+   "y": 0.7384,
+   "typ": "twierdza",
+   "pozycja_zrodlo": "kanon (mtg.wiki Gudul delta: „near a small, steep pass where the river comes out of the mountains”) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "wyjście rzeki z gór"
+  },
+  {
+   "nazwa": "Molderfang Falls",
+   "x": 0.7063,
+   "y": 0.7823,
+   "typ": "wodospad",
+   "pozycja_zrodlo": "kanon (mtg.wiki Gudul delta, oryginalna linia: miejsce upadku Silumgara do rzeki) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "święte miejsce"
+  },
+  {
+   "nazwa": "Gurmag Swamp",
+   "x": 0.8628,
+   "y": 0.6043,
+   "typ": "kraina",
+   "pozycja_zrodlo": "kanon (KTK/TDM: pas bagien okalający górną część Sultai) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": ""
+  },
+  {
+   "nazwa": "Bloomvine Jungle",
+   "x": 0.7932,
+   "y": 0.7368,
+   "typ": "kraina",
+   "pozycja_zrodlo": "kanon (TDM: największa dżungla, Marang ją przecina) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": ""
+  },
+  {
+   "nazwa": "The Sagu",
+   "x": 0.8685,
+   "y": 0.9147,
+   "typ": "kraina",
+   "pozycja_zrodlo": "kanon (KTK/TDM: Sagu Forest/Jungle na obrzeżach, dom nag) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": ""
+  },
+  {
+   "nazwa": "Glintglaze Lake",
+   "x": 0.1847,
+   "y": 0.1076,
+   "typ": "akwen",
+   "pozycja_zrodlo": "kanon (TDM: alpejskie jezioro Temur, zimą obóz na lodzie) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": ""
+  },
+  {
+   "nazwa": "Dragon's Throat",
+   "x": 0.5035,
+   "y": 0.1804,
+   "typ": "miejsce",
+   "pozycja_zrodlo": "kanon (KTK cz. 2: wyjąca dolina polodowcowa, harfy z żeber smoków) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "na rasterze jako podłużne jezioro w dolinie"
+  },
+  {
+   "nazwa": "Pearl Lake",
+   "x": 0.8106,
+   "y": 0.12,
+   "typ": "akwen",
+   "pozycja_zrodlo": "kanon (TDM) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": ""
+  },
+  {
+   "nazwa": "Dirgur Lake",
+   "x": 0.7498,
+   "y": 0.3684,
+   "typ": "akwen",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: wielkie jezioro Dirgur) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": ""
+  },
+  {
+   "nazwa": "Marang River",
+   "x": 0.7498,
+   "y": 0.8526,
+   "typ": "rzeka",
+   "pozycja_zrodlo": "kanon (TDM: z roztopów, jedna z największych rzek Sultai) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": ""
+  },
+  {
+   "nazwa": "Niraj River",
+   "x": 0.7613,
+   "y": 0.6499,
+   "typ": "rzeka",
+   "pozycja_zrodlo": "raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "nazwa tylko na rasterze — rzeka fizyczna, pozycja fanowska"
+  },
+  {
+   "nazwa": "Salt Road",
+   "x": 0.6947,
+   "y": 0.5795,
+   "typ": "szlak",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: wielki trakt przez terytoria klanów; Arashin — wszystkie szlaki; Dirgur przy skrzyżowaniu; Purugir) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "W→E: Kavah/Arashin → Sandsteppe Gateway → step → Dirgur/Purugir"
+  },
+  {
+   "nazwa": "Morze Południowe",
+   "x": 0.799,
+   "y": 0.9768,
+   "typ": "akwen",
+   "pozycja_zrodlo": "rekonstrukcja: Sarkhan mówi, że Tarkir nie ma oceanów; Sultai „dredge the seas”, Sage-Eye nad zatoką — na rasterze bezimienne wody S; nazwa robocza Kodeksu",
+   "notka": "morze śródlądowe, w które uchodzi delta Gudul; nazwa nie jest kanoniczna"
+  }
+ ],
+ "regiony": [],
+ "pinezki": [
+  {
+   "karta": "509ktk-highland-game",
+   "x": 0.4542,
+   "y": 0.1832,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła: zimowe łowy klanu Temur w Qal Sisma, poroże dla szeptaczy wg nauk Chianula. Kanon KTK: zimą (dwa najmroźniejsze miesiące) cały klan zbiera się w Karakyk Valley, a łowiska rodzin skupiają się wokół Staircase of Bones („central location between the various family hunting grounds”) — pinezka w łowiskach między tymi dwoma punktami, w przedgórzu Qal Sisma; karta nie nazywa konkretnego miejsca, stąd pewność „region”."
+  }
+ ],
+ "scena": "scena.json",
+ "generator": "tools/mapforge/tarkir-scena-t4.py",
+ "silnik": "mapforge (ADR 0018/0019/0020/0022/0023); styl atlas; terytoria klanów jako dzielnice bez arterii (opcja bezGranicy) + granice regionów; nowy biom `pustynia` i POI `szczyt` dodane dla tej mapy; kompas włączony (N u góry), skala wyłączona (kanon nie podaje odległości)",
+ "zrodlo_fanmapa": {
+  "tytul": "Tarkir Map 2025 (EN) — „Dedicated to MTG Wiki Italia, a Lore Café production; arts & graphics by 3d4 — All Rights Reserved”",
+  "url": "https://www.reddit.com/r/mtgvorthos/comments/1jqv1su/tarkir_dragonstorm_handcrafted_map/",
+  "dostarczyl": "właściciel, 2026-09-07 (załącznik w czacie; plik nie trafił do sandboxa — odczyt z podglądu w UI)",
+  "charakter": "fan-made, na podstawie przewodnika TDM 2025; epoka Tarkir: Dragonstorm (nazwy osad TDM: Dalkovan City, Qatros Karst, Mistrise, Storm Crane, Jigme, Khava, Kishla)",
+  "zakres_uzycia": "układ pięciu terytoriów, przebieg Salt Road, Scour, rzek Marang/Niraj/Sandsteppe, położenie jezior i względne pozycje POI; nazwy i dobór obiektów wg kanonu epoki khanów",
+  "rozbieznosci_z_kanonem": [
+   "Temur–Abzan: raster styka te terytoria na W; kanon TDM — nie graniczą (skorygowano: klin Mardu do krawędzi W)",
+   "Sage-Eye Stronghold: raster nazywa go „Dragon's Eye” (linia smoków); mapa używa nazwy KTK",
+   "Brine Lake, Niraj River, Objung Swamp, Whisperwood: nazwy fizyczne obecne tylko na rasterze (brak w wiki/przewodnikach) — przyjęte jako pozycje fanowskie, oznaczone w kotwicach"
+  ]
+ },
+ "poza_epoka": [
+  "Dalkovan cities / Thunder Stadium (TDM — ruchome miasta Mardu)",
+  "Dragonsong Rock (TDM)",
+  "Qatros Karst City (TDM)",
+  "Mistrise Village (TDM)",
+  "Summer Landing (TDM; w epoce khanów = Ayagor)",
+  "Storm Crane Monastery (TDM)",
+  "Riverwheel Village / Icefall Regent (DTK/TDM; na mapie Riverwheel Stronghold)",
+  "Kishla Village (TDM)",
+  "Jigme (raster TDM)",
+  "Khava (raster; wiki: Kavah — osada epoki khanów zachowana pod nazwą Kavah)",
+  "Crucible of the Spirit Dragon (FRF/DTK — na mapie Tomb of the Spirit Dragon)",
+  "Great Aerie / Dromoka (DTK)",
+  "Kolaghan Monument (DTK)"
+ ],
+ "otwarte_na_kolejne_przejscia": [
+  "DODANE 2026-09-07 (PR-21, pakiet 3): mapa T4 epoki khanów na geometrii rastra Lore Café. Nierozstrzygnięte w kanonie: (a) czy Tarkir ma morze — Sarkhan: „no oceans”, ale Sultai „dredge the seas” i Sage-Eye stoi „at the edge of a bay”; przyjęto morze śródlądowe na S (nazwa robocza); (b) pozycje Highspire, Initiate's Stair, Aerie of the Unfettered, Kavah, Lookout Roost wewnątrz terytoriów — z rastra (pozycja_zrodlo); (c) The Scour w kanonie zaczyna się w Qal Sisma — na mapie od gór zachodnich Temur do stepu, jak na rasterze.",
+  "Kolejne karty Tarkiru: sceny KTK/FRF (linia khanów) pinują na tej mapie w nazwach khanów; sceny DTK/TDM (smoczy lordowie / po Stormnexus) też pinują tu (ta sama topografia) — etykiety epoki dopisać w karcie; osobna mapa tylko przy zmianie topologii (ADR 0033)."
+ ]
+}
