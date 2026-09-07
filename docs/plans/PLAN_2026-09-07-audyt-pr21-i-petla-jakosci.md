@@ -127,10 +127,10 @@ kwerenda Nowej Phyrexii do oceny link-miningu. URL-e w treści stron.
 
 ### D. Zamknięcie
 
-- [ ] Aktualne co-nowego (czas Europe/Warsaw), historia/roadmapa,
+- [x] Aktualne co-nowego (czas Europe/Warsaw), historia/roadmapa,
   handoff i ewentualne trwałe lekcje — bez powielania statusu.
-- [ ] Pełne testy + świeży build + map-audit; aktualny podgląd.
-- [ ] Czyste drzewo i wszystkie commity wypchnięte; opis PR aktualizowany
+- [x] Pełne testy + świeży build + map-audit; aktualny podgląd.
+- [x] Czyste drzewo i wszystkie commity wypchnięte; opis PR aktualizowany
   kumulatywnie po każdym kroku merytorycznym. PR pozostaje do scalenia
   przez właściciela (Squash and merge).
 
@@ -138,12 +138,14 @@ kwerenda Nowej Phyrexii do oceny link-miningu. URL-e w treści stron.
 
 Właściciel wznowił połączenie i polecił wypchnąć zmiany. A4 (`6a3622d`)
 i A5 (`1d2d4fd`) są na gałęzi sesji; opis PR aktualizowany kumulatywnie.
-Dalsze zadanie to **C: pogłębianie i link-mining**, nie ponowienie audytu
-ani odtwarzanie wykonanych napraw. Końcowe zamknięcie D po tej części.
+Był to checkpoint przed częścią C. Następnie wykonano pogłębianie
+(`f1cd6cd`) i link-mining (`6a6db3f`), bez ponawiania zamkniętego audytu.
+Części C i D zostały domknięte: 132 testy, kontrola HTTP/file://,
+map-audit 0, aktualny PR i preview.
 Handoff: `docs/setup/HANDOFF_2026-09-07-pr22.md`.
 
 ## Poza zakresem
 
-Nowe materializacje (brak dostawy), edycje archiwum `collection/entries/`,
+Nowe materializacje kart (brak dostawy), edycje archiwum `collection/entries/`,
 nowe mapy na zapas, generowanie ilustracji, zmiany `.github/workflows/`,
 nowe zależności, publikacja/scalanie i force push.

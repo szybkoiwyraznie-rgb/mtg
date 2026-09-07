@@ -280,13 +280,15 @@ PR-13 „T1 odrzucony licencyjnie” nie blokuje projektu prywatnego).
 PR #21 pozostawał otwarty podczas pracy nad pakietami; po zakończeniu
 sesji został scalony przez właściciela.
 
-**PR-22 (2026-09-07, w toku) — audyt PR-21 i naprawy A1–A6/E1:**
-pełny przegląd 61 plików, korekta kanonu Tarkiru, pięć pełnych snapshotów,
-regresje przełączania map, poprawki mobile i usunięcie duplikatu SVG.
-130 testów; HTML Tarkiru po A5 mniejszy o około 47% względem A1–A4.
-Raport: `docs/audits/AUDYT_2026-09-07-PR21.md`. **Pogłębianie lore
-w Pętli Jakości i link-mining pozostają do wykonania**; punkt kontrolny:
-`docs/setup/HANDOFF_2026-09-07-pr22.md`.
+**PR-22 (2026-09-07, gotowy do recenzji, niescalony) — audyt PR-21 i Pętla Jakości:**
+pełny przegląd 61 plików, naprawy A1–A6/E1: kanon Tarkiru, pięć pełnych
+snapshotów, przełączanie map, mobile i usunięcie duplikatu SVG.
+Pętla: **2 pogłębienia** (Aerith Rescue Mission, Mirrodin), **1 hasło**
+(Nowa Phyrexia, dwa konteksty kart z różnych planów), pass mapowy w ramach
+napraw i ponowne QA. **132 testy; 15 stron = 7 kart, 1 hasło, 7 planów**.
+Raport: `docs/audits/AUDYT_2026-09-07-PR21.md`; podsumowanie i ograniczenia:
+`docs/setup/HANDOFF_2026-09-07-pr22.md`. Surowe stats 98% wynikają z braku
+nieobowiązkowej pinezki hasła społecznego, nie z brakujących sekcji lore.
 
 ## Wątki otwarte (czekają na decyzję właściciela)
 

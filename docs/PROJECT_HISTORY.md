@@ -26,9 +26,27 @@ z dowodami i kolejką A1–A6/E1 zapisano osobno (`2db0c56`).
 - A6: aktualizacja statusu PR #21, wykonania B2, epoki Mirrodinu;
   checkpoint „Co nowego”, roadmapa i handoff bieżącej pracy.
 
-Stan po naprawach: 130 testów, build 14 stron, 7 map, 0 haseł.
-**To nie koniec Pętli Jakości**: pogłębianie lore i link-mining są
-niewykonane. Kolejka i ograniczenia w bieżącej roadmapie/handoffie.
+Stan w punkcie kontrolnym: 130 testów, build 14 stron, 7 map, 0 haseł;
+wtedy pogłębianie i link-mining pozostawały niewykonane.
+
+### Domknięcie Pętli Jakości (ta sama sesja)
+
+- `f1cd6cd`: jawny ranking i 2 pogłębienia — motywacje ratowników Aerith,
+  Hojo/Cetra, ostrożny opis Clouda oraz pamięć/Zniknięcie/Kemba w Mirrodinie.
+  Źródła FFVII i WotC; bez fikcyjnego flavoru i bez zmian dostaw.
+- `6a6db3f`: pierwsze hasło, Nowa Phyrexia (`spolecznosc`, plan Mirrodin).
+  Treści 305ARB i 488SOM spełniają próg dwóch kart; odsyłacze także
+  z Alary/Mirrodinu/Tarkiru, automatyczne W kolekcji. W źródłach rozdzielone
+  podbój Mirrodinu i inwazja Multiwersum. Dwie regresje + smoke backlinków.
+- Pass mapowy wykonany u przyczyny w A1/A3/A4/A5. Po zmianach treści
+  ponowiono map-audit i 10 kliknięć mobile/desktop; hasło działa także
+  przez file://. Obrazy QA obejrzane, narzędzia poza repo.
+- Wynik: **132 testy, 15 stron (7 kart + 1 hasło + 7 planów)**.
+  Surowe stats 98%: jedynie niegeograficzne hasło 6/8 przez brak
+  nieobowiązkowej pinezki — bez fabrykowania lokalizacji dla wyniku.
+
+Praca gotowa do recenzji w PR #22; scalenie pozostaje decyzją właściciela.
+Szczegóły i ograniczenia w `docs/setup/HANDOFF_2026-09-07-pr22.md`.
 
 ## 2026-09-06 — sesja PR-21: audyt PR-20 z pierwszą recenzją wizualną map + Pętla Jakości
 

@@ -39,18 +39,11 @@ z których każda miała własnego **praetora**. Nie tworzyły harmonijnej
 wspólnoty: zgadzały się na ekspansję Phyrexii, lecz rywalizowały o to,
 jak ma wyglądać jej zwycięstwo.
 
-- **Machine Orthodoxy — Elesh Norn:** religijny porządek, hierarchia
-  i podporządkowanie jednostki całości. Norn chciała uczynić własną
-  wizję obowiązującą dla pozostałych frakcji.
-- **Progress Engine — Jin-Gitaxias:** eksperyment jako droga do coraz
-  skuteczniejszej przemiany życia; etykę traktowano jako przeszkodę.
-- **Seven Steel Thanes — Sheoldred:** feudalna rywalizacja, niewola
-  i kontrola zdobywana także manipulowaniem sojusznikami.
-- **Quiet Furnace — Urabrask:** praca kuźni oraz większa przestrzeń
-  dla indywidualności. Sprzeciw wobec jednolitości Norn nie oznaczał
-  wyrzeczenia się przemocy ani phyrexiańskiego celu.
-- **Vicious Swarm — Vorinclex i Glissa:** wymuszona selekcja, w której
-  silniejsi pożerają słabszych, a cały krajobraz staje się areną.
+- **Machine Orthodoxy — Elesh Norn:** religijny porządek, hierarchia i podporządkowanie jednostki całości. Norn chciała uczynić własną wizję obowiązującą dla pozostałych frakcji.
+- **Progress Engine — Jin-Gitaxias:** eksperyment jako droga do coraz skuteczniejszej przemiany życia; etykę traktowano jako przeszkodę.
+- **Seven Steel Thanes — Sheoldred:** feudalna rywalizacja, niewola i kontrola zdobywana także manipulowaniem sojusznikami.
+- **Quiet Furnace — Urabrask:** praca kuźni oraz większa przestrzeń dla indywidualności. Sprzeciw wobec jednolitości Norn nie oznaczał wyrzeczenia się przemocy ani phyrexiańskiego celu.
+- **Vicious Swarm — Vorinclex i Glissa:** wymuszona selekcja, w której silniejsi pożerają słabszych, a cały krajobraz staje się areną.
 
 W Warstwie Pieców ukrywali się **Mirranie**: Urabrask nakazał swoim
 siłom pozostawić ich w spokoju. Ta szczelina między programami praetorów
@@ -85,14 +78,6 @@ nie powinien być mylony z jego wcześniejszym zwycięstwem nad planem.
 
 ## Źródła
 
-- Grace P. Fong, Planeswalker's Guide to Phyrexia: All Will Be One
-  (2023) — stara i nowa Phyrexia, olej/kompleacja, praetorzy, różnice
-  frakcji, Mirranie, sfery i przygotowania do inwazji:
-  [5](https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-phyrexia-all-will-be-one).
-  Przewodnik przyjmuje głos phyrexiańskiej propagandy; jej twierdzenia
-  o „doskonałości” są przekonaniami opisywanej cywilizacji.
-- Wizards of the Coast, March of the Machine — Episode 10: The Rhythms
-  of Life (2023) — izolacja Nowej Phyrexii, upadek wojsk i Mirranie
-  w Zhalfirze: [4](https://magic.wizards.com/en/news/magic-story/episode-10-the-rhythms-of-life).
-- MTG Wiki, Alara — przebudzenie Maelstromu podczas inwazji:
-  https://mtg.wiki/page/Alara
+- Grace P. Fong, Planeswalker's Guide to Phyrexia: All Will Be One (2023) — stara i nowa Phyrexia, olej/kompleacja, praetorzy, różnice frakcji, Mirranie, sfery i przygotowania do inwazji: [5](https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-phyrexia-all-will-be-one). Przewodnik przyjmuje głos phyrexiańskiej propagandy; jej twierdzenia o „doskonałości” są przekonaniami opisywanej cywilizacji.
+- Wizards of the Coast, March of the Machine — Episode 10: The Rhythms of Life (2023) — izolacja Nowej Phyrexii, upadek wojsk i Mirranie w Zhalfirze: [4](https://magic.wizards.com/en/news/magic-story/episode-10-the-rhythms-of-life).
+- MTG Wiki, Alara — przebudzenie Maelstromu podczas inwazji: https://mtg.wiki/page/Alara
