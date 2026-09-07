@@ -36,7 +36,7 @@ Pośrodku powierzchni leży **Glimmervoid** — srebrna równina
 heksagonalnych płyt, którą trzeba przejść, by dostać się z jednego
 regionu do drugiego. Świat jest niewielki (obwód około 1400 km),
 a regiony dzielą od siebie dni marszu. Pod powierzchnią, w ciemności,
-Phyrexia czekała na swoją godzinę — i wyszła z Mephidrossu.
+[[nowa-phyrexia|Phyrexia]] czekała na swoją godzinę — i wyszła z Mephidrossu.
 
 ## Geografia
 
@@ -92,8 +92,8 @@ Thicket**.
 W czasach Memnarcha **elfy Viridian** i **trolle** Tangle łączyła
 szczególna więź: trolle strzegły pamięci w Tel-Jilad, a elfy podczas
 konwergencji słońc przechodziły przy Radiksie **Rebuking** — rytuał
-usuwania bolesnych wspomnień, zapisywanych potem przez trolle w Drzewie. Elfy są łucznikami
-i myśliwymi lasu; ich zbrojmistrzowie kują w miedzi. **Sylvok** —
+usuwania bolesnych wspomnień, zapisywanych potem przez trolle w Drzewie.
+Elfy są łucznikami i myśliwymi lasu; ich zbrojmistrzowie kują w miedzi. **Sylvok** —
 zieloni ludzie Tangle — słuchają druidów. **Leonin** Razor Fields
 odpowiadają przed Kha, wojownikiem-wodzem z Taj-Nar; obok nich żyją
 **Auriok** (ludzie o luźnej federacji wiosek) i **loxodon**. **Vedalken**

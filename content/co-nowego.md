@@ -1,3 +1,21 @@
+## 2026-09-07 22:40 — Pętla Jakości: pamięć Mirrodinu, ratunek Aerith i pierwsze wspólne hasło
+
+- **[[275fin-aerith-rescue-mission|Aerith Rescue Mission]]:** relacje
+  ratowników, dług wobec Aerith, Cetra i cel badań Hojo. Przeszłość
+  Clouda jako SOLDIER jest jego deklaracją, nie bezkrytycznie przyjętym
+  życiorysem; ujęcie schodów odróżnione od całego przebiegu misji.
+  Nie dodano fikcyjnego flavoru.
+- **[[mirrodin|Mirrodin]]:** pamięć Tel-Jilad i Rebuking, cena Zniknięcia,
+  regencja Kemby i rozłam leonin. Społeczny kontekst epoki Blizn
+  łączy plan z Carapace Forger.
+- **[[nowa-phyrexia|Nowa Phyrexia]] — pierwsza Karta Hasła:** jedna
+  cywilizacja łączy już dwie karty, Carapace Forger i Illusory Demon.
+  Artykuł odróżnia podbój Mirrodinu od późniejszej inwazji Multiwersum,
+  opisuje spór praetorów i klęskę imperium. Odsyłacze z obu kart oraz
+  Mirrodinu, Alary i Tarkiru; „W kolekcji” liczy się automatycznie.
+- Nadal **7 kart i 7 planów**, teraz **1 hasło**. Nie powstały nowe
+  mapy ani pinezki; istniejące dostawy i źródłowy raster T1 bez zmian.
+
 ## 2026-09-07 22:17 — PR-22: audyt i naprawy map oraz danych kart
 
 Audyt poprzedniego PR objął 61 plików. Wykonane poprawki:

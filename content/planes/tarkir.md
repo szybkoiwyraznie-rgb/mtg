@@ -141,7 +141,7 @@ miejsce — dolina zgromadzeń i uczt Atarki, której lód stopniał.
 powodziami, nie z bezsmoczym światem KTK.
 
 **Odrodzone klany** (*Tarkir: Dragonstorm*) należą do tej zmienionej
-linii, po inwazji Phyrexii i Rytuale Stormnexus. Dawne Ayagor jest teraz
+linii, po inwazji [[nowa-phyrexia|Nowej Phyrexii]] i Rytuale Stormnexus. Dawne Ayagor jest teraz
 **Summer Landing**, miejscem świętowania przetrwania Temur. Przewodnik
 wymienia osobno **Karakyk Glacial Settlement**, zimową osadę w dolinie
 lodowcowej — nie jest to kolejna nazwa Summer Landing. Także pustynie

@@ -25,7 +25,7 @@ viridiańskich łuczników brzmi jak dziesiątki dzwonków, każdy o innej
 wysokości — i była śmiertelnym dzwonem dla niejednej bandy najeźdźców.
 
 Aż ze wschodu, znad Mephidrossu, nadszedł przeciwnik, którego dzwonki
-nie zatrzymują. W erze *Scars of Mirrodin* Phyrexia — zrodzona z oleju,
+nie zatrzymują. W erze *Scars of Mirrodin* [[nowa-phyrexia|Phyrexia]] — zrodzona z oleju,
 który przed wiekami przeniknął do jądra planu — wyszła na powierzchnię
 przez bagna nekrogenu. Jej stworzenia nie są ani zwierzętami lasu, ani
 konstruktami Memnarcha, na które elfy polowały od Piątego Świtu: to
@@ -196,6 +196,6 @@ lud planu, chcąc przetrwać, musi sam sobie wykuć chitynę.
   od wschodu, a las umacnia swoje serce.
 
 Carapace Forger jest małą kartą o wielkim momencie: chwili, w której
-Tangle rozumie, że stara Phyrexia wróciła w nowym ciele, a jedyną
+Tangle rozumie, że phyrexiańskie zagrożenie odrodziło się w nowym ciele, a jedyną
 odpowiedzią lasu z miedzi jest zrobić to, czego elfy nigdy nie chciały
 — stać się, choć na czas jednej bitwy, metalem od zewnątrz.

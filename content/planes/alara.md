@@ -183,7 +183,7 @@ Nicol Bolasa, który orkiestrował wojny shardów i kierował manę
 obelisków w burzę — scalił plan z powrotem; w punkcie, gdzie pięć
 shardów się zeszło, powstał Maelstrom, a Bolas wszedł w jego środek,
 by odzyskać dawną moc (powstrzymał go Ajani Goldmane). Dziś Alara
-jest „Reunited” — i nawet podczas Nowej Phyrexiańskiej Inwazji
+jest „Reunited” — i nawet podczas inwazji [[nowa-phyrexia|Nowej Phyrexii]]
 sam Maelstrom powstał przeciw najeźdźcy.
 
 ## Mapa

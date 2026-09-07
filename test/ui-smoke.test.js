@@ -262,6 +262,12 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   assert.ok(ramaT.includes('praca własna'), 'mapa Tarkiru: brak atrybucji rekonstrukcji T4');
   assert.ok(ramaT.includes('przełącznik epok'), 'mapa Tarkiru: legenda bez opisu przełącznika');
   assert.ok(ramaT.includes('aspect-ratio: 4307 / 3293'), 'mapa Tarkiru: iframe w proporcjach rastra T1 (wariant domyślny)');
+  // Pierwsze hasło z link-miningu: karty w kolekcji liczy renderer,
+  // nie wpisana ręcznie lista w artykule.
+  shim4.idz('#/haslo/nowa-phyrexia');
+  const phyrexia = shim4.app.innerHTML;
+  assert.ok(phyrexia.includes('Nowa Phyrexia') && phyrexia.includes('W kolekcji'), 'hasło: brak strony lub backlinków');
+  assert.ok(phyrexia.includes('Illusory Demon') && phyrexia.includes('Carapace Forger'), 'hasło: brak obu kart z różnych planów');
   shim4.przywroc();
 
   // B1: badge pinezki ukryty do najechania/fokusu (CSS strony mapy)

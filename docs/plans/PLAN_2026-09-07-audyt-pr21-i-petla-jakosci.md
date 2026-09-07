@@ -90,8 +90,13 @@ QA resvg i Chromium 149 poza repo. Wady wykryte mimo zielonych bram.
   opis przeszłości Clouda i rozróżnienie sceny od sekwencji gry) oraz
   Mirrodin (pamięć Tel-Jilad, Zniknięcie, Kemba i rozłam leonin).
   Flavor Aerith pozostaje jawnie nieobecny; numery, dostawy i pinezki bez zmian.
-- [ ] Link-mining: wspólne encje tylko przy progu ≥2 kart; brak
-  kwalifikujących się encji odnotowany, bez tworzenia haseł na zapas.
+- [x] Link-mining: **Nowa Phyrexia** (`spolecznosc`, plan Mirrodin),
+  wsparcie treścią 305ARB i 488SOM; 5 stron odsyłających (2 karty,
+  3 plany). Jedno hasło, dwie odrębne wojny i rozdzielenie od starej
+  Phyrexii; brak drugiego hasła na zapas. Test progu kart i backlinków UI.
+  132/132, 15 stron (7 kart + 1 hasło + 7 planów). Stats surowe 98%:
+  hasło społeczne dostaje 6/8 za brak NIEOBOWIĄZKOWEJ pinezki; pozostałe
+  14 stron 8/8. Nie zmieniamy metryki ani nie dokładamy fikcyjnego punktu.
 - [x] Pass mapowy: kompletność, dokładność i czytelność map własnych;
   naprawy map z audytu mogą stanowić jego wynik. T2 bez ingerencji
   w adoptowany line-art; T1 Tarkiru pozostaje źródłowym rastrem.
