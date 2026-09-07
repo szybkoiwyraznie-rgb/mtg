@@ -201,6 +201,22 @@ oddalonych kresek; tama nie dotykająca linii brzegowej).
 podłącz do linii brzegowej (przedłuż do styku z wodą). Samotny odcinek
 bez kontekstu usuń albo połącz.
 
+### Pułapka #6 — rzeki „znikąd donikąd” i biomy jeden na drugim (ADR 0034)
+
+**Objaw (recenzja Tarkiru 2026-09-07):** rzeka urywa się w stepie 60 j.
+przed jeziorem; odpływ jeziora zaczyna się poza taflą; czapa lodu leży na
+grzbiecie i zasłania połowę glifów; kanion narysowany miejską `szczeliną`
+wygląda jak „pogięta rura”.
+
+**Reguła:** **NIE MA RZEK, KTÓRE KOŃCZĄ SIĘ W POLU** — ostatni punkt
+w morzu, w jeziorze albo na osi innej rzeki; odpływ (`zrodlo:false`)
+zaczyna się w tafli. Raster fanowski z urwaną rzeką to luka do domknięcia,
+nie wzór. Czapa `lod` idzie **obok** grzbietu (silnik i tak nie postawi
+glifu pod lodem). Kanion w krajobrazie = klocek `rozpadlina`; `szczelina`
+tylko w mieście. Mapa full-bleed (ląd na całym arkuszu) = `ramka:
+{passePartout:true}`. Walidator: `node tools/mapforge/cli.mjs` wypisuje
+`[wiązania] … kończy się w polu` — 0 uwag przed podglądem.
+
 ---
 
 ## 5. Koordynaty „zero-cośtam" (wirtualny układ współrzędnych)
@@ -251,6 +267,8 @@ Nie próbuj przeliczać X↔piksele liniowo — układy bywają różnie zorient
 - [ ] Jeziora wewnętrzne w 100% otoczone lądem (nie łączą się z oceanem)?
 - [ ] Etykiety nie nachodzą (renderowany crop, nie w pamięci)?
 - [ ] Brak samotnych segmentów/belek (kaniony scalone, tama przy brzegu)?
+- [ ] Każda rzeka/dopływ uchodzi (morze / jezioro / inna rzeka), odpływy zaczynają się w tafli — CLI bez uwag `[wiązania]` (ADR 0034)?
+- [ ] Żadna czapa lodu na grzbiecie pasma; kanion = `rozpadlina`, nie `szczelina`; full-bleed = ramka passe-partout (ADR 0034)?
 - [ ] `dist/` **bez** `will-change`/`translate3d`/`backface` w `.mapa-ruch`?
 - [ ] Build wstrzykuje inline SVG (zdekodowany data-URI zawiera nowy znacznik)?
 - [ ] `npm test` + `npm run build` zielone?

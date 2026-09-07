@@ -222,3 +222,24 @@ gdy tylko token wróci (`rebase --onto` na stan zdalny, bez force).
 Przed wystawieniem podglądu właścicielowi: świeży build **po** ostatniej
 zmianie treści i kontrola jednej starej strony (data utworzenia sprzed
 dni). Nie filtruj stderr builda.
+
+## L12 (2026-09-07) — walidator pilnuje tylko tego, co zna: reguły z recenzji wchodzą do `sprawdzWiazania`, nie do pamięci agenta
+
+**Objaw:** mapa Tarkiru przeszła `map-audit` (0) i wiązania (0), a
+właściciel w pierwszej minucie recenzji wskazał cztery wady: rzeki
+kończące się w polu, lód na grzbiecie, kanion narysowany klockiem
+miejskim, ramka na treści full-bleed. Trzy z czterech istniały już
+wcześniej na Zendikarze i w scenie demo — niezauważone przez trzy PR-y.
+
+**Przyczyna:** walidatory znały etykiety, POI i ląd/wodę, ale nie znały
+**relacji między obiektami sceny** (rzeka↔akwen, pasmo↔lód). Reguły
+„oczywiste” dla kartografa (rzeka gdzieś uchodzi) nie były nigdzie
+zapisane maszynowo, więc obowiązywały tylko tam, gdzie agent akurat o nich
+pamiętał. Raster L10 pomaga zobaczyć, ale oko agenta też omija to, czego
+nie szuka.
+
+**Lekcja:** każda uwaga recenzyjna, którą da się wyrazić geometrycznie,
+trafia w tej samej sesji do walidatora (`sprawdzWiazania` / `map-audit`)
+z testem na WSZYSTKICH scenach repo — wtedy naprawa Tarkiru od razu
+wyłapuje Zendikar i demo. Uwaga, której nie da się zautomatyzować, idzie
+do checklisty SKILL_MAPA_PLANU §7 jako pytanie TAK/NIE. ADR 0034.
