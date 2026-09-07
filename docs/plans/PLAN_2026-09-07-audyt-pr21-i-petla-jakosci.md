@@ -52,8 +52,11 @@ oraz najnowszy handoff) i uruchomienie podglądu, bez zmian w repo.
   generatora/sceny/mapy i treści; T1 oraz pinezka karty bez zmian.
   Wynik: 118/118 testów, 23 POI/61 etykiet/14 biomów, determinizm,
   map-audit i wiązania 0; ogląd całości, północy i Arashin.
-- [ ] **A2 (P2) + E1:** pełne snapshoty Scryfall i test obciętego JSON-a;
+- [x] **A2 (P2) + E1:** pełne snapshoty Scryfall i test obciętego JSON-a;
   E1 to analogiczny dług trzech starszych snapshotów, nie regresja PR #21.
+  Odtworzono 5 pełnych odpowiedzi API (65–67 pól) z notką naprawczą;
+  rdzeń Oracle/ID/koszt/typ/P/T/flavor bez zmian. Brama najpierw
+  odrzuciła wszystkie 5 starych cache’ów; 2 regresje obciętej struktury.
 - [ ] **A3 (P2):** limit zoomu w układzie złotym, regresje zachowania
   T1→T4→T1 i T4→T1→T4 na obu granicach.
 - [ ] **A4 (P2):** przełącznik na małym ekranie nie zasłania pinezki;
