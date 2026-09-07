@@ -530,6 +530,19 @@ export function ruina(x, y, { skala = 1 } = {}) {
   return out + `</g>`;
 }
 
+/** Jaskinia: skalny łuk z ciemnym wejściem, w atlasowym kole.
+ *  Użycie: Velis Vel. To grota, nie ruina ani mirrodińska lacuna. */
+export function jaskinia(x, y, { skala = 1 } = {}) {
+  const s = skala;
+  const P = (dx, dy) => `${rr(x + dx * s)} ${rr(y + dy * s)}`;
+  return `<g class="mf-jaskinia" data-x="${rr(x)}" data-y="${rr(y)}">` +
+    `<circle cx="${rr(x)}" cy="${rr(y)}" r="${rr(13 * s)}" fill="${PAL.lad}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.1 * s)}"/>` +
+    `<path d="M ${P(-9, 7)} L ${P(-8, -2)} L ${P(-4, -8)} L ${P(3, -9)} L ${P(8, -3)} L ${P(10, 7)} Z" fill="${PAL.skala}" stroke="${PAL.skalaCien}" stroke-width="${rr(1.2 * s)}" stroke-linejoin="round"/>` +
+    `<path d="M ${P(-5, 7)} L ${P(-4, 0)} Q ${P(0, -7)} ${P(5, 0)} L ${P(6, 7)} Z" fill="${PAL.tekst}"/>` +
+    `<path d="M ${P(-8, -2)} L ${P(-5, -1)} M ${P(3, -9)} L ${P(2, -6)}" stroke="${PAL.skalaCien}" stroke-width="${rr(s)}" fill="none"/>` +
+    `</g>`;
+}
+
 /**
  * Iglica — samotna smukła turnia (np. Living Spire na Murasie): ręcznie
  * rysowana sylwetka w języku glifów (czarna bryła, jak góry). NIE jest to

@@ -17,8 +17,10 @@ wyłącznie z identyfikatora właściciela.
 
 - [x] Utrwalić decyzje: ADR 0036/0037, L8, oznaczenie odrzuconego T1;
   regresja sondowania `605FOT.png`/`605KON.png` niezależnie od Scryfalla.
-- [ ] Wspólny warsztat: potrzebne klocki i audyt wszystkich SVG wariantów,
-  z testami; bez wpływu na zaakceptowane mapy.
+- [x] Wspólny warsztat: potrzebne klocki i audyt wszystkich SVG wariantów,
+  z testami; bez wpływu na zaakceptowane mapy. Dodano jaskinię (Velis Vel),
+  osobne id zasobów przy dwóch inline SVG T4 i regresję audytu drugiego SVG;
+  138/138 testów, build zielony.
 - [ ] Generator jednego układu z kanonu tekstowego (bez odrzuconych map
   jako matrycy), dwa standardowe JSON-y scen różniące się etykietami,
   wspólne biomy/rzeki/pasma/POI; render mapforge, motyw atlas.

@@ -129,6 +129,18 @@ export const POZIOMY_PEWNOSCI = {
   przyblizona: { etykieta: 'przybliżona', kolor: '#b3392e', opis: 'rekonstrukcja — wymaga uzasadnienia' },
 };
 
+/** Dwa inline SVG mapforge nie mogą współdzielić DOM-owych id defs.
+ *  Geometria i nazwy kart pozostają nietknięte; zmieniamy tylko lokalne
+ *  identyfikatory zasobów SVG i odwołania do nich (np. clipPath). */
+export function prefiksujIdPodkladu(svg, prefiks) {
+  const idy = new Map([...svg.matchAll(/\sid\s*=\s*(["'])(.*?)\1/g)]
+    .map((m) => [m[2], `${prefiks}${m[2]}`]));
+  return svg.replace(/(\sid\s*=\s*)(["'])(.*?)\2/g, (_, a, q, id) => `${a}${q}${idy.get(id)}${q}`)
+    .replace(/url\((["']?)#([^)'"\s]+)\1\)/g, (caly, q, id) => idy.has(id) ? `url(${q}#${idy.get(id)}${q})` : caly)
+    .replace(/(\s(?:xlink:)?href\s*=\s*)(["'])#([^"']+)\2/g,
+      (caly, a, q, id) => idy.has(id) ? `${a}${q}#${idy.get(id)}${q}` : caly);
+}
+
 const KALIBRACJA_TOZSAMA = { sx: 1, sy: 1, ox: 0, oy: 0 };
 
 /**
@@ -402,11 +414,14 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
   // Sceny podkładów: każdy wariant ma własną scenę (podkład + obwódki
   // regionów w swoim układzie); widoczna jest jedna, przełącznik zmienia
   // `hidden` i przelicza widok kalibracją (bez utraty zoomu/pinezek).
-  const htmlSceny = sceny.map(({ w, podkladMarkup }) => {
+  const wieleSvgT4 = sceny.filter(({ w, podkladMarkup }) => podkladMarkup && (w.wariant ?? mapa.wariant) === 'T4').length > 1;
+  const htmlSceny = sceny.map(({ w, podkladMarkup }, i) => {
     const W = w.wymiary?.szerokosc ?? szer;
     const H = w.wymiary?.wysokosc ?? wys;
     const k = w.kalibracja;
-    const podklad = podkladMarkup
+    const wektor = wieleSvgT4 && podkladMarkup && (w.wariant ?? mapa.wariant) === 'T4'
+      ? prefiksujIdPodkladu(podkladMarkup, `podklad-${i}-`) : podkladMarkup;
+    const podklad = wektor
       || ((w.podkladData || w.podkladUrl)
         ? `<img class="mapa-podklad" src="${w.podkladData ?? w.podkladUrl}" alt="Podkład mapy: ${escapeHtml(w.tytul ?? mapa.tytul ?? slugPlanu)}" draggable="false"${w.id === start.id ? '' : ' loading="lazy"'}>`
         : `<div class="mapa-brak-podkladu">Brak osadzonego podkładu (build nie wstrzyknął pliku — sprawdź maps/${escapeHtml(slugPlanu)}/${escapeHtml(String(w.podklad ?? 'podklad.svg'))}).</div>`);

@@ -7,7 +7,7 @@
 import fs from 'node:fs';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { zamontujMape, wariantyMapy } from '../src/codex/render-map.js';
+import { zamontujMape, wariantyMapy, prefiksujIdPodkladu } from '../src/codex/render-map.js';
 
 const mapa = JSON.parse(fs.readFileSync('maps/tarkir/map.json', 'utf8'));
 const znacznik = mapa.pinezki[0];
@@ -174,4 +174,15 @@ test('mapa: mobilny tytuł nie urywa się na brzegu i nie przykleja się po pan 
   m.okno.emit('pointermove', { pointerId: 1, clientX: -1000, clientY: 0 });
   m.okno.emit('pointerup', { pointerId: 1 });
   assert.ok(x() < 0, 'obszar poza kadrem nie pozostawia przyklejonej etykiety');
+});
+
+
+test('mapa: dwa SVG T4 mają rozłączne id zasobów, bez zmiany linków kart', () => {
+  const svg = `<svg><defs><clipPath id="land"><path id='path' d="M0 0H10V10Z"/></clipPath></defs><g data-id="untouched" clip-path="url(#land)"><use href="#path"/><a href="#/karta/605shm-consign-to-dream">karta</a></g></svg>`;
+  const a = prefiksujIdPodkladu(svg, 'a-');
+  const b = prefiksujIdPodkladu(svg, 'b-');
+  assert.ok(a.includes('id="a-land"') && a.includes('url(#a-land)') && a.includes('href="#a-path"'));
+  assert.ok(b.includes('id="b-land"') && b.includes('url(#b-land)'));
+  assert.ok(a.includes('data-id="untouched"'));
+  assert.ok(a.includes('href="#/karta/605shm-consign-to-dream"'));
 });

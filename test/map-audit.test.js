@@ -86,3 +86,15 @@ test('map-audit: tytuł regionu obok glifu (poza boxem + margines 6) = OK', (t) 
     fs.rmSync(kat, { recursive: true, force: true });
   }
 });
+
+
+test('map-audit: sprawdza także niedomyślny SVG w podklad*.svg', (t) => {
+  if (!python) return t.skip('brak python3 w środowisku');
+  const kat = katalogZ(podklad({ fortX: 560, fortY: 580 }));
+  try {
+    fs.writeFileSync(path.join(kat, 'podklad-lorwyn.svg'), podklad({ fortX: 560, fortY: 480 }));
+    const { status, out } = audyt(kat);
+    assert.equal(status, 1);
+    assert.match(out, /podklad-lorwyn\.svg: TYTUŁ NA OBIEKCIE/);
+  } finally { fs.rmSync(kat, { recursive: true, force: true }); }
+});
