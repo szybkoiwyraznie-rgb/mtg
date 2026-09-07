@@ -1,3 +1,40 @@
+## 2026-09-07 02:50 — PR-21 (pakiet 3): 509KTK Highland Game + nowy plan Tarkir z mapą T4
+
+Dostawa właściciela: **509KTK · Highland Game · KTK · Tarkir** wraz
+z Fabułą — pierwsza karta siódmego planu i pierwsza mapa narysowana
+na geometrii mapy fanowskiej wskazanej przez właściciela:
+
+- **Research mapy T2→T3→T4:** Tarkir nie ma oficjalnej mapy — oba
+  Planeswalker's Guide (*Khans of Tarkir* 2014, *Tarkir: Dragonstorm*
+  2025) to same opisy, MTG Wiki nie ma kategorii map planu. Raport
+  przed rysowaniem; właściciel wybrał **T4** i dostarczył fanowską mapę
+  **Lore Café / MTG Wiki Italia (3d4, 2025)** — użytą jako źródło
+  pomocnicze geometrii, nie kanonu. Werdykt w `maps/tarkir/zrodlo-research.md`.
+- **Mapa Tarkiru (mapforge, styl atlas), epoka khanów:** kontynent bez
+  oceanu z południowym morzem śródlądowym i deltą Gudul; pięć terytoriów
+  jako tinty z kreskowanymi szwami — Sandsteppe (Mardu) w środku, Qal
+  Sisma (Temur) na północy, Tiansun (Jeskai) na wschodzie, Shifting
+  Wastes (Abzan) na zachodzie, Gudul (Sultai) na południu; Salt Road,
+  The Scour, Marang i Niraj, jeziora Dirgur i Glintglaze; 26 POI
+  w nazwach epoki khanów (Karakyk Valley, Wingthrone, Sage-Eye, Arashin,
+  Kheru Temple…), 52 kotwice z proweniencją. Jedna relacja poprawiona
+  wobec rastra: Temur nie graniczy z Abzanem (kanon TDM). Osady
+  późniejszych epok wymienione w `map.json` jako `poza_epoka`.
+- **Nowe klocki mapforge:** biom **`pustynia`** (sierpowate wydmy —
+  Shifting Wastes) i POI **`szczyt`** (pojedynczy święty szczyt — Eternal
+  Ice); opcja dzielnic bez arterii (terytoria klanów). Testy silnika.
+  `map-audit` 0 problemów; podkład obejrzany jako raster (całość
+  + wycinki N, NE, SE, W).
+- **Strona planu `tarkir`:** setting (smoki z burz, Ugin, pięć aspektów
+  smoka), geografia pięciu terytoriów, ludy, trzy epoki na jednej
+  topografii, opis mapy, źródła.
+- **Karta 509KTK Highland Game (LORE-first):** zimowe łowy Temur w Qal
+  Sisma, Chianul Who Whispers Twice, inicjacja Arel („weaving”), poroże
+  jako narzędzie szeptu, Hunt Caller; pinezka o pewności „region”
+  w łowiskach między Karakyk Valley a Staircase of Bones. Nowe tagi:
+  szamanizm, łowy, klany Tarkiru.
+- Testy 109 (plan/mapa/karta Tarkiru, licznik 7 kart, home).
+
 ## 2026-09-06 23:20 — PR-21 (pakiet 2): 488SOM Carapace Forger + nowy plan Mirrodin z mapą T4
 
 Dostawa właściciela: **488SOM · Carapace Forger · SOM · Mirrodin** wraz
