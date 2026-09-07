@@ -222,27 +222,38 @@ JEZIORA = [
 ]
 
 # ------------------------------------------------------------------ rzeki
+# HYDROLOGIA (decyzja właściciela 2026-09-07): każda rzeka uchodzi do
+# morza, jeziora albo innej rzeki; odpływ jeziora zaczyna się w jego tafli.
+# Sieć: Sandsteppe River (Abzan → step → Screamreach) i Marang (Tiansun →
+# Dirgur Lake → odpływ → przełęcz z fortecą → Molderfang → delta) łączą się
+# w bagnach Screamreach/Gudul; Niraj uchodzi do Marang; delta = morze.
 RZEKI = [
-    # Sandsteppe — rzeka „wypływająca z ziem Abzan” przez Sandsteppe Gateway w step
+    # Sandsteppe — „wypływająca z ziem Abzan” przez Sandsteppe Gateway w step,
+    # dalej przez Goldengrave do bagien Screamreach, gdzie wpada do Marang.
     {'id': 'sandsteppe', 'punkty': poly([(160, 300), (150, 380), (180, 430), (260, 520), (310, 580),
-                                         (330, 640), (360, 680), (430, 720), (480, 760), (540, 790), (620, 800)]),
+                                         (330, 640), (360, 680), (430, 720), (480, 760), (540, 790), (620, 800),
+                                         (700, 830), (760, 870), (820, 905), (880, 930)]),
      'opcje': {'s0': 2.5, 's1': 7}},
-    # Niraj River — z gór wschodnich Mardu/Jeskai do Gurmag i morza
-    {'id': 'niraj', 'punkty': poly([(1350, 560), (1300, 620), (1280, 700), (1230, 760), (1200, 800),
-                                    (1220, 860), (1250, 920), (1280, 980), (1300, 1050), (1320, 1090)]),
-     'opcje': {'s0': 2.5, 's1': 7}},
-    # Marang River — z roztopów gór (przełęcz z fortecą) przez Molderfang Falls do delty
-    {'id': 'marang', 'punkty': poly([(1000, 815), (1015, 850), (1035, 885), (1070, 915), (1120, 940), (1160, 980), (1200, 1000),
-                                     (1250, 1010), (1300, 1030), (1360, 1050), (1400, 1085)]),
-     'opcje': {'s0': 3, 's1': 9},
-     'doplywy': [
-         {'id': 'marang-kheru', 'punkty': poly([(980, 1010), (1010, 1050), (1050, 1080), (1100, 1100)])},
-     ]},
-    # Rzeki Tiansun — wielkie rzeki z roztopów, ku Dirgur Lake
-    {'id': 'tiansun-rzeka', 'punkty': poly([(1330, 130), (1320, 200), (1300, 260), (1290, 330), (1260, 400), (1230, 445)]),
+    # Górna Marang — z roztopów Tiansun (Riverwheel/Icefall) do Dirgur Lake…
+    {'id': 'marang-gorna', 'punkty': poly([(1330, 130), (1320, 200), (1300, 260), (1290, 330), (1260, 400), (1235, 440), (1220, 462)]),
      'opcje': {'s0': 2, 's1': 5}},
-    {'id': 'dirgur-odplyw', 'punkty': poly([(1230, 495), (1280, 540), (1330, 560)]),
-     'opcje': {'s0': 3, 's1': 4, 'zrodlo': False}},
+    # …odpływ z Dirgur Lake stepem na S: to Marang zbierająca step, mijająca
+    # Screamreach i wychodząca z gór przełęczą z Marang River Fortress
+    # (mtg.wiki: „where the river comes out of the mountains”).
+    {'id': 'marang', 'punkty': poly([(1215, 490), (1190, 560), (1130, 640), (1060, 720), (990, 790),
+                                     (1000, 815), (1015, 850), (1035, 885), (1070, 915), (1120, 940), (1160, 980), (1200, 1000),
+                                     (1250, 1010), (1300, 1030), (1360, 1050), (1400, 1085), (1430, 1108), (1445, 1128)]),
+     'opcje': {'s0': 3, 's1': 9, 'zrodlo': False},
+     'doplywy': [
+         # Sandsteppe River wpada do Marang na bagnach Screamreach (zbieg)
+         {'id': 'screamreach-zbieg', 'punkty': poly([(880, 930), (930, 900), (975, 830), (990, 790)])},
+         # kanał Kheru — ramię delty do morza
+         {'id': 'marang-kheru', 'punkty': poly([(1180, 990), (1120, 1040), (1080, 1090), (1050, 1130), (1030, 1160)])},
+     ]},
+    # Niraj River — spod gór Tiansun-brzeg przez Gurmag Swamp do Marang w Bloomvine
+    {'id': 'niraj', 'punkty': poly([(1350, 560), (1300, 620), (1280, 700), (1230, 760), (1200, 800),
+                                    (1220, 860), (1250, 920), (1280, 980), (1300, 1030)]),
+     'opcje': {'s0': 2.5, 's1': 6}},
 ]
 
 # ------------------------------------------------------------------ drogi
@@ -267,11 +278,15 @@ DROGI = [
      'opcje': {'typ': 'szlak'}},
 ]
 
-# ---------------------------------------------------------------- szczelina
+# ---------------------------------------------------------------- rozpadlina
 # The Scour — rozpadlina z Qal Sisma (Temur) „jak blizna” w ziemie Mardu.
-SZCZELINY = [
-    {'id': 'the-scour', 'punkty': poly([(210, 420), (260, 450), (320, 480), (380, 500), (440, 520), (490, 505)]),
-     'opcje': {'szer': 26}},
+# Klocek `rozpadlina` (kanion w krajobrazie: dwie kreski klifów + osuwiska),
+# nie miejska `szczelina` (recenzja właściciela 2026-09-07 pkt 2 — gruby
+# wypełniony pas wyglądał jak rura). Zaczyna się u stóp grzbietu zachodniego,
+# poniżej glifów (nie wchodzi na góry).
+ROZPADLINY = [
+    {'id': 'the-scour', 'punkty': poly([(255, 470), (300, 490), (350, 505), (400, 515), (450, 522), (500, 512)]),
+     'opcje': {'szer': 22, 'osuwiska': 0.9}},
 ]
 
 # ------------------------------------------------------------------- POI
@@ -280,7 +295,7 @@ SZCZELINY = [
 POI = WULKANY + [
     # --- Temur Frontier / Qal Sisma
     ('miasto', R(650, 145), 'karakyk-valley', {'skala': 1.0}),         # zimowe leże klanu (cyrk lodowcowy)
-    ('szczyt', R(440, 150), 'eternal-ice', {'skala': 1.3}),          # święty szczyt szeptaczy (glif mapome) — u stóp czapy
+    ('szczyt', R(430, 176), 'eternal-ice', {'skala': 1.3}),          # święty szczyt szeptaczy (glif mapome) — pod krawędzią czapy, nie w niej
     ('ognisko', R(760, 315), 'staircase-of-bones', {'skala': 0.9}),    # wzgórze zgromadzeń
     ('ruina', R(130, 190), 'crucible-spirit-dragon', {'skala': 0.9}),  # Grób/Krucybel Ugina (lodowa rozpadlina)
     ('ognisko', R(505, 288), 'ayagor', {'skala': 0.8}),                # Dragon's Bowl (w TDM: Summer Landing)
@@ -358,7 +373,7 @@ ETYKIETY = [
     obszar('Whisperwood', R(548, 232), fs=15, ital=False),
     obszar('Dusyut Forest', R(560, 1020), fs=17, ital=False),
     obszar('Melting Wilds', R(560, 78), fs=15),
-    obszar('The Scour', R(320, 425), fs=17, ital=False),
+    obszar('The Scour', R(330, 455), fs=17, ital=False),
     obszar('Qadat, the Fire Rim', R(1170, 150), fs=18, kat=-8),
     # --- wody (granat, ADR 0024)
     obszar('Glintglaze Lake', R(240, 130), fs=14, ital=False, kolor=GRANAT),
@@ -371,6 +386,7 @@ ETYKIETY = [
     obszar('Niraj River', R(1235, 785), fs=14, kat=62, kolor=GRANAT),
     obszar('Marang River', R(1215, 1030), fs=15, kat=14, kolor=GRANAT),
     obszar('Sandsteppe River', R(455, 735), fs=13, kat=28, kolor=GRANAT),
+    obszar('Marang River', R(1085, 690), fs=13, kat=-48, kolor=GRANAT),
     obszar('Morze Południowe', R(1300, 1180), fs=20, kolor=GRANAT),
     # --- szlaki
     obszar('Salt Road', R(560, 735), fs=15, kat=22),
@@ -415,7 +431,9 @@ WODY = ['Glintglaze Lake', "Dragon's Throat", 'Pearl Lake', 'Dirgur Lake', 'Brin
 # ------------------------------------------------------------------ biomy
 BIOMY = [
     # Qal Sisma — czapa lodowa na najwyższym grzbiecie (Melting Wilds)
-    {'id': 'lodowiec-qal-sisma', 'typ': 'lod', 'punkty': poly([(300, 50), (380, 30), (470, 22), (560, 26), (640, 40), (690, 62), (660, 92), (590, 112), (500, 122), (410, 118), (330, 100), (290, 76)], j=5),
+    # czapa leży w wysokiej niecce MIĘDZY grzbietem N a Whisperwood — nie na
+    # grzbiecie (pkt 3 recenzji: lód zasłaniał pasmo); pasma i tak omijają lód.
+    {'id': 'lodowiec-qal-sisma', 'typ': 'lod', 'punkty': poly([(330, 92), (400, 78), (480, 72), (560, 76), (630, 88), (670, 108), (640, 132), (570, 146), (490, 152), (410, 146), (345, 128), (310, 108)], j=4),
      'opcje': {'pekniecia': 4}},
     # Whisperwood i Rainveil Forest — lasy Temur
     {'id': 'whisperwood', 'typ': 'las', 'punkty': poly([(500, 160), (600, 150), (630, 185), (590, 215), (510, 210), (470, 185)], j=4),
@@ -489,7 +507,7 @@ SCENA = {
     'jeziora': JEZIORA,
     'rzeki': RZEKI,
     'pasma': PASMA,
-    'szczeliny': SZCZELINY,
+    'rozpadliny': ROZPADLINY,
     'biomy': BIOMY,
     'drogi': DROGI,
     'poi': [{'typ': t, 'x': pt[0], 'y': pt[1], 'id': i, **({'opcje': o} if o else {})}
@@ -499,7 +517,8 @@ SCENA = {
     'etykietyWodne': WODY,
     'kompas': {'x': 1880, 'y': 120, 'r': 42},
     'skala': False,
-    'ramka': True,
+    # full-bleed: pas papieru poza ramką zasłania treść pod linią (pkt 1 recenzji)
+    'ramka': {'margines': 22, 'passePartout': True},
 }
 
 

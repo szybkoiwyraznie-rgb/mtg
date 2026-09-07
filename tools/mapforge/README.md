@@ -25,6 +25,15 @@ python3 tools/map-audit.py <plan>               # weryfikacja geometrii wygenero
 4. **Klocki samodzielne:** każda funkcja z `bloki.mjs` zwraca fragment
    SVG — można dokleić warstwę mapforge do istniejącego, ręcznego
    podkładu (adoptowanie stopniowe, ADR 0018).
+5. **Hydrologia (decyzja właściciela 2026-09-07):** NIE MA RZEK, KTÓRE
+   KOŃCZĄ SIĘ W POLU. Ostatni punkt rzeki/dopływu leży w morzu (poza
+   lądem), w jeziorze albo na osi innej rzeki (≤ 12 j.); odpływ jeziora
+   (`zrodlo:false`) zaczyna się w tafli. Pilnuje `sprawdzWiazania`
+   (uwaga `[wiązania]` w CLI, test na scenach repo).
+6. **Jeden biom na miejsce — lód nad górami zakazany:** czapa `lod` jest
+   litą nakładką, więc pasma omijają jej poligony (glif nie staje pod
+   lodem podstawą ani szczytem), a biomy rozsiewane omijają lód jak
+   dotąd. Grzbiet ma iść OBOK czapy, nie pod nią.
 
 ## Motywy (`--styl=pergamin|atlas`)
 
@@ -74,13 +83,14 @@ przed renderem.
 | `granicaRegionu(punkty)` | łamana | subtelny szary szew (dashed) między regionami scalonych planów — achromat |
 | `mur(id, punkty, {strona, zab})` | łamana | mur miejski z blankami (kaseta `mury`; brama = przerwa między segmentami) |
 | `szczelina(id, punkty, {szer})` | łamana | ciemny pas wąwozu miejskiego z poszarpanymi krawędziami i schodami (kaseta `szczeliny`; strefa zajęta dla biomów) |
+| `rozpadlina(id, punkty, {szer, osuwiska})` | łamana | **kanion w krajobrazie** (The Scour na Tarkirze): dwie niezależnie poszarpane kreski klifów zbiegające się na końcach (wrzeciono), szraf dna, kreski osuwisk — BEZ wypełnienia. Kaseta `rozpadliny`; strefa zajęta dla biomów. `szczelina` to klocek miejski — w krajobrazie czyta się jak rura (recenzja 2026-09-07) |
 | `tkanina(id, punkty, {gestosc})` | wielokąt | **biom**: mikro-bloki zabudowy / ulice (ziarno `prng(id)`, respektuje maski i strefy zajęte) |
 | `gruz(id, punkty, {gestosc})` | wielokąt | **biom**: rumowisko (połamane narożniki) — rubblebelty |
 | `plac / kolumny / kopula / platforma / kolowrot / most / ognisko` | punkt | POI miejskie: rynek, kolumnada, rotunda, platforma na łańcuchach, koło wodne, most, ognisko-zgromadzenie (w duchu mapome, koło z tłem lądu) |
 | `drzewo` (POI) | punkt | wielkie drzewo-pomnik (Vitu-Ghazi) — hero-korona z własnym ziarnem |
 | `etykieta(tekst, x, y, {kat, fs, ital})` | tekst | halo + obrót wokół punktu (`kat` w stopniach); `przyDo:[x,y]` kotwiczy napis obok obiektu + kreska |
 | `lukEtykieta(id, punkty, tekst, {fs})` | łuk | etykieta po łuku (textPath) — zatoki, doliny |
-| `kompas / ramka / skalaLinia` | — | oprawa mapy |
+| `kompas / ramka / skalaLinia` | — | oprawa mapy; `ramka: {margines, passePartout:true}` dla map **full-bleed** (kontynent na całym arkuszu — Tarkir): pas papieru poza oknem zasłania treść pod linią ramki |
 
 ### Język rysowania glifów (styl „hand-drawn" jak mapome)
 

@@ -238,11 +238,11 @@
   },
   {
    "nazwa": "The Scour",
-   "x": 0.2311,
-   "y": 0.3518,
+   "x": 0.2659,
+   "y": 0.4205,
    "typ": "kraina",
    "pozycja_zrodlo": "kanon (KTK cz. 2: rozpadlina z Qal Sisma „jak blizna w ziemie Mardu”, wiatr z czarnym pyłem) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
-   "notka": "klocek szczelina"
+   "notka": "klocek rozpadlina (kanion w krajobrazie: kreski klifów, bez wypełnienia — recenzja właściciela 2026-09-07 zastąpiła miejską szczelinę)"
   },
   {
    "nazwa": "Arashin",
@@ -410,7 +410,7 @@
    "y": 0.8526,
    "typ": "rzeka",
    "pozycja_zrodlo": "kanon (TDM: z roztopów, jedna z największych rzek Sultai) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
-   "notka": ""
+   "notka": "sieć hydrologiczna (recenzja 2026-09-07: rzeki muszą uchodzić): górna Marang z roztopów Tiansun → Dirgur Lake → odpływ stepem na S (zbiera Sandsteppe River na bagnach Screamreach) → przełęcz z Marang River Fortress → Molderfang Falls → Bloomvine (przyjmuje Niraj) → delta Gudul / Morze Południowe; ramię Kheru do morza"
   },
   {
    "nazwa": "Niraj River",
@@ -418,7 +418,7 @@
    "y": 0.6499,
    "typ": "rzeka",
    "pozycja_zrodlo": "raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
-   "notka": "nazwa tylko na rasterze — rzeka fizyczna, pozycja fanowska"
+   "notka": "nazwa tylko na rasterze — rzeka fizyczna, pozycja fanowska; spod Tiansun-brzeg przez Gurmag Swamp, uchodzi do Marang w Bloomvine"
   },
   {
    "nazwa": "Salt Road",
@@ -459,7 +459,8 @@
   "rozbieznosci_z_kanonem": [
    "Temur–Abzan: raster styka te terytoria na W; kanon TDM — nie graniczą (skorygowano: klin Mardu do krawędzi W)",
    "Sage-Eye Stronghold: raster nazywa go „Dragon's Eye” (linia smoków); mapa używa nazwy KTK",
-   "Brine Lake, Niraj River, Objung Swamp, Whisperwood: nazwy fizyczne obecne tylko na rasterze (brak w wiki/przewodnikach) — przyjęte jako pozycje fanowskie, oznaczone w kotwicach"
+   "Brine Lake, Niraj River, Objung Swamp, Whisperwood: nazwy fizyczne obecne tylko na rasterze (brak w wiki/przewodnikach) — przyjęte jako pozycje fanowskie, oznaczone w kotwicach",
+   "Rzeki: raster urywa Sandsteppe River i rzekę Tiansun w stepie; na mapie każda rzeka uchodzi (Sandsteppe → Marang na Screamreach; Tiansun → Dirgur Lake → Marang; Niraj → Marang; Marang → morze) — decyzja właściciela 2026-09-07 „nie ma rzek, które kończą się w polu”"
   ]
  },
  "poza_epoka": [
@@ -480,5 +481,20 @@
  "otwarte_na_kolejne_przejscia": [
   "DODANE 2026-09-07 (PR-21, pakiet 3): mapa T4 epoki khanów na geometrii rastra Lore Café. Nierozstrzygnięte w kanonie: (a) czy Tarkir ma morze — Sarkhan: „no oceans”, ale Sultai „dredge the seas” i Sage-Eye stoi „at the edge of a bay”; przyjęto morze śródlądowe na S (nazwa robocza); (b) pozycje Highspire, Initiate's Stair, Aerie of the Unfettered, Kavah, Lookout Roost wewnątrz terytoriów — z rastra (pozycja_zrodlo); (c) The Scour w kanonie zaczyna się w Qal Sisma — na mapie od gór zachodnich Temur do stepu, jak na rasterze.",
   "Kolejne karty Tarkiru: sceny KTK/FRF (linia khanów) pinują na tej mapie w nazwach khanów; sceny DTK/TDM (smoczy lordowie / po Stormnexus) też pinują tu (ta sama topografia) — etykiety epoki dopisać w karcie; osobna mapa tylko przy zmianie topologii (ADR 0033)."
- ]
+ ],
+ "recenzja_2026-09-07": {
+  "uwagi_wlasciciela": [
+   "ramka nachodzi na treść (full-bleed)",
+   "The Scour jako szczelina miejska = „rura”",
+   "lądolód zasłania pasmo",
+   "rzeki kończące się w polu"
+  ],
+  "poprawki": [
+   "ramka passePartout (pas papieru poza oknem)",
+   "nowy klocek rozpadlina (kanion w krajobrazie)",
+   "czapa lodu w niecce między grzbietami + pasma omijają lód (silnik)",
+   "pełna sieć hydrologiczna + walidator sprawdzHydrologie w sprawdzWiazania"
+  ],
+  "weryfikacja": "raster całości i wycinków (N, Scour, Dirgur–Screamreach, delta), map-audit 0, wiązania 0"
+ }
 }

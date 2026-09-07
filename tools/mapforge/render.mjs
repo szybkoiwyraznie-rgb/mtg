@@ -19,7 +19,8 @@
  *     etykietyLukowe: [{ id, punkty, tekst, fs? }]
  *     kompas: { x, y, r } | false,
  *     skala: { x, y, px, km } | false,
- *     ramka: true | { margines },
+ *     rozpadliny: [{ id, punkty, opcje:{ szer, osuwiska } }]   // kaniony w krajobrazie (The Scour)
+ *     ramka: true | { margines, passePartout },
  *   }
  * Kolejność warstw stała (decyzja właściciela 2026-09-02, pkt g):
  * ocean → wybrzeża → ląd → jeziora → rzeki → góry → wulkany →
@@ -31,11 +32,11 @@ import {
   PAL, motyw, las, bagno, step, pustynia, lod, wir, pasmo, pasmoInstancje, wulkan, rzeka,
   doplyw, jezioro, droga, miasto, ruina, fort, hedron, lacuna, iglica, szczyt, etykieta,
   lukEtykieta, kompas, ramka, skalaLinia, drzewo,
-  dzielnica, granicaDzielnicy, granicaRegionu, mur, szczelina, tkanina, gruz,
+  dzielnica, granicaDzielnicy, granicaRegionu, mur, szczelina, rozpadlina, tkanina, gruz,
   plac, kolumny, kopula, platforma, kolowrot, most, ognisko, drzewoPoi,
   herb, HERBY_GILDII,
 } from './bloki.mjs';
-import { prng, gladka, prosta, parsujD, pit } from './geom.mjs';
+import { prng, gladka, prosta, parsujD, pit, chaikin } from './geom.mjs';
 
 const BLOKI_BIOMOW = { las, bagno, step, pustynia, lod, wir, tkanina, gruz };
 
@@ -323,9 +324,15 @@ export function renderuj(scena, { styl } = {}) {
     }
   }
 
+  // Czapy lodowe (biom `lod`) są litą nakładką rysowaną NAD górami — glif
+  // pasma pod czapą znika w połowie (recenzja właściciela 2026-09-07 pkt 3:
+  // „lądolód zasłania łańcuch górski”). Pasmo omija poligony lodu tak samo
+  // jak morze: grzbiet pod czapą nie dostaje glifów.
+  const poligonyLodu = (scena.biomy ?? []).filter((b) => b.typ === 'lod').map((b) => b.punkty);
+  const opcjePasma = (p) => ({ maski: maskiLadow, wyklucz: poligonyLodu, ...(p.opcje ?? {}) });
   if (scena.pasma?.length) {
     warstwy.push(`<!-- === PASMA GÓRSKIE === -->`,
-      ...scena.pasma.map((p) => pasmo(p.id, p.punkty, { maski: maskiLadow, ...(p.opcje ?? {}) })));
+      ...scena.pasma.map((p) => pasmo(p.id, p.punkty, opcjePasma(p))));
   }
 
   // ETYKIETY: pozycje liczone WCZEŚNIE (przed biomami), rysowane na końcu
@@ -361,7 +368,7 @@ export function renderuj(scena, { styl } = {}) {
     // też poligony wcześniejszych (nakład dwóch biomów należy do pierwszego).
     const wyklucz = { bboxy: [], poligony: [] };
     for (const p of scena.pasma ?? []) {
-      for (const i of pasmoInstancje(p.id, p.punkty, { maski: maskiLadow, ...(p.opcje ?? {}) })) {
+      for (const i of pasmoInstancje(p.id, p.punkty, opcjePasma(p))) {
         wyklucz.bboxy.push([i.x - i.w / 2 - 4, i.y - i.h - 4, i.x + i.w / 2 + 4, i.y + 4]);
       }
     }
@@ -384,6 +391,9 @@ export function renderuj(scena, { styl } = {}) {
     for (const sz of scena.szczeliny ?? []) {
       // wąwóz/szczelina jest strefą zajętą — tkanina miejska nie zasypuje pęknięcia
       wyklucz.poligony.push(buforPas(sz.punkty, (sz.opcje?.szer ?? 20) / 2 + 7));
+    }
+    for (const rz of scena.rozpadliny ?? []) {
+      wyklucz.poligony.push(buforPas(rz.punkty, (rz.opcje?.szer ?? 14) / 2 + 8));
     }
     for (const b of scena.biomy) {
       if (b.typ === 'lod') wyklucz.poligony.push(b.punkty);   // lita czapa: nic w niej nie rośnie
@@ -411,6 +421,10 @@ export function renderuj(scena, { styl } = {}) {
   if (scena.szczeliny?.length) {
     warstwy.push(`<!-- === SZCZELINY (wąwozy miejskie) === -->`,
       ...scena.szczeliny.map((sz) => szczelina(sz.id, sz.punkty, sz.opcje ?? {})));
+  }
+  if (scena.rozpadliny?.length) {
+    warstwy.push(`<!-- === ROZPADLINY (kaniony w krajobrazie) === -->`,
+      ...scena.rozpadliny.map((rz) => rozpadlina(rz.id, rz.punkty, rz.opcje ?? {})));
   }
   if (scena.dzielnice?.length) {
     // Każda współdzielona krawędź rysowana RAZ (dedupe po parze
@@ -597,6 +611,79 @@ export function sprawdzWiazania(scena) {
     if (wJeziorze(ax, ay)) continue;                  // nazwa akwenu (np. Glasspool z ruiną w tafli)
     const obcy = poi.find((p) => Math.hypot(p.x - ax, p.y - ay) <= 20);
     if (obcy) uwagi.push(`etykieta "${e.tekst}" siedzi na cudzym POI ${obcy.typ} (${obcy.x},${obcy.y}) — odsunąć kotwicę`);
+  }
+
+  // 4) HYDROLOGIA (decyzja właściciela 2026-09-07, recenzja Tarkiru pkt 4):
+  //    „NIE MA RZEK, KTÓRE SIĘ KOŃCZĄ W POLU”. Ostatni punkt każdej rzeki
+  //    i każdego dopływu musi leżeć w wodzie (morze = poza lądem, jezioro)
+  //    albo na innej rzece (zbieg, ≤ 12 j. od jej osi). Rzeki bez źródła
+  //    (`zrodlo:false`, np. odpływ jeziora) muszą też ZACZYNAĆ się w wodzie
+  //    lub na innej rzece — inaczej to rzeka „znikąd”.
+  for (const u of sprawdzHydrologie(scena, { naLadzie, wJeziorze })) uwagi.push(u);
+  return uwagi;
+}
+
+/** Odległość punktu od łamanej (najbliższy odcinek). */
+function odlegloscOdLamanej(p, pts) {
+  let best = Infinity;
+  for (let i = 0; i < pts.length - 1; i++) {
+    const [ax, ay] = pts[i], [bx, by] = pts[i + 1];
+    const dx = bx - ax, dy = by - ay;
+    const l2 = dx * dx + dy * dy || 1;
+    const t = Math.max(0, Math.min(1, ((p[0] - ax) * dx + (p[1] - ay) * dy) / l2));
+    best = Math.min(best, Math.hypot(p[0] - (ax + dx * t), p[1] - (ay + dy * t)));
+  }
+  return best;
+}
+
+/**
+ * Hydrologia sceny: każda rzeka/dopływ uchodzi do morza, jeziora albo innej
+ * rzeki. Zwraca listę uwag (pusta = OK). Używane przez sprawdzWiazania;
+ * eksportowane osobno dla testów.
+ */
+export function sprawdzHydrologie(scena, { naLadzie, wJeziorze } = {}) {
+  const uwagi = [];
+  const maski = (scena.lądy ?? [])
+    .map((l) => (l.d ? parsujD(l.d) : l.punkty))
+    .filter((m) => Array.isArray(m) && m.length > 3);
+  naLadzie ??= (x, y) => maski.some((m) => pit([x, y], m));
+  wJeziorze ??= (x, y) => (scena.jeziora ?? []).some((j) => {
+    if (j.d) return pit([x, y], parsujD(j.d));
+    if (j.cx == null) return false;
+    const dx = (x - j.cx) / (j.rx || 1);
+    const dy = (y - j.cy) / (j.ry || 1);
+    return dx * dx + dy * dy <= 1.1;
+  });
+  const cieki = [];
+  for (const r of scena.rzeki ?? []) {
+    cieki.push({ id: r.id, punkty: r.punkty, zrodlo: r.opcje?.zrodlo !== false });
+    for (const d of r.doplywy ?? []) cieki.push({ id: d.id, punkty: d.punkty, zrodlo: true, doplyw: r.id });
+  }
+  if (!cieki.length || !maski.length) return uwagi;
+  // Tolerancja 8 j. (obrys jeziora 2 j. + stożek ujścia): koniec rzeki
+  // tuż PRZED linią brzegową wciąż „wpada” do akwenu — próbkujemy krąg.
+  const wWodzie = ([x, y]) => {
+    if (!naLadzie(x, y) || wJeziorze(x, y)) return true;
+    for (let k = 0; k < 8; k++) {
+      const a = (k / 8) * Math.PI * 2;
+      const px = x + Math.cos(a) * 8, py = y + Math.sin(a) * 8;
+      if (!naLadzie(px, py) || wJeziorze(px, py)) return true;
+    }
+    return false;
+  };
+  const naInnejRzece = (p, wlasny) => cieki.some((c) => c.id !== wlasny
+    && odlegloscOdLamanej(p, chaikin(c.punkty, 2, false)) <= 12);
+  for (const c of cieki) {
+    const koniec = c.punkty[c.punkty.length - 1];
+    if (!wWodzie(koniec) && !naInnejRzece(koniec, c.id)) {
+      uwagi.push(`rzeka "${c.id}" kończy się w polu (${Math.round(koniec[0])},${Math.round(koniec[1])}) — musi uchodzić do morza, jeziora albo innej rzeki`);
+    }
+    if (!c.zrodlo) {
+      const start = c.punkty[0];
+      if (!wWodzie(start) && !naInnejRzece(start, c.id)) {
+        uwagi.push(`rzeka "${c.id}" bez źródła zaczyna się w polu (${Math.round(start[0])},${Math.round(start[1])}) — odpływ musi wychodzić z jeziora/morza albo z innej rzeki`);
+      }
+    }
   }
   return uwagi;
 }

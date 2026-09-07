@@ -338,8 +338,12 @@ export function szczyt(x, y, w, h, { snieg = false, flip = 1, glifId = null } = 
  * lasy/bagna/stepy nie zakrywają szczytów. Zwraca listę
  * `{ x, y, w, h, flip, snieg, glifId }` (x,y = środek dolnej krawędzi).
  */
-export function pasmoInstancje(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = false, maski = null } = {}) {
-  const naLadzie = (p) => !maski || !maski.length || maski.some((m) => pit(p, m));
+export function pasmoInstancje(id, punkty, { szer = 46, gestoscSzczytow = null, snieg = false, maski = null, wyklucz = null } = {}) {
+  // `wyklucz` — poligony, w których glify nie stają (czapy lodowe: lita
+  // nakładka rysowana nad górami zasłaniałaby połowę sylwetki — recenzja
+  // 2026-09-07 pkt 3). Sprawdzane jak ląd: podstawa i wierzchołek glifu.
+  const poza = (p) => !wyklucz || !wyklucz.length || !wyklucz.some((w) => pit(p, w));
+  const naLadzie = (p) => (!maski || !maski.length || maski.some((m) => pit(p, m))) && poza(p);
   const rng = prng(`pasmo:${id}`);
   const grzbiet = chaikin(punkty, 3, false);
   const dl = dlugosc(grzbiet);
@@ -368,6 +372,7 @@ export function pasmoInstancje(id, punkty, { szer = 46, gestoscSzczytow = null, 
     // skrajne glify pasma „włażą na morze" (recenzja 2026-09-02: zachodni
     // kraniec Skyfang na wodzie).
     if (!naLadzie([x - w * 0.32, y]) || !naLadzie([x + w * 0.32, y])) continue;
+    if (!poza([x, y - hGlifu * 0.6])) continue;   // wierzchołek nie wchodzi pod czapę lodu
     instancje.push({
       x, y, h: hGlifu, w,
       flip: rng() < 0.5 ? -1 : 1,
@@ -636,10 +641,27 @@ export function kompas(x, y, r) {
   return out;
 }
 
-export function ramka(szer, wys, { margines = 22 } = {}) {
+/**
+ * Ramka mapy. Dwa tryby:
+ *  - domyślny: dwie linie NA treści (wyspy w oceanie — ląd nie dochodzi do
+ *    krawędzi, więc linie niczego nie zakrywają);
+ *  - `passePartout: true`: pas papieru (kolor lądu) POZA marginesem
+ *    zasłania treść wychodzącą poza ramkę, a linie leżą na jego wewnętrznej
+ *    krawędzi — mapy FULL-BLEED (kontynent na całym arkuszu: Tarkir) nie mają
+ *    gór ani lasów „pod ramką” (recenzja właściciela 2026-09-07 pkt 1).
+ *    Treść kończy się dokładnie na linii ramki, jak w atlasie.
+ */
+export function ramka(szer, wys, { margines = 22, passePartout = false } = {}) {
   const m = margines;
-  return `<rect x="${m}" y="${m}" width="${szer - 2 * m}" height="${wys - 2 * m}" fill="none" stroke="${PAL.tekst}" stroke-width="2.5"/>` +
+  let out = '';
+  if (passePartout) {
+    // evenodd: zewnętrzny prostokąt (cały arkusz) minus okno mapy = pas papieru
+    out += `<path d="M 0 0 H ${szer} V ${wys} H 0 Z M ${m} ${m} V ${wys - m} H ${szer - m} V ${m} Z" ` +
+      `fill="${PAL.lad}" fill-rule="evenodd"/>`;
+  }
+  out += `<rect x="${m}" y="${m}" width="${szer - 2 * m}" height="${wys - 2 * m}" fill="none" stroke="${PAL.tekst}" stroke-width="2.5"/>` +
     `<rect x="${m + 6}" y="${m + 6}" width="${szer - 2 * m - 12}" height="${wys - 2 * m - 12}" fill="none" stroke="${PAL.tekst}" stroke-width="1" opacity="0.6"/>`;
+  return out;
 }
 
 export function skalaLinia(x, y, { px = 150, km = 150, segmenty = 4 } = {}) {
@@ -756,6 +778,81 @@ export function szczelina(id, punkty, { szer = 20 } = {}) {
   return `<g class="mf-szczelina" data-x="${rr(punkty[0][0])}" data-y="${rr(punkty[0][1])}">` +
     `<path d="${prosta(pas, true)}" fill="${PAL.szczelinaFill}" stroke="${PAL.szczelinaInk}" stroke-width="1.4" stroke-linejoin="round"/>` +
     `<path d="${schody}" stroke="${PAL.kamien}" stroke-width="1.1" fill="none" opacity="0.8"/>` +
+    `</g>`;
+}
+
+/**
+ * Rozpadlina / kanion w KRAJOBRAZIE (The Scour na Tarkirze): dwie
+ * nierówne kreski krawędzi klifów rozchodzące się ku środkowi długości
+ * i zbiegające na końcach (wrzeciono), plus krótkie kreski osuwisk po
+ * obu stronach — bez wypełnienia (język kreski jak grzbiety pasm).
+ * `szczelina` (gruby wypełniony pas ze „schodami”) jest klockiem MIEJSKIM
+ * (wąwozy Ravniki) i w krajobrazie czyta się jak rura (recenzja właściciela
+ * 2026-09-07 pkt 2) — dla kanionów naturalnych używaj tego klocka.
+ * Rysowana NAD biomami, POD drogami i POI (kaseta `rozpadliny`).
+ */
+export function rozpadlina(id, punkty, { szer = 14, osuwiska = 0.7 } = {}) {
+  const rng = prng(`rozpadlina:${id}`);
+  const os = chaikin(punkty, 2, false);
+  const n = os.length;
+  // Krawędzie klifów: dwie NIEZALEŻNIE poszarpane łamane (ząbki co punkt,
+  // z długofalowym „oddechem” szerokości) — kanion, nie wstęga o równych
+  // brzegach. Wrzeciono: końce zbiegają się do punktu.
+  const lewo = [], prawo = [];
+  let fazaL = rng() * 6.28, fazaP = rng() * 6.28;
+  for (let i = 0; i < n; i++) {
+    const a = os[Math.max(0, i - 1)], b = os[Math.min(n - 1, i + 1)];
+    const dx = b[0] - a[0], dy = b[1] - a[1];
+    const l = Math.hypot(dx, dy) || 1;
+    const nx = -dy / l, ny = dx / l;
+    const t = i / Math.max(1, n - 1);
+    const wrzeciono = Math.sin(Math.PI * t) ** 0.5;
+    const p = szer / 2 * wrzeciono;
+    const oddechL = 1 + 0.35 * Math.sin(fazaL + t * 9.5), oddechP = 1 + 0.35 * Math.sin(fazaP + t * 7.3);
+    const zL = (rng() - 0.5) * p * 0.9, zP = (rng() - 0.5) * p * 0.9;   // ząbki klifu
+    const jl = Math.max(0.4, p * oddechL + zL), jr = Math.max(0.4, p * oddechP + zP);
+    const wzdl = (rng() - 0.5) * 3;                                   // jitter wzdłuż osi
+    lewo.push([os[i][0] + nx * jl + dx / l * wzdl, os[i][1] + ny * jl + dy / l * wzdl]);
+    prawo.push([os[i][0] - nx * jr - dx / l * wzdl, os[i][1] - ny * jr - dy / l * wzdl]);
+  }
+  // Cień dna: cienkie kreski szrafu wzdłuż osi w połowie głębokości (tylko w środku)
+  let szraf = '';
+  const c = dlugosc(os);
+  const ns = Math.max(4, Math.floor(c / 9));
+  for (let k = 1; k < ns; k++) {
+    const t = k / ns;
+    if (t < 0.12 || t > 0.88) continue;
+    const q = punktNa(os, t), q0 = punktNa(os, Math.max(0, t - 0.012)), q1 = punktNa(os, Math.min(1, t + 0.012));
+    const dx = q1[0] - q0[0], dy = q1[1] - q0[1];
+    const l = Math.hypot(dx, dy) || 1;
+    const nx = -dy / l, ny = dx / l;
+    const g = szer / 2 * Math.sin(Math.PI * t) ** 0.5;
+    const s1 = -g * (0.15 + rng() * 0.5), s2 = g * (0.1 + rng() * 0.3);
+    szraf += `M ${rr(q[0] + nx * s1)} ${rr(q[1] + ny * s1)} L ${rr(q[0] + nx * s2 + dx / l * 2)} ${rr(q[1] + ny * s2 + dy / l * 2)} `;
+  }
+  // Osuwiska: krótkie kreski od krawędzi na zewnątrz (skarpy)
+  let kreski = '';
+  const nk = Math.max(3, Math.floor(c / 20 * osuwiska));
+  for (let k = 1; k < nk; k++) {
+    const t = (k + (rng() - 0.5) * 0.5) / nk;
+    if (t <= 0.06 || t >= 0.94) continue;
+    const p0 = punktNa(os, Math.max(0, t - 0.01)), p1 = punktNa(os, Math.min(1, t + 0.01));
+    const dx = p1[0] - p0[0], dy = p1[1] - p0[1];
+    const l = Math.hypot(dx, dy) || 1;
+    const nx = -dy / l, ny = dx / l;
+    const q = punktNa(os, t);
+    const strona = rng() < 0.5 ? 1 : -1;
+    const r0 = szer / 2 * Math.sin(Math.PI * t) ** 0.5 * (0.85 + rng() * 0.4);
+    const r1 = r0 + 3 + rng() * 6;
+    const skos = (rng() - 0.5) * 4;
+    kreski += `M ${rr(q[0] + nx * r0 * strona)} ${rr(q[1] + ny * r0 * strona)} ` +
+      `L ${rr(q[0] + nx * r1 * strona + dx / l * skos)} ${rr(q[1] + ny * r1 * strona + dy / l * skos)} `;
+  }
+  return `<g class="mf-rozpadlina" data-x="${rr(punkty[0][0])}" data-y="${rr(punkty[0][1])}">` +
+    `<path d="${prosta(lewo)}" fill="none" stroke="${PAL.tekst}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>` +
+    `<path d="${prosta(prawo)}" fill="none" stroke="${PAL.tekst}" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>` +
+    `<path d="${szraf}" fill="none" stroke="${PAL.tekst}" stroke-width="0.8" stroke-linecap="round" opacity="0.55"/>` +
+    `<path d="${kreski}" fill="none" stroke="${PAL.tekst}" stroke-width="0.9" stroke-linecap="round" opacity="0.7"/>` +
     `</g>`;
 }
 

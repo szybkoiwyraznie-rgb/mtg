@@ -12,7 +12,7 @@ import {
 } from '../tools/mapforge/geom.mjs';
 import {
   las, bagno, step, pustynia, pasmo, pasmoInstancje, rzeka, jezioro, droga, etykieta, lukEtykieta,
-  miasto, ruina, hedron, lacuna, szczyt, wulkan, motyw,
+  miasto, ruina, hedron, lacuna, szczyt, wulkan, motyw, ramka, rozpadlina,
 } from '../tools/mapforge/bloki.mjs';
 import { renderuj, scenaDemo } from '../tools/mapforge/cli.mjs';
 
@@ -343,4 +343,65 @@ test('mapforge: twarda zasada wiązania etykieta↔obiekt (ADR 0023)', async () 
     etykiety: [{ tekst: 'Zęby Próbne', x: 100, y: 140, opcje: { fs: 14, przyDo: [100, 100] } }],
   };
   assert.deepEqual(sprawdzWiazania(grupa), [], 'grupa nazwana przechodzi');
+});
+
+// --- Recenzja właściciela 2026-09-07 (mapa Tarkiru, pkt 1–4) ---------------
+
+test('mapforge: ramka passePartout zasłania treść poza oknem mapy (pkt 1 — full-bleed)', () => {
+  motyw('atlas');
+  const zwykla = ramka(2000, 1400);
+  assert.ok(!zwykla.includes('evenodd'), 'domyślnie tylko linie (wyspy w oceanie)');
+  const pp = ramka(2000, 1400, { margines: 22, passePartout: true });
+  assert.ok(pp.includes('fill-rule="evenodd"'), 'pas papieru = prostokąt z oknem (evenodd)');
+  assert.ok(pp.includes('fill="#f7f7f7"'), 'pas w kolorze lądu motywu');
+  assert.ok(pp.includes('M 0 0 H 2000 V 1400 H 0 Z M 22 22 V 1378 H 1978 V 22 Z'), 'okno = margines');
+  assert.ok(pp.indexOf('evenodd') < pp.indexOf('<rect'), 'pas POD liniami ramki');
+  motyw('pergamin');
+});
+
+test('mapforge: rozpadlina — kanion w krajobrazie: kreski klifów bez wypełnienia, wrzeciono (pkt 2)', () => {
+  const r = rozpadlina('scour', [[100, 100], [200, 130], [300, 150], [400, 145]], { szer: 20 });
+  assert.ok(r.includes('class="mf-rozpadlina"') && r.includes('data-x="100"'), 'grupa z kotwicą');
+  assert.ok(!/fill="#[0-9a-f]{6}"/.test(r), 'żadnego wypełnienia — to nie „rura” (szczelina miejska)');
+  assert.equal((r.match(/<path/g) ?? []).length, 4, 'dwie krawędzie + szraf dna + osuwiska');
+  assert.equal(r, rozpadlina('scour', [[100, 100], [200, 130], [300, 150], [400, 145]], { szer: 20 }), 'deterministyczna');
+});
+
+test('mapforge: pasmo omija czapę lodową — glify nie stają pod litym lodem (pkt 3)', () => {
+  const grzbiet = [[100, 200], [300, 200], [500, 200], [700, 200]];
+  const bez = pasmoInstancje('g', grzbiet, { szer: 40 });
+  const lod = [[280, 120], [520, 120], [520, 280], [280, 280]];
+  const z = pasmoInstancje('g', grzbiet, { szer: 40, wyklucz: [lod] });
+  assert.ok(z.length < bez.length, 'część glifów wypada');
+  assert.ok(z.every((i) => !pit([i.x, i.y], lod) && !pit([i.x, i.y - i.h * 0.6], lod)), 'żaden glif podstawą ani szczytem w lodzie');
+  assert.ok(z.some((i) => i.x < 280) && z.some((i) => i.x > 520), 'pasmo trwa po obu stronach czapy');
+});
+
+test('mapforge: hydrologia — rzeka nie kończy się w polu (pkt 4; sprawdzWiazania)', async () => {
+  const { sprawdzHydrologie } = await import('../tools/mapforge/render.mjs');
+  const lad = [{ id: 'l', punkty: [[0, 0], [1000, 0], [1000, 1000], [0, 1000]] }];
+  const jezioro = { cx: 500, cy: 500, rx: 40, ry: 30 };
+  // do morza (poza lądem), do jeziora, do innej rzeki — OK
+  const dobra = { lądy: lad, jeziora: [jezioro], rzeki: [
+    { id: 'do-morza', punkty: [[300, 300], [200, 200], [100, 100], [-5, 20]] },
+    { id: 'do-jeziora', punkty: [[800, 800], [700, 700], [600, 600], [530, 520]] },
+    { id: 'do-rzeki', punkty: [[900, 200], [800, 300], [700, 300], [604, 604]] },
+    { id: 'odplyw', punkty: [[500, 520], [500, 700], [500, 1005]], opcje: { zrodlo: false } },
+  ] };
+  assert.deepEqual(sprawdzHydrologie(dobra), []);
+  // w polu — uwaga; odpływ zaczynający się w polu — uwaga; dopływ w polu — uwaga
+  const zla = { lądy: lad, jeziora: [jezioro], rzeki: [
+    { id: 'w-polu', punkty: [[300, 300], [200, 200], [150, 150]], doplywy: [{ id: 'd-w-polu', punkty: [[400, 100], [350, 150]] }] },
+    { id: 'znikad', punkty: [[800, 100], [900, 100], [1005, 100]], opcje: { zrodlo: false } },
+  ] };
+  const uwagi = sprawdzHydrologie(zla);
+  assert.ok(uwagi.some((u) => u.includes('"w-polu" kończy się w polu')), 'rzeka w polu');
+  assert.ok(uwagi.some((u) => u.includes('"d-w-polu" kończy się w polu')), 'dopływ w polu');
+  assert.ok(uwagi.some((u) => u.includes('"znikad" bez źródła zaczyna się w polu')), 'odpływ znikąd');
+  assert.equal(uwagi.length, 3);
+  // Sceny repo z rzekami: 0 uwag (Tarkir po recenzji, Zendikar po dociągnięciu rzeki Bala Ged do Umung).
+  for (const plan of ['tarkir', 'zendikar', 'alara']) {
+    const scena = JSON.parse(fs.readFileSync(`maps/${plan}/scena.json`, 'utf8'));
+    assert.deepEqual(sprawdzHydrologie(scena), [], `hydrologia ${plan}`);
+  }
 });
