@@ -224,6 +224,12 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   // ── Strona mapy Tarkiru (ADR 0035: dwa podkłady-warianty, układ złoty = raster T1)
   const shim3b = wykonajArtefakt('dist/maps/tarkir.html');
   const mapaT = shim3b.app.innerHTML;
+  // A5: warianty są jedynym źródłem markupu tej mapy. Płaska kopia SVG
+  // podwajała duży payload, mimo że renderer jej nie używał.
+  const daneMapyT = globalThis.CODEX_DATA.mapy.tarkir;
+  assert.ok(!Object.hasOwn(daneMapyT, 'podkladMarkup'), 'mapa wariantowa: nieużywana druga kopia SVG');
+  assert.equal(daneMapyT.warianty.find((w) => w.id === 't4').podkladMarkup,
+    fs.readFileSync('maps/tarkir/podklad.svg', 'utf8'), 'wariant T4 zachowuje pełny SVG');
   assert.ok(mapaT.includes('class="mapa-epoki"'), 'mapa Tarkiru: brak przełącznika epok');
   assert.match(mapaT, /data-epoka-przelacz="t1"\s+aria-pressed="true"/, 'mapa Tarkiru: T1 (raster) ma być domyślny');
   assert.match(mapaT, /data-epoka-przelacz="t4"\s+aria-pressed="false"/, 'mapa Tarkiru: T4 jako drugi wariant');
@@ -249,6 +255,8 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   // Tarkir (ADR 0035): atrybucja KAŻDEGO podkładu + legenda przełącznika; iframe w proporcjach T1
   shim4.idz('#/mapa/tarkir');
   const ramaT = shim4.app.innerHTML;
+  assert.equal(globalThis.CODEX_DATA.mapy.tarkir.podkladUrl, 'maps/tarkir/podklad-t1-mini.jpg',
+    'mini-mapy w głównym artefakcie nadal biorą miniaturę T1');
   assert.ok(ramaT.includes('Lore Café'), 'mapa Tarkiru: brak atrybucji rastra T1 (Lore Café)');
   assert.ok(ramaT.includes('All Rights Reserved'), 'mapa Tarkiru: licencja rastra fanowskiego musi być widoczna');
   assert.ok(ramaT.includes('praca własna'), 'mapa Tarkiru: brak atrybucji rekonstrukcji T4');

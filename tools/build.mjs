@@ -264,14 +264,18 @@ export async function zbuduj({ out, root = ROOT } = {}) {
   // flaga CODEX_MAPA i surowy markup SVG podkładu (bez base64 — lżej).
   // main.js w trybie CODEX_MAPA renderuje mapę zamiast routera.
   for (const { slug, mapa, plik } of stronyMap) {
-    const svgTekst = /\.svg$/i.test(mapa.podklad) ? fs.readFileSync(plik, 'utf8') : '';
+    const warianty = Array.isArray(mapa.warianty) ? mapa.warianty : [];
+    // A5 (audyt PR-21): mapa z wariantami używa wyłącznie ich markupu.
+    // Płaski fallback jest potrzebny starym mapom, ale duplikował całe
+    // SVG Tarkiru w HTML, parsowaniu JS i ZIP-ie.
+    const svgTekst = !warianty.length && /\.svg$/i.test(mapa.podklad) ? fs.readFileSync(plik, 'utf8') : '';
     // strona mapy żyje w maps/ (płaska) lub maps/<plan>/ (podmapa,
     // ADR 0032) — URL podkładu liczony względem katalogu strony
     const urlWzgledny = (nazwa) => path.posix.relative(path.posix.dirname(slug), `${slug}/${nazwa}`);
     const rejestr = `globalThis.CODEX_DATA.mapy[${JSON.stringify(slug)}]`;
     // Warianty podkładu (ADR 0035): każdy dostaje własny URL, a SVG —
     // surowy markup (etykiety do nakładki); raster zostaje <img> z URL.
-    const wstrzyknijWarianty = (Array.isArray(mapa.warianty) ? mapa.warianty : []).map((w, i) => {
+    const wstrzyknijWarianty = warianty.map((w, i) => {
       const plikW = path.join(root, 'maps', slug, String(w.podklad ?? ''));
       const svgW = /\.svg$/i.test(String(w.podklad ?? '')) && fs.existsSync(plikW) ? fs.readFileSync(plikW, 'utf8') : '';
       return `${rejestr}.warianty[${i}].podkladUrl = ${JSON.stringify(urlWzgledny(w.podklad))};\n` +

@@ -68,8 +68,12 @@ oraz najnowszy handoff) i uruchomienie podglądu, bez zmian w repo.
   T1 i T4). Ogląd T4 ujawnił dodatkowo tłok podpisów: LOD uwzględnia
   szerokość, mobilne tytuły są mniejsze i nie urywają się na brzegu
   (bez przyklejania nazw regionów wyjeżdżających poza kadr). 130/130.
-- [ ] **A5 (P2):** usunięcie nieużywanej, drugiej kopii SVG w HTML mapy;
+- [x] **A5 (P2):** usunięcie nieużywanej, drugiej kopii SVG w HTML mapy;
   kontrola danych buildu, starych map, miniatur i `file://`.
+  Pomiar po A1–A4: HTML Tarkiru 8 482 236 → 4 516 019 bajtów
+  (−3 966 217, około 47%). Regresja odrzuca płaską kopię markupu,
+  zachowuje pełny SVG wariantu T4 i miniaturę T1. 130/130 testów;
+  Chromium HTTP/`file://`: T1/T4, pinezka, skala i powrót poprawne.
 - [ ] **A6 (P3):** precyzyjny opis testów w L13/gidzie; status PR #21
   i zakresy roadmapy aktualne przy domknięciu sesji.
 
