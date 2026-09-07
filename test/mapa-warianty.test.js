@@ -1,0 +1,153 @@
+/**
+ * A3 / ADR 0035: rzeczywisty montaż kontrolera i zdarzenia wheel/click/pan,
+ * nie tylko obecność markupu. Mini-DOM ma kontrolowane wymiary layoutu;
+ * CSS, hit-testing i raster pozostają przedmiotem QA w przeglądarce.
+ * Zero jsdom/zależności (ADR 0002).
+ */
+import fs from 'node:fs';
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { zamontujMape, wariantyMapy } from '../src/codex/render-map.js';
+
+const mapa = JSON.parse(fs.readFileSync('maps/tarkir/map.json', 'utf8'));
+const znacznik = mapa.pinezki[0];
+
+function wezel(atrybuty = {}, dzieci = []) {
+  const attr = new Map(Object.entries(atrybuty).map(([k, v]) => [k, String(v)]));
+  const klasy = new Set((attr.get('class') ?? '').split(/\s+/).filter(Boolean));
+  const nasluch = new Map();
+  const dataset = {};
+  const klucz = (s) => s.slice(5).replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+  for (const [k, v] of attr) if (k.startsWith('data-')) dataset[klucz(k)] = v;
+  const pasuje = (el, sel) => {
+    if (sel.startsWith('.')) return el.classList.contains(sel.slice(1));
+    const m = sel.match(/^\[([^=\]]+)(?:="([^"]*)")?\]$/);
+    return m ? el.hasAttribute(m[1]) && (m[2] === undefined || el.getAttribute(m[1]) === m[2]) : false;
+  };
+  const wszystkie = () => dzieci.flatMap((d) => [d, ...d.potomkowie()]);
+  const el = {
+    dataset, style: {}, hidden: false, textContent: 'Etykieta',
+    clientWidth: 0, clientHeight: 0, offsetWidth: 70, offsetHeight: 16,
+    classList: {
+      contains: (k) => klasy.has(k),
+      toggle(k, czy) { if (czy ?? !klasy.has(k)) klasy.add(k); else klasy.delete(k); },
+    },
+    potomkowie: wszystkie,
+    querySelectorAll(sel) { return wszystkie().filter((d) => sel.split(',').some((s) => pasuje(d, s.trim()))); },
+    querySelector(sel) { return this.querySelectorAll(sel)[0] ?? null; },
+    getAttribute: (k) => attr.get(k) ?? null,
+    hasAttribute: (k) => attr.has(k),
+    setAttribute(k, v) { attr.set(k, String(v)); if (k.startsWith('data-')) dataset[klucz(k)] = String(v); },
+    addEventListener(typ, fn) { const lista = nasluch.get(typ) ?? []; lista.push(fn); nasluch.set(typ, lista); },
+    emit(typ, pola = {}) {
+      const e = { target: el, preventDefault() {}, stopPropagation() {}, ...pola };
+      for (const fn of nasluch.get(typ) ?? []) fn(e);
+    },
+    closest() { return null; },
+    getBoundingClientRect() { return { left: 0, top: 0, width: this.clientWidth, height: this.clientHeight }; },
+  };
+  return el;
+}
+
+function zamontowana({ start = 't1', pin = false, warianty = mapa.warianty } = {}) {
+  const sceny = warianty.map((w) => {
+    const k = w.kalibracja;
+    const el = wezel({ 'data-scena': '', 'data-epoka': w.id,
+      'data-aspekt': w.wymiary.szerokosc / w.wymiary.wysokosc,
+      'data-sx': k.sx, 'data-sy': k.sy, 'data-ox': k.ox, 'data-oy': k.oy,
+      'data-etykiety': w.etykiety === false ? '0' : '1' });
+    el.hidden = w.id !== start;
+    return el;
+  });
+  const pinezka = wezel({ 'data-pinezka': znacznik.karta, 'data-x': znacznik.x, 'data-y': znacznik.y });
+  const etykiety = warianty.filter((w) => w.etykiety !== false).map((w) => wezel({
+    'data-podklad-etykieta': '', 'data-epoka': w.id, 'data-x': 0.5, 'data-y': 0.4,
+    'data-min-k': 1, class: `mapa-etykieta-podkladu${w.id === start ? '' : ' poza-epoka'}`,
+  }));
+  const guziki = warianty.map((w) => wezel({ 'data-epoka-przelacz': w.id, 'aria-pressed': w.id === start }));
+  const nakladka = wezel({ 'data-mapa-nakladka': '' }, [pinezka, ...etykiety]);
+  const ruch = wezel({ 'data-mapa-ruch': '' }, sceny);
+  const okno = wezel({ class: 'mapa-okno', 'data-pin': pin ? znacznik.karta : '' }, [ruch, nakladka, ...guziki]);
+  ruch.clientWidth = okno.clientWidth = 1440; okno.clientHeight = 1100;
+  const app = wezel({}, [okno]);
+  zamontujMape(app);
+  return {
+    okno, sceny, guziki, etykiety,
+    widok() {
+      const m = ruch.style.transform.match(/translate\(([-\d.e+]+)px, ([-\d.e+]+)px\) scale\(([-\d.e+]+)\)/);
+      assert.ok(m, 'kontroler musi naprawdę nanieść transformację');
+      const p = [...pinezka.style.transform.matchAll(/([-\d.]+)px/g)].map((x) => +x[1]);
+      const scena = sceny.find((s) => !s.hidden);
+      return { ox: +m[1], oy: +m[2], k: +m[3], zlota: +m[3] * +scena.dataset.sx, pin: p };
+    },
+    przelacz(id) { guziki.find((g) => g.dataset.epokaPrzelacz === id).emit('click'); },
+    kolko(delta, n = 1) {
+      const [x, y] = this.widok().pin;
+      for (let i = 0; i < n; i++) okno.emit('wheel', { clientX: x, clientY: y, deltaY: delta });
+    },
+  };
+}
+
+function blisko(a, b, tolerancja = 0.05) {
+  assert.ok(Math.abs(a - b) <= tolerancja, `${a} ≠ ${b} (tolerancja ${tolerancja})`);
+}
+function tenSamWidok(a, b) {
+  blisko(a.zlota, b.zlota, 1e-9);
+  blisko(a.pin[0], b.pin[0]); blisko(a.pin[1], b.pin[1]);
+}
+
+for (const start of ['t1', 't4']) {
+  for (const granica of ['min', 'max']) {
+    test(`mapa: ${start} → drugi wariant → ${start} zachowuje widok na ${granica} zoomu (A3)`, () => {
+      const m = zamontowana({ start });
+      const delta = granica === 'max' ? -100 : 100;
+      m.kolko(delta, 70);
+      const przed = m.widok();
+      blisko(przed.zlota, granica === 'max' ? 14 : 0.4, 1e-9);
+      m.przelacz(start === 't1' ? 't4' : 't1');
+      tenSamWidok(przed, m.widok());
+      // Kolejne zdarzenie na granicy też nie może nagle przyciąć nowego k.
+      m.kolko(delta);
+      tenSamWidok(przed, m.widok());
+      m.przelacz(start);
+      tenSamWidok(przed, m.widok());
+      m.kolko(-delta);
+      assert.notEqual(m.widok().zlota, przed.zlota, 'zoom w przeciwną stronę nadal działa');
+    });
+  }
+}
+
+test('mapa: przełączenie po pan/zoom, aktywna scena, aria-pressed i etykiety', () => {
+  const m = zamontowana();
+  m.kolko(-100, 8);
+  m.okno.emit('pointerdown', { pointerId: 1, clientX: 200, clientY: 300 });
+  m.okno.emit('pointermove', { pointerId: 1, clientX: 310, clientY: 410 });
+  m.okno.emit('pointerup', { pointerId: 1 });
+  const przed = m.widok();
+  m.przelacz('t4');
+  tenSamWidok(przed, m.widok());
+  assert.equal(m.sceny.find((s) => !s.hidden).dataset.epoka, 't4');
+  assert.equal(m.guziki[1].getAttribute('aria-pressed'), 'true');
+  assert.ok(m.etykiety.every((e) => !e.classList.contains('poza-epoka')));
+  m.przelacz('t1');
+  tenSamWidok(przed, m.widok());
+  assert.ok(m.etykiety.every((e) => e.classList.contains('poza-epoka')));
+});
+
+test('mapa: deep-link na pinezkę ma tę samą złotą skalę w obu wariantach', () => {
+  for (const start of ['t1', 't4']) {
+    const m = zamontowana({ start, pin: true });
+    blisko(m.widok().zlota, 2.5, 1e-9);
+    blisko(m.widok().pin[0], 720); blisko(m.widok().pin[1], 550);
+  }
+});
+
+test('mapa: stary model bez wariantów nadal działa z tożsamościową kalibracją', () => {
+  const warianty = wariantyMapy({ tytul: 'Jedna mapa', podklad: 'podklad.svg', wariant: 'T4',
+    wymiary: { szerokosc: 2000, wysokosc: 1400 } });
+  const m = zamontowana({ start: 'podklad', warianty });
+  m.kolko(-100, 70); blisko(m.widok().k, 14);
+  m.kolko(100, 140); blisko(m.widok().k, 0.4);
+  m.okno.emit('keydown', { key: 'Escape' });
+  blisko(m.widok().k, 1);
+});

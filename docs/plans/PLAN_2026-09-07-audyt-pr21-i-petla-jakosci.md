@@ -57,8 +57,11 @@ oraz najnowszy handoff) i uruchomienie podglądu, bez zmian w repo.
   Odtworzono 5 pełnych odpowiedzi API (65–67 pól) z notką naprawczą;
   rdzeń Oracle/ID/koszt/typ/P/T/flavor bez zmian. Brama najpierw
   odrzuciła wszystkie 5 starych cache’ów; 2 regresje obciętej struktury.
-- [ ] **A3 (P2):** limit zoomu w układzie złotym, regresje zachowania
+- [x] **A3 (P2):** limit zoomu w układzie złotym, regresje zachowania
   T1→T4→T1 i T4→T1→T4 na obu granicach.
+  7 testów zachowania kontrolera (przed naprawą 5 czerwonych);
+  Chromium: Δ pinezki 0 px, bez utraty skali, również po powrocie.
+  127/127 testów; część A6 o zakresie smoke poprawiona w L13/gidzie.
 - [ ] **A4 (P2):** przełącznik na małym ekranie nie zasłania pinezki;
   rzeczywiste kliknięcie w Chromium, nie samo sprawdzenie CSS.
 - [ ] **A5 (P2):** usunięcie nieużywanej, drugiej kopii SVG w HTML mapy;

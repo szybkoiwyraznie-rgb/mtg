@@ -261,8 +261,13 @@ docelowym pliku** (pierścienie osad, glify twierdz — środek, nie napis).
 Obiekty, które mają być „w tym samym miejscu” w obu widokach, dostają
 w generatorze pozycję z pomiaru pełnego (`P(X,Y)`), a nie przeliczoną
 z podglądu. Wynik pomiarów trafia do `zrodlo-research.md` (tabela px),
-kalibracja do `map.json`, a test smoke pilnuje, że pinezka po
-przełączeniu nie zmienia piksela ekranu (symulacja DOM w sesji: 453.86 px
-przed i po). Podgląd z UI jest dobry do rysowania relacji, nie do
-współrzędnych, które mają przetrwać zmianę podkładu.
+kalibracja do `map.json`. Test smoke pilnuje początkowego markupu;
+jednorazowy pomiar 453.86 px z PR-21 nie był testem regresyjnym.
+Od naprawy A3 w PR-22 `test/mapa-warianty.test.js` montuje kontroler
+w mini-DOM o znanych wymiarach i wykonuje wheel/click/pan: minimum,
+maksimum, powrót do pierwszego wariantu, deep-link i widoczność etykiet.
+Limity zoomu liczy się w układzie złotym, nie w różnych jednostkach
+podkładów. CSS/hit-testing nadal wymagają przeglądarki (A4).
+Podgląd z UI jest dobry do rysowania relacji, nie do współrzędnych,
+które mają przetrwać zmianę podkładu.
 

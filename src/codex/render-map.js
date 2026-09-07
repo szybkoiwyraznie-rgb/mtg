@@ -410,7 +410,7 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
       || ((w.podkladData || w.podkladUrl)
         ? `<img class="mapa-podklad" src="${w.podkladData ?? w.podkladUrl}" alt="Podkład mapy: ${escapeHtml(w.tytul ?? mapa.tytul ?? slugPlanu)}" draggable="false"${w.id === start.id ? '' : ' loading="lazy"'}>`
         : `<div class="mapa-brak-podkladu">Brak osadzonego podkładu (build nie wstrzyknął pliku — sprawdź maps/${escapeHtml(slugPlanu)}/${escapeHtml(String(w.podklad ?? 'podklad.svg'))}).</div>`);
-    return `<div class="mapa-scena" data-scena data-epoka="${escapeHtml(w.id)}" data-aspekt="${(W / H).toFixed(4)}"
+    return `<div class="mapa-scena" data-scena data-epoka="${escapeHtml(w.id)}" data-aspekt="${W / H}"
           data-sx="${k.sx}" data-sy="${k.sy}" data-ox="${k.ox}" data-oy="${k.oy}" data-etykiety="${w.etykiety ? '1' : '0'}"
           style="aspect-ratio: ${W} / ${H}"${w.id === start.id ? '' : ' hidden'}>
           ${podklad}
@@ -441,7 +441,7 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
     </header>`}
     <div class="mapa-okno" id="mapa-okno" tabindex="0" role="application"
       aria-label="Mapa ${escapeHtml(mapa.tytul ?? slugPlanu)}: przeciągnij, aby przesunąć, kółko myszy, aby przybliżyć"
-      data-plan="${escapeHtml(slugPlanu)}" data-pin="${escapeHtml(pinDocelowy)}" data-aspekt="${(szer / wys).toFixed(4)}" data-epoka="${escapeHtml(start.id)}">
+      data-plan="${escapeHtml(slugPlanu)}" data-pin="${escapeHtml(pinDocelowy)}" data-aspekt="${szer / wys}" data-epoka="${escapeHtml(start.id)}">
       <div class="mapa-ruch" data-mapa-ruch>
         ${htmlSceny}
       </div>
@@ -595,6 +595,9 @@ export function zamontujMape(app, opcje = {}) {
   // nigdy by nie wystartował (bug wykryty recenzją: „Emeria" i „ruiny
   // w niebie" na wspólnej kotwicy kładły się jedna na drugiej).
   const stanUkladu = { k: -1 };
+  // Limity dotyczą WIZUALNEJ skali w układzie złotym (k · sx), nie
+  // surowego CSS-owego k aktywnego podkładu. Inaczej T1 przy k=14 po
+  // przełączeniu na T4 wpada w clamp i traci skalę (A3, audyt PR-21).
   const K_MIN = 0.4, K_MAX = 14;
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 
@@ -738,7 +741,7 @@ export function zamontujMape(app, opcje = {}) {
   };
 
   const zoomWokol = (px, py, k2) => {
-    k2 = clamp(k2, K_MIN, K_MAX);
+    k2 = clamp(k2 * kal.sx, K_MIN, K_MAX) / kal.sx;
     stan.ox = px - (px - stan.ox) * (k2 / stan.k);
     stan.oy = py - (py - stan.oy) * (k2 / stan.k);
     stan.k = k2;
@@ -758,7 +761,7 @@ export function zamontujMape(app, opcje = {}) {
       const h = wysokoscSceny();
       const wysOkna = okno.clientHeight || h;
       const [px, py] = wUkladzie(el);
-      stan.k = 2.5;
+      stan.k = 2.5 / kal.sx; // ten sam wizualny zoom deep-linka w każdym wariancie
       stan.ox = (okno.clientWidth || w) / 2 - px * w * stan.k;
       stan.oy = wysOkna / 2 - py * h * stan.k;
     }
@@ -782,10 +785,12 @@ export function zamontujMape(app, opcje = {}) {
     stara.hidden = true;
     cel.hidden = false;
     const kal2 = kalibracjaSceny(cel);
-    const k2 = clamp(stan.k * (kal.sx / kal2.sx), K_MIN, K_MAX);
+    // Przełączenie nie jest zoomem: zmienia tylko jednostki. Nie wolno
+    // ograniczać k ponownie (także po dopasowaniu bardzo wysokiej mapy).
+    const k2 = stan.k * (kal.sx / kal2.sx);
     kal = kal2;
     aspekt = parseFloat(cel.dataset.aspekt) || aspekt;
-    okno.setAttribute('data-aspekt', aspekt.toFixed(4));
+    okno.setAttribute('data-aspekt', String(aspekt));
     okno.setAttribute('data-epoka', id);
     const H2 = wysokoscSceny();
     stan.k = k2;
