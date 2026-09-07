@@ -62,8 +62,12 @@ oraz najnowszy handoff) i uruchomienie podglądu, bez zmian w repo.
   7 testów zachowania kontrolera (przed naprawą 5 czerwonych);
   Chromium: Δ pinezki 0 px, bez utraty skali, również po powrocie.
   127/127 testów; część A6 o zakresie smoke poprawiona w L13/gidzie.
-- [ ] **A4 (P2):** przełącznik na małym ekranie nie zasłania pinezki;
+- [x] **A4 (P2):** przełącznik na małym ekranie nie zasłania pinezki;
   rzeczywiste kliknięcie w Chromium, nie samo sprawdzenie CSS.
+  QA: 10/10 kliknięć + otwarcie/zamknięcie karty (320/390/600/768/1440 px,
+  T1 i T4). Ogląd T4 ujawnił dodatkowo tłok podpisów: LOD uwzględnia
+  szerokość, mobilne tytuły są mniejsze i nie urywają się na brzegu
+  (bez przyklejania nazw regionów wyjeżdżających poza kadr). 130/130.
 - [ ] **A5 (P2):** usunięcie nieużywanej, drugiej kopii SVG w HTML mapy;
   kontrola danych buildu, starych map, miniatur i `file://`.
 - [ ] **A6 (P3):** precyzyjny opis testów w L13/gidzie; status PR #21

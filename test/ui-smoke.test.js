@@ -441,3 +441,10 @@ test('UI/build: drzewo HTML map (ADR 0027 v2 — iframe, offline z dysku)', asyn
   assert.ok(!stronaMapy.includes('data:image/svg+xml;base64'), 'strona mapy: SVG surowy, nie base64');
   fs.rmSync(cel, { force: true });
 });
+
+// To brama obecności reguły CSS, NIE substytut hit-testu w przeglądarce.
+// Manualne QA A4: 320/390/600/768/1440 px, kliknięcie pinezki w T1 i T4.
+test('UI: CSS przenosi przełącznik epok na dół małego viewportu mapy (A4)', () => {
+  const css = fs.readFileSync('src/codex/style.css', 'utf8');
+  assert.match(css, /@media\s*\(max-width:\s*600px\)\s*\{\s*\.mapa-epoki\s*\{[^}]*top:\s*auto;[^}]*bottom:\s*10px;/);
+});

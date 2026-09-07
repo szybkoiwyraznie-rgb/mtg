@@ -49,7 +49,7 @@ function wezel(atrybuty = {}, dzieci = []) {
   return el;
 }
 
-function zamontowana({ start = 't1', pin = false, warianty = mapa.warianty } = {}) {
+function zamontowana({ start = 't1', pin = false, warianty = mapa.warianty, szerokosc = 1440, wysokosc = 1100 } = {}) {
   const sceny = warianty.map((w) => {
     const k = w.kalibracja;
     const el = wezel({ 'data-scena': '', 'data-epoka': w.id,
@@ -68,7 +68,7 @@ function zamontowana({ start = 't1', pin = false, warianty = mapa.warianty } = {
   const nakladka = wezel({ 'data-mapa-nakladka': '' }, [pinezka, ...etykiety]);
   const ruch = wezel({ 'data-mapa-ruch': '' }, sceny);
   const okno = wezel({ class: 'mapa-okno', 'data-pin': pin ? znacznik.karta : '' }, [ruch, nakladka, ...guziki]);
-  ruch.clientWidth = okno.clientWidth = 1440; okno.clientHeight = 1100;
+  ruch.clientWidth = okno.clientWidth = szerokosc; okno.clientHeight = wysokosc;
   const app = wezel({}, [okno]);
   zamontujMape(app);
   return {
@@ -150,4 +150,28 @@ test('mapa: stary model bez wariantów nadal działa z tożsamościową kalibrac
   m.kolko(100, 140); blisko(m.widok().k, 0.4);
   m.okno.emit('keydown', { key: 'Escape' });
   blisko(m.widok().k, 1);
+});
+
+
+test('mapa: na małym ekranie podpisy szczegółów czekają na zoom (QA A4)', () => {
+  const m = zamontowana({ start: 't4', szerokosc: 356, wysokosc: 272 });
+  assert.ok(m.etykiety.every((e) => e.classList.contains('poza-zasiegiem')), 'na miniaturze bez tłoku szczegółowych podpisów');
+  m.kolko(-100, 10);
+  assert.ok(m.etykiety.every((e) => !e.classList.contains('poza-zasiegiem')), 'po zoomie podpisy wracają');
+});
+
+
+test('mapa: mobilny tytuł nie urywa się na brzegu i nie przykleja się po pan (QA A4)', () => {
+  const m = zamontowana({ start: 't4', szerokosc: 356, wysokosc: 272 });
+  const tytul = m.etykiety[0];
+  tytul.classList.toggle('tier-kontynent', true);
+  tytul.setAttribute('data-x', 0.99);
+  tytul.setAttribute('data-min-k', 0);
+  m.okno.emit('keydown', { key: 'Escape' });
+  const x = () => +tytul.style.transform.match(/translate\(([-\d.]+)px/)[1];
+  assert.ok(x() + tytul.offsetWidth / 2 <= 352, 'nazwa w całości wewnątrz okna');
+  m.okno.emit('pointerdown', { pointerId: 1, clientX: 0, clientY: 0 });
+  m.okno.emit('pointermove', { pointerId: 1, clientX: -1000, clientY: 0 });
+  m.okno.emit('pointerup', { pointerId: 1 });
+  assert.ok(x() < 0, 'obszar poza kadrem nie pozostawia przyklejonej etykiety');
 });

@@ -637,9 +637,13 @@ export function zamontujMape(app, opcje = {}) {
     // etykiety nieaktywnych wariantów (poza-epoka) nie biorą udziału.
     const podkladowe = [...nakladka.querySelectorAll('[data-podklad-etykieta]')]
       .filter((el) => !el.classList.contains('poza-epoka'));
+    // Na telefonie k≈1 wciąż oznacza miniaturę kilkuset pikseli.
+    // Samo k włączało wszystkie podpisy jak na desktopie (QA A4).
+    // LOD zależy też od szerokości sceny; tytuły (próg 0) pozostają.
+    const skalaLod = stan.k * Math.min(1, w / 800);
     for (const el of podkladowe) {
       const prog = parseFloat(el.dataset.minK || '1');
-      el.classList.toggle('poza-zasiegiem', stan.k + 1e-9 < prog);
+      el.classList.toggle('poza-zasiegiem', skalaLod + 1e-9 < prog);
     }
 
     // Pass 2 — UKŁAD etykiet OBIEKTOWYCH (ADR 0022): przeliczany tylko przy
@@ -724,8 +728,16 @@ export function zamontujMape(app, opcje = {}) {
       }
       const [x, y] = wUkladzie(el);
       if (!Number.isFinite(x) || !Number.isFinite(y)) continue;
-      const px = (x * w * stan.k + stan.ox).toFixed(2);
+      let px = (x * w * stan.k + stan.ox).toFixed(2);
       const py = (y * h * stan.k + stan.oy).toFixed(2);
+      // Tytuł obszaru może przesunąć się od brzegu małego okna, aby nie
+      // urywać nazwy. Tylko przy widocznej kotwicy: po pan poza ekran
+      // nie „przyklejamy” nazwy nieobecnego regionu. Pinezki bez zmian.
+      if (w <= 600 && el.classList.contains('tier-kontynent')
+          && +px >= 0 && +px <= w && +py >= 0 && +py <= okno.clientHeight) {
+        const polowa = (el.offsetWidth || 0) / 2;
+        if (polowa + 4 < w / 2) px = clamp(+px, polowa + 4, w - polowa - 4).toFixed(2);
+      }
       if (!el.hasAttribute('data-podklad-etykieta')) {
         el.style.transform = `translate(${px}px, ${py}px)`;
         continue;
