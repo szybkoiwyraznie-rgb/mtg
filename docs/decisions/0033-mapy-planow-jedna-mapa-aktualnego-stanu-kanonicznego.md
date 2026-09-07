@@ -112,3 +112,17 @@ sprzeciwu właściciela — do potwierdzenia przy recenzji):
    między epokami dokumentuje `map.json`; osobna warstwa/mapa epoki
    powstaje wyłącznie na żądanie karty, której scena wymaga innych
    nazw w stopniu uniemożliwiającym czytelną pinezkę.
+
+### Aktualizacja 2026-09-07 (późniejsza, ta sama sesja) — Tarkir dostaje DWA podkłady epok (ADR 0035)
+
+Właściciel po obejrzeniu mapy T4 obok rastra Lore Café zdecydował: raster
+wchodzi do repo jako podkład **T1 (epoka Tarkir: Dragonstorm)**, a
+rekonstrukcja T4 zostaje jako podkład **epoki khanów**; na stronie mapy
+działa przełącznik T1 ↔ T4. To nadal JEDNA mapa (pkt 1 powyżej stoi):
+wspólna topografia, wspólne pinezki w jednym układzie współrzędnych
+(złoty = raster T1), a różnice nazw między epokami niesie podkład, nie
+osobna mapa. Pkt 3 (wzorzec ogólny) zostaje rozszerzony: gdy właściciel
+dostarczy raster innej epoki, może on być drugim podkładem tej samej
+mapy — bez potrzeby spełnienia kryterium §2 (zmiana topologii), które
+dotyczy osobnych MAP z osobnymi współrzędnymi. Szczegóły: ADR 0035.
+

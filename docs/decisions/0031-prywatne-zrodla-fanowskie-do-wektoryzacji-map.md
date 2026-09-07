@@ -1,6 +1,8 @@
 # ADR 0031: Prywatne źródła fanowskie mogą być bazą wektoryzacji map planów
 
-- **Status:** Zaakceptowana
+- **Status:** Zaakceptowana — §2 doprecyzowany przez ADR 0035 (2026-09-07):
+  raster dostarczony przez właściciela MOŻE wejść do repo jako podkład T1,
+  gdy właściciel tak zdecyduje (Tarkir: `maps/tarkir/podklad-t1.jpg`)
 - **Data:** 2026-09-03
 - **Decydenci:** właściciel projektu (feedback 2026-09-03: projekt prywatny/niepubliczny; fan-made mapa Ravniki może być źródłem dokładniejszej wektoryzacji); agent Arena (sesja PR-13)
 - **Zastępuje:** doprecyzowuje ADR 0009 pkt 4 poza przypadkiem Śródziemia; rozszerza praktykę źródeł fanowskich z mapy Zendikaru

@@ -195,11 +195,25 @@ export async function zbuduj({ out, root = ROOT } = {}) {
     if (mapa.problem || !mapa.podklad) continue;
     const plik = path.join(root, 'maps', slug, mapa.podklad);
     if (!fs.existsSync(plik)) continue; // brak pliku wychwyci test mapy (MA2)
-    const rel = `maps/${slug}/${mapa.podklad}`;
-    const celPodkladu = path.join(katalogOut, rel);
-    fs.mkdirSync(path.dirname(celPodkladu), { recursive: true });
-    fs.copyFileSync(plik, celPodkladu);
-    mapa.podkladUrl = rel;                       // mini-mapy kart (<img>)
+    const kopiuj = (nazwa) => {
+      if (!nazwa) return null;
+      const zrodlo = path.join(root, 'maps', slug, String(nazwa));
+      if (!fs.existsSync(zrodlo)) return null;
+      const rel = `maps/${slug}/${nazwa}`;
+      const cel = path.join(katalogOut, rel);
+      fs.mkdirSync(path.dirname(cel), { recursive: true });
+      fs.copyFileSync(zrodlo, cel);
+      return rel;
+    };
+    kopiuj(mapa.podklad);
+    // Warianty podkładu (ADR 0035): każdy podkład (i miniatura rastra)
+    // trafia do drzewa map; mini-mapy kart biorą miniaturę wariantu
+    // domyślnego (pełny raster T1 waży kilkanaście MB — nie na kafel).
+    const warianty = Array.isArray(mapa.warianty) ? mapa.warianty : [];
+    for (const w of warianty) { kopiuj(w.podklad); kopiuj(w.miniatura); }
+    const domyslny = warianty.find((w) => w.domyslny) ?? warianty[0];
+    const miniatura = domyslny?.miniatura ? kopiuj(domyslny.miniatura) : null;
+    mapa.podkladUrl = miniatura ?? `maps/${slug}/${domyslny?.podklad ?? mapa.podklad}`; // mini-mapy kart (<img>)
     mapa.stronaMapy = `maps/${slug}.html`;       // iframe w artefakcie
     // stopka strony mapy (ADR 0029): czas z historii całego katalogu planu
     mapa.czas = datyGit(path.relative(ROOT, path.join(root, 'maps', slug)));
@@ -251,12 +265,23 @@ export async function zbuduj({ out, root = ROOT } = {}) {
   // main.js w trybie CODEX_MAPA renderuje mapę zamiast routera.
   for (const { slug, mapa, plik } of stronyMap) {
     const svgTekst = /\.svg$/i.test(mapa.podklad) ? fs.readFileSync(plik, 'utf8') : '';
+    // strona mapy żyje w maps/ (płaska) lub maps/<plan>/ (podmapa,
+    // ADR 0032) — URL podkładu liczony względem katalogu strony
+    const urlWzgledny = (nazwa) => path.posix.relative(path.posix.dirname(slug), `${slug}/${nazwa}`);
+    const rejestr = `globalThis.CODEX_DATA.mapy[${JSON.stringify(slug)}]`;
+    // Warianty podkładu (ADR 0035): każdy dostaje własny URL, a SVG —
+    // surowy markup (etykiety do nakładki); raster zostaje <img> z URL.
+    const wstrzyknijWarianty = (Array.isArray(mapa.warianty) ? mapa.warianty : []).map((w, i) => {
+      const plikW = path.join(root, 'maps', slug, String(w.podklad ?? ''));
+      const svgW = /\.svg$/i.test(String(w.podklad ?? '')) && fs.existsSync(plikW) ? fs.readFileSync(plikW, 'utf8') : '';
+      return `${rejestr}.warianty[${i}].podkladUrl = ${JSON.stringify(urlWzgledny(w.podklad))};\n` +
+        (svgW ? `${rejestr}.warianty[${i}].podkladMarkup = ${JSON.stringify(svgW)};\n` : '');
+    }).join('');
     const wstrzyknij = `\n// ===== TRYB STRONY MAPY (ADR 0027 v2) =====\n` +
       `globalThis.CODEX_MAPA = ${JSON.stringify(slug)};\n` +
-      // strona mapy żyje w maps/ (płaska) lub maps/<plan>/ (podmapa,
-      // ADR 0032) — URL podkładu liczony względem katalogu strony
-      `globalThis.CODEX_DATA.mapy[${JSON.stringify(slug)}].podkladUrl = ${JSON.stringify(path.posix.relative(path.posix.dirname(slug), `${slug}/${mapa.podklad}`))};\n` +
-      (svgTekst ? `globalThis.CODEX_DATA.mapy[${JSON.stringify(slug)}].podkladMarkup = ${JSON.stringify(svgTekst)};\n` : '');
+      `${rejestr}.podkladUrl = ${JSON.stringify(urlWzgledny(mapa.podklad))};\n` +
+      (svgTekst ? `${rejestr}.podkladMarkup = ${JSON.stringify(svgTekst)};\n` : '') +
+      wstrzyknijWarianty;
     const htmlMapy = shell
       .replace('<!--STYL-->', () => `<style>\n${css}\n</style>`)
       .replace('<!--BUNDLE-->', () => `<script>\n${doSkryptu(daneJs + wstrzyknij)}\n\n${kod}\n</script>`);

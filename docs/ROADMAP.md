@@ -267,9 +267,16 @@ fanowskiej mapy Lore Café dostarczonej przez właściciela — ADR 0031;
 epoka khanów na wspólnej topografii trzech epok — ADR 0033 uzupełnienie;
 `maps/tarkir/`), strona planu, karta LORE-first z pinezką `region`
 w Qal Sisma; nowe klocki mapforge `pustynia` i `szczyt`. Roadmapa:
-`docs/plans/PLAN_2026-09-07-pr21-tarkir-highland-game.md`. Czeka na
-recenzję mapy przez właściciela; PR #21 pozostaje otwarty do końca sesji
-(decyzja właściciela — scalenie odcięłoby agenta od GitHuba).
+`docs/plans/PLAN_2026-09-07-pr21-tarkir-highland-game.md`. Recenzja
+mapy przez właściciela → ADR 0034 (hydrologia, lód↔pasma, rozpadlina,
+ramka full-bleed). **Decyzja właściciela po recenzji: T1 dla Tarkiru** —
+raster Lore Café w repo jako podkład epoki Dragonstorm, T4 jako epoka
+khanów, **przełącznik epok** na stronie mapy, **jeden układ współrzędnych
+(złoty = raster T1)**, T1 bez etykiet Codexu → ADR 0035; silnik map
+obsługuje `warianty[]` dla każdej mapy (K3 T1 wraca do gry: precedens
+PR-13 „T1 odrzucony licencyjnie” nie blokuje projektu prywatnego).
+PR #21 pozostaje otwarty do końca sesji (decyzja właściciela — scalenie
+odcięłoby agenta od GitHuba).
 
 ## Wątki otwarte (czekają na decyzję właściciela)
 

@@ -243,3 +243,26 @@ trafia w tej samej sesji do walidatora (`sprawdzWiazania` / `map-audit`)
 z testem na WSZYSTKICH scenach repo — wtedy naprawa Tarkiru od razu
 wyłapuje Zendikar i demo. Uwaga, której nie da się zautomatyzować, idzie
 do checklisty SKILL_MAPA_PLANU §7 jako pytanie TAK/NIE. ADR 0034.
+
+## L13 (2026-09-07) — geometria „z podglądu” ma inny błąd niż geometria „z pliku”: zanim dwa podkłady dostaną wspólne współrzędne, zmierz kalibrację na obiektach, nie na proporcjach
+
+**Co się stało.** Mapa T4 Tarkiru była rysowana z odczytów rastra
+oglądanego w UI czatu (1568×1208), bo plik nie dotarł do sandboxa.
+Gdy właściciel wgrał pełny raster (4307×3293) i zapadła decyzja o JEDNYM
+układzie współrzędnych dla obu podkładów, pierwszy odruch — przeliczyć
+wszystko stosunkiem szerokości — dawał kalibrację „na oko” z błędem do
+~90 px na pełnym rasterze: proporcje obu obrazów różniły się o 0,8 %
+(podgląd był przycięty o kilka pikseli, nie przeskalowany), a odczyty
+z podglądu miały własny rozrzut ±40 px.
+
+**Reguła.** Kalibrację między podkładami wyprowadza się z generatora
+(znane odwzorowanie) i **weryfikuje na ≥ 20 obiektach zmierzonych na
+docelowym pliku** (pierścienie osad, glify twierdz — środek, nie napis).
+Obiekty, które mają być „w tym samym miejscu” w obu widokach, dostają
+w generatorze pozycję z pomiaru pełnego (`P(X,Y)`), a nie przeliczoną
+z podglądu. Wynik pomiarów trafia do `zrodlo-research.md` (tabela px),
+kalibracja do `map.json`, a test smoke pilnuje, że pinezka po
+przełączeniu nie zmienia piksela ekranu (symulacja DOM w sesji: 453.86 px
+przed i po). Podgląd z UI jest dobry do rysowania relacji, nie do
+współrzędnych, które mają przetrwać zmianę podkładu.
+

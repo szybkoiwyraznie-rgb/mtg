@@ -35,11 +35,18 @@ Forest, Pearl Lake, Bloomvine Jungle, Marang River, Whisperwood, Brine
 Lake, Stormplains, Dusyut Forest, Niraj River, Objung Swamp, The Sagu)
 są dopuszczone — góry, jeziora i lasy nie powstają od zmiany khana.
 
-Układ współrzędnych: raster 1568×1208 px → płótno 2000×1400
-(skala 1.1589, offset x = 91.4; N u góry). Funkcja R(px, py) przelicza
-odczyt z rastra. Kontynent bez oceanu (Sarkhan): ląd wychodzi poza
-ramkę (full-bleed), jedynym wielkim akwenem jest południowe morze
-śródlądowe, w które uchodzi delta Gudul.
+Układ współrzędnych (ADR 0035): odczyty z PODGLĄDU rastra Lore Café
+1568×1208 px (tak rysowano pierwotnie) → płótno 2000×1400 przez R(px, py)
+(skala 1.1589, offset x = 91.4; N u góry). Podgląd był proporcjonalnym
+pomniejszeniem pełnego rastra 4307×3293 (podkład T1 `podklad-t1.jpg`),
+więc odczyt pełny = podgląd × 2.7468; funkcja P(X, Y) przyjmuje odczyt
+z PEŁNEGO rastra — punkty skalibrowane 2026-09-07 na pełnym rastrze
+(POI, kotwice) używają P, reszta geometrii zostaje w R. Ta sama
+kalibracja (złoty układ T1 → płótno T4) jest zapisana w map.json
+(`warianty[t4].kalibracja`), dzięki czemu pinezki kart mają JEDEN zestaw
+współrzędnych (złoty = raster T1) na obu podkładach. Kontynent bez oceanu
+(Sarkhan): ląd wychodzi poza ramkę (full-bleed), jedynym wielkim akwenem
+jest południowe morze śródlądowe, w które uchodzi delta Gudul.
 
 Deterministyczny: pisze maps/tarkir/scena.json. Renderować przez
     node tools/mapforge/cli.mjs maps/tarkir/scena.json -o maps/tarkir/podklad.svg
@@ -58,8 +65,20 @@ OY = 0.0
 
 
 def R(px, py):
-    """Odczyt z rastra Lore Café (px) → współrzędne płótna."""
+    """Odczyt z PODGLĄDU rastra Lore Café (1568×1208) → współrzędne płótna."""
     return [round(OX + px * S, 1), round(OY + py * S, 1)]
+
+
+# Pełny raster (podkład T1) 4307×3293 = podgląd × K_PELNY (obie osie; proporcje
+# 1.3079 vs 1.2980 różnią się o <1 % — wysokość podglądu była przycięta o ~9 px,
+# nie przeskalowana; kalibracja na 26 punktach: RMS 13 px w pionie).
+PELNY_W, PELNY_H = 4307, 3293
+K_PELNY = PELNY_W / 1568                 # 2.7468
+
+
+def P(X, Y):
+    """Odczyt z PEŁNEGO rastra Lore Café (4307×3293, układ złoty T1) → płótno."""
+    return R(X / K_PELNY, Y / K_PELNY)
 
 
 def szum(x, y, amp):
@@ -198,8 +217,8 @@ PASMA = [
 
 # --------------------------------------------------------------- wulkany
 WULKANY = [
-    ('wulkan', R(1080, 165), 'qadat', {'skala': 1.3}),          # Qadat, the Fire Rim
-    ('wulkan', R(1360, 305), 'cori-mountain', {'skala': 1.05}),  # Cori Mountain (zalana kaldera)
+    ('wulkan', P(2960, 520), 'qadat', {'skala': 1.3}),          # Qadat, the Fire Rim
+    ('wulkan', P(3743, 849), 'cori-mountain', {'skala': 1.05}),  # Cori Mountain (zalana kaldera)
 ]
 
 # ---------------------------------------------------------------- jeziora
@@ -294,34 +313,34 @@ ROZPADLINY = [
 # (uzasadnienie kanoniczne każdej kotwicy w map.json).
 POI = WULKANY + [
     # --- Temur Frontier / Qal Sisma
-    ('miasto', R(650, 145), 'karakyk-valley', {'skala': 1.0}),         # zimowe leże klanu (cyrk lodowcowy)
-    ('szczyt', R(430, 176), 'eternal-ice', {'skala': 1.3}),          # święty szczyt szeptaczy (glif mapome) — pod krawędzią czapy, nie w niej
-    ('ognisko', R(760, 315), 'staircase-of-bones', {'skala': 0.9}),    # wzgórze zgromadzeń
-    ('ruina', R(130, 190), 'crucible-spirit-dragon', {'skala': 0.9}),  # Grób/Krucybel Ugina (lodowa rozpadlina)
-    ('ognisko', R(505, 288), 'ayagor', {'skala': 0.8}),                # Dragon's Bowl (w TDM: Summer Landing)
+    ('miasto', P(1793, 338), 'karakyk-valley', {'skala': 1.0}),         # zimowe leże klanu (cyrk lodowcowy)
+    ('szczyt', P(1215, 470), 'eternal-ice', {'skala': 1.3}),          # święty szczyt szeptaczy (glif mapome) — pod krawędzią czapy, nie w niej
+    ('ognisko', P(2071, 878), 'staircase-of-bones', {'skala': 0.9}),    # wzgórze zgromadzeń
+    ('ruina', P(360, 545), 'crucible-spirit-dragon', {'skala': 0.9}),  # Grób/Krucybel Ugina (lodowa rozpadlina)
+    ('ognisko', P(1364, 816), 'ayagor', {'skala': 0.8}),                # Dragon's Bowl (w TDM: Summer Landing)
     # --- Jeskai Way / Tiansun
-    ('fort', R(1398, 362), 'dragons-eye', {'skala': 1.1}),            # Sage-Eye Stronghold (zbocze nad zatoką)
-    ('fort', R(1262, 338), 'riverwheel', {'skala': 0.95}),            # Riverwheel Stronghold (klif, wodospad)
-    ('wodospad', R(1248, 362), 'icefall', {'skala': 0.9}),
-    ('fort', R(1215, 470), 'dirgur', {'skala': 1.0}),                 # Dirgur Stronghold (wyspa na jeziorze)
-    ('miasto', R(1195, 520), 'purugir', {'skala': 0.8}),              # faktoria Salt Road
-    ('fort', R(1460, 165), 'highspire', {'skala': 0.85}),             # Highspire Stronghold (modliszki)
-    ('iglica', R(1130, 285), 'initiates-stair', {'skala': 0.9}),      # biały pinakl, 1578 stopni
+    ('fort', P(3845, 1060), 'dragons-eye', {'skala': 1.1}),            # Sage-Eye Stronghold (zbocze nad zatoką)
+    ('fort', P(3472, 963), 'riverwheel', {'skala': 0.95}),            # Riverwheel Stronghold (klif, wodospad)
+    ('wodospad', P(3430, 1000), 'icefall', {'skala': 0.9}),
+    ('fort', P(3401, 1327), 'dirgur', {'skala': 1.0}),                 # Dirgur Stronghold (wyspa na jeziorze)
+    ('miasto', P(3337, 1420), 'purugir', {'skala': 0.8}),              # faktoria Salt Road
+    ('fort', P(4036, 462), 'highspire', {'skala': 0.85}),             # Highspire Stronghold (modliszki)
+    ('iglica', P(3080, 785), 'initiates-stair', {'skala': 0.9}),      # biały pinakl, 1578 stopni
     # --- Mardu Horde / Sandsteppe
-    ('fort', R(230, 580), 'sandsteppe-gateway', {'skala': 1.1}),      # most-forteca na granicy Abzan
-    ('fort', R(740, 560), 'wingthrone', {'skala': 1.15}),             # stolica Zurgo (klify, czaszka smoka)
+    ('fort', P(860, 1590), 'sandsteppe-gateway', {'skala': 1.1}),      # most-forteca na granicy Abzan
+    ('fort', P(2033, 1527), 'wingthrone', {'skala': 1.15}),             # stolica Zurgo (klify, czaszka smoka)
     # --- Abzan Houses / Shifting Wastes
-    ('fort', R(230, 700), 'arashin', {'skala': 1.25}),                # Arashin + Mer-Ek (skaliste wzgórze)
-    ('drzewo', R(340, 740), 'first-tree', {'skala': 1.6}),            # First Tree (w Arashin) — tu: Kin-Tree
-    ('miasto', R(120, 790), 'kavah', {'skala': 0.8}),                 # Kavah — osada dwa dni od Arashin
-    ('iglica', R(690, 1010), 'lookout-roost', {'skala': 1.1}),        # wieża 400 stóp z czerwonego kamienia
-    ('ruina', R(640, 1110), 'aerie-unfettered', {'skala': 0.9}),      # Aerie of the Unfettered (pradawna)
+    ('fort', P(697, 1957), 'arashin', {'skala': 1.25}),                # Arashin + Mer-Ek (skaliste wzgórze)
+    ('drzewo', P(885, 2035), 'first-tree', {'skala': 1.6}),            # First Tree (w Arashin) — tu: Kin-Tree
+    ('miasto', P(442, 2187), 'kavah', {'skala': 0.8}),                 # Kavah — osada dwa dni od Arashin
+    ('iglica', P(1985, 2745), 'lookout-roost', {'skala': 1.1}),        # wieża 400 stóp z czerwonego kamienia
+    ('ruina', P(1800, 3060), 'aerie-unfettered', {'skala': 0.9}),      # Aerie of the Unfettered (pradawna)
     # --- Sultai Brood / Gudul
-    ('kopula', R(975, 1050), 'kheru', {'skala': 1.15}),               # Kheru Temple (siedziba Sidisi)
-    ('miasto', R(930, 1040), 'qarsi', {'skala': 0.85}),               # Qarsi Palace (na kanałach)
-    ('ruina', R(1380, 800), 'ukud', {'skala': 1.0}),                  # Ukud Necropolis (Gurmag)
-    ('fort', R(1050, 892), 'marang-fortress', {'skala': 0.95}),       # Marang River Fortress (przełęcz, rzeka wychodzi z gór)
-    ('wodospad', R(1140, 945), 'molderfang', {'skala': 1.0}),         # Molderfang Falls (Silumgar spadł)
+    ('kopula', P(2680, 2893), 'kheru', {'skala': 1.15}),               # Kheru Temple (siedziba Sidisi)
+    ('miasto', P(2635, 2865), 'qarsi', {'skala': 0.85}),               # Qarsi Palace (na kanałach)
+    ('ruina', P(3750, 2180), 'ukud', {'skala': 1.0}),                  # Ukud Necropolis (Gurmag)
+    ('fort', P(2780, 2442), 'marang-fortress', {'skala': 0.95}),       # Marang River Fortress (przełęcz, rzeka wychodzi z gór)
+    ('wodospad', P(3172, 2610), 'molderfang', {'skala': 1.0}),         # Molderfang Falls (Silumgar spadł)
 ]
 
 POZ = {p[2]: (p[1][0], p[1][1]) for p in POI}

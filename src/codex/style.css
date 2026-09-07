@@ -340,6 +340,27 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
 .mapa-pinezka:focus-visible .mapa-pinezka-etykieta { opacity: 1; }
 .mapa-pinezka:hover .mapa-pinezka-etykieta { background: #2c2313; }
 
+/* Przełącznik epok/podkładów (ADR 0035): pływa nad oknem mapy; etykiety
+   nieaktywnego wariantu (poza-epoka) znikają — czysty raster T1 pokazuje
+   wyłącznie pinezki kart (decyzja właściciela 2026-09-07). */
+.mapa-epoki {
+  position: absolute; top: 10px; right: 10px; z-index: 8;
+  display: flex; border-radius: 8px; overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+.mapa-epoki button {
+  font: inherit; font-size: 0.8rem; font-weight: 600; line-height: 1.2;
+  padding: 0.38rem 0.75rem; cursor: pointer;
+  border: 1px solid rgba(60, 45, 20, 0.55); background: rgba(246, 239, 223, 0.94); color: #2c2313;
+}
+.mapa-epoki button + button { border-left: none; }
+.mapa-epoki button:hover { background: #fff8e8; }
+.mapa-epoki button[aria-pressed="true"] { background: #2c2313; color: #f6efdf; cursor: default; }
+.mapa-epoki button:focus-visible { outline: 2px solid var(--akcent); outline-offset: -2px; }
+.mapa-epoki-legenda { display: inline-block; width: 1.2em; text-align: center; font-weight: 700; }
+.mapa-etykieta-podkladu.poza-epoka, .mapa-etykieta-regionu.poza-epoka { display: none; }
+.mapa-scena[hidden] { display: none; }
+
 .mapa-etykieta-regionu {
   position: absolute; left: 0; top: 0; width: 0; height: 0;
   text-decoration: none; z-index: 4;

@@ -22,6 +22,13 @@ HTTP 403. Zgodnie ze stałą decyzją właściciela (Mirrodin, 2026-09-06)
 raster fanowski wchodzi do gry dopiero, gdy właściciel go dostarczy,
 i tylko jako źródło pomocnicze dla pozycji nieustalonych w kanonie.
 
+**Aktualizacja 2026-09-07:** właściciel dostarczył raster Lore Café / MTG
+Wiki Italia („Tarkir Map 2025 (EN)”, 3d4) — najpierw jako podgląd
+1568×1208 (matryca geometrii T4), potem pełny plik 4307×3293 commitem
+na gałąź. Decyzją właściciela raster jest **podkładem T1** (epoka
+Dragonstorm) obok T4 (epoka khanów) — ADR 0035; sekcja „Kalibracja”
+niżej.
+
 ## Źródła (URL)
 
 - https://magic.wizards.com/en/news/feature/planeswalkers-guide-khans-tarkir-part-1-2014-09-03 — Abzan, Jeskai, Sultai (epoka khanów).
@@ -140,4 +147,50 @@ topologii).
 
 ## Decyzje właściciela
 
-_(oczekuje — raport przedstawiony w czacie 2026-09-07)_
+1. **2026-09-07 (rano):** T4 — rekonstrukcja mapforge; raster fanowski
+   Lore Café dostarczony w czacie jako źródło pomocnicze geometrii
+   (ADR 0031); mapa w nazwach epoki khanów (ADR 0033 uzup.).
+2. **2026-09-07 (po recenzji T4):** „Tak, chcę iść w tą stronę” — raster
+   Lore Café **wchodzi do repo jako podkład T1** (właściciel wgrał
+   `tarkir.jpeg` commitem `f1b0057`; teraz `maps/tarkir/podklad-t1.jpg`,
+   4307×3293), **przełącznik T1 (Dragonstorm) ↔ T4 (Khans)** na stronie
+   mapy, **pinezki wszystkich kart w obu widokach**, **w T1 wszystkie
+   etykiety Codexu wyłączone** (czysty raster), **koordynaty identyczne
+   między epokami — złoty standard = raster T1**. Prawa autorskie
+   nieistotne (projekt prywatny). → ADR 0035.
+
+## Kalibracja T1 ↔ T4 (ADR 0035)
+
+- Generator T4 rysował z odczytów **podglądu** rastra 1568×1208 przez
+  `R(px, py) = (91.4 + 1.1589·px, 1.1589·py)` na płótnie 2000×1400.
+  Pełny raster 4307×3293 = podgląd × 2.7468 (proporcje 1.3079 vs 1.2980
+  — podgląd był o ~9 px niższy, nie przeskalowany nieproporcjonalnie).
+- Kalibracja układu złotego (T1, 0–1) → płótno T4 (0–1):
+  `x4 = 0.045695 + 0.908609·x1`, `y4 = 0.992421·y1`.
+- Weryfikacja: 26 POI zmierzonych na pełnym rasterze (pierścienie osad,
+  glify twierdz, środek szczytu/wodospadu) — RMS 13 px w pionie, 26 px
+  w poziomie (jednostki T4) względem pierwotnych odczytów z podglądu;
+  po domierzeniu POI generator używa `P(X, Y)` z pomiaru pełnego, więc
+  obiekt w T4 leży w tym samym punkcie złotym co pinezka w T1.
+- Pomiar (px na pełnym rasterze): Karakyk Valley (1793,338), Eternal Ice
+  (1215,470 — środek czapy), Staircase of Bones (2071,878), Crucible /
+  Tomb of the Spirit Dragon (360,545), Summer Landing/Ayagor (1364,816),
+  Qadat (2960,520), Dragon's Eye/Sage-Eye (3845,1060), Riverwheel
+  (3472,963), Dirgur Lake Monastery (3401,1327), Purugir (3337,1420),
+  Cori Mountain (3743,849), Highspire (4036,462), Initiate Stairs
+  (3080,785), Wingthrone ≈ Dalkovan City S (2033,1527 — pozycja z T4,
+  osada epoki khanów nie występuje na rasterze TDM), Sandsteppe Gateway
+  (860,1590), Arashin (697,1957), Mer-Ek/First Tree (885,2035), Khava
+  (442,2187), Lookout Roost (1985,2745), Aerie of the Unfettered
+  (1800,3060), Kheru (2680,2893), Qarsi Palace (2635,2865), Ukud
+  Necropolis (3750,2180), Marang River Fortress (2780,2442), Molderfang
+  Falls (3172,2610); jeziora: Dragon's Throat (2160,530), Glintglaze
+  (790,445), Pearl Lake (3660,380), Dirgur Lake (3430,1330), Brine Lake
+  (190,1905).
+- Pinezka 509KTK w układzie złotym: (0.4496, 0.1846) = px (1936, 608) —
+  przedgórze między Karakyk Valley a Staircase of Bones, na W od
+  Dragon's Throat (sprawdzone na wycinku rastra).
+- Kotwice regionów/krain bez POI (Sandsteppe, Goldengrave, Screamreach,
+  Gurmag, Bloomvine, Sagu, Stormplains, Dusyut, Scour, rzeki, Salt Road,
+  morze) przeliczone z T4 kalibracją — dokładność odczytu z podglądu
+  (±30 px T4); domierzyć przy następnej karcie w danym regionie.

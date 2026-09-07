@@ -65,6 +65,21 @@ obrazów przez agenta** (rastry map przez resvg poza repo).
    commitach; po odświeżeniu tokena środowisko wróciło jako płytki klon
    z patchsetem (§2a) — łańcuch odtworzony i wypchnięty commit po
    commicie (`e7b633d` → `442ee98` → `b1431ed` → `395f0f4` → dokumenty).
+7. **Recenzja mapy Tarkiru (2026-09-07 ~14:00):** cztery uwagi
+   właściciela → cztery reguły silnika (ADR 0034: ramka passe-partout,
+   klocek `rozpadlina`, pasma omijają lód, walidator hydrologii);
+   113/113, map-audit 0.
+8. **T1 dla Tarkiru (2026-09-07, po recenzji — decyzja właściciela):**
+   raster Lore Café wchodzi do repo jako podkład **T1 · Dragonstorm**
+   (właściciel wgrał plik commitem `f1b0057`; `maps/tarkir/podklad-t1.jpg`
+   4307×3293 + miniatura), T4 zostaje jako **Khans**; silnik map dostał
+   **warianty podkładu** (przełącznik epok w oknie mapy, sceny per
+   wariant, kalibracja afiniczna, `?epoka=`), **jeden układ współrzędnych
+   = raster T1** (kotwice i pinezka przeliczone, 26 POI generatora
+   domierzonych na pełnym rasterze), **T1 bez etykiet Codexu** (czysty
+   raster + pinezki). ADR 0035 (+ dopiski 0007/0031/0033), testy
+   114/114, symulacja DOM: pinezka nie drga po przełączeniu. Token
+   GitHub wygasł czwarty raz — commity lokalne od `981f8ae`.
 
 ## 2026-09-06 — sesja PR-20: audyt PR-19 + kolejka napraw A1–A4 + lekcja L9
 

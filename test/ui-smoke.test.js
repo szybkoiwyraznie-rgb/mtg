@@ -218,7 +218,27 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   const mapaZ = shim3.app.innerHTML;
   assert.ok(mapaZ.includes('<svg class="mapa-podklad"'), 'mapa Zendikaru: brak wektorowego podkładu inline');
   assert.ok(mapaZ.includes('data-pinezka="2bfz-coralhelm-guide"'), 'mapa Zendikaru: brak pinezki 2BFZ');
+  assert.ok(!mapaZ.includes('mapa-epoki'), 'mapa Zendikaru: jeden podkład — bez przełącznika epok');
   shim3.przywroc();
+
+  // ── Strona mapy Tarkiru (ADR 0035: dwa podkłady-warianty, układ złoty = raster T1)
+  const shim3b = wykonajArtefakt('dist/maps/tarkir.html');
+  const mapaT = shim3b.app.innerHTML;
+  assert.ok(mapaT.includes('class="mapa-epoki"'), 'mapa Tarkiru: brak przełącznika epok');
+  assert.match(mapaT, /data-epoka-przelacz="t1"\s+aria-pressed="true"/, 'mapa Tarkiru: T1 (raster) ma być domyślny');
+  assert.match(mapaT, /data-epoka-przelacz="t4"\s+aria-pressed="false"/, 'mapa Tarkiru: T4 jako drugi wariant');
+  assert.ok(mapaT.includes('<img class="mapa-podklad" src="tarkir/podklad-t1.jpg"'), 'mapa Tarkiru: raster T1 jako <img> (pełna rozdzielczość)');
+  assert.ok(mapaT.includes('<svg class="mapa-podklad"'), 'mapa Tarkiru: scena T4 z inline SVG (ukryta do przełączenia)');
+  assert.match(mapaT, /<div class="mapa-scena" data-scena data-epoka="t4"[^>]*\shidden/, 'mapa Tarkiru: scena T4 startuje ukryta');
+  assert.doesNotMatch(mapaT, /<div class="mapa-scena" data-scena data-epoka="t1"[^>]*\shidden/, 'mapa Tarkiru: scena T1 widoczna');
+  // T1 = czysty raster: ŻADNA etykieta Codexu nie jest aktywna, pinezka jest
+  const etykietyT = mapaT.match(/data-podklad-etykieta/g) ?? [];
+  const pozaEpoka = mapaT.match(/poza-epoka/g) ?? [];
+  assert.ok(etykietyT.length > 40, 'mapa Tarkiru: etykiety T4 obecne w nakładce (do przełączenia)');
+  assert.equal(pozaEpoka.length, etykietyT.length, 'mapa Tarkiru: w T1 wszystkie etykiety podkładu wyłączone (poza-epoka)');
+  assert.ok(mapaT.includes('data-pinezka="509ktk-highland-game" data-x="0.4496" data-y="0.1846"'),
+    'mapa Tarkiru: pinezka 509KTK w układzie złotym (raster T1)');
+  shim3b.przywroc();
 
   // atrybucja rekonstrukcji i uzasadnienia pinezek — w artefakcie bazowym
   const shim4 = wykonajArtefakt(cel);
@@ -226,6 +246,14 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   const ramaZ = shim4.app.innerHTML;
   assert.ok(ramaZ.includes('praca własna'), 'mapa Zendikaru: brak atrybucji rekonstrukcji (T3, w rodzicu)');
   assert.ok(ramaZ.includes('wybrzeży Halimar'), 'mapa Zendikaru: brak uzasadnienia pinezki (MA4, w rodzicu)');
+  // Tarkir (ADR 0035): atrybucja KAŻDEGO podkładu + legenda przełącznika; iframe w proporcjach T1
+  shim4.idz('#/mapa/tarkir');
+  const ramaT = shim4.app.innerHTML;
+  assert.ok(ramaT.includes('Lore Café'), 'mapa Tarkiru: brak atrybucji rastra T1 (Lore Café)');
+  assert.ok(ramaT.includes('All Rights Reserved'), 'mapa Tarkiru: licencja rastra fanowskiego musi być widoczna');
+  assert.ok(ramaT.includes('praca własna'), 'mapa Tarkiru: brak atrybucji rekonstrukcji T4');
+  assert.ok(ramaT.includes('przełącznik epok'), 'mapa Tarkiru: legenda bez opisu przełącznika');
+  assert.ok(ramaT.includes('aspect-ratio: 4307 / 3293'), 'mapa Tarkiru: iframe w proporcjach rastra T1 (wariant domyślny)');
   shim4.przywroc();
 
   // B1: badge pinezki ukryty do najechania/fokusu (CSS strony mapy)

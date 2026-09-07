@@ -1,3 +1,34 @@
+## 2026-09-07 18:45 — PR-21: Tarkir dostaje dwie mapy epok — raster Dragonstorm (T1) i rekonstrukcja Khans (T4) pod jednym przełącznikiem
+
+Właściciel obejrzał rekonstrukcję T4 obok ręcznie rysowanej mapy fanowskiej
+Lore Café i zdecydował: **raster wchodzi do Codexu jako podkład T1**, a
+T4 zostaje jako mapa epoki khanów. Na stronie mapy Tarkiru jest teraz
+przełącznik **T1 · Dragonstorm ↔ T4 · Khans** (ADR 0035):
+
+- **T1 · Dragonstorm** (domyślny) — pełna rozdzielczość rastra
+  (4307×3293), nazwy epoki po Stormnexus: Dragon's Eye, Summer Landing,
+  Dalkovan Cities, Qatros Karst, Mistrise, Kishla… Codex **nie dokłada tu
+  żadnych własnych etykiet** — raster ma swoje, a widoczne są wyłącznie
+  pinezki kart.
+- **T4 · Khans** — rekonstrukcja mapforge z etykietami epoki khanów
+  (Sage-Eye Stronghold, Ayagor, Tomb of the Spirit Dragon, Wingthrone);
+  pozycje 26 obiektów **domierzone na pełnym rasterze**, więc twierdza
+  w T4 stoi dokładnie tam, gdzie jej pierścień na rastrze.
+- **Jeden zestaw współrzędnych.** Złoty standard = raster T1; T4 dostaje
+  te same pinezki przez kalibrację (proporcje obu podkładów są różne —
+  1.31 vs 1.43 — a mimo to pinezka 509KTK *Highland Game* po przełączeniu
+  nie drgnie o piksel). Kolejne karty Tarkiru — z KTK, DTK czy TDM —
+  pinują raz, a epokę wybiera się przyciskiem.
+- Przełącznik zachowuje widok: punkt pod środkiem okna i przybliżenie
+  zostają, zmienia się tylko podkład. Deep-link `?epoka=t4` otwiera od
+  razu mapę khanów.
+
+Przy okazji: atrybucja strony mapy wymienia teraz **każdy podkład
+osobno** (Lore Café / MTG Wiki Italia, grafika 3d4, All Rights Reserved —
+użytek prywatny; rekonstrukcja — praca własna), a karta 509KTK w sekcji
+„Na Mapie” tłumaczy, czemu jej pinezka leży w tym samym miejscu na obu
+mapach epok.
+
 ## 2026-09-07 14:05 — PR-21: mapa Tarkiru po recenzji właściciela (cztery uwagi → cztery reguły silnika)
 
 Właściciel obejrzał pierwszą wersję mapy Tarkiru („jak na pierwszą wersję

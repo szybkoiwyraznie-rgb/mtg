@@ -22,6 +22,16 @@
  * dostaje visibility:hidden. Etykiety bez x/y (textPath, pozycjonowane
  * transformem — np. line-art mapome) zostają w SVG. Drobne napisy mają
  * LOD: data-min-k — widoczne dopiero od danego przybliżenia.
+ *
+ * WARIANTY PODKŁADU (ADR 0035, Tarkir): `map.json` może nieść tablicę
+ * `warianty[]` — kilka podkładów tej samej mapy (np. raster epoki
+ * Dragonstorm T1 i rekonstrukcja epoki khanów T4). Współrzędne pinezek
+ * i regionów są JEDNE, w układzie ZŁOTYM (= wariant domyślny); każdy
+ * inny wariant niesie `kalibracja` {sx, sy, ox, oy} przeliczającą układ
+ * złoty na swój (x' = ox + sx·x). Przełącznik w oknie mapy zmienia
+ * podkład bez utraty widoku (środek i skala przeliczane przez
+ * kalibrację); wariant z `etykiety:false` (czysty raster) nie pokazuje
+ * żadnych etykiet Codexu — zostają wyłącznie pinezki kart.
  */
 
 import { escapeHtml } from './markdown.js';
@@ -119,6 +129,41 @@ export const POZIOMY_PEWNOSCI = {
   przyblizona: { etykieta: 'przybliżona', kolor: '#b3392e', opis: 'rekonstrukcja — wymaga uzasadnienia' },
 };
 
+const KALIBRACJA_TOZSAMA = { sx: 1, sy: 1, ox: 0, oy: 0 };
+
+/**
+ * Warianty podkładu mapy (ADR 0035): `mapa.warianty[]` albo jeden wariant
+ * zsyntetyzowany z pól płaskich map.json (mapy jednopodkładowe — bez
+ * zmian zachowania). Każdy wariant: { id, tytul, epoka?, podklad, wymiary,
+ * etykiety, kalibracja, podkladUrl?, podkladMarkup?, podkladData? }.
+ */
+export function wariantyMapy(mapa) {
+  const lista = Array.isArray(mapa?.warianty) && mapa.warianty.length > 0
+    ? mapa.warianty
+    : [{
+      id: 'podklad', tytul: mapa?.tytul ?? '', podklad: mapa?.podklad, wymiary: mapa?.wymiary,
+      wariant: mapa?.wariant, podkladUrl: mapa?.podkladUrl, podkladData: mapa?.podkladData,
+      podkladMarkup: mapa?.podkladMarkup, domyslny: true,
+    }];
+  return lista.map((w, i) => ({
+    ...w,
+    id: String(w.id ?? `podklad-${i}`),
+    etykiety: w.etykiety !== false,
+    kalibracja: { ...KALIBRACJA_TOZSAMA, ...(w.kalibracja ?? {}) },
+  }));
+}
+
+/** Wariant domyślny = układ złoty współrzędnych (flaga `domyslny` albo pierwszy). */
+export function wariantDomyslny(warianty) {
+  return warianty.find((w) => w.domyslny) ?? warianty[0];
+}
+
+/** Układ złoty → układ wariantu (znormalizowane 0–1). */
+export function doUkladuWariantu(w, x, y) {
+  const k = w.kalibracja ?? KALIBRACJA_TOZSAMA;
+  return [k.ox + k.sx * x, k.oy + k.sy * y];
+}
+
 // ADR 0027 (v2 — drzewo HTML): każda mapa jest OSOBNĄ, samowystarczalną
 // stroną `maps/<plan>.html` (inline SVG + pełny silnik + dane), którą
 // główny artefakt osadza w <iframe>. file:// blokuje fetch, ale NIE
@@ -151,10 +196,18 @@ export function renderMapeIframe(slugPlanu, query = {}) {
       'Mapa powstaje razem z pierwszą kartą osadzoną w tym planie.',
     );
   }
-  const szer = mapa.wymiary?.szerokosc ?? 3200;
-  const wys = mapa.wymiary?.wysokosc ?? 2400;
+  const warianty = wariantyMapy(mapa);
+  // proporcje iframe'a = wariant startowy (ADR 0035: domyślny albo ?epoka=)
+  const startowy = warianty.find((w) => w.id === query.epoka) ?? wariantDomyslny(warianty);
+  const szer = startowy.wymiary?.szerokosc ?? mapa.wymiary?.szerokosc ?? 3200;
+  const wys = startowy.wymiary?.wysokosc ?? mapa.wymiary?.wysokosc ?? 2400;
   const pinezki = mapa.pinezki ?? [];
-  const pin = query.pin ? `?pin=${encodeURIComponent(query.pin)}` : '';
+  const zapytanie = new URLSearchParams();
+  if (query.pin) zapytanie.set('pin', query.pin);
+  if (query.epoka && warianty.some((w) => w.id === query.epoka)) zapytanie.set('epoka', query.epoka);
+  const pin = zapytanie.toString() ? `?${zapytanie}` : '';
+  const atrybucja = (z) => `<a href="${escapeHtml(z?.url ?? '#')}" rel="noopener noreferrer" target="_blank">${escapeHtml(z?.tytul ?? 'źródło')}</a>
+      — ${escapeHtml(z?.autor ?? '?')}, licencja ${escapeHtml(z?.licencja ?? '?')}${z?.pobrano ? `, pobrano ${escapeHtml(z.pobrano)}` : ''}`;
   return `
   <nav class="okruszki">
     <a href="#/">Codex</a> ›
@@ -190,6 +243,7 @@ export function renderMapeIframe(slugPlanu, query = {}) {
           <li><span class="mapa-pinezka-legenda" style="background:${p.kolor}"></span>
             <strong>${p.etykieta}</strong> — ${p.opis}</li>`).join('')}
         <li><span class="mapa-obwodka-legenda"></span><strong>obwódka regionu</strong> — kraina hasła geograficznego (kolor = pewność)</li>
+        ${warianty.length > 1 ? `<li><span class="mapa-epoki-legenda">⇄</span><strong>przełącznik epok</strong> (w oknie mapy) — ${warianty.map((w) => `<em>${escapeHtml(w.tytul ?? w.id)}</em>${w.epoka ? ` (${escapeHtml(w.epoka)})` : ''}`).join(' ↔ ')}; pinezki kart są wspólne dla wszystkich podkładów (jeden układ współrzędnych — ADR 0035)</li>` : ''}
       </ul>
     </section>
 
@@ -209,8 +263,9 @@ export function renderMapeIframe(slugPlanu, query = {}) {
     </section>
 
     <footer class="mapa-atrybucja">
-      <p>Podkład: <a href="${escapeHtml(mapa.zrodlo?.url ?? '#')}" rel="noopener noreferrer" target="_blank">${escapeHtml(mapa.zrodlo?.tytul ?? 'źródło')}</a>
-      — ${escapeHtml(mapa.zrodlo?.autor ?? '?')}, licencja ${escapeHtml(mapa.zrodlo?.licencja ?? '?')}${mapa.zrodlo?.pobrano ? `, pobrano ${escapeHtml(mapa.zrodlo.pobrano)}` : ''}.</p>
+      ${warianty.length > 1
+        ? warianty.map((w) => `<p>Podkład <strong>${escapeHtml(w.tytul ?? w.id)}</strong>${w.epoka ? ` (${escapeHtml(w.epoka)})` : ''}: ${atrybucja(w.zrodlo ?? mapa.zrodlo)}.</p>`).join('\n      ')
+        : `<p>Podkład: ${atrybucja(mapa.zrodlo)}.</p>`}
       <p class="meta">Współrzędne pinezek są znormalizowane względem podkładu; lokalizacje ustalane z lore, nie z położenia kursora.</p>
     </footer>
     ${stopkaCzasu(mapa.czas)}
@@ -248,18 +303,30 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
     );
   }
 
-  const szer = mapa.wymiary?.szerokosc ?? 3200;
-  const wys = mapa.wymiary?.wysokosc ?? 2400;
   const pinezki = mapa.pinezki ?? [];
   const regiony = mapa.regiony ?? [];
   const pinDocelowy = query.pin && pinezki.some((p) => p.karta === query.pin) ? query.pin : '';
 
-  const svgRegiony = regiony.map((r) => {
+  // Warianty podkładu (ADR 0035): układ ZŁOTY współrzędnych = wariant
+  // domyślny; start z `?epoka=<id>` albo domyślny.
+  const warianty = wariantyMapy(mapa);
+  const zloty = wariantDomyslny(warianty);
+  const start = warianty.find((w) => w.id === query.epoka) ?? zloty;
+  const szer = start.wymiary?.szerokosc ?? mapa.wymiary?.szerokosc ?? 3200;
+  const wys = start.wymiary?.wysokosc ?? mapa.wymiary?.wysokosc ?? 2400;
+
+  // Obwódki regionów: SVG w układzie danego wariantu (bbox przeliczony
+  // kalibracją); wariant bez etykiet Codexu (czysty raster) ich nie ma.
+  const svgRegionyDla = (w) => (w.etykiety ? regiony : []).map((r) => {
     const [x0, y0, x1, y1] = r.bbox ?? [];
     if ([x0, y0, x1, y1].some((v) => typeof v !== 'number')) return '';
     const p = POZIOMY_PEWNOSCI[r.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
+    const W = w.wymiary?.szerokosc ?? szer;
+    const H = w.wymiary?.wysokosc ?? wys;
+    const [ax, ay] = doUkladuWariantu(w, x0, y0);
+    const [bx, by] = doUkladuWariantu(w, x1, y1);
     return `<a href="#/haslo/${escapeHtml(r.haslo)}" class="mapa-region-link" aria-label="Region: ${escapeHtml(r.haslo)}">
-      <rect class="mapa-region" x="${x0 * szer}" y="${y0 * wys}" width="${(x1 - x0) * szer}" height="${(y1 - y0) * wys}"
+      <rect class="mapa-region" x="${ax * W}" y="${ay * H}" width="${(bx - ax) * W}" height="${(by - ay) * H}"
         fill="${p.kolor}22" stroke="${p.kolor}" stroke-width="7" stroke-dasharray="20 14" rx="24"/>
     </a>`;
   }).join('');
@@ -279,19 +346,29 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
   // Etykiety podkładu → nakładka ekranowa (stały rozmiar przy zoomie).
   // Tylko T3+ (podkłady własne: ręczne/mapforge) — podkładów adoptowanych
   // (T2, np. mapome) typografii nie ruszamy (T2 renderuje się jako <img>).
-  let etykietyPodkladu = [];
-  let podkladMarkup = '';
-  const svgTypograficzny = mapa.podklad && mapa.wariant !== 'T1' && mapa.wariant !== 'T2'
-    && /\.svg$/i.test(String(mapa.podklad));
-  if (svgTypograficzny) {
-    const surowy = surowyMarkupPodkladu(mapa);
-    if (surowy) {
-      const r = przeniesEtykietyDoNakladki(surowy);
-      etykietyPodkladu = r.etykiety;
-      podkladMarkup = r.markup;
+  // Per wariant: etykieta niesie `data-epoka` swojego podkładu i jest
+  // widoczna tylko, gdy ten podkład jest aktywny; wariant z `etykiety:false`
+  // (czysty raster — decyzja właściciela, ADR 0035) nie daje żadnych.
+  const sceny = warianty.map((w) => {
+    const tier = w.wariant ?? mapa.wariant;
+    const svgTypograficzny = w.etykiety && w.podklad && tier !== 'T1' && tier !== 'T2'
+      && /\.svg$/i.test(String(w.podklad));
+    let etykiety = [];
+    let podkladMarkup = '';
+    if (svgTypograficzny) {
+      const surowy = surowyMarkupPodkladu(w);
+      if (surowy) {
+        const r = przeniesEtykietyDoNakladki(surowy);
+        etykiety = r.etykiety;
+        podkladMarkup = r.markup;
+      }
+    } else if (w.podklad && /\.svg$/i.test(String(w.podklad))) {
+      podkladMarkup = surowyMarkupPodkladu(w);
     }
-  }
-  const htmlEtykietyPodkladu = etykietyPodkladu.map((e) => {
+    return { w, etykiety, podkladMarkup };
+  });
+
+  const htmlEtykietyPodkladu = sceny.flatMap(({ w, etykiety }) => etykiety.map((e) => {
     // LOD: drobne napisy pokazują się od przybliżenia, w którym ich
     // oryginalny rozmiar „urósłby" do czytelnych ~16 px ekranu
     const prog = e.kontynent ? 0 : e.fs >= 17 ? 1 : Math.min(1.6, Math.max(1, 16 / e.fs));
@@ -304,21 +381,50 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
     const bx = e.ax != null ? e.ax : e.x;
     const by = e.ax != null ? e.ay : e.y;
     const kolorPisma = e.fill ? `;color:${e.fill}` : '';
-    return `<span class="mapa-etykieta-podkladu ${tier}${e.kursywa ? ' kursywa' : ''}" data-podklad-etykieta
+    const pozaEpoka = w.id !== start.id ? ' poza-epoka' : '';
+    return `<span class="mapa-etykieta-podkladu ${tier}${e.kursywa ? ' kursywa' : ''}${pozaEpoka}" data-podklad-etykieta
+      data-epoka="${escapeHtml(w.id)}"
       data-x="${e.x.toFixed(4)}" data-y="${e.y.toFixed(4)}" data-fs="${e.fs}" data-min-k="${prog.toFixed(2)}"
       data-kotwica="${e.kotwica}"${przy}
       style="left:${(bx * 100).toFixed(2)}%;top:${(by * 100).toFixed(2)}%${kolorPisma}">${e.tresc}</span>`;
-  }).join('');
+  })).join('');
 
   const htmlRegionyEtykiety = regiony.map((r) => {
     const [x0, y0, x1, y1] = r.bbox ?? [];
     if ([x0, y0, x1, y1].some((v) => typeof v !== 'number')) return '';
     const haslo = dane.strony?.[r.haslo];
     const poz = POZIOMY_PEWNOSCI[r.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
-    return `<a href="#/haslo/${escapeHtml(r.haslo)}" class="mapa-etykieta-regionu" data-region-etykieta
+    return `<a href="#/haslo/${escapeHtml(r.haslo)}" class="mapa-etykieta-regionu${start.etykiety ? '' : ' poza-epoka'}" data-region-etykieta
       data-x="${(x0 + x1) / 2}" data-y="${y0}" style="--kolor:${poz.kolor}">
       <span>${escapeHtml(haslo?.tytul ?? r.haslo)}</span></a>`;
   }).join('');
+
+  // Sceny podkładów: każdy wariant ma własną scenę (podkład + obwódki
+  // regionów w swoim układzie); widoczna jest jedna, przełącznik zmienia
+  // `hidden` i przelicza widok kalibracją (bez utraty zoomu/pinezek).
+  const htmlSceny = sceny.map(({ w, podkladMarkup }) => {
+    const W = w.wymiary?.szerokosc ?? szer;
+    const H = w.wymiary?.wysokosc ?? wys;
+    const k = w.kalibracja;
+    const podklad = podkladMarkup
+      || ((w.podkladData || w.podkladUrl)
+        ? `<img class="mapa-podklad" src="${w.podkladData ?? w.podkladUrl}" alt="Podkład mapy: ${escapeHtml(w.tytul ?? mapa.tytul ?? slugPlanu)}" draggable="false"${w.id === start.id ? '' : ' loading="lazy"'}>`
+        : `<div class="mapa-brak-podkladu">Brak osadzonego podkładu (build nie wstrzyknął pliku — sprawdź maps/${escapeHtml(slugPlanu)}/${escapeHtml(String(w.podklad ?? 'podklad.svg'))}).</div>`);
+    return `<div class="mapa-scena" data-scena data-epoka="${escapeHtml(w.id)}" data-aspekt="${(W / H).toFixed(4)}"
+          data-sx="${k.sx}" data-sy="${k.sy}" data-ox="${k.ox}" data-oy="${k.oy}" data-etykiety="${w.etykiety ? '1' : '0'}"
+          style="aspect-ratio: ${W} / ${H}"${w.id === start.id ? '' : ' hidden'}>
+          ${podklad}
+          <svg class="mapa-regiony" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">${svgRegionyDla(w)}</svg>
+        </div>`;
+  }).join('\n        ');
+
+  // Przełącznik epok/podkładów (ADR 0035) — tylko gdy jest z czego wybierać.
+  const htmlEpoki = warianty.length > 1 ? `
+      <div class="mapa-epoki" role="group" aria-label="Podkład mapy (epoka)">
+        ${warianty.map((w) => `<button type="button" data-epoka-przelacz="${escapeHtml(w.id)}"
+          aria-pressed="${w.id === start.id ? 'true' : 'false'}"
+          title="${escapeHtml(w.podtytul ?? w.epoka ?? w.tytul ?? w.id)}">${escapeHtml(w.tytul ?? w.id)}</button>`).join('')}
+      </div>` : '';
 
   return `
   ${osadzona ? '' : `<nav class="okruszki">
@@ -335,17 +441,11 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
     </header>`}
     <div class="mapa-okno" id="mapa-okno" tabindex="0" role="application"
       aria-label="Mapa ${escapeHtml(mapa.tytul ?? slugPlanu)}: przeciągnij, aby przesunąć, kółko myszy, aby przybliżyć"
-      data-plan="${escapeHtml(slugPlanu)}" data-pin="${escapeHtml(pinDocelowy)}" data-aspekt="${(szer / wys).toFixed(4)}">
+      data-plan="${escapeHtml(slugPlanu)}" data-pin="${escapeHtml(pinDocelowy)}" data-aspekt="${(szer / wys).toFixed(4)}" data-epoka="${escapeHtml(start.id)}">
       <div class="mapa-ruch" data-mapa-ruch>
-        <div class="mapa-scena" style="aspect-ratio: ${szer} / ${wys}">
-          ${podkladMarkup
-            || ((mapa.podkladData || mapa.podkladUrl)
-              ? `<img class="mapa-podklad" src="${mapa.podkladData ?? mapa.podkladUrl}" alt="Podkład mapy: ${escapeHtml(mapa.tytul ?? slugPlanu)}" draggable="false">`
-              : `<div class="mapa-brak-podkladu">Brak osadzonego podkładu (build nie wstrzyknął pliku — sprawdź maps/${escapeHtml(slugPlanu)}/podklad.svg).</div>`)}
-          <svg class="mapa-regiony" viewBox="0 0 ${szer} ${wys}" preserveAspectRatio="none" aria-hidden="true">${svgRegiony}</svg>
-        </div>
+        ${htmlSceny}
       </div>
-      <div class="mapa-nakladka" data-mapa-nakladka>${htmlEtykietyPodkladu}${htmlPinezki}${htmlRegionyEtykiety}</div>
+      <div class="mapa-nakladka" data-mapa-nakladka>${htmlEtykietyPodkladu}${htmlPinezki}${htmlRegionyEtykiety}</div>${htmlEpoki}
     </div>
 
     ${osadzona ? '' : `${pinezki.length > 0 ? `
@@ -429,6 +529,23 @@ export function zamontujMape(app, opcje = {}) {
   if (!ruch) return;
   const nakladka = okno.querySelector('[data-mapa-nakladka]');
 
+  // ── Warianty podkładu (ADR 0035): sceny [data-scena], jedna widoczna.
+  // Pinezki i etykiety regionów są w układzie ZŁOTYM (wariant domyślny);
+  // aktywna scena niesie kalibrację złoty → własny (sx, sy, ox, oy).
+  const sceny = [...ruch.querySelectorAll('[data-scena]')];
+  const scenaAktywna = () => sceny.find((s) => !s.hidden) ?? sceny[0] ?? null;
+  const kalibracjaSceny = (s) => ({
+    sx: parseFloat(s?.dataset.sx) || 1, sy: parseFloat(s?.dataset.sy) || 1,
+    ox: parseFloat(s?.dataset.ox) || 0, oy: parseFloat(s?.dataset.oy) || 0,
+  });
+  let kal = kalibracjaSceny(scenaAktywna());
+  const wUkladzie = (el) => {
+    const x = parseFloat(el.dataset.x);
+    const y = parseFloat(el.dataset.y);
+    if (el.hasAttribute('data-podklad-etykieta')) return [x, y]; // już w układzie swojego wariantu
+    return [kal.ox + kal.sx * x, kal.oy + kal.sy * y];
+  };
+
   // ── Warstwa karty (B2): otwarcie z pinezki, zamknięcie z powrotem ──
   const warstwa = app.querySelector('[data-map-warstwa]');
   const trescWarstwy = warstwa?.querySelector?.('[data-map-warstwa-tresc]');
@@ -481,8 +598,9 @@ export function zamontujMape(app, opcje = {}) {
   const K_MIN = 0.4, K_MAX = 14;
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 
-  // Wymiary TREŚCI mapy (układ, nie transform — nie zmieniają się z zoomem).
-  const aspekt = parseFloat(okno.getAttribute('data-aspekt')) || 3200 / 2400;
+  // Wymiary TREŚCI mapy (układ, nie transform — nie zmieniają się z zoomem;
+  // zmienia je tylko przełączenie wariantu podkładu o innych proporcjach).
+  let aspekt = parseFloat(scenaAktywna()?.dataset.aspekt) || parseFloat(okno.getAttribute('data-aspekt')) || 3200 / 2400;
   const szerokoscSceny = () => ruch.clientWidth || ruch.offsetWidth || okno.clientWidth || 800;
   const wysokoscSceny = () => szerokoscSceny() / aspekt;
 
@@ -512,8 +630,10 @@ export function zamontujMape(app, opcje = {}) {
     const w = szerokoscSceny();
     const h = wysokoscSceny();
 
-    // Pass 1 — LOD etykiet podkładu (widoczność zależy tylko od zoomu).
-    const podkladowe = [...nakladka.querySelectorAll('[data-podklad-etykieta]')];
+    // Pass 1 — LOD etykiet podkładu (widoczność zależy tylko od zoomu);
+    // etykiety nieaktywnych wariantów (poza-epoka) nie biorą udziału.
+    const podkladowe = [...nakladka.querySelectorAll('[data-podklad-etykieta]')]
+      .filter((el) => !el.classList.contains('poza-epoka'));
     for (const el of podkladowe) {
       const prog = parseFloat(el.dataset.minK || '1');
       el.classList.toggle('poza-zasiegiem', stan.k + 1e-9 < prog);
@@ -599,8 +719,7 @@ export function zamontujMape(app, opcje = {}) {
         }
         continue;
       }
-      const x = parseFloat(el.dataset.x);
-      const y = parseFloat(el.dataset.y);
+      const [x, y] = wUkladzie(el);
       if (!Number.isFinite(x) || !Number.isFinite(y)) continue;
       const px = (x * w * stan.k + stan.ox).toFixed(2);
       const py = (y * h * stan.k + stan.oy).toFixed(2);
@@ -638,10 +757,59 @@ export function zamontujMape(app, opcje = {}) {
       const w = szerokoscSceny();
       const h = wysokoscSceny();
       const wysOkna = okno.clientHeight || h;
+      const [px, py] = wUkladzie(el);
       stan.k = 2.5;
-      stan.ox = (okno.clientWidth || w) / 2 - parseFloat(el.dataset.x) * w * stan.k;
-      stan.oy = wysOkna / 2 - parseFloat(el.dataset.y) * h * stan.k;
+      stan.ox = (okno.clientWidth || w) / 2 - px * w * stan.k;
+      stan.oy = wysOkna / 2 - py * h * stan.k;
     }
+  }
+
+  // ── Przełącznik wariantów/epok (ADR 0035): zmiana podkładu BEZ utraty
+  // widoku — punkt złoty pod środkiem okna i wizualna skala zostają
+  // (k przeliczone przez stosunek sx kalibracji), pinezki się nie ruszają.
+  const przelaczEpoke = (id) => {
+    const cel = sceny.find((s) => s.dataset.epoka === id);
+    const stara = scenaAktywna();
+    if (!cel || !stara || cel === stara) return;
+    const W = szerokoscSceny();
+    const H = wysokoscSceny();
+    const cx = (okno.clientWidth || W) / 2;
+    const cy = (okno.clientHeight || H) / 2;
+    const ua = (cx - stan.ox) / (W * stan.k);
+    const va = (cy - stan.oy) / (H * stan.k);
+    const u = (ua - kal.ox) / kal.sx;                 // punkt złoty pod środkiem
+    const v = (va - kal.oy) / kal.sy;
+    stara.hidden = true;
+    cel.hidden = false;
+    const kal2 = kalibracjaSceny(cel);
+    const k2 = clamp(stan.k * (kal.sx / kal2.sx), K_MIN, K_MAX);
+    kal = kal2;
+    aspekt = parseFloat(cel.dataset.aspekt) || aspekt;
+    okno.setAttribute('data-aspekt', aspekt.toFixed(4));
+    okno.setAttribute('data-epoka', id);
+    const H2 = wysokoscSceny();
+    stan.k = k2;
+    stan.ox = cx - (kal.ox + kal.sx * u) * W * k2;
+    stan.oy = cy - (kal.oy + kal.sy * v) * H2 * k2;
+    for (const b of okno.querySelectorAll('[data-epoka-przelacz]')) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-epoka-przelacz') === id ? 'true' : 'false');
+    }
+    for (const el of nakladka?.querySelectorAll('[data-podklad-etykieta]') ?? []) {
+      el.classList.toggle('poza-epoka', el.getAttribute('data-epoka') !== id);
+    }
+    const bezEtykiet = cel.getAttribute('data-etykiety') === '0';
+    for (const el of nakladka?.querySelectorAll('[data-region-etykieta]') ?? []) {
+      el.classList.toggle('poza-epoka', bezEtykiet);
+    }
+    stanUkladu.k = -1;                                // wymuś nowy układ etykiet
+    nanies();
+  };
+  for (const b of okno.querySelectorAll('[data-epoka-przelacz]')) {
+    b.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      przelaczEpoke(b.getAttribute('data-epoka-przelacz'));
+    });
   }
 
   // Sterowanie bez paska (decyzja właściciela 2026-09-02): zoom = kółko

@@ -165,9 +165,12 @@ i pewność „region”, nie „dokładna”. Mapa niesie resztę kontekstu:
 **Eternal Ice** i **Dragon's Throat**, święte miejsca szeptaczy, do
 których trafi poroże; **The Scour** i step **Mardu** na południu, skąd
 przychodzą napaści, na które Temur odpowiadają rajdami; **Whisperwood**
-i **Rainveil Forest** — letnie łowiska niższych stoków. Sama mapa jest
-rekonstrukcją (Tarkir nie ma oficjalnej mapy), a pozycje wewnątrz
-regionów są relacyjne.
+i **Rainveil Forest** — letnie łowiska niższych stoków. Mapa ma dwa
+podkłady pod przełącznikiem: raster **Dragonstorm** (nazwy epoki po
+Stormnexus — ta sama dolina to tu okolica Summer Landing) i
+rekonstrukcję **Khans** z nazwami epoki karty; pinezka na obu leży w tym
+samym miejscu, bo góry nie zmieniają się od zmiany khana. Tarkir nie ma
+oficjalnej mapy, a pozycje wewnątrz regionów są relacyjne.
 
 ## Mechanika jako Opowieść
 

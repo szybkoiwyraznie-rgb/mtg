@@ -451,3 +451,48 @@ Nowe glify = ekstrakt z podkładu mapome w repo (patrz nagłówek
 (Azgaar, MIT — ADR 0020) z atrybucją. Zmiana układu/gęstości = edycja
 `tools/mapforge/bloki.mjs` (`pasmo`, `szczyt`) + regeneracja
 `maps/<plan>/podklad.svg` i `maps/_warsztat/podklad*.svg` + testy.
+
+## 12. Raster T1 obok rekonstrukcji — warianty podkładu i układ złoty (ADR 0035)
+
+Gdy właściciel dostarczy raster (fanowski lub oficjalny) i zdecyduje o
+commicie, mapa dostaje **dwa podkłady** zamiast wymiany jednego na drugi:
+
+1. **Pliki:** `maps/<plan>/podklad-t1.jpg` (pełna rozdzielczość — właściciel
+   zoomuje do detalu) + `podklad-t1-mini.jpg` (~1200 px, `convert … -resize
+   1200x -quality 82 -strip`) do mini-map kart. Rekonstrukcja zostaje jako
+   `podklad.svg`.
+2. **`map.json.warianty[]`** — po jednym wpisie na podkład: `id`, `tytul`
+   (np. „T1 · Dragonstorm”), `epoka`, `wariant` (T1–T4), `podklad`,
+   `miniatura`, `wymiary`, `etykiety` (**raster = `false`**: Codex nie
+   dokłada napisów na cudzą kartografię), `kalibracja`, `zrodlo` (pełna
+   proweniencja i licencja — pokazuje ją atrybucja strony mapy). Dokładnie
+   jeden wariant ma `domyslny: true` — **to on jest układem złotym**
+   współrzędnych i MUSI mieć kalibrację tożsamościową.
+3. **Kalibracja** innych wariantów to afiniczne, osiowe odwzorowanie
+   złoty → wariant: `x' = ox + sx·x`, `y' = oy + sy·y`. Nie zgaduj jej —
+   wyprowadź z generatora (Tarkir: `R(px,py)` podglądu 1568×1208 na
+   płótno 2000×1400, pełny raster = podgląd × 2.7468) i **zweryfikuj na
+   ≥ 20 POI zmierzonych na pełnym rasterze**. Wynik zapisz w
+   `kalibracja_notka` i w `zrodlo-research.md` (tabela pomiarów).
+4. **Pomiar na rasterze** — wycinek 1:1 z siatką co 50 px i podpisanymi
+   liniami co 100 (ImageMagick: `convert podklad-t1.jpg -crop WxH+X+Y
+   +repage -draw "line …"`; czcionka `DejaVu-Sans-Bold`), oglądany jako
+   obraz. Pierścienie osad można znaleźć automatycznie: skan w skali
+   szarości maksymalizujący `(jasność r=6–8) − (jasność r=12–16)` daje
+   środek pierścienia z dokładnością ±3 px. Zmierzone POI wpisz do
+   generatora funkcją `P(X, Y)` (odczyt pełny), nie `R` — wtedy obiekt
+   w rekonstrukcji leży dokładnie tam, gdzie pinezka na rastrze.
+5. **Kotwice i pinezki w `map.json` są w układzie złotym.** Nowa pinezka
+   = odczyt `X, Y` na pełnym rasterze → `x = X/W, y = Y/H`. Kotwica ma
+   `px_t1` (pomiar) i `uklad` (skąd współrzędne). `map-audit.py` sam
+   przelicza kalibracją na audytowany SVG.
+6. **Silnik robi resztę:** przełącznik w oknie mapy, `?epoka=<id>` w
+   deep-linku, zachowanie widoku przy przełączeniu, etykiety tylko
+   aktywnego wariantu, atrybucja per podkład. Test smoke sprawdza, że
+   wariant domyślny startuje, drugi jest ukryty, a w wariancie bez
+   etykiet wszystkie `data-podklad-etykieta` mają `poza-epoka`.
+7. **Czego nie robić:** nie dublować pinezek per wariant; nie trzymać
+   współrzędnych w układzie rekonstrukcji, gdy jest raster (raster jest
+   złoty, bo to on jest źródłem geometrii); nie rysować etykiet Codexu
+   na rastrze; nie commitować rastra bez decyzji właściciela (ADR 0031 §2).
+

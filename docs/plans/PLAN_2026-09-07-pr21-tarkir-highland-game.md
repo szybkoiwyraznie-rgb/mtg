@@ -112,5 +112,22 @@ handoff i opis PR zaktualizowane.
       `rozpadlina`, pasma omijają lód, walidator hydrologii), rastery,
       map-audit 0, testy 113/113; ADR 0034, L12, SKILL §4/#6 i §7
       (`aa76360`, `cd186ad`, co-nowego 14:05).
-- [ ] Potwierdzenie epoki etykiet (nazwy khanów — ADR 0033 uzupełnienie)
-      przy kolejnej recenzji.
+- [x] Potwierdzenie epoki etykiet — pośrednio: właściciel nazwał T4
+      „Khans” w decyzji o przełączniku (2026-09-07).
+- [x] **T1 dla Tarkiru (decyzja właściciela 2026-09-07, po recenzji):**
+      raster Lore Café w repo (`maps/tarkir/podklad-t1.jpg`, 4307×3293,
+      wgrany przez właściciela commitem `f1b0057` jako `tarkir.jpeg`)
+      + miniatura; silnik map: **warianty podkładu** (`warianty[]`,
+      przełącznik epok w oknie mapy, kalibracja afiniczna, sceny
+      per wariant, `?epoka=`), **układ złoty = raster T1** (52 kotwice
+      i pinezka 509KTK przeliczone; 26 POI generatora domierzonych na
+      pełnym rasterze funkcją `P(X,Y)`), **T1 bez etykiet Codexu**;
+      build kopiuje podkłady wariantów, mini-mapa z miniatury;
+      `map-audit` przelicza pinezki kalibracją; testy +1 = 114/114,
+      smoke strony mapy; ADR 0035 (+ dopiski 0007/0031/0033);
+      symulacja DOM: pinezka w tym samym pikselu po T1→T4→T1
+      (`981f8ae`, `495c4a3`, `9bcc668`, `98701d8`, `fd988d9`, dokumenty).
+- [ ] Push po odzyskaniu tokena (czwarte wygaśnięcie — commity lokalne
+      od `981f8ae`) + opis PR #21 (sekcja „T1 Dragonstorm ↔ T4 Khans”).
+- [ ] Recenzja właściciela w podglądzie: przełącznik, zoom rastra,
+      pinezka na obu podkładach.

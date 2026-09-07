@@ -133,19 +133,33 @@ niosą nazwy w kartach, nie osobne geometrie.
 
 ## Mapa
 
-`maps/tarkir/` — rekonstrukcja kanoniczna (T4): oficjalna mapa Tarkiru
-nigdy nie powstała, więc podkład powstał w silniku mapforge z kanonu
-tekstowego obu Planeswalker's Guide (2014, 2025) i MTG Wiki, a układ
-terytoriów i względne położenie miejsc przeniesiono z dostarczonej przez
-właściciela fanowskiej mapy Lore Café / MTG Wiki Italia (3d4, 2025) —
-źródła pomocniczego geometrii, nie kanonu. Mapa pokazuje epokę khanów:
-Sandsteppe w środku, Qal Sisma na północy, Tiansun na wschodzie, Shifting
-Wastes na zachodzie, delta Gudul nad południowym morzem śródlądowym,
-Salt Road jako spinający trakt. Jedną relację poprawiono wobec rastra:
-Temur nie graniczy z Abzanem (klin Mardu sięga zachodniej krawędzi).
-Osady istniejące dopiero w późniejszych epokach są wymienione
-w `map.json` (`poza_epoka`); proweniencja każdej kotwicy — tamże,
-werdykt researchu w `zrodlo-research.md`.
+`maps/tarkir/` — jedna mapa, **dwa podkłady epok pod przełącznikiem**
+w oknie mapy (ADR 0035):
+
+- **T1 · Dragonstorm** (domyślny) — ręcznie rysowana mapa fanowska
+  „Tarkir Map 2025 (EN)” Lore Café / MTG Wiki Italia (grafika 3d4),
+  dostarczona przez właściciela; pokazuje Tarkir po Rytuale Stormnexus
+  w nazwach TDM (Dragon's Eye, Summer Landing, Dalkovan Cities, Qatros
+  Karst, Mistrise, Storm Crane, Jigme, Khava, Kishla). Codex nie dokłada
+  na nią żadnych własnych napisów — raster ma swoje; widać tylko
+  pinezki kart. Użytek prywatny (All Rights Reserved).
+- **T4 · Khans** — rekonstrukcja kanoniczna mapforge: oficjalna mapa
+  Tarkiru nigdy nie powstała, więc podkład powstał z kanonu tekstowego
+  obu Planeswalker's Guide (2014, 2025) i MTG Wiki, na geometrii
+  przeniesionej z tego samego rastra. Etykiety w nazwach **epoki
+  khanów** (Sage-Eye Stronghold, Ayagor, Karakyk Valley, Tomb of the
+  Spirit Dragon, Wingthrone); jedną relację poprawiono wobec rastra:
+  Temur nie graniczy z Abzanem (klin Mardu sięga zachodniej krawędzi).
+
+Oba podkłady dzielą topografię: Sandsteppe w środku, Qal Sisma na
+północy, Tiansun na wschodzie, Shifting Wastes na zachodzie, delta Gudul
+nad południowym morzem śródlądowym, Salt Road jako spinający trakt.
+Pinezki kart mają **jeden zestaw współrzędnych** (złoty standard =
+raster T1) i po przełączeniu epoki nie zmieniają miejsca — scena z KTK
+i scena z TDM leżą na tej samej górze niezależnie od tego, jak ta góra
+w danej epoce się nazywa. Osady istniejące dopiero w późniejszych
+epokach są wymienione w `map.json` (`poza_epoka`); proweniencja każdej
+kotwicy — tamże, werdykt researchu i kalibracja — w `zrodlo-research.md`.
 
 ## Źródła
 
@@ -173,6 +187,6 @@ werdykt researchu w `zrodlo-research.md`.
   https://mtg.wiki/page/Sandsteppe · https://mtg.wiki/page/Shifting_Wastes ·
   https://mtg.wiki/page/Gudul_delta
 - Mapa fanowska „Tarkir Map 2025 (EN)” — Lore Café / MTG Wiki Italia,
-  grafika 3d4 (r/mtgvorthos, 2025), dostarczona przez właściciela jako
-  źródło pomocnicze geometrii:
+  grafika 3d4 (r/mtgvorthos, 2025), dostarczona przez właściciela —
+  podkład T1 (epoka Dragonstorm) i źródło geometrii rekonstrukcji T4:
   https://www.reddit.com/r/mtgvorthos/comments/1jqv1su/tarkir_dragonstorm_handcrafted_map/

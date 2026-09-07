@@ -2223,8 +2223,8 @@
  "poi": [
   {
    "typ": "wulkan",
-   "x": 1343.0,
-   "y": 191.2,
+   "x": 1340.3,
+   "y": 219.4,
    "id": "qadat",
    "opcje": {
     "skala": 1.3
@@ -2232,8 +2232,8 @@
   },
   {
    "typ": "wulkan",
-   "x": 1667.5,
-   "y": 353.5,
+   "x": 1670.6,
+   "y": 358.2,
    "id": "cori-mountain",
    "opcje": {
     "skala": 1.05
@@ -2241,8 +2241,8 @@
   },
   {
    "typ": "miasto",
-   "x": 844.7,
-   "y": 168.0,
+   "x": 847.9,
+   "y": 142.6,
    "id": "karakyk-valley",
    "opcje": {
     "skala": 1.0
@@ -2250,8 +2250,8 @@
   },
   {
    "typ": "szczyt",
-   "x": 589.7,
-   "y": 204.0,
+   "x": 604.0,
+   "y": 198.3,
    "id": "eternal-ice",
    "opcje": {
     "skala": 1.3
@@ -2259,8 +2259,8 @@
   },
   {
    "typ": "ognisko",
-   "x": 972.2,
-   "y": 365.1,
+   "x": 965.2,
+   "y": 370.4,
    "id": "staircase-of-bones",
    "opcje": {
     "skala": 0.9
@@ -2268,8 +2268,8 @@
   },
   {
    "typ": "ruina",
-   "x": 242.1,
-   "y": 220.2,
+   "x": 243.3,
+   "y": 229.9,
    "id": "crucible-spirit-dragon",
    "opcje": {
     "skala": 0.9
@@ -2277,8 +2277,8 @@
   },
   {
    "typ": "ognisko",
-   "x": 676.7,
-   "y": 333.8,
+   "x": 666.9,
+   "y": 344.3,
    "id": "ayagor",
    "opcje": {
     "skala": 0.8
@@ -2286,8 +2286,8 @@
   },
   {
    "typ": "fort",
-   "x": 1711.6,
-   "y": 419.5,
+   "x": 1713.7,
+   "y": 447.2,
    "id": "dragons-eye",
    "opcje": {
     "skala": 1.1
@@ -2295,8 +2295,8 @@
   },
   {
    "typ": "fort",
-   "x": 1554.0,
-   "y": 391.7,
+   "x": 1556.3,
+   "y": 406.3,
    "id": "riverwheel",
    "opcje": {
     "skala": 0.95
@@ -2304,8 +2304,8 @@
   },
   {
    "typ": "wodospad",
-   "x": 1537.7,
-   "y": 419.5,
+   "x": 1538.6,
+   "y": 421.9,
    "id": "icefall",
    "opcje": {
     "skala": 0.9
@@ -2313,8 +2313,8 @@
   },
   {
    "typ": "fort",
-   "x": 1499.5,
-   "y": 544.7,
+   "x": 1526.3,
+   "y": 559.9,
    "id": "dirgur",
    "opcje": {
     "skala": 1.0
@@ -2322,8 +2322,8 @@
   },
   {
    "typ": "miasto",
-   "x": 1476.3,
-   "y": 602.6,
+   "x": 1499.3,
+   "y": 599.1,
    "id": "purugir",
    "opcje": {
     "skala": 0.8
@@ -2331,8 +2331,8 @@
   },
   {
    "typ": "fort",
-   "x": 1783.4,
-   "y": 191.2,
+   "x": 1794.3,
+   "y": 194.9,
    "id": "highspire",
    "opcje": {
     "skala": 0.85
@@ -2340,8 +2340,8 @@
   },
   {
    "typ": "iglica",
-   "x": 1401.0,
-   "y": 330.3,
+   "x": 1390.9,
+   "y": 331.2,
    "id": "initiates-stair",
    "opcje": {
     "skala": 0.9
@@ -2349,8 +2349,8 @@
   },
   {
    "typ": "fort",
-   "x": 357.9,
-   "y": 672.2,
+   "x": 454.2,
+   "y": 670.9,
    "id": "sandsteppe-gateway",
    "opcje": {
     "skala": 1.1
@@ -2358,8 +2358,8 @@
   },
   {
    "typ": "fort",
-   "x": 949.0,
-   "y": 649.0,
+   "x": 949.2,
+   "y": 644.3,
    "id": "wingthrone",
    "opcje": {
     "skala": 1.15
@@ -2367,8 +2367,8 @@
   },
   {
    "typ": "fort",
-   "x": 357.9,
-   "y": 811.3,
+   "x": 385.5,
+   "y": 825.7,
    "id": "arashin",
    "opcje": {
     "skala": 1.25
@@ -2376,8 +2376,8 @@
   },
   {
    "typ": "drzewo",
-   "x": 485.4,
-   "y": 857.6,
+   "x": 464.8,
+   "y": 858.6,
    "id": "first-tree",
    "opcje": {
     "skala": 1.6
@@ -2385,8 +2385,8 @@
   },
   {
    "typ": "miasto",
-   "x": 230.5,
-   "y": 915.6,
+   "x": 277.9,
+   "y": 922.7,
    "id": "kavah",
    "opcje": {
     "skala": 0.8
@@ -2394,8 +2394,8 @@
   },
   {
    "typ": "iglica",
-   "x": 891.1,
-   "y": 1170.5,
+   "x": 928.9,
+   "y": 1158.2,
    "id": "lookout-roost",
    "opcje": {
     "skala": 1.1
@@ -2403,8 +2403,8 @@
   },
   {
    "typ": "ruina",
-   "x": 833.1,
-   "y": 1286.4,
+   "x": 850.9,
+   "y": 1291.1,
    "id": "aerie-unfettered",
    "opcje": {
     "skala": 0.9
@@ -2412,8 +2412,8 @@
   },
   {
    "typ": "kopula",
-   "x": 1221.4,
-   "y": 1216.9,
+   "x": 1222.1,
+   "y": 1220.6,
    "id": "kheru",
    "opcje": {
     "skala": 1.15
@@ -2421,8 +2421,8 @@
   },
   {
    "typ": "miasto",
-   "x": 1169.2,
-   "y": 1205.3,
+   "x": 1203.2,
+   "y": 1208.8,
    "id": "qarsi",
    "opcje": {
     "skala": 0.85
@@ -2430,8 +2430,8 @@
   },
   {
    "typ": "ruina",
-   "x": 1690.7,
-   "y": 927.2,
+   "x": 1673.6,
+   "y": 919.8,
    "id": "ukud",
    "opcje": {
     "skala": 1.0
@@ -2439,8 +2439,8 @@
   },
   {
    "typ": "fort",
-   "x": 1308.3,
-   "y": 1033.8,
+   "x": 1264.3,
+   "y": 1030.3,
    "id": "marang-fortress",
    "opcje": {
     "skala": 0.95
@@ -2448,8 +2448,8 @@
   },
   {
    "typ": "wodospad",
-   "x": 1412.6,
-   "y": 1095.2,
+   "x": 1429.7,
+   "y": 1101.2,
    "id": "molderfang",
    "opcje": {
     "skala": 1.0
@@ -2848,368 +2848,368 @@
   },
   {
    "tekst": "Karakyk Valley",
-   "x": 844.7,
-   "y": 168.0,
+   "x": 847.9,
+   "y": 142.6,
    "opcje": {
     "fs": 16,
     "kotwica": "middle",
     "przyDo": [
-     844.7,
-     168.0
+     847.9,
+     142.6
     ]
    }
   },
   {
    "tekst": "Eternal Ice",
-   "x": 589.7,
-   "y": 204.0,
+   "x": 604.0,
+   "y": 198.3,
    "opcje": {
     "fs": 15,
     "kotwica": "middle",
     "przyDo": [
-     589.7,
-     204.0
+     604.0,
+     198.3
     ]
    }
   },
   {
    "tekst": "Staircase of Bones",
-   "x": 972.2,
-   "y": 365.1,
+   "x": 965.2,
+   "y": 370.4,
    "opcje": {
     "fs": 15,
     "kotwica": "middle",
     "przyDo": [
-     972.2,
-     365.1
+     965.2,
+     370.4
     ]
    }
   },
   {
    "tekst": "Tomb of the Spirit Dragon",
-   "x": 242.1,
-   "y": 220.2,
+   "x": 243.3,
+   "y": 229.9,
    "opcje": {
     "fs": 14,
     "kotwica": "middle",
     "przyDo": [
-     242.1,
-     220.2
+     243.3,
+     229.9
     ]
    }
   },
   {
    "tekst": "Ayagor",
-   "x": 676.7,
-   "y": 333.8,
+   "x": 666.9,
+   "y": 344.3,
    "opcje": {
     "fs": 14,
     "kotwica": "middle",
     "przyDo": [
-     676.7,
-     333.8
+     666.9,
+     344.3
     ]
    }
   },
   {
    "tekst": "(Dragon's Bowl)",
-   "x": 676.7,
-   "y": 333.8,
+   "x": 666.9,
+   "y": 344.3,
    "opcje": {
     "fs": 12,
     "kotwica": "middle",
     "przyDo": [
-     676.7,
-     333.8
+     666.9,
+     344.3
     ],
     "ital": true
    }
   },
   {
    "tekst": "Qadat",
-   "x": 1343.0,
-   "y": 191.2,
+   "x": 1340.3,
+   "y": 219.4,
    "opcje": {
     "fs": 14,
     "kotwica": "middle",
     "przyDo": [
-     1343.0,
-     191.2
+     1340.3,
+     219.4
     ]
    }
   },
   {
    "tekst": "Sage-Eye Stronghold",
-   "x": 1711.6,
-   "y": 419.5,
+   "x": 1713.7,
+   "y": 447.2,
    "opcje": {
     "fs": 16,
     "kotwica": "middle",
     "przyDo": [
-     1711.6,
-     419.5
+     1713.7,
+     447.2
     ]
    }
   },
   {
    "tekst": "Riverwheel Stronghold",
-   "x": 1554.0,
-   "y": 391.7,
+   "x": 1556.3,
+   "y": 406.3,
    "opcje": {
     "fs": 15,
     "kotwica": "middle",
     "przyDo": [
-     1554.0,
-     391.7
+     1556.3,
+     406.3
     ]
    }
   },
   {
    "tekst": "(Icefall)",
-   "x": 1537.7,
-   "y": 419.5,
+   "x": 1538.6,
+   "y": 421.9,
    "opcje": {
     "fs": 12,
     "kotwica": "middle",
     "przyDo": [
-     1537.7,
-     419.5
+     1538.6,
+     421.9
     ],
     "ital": true
    }
   },
   {
    "tekst": "Dirgur Stronghold",
-   "x": 1499.5,
-   "y": 544.7,
+   "x": 1526.3,
+   "y": 559.9,
    "opcje": {
     "fs": 16,
     "kotwica": "middle",
     "przyDo": [
-     1499.5,
-     544.7
+     1526.3,
+     559.9
     ]
    }
   },
   {
    "tekst": "Purugir",
-   "x": 1476.3,
-   "y": 602.6,
+   "x": 1499.3,
+   "y": 599.1,
    "opcje": {
     "fs": 14,
     "kotwica": "middle",
     "przyDo": [
-     1476.3,
-     602.6
+     1499.3,
+     599.1
     ]
    }
   },
   {
    "tekst": "Highspire Stronghold",
-   "x": 1783.4,
-   "y": 191.2,
+   "x": 1794.3,
+   "y": 194.9,
    "opcje": {
     "fs": 14,
     "kotwica": "middle",
     "przyDo": [
-     1783.4,
-     191.2
+     1794.3,
+     194.9
     ]
    }
   },
   {
    "tekst": "Cori Mountain Stronghold",
-   "x": 1667.5,
-   "y": 353.5,
+   "x": 1670.6,
+   "y": 358.2,
    "opcje": {
     "fs": 15,
     "kotwica": "middle",
     "przyDo": [
-     1667.5,
-     353.5
+     1670.6,
+     358.2
     ]
    }
   },
   {
    "tekst": "Initiate's Stair",
-   "x": 1401.0,
-   "y": 330.3,
+   "x": 1390.9,
+   "y": 331.2,
    "opcje": {
     "fs": 14,
     "kotwica": "middle",
     "przyDo": [
-     1401.0,
-     330.3
+     1390.9,
+     331.2
     ]
    }
   },
   {
    "tekst": "Sandsteppe Gateway",
-   "x": 357.9,
-   "y": 672.2,
+   "x": 454.2,
+   "y": 670.9,
    "opcje": {
     "fs": 15,
     "kotwica": "middle",
     "przyDo": [
-     357.9,
-     672.2
+     454.2,
+     670.9
     ]
    }
   },
   {
    "tekst": "Wingthrone",
-   "x": 949.0,
-   "y": 649.0,
+   "x": 949.2,
+   "y": 644.3,
    "opcje": {
     "fs": 17,
     "kotwica": "middle",
     "przyDo": [
-     949.0,
-     649.0
+     949.2,
+     644.3
     ]
    }
   },
   {
    "tekst": "Arashin",
-   "x": 357.9,
-   "y": 811.3,
+   "x": 385.5,
+   "y": 825.7,
    "opcje": {
     "fs": 17,
     "kotwica": "middle",
     "przyDo": [
-     357.9,
-     811.3
+     385.5,
+     825.7
     ]
    }
   },
   {
    "tekst": "(Mer-Ek Fortress)",
-   "x": 357.9,
-   "y": 811.3,
+   "x": 385.5,
+   "y": 825.7,
    "opcje": {
     "fs": 12,
     "kotwica": "middle",
     "przyDo": [
-     357.9,
-     811.3
+     385.5,
+     825.7
     ],
     "ital": true
    }
   },
   {
    "tekst": "First Tree",
-   "x": 485.4,
-   "y": 857.6,
+   "x": 464.8,
+   "y": 858.6,
    "opcje": {
     "fs": 13,
     "kotwica": "middle",
     "przyDo": [
-     485.4,
-     857.6
+     464.8,
+     858.6
     ]
    }
   },
   {
    "tekst": "Kavah",
-   "x": 230.5,
-   "y": 915.6,
+   "x": 277.9,
+   "y": 922.7,
    "opcje": {
     "fs": 14,
     "kotwica": "middle",
     "przyDo": [
-     230.5,
-     915.6
+     277.9,
+     922.7
     ]
    }
   },
   {
    "tekst": "Lookout Roost",
-   "x": 891.1,
-   "y": 1170.5,
+   "x": 928.9,
+   "y": 1158.2,
    "opcje": {
     "fs": 15,
     "kotwica": "middle",
     "przyDo": [
-     891.1,
-     1170.5
+     928.9,
+     1158.2
     ]
    }
   },
   {
    "tekst": "Aerie of the Unfettered",
-   "x": 833.1,
-   "y": 1286.4,
+   "x": 850.9,
+   "y": 1291.1,
    "opcje": {
     "fs": 14,
     "kotwica": "middle",
     "przyDo": [
-     833.1,
-     1286.4
+     850.9,
+     1291.1
     ]
    }
   },
   {
    "tekst": "Kheru Temple",
-   "x": 1221.4,
-   "y": 1216.9,
+   "x": 1222.1,
+   "y": 1220.6,
    "opcje": {
     "fs": 17,
     "kotwica": "middle",
     "przyDo": [
-     1221.4,
-     1216.9
+     1222.1,
+     1220.6
     ]
    }
   },
   {
    "tekst": "Qarsi Palace",
-   "x": 1169.2,
-   "y": 1205.3,
+   "x": 1203.2,
+   "y": 1208.8,
    "opcje": {
     "fs": 14,
     "kotwica": "middle",
     "przyDo": [
-     1169.2,
-     1205.3
+     1203.2,
+     1208.8
     ]
    }
   },
   {
    "tekst": "Ukud Necropolis",
-   "x": 1690.7,
-   "y": 927.2,
+   "x": 1673.6,
+   "y": 919.8,
    "opcje": {
     "fs": 15,
     "kotwica": "middle",
     "przyDo": [
-     1690.7,
-     927.2
+     1673.6,
+     919.8
     ]
    }
   },
   {
    "tekst": "Marang River Fortress",
-   "x": 1308.3,
-   "y": 1033.8,
+   "x": 1264.3,
+   "y": 1030.3,
    "opcje": {
     "fs": 14,
     "kotwica": "middle",
     "przyDo": [
-     1308.3,
-     1033.8
+     1264.3,
+     1030.3
     ]
    }
   },
   {
    "tekst": "Molderfang Falls",
-   "x": 1412.6,
-   "y": 1095.2,
+   "x": 1429.7,
+   "y": 1101.2,
    "opcje": {
     "fs": 14,
     "kotwica": "middle",
     "przyDo": [
-     1412.6,
-     1095.2
+     1429.7,
+     1101.2
     ]
    }
   }

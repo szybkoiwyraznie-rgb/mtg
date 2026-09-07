@@ -559,12 +559,21 @@ def audytuj_podklad(mapa, nazwa, mjson, woda):
         problemy.append(f'{nazwa}: FORGE W WODZIE: {kl} ×{len(pozycje)} (np. {przykl})')
     if mjson.exists():
         d = json.loads(mjson.read_text(encoding='utf-8'))
+        # ADR 0035: przy wariantach podkładu pinezki/kotwice są w układzie
+        # ZŁOTYM (wariant domyślny) — na audytowany SVG przelicza je
+        # kalibracja wariantu, którego podkładem jest ten plik.
+        kal = {'sx': 1, 'sy': 1, 'ox': 0, 'oy': 0}
+        for w in d.get('warianty', []) or []:
+            if w.get('podklad') == nazwa:
+                kal = {**kal, **(w.get('kalibracja') or {})}
+        def zloty(x, y):
+            return (kal['ox'] + kal['sx'] * x) * mapa.w, (kal['oy'] + kal['sy'] * y) * mapa.h
         for pn in d.get('pinezki', []):
-            x, y = pn['x'] * mapa.w, pn['y'] * mapa.h
+            x, y = zloty(pn['x'], pn['y'])
             if not mapa.na_ladzie(x, y, tolerancja=10):
                 problemy.append(f"{nazwa}: PINEZKA W WODZIE: {pn['karta']} ({x:.0f},{y:.0f})")
         for c in d.get('kotwice', []):
-            x, y = c['x'] * mapa.w, c['y'] * mapa.h
+            x, y = zloty(c['x'], c['y'])
             if not mapa.na_ladzie(x, y):
                 info.append(f"{nazwa}: kotwica w wodzie (OK dla obiektów wodnych): "
                             f"{c['nazwa']} ({x:.0f},{y:.0f})")
