@@ -19,22 +19,23 @@ oraz najnowszy handoff) i uruchomienie podglądu, bez zmian w repo.
 
 ### 0. PR na starcie
 
-- [ ] Roadmapa → zielone `npm test` + `npm run build` → commit i push.
-- [ ] Otworzenie PR przed audytem właściwym i zmianami merytorycznymi.
+- [x] Roadmapa → zielone `npm test` + `npm run build` → commit i push.
+- [x] Otworzenie PR przed audytem właściwym i zmianami merytorycznymi —
+  [#22](https://github.com/szybkoiwyraznie-rgb/mtg/pull/22), roadmapa `2188033`.
 
 ### A. Audyt PR #21 (przed naprawami i Pętlą)
 
-- [ ] Integralność: testy, build, map-audit, wiki-stats; porównanie
+- [x] Integralność: testy, build, map-audit, wiki-stats; porównanie
   z końcowym stanem handoffu, nie z jego historycznymi nagłówkami.
-- [ ] Pełna lista zmienionych plików i recenzja zmian względem bazy:
+- [x] Pełna lista zmienionych plików i recenzja zmian względem bazy:
   kod/render/build/testy, treść/dostawy/snapshoty, mapy, dokumentacja.
-- [ ] Treść: Fabuła jako kotwica, LORE-first, Oracle, źródła,
+- [x] Treść: Fabuła jako kotwica, LORE-first, Oracle, źródła,
   imgId ≠ collector_number, taxonomia, brak nieuprawnionych haseł.
-- [ ] Mapy: proweniencja i epoki, pinezki i złoty układ Tarkiru,
+- [x] Mapy: proweniencja i epoki, pinezki i złoty układ Tarkiru,
   spójność generator → scena → SVG, hydrologia, wiązania i styl.
-- [ ] Ogląd map zmienionych przez PR: całość + wycinki; kontrola
+- [x] Ogląd map zmienionych przez PR: całość + wycinki; kontrola
   przełącznika T1/T4 również behawioralna (nie sam markup testu smoke).
-- [ ] Raport `docs/audits/AUDYT_2026-09-07-PR21.md`: wyniki per plik/
+- [x] Raport `docs/audits/AUDYT_2026-09-07-PR21.md`: wyniki per plik/
   grupa, dowody usterek, priorytety i kolejka. Osobny zielony commit.
 
 ### B. Naprawy z audytu
@@ -44,6 +45,25 @@ oraz najnowszy handoff) i uruchomienie podglądu, bez zmian w repo.
 - [ ] Zmiany map tylko w źródłach/generatorach, następnie render i ogląd.
 - [ ] Rozstrzygnięcia wykraczające poza istniejące ADR-y → decyzja
   właściciela przed implementacją; żadnych cichych zmian kontraktu.
+
+#### Kolejka z raportu (stan audytu: przed naprawami)
+
+- [ ] **A1 (P1):** epoki Tarkiru i tożsamość miejsc — korekta źródeł,
+  generatora/sceny/mapy i treści; T1 oraz pinezka karty bez zmian.
+- [ ] **A2 (P2) + E1:** pełne snapshoty Scryfall i test obciętego JSON-a;
+  E1 to analogiczny dług trzech starszych snapshotów, nie regresja PR #21.
+- [ ] **A3 (P2):** limit zoomu w układzie złotym, regresje zachowania
+  T1→T4→T1 i T4→T1→T4 na obu granicach.
+- [ ] **A4 (P2):** przełącznik na małym ekranie nie zasłania pinezki;
+  rzeczywiste kliknięcie w Chromium, nie samo sprawdzenie CSS.
+- [ ] **A5 (P2):** usunięcie nieużywanej, drugiej kopii SVG w HTML mapy;
+  kontrola danych buildu, starych map, miniatur i `file://`.
+- [ ] **A6 (P3):** precyzyjny opis testów w L13/gidzie; status PR #21
+  i zakresy roadmapy aktualne przy domknięciu sesji.
+
+Dowody: `docs/audits/AUDYT_2026-09-07-PR21.md` (rejestr 61/61 plików).
+Bazowe 114 testów, determinizm 5 SVG i 2 generatorów, map-audit 0;
+QA resvg i Chromium 149 poza repo. Wady wykryte mimo zielonych bram.
 
 ### C. Pętla Jakości (ADR 0006/0015)
 
