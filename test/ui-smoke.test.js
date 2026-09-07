@@ -170,6 +170,23 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   assert.ok(karta4.includes('<h2>Kronika Lore</h2>'), 'karta 488SOM: brak otwarcia LORE-first');
   assert.ok(karta4.includes('#/mapa/mirrodin?pin=488som-carapace-forger'),
     'karta 488SOM: brak deep-linka pinezki');
+
+  // PR-21 pakiet 3: Tarkir — mapa T4 (epoka khanów, geometria z rastra fanowskiego);
+  // pinezka 509KTK w łowiskach Temur (pewność „region”)
+  shim.idz('#/plan/tarkir');
+  assert.ok(shim.app.innerHTML.includes('#/mapa/tarkir'), 'plan Tarkiru: brak linku do mapy');
+  assert.ok(shim.app.innerHTML.includes('class="stopka-czasu meta"'), 'plan Tarkiru: brak stopki czasu');
+  shim.idz('#/mapa/tarkir');
+  const ta = shim.app.innerHTML;
+  assert.ok(ta.includes('Mapa: Tarkir'), 'mapa Tarkiru: brak tytułu');
+  assert.ok(ta.includes('src="maps/tarkir.html"'), 'mapa Tarkiru: brak iframe');
+  shim.idz('#/karta/509ktk-highland-game');
+  const karta5 = shim.app.innerHTML;
+  assert.ok(karta5.includes('509KTK'), 'karta 509KTK: brak imgId');
+  assert.ok(karta5.includes('Highland Game'), 'karta 509KTK: brak tytułu');
+  assert.ok(karta5.includes('<h2>Kronika Lore</h2>'), 'karta 509KTK: brak otwarcia LORE-first');
+  assert.ok(karta5.includes('#/mapa/tarkir?pin=509ktk-highland-game'),
+    'karta 509KTK: brak deep-linka pinezki');
   shim.przywroc();
 
   // ── Strona mapy Śródziemia (samowystarczalny HTML, T2 → <img>)
@@ -291,7 +308,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (6)'), 'lista kart: brak 6 kart');
+  assert.ok(lista.includes('Karty Katalogowe (7)'), 'lista kart: brak 7 kart');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
     'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
@@ -371,7 +388,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   shim.idz('#/');
   // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — przy ≥6 kartach
   // najstarsza (1LTR) wypada z listy, więc sprawdzamy najnowszą (488SOM, 2026-09-06).
-  assert.ok(shim.app.innerHTML.includes('Carapace Forger'), 'home: brak ostatniej materializacji');
+  assert.ok(shim.app.innerHTML.includes('Highland Game'), 'home: brak ostatniej materializacji');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();
