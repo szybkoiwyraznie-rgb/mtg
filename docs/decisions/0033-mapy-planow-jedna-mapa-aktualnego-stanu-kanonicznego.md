@@ -77,3 +77,38 @@ mapę.” Zastosowanie §1–2 do Mirrodinu:
 3. Wzorzec ogólny: „przed/po” nie liczy się od wydarzenia fabularnego
    (kompleacja, Conflux), lecz od **zmiany topologii** — dopisek epoki
    w `zrodlo.notka` ma nazywać erę mapy w tych kategoriach.
+
+## Uzupełnienie 2026-09-07 — Tarkir (dwie linie czasowe; decyzja właściciela: T4)
+
+Kontekst: pakiet 3 PR-21 (karta 509KTK Highland Game z *Khans of
+Tarkir*, mapa `maps/tarkir/` T4). Tarkir ma trzy stany kanoniczne na tej
+samej topografii: **epokę khanów** (KTK/FRF — linia czasowa przed
+Khanfall), **epokę smoczych lordów** (DTK — po tym, jak Sarkhan ocalił
+Ugina) i **Tarkir: Dragonstorm** (po Rytuale Stormnexus). Zmieniają się
+władcy, nazwy osad (Sage-Eye → Dragon's Eye, Karakyk → Ayagor/Summer
+Landing) i powstają nowe osady (Qatros Karst, Mistrise, ruchome miasta
+dalkovan) — góry, rzeki, jeziora i step zostają na miejscu.
+
+Właściciel (czat 2026-09-07) wybrał T4 po raporcie T2→T3→T4 i dostarczył
+raster fanowski Lore Café jako źródło pomocnicze geometrii (ADR 0031).
+Zastosowanie §1–2 do Tarkiru (rekomendacja agenta z raportu, bez
+sprzeciwu właściciela — do potwierdzenia przy recenzji):
+
+1. **Jedna mapa fizyczna Tarkiru** obsługuje sceny wszystkich trzech
+   epok (kryterium §2 — zmiana topologii — nie jest spełnione).
+   Odstępstwo od §1 („aktualny stan kanoniczny”): etykiety osad są
+   w nazwach **epoki khanów**, bo z niej pochodzi karta, która plan
+   otworzyła, a osady późniejszych epok to głównie przemianowania
+   tych samych miejsc. Osady istniejące tylko w epokach późniejszych
+   są wyliczone w `map.json` (`poza_epoka`) — kolejne karty DTK/TDM
+   pinują na tej samej mapie, a nazwę epoki niesie karta.
+2. Obiekty **czysto fizyczne** poświadczone tylko w późniejszym kanonie
+   (Glintglaze Lake, Rainveil Forest, Pearl Lake, Marang River…) są
+   dopuszczone na mapie epoki khanów — geografia nie powstaje od zmiany
+   khana.
+3. Wzorzec ogólny (rozszerzenie pkt 3 uzupełnienia o Mirrodin): gdy
+   plan ma kilka linii czasowych na jednej topografii, mapa dostaje
+   etykiety epoki **pierwszej karty planu w Kodeksie**, a różnice nazw
+   między epokami dokumentuje `map.json`; osobna warstwa/mapa epoki
+   powstaje wyłącznie na żądanie karty, której scena wymaga innych
+   nazw w stopniu uniemożliwiającym czytelną pinezkę.

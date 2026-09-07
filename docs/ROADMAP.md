@@ -261,6 +261,15 @@ w mapforge: tarcza-półkula metalowej sfery, pięć regionów wg cyklu
 fastlandów SOM, epoka przed kompleacją; `maps/mirrodin/`), strona planu,
 karta LORE-first z pinezką `region` w Tangle. Roadmapa:
 `docs/plans/PLAN_2026-09-06-pr21-mirrodin-carapace-forger.md`.
+**Pakiet 3 tego samego PR (2026-09-07, zlecenie właściciela):** 509KTK
+Highland Game + nowy plan **Tarkir** z mapą **T4** (mapforge na geometrii
+fanowskiej mapy Lore Café dostarczonej przez właściciela — ADR 0031;
+epoka khanów na wspólnej topografii trzech epok — ADR 0033 uzupełnienie;
+`maps/tarkir/`), strona planu, karta LORE-first z pinezką `region`
+w Qal Sisma; nowe klocki mapforge `pustynia` i `szczyt`. Roadmapa:
+`docs/plans/PLAN_2026-09-07-pr21-tarkir-highland-game.md`. Czeka na
+recenzję mapy przez właściciela; PR #21 pozostaje otwarty do końca sesji
+(decyzja właściciela — scalenie odcięłoby agenta od GitHuba).
 
 ## Wątki otwarte (czekają na decyzję właściciela)
 

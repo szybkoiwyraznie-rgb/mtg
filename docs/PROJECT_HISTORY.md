@@ -41,6 +41,30 @@ obrazów przez agenta** (rastry map przez resvg poza repo).
    `rzemioslo`, asercje smoke (107/107, build 12 stron). Incydent:
    odświeżenie sandboxa i utrata tokena GitHub na ~2 h — praca lokalna,
    potem `rebase --onto` na `4ba8173` i push fast-forward.
+6. **Pakiet 3 (2026-09-07, zlecenie właściciela w tej samej sesji):**
+   dostawa **509KTK · Highland Game · KTK · Tarkir** + Fabuła — siódma
+   karta i siódmy plan. Research mapy T2→T3→T4 (Tarkir bez oficjalnej
+   mapy — oba Planeswalker's Guide to opisy); raport w czacie →
+   właściciel wybrał **T4** i dostarczył fanowską mapę **Lore Café /
+   MTG Wiki Italia (3d4, 2025)** jako źródło pomocnicze geometrii
+   (ADR 0031; raster poza repo, plik nie dotarł do sandboxa — odczyt
+   z UI). Mapa `maps/tarkir/` (generator `tools/mapforge/tarkir-scena-t4.py`,
+   współrzędne z rastra przez `R(px, py)`): kontynent bez oceanu,
+   morze południowe z deltą Gudul, pięć terytoriów klanów (tinty +
+   szwy), Salt Road, Scour, 26 POI w nazwach epoki khanów, 52 kotwice;
+   jedna korekta kanoniczna wobec rastra (Temur–Abzan nie graniczą).
+   Nowe klocki mapforge: biom `pustynia`, POI `szczyt`, dzielnice bez
+   arterii. Strona planu `tarkir`, karta LORE-first z pinezką `region`
+   w łowiskach Temur (Karakyk Valley ↔ Staircase of Bones), tagi
+   `szamanizm`/`lowy`/`klany-tarkiru`; ADR 0033 uzupełnienie (Tarkir:
+   jedna topografia, etykiety epoki pierwszej karty planu); 109/109,
+   build 14 stron, `map-audit` 0. Wcześniej w tej sesji: L11 +
+   ENVIRONMENT §2a (płytki klon po odświeżeniu sandboxa = fałszywe
+   stopki dat) i naprawa stopki czasu stron planów (`e533ff6`). Token
+   GitHub wygasł ponownie w trakcie pakietu 3 — praca na lokalnych
+   commitach; po odświeżeniu tokena środowisko wróciło jako płytki klon
+   z patchsetem (§2a) — łańcuch odtworzony i wypchnięty commit po
+   commicie (`e7b633d` → `442ee98` → `b1431ed` → `395f0f4` → dokumenty).
 
 ## 2026-09-06 — sesja PR-20: audyt PR-19 + kolejka napraw A1–A4 + lekcja L9
 
