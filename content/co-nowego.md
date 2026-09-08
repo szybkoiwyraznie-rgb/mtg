@@ -11,6 +11,13 @@
   (Geografia: The Shining Sea, „Złota Przystań”) i test ui-smoke
   (≥14 kółek) zsynchronizowane.
 
+
+## 2026-09-08 14:00 — Pętla Jakości po PR-25
+
+- Audyt PR-25 zakończony bez nowych usterek: **166/166 testów**, pełny build i `map-audit` z wynikiem 0.
+- Baza ma 25 stron: 13 kart, 2 hasła i 11 planów; statystyki kompletności wynoszą średnio 100%.
+- Link-mining i pass mapowy nie wskazały encji ani brakujących POI spełniających kryteria. Nie utworzono sztucznego hasła.
+
 ## 2026-09-08 22:05 — Mapa FR: wektor T2 do kosza, podkład = oficjalna Faerûn 3E (T1+LOD jak Dominaria) + warstwa POI
 
 - **Decyzja właściciela (po obejrzeniu mapy live): T2 wektor

@@ -1227,3 +1227,12 @@ karta MtG + lore świata → ADR 0010 (zastępuje hierarchię ADR 0003);
 1LTR (prompt + narracja) → wpis kolekcji verbatim + Karta Katalogowa
 (12 sekcji) + pinezka regionu Dunland (0,406/0.492) w map.json →
 testy 64/64, artefakt 2,4 MB.
+
+## 2026-09-08 — PR-26: Pętla Jakości po PR-25
+
+Sesja `arena/01a08323-mtg`, PR #26. Po przywróceniu pełnej historii gita
+wykonano audyt poprzedniego PR i pełny przebieg Pętli Jakości. Audyt
+`docs/audits/AUDYT_2026-09-08-PR25.md` nie wykazał regresji: 166/166 testów,
+build zielony, `map-audit` 0, stats 100% średnio. Link-mining nie osiągnął
+progu dwóch kart dla nowego hasła, a pass mapowy nie znalazł braków.
+Handoff: `docs/setup/HANDOFF_2026-09-08-pr26.md`.
