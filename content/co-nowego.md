@@ -1,3 +1,16 @@
+## 2026-09-08 18:45 — Naprawa CI: build mini-map bez ImageMagick (czysty JS)
+
+- **Czerwony CI od 17:24 (regresja z deduplikacji ZIP-a) naprawiona.**
+  Przyczyna: build mini-map używał `convert` (ImageMagick), którego nie
+  ma na runnerach GitHub (ubuntu-latest 24.04) — build cicho spadał na
+  pełną bazę, a bramka testowa (resvg dostępny) odrzucała drzewo.
+- **Nowy łańcuch (ADR 0027 v3, korekta):** wyłącznie devDependency npm,
+  zero binarików systemowych — resvg (SVG→PNG) + `pngjs`/`jpeg-js`
+  (czysty JS: dekodowanie, skalowanie bilinearnie do 800 px, JPEG q80).
+- Weryfikacja: build + 161/161 testów w środowisku **bez** `convert`
+  (symulacja runnera) i z nim; mini 57–216 kB (bramka ≤ 400 kB);
+  ZIP ~62,3 MB (200 plików).
+
 ## 2026-09-08 18:10 — Głos Kronikarza: narracja kart 100% w świecie (ADR 0042)
 
 - **Decyzja właściciela (po recenzji Expunge):** „aż do części

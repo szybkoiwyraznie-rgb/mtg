@@ -102,6 +102,13 @@ tej pinezki, o wielkości miniaturki — będzie ważyć 100 kB”):
    (rastry zawsze, SVG gdy jest delegat rsvg) → fallback: pełna baza
    w drzewie + ostrzeżenie (działa, ZIP cięższy). Bramka testowa:
    przy resvg mini.jpg ≤ 400 kB na każdy plan i zero `.svg` w drzewie.
+   > **Korekta 2026-09-08 (regresja CI):** ImageMagick `convert` nie
+   > istnieje na runnerach GitHub (ubuntu-latest 24.04) — build cicho
+   > spadał na fallback, a bramka testowa (resvg dostępny) padała.
+   > Łańcuch w całości w devDependency npm, ZERO binarików systemowych:
+   > SVG → resvg → PNG; PNG/JPG → `pngjs`/`jpeg-js` (czysty JS) → RGBA;
+   > skalowanie bilinearnie do 800 px + kodowanie JPEG q80 (`jpeg-js`);
+   > fallback (pełna baza) zostaje tylko na wypadek braku zależności.
 5. Skutek: ZIP 90,5 → 62,1 MB (−31%); mini-mapy T4 dociągają ~100 kB
    zamiast 8,3 MB.
 

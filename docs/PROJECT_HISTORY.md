@@ -69,6 +69,18 @@ ui-smoke zaktualizowana („Na karcie obecne jest” → „W scenie obecne
 jest”; adnotacja o braku flavor w 1LTR w Źródłach). **161 testów,
 22 strony, ZIP 62,1 MB.**
 
+**Naprawa czerwonego CI (regresja od `7ae7866`):** CI padał na kroku
+testowym (9–14 s, logi niedostępne), a lokalnie suita była zielona —
+różnica środowiskowa: build mini-map używał ImageMagick `convert`,
+którego nie ma na runnerach GitHub (ubuntu-latest 24.04); build cicho
+spadał na fallback (pełna baza w drzewie), a bramka testowa
+(`maResvg` = true) odrzucała brak mini.jpg. Naprawa: łańcuch w całości
+w devDependency npm (resvg + czysto-JS `pngjs`/`jpeg-js`, skalowanie
+bilinearnie do 800 px, JPEG q80) — zero binarików systemowych (ADR 0027
+v3, korekta). Weryfikacja: 161/161 testów + build w symulacji runnera
+(PATH bez `convert`/`python3` — 5 testów skacze legalnie: map-audit i
+`tnij()`).
+
 ## 2026-09-08 — PR-23: przejęcie przerwanej sesji PR-22 i domknięcie 605SHM / Lorwyn
 
 Sesja `arena/01a07fc3-mtg`, PR #23. Poprzedni agent (PR #22) przerwał
