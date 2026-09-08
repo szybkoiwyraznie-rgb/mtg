@@ -15,7 +15,7 @@ pinezka:
 
 ## Kronika Lore
 
-Zaraza, która wyszła z Mephidrossu, nie wszędzie przybiera postać
+Zaraza, która wyszła z [[mephidross|Mephidrossu]], nie wszędzie przybiera postać
 gnijącego mięsa. Na białej stronie planu [[nowa-phyrexia|Phyrexia]] nie cuchnie — ona
 lśni. **Ortodoksja Maszyn**, frakcja związana z białą maną i prowadzona
 przez pretorkę **Elesh Norn**, buduje na Mirrodinie coś, co wygląda

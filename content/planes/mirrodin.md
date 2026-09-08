@@ -60,7 +60,7 @@ Neurok na brzegu; **Quicksilver Spires** — kryształowe iglice połączone
 mostami — tworzą sieć dróg przez morze, a **Titan Forge** stoi w kręgu
 nieruchomej rtęci.
 
-**Mephidross** (B) — bagno nekrogenowych mgieł, płytkie błoto najeżone
+**[[mephidross|Mephidross]]** (B) — bagno nekrogenowych mgieł, płytkie błoto najeżone
 kominami zionącymi trującym gazem. Największy z nich, **Ish Sah** —
 Krypta Szeptów — jest siedzibą nekromanty Getha i Morioków, a pod nim
 schodzi w dół czarna lacuna. Dross rozlewa się: na Oxiddę przez

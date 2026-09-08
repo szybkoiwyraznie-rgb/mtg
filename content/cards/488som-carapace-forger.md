@@ -60,7 +60,7 @@ właśnie elf-artificer ratuje las stopem, nie łukiem.
 
 **Tangle** — miedziany las, dom elfów, trolli i druidów Sylvok; w jego
 sercu **Radix**, krąg miedzi nad zieloną lacuną, i **Tel-Jilad**, drzewo,
-w którego pniu trolle wyryły historię planu. **Mephidross** — bagno
+w którego pniu trolle wyryły historię planu. **[[mephidross|Mephidross]]** — bagno
 nekrogenu, z którego wyszła inwazja; jego kominy zionęły trującą mgłą
 zmieniającą żywych w **nim**, a teraz maszeruje stamtąd coś gorszego.
 **Phyrexianie** — „nowe horrory” inskrypcji: biomechaniczne istoty, w których

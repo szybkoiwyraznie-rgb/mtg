@@ -1,3 +1,27 @@
+## 2026-09-08 18:50 — Pętla Jakości: pełny obieg (metyka, pogłębienie, hasło Mephidross)
+
+- **Metryka:** pinezka w stats nie ma sensu dla haseł bez lokalizacji
+  (szkielet: „Na mapie” tylko `geografia`/`postac`) — komponent N/A
+  dla pozostałych klas (maks 6 zamiast 8); Nowa Phyrexia 75% → 100%.
+  Baza: **100% (średnia 7.9/8), 23 strony**.
+- **Pogłębienie (2 strony):** plan `dominaria` (374 → ~560 słów:
+  kontynenty z ludami i punktami — Wybrani i Pięć Edyktów, Tangle,
+  Zhalfir i bitwa Inwazji, Kabała i Coliseum, Sylex; **korekta:**
+  Sarpadia to ruiny Sarpadyjskich Imperiów (Icatia, Vodalia, Czarne
+  Ręce, Havenwood, upadek ok. 170 AR) — nie „imperium thorne'ów”);
+  karta `305arb-illusory-demon` (paleta wiru = mieszanka many
+  pięciu shardów + boldy Child of Alara/Maelstrom Wanderer).
+- **Link-mining: hasło [[mephidross|Mephidross]]** (geografia,
+  Mirrodin) — próg 2 kart (476mbs + 488som) + plan; wikilinki w 3
+  miejscach; na mapie Mirrodinu **obwódka regionu** (regiony w
+  map.json, pewność region, bbox z kotwic kanonicznych). Kolejka
+  „o jedną kartę” od progu: ~35 encji w backlogu.
+- **Pass mapowy:** pinezki 11/11 kart (frontmatter + map.json),
+  map-audit 0, nowa obwódka regionu hasła (mechanizm `regiony`
+  po raz pierwszy użyty).
+- Weryfikacja: 161/161 testów, build 23 strony (11 kart, 2 hasła,
+  10 planów), map-audit 0, stats 100%.
+
 ## 2026-09-08 18:45 — Naprawa CI: build mini-map bez ImageMagick (czysty JS)
 
 - **Czerwony CI od 17:24 (regresja z deduplikacji ZIP-a) naprawiona.**
