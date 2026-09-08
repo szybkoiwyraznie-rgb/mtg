@@ -325,8 +325,19 @@ test('UI: mapa T3 — etykiety podkładu w nakładce ekranowej (stały rozmiar, 
   const shim2 = wykonajArtefakt('dist/maps/srodziemie.html');
   assert.ok(!shim2.app.innerHTML.includes('data-podklad-etykieta'), 'podkład adoptowany (T2) nie może mieć przeniesionych etykiet');
 
-  fs.rmSync(cel, { force: true });
+  // T2 (adoptowany, Vectorized Realms) — eksport Inkscape ma `<svg>` z
+  // nową linią po tagu; markup musi się wstrzyknąć INLINE (regresja:
+  // gate `<svg ` odrzucał taki plik → <img> do bazy, której nie ma w
+  // drzewie dist — ADR 0027 v3 — ikona niezaładowanej grafiki).
   shim2.przywroc();
+  const shim3 = wykonajArtefakt('dist/maps/forgotten-realms.html');
+  const fr = shim3.app.innerHTML;
+  assert.ok(fr.includes('<svg class="mapa-podklad"'), 'FR: brak inline SVG podkładu (T2)');
+  assert.ok(!fr.includes('<img class="mapa-podklad"'), 'FR: podkład nie może być <img> (baza wektorowa nie jest w drzewie)');
+  assert.ok(fr.includes('kodex-etykiety'), 'FR: brak warstwy etykiet podkładu');
+
+  fs.rmSync(cel, { force: true });
+  shim3.przywroc();
 });
 
 test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () => {

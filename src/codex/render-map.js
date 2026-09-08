@@ -38,6 +38,14 @@ import { escapeHtml } from './markdown.js';
 import { dajDane } from './data.js';
 import { nieZnalesc, stanPusty, stopkaCzasu } from './render.js';
 
+/** Surowy markup SVG podkładu → inline z klasą `mapa-podklad`.
+ *  Tag korzenia może być po nim śladem (spacja, NOWA LINIA — eksport
+ *  wektorowy nie jest jednorodny) albo `>`; pusty string = nie-SVG. */
+function doMarkupPodkladu(markup) {
+  if (typeof markup !== 'string' || !/<svg[\s>]/.test(markup)) return '';
+  return markup.replace(/<svg(?=[\s>])/, '<svg class="mapa-podklad"');
+}
+
 /** Dekoduje base64 data-URI SVG do surowego znacznika (inline). */
 function podkladSvgMarkup(dataUri) {
   const m = /^data:image\/svg\+xml;base64,(.*)$/.exec(dataUri);
@@ -46,7 +54,7 @@ function podkladSvgMarkup(dataUri) {
     const bin = atob(m[1]);
     const bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
     const markup = new TextDecoder('utf-8').decode(bytes);
-    return markup.includes('<svg ') ? markup.replace('<svg ', '<svg class="mapa-podklad" ', 1) : '';
+    return doMarkupPodkladu(markup);
   } catch (e) {
     return '';
   }
@@ -257,8 +265,9 @@ export function czyPokazacL2(kWizualna, prog, widoczny, bbox) {
 /** Surowy markup podkładu SVG: wstrzyknięty markup (strona mapy) albo
  *  base64 (dane inline). Pusty string = markup niedostępny. */
 function surowyMarkupPodkladu(mapa) {
-  if (mapa.podkladMarkup && mapa.podkladMarkup.includes('<svg ')) {
-    return mapa.podkladMarkup.replace('<svg ', '<svg class="mapa-podklad" ', 1);
+  if (mapa.podkladMarkup) {
+    const inline = doMarkupPodkladu(mapa.podkladMarkup);
+    if (inline) return inline;
   }
   if (mapa.podkladData) return podkladSvgMarkup(mapa.podkladData);
   return '';
