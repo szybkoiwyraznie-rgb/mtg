@@ -40,6 +40,19 @@ z repo znikają z drzewa map i ZIP-a (regresja: nadpisywanie nie
 10 planów**; map-audit 0. Plan:
 `docs/plans/PLAN_2026-09-08-pr25-dominaria-l2-i-druk-zrodlowy.md`.
 
+**Kontynuacja (recenzja właściciela odpowiedzi o ZIP):** pomiar
+potwierdził obserwację — wektorowe bazy leżały w ZIP-ie DWU razy
+(inline w stronach map + plik w katalogu dla mini-map; ~28,8 MB z
+90,5 MB, 32%); mini-mapy T4 dociągały pełny 8,3 MB SVG. Decyzja
+właściciela: mini-mapa = mały jpg-screenshot z pinezką. Wdrożone
+(**ADR 0027 Uzupełnienie v3**): build generuje `mini.jpg` (800 px,
+q80; rasterizator `@resvg/resvg-js` dev-only — silnik pozostaje
+zero-dependency, CI `npm ci`; fallback ImageMagick → pełna baza),
+drzewo dist nie zawiera wektorowych baz (niezmiennik + usuwanie
+stale), pole `miniatura` wycofane (committowane miniatury usunięte).
+**ZIP 90,5 → 62,1 MB (−31%)**; mini 48–159 kB per plan; bramki
+testowe (mini ≤ 400 kB, zero `.svg` w drzewie).
+
 ## 2026-09-08 — PR-23: przejęcie przerwanej sesji PR-22 i domknięcie 605SHM / Lorwyn
 
 Sesja `arena/01a07fc3-mtg`, PR #23. Poprzedni agent (PR #22) przerwał

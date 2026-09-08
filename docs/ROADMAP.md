@@ -325,9 +325,15 @@ errata researchu. Po decyzji właściciela: **L2 „Domeny” i
 `aerona.jpg` usunięte** (mapa = całość FHD + kafelki od zoomu);
 pinezka 40USG zmierzona na M1 master (px 1569,1979 → 0.1937,0.3806;
 pewność: region); kotwice bez D1. **Build:** pełny build czyści `dist/`
-(usunięte pliki znikają z drzewa i ZIP-a). **159 testów; 22 strony
-= 11 kart, 1 hasło, 10 planów**; map-audit 0. Raporty:
-`docs/audits/AUDYT_2026-09-08-PR24.md`,
+(usunięte pliki znikają z drzewa i ZIP-a). **Kontynuacja (recenzja
+właściciela odpowiedzi o ZIP):** wektorowe bazy dublowane w ZIP-ie
+(~28,8 MB; mini-mapy T4 dociągały pełny 8,3 MB SVG) → **ADR 0027 v3**:
+mini-mapa = `mini.jpg` generowany w buildzie (800 px, q80;
+`@resvg/resvg-js` dev-only, silnik zero-dependency, CI `npm ci`;
+fallback ImageMagick → pełna baza), drzewo bez wektorowych baz,
+pole `miniatura` wycofane. **ZIP 90,5 → 62,1 MB (−31%)**.
+**159 testów; 22 strony = 11 kart, 1 hasło, 10 planów**; map-audit 0.
+Raporty: `docs/audits/AUDYT_2026-09-08-PR24.md`,
 `docs/plans/PLAN_2026-09-08-pr25-dominaria-l2-i-druk-zrodlowy.md`.
 
 ## Wątki otwarte (czekają na decyzję właściciela)

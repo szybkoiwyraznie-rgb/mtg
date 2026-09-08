@@ -1,3 +1,18 @@
+## 2026-09-08 17:30 — ZIP lżejszy o 28 MB: mini-mapy z miniatur, koniec dublowania map
+
+- **Pytanie o ZIP rozstrzygnięte i naprawione.** Strony map inlinowały
+  całe wektorowe podkłady (musi tak być — `file://` blokuje `fetch`),
+  a te same pliki leżały w katalogach `maps/<plan>/` — dublet wart
+  ~28,8 MB (32% ZIP-a). Do tego mini-mapa planów T4 dociągała CAŁY
+  8,3 MB SVG jako thumbnail.
+- **Nowy stan (ADR 0027 v3):** mini-mapa = **mini.jpg generowany w
+  buildzie** (screenshot bazy, 800 px, ~50–160 kB — pinezka rysowana
+  na niej w dokładnych współrzędnych, jak dotąd). Katalogi `maps/`
+  zawierają tylko to, co strona mapy dociąga `<img>` (rastry, kafle) —
+  zero SVG-ów, zero dubletów.
+- **Efekt: ZIP 90,5 → 62,1 MB (−31%)**; mini-mapa Lorwynu waży teraz
+  92 kB zamiast 8,3 MB.
+
 ## 2026-09-08 16:55 — Dominaria: mapa wraca do reguł, pinezka zmierzona na podkładzie
 
 - **Deep-zoom „Aerony” znika z mapy** — decyzją właściciela nic nowego
