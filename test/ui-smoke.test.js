@@ -347,7 +347,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(karta.includes('Podsumowanie Lore'), 'karta: brak sekcji podsumowania');
   assert.ok(!karta.includes('Wątki i Powiązania'), 'karta: wątki mają żyć w treści (pogrubienia), nie w osobnej sekcji');
   assert.ok(karta.includes('<strong>Crebain</strong>') || karta.includes('<strong>crebain</strong>'), 'karta: brak pogrubionych encji lore w treści');
-  assert.ok(karta.includes('Na karcie obecne jest'), 'karta: Postacie i Byty mają zaczynać się od tego, co jest na karcie (kanon)');
+  assert.ok(karta.includes('W scenie obecne jest'), 'karta: Postacie i Byty mają zaczynać się od bytów sceny (kanon, ADR 0042 — głos Kronikarza)');
   assert.ok(!karta.includes('Armia Isengardu'), 'karta: byty z narracji/promptu nie mogą być listowane jako byty karty');
   assert.ok(!karta.includes('leykus'), 'karta: bez niekanonicznych porównań ("leykus")');
   assert.ok(!karta.includes('pierwszy mieszkaniec'), 'karta: bez meta-komentarzy o kolekcji (feedback B)');
