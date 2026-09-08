@@ -79,6 +79,21 @@ test('pakiet dystrybucyjny: artefakt + drzewo map + ZIP (ADR 0027 v2)', async ()
   fs.rmSync('/tmp/codex-test-pakiet', { recursive: true, force: true });
 });
 
+test('pakiet: pełny build czyści katalog — stale pliki znikają z drzewa i ZIP-a (PR-25)', async () => {
+  // Regresja: build nadpisywał, ale nie śledził usunięć — plik usunięty
+  // z repo (np. aerona.jpg, ADR 0041) zostawał w dist/ i w ZIP-ie.
+  const { zbudujPakiet } = await import('../tools/build.mjs');
+  const katalog = '/tmp/codex-test-stale';
+  fs.rmSync(katalog, { recursive: true, force: true });
+  fs.mkdirSync(`${katalog}/maps/dominaria`, { recursive: true });
+  fs.writeFileSync(`${katalog}/maps/dominaria/przestarzaly.jpg`, 'stale');
+  const wynik = await zbudujPakiet({ katalog });
+  assert.ok(!fs.existsSync(`${katalog}/maps/dominaria/przestarzaly.jpg`),
+    'stale plik w drzewie map musi zniknąć przy pełnym buildzie');
+  fs.rmSync(katalog, { recursive: true, force: true });
+  void wynik;
+});
+
 test('CLI --out buduje pełny pakiet z ZIP-em (kontrakt pages.yml)', () => {
   // Regresja: `node tools/build.mjs --out dist/index.html` (dokładnie tak
   // woła pages.yml) pomijał ZIP → 404 na „Pobierz archiwum (ZIP)" na Pages.

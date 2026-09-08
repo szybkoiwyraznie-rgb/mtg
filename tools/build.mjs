@@ -346,6 +346,11 @@ function stripModuleSyntax(source) {
  */
 export async function zbudujPakiet({ root = ROOT, katalog } = {}) {
   katalog = katalog ?? path.join(root, 'dist');
+  // PR-25: pełny build czyści katalog wyjściowy — pliki usunięte z repo
+  // (np. maps/dominaria/aerona.jpg, ADR 0041) muszą zniknąć z drzewa i
+  // ZIP-a: build nadpisuje, ale nie śledzi usunięć (stale pliki zostawały
+  // w archiwum).
+  fs.rmSync(katalog, { recursive: true, force: true });
   const celGlowny = path.join(katalog, 'mtg-lore-codex.html');
   await zbuduj({ root, out: celGlowny });
   fs.copyFileSync(celGlowny, path.join(katalog, 'index.html'));

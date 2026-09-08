@@ -77,7 +77,11 @@ test('warianty podkładu (ADR 0035): pliki istnieją, dokładnie jeden domyślny
   for (const [plan, mapa] of mapy) {
     if (mapa.problem || !Array.isArray(mapa.warianty)) continue;
     const w = mapa.warianty;
-    if (w.length < 2) problemy.push(`${plan}: warianty[] ma sens od dwóch podkładów (jest ${w.length})`);
+    // LOD (ADR 0039/0041): jednowariantowe warianty[] jest legalne, gdy niesie
+    // metadane kafelków L1 (mapa = jeden podkład + piramida LOD, np. Dominaria)
+    if (w.length < 2 && !w.some((x) => x.kafle)) {
+      problemy.push(`${plan}: warianty[] ma sens od dwóch podkładów lub z kafelami LOD (jest ${w.length})`);
+    }
     if (w.filter((x) => x.domyslny).length !== 1) problemy.push(`${plan}: dokładnie jeden wariant domyślny (układ złoty)`);
     const idy = new Set();
     for (const x of w) {
