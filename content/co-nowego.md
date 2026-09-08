@@ -1,3 +1,23 @@
+## 2026-09-08 16:55 — Dominaria: mapa wraca do reguł, pinezka zmierzona na podkładzie
+
+- **Deep-zoom „Aerony” znika z mapy** — decyzją właściciela nic nowego
+  nie wnosił (wycinek tej samej dużej mapy). Mapa Codexu to teraz dwa
+  elementy: jedna całościowa mapa FHD + kafelkowa od pewnego zoomu
+  (ADR 0041). Raster 1,6 MB zniknął z repo i z pobieranego ZIP-a.
+- **Pinezka [[40usg-expunge|Expunge]] zmierzona na podkładzie M1**
+  (nie z ilustracji karty — to procedura, ADR 0040): ikona Cathedral
+  of Serra na masterze, pixel (1569, 1979) → (0.1937, 0.3806).
+  Pewność: region — Fabuła nie wskazuje podwórka.
+- **Karta Expunge przepisana w całości** — scena oparta na Fabule
+  właściciela i kanonie (złotoskrzydły wojownik Serran nad katedrą,
+  ~3780 AR), nie na odczycie ilustracji. Nowy test pilnuje całego
+  katalogu kart: zero nawiązań do oryginalnych ilustracji, zero
+  wignet, zero nazw artystów w treści (ADR 0040).
+- Strona planu [[dominaria|Dominarii]] zyskała sekcje „Mapa” i
+  „Źródła”, a pełny build czyści `dist/` — plik usunięty z repo
+  znika z drzewa i ZIP-a (stare 1,6 MB przetrwałyby w archiwum do
+  tej sesji).
+
 ## 2026-09-08 14:45 — Audyt PR-23: jezioro bez nazwy nocą, proweniencja kotwic Innistradu
 
 - **Lorwyn:** nazwa „Source of Lanes” znika z nocnego oblicza mapy —

@@ -4,6 +4,42 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-08 — PR-25: audyt scalonego PR-24, procedura ilustracji kart, decyzja o mapie Dominarii
+
+Sesja `arena/01a081d0-mtg`, PR #25. Poprzedni agent (PR #24: Dominaria
+T1 + podmapa Aerony D1) zawiesił się po pierwszej wersji mapy; uwagi
+właściciel zgłaszał bezpośrednio.
+
+**Audyt scalonego PR-24** (81 plików; `docs/audits/AUDYT_2026-09-08-PR24.md`):
+baza zdrowa (testy, build, map-audit, kompletność); 8 pozycji (F1–F8) —
+wszystkie naprawione w tym PR. Dwie pozycje proceduralne stały się
+ADR-ami „na sztywno” (właściciel: „to nie pierwsza taka sytuacja”):
+**ADR 0040** — oryginalne ilustracje z kart NIE są kanonem (kanoniczne
+są tylko ilustracje FOT/KON właściciela), jakiekolwiek nawiązywanie do
+nich i wnioskowanie na ich podstawie jest niezgodne z procedurą;
+**ADR 0041** — podmapa/nakładka będąca wycinkiem bazy bez nowego
+detalu nie ma zastosowania; mapa = jedna całościowa mapa FHD +
+kafelkowa od pewnego zoomu (mechanizm L2 w silniku zostaje —
+regulator, nie treść).
+
+**Treść:** karta [[40usg-expunge|Expunge]] (40USG) przepisana w całości
+z Fabuły właściciela + kanonu (scena z odczytu ilustracji Moellera
+wycofana); [[393dka-forge-devil|Forge Devil]] bez nazwiska artysty w
+scenie; strona planu [[dominaria|Dominarii]] z sekcjami „Mapa” +
+„Źródła”; errata w researchu Dominarii; nowy strażnik
+`test/druk-zrodlowy.test.js` (ilustracj*/wignet/artysta ze snapshotu
+zabronione w każdej karcie z dostępny snapshotem).
+
+**Mapa:** nakładka L2 „Domeny” + raster `aerona.jpg` (1,6 MB)
+usunięte (warianty: `['t1']`); pinezka 40USG zmierzona na M1 master
+(px 1569,1979 → 0.1937,0.3806; pewność `region`); kotwice kontynentów
+bez adnotacji D1; `map.json` z sekcją „otwarte” (decyzje o detalach).
+**Build:** `zbudujPakiet` czyści katalog wyjściowy — pliki usunięte
+z repo znikają z drzewa map i ZIP-a (regresja: nadpisywanie nie
+śledziło usunięć). **159 testów; 22 strony = 11 kart, 1 hasło,
+10 planów**; map-audit 0. Plan:
+`docs/plans/PLAN_2026-09-08-pr25-map-dominaria-los-matry.md`.
+
 ## 2026-09-08 — PR-23: przejęcie przerwanej sesji PR-22 i domknięcie 605SHM / Lorwyn
 
 Sesja `arena/01a07fc3-mtg`, PR #23. Poprzedni agent (PR #22) przerwał
