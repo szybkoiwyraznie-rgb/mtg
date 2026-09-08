@@ -328,7 +328,7 @@ pewność: region); kotwice bez D1. **Build:** pełny build czyści `dist/`
 (usunięte pliki znikają z drzewa i ZIP-a). **159 testów; 22 strony
 = 11 kart, 1 hasło, 10 planów**; map-audit 0. Raporty:
 `docs/audits/AUDYT_2026-09-08-PR24.md`,
-`docs/plans/PLAN_2026-09-08-pr25-map-dominaria-los-matry.md`.
+`docs/plans/PLAN_2026-09-08-pr25-dominaria-l2-i-druk-zrodlowy.md`.
 
 ## Wątki otwarte (czekają na decyzję właściciela)
 

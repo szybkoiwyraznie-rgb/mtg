@@ -38,7 +38,7 @@ bez adnotacji D1; `map.json` z sekcją „otwarte” (decyzje o detalach).
 z repo znikają z drzewa map i ZIP-a (regresja: nadpisywanie nie
 śledziło usunięć). **159 testów; 22 strony = 11 kart, 1 hasło,
 10 planów**; map-audit 0. Plan:
-`docs/plans/PLAN_2026-09-08-pr25-map-dominaria-los-matry.md`.
+`docs/plans/PLAN_2026-09-08-pr25-dominaria-l2-i-druk-zrodlowy.md`.
 
 ## 2026-09-08 — PR-23: przejęcie przerwanej sesji PR-22 i domknięcie 605SHM / Lorwyn
 
