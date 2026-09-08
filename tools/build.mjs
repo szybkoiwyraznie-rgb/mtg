@@ -34,39 +34,84 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 // ── Mini-mapy kart (ADR 0027 v3 — decyzja właściciela 2026-09-08) ────
 // Miniatura = screenshot bazy domyślnego wariantu, szer. 800 px, jpg q80
-// (Lorwyn: 8,3 MB SVG → ~100 kB). Łańcuch rasterizatorów:
-// 1) @resvg/resvg-js — dev-only (build), natywny, bez zależności systemowych,
-//    pełna jakość SVG; silnik (src/codex) pozostaje zero-dependency (ADR 0002);
-// 2) ImageMagick `convert` — rastry zawsze, SVG gdy jest delegat rsvg;
-// 3) fallback: pełna baza w drzewie (działa, ale ZIP cięższy) + ostrzeżenie.
-async function wyrenderujMiniature({ zrodlo, cel }) {
-  const jestSvg = String(zrodlo).toLowerCase().endsWith('.svg');
-  const tmpPng = `${cel}.tmp.png`;
-  try {
-    if (jestSvg) {
-      try {
-        const { Resvg } = await import('@resvg/resvg-js');
-        const png = new Resvg(fs.readFileSync(zrodlo), {
-          fitTo: { mode: 'width', value: 800 }, background: '#f7f2e7',
-        }).render().asPng();
-        fs.writeFileSync(tmpPng, png);
-        execFileSync('convert', [tmpPng, '-quality', '80', '-strip', cel], { stdio: 'pipe' });
-        return true;
-      } catch { /* brak modułu lub plik nie do wsparcia — spróbuj ImageMagick */ }
+// (Lorwyn: 8,3 MB SVG → ~100 kB). Łańcuch wyłącznie w zależnościach
+// npm (dev-only — silnik src/codex pozostaje zero-dependency, ADR 0002),
+// BEZ binarików systemowych — runner CI (ubuntu-latest 24.04) nie ma
+// ImageMagick, regresja 2026-09-08: fallback do pełnej bazy + czerwony
+// test artefaktu:
+// 1) SVG → @resvg/resvg-js (natywny, pełna jakość SVG) → PNG;
+// 2) PNG/JPG → pngjs / jpeg-js (czysty JS) → RGBA;
+// 3) skalowanie bilinearnie do 800 px + kodowanie JPEG q80 (jpeg-js);
+// 4) fallback: pełna baza w drzewie (działa, ale ZIP cięższy) + ostrzeżenie.
+const SZEROKOSC_MINI = 800;
+const JAKOSC_JPG = 80;
+
+/** Bilinearny downscale RGBA (czysty JS; jakość wystarczająca dla miniatury). */
+function skalujBilinearnie(src, sw, sh, dw, dh) {
+  const dst = Buffer.alloc(dw * dh * 4);
+  const rx = sw / dw, ry = sh / dh;
+  for (let y = 0; y < dh; y++) {
+    const sy = Math.min(sh - 1, Math.floor(y * ry));
+    const y1 = Math.min(sh - 1, sy + 1);
+    const fy = Math.min(1, y * ry - sy);
+    for (let x = 0; x < dw; x++) {
+      const sx = Math.min(sw - 1, Math.floor(x * rx));
+      const x1 = Math.min(sw - 1, sx + 1);
+      const fx = Math.min(1, x * rx - sx);
+      for (let c = 0; c < 4; c++) {
+        const i00 = (sy * sw + sx) * 4 + c, i10 = (sy * sw + x1) * 4 + c;
+        const i01 = (y1 * sw + sx) * 4 + c, i11 = (y1 * sw + x1) * 4 + c;
+        dst[(y * dw + x) * 4 + c] =
+          Math.round(src[i00] * (1 - fx) * (1 - fy) + src[i10] * fx * (1 - fy) +
+                     src[i01] * (1 - fx) * fy + src[i11] * fx * fy);
+      }
     }
-    execFileSync('convert', [zrodlo, '-background', '#f7f2e7', '-resize', '800x', '-quality', '80', '-strip', cel], { stdio: 'pipe' });
+  }
+  return dst;
+}
+
+async function wyrenderujMiniature({ zrodlo, cel }) {
+  try {
+    const rozszerzenie = path.extname(zrodlo).toLowerCase();
+    let rgba;
+    if (rozszerzenie === '.svg') {
+      const { Resvg } = await import('@resvg/resvg-js');
+      const png = new Resvg(fs.readFileSync(zrodlo), {
+        fitTo: { mode: 'width', value: SZEROKOSC_MINI }, background: '#f7f2e7',
+      }).render().asPng();
+      const { PNG } = await import('pngjs');
+      rgba = PNG.sync.read(png);
+    } else if (rozszerzenie === '.jpg' || rozszerzenie === '.jpeg') {
+      const { decode } = await import('jpeg-js');
+      rgba = decode(fs.readFileSync(zrodlo), { maxMemoryUsageInMB: 512 });
+    } else if (rozszerzenie === '.png') {
+      const { PNG } = await import('pngjs');
+      rgba = PNG.sync.read(fs.readFileSync(zrodlo));
+    } else {
+      return false;
+    }
+    let { width, height, data } = rgba;
+    if (width > SZEROKOSC_MINI) {
+      const nowaWys = Math.max(1, Math.round(height * SZEROKOSC_MINI / width));
+      data = skalujBilinearnie(data, width, height, SZEROKOSC_MINI, nowaWys);
+      width = SZEROKOSC_MINI;
+      height = nowaWys;
+    }
+    const { encode } = await import('jpeg-js');
+    const jpg = encode({ data, width, height }, JAKOSC_JPG).data;
+    fs.writeFileSync(cel, Buffer.from(jpg));
     return true;
   } catch {
     return false;
-  } finally {
-    try { fs.rmSync(tmpPng, { force: true }); } catch { /* plik tymczasowy — pomijamy */ }
   }
 }
 
-/** Czy środowisko buildu ma rasterizator mini-map (ADR 0027 v3). */
+/** Czy środowisko buildu ma rasterizator mini-map (ADR 0027 v3).
+ *  SVG wymaga resvg (natywny dev-dep); rastry idą przez czysty JS
+ *  (pngjs/jpeg-js) — dostępne po `npm ci`. */
 export async function czyDostepnyRasterizer() {
   try { await import('@resvg/resvg-js'); return true; } catch { /* dalej */ }
-  try { execFileSync('convert', ['-version'], { stdio: 'pipe' }); return true; } catch { return false; }
+  try { await import('jpeg-js'); return true; } catch { return false; }
 }
 
 // ── Metadane czasu stron (ADR 0029) ─────────────────────────────────
