@@ -126,7 +126,7 @@ Encje „o jedną kartę” od progu (skan boldów 2026-09-08):
 | Avernus, Baator | geografia | 3clb-nefarious-imp | 1 karta |
 | imp (chochlik) | fauna | 3clb-nefarious-imp | 1 karta |
 | Wojna Hobgoblinów, Tiamat | wydarzenie/koncepcja | 3clb-nefarious-imp (+ plan forgotten-realms) | 1 karta |
-| Faerûn, Abeir-Toril, Morze Upadłych Gwiazd, Moonshaes, Nelanther, Amn, Luruar, Morze Wewnętrzne, Królestwo Wysokie, Morze Bezludne | geografia | — (plan forgotten-realms) | licznik od kart, nie planów |
+| Faerûn, Abeir-Toril, Morze Upadłych Gwiazd, Moonshaes, Nelanther, Amn, Luruar, Jezioro Pary, Królestwo Wysokie, Morze Bezludne | geografia | — (plan forgotten-realms) | licznik od kart, nie planów |
 | Mystra, Selûne, Lathander, Ilmater, Tempus, Tkanina Magii, Czas Kłopotów | postac/koncepcja | — (plan forgotten-realms) | licznik od kart, nie planów |
 
 ## Mapa Zendikaru — WYKONANA (ADR 0012)

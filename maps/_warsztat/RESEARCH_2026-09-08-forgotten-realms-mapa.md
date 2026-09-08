@@ -11,6 +11,17 @@
 > `maps/forgotten-realms/podklad.svg` z repozytorium **Vectorized Realms**
 > (jonovotny), plik `faerun-v016-40dpi.svg`.
 
+## Errata 2026-09-09 (audyt PR-25)
+
+Ten dokument zachowuje historię **odrzuconego** wariantu T2 i jego
+lokalnych współrzędnych, ale nie jest już źródłem prawdy dla geografii
+Faerûnu. W pierwszym przejściu pomylono kilka nazw i relacji:
+**Luruar** opisano jak południowe mokradła, **Sea of Fallen Stars**
+potraktowano osobno od **Inner Sea**, a południowy akwen czytano jak
+„Morze Wewnętrzne”, choć na mapie 3E chodzi o **Lake of Steam**.
+Obowiązujący zapis kanoniczny i kotwice robocze żyją w
+`maps/forgotten-realms/map.json` (wariant T1 po decyzji właściciela).
+
 ## 0. Kotwica: karta inicjująca 3CLB Nefarious Imp
 
 Dostawa właściciela (2026-09-08): mroczny gabinet wojenny na

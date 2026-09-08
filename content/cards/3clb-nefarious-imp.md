@@ -149,16 +149,9 @@ informacji; jest jej surowcem.
   piekielnej (poniżej baatezu), forma humanoida ~2 st, rzadkie
   barwy, niewidzialność, wykrywanie magii, sugestia raz dziennie,
   szybka regeneracja, rany tylko srebrne/czarne, tchórzliwość,
-  kradzież kosztowności, służba każdemu złemu panu:
+  kradzież kosztowności, służba każdemu złemu panu oraz powrót na
+  rodzimą płaszczyznę po roku i dniu, jeśli zginie poza nią:
   https://forgottenrealms.fandom.com/wiki/Imp
-- Official Bestiary Wiki, *Imp (D&D)* — najsłabszy szczebel
-  legionów, kusiciel i służalca śmiertelników, familiar złego
-  czarnoksiężnika, ~9 dusz do awansu:
-  https://officialbestiary.fandom.com/wiki/Imp_(D&D)
-- FR Fan Wiki (społeczna), *Imp Species* — pochodzenie z
-  Acheronu/Baatoru, doradcy i szpiedzy, powrót po roku i dniu
-  (źródło społeczności, traktowane jako uzupełnienie):
-  https://worldaneil.github.io
 - Mapa Kodeksu: pinezka (0.124, 0.176) na rastrze oficjalnej mapy
   Faerûn 3E (WotC/TSR, 2001), rejon: Wybrzeże Mieczy (środek pasa,
   Neverwinter–Waterdeep).
