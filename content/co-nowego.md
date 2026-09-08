@@ -1,3 +1,36 @@
+## 2026-09-08 22:05 — Mapa FR: wektor T2 do kosza, podkład = oficjalna Faerûn 3E (T1+LOD jak Dominaria) + warstwa POI
+
+- **Decyzja właściciela (po obejrzeniu mapy live): T2 wektor
+  Vectorized Realms odrzucony** („wolny, brak ikon lokalizacji,
+  brzydki”) — kasacja `podklad.svg` (4,3 MB) i wymiana na **T1:
+  oficjalną mapę Faerûn 3E** (WotC/TSR, 2001, 4763×3185; plik
+  dostarczył właściciel, commit „Add files via upload”).
+- **Model ładowania = dokładnie Dominaria (ADR 0039):** L0
+  (`l0.jpg`, 1920 px, 826 kB) ładowane pierwsze w całości +
+  kafelki L1 w pełnej rozdzielczości (10×7 po 512 px, próg 2.5)
+  doładowywane od przybliżenia; master 4,3 MB w repo, poza dist.
+  Siatka cięta `tools/kafle.mjs` (konwersja webp→JPG q92).
+- **Nowa warstwa POI (decyzja właściciela: „pod spodem wektorowo
+  najważniejsze POI pod przyszłe pinezki”):** 13 złotych kółek
+  (miasta Wybrzeża Mieczy, Silverymoon, Mithral Hall, Myth
+  Drannor, Mulmaster, Helondeth, Mulhorand, huby Moonshaes i
+  Nelanther) renderowanych w scenie **pod warstwą kafelków** —
+  widoczne na rastrze L0, po doładowaniu L1 pokrywa je druk
+  mastera. Dane w `map.json` (pole `poi`), bez etykiet (nazwy
+  niesie raster), bez interakcji (ADR 0043: piny = tylko karty).
+- **Kotwice i pinezka przeliczone na nowy raster** (odczyt siatki
+  5% na L0 + wycinki detaliczne): 9 regionów w nowych
+  współrzędnych; pinezka 3CLB na środku pasa Wybrzeża Mieczy
+  (0.124, 0.176 — Neverwinter–Waterdeep), pewność rejon bez
+  zmian. „Królestwo Wysokie” bez jawnej etykiety na podkładzie —
+  kotwica z jawną proweniencją (Cities of the Inner Sea 3e).
+- **Strażnicy:** ui-smoke FR odwrócony na T1 (img l0.jpg, brak
+  inline SVG i kodex-etykiet, warstwa `data-kafle` + `mapa-poi`
+  z ≥13 punktami); `mapy.test.js`: schemat warstwy POI (nazwa,
+  x/y ∈ [0,1], bez duplikatów).
+- Strona planu (sekcja Mapa) i karta 3CLB („Na Mapie”, Źródła)
+  zsynchronizowane z nowym podkładem.
+
 ## 2026-09-08 20:59 — Naprawa map: lewy górny róg w środku okna (wszystkie mapy) + FR bez grafiki
 
 - **Regresja (recenzja właściciela): „środek iframe'a to lewy górny

@@ -35,8 +35,8 @@ Północy po pustkowie Amn na południu.
 
 ## Geografia
 
-Mapa settingu pokrywa Faerûn w granicach źródłowych wektorów
-(dane z epoki 3.5e; różnice granic względem 5e są kosmetyczne):
+Mapa settingu pokrywa Faerûn w granicach oficjalnej mapy 3E
+(różnice granic względem epoki 5e są kosmetyczne):
 
 - **Wybrzeże Mieczy** — pas nadmorskich królestw i miast-handli
   wzdłuż zachodniego brzegu; serce settingu, miejsce akcji CLB;
@@ -59,16 +59,26 @@ Mapa settingu pokrywa Faerûn w granicach źródłowych wektorów
 
 ## Mapa
 
-`maps/forgotten-realms/` — wariant **T2 (przyjęcie)**: jedyny
-kompletny wektor Faerûn znaleziony w kwerendzie (Vectorized Realms,
-autor jonovotny, dane z epoki 3.5e — badanie:
-`maps/_warsztat/RESEARCH_2026-09-08-forgotten-realms-mapa.md`).
-Źródło nie udostępnia otwartej licencji, a projekt jest prywatny
-bez publicznej dystrybucji — użytkowanie prywatne, decyzja
-właściciela 2026-09-08; źródło w stopce mapy tak jak z podkładami
-rastrowymi Tarkiru i Innistradu. Podkład nie miał etykiet — warstwę
-etykiet (polskie nazwy regionów) dołożył Kodeks w warstwie
-`#kodex-etykiety` wewnątrz podkładu.
+`maps/forgotten-realms/` — wariant **T1 (rastr)**: oficjalna mapa
+Faerûn **3E** (Wizards of the Coast / TSR, 2001) — cała zachodnia
+połowa kontynentu, z etykietami i ikonami miast nadrukowanymi na
+podkładzie (decyzja właściciela 2026-09-08: „bezkonkurencyjna” w
+porównaniu z kandydatami; badanie:
+`maps/_warsztat/RESEARCH_2026-09-08-faerun-mapa-t1.md`).
+Model ładowania jak w Dominarii (ADR 0039): **L0** — pomniejszona
+całość (`l0.jpg`, 1920 px, pierwszy render), **L1** — kafelki
+mastera w pełnej rozdzielczości (10×7 po 512 px) doładowywane od
+progu przybliżenia 2.5. Master 4763×3185 (4,3 MB) żyje w repo,
+poza dist; podkład dostarczył właściciel, atrybucja źródła w
+stopce mapy (użytek prywatny, ADR 0031).
+
+Pod spodem rastrowych warstw leży **wektorowa warstwa POI**
+(złote kółka, bez etykiet — nazwy niesie sam podkład): trzynaście
+najważniejszych punktów odniesienia (miasta Wybrzeża Mieczy,
+Silverymoon, Myth Drannor, Mulmaster, Helondeth, Mulhorand i huby
+archipelagów) jako kotwice pod przyszłe pinezki kart (ADR 0043:
+piny na mapach = tylko karty). Po doładowaniu kafli L1 kółka
+pokrywa druk mastera.
 
 Pinezki na mapie (ADR 0043: tylko karty):
 
@@ -85,12 +95,9 @@ Pinezki na mapie (ADR 0043: tylko karty):
 - Forgotten Realms Wiki (PL), *Zapomniane Krainy* — polska nazwa
   settingu, Faerûn, Abeir-Toril:
   https://forgottenrealms.fandom.com/pl/wiki/Zapomniane_Krainy
-- Vectorized Realms (jonovotny) — wektor Faerûn v016 (dane 3.5e),
-  bez licencji otwartej; użytkowanie prywatne:
-  https://github.com/jonovotny/vectorized-realms
-- D&D Beyond / WotC — oficjalna mapa Faerûn (3e) jako wzorzec
-  granic akwenów i lądów:
-  https://www.dndbeyond.com
+- Mapa - Faerun - 3E (WotC/TSR, 2001) — podkład mapy planu (T1);
+  użytkowanie prywatne, atrybucja w stopce mapy:
+  https://forgottenrealms.fandom.com/wiki/File:Map_-_Faerun_-_3E.jpg
 - Scryfall, set CLB (*Commander Legends: Battle for Baldur's Gate*,
   2022-06-10) — karty crossoveru do kodexu:
   https://scryfall.com/sets/clb

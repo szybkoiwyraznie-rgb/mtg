@@ -115,8 +115,10 @@ miasta handlowe Wybrzeża gęstnieją, a z nimi gabinety.
 
 Oznaczenie na mapie Faerûn (ikona chochlika):
 `#/mapa/forgotten-realms?pin=3clb-nefarious-imp` — na zoomie
-podkładu (wektor 3055×2044) etykieta regionu **Wybrzeże Mieczy**
-jest w pełni czytelna.
+podkładu (raster 4763×3185, kafelki w pełnej rozdzielczości od
+przybliżenia 2.5) etykieta regionu **Wybrzeże Mieczy** jest w
+pełni czytelna; pinezka stoi na środku pasa, między Neverwinter
+a Waterdeep.
 
 ## Mechanika jako Opowieść
 
@@ -157,8 +159,9 @@ informacji; jest jej surowcem.
   Acheronu/Baatoru, doradcy i szpiedzy, powrót po roku i dniu
   (źródło społeczności, traktowane jako uzupełnienie):
   https://worldaneil.github.io
-- Mapa Kodeksu: pinezka (0.18, 0.38) na wektorze Faerûn
-  (Vectorized Realms), rejon: Wybrzeże Mieczy.
+- Mapa Kodeksu: pinezka (0.124, 0.176) na rastrze oficjalnej mapy
+  Faerûn 3E (WotC/TSR, 2001), rejon: Wybrzeże Mieczy (środek pasa,
+  Neverwinter–Waterdeep).
 
 ## Podsumowanie Lore
 

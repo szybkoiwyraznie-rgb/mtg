@@ -7,6 +7,18 @@
 > Właściciel pobiera plik z linków poniżej i wrzuca do repo (sandbox
 > blokuje media-CDN-y — pobrań binarnych nie robi agent).
 
+> **STATUS: WYKONANA (2026-09-08, wieczór).** Właściciel wybrał
+> kandydata **A (oficjalna 3E, „bezkonkurencyjna”)** i sam wrzucił
+> plik do gałęzi (commit `c2c4b77`, webp 3,1 MB w korzeniu repo).
+> Zrealizowane: konwersja webp→`master.jpg` (JPG q92, 4,3 MB),
+> siatka LOD `tools/kafle.mjs` (L0 1920×1284 + 10×7×512, próg 2.5),
+> `map.json` T1+LOD (kotwice 9 + pinezka 3CLB przeliczone odczytem
+> siatki 5% + warstwa POI 13 punktów), silnik: `htmlPoi` (kółka pod
+> kafelkami), kasacja `podklad.svg`. Właściciel dodał wymaganie
+> ponad model Tarkiru: **LOD jak Dominaria** (kafelki L1 w pełnej
+> rozdzielczości) + **wektorowe POI pod przyszłe pinezki** —
+> zrealizowane w tym samym przejściu.
+
 ## 1. Kryteria T1 (z ADR 0038/0041 + precedensy Tarkir/Innistrad)
 
 - **Jeden rastr** (JPG, ~2–10 MB) renderowany jako `<img>` + pinezki
