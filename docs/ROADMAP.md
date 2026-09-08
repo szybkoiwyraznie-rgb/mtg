@@ -304,6 +304,14 @@ karta **605SHM**, plan **Lorwyn–Shadowmoor** i mapa **T4 z przełącznikiem
 dwóch oblicz** (wspólna geometria, dwa słowniki nazw). **143 testy;
 17 stron = 8 kart, 1 hasło, 8 planów**; map-audit 0; obie mapy obejrzane
 rastrowo. Handoff: `docs/setup/HANDOFF_2026-09-08-pr23.md`.
+**Po handoffie 6 commitów** (nowe dostawy właściciela): 476MBS Banishment
+Decree (Mirrodin, biała Phyrexia), ADR 0038 (drabina T2→T1→T3→T4) +
+research Innistradu, raster T1 od właściciela, 393DKA Forge Devil + plan
+**Innistrad z mapą T1** (64 kotwice), research Dominarii (T1 + podmapa
+Aerony). Scalony 2026-09-08 12:17 UTC (squash `eca14c0`). **Finalnie:
+143 testy; 20 stron = 10 kart, 1 hasło, 9 planów**; PR #22 zamknięty
+jako wchłonięty. Handoff/opis PR nie nadążyły za końcówką (L9 — patrz
+audyt `docs/audits/AUDYT_2026-09-08-PR23.md`, znalezisko F2).
 
 ## Wątki otwarte (czekają na decyzję właściciela)
 

@@ -50,6 +50,22 @@ worktree właściciel dostarczył jako plik `.patch` (commit `621fd75`).
 - Wynik: **143 testy, 17 stron**; wszystkie karty i plany 8/8
   w `wiki-stats`.
 
+### Dostawy po handoffie (ta sama sesja, 6 commitów)
+
+Handoff spisano przed końcem pracy; gałąź urosła jeszcze o: notkę
+o szlakach Lorwynu, materializację **476MBS Banishment Decree**
+(Mirrodin — Ortodoksja Maszyn, Auriokowie, pinezka `region` przy Cave
+of Light), **ADR 0038** (drabina wariantów map) + research Innistradu,
+raster T1 wgrany przez właściciela (`innistrad2.webp`, potem
+przekodowany do JPG i sprzątnięty), materializację **393DKA Forge
+Devil** + plan **Innistrad z mapą T1** (64 kotwice, pinezka `dokladna`
+na Thraben) oraz research Dominarii (rekomendacja T1 + podmapa Aerony).
+Opis PR, ROADMAP i ten dziennik nie nadążyły za końcówką (L9 — audyt
+PR-24, znalezisko F2; liczby wyżej dotyczą stanu `f82d1ba`).
+Scalono 2026-09-08 12:17 UTC (squash `eca14c0`, PR #23); PR #22
+zamknięty jako wchłonięty. **Stan po scaleniu: 143 testy, 20 stron
+(10 kart + 1 hasło + 9 planów)**, `map-audit` 0, stats 99%.
+
 ## 2026-09-07 — PR-22: audyt PR-21 i naprawy (punkt kontrolny)
 
 Sesja `arena/01a07d33-mtg`, PR #22 otwarty przed pracą (`2188033`).
