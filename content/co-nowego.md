@@ -1,3 +1,22 @@
+## 2026-09-08 10:05 — Pętla Jakości: co naprawdę łączy światy Final Fantasy
+
+- **[[final-fantasy|Final Fantasy]]:** plan był najuboższą stroną bazy —
+  dostał sekcję o tym, co spina sagę, skoro nie spina jej geografia.
+  **Kryształy** jako źródło powołania i cel podboju; **Lifestream** —
+  rzeka duchowej energii, w której krąży pamięć zmarłych; **materia**
+  jako skrystalizowana wiedza; **wydobycie** jako sedno konfliktu
+  (planeta jest żywa, a jej krew da się spalić na prąd); **Jenova**
+  i zagłada **Cetry** dwa tysiące lat przed sceną karty; **Ziemia
+  Obiecana**, która nigdy nie była miejscem — tylko stanem, i której
+  błędne odczytanie ściągnęło nieszczęście na [[275fin-aerith-rescue-mission|Aerith]].
+- **[[1ltr-dunland-crebain|Dunland Crebain]]:** dopisana historia sieci
+  zwiadu. Saruman zbudował swój wywiad cudzymi rękami — ptasich szpiegów
+  pomagał mu zbierać **Radagast**, przekonany, że służy Białej Radzie.
+  **Éomer** ostrzegał, że „ptaki złej wróżby są w powietrzu”, a **Théoden**
+  życzył czarodziejowi szubienicy „na uciechę jego własnym krukom”.
+- Bez nowych haseł: żadna encja nie przekroczyła progu dwóch kart.
+  Wszystkie **8 kart** ma pinezki na mapach swoich planów.
+
 ## 2026-09-08 09:10 — Consign to Dream i pierwsza mapa dwóch oblicz: Lorwyn–Shadowmoor
 
 - **[[605shm-consign-to-dream|Consign to Dream]]:** nowa Karta Katalogowa.

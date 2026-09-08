@@ -31,6 +31,25 @@ worktree właściciel dostarczył jako plik `.patch` (commit `621fd75`).
   pkt 6); Glen Elendra osłonięta pasmami, rzeka wychodzi poza kadr bez
   wymyślonego morza; brak etykiet-sierot.
 
+### Pętla Jakości (druga część sesji)
+
+- **Pogłębienia (2):** plan `final-fantasy` — najsłabsza strona bazy
+  (244 słowa, 2 źródła) — dostał sekcję „Co łączy światy sagi”
+  (Kryształy, Lifestream i pamięć, materia, wydobycie, Jenova/Cetra,
+  Ziemia Obiecana jako stan; +5 źródeł); karta `1ltr-dunland-crebain`
+  — kanoniczny wątek sieci wywiadu (Radagast zwerbowany podstępem,
+  ostrzeżenie Éomera, słowa Théodena o krukach Sarumana; +1 źródło).
+- **Link-mining: 0 nowych haseł.** Zliczono boldy i nazwy własne we
+  wszystkich kartach z pominięciem sekcji Źródła — żadna encja nie
+  osiąga progu 2 kart. Nie fabrykowano haseł dla metryki.
+- **Pass mapowy:** kompletność 8/8 kart z pinezkami (weryfikacja
+  skryptowa wobec wszystkich `map.json`), `map-audit` 0.
+- **Środowisko odświeżyło się po raz drugi w tej sesji** — płytki klon
+  bez commitów sesji; naprawa przez `fetch --unshallow` +
+  `rebase --onto` na stan zdalny, bez force (L11, ENVIRONMENT §2a).
+- Wynik: **143 testy, 17 stron**; wszystkie karty i plany 8/8
+  w `wiki-stats`.
+
 ## 2026-09-07 — PR-22: audyt PR-21 i naprawy (punkt kontrolny)
 
 Sesja `arena/01a07d33-mtg`, PR #22 otwarty przed pracą (`2188033`).
