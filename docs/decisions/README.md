@@ -53,6 +53,7 @@ dziedziczona z projektu mtg-game.
 | [0035](0035-warianty-podkladu-t1-raster-fanowski-w-repo-i-uklad-zloty.md) | Warianty podkładu jednej mapy: raster fanowski T1 w repo (decyzja właściciela per plan), przełącznik epok T1 Dragonstorm ↔ T4 Khans, JEDEN układ współrzędnych (złoty = raster T1, kalibracja afiniczna dla innych podkładów), wariant bez etykiet Codexu — Tarkir | Zaakceptowana |
 | [0036](0036-niezmienny-numer-kolekcji-fot-kon.md) | Niezmienny numer kolekcji/imgId właściciela; niezależność FOT/KON i slugu od numeracji Scryfalla | Zaakceptowana |
 | [0037](0037-lorwyn-shadowmoor-t4-wspolny-uklad.md) | Lorwyn–Shadowmoor T4: jeden wspólny układ, przełączane nazwy, pinezki w obu obliczach; T1 tylko po akceptacji nienagannej jakości, Eclipsed odłożone | Zaakceptowana |
+| [0038](0038-drabina-preferencji-wariantow-map-t2-t1-t3-t4.md) | Drabina preferencji wariantów map: T2 → T1 → T3 → T4; T4 jest ostatecznością wymagającą uzasadnienia, rastry fanowskie są pełnoprawnym źródłem, wariant wybiera się po researchu | Zaakceptowana |
 
 Spójnością rejestru (numeracja, statusy, tabela) pilnuje
 `test/rejestr-adr.test.js`.
