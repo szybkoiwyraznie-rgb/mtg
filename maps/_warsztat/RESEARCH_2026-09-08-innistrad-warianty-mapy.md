@@ -33,7 +33,7 @@ Najlepszy kandydat fanowski (obejrzany):
   Somberwald, Heron's Grace Monastery; Gavony z Thraben, Nearheath
   (Videns, Wittal, Effalen, Estwald, Hanweir), Moorland, Trostad,
   Westvale, rzeka Kirch; Kessig z Ulvenwald, Hollowhenge, Lambholt,
-  Gatstaf, Natterknolls, Bower Passage, Briar Bridges, Devil's Breach,
+  Gatstaf, Natterknolls, Bower Passage, Briar Bridges, Devils' Breach,
   The Approaches; Nephalia z Havengul, Drunau, Selhoff, Morkrut Swamp,
   Lake Zhava, Erdwal, Jenrik's Tower, Silver Beach.
 - Zgodność z kanonem tekstowym **dobra**: Gavony w centrum, Stensia

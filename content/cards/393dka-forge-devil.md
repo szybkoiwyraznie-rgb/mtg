@@ -113,7 +113,7 @@ w miejscu, którego nikt nie pilnuje, bo do niedawna nie było trzeba.
 
 ## Transpozycja
 
-Scena z dostawy właściciela rozgrywa się dokładnie tam, gdzie umieszcza
+Fabuła osadza scenę dokładnie tam, gdzie umieszcza
 ją flavor: w **najniższych poziomach Katedry w Thraben**, pośród
 archiwów Kościoła. Elementy sceny mają pokrycie w kanonie:
 
@@ -182,6 +182,7 @@ nieznaczący, wszystkie razem zdolne zawalić sklepienie.
 4. [The Prison of Silver](https://mtglore.com/web-articles/the-prison-of-silver/) — uwięzienie Avacyn w Helvaulcie i zanik świętej mocy, czyli powód, dla którego diabły mogły wejść do katedry.
 5. [The Guardian, the Witch, and the Angel](https://mtglore.com/web-fiction/the-guardian-the-witch-and-the-angel/) — katakumby pod katedrą, potajemny pochówek Mikaeusa, straż katarów.
 6. [Church of Avacyn — MTG Wiki](https://mtg.wiki/page/Church_of_Avacyn) — katarowie jako zbrojne ramię Kościoła i rola srebrnego symbolu.
+7. Fabuła właściciela (2026-09-08) — najniższe poziomy Katedry w Thraben, diabeł rozbijający filar nośny, rykoszet raniący katarów i przywoływaczy, płonące archiwa jako światło sceny.
 
 ## Podsumowanie Lore
 

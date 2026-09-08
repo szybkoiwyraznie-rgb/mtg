@@ -436,6 +436,11 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   for (const slug of slugiKart) {
     shim.idz(`#/karta/${slug}`);
     const html = shim.app.innerHTML;
+    // F1 (audyt PR-23): każda dostawa w bazie niesie Fabułę (ADR 0026),
+    // więc każda karta ma ją cytować — 393DKA przeszła bez niej, bo
+    // pozytywna asercja obejmowała tylko 1LTR.
+    assert.ok(html.includes('Fabuła'),
+      `karta ${slug}: brak cytowania Fabuły (ADR 0026 pkt 4)`);
     assert.ok(!html.includes('Fabuła dostawy'),
       `karta ${slug}: termin „Fabuła dostawy" zabroniony (ADR 0026) — ma być samo „Fabuła"`);
     assert.ok(!html.includes('ADR'),
