@@ -110,3 +110,20 @@ test('warianty podkładu (ADR 0035): pliki istnieją, dokładnie jeden domyślny
   assert.deepEqual(problemy, [], `Wadliwe warianty podkładu:\n${problemy.join('\n')}`);
 });
 
+test('Innistrad: kotwice z jawną proweniencją jednostkową (F5, audyt PR-23)', () => {
+  // Dwa poziomy: „kanon:” z URL-em przewodnika albo jawne „wyłącznie
+  // raster:” do weryfikacji przy karcie z regionu. Szablonowa kopia
+  // jednego zdania na wszystkie kotwice nie przechodzi.
+  const mapa = mapy.get('innistrad');
+  assert.ok(mapa && !mapa.problem, 'brak mapy innistrad');
+  assert.ok(mapa.kotwice.length >= 64, `oczekiwano ≥64 kotwic, jest ${mapa.kotwice.length}`);
+  const zle = [];
+  for (const k of mapa.kotwice ?? []) {
+    const z = k.pozycja_zrodlo ?? '';
+    const kanon = z.startsWith('kanon:') && z.includes('https://');
+    const raster = z.startsWith('wyłącznie raster:');
+    if (!kanon && !raster) zle.push(k.nazwa);
+  }
+  assert.deepEqual(zle, [], `Kotwice bez jawnej proweniencji: ${zle.join(', ')}`);
+});
+
