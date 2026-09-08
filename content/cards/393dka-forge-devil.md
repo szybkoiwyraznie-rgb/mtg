@@ -176,7 +176,7 @@ nieznaczący, wszystkie razem zdolne zawalić sklepienie.
 
 ## Źródła
 
-1. [Forge Devil — Scryfall](https://scryfall.com/card/dka/91/forge-devil) — dane druku, tekst wyroczni i flavor; ilustracja: Austin Hsu, *Dark Ascension* (3 lutego 2012).
+1. [Forge Devil — Scryfall](https://scryfall.com/card/dka/91/forge-devil) — dane druku, tekst wyroczni i flavor.
 2. [Plane Shift: Innistrad](https://media.wizards.com/2016/dnd/downloads/Plane_Shift_Innistrad.pdf) — opis diabłów: wzrost trzech–czterech stóp, igiełkowate zęby, sabotaż i podjudzanie jako właściwa specjalność.
 3. [Archive Trap: The World of Innistrad](https://www.mtgsalvation.com/articles/49486-archive-trap-the-world-of-innistrad) — diabły jako sprawcy okrutnych psot kierowani przez demony; Skirsdag w hierarchii Kościoła; położenie Thraben i Katedry.
 4. [The Prison of Silver](https://mtglore.com/web-articles/the-prison-of-silver/) — uwięzienie Avacyn w Helvaulcie i zanik świętej mocy, czyli powód, dla którego diabły mogły wejść do katedry.
