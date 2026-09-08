@@ -34,7 +34,11 @@ Pokonasz jednego — a za kilka uderzeń serca wir zmieli światło
 na nowo i za twoimi plecami wyłoni się następny. Scena należy do ery
 scalonej Alary (*Alara Reborn*): Maelstrom istnieje dopiero od
 Conflux, więc ten „demon” wiruje dokładnie tam, gdzie pięć światów
-zszyto w jeden.
+zszyto w jeden. Paleta wiru to mieszanka many wszystkich pięciu
+shardów — w uspokojonych momentach burzy widać jeszcze barwę
+każdego świata osobno, ale gdy wiatr szarpie łuną, kolory
+rozpuszczają się w fioletach, różach, błękitach i bursztynach,
+w których istota zyskuje swoją sylwetkę.
 
 ## Postacie i Byty
 
@@ -43,7 +47,7 @@ Scena niesie troje aktorów, z których tylko jedno jest osobą.
 sylwetka drapieżnika zbudowana z cienia, dymu i łuny, nietrwała jak
 każde załamanie światła. **Maelstrom** — prawdziwy sprawca: burza
 many wszystkich pięciu shardów, śmiertelne serce Alary, z którego
-wyszły też Child of Alara i Maelstrom Wanderer; podczas późniejszej
+wyszły też **Child of Alara** i **Maelstrom Wanderer**; podczas późniejszej
 inwazji [[nowa-phyrexia|Nowej Phyrexii]] sam powstał w obronie planu. I nieobecny
 **Nicol Bolas** — to jego wojny shardów karmiły burzę, to on
 kierował manę obelisków w wir i wszedł w jego środek po dawną moc;
