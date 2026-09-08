@@ -1,3 +1,29 @@
+## 2026-09-08 20:59 — Naprawa map: lewy górny róg w środku okna (wszystkie mapy) + FR bez grafiki
+
+- **Regresja (recenzja właściciela): „środek iframe'a to lewy górny
+  róg mapy, większość chowa się poza ekranem — dotyczy WSZYSTKICH
+  map".** Przyczyna: deep-link miejsca `?x=&y=` (ADR 0043) liczył
+  `Number(query.x)` a pusty string brakującego parametru daje
+  `Number('') = 0` ⇒ każda mapa bez query dostawała `data-x="0"
+  data-y="0"` i centrowała się w rogu (0,0) z zoomem deep-linka
+  (2.5×). Poprawka: pusty string = brak parametru (→ NaN, bez
+  atrybutu). Wyraźne `?x=&y=`, `?pin=` i widok domyślny działają
+  (zweryfikowane geometrią w jsdom: identity bez query, centering
+  na pinezce/miejscu z query).
+- **Regresja FR: „ikona niezaładowanej grafiki + podpis Podkład
+  mapy".** Przyczyna: eksport Inkscape ma `<svg>` z nową linią po
+  tagu, a gate inline `markup.includes('<svg ')` (spacja!) odrzucał
+  taki plik ⇒ podkład renderował się jako `<img>` do bazy wektorowej,
+  której nie ma w drzewie dist (ADR 0027 v3). Poprawka: gate toleruje
+  ślad po tagu (`/<svg[\s>]/`, `doMarkupPodkladu`) + normalizacja
+  tagu otwierającego `podklad.svg`.
+- **Strażnik:** test regresji `mapy.test.js` (brakujące/puste
+  `?x=&y=` NIE dają atrybutu miejsca; wyraźne dają) + rozbudowa
+  ui-smoke (FR: inline SVG, nie `<img>`; warstwa etykiet obecna).
+- Weryfikacja: 165/165 testów, build 25 stron (12 kart, 2 hasła,
+  11 planów), stats 100%; geometria map zmierzona (identity domyślna,
+  centering pinezki/miejsca wg wzoru).
+
 ## 2026-09-08 20:25 — Nowa karta Nefarious Imp (3CLB) + nowy plan: Zapomniane Krainy (mapa T2)
 
 - **Nowa karta + nowy plan (dostawa właściciela):** 3CLB
