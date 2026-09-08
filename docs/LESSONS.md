@@ -285,3 +285,20 @@ podkładów. CSS/hit-testing nadal wymagają przeglądarki (A4).
 Podgląd z UI jest dobry do rysowania relacji, nie do współrzędnych,
 które mają przetrwać zmianę podkładu.
 
+
+## L14 (2026-09-08) — numer w konwencji repo to indeks kolekcji właściciela, nie numer kolekcjonerski; tożsamości karty nie ustala się ze snippetu wyszukiwarki
+
+**Objaw:** agent odczytał „40USG" jako kartę nr 40 z Urza's Saga i na
+podstawie poszatkowanego snippetu galerii Scryfalla ogłosił właścicielowi,
+że kartą jest „Rune of Protection: Red". Karta to Expunge (nr kol. 135).
+
+**Przyczyna:** w konwencji `NNNSET` (605SHM, 393DKA, 40USG) liczba to
+pozycja w kolekcji właściciela — dowodzi tego sama baza (Shadowmoor miał
+301 kart, więc 605 nie może być numerem kolekcjonerskim). Snippety
+wyszukiwarki mieszają nazwy z numerami galerii i nie są źródłem
+tożsamości.
+
+**Reguła:** tożsamości karty (nazwa, set, numer kolekcjonerski, artysta,
+flavor) nie zgaduj — bierz z dostawy właściciela albo z API Scryfalla
+(`/cards/named?exact=…&set=…`, działa przez fetch). W razie rozjazdu
+dostawa właściciela jest rozstrzygająca.
