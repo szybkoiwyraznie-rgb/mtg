@@ -115,6 +115,20 @@ Encje „o jedną kartę” od progu (skan boldów 2026-09-08):
 | Benalia, Wybrani, Pięć Edyktów, Tangle (Dominaria), Argoth, Sylex, Kabała, Aphetto, Daru, Tamingazin, Zhalfir, Suq'At, Sarpadyjskie Imperia, Ciemne Czasy, thrullowie, thalidzi, homaridi | geografia/spolecznosc | 40usg-expunge / plan dominaria | 1 karta |
 | Eldrazi, Roil, Halimar, Coralhelm, Jori En, merfolk | różne | 2bfz-coralhelm-guide (+ plan zendikar) | 1 karta |
 
+## Link-mining PR-26 (Forgotten Realms, 2026-09-08)
+
+Pierwsza karta FR: `3clb-nefarious-imp` (+ plan `forgotten-realms`).
+Encje „o jedną kartę” od progu (skan boldów 2026-09-08):
+
+| Encja | Klasa (docelowa) | Karta wspominająca | Do progu brakuje |
+| --- | --- | --- | --- |
+| Wybrzeże Mieczy | geografia | 3clb-nefarious-imp (+ plan forgotten-realms) | 1 karta |
+| Avernus, Baator | geografia | 3clb-nefarious-imp | 1 karta |
+| imp (chochlik) | fauna | 3clb-nefarious-imp | 1 karta |
+| Wojna Hobgoblinów, Tiamat | wydarzenie/koncepcja | 3clb-nefarious-imp (+ plan forgotten-realms) | 1 karta |
+| Faerûn, Abeir-Toril, Morze Upadłych Gwiazd, Moonshaes, Nelanther, Amn, Luruar, Morze Wewnętrzne, Królestwo Wysokie, Morze Bezludne | geografia | — (plan forgotten-realms) | licznik od kart, nie planów |
+| Mystra, Selûne, Lathander, Ilmater, Tempus, Tkanina Magii, Czas Kłopotów | postac/koncepcja | — (plan forgotten-realms) | licznik od kart, nie planów |
+
 ## Mapa Zendikaru — WYKONANA (ADR 0012)
 
 Zrobione 2026-08-31 (feedback G właściciela): **rekonstrukcja własna

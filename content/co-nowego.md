@@ -1,3 +1,40 @@
+## 2026-09-08 20:25 — Nowa karta Nefarious Imp (3CLB) + nowy plan: Zapomniane Krainy (mapa T2)
+
+- **Nowa karta + nowy plan (dostawa właściciela):** 3CLB
+  *Nefarious Imp* (CLB #137, `{2}{B}` 2/1, Imp — Flying; „Whenever
+  one or more permanents you control leave the battlefield, scry 1”)
+  — pierwsza karta planu franczyzy zewnętrznej **Zapomniane Krainy**
+  (*Forgotten Realms*, D&D; typIP zewnetrzne, wzór Final Fantasy).
+  Głos Kronikarza (ADR 0042) — scena: mroczny gabinet wojenny na
+  Wybrzeżu Mieczy, szkarłatny imp, stopione figurki, skradziony
+  kryształ i widmowy obraz artefaktu. Tagi ze słownika:
+  demony/szpiedzy/wojna.
+- **Nowy plan:** `content/planes/forgotten-realms.md` — setting w
+  pigułce (Abeir-Toril, Faerûn, Wybrzeże Mieczy, Tkanina Magii, Czas
+  Kłopotów, bóstwa), geografia (9 regionów mapy), sekcja Mapa,
+  źródła (FR Fandom EN/PL, D&D Beyond, Vectorized Realms, Scryfall).
+- **Mapa T2 (przyjęcie):** `maps/forgotten-realms/` — jedyny
+  kompletny wektor Faerûn znaleziony w kwerendzie: **Vectorized
+  Realms** (jonovotny), `faerun-v016-40dpi.svg` (4,29 MB, viewBox
+  3055.4×2043.6). Brak otwartej licencji ⇒ użytkowanie prywatne
+  (projekt prywatny, bez publicznej dystrybucji — decyzja
+  właściciela 2026-09-08); źródło w stopce mapy (wzór podkładów
+  Tarkiru/Innistradu). Podkład bez etykiet ⇒ warstwa
+  `#kodex-etykiety` (9 polskich etykiet regionów) wewnątrz podkładu
+  (model mapome/Śródziemia; T2 inline'uje SVG as-is).
+- **Pinezka (ADR 0043):** 3clb w środku Wybrzeża Mieczy
+  (0.18/0.38, pewność: region) — scena nie nazywa miasta, więc
+  pinezka stoi na rejonie, nie na lokalu.
+- **Research doc:** `maps/_warsztat/RESEARCH_2026-09-08-forgotten-realms-mapa.md`
+  (inwentarz wektorów + SHA-e blobów, weryfikacja wizualna resvg,
+  kwestia licencji, układ współrzędnych, etykiety).
+- **Backlog:** sekcja link-miningu FR — Wybrzeże Mieczy, Avernus,
+  imp, Wojna Hobgoblinów „o jedną kartę” od progu.
+- **Testy:** ui-smoke — 12 kart (`Karty Katalogowe (12)`), 5.
+  materializacja na home = 605SHM (Consign to Dream).
+- Weryfikacja: 164/164 testów, build 25 stron (12 kart, 2 hasła,
+  11 planów), stats 100%.
+
 ## 2026-09-08 20:15 — ADR 0043: na mapie oznaczenia noszą wyłącznie karty
 
 - **Reguła systemowa (właściciel):** piny/obwódki na mapie mogą mieć
