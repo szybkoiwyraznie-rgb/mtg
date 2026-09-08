@@ -54,7 +54,7 @@ kalał świętego miejsca.
 ## Postacie i Byty
 
 **Cenobita (wysoki, wierny doktrynie)** — kapłan Ortodoksji Maszyn.
-Kanon dzieli ten stan duchowny na rangi; sam flavor tej karty cytuje
+Kronika dzieli ten stan duchowny na rangi; sama inskrypcja cytuje
 „Axsha, pomniejszego cenobitę", co pokazuje, że hierarchia jest
 rozbudowana i że wyroki wydają także urzędnicy niskiego szczebla.
 Cenobici to nie generałowie, lecz **funkcjonariusze doktryny**:
@@ -77,7 +77,7 @@ wzmocnionymi złotymi płytami. Nie tworzyli jednego państwa: każda
 osada była miastem-państwem, a prawa pilnowali wędrowni **Accorders**
 wedle *Accord of Equity*. Największą osadą był **Bladehold**, gdzie
 wynaleziono technikę *mirroring* — walkę z użyciem własnego odbicia
-w ostrzach trawy. Kanon odnotowuje rzecz, która czyni ten wyrok
+w ostrzach trawy. Zapis odnotowuje rzecz, która czyni ten wyrok
 gorzko logicznym: **Auriokowie byli ludem najbardziej opornym na
 compleation**, dobrowolne i przymusowe. Lud, którego najtrudniej
 przerobić, jest z punktu widzenia Ortodoksji surowcem wybrakowanym.
@@ -131,30 +131,30 @@ rzeczą w białej Phyrexii.
 
 ## Transpozycja
 
-Karta jest rodzima dla Mirrodinu, więc most jest krótki, a Fabuła
-kolekcji ustawia scenę w **katedralnych korytarzach Ortodoksji Maszyn**
-i zawęża ją do jednego momentu: **orzeczenia i odepchnięcia**. Kanon
+Scena jest rodzima dla Mirrodinu, więc droga do niej jest prosta:
+zapis ustawia ją w **katedralnych korytarzach Ortodoksji Maszyn**
+i zawęża ją do jednego momentu: **orzeczenia i odepchnięcia**. Zapis
 dostarcza wszystkich elementów — cenobitów jako kapłanów inkwizycji,
 Elesh Norn jako doktrynę, porcelanowy metal na żywym mięsie, ideę
 wielkiego zjednoczenia, Aurioków jako lud Razor Fields najbardziej
-oporny na compleation, oraz sam flavor karty jako wyrok wypowiedziany
+oporny na compleation, oraz sama inskrypcja jako wyrok wypowiedziany
 wprost.
 
-Fabuła dokłada trzy rzeczy, które są **osadzeniem kolekcji**, nie
-kanonem: obraz bieli porcelany mieszającej się z czerwienią ścięgien
+Kronikarz dokłada trzy rzeczy, które są **osadzeniem sceny**, nie
+nowymi faktami świata: obraz bieli porcelany mieszającej się z czerwienią ścięgien
 w konkretnym wnętrzu, gest wysokiego cenobity unoszącego wydłużoną
 dłoń, oraz kierunek wyrzucenia — przez „mroczne wrota wyjściowe"
 z powrotem na Razor Fields. Ten ostatni szczegół jest dla mapy
 najważniejszy, bo wiąże wnętrze katedry z konkretnym regionem planu.
 
-Jedno rozstrzygnięcie wymaga zapisania. Kanoniczna **Fair Basilica** —
+Jedno rozstrzygnięcie wymaga zapisania. **Fair Basilica** —
 porcelanowa katedra Elesh Norn — jest sferą **późniejszej** epoki,
 zbudowaną po zwycięstwie Phyrexii, gdy powierzchnia stała się już
-Mirrexem. Scena tej karty dzieje się w erze *Mirrodin Besieged*, gdy
-wojna o powierzchnię [[mirrodin|Mirrodinu]] wciąż trwa. Katedry z Fabuły **nie utożsamiamy**
+Mirrexem. Scena dzieje się w erze *Mirrodin Besieged*, gdy
+wojna o powierzchnię [[mirrodin|Mirrodinu]] wciąż trwa. Katedry z zapisu **nie utożsamiamy**
 więc z Fair Basiliką: to obiekt Ortodoksji z czasu kampanii na
 powierzchni, świątynia wzniesiona lub zawłaszczona w trakcie
-nawracania Razor Fields. Kolekcja nie przenosi karty do późniejszej
+nawracania Razor Fields. Kronika nie przenosi sceny do późniejszej
 epoki tylko dlatego, że późniejsza epoka ma ładniejszą nazwę dla
 katedry.
 
@@ -165,8 +165,8 @@ Pinezka o pewności **region**:
 **Razor Fields**, na południowy wschód od **Cave of Light**, poniżej
 **Taj-Nar**, na granicy z **Glimmervoid**.
 
-Ani karta, ani Fabuła nie podają adresu katedry, więc pinezka nie
-udaje precyzji. Uzasadnienie wyboru jest takie: Fabuła każe wyrzucić
+Ani inskrypcja, ani zapis nie podają adresu katedry, więc miejsce nie
+udaje precyzji. Uzasadnienie wyboru jest takie: Zapis każe wyrzucić
 heretyka z wnętrza **na** Razor Fields, więc katedra musi stać
 w samych Polach albo tuż przy nich. Ortodoksja zaś nie buduje
 przypadkowo — biała frakcja zajmuje białe miejsca święte, a

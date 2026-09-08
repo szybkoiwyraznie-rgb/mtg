@@ -29,7 +29,7 @@ ma jeszcze kogoś, kto stanie między mieszkańcem a przemocą. Ogień może
 obejść krawędzie tarczy, dym może zasłonić twarz, ale sens sceny pozostaje
 prosty: linia nie pęka.
 
-Ta karta mówi o Boros w najczystszej, obronnej postaci. Legion bywa
+Ta scena mówi o Boros w najczystszej, obronnej postaci. Legion bywa
 narzędziem przymusu, armią i konstabularią, ale w tej scenie jego władza
 nie polega na szarży. Polega na odmowie cofnięcia się. W mieście gildii,
 gdzie każda ulica jest czyjąś granicą wpływu, tarcza ma rangę znaku
@@ -51,7 +51,7 @@ wyobraźnia sprawiedliwości, której symbolem jest **Razia**. Tarcza ze
 słońcem nie jest ozdobą. To znak przynależności do porządku, który widzi
 walkę jako służbę — ostrze i tarcza są narzędziami tej samej przysięgi.
 
-Głos flavoru należy do **Alovneka**, maga gildii Boros. Jego sentencja nie
+Głos inskrypcji należy do **Alovneka**, maga gildii Boros. Jego sentencja nie
 brzmi jak rozkaz bitewny, lecz jak lekcja przekazywana rekrutom: wojna to
 nie tylko pchnięcie mieczem, ale także umiejętność utrzymania pozycji.
 Dlatego Alovnek jest w tym wpisie ważny nie jako rozbudowana postać, lecz
@@ -64,7 +64,7 @@ czemuś, co napiera. To nie jest nazwa miejsca ani zaklęcia własnego, tylko
 czasownik graniczny — słowo dla chwili, w której ciało, tarcza i wola
 przestają być osobnymi rzeczami.
 
-Pełne polskie odczytanie nazwy w Kodeksie: **„Wytrzymaj!”**. Najlepiej
+Pełne polskie odczytanie nazwy w kronice: **„Wytrzymaj!”**. Najlepiej
 brzmi jako komenda z linii tarcz: krótka, bez ozdobników, wypowiadana nie
 po to, by podnieść morale, lecz po to, by ocalić metr bruku.
 
@@ -88,21 +88,21 @@ Odczyt fraza po frazie:
   służby, a rzemiosło wymaga właściwego narzędzia do właściwej pracy.
 
 Cytat dobrze tłumaczy, dlaczego scena jest spokojniejsza niż typowy obraz
-szarży Legionu. Oś karty nie biegnie od gniewu do zwycięstwa, lecz od
+szarży Legionu. Oś sceny nie biegnie od gniewu do zwycięstwa, lecz od
 uderzenia do przetrwania. Dopiero człowiek, którego nie złamano, może
 odpowiedzieć.
 
 ## Transpozycja
 
-*Withstand* jest kartą rodzimą dla Ravnicy, więc Kodeks nie przenosi jej
-między światami. Praca transpozycyjna polega tutaj na zawężeniu sceny:
+*Withstand* jest ryt rodzym dla Ravnicy, więc kronika nie przenosi go
+między światami. Praca zapisu polega tutaj na zawężeniu sceny:
 z ogólnej borosijskiej doktryny do konkretnego bruku Dziesiątego Dystryktu,
 w okolicę, gdzie obecność Legionu jest najgęstsza i najbardziej naturalna.
 
-Fabuła właściciela dopowiada materializację: ciężka stalowa zbroja,
+Kronikarz dopowiada rysunek sceny: ciężka stalowa zbroja,
 złote okucia, wieżowa tarcza z płonącym słońcem, żółto-pomarańczowa aura
-ognia i złote runy na brzegu tarczy. To nadal nie jest nowy kanon Ravnicy,
-lecz precyzyjna scena kolekcji: jeden żołnierz Boros na ravnickim bruku,
+ognia i złote runy na brzegu tarczy. To nadal nie jest nowy fakt o Ravnicy,
+lecz precyzyjna scena zapisu: jeden żołnierz Boros na ravnickim bruku,
 w gildii albo na jej pograniczu, w chwili zatrzymanego uderzenia.
 
 ## Na Mapie
@@ -110,8 +110,8 @@ w gildii albo na jej pograniczu, w chwili zatrzymanego uderzenia.
 Najlepszym miejscem dla tej sceny jest **Precinct Four** Dziesiątego
 Dystryktu [[ravnica|Ravnicy]] — obszar Sunhome, The Bulwark i Tin Street.
 Pinezka wskazuje zachodni skraj borosijskiej strefy przy Tin Street Market,
-nie konkretny kamień uliczny. Poziom pewności: **region**. Fabuła daje
-Boros i ravnicki bruk; kanon geograficzny dopowiada, że właśnie Czwarty
+nie konkretny kamień uliczny. Pewność miejsca: **region**. Zapis daje
+Boros i ravnicki bruk; zapis geograficzny dopowiada, że właśnie Czwarty
 Precykt jest naturalnym zapleczem Legionu.
 
 Pinezka: `#/mapa/ravnica?pin=137gpt-withstand`.
