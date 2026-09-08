@@ -66,6 +66,29 @@ karcie Alary.
 | Etherium / Ethersworn | magia | plan alara | 2 karty |
 | Nacatl (Coil, Claws of Marisi) | spolecznosc | plan alara | 2 karty |
 
+## Link-mining PR-22 — encja wspólna dla różnych planów
+
+**Nowa Phyrexia — wykonane 2026-09-07**, `content/lore/nowa-phyrexia.md`,
+klasa `spolecznosc`, plan macierzysty Mirrodin. Próg spełniały treści
+**dwóch kart przed dopisaniem wikilinków**: Carapace Forger (wróg Mirran)
+i Illusory Demon (najeźdźcy, przeciw którym wystąpił Maelstrom).
+Hasło opisuje jedną cywilizację, nie łączy dwóch wojen w jedno wydarzenie.
+Linki ze wszystkich pięciu stron wspominających tę encję: obie karty
+oraz plany Mirrodin, Alara i Tarkir. Liczba planów nie jest progiem kart.
+
+Drugi artykuł nie powstaje tylko po to, by wyczerpać limit dwóch haseł:
+wojna, fauna czy szpiedzy jako wspólne tagi nie określają jednej konkretnej
+frakcji/istoty. Dalsze rozpoznane encje nadal wymagają drugiej karty:
+
+| Encja | Klasa | Karta wspominająca | Do progu brakuje |
+| --- | --- | --- | --- |
+| Cloud Strife | postac | 275fin-aerith-rescue-mission | 1 karta |
+| Cetra | spolecznosc | 275fin-aerith-rescue-mission | 1 karta |
+| Shinra | spolecznosc | 275fin-aerith-rescue-mission | 1 karta |
+| Tel-Jilad | geografia | 488som-carapace-forger | 1 karta |
+| Chianul | postac | 509ktk-highland-game | 1 karta |
+| Arel | postac | 509ktk-highland-game | 1 karta |
+
 ## Mapa Zendikaru — WYKONANA (ADR 0012)
 
 Zrobione 2026-08-31 (feedback G właściciela): **rekonstrukcja własna
@@ -144,3 +167,11 @@ Pinezki kart na wielu mapach planów; pomysł na widok przeglądowy
 Snapshoty Scryfalla niosą `set`/`set_name`; przy dziesiątkach kart może
 przydać się rejestr `content/sets.json` z polskimi opisami. Zbierać
 potrzebę przy pierwszym panelu filtrów po wydaniach.
+
+## Metryka niegeograficznych haseł (rozpoznanie PR-22)
+
+Pierwsze hasło klasy `spolecznosc` (Nowa Phyrexia) ma wszystkie wymagane
+sekcje, źródła i wikilinki, lecz stats daje 6/8 za brak pinezki. Szkielet
+nie wymaga lokalizacji tej klasy. Wskaźnik raportujemy jawnie (98%
+całości), bez stawiania nieuzasadnionego punktu i bez zmiany wzoru w tej
+Pętli. Przy rozwoju metryki rozważyć pola nieobowiązujące dla danej klasy.

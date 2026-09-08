@@ -43,8 +43,8 @@ Scena niesie troje aktorów, z których tylko jedno jest osobą.
 sylwetka drapieżnika zbudowana z cienia, dymu i łuny, nietrwała jak
 każde załamanie światła. **Maelstrom** — prawdziwy sprawca: burza
 many wszystkich pięciu shardów, śmiertelne serce Alary, z którego
-wyszły też Child of Alara i Maelstrom Wanderer; podczas Nowej
-Phyrexiańskiej Inwazji sam powstał w obronie planu. I nieobecny
+wyszły też Child of Alara i Maelstrom Wanderer; podczas późniejszej
+inwazji [[nowa-phyrexia|Nowej Phyrexii]] sam powstał w obronie planu. I nieobecny
 **Nicol Bolas** — to jego wojny shardów karmiły burzę, to on
 kierował manę obelisków w wir i wszedł w jego środek po dawną moc;
 „demony” Maelstromu są echem jego orkiestracji, choć staruszka

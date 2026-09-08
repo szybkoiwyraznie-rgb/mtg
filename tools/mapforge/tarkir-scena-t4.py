@@ -11,7 +11,8 @@ Lore Café / MTG Wiki Italia, grafika 3d4 („Dedicated to MTG Wiki Italia,
 a Lore Café production; All Rights Reserved”) — jako ŹRÓDŁO POMOCNICZE
 GEOMETRII (ADR 0031): układ terytoriów i względne położenie POI są
 przeniesione z tego rastra, a KANON TEKSTOWY rozstrzyga, co jest na mapie
-i jak się nazywa. Raster nie trafia do repo (ADR 0008/0031).
+i jak się nazywa. Od decyzji ADR 0035 raster jest podkładem T1 w repo;
+T4 pozostaje odrębną rekonstrukcją epoki KTK, nie transkrypcją nazw TDM.
 
 Zgodność rastra z kanonem (sprawdzona przed adopcją): Mardu w centrum
 dotyka wszystkich klanów; Sultai na południu; Tiansun na wschodzie;
@@ -24,16 +25,22 @@ do delty; Screamreach na styku Abzan/Mardu/Sultai — wszystko zgodne
 z KTK 2014 i TDM 2025.
 
 EPOKA (ADR 0033 §1–2, analogia Mirrodinu): JEDNA mapa fizyczna Tarkiru
-z etykietami osad EPOKI KHANÓW (karta 509KTK jest z KTK — linia czasowa
-przed Khanfall). Topografia jest wspólna dla obu linii czasowych;
-osady istniejące dopiero w linii smoczych lordów / po Stormnexus
-(Qatros Karst, Mistrise, Summer Landing, Storm Crane, Dalkovan cities,
+z etykietami osad EPOKI KHANÓW (oryginalne „teraz” KTK, bez smoków). Wspólna siatka jest konwencją kartograficzną, NIE
+stwierdzeniem identyczności wszystkich miejsc w obu liniach czasowych.
+Audyt PR-21: Karakyk nie jest Ayagor; Melting Wilds to skutek rządów
+Atarki, a First Tree należy do Arashin, nie do oazy Anafenzy na T1.
+Osady istniejące dopiero w linii smoczych lordów / po Stormnexus
+(Qatros Karst, Mistrise, Ayagor/Summer Landing, Aerie of the Unfettered,
+Storm Crane, Dalkovan cities,
 Thunder Stadium, Dragonsong Rock, Jigme, Khava, Kishla, Riverwheel
 Village) NIE są rysowane — lista w map.json `poza_epoka`. Obiekty
-czysto fizyczne poświadczone tylko w TDM (Glintglaze Lake, Rainveil
+fizyczne z późniejszych opisów i z samego rastra (Glintglaze Lake, Rainveil
 Forest, Pearl Lake, Bloomvine Jungle, Marang River, Whisperwood, Brine
-Lake, Stormplains, Dusyut Forest, Niraj River, Objung Swamp, The Sagu)
-są dopuszczone — góry, jeziora i lasy nie powstają od zmiany khana.
+Lake, Stormplains, Niraj River, Objung Swamp, The Sagu) służą jako
+relacyjne uzupełnienie rekonstrukcji. Dusyut nie jest lasem na powierzchni
+KTK: to podziemny las odsłonięty dopiero przez zapadlisko w czasach TDM.
+Źródła korekty: przewodniki KTK cz. 1–2 (2014), DTK cz. 2 (2015),
+TDM cz. 1–2 (2025); dokładne URL-e w maps/tarkir/zrodlo-research.md.
 
 Układ współrzędnych (ADR 0035): odczyty z PODGLĄDU rastra Lore Café
 1568×1208 px (tak rysowano pierwotnie) → płótno 2000×1400 przez R(px, py)
@@ -317,11 +324,10 @@ POI = WULKANY + [
     ('szczyt', P(1215, 470), 'eternal-ice', {'skala': 1.3}),          # święty szczyt szeptaczy (glif mapome) — pod krawędzią czapy, nie w niej
     ('ognisko', P(2071, 878), 'staircase-of-bones', {'skala': 0.9}),    # wzgórze zgromadzeń
     ('ruina', P(360, 545), 'crucible-spirit-dragon', {'skala': 0.9}),  # Grób/Krucybel Ugina (lodowa rozpadlina)
-    ('ognisko', P(1364, 816), 'ayagor', {'skala': 0.8}),                # Dragon's Bowl (w TDM: Summer Landing)
     # --- Jeskai Way / Tiansun
     ('fort', P(3845, 1060), 'dragons-eye', {'skala': 1.1}),            # Sage-Eye Stronghold (zbocze nad zatoką)
     ('fort', P(3472, 963), 'riverwheel', {'skala': 0.95}),            # Riverwheel Stronghold (klif, wodospad)
-    ('wodospad', P(3430, 1000), 'icefall', {'skala': 0.9}),
+    ('wodospad', P(3430, 1000), 'riverwheel-waterfall', {'skala': 0.9}),
     ('fort', P(3401, 1327), 'dirgur', {'skala': 1.0}),                 # Dirgur Stronghold (wyspa na jeziorze)
     ('miasto', P(3337, 1420), 'purugir', {'skala': 0.8}),              # faktoria Salt Road
     ('fort', P(4036, 462), 'highspire', {'skala': 0.85}),             # Highspire Stronghold (modliszki)
@@ -331,10 +337,8 @@ POI = WULKANY + [
     ('fort', P(2033, 1527), 'wingthrone', {'skala': 1.15}),             # stolica Zurgo (klify, czaszka smoka)
     # --- Abzan Houses / Shifting Wastes
     ('fort', P(697, 1957), 'arashin', {'skala': 1.25}),                # Arashin + Mer-Ek (skaliste wzgórze)
-    ('drzewo', P(885, 2035), 'first-tree', {'skala': 1.6}),            # First Tree (w Arashin) — tu: Kin-Tree
     ('miasto', P(442, 2187), 'kavah', {'skala': 0.8}),                 # Kavah — osada dwa dni od Arashin
     ('iglica', P(1985, 2745), 'lookout-roost', {'skala': 1.1}),        # wieża 400 stóp z czerwonego kamienia
-    ('ruina', P(1800, 3060), 'aerie-unfettered', {'skala': 0.9}),      # Aerie of the Unfettered (pradawna)
     # --- Sultai Brood / Gudul
     ('kopula', P(2680, 2893), 'kheru', {'skala': 1.15}),               # Kheru Temple (siedziba Sidisi)
     ('miasto', P(2635, 2865), 'qarsi', {'skala': 0.85}),               # Qarsi Palace (na kanałach)
@@ -390,8 +394,6 @@ ETYKIETY = [
     obszar('Gudul Islands', R(1100, 1090), fs=16, ital=False),
     obszar('Rainveil Forest', R(680, 395), fs=17, ital=False),
     obszar('Whisperwood', R(548, 232), fs=15, ital=False),
-    obszar('Dusyut Forest', R(560, 1020), fs=17, ital=False),
-    obszar('Melting Wilds', R(560, 78), fs=15),
     obszar('The Scour', R(330, 455), fs=17, ital=False),
     obszar('Qadat, the Fire Rim', R(1170, 150), fs=18, kat=-8),
     # --- wody (granat, ADR 0024)
@@ -417,12 +419,10 @@ ETYKIETY = [
     przy('eternal-ice', 'Eternal Ice', 15),
     przy('staircase-of-bones', 'Staircase of Bones', 15),
     przy('crucible-spirit-dragon', 'Tomb of the Spirit Dragon', 14),
-    przy('ayagor', 'Ayagor', 14),
-    przy('ayagor', "(Dragon's Bowl)", 12, ital=True),
     przy('qadat', 'Qadat', 14),
     przy('dragons-eye', 'Sage-Eye Stronghold', 16),
     przy('riverwheel', 'Riverwheel Stronghold', 15),
-    przy('icefall', '(Icefall)', 12, ital=True),
+    przy('riverwheel-waterfall', '(wodospad Riverwheel)', 12, ital=True),
     przy('dirgur', 'Dirgur Stronghold', 16),
     przy('purugir', 'Purugir', 14),
     przy('highspire', 'Highspire Stronghold', 14),
@@ -432,10 +432,10 @@ ETYKIETY = [
     przy('wingthrone', 'Wingthrone', 17),
     przy('arashin', 'Arashin', 17),
     przy('arashin', '(Mer-Ek Fortress)', 12, ital=True),
-    przy('first-tree', 'First Tree', 13),
+    # First Tree i Mer-Ek są częściami Arashin, nie osobnymi osadami.
+    przy('arashin', '(First Tree)', 12, ital=True),
     przy('kavah', 'Kavah', 14),
     przy('lookout-roost', 'Lookout Roost', 15),
-    przy('aerie-unfettered', 'Aerie of the Unfettered', 14),
     przy('kheru', 'Kheru Temple', 17),
     przy('qarsi', 'Qarsi Palace', 14),
     przy('ukud', 'Ukud Necropolis', 15),
@@ -445,11 +445,11 @@ ETYKIETY = [
 
 WODY = ['Glintglaze Lake', "Dragon's Throat", 'Pearl Lake', 'Dirgur Lake', 'Brine Lake', "Dragon's Eye Bay",
         'Objung Swamp', 'Niraj River', 'Marang River', 'Sandsteppe River', 'Morze Południowe',
-        'Gudul Islands', 'Molderfang Falls', '(Icefall)']
+        'Gudul Islands', 'Molderfang Falls', '(wodospad Riverwheel)']
 
 # ------------------------------------------------------------------ biomy
 BIOMY = [
-    # Qal Sisma — czapa lodowa na najwyższym grzbiecie (Melting Wilds)
+    # Qal Sisma w KTK — lodowiec, bez nazwy Melting Wilds z linii Atarki
     # czapa leży w wysokiej niecce MIĘDZY grzbietem N a Whisperwood — nie na
     # grzbiecie (pkt 3 recenzji: lód zasłaniał pasmo); pasma i tak omijają lód.
     {'id': 'lodowiec-qal-sisma', 'typ': 'lod', 'punkty': poly([(330, 92), (400, 78), (480, 72), (560, 76), (630, 88), (670, 108), (640, 132), (570, 146), (490, 152), (410, 146), (345, 128), (310, 108)], j=4),
@@ -483,9 +483,6 @@ BIOMY = [
      'opcje': {'gestosc': 0.8}},
     {'id': 'gudul-bagna', 'typ': 'bagno', 'punkty': poly([(1000, 1100), (1140, 1080), (1240, 1100), (1200, 1160), (1060, 1170)], j=5),
      'opcje': {'gestosc': 0.8}},
-    # Dusyut Forest — zielona plama w pustyni Abzan (raster: ciemnozielona)
-    {'id': 'dusyut', 'typ': 'las', 'punkty': poly([(470, 920), (600, 900), (700, 960), (640, 1060), (520, 1080), (430, 1010)], j=5),
-     'opcje': {'gestosc': 0.6, 'skala': 0.9}},
     # Shifting Wastes — pustynia (nowy klocek `pustynia`)
     {'id': 'shifting-wastes', 'typ': 'pustynia', 'punkty': poly([(0, 740), (200, 760), (400, 800), (460, 900), (420, 1010),
                                                                   (480, 1120), (560, 1208), (0, 1208)], j=8),
@@ -511,7 +508,9 @@ SCENA = {
         'zgodność z kanonem KTK 2014 / TDM 2025 sprawdzona relacja po relacji (zrodlo-research.md). '
         'Pięć terytoriów jako tinty (dzielnice bez arterii) + kreskowane szwy granic; Qal Sisma N, '
         'Tiansun E, Sandsteppe centrum, Shifting Wastes W (biom pustynia), Gudul S. Osady w nazwach '
-        'epoki khanów; osady linii smoczych lordów/TDM poza mapą (map.json: poza_epoka).'
+        'epoki KTK; Ayagor, Melting Wilds, Aerie of the Unfettered i odsłonięty Dusyut poza T4. '
+        'First Tree reprezentowane przy Arashin, nie w oazie Anafenzy. Wspólna siatka nie oznacza '
+        'tożsamości każdej lokacji pomiędzy liniami czasowymi (audyt PR-21).'
     ),
     'ocean': {'kolor': '#e9e9e9'},
     'lądy': [{'id': 'kontynent-tarkiru', 'punkty': LAD}],

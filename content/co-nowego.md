@@ -1,3 +1,128 @@
+## 2026-09-08 12:20 — Iskry w archiwum: Innistrad wchodzi do Kodeksu
+
+- **Nowy plan:** [[innistrad|Innistrad]] — gotycki horror, cztery
+  prowincje wokół **Thraben**, jeden srebrny księżyc i Kościół, którego
+  archanioł zniknął. Strona planu opisuje geografię, **Helvault**,
+  pęknięcie Kościoła Avacyn i osobliwe rozróżnienie: demony knują,
+  a diabły są ich popędami przybranymi w ciało.
+- **Nowa karta:** [[393dka-forge-devil|Forge Devil]] (DKA) — dziesiąta
+  karta kolekcji. W najniższych poziomach Katedry w Thraben diabeł
+  rozbija żeliwnym prętem filar nośny, a wokół płoną bezcenne archiwa
+  Kościoła. Rykoszetujący gruz rani i katarów, i tych, którzy potwora
+  przywołali.
+- Sedno sceny: to nie atak, tylko **osłabianie**. Diabeł nie wygra
+  z katarem, więc podcina to, na czym stoi ich świat — konstrukcję
+  i pamięć. Mechanika mówi dokładnie to samo: jedno obrażenie w cel,
+  drugie zawsze we własną stronę.
+- **Mapa Innistradu** to pierwszy w Kodeksie podkład **T1** poza
+  Tarkirem: raster 4096×3072 dostarczony przez właściciela, z 64
+  kotwicami zweryfikowanymi w kanonie tekstowym. Oficjalnej mapy planu
+  Wizards nigdy nie wydał, więc kanoniczny podkład nie istnieje.
+- Pinezka stoi na **Thraben** z pewnością **dokładną** — miejsce podaje
+  wprost tekst karty. Na mapie widać, jak daleko stąd do **Ashmouth**
+  i **Devils' Breach**, dwóch bram do świata diabłów: ten stwór nie
+  przyszedł pieszo, ktoś go wpuścił.
+- Drabinę wyboru wariantów map (**T2 → T1 → T3 → T4**) utrwalono
+  w nowym ADR 0038 wraz z zasadą, że rekonstrukcja z samego tekstu jest
+  ostatecznością wymagającą uzasadnienia.
+
+## 2026-09-08 11:40 — Niegodny konsekracji: biała Phyrexia na Mirrodinie
+
+- **Nowa karta:** [[476mbs-banishment-decree|Banishment Decree]] (MBS,
+  Mirrodin) — dziewiąta karta kolekcji i druga na tym planie. Cenobita
+  **Ortodoksji Maszyn** orzeka nad wojownikiem **Aurioków**, że ten jest
+  „niegodny konsekracji", i falą sterylnego światła wypycha go
+  z katedry z powrotem na **Razor Fields**.
+- Sedno sceny: biała [[nowa-phyrexia|Phyrexia]] nie zabija heretyka —
+  **ocenia go i odsyła**. Compleation nazywa łaską, więc odmowa
+  przerobienia w maszynę jest karą. Wyrok wydaje urzędnik niskiej rangi
+  („Axsh, pomniejszy cenobita"), rutynowo: to procedura, nie wydarzenie.
+- Gorzka logika z kanonu: Auriokowie byli ludem **najbardziej opornym
+  na compleation**, więc dla tej frakcji są surowcem wybrakowanym.
+  Mechanika mówi to samo — zaklęcie nie niszczy celu, tylko odkłada go
+  na wierzch talii.
+- **Plan [[mirrodin|Mirrodin]]** dostał opis Ortodoksji Maszyn jako
+  białej frakcji najeźdźcy oraz rozbudowane hasło o Auriokach
+  (Accorders, *Accord of Equity*, technika *mirroring* z Bladehold).
+- Pinezka na mapie Mirrodinu przy **Cave of Light**, białej lakunie
+  u podnóża Taj-Nar: świątynia najeźdźcy przy przejętym sanktuarium
+  obrońcy. Kanoniczna **Fair Basilica** świadomie **nie** została z tą
+  katedrą utożsamiona — to sfera późniejszej epoki, po upadku planu.
+
+## 2026-09-08 10:05 — Pętla Jakości: co naprawdę łączy światy Final Fantasy
+
+- **[[final-fantasy|Final Fantasy]]:** plan był najuboższą stroną bazy —
+  dostał sekcję o tym, co spina sagę, skoro nie spina jej geografia.
+  **Kryształy** jako źródło powołania i cel podboju; **Lifestream** —
+  rzeka duchowej energii, w której krąży pamięć zmarłych; **materia**
+  jako skrystalizowana wiedza; **wydobycie** jako sedno konfliktu
+  (planeta jest żywa, a jej krew da się spalić na prąd); **Jenova**
+  i zagłada **Cetry** dwa tysiące lat przed sceną karty; **Ziemia
+  Obiecana**, która nigdy nie była miejscem — tylko stanem, i której
+  błędne odczytanie ściągnęło nieszczęście na [[275fin-aerith-rescue-mission|Aerith]].
+- **[[1ltr-dunland-crebain|Dunland Crebain]]:** dopisana historia sieci
+  zwiadu. Saruman zbudował swój wywiad cudzymi rękami — ptasich szpiegów
+  pomagał mu zbierać **Radagast**, przekonany, że służy Białej Radzie.
+  **Éomer** ostrzegał, że „ptaki złej wróżby są w powietrzu”, a **Théoden**
+  życzył czarodziejowi szubienicy „na uciechę jego własnym krukom”.
+- Bez nowych haseł: żadna encja nie przekroczyła progu dwóch kart.
+  Wszystkie **8 kart** ma pinezki na mapach swoich planów.
+
+## 2026-09-08 09:10 — Consign to Dream i pierwsza mapa dwóch oblicz: Lorwyn–Shadowmoor
+
+- **[[605shm-consign-to-dream|Consign to Dream]]:** nowa Karta Katalogowa.
+  Glen Elendra broni się glamerem, nie cierniami; olbrzym nie zostaje
+  pokonany siłą, tylko pozbawiony trwałości. Sen jako łup wróżek Oony.
+- **[[lorwyn|Lorwyn–Shadowmoor]] — nowy plan** z mapą **T4** i
+  **przełącznikiem dwóch oblicz**: ta sama geografia, dwa zestawy nazw
+  (Goldmeadow ↔ Mistmeadow, Kinsbaile ↔ Kinscaer, Lys Alana ↔ Cayr
+  Ulios, Wanderwine ↔ Wanderbrine). Domyślny widok to Shadowmoor, bo
+  z tego oblicza pochodzi karta.
+- Wspólny rysunek jest **konwencją atlasu**, nie twierdzeniem, że Wielka
+  Zorza niczego nie zmieniła — zastrzeżenie zapisane w proweniencji mapy.
+  Nazwy bez potwierdzonej pary nie dostały wymyślonego odpowiednika.
+- Pinezka Consign to Dream: **Glen Elendra**, pewność `region`.
+  Teraz **8 kart, 8 planów, 1 hasło**.
+
+## 2026-09-07 22:40 — Pętla Jakości: pamięć Mirrodinu, ratunek Aerith i pierwsze wspólne hasło
+
+- **[[275fin-aerith-rescue-mission|Aerith Rescue Mission]]:** relacje
+  ratowników, dług wobec Aerith, Cetra i cel badań Hojo. Przeszłość
+  Clouda jako SOLDIER jest jego deklaracją, nie bezkrytycznie przyjętym
+  życiorysem; ujęcie schodów odróżnione od całego przebiegu misji.
+  Nie dodano fikcyjnego flavoru.
+- **[[mirrodin|Mirrodin]]:** pamięć Tel-Jilad i Rebuking, cena Zniknięcia,
+  regencja Kemby i rozłam leonin. Społeczny kontekst epoki Blizn
+  łączy plan z Carapace Forger.
+- **[[nowa-phyrexia|Nowa Phyrexia]] — pierwsza Karta Hasła:** jedna
+  cywilizacja łączy już dwie karty, Carapace Forger i Illusory Demon.
+  Artykuł odróżnia podbój Mirrodinu od późniejszej inwazji Multiwersum,
+  opisuje spór praetorów i klęskę imperium. Odsyłacze z obu kart oraz
+  Mirrodinu, Alary i Tarkiru; „W kolekcji” liczy się automatycznie.
+- Nadal **7 kart i 7 planów**, teraz **1 hasło**. Nie powstały nowe
+  mapy ani pinezki; istniejące dostawy i źródłowy raster T1 bez zmian.
+
+## 2026-09-07 22:17 — PR-22: audyt i naprawy map oraz danych kart
+
+Audyt poprzedniego PR objął 61 plików. Wykonane poprawki:
+
+- **[[tarkir|Tarkir]]:** KTK, FRF i linia smoczych lordów są rozdzielone;
+  Karakyk nie jest Ayagor, a First Tree należy do Arashin. T4 nie
+  przenosi już późniejszych lokacji jako kanonu epoki khanów.
+- **Przełącznik T1/T4** zachowuje skalę również na obu granicach zoomu.
+  Pinezka [[509ktk-highland-game|Highland Game]] jest klikalna na małym
+  ekranie; szczegółowe podpisy map pojawiają się dopiero po przybliżeniu.
+- **Lżejszy HTML mapy Tarkiru:** usunięta nieużywana druga kopia SVG —
+  około 47% mniej niż po wcześniejszych naprawach tej sesji.
+- **Pięć snapshotów Scryfalla** odzyskało pełne odpowiedzi API. Reguły
+  kart nie zostały zmienione; nowa brama wykrywa obcięte struktury.
+- **130 testów**, kontrola map i przeglądarki; bez nowych kart,
+  zmian dostaw, źródłowego rastra T1 ani współrzędnych pinezki 509KTK.
+
+To punkt kontrolny po odnowieniu połączenia GitHub i wypchnięciu
+napraw. Pogłębianie lore i link-mining w Pętli Jakości pozostają
+**do wykonania**; PR #22 nie został scalony.
+
 ## 2026-09-07 18:45 — PR-21: Tarkir dostaje dwie mapy epok — raster Dragonstorm (T1) i rekonstrukcja Khans (T4) pod jednym przełącznikiem
 
 Właściciel obejrzał rekonstrukcję T4 obok ręcznie rysowanej mapy fanowskiej

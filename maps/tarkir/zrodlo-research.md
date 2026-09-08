@@ -35,8 +35,9 @@ niżej.
 - https://magic.wizards.com/en/news/feature/planeswalkers-guide-khans-tarkir-part-2-2014-09-10 — Mardu, Temur, planeswalkerzy (epoka khanów); Chianul, Karakyk Valley, Staircase of Bones, Dragon's Throat, Qal Sisma, The Scour.
 - https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-tarkir-dragonstorm-part-1 — historia, Abzan, Jeskai (TDM 2025) — strony świata i sąsiedztwa.
 - https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-tarkir-dragonstorm-part-2 — Sultai, Mardu, Temur (TDM 2025) — strony świata i sąsiedztwa.
+- https://magic.wizards.com/en/news/magic-story/planeswalkers-guide-dragons-tarkir-part-2-2015-03-18 — kontrola różnic linii czasowych (audyt PR-21): Ayagor, Melting Wilds, brak cyrku Karakyk KTK, Aerie of the Unfettered.
 - https://mtg.wiki/page/Tarkir — historia, geografia („Tarkir ranges from arid desert plains to humid tropical jungles to frigid snow-covered tundra. According to Sarkhan, Tarkir has no oceans”), lista regionów z kolorami klanów.
-- https://mtg.wiki/page/Qal_Sisma — lokacje Qal Sisma (obie epoki), sekcja „Historical” = epoka khanów (Karakyk Valley, Staircase of Bones, Melting Wilds, Tomb of the Spirit Dragon).
+- https://mtg.wiki/page/Qal_Sisma — lokacje Qal Sisma (obie epoki), sekcja „Historical” obejmuje RÓŻNE linie czasowe, nie tylko KTK (korekta audytu PR-21; Ayagor/Melting Wilds należą do DTK).
 - https://mtg.wiki/page/List_of_secondary_characters/Tarkir — Arel: „w starej linii czasowej młoda szamanka Temur, świeżo inicjowana” (flavor Highland Game: „Chianul, at the weaving of Arel”).
 - https://mtg.wiki/page/Category:Maps_by_location — brak podkategorii dla Tarkiru (stan 2026-09-07).
 - https://www.reddit.com/r/magicTCG/comments/1amh5y5/map_of_tarkir/ — snippet wyszukiwarki: brak oficjalnej mapy (strona 403 z sandboxa).
@@ -103,8 +104,7 @@ Relacje przyjęte do sceny (źródło → konsekwencja):
   leże całego klanu; wg legendy krater po upadku smoka), **Staircase of
   Bones** (zaokrąglone wzgórze „w centralnym położeniu między
   łowiskami rodzin”), **Dragon's Throat** (wyjąca dolina, harfy
-  z żeber smoków, tylko szeptacze), **Melting Wilds** (topniejące
-  lodowce), **Ayagor / Dragon's Bowl**, **Eternal Ice** (święty szczyt),
+  z żeber smoków, tylko szeptacze), **Eternal Ice** (święty szczyt),
   **Glintglaze Lake** (alpejskie jezioro, zimą obóz na lodzie),
   **Rainveil Forest** (las niższych partii, tydzień drogi z gór),
   **Valley/Tomb of the Spirit Dragon** (miejsce śmierci/hibernacji
@@ -133,9 +133,9 @@ Wastes; mapforge nie ma jeszcze biomu pustynnego), `las`+`bagno`
 (Gudul). The Scour = klocek `szczelina` (istnieje). ~30 POI, ~50
 etykiet — skala pakietu Mirrodin.
 
-Epoka: karta jest z KTK (linia khanów). Fizyczna geografia jest wspólna
-dla obu linii czasowych (zmieniają się władcy i nazwy osad, nie
-topografia) → **jedna mapa fizyczna Tarkiru**, etykiety osad w nazwach
+Epoka: karta jest z KTK (oryginalne „teraz” bez smoków). Jedna siatka
+regionów jest konwencją rekonstrukcji, nie stwierdzeniem niezmienności
+każdej doliny i osady → **jedna mapa fizyczna Tarkiru**, etykiety w nazwach
 epoki khanów (Karakyk Valley, Wingthrone, Sage-Eye, Kheru Temple…);
 obiekty czysto fizyczne poświadczone tylko w TDM (Glintglaze Lake,
 Rainveil Forest, Pearl Lake, Bloomvine Jungle, Marang River) dopuszczone;
@@ -167,7 +167,7 @@ topologii).
   — podgląd był o ~9 px niższy, nie przeskalowany nieproporcjonalnie).
 - Kalibracja układu złotego (T1, 0–1) → płótno T4 (0–1):
   `x4 = 0.045695 + 0.908609·x1`, `y4 = 0.992421·y1`.
-- Weryfikacja: 26 POI zmierzonych na pełnym rasterze (pierścienie osad,
+- Pierwotna weryfikacja PR-21: 26 POI zmierzonych na pełnym rasterze (pierścienie osad,
   glify twierdz, środek szczytu/wodospadu) — RMS 13 px w pionie, 26 px
   w poziomie (jednostki T4) względem pierwotnych odczytów z podglądu;
   po domierzeniu POI generator używa `P(X, Y)` z pomiaru pełnego, więc
@@ -180,7 +180,8 @@ topologii).
   Cori Mountain (3743,849), Highspire (4036,462), Initiate Stairs
   (3080,785), Wingthrone ≈ Dalkovan City S (2033,1527 — pozycja z T4,
   osada epoki khanów nie występuje na rasterze TDM), Sandsteppe Gateway
-  (860,1590), Arashin (697,1957), Mer-Ek/First Tree (885,2035), Khava
+  (860,1590), Arashin (697,1957), **Anafenza's Kin-Tree (885,2035)**
+  (błędnie opisane wcześniej jako Mer-Ek/First Tree — korekta niżej), Khava
   (442,2187), Lookout Roost (1985,2745), Aerie of the Unfettered
   (1800,3060), Kheru (2680,2893), Qarsi Palace (2635,2865), Ukud
   Necropolis (3750,2180), Marang River Fortress (2780,2442), Molderfang
@@ -194,3 +195,42 @@ topologii).
   Gurmag, Bloomvine, Sagu, Stormplains, Dusyut, Scour, rzeki, Salt Road,
   morze) przeliczone z T4 kalibracją — dokładność odczytu z podglądu
   (±30 px T4); domierzyć przy następnej karcie w danym regionie.
+
+## Korekta kanonu 2026-09-07 — audyt PR-21 (A1)
+
+Powyższe pomiary opisują położenie rysunków na T1, nie dowodzą tożsamości
+miejsc z KTK. Sekcja „Historical” wiki nie jest filtrem epoki KTK:
+
+- **Karakyk Valley ≠ Ayagor.** Przewodnik DTK cz. 2 mówi, że cyrk
+  Karakyk z oryginalnej historii nie istnieje w zmienionej linii.
+  Ayagor jest doliną uczt Atarki. W TDM Summer Landing to dawne Ayagor,
+  a Karakyk Glacial Settlement jest wymienione osobno. Położenie Karakyk
+  KTK na wspólnej siatce pozostaje rekonstrukcją relacyjną, nie
+  potwierdzonym utożsamieniem obu dolin.
+- **Ayagor i Melting Wilds usunięte z T4 KTK** — ich opis i nazwy są
+  powiązane z linią Atarki. Lodowiec Qal Sisma pozostaje bez tej nazwy.
+- **Aerie of the Unfettered** nie ma wystarczającego poświadczenia dla
+  KTK: źródła opisują osadę smoków DTK, w TDM opuszczoną. „Pradawna”
+  w TDM nie uprawnia do wymyślenia ruin w oryginalnej linii.
+- **Dusyut** to podziemny las, niedawno odsłonięty przez zapadlisko TDM.
+  Usunięto jego powierzchniowy biom i etykietę z T4 KTK.
+- **First Tree** z KTK należy do placu w Arashin chronionego przez
+  Mer-Ek. Punkt T1 (885,2035) przedstawia oazę Anafenza's Kin-Tree.
+  First Tree jest teraz podpisem przy POI Arashin; jego kotwica dzieli
+  położenie miasta, bez pozorowania osobnego pomiaru drzewa.
+- **Riverwheel** ma wodospad pod nazwą opisową „wodospad Riverwheel”,
+  bez aliasu Icefall z odmiennego „teraz”.
+
+Po korekcie: **23 POI, 61 etykiet, 14 biomów**. Naturalne obiekty znane
+wyłącznie z rastra (np. Brine Lake, Niraj, Whisperwood) nadal mają jawną
+proweniencję fanowską, nie są przedstawiane jako zweryfikowane nazwy WotC.
+
+Źródła: przewodnik KTK cz. 1 (First Tree i Arashin), KTK cz. 2
+(Karakyk, łowiska), DTK cz. 2 (Atarka, Ayagor, Melting Wilds, Aerie),
+TDM cz. 1 (Dusyut i Anafenza's Kin-Tree) i TDM cz. 2 (Summer Landing
+oraz Karakyk) — pełne URL-e w sekcji Źródła.
+
+**Bez zmiany decyzji właściciela:** T1/T4 nadal są podkładami jednej
+mapy. Raster T1, miniatura, kalibracja i regionalna pinezka 509KTK
+(0.4496,0.1846) nie zostały zmienione. Nowa karta wymaga sprawdzenia
+konkretnej sceny/epoki; wspólne współrzędne nie zastępują takiej kwerendy.

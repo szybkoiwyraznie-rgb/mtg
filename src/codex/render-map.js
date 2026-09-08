@@ -129,6 +129,18 @@ export const POZIOMY_PEWNOSCI = {
   przyblizona: { etykieta: 'przybliżona', kolor: '#b3392e', opis: 'rekonstrukcja — wymaga uzasadnienia' },
 };
 
+/** Dwa inline SVG mapforge nie mogą współdzielić DOM-owych id defs.
+ *  Geometria i nazwy kart pozostają nietknięte; zmieniamy tylko lokalne
+ *  identyfikatory zasobów SVG i odwołania do nich (np. clipPath). */
+export function prefiksujIdPodkladu(svg, prefiks) {
+  const idy = new Map([...svg.matchAll(/\sid\s*=\s*(["'])(.*?)\1/g)]
+    .map((m) => [m[2], `${prefiks}${m[2]}`]));
+  return svg.replace(/(\sid\s*=\s*)(["'])(.*?)\2/g, (_, a, q, id) => `${a}${q}${idy.get(id)}${q}`)
+    .replace(/url\((["']?)#([^)'"\s]+)\1\)/g, (caly, q, id) => idy.has(id) ? `url(${q}#${idy.get(id)}${q})` : caly)
+    .replace(/(\s(?:xlink:)?href\s*=\s*)(["'])#([^"']+)\2/g,
+      (caly, a, q, id) => idy.has(id) ? `${a}${q}#${idy.get(id)}${q}` : caly);
+}
+
 const KALIBRACJA_TOZSAMA = { sx: 1, sy: 1, ox: 0, oy: 0 };
 
 /**
@@ -402,15 +414,18 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
   // Sceny podkładów: każdy wariant ma własną scenę (podkład + obwódki
   // regionów w swoim układzie); widoczna jest jedna, przełącznik zmienia
   // `hidden` i przelicza widok kalibracją (bez utraty zoomu/pinezek).
-  const htmlSceny = sceny.map(({ w, podkladMarkup }) => {
+  const wieleSvgT4 = sceny.filter(({ w, podkladMarkup }) => podkladMarkup && (w.wariant ?? mapa.wariant) === 'T4').length > 1;
+  const htmlSceny = sceny.map(({ w, podkladMarkup }, i) => {
     const W = w.wymiary?.szerokosc ?? szer;
     const H = w.wymiary?.wysokosc ?? wys;
     const k = w.kalibracja;
-    const podklad = podkladMarkup
+    const wektor = wieleSvgT4 && podkladMarkup && (w.wariant ?? mapa.wariant) === 'T4'
+      ? prefiksujIdPodkladu(podkladMarkup, `podklad-${i}-`) : podkladMarkup;
+    const podklad = wektor
       || ((w.podkladData || w.podkladUrl)
         ? `<img class="mapa-podklad" src="${w.podkladData ?? w.podkladUrl}" alt="Podkład mapy: ${escapeHtml(w.tytul ?? mapa.tytul ?? slugPlanu)}" draggable="false"${w.id === start.id ? '' : ' loading="lazy"'}>`
         : `<div class="mapa-brak-podkladu">Brak osadzonego podkładu (build nie wstrzyknął pliku — sprawdź maps/${escapeHtml(slugPlanu)}/${escapeHtml(String(w.podklad ?? 'podklad.svg'))}).</div>`);
-    return `<div class="mapa-scena" data-scena data-epoka="${escapeHtml(w.id)}" data-aspekt="${(W / H).toFixed(4)}"
+    return `<div class="mapa-scena" data-scena data-epoka="${escapeHtml(w.id)}" data-aspekt="${W / H}"
           data-sx="${k.sx}" data-sy="${k.sy}" data-ox="${k.ox}" data-oy="${k.oy}" data-etykiety="${w.etykiety ? '1' : '0'}"
           style="aspect-ratio: ${W} / ${H}"${w.id === start.id ? '' : ' hidden'}>
           ${podklad}
@@ -441,7 +456,7 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
     </header>`}
     <div class="mapa-okno" id="mapa-okno" tabindex="0" role="application"
       aria-label="Mapa ${escapeHtml(mapa.tytul ?? slugPlanu)}: przeciągnij, aby przesunąć, kółko myszy, aby przybliżyć"
-      data-plan="${escapeHtml(slugPlanu)}" data-pin="${escapeHtml(pinDocelowy)}" data-aspekt="${(szer / wys).toFixed(4)}" data-epoka="${escapeHtml(start.id)}">
+      data-plan="${escapeHtml(slugPlanu)}" data-pin="${escapeHtml(pinDocelowy)}" data-aspekt="${szer / wys}" data-epoka="${escapeHtml(start.id)}">
       <div class="mapa-ruch" data-mapa-ruch>
         ${htmlSceny}
       </div>
@@ -595,6 +610,9 @@ export function zamontujMape(app, opcje = {}) {
   // nigdy by nie wystartował (bug wykryty recenzją: „Emeria" i „ruiny
   // w niebie" na wspólnej kotwicy kładły się jedna na drugiej).
   const stanUkladu = { k: -1 };
+  // Limity dotyczą WIZUALNEJ skali w układzie złotym (k · sx), nie
+  // surowego CSS-owego k aktywnego podkładu. Inaczej T1 przy k=14 po
+  // przełączeniu na T4 wpada w clamp i traci skalę (A3, audyt PR-21).
   const K_MIN = 0.4, K_MAX = 14;
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 
@@ -634,9 +652,13 @@ export function zamontujMape(app, opcje = {}) {
     // etykiety nieaktywnych wariantów (poza-epoka) nie biorą udziału.
     const podkladowe = [...nakladka.querySelectorAll('[data-podklad-etykieta]')]
       .filter((el) => !el.classList.contains('poza-epoka'));
+    // Na telefonie k≈1 wciąż oznacza miniaturę kilkuset pikseli.
+    // Samo k włączało wszystkie podpisy jak na desktopie (QA A4).
+    // LOD zależy też od szerokości sceny; tytuły (próg 0) pozostają.
+    const skalaLod = stan.k * Math.min(1, w / 800);
     for (const el of podkladowe) {
       const prog = parseFloat(el.dataset.minK || '1');
-      el.classList.toggle('poza-zasiegiem', stan.k + 1e-9 < prog);
+      el.classList.toggle('poza-zasiegiem', skalaLod + 1e-9 < prog);
     }
 
     // Pass 2 — UKŁAD etykiet OBIEKTOWYCH (ADR 0022): przeliczany tylko przy
@@ -721,8 +743,16 @@ export function zamontujMape(app, opcje = {}) {
       }
       const [x, y] = wUkladzie(el);
       if (!Number.isFinite(x) || !Number.isFinite(y)) continue;
-      const px = (x * w * stan.k + stan.ox).toFixed(2);
+      let px = (x * w * stan.k + stan.ox).toFixed(2);
       const py = (y * h * stan.k + stan.oy).toFixed(2);
+      // Tytuł obszaru może przesunąć się od brzegu małego okna, aby nie
+      // urywać nazwy. Tylko przy widocznej kotwicy: po pan poza ekran
+      // nie „przyklejamy” nazwy nieobecnego regionu. Pinezki bez zmian.
+      if (w <= 600 && el.classList.contains('tier-kontynent')
+          && +px >= 0 && +px <= w && +py >= 0 && +py <= okno.clientHeight) {
+        const polowa = (el.offsetWidth || 0) / 2;
+        if (polowa + 4 < w / 2) px = clamp(+px, polowa + 4, w - polowa - 4).toFixed(2);
+      }
       if (!el.hasAttribute('data-podklad-etykieta')) {
         el.style.transform = `translate(${px}px, ${py}px)`;
         continue;
@@ -738,7 +768,7 @@ export function zamontujMape(app, opcje = {}) {
   };
 
   const zoomWokol = (px, py, k2) => {
-    k2 = clamp(k2, K_MIN, K_MAX);
+    k2 = clamp(k2 * kal.sx, K_MIN, K_MAX) / kal.sx;
     stan.ox = px - (px - stan.ox) * (k2 / stan.k);
     stan.oy = py - (py - stan.oy) * (k2 / stan.k);
     stan.k = k2;
@@ -758,7 +788,7 @@ export function zamontujMape(app, opcje = {}) {
       const h = wysokoscSceny();
       const wysOkna = okno.clientHeight || h;
       const [px, py] = wUkladzie(el);
-      stan.k = 2.5;
+      stan.k = 2.5 / kal.sx; // ten sam wizualny zoom deep-linka w każdym wariancie
       stan.ox = (okno.clientWidth || w) / 2 - px * w * stan.k;
       stan.oy = wysOkna / 2 - py * h * stan.k;
     }
@@ -782,10 +812,12 @@ export function zamontujMape(app, opcje = {}) {
     stara.hidden = true;
     cel.hidden = false;
     const kal2 = kalibracjaSceny(cel);
-    const k2 = clamp(stan.k * (kal.sx / kal2.sx), K_MIN, K_MAX);
+    // Przełączenie nie jest zoomem: zmienia tylko jednostki. Nie wolno
+    // ograniczać k ponownie (także po dopasowaniu bardzo wysokiej mapy).
+    const k2 = stan.k * (kal.sx / kal2.sx);
     kal = kal2;
     aspekt = parseFloat(cel.dataset.aspekt) || aspekt;
-    okno.setAttribute('data-aspekt', aspekt.toFixed(4));
+    okno.setAttribute('data-aspekt', String(aspekt));
     okno.setAttribute('data-epoka', id);
     const H2 = wysokoscSceny();
     stan.k = k2;

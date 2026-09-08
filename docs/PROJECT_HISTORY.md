@@ -4,9 +4,115 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-08 — PR-23: przejęcie przerwanej sesji PR-22 i domknięcie 605SHM / Lorwyn
+
+Sesja `arena/01a07fc3-mtg`, PR #23. Poprzedni agent (PR #22) przerwał
+pracę: 15 commitów było na gałęzi `arena/01a07d33-mtg`, a resztę
+worktree właściciel dostarczył jako plik `.patch` (commit `621fd75`).
+
+- Gałąź sesji przejęła commity PR-22 przez `merge --ff-only` (bez force,
+  bez przepisywania historii — AGENTS §1.4).
+- Niewypchniętą resztę odtworzono deterministycznie: patch nałożony
+  w osobnym worktree na commit bazowy `6bf2fba`, różnica wobec czoła
+  gałęzi wyliczona i zaaplikowana jako jeden commit (14 plików,
+  +16 329 linii). Ta droga była konieczna, bo `.patch` był liczony
+  względem bazy, nie względem wypchniętych commitów — bezpośrednie
+  `git apply` odbijało 12 plików.
+- Odzyskana treść: dostawa **605SHM Consign to Dream** (archiwum,
+  snapshot, karta LORE-first), plan **`lorwyn`** (Lorwyn–Shadowmoor),
+  mapa **T4** z dwoma wariantami etykiet (ADR 0037), generator
+  `tools/mapforge/lorwyn-scena-t4.mjs`, `test/lorwyn.test.js`.
+- Weryfikacja własna, nie przepisana z handoffu: **143 testy**, build
+  **17 stron (8 kart, 1 hasło, 8 planów)**, `map-audit` **0 problemów**
+  na wszystkich planach, `wiki-stats` — wszystkie nowe strony **8/8**.
+- Ogląd rastrowy obu oblicz mapy (L10, resvg poza repo): geometria
+  identyczna, różnią się wyłącznie napisy; pasma z nachodzeniem baz
+  (mediana odstępu glifów 42 px przy `szer` 43–52 — zgodne z ADR 0021
+  pkt 6); Glen Elendra osłonięta pasmami, rzeka wychodzi poza kadr bez
+  wymyślonego morza; brak etykiet-sierot.
+
+### Pętla Jakości (druga część sesji)
+
+- **Pogłębienia (2):** plan `final-fantasy` — najsłabsza strona bazy
+  (244 słowa, 2 źródła) — dostał sekcję „Co łączy światy sagi”
+  (Kryształy, Lifestream i pamięć, materia, wydobycie, Jenova/Cetra,
+  Ziemia Obiecana jako stan; +5 źródeł); karta `1ltr-dunland-crebain`
+  — kanoniczny wątek sieci wywiadu (Radagast zwerbowany podstępem,
+  ostrzeżenie Éomera, słowa Théodena o krukach Sarumana; +1 źródło).
+- **Link-mining: 0 nowych haseł.** Zliczono boldy i nazwy własne we
+  wszystkich kartach z pominięciem sekcji Źródła — żadna encja nie
+  osiąga progu 2 kart. Nie fabrykowano haseł dla metryki.
+- **Pass mapowy:** kompletność 8/8 kart z pinezkami (weryfikacja
+  skryptowa wobec wszystkich `map.json`), `map-audit` 0.
+- **Środowisko odświeżyło się po raz drugi w tej sesji** — płytki klon
+  bez commitów sesji; naprawa przez `fetch --unshallow` +
+  `rebase --onto` na stan zdalny, bez force (L11, ENVIRONMENT §2a).
+- Wynik: **143 testy, 17 stron**; wszystkie karty i plany 8/8
+  w `wiki-stats`.
+
+## 2026-09-07 — PR-22: audyt PR-21 i naprawy (punkt kontrolny)
+
+Sesja `arena/01a07d33-mtg`, PR #22 otwarty przed pracą (`2188033`).
+Audyt `bbe6d34` → `6bf2fba` obejmuje wszystkie 61 plików; raport
+z dowodami i kolejką A1–A6/E1 zapisano osobno (`2db0c56`).
+
+- `68331ce` — A1: epoki Tarkiru, First Tree przy Arashin, dobór nazw T4;
+  errata faktograficzna ADR 0033 bez zmiany modelu mapy z ADR 0035.
+- `a362672` — A2/E1: naprawa pełności pięciu snapshotów i brama struktury;
+  bez zmiany reguł gry. W starszym FIN odtworzono również poprawne
+  `set_id` i `resource_id` z API; ID karty/Oracle i kod wydania pozostały.
+- `37b2a8f` — A3: złota skala na granicach zoomu, test montażu i zdarzeń;
+  precyzyjny opis zakresu smoke w L13/gidzie (część A6).
+- `6a3622d` — A4: klikalna pinezka mobile, LOD zależny od szerokości,
+  mniejsze tytuły i kontrola krawędzi. Chromium: 10/10 kliknięć w T1/T4
+  na pięciu szerokościach. Push chwilowo zablokowany wygasłą autoryzacją;
+  wypchnięty po odnowieniu połączenia przez właściciela.
+- `1d2d4fd` — A5: usunięcie nieużywanego SVG z toru wariantów;
+  HTML Tarkiru 8 482 236 → 4 516 019 bajtów, około −47%.
+- A6: aktualizacja statusu PR #21, wykonania B2, epoki Mirrodinu;
+  checkpoint „Co nowego”, roadmapa i handoff bieżącej pracy.
+
+Stan w punkcie kontrolnym: 130 testów, build 14 stron, 7 map, 0 haseł;
+wtedy pogłębianie i link-mining pozostawały niewykonane.
+
+### Domknięcie Pętli Jakości (ta sama sesja)
+
+- `f1cd6cd`: jawny ranking i 2 pogłębienia — motywacje ratowników Aerith,
+  Hojo/Cetra, ostrożny opis Clouda oraz pamięć/Zniknięcie/Kemba w Mirrodinie.
+  Źródła FFVII i WotC; bez fikcyjnego flavoru i bez zmian dostaw.
+- `6a6db3f`: pierwsze hasło, Nowa Phyrexia (`spolecznosc`, plan Mirrodin).
+  Treści 305ARB i 488SOM spełniają próg dwóch kart; odsyłacze także
+  z Alary/Mirrodinu/Tarkiru, automatyczne W kolekcji. W źródłach rozdzielone
+  podbój Mirrodinu i inwazja Multiwersum. Dwie regresje + smoke backlinków.
+- Pass mapowy wykonany u przyczyny w A1/A3/A4/A5. Po zmianach treści
+  ponowiono map-audit i 10 kliknięć mobile/desktop; hasło działa także
+  przez file://. Obrazy QA obejrzane, narzędzia poza repo.
+- Wynik: **132 testy, 15 stron (7 kart + 1 hasło + 7 planów)**.
+  Surowe stats 98%: jedynie niegeograficzne hasło 6/8 przez brak
+  nieobowiązkowej pinezki — bez fabrykowania lokalizacji dla wyniku.
+
+Praca gotowa do recenzji w PR #22; scalenie pozostaje decyzją właściciela.
+Szczegóły i ograniczenia w `docs/setup/HANDOFF_2026-09-07-pr22.md`.
+
+### Nowe zlecenie po Pętli — research 605SHM / Lorwyn–Shadowmoor
+
+Właściciel przekazał 605SHM Consign to Dream (SHM, Lorwyn) z Fabułą
+Glen Elendra/Oony i poprosił o rekomendację obsługi dwóch wcieleń oraz
+możliwych map, przed rysowaniem. Roadmapa `ca232ff` zachowuje oczekującą
+Fabułę verbatim; archiwum kolekcji i baza nie zostały rozszerzone.
+
+Sprawdzono SHM/32, klasyczną epokę Oony, niezmienność Glen w Wielkiej
+Zorzy oraz inny stan świata z Lorwyn Eclipsed (przewodnik i finał).
+Znaleziono parę map Varghedina i alternatywy; metadane oryginałów
+potwierdzone, ale lokalnie obejrzano tylko miniatury (TLS blokuje pełne
+JPG). Raport i warunkowa rekomendacja T1/T1 w `docs/research/`.
+Implementacja czeka na akceptację kierunku i pliki do rzeczywistego QA,
+nie na automatyczne uznanie fanowskiej kartografii za kanon.
+
 ## 2026-09-06 — sesja PR-21: audyt PR-20 z pierwszą recenzją wizualną map + Pętla Jakości
 
-Sesja `arena/01a0770f-mtg` (PR #21, otwarty). Tryb: „Kontynuuj zgodnie
+Sesja `arena/01a0770f-mtg` (PR #21, scalony 2026-09-07 20:47,
+squash `6bf2fba`). Tryb: „Kontynuuj zgodnie
 z AGENTS” — bez dostawy materializacji. **Pierwsza sesja z oglądem
 obrazów przez agenta** (rastry map przez resvg poza repo).
 

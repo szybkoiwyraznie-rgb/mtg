@@ -54,6 +54,23 @@ Ręki** i cichą armię formującą się w wąwozie. To scena kolekcji, nie nowy
 epizod dopisany Tolkienowi, ale dobrze rozumie kanon: ptaki są sygnałem,
 a siła zbrojna rusza dopiero wtedy, gdy oczy z nieba potwierdzą drogę.
 
+Za pojedynczym stadem stoi cała **sieć**, i to jej historia jest
+najciemniejsza. Saruman zbudował swój wywiad częściowo cudzymi rękami:
+do zbierania ptasich szpiegów namówił **Radagasta Brunatnego**, który
+nie domyślił się zdrady i sądził, że pomaga Białej Radzie w czuwaniu
+nad wrogiem. Zwiad Isengardu wyrósł więc z życzliwości kogoś, kto kochał
+zwierzęta — narzędziem wojny stała się przyjaźń ze światem
+przyrody. [7](https://lotr.fandom.com/wiki/Crebain)
+
+Że sieć działała, wiedzieli także jej przeciwnicy. **Éomer** ostrzegał
+Aragorna, że szpiedzy Sarumana „prześlizgują się przez każdą sieć,
+a jego ptaki złej wróżby są w powietrzu” — dowód, że w Rohanie umiano
+już czytać niebo jako część mapy wojennej. Później **Théoden** obrócił
+ten obraz przeciw czarodziejowi, życząc mu szubienicy „na uciechę
+jego własnym krukom”: ptak-donosiciel staje się ptakiem-padlinożercą,
+a narzędzie władzy przeżywa tego, kto je stworzył.
+[7](https://lotr.fandom.com/wiki/Crebain)
+
 ## Nazwa Karty
 
 **Dunland** to kraina ludzi wypchniętych na zachodnie pogranicze Rohanu,
@@ -135,6 +152,11 @@ pierwszą fazę bitwy. Wystarczy, że wskaże cel.
 - The Tolkien Forum, „Dunlendings” — geografia Dunlandu i kontekst
   konfliktu z Rohanem:
   <https://thetolkien.forum/wiki/Dunlendings>
+- LOTR Wiki, „Crebain” — Radagast nieświadomie pomagający Sarumanowi
+  zbierać ptasich szpiegów (za *Silmarillionem*, „Of the Rings of Power
+  and the Third Age”), ostrzeżenie Éomera o „ptakach złej wróżby”
+  i słowa Théodena o krukach Sarumana:
+  [7](https://lotr.fandom.com/wiki/Crebain)
 
 ## Podsumowanie Lore
 

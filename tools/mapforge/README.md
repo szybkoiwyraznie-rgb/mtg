@@ -77,6 +77,7 @@ przed renderem.
 | `iglica(x, y, {skala})` | punkt | smukła turnia/gmach (wolne iglice, Nivix) |
 | `hedron(x, y, {skala, opacity})` | punkt | kamienny pierścień (dryf = opacity) |
 | `lacuna(x, y, {skala})` | punkt | kolisty szyb w płycie z ciemnym wnętrzem i nacięciami-szczeblami — tunel do jądra planu (Mirrodin: pięć lacun, którymi wyszły słońca) |
+| `jaskinia(x, y, {skala})` | punkt | skalny łuk z ciemnym wejściem w atlasowym kole — groty (Velis Vel), nie ruina/hedron/lacuna |
 | **klocki miejskie (T4 — atlas metropolii, Ravnica)** | | |
 | `dzielnica(punkty, {ton})` | wielokąt | tint panowania (kaseta `dzielnice` w scenie; ton = przyciemnienie lądu) |
 | `granicaDzielnicy(punkty, {zamkniete})` | łamana | granica-arteria (prześwit + tusz); render dedyka każdą krawędź RAZ |

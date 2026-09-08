@@ -35,55 +35,74 @@ wchodzi tej nocy do gardła wroga. Nie dla symbolu. Po swoją.
 
 ## Postacie i Byty
 
-Scena i ilustracja niosą pięcioro: **Cloud Strife**, były SOLDIER
-i najemnik o kolczastym blondzie, z Buster Swordem na plecach — idzie
-na przedzie, bo tak mu każą resztki sumienia po Nibelheimie; **Tifa
-Lockhart**, współwłaścicielka baru Seventh Heaven i serce Avalanche,
-która w slumsach Sektora 7 nauczyła się, że dom to ludzie, nie dach;
-**Barret Wallace**, którego karabin-proteza jest jednocześnie bronią
-i pomnikiem po tym, co Shinra zrobiła z Corel; **Aerith Gainsborough**
-— kwiatowa dziewczyna z Sektora 5, w której żyłach płynie pamięć
-Cetra; oraz **Tseng**, dowódca Turks, uprzejmy i bezlitosny wykonawca
-poleceń prezydenta Shinra, strażnik jej piętra.
+**Cloud Strife** wchodzi do wieży jako najemnik z Buster Swordem, ale
+Aerith nie jest już dla niego anonimową klientką. W kościele Sektora 5
+przyjął rolę jej ochroniarza w zamian za obietnicę randki; ratunek
+przedłuża tę osobistą więź. Przedstawia się jako były członek **SOLDIER**,
+lecz jego opowieść o sobie nie jest bezbłędnym życiorysem: Cloud służył
+w piechocie Shinry i nigdy nie dostał się do elitarnej formacji.
+Ta różnica ma znaczenie — zdolność ochrony kogoś nie zależy tu od
+prawdziwości wojskowego tytułu. [1](https://finalfantasy.fandom.com/wiki/Cloud_Strife)
 
-W tle sceny stoi szósty bohater: sam **budynek Shinra** — pionowe
-miasto w mieście, hub sektora 0, w którym firma trzyma próbówki
-z przyszłością planety.
+**Tifa Lockhart** i **Barret Wallace** niosą do wieży stratę Sektora 7,
+ale także dług wobec Aerith. To Aerith pomogła ocalić **Marlene**, córkę
+Barreta, gdy niszczono podporę talerza. Ich wyprawa nie służy więc
+wyłącznie walce z korporacją: odbijają osobę, która ochroniła ich
+rodzinę. Różnią się metodą — Barret chce wejść siłą przez główne drzwi,
+a Tifa proponuje schody i uniknięcie starcia. Wybór drogi ujawnia dwa
+sposoby troski o tych samych ludzi. [3](https://finalfantasy.fandom.com/wiki/Tifa_Lockhart)
+
+**Aerith Gainsborough** jest dla przyjaciół sprzedawczynią kwiatów
+z Sektora 5, a dla Shinry ostatnią znaną dziedziczką **Cetra**.
+Korporacja chce wykorzystać jej więź z planetą do odnalezienia
+**Ziemi Obiecanej** i budowy **Neo Midgaru**. Nie traktuje jej jak
+obywatelki, której należy zapewnić bezpieczeństwo, lecz jak dostęp
+do zasobu. Wieża skupia w jednym miejscu przemoc ekonomiczną
+prezydenta i eksperymenty **profesora Hojo**: jego laboratorium jest
+celem ratowników, nie bezpiecznym azylem pod strażą.
+[1](https://finalfantasy.fandom.com/wiki/Shinra_Building)
+
+**Tseng** jest twarzą Turks — organizacji, która doprowadziła Aerith
+do niewoli. Hojo reprezentuje inny rodzaj tej samej władzy: podporządkowanie
+osoby badaniom. W oryginalnej sekwencji ratunek obejmuje też **Red XIII**,
+rozumną istotę zamkniętą w laboratorium. Uwolniony sprzymierza się
+z drużyną; nie należy jednak do trójki wspinającej się po schodach
+na początku misji. Budynek Shinra zmienia się z symbolu potęgi firmy
+w miejsce spotkania ludzi i istot, których próbowała ona posiąść.
+[1](https://finalfantasy.fandom.com/wiki/Shinra_Building)
 
 ## Nazwa Karty
 
-**Aerith Rescue Mission** czyta się w świecie dosłownie: misja
-uratowania Aerith. „Rescue” odróżnia tę noc od wszystkich wcześniejszych
-operacji Avalanche — to nie dywersja przy reaktorze i nie ucieczka
-z własnego podwórka, tylko wejście w górę, do twierdzy, po człowieka.
-Po polsku: **Misja Ratunkowa Aerith**. Imię Aerith (w starszych
-tłumaczeniach „Aeris”) to imię kwiatowej sprzedawczyni z slumsów,
-które w lore FFVII nosi echo „ziemi” i „światła”; „mission” zaś jest
-słowem z języka, jakim Avalanche mówi o sobie: zadanie, zlecenie,
-rzecz, którą trzeba zrobić razem.
+**Aerith Rescue Mission** oznacza dosłownie misję uratowania Aerith.
+„Rescue” odróżnia jej cel od sabotażu reaktora: nie chodzi o zniszczenie
+instalacji, lecz o odzyskanie osoby. Po polsku: **Misja Ratunkowa Aerith**.
+Imię na początku nazwy stawia więź z konkretną przyjaciółką przed wojną
+Avalanche z koncernem — to interpretacja nacisku zawartego w tytule,
+nie nazwa osobnej operacji wojskowej.
 
 ## Flavor Text
 
-Karta z kolekcji właściciela (275FIN; FIN/5 wg Scryfall) **nie ma
-flavor textu** — i to też jest
-wymowne: scena nie potrzebuje cytatu, bo cały jej ciężar niesie obraz
-schodów, na których drużyna pcha siebie nawzajem w górę. Cisza
-flavoru zostawia miejsce na Fabułę: „w Midgarze sama Shinra
-zbudowała drogę, po której po raz pierwszy AVALANCHE pójdzie w górę,
-nie w dół”.
+Karta **nie ma drukowanego flavor textu**. Słownym odwołaniem do
+wydarzeń FFVII są natomiast nazwy dwóch opcji — **Take the Elevator**
+i **Take 59 Flights of Stairs** — odpowiadające wyborowi wejścia do
+budynku Shinra; nie są cytatem wypowiedzianym przez którąś z postaci.
 
 ## Transpozycja
 
-Karta przenosi do Kodeksu pojedynczą, kanoniczną scenę FFVII —
-infiltrację budynku Shinra w celu odbicia Aerith z rąk Turks —
-i kotwiczy ją w geografii planu [[final-fantasy|Final Fantasy]],
-w Midgarze: slumsy pod talerzami jako punkt
-startu, wieża w hubie sektora 0 jako cel. Fabuła właściciela
-jest wiążącą kotwicą transpozycji: to ona ustanawia ujęcie „szybu
-schodowego” i temat „w górę, nie w dół”, który mapa Midgaru niesie
-w samym swoim kształcie (talery nad slumsami). Kanon FFVII pozostaje
-nadrzędny wobec interpretacji: pięć postaci, Turks i budynek Shinra
-są zgodne z oryginalną sekwencją gry.
+Scena należy do [[final-fantasy|Final Fantasy]], do Midgaru w czasie
+wyprawy po Aerith. Jej centrum stanowi wspinaczka Clouda, Tify i Barreta:
+trójka przyjaciół korzysta z infrastruktury wroga, by odzyskać więźniarkę.
+Fabuła ukazuje Aerith na wyższym podeście pod strażą Tsenga i skupia
+całą relację ratownicy–więźniarka–Turks w jednym pionowym kadrze.
+Nie jest to opis każdej kolejnej sali z gry.
+
+Kanon oryginalnego FFVII daje szerszy przebieg: schody albo wejście
+przez hol i windy prowadzą na 59. piętro, a dopiero dalsza infiltracja
+prowadzi do laboratorium Hojo. Obecność Red XIII i późniejsze uwięzienie
+drużyny należą do tej szerszej sekwencji, nie do początkowej wspinaczki.
+Motyw „w górę, nie w dół” odczytuje ratunek jako odwrócenie hierarchii
+Midgaru: mieszkańcy slumsów wchodzą do wieży, która rozporządza ich życiem.
+[1](https://finalfantasy.fandom.com/wiki/Shinra_Building)
 
 ## Na Mapie
 
@@ -94,24 +113,25 @@ piętra, laboratorium), a kotwica „Budynek Shinra” istnieje w
 `maps/final-fantasy/midgar/map.json`. Fabuła i kanon gry wskazują
 to samo miejsce; slumsy Sektora 7 (start Avalanche) i Sektora 5
 (Aerith) leżą na tej samej mapie jako kotwice kontekstu. Mapa niesie
-też szerszy kontekst misji: Seventh Heaven (bara Avalanche), kościół
+też szerszy kontekst misji: Seventh Heaven (bar Avalanche), kościół
 i dom Aerith, Loveless Avenue w Sektorze 8 oraz pierścień ośmiu
 reaktorów mako przy krawędzi talerza — cel wcześniejszych i późniejszych
 operacji Avalanche.
 
 ## Mechanika jako Opowieść
 
-Sorcery za `{3}{W}` każe wybrać jedno z dwojga — i ten wybór jest
-streszczeniem całej sceny. **„Take the Elevator”** tworzy trzy tokeny
-Hero 1/1: winda to droga Shinry — szybka, bezosobowa, produkująca
-sojuszników jak korporacja produkuje raporty. **„Take 59 Flights
-of Stairs”** — 59 pięter schodów, dokładnie tyle, ile drużyna
-wspina się w kanonicznej sekwencji — tapuje do trzech stworzeń
-i nakłada stun counter na jedno z nich: to droga Avalanche — wolna,
-wspólna, zostawiająca za sobą unieruchomionych strażników. Koszt
-`{3}{W}` i typ sorcery mówią resztę: to jednorazowy zryw, akcja
-a nie stan; biały kolor pasuje do misji ratunkowej — wspólnoty,
-ochrony swoich, determinacji, która nie pyta o zysk.
+**Take the Elevator** tworzy trzy tokeny Hero 1/1: można w nich odczytać
+trójkę ratowników, nie sojuszników wytwarzanych przez korporację.
+**Take 59 Flights of Stairs** tapuje do trzech stworzeń i kładzie
+znacznik ogłuszenia na jednym z nich. W odczytaniu fabularnym przywołuje
+to wyczerpującą wspinaczkę i czas zyskany przez ominięcie bezpośredniej
+konfrontacji — w oryginalnym FFVII na samych schodach nie ma losowych
+walk. Nie jest to potwierdzenie, że drużyna pokonała tam trzech
+konkretnych strażników.
+
+Biała mana wspiera temat ochrony i działania razem. Reguła każe wybrać
+jedną drogę do tego samego celu: można odczytać ją jako różnicę metod,
+a nie zmianę lojalności drużyny.
 
 ## Źródła
 
@@ -126,8 +146,18 @@ ochrony swoich, determinacji, która nie pyta o zysk.
 - Fandom, hasło Aerith Gainsborough — ostatnia Cetra, porwanie przez
   Turks, więzienie w budynku Shinra:
   https://finalfantasy.fandom.com/wiki/Aerith_Gainsborough
-- Wiedza ogólna (sekwencja schodów/windy z oryginalnego FFVII, 1997):
-  bez URL — oznaczona jako wiedza ogólna.
+- Final Fantasy Wiki, Cloud Strife — służba w piechocie, deklarowana
+  przeszłość SOLDIER, układ ochroniarz–Aerith:
+  [1](https://finalfantasy.fandom.com/wiki/Cloud_Strife).
+- Final Fantasy Wiki, Tifa Lockhart — Marlene, ratunek Aerith i wybór
+  spokojniejszej drogi schodami, sekcja Original continuity:
+  [3](https://finalfantasy.fandom.com/wiki/Tifa_Lockhart).
+- Final Fantasy Wiki, Shinra Building — oryginalna sekwencja ratunku,
+  plan Neo Midgaru, laboratorium Hojo i uwolnienie Red XIII:
+  [1](https://finalfantasy.fandom.com/wiki/Shinra_Building).
+- Final Fantasy Wiki, Storming the Shinra Building — wejście przez
+  hol/windy albo schody, 59. piętro, brak losowych walk na schodach:
+  https://finalfantasy.fandom.com/wiki/Storming_the_Shinra_Building
 
 ## Podsumowanie Lore
 

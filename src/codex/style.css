@@ -357,6 +357,13 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
 .mapa-epoki button:hover { background: #fff8e8; }
 .mapa-epoki button[aria-pressed="true"] { background: #2c2313; color: #f6efdf; cursor: default; }
 .mapa-epoki button:focus-visible { outline: 2px solid var(--akcent); outline-offset: -2px; }
+/* W małym iframe górny pasek przykrywał domyślną pinezkę Qal Sisma
+   (A4, audyt PR-21). Zmieniamy interfejs, nie współrzędne sceny karty.
+   Media query mierzy viewport SAMEJ strony mapy, także w iframe. */
+@media (max-width: 600px) {
+  .mapa-epoki { top: auto; bottom: 10px; max-width: calc(100% - 20px); }
+  .mapa-etykieta-podkladu.tier-kontynent { font-size: 14px; letter-spacing: 0.01em; }
+}
 .mapa-epoki-legenda { display: inline-block; width: 1.2em; text-align: center; font-weight: 700; }
 .mapa-etykieta-podkladu.poza-epoka, .mapa-etykieta-regionu.poza-epoka { display: none; }
 .mapa-scena[hidden] { display: none; }

@@ -12,7 +12,7 @@ import {
 } from '../tools/mapforge/geom.mjs';
 import {
   las, bagno, step, pustynia, pasmo, pasmoInstancje, rzeka, jezioro, droga, etykieta, lukEtykieta,
-  miasto, ruina, hedron, lacuna, szczyt, wulkan, motyw, ramka, rozpadlina,
+  miasto, ruina, hedron, lacuna, jaskinia, szczyt, wulkan, motyw, ramka, rozpadlina,
 } from '../tools/mapforge/bloki.mjs';
 import { renderuj, scenaDemo } from '../tools/mapforge/cli.mjs';
 
@@ -404,4 +404,18 @@ test('mapforge: hydrologia — rzeka nie kończy się w polu (pkt 4; sprawdzWiaz
     const scena = JSON.parse(fs.readFileSync(`maps/${plan}/scena.json`, 'utf8'));
     assert.deepEqual(sprawdzHydrologie(scena), [], `hydrologia ${plan}`);
   }
+});
+
+
+test('mapforge: jaskinia ma własny glif, kotwicę i poprawne wiązanie etykiety', async () => {
+  const { sprawdzWiazania } = await import('../tools/mapforge/render.mjs');
+  const svg = jaskinia(200, 150);
+  assert.equal(svg, jaskinia(200, 150));
+  assert.match(svg, /class="mf-jaskinia" data-x="200" data-y="150"/);
+  assert.doesNotMatch(svg, /mf-ruina|mf-lacuna|mf-hedron/);
+  const s = { szerokosc: 400, wysokosc: 300, lądy: [{ punkty: [[0,0],[400,0],[400,300],[0,300]] }],
+    poi: [{ typ: 'jaskinia', x: 200, y: 150 }],
+    etykiety: [{ tekst: 'Velis Vel', x: 200, y: 150, opcje: { przyDo: [200,150] } }], ramka: false };
+  assert.deepEqual(sprawdzWiazania(s), []);
+  assert.match(renderuj(s), /mf-jaskinia/);
 });

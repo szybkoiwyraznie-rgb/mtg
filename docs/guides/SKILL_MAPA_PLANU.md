@@ -491,6 +491,16 @@ commicie, mapa dostaje **dwa podkłady** zamiast wymiany jednego na drugi:
    aktywnego wariantu, atrybucja per podkład. Test smoke sprawdza, że
    wariant domyślny startuje, drugi jest ukryty, a w wariancie bez
    etykiet wszystkie `data-podklad-etykieta` mają `poza-epoka`.
+   Regresje zachowania są osobno w `test/mapa-warianty.test.js`:
+   montaż kontrolera, wheel/click/pan, obie granice zoomu i powrót,
+   deep-link, przełączenie etykiet i adapter starej mapy. Ograniczenie
+   skali dotyczy układu złotego (`k · sx`), nie CSS-owego `k` wariantu.
+   Przed preview sprawdź też kliknięcia przycisków i pinezki w prawdziwej
+   przeglądarce na telefonie — mini-DOM nie zna kolizji CSS. Mały
+   viewport nie może udawać desktopu tylko dlatego, że `k≈1`: próg
+   detali uwzględnia szerokość sceny; tytuły obszarów pozostają, w
+   mniejszym kroju i bez obcinania przy widocznej kotwicy. Pasek epok
+   jest na dole małego okna, z dala od domyślnej pinezki Qal Sisma.
 7. **Czego nie robić:** nie dublować pinezek per wariant; nie trzymać
    współrzędnych w układzie rekonstrukcji, gdy jest raster (raster jest
    złoty, bo to on jest źródłem geometrii); nie rysować etykiet Codexu

@@ -30,7 +30,7 @@
 
 import {
   PAL, motyw, las, bagno, step, pustynia, lod, wir, pasmo, pasmoInstancje, wulkan, rzeka,
-  doplyw, jezioro, droga, miasto, ruina, fort, hedron, lacuna, iglica, szczyt, etykieta,
+  doplyw, jezioro, droga, miasto, ruina, fort, hedron, lacuna, jaskinia, iglica, szczyt, etykieta,
   lukEtykieta, kompas, ramka, skalaLinia, drzewo,
   dzielnica, granicaDzielnicy, granicaRegionu, mur, szczelina, rozpadlina, tkanina, gruz,
   plac, kolumny, kopula, platforma, kolowrot, most, ognisko, drzewoPoi,
@@ -79,7 +79,7 @@ export const ETYKIETY_WODNE_KOLOR = [
   'Rzeka Srebrna', 'Zatoka Ciszy',                  // demo
 ];
 const BLOKI_POI = {
-  miasto, ruina, fort, hedron, iglica,
+  miasto, ruina, fort, hedron, iglica, jaskinia,
   // `lacuna` — szyb do jądra planu (Mirrodin): pierścień + ciemne wnętrze.
   lacuna,
   // `szczyt` — pojedynczy święty/nazwany szczyt jako POI (Eternal Ice na
@@ -171,7 +171,7 @@ export function rozstawEtykiety(etykiety, { szer, wys, maskiLadow = [], woda = n
   // recenzja 2026-09-02: „Teeth of Akoum za daleko od wulkanów".
   const PROMIEN_POI = {
     miasto: { dol: 13, gora: 13 }, ruina: { dol: 13, gora: 11 },
-    fort: { dol: 13, gora: 13 },
+    fort: { dol: 13, gora: 13 }, jaskinia: { dol: 13, gora: 13 },
     hedron: { dol: 10, gora: 10 }, lacuna: { dol: 10, gora: 10 }, wulkan: { dol: 4, gora: 29 },
     iglica: { dol: 4, gora: 31 }, wodospad: { dol: 6, gora: 10 }, szczyt: { dol: 4, gora: 40 },
     // POI miejskie (Ravnica): koła o promieniu ~11–13 · skala

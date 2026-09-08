@@ -48,7 +48,7 @@ MARKERY = {'gora', 'wulkan', 'drzewo', 'bagno', 'miasto', 'ruina'}
 # biomy (mf-drzewo/mf-kepka) i wir celowo poza listą — napis nad lasem
 # czy nad wirem jest cechą (ADR 0025), nie błędem.
 OBIEKTY_MF = {'mf-fort', 'mf-miasto', 'mf-ruina', 'mf-iglica', 'mf-wulkan',
-              'mf-szczyt', 'mf-hedron', 'mf-lacuna', 'mf-wodospad', 'mf-herb'}
+              'mf-szczyt', 'mf-hedron', 'mf-lacuna', 'mf-jaskinia', 'mf-wodospad', 'mf-herb'}
 TYTUL_MIN_FS = 40                            # próg „tytułu" dla SVG bez klasy
 SPODZEANE_WODY = {                           # konwencja projektu
     'Bojuka Bay', 'Sunder Bay', 'Chill Depths', 'Makindi Trenches',

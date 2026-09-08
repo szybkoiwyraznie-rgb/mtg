@@ -221,9 +221,25 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   assert.ok(!mapaZ.includes('mapa-epoki'), 'mapa Zendikaru: jeden podkład — bez przełącznika epok');
   shim3.przywroc();
 
+  // Lorwyn: dwa T4, jeden układ, brak kolizji id inline SVG.
+  const shimL = wykonajArtefakt('dist/maps/lorwyn.html');
+  const mapaL = shimL.app.innerHTML;
+  assert.ok(mapaL.includes('data-epoka="shadowmoor"') && mapaL.includes('data-epoka="lorwyn"'));
+  assert.ok(mapaL.includes('data-pinezka="605shm-consign-to-dream"'));
+  assert.ok(mapaL.includes('podklad-0-lady-klip') && mapaL.includes('podklad-1-lady-klip'));
+  const idyL = [...mapaL.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]);
+  assert.equal(new Set(idyL).size, idyL.length, 'Lorwyn: zduplikowane id SVG');
+  shimL.przywroc();
+
   // ── Strona mapy Tarkiru (ADR 0035: dwa podkłady-warianty, układ złoty = raster T1)
   const shim3b = wykonajArtefakt('dist/maps/tarkir.html');
   const mapaT = shim3b.app.innerHTML;
+  // A5: warianty są jedynym źródłem markupu tej mapy. Płaska kopia SVG
+  // podwajała duży payload, mimo że renderer jej nie używał.
+  const daneMapyT = globalThis.CODEX_DATA.mapy.tarkir;
+  assert.ok(!Object.hasOwn(daneMapyT, 'podkladMarkup'), 'mapa wariantowa: nieużywana druga kopia SVG');
+  assert.equal(daneMapyT.warianty.find((w) => w.id === 't4').podkladMarkup,
+    fs.readFileSync('maps/tarkir/podklad.svg', 'utf8'), 'wariant T4 zachowuje pełny SVG');
   assert.ok(mapaT.includes('class="mapa-epoki"'), 'mapa Tarkiru: brak przełącznika epok');
   assert.match(mapaT, /data-epoka-przelacz="t1"\s+aria-pressed="true"/, 'mapa Tarkiru: T1 (raster) ma być domyślny');
   assert.match(mapaT, /data-epoka-przelacz="t4"\s+aria-pressed="false"/, 'mapa Tarkiru: T4 jako drugi wariant');
@@ -249,11 +265,26 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   // Tarkir (ADR 0035): atrybucja KAŻDEGO podkładu + legenda przełącznika; iframe w proporcjach T1
   shim4.idz('#/mapa/tarkir');
   const ramaT = shim4.app.innerHTML;
+  assert.equal(globalThis.CODEX_DATA.mapy.tarkir.podkladUrl, 'maps/tarkir/podklad-t1-mini.jpg',
+    'mini-mapy w głównym artefakcie nadal biorą miniaturę T1');
   assert.ok(ramaT.includes('Lore Café'), 'mapa Tarkiru: brak atrybucji rastra T1 (Lore Café)');
   assert.ok(ramaT.includes('All Rights Reserved'), 'mapa Tarkiru: licencja rastra fanowskiego musi być widoczna');
   assert.ok(ramaT.includes('praca własna'), 'mapa Tarkiru: brak atrybucji rekonstrukcji T4');
   assert.ok(ramaT.includes('przełącznik epok'), 'mapa Tarkiru: legenda bez opisu przełącznika');
   assert.ok(ramaT.includes('aspect-ratio: 4307 / 3293'), 'mapa Tarkiru: iframe w proporcjach rastra T1 (wariant domyślny)');
+  // Pierwsze hasło z link-miningu: karty w kolekcji liczy renderer,
+  // nie wpisana ręcznie lista w artykule.
+  shim4.idz('#/haslo/nowa-phyrexia');
+  const phyrexia = shim4.app.innerHTML;
+  assert.ok(phyrexia.includes('Nowa Phyrexia') && phyrexia.includes('W kolekcji'), 'hasło: brak strony lub backlinków');
+  assert.ok(phyrexia.includes('Illusory Demon') && phyrexia.includes('Carapace Forger'), 'hasło: brak obu kart z różnych planów');
+  shim4.idz('#/karta/605shm-consign-to-dream');
+  const karta605 = shim4.app.innerHTML;
+  assert.ok(karta605.includes('605SHM') && karta605.includes('Consign to Dream'));
+  assert.ok(karta605.includes('./img/605FOT.png|./img/605SHMFOT.png'));
+  assert.ok(karta605.includes('./img/605KON.png|./img/605SHMKON.png'));
+  assert.ok(!karta605.includes('./img/32FOT.png') && !karta605.includes('./img/32KON.png'));
+  assert.ok(karta605.includes('#/mapa/lorwyn?pin=605shm-consign-to-dream'));
   shim4.przywroc();
 
   // B1: badge pinezki ukryty do najechania/fokusu (CSS strony mapy)
@@ -336,7 +367,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (7)'), 'lista kart: brak 7 kart');
+  assert.ok(lista.includes('Karty Katalogowe (10)'), 'lista kart: brak 10 kart');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
     'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
@@ -440,4 +471,11 @@ test('UI/build: drzewo HTML map (ADR 0027 v2 — iframe, offline z dysku)', asyn
   assert.ok(stronaMapy.includes('podkladMarkup'), 'strona mapy: wstrzyknięty markup SVG');
   assert.ok(!stronaMapy.includes('data:image/svg+xml;base64'), 'strona mapy: SVG surowy, nie base64');
   fs.rmSync(cel, { force: true });
+});
+
+// To brama obecności reguły CSS, NIE substytut hit-testu w przeglądarce.
+// Manualne QA A4: 320/390/600/768/1440 px, kliknięcie pinezki w T1 i T4.
+test('UI: CSS przenosi przełącznik epok na dół małego viewportu mapy (A4)', () => {
+  const css = fs.readFileSync('src/codex/style.css', 'utf8');
+  assert.match(css, /@media\s*\(max-width:\s*600px\)\s*\{\s*\.mapa-epoki\s*\{[^}]*top:\s*auto;[^}]*bottom:\s*10px;/);
 });

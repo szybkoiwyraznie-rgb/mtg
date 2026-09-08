@@ -3,7 +3,7 @@
  "szerokosc": 2000,
  "wysokosc": 1400,
  "styl": "atlas",
- "opis": "Tarkir T4 (rekonstrukcja kanoniczna, epoka khanów — ADR 0033): kontynent bez oceanu (full-bleed), południowe morze śródlądowe z deltą Gudul. Układ terytoriów i względne pozycje POI przeniesione z rastra fanowskiego Lore Café / MTG Wiki Italia (3d4, 2025) dostarczonego przez właściciela 2026-09-07 (ADR 0031, źródło pomocnicze geometrii); zgodność z kanonem KTK 2014 / TDM 2025 sprawdzona relacja po relacji (zrodlo-research.md). Pięć terytoriów jako tinty (dzielnice bez arterii) + kreskowane szwy granic; Qal Sisma N, Tiansun E, Sandsteppe centrum, Shifting Wastes W (biom pustynia), Gudul S. Osady w nazwach epoki khanów; osady linii smoczych lordów/TDM poza mapą (map.json: poza_epoka).",
+ "opis": "Tarkir T4 (rekonstrukcja kanoniczna, epoka khanów — ADR 0033): kontynent bez oceanu (full-bleed), południowe morze śródlądowe z deltą Gudul. Układ terytoriów i względne pozycje POI przeniesione z rastra fanowskiego Lore Café / MTG Wiki Italia (3d4, 2025) dostarczonego przez właściciela 2026-09-07 (ADR 0031, źródło pomocnicze geometrii); zgodność z kanonem KTK 2014 / TDM 2025 sprawdzona relacja po relacji (zrodlo-research.md). Pięć terytoriów jako tinty (dzielnice bez arterii) + kreskowane szwy granic; Qal Sisma N, Tiansun E, Sandsteppe centrum, Shifting Wastes W (biom pustynia), Gudul S. Osady w nazwach epoki KTK; Ayagor, Melting Wilds, Aerie of the Unfettered i odsłonięty Dusyut poza T4. First Tree reprezentowane przy Arashin, nie w oazie Anafenzy. Wspólna siatka nie oznacza tożsamości każdej lokacji pomiędzy liniami czasowymi (audyt PR-21).",
  "ocean": {
   "kolor": "#e9e9e9"
  },
@@ -1904,40 +1904,6 @@
    }
   },
   {
-   "id": "dusyut",
-   "typ": "las",
-   "punkty": [
-    [
-     640.4,
-     1065.9
-    ],
-    [
-     781.9,
-     1043.3
-    ],
-    [
-     904.0,
-     1112.7
-    ],
-    [
-     837.8,
-     1231.6
-    ],
-    [
-     696.0,
-     1254.0
-    ],
-    [
-     590.8,
-     1173.0
-    ]
-   ],
-   "opcje": {
-    "gestosc": 0.6,
-    "skala": 0.9
-   }
-  },
-  {
    "id": "shifting-wastes",
    "typ": "pustynia",
    "punkty": [
@@ -2276,15 +2242,6 @@
    }
   },
   {
-   "typ": "ognisko",
-   "x": 666.9,
-   "y": 344.3,
-   "id": "ayagor",
-   "opcje": {
-    "skala": 0.8
-   }
-  },
-  {
    "typ": "fort",
    "x": 1713.7,
    "y": 447.2,
@@ -2306,7 +2263,7 @@
    "typ": "wodospad",
    "x": 1538.6,
    "y": 421.9,
-   "id": "icefall",
+   "id": "riverwheel-waterfall",
    "opcje": {
     "skala": 0.9
    }
@@ -2375,15 +2332,6 @@
    }
   },
   {
-   "typ": "drzewo",
-   "x": 464.8,
-   "y": 858.6,
-   "id": "first-tree",
-   "opcje": {
-    "skala": 1.6
-   }
-  },
-  {
    "typ": "miasto",
    "x": 277.9,
    "y": 922.7,
@@ -2399,15 +2347,6 @@
    "id": "lookout-roost",
    "opcje": {
     "skala": 1.1
-   }
-  },
-  {
-   "typ": "ruina",
-   "x": 850.9,
-   "y": 1291.1,
-   "id": "aerie-unfettered",
-   "opcje": {
-    "skala": 0.9
    }
   },
   {
@@ -2632,25 +2571,6 @@
    "opcje": {
     "fs": 15,
     "kotwica": "middle"
-   }
-  },
-  {
-   "tekst": "Dusyut Forest",
-   "x": 740.4,
-   "y": 1182.1,
-   "opcje": {
-    "fs": 17,
-    "kotwica": "middle"
-   }
-  },
-  {
-   "tekst": "Melting Wilds",
-   "x": 740.4,
-   "y": 90.4,
-   "opcje": {
-    "fs": 15,
-    "kotwica": "middle",
-    "ital": true
    }
   },
   {
@@ -2899,33 +2819,6 @@
    }
   },
   {
-   "tekst": "Ayagor",
-   "x": 666.9,
-   "y": 344.3,
-   "opcje": {
-    "fs": 14,
-    "kotwica": "middle",
-    "przyDo": [
-     666.9,
-     344.3
-    ]
-   }
-  },
-  {
-   "tekst": "(Dragon's Bowl)",
-   "x": 666.9,
-   "y": 344.3,
-   "opcje": {
-    "fs": 12,
-    "kotwica": "middle",
-    "przyDo": [
-     666.9,
-     344.3
-    ],
-    "ital": true
-   }
-  },
-  {
    "tekst": "Qadat",
    "x": 1340.3,
    "y": 219.4,
@@ -2965,7 +2858,7 @@
    }
   },
   {
-   "tekst": "(Icefall)",
+   "tekst": "(wodospad Riverwheel)",
    "x": 1538.6,
    "y": 421.9,
    "opcje": {
@@ -3097,16 +2990,17 @@
    }
   },
   {
-   "tekst": "First Tree",
-   "x": 464.8,
-   "y": 858.6,
+   "tekst": "(First Tree)",
+   "x": 385.5,
+   "y": 825.7,
    "opcje": {
-    "fs": 13,
+    "fs": 12,
     "kotwica": "middle",
     "przyDo": [
-     464.8,
-     858.6
-    ]
+     385.5,
+     825.7
+    ],
+    "ital": true
    }
   },
   {
@@ -3132,19 +3026,6 @@
     "przyDo": [
      928.9,
      1158.2
-    ]
-   }
-  },
-  {
-   "tekst": "Aerie of the Unfettered",
-   "x": 850.9,
-   "y": 1291.1,
-   "opcje": {
-    "fs": 14,
-    "kotwica": "middle",
-    "przyDo": [
-     850.9,
-     1291.1
     ]
    }
   },
@@ -3228,7 +3109,7 @@
   "Morze Południowe",
   "Gudul Islands",
   "Molderfang Falls",
-  "(Icefall)"
+  "(wodospad Riverwheel)"
  ],
  "etykietyWodne": [
   "Glintglaze Lake",
@@ -3244,7 +3125,7 @@
   "Morze Południowe",
   "Gudul Islands",
   "Molderfang Falls",
-  "(Icefall)"
+  "(wodospad Riverwheel)"
  ],
  "kompas": {
   "x": 1880,

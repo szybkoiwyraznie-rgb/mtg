@@ -82,12 +82,13 @@ mapę.” Zastosowanie §1–2 do Mirrodinu:
 
 Kontekst: pakiet 3 PR-21 (karta 509KTK Highland Game z *Khans of
 Tarkir*, mapa `maps/tarkir/` T4). Tarkir ma trzy stany kanoniczne na tej
-samej topografii: **epokę khanów** (KTK/FRF — linia czasowa przed
-Khanfall), **epokę smoczych lordów** (DTK — po tym, jak Sarkhan ocalił
-Ugina) i **Tarkir: Dragonstorm** (po Rytuale Stormnexus). Zmieniają się
-władcy, nazwy osad (Sage-Eye → Dragon's Eye, Karakyk → Ayagor/Summer
-Landing) i powstają nowe osady (Qatros Karst, Mistrise, ruchome miasta
-dalkovan) — góry, rzeki, jeziora i step zostają na miejscu.
+wspólnej siatce regionów: **oryginalne „teraz” khanów** (KTK),
+**zmienione „teraz” smoczych lordów** (DTK — po tym, jak Sarkhan ocalił
+Ugina) i **Tarkir: Dragonstorm** (po Rytuale Stormnexus). FRF przedstawia
+odległą przeszłość ze smokami, nie bezsmoczne „teraz” KTK. Zmieniają się
+władcy, część nazw (Sage-Eye → Dragon's Eye), a także niektóre lokacje
+i krajobrazy. Karakyk Valley nie jest wcześniejszą nazwą Ayagor/Summer
+Landing; wspólna siatka jest konwencją rekonstrukcji (errata poniżej).
 
 Właściciel (czat 2026-09-07) wybrał T4 po raporcie T2→T3→T4 i dostarczył
 raster fanowski Lore Café jako źródło pomocnicze geometrii (ADR 0031).
@@ -104,8 +105,9 @@ sprzeciwu właściciela — do potwierdzenia przy recenzji):
    pinują na tej samej mapie, a nazwę epoki niesie karta.
 2. Obiekty **czysto fizyczne** poświadczone tylko w późniejszym kanonie
    (Glintglaze Lake, Rainveil Forest, Pearl Lake, Marang River…) są
-   dopuszczone na mapie epoki khanów — geografia nie powstaje od zmiany
-   khana.
+   dopuszczone jako relacyjne uzupełnienie mapy epoki khanów, o ile
+   źródło nie wiąże ich powstania, odsłonięcia lub danej nazwy z inną
+   linią czasową. Nie przenosi się automatycznie każdego obiektu TDM.
 3. Wzorzec ogólny (rozszerzenie pkt 3 uzupełnienia o Mirrodin): gdy
    plan ma kilka linii czasowych na jednej topografii, mapa dostaje
    etykiety epoki **pierwszej karty planu w Kodeksie**, a różnice nazw
@@ -126,3 +128,22 @@ dostarczy raster innej epoki, może on być drugim podkładem tej samej
 mapy — bez potrzeby spełnienia kryterium §2 (zmiana topologii), które
 dotyczy osobnych MAP z osobnymi współrzędnymi. Szczegóły: ADR 0035.
 
+### Errata faktograficzna 2026-09-07 — audyt PR #21 (bez nowej decyzji o modelu map)
+
+W uzasadnieniu pomylono sekcję wiki „Historical” z epoką KTK. Przewodnik
+DTK cz. 2 wyklucza istnienie cyrku Karakyk z KTK w linii Atarki, a Ayagor
+i Melting Wilds wiąże z jej panowaniem. TDM cz. 2 wymienia Karakyk Glacial
+Settlement osobno od Summer Landing (dawnego Ayagor). First Tree z KTK
+należy do Arashin, nie do zmierzonej na T1 oazy Anafenza's Kin-Tree.
+
+Korekta tych faktów i doboru obiektów w T4 **nie zmienia decyzji
+właściciela z ADR 0035**: jedna mapa, dwa podkłady, T1 domyślny i wspólne
+współrzędne pinezek. Nie otwiera zgody na nowe mapy ani migrację
+pinezki karty. Złoty punkt regionalny nie dowodzi tożsamości konkretnej
+osady w różnych epokach; taką tożsamość trzeba sprawdzić w lore.
+
+Źródła:
+- https://magic.wizards.com/en/news/magic-story/planeswalkers-guide-dragons-tarkir-part-2-2015-03-18
+- https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-tarkir-dragonstorm-part-2
+- https://magic.wizards.com/en/news/feature/planeswalkers-guide-khans-tarkir-part-1-2014-09-03
+- https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-tarkir-dragonstorm-part-1

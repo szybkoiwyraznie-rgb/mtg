@@ -55,3 +55,8 @@ który usuwa zagrożenie u źródła, zawodzić nie musi.
 - Znika klasa błędów „byty z promptu opisane jak kanon karty" — testy
   dymne pilnują negatywnie (na stronie karty nie może być sekcji narracji
   ani treści promptu).
+
+## Doprecyzowanie 2026-09-07 — tożsamość kolekcji
+
+ADR 0036 formalizuje niezmienność numeru/imgId od właściciela.
+Scryfall nigdy nie zastępuje tego klucza ani ścieżek FOT/KON.

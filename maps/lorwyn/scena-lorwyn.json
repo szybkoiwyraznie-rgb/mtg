@@ -1,0 +1,974 @@
+{
+ "nazwa": "lorwyn-shadowmoor-t4-wspolny-uklad",
+ "szerokosc": 2000,
+ "wysokosc": 1400,
+ "styl": "atlas",
+ "opis": "Autorska rekonstrukcja relacji przestrzennych epoki Oony, ADR 0037. Wspólna geometria, zmieniają się tylko etykiety. Bez matrycy odrzuconych map; znana kraina, nie cały glob. Rzeka kontynuuje bieg poza kadrem.",
+ "ocean": {
+  "kolor": "#e9e9e9"
+ },
+ "lądy": [
+  {
+   "id": "poznana-kraina",
+   "punkty": [
+    [
+     -60,
+     -60
+    ],
+    [
+     2060,
+     -60
+    ],
+    [
+     2060,
+     1460
+    ],
+    [
+     -60,
+     1460
+    ]
+   ]
+  }
+ ],
+ "jeziora": [
+  {
+   "cx": 1020,
+   "cy": 290,
+   "rx": 24,
+   "ry": 15,
+   "opcje": {
+    "fale": false
+   }
+  }
+ ],
+ "rzeki": [
+  {
+   "id": "wanderwine",
+   "punkty": [
+    [
+     1020,
+     290
+    ],
+    [
+     1020,
+     360
+    ],
+    [
+     1080,
+     505
+    ],
+    [
+     1040,
+     650
+    ],
+    [
+     995,
+     785
+    ],
+    [
+     1095,
+     940
+    ],
+    [
+     1075,
+     1100
+    ],
+    [
+     1100,
+     1250
+    ],
+    [
+     1090,
+     1510
+    ]
+   ],
+   "opcje": {
+    "s0": 3,
+    "s1": 10,
+    "zrodlo": false
+   },
+   "doplywy": [
+    {
+     "id": "doplyw-zachodni",
+     "punkty": [
+      [
+       245,
+       560
+      ],
+      [
+       440,
+       555
+      ],
+      [
+       645,
+       595
+      ],
+      [
+       815,
+       605
+      ],
+      [
+       1030.2,
+       678.5
+      ]
+     ],
+     "opcje": {
+      "s0": 1.5,
+      "s1": 4
+     }
+    },
+    {
+     "id": "doplyw-wschodni",
+     "punkty": [
+      [
+       1775,
+       825
+      ],
+      [
+       1610,
+       835
+      ],
+      [
+       1420,
+       930
+      ],
+      [
+       1245,
+       945
+      ],
+      [
+       1086.6,
+       985
+      ]
+     ],
+     "opcje": {
+      "s0": 1.5,
+      "s1": 4
+     }
+    }
+   ]
+  }
+ ],
+ "pasma": [
+  {
+   "id": "gory-polnocne-z",
+   "punkty": [
+    [
+     115,
+     175
+    ],
+    [
+     260,
+     110
+    ],
+    [
+     430,
+     150
+    ],
+    [
+     630,
+     100
+    ],
+    [
+     805,
+     140
+    ]
+   ],
+   "opcje": {
+    "szer": 52
+   }
+  },
+  {
+   "id": "gory-polnocne-w",
+   "punkty": [
+    [
+     1100,
+     140
+    ],
+    [
+     1310,
+     100
+    ],
+    [
+     1550,
+     150
+    ],
+    [
+     1780,
+     110
+    ],
+    [
+     1880,
+     185
+    ]
+   ],
+   "opcje": {
+    "szer": 52
+   }
+  },
+  {
+   "id": "gory-zachodnie-n",
+   "punkty": [
+    [
+     110,
+     200
+    ],
+    [
+     80,
+     360
+    ],
+    [
+     120,
+     480
+    ]
+   ],
+   "opcje": {
+    "szer": 43
+   }
+  },
+  {
+   "id": "gory-zachodnie-s",
+   "punkty": [
+    [
+     110,
+     640
+    ],
+    [
+     75,
+     800
+    ],
+    [
+     100,
+     960
+    ],
+    [
+     180,
+     1180
+    ],
+    [
+     300,
+     1280
+    ]
+   ],
+   "opcje": {
+    "szer": 47
+   }
+  },
+  {
+   "id": "gory-wschodnie",
+   "punkty": [
+    [
+     1850,
+     240
+    ],
+    [
+     1880,
+     425
+    ],
+    [
+     1835,
+     625
+    ],
+    [
+     1880,
+     780
+    ]
+   ],
+   "opcje": {
+    "szer": 48
+   }
+  },
+  {
+   "id": "glen-zachod",
+   "punkty": [
+    [
+     1340,
+     1030
+    ],
+    [
+     1315,
+     1150
+    ],
+    [
+     1390,
+     1260
+    ]
+   ],
+   "opcje": {
+    "szer": 32
+   }
+  },
+  {
+   "id": "glen-wschod",
+   "punkty": [
+    [
+     1800,
+     935
+    ],
+    [
+     1860,
+     1100
+    ],
+    [
+     1760,
+     1270
+    ]
+   ],
+   "opcje": {
+    "szer": 40
+   }
+  }
+ ],
+ "biomy": [
+  {
+   "id": "las-zachodni-polnoc",
+   "typ": "las",
+   "punkty": [
+    [
+     180,
+     260
+    ],
+    [
+     760,
+     245
+    ],
+    [
+     935,
+     340
+    ],
+    [
+     945,
+     480
+    ],
+    [
+     835,
+     530
+    ],
+    [
+     380,
+     500
+    ],
+    [
+     170,
+     435
+    ]
+   ],
+   "opcje": {
+    "gestosc": 0.48,
+    "skala": 0.95
+   }
+  },
+  {
+   "id": "las-zachodni-poludnie",
+   "typ": "las",
+   "punkty": [
+    [
+     180,
+     640
+    ],
+    [
+     530,
+     620
+    ],
+    [
+     775,
+     665
+    ],
+    [
+     865,
+     760
+    ],
+    [
+     790,
+     930
+    ],
+    [
+     650,
+     1040
+    ],
+    [
+     360,
+     1100
+    ],
+    [
+     170,
+     910
+    ]
+   ],
+   "opcje": {
+    "gestosc": 0.5,
+    "skala": 1
+   }
+  },
+  {
+   "id": "las-wschodni",
+   "typ": "las",
+   "punkty": [
+    [
+     1210,
+     315
+    ],
+    [
+     1700,
+     300
+    ],
+    [
+     1795,
+     470
+    ],
+    [
+     1780,
+     660
+    ],
+    [
+     1660,
+     800
+    ],
+    [
+     1490,
+     860
+    ],
+    [
+     1280,
+     760
+    ],
+    [
+     1200,
+     510
+    ]
+   ],
+   "opcje": {
+    "gestosc": 0.65,
+    "skala": 1.05
+   }
+  },
+  {
+   "id": "otoczenie-glen",
+   "typ": "las",
+   "punkty": [
+    [
+     1450,
+     965
+    ],
+    [
+     1630,
+     950
+    ],
+    [
+     1740,
+     1060
+    ],
+    [
+     1700,
+     1215
+    ],
+    [
+     1480,
+     1240
+    ],
+    [
+     1405,
+     1130
+    ]
+   ],
+   "opcje": {
+    "gestosc": 0.75,
+    "skala": 1
+   }
+  },
+  {
+   "id": "mokradla-przy-rzece",
+   "typ": "bagno",
+   "punkty": [
+    [
+     1140,
+     760
+    ],
+    [
+     1260,
+     785
+    ],
+    [
+     1320,
+     865
+    ],
+    [
+     1210,
+     910
+    ],
+    [
+     1140,
+     875
+    ]
+   ],
+   "opcje": {
+    "gestosc": 0.6
+   }
+  },
+  {
+   "id": "pola-osad-zachodu",
+   "typ": "step",
+   "punkty": [
+    [
+     220,
+     560
+    ],
+    [
+     725,
+     555
+    ],
+    [
+     930,
+     650
+    ],
+    [
+     915,
+     895
+    ],
+    [
+     950,
+     1110
+    ],
+    [
+     835,
+     1340
+    ],
+    [
+     330,
+     1350
+    ],
+    [
+     230,
+     1180
+    ]
+   ],
+   "opcje": {
+    "gestosc": 0.36
+   }
+  },
+  {
+   "id": "wschodnie-polany",
+   "typ": "step",
+   "punkty": [
+    [
+     1200,
+     970
+    ],
+    [
+     1340,
+     880
+    ],
+    [
+     1720,
+     845
+    ],
+    [
+     1900,
+     900
+    ],
+    [
+     1850,
+     1320
+    ],
+    [
+     1190,
+     1340
+    ]
+   ],
+   "opcje": {
+    "gestosc": 0.18
+   }
+  }
+ ],
+ "drogi": [
+  {
+   "id": "osady-kithkin",
+   "punkty": [
+    [
+     720,
+     485
+    ],
+    [
+     820,
+     565
+    ],
+    [
+     890,
+     670
+    ],
+    [
+     890,
+     815
+    ],
+    [
+     895,
+     1030
+    ],
+    [
+     740,
+     1130
+    ],
+    [
+     510,
+     1120
+    ],
+    [
+     340,
+     1035
+    ]
+   ],
+   "opcje": {
+    "typ": "szlak"
+   }
+  },
+  {
+   "id": "ballyrush-goldmeadow",
+   "punkty": [
+    [
+     410,
+     670
+    ],
+    [
+     570,
+     585
+    ],
+    [
+     700,
+     595
+    ],
+    [
+     890,
+     670
+    ]
+   ],
+   "opcje": {
+    "typ": "szlak"
+   }
+  }
+ ],
+ "poi": [
+  {
+   "id": "burrenton",
+   "typ": "miasto",
+   "x": 720,
+   "y": 485,
+   "opcje": {
+    "skala": 1
+   }
+  },
+  {
+   "id": "ballyrush",
+   "typ": "miasto",
+   "x": 410,
+   "y": 670,
+   "opcje": {
+    "skala": 1
+   }
+  },
+  {
+   "id": "cloverdell",
+   "typ": "miasto",
+   "x": 340,
+   "y": 1035,
+   "opcje": {
+    "skala": 1
+   }
+  },
+  {
+   "id": "goldmeadow",
+   "typ": "miasto",
+   "x": 890,
+   "y": 670,
+   "opcje": {
+    "skala": 1
+   }
+  },
+  {
+   "id": "kinsbaile",
+   "typ": "miasto",
+   "x": 895,
+   "y": 1030,
+   "opcje": {
+    "skala": 1.35
+   }
+  },
+  {
+   "id": "lys-alana",
+   "typ": "miasto",
+   "x": 1500,
+   "y": 445,
+   "opcje": {
+    "skala": 1.4
+   }
+  },
+  {
+   "id": "mudbutton",
+   "typ": "miasto",
+   "x": 1195,
+   "y": 855,
+   "opcje": {
+    "skala": 0.9
+   }
+  },
+  {
+   "id": "bosk",
+   "typ": "drzewo",
+   "x": 920,
+   "y": 395,
+   "opcje": {
+    "skala": 1.9
+   }
+  },
+  {
+   "id": "glen-elendra",
+   "typ": "drzewo",
+   "x": 1560,
+   "y": 1130,
+   "opcje": {
+    "skala": 2.7
+   }
+  },
+  {
+   "id": "tanufel",
+   "typ": "szczyt",
+   "x": 945,
+   "y": 225,
+   "opcje": {
+    "skala": 2,
+    "snieg": false
+   }
+  },
+  {
+   "id": "velis-vel",
+   "typ": "jaskinia",
+   "x": 620,
+   "y": 995,
+   "opcje": {
+    "skala": 1.3
+   }
+  }
+ ],
+ "etykiety": [
+  {
+   "tekst": "Western Lorwyn",
+   "x": 560,
+   "y": 1210,
+   "opcje": {
+    "fs": 40,
+    "kotwica": "middle",
+    "duze": true
+   }
+  },
+  {
+   "tekst": "The Great Forest",
+   "x": 470,
+   "y": 790,
+   "opcje": {
+    "fs": 28,
+    "kotwica": "middle"
+   }
+  },
+  {
+   "tekst": "Gilt-Leaf Wood",
+   "x": 1490,
+   "y": 665,
+   "opcje": {
+    "fs": 33,
+    "kotwica": "middle"
+   }
+  },
+  {
+   "tekst": "Wren's Run",
+   "x": 525,
+   "y": 340,
+   "opcje": {
+    "fs": 20,
+    "kotwica": "middle"
+   }
+  },
+  {
+   "tekst": "Burrenton",
+   "x": 720,
+   "y": 485,
+   "opcje": {
+    "fs": 17,
+    "kotwica": "middle",
+    "przyDo": [
+     720,
+     485
+    ]
+   }
+  },
+  {
+   "tekst": "Ballyrush",
+   "x": 410,
+   "y": 670,
+   "opcje": {
+    "fs": 17,
+    "kotwica": "middle",
+    "przyDo": [
+     410,
+     670
+    ]
+   }
+  },
+  {
+   "tekst": "Cloverdell",
+   "x": 340,
+   "y": 1035,
+   "opcje": {
+    "fs": 17,
+    "kotwica": "middle",
+    "przyDo": [
+     340,
+     1035
+    ]
+   }
+  },
+  {
+   "tekst": "Goldmeadow",
+   "x": 890,
+   "y": 670,
+   "opcje": {
+    "fs": 18,
+    "kotwica": "middle",
+    "przyDo": [
+     890,
+     670
+    ]
+   }
+  },
+  {
+   "tekst": "Kinsbaile",
+   "x": 895,
+   "y": 1030,
+   "opcje": {
+    "fs": 20,
+    "kotwica": "middle",
+    "przyDo": [
+     895,
+     1030
+    ]
+   }
+  },
+  {
+   "tekst": "Lys Alana",
+   "x": 1500,
+   "y": 445,
+   "opcje": {
+    "fs": 20,
+    "kotwica": "middle",
+    "przyDo": [
+     1500,
+     445
+    ]
+   }
+  },
+  {
+   "tekst": "Mudbutton Warren",
+   "x": 1195,
+   "y": 855,
+   "opcje": {
+    "fs": 15,
+    "kotwica": "middle",
+    "przyDo": [
+     1195,
+     855
+    ]
+   }
+  },
+  {
+   "tekst": "Murmuring Bosk",
+   "x": 920,
+   "y": 395,
+   "opcje": {
+    "fs": 16,
+    "kotwica": "middle",
+    "przyDo": [
+     920,
+     395
+    ]
+   }
+  },
+  {
+   "tekst": "Glen Elendra",
+   "x": 1560,
+   "y": 1130,
+   "opcje": {
+    "fs": 22,
+    "kotwica": "middle",
+    "przyDo": [
+     1560,
+     1130
+    ]
+   }
+  },
+  {
+   "tekst": "Mount Tanufel",
+   "x": 945,
+   "y": 225,
+   "opcje": {
+    "fs": 18,
+    "kotwica": "middle",
+    "przyDo": [
+     945,
+     225
+    ]
+   }
+  },
+  {
+   "tekst": "Source of Lanes",
+   "x": 1020,
+   "y": 290,
+   "opcje": {
+    "fs": 14,
+    "kotwica": "middle"
+   }
+  },
+  {
+   "tekst": "Wanderwine",
+   "x": 1020,
+   "y": 1190,
+   "opcje": {
+    "fs": 21,
+    "kotwica": "middle",
+    "kat": -79
+   }
+  },
+  {
+   "tekst": "Velis Vel",
+   "x": 620,
+   "y": 995,
+   "opcje": {
+    "fs": 17,
+    "kotwica": "middle",
+    "przyDo": [
+     620,
+     995
+    ]
+   }
+  }
+ ],
+ "strefyWodne": [
+  "Source of Lanes",
+  "(źródło Wanderbrine)",
+  "Wanderwine",
+  "Wanderbrine"
+ ],
+ "etykietyWodne": [
+  "Source of Lanes",
+  "(źródło Wanderbrine)",
+  "Wanderwine",
+  "Wanderbrine"
+ ],
+ "kompas": {
+  "x": 1860,
+  "y": 1280,
+  "r": 38
+ },
+ "skala": false,
+ "ramka": {
+  "margines": 22,
+  "passePartout": true
+ }
+}

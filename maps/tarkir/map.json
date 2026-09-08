@@ -40,7 +40,7 @@
   {
    "id": "t4",
    "tytul": "T4 · Khans",
-   "epoka": "epoka khanów (KTK/FRF) — rekonstrukcja kanoniczna mapforge",
+   "epoka": "oryginalna linia czasowa Khans of Tarkir (KTK), świat bez smoków — rekonstrukcja mapforge",
    "wariant": "T4",
    "podklad": "podklad.svg",
    "wymiary": {
@@ -54,7 +54,7 @@
     "ox": 0.045695,
     "oy": 0
    },
-   "kalibracja_notka": "złoty (T1, 0–1) → płótno T4 (0–1): x4 = ox + sx·x1, y4 = sy·y1. Wyprowadzenie: generator rysuje z odczytów podglądu rastra 1568×1208 funkcją R(px,py) = (91.4 + 1.1589·px, 1.1589·py) na płótnie 2000×1400; pełny raster = podgląd × 2.7468. Kalibracja sprawdzona na 26 punktach POI (RMS 13 px w pionie, 26 px w poziomie w jednostkach T4 — błąd odczytu z podglądu). Kotwice POI mają w scenie pozycje P(X,Y) z pomiaru na pełnym rasterze, więc pinezka w układzie złotym trafia w T4 dokładnie w ten sam obiekt.",
+   "kalibracja_notka": "złoty (T1, 0–1) → płótno T4 (0–1): x4 = ox + sx·x1, y4 = sy·y1. Wyprowadzenie: generator rysuje z odczytów podglądu rastra 1568×1208 funkcją R(px,py) = (91.4 + 1.1589·px, 1.1589·py) na płótnie 2000×1400; pełny raster = podgląd × 2.7468. Kalibracja sprawdzona na 26 punktach POI (RMS 13 px w pionie, 26 px w poziomie w jednostkach T4 — błąd odczytu z podglądu). Kotwice POI mają w scenie pozycje P(X,Y) z pomiaru na pełnym rasterze, więc pinezka w układzie złotym trafia w T4 dokładnie w ten sam obiekt. Audyt PR-21 (2026-09-07): pomiar geometrii nie dowodzi tożsamości miejsc w obu epokach. First Tree zostało przypisane do Arashin (kanon KTK), nie do Anafenza's Kin-Tree; Ayagor i Aerie of the Unfettered nie są POI podkładu KTK.",
    "zrodlo": {
     "url": "https://magic.wizards.com/en/news/feature/planeswalkers-guide-khans-tarkir-part-2-2014-09-10",
     "url2": "https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-tarkir-dragonstorm-part-2",
@@ -74,10 +74,10 @@
   "autor": "MTG Lore Codex (praca własna — scena mapforge maps/tarkir/scena.json z generatora tools/mapforge/tarkir-scena-t4.py); układ i pozycje względne wg mapy fanowskiej Lore Café (3d4), dostarczonej przez właściciela 2026-09-07",
   "licencja": "praca własna na kanonie tekstowym; geometria wzorowana na prywatnie dostarczonym rastrze fanowskim (Lore Café, „All Rights Reserved” — raster od 2026-09-07 W REPO jako podkład T1 `podklad-t1.jpg` — decyzja właściciela, ADR 0035; do tej pory wyłącznie matryca pozycji, ADR 0031); glify gór mapome CC-BY-4.0 (ADR 0020)",
   "pobrano": "2026-09-07",
-  "notka": "T4 (rekonstrukcja kanoniczna): oficjalna mapa Tarkiru nigdy nie powstała — oba Planeswalker's Guide to opisy; MTG Wiki bez kategorii map Tarkiru (research 2026-09-07, zrodlo-research.md). Właściciel wybrał T4 i dostarczył raster fanowski Lore Café (2025) jako źródło pomocnicze geometrii. Zgodność rastra z kanonem sprawdzona relacja po relacji; JEDNA korekta kanoniczna wobec rastra: na rasterze Temur styka się z Abzanem na zachodzie, a wg TDM Temur graniczy tylko z Mardu i Jeskai, Abzan tylko z Mardu i Sultai — klin Mardu poprowadzono do zachodniej krawędzi (Stormplains i Sandsteppe Gateway po stronie Abzan). EPOKA (ADR 0033 §1–2): jedna mapa fizyczna Tarkiru z etykietami osad EPOKI KHANÓW (KTK — linia czasowa przed Khanfall; karta 509KTK). Topografia jest wspólna dla obu linii czasowych; osady poświadczone tylko w linii smoczych lordów / po Stormnexus są poza mapą (pole poza_epoka), a obiekty czysto fizyczne znane tylko z TDM (jeziora, lasy, rzeki) — dopuszczone. Kontynent bez oceanu (Sarkhan): ląd full-bleed, jedyny wielki akwen to południowe morze śródlądowe (nazwa robocza „Morze Południowe” — niekanoniczna) z deltą Gudul. Nowe klocki mapforge dla tej mapy: biom `pustynia` (wydmy) i POI `szczyt` (Eternal Ice)."
+  "notka": "T4 (rekonstrukcja kanoniczna): oficjalna mapa Tarkiru nigdy nie powstała — oba Planeswalker's Guide to opisy; MTG Wiki bez kategorii map Tarkiru (research 2026-09-07, zrodlo-research.md). Właściciel wybrał T4 i dostarczył raster fanowski Lore Café (2025) jako źródło pomocnicze geometrii. Zgodność rastra z kanonem sprawdzona relacja po relacji; JEDNA korekta kanoniczna wobec rastra: na rasterze Temur styka się z Abzanem na zachodzie, a wg TDM Temur graniczy tylko z Mardu i Jeskai, Abzan tylko z Mardu i Sultai — klin Mardu poprowadzono do zachodniej krawędzi (Stormplains i Sandsteppe Gateway po stronie Abzan). EPOKA (ADR 0033 §1–2): jedna mapa fizyczna Tarkiru z etykietami osad EPOKI KHANÓW (KTK — oryginalna linia czasowa bez smoków; karta 509KTK). Wspólna siatka jest konwencją rekonstrukcji, nie dowodem identyczności wszystkich miejsc; osady poświadczone tylko w linii smoczych lordów / po Stormnexus są poza mapą (pole poza_epoka), a obiekty czysto fizyczne znane tylko z TDM (jeziora, lasy, rzeki) — dopuszczone. Kontynent bez oceanu (Sarkhan): ląd full-bleed, jedyny wielki akwen to południowe morze śródlądowe (nazwa robocza „Morze Południowe” — niekanoniczna) z deltą Gudul. Nowe klocki mapforge dla tej mapy: biom `pustynia` (wydmy) i POI `szczyt` (Eternal Ice). Korekta audytu PR-21: sekcja Historical wiki obejmuje także DTK. Ayagor i Melting Wilds należą do linii Atarki; Karakyk nie jest wcześniejszą nazwą Ayagor. Aerie of the Unfettered i odsłonięty podziemny Dusyut nie są odtwarzane na T4. First Tree leży w Arashin, a nie na zmierzonym symbolu Anafenza's Kin-Tree."
  },
  "rekonstrukcja": true,
- "epoka": "Dwie mapy epok pod przełącznikiem (ADR 0033 uzup. 2026-09-07 / ADR 0035): T1 = Tarkir: Dragonstorm (raster fanowski, własne napisy TDM), T4 = epoka khanów (KTK/FRF, rekonstrukcja z etykietami Codexu); topografia wspólna, pinezki kart wspólne (układ złoty T1)",
+ "epoka": "Jedna mapa, dwa podkłady (ADR 0035): T1 = Tarkir: Dragonstorm, T4 = oryginalna linia KTK bez smoków. FRF opisuje dawny Tarkir ze smokami, nie ten sam stan co KTK. Pinezki wspólne w układzie złotym T1; lokalne różnice historii i krajobrazu nie są utożsamiane.",
  "kotwice": [
   {
    "nazwa": "Qal Sisma",
@@ -85,7 +85,7 @@
    "y": 0.1067,
    "typ": "region",
    "pozycja_zrodlo": "kanon (TDM: Temur „northern climate”, Qal Sisma = góry Temur; KTK: wysoki płaskowyż granitowo-wapienny) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
-   "notka": "góry Temur Frontier; Karakyk Valley, Staircase of Bones, Dragon's Throat, Eternal Ice, Melting Wilds",
+   "notka": "góry Temur Frontier; Karakyk Valley, Staircase of Bones, Dragon's Throat, Eternal Ice; Melting Wilds dopiero w linii Atarki (DTK)",
    "uklad": "złoty T1 — przeliczone z rysunku T4 kalibracją (odczyt z podglądu rastra)"
   },
   {
@@ -175,7 +175,7 @@
    "y": 0.1026,
    "typ": "osada",
    "pozycja_zrodlo": "kanon (KTK cz. 2: cyrk lodowcowy, zimowe leże całego klanu; TDM: Karakyk Glacial Settlement) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
-   "notka": "permanentne zimowe schronienia w jaskiniach; zgromadzenia klanu, wyzwania Dragonclaw",
+   "notka": "permanentne zimowe schronienia w jaskiniach; zgromadzenia klanu, wyzwania Dragonclaw; odpowiednik położenia z TDM jest umowny: źródło DTK wyklucza istnienie cyrku KTK w zmienionej linii. Karakyk Glacial Settlement TDM i Summer Landing to różne miejsca.",
    "px_t1": [
     1793,
     338
@@ -231,12 +231,11 @@
    "y": 0.2478,
    "typ": "miejsce",
    "pozycja_zrodlo": "kanon (mtg.wiki Qal Sisma: Ayagor — Dragon's Bowl, w TDM Summer Landing) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
-   "notka": "polana w przedgórzu; w epoce khanów nazwa Ayagor",
+   "notka": "DTK: dolina spotkań Atarki; w TDM Summer Landing. Poza podkładem T4 epoki KTK. Nie jest przemianowanym Karakyk; pozycja na T1 pozostaje punktem odniesienia.",
    "px_t1": [
     1364,
     816
    ],
-   "poi": "ayagor",
    "uklad": "złoty T1 — pomiar na pełnym rasterze Lore Café 2026-09-07"
   },
   {
@@ -422,17 +421,13 @@
   },
   {
    "nazwa": "First Tree",
-   "x": 0.2055,
-   "y": 0.618,
+   "x": 0.1618,
+   "y": 0.5943,
    "typ": "miejsce",
-   "pozycja_zrodlo": "kanon (KTK cz. 1: święte drzewo w Plaza of the First Tree pod Mer-Ek) — na mapie symbol obok Arashin",
-   "notka": "kin-tree założycielskie; w TDM „Anafenza's Kin-Tree” w okolicy",
-   "px_t1": [
-    885,
-    2035
-   ],
-   "poi": "first-tree",
-   "uklad": "złoty T1 — pomiar na pełnym rasterze Lore Café 2026-09-07"
+   "pozycja_zrodlo": "Kanon KTK, przewodnik cz. 1: First Tree na placu w Arashin, pod ochroną Mer-Ek. Kotwica wspólna z miastem, nie pomiar drzewa na rasterze TDM: https://magic.wizards.com/en/news/feature/planeswalkers-guide-khans-tarkir-part-1-2014-09-03",
+   "notka": "Założycielskie kin-tree i Bursztynowy Tron. Nie utożsamiać z Anafenza's Kin-Tree (885,2035 na T1); reprezentowane etykietą przy POI Arashin.",
+   "poi": "arashin",
+   "uklad": "złoty T1 — zakotwiczenie w Arashin na podstawie kanonu KTK (rekonstrukcja), bez osobnego pomiaru First Tree"
   },
   {
    "nazwa": "Kavah",
@@ -468,12 +463,11 @@
    "y": 0.9292,
    "typ": "ruina",
    "pozycja_zrodlo": "kanon (TDM: „abandoned ancient structure”) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
-   "notka": "pradawna budowla — obiekt fizyczny dopuszczony w epoce khanów jako ruina",
+   "notka": "Osada smoków w DTK, opuszczona struktura w TDM. Poza T4: określenie „pradawna” w TDM nie dowodzi istnienia w KTK.",
    "px_t1": [
     1800,
     3060
    ],
-   "poi": "aerie-unfettered",
    "uklad": "złoty T1 — pomiar na pełnym rasterze Lore Café 2026-09-07"
   },
   {
@@ -491,7 +485,7 @@
    "y": 0.8508,
    "typ": "kraina",
    "pozycja_zrodlo": "kanon (TDM: podziemny las odsłonięty przez zapadlisko) + raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
-   "notka": "na mapie jako zielona plama w pustyni",
+   "notka": "Podziemny las odsłonięty dopiero niedawno w TDM; nie przedstawiany jako powierzchniowy biom/etykieta T4 epoki KTK.",
    "uklad": "złoty T1 — przeliczone z rysunku T4 kalibracją (odczyt z podglądu rastra)"
   },
   {
@@ -716,7 +710,8 @@
    "Temur–Abzan: raster styka te terytoria na W; kanon TDM — nie graniczą (skorygowano: klin Mardu do krawędzi W)",
    "Sage-Eye Stronghold: raster nazywa go „Dragon's Eye” (linia smoków); mapa używa nazwy KTK",
    "Brine Lake, Niraj River, Objung Swamp, Whisperwood: nazwy fizyczne obecne tylko na rasterze (brak w wiki/przewodnikach) — przyjęte jako pozycje fanowskie, oznaczone w kotwicach",
-   "Rzeki: raster urywa Sandsteppe River i rzekę Tiansun w stepie; na mapie każda rzeka uchodzi (Sandsteppe → Marang na Screamreach; Tiansun → Dirgur Lake → Marang; Niraj → Marang; Marang → morze) — decyzja właściciela 2026-09-07 „nie ma rzek, które kończą się w polu”"
+   "Rzeki: raster urywa Sandsteppe River i rzekę Tiansun w stepie; na mapie każda rzeka uchodzi (Sandsteppe → Marang na Screamreach; Tiansun → Dirgur Lake → Marang; Niraj → Marang; Marang → morze) — decyzja właściciela 2026-09-07 „nie ma rzek, które kończą się w polu”",
+   "Audyt PR-21: z rastra TDM nie przenosimy na KTK Ayagor/Summer Landing, Aerie of the Unfettered ani powierzchniowego Dusyut; punkt (885,2035) to Anafenza's Kin-Tree, nie First Tree. First Tree reprezentowane przy Arashin zgodnie z przewodnikiem KTK cz. 1."
   ]
  },
  "poza_epoka": [
@@ -724,7 +719,7 @@
   "Dragonsong Rock (TDM)",
   "Qatros Karst City (TDM)",
   "Mistrise Village (TDM)",
-  "Summer Landing (TDM; w epoce khanów = Ayagor)",
+  "Ayagor / Summer Landing (DTK / TDM; nie lokacja KTK, nie alias Karakyk Valley)",
   "Storm Crane Monastery (TDM)",
   "Riverwheel Village / Icefall Regent (DTK/TDM; na mapie Riverwheel Stronghold)",
   "Kishla Village (TDM)",
@@ -732,12 +727,16 @@
   "Khava (raster; wiki: Kavah — osada epoki khanów zachowana pod nazwą Kavah)",
   "Crucible of the Spirit Dragon (FRF/DTK — na mapie Tomb of the Spirit Dragon)",
   "Great Aerie / Dromoka (DTK)",
-  "Kolaghan Monument (DTK)"
+  "Kolaghan Monument (DTK)",
+  "Melting Wilds (DTK: topnienie lodowców związane z Atarką)",
+  "Aerie of the Unfettered (osada smoków DTK, w TDM opuszczona; brak podstaw do rysowania ruin w KTK)",
+  "Dusyut Forest na powierzchni (TDM: podziemny las odsłonięty niedawno przez zapadlisko)"
  ],
  "otwarte_na_kolejne_przejscia": [
+  "KOREKTA 2026-09-07, audyt PR-21 (A1): T4 opisuje KTK, nie FRF ani DTK. Usunięte Ayagor/Melting Wilds/Aerie oraz powierzchniowy Dusyut; First Tree przy Arashin, nie w oazie Anafenzy. Pinezka 509KTK, kalibracja i pliki T1 bez zmian. Świadome ograniczenie: wspólna siatka przybliża regiony, nie zaświadcza tożsamości osad/glacjologii w obu liniach.",
   "DODANE 2026-09-07 (PR-21, T1): raster Lore Café wszedł do repo jako podkład T1; przełącznik T1 Dragonstorm ↔ T4 Khans; pinezki w układzie złotym T1. Pozycje kotwic POI zmierzone na pełnym rasterze (px_t1); kotwice regionów/krain przeliczone z T4 (odczyt z podglądu) — przy okazji następnej karty w danym regionie warto domierzyć na pełnym rasterze. Geometria T4 (pasma, rzeki, terytoria) nadal z odczytów podglądu (R) — nie wymaga przeliczenia, bo kalibracja jest wspólna.",
   "DODANE 2026-09-07 (PR-21, pakiet 3): mapa T4 epoki khanów na geometrii rastra Lore Café. Nierozstrzygnięte w kanonie: (a) czy Tarkir ma morze — Sarkhan: „no oceans”, ale Sultai „dredge the seas” i Sage-Eye stoi „at the edge of a bay”; przyjęto morze śródlądowe na S (nazwa robocza); (b) pozycje Highspire, Initiate's Stair, Aerie of the Unfettered, Kavah, Lookout Roost wewnątrz terytoriów — z rastra (pozycja_zrodlo); (c) The Scour w kanonie zaczyna się w Qal Sisma — na mapie od gór zachodnich Temur do stepu, jak na rasterze.",
-  "Kolejne karty Tarkiru: sceny KTK/FRF (linia khanów) pinują na tej mapie w nazwach khanów; sceny DTK/TDM (smoczy lordowie / po Stormnexus) też pinują tu (ta sama topografia) — etykiety epoki dopisać w karcie; osobna mapa tylko przy zmianie topologii (ADR 0033)."
+  "Kolejne karty Tarkiru pinują na wspólnej mapie zgodnie z Fabułą; epokę i zgodność konkretnej lokacji sprawdza się osobno. FRF to dawny świat ze smokami, KTK to oryginalne „teraz” bez nich, DTK/TDM należą do zmienionej linii. Nie stosować automatycznego aliasowania lokacji między tymi stanami (ADR 0033/0035)."
  ],
  "recenzja_2026-09-07": {
   "uwagi_wlasciciela": [

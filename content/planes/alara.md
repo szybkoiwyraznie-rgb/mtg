@@ -132,8 +132,8 @@ klany ruszają czasem na samobójczy **Life Hunt**, a pięćdziesiątka to
 wiek niemal niespotykany. Miejsca Jundu: **Bloodhall**, jaskinia
 sangrytu, w której zbiera się Life Hunt (podczas Conflux zagarnięta
 przez Grixis); **Cicatrice**, „ziemie blizn” między dwiema dolinami
-ryftowymi, gniazdo najpotężniejszej czerwonej smoczycy; **the Rip**,
-najgłębsza szrama (dwie mile w dół); **the Seethe**, smołowe doły
+ryftowymi, gniazdo jednej z najpotężniejszych czerwonych smoczyc;
+**the Rip**, najgłębsza szrama (dwie mile w dół); **the Seethe**, smołowe doły
 viashino Pitch Thrash; **Mount Jhal**, gdzie w leżu smoka
 **Malactotha** szamanka **Rakka Mar** odsłoniła Obelisk Jundu
 z czystego sangrytu; **Worldheart Chalice**, wulkaniczna kryjówka
@@ -183,7 +183,7 @@ Nicol Bolasa, który orkiestrował wojny shardów i kierował manę
 obelisków w burzę — scalił plan z powrotem; w punkcie, gdzie pięć
 shardów się zeszło, powstał Maelstrom, a Bolas wszedł w jego środek,
 by odzyskać dawną moc (powstrzymał go Ajani Goldmane). Dziś Alara
-jest „Reunited” — i nawet podczas Nowej Phyrexiańskiej Inwazji
+jest „Reunited” — i nawet podczas inwazji [[nowa-phyrexia|Nowej Phyrexii]]
 sam Maelstrom powstał przeciw najeźdźcy.
 
 ## Mapa

@@ -61,3 +61,9 @@ odwracalna i oparta na oglądzie efektu, nie na domysłach.
 **Ujemne:** raster podkładu w repo (pojedyncze MB na plan — akceptowalne;
 podkłady to pliki w `maps/`, świadomie commitowane jako dane projektu);
 zoom głęboki na detale podkładu pokazuje piksele do czasu T2.
+
+## Brama jakości T1 (decyzja właściciela 2026-09-07)
+
+T1 wymaga pięknej, nienagannej mapy zaakceptowanej przez właściciela;
+benchmarkiem jest podkład Tarkiru. Dostępność i rozdzielczość nie
+wystarczają. Dla Lorwynu znalezione mapy odrzucono i wybrano T4 — ADR 0037.
