@@ -184,6 +184,19 @@
    "uklad": "złoty M1 — odczyt z podglądu L0",
    "x": 0.3,
    "y": 0.155
+  },
+  {
+   "nazwa": "Cathedral of Serra",
+   "x": 0.1916,
+   "y": 0.3891,
+   "typ": "obiekt",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Cathedral_of_Serra (Równiny Sursi, lokalizacja benalijska) + ikona i etykieta na D1 (Varghedin)",
+   "notka": "świątynia Serran (brat Angus, ~3780 AR — stoi w epoce USG); pinezka 40USG",
+   "px_t1": [
+    1552,
+    2023
+   ],
+   "uklad": "złoty M1 — odczyt D1 (1417,1120) przez bbox L2, 2026-09-08"
   }
  ],
  "otwarte_na_kolejne_przejscia": [
@@ -191,7 +204,15 @@
   "Mikro-siatka kalibracji (±0.002) rozmyślnie pominięta: ghosting crossfade'u zdominowany różnicami typografii D1/M1, nie geometrią; ewentualny powrót przy skardze na szarpnięcie Icehaven.",
   "Kotwice 'wyłącznie raster' (12) do weryfikacji przy pierwszej karcie z regionu (precedens F5 Innistrad, PR-23)."
  ],
- "pinezki": [],
+ "pinezki": [
+  {
+   "karta": "40usg-expunge",
+   "x": 0.1916,
+   "y": 0.3891,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła: złotoskrzydły wojownik Serran (ilustracja Moellera, podgląd printu) wymazywany czarną mgłą nad dziedzińcem katedry w czasie inwazji Phyrexii (USG, 4205 AR). Katedra Serran na Równinach Sursi to jedyna nazwana katedra Benalii (kategoria wiki: lokalizacje benalijskie) i istnieje od ~3780 AR — stoi w epoce karty. D1 znaczy ją ikoną i etykietą (odczyt 1417,1120 → złoty przez bbox L2). Ilustracja pokazuje śmierć anioła w powietrzu nad kompleksem; dokładny dziedziniec nieoznaczony — stąd pewność region."
+  }
+ ],
  "plan": "dominaria",
  "podklad": "l0.jpg",
  "regiony": [],
