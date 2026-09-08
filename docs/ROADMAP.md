@@ -295,8 +295,15 @@ research i rekomendacja przed materializacją zakończone. Jeden plan,
 dwa klasyczne oblicza epoki Oony, domyślny Shadowmoor; para Varghedina
 jako kandydat T1/T1, zależnie od pełnego QA i zgody właściciela.
 Raport: `docs/research/RESEARCH_2026-09-07-lorwyn-shadowmoor.md`.
-Karta/plan/mapa nie zostały jeszcze dodane; oczekujemy na decyzję
-oraz oryginały rastrów (sandbox pobrał jedynie miniatury).
+Właściciel wybrał **T4** (ADR 0037) — rastry fanowskie nie weszły.
+
+**PR-23 (2026-09-08) — przejęcie przerwanej sesji i domknięcie pakietu.**
+Sesja PR-22 urwała się przed pushem; commity + dostarczony `.patch`
+zostały przejęte na gałąź `arena/01a07fc3-mtg` (PR #23). W bazie są już
+karta **605SHM**, plan **Lorwyn–Shadowmoor** i mapa **T4 z przełącznikiem
+dwóch oblicz** (wspólna geometria, dwa słowniki nazw). **143 testy;
+17 stron = 8 kart, 1 hasło, 8 planów**; map-audit 0; obie mapy obejrzane
+rastrowo. Handoff: `docs/setup/HANDOFF_2026-09-08-pr23.md`.
 
 ## Wątki otwarte (czekają na decyzję właściciela)
 

@@ -4,6 +4,33 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-08 — PR-23: przejęcie przerwanej sesji PR-22 i domknięcie 605SHM / Lorwyn
+
+Sesja `arena/01a07fc3-mtg`, PR #23. Poprzedni agent (PR #22) przerwał
+pracę: 15 commitów było na gałęzi `arena/01a07d33-mtg`, a resztę
+worktree właściciel dostarczył jako plik `.patch` (commit `621fd75`).
+
+- Gałąź sesji przejęła commity PR-22 przez `merge --ff-only` (bez force,
+  bez przepisywania historii — AGENTS §1.4).
+- Niewypchniętą resztę odtworzono deterministycznie: patch nałożony
+  w osobnym worktree na commit bazowy `6bf2fba`, różnica wobec czoła
+  gałęzi wyliczona i zaaplikowana jako jeden commit (14 plików,
+  +16 329 linii). Ta droga była konieczna, bo `.patch` był liczony
+  względem bazy, nie względem wypchniętych commitów — bezpośrednie
+  `git apply` odbijało 12 plików.
+- Odzyskana treść: dostawa **605SHM Consign to Dream** (archiwum,
+  snapshot, karta LORE-first), plan **`lorwyn`** (Lorwyn–Shadowmoor),
+  mapa **T4** z dwoma wariantami etykiet (ADR 0037), generator
+  `tools/mapforge/lorwyn-scena-t4.mjs`, `test/lorwyn.test.js`.
+- Weryfikacja własna, nie przepisana z handoffu: **143 testy**, build
+  **17 stron (8 kart, 1 hasło, 8 planów)**, `map-audit` **0 problemów**
+  na wszystkich planach, `wiki-stats` — wszystkie nowe strony **8/8**.
+- Ogląd rastrowy obu oblicz mapy (L10, resvg poza repo): geometria
+  identyczna, różnią się wyłącznie napisy; pasma z nachodzeniem baz
+  (mediana odstępu glifów 42 px przy `szer` 43–52 — zgodne z ADR 0021
+  pkt 6); Glen Elendra osłonięta pasmami, rzeka wychodzi poza kadr bez
+  wymyślonego morza; brak etykiet-sierot.
+
 ## 2026-09-07 — PR-22: audyt PR-21 i naprawy (punkt kontrolny)
 
 Sesja `arena/01a07d33-mtg`, PR #22 otwarty przed pracą (`2188033`).

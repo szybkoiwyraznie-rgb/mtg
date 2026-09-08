@@ -1,3 +1,19 @@
+## 2026-09-08 09:10 — Consign to Dream i pierwsza mapa dwóch oblicz: Lorwyn–Shadowmoor
+
+- **[[605shm-consign-to-dream|Consign to Dream]]:** nowa Karta Katalogowa.
+  Glen Elendra broni się glamerem, nie cierniami; olbrzym nie zostaje
+  pokonany siłą, tylko pozbawiony trwałości. Sen jako łup wróżek Oony.
+- **[[lorwyn|Lorwyn–Shadowmoor]] — nowy plan** z mapą **T4** i
+  **przełącznikiem dwóch oblicz**: ta sama geografia, dwa zestawy nazw
+  (Goldmeadow ↔ Mistmeadow, Kinsbaile ↔ Kinscaer, Lys Alana ↔ Cayr
+  Ulios, Wanderwine ↔ Wanderbrine). Domyślny widok to Shadowmoor, bo
+  z tego oblicza pochodzi karta.
+- Wspólny rysunek jest **konwencją atlasu**, nie twierdzeniem, że Wielka
+  Zorza niczego nie zmieniła — zastrzeżenie zapisane w proweniencji mapy.
+  Nazwy bez potwierdzonej pary nie dostały wymyślonego odpowiednika.
+- Pinezka Consign to Dream: **Glen Elendra**, pewność `region`.
+  Teraz **8 kart, 8 planów, 1 hasło**.
+
 ## 2026-09-07 22:40 — Pętla Jakości: pamięć Mirrodinu, ratunek Aerith i pierwsze wspólne hasło
 
 - **[[275fin-aerith-rescue-mission|Aerith Rescue Mission]]:** relacje
