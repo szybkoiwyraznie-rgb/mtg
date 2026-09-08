@@ -96,7 +96,16 @@ usuwania bolesnych wspomnień, zapisywanych potem przez trolle w Drzewie.
 Elfy są łucznikami i myśliwymi lasu; ich zbrojmistrzowie kują w miedzi. **Sylvok** —
 zieloni ludzie Tangle — słuchają druidów. **Leonin** Razor Fields
 odpowiadają przed Kha, wojownikiem-wodzem z Taj-Nar; obok nich żyją
-**Auriok** (ludzie o luźnej federacji wiosek) i **loxodon**. **Vedalken**
+**Auriok** i **loxodon**. Auriokowie to biali ludzie Pól: skóra
+brązowa, nakrapiana złotem i wzmocniona złotymi płytami, włosy
+wybielone słońcem, które nad Razor Fields prawie nie zachodzi.
+Nie tworzyli państwa — każda osada była miastem-państwem, a prawa
+pilnowali wędrowni **Accorders** wedle *Accord of Equity*. W walce
+z konstruktami wyspecjalizowali się w zaklęciach przeciw artefaktom,
+a w Bladehold wymyślili *mirroring*: walkę z użyciem własnego odbicia
+w ostrzach trawy. Gdy przyszła Phyrexia, okazali się ludem
+**najbardziej opornym na compleation** — co nie uratowało ich
+przed niemal całkowitą zagładą. **Vedalken**
 Quicksilver Sea rządzą przez Synod i trzymają w poddaństwie **Neurok**;
 gonią za serum z blinkmothów. **Gobliny** Oxiddy czczą Kuźnię i Stalową
 Matkę; klan Krark wierzy, że pod Mirrodinem jest jeszcze jedna warstwa
@@ -149,7 +158,15 @@ Glissy z Memnarchem, Piąty Świt i Zniknięcie (wielu mieszkańców wróciło
 na rodzime plany). **Blizny i wojna** — Phyrexianie, zrodzeni z oleju,
 który Karn nieświadomie przyniósł do jądra, wyszli na powierzchnię przez
 Mephidross (*Scars of Mirrodin*), oblegli plan (*Mirrodin Besieged*)
-i zdobyli go (*New Phyrexia*). Przez wszystkie te fazy geografia
+i zdobyli go (*New Phyrexia*). Najeźdźca nie jest przy tym jednolity:
+pięć frakcji pod pięcioma pretorami odpowiada pięciu kolorom many.
+Na białej stronie działa **Ortodoksja Maszyn** pretorki **Elesh Norn** —
+frakcja, która nie tyle podbija, co **nawraca**: ma hierarchię
+kapłanów zwanych **cenobitami**, pisane prawo (**Argent Etchings**)
+i obrzęd przyjęcia do wspólnoty. Compleation nazywa w nim
+konsekracją, a kogo uzna za niegodnego tej łaski, tego nie zabija,
+lecz odsyła precz. To odmiana grozy bez gnicia: czysta, uprzejma
+i dlatego szczególnie zimna. Przez wszystkie te fazy geografia
 powierzchni jest ta sama: Dross rozlewa się na sąsiednie krainy, pod
 ziemią rośnie Warstwa Pieców Urabraska, ale pięć regionów wokół
 Glimmervoid stoi tam, gdzie stało — dlatego jedna mapa obsługuje karty
@@ -190,6 +207,15 @@ w `map.json`, werdykt researchu w `zrodlo-research.md`.
   o obwodzie 1400 km, pięć słońc i lacuny, pełna lista lokacji
   z przynależnością do regionów, sfery New Phyrexii:
   https://mtg.wiki/page/New_Phyrexia_(plane)
+- A Planeswalker's Guide to New Phyrexia: The Machine Orthodoxy (2011)
+  — biała frakcja Phyrexii: cenobici jako kapłani inkwizycji, Argent
+  Etchings jako pismo święte, Elesh Norn jako Wielka Cenobitka
+  naginająca doktrynę, compleation jako „konsekracja”:
+  https://magic.wizards.com/en/news/feature/planeswalkers-guide-new-phyrexia-machine-orthodoxy-2011-04-06
+- MTG Wiki, hasło Auriok — złoto w ciele, osady jako miasta-państwa,
+  Accorders i Accord of Equity, mirroring z Bladehold, Cave of Light
+  jako miejsce święte, największa odporność na compleation:
+  https://mtg.wiki/page/Auriok
 - MTG Wiki, hasło Lacunae — tunele do jądra planu, pięć par
   lacuna–słońce, magia grawitacyjna, watermark Mirran:
   https://mtg.wiki/page/Lacunae

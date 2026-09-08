@@ -1,3 +1,26 @@
+## 2026-09-08 11:40 — Niegodny konsekracji: biała Phyrexia na Mirrodinie
+
+- **Nowa karta:** [[476mbs-banishment-decree|Banishment Decree]] (MBS,
+  Mirrodin) — dziewiąta karta kolekcji i druga na tym planie. Cenobita
+  **Ortodoksji Maszyn** orzeka nad wojownikiem **Aurioków**, że ten jest
+  „niegodny konsekracji", i falą sterylnego światła wypycha go
+  z katedry z powrotem na **Razor Fields**.
+- Sedno sceny: biała [[nowa-phyrexia|Phyrexia]] nie zabija heretyka —
+  **ocenia go i odsyła**. Compleation nazywa łaską, więc odmowa
+  przerobienia w maszynę jest karą. Wyrok wydaje urzędnik niskiej rangi
+  („Axsh, pomniejszy cenobita"), rutynowo: to procedura, nie wydarzenie.
+- Gorzka logika z kanonu: Auriokowie byli ludem **najbardziej opornym
+  na compleation**, więc dla tej frakcji są surowcem wybrakowanym.
+  Mechanika mówi to samo — zaklęcie nie niszczy celu, tylko odkłada go
+  na wierzch talii.
+- **Plan [[mirrodin|Mirrodin]]** dostał opis Ortodoksji Maszyn jako
+  białej frakcji najeźdźcy oraz rozbudowane hasło o Auriokach
+  (Accorders, *Accord of Equity*, technika *mirroring* z Bladehold).
+- Pinezka na mapie Mirrodinu przy **Cave of Light**, białej lakunie
+  u podnóża Taj-Nar: świątynia najeźdźcy przy przejętym sanktuarium
+  obrońcy. Kanoniczna **Fair Basilica** świadomie **nie** została z tą
+  katedrą utożsamiona — to sfera późniejszej epoki, po upadku planu.
+
 ## 2026-09-08 10:05 — Pętla Jakości: co naprawdę łączy światy Final Fantasy
 
 - **[[final-fantasy|Final Fantasy]]:** plan był najuboższą stroną bazy —
