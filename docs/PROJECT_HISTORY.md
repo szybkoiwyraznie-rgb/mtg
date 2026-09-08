@@ -4,6 +4,44 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-09 — PR-27: audyt scalonego PR-25, naprawa geografii Forgotten Realms, link-mining Wybrzeża Mieczy
+
+Sesja `arena/01a08327-mtg`, PR #27. Zgodnie z `AGENTS.md` najpierw
+powstała roadmapa i PR, a dopiero potem audyt poprzedniego scalonego PR.
+
+**Audyt PR-25** (`docs/audits/AUDYT_2026-09-09-PR25.md`) potwierdził,
+że warstwa kodowa i proceduralna poprzedniej sesji była mocna, ale nowa
+zawartość Forgotten Realms miała dwa realne problemy: **F1/P1**
+(błędna geografia Faerûnu: `Luruar`, `Sea of Fallen Stars` vs `Inner Sea`,
+południowy akwen podkładu, kierunek `Trackless Sea`) oraz **F2/P2**
+(zbyt słabe źródło w `content/cards/3clb-nefarious-imp.md`, wskazujące
+root serwisu zamiast konkretnego artykułu).
+
+**Naprawy po audycie:** `content/planes/forgotten-realms.md` i
+`maps/forgotten-realms/map.json` zostały zsynchronizowane z kanonem:
+`Luruar` wrócił do Silver Marches w północno-zachodnim Faerûnie,
+`Morze Upadłych Gwiazd` zostało jawnie utożsamione z `Inner Sea`,
+południowy akwen podkładu opisano jako `Jezioro Pary (Lake of Steam)`,
+a `Morze Bezludne` nie dryfuje już na południowy wschód. Research
+warsztatowy dostał erratę, backlog przestał dziedziczyć mylącą nazwę
+`Morze Wewnętrzne`, a karta [[3clb-nefarious-imp|Nefarious Imp]]
+straciła niekonkretne `https://worldaneil.github.io` na rzecz
+bezpośredniego źródła FR Wiki.
+
+**Pętla Jakości po audycie:** pogłębione zostało hasło
+[[mephidross|Mephidross]] (nimy, Moriokowie, Darkslick, Blackcleave,
+Rey-Goor, Ish Sah, skala infekcji), a link-mining przyniósł nowe hasło
+[[wybrzeze-mieczy|Wybrzeże Mieczy]] z odsyłaniem do mapy Faerûnu.
+Wikilinki dopisano na karcie 3CLB i stronie planu Forgotten Realms;
+`docs/backlog.md` przenosi Wybrzeże Mieczy z kolejki kandydatów do sekcji
+wykonanej. `content/co-nowego.md` i PR #27 zostały zaktualizowane
+kumulatywnie.
+
+**Weryfikacja końcowa:** `npm test` **166/166**, `npm run build` OK,
+`python3 tools/map-audit.py` = **0 problemów**, `node tools/wiki-stats.mjs --json`
+= **26 stron (12 kart, 3 hasła, 11 planów), średnio 100% kompletności**.
+Handoff: `docs/setup/HANDOFF_2026-09-09-pr27.md`.
+
 ## 2026-09-08 — PR-25: audyt scalonego PR-24, procedura ilustracji kart, decyzja o mapie Dominarii
 
 Sesja `arena/01a081d0-mtg`, PR #25. Poprzedni agent (PR #24: Dominaria

@@ -1,3 +1,27 @@
+## 2026-09-09 00:48 — Audyt PR-25 domknięty: poprawiona geografia Forgotten Realms, pogłębiony Mephidross, nowe hasło Wybrzeże Mieczy
+
+- **Audyt poprzedniego scalonego PR #25** zapisany w
+  `docs/audits/AUDYT_2026-09-09-PR25.md`, a jego dwa znalezienia
+  zostały od razu obsłużone na gałęzi sesji.
+- **Forgotten Realms wyprostowane po audycie:** `content/planes/forgotten-realms.md`
+  i `maps/forgotten-realms/map.json` nie mylą już **Luruaru** z południem
+  przy Amnie, jasno traktują **Sea of Fallen Stars = Inner Sea**, a
+  południowy akwen podkładu opisują jako **Jezioro Pary (Lake of Steam)**;
+  opis `Trackless Sea` wrócił na zachód/południowy zachód. Warsztatowe
+  notki badań i backlog przestały dziedziczyć błędne nazwy.
+- **Karta [[3clb-nefarious-imp|Nefarious Imp]]** straciła niekonkretne
+  źródło `https://worldaneil.github.io`; zostaje bezpośredni, weryfikowalny
+  wpis o impach z FR Wiki.
+- **Pogłębienie LORE (krok 2):** [[mephidross|Mephidross]] dostał nowe
+  akapity o nimach, Moriokach, ruchomych granicach Drossu (Darkslick,
+  Blackcleave, Rey-Goor), Ish Sah i skali phyrexiańskiej infekcji.
+- **Link-mining (krok 3):** nowe hasło [[wybrzeze-mieczy|Wybrzeże Mieczy]]
+  (geografia, Forgotten Realms) z odsyłaczem do mapy Faerûnu; wikilinki
+  dopisane w karcie 3CLB i na stronie planu.
+- Weryfikacja po zmianach: `npm test` **166/166**, `npm run build` OK,
+  `python3 tools/map-audit.py` = **0 problemów**, `node tools/wiki-stats.mjs --json`
+  = **26 stron, średnio 100% kompletności**.
+
 ## 2026-09-08 22:35 — Mapa FR: Calimport odnaleziony na podkładzie — kotwica Królestwa Wysokiego na dobrej pozycji
 
 - **Korekta po recenzji właściciela:** twierdzenie „na mapie nie ma

@@ -115,14 +115,18 @@ Encje „o jedną kartę” od progu (skan boldów 2026-09-08):
 | Benalia, Wybrani, Pięć Edyktów, Tangle (Dominaria), Argoth, Sylex, Kabała, Aphetto, Daru, Tamingazin, Zhalfir, Suq'At, Sarpadyjskie Imperia, Ciemne Czasy, thrullowie, thalidzi, homaridi | geografia/spolecznosc | 40usg-expunge / plan dominaria | 1 karta |
 | Eldrazi, Roil, Halimar, Coralhelm, Jori En, merfolk | różne | 2bfz-coralhelm-guide (+ plan zendikar) | 1 karta |
 
-## Link-mining PR-26 (Forgotten Realms, 2026-09-08)
+## Link-mining Forgotten Realms (start: PR-25, aktualizacja 2026-09-09)
 
-Pierwsza karta FR: `3clb-nefarious-imp` (+ plan `forgotten-realms`).
-Encje „o jedną kartę” od progu (skan boldów 2026-09-08):
+**Wybrzeże Mieczy — wykonane 2026-09-09**,
+`content/lore/wybrzeze-mieczy.md`, klasa `geografia`, plan
+`forgotten-realms`. Próg spełniały `3clb-nefarious-imp` + plan
+`forgotten-realms`; wikilinki dopisane na obu stronach i hasło dostało
+odsyłacz do mapy Faerûnu (`?x=0.13&y=0.27`).
+
+Pozostałe encje „o jedną kartę” od progu:
 
 | Encja | Klasa (docelowa) | Karta wspominająca | Do progu brakuje |
 | --- | --- | --- | --- |
-| Wybrzeże Mieczy | geografia | 3clb-nefarious-imp (+ plan forgotten-realms) | 1 karta |
 | Avernus, Baator | geografia | 3clb-nefarious-imp | 1 karta |
 | imp (chochlik) | fauna | 3clb-nefarious-imp | 1 karta |
 | Wojna Hobgoblinów, Tiamat | wydarzenie/koncepcja | 3clb-nefarious-imp (+ plan forgotten-realms) | 1 karta |
