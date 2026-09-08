@@ -337,7 +337,7 @@ test('UI: mapa T3 — etykiety podkładu w nakładce ekranowej (stały rozmiar, 
   assert.ok(!fr.includes('kodex-etykiety'), 'FR: raster T1 nie niesie etykiet Codexu (etykiety:false — nazwy na rastrze)');
   assert.ok(fr.includes('data-kafle'), 'FR: brak warstwy kafelków LOD (L1)');
   assert.ok(fr.includes('<svg class="mapa-poi"'), 'FR: brak warstwy POI (kotwice pod przyszłe pinezki)');
-  assert.ok((fr.match(/<circle /g) ?? []).length >= 13, 'FR: warstwa POI niesie co najmniej 13 punktów');
+  assert.ok((fr.match(/<circle /g) ?? []).length >= 14, 'FR: warstwa POI niesie co najmniej 14 punktów');
 
   fs.rmSync(cel, { force: true });
   shim3.przywroc();

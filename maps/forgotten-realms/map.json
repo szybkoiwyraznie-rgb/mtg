@@ -66,12 +66,12 @@
   },
   {
    "nazwa": "Królestwo Wysokie",
-   "notka": "Calimport — „Złota Przystań”; etykieta regionu do weryfikacji przy karcie z regionu",
-   "pozycja_zrodlo": "kanon: Cities of the Inner Sea (3e) — region Calimportu i Veny; podkład 3E nie niesie jawnej etykiety „High Kingdom” — południowo-wschodni brzeg Morza Wewnętrznego, odczyt siatki 5% na rastrze 3E",
+   "notka": "Calimport — „Złota Przystań”, stolica Królestwa Wysokiego; etykieta miasta jawna na podkładzie (etkieta regionu nie — nazwa regionu z kanonu)",
+   "pozycja_zrodlo": "kanon: Cities of the Inner Sea (3e) — region Królestwa Wysokiego; Calimport na północnym brzegu The Shining Sea, na południe od Calim Desert (Calimshan) — etykieta miasta na rastrze 3E, odczyt siatki 5%",
    "typ": "region",
-   "uklad": "złoty 3E — odczyt z siatki 5% na rastrze (bez jawnej etykiety na podkładzie)",
-   "x": 0.56,
-   "y": 0.66
+   "uklad": "złoty 3E — odczyt z siatki 5% na rastrze (na etykiecie Calimport)",
+   "x": 0.285,
+   "y": 0.736
   },
   {
    "nazwa": "Morze Bezludne",
@@ -85,7 +85,7 @@
  ],
  "otwarte_na_kolejne_przejscia": [
   "Kotwice regionów wykalibrowane odczytem siatki 5% na rastrze 3E (l0.jpg 1920×1284 = proxy mastera 4763×3185, ten sam kadr); do weryfikacji przy pierwszej karcie z regionu (precedens F5 Innistrad, PR-23).",
-  "Warstwa POI (13 punktów: miasta i huby archipelagów) renderowana w scenie POD warstwą kafelków L1 — kotwice pod przyszłe pinezki kart (decyzja właściciela 2026-09-08); dane w map.json (pole \"poi\").",
+  "Warstwa POI (14 punktów: miasta i huby archipelagów) renderowana w scenie POD warstwą kafelków L1 — kotwice pod przyszłe pinezki kart (decyzja właściciela 2026-09-08); dane w map.json (pole \"poi\").",
   "T2 (Vectorized Realms, wektor) skasowany 2026-09-08 po obejrzeniu mapy live (decyzja właściciela: wolny, bez ikon lokalizacji, brzydki); plik podklad.svg usunięty, treści wektora nienaruszone w historii gałęzi."
  ],
  "pinezki": [
@@ -109,6 +109,7 @@
   { "nazwa": "Mulmaster", "typ": "miasto", "x": 0.44, "y": 0.455 },
   { "nazwa": "Helondeth", "typ": "miasto", "x": 0.513, "y": 0.51 },
   { "nazwa": "Mulhorand", "typ": "miasto", "x": 0.79, "y": 0.56 },
+  { "nazwa": "Calimport", "typ": "miasto", "x": 0.285, "y": 0.736 },
   { "nazwa": "Moonshaes", "typ": "archipelag", "x": 0.07, "y": 0.36 },
   { "nazwa": "Wyspy Nelanther", "typ": "archipelag", "x": 0.138, "y": 0.562 }
  ],
@@ -146,7 +147,7 @@
    "zrodlo": {
     "autor": "Wizards of the Coast / TSR — oficjalna mapa Faerûn do D&D 3.0 (2001); cyfrowa edycja znana z Forgotten Realms Wiki",
     "licencja": "materiał WotC — użytek prywatny, niepubliczny (ADR 0031); przy upublicznieniu Codexu podkład do wymiany (ADR 0007 §3)",
-    "notka": "Podkład dostarczył właściciel serwisu (webp 3,1 MB, commit c2c4b77, 2026-09-08); master.jpg = konwersja do JPG q92 (4,3 MB), siatka L1 cięta tools/kafle.mjs: 10×7 kafelków po 512 px (próg 2.5). Warstwa POI (13 punktów) renderowana w scenie pod kafelkami — kotwice pod przyszłe pinezki kart (decyzja właściciela 2026-09-08). T2 (Vectorized Realms) skasowany po decyzji właściciela.",
+    "notka": "Podkład dostarczył właściciel serwisu (webp 3,1 MB, commit c2c4b77, 2026-09-08); master.jpg = konwersja do JPG q92 (4,3 MB), siatka L1 cięta tools/kafle.mjs: 10×7 kafelków po 512 px (próg 2.5). Warstwa POI (14 punktów) renderowana w scenie pod kafelkami — kotwice pod przyszłe pinezki kart (decyzja właściciela 2026-09-08). T2 (Vectorized Realms) skasowany po decyzji właściciela.",
     "pobrano": "2026-09-08",
     "tytul": "Map - Faerun - 3E — oficjalna mapa Faerûn (D&D 3.0, WotC/TSR)",
     "url": "https://forgottenrealms.fandom.com/wiki/File:Map_-_Faerun_-_3E.jpg"

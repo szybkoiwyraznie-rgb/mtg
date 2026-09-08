@@ -1,3 +1,16 @@
+## 2026-09-08 22:35 — Mapa FR: Calimport odnaleziony na podkładzie — kotwica Królestwa Wysokiego na dobrej pozycji
+
+- **Korekta po recenzji właściciela:** twierdzenie „na mapie nie ma
+  Calimporta” było błędem odczytu (szukano wschód od Morza
+  Wewnętrznego, a nie na południu). Calimport leży na **północnym
+  brzegu The Shining Sea, na południe od Calim Desert (Calimshan)** —
+  etykieta miasta jawna na rastrze 3E.
+- Kotwica **Królestwo Wysokie** przeniesiona na Calimport
+  (0.285, 0.736) z jawnym odwołaniem do etykiety na podkładzie;
+  **Calimport dołączony do warstwy POI** (14 punktów). Strona planu
+  (Geografia: The Shining Sea, „Złota Przystań”) i test ui-smoke
+  (≥14 kółek) zsynchronizowane.
+
 ## 2026-09-08 22:05 — Mapa FR: wektor T2 do kosza, podkład = oficjalna Faerûn 3E (T1+LOD jak Dominaria) + warstwa POI
 
 - **Decyzja właściciela (po obejrzeniu mapy live): T2 wektor

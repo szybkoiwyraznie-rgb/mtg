@@ -52,8 +52,9 @@ Mapa settingu pokrywa Faerûn w granicach oficjalnej mapy 3E
   i starych przekleństw;
 - **Morze Wewnętrzne** — duży akwen na południowym wschodzie,
   połączony cieśniną z Morzem Upadłych Gwiazd;
-- **Królestwo Wysokie** (High Kingdom) — państwo na południowym
-  wschodzie, nad Morzem Wewnętrznym;
+- **Królestwo Wysokie** (High Kingdom) — państwo nad The Shining
+  Sea (południową częścią Morza Wewnętrznego), na południe od
+  Calimshan; stolica Calimport, „Złota Przystań”;
 - **Morze Bezludne** — pusta południowo-wschodnia woda, na której
   kończy się zasięg mapy.
 
@@ -73,10 +74,11 @@ poza dist; podkład dostarczył właściciel, atrybucja źródła w
 stopce mapy (użytek prywatny, ADR 0031).
 
 Pod spodem rastrowych warstw leży **wektorowa warstwa POI**
-(złote kółka, bez etykiet — nazwy niesie sam podkład): trzynaście
+(złote kółka, bez etykiet — nazwy niesie sam podkład): czternaście
 najważniejszych punktów odniesienia (miasta Wybrzeża Mieczy,
-Silverymoon, Myth Drannor, Mulmaster, Helondeth, Mulhorand i huby
-archipelagów) jako kotwice pod przyszłe pinezki kart (ADR 0043:
+Silverymoon, Myth Drannor, Mulmaster, Helondeth, Mulhorand,
+Calimport i huby archipelagów) jako kotwice pod przyszłe pinezki
+kart (ADR 0043:
 piny na mapach = tylko karty). Po doładowaniu kafli L1 kółka
 pokrywa druk mastera.
 
