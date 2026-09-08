@@ -908,15 +908,6 @@
    }
   },
   {
-   "tekst": "(źródło Wanderbrine)",
-   "x": 1020,
-   "y": 290,
-   "opcje": {
-    "fs": 14,
-    "kotwica": "middle"
-   }
-  },
-  {
    "tekst": "Wanderbrine",
    "x": 1020,
    "y": 1190,
@@ -942,13 +933,13 @@
  ],
  "strefyWodne": [
   "Source of Lanes",
-  "(źródło Wanderbrine)",
+  null,
   "Wanderwine",
   "Wanderbrine"
  ],
  "etykietyWodne": [
   "Source of Lanes",
-  "(źródło Wanderbrine)",
+  null,
   "Wanderwine",
   "Wanderbrine"
  ],
