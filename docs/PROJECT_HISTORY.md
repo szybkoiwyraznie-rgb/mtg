@@ -4,6 +4,83 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-08 — PR-25: audyt scalonego PR-24, procedura ilustracji kart, decyzja o mapie Dominarii
+
+Sesja `arena/01a081d0-mtg`, PR #25. Poprzedni agent (PR #24: Dominaria
+T1 + podmapa Aerony D1) zawiesił się po pierwszej wersji mapy; uwagi
+właściciel zgłaszał bezpośrednio.
+
+**Audyt scalonego PR-24** (81 plików; `docs/audits/AUDYT_2026-09-08-PR24.md`):
+baza zdrowa (testy, build, map-audit, kompletność); 8 pozycji (F1–F8) —
+wszystkie naprawione w tym PR. Dwie pozycje proceduralne stały się
+ADR-ami „na sztywno” (właściciel: „to nie pierwsza taka sytuacja”):
+**ADR 0040** — oryginalne ilustracje z kart NIE są kanonem (kanoniczne
+są tylko ilustracje FOT/KON właściciela), jakiekolwiek nawiązywanie do
+nich i wnioskowanie na ich podstawie jest niezgodne z procedurą;
+**ADR 0041** — podmapa/nakładka będąca wycinkiem bazy bez nowego
+detalu nie ma zastosowania; mapa = jedna całościowa mapa FHD +
+kafelkowa od pewnego zoomu (mechanizm L2 w silniku zostaje —
+regulator, nie treść).
+
+**Treść:** karta [[40usg-expunge|Expunge]] (40USG) przepisana w całości
+z Fabuły właściciela + kanonu (scena z odczytu ilustracji Moellera
+wycofana); [[393dka-forge-devil|Forge Devil]] bez nazwiska artysty w
+scenie; strona planu [[dominaria|Dominarii]] z sekcjami „Mapa” +
+„Źródła”; errata w researchu Dominarii; nowy strażnik
+`test/druk-zrodlowy.test.js` (ilustracj*/wignet/artysta ze snapshotu
+zabronione w każdej karcie z dostępny snapshotem).
+
+**Mapa:** nakładka L2 „Domeny” + raster `aerona.jpg` (1,6 MB)
+usunięte (warianty: `['t1']`); pinezka 40USG zmierzona na M1 master
+(px 1569,1979 → 0.1937,0.3806; pewność `region`); kotwice kontynentów
+bez adnotacji D1; `map.json` z sekcją „otwarte” (decyzje o detalach).
+**Build:** `zbudujPakiet` czyści katalog wyjściowy — pliki usunięte
+z repo znikają z drzewa map i ZIP-a (regresja: nadpisywanie nie
+śledziło usunięć). **159 testów; 22 strony = 11 kart, 1 hasło,
+10 planów**; map-audit 0. Plan:
+`docs/plans/PLAN_2026-09-08-pr25-dominaria-l2-i-druk-zrodlowy.md`.
+
+**Kontynuacja (recenzja właściciela odpowiedzi o ZIP):** pomiar
+potwierdził obserwację — wektorowe bazy leżały w ZIP-ie DWU razy
+(inline w stronach map + plik w katalogu dla mini-map; ~28,8 MB z
+90,5 MB, 32%); mini-mapy T4 dociągały pełny 8,3 MB SVG. Decyzja
+właściciela: mini-mapa = mały jpg-screenshot z pinezką. Wdrożone
+(**ADR 0027 Uzupełnienie v3**): build generuje `mini.jpg` (800 px,
+q80; rasterizator `@resvg/resvg-js` dev-only — silnik pozostaje
+zero-dependency, CI `npm ci`; fallback ImageMagick → pełna baza),
+drzewo dist nie zawiera wektorowych baz (niezmiennik + usuwanie
+stale), pole `miniatura` wycofane (committowane miniatury usunięte).
+**ZIP 90,5 → 62,1 MB (−31%)**; mini 48–159 kB per plan; bramki
+testowe (mini ≤ 400 kB, zero `.svg` w drzewie).
+
+**Głos Kronikarza (decyzja właściciela po recenzji Expunge):** narracja
+wpisu karty — od pierwszej sekcji do „Mechanika jako Opowieść” włącznie —
+jest 100% osadzona w świecie, pisana głosem niezależnego kronikarza,
+który nie zna procesu; terminy meta (karta, Fabuła, Kodeks, kolekcja,
+kanon, Scryfall, oracle, print, flavor, snapshot, dostawa, reguła
+karty, epoka karty, „most”) dozwolone tylko w frontmatter/infoboksie/
+Mechanice/Źródłach. **ADR 0042** + dopisek wycofujący ADR 0030 §5
+(wyjątek „skrajnie zwięźle”). Skan całego katalogu: meta-język w
+narracji miały **wszystkie 11 kart** (także przepisany Expunge) —
+poprawione (~70 miejsc): scena/ryt/zapis, inskrypcja, kronikarz
+dopowiada, mechanika rytu, fakt świata. **Strażnik**
+`test/glos-kronikarza.test.js` (26 terminów + regresja 40USG); regresja
+ui-smoke zaktualizowana („Na karcie obecne jest” → „W scenie obecne
+jest”; adnotacja o braku flavor w 1LTR w Źródłach). **161 testów,
+22 strony, ZIP 62,1 MB.**
+
+**Naprawa czerwonego CI (regresja od `7ae7866`):** CI padał na kroku
+testowym (9–14 s, logi niedostępne), a lokalnie suita była zielona —
+różnica środowiskowa: build mini-map używał ImageMagick `convert`,
+którego nie ma na runnerach GitHub (ubuntu-latest 24.04); build cicho
+spadał na fallback (pełna baza w drzewie), a bramka testowa
+(`maResvg` = true) odrzucała brak mini.jpg. Naprawa: łańcuch w całości
+w devDependency npm (resvg + czysto-JS `pngjs`/`jpeg-js`, skalowanie
+bilinearnie do 800 px, JPEG q80) — zero binarików systemowych (ADR 0027
+v3, korekta). Weryfikacja: 161/161 testów + build w symulacji runnera
+(PATH bez `convert`/`python3` — 5 testów skacze legalnie: map-audit i
+`tnij()`).
+
 ## 2026-09-08 — PR-23: przejęcie przerwanej sesji PR-22 i domknięcie 605SHM / Lorwyn
 
 Sesja `arena/01a07fc3-mtg`, PR #23. Poprzedni agent (PR #22) przerwał

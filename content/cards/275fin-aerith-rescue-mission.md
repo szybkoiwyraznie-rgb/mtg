@@ -82,7 +82,7 @@ nie nazwa osobnej operacji wojskowej.
 
 ## Flavor Text
 
-Karta **nie ma drukowanego flavor textu**. Słownym odwołaniem do
+Zapis **nie ma przypisanej inskrypcji**. Słownym odwołaniem do
 wydarzeń FFVII są natomiast nazwy dwóch opcji — **Take the Elevator**
 i **Take 59 Flights of Stairs** — odpowiadające wyborowi wejścia do
 budynku Shinra; nie są cytatem wypowiedzianym przez którąś z postaci.
@@ -92,11 +92,11 @@ budynku Shinra; nie są cytatem wypowiedzianym przez którąś z postaci.
 Scena należy do [[final-fantasy|Final Fantasy]], do Midgaru w czasie
 wyprawy po Aerith. Jej centrum stanowi wspinaczka Clouda, Tify i Barreta:
 trójka przyjaciół korzysta z infrastruktury wroga, by odzyskać więźniarkę.
-Fabuła ukazuje Aerith na wyższym podeście pod strażą Tsenga i skupia
+Zapis ukazuje Aerith na wyższym podeście pod strażą Tsenga i skupia
 całą relację ratownicy–więźniarka–Turks w jednym pionowym kadrze.
-Nie jest to opis każdej kolejnej sali z gry.
+Nie jest to opis każdej kolejnej sali wieży.
 
-Kanon oryginalnego FFVII daje szerszy przebieg: schody albo wejście
+Kronika świata daje szerszy przebieg: schody albo wejście
 przez hol i windy prowadzą na 59. piętro, a dopiero dalsza infiltracja
 prowadzi do laboratorium Hojo. Obecność Red XIII i późniejsze uwięzienie
 drużyny należą do tej szerszej sekwencji, nie do początkowej wspinaczki.
@@ -109,8 +109,8 @@ Midgaru: mieszkańcy slumsów wchodzą do wieży, która rozporządza ich życie
 Pinezka **dokładna**: `#/mapa/final-fantasy/midgar?pin=275fin-aerith-rescue-mission`
 — **budynek Shinra**, hub sektora 0, geometryczny środek radialnego
 Midgaru. Pewność pełna: cała scena dzieje się w wieży (szyb schodowy,
-piętra, laboratorium), a kotwica „Budynek Shinra” istnieje w
-`maps/final-fantasy/midgar/map.json`. Fabuła i kanon gry wskazują
+piętra, laboratorium), a kotwica „Budynek Shinra” istnieje na mapie.
+Zapis i kronika świata wskazują
 to samo miejsce; slumsy Sektora 7 (start Avalanche) i Sektora 5
 (Aerith) leżą na tej samej mapie jako kotwice kontekstu. Mapa niesie
 też szerszy kontekst misji: Seventh Heaven (bar Avalanche), kościół

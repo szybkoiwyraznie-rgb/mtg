@@ -1,6 +1,8 @@
 /**
- * Dominaria (krok 3): prawdziwy map.json renderuje pełny stos LOD —
- * złota scena T1 z kafelkami L1 + nakładka L2 z bbox kalibracji M1↔D1.
+ * Dominaria: prawdziwy map.json renderuje stos LOD — złota scena T1
+ * z kafelkami L1. Nakładka L2 „Domeny" usunięta decyzją właściciela
+ * 2026-09-08 (ADR 0041: wycinek bazy bez nowego detalu) — tu regresja
+ * negatywna; mechanizm L2 w silniku testowany w lod.test.js.
  */
 import fs from 'node:fs';
 import { test } from 'node:test';
@@ -35,22 +37,22 @@ test('Dominaria: złoty wariant T1 niesie warstwę kafli L1 (16×11×512)', () =
   });
 });
 
-test('Dominaria: nakładka L2 Domeny z bbox kalibracji M1↔D1', () => {
+test('Dominaria: brak nakładki L2 (ADR 0041) — mapa to L0 + kafle L1', () => {
   zPrawdziwaMapa(() => {
     const html = renderMape('dominaria', {});
-    assert.ok(html.includes('data-l2="domeny"'), 'nakładka L2 w złotej scenie');
-    assert.ok(html.includes('data-prog="6"'), 'próg S2');
-    assert.ok(html.includes('data-bbox="0.02,0.15,0.355,0.61"'), 'bbox kalibracji');
-    assert.ok(html.includes('left:2.000%;top:15.000%;width:33.500%;height:46.000%'), 'pozycja nakładki');
-    assert.ok(html.includes('data-src="dominaria/aerona.jpg"'), 'leniwy src pokrycia D1');
-    assert.ok(!html.includes('data-epoka-przelacz'), 'nakładka poza przełącznikiem epok');
+    assert.ok(!html.includes('data-l2'), 'brak nakładki L2 (wycinek bazy zabroniony)');
+    assert.ok(!html.includes('aerona.jpg'), 'brak pokrycia D1 w scenie');
+    assert.equal(mapa.warianty.length, 1, 'jeden wariant (t1)');
+    assert.ok(!mapa.warianty[0].bbox, 'brak bbox kalibracji');
+    assert.ok(!fs.existsSync('maps/dominaria/aerona.jpg'), 'aerona.jpg usunięte z repo');
   });
 });
 
-test('Dominaria: ?epoka=domeny dopasowuje widok do regionu', () => {
+test('Dominaria: ?epoka=domeny ignorowane (wariant nie istnieje)', () => {
   zPrawdziwaMapa(() => {
     const html = renderMape('dominaria', { epoka: 'domeny' });
-    assert.ok(html.includes('data-region="domeny"'), 'deep-link regionu L2');
+    assert.ok(!html.includes('data-region='), 'brak deep-linku regionu L2');
+    assert.ok(!html.includes('data-l2'), 'brak nakładki mimo ?epoka=');
   });
 });
 

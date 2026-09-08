@@ -67,9 +67,6 @@ kartę** (lub zlecenie właściciela). Pilot: Śródziemie, karta 1LTR.
       "pewnosc": "region",
       "uzasadnienie": "Dunland — kraina między Isengardem a Górami Mglistymi (wg mapy kanonicznej); scena na urwisku nad wąwozem."
     }
-  ],
-  "regiony": [
-    { "haslo": "dunland", "ksztalt": "SVG path lub bbox", "pewnosc": "przyblizona" }
   ]
 }
 ```
@@ -98,7 +95,8 @@ kalibracji: `SKILL_MAPA_PLANU.md` §12.
    ZIP-a, a rozmiar artefaktu głównego nie rośnie z liczbą planów.
 4. Strona mapy renderuje podkład wektorowo inline, gdy źródłem jest SVG,
    oraz jako `<img>` dla PNG/JPG; pan/zoom pozostaje własnym vanilla JS
-   (pointer events, dotyk, deep-link `#/mapa/<plan>?pin=<slug>`).
+   (pointer events, dotyk, deep-link `#/mapa/<plan>?pin=<slug>` dla kart
+   oraz `?x=<0–1>&y=<0–1>` dla odsyłania stron do miejsca, ADR 0043).
 5. Mini-mapy kart korzystają z tego samego surowego podkładu przez
    względny `podkladUrl`.
 
@@ -111,14 +109,19 @@ kalibracji: `SKILL_MAPA_PLANU.md` §12.
    - `przyblizona` — rekonstrukcja/niepewność; wymaga `uzasadnienie`.
 3. Pole `uzasadnienie` obowiązkowe — test wymaga niepustego przy
    `przyblizona`; silnik pokazuje pewność na mapie (kształt/kolor pinezki).
-4. Pinezka bez karty (region hasła geograficznego) idzie do `regiony`,
-   nie `pinezki`.
+4. **Na mapie oznaczenia noszą wyłącznie karty (ADR 0043):** nie ma
+   pinezek ani obwódek haseł/planów; pole `regiony` wycofane ze schematu.
+   Miejsce, które ma oznaczyć hasło (nie karta), nie wchodzi na mapę —
+   strona hasła łączy się z mapą odsyłaniem (`?x=&y=`, patrz MA5).
 
 ## MA5 — Integracja z resztą bazy
 
 - Strona planu: miniatura mapy + liczba pinezek; klik → `#/mapa/<plan>`.
 - Karta Katalogowa: sekcja „Na Mapie" linkuje do deep-linka pinezki.
-- Hasła `geografia`/`postac`: obwódka/region na mapie, jeśli ustalony.
+- Hasła (każdej klasy): sekcja „Na mapie" = zdanie o położeniu +
+  JEDNO odsyłanie do mapy zbliżonej w określonym miejscu
+  (`#/mapa/<plan>?x=<0–1>&y=<0–1>`); hasło NIE ma pinezki ani obwódki
+  na mapie (ADR 0043 — na mapie oznaczenia noszą wyłącznie karty).
 - Legenda poziomów pewności na stronie mapy.
 
 ## Ocena T1 → decyzja o T2

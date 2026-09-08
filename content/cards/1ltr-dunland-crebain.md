@@ -28,7 +28,7 @@ Sarumana mogły dosięgać jej szybko, i dość dzika, by stada ptaków miały
 gdzie krążyć nad urwiskami, wąwozami i wrzosowiskami. W takim pejzażu lot
 crebainów nie jest ozdobą. Jest początkiem działania wojennego.
 
-Karta opowiada więc nie o samej ptasiej grozie, lecz o chwili przed
+Zapis opowiada więc nie o samej ptasiej grozie, lecz o chwili przed
 uderzeniem. Najpierw nadchodzi znak z powietrza. Dopiero potem w dole
 porusza się armia. W tej kolejności mieści się cała taktyka Isengardu:
 wiedzieć wcześniej, zebrać siły szybciej, uderzyć tam, gdzie przeciwnik
@@ -36,7 +36,7 @@ został już zauważony.
 
 ## Postacie i Byty
 
-Na karcie obecne jest **stado crebainów** — wielkich, czarnych ptaków
+W scenie obecne jest **stado crebainów** — wielkich, czarnych ptaków
 krukowatego rodzaju. Ich nazwa należy do języka świata, nie do poetyckiej
 metafory: *craban* oznacza pojedynczego ptaka, *crebain* liczbę mnogą.
 Tradycja wiąże je z Dunlandem i Lasem Fangorn, a w opowieści o Drużynie
@@ -49,9 +49,9 @@ w informację: kto rozpalił ogień, kto idzie otwartą drogą, kto nie zdąży�
 zejść z grani. Strach przed nimi nie wynika z dzioba ani pazurów, lecz z
 pytania, komu właśnie donoszą.
 
-Fabuła właściciela umieszcza pod ich lotem dwóch **Uruk-hai Białej
-Ręki** i cichą armię formującą się w wąwozie. To scena kolekcji, nie nowy
-epizod dopisany Tolkienowi, ale dobrze rozumie kanon: ptaki są sygnałem,
+Kronikarz umieszcza pod ich lotem dwóch **Uruk-hai Białej
+Ręki** i cichą armię formującą się w wąwozie. To scena z zapisu, nie nowy
+epizod dopisany Tolkienowi, ale dobrze rozumie zapis: ptaki są sygnałem,
 a siła zbrojna rusza dopiero wtedy, gdy oczy z nieba potwierdzą drogę.
 
 Za pojedynczym stadem stoi cała **sieć**, i to jej historia jest
@@ -85,7 +85,7 @@ którzy nie ufają niebu.
 
 ## Flavor Text
 
-Ten wydruk nie ma flavor textu — i ta cisza dobrze służy karcie. Crebainy
+Ta scena nie ma przypisanej inskrypcji — i ta cisza dobrze służy jej wymowie. Crebainy
 nie potrzebują dopisanego zdania, bo ich sens w świecie działa jak alarm:
 pojawia się chmura ptaków, więc rozsądni ludzie milkną. Brak głosu jest tu
 prawie częścią opowieści. Zwiad nie przemawia; zwiad patrzy.
@@ -97,14 +97,15 @@ można ufać — i że za lotem może stać wola Sarumana.
 
 ## Transpozycja
 
-To karta ze Śródziemia przeniesionego na język Magic, ale jej sens lore
-pozostaje bezpośredni. Nazwa, miejsce i rola istot prowadzą wprost do
-Tolkiena: dunlandzkie crebainy jako zwiad, Isengard jako centrum rozkazu,
+Scena rodzi się w Śródziemiu — świecie, który sam w sobie wystarcza,
+bez przenoszenia. Nazwa, miejsce i rola istot prowadzą wprost do
+źródeł tego świata: dunlandzkie crebainy jako zwiad, Isengard jako
+centrum rozkazu,
 wojna jako system informacji przed systemem przemocy.
 
-Materializacja kolekcji zawęża scenę do urwiska na skraju Dunlandu. W dole
+Kronika zawęża scenę do urwiska na skraju Dunlandu. W dole
 formuje się armia Sarumana, Uruk-hai czekają na znak, a jeden ptak pikuje
-niżej jak ciemna pieczęć rozkazu. Kodeks czyta tę scenę jako epizod
+niżej jak ciemna pieczęć rozkazu. Kronika czyta tę scenę jako epizod
 pograniczny: nie sam przelot nad Hollin, lecz ta sama logika zwiadu,
 zastosowana bliżej dunlandzkiej ojcowizny stada.
 
@@ -112,8 +113,8 @@ zastosowana bliżej dunlandzkiej ojcowizny stada.
 
 Pinezka wskazuje **Dunland** w [[srodziemie|Śródziemiu]] — region między
 Isenem, Górami Mglistymi i zachodnimi rubieżami Rohanu. Poziom pewności:
-**region**. Kanon daje ojcowiznę ptaków i epizod ich zwiadowczego użycia;
-Fabuła dopowiada urwisko oraz wąwóz zborny armii, ale nie nazywa
+**region**. Zapis daje ojcowiznę ptaków i epizod ich zwiadowczego użycia;
+Kronikarz dopowiada urwisko oraz wąwóz zborny armii, ale nie nazywa
 konkretnego punktu na mapie.
 
 Pinezka: `#/mapa/srodziemie?pin=1ltr-dunland-crebain`.
@@ -141,8 +142,8 @@ pierwszą fazę bitwy. Wystarczy, że wskaże cel.
 - Fabuła właściciela (2026-09-02) — urwisko w Dunlandzie,
   Uruk-hai Białej Ręki, armia Sarumana w wąwozie i pikujący crebain jako
   sygnał.
-- Scryfall, *Dunland Crebain* — typ, tekst Oracle i informacja o braku
-  flavor textu w posiadanym wydruku:
+- Scryfall, *Dunland Crebain* — typ, tekst Oracle; posiadany wydruk
+  nie ma flavor textu:
   <https://scryfall.com/card/ltr/411/dunland-crebain>
 - Tolkien Gateway, „Crebain” — siedlisko, rola zwiadowcza, scena w Hollin
   i etymologia nazwy:

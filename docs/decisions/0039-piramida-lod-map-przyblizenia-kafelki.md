@@ -108,3 +108,18 @@ przy materializacji.
 podmap-światów (osobne strony); nie mów „artefakt single-file" —
 mapy to drzewo w iframe (ADR 0027 v2); progi i pokrycia dokumentuj
 w `map.json`; jak zawsze: research → ogląd → decyzja (ADR 0038 §4).
+
+## Uzupełnienie 2026-09-08 — ADR 0041 (nowy detal dla L2; korekta §8)
+
+1. Pokrycie L2 musi wnosić detal nieobecny w bazie (nowa toponimia,
+   geometria nazwanych obiektów lub detal epoki); **wycinek mapy
+   bazowej jest zabroniony** (decyzja właściciela 2026-09-08, audyt
+   PR-24 F2 — nakładka „Domeny" Dominarii powtarzała toponimię
+   mastera M1).
+2. Korekta §8 (litera ADR vs implementacja): raster L0 jest
+   **linkowany `<img>`**, nie inline (`file://` blokuje `fetch`, ale
+   nie `<img>` — offline działa tak samo); inline dotyczy wyłącznie
+   podkładów SVG (markup w stronie mapy, ADR 0027 v2).
+3. Mapa Dominarii (pierwsza mapa LOD) ma od tej decyzji dwa szczeble:
+   L0 + kafle L1; nakładka L2 „Domeny" i plik `aerona.jpg` usunięte,
+   pinezka 40USG odczytana wprost z mastera M1 (L13).

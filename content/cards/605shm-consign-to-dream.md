@@ -54,7 +54,7 @@ zachować przewagę nad silniejszymi mieszkańcami świata.
 
 **Bezimienny leśny olbrzym** jest w tej scenie przeciwieństwem wróżek:
 masywnym ciałem, które zdaje się gwarantować własną obecność. Nie
-otrzymuje jednak imienia ani przypisania do konkretnej karty stworzenia.
+otrzymuje jednak imienia ani przypisania do konkretnej istoty.
 Istotny jest kontrast skali — jego wielkość nie chroni umysłu przed snem,
 a kamienna postać nie opiera się lekkiemu gestowi Oony.
 
@@ -82,23 +82,23 @@ cudza pamięć i marzenia są źródłem wiedzy oraz mocy.
 
 ## Transpozycja
 
-Fabuła osadza czar w **Glen Elendra**, przy Oonie i jej wróżkach, podczas
+Kronikarz osadza czar w **Glen Elendra**, przy Oonie i jej wróżkach, podczas
 uśpienia leśnego olbrzyma. Wrzeciono, kamienne ciało, błękitne motyle
 i rozpad w pył są konkretami tego ujęcia; nie trzeba dopisywać im
-rangi nazwanych artefaktów ani osobnego, kanonicznego wydarzenia.
+rangi nazwanych artefaktów ani osobnego, udokumentowanego wydarzenia.
 Łączą się z poświadczoną magią glamerów i zbieraniem snów olbrzymów.
 
 Scena należy do klasycznej epoki królowej Oony na
 [[lorwyn|Lorwynie–Shadowmoor]]. Glen Elendra była chroniona przed
 przemianą Wielkiej Zorzy, dlatego może spinać oba oblicza tego świata.
 Półmrok ogrodu nie rozstrzyga sam o całym niebie planu; nocne oblicze
-Shadowmoor jest tu właściwym tłem dla wydania i przyjętej epoki sceny.
+Shadowmoor jest tu właściwym tłem dla osadzenia i przyjętej epoki sceny.
 
 ## Na Mapie
 
 Pinezka wskazuje **ostępy Glen Elendra**, górską dolinę na południe od
 Lys Alana — w Shadowmoor zwanego Cayr Ulios. Nie przypisuje gestu Oony
-do konkretnego miejsca pałacu: Fabuła wskazuje las i dolinę, stąd
+do konkretnego miejsca pałacu: Zapis wskazuje las i dolinę, stąd
 pewność **region**. Ukrycie glen przez iluzje należy do lore, a jej
 współrzędne na atlasie są rekonstrukcją znanych relacji.
 

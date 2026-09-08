@@ -42,9 +42,10 @@
 
 ### E5 (opcjonalnie) — Warsztat rozszerzalny
 - Klocki czekające na potrzebę: cytadela/fort, latarnia, wrak,
-  wodospad na rzece, granice regionów (obwódki haseł, ADR 0015 pkt 6),
-  hfyny/pionowe klify Ondu. Dopisywać wg zasad ADR 0018 (determinizm,
-  audyt, zero zależności).
+  wodospad na rzece, hfyny/pionowe klify Ondu. Dopisywać wg zasad ADR 0018
+  (determinizm, audyt, zero zależności). ~~granice regionów (obwódki haseł,
+  ADR 0015 pkt 6)~~ — **wycofane przez ADR 0043** (na mapie oznaczenia noszą
+  wyłącznie karty; hasła łączą się z mapą odsyłaniem `?x=&y=`).
 
 ## Kryteria gotowości całości
 

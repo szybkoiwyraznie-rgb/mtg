@@ -37,6 +37,10 @@ krótkie odczytanie reguł jako opowieści.
    Biografie autorów, historia dodatków, warianty wydań, rama, rzadkość,
    numer kolekcjonerski i podobne dane nie są clue wpisu. Jeżeli są potrzebne
    jako źródło danych karty, wystarcza zwięzły wpis w „Źródłach”.
+   > **Wycofane częściowo (ADR 0042):** wyjątek „skrajnie zwięźle” nie
+   > obowiązuje — narracja do sekcji „Mechanika jako Opowieść” włącznie
+   > jest 100% w świecie (głos Kronikarza); warstwa meta ma tylko
+   > frontmatter/infoboks/„Mechanika jako Opowieść”/„Źródła”.
 6. **Nowy układ sekcji karty:**
    1. Kronika Lore
    2. Postacie i Byty

@@ -4,8 +4,9 @@
  *
  * Wejście: ciężki master (np. Dominaria 8100×5200, ~10 MB).
  * Wyjście w katalogu docelowym:
- *   l0.jpg          — przeglądowa (~FHD), pierwszy render + mini-mapy kart
- *   mini.jpg        — miniatura (~800 px) do kafelków kart
+ *   l0.jpg          — przeglądowa (~FHD), pierwszy render
+ *   mini.jpg        — tylko podgląd lokalny warsztatu; mini-mapy kart
+ *                     generuje build sam (ADR 0027 v3) — nie commitujemy
  *   kafle/kNNN.jpg  — kafelki L1 (row-major, N = wiersz·kolumny + kolumna)
  *   manifest.json   — geometria siatki (czyta ją silnik i testy)
  *

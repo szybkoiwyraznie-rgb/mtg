@@ -136,7 +136,7 @@ export function modelMapyLorwynu() {
       notka: m.noc ? `Lorwyn: ${m.dzien}; Shadowmoor: ${m.noc}.` : 'Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu.' })),
     pinezki: [{ karta: '605shm-consign-to-dream', x: 0.755, y: 0.7714, pewnosc: 'region',
       uzasadnienie: 'Fabuła właściciela: ostępy Glen Elendra, Oona, wróżki i usypiany olbrzym. Punkt w zalesionym otoczeniu górskiej doliny na południe od Lys Alana/Cayr Ulios; bez przypisywania sceny do konkretnego miejsca pałacu. Współrzędne są wspólne w obu obliczach T4, zgodnie z ADR 0037.' }],
-    regiony: [], scena: 'scena.json', generator: 'tools/mapforge/lorwyn-scena-t4.mjs',
+    scena: 'scena.json', generator: 'tools/mapforge/lorwyn-scena-t4.mjs',
     silnik: 'mapforge atlas; wspólna geometria, dwa słowniki etykiet; jaskinia Velis Vel ma własny glif',
     zrodlo_fanmapa: null,
     poza_zakresem: ['Lorwyn Eclipsed — dopiero przy karcie wymagającej tego stanu', 'Niepotwierdzone odpowiedniki nazw i nowe lokacje po upadku Oony', 'Odrzucone rastry Varghedina i pozostałych autorów — nie są matrycą geometrii'],

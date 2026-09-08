@@ -25,126 +25,122 @@ ku czci planeswalkerki **Serry**, która odchodząc pobłogosławiła tę
 ziemię i uczyniła ją schronieniem przed ciemnością. Do dziś w katedrze
 samorzutnie pojawiają się **anioły Serran** — żywy znak błogosławieństwa.
 
-Scena tej karty to chwila, w której błogosławieństwo pęka. Nad
-dziedzińcem katedry złotoskrzydły wojownik w złotej zbroi rozpada się
-w powietrzu: czarna, oleista mgła o wijących się mackach wdziera się
-w pancerz i **wymazuje** go z nieba, a wokół krążą drobni, ciemni
-lotnicy — phyrexiańskie ścierwojady bitwy. Błyskawice tną błękit;
-złoto pęka razem ze światłem. Ilustracja Christophera Moellera
-(sygnowana '98) pokazuje sam moment wykreślenia: ofiarą jest istota
-biała, święta i skrzydlata — anioł nad własną katedrą — a sprawcą
-czarna magia inwazji, która nie zabija, lecz **usuwa ze świata**.
-Żaden tekst fabularny tego nie dopowiada; karta nie ma flavoru.
-Wystarcza obraz i reguła: zniszczony nie może się zregenerować.
+Ta kronika zapisuje chwilę, w której błogosławieństwo pęka. Nad
+dziedzińcem katedry złotoskrzydły wojownik Serran rozpada się
+w powietrzu: czarna, oleista mgła o mackach wdziera się w pancerz
+i wymazuje go z nieba, a wokół krążą drobni, ciemni lotnicy wroga —
+w czasach inwazji: phyrexiańskie ścierwojady bitwy. Błyskawice tną
+błękit; światło pęka razem ze złotem. Ofiarą jest istota biała,
+święta i skrzydlata — anioł nad własną katedrą — a sprawcą czarna
+magia inwazji, która nie zabija, lecz **usuwa ze świata**: zniszczony
+przez nią nie może się zregenerować.
 
 ## Postacie i Byty
 
-**Anioł Serran** — ofiara z ilustracji: złotoskrzydły wojownik w złotej
-zbroi, rozrywany w powietrzu nad katedrą. Karta go nie nazywa, a wiki
-nie prowadzi hasła Expunge (stan na 2026-09-08); identyfikacja jest
-odczytaniem Kodeksu: złote skrzydła i święty charakter ofiary, biała
-barwa wymagana przez regułę (cel: stworzenie nie-czarne, nie-artefakt)
-oraz kanoniczny fakt, że anioły Serran pojawiają się w tej katedrze
-samorzutnie. To anioł konkretnego miejsca, nie imienia.
+**Anioł Serran** — ofiara sceny: złotoskrzydły wojownik, który
+rozpada się w powietrzu nad dziedzińcem. Kronika nie nadaje mu
+imienia — to anioł konkretnego miejsca, nie imienia. Okoliczności
+nie pozostawiają wątpliwości co do tożsamości: biały, skrzydlaty
+wojownik nad **Katedrą Serran**, świątynią, w której anioły Serran
+pojawiają się samorzutnie — żywym znakiem błogosławieństwa Serran
+spoczywającego na Równinach Sursi.
 
-**Czarny sprawca** — nienazwany na karcie rzucający: czarna, oleista
-mgła o mackach, wdzierająca się w ofiarę. W epoce karty (inwazja,
-4205 AR) jej naturalnym nosicielem jest phyrexiańska magia zniszczenia;
-karta nie rozstrzyga, czy to zaklęcie wroga, czy mroczna odpowiedź
-oblężonych. Kodeks czyta ją jako atak inwazji na świętość Benalii.
+**Czarny sprawca** — nienazwany rzucający: czarna, oleista mgła o
+mackach wdziera się w ofiarę. W czasach inwazji (4205 AR) jej
+naturalnym nosicielem jest phyrexiańska magia zniszczenia; kronika
+nie rozstrzyga, czy to zaklęcie wroga, czy mroczna odpowiedź
+oblężonych, lecz odczytuje je jako atak inwazji na świętość Benalii.
 
 **Brat Angus** — święty mąż (~3780 AR), który odwrócił uwagę
 nienazwanego planeswalkera atakującego Serrę na Równinach Sursi,
 uniósł jej umierające ciało i wzniósł na jej cześć świątynię —
 zaczątek Katedry Serran. Jego lament (kanty 1001–1020 Pieśni
-Wszystkiego) jest najstarszą warstwą tego miejsca; w epoce karty nie
-żyje od czterech stuleci.
+Wszystkiego) jest najstarszą warstwą tego miejsca; w chwili inwazji
+nie żyje od czterech stuleci.
 
-**Serra** — planeswalkerka, patronka Kościoła Serran; jej błogosławieństwo
-spoczywa na ziemi katedry. W tle sceny także **Tsabo Tavoc**, której
-zabójcy pierwsi uderzyli w Benalię, oraz milczący **Gerrard Capashen**,
-rodak z Benalia City, walczący w tej samej wojnie gdzie indziej.
+**Serra** — planeswalkerka, patronka Kościoła Serran; jej
+błogosławieństwo spoczywa na ziemi katedry. W tle sceny także
+**Tsabo Tavoc**, której zabójcy pierwsi uderzyli w Benalię, oraz
+milczący **Gerrard Capashen**, rodak z Benalia City, walczący w tej
+samej wojnie gdzie indziej.
 
 ## Nazwa Karty
 
-**Expunge** to po angielsku „wymazać, wykreślić, usunąć” — z rejestru,
-z pamięci, z istnienia. Słowo należy do języka urzędów i sądów (rekord
-*expunged* przestaje istnieć prawnie) oraz do języka cenzury: to, co
-wykreślone, nie zostało pokonane, lecz **unieważnione**. Nazwa nie mówi
-więc o zabijaniu, lecz o cofnięciu czyjegoś miejsca w świecie — dokładnie
-to pokazuje ilustracja (anioł rozpadający się w powietrzu) i dokładnie
-to zapisuje reguła (*can't be regenerated*: nie ma powrotu, nie ma
-nawet ciała do wskrzeszenia).
+Nazwa rytu — **Expunge** — pochodzi z języka urzędów i sądów:
+wymazać, wykreślić z rejestru, z pamięci, z istnienia (rekord
+*expunged* przestaje istnieć prawnie). Należy też do języka cenzury:
+to, co wykreślone, nie zostało pokonane, lecz **unieważnione**. Nazwa
+mówi więc nie o zabijaniu, lecz o cofnięciu czyjegoś miejsca w
+świecie — dokładnie to pokazuje scena z dziedzińca (anioł
+rozpadający się w powietrzu) i dokładnie to potwierdza los ofiary:
+dla wykreślonego nie ma powrotu, nie ma nawet ciała do wskrzeszenia.
 
-Po polsku: **Wykreślić** — albo mocniej **Wymazać**: usunąć tak, jakby
-nigdy nie było.
+Po polsku: **Wykreślić** — albo mocniej **Wymazać**: usunąć tak,
+jakby nigdy nie było.
 
 ## Flavor Text
 
-Karta nie ma tekstu fabularnego (Scryfall: brak pola flavor_text).
-Milczenie jest tu wymowne dwojako. Po pierwsze, scena mówi sama:
-złoto przeciw czerni, niebo przeciw mgle — żaden podpis nie dodałby
-grozy, którą niesie sam obraz Moellera. Po drugie, brak głosu pasuje
-do mechaniki wykreślenia: ofiara nie dostaje ostatniego słowa, bo
-wykreśleni nie przemawiają. Kodeks czyta pustkę pod ilustracją jako
-część karty, nie jej ubytek.
+Kronika tej sceny nie nosi inskrypcji — ani ostatniego słowa
+ofiary, ani epitafium, ani podpisu świadka. Milczenie mówi dwojako.
+Po pierwsze: scena mówi sama — złoto przeciw czerni, niebo przeciw
+mgle — żadna inskrypcja nie dodałaby grozy, którą niesie sam obraz.
+Po drugie: brak głosu pasuje do logiki wykreślenia. Ofiara nie
+dostaje ostatniego słowa, bo wykreśleni nie przemawiają. Cisza nie
+jest tu ubytkiem zapisu — jest jego częścią.
 
 ## Transpozycja
 
-Karta jest rodzima dla [[dominaria|Dominarii]], więc most jest krótki:
-Fabuła kolekcji wybiera z kanonu jedną wojnę (inwazję Phyrexii,
-4205 AR), jedno miejsce (dziedziniec Katedry Serran na Równinach Sursi)
-i jedną ofiarę (anioła nad własną katedrą), a resztę kanon dostarcza
-sam — budowniczego Angusa i datę ~3780 AR (katedra stoi w epoce karty),
-błogosławieństwo Serran i samorzutne anioły, pierwszeństwo Benalii
-wśród ofiar Tsabo Tavoc oraz regułę karty, która białą ofiarę i brak
-regeneracji zamienia w teologię wykreślenia. Fabuła dodaje do tego
-obraz **„czarnej, oleistej mgły o mackach”** i **„phyrexiańskich
-ścierwojadów bitwy”** — to dokładnie ta treść, którą ilustracja
-zapisuje kształtem, a reguła skutkiem. Scena osadzona jest w *Urza's
-Saga*, w szczycie inwazji; to nie jest epizod z odbudowy (New Benalia)
-ani z czasów późniejszych wojen. Anioł z tej karty należy do starej
-Benalii matki, która właśnie płonie.
+Scena jest rodzima dla [[dominaria|Dominarii]], więc kronika nie
+musi budować do niej drogi: wojna jest jedna (inwazja Phyrexii,
+4205 AR), miejsce jedno (dziedziniec Katedry Serran na Równinach
+Sursi), ofiara jedna (anioł nad własną katedrą), a resztę świat
+dostarcza sam — budowniczego Angusa i datę ~3780 AR (katedra stoi
+już w chwili inwazji), błogosławieństwo Serran i samorzutne anioły,
+pierwszeństwo Benalii wśród ofiar Tsabo Tavoc. Zapis dokłada obrazy
+„czarnej, oleistej mgły o mackach” i „ciemnych lotników wroga” —
+scena rozgrywa się w szczycie inwazji, w *Urza's Saga*; to nie jest
+epizod z odbudowy (New Benalia) ani z czasów późniejszych wojen.
+Anioł tej kroniki należy do starej Benalii matki, która właśnie
+płonie.
 
 ## Na Mapie
 
-Pinezka o pewności **region**: `#/mapa/dominaria?pin=40usg-expunge`
-— **Katedra Serran** na Równinach **Sursi**, w południowej części
-Aerona, nad cieśniną **Vernaria** i zatoką **Kish**, między górami
-**Tonga** a pustynią **Erg Mirab**. Katedra jest lokalizacją benalijską
-(kategoria wiki) i jedyną nazwaną katedrą Benalii; stoi od ~3780 AR,
-więc istnieje w epoce karty (4205 AR). Ilustracja pokazuje śmierć
-anioła w powietrzu nad kompleksem, a nie konkretny dziedziniec —
-dokładne podwórko jest nieoznaczone, stąd pinezka na ikonie świątyni
-i pewność „region”, nie „dokładna”. Mapa niesie resztę kontekstu:
-pobliskie **Fors Basin** i **Kush** na zachodzie, Cieśninę Vernaria
-i wyspę **Ajrhad** na wschodzie. Nakładka L2 **Domeny** (zbliżenie
-Aerona) pokazuje etykietę i ikonę katedry w pełnej rozdzielczości;
-pinezka leży wewnątrz jej bbox, więc deep-link `?pin=` otwiera widok
-prosto na oknem zbliżenia.
+**Katedra Serran** stoi na Równinach **Sursi**, w południowej części
+Aerona, nad cieśniną **Vernaria** i wyspą **Kish**, między górami
+**Tonga Cordis** a pustynią **Erg Mirab**. Katedra jest lokalizacją
+benalijską (kategoria wiki) i jedyną nazwaną katedrą Benalii; stoi
+od ~3780 AR, więc istnieje również w 4205 AR. Kronika nie wskazuje,
+którego podwórka kompleksu dotyczy scena — miejsce wyznaczono
+z pewnością rejonu, nie podwórka. Mapa niesie resztę kontekstu:
+pobliskie **Fors Basin** i **Kush** na zachodzie, cieśninę
+**Vernaria** i wyspę **Ajrhad** na wschodzie.
+
+Oznaczenie na mapie Dominarii (ikona świątyni):
+`#/mapa/dominaria?pin=40usg-expunge` — na zoomie kafelków (master
+8100 px) etykieta i ikona katedry są w pełni czytelne.
 
 ## Mechanika jako Opowieść
 
 {2}{B} za Instant niszczący wybrane stworzenie niebędące artefaktem
 ani czarne — z klauzulą *can't be regenerated*. W regułach to
 klasyczny czarny removal z ograniczeniem celu; w świecie to cała
-teologia karty w trzech linijkach. Czarna mana inwazji płaci za
-wymazanie (dwie generyczne + czerń — tanio jak na wyrok, drogo jak na
-pospolitą zagładę), a ograniczenie celu mówi, kogo da się wykreślić:
-istoty z krwi i ducha (nie maszyny Phyrexii — artefakty, nie swoich —
-czarne). Klauzula nieregeneracji to sedno nazwy: to nie jest śmierć,
-po której coś zostaje — to usunięcie bez reszty, po którym nie ma do
-czego wracać. A **cycling {2}** dopisuje epilog: nawet niewykorzystane
-zaklęcie można odrzucić dla wiedzy — wymazać z ręki, by dobrać kartę.
-W świecie to dym rozwiewający się nad dziedzińcem: to, co miało zabić,
-rozpływa się w wgląd.
+teologia rytu w trzech linijkach. Czarna mana inwazji płaci za
+wymazanie (dwie generyczne + czerń — tanio jak na wyrok, drogo jak
+na pospolitą zagładę), a ograniczenie celu mówi, kogo da się
+wykreślić: istoty z krwi i ducha (nie maszyny Phyrexii — artefakty,
+nie swoich — czarne). Klauzula nieregeneracji to sedno nazwy: to nie
+jest śmierć, po której coś zostaje — to usunięcie bez reszty, po
+którym nie ma do czego wracać. A **cycling {2}** dopisuje epilog:
+nawet niewykorzystane zaklęcie można odrzucić dla wiedzy — wymazać
+z ręki, by dobrać kartę. W świecie to dym rozwiewający się nad
+dziedzińcem: to, co miało zabić, rozpływa się w wgląd.
 
 ## Źródła
 
 - Fabuła właściciela (2026-09-08) — złotoskrzydły wojownik Serran
-  wymazywany czarną mgłą; dziedziniec katedry w Benalii; czas inwazji.
-- Scryfall, Expunge (USG/135) — dane karty, oracle text, brak flavoru,
-  ilustracja Christopher Moeller:
+  wymazywany czarną mgłą nad dziedzińcem katedry w Benalii; ciemni
+  lotnicy wroga; czas inwazji.
+- Scryfall, Expunge (USG/135) — dane karty, oracle text, brak flavoru:
   https://scryfall.com/card/usg/135/expunge
 - MTG Wiki, hasło Cathedral of Serra — świątynia na Równinach Sursi
   (Aerona, Domeny), lokalizacja benalijska, budowniczy brat Angus,
@@ -156,12 +152,10 @@ rozpływa się w wgląd.
 - MTG Wiki, hasło Benalia — naród Aerona, Benalia City największym
   miastem Domen, dewastacja w phyrexiańskiej inwazji, Kościół Serran:
   https://mtg.wiki/page/Benalia
-- Original Magic Art, kolekcja Christophera Moellera — print Expunge
-  (podgląd ilustracji, sygnatura '98):
-  https://www.originalmagicart.store/collections/christopher-moeller
-- Mapa Codexu: etykieta i ikona Cathedral of Serra na podkładzie D1
-  (The Domains by Varghedin), odczyt D1 (1417, 1120) → układ złoty
-  przez bbox L2: https://mtg.wiki/page/File:The_Domains_by_Varghedin.jpg
+- Mapa Codexu: etykieta i ikona Cathedral of Serra na podkładzie M1
+  (Dominaria by Varghedin), odczyt z mastera px (1569, 1979) → układ
+  złoty (0.1937, 0.3806):
+  https://mtg.wiki/page/File:Dominaria_by_Varghedin.jpg
 
 ## Podsumowanie Lore
 

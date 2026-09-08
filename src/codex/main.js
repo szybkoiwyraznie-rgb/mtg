@@ -67,7 +67,10 @@ if (globalThis.CODEX_MAPA) {
   const app = globalThis.document?.getElementById('app');
   if (app) {
     const q = new URLSearchParams(globalThis.location?.search ?? '');
-    app.innerHTML = renderMape(globalThis.CODEX_MAPA, { pin: q.get('pin') ?? '', epoka: q.get('epoka') ?? '' }, { osadzona: true });
+    app.innerHTML = renderMape(globalThis.CODEX_MAPA, {
+      pin: q.get('pin') ?? '', epoka: q.get('epoka') ?? '',
+      x: q.get('x') ?? '', y: q.get('y') ?? '',   // ADR 0043: deep-link miejsca
+    }, { osadzona: true });
     // Warstwa karty i nawigacja żyją w rodzicu (postMessage) — strona
     // mapy montuje tylko pan/zoom/nakładkę.
     zamontujMape(app, { doRodzica: true });

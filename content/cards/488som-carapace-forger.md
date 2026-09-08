@@ -60,15 +60,15 @@ właśnie elf-artificer ratuje las stopem, nie łukiem.
 
 **Tangle** — miedziany las, dom elfów, trolli i druidów Sylvok; w jego
 sercu **Radix**, krąg miedzi nad zieloną lacuną, i **Tel-Jilad**, drzewo,
-w którego pniu trolle wyryły historię planu. **Mephidross** — bagno
+w którego pniu trolle wyryły historię planu. **[[mephidross|Mephidross]]** — bagno
 nekrogenu, z którego wyszła inwazja; jego kominy zionęły trującą mgłą
 zmieniającą żywych w **nim**, a teraz maszeruje stamtąd coś gorszego.
-**Phyrexianie** — „nowe horrory” flavoru: biomechaniczne istoty, w których
+**Phyrexianie** — „nowe horrory” inskrypcji: biomechaniczne istoty, w których
 metal i ciało są zrośnięte całkowicie; w erze *Scars* Mirranie dopiero
-uczą się, czym są. Fabuła kolekcji dodaje do tej sceny jedną tezę
-materializacyjną: że skorupa zbrojmistrza jest w pełni zasilona dopiero
+uczą się, czym są. Kronikarz dodaje do tej sceny jedno rozstrzygnięcie:
+że skorupa zbrojmistrza jest w pełni zasilona dopiero
 wtedy, gdy zintegruje się z trzema odrębnymi artefaktami — to obraz
-kolekcji, nie nowy kanon, ale obraz zgodny z regułą karty co do joty.
+zapisu, nie nowy fakt świata, ale obraz zgodny z mechaniką rytu co do joty.
 
 ## Nazwa Karty
 
@@ -109,15 +109,15 @@ zasługą, lecz kolektywnym przyznaniem, że las musi zmienić skórę.
 
 ## Transpozycja
 
-Karta jest rodzima dla Mirrodinu, więc most jest krótki: Fabuła kolekcji
+Scena jest rodzima dla Mirrodinu, więc droga do niej jest prosta: zapis
 zawęża scenę do **serca Tangle** i do **momentu zwrotu** — chwili,
 w której viridiańscy zbrojmistrzowie odkładają łuki i zaczynają kuć
-skorupy. Kanon dostarcza wszystkich elementów: kulturę łuczników
+skorupy. Kronika dostarcza wszystkich elementów: kulturę łuczników
 i biczowników (przewodnik stylu *Scars of Mirrodin*), inwazję Phyrexii
 z Mephidrossu, Rey-Goor jako miejsce, gdzie Dross wchodzi w las,
-i sam flavor karty jako wyznanie tej przemiany. Fabuła dodaje obraz
-„skorupy zasilanej trzema artefaktami” — dokładny przekład reguły
-Metalcraft na język świata — oraz ocenę: że to **ostatnia linia
+i sama inskrypcja jako wyznanie tej przemiany. Kronikarz dopowiada obraz
+„skorupy zasilanej trzema artefaktami” — dokładny przekład zdolności
+*Metalcraft* na język świata — oraz ocenę: że to **ostatnia linia
 obrony**. Scena osadzona jest w epoce *Scars of Mirrodin* — na początku
 wojny, gdy Phyrexia dopiero wychodzi z bagien — i pinuje się na mapie
 [[mirrodin|Mirrodinu]] w jego klasycznej postaci pięciu regionów wokół
@@ -127,15 +127,15 @@ Glimmervoid, wspólnej dla całej ery powierzchni planu.
 
 Pinezka o pewności **region**: `#/mapa/mirrodin?pin=488som-carapace-forger`
 — serce **Tangle**, między **Viridią**, osadą elfów, a **Tel-Jilad**.
-Ani karta, ani Fabuła nie nazywają konkretnego miejsca; wiadomo tylko,
+Ani inskrypcja, ani zapis nie nazywają konkretnego miejsca; wiadomo tylko,
 że to „serce miedzianego lasu”, a warsztaty zbrojmistrzów najsensowniej
 umieścić przy największej osadzie Viridian, blisko Drzewa Opowieści.
 Mapa niesie resztę kontekstu: **Rey-Goor** na skraju lasu — kierunek,
 z którego przez bagna płynie zaraza — **Mephidross** z Ish Sah po
 drugiej stronie tarczy, **Copperline Gorge** oddzielający las od gór
 Oxiddy i **Radix** w środku lasu, święte miejsce elfów nad zieloną
-lacuną. Sama mapa jest rekonstrukcją z kanonu tekstowego (Mirrodin
-nie doczekał się oficjalnej mapy), a pozycje wewnątrz regionów są
+lacuną. Sama mapa jest odtworzeniem ze źródeł zapisu (Mirrodin znany
+jest z opisu, nie z pomiaru), a pozycje wewnątrz regionów są
 relacyjne — stąd pewność „region”, nie „dokładna”.
 
 ## Mechanika jako Opowieść

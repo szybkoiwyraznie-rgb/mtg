@@ -5,7 +5,7 @@
 
 import { escapeHtml } from './markdown.js';
 import { dajDane, listaPlanow, listaKart, ostatnieMaterializacje, wpisyCoNowego } from './data.js';
-import { stanPusty, kropkiKolorow, chipsyTagow } from './render.js';
+import { stanPusty, kropkiKolorow, chipsyTagow, odmiana } from './render.js';
 
 export function renderGlowna() {
   const dane = dajDane();
@@ -61,6 +61,6 @@ function kafelPlanu(plan) {
   return `<a class="kafel-planu" href="#/plan/${plan.slug}">
     <span class="nazwa">${escapeHtml(plan.tytul)}</span>
     <span class="meta">${etykietaIP}${plan.mapa === 'pending' ? '' : plan.mapa ? ' · 🗺️' : ''}</span>
-    <span class="licznik">${liczbaKart} ${liczbaKart === 1 ? 'karta' : 'kart'}</span>
+    <span class="licznik">${liczbaKart} ${odmiana(liczbaKart, ['karta', 'karty', 'kart'])}</span>
   </a>`;
 }

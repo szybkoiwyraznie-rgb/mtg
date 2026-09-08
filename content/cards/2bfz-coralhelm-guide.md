@@ -36,7 +36,7 @@ ludziom i ludom, którzy potrafią przeprowadzić innych przez szczelinę w
 
 ## Postacie i Byty
 
-Na karcie obecna jest **merfolka-przewodniczka** z Coralhelm: zwiadowczyni,
+W scenie obecna jest **merfolka-przewodniczka** z Coralhelm: zwiadowczyni,
 która łączy znajomość wybrzeża z praktyką ekspedycji. Jej wartość nie
 wynika z siły ramienia, lecz z pamięci terenu. W świecie Roilu taka pamięć
 nie jest biernym wspomnieniem; musi być stale odnawiana, bo Zendikar zmusza
@@ -48,14 +48,14 @@ uciekiniera wygląda jak urwany brzeg, dla przewodniczki może być wejściem
 do trasy pod powierzchnią. To, co dla patroli Eldrazi jest pustym kanionem,
 może być korytarzem ukrytego przejścia.
 
-Fabuła właściciela dopowiada, że przewodniczka prowadzi przez
+Kronikarz dopowiada, że przewodniczka prowadzi przez
 zalany kanion potężnego **balotha**. Ten szczegół dobrze podkreśla jej rolę:
 nie chodzi o samotne wymknięcie się wąską szczeliną, lecz o otwarcie drogi
 nawet dla czegoś dużego, ciężkiego i pozornie niemożliwego do ukrycia.
 
 ## Nazwa Karty
 
-**Coralhelm** można czytać dosłownie jako „Koralowy Hełm”, ale w Kodeksie
+**Coralhelm** można czytać dosłownie jako „Koralowy Hełm”, ale w kronice
 to przede wszystkim nazwa miejsca: merfolcza osada nad Halimar, zakorzeniona
 w wodnym krajobrazie Tazeem. **Guide** oznacza przewodniczkę — kogoś, kto
 nie tylko zna trasę, ale bierze odpowiedzialność za tych, którzy idą za nią.
@@ -94,23 +94,23 @@ która tylko zna kierunek.
 
 ## Transpozycja
 
-Karta jest rodzima dla Zendikaru. Nie trzeba przenosić jej do innego świata;
+Scena jest rodzima dla Zendikaru. Nie trzeba przenosić jej do innego świata;
 trzeba tylko czytać ją z perspektywy planu, na którym geografia jest żywą
 siłą. Coralhelm, Halimar, Tazeem, Roil i wojna z Eldrazi układają się w
 jedną opowieść o wiedzy terenowej jako narzędziu przetrwania.
 
-Materializacja kolekcji skupia tę opowieść w zalanym kanionie. Baloth
+Kronika skupia tę opowieść w zalanym kanionie. Baloth
 przechodzi tajnym korytarzem, patrole Eldrazi stoją na klifach odwrócone
 plecami, a przewodniczka prowadzi wszystkich przez miejsce, którego wróg
-nie umie przeczytać. To precyzyjna scena kolekcji, ale jej sens wypływa
-wprost z kanonu karty: przeprowadzić kogoś tam, gdzie nie zostanie
+nie umie przeczytać. To precyzyjna scena zapisu, ale jej sens wypływa
+wprost z sensu nazwy: przeprowadzić kogoś tam, gdzie nie zostanie
 zatrzymany.
 
 ## Na Mapie
 
 Pinezka wskazuje region **Tazeem** na [[zendikar|Zendikarze]], przy wodach
-Halimar i Coralhelm. Poziom pewności: **region**. Nazwa karty i flavor
-wiążą przewodniczkę z wybrzeżem Coralhelm; Fabuła dodaje zalany
+Halimar i Coralhelm. Pewność miejsca: **region**. Nazwa rytu i inskrypcja
+wiążą przewodniczkę z wybrzeżem Coralhelm; kronikarz dopowiada zalany
 kanion i lewitujące skały, czyli pejzaż zgodny z tazeemskim, roilowym
 charakterem planu.
 

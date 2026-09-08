@@ -16,7 +16,6 @@
    "epoka": "Tarkir: Dragonstorm (po Rytuale Stormnexus, 2025) — raster fanowski Lore Café",
    "wariant": "T1",
    "podklad": "podklad-t1.jpg",
-   "miniatura": "podklad-t1-mini.jpg",
    "wymiary": {
     "szerokosc": 4307,
     "wysokosc": 3293
@@ -687,7 +686,6 @@
    "uklad": "złoty T1 — przeliczone z rysunku T4 kalibracją (odczyt z podglądu rastra)"
   }
  ],
- "regiony": [],
  "pinezki": [
   {
    "karta": "509ktk-highland-game",

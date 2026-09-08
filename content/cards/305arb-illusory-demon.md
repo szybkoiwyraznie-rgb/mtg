@@ -34,7 +34,11 @@ Pokonasz jednego — a za kilka uderzeń serca wir zmieli światło
 na nowo i za twoimi plecami wyłoni się następny. Scena należy do ery
 scalonej Alary (*Alara Reborn*): Maelstrom istnieje dopiero od
 Conflux, więc ten „demon” wiruje dokładnie tam, gdzie pięć światów
-zszyto w jeden.
+zszyto w jeden. Paleta wiru to mieszanka many wszystkich pięciu
+shardów — w uspokojonych momentach burzy widać jeszcze barwę
+każdego świata osobno, ale gdy wiatr szarpie łuną, kolory
+rozpuszczają się w fioletach, różach, błękitach i bursztynach,
+w których istota zyskuje swoją sylwetkę.
 
 ## Postacie i Byty
 
@@ -43,7 +47,7 @@ Scena niesie troje aktorów, z których tylko jedno jest osobą.
 sylwetka drapieżnika zbudowana z cienia, dymu i łuny, nietrwała jak
 każde załamanie światła. **Maelstrom** — prawdziwy sprawca: burza
 many wszystkich pięciu shardów, śmiertelne serce Alary, z którego
-wyszły też Child of Alara i Maelstrom Wanderer; podczas późniejszej
+wyszły też **Child of Alara** i **Maelstrom Wanderer**; podczas późniejszej
 inwazji [[nowa-phyrexia|Nowej Phyrexii]] sam powstał w obronie planu. I nieobecny
 **Nicol Bolas** — to jego wojny shardów karmiły burzę, to on
 kierował manę obelisków w wir i wszedł w jego środek po dawną moc;
@@ -67,23 +71,24 @@ najgroźniejsze jest to, co nie do końca istnieje.
 > *In the Maelstrom, a trick of the light can feast on human flesh.*
 > — „W Maelstromie sztuczka światła może ucztować na ludzkim ciele.”
 
-Jedno zdanie, które jest całym lore karty. „Trick of the light” —
-błąd załamania, omam — jest podmiotem czasownika „feast”. Flavor nie
-mówi „wygląda jak demon”: mówi, że iluzja JE. Horror karty nie polega
+Jedno zdanie, które jest całym zapisem sceny. „Trick of the light” —
+błąd załamania, omam — jest podmiotem czasownika „feast”. Inskrypcja
+nie mówi „wygląda jak demon”: mówi, że iluzja jest. Horror sceny nie
+polega
 na tym, że coś udaje drapieżnika, tylko na tym, że drapieżność
-nie wymaga ciała. Fabuła właściciela powtarza to obrazem: istota, której
+nie wymaga ciała. Zapis powtarza to obrazem: istota, której
 ręka i ogon rozsypują się w świetliste drobiny, „jakby sama obecność
 była nietrwała” — i która mimo to poluje.
 
 ## Transpozycja
 
-Karta przenosi do Kodeksu scenę polowania błędu światła w Maelstromie
+Kronika bierze do zapisu scenę polowania błędu światła w Maelstromie
 i kotwiczy ją w geografii planu [[alara|Alara]] — jednej mapie
-scalnego planu. Fabuła właściciela jest wiążącą kotwicą:
-to ona ustanawia paletę wiru (fiolety, róże, błękity, bursztyny),
+scalnego planu. Zapis jest wiążącą kotwicą:
+ustanawia paletę wiru (fiolety, róże, błękity, bursztyny),
 anatomię nietrwałości (skrzydła z cienia, rozsypujące się krawędzie)
 i tezę „Maelstrom nie rodzi demonów — rodzi błędy światła”. Era sceny
-(ARB, post-Conflux) jest zgodna z kanonicznym istnieniem Maelstromu,
+(ARB, post-Conflux) jest zgodna z istnieniem Maelstromu w zapisie,
 który powstał dopiero w Conflux — pinezka nie mogłaby istnieć na
 żadnej mapie „przed”.
 
@@ -95,9 +100,9 @@ mapy. Pewność pełna: cała scena dzieje się w burzy, a kotwica
 „Maelstrom” istnieje w `maps/alara/map.json`. Mapa niesie kontekst:
 pięć regionów w cyklu many (Bant, Esper, Grixis, Jund, Naya) wokół
 wiru, obeliski przy szwach regionów — pomniki epoki, gdy Bolas
-kierował ich maną w burzę — oraz kanoniczne miejsca regionów
+kierował ich maną w burzę — oraz miejsca regionów znane z zapisu
 (Valeron, Jhess, Akrasa, Sedraxis, Antali) jako kotwice przyszłych
-kart, także tych z epoki shardów.
+scen, także tych z epoki shardów.
 
 ## Mechanika jako Opowieść
 

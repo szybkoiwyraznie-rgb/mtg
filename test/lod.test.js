@@ -44,9 +44,11 @@ test('manifest Dominarii zgadza się z plikami kafelków na dysku', (t) => {
   assert.equal(pliki.length, manifest.kolumny * manifest.wiersze);
   assert.equal(pliki[0], 'k000.jpg');
   assert.equal(pliki[pliki.length - 1], `k${String(manifest.kolumny * manifest.wiersze - 1).padStart(3, '0')}.jpg`);
-  for (const f of ['l0.jpg', 'mini.jpg']) {
+  for (const f of ['l0.jpg']) {
     assert.ok(fs.existsSync(path.join('maps/dominaria', f)), `brak ${f}`);
   }
+  // mini.jpg: warsztat generuje lokalnie (ADR 0027 v3) — mini-mapy kart
+  // wytwarza build z bazy domyślnego wariantu, plik nie jest commitowany
 });
 
 test('tnij() na mini-obrazku daje siatkę 4×2 + manifest', (t) => {
@@ -96,12 +98,11 @@ const MAPA_LOD = {
       podkladUrl: 'dominaria/l0.jpg', wymiary: { szerokosc: 8100, wysokosc: 5200 },
       etykiety: false, kalibracja: { sx: 1, sy: 1, ox: 0, oy: 0 },
       kafle: { katalog: 'kafle', rozmiar: 512, kolumny: 16, wiersze: 11, wzorzec: 'k{nnn}.jpg', prog: 2.5 } },
-    { id: 'aerona', tytul: 'Aerona', wariant: 'T1', podklad: 'aerona.jpg',
-      podkladUrl: 'dominaria/aerona.jpg', wymiary: { szerokosc: 2767, wysokosc: 2155 },
+    { id: 'pokrycie', tytul: 'Pokrycie testowe', wariant: 'T1', podklad: 'pokrycie-testowe.jpg',
+      podkladUrl: 'dominaria/pokrycie-testowe.jpg', wymiary: { szerokosc: 2767, wysokosc: 2155 },
       etykiety: false, bbox: [0.05, 0.1, 0.3, 0.45], prog: 6 },
   ],
   pinezki: [{ karta: 'x', x: 0.1, y: 0.2, pewnosc: 'region' }],
-  regiony: [],
 };
 
 function zeSztucznymiDanymi(fn) {
@@ -118,13 +119,13 @@ test('LOD markup: warstwa kafli, nakładka L2, brak przełącznika, kmax, region
     const html = renderMape('dominaria', {});
     assert.ok(html.includes('data-kafle'), 'warstwa kafli L1');
     assert.ok(html.includes('data-baza="dominaria/kafle/k"'), 'baza URL-i z podkladUrl');
-    assert.ok(html.includes('data-l2="aerona"'), 'nakładka L2 w złotej scenie');
-    assert.ok(html.includes('data-src="dominaria/aerona.jpg"'), 'leniwy src pokrycia');
+    assert.ok(html.includes('data-l2="pokrycie"'), 'nakładka L2 w złotej scenie');
+    assert.ok(html.includes('data-src="dominaria/pokrycie-testowe.jpg"'), 'leniwy src pokrycia');
     assert.ok(!html.includes('data-epoka-przelacz'), 'bbox nie trafia do przełącznika epok');
     assert.ok(html.includes('data-kmax="22"'), 'głębszy zoom dla map LOD');
     assert.ok(!html.includes('data-region='), 'bez ?epoka= brak dopasowania regionu');
-    const htmlRegion = renderMape('dominaria', { epoka: 'aerona' });
-    assert.ok(htmlRegion.includes('data-region="aerona"'), '?epoka=nakładka → deep-link regionu');
+    const htmlRegion = renderMape('dominaria', { epoka: 'pokrycie' });
+    assert.ok(htmlRegion.includes('data-region="pokrycie"'), '?epoka=nakładka → deep-link regionu');
   });
 });
 
@@ -178,8 +179,8 @@ function zamontowanaLOD({ pin = false, region = false } = {}) {
     'data-kolumny': 16, 'data-wiersze': 11, 'data-rozmiar': 512, 'data-prog': 2.5,
     'data-master-w': 8100, 'data-master-h': 5200 });
   kafle.hidden = true;
-  const l2img = wezel2({ 'data-l2-img': '', 'data-src': 'dominaria/aerona.jpg', tag: 'img' });
-  const l2 = wezel2({ 'data-l2': 'aerona', 'data-prog': 6, 'data-bbox': '0.05,0.1,0.3,0.45' }, [l2img]);
+  const l2img = wezel2({ 'data-l2-img': '', 'data-src': 'dominaria/pokrycie-testowe.jpg', tag: 'img' });
+  const l2 = wezel2({ 'data-l2': 'pokrycie', 'data-prog': 6, 'data-bbox': '0.05,0.1,0.3,0.45' }, [l2img]);
   l2.hidden = true;
   const scena = wezel2({ 'data-scena': '', 'data-epoka': 'swiat', 'data-zloty': '1',
     'data-aspekt': 8100 / 5200, 'data-sx': 1, 'data-sy': 1, 'data-ox': 0, 'data-oy': 0, 'data-etykiety': '0' },
@@ -188,7 +189,7 @@ function zamontowanaLOD({ pin = false, region = false } = {}) {
   const nakladka = wezel2({ 'data-mapa-nakladka': '' }, [pinezka]);
   const ruch = wezel2({ 'data-mapa-ruch': '' }, [scena]);
   const okno = wezel2({ class: 'mapa-okno', 'data-pin': pin ? 'x' : '', 'data-kmax': 22,
-    ...(region ? { 'data-region': 'aerona' } : {}) }, [ruch, nakladka]);
+    ...(region ? { 'data-region': 'pokrycie' } : {}) }, [ruch, nakladka]);
   ruch.clientWidth = okno.clientWidth = 1000; okno.clientHeight = 700;
   const app = wezel2({}, [okno]);
   const poprzedniDocument = globalThis.document;
@@ -232,7 +233,7 @@ test('LOD montaż: start lekki, zoom montuje kafle, L2 wchodzi od progu i znika'
   assert.ok(m.widok().k >= 6, `k=${m.widok().k}`);
   assert.equal(m.l2.hidden, false);
   assert.ok(m.l2.classList.contains('widoczna'));
-  assert.equal(m.l2img.getAttribute('src'), 'dominaria/aerona.jpg');
+  assert.equal(m.l2img.getAttribute('src'), 'dominaria/pokrycie-testowe.jpg');
   // zoom out ×15 → poniżej progów: L2 znika, kafle gasną
   m.kolko(500, 350, 100, 15);
   assert.ok(m.widok().k < 2.5, `k=${m.widok().k}`);

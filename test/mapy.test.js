@@ -7,6 +7,7 @@ import path from 'node:path';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { wczytajStrony, wczytajMapy } from '../tools/content-loader.mjs';
+import { renderMape } from '../src/codex/render-map.js';
 
 const strony = wczytajStrony().filter((s) => !s.problem);
 const karty = new Set(strony.filter((s) => s.typ === 'karta').map((s) => s.slug));
@@ -50,11 +51,90 @@ test('pinezki wskazują istniejące karty, mają współrzędne 0-1 i pewność'
         problemy.push(`${plan}: pinezka ${p.karta} przybliżona bez uzasadnienia (MA4)`);
       }
     }
-    for (const r of mapa.regiony ?? []) {
-      if (!strony.some((s) => s.slug === r.haslo)) problemy.push(`${plan}: region → nieistniejące hasło ${r.haslo}`);
-    }
+    // ADR 0043: pole "regiony" (obwódki haseł) wycofane ze schematu —
+    // na mapie oznaczenia noszą wyłącznie karty.
+    if ('regiony' in mapa) problemy.push(`${plan}: pole "regiony" w map.json — ADR 0043 (na mapie oznaczenia noszą wyłącznie karty)`);
   }
   assert.deepEqual(problemy, [], `Wadliwe pinezki:\n${problemy.join('\n')}`);
+});
+
+test('warstwa POI (kotwice pod przyszłe pinezki): nazwa + x/y w [0,1], bez duplikatów', () => {
+  const problemy = [];
+  for (const [plan, mapa] of mapy) {
+    if (mapa.problem) continue;
+    if (!Array.isArray(mapa.poi)) continue;
+    const nazwy = new Set();
+    for (const p of mapa.poi) {
+      if (!p.nazwa || typeof p.nazwa !== 'string') problemy.push(`${plan}: POI bez nazwy`);
+      else if (nazwy.has(p.nazwa)) problemy.push(`${plan}: POI "${p.nazwa}" — duplikat nazwy`);
+      else nazwy.add(p.nazwa);
+      const x = Number(p.x); const y = Number(p.y);
+      if (!Number.isFinite(x) || x < 0 || x > 1) problemy.push(`${plan}: POI ${p.nazwa} x poza [0,1] (${p.x})`);
+      if (!Number.isFinite(y) || y < 0 || y > 1) problemy.push(`${plan}: POI ${p.nazwa} y poza [0,1] (${p.y})`);
+    }
+  }
+  assert.deepEqual(problemy, [], `Wadliwa warstwa POI:\n${problemy.join('\n')}`);
+});
+
+test('ADR 0043: na mapie oznaczenia noszą wyłącznie karty (pinezka tylko w frontmatterze karty; brak regiony)', () => {
+  const problemy = [];
+  // Frontmatter: pinezka poza typem "karta" = naruszenie (hasła/plany
+  // łączą się z mapą tylko odsyłaniem ?x=&y=, nie znacznikiem).
+  for (const s of strony) {
+    if (s.typ !== 'karta' && s.pinezka) {
+      problemy.push(`${s.slug} (${s.typ}): pinezka w frontmatterze — ADR 0043`);
+    }
+  }
+  // map.json: żaden region haseł/obwódka — nawet pusty kontener pola.
+  for (const [plan, mapa] of mapy) {
+    if (mapa.problem) continue;
+    if ('regiony' in mapa) problemy.push(`${plan}: pole "regiony" w map.json — ADR 0043`);
+  }
+  assert.deepEqual(problemy, [], `Znaczniki mapy poza kartami:\n${problemy.join('\n')}`);
+});
+
+test('ADR 0043 (regresja): brakujące ?x=&y= NIE jest miejscem (0,0) — Number(\"\") = 0', () => {
+  // Recenzja właściciela (2026-09-08): wszystkie mapy pokazywały lewy
+  // górny róg w środku okna (zoom deep-linka). Przyczyna: pusty string
+  // brakującego parametru przechodził przez Number('') = 0 i trafiał do
+  // centeringu jako miejsce (0,0). Pusty string = brak parametru.
+  const poprzednie = globalThis.CODEX_DATA;
+  globalThis.CODEX_DATA = {
+    zbudowano: '',
+    strony: { dominaria: { slug: 'dominaria', typ: 'plan', tytul: 'Dominaria' } },
+    plany: ['dominaria'],
+    tagi: {},
+    backlinki: {},
+    coNowego: [],
+    statystyki: { karty: 0, hasla: 0, plany: 1 },
+    mapy: {
+      dominaria: {
+        plan: 'dominaria', tytul: 'Dominaria', wariant: 'T1',
+        wymiary: { szerokosc: 1000, wysokosc: 600 },
+        podklad: 'podklad.svg',
+        zrodlo: { url: 'https://przyklad.test', pobrano: '2026-01-01' },
+        pinezki: [],
+      },
+    },
+  };
+  try {
+    const oknoZ = (html) => html.match(/<div class="mapa-okno"[^>]*>/)?.[0] ?? '';
+    // Brak parametru wcale (query = {})
+    const pusty = oknoZ(renderMape('dominaria', {}, {}));
+    assert.ok(!pusty.includes('data-x') && !pusty.includes('data-y'),
+      `brakujący parametr dał atrybut miejsca (0,0): ${pusty}`);
+    // Pusty string (tak main.js podaje brakujące query parametry)
+    const pustyStringi = oknoZ(renderMape('dominaria', { pin: '', epoka: '', x: '', y: '' }, {}));
+    assert.ok(!pustyStringi.includes('data-x') && !pustyStringi.includes('data-y'),
+      `pusty string dał atrybut miejsca (0,0): ${pustyStringi}`);
+    // Wyraźne parametry dalej działają (deep-link miejsca)
+    const zMiejscem = oknoZ(renderMape('dominaria', { x: '0.25', y: '0.75' }, {}));
+    assert.ok(zMiejscem.includes('data-x="0.25"') && zMiejscem.includes('data-y="0.75"'),
+      `wyraźne miejsce nie trafiło do okna: ${zMiejscem}`);
+  } finally {
+    if (poprzednie === undefined) delete globalThis.CODEX_DATA;
+    else globalThis.CODEX_DATA = poprzednie;
+  }
 });
 
 test('karty z pinezką w frontmatterze mają ją też w map.json (jedno źródło prawdy)', () => {
@@ -77,14 +157,19 @@ test('warianty podkładu (ADR 0035): pliki istnieją, dokładnie jeden domyślny
   for (const [plan, mapa] of mapy) {
     if (mapa.problem || !Array.isArray(mapa.warianty)) continue;
     const w = mapa.warianty;
-    if (w.length < 2) problemy.push(`${plan}: warianty[] ma sens od dwóch podkładów (jest ${w.length})`);
+    // LOD (ADR 0039/0041): jednowariantowe warianty[] jest legalne, gdy niesie
+    // metadane kafelków L1 (mapa = jeden podkład + piramida LOD, np. Dominaria)
+    if (w.length < 2 && !w.some((x) => x.kafle)) {
+      problemy.push(`${plan}: warianty[] ma sens od dwóch podkładów lub z kafelami LOD (jest ${w.length})`);
+    }
     if (w.filter((x) => x.domyslny).length !== 1) problemy.push(`${plan}: dokładnie jeden wariant domyślny (układ złoty)`);
     const idy = new Set();
     for (const x of w) {
       if (!x.id || idy.has(x.id)) problemy.push(`${plan}: wariant bez unikalnego id`);
       idy.add(x.id);
       if (!['T1', 'T2', 'T3', 'T4'].includes(x.wariant)) problemy.push(`${plan}/${x.id}: wariant "${x.wariant}"`);
-      for (const plik of [x.podklad, x.miniatura].filter(Boolean)) {
+      // miniatura: pole wycofane (ADR 0027 v3) — mini-mapy generuje build
+      for (const plik of [x.podklad].filter(Boolean)) {
         if (!fs.existsSync(path.join('maps', plan, String(plik)))) problemy.push(`${plan}/${x.id}: brak pliku ${plik}`);
       }
       if (!x.wymiary?.szerokosc || !x.wymiary?.wysokosc) problemy.push(`${plan}/${x.id}: brak wymiarów`);

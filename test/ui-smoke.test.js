@@ -265,8 +265,8 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   // Tarkir (ADR 0035): atrybucja KAŻDEGO podkładu + legenda przełącznika; iframe w proporcjach T1
   shim4.idz('#/mapa/tarkir');
   const ramaT = shim4.app.innerHTML;
-  assert.equal(globalThis.CODEX_DATA.mapy.tarkir.podkladUrl, 'maps/tarkir/podklad-t1-mini.jpg',
-    'mini-mapy w głównym artefakcie nadal biorą miniaturę T1');
+  assert.equal(globalThis.CODEX_DATA.mapy.tarkir.podkladUrl, 'maps/tarkir/mini.jpg',
+    'mini-mapy biorą generowany w buildzie mini.jpg (ADR 0027 v3)');
   assert.ok(ramaT.includes('Lore Café'), 'mapa Tarkiru: brak atrybucji rastra T1 (Lore Café)');
   assert.ok(ramaT.includes('All Rights Reserved'), 'mapa Tarkiru: licencja rastra fanowskiego musi być widoczna');
   assert.ok(ramaT.includes('praca własna'), 'mapa Tarkiru: brak atrybucji rekonstrukcji T4');
@@ -325,8 +325,22 @@ test('UI: mapa T3 — etykiety podkładu w nakładce ekranowej (stały rozmiar, 
   const shim2 = wykonajArtefakt('dist/maps/srodziemie.html');
   assert.ok(!shim2.app.innerHTML.includes('data-podklad-etykieta'), 'podkład adoptowany (T2) nie może mieć przeniesionych etykiet');
 
-  fs.rmSync(cel, { force: true });
+  // T1 (oficjalna 3E, 2026-09-08 — decyzja właściciela: wektor T2
+  // Vectorized Realms skasowany po obejrzeniu mapy live): rastr jako
+  // <img> L0 + warstwa kafelków L1 (LOD, ADR 0039) + wektorowa warstwa
+  // POI pod kafelkami (kotwice pod przyszłe pinezki kart, ADR 0043).
   shim2.przywroc();
+  const shim3 = wykonajArtefakt('dist/maps/forgotten-realms.html');
+  const fr = shim3.app.innerHTML;
+  assert.ok(fr.includes('<img class="mapa-podklad" src="forgotten-realms/l0.jpg"'), 'FR: brak rastrowego podkładu L0 (T1)');
+  assert.ok(!fr.includes('<svg class="mapa-podklad"'), 'FR: podkład nie może być inline SVG (baza = rastr 3E, ADR 0027 v3)');
+  assert.ok(!fr.includes('kodex-etykiety'), 'FR: raster T1 nie niesie etykiet Codexu (etykiety:false — nazwy na rastrze)');
+  assert.ok(fr.includes('data-kafle'), 'FR: brak warstwy kafelków LOD (L1)');
+  assert.ok(fr.includes('<svg class="mapa-poi"'), 'FR: brak warstwy POI (kotwice pod przyszłe pinezki)');
+  assert.ok((fr.match(/<circle /g) ?? []).length >= 14, 'FR: warstwa POI niesie co najmniej 14 punktów');
+
+  fs.rmSync(cel, { force: true });
+  shim3.przywroc();
 });
 
 test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () => {
@@ -347,7 +361,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(karta.includes('Podsumowanie Lore'), 'karta: brak sekcji podsumowania');
   assert.ok(!karta.includes('Wątki i Powiązania'), 'karta: wątki mają żyć w treści (pogrubienia), nie w osobnej sekcji');
   assert.ok(karta.includes('<strong>Crebain</strong>') || karta.includes('<strong>crebain</strong>'), 'karta: brak pogrubionych encji lore w treści');
-  assert.ok(karta.includes('Na karcie obecne jest'), 'karta: Postacie i Byty mają zaczynać się od tego, co jest na karcie (kanon)');
+  assert.ok(karta.includes('W scenie obecne jest'), 'karta: Postacie i Byty mają zaczynać się od bytów sceny (kanon, ADR 0042 — głos Kronikarza)');
   assert.ok(!karta.includes('Armia Isengardu'), 'karta: byty z narracji/promptu nie mogą być listowane jako byty karty');
   assert.ok(!karta.includes('leykus'), 'karta: bez niekanonicznych porównań ("leykus")');
   assert.ok(!karta.includes('pierwszy mieszkaniec'), 'karta: bez meta-komentarzy o kolekcji (feedback B)');
@@ -367,7 +381,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (11)'), 'lista kart: brak 11 kart');
+  assert.ok(lista.includes('Karty Katalogowe (12)'), 'lista kart: brak 12 kart');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
     'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
@@ -450,9 +464,9 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   }
 
   shim.idz('#/');
-  // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — przy ≥6 kartach
-  // najstarsza (1LTR) wypada z listy, więc sprawdzamy najnowszą (488SOM, 2026-09-06).
-  assert.ok(shim.app.innerHTML.includes('Highland Game'), 'home: brak ostatniej materializacji');
+  // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — przy 12 kartach
+  // starsze wypadają z listy, więc sprawdzamy piątą (605SHM, 2026-09-07).
+  assert.ok(shim.app.innerHTML.includes('Consign to Dream'), 'home: brak ostatniej materializacji');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();
@@ -467,10 +481,12 @@ test('UI/build: drzewo HTML map (ADR 0027 v2 — iframe, offline z dysku)', asyn
   assert.ok(html.includes('"stronaMapy": "maps/srodziemie.html"'), 'rejestr: strona mapy Śródziemia');
   assert.ok(html.includes('"stronaMapy": "maps/zendikar.html"'), 'rejestr: strona mapy Zendikaru');
   assert.ok(html.length < 2.5 * 1024 * 1024, `artefakt (${(html.length / 1048576).toFixed(2)} MB) ma być < 2.5 MB`);
-  // drzewo: strony map + surowe podkłady (mini-mapy)
+  // drzewo: strony map + mini-mapy z generowanego mini.jpg (ADR 0027 v3);
+  // wektorowe bazy NIE są w drzewie (są inline w stronach map)
   assert.ok(fs.existsSync('dist/maps/srodziemie.html'), 'dist/maps/srodziemie.html');
   assert.ok(fs.existsSync('dist/maps/zendikar.html'), 'dist/maps/zendikar.html');
-  assert.ok(fs.existsSync('dist/maps/zendikar/podklad.svg'), 'dist/maps/zendikar/podklad.svg (mini-mapy)');
+  assert.ok(fs.existsSync('dist/maps/zendikar/mini.jpg'), 'dist/maps/zendikar/mini.jpg (mini-mapy)');
+  assert.ok(!fs.existsSync('dist/maps/zendikar/podklad.svg'), 'brak duplikatu bazy SVG w drzewie (ADR 0027 v3)');
   const stronaMapy = fs.readFileSync('dist/maps/zendikar.html', 'utf8');
   assert.ok(stronaMapy.includes('CODEX_MAPA'), 'strona mapy: tryb CODEX_MAPA');
   assert.ok(stronaMapy.includes('podkladMarkup'), 'strona mapy: wstrzyknięty markup SVG');

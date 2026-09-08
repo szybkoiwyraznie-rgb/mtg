@@ -302,3 +302,22 @@ tożsamości.
 flavor) nie zgaduj — bierz z dostawy właściciela albo z API Scryfalla
 (`/cards/named?exact=…&set=…`, działa przez fetch). W razie rozjazdu
 dostawa właściciela jest rozstrzygająca.
+
+## L15 (2026-09-08) — build nadpisuje, ale nie śledzi usunięć: katalog wyjściowy czyścić przy każdym pełnym buildzie
+
+**Objaw:** po `git rm maps/dominaria/aerona.jpg` plik wciąż był w
+`dist/maps/dominaria/` i w pobieranym ZIP-ie — build nadpisywał istniejące
+plikowe pliki, ale nigdy nie usuwał tych, których nie napisał w tym
+przebiegu. Właściciel pobrałby ZIP z marnym 1,6 MB, o którym repo mówi
+„usunięte”.
+
+**Przyczyna:** `zbudujPakiet` pisał drzewo na wierzchu starego `dist/`
+bez czyszczenia; `dist/` jest gitignorowany, więc nic nie sygnalizowało
+driftu.
+
+**Reguła:** pełny build (`zbudujPakiet`) najpierw `rmSync(katalog,
+{recursive, force})` — drzewo `dist/` ma być funkcją repo, nie
+akumulacją przebiegów. Test regresyjny w `test/artefakt.test.js`
+(stale plik w katalogu musi zniknąć). Jeśli kiedyś zbuduje się do
+katalogu z czymś cennym poza artefaktami — najpierw przenieś to, potem
+buduj.

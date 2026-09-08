@@ -32,6 +32,88 @@ import {
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
+// ── Mini-mapy kart (ADR 0027 v3 — decyzja właściciela 2026-09-08) ────
+// Miniatura = screenshot bazy domyślnego wariantu, szer. 800 px, jpg q80
+// (Lorwyn: 8,3 MB SVG → ~100 kB). Łańcuch wyłącznie w zależnościach
+// npm (dev-only — silnik src/codex pozostaje zero-dependency, ADR 0002),
+// BEZ binarików systemowych — runner CI (ubuntu-latest 24.04) nie ma
+// ImageMagick, regresja 2026-09-08: fallback do pełnej bazy + czerwony
+// test artefaktu:
+// 1) SVG → @resvg/resvg-js (natywny, pełna jakość SVG) → PNG;
+// 2) PNG/JPG → pngjs / jpeg-js (czysty JS) → RGBA;
+// 3) skalowanie bilinearnie do 800 px + kodowanie JPEG q80 (jpeg-js);
+// 4) fallback: pełna baza w drzewie (działa, ale ZIP cięższy) + ostrzeżenie.
+const SZEROKOSC_MINI = 800;
+const JAKOSC_JPG = 80;
+
+/** Bilinearny downscale RGBA (czysty JS; jakość wystarczająca dla miniatury). */
+function skalujBilinearnie(src, sw, sh, dw, dh) {
+  const dst = Buffer.alloc(dw * dh * 4);
+  const rx = sw / dw, ry = sh / dh;
+  for (let y = 0; y < dh; y++) {
+    const sy = Math.min(sh - 1, Math.floor(y * ry));
+    const y1 = Math.min(sh - 1, sy + 1);
+    const fy = Math.min(1, y * ry - sy);
+    for (let x = 0; x < dw; x++) {
+      const sx = Math.min(sw - 1, Math.floor(x * rx));
+      const x1 = Math.min(sw - 1, sx + 1);
+      const fx = Math.min(1, x * rx - sx);
+      for (let c = 0; c < 4; c++) {
+        const i00 = (sy * sw + sx) * 4 + c, i10 = (sy * sw + x1) * 4 + c;
+        const i01 = (y1 * sw + sx) * 4 + c, i11 = (y1 * sw + x1) * 4 + c;
+        dst[(y * dw + x) * 4 + c] =
+          Math.round(src[i00] * (1 - fx) * (1 - fy) + src[i10] * fx * (1 - fy) +
+                     src[i01] * (1 - fx) * fy + src[i11] * fx * fy);
+      }
+    }
+  }
+  return dst;
+}
+
+async function wyrenderujMiniature({ zrodlo, cel }) {
+  try {
+    const rozszerzenie = path.extname(zrodlo).toLowerCase();
+    let rgba;
+    if (rozszerzenie === '.svg') {
+      const { Resvg } = await import('@resvg/resvg-js');
+      const png = new Resvg(fs.readFileSync(zrodlo), {
+        fitTo: { mode: 'width', value: SZEROKOSC_MINI }, background: '#f7f2e7',
+      }).render().asPng();
+      const { PNG } = await import('pngjs');
+      rgba = PNG.sync.read(png);
+    } else if (rozszerzenie === '.jpg' || rozszerzenie === '.jpeg') {
+      const { decode } = await import('jpeg-js');
+      rgba = decode(fs.readFileSync(zrodlo), { maxMemoryUsageInMB: 512 });
+    } else if (rozszerzenie === '.png') {
+      const { PNG } = await import('pngjs');
+      rgba = PNG.sync.read(fs.readFileSync(zrodlo));
+    } else {
+      return false;
+    }
+    let { width, height, data } = rgba;
+    if (width > SZEROKOSC_MINI) {
+      const nowaWys = Math.max(1, Math.round(height * SZEROKOSC_MINI / width));
+      data = skalujBilinearnie(data, width, height, SZEROKOSC_MINI, nowaWys);
+      width = SZEROKOSC_MINI;
+      height = nowaWys;
+    }
+    const { encode } = await import('jpeg-js');
+    const jpg = encode({ data, width, height }, JAKOSC_JPG).data;
+    fs.writeFileSync(cel, Buffer.from(jpg));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/** Czy środowisko buildu ma rasterizator mini-map (ADR 0027 v3).
+ *  SVG wymaga resvg (natywny dev-dep); rastry idą przez czysty JS
+ *  (pngjs/jpeg-js) — dostępne po `npm ci`. */
+export async function czyDostepnyRasterizer() {
+  try { await import('@resvg/resvg-js'); return true; } catch { /* dalej */ }
+  try { await import('jpeg-js'); return true; } catch { return false; }
+}
+
 // ── Metadane czasu stron (ADR 0029) ─────────────────────────────────
 // Daty utworzenia/aktualizacji pochodzą z historii gita pliku źródłowego
 // (moment commita = moment publikacji treści; strefa Europe/Warsaw).
@@ -205,10 +287,22 @@ export async function zbuduj({ out, root = ROOT } = {}) {
       fs.copyFileSync(zrodlo, cel);
       return rel;
     };
-    kopiuj(mapa.podklad);
-    // Warianty podkładu (ADR 0035): każdy podkład (i miniatura rastra)
-    // trafia do drzewa map; mini-mapy kart biorą miniaturę wariantu
-    // domyślnego (pełny raster T1 waży kilkanaście MB — nie na kafel).
+    // ADR 0027 v3 (właściciel 2026-09-08): w drzewie dist ląduje tylko to,
+    // co strona mapy czyta przez <img> (rastry, kafle). Wektorowe bazy są
+    // zainlinowane w maps/<slug>.html — ich plik w drzewie to dublowana
+    // bajt w ZIP-ie, więc go nie kopiuje.
+    const jestWektor = (nazwa) => String(nazwa).toLowerCase().endsWith('.svg');
+    const kopiujPodklad = (nazwa) => {
+      if (!nazwa) return null;
+      if (jestWektor(nazwa)) {
+        // Baza jest inline w html — utrzymujemy niezmiennik „wektorowa baza
+        // nie leży w drzewie dist” (usuwa też resztki poprzedniego buildu).
+        try { fs.rmSync(path.join(katalogOut, 'maps', slug, String(nazwa)), { force: true }); } catch { /* jeszcze nie było */ }
+        return null;
+      }
+      return kopiuj(nazwa);
+    };
+    kopiujPodklad(mapa.podklad);
     const kopiujKatalog = (nazwa) => {
       if (!nazwa) return;
       const zrodlo = path.join(root, 'maps', slug, String(nazwa));
@@ -221,10 +315,28 @@ export async function zbuduj({ out, root = ROOT } = {}) {
       }
     };
     const warianty = Array.isArray(mapa.warianty) ? mapa.warianty : [];
-    for (const w of warianty) { kopiuj(w.podklad); kopiuj(w.miniatura); if (w.kafle) kopiujKatalog(w.kafle.katalog); }
+    for (const w of warianty) { kopiujPodklad(w.podklad); if (w.kafle) kopiujKatalog(w.kafle.katalog); }
     const domyslny = warianty.find((w) => w.domyslny) ?? warianty[0];
-    const miniatura = domyslny?.miniatura ? kopiuj(domyslny.miniatura) : null;
-    mapa.podkladUrl = miniatura ?? `maps/${slug}/${domyslny?.podklad ?? mapa.podklad}`; // mini-mapy kart (<img>)
+    // Mini-mapa (kafel na stronie karty, <img>): jpg-screenshot bazy
+    // domyślnego wariantu wygenerowany w buildzie (800 px, q80) —
+    // Lorwyn: 8,3 MB SVG → ~100 kB zamiast pełnej bazy w drzewie.
+    // Pinezka rysowana po stronie karty (kropka w dokładnych współrzędnych).
+    const bazaDomyslna = domyslny?.podklad ?? mapa.podklad;
+    const plikBazy = path.join(root, 'maps', slug, bazaDomyslna);
+    const celMini = path.join(katalogOut, 'maps', slug, 'mini.jpg');
+    if (!fs.existsSync(plikBazy)) {
+      problemy.push(`${slug}: brak bazy ${bazaDomyslna} do wygenerowania mini-mapy`);
+    } else {
+      fs.mkdirSync(path.dirname(celMini), { recursive: true });
+      const udalo = await wyrenderujMiniature({ zrodlo: plikBazy, cel: celMini });
+      if (udalo) {
+        mapa.podkladUrl = `maps/${slug}/mini.jpg`;
+      } else {
+        console.warn(`UWAGA: brak rasterizatora dla "${slug}" — mini-mapa z pełnej bazy (ZIP cięższy).`);
+        kopiuj(bazaDomyslna);
+        mapa.podkladUrl = `maps/${slug}/${bazaDomyslna}`;
+      }
+    }
     mapa.stronaMapy = `maps/${slug}.html`;       // iframe w artefakcie
     // stopka strony mapy (ADR 0029): czas z historii całego katalogu planu
     mapa.czas = datyGit(path.relative(ROOT, path.join(root, 'maps', slug)));
@@ -346,6 +458,11 @@ function stripModuleSyntax(source) {
  */
 export async function zbudujPakiet({ root = ROOT, katalog } = {}) {
   katalog = katalog ?? path.join(root, 'dist');
+  // PR-25: pełny build czyści katalog wyjściowy — pliki usunięte z repo
+  // (np. maps/dominaria/aerona.jpg, ADR 0041) muszą zniknąć z drzewa i
+  // ZIP-a: build nadpisuje, ale nie śledzi usunięć (stale pliki zostawały
+  // w archiwum).
+  fs.rmSync(katalog, { recursive: true, force: true });
   const celGlowny = path.join(katalog, 'mtg-lore-codex.html');
   await zbuduj({ root, out: celGlowny });
   fs.copyFileSync(celGlowny, path.join(katalog, 'index.html'));

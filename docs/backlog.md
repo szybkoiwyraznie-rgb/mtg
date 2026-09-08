@@ -89,6 +89,46 @@ frakcji/istoty. Dalsze rozpoznane encje nadal wymagają drugiej karty:
 | Chianul | postac | 509ktk-highland-game | 1 karta |
 | Arel | postac | 509ktk-highland-game | 1 karta |
 
+## Link-mining PR-25 (Pętla Jakości, 2026-09-08)
+
+**Mephidross — wykonane 2026-09-08**, `content/lore/mephidross.md`,
+klasa `geografia`, plan Mirrodin. Próg (2 karty) spełniały
+476mbs-banishment-decree + 488som-carapace-forger (+ plan mirrodin);
+wikilinki dopisane we wszystkich trzech miejscach; sekcja „Na mapie”
+odsyła do mapy Mirrodinu zbliżonej w określonym miejscu (deep-link
+`?x=&y=`). Uwaga: „Tangle” na liście encji ≥2 stron NIE tworzy
+hasła — to dwie różne encje o tej samej nazwie (miedziany las
+Mirrodinu i Drzewo Świata Aerony w Dominarii). (Wcześniejsza obwódka
+regionu `regiony` w map.json wycofana — ADR 0043.)
+
+Encje „o jedną kartę” od progu (skan boldów 2026-09-08):
+
+| Encja | Klasa (docelowa) | Karta wspominająca | Do progu brakuje |
+| --- | --- | --- | --- |
+| Elesh Norn | postac | 476mbs-banishment-decree (+ plan mirrodin, hasło nowa-phyrexia) | 1 karta |
+| Razor Fields, Ortodoksja Maszyn, Glimmervoid, Taj-Nar, Accorders, Argent Etchings, Cave of Light, Ten Shields | geografia/doktryna | 476mbs-banishment-decree (+ plan mirrodin) | 1 karta |
+| Copperline Gorge, Radix, Rey-Goor | geografia | 488som-carapace-forger (+ plan mirrodin) | 1 karta |
+| Oona, Glen Elendra | postac/geografia | 605shm-consign-to-dream (+ plan lorwyn) | 1 karta |
+| Thraben, Ashmouth, Kirch, Skirsdag, Mikaeusa, Katedra Avacyn, Devils' Breach | geografia | 393dka-forge-devil (+ plan innistrad) | 1 karta |
+| Temur, Mardu, Qal Sisma, Karakyk Valley, Summer Landing, Eternal Ice, Dragon's Throat, The Scour, ainok | geografia/klany | 509ktk-highland-game (+ plan tarkir) | 1 karta |
+| Sunhome, Precinct Four | geografia | 137gpt-withstand (+ plan ravnica) | 1 karta |
+| Benalia, Wybrani, Pięć Edyktów, Tangle (Dominaria), Argoth, Sylex, Kabała, Aphetto, Daru, Tamingazin, Zhalfir, Suq'At, Sarpadyjskie Imperia, Ciemne Czasy, thrullowie, thalidzi, homaridi | geografia/spolecznosc | 40usg-expunge / plan dominaria | 1 karta |
+| Eldrazi, Roil, Halimar, Coralhelm, Jori En, merfolk | różne | 2bfz-coralhelm-guide (+ plan zendikar) | 1 karta |
+
+## Link-mining PR-26 (Forgotten Realms, 2026-09-08)
+
+Pierwsza karta FR: `3clb-nefarious-imp` (+ plan `forgotten-realms`).
+Encje „o jedną kartę” od progu (skan boldów 2026-09-08):
+
+| Encja | Klasa (docelowa) | Karta wspominająca | Do progu brakuje |
+| --- | --- | --- | --- |
+| Wybrzeże Mieczy | geografia | 3clb-nefarious-imp (+ plan forgotten-realms) | 1 karta |
+| Avernus, Baator | geografia | 3clb-nefarious-imp | 1 karta |
+| imp (chochlik) | fauna | 3clb-nefarious-imp | 1 karta |
+| Wojna Hobgoblinów, Tiamat | wydarzenie/koncepcja | 3clb-nefarious-imp (+ plan forgotten-realms) | 1 karta |
+| Faerûn, Abeir-Toril, Morze Upadłych Gwiazd, Moonshaes, Nelanther, Amn, Luruar, Morze Wewnętrzne, Królestwo Wysokie, Morze Bezludne | geografia | — (plan forgotten-realms) | licznik od kart, nie planów |
+| Mystra, Selûne, Lathander, Ilmater, Tempus, Tkanina Magii, Czas Kłopotów | postac/koncepcja | — (plan forgotten-realms) | licznik od kart, nie planów |
+
 ## Mapa Zendikaru — WYKONANA (ADR 0012)
 
 Zrobione 2026-08-31 (feedback G właściciela): **rekonstrukcja własna
@@ -168,10 +208,14 @@ Snapshoty Scryfalla niosą `set`/`set_name`; przy dziesiątkach kart może
 przydać się rejestr `content/sets.json` z polskimi opisami. Zbierać
 potrzebę przy pierwszym panelu filtrów po wydaniach.
 
-## Metryka niegeograficznych haseł (rozpoznanie PR-22)
+## Metryka haseł bez pinezki (rozpoznanie PR-22) — DOMKNIĘTE (PR-25)
 
-Pierwsze hasło klasy `spolecznosc` (Nowa Phyrexia) ma wszystkie wymagane
-sekcje, źródła i wikilinki, lecz stats daje 6/8 za brak pinezki. Szkielet
-nie wymaga lokalizacji tej klasy. Wskaźnik raportujemy jawnie (98%
-całości), bez stawiania nieuzasadnionego punktu i bez zmiany wzoru w tej
-Pętli. Przy rozwoju metryki rozważyć pola nieobowiązujące dla danej klasy.
+Pierwsze hasło klasy `spolecznosc` (Nowa Phyrexia) miało wszystkie
+wymagane sekcje, źródła i wikilinki, lecz stats dawał 6/8 za brak
+pinezki, choć szkielet nie wymaga lokalizacji tej klasy. Rozwiązanie
+(2026-09-08, `tools/wiki-stats.mjs`): komponent pinezki = N/A i nie
+liczy się do maksimum strony (maks 6); uwaga w gidzie Pętli Jakości.
+**ADR 0043 (2026-09-08) poszerza regułę systemowo:** na mapie
+oznaczenia noszą wyłącznie karty, więc pinezka = N/A dla haseł
+**każdej** klasy (nie tylko niegeograficznych); hasło łączy się z
+mapą wyłącznie odsyłaniem (`?x=&y=`), pole `regiony` wycofane.

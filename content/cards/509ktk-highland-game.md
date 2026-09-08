@@ -28,7 +28,7 @@ w jaskiniach wzmocnionych smoczymi kośćmi, śpiąc, opowiadając,
 naprawiając narzędzia i jedząc jak najmniej. Ale zanim klan zaśnie,
 ktoś musi zapełnić spiżarnię.
 
-Scena tej karty to ten właśnie moment: łowca podchodzi olbrzymiego
+Scena to ten właśnie moment: łowca podchodzi olbrzymiego
 jelenia, najcenniejsze trofeum surowych wyżyn. Na łowach Temur nie ma
 nic z rozrywki. **Hunt Caller**, Zwołujący Łowy, każdego roku wyznacza
 rodzinom ich tereny, a tytuł zdobywa się w noc Wielkich Łowów: ten, kto
@@ -55,7 +55,7 @@ dzieci w Karakyk, a poroże zaczyna słuchać umarłych.
 ## Postacie i Byty
 
 **Olbrzymi jeleń** (Elk) — zwierzyna łowna wysokich pastwisk Qal Sisma.
-Na karcie nie jest bestią ani duchem, lecz zwykłym, śmiertelnym
+W scenie nie jest bestią ani duchem, lecz zwykłym, śmiertelnym
 zwierzęciem; jego godność polega na tym, że karmi klan i użycza rogów
 rytuałowi. W ekologii Tarkiru epoki khanów dzieli góry z olbrzymimi
 niedźwiedziami, szablozębnymi kotami, ogrami i goblinami o białym futrze
@@ -66,10 +66,10 @@ wojownicy przyjęci do rodzin po pierwszych potyczkach w górach), którzy
 czczą **dzikość smoka** i noszą jego pazur jako znak. Wędrowni przez
 większość roku, zimą osiadli w Karakyk Valley; każdy dorosły jest
 wojownikiem, a niedźwiedzie są członkami rodzin. Ich khan nosi tytuł
-**Dragonclaw**; w epoce karty jest nim **Surrak**, który zdobył go,
+**Dragonclaw**; w epoce inwazji jest nim **Surrak**, który zdobył go,
 pokonawszy w jaskini olbrzymiego niedźwiedzia.
 
-**Chianul, Who Whispers Twice** — cytowany we flavorze szaman, około
+**Chianul, Who Whispers Twice** — cytowany w inskrypcji szaman, około
 pięćdziesięcioletni (u Temur to sędziwy wiek). Jest **Tym, Który Szepcze
 Dwakroć**: raz do duchów, raz do khana — jedynym szamanem, który zamiast
 pustelniczej medytacji towarzyszy wodzowi jako doradca, prowadzi Wide
@@ -78,16 +78,16 @@ Widział „inne teraz”, w którym smoki panują nad ludźmi; to on uczył
 młodego **Sarkhana Vola** o wizjach i smokach i to on wskazał Sarkhanowi
 „słaby punkt w wielu teraz”, który zaważył na losie planu.
 
-**Arel** — adresatka rytuału z flavoru: młoda szamanka Temur, świeżo
+**Arel** — adresatka rytuału z inskrypcji: młoda szamanka Temur, świeżo
 inicjowana. W epoce khanów pojawia się jako „Arel, the Whisperer”;
 w zmienionym „teraz” jej odpowiedniczką jest „Arel, Unseen Whisperer”,
 dysydentka wśród rodu Atarki, przekonana, że smoczy lordowie są tyranami.
-Nie są to kolejne etapy jednej biografii: karta pokazuje Arel z oryginalnej
+Nie są to kolejne etapy jednej biografii: scena pokazuje Arel z oryginalnej
 linii czasowej, podczas inicjacji.
 
-**Traper** z Fabuły kolekcji — doświadczony łowca, którego karta nie
+**Traper** z zapisu — doświadczony łowca, którego kronika nie
 nazywa, ale którego łowy widzimy: ciche podejście, jedno trofeum, powrót
-do zimujących rodzin. Jest figurą kolekcji, nie nowym kanonem — ale
+do zimujących rodzin. Jest postacią zapisu, nie nowym faktem świata — ale
 figurą dokładnie zgodną z rolami Temur, w których „łowca” jest wiecznym
 płaszczem przekazywanym z pokolenia na pokolenie, a nie imieniem
 bohatera.
@@ -100,8 +100,8 @@ odsyła do górskiej, bezdrzewnej krainy, w której to polowanie się toczy
 (w tle pobrzmiewają szkockie Highlands z ich jeleniami). Nazwa nie
 nazywa więc jednego zwierzęcia, lecz **kategorię**: to, co góry dają
 łowcom na przeżycie. Jest w niej także cicha ironia właściwa dla Tarkiru:
-ten sam wyraz oznacza „grę”, a karta trafia do gry, w której jeleń ginie
-po to, by ktoś zyskał życie.
+ten sam wyraz oznacza „grę”, a łowy, w których jeleń ginie
+po to, by ktoś zyskał życie, są grą w najstarszym znaczeniu.
 
 Po polsku: **Zwierzyna Wyżyn** — albo dosłowniej **Łowna Zwierzyna
 Górska**: to, na co polują Temur na płaskowyżu Qal Sisma.
@@ -118,7 +118,7 @@ Górska**: to, na co polują Temur na płaskowyżu Qal Sisma.
 
 Odczyt fraza po frazie. **„Bring down a stag”** — to rozkaz łowiecki
 wydany przez szamana, nie przez Zwołującego Łowy: rytuał zaczyna się od
-polowania, a zwierzę z nazwy karty jest ofiarą złożoną nie bogom, lecz
+polowania, a zwierzę z nazwy rytu jest ofiarą złożoną nie bogom, lecz
 przyszłości klanu. **„fix its horns upon her head”** — poroże zostaje
 przytwierdzone do nakrycia głowy; u Temur to nie ozdoba, lecz narzędzie:
 szamańskie nakrycia głowy obwieszone kością i porożem skupiają szept,
@@ -133,25 +133,25 @@ wpleciona w tkaninę czasu; po raz pierwszy zakłada się jej nakrycie
 głowy, które od tej chwili zasłoni jej oczy na zawsze.
 
 Łowy i inicjację można czytać jako dwie strony tej samej praktyki:
-zwierzę karmi rodzinę, a jego poroże służy szeptaczom. Flavor wskazuje
+zwierzę karmi rodzinę, a jego poroże służy szeptaczom. Inskrypcja wskazuje
 Arel; scena łowów nie nazywa odbiorczyni trofeum, więc nie rozstrzyga,
 że właśnie ten jeleń posłużył do jej inicjacji.
 
 ## Transpozycja
 
-Karta jest rodzima dla Tarkiru, więc most jest krótki: Fabuła kolekcji
-wybiera z kanonu jedną porę (zimę), jedno miejsce (łowiska Temur w Qal
+Scena jest rodzima dla Tarkiru, więc droga do niej jest prosta: zapis
+wybiera z kroniki jedną porę (zimę), jedno miejsce (łowiska Temur w Qal
 Sisma) i jedną intencję (poroże dla szeptaczy wedle nauk Chianula),
-a resztę kanon dostarcza sam — cykl zimowania w Karakyk Valley, rolę
-Zwołującego Łowy, nakrycia głowy szamanów i sam flavor karty, który
-nazywa Chianula i inicjację Arel. Fabuła dodaje do tego obraz
+a resztę zapis dostarcza sam — cykl zimowania w Karakyk Valley, rolę
+Zwołującego Łowy, nakrycia głowy szamanów i sama inskrypcja, która
+nazywa Chianula i inicjację Arel. Kronikarz dopowiada do tego obraz
 **„osłabionych mrozem koczowników”**, którym mięso i futro „tchną nową
-żywotność” — to dokładnie ta wymiana, którą reguła karty zapisuje jako
+żywotność” — to dokładnie ta wymiana, którą mechanika rytu zapisuje jako
 zysk życia po śmierci stworzenia. Scena osadzona jest w epoce khanów
 (*Khans of Tarkir*), przed tym, jak Sarkhan Vol zmienił bieg czasu;
 w zmienionym „teraz” Qal Sisma jest ziemią Atarki, a inna Arel działa
 wśród jej poddanych jako dysydentka. Nie jest to dalszy ciąg opisanej
-tu inicjacji. Łowy z tej karty należą do dawnego świata Temur na
+tu inicjacji. Łowy z tej sceny należą do dawnego świata Temur na
 [[tarkir|Tarkirze]], nie do uczt smoczego lorda.
 
 ## Na Mapie
@@ -159,8 +159,8 @@ tu inicjacji. Łowy z tej karty należą do dawnego świata Temur na
 Pinezka o pewności **region**: `#/mapa/tarkir?pin=509ktk-highland-game`
 — łowiska klanu Temur w przedgórzu **Qal Sisma**, między **Karakyk
 Valley**, zimowym leżem klanu, a **Staircase of Bones**, wzgórzem
-zgromadzeń, o którym kanon mówi, że leży „w centralnym położeniu między
-łowiskami rodzin”. Ani karta, ani Fabuła nie nazywają konkretnej doliny;
+zgromadzeń, o którym kronika mówi, że leży „w centralnym położeniu między
+łowiskami rodzin”. Ani inskrypcja, ani zapis nie nazywają konkretnej doliny;
 wiadomo tylko, że łowy toczą się zimą w górach Temur i że ich plon wraca
 do zimujących rodzin — stąd pinezka na łowiskach najbliżej Karakyk
 i pewność „region”, nie „dokładna”. Mapa niesie resztę kontekstu:
@@ -169,7 +169,8 @@ których trafi poroże; **The Scour** i step **Mardu** na południu, skąd
 przychodzą napaści, na które Temur odpowiadają rajdami; **Whisperwood**
 i **Rainveil Forest** — letnie łowiska niższych stoków. Mapa ma dwa
 podkłady pod przełącznikiem: raster **Dragonstorm** (po Stormnexus)
-i rekonstrukcję **Khans** z nazwami epoki karty. Wspólny punkt oznacza
+i rekonstrukcję **Khans** — układ z czasów, w których osadzona jest
+scena. Wspólny punkt oznacza
 region łowów, nie tożsamość nazwanych dolin między liniami czasu:
 **Summer Landing** to dawne **Ayagor** z epoki Atarki, a nie Karakyk
 Valley. W TDM istnieje osobno Karakyk Glacial Settlement. Tarkir nie ma

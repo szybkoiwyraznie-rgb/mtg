@@ -1,3 +1,225 @@
+## 2026-09-08 22:35 — Mapa FR: Calimport odnaleziony na podkładzie — kotwica Królestwa Wysokiego na dobrej pozycji
+
+- **Korekta po recenzji właściciela:** twierdzenie „na mapie nie ma
+  Calimporta” było błędem odczytu (szukano wschód od Morza
+  Wewnętrznego, a nie na południu). Calimport leży na **północnym
+  brzegu The Shining Sea, na południe od Calim Desert (Calimshan)** —
+  etykieta miasta jawna na rastrze 3E.
+- Kotwica **Królestwo Wysokie** przeniesiona na Calimport
+  (0.285, 0.736) z jawnym odwołaniem do etykiety na podkładzie;
+  **Calimport dołączony do warstwy POI** (14 punktów). Strona planu
+  (Geografia: The Shining Sea, „Złota Przystań”) i test ui-smoke
+  (≥14 kółek) zsynchronizowane.
+
+## 2026-09-08 22:05 — Mapa FR: wektor T2 do kosza, podkład = oficjalna Faerûn 3E (T1+LOD jak Dominaria) + warstwa POI
+
+- **Decyzja właściciela (po obejrzeniu mapy live): T2 wektor
+  Vectorized Realms odrzucony** („wolny, brak ikon lokalizacji,
+  brzydki”) — kasacja `podklad.svg` (4,3 MB) i wymiana na **T1:
+  oficjalną mapę Faerûn 3E** (WotC/TSR, 2001, 4763×3185; plik
+  dostarczył właściciel, commit „Add files via upload”).
+- **Model ładowania = dokładnie Dominaria (ADR 0039):** L0
+  (`l0.jpg`, 1920 px, 826 kB) ładowane pierwsze w całości +
+  kafelki L1 w pełnej rozdzielczości (10×7 po 512 px, próg 2.5)
+  doładowywane od przybliżenia; master 4,3 MB w repo, poza dist.
+  Siatka cięta `tools/kafle.mjs` (konwersja webp→JPG q92).
+- **Nowa warstwa POI (decyzja właściciela: „pod spodem wektorowo
+  najważniejsze POI pod przyszłe pinezki”):** 13 złotych kółek
+  (miasta Wybrzeża Mieczy, Silverymoon, Mithral Hall, Myth
+  Drannor, Mulmaster, Helondeth, Mulhorand, huby Moonshaes i
+  Nelanther) renderowanych w scenie **pod warstwą kafelków** —
+  widoczne na rastrze L0, po doładowaniu L1 pokrywa je druk
+  mastera. Dane w `map.json` (pole `poi`), bez etykiet (nazwy
+  niesie raster), bez interakcji (ADR 0043: piny = tylko karty).
+- **Kotwice i pinezka przeliczone na nowy raster** (odczyt siatki
+  5% na L0 + wycinki detaliczne): 9 regionów w nowych
+  współrzędnych; pinezka 3CLB na środku pasa Wybrzeża Mieczy
+  (0.124, 0.176 — Neverwinter–Waterdeep), pewność rejon bez
+  zmian. „Królestwo Wysokie” bez jawnej etykiety na podkładzie —
+  kotwica z jawną proweniencją (Cities of the Inner Sea 3e).
+- **Strażnicy:** ui-smoke FR odwrócony na T1 (img l0.jpg, brak
+  inline SVG i kodex-etykiet, warstwa `data-kafle` + `mapa-poi`
+  z ≥13 punktami); `mapy.test.js`: schemat warstwy POI (nazwa,
+  x/y ∈ [0,1], bez duplikatów).
+- Strona planu (sekcja Mapa) i karta 3CLB („Na Mapie”, Źródła)
+  zsynchronizowane z nowym podkładem.
+
+## 2026-09-08 20:59 — Naprawa map: lewy górny róg w środku okna (wszystkie mapy) + FR bez grafiki
+
+- **Regresja (recenzja właściciela): „środek iframe'a to lewy górny
+  róg mapy, większość chowa się poza ekranem — dotyczy WSZYSTKICH
+  map".** Przyczyna: deep-link miejsca `?x=&y=` (ADR 0043) liczył
+  `Number(query.x)` a pusty string brakującego parametru daje
+  `Number('') = 0` ⇒ każda mapa bez query dostawała `data-x="0"
+  data-y="0"` i centrowała się w rogu (0,0) z zoomem deep-linka
+  (2.5×). Poprawka: pusty string = brak parametru (→ NaN, bez
+  atrybutu). Wyraźne `?x=&y=`, `?pin=` i widok domyślny działają
+  (zweryfikowane geometrią w jsdom: identity bez query, centering
+  na pinezce/miejscu z query).
+- **Regresja FR: „ikona niezaładowanej grafiki + podpis Podkład
+  mapy".** Przyczyna: eksport Inkscape ma `<svg>` z nową linią po
+  tagu, a gate inline `markup.includes('<svg ')` (spacja!) odrzucał
+  taki plik ⇒ podkład renderował się jako `<img>` do bazy wektorowej,
+  której nie ma w drzewie dist (ADR 0027 v3). Poprawka: gate toleruje
+  ślad po tagu (`/<svg[\s>]/`, `doMarkupPodkladu`) + normalizacja
+  tagu otwierającego `podklad.svg`.
+- **Strażnik:** test regresji `mapy.test.js` (brakujące/puste
+  `?x=&y=` NIE dają atrybutu miejsca; wyraźne dają) + rozbudowa
+  ui-smoke (FR: inline SVG, nie `<img>`; warstwa etykiet obecna).
+- Weryfikacja: 165/165 testów, build 25 stron (12 kart, 2 hasła,
+  11 planów), stats 100%; geometria map zmierzona (identity domyślna,
+  centering pinezki/miejsca wg wzoru).
+
+## 2026-09-08 20:25 — Nowa karta Nefarious Imp (3CLB) + nowy plan: Zapomniane Krainy (mapa T2)
+
+- **Nowa karta + nowy plan (dostawa właściciela):** 3CLB
+  *Nefarious Imp* (CLB #137, `{2}{B}` 2/1, Imp — Flying; „Whenever
+  one or more permanents you control leave the battlefield, scry 1”)
+  — pierwsza karta planu franczyzy zewnętrznej **Zapomniane Krainy**
+  (*Forgotten Realms*, D&D; typIP zewnetrzne, wzór Final Fantasy).
+  Głos Kronikarza (ADR 0042) — scena: mroczny gabinet wojenny na
+  Wybrzeżu Mieczy, szkarłatny imp, stopione figurki, skradziony
+  kryształ i widmowy obraz artefaktu. Tagi ze słownika:
+  demony/szpiedzy/wojna.
+- **Nowy plan:** `content/planes/forgotten-realms.md` — setting w
+  pigułce (Abeir-Toril, Faerûn, Wybrzeże Mieczy, Tkanina Magii, Czas
+  Kłopotów, bóstwa), geografia (9 regionów mapy), sekcja Mapa,
+  źródła (FR Fandom EN/PL, D&D Beyond, Vectorized Realms, Scryfall).
+- **Mapa T2 (przyjęcie):** `maps/forgotten-realms/` — jedyny
+  kompletny wektor Faerûn znaleziony w kwerendzie: **Vectorized
+  Realms** (jonovotny), `faerun-v016-40dpi.svg` (4,29 MB, viewBox
+  3055.4×2043.6). Brak otwartej licencji ⇒ użytkowanie prywatne
+  (projekt prywatny, bez publicznej dystrybucji — decyzja
+  właściciela 2026-09-08); źródło w stopce mapy (wzór podkładów
+  Tarkiru/Innistradu). Podkład bez etykiet ⇒ warstwa
+  `#kodex-etykiety` (9 polskich etykiet regionów) wewnątrz podkładu
+  (model mapome/Śródziemia; T2 inline'uje SVG as-is).
+- **Pinezka (ADR 0043):** 3clb w środku Wybrzeża Mieczy
+  (0.18/0.38, pewność: region) — scena nie nazywa miasta, więc
+  pinezka stoi na rejonie, nie na lokalu.
+- **Research doc:** `maps/_warsztat/RESEARCH_2026-09-08-forgotten-realms-mapa.md`
+  (inwentarz wektorów + SHA-e blobów, weryfikacja wizualna resvg,
+  kwestia licencji, układ współrzędnych, etykiety).
+- **Backlog:** sekcja link-miningu FR — Wybrzeże Mieczy, Avernus,
+  imp, Wojna Hobgoblinów „o jedną kartę” od progu.
+- **Testy:** ui-smoke — 12 kart (`Karty Katalogowe (12)`), 5.
+  materializacja na home = 605SHM (Consign to Dream).
+- Weryfikacja: 164/164 testów, build 25 stron (12 kart, 2 hasła,
+  11 planów), stats 100%.
+
+## 2026-09-08 20:15 — ADR 0043: na mapie oznaczenia noszą wyłącznie karty
+
+- **Reguła systemowa (właściciel):** piny/obwódki na mapie mogą mieć
+  **tylko KARTY**. Geografia nie jest na mapie zaznaczana; jedyny związek
+  strony (karty/hasła/planu) z mapą = **odsyłanie do mapy zbliżonej w
+  określonym miejscu** (deep-link `?x=<0–1>&y=<0–1>`).
+- **Czyszczenie bazy:** hasło `mephidross` traci pinezkę z frontmattera
+  i obwódkę regionu; „Na mapie” = zdanie o położeniu + odsyłanie
+  `#/mapa/mirrodin?x=0.6381&y=0.7787`. Pole `regiony` usunięte ze
+  wszystkich `map.json` (schemat wycofany).
+- **Silnik:** renderowanie obwódek/etykiet regionów haseł usunięte
+  (render-map.js + martwa CSS); **nowy deep-link `?x=&y=`** — centruje i
+  przybliża punkt bez zostawiania znacznika (działa z LOD, jak `?pin=`).
+- **Walidacja na sztywno:** frontmatter `pinezka` poza `karta` = błąd
+  (registry.js); `regiony` w `map.json` = problem (content-loader) +
+  guard test `mapy.test.js` (ADR 0043).
+- **Metryka (ADR 0043):** pinezka = N/A dla haseł **każdej klasy**
+  (maks 6 zamiast 8) — nie tylko niegeograficznych.
+- **Dokumentacja:** ADR 0043 (+ ADR 0015 §2.6 częściowo zastąpione);
+  SZKIELET_HASLA, PETLA_JAKOSCI, PROCES_MAP, PLAN mapforge E5.
+- Weryfikacja: 162/162 testów, build 23 strony, map-audit 0, stats 100%.
+
+## 2026-09-08 18:50 — Pętla Jakości: pełny obieg (metyka, pogłębienie, hasło Mephidross)
+
+- **Metryka:** pinezka w stats nie ma sensu dla haseł bez lokalizacji
+  (szkielet: „Na mapie” tylko `geografia`/`postac`) — komponent N/A
+  dla pozostałych klas (maks 6 zamiast 8); Nowa Phyrexia 75% → 100%.
+  Baza: **100% (średnia 7.9/8), 23 strony**.
+- **Pogłębienie (2 strony):** plan `dominaria` (374 → ~560 słów:
+  kontynenty z ludami i punktami — Wybrani i Pięć Edyktów, Tangle,
+  Zhalfir i bitwa Inwazji, Kabała i Coliseum, Sylex; **korekta:**
+  Sarpadia to ruiny Sarpadyjskich Imperiów (Icatia, Vodalia, Czarne
+  Ręce, Havenwood, upadek ok. 170 AR) — nie „imperium thorne'ów”);
+  karta `305arb-illusory-demon` (paleta wiru = mieszanka many
+  pięciu shardów + boldy Child of Alara/Maelstrom Wanderer).
+- **Link-mining: hasło [[mephidross|Mephidross]]** (geografia,
+  Mirrodin) — próg 2 kart (476mbs + 488som) + plan; wikilinki w 3
+  miejscach; na mapie Mirrodinu **obwódka regionu** (regiony w
+  map.json, pewność region, bbox z kotwic kanonicznych). Kolejka
+  „o jedną kartę” od progu: ~35 encji w backlogu.
+- **Pass mapowy:** pinezki 11/11 kart (frontmatter + map.json),
+  map-audit 0, nowa obwódka regionu hasła (mechanizm `regiony`
+  po raz pierwszy użyty).
+- Weryfikacja: 161/161 testów, build 23 strony (11 kart, 2 hasła,
+  10 planów), map-audit 0, stats 100%.
+
+## 2026-09-08 18:45 — Naprawa CI: build mini-map bez ImageMagick (czysty JS)
+
+- **Czerwony CI od 17:24 (regresja z deduplikacji ZIP-a) naprawiona.**
+  Przyczyna: build mini-map używał `convert` (ImageMagick), którego nie
+  ma na runnerach GitHub (ubuntu-latest 24.04) — build cicho spadał na
+  pełną bazę, a bramka testowa (resvg dostępny) odrzucała drzewo.
+- **Nowy łańcuch (ADR 0027 v3, korekta):** wyłącznie devDependency npm,
+  zero binarików systemowych — resvg (SVG→PNG) + `pngjs`/`jpeg-js`
+  (czysty JS: dekodowanie, skalowanie bilinearnie do 800 px, JPEG q80).
+- Weryfikacja: build + 161/161 testów w środowisku **bez** `convert`
+  (symulacja runnera) i z nim; mini 57–216 kB (bramka ≤ 400 kB);
+  ZIP ~62,3 MB (200 plików).
+
+## 2026-09-08 18:10 — Głos Kronikarza: narracja kart 100% w świecie (ADR 0042)
+
+- **Decyzja właściciela (po recenzji Expunge):** „aż do części
+  Mechanika jako opowieść całość treści jest 100% osadzona w Lore” —
+  wpis karty czytany ma być jak fragment kroniki świata. Język procesu
+  (karta, Fabuła, Kodeks, kolekcja, kanon, Scryfall, oracle, print,
+  flavor, snapshot, dostawa, reguła karty, epoka karty, „most”)
+  zabroniony w narracji do sekcji „Mechanika jako Opowieść”; żyje tylko
+  w frontmatter/infoboksie/Mechanice/Źródłach.
+- **ADR 0042** + wycofany ADR 0030 §5 („skrajnie zwięźle”) + słowniczek
+  zastępczy: scena/ryt/zapis, inskrypcja, kronikarz dopowiada,
+  mechanika rytu, fakt świata.
+- **Skan katalogu: meta-język w narracji miały wszystkie 11 kart**
+  (w tym przepisany Expunge) — ~70 poprawek zdaniowych; fakty
+  (miejsc, bytów, epok, pinezek) bez zmian.
+- **Strażnik:** `test/glos-kronikarza.test.js` — 26 terminów meta na
+  ciało sekcji narracyjnych każdej karty ze snapshotem + regresja
+  40USG; **161/161 testów**.
+
+## 2026-09-08 17:30 — ZIP lżejszy o 28 MB: mini-mapy z miniatur, koniec dublowania map
+
+- **Pytanie o ZIP rozstrzygnięte i naprawione.** Strony map inlinowały
+  całe wektorowe podkłady (musi tak być — `file://` blokuje `fetch`),
+  a te same pliki leżały w katalogach `maps/<plan>/` — dublet wart
+  ~28,8 MB (32% ZIP-a). Do tego mini-mapa planów T4 dociągała CAŁY
+  8,3 MB SVG jako thumbnail.
+- **Nowy stan (ADR 0027 v3):** mini-mapa = **mini.jpg generowany w
+  buildzie** (screenshot bazy, 800 px, ~50–160 kB — pinezka rysowana
+  na niej w dokładnych współrzędnych, jak dotąd). Katalogi `maps/`
+  zawierają tylko to, co strona mapy dociąga `<img>` (rastry, kafle) —
+  zero SVG-ów, zero dubletów.
+- **Efekt: ZIP 90,5 → 62,1 MB (−31%)**; mini-mapa Lorwynu waży teraz
+  92 kB zamiast 8,3 MB.
+
+## 2026-09-08 16:55 — Dominaria: mapa wraca do reguł, pinezka zmierzona na podkładzie
+
+- **Deep-zoom „Aerony” znika z mapy** — decyzją właściciela nic nowego
+  nie wnosił (wycinek tej samej dużej mapy). Mapa Codexu to teraz dwa
+  elementy: jedna całościowa mapa FHD + kafelkowa od pewnego zoomu
+  (ADR 0041). Raster 1,6 MB zniknął z repo i z pobieranego ZIP-a.
+- **Pinezka [[40usg-expunge|Expunge]] zmierzona na podkładzie M1**
+  (nie z ilustracji karty — to procedura, ADR 0040): ikona Cathedral
+  of Serra na masterze, pixel (1569, 1979) → (0.1937, 0.3806).
+  Pewność: region — Fabuła nie wskazuje podwórka.
+- **Karta Expunge przepisana w całości** — scena oparta na Fabule
+  właściciela i kanonie (złotoskrzydły wojownik Serran nad katedrą,
+  ~3780 AR), nie na odczycie ilustracji. Nowy test pilnuje całego
+  katalogu kart: zero nawiązań do oryginalnych ilustracji, zero
+  wignet, zero nazw artystów w treści (ADR 0040).
+- Strona planu [[dominaria|Dominarii]] zyskała sekcje „Mapa” i
+  „Źródła”, a pełny build czyści `dist/` — plik usunięty z repo
+  znika z drzewa i ZIP-a (stare 1,6 MB przetrwałyby w archiwum do
+  tej sesji).
+
 ## 2026-09-08 14:45 — Audyt PR-23: jezioro bez nazwy nocą, proweniencja kotwic Innistradu
 
 - **Lorwyn:** nazwa „Source of Lanes” znika z nocnego oblicza mapy —

@@ -38,6 +38,14 @@ import { escapeHtml } from './markdown.js';
 import { dajDane } from './data.js';
 import { nieZnalesc, stanPusty, stopkaCzasu } from './render.js';
 
+/** Surowy markup SVG podkładu → inline z klasą `mapa-podklad`.
+ *  Tag korzenia może być po nim śladem (spacja, NOWA LINIA — eksport
+ *  wektorowy nie jest jednorodny) albo `>`; pusty string = nie-SVG. */
+function doMarkupPodkladu(markup) {
+  if (typeof markup !== 'string' || !/<svg[\s>]/.test(markup)) return '';
+  return markup.replace(/<svg(?=[\s>])/, '<svg class="mapa-podklad"');
+}
+
 /** Dekoduje base64 data-URI SVG do surowego znacznika (inline). */
 function podkladSvgMarkup(dataUri) {
   const m = /^data:image\/svg\+xml;base64,(.*)$/.exec(dataUri);
@@ -46,7 +54,7 @@ function podkladSvgMarkup(dataUri) {
     const bin = atob(m[1]);
     const bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
     const markup = new TextDecoder('utf-8').decode(bytes);
-    return markup.includes('<svg ') ? markup.replace('<svg ', '<svg class="mapa-podklad" ', 1) : '';
+    return doMarkupPodkladu(markup);
   } catch (e) {
     return '';
   }
@@ -257,8 +265,9 @@ export function czyPokazacL2(kWizualna, prog, widoczny, bbox) {
 /** Surowy markup podkładu SVG: wstrzyknięty markup (strona mapy) albo
  *  base64 (dane inline). Pusty string = markup niedostępny. */
 function surowyMarkupPodkladu(mapa) {
-  if (mapa.podkladMarkup && mapa.podkladMarkup.includes('<svg ')) {
-    return mapa.podkladMarkup.replace('<svg ', '<svg class="mapa-podklad" ', 1);
+  if (mapa.podkladMarkup) {
+    const inline = doMarkupPodkladu(mapa.podkladMarkup);
+    if (inline) return inline;
   }
   if (mapa.podkladData) return podkladSvgMarkup(mapa.podkladData);
   return '';
@@ -290,6 +299,9 @@ export function renderMapeIframe(slugPlanu, query = {}) {
   const zapytanie = new URLSearchParams();
   if (query.pin) zapytanie.set('pin', query.pin);
   if (query.epoka && warianty.some((w) => w.id === query.epoka)) zapytanie.set('epoka', query.epoka);
+  // ADR 0043: odsyłanie strony do mapy zbliżonej w określonym miejscu.
+  if (query.x) zapytanie.set('x', query.x);
+  if (query.y) zapytanie.set('y', query.y);
   const pin = zapytanie.toString() ? `?${zapytanie}` : '';
   const atrybucja = (z) => `<a href="${escapeHtml(z?.url ?? '#')}" rel="noopener noreferrer" target="_blank">${escapeHtml(z?.tytul ?? 'źródło')}</a>
       — ${escapeHtml(z?.autor ?? '?')}, licencja ${escapeHtml(z?.licencja ?? '?')}${z?.pobrano ? `, pobrano ${escapeHtml(z.pobrano)}` : ''}`;
@@ -303,7 +315,7 @@ export function renderMapeIframe(slugPlanu, query = {}) {
   <article class="mapa-strona">
     <header class="mapa-naglowek">
       <h1>Mapa: ${escapeHtml(mapa.tytul ?? slugPlanu)}</h1>
-      <p class="meta">pinezki kart: ${pinezki.length} · regiony: ${(mapa.regiony ?? []).length}</p>
+      <p class="meta">pinezki kart: ${pinezki.length}</p>
     </header>
 
     <iframe class="mapa-iframe" src="${escapeHtml(mapa.stronaMapy)}${pin}"
@@ -389,8 +401,16 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
   }
 
   const pinezki = mapa.pinezki ?? [];
-  const regiony = mapa.regiony ?? [];
   const pinDocelowy = query.pin && pinezki.some((p) => p.karta === query.pin) ? query.pin : '';
+  // ADR 0043: deep-link miejsca (?x=&y=, współrzędne normalizowane) —
+  // odsyłanie strony do mapy zbliżonej w określonym miejscu, BEZ znacznika.
+  // Uwaga: pusty string = BRAK parametru, a Number('') = 0 — bez strazy
+  // każda mapa bez query centrowała się w rogu (0,0) z zoomem deep-linka.
+  const xDocelowy = query.x ? Number(query.x) : NaN;
+  const yDocelowy = query.y ? Number(query.y) : NaN;
+  const docelMiejsca = Number.isFinite(xDocelowy) && Number.isFinite(yDocelowy)
+    && xDocelowy >= 0 && xDocelowy <= 1 && yDocelowy >= 0 && yDocelowy <= 1
+    ? { x: xDocelowy, y: yDocelowy } : null;
 
   // Warianty podkładu (ADR 0035): układ ZŁOTY współrzędnych = wariant
   // domyślny; start z `?epoka=<id>` albo domyślny.
@@ -407,22 +427,6 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
   const maLOD = nakladkiL2.length > 0 || scenyWarianty.some((w) => w.kafle);
   const szer = start.wymiary?.szerokosc ?? mapa.wymiary?.szerokosc ?? 3200;
   const wys = start.wymiary?.wysokosc ?? mapa.wymiary?.wysokosc ?? 2400;
-
-  // Obwódki regionów: SVG w układzie danego wariantu (bbox przeliczony
-  // kalibracją); wariant bez etykiet Codexu (czysty raster) ich nie ma.
-  const svgRegionyDla = (w) => (w.etykiety ? regiony : []).map((r) => {
-    const [x0, y0, x1, y1] = r.bbox ?? [];
-    if ([x0, y0, x1, y1].some((v) => typeof v !== 'number')) return '';
-    const p = POZIOMY_PEWNOSCI[r.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
-    const W = w.wymiary?.szerokosc ?? szer;
-    const H = w.wymiary?.wysokosc ?? wys;
-    const [ax, ay] = doUkladuWariantu(w, x0, y0);
-    const [bx, by] = doUkladuWariantu(w, x1, y1);
-    return `<a href="#/haslo/${escapeHtml(r.haslo)}" class="mapa-region-link" aria-label="Region: ${escapeHtml(r.haslo)}">
-      <rect class="mapa-region" x="${ax * W}" y="${ay * H}" width="${(bx - ax) * W}" height="${(by - ay) * H}"
-        fill="${p.kolor}22" stroke="${p.kolor}" stroke-width="7" stroke-dasharray="20 14" rx="24"/>
-    </a>`;
-  }).join('');
 
   const htmlPinezki = pinezki.map((p) => {
     const karta = dane.strony?.[p.karta];
@@ -446,6 +450,26 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
   // w scenie ZŁOTEJ (dziedziczą jej pan/zoom; przy przełączeniu epoki
   // chowają się razem ze złotą sceną). Etykiety Codexu ich nie dotyczą
   // (T1 ma własne napisy na rastrze).
+  // Warstwa POI (decyzja właściciela 2026-09-08, FR): najważniejsze punkty
+  // odniesienia (miasta, huby archipelagów) jako małe złote kółka POD
+  // warstwą kafelków L1 — w fazie L0 widoczne na rastrze, po doładowaniu
+  // kafli pokryte drukiem mastera. Dane: mapa.poi[] (x,y 0–1 w układzie
+  // złotym). Bez etykiet (nazwy niesie raster) i bez interakcji
+  // (pointer-events none) — kotwice pod przyszłe pinezki kart (ADR 0043:
+  // piny na mapach = tylko karty).
+  const htmlPoi = (W, H) => {
+    const lista = Array.isArray(mapa.poi) ? mapa.poi : [];
+    const punkty = lista.filter((p) => Number.isFinite(Number(p.x)) && Number.isFinite(Number(p.y)));
+    if (punkty.length === 0) return '';
+    const r = Math.max(8, W / 320);
+    const koly = punkty.map((p) => {
+      const x = Math.min(1, Math.max(0, Number(p.x))) * W;
+      const y = Math.min(1, Math.max(0, Number(p.y))) * H;
+      return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}"${p.nazwa ? ` data-poi="${escapeHtml(String(p.nazwa))}"` : ''}/>`;
+    }).join('');
+    return `<svg class="mapa-poi" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">${koly}</svg>`;
+  };
+
   const htmlKafle = (w) => {
     if (!w.kafle) return '';
     const kf = w.kafle;
@@ -507,19 +531,9 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
       style="left:${(bx * 100).toFixed(2)}%;top:${(by * 100).toFixed(2)}%${kolorPisma}">${e.tresc}</span>`;
   })).join('');
 
-  const htmlRegionyEtykiety = regiony.map((r) => {
-    const [x0, y0, x1, y1] = r.bbox ?? [];
-    if ([x0, y0, x1, y1].some((v) => typeof v !== 'number')) return '';
-    const haslo = dane.strony?.[r.haslo];
-    const poz = POZIOMY_PEWNOSCI[r.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
-    return `<a href="#/haslo/${escapeHtml(r.haslo)}" class="mapa-etykieta-regionu${start.etykiety ? '' : ' poza-epoka'}" data-region-etykieta
-      data-x="${(x0 + x1) / 2}" data-y="${y0}" style="--kolor:${poz.kolor}">
-      <span>${escapeHtml(haslo?.tytul ?? r.haslo)}</span></a>`;
-  }).join('');
-
-  // Sceny podkładów: każdy wariant ma własną scenę (podkład + obwódki
-  // regionów w swoim układzie); widoczna jest jedna, przełącznik zmienia
-  // `hidden` i przelicza widok kalibracją (bez utraty zoomu/pinezek).
+  // Sceny podkładów: każdy wariant ma własną scenę (podkład w swoim
+  // układzie); widoczna jest jedna, przełącznik zmienia `hidden` i
+  // przelicza widok kalibracją (bez utraty zoomu/pinezek).
   const wieleSvgT4 = sceny.filter(({ w, podkladMarkup }) => podkladMarkup && (w.wariant ?? mapa.wariant) === 'T4').length > 1;
   const htmlSceny = sceny.map(({ w, podkladMarkup }, i) => {
     const W = w.wymiary?.szerokosc ?? szer;
@@ -536,9 +550,9 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
           data-sx="${k.sx}" data-sy="${k.sy}" data-ox="${k.ox}" data-oy="${k.oy}" data-etykiety="${w.etykiety ? '1' : '0'}"${czyZlota ? ' data-zloty="1"' : ''}
           style="aspect-ratio: ${W} / ${H}"${w.id === start.id ? '' : ' hidden'}>
           ${podklad}
+          ${htmlPoi(W, H)}
           ${htmlKafle(w)}
           ${czyZlota ? htmlNakladkiL2 : ''}
-          <svg class="mapa-regiony" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">${svgRegionyDla(w)}</svg>
         </div>`;
   }).join('\n        ');
 
@@ -561,15 +575,15 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
   <article class="mapa-strona${osadzona ? ' mapa-strona-osadzona' : ''}">
     ${osadzona ? '' : `<header class="mapa-naglowek">
       <h1>Mapa: ${escapeHtml(mapa.tytul ?? slugPlanu)}</h1>
-      <p class="meta">pinezki kart: ${pinezki.length} · regiony: ${regiony.length}</p>
+      <p class="meta">pinezki kart: ${pinezki.length}</p>
     </header>`}
     <div class="mapa-okno" id="mapa-okno" tabindex="0" role="application"
       aria-label="Mapa ${escapeHtml(mapa.tytul ?? slugPlanu)}: przeciągnij, aby przesunąć, kółko myszy, aby przybliżyć"
-      data-plan="${escapeHtml(slugPlanu)}" data-pin="${escapeHtml(pinDocelowy)}" data-aspekt="${szer / wys}" data-epoka="${escapeHtml(start.id)}"${regionQuery ? ` data-region="${escapeHtml(regionQuery.id)}"` : ''}${maLOD ? ' data-kmax="22"' : ''}>
+      data-plan="${escapeHtml(slugPlanu)}" data-pin="${escapeHtml(pinDocelowy)}" data-aspekt="${szer / wys}" data-epoka="${escapeHtml(start.id)}"${docelMiejsca ? ` data-x="${docelMiejsca.x}" data-y="${docelMiejsca.y}"` : ''}${regionQuery ? ` data-region="${escapeHtml(regionQuery.id)}"` : ''}${maLOD ? ' data-kmax="22"' : ''}>
       <div class="mapa-ruch" data-mapa-ruch>
         ${htmlSceny}
       </div>
-      <div class="mapa-nakladka" data-mapa-nakladka>${htmlEtykietyPodkladu}${htmlPinezki}${htmlRegionyEtykiety}</div>${htmlEpoki}
+      <div class="mapa-nakladka" data-mapa-nakladka>${htmlEtykietyPodkladu}${htmlPinezki}</div>${htmlEpoki}
     </div>
 
     ${osadzona ? '' : `${pinezki.length > 0 ? `
@@ -925,7 +939,7 @@ export function zamontujMape(app, opcje = {}) {
     }
 
     // Pass 3 — pozycjonowanie wszystkich markerów nakładki.
-    for (const el of nakladka.querySelectorAll('[data-pinezka], [data-region-etykieta], [data-podklad-etykieta]')) {
+    for (const el of nakladka.querySelectorAll('[data-pinezka], [data-podklad-etykieta]')) {
       if (el.dataset.ax) {
         // Etykieta obiektowa: kotwica obiektu + strona/piętro z Pass 2.
         const px = (parseFloat(el.dataset.ax) * w * stan.k + stan.ox).toFixed(2);
@@ -1003,6 +1017,33 @@ export function zamontujMape(app, opcje = {}) {
     }
   }
 
+  // ADR 0043: deep-link miejsca ?x=&y= (współrzędne normalizowane, układ
+  // złoty) — odsyłanie strony (karty/hasła/planu) do mapy zbliżonej w
+  // określonym miejscu. Centruje i przybliża JAK ?pin=, ale BEZ zostawiania
+  // znacznika na mapie (na mapie oznaczenia noszą wyłącznie karty).
+  const docelX = okno.getAttribute?.('data-x');
+  const docelY = okno.getAttribute?.('data-y');
+  if (docelX !== null && docelY !== null && docelX !== '' && docelY !== '') {
+    const gx = parseFloat(docelX);
+    const gy = parseFloat(docelY);
+    if (Number.isFinite(gx) && Number.isFinite(gy) && gx >= 0 && gx <= 1 && gy >= 0 && gy <= 1) {
+      const w = szerokoscSceny();
+      const h = wysokoscSceny();
+      const wysOkna = okno.clientHeight || h;
+      const px = kal.ox + kal.sx * gx;
+      const py = kal.oy + kal.sy * gy;
+      stan.k = 2.5 / kal.sx; // ten sam wizualny zoom co deep-link ?pin=
+      // LOD: miejsce w bbox nakładki → od razu zoom z jej progiem (ADR 0039 §6).
+      for (const n of nakladki) {
+        if (wBbox(gx, gy, n.bbox)) {
+          stan.k = Math.min(Math.max(stan.k, (n.prog * 1.1) / kal.sx), K_MAX);
+        }
+      }
+      stan.ox = (okno.clientWidth || w) / 2 - px * w * stan.k;
+      stan.oy = wysOkna / 2 - py * h * stan.k;
+    }
+  }
+
   // ?epoka=<nakładka-L2> (ADR 0039): dopasuj widok do jej bbox — deep-link regionu.
   const regionDocelowy = okno.getAttribute?.('data-region') ?? '';
   if (regionDocelowy) {
@@ -1054,10 +1095,6 @@ export function zamontujMape(app, opcje = {}) {
     }
     for (const el of nakladka?.querySelectorAll('[data-podklad-etykieta]') ?? []) {
       el.classList.toggle('poza-epoka', el.getAttribute('data-epoka') !== id);
-    }
-    const bezEtykiet = cel.getAttribute('data-etykiety') === '0';
-    for (const el of nakladka?.querySelectorAll('[data-region-etykieta]') ?? []) {
-      el.classList.toggle('poza-epoka', bezEtykiet);
     }
     stanUkladu.k = -1;                                // wymuś nowy układ etykiet
     nanies();

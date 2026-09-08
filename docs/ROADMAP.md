@@ -33,8 +33,9 @@ karty** — kliknięcie pinezki otwiera Kartę Katalogową na zmaksymalizowanej
 warstwie nad mapą, zamykanej ✕/tłem/Esc z powrotem do mapy w tym samym
 stanie zoomu (progressive enhancement: bez JS pinezka jest zwykłym
 linkiem). Regiony/obwódki haseł geograficznych NIE są zadaniem (wątek
-zamknięty decyzją właściciela 2026-09-05); dalszy rozwój po dostawach
-kolejnych kart.
+zamknięty decyzją właściciela 2026-09-05; **ADR 0043, 2026-09-08: na
+mapie oznaczenia noszą wyłącznie karty** — hasła łączą się z mapą
+odsyłaniem `?x=&y=`); dalszy rozwój po dostawach kolejnych kart.
 
 ## K5 — Pętla Jakości operacyjna — **domknięte (PR-3, 2026-08-31)**
 
@@ -312,6 +313,29 @@ Aerony). Scalony 2026-09-08 12:17 UTC (squash `eca14c0`). **Finalnie:
 143 testy; 20 stron = 10 kart, 1 hasło, 9 planów**; PR #22 zamknięty
 jako wchłonięty. Handoff/opis PR nie nadążyły za końcówką (L9 — patrz
 audyt `docs/audits/AUDYT_2026-09-08-PR23.md`, znalezisko F2).
+
+**PR-25 (2026-09-08) — audyt scalonego PR-24 + naprawy treści + decyzja o mapie Dominarii:**
+audyt scalonego PR-24 (Dominaria T1 + podmapa Aerony D1; 81 plików)
+wykazał wady proceduralne: wnioskowanie z oryginalnej ilustracji karty
+(F1 — zabronione, **ADR 0040**), podmapa jako wycinek bazy bez nowego
+detalu (F2 — **ADR 0041**), pinezka z ilustracji zamiast z podkładu (F4).
+Naprawione w tym PR: karta Expunge przepisana z Fabuły + kanonu,
+strażnik `test/druk-zrodlowy.test.js` (zero nawiązań do ilustracji/
+wignet/artystów w katalogu kart), strona planu „Mapa” + „Źródła”,
+errata researchu. Po decyzji właściciela: **L2 „Domeny” i
+`aerona.jpg` usunięte** (mapa = całość FHD + kafelki od zoomu);
+pinezka 40USG zmierzona na M1 master (px 1569,1979 → 0.1937,0.3806;
+pewność: region); kotwice bez D1. **Build:** pełny build czyści `dist/`
+(usunięte pliki znikają z drzewa i ZIP-a). **Kontynuacja (recenzja
+właściciela odpowiedzi o ZIP):** wektorowe bazy dublowane w ZIP-ie
+(~28,8 MB; mini-mapy T4 dociągały pełny 8,3 MB SVG) → **ADR 0027 v3**:
+mini-mapa = `mini.jpg` generowany w buildzie (800 px, q80;
+`@resvg/resvg-js` dev-only, silnik zero-dependency, CI `npm ci`;
+fallback ImageMagick → pełna baza), drzewo bez wektorowych baz,
+pole `miniatura` wycofane. **ZIP 90,5 → 62,1 MB (−31%)**.
+**159 testów; 22 strony = 11 kart, 1 hasło, 10 planów**; map-audit 0.
+Raporty: `docs/audits/AUDYT_2026-09-08-PR24.md`,
+`docs/plans/PLAN_2026-09-08-pr25-dominaria-l2-i-druk-zrodlowy.md`.
 
 ## Wątki otwarte (czekają na decyzję właściciela)
 

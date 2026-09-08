@@ -215,6 +215,22 @@ takim materiale — ADR 0038 §2).
 4. M1 w całości (9,65 MB) czy po rekompresji? (decyzja właściciela przy dostawie rastra)
 5. Zakres kotwic świata — propozycja ~20–30; gęściej dopiero z kartami (F5).
 
+## Errata (2026-09-08, sesja PR-25 — audyt `docs/audits/AUDYT_2026-09-08-PR24.md`)
+
+1. §0 „brak flavor textu (**scena pochodzi w całości z odczytu artu**)”
+   — **sformułowanie niezgodne z procedurą**: scena pochodzi z Fabuły
+   właściciela (verbatim w `collection/entries/40usg-expunge.md`),
+   nie z odczytu ilustracji (ADR 0040).
+2. Rekomendacja §5 (nakładka L2 „Domeny” z D1) została wykonana
+   w PR-24 i **wycofana decyzją właściciela 2026-09-08** (ADR 0041):
+   nakładka nie wnosiła detalu — toponimia mastera M1 pokrywa rejon
+   (Cathedral of Serra, Sursi, Kish są nazwane na M1); pinezka 40USG
+   zmierzona wprost na masterze M1, px (1569, 1979).
+3. §5.2 „Sufit pewności: region — katedra z dziedzińcem nie jest
+   oznaczona na żadnej mapie” — **nieprawdziwa przesłanka**: katedra
+   jest oznaczona ikoną i etykietą (M1 i D1); pewność region wynika
+   z Fabuły (nieoznaczony dziedziniec), nie z braku oznaczenia.
+
 ## 7. Źródła
 
 - Karta: Expunge (USG) — Scryfall API (`/cards/named?exact=expunge&set=usg`):

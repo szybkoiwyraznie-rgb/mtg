@@ -1,0 +1,24 @@
+{
+ "narzedzie": "tools/kafle.mjs (ADR 0039)",
+ "master": {
+  "plik": "master.jpg",
+  "szerokosc": 4763,
+  "wysokosc": 3185
+ },
+ "rozmiar": 512,
+ "kolumny": 10,
+ "wiersze": 7,
+ "format": "jpg",
+ "wzorzec": "kafle/k{nnn}.jpg (row-major, zero-padded)",
+ "l0": {
+  "plik": "l0.jpg",
+  "szerokosc": 1920,
+  "wysokosc": 1284
+ },
+ "mini": {
+  "plik": "mini.jpg",
+  "szerokosc": 800,
+  "wysokosc": 535
+ },
+ "jakosc": 82
+}

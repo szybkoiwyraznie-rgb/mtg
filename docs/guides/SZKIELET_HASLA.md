@@ -48,7 +48,9 @@ materializacja: YYYY-MM-DD
 
 ## Na mapie
 
-<tylko dla klasy geografia/lokacja: region/obwódka na mapie planu>
+<dla encji z ustaloną lokalizacją: zdanie o położeniu + JEDNO odsyłanie
+do mapy zbliżonej w określonym miejscu — ADR 0043: hasło NIE ma pinezki
+ani obwódki na mapie (na mapie oznaczenia noszą wyłącznie karty)>
 
 ## Źródła
 
@@ -81,7 +83,7 @@ obrys na mapie). Nowa klasa = zmiana tego gidu + ADR 0005 (świadomie).
 | **Pochodzenie MtG** (opcjonalna) | Skoro encja bywa transpozycją: jaki element MtG/karty jest źródłem. Dla encji czysto settingowych — brak sekcji. |
 | **W kolekcji** | Liczone automatycznie (backlinki) — NIE wpisuje się ręcznie. |
 | **Powiązane hasła** | Wikilinki z jednym zdaniem uzasadnienia. |
-| **Na mapie** | Tylko `geografia`/`postac` z ustaloną lokalizacją: region/obwódka + pewność. |
+| **Na mapie** | Dla encji z ustaloną lokalizacją: zdanie o położeniu + JEDNO odsyłanie do mapy zbliżonej w określonym miejscu (`#/mapa/<plan>?x=<0–1>&y=<0–1>`). ADR 0043: hasło NIE ma pinezki ani obwódki na mapie — na mapie oznaczenia noszą wyłącznie karty. |
 | **Źródła** | Jak w Karcie Katalogowej: link + co zaczerpnięto; „wiedza ogólna" bez URL-a oznaczona. Obowiązkowe. |
 
 ## Dobre praktyki

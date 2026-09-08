@@ -20,7 +20,7 @@ Nad ziemią stoi największa świątynia planu, opasana pierścieniami
 murów; pod nią schodzą archiwa, skarbce i katakumby — w jednej z nich
 pochowano potajemnie lunarchę **Mikaeusa**, a wraz z nim tajemnicę
 zniknięcia archanioła. To właśnie w tych najniższych poziomach zaczyna
-się scena tej karty.
+się ta scena.
 
 Kościół [[innistrad|Innistradu]] słabnie. Avacyn zniknęła — w istocie
 została uwięziona w **Helvaulcie**, srebrnej bryle stojącej w trójkątnym
@@ -73,7 +73,7 @@ z coraz mniejszym wsparciem świętej magii, która przestała odpowiadać
 na wezwania.
 
 **Lekkomyślni przywoływacze** — ci, którzy otwarli potworom drogę.
-Karta nie mówi, czy byli to kultyści Skirsdag, czy zwykli głupcy
+Zapis nie mówi, czy byli to kultyści Skirsdag, czy zwykli głupcy
 igrający z mocą ponad ich rozeznanie. Jedno i drugie zdarza się na
 Innistradzie równie często, a rezultat jest identyczny: przywołany
 diabeł rani również tego, kto go przywołał.
@@ -88,7 +88,7 @@ warstwy są w tej chwili zagrożone przez stworzenie wielkości dziecka.
 **Forge Devil** — „diabeł kuźni”. Nazwa łączy dwa źródła. Pierwsze to
 narzędzie i żywioł: żeliwny pręt, iskry, ogień, rozgrzany metal —
 diabeł zachowuje się jak kowal, tyle że jego rzemiosłem jest rozbijanie.
-Drugie to sam charakter tych istot, opisany w kanonie jako „infernalni
+Drugie to sam charakter tych istot, opisany w kronice jako „infernalni
 sprawcy złośliwej psoty", którzy najlepszą robotę wykonują sabotując
 rzeczy wartościowe. *Forge* jest tu ironią: kuźnia to miejsce, gdzie
 z ognia powstaje kształt. Ten diabeł odwraca kierunek — bierze ogień
@@ -113,20 +113,20 @@ w miejscu, którego nikt nie pilnuje, bo do niedawna nie było trzeba.
 
 ## Transpozycja
 
-Fabuła osadza scenę dokładnie tam, gdzie umieszcza
-ją flavor: w **najniższych poziomach Katedry w Thraben**, pośród
-archiwów Kościoła. Elementy sceny mają pokrycie w kanonie:
+Kronikarz osadza scenę dokładnie tam, gdzie umieszcza
+ją inskrypcja: w **najniższych poziomach Katedry w Thraben**, pośród
+archiwów Kościoła. Elementy sceny mają pokrycie w kronice:
 
-- **Diabły w podziemiach katedry** — wprost z tekstu tej karty.
+- **Diabły w podziemiach katedry** — wprost z inskrypcji sceny.
 - **Bezmyślne niszczenie** — diabły to popędy demonów przybrane
   w ciało, „okrutne i uradowane cudzym bólem", bez troski o czyjekolwiek
   bezpieczeństwo, także własne.
-- **Sabotaż konstrukcji** — kanon podaje sabotaż i podjudzanie do
+- **Sabotaż konstrukcji** — kronika podaje sabotaż i podjudzanie do
   przemocy jako właściwą specjalność diabłów, skuteczniejszą niż walka.
 - **Rana zadana katarom i przywoływaczom naraz** — bezpośrednie
-  odczytanie mechaniki karty przez pryzmat chaotycznej natury stwora.
+  odczytanie mechaniki rytu przez pryzmat chaotycznej natury stwora.
 - **Płonące archiwa jako źródło światła** — obraz własny opowieści,
-  ale spójny z tekstem karty: to, co się pali, jest tu jedyną lampą.
+  ale spójny z inskrypcją: to, co się pali, jest tu jedyną lampą.
 
 Rozstrzygnięcie chronologiczne: scena należy do epoki *Dark Ascension*,
 gdy Avacyn jest jeszcze uwięziona w Helvaulcie, a Kościół słabnie. To
@@ -138,7 +138,7 @@ się znacznie więcej; wtedy nie potrzebowałyby żadnych przywoływaczy.
 ## Na Mapie
 
 Pinezka stoi na **Thraben**, w północnej Gavony — pewność
-**dokładna**, bo miejsce podaje wprost tekst karty. Miasto leży na
+**dokładna**, bo miejsce podaje wprost inskrypcja. Miasto leży na
 płaskowyżu przy ujściu rzeki **Kirch**, która spada obok niego do morza
 dwutysięcznostopowym wodospadem, i jest opasane wieloma pierścieniami
 murów. Katedra stoi w jego obrębie; scena rozgrywa się pod nią.
@@ -146,7 +146,7 @@ murów. Katedra stoi w jego obrębie; scena rozgrywa się pod nią.
 Warto zestawić tę pinezkę z dwoma innymi punktami mapy. **Ashmouth**
 w centrum Geier Reach w Stensii i **Devils' Breach** na południu
 Kessigu to dwie bramy do świata demonów i diabłów — obie daleko od
-Thraben, obie za pasmami gór albo za wielkim lasem. Diabeł z tej karty
+Thraben, obie za pasmami gór albo za wielkim lasem. Diabeł z tej sceny
 nie przyszedł stamtąd pieszo. Ktoś go **przywołał** na miejscu, w sercu
 najlepiej strzeżonego miasta planu. Odległość na mapie jest częścią
 zarzutu.
@@ -176,7 +176,7 @@ nieznaczący, wszystkie razem zdolne zawalić sklepienie.
 
 ## Źródła
 
-1. [Forge Devil — Scryfall](https://scryfall.com/card/dka/91/forge-devil) — dane druku, tekst wyroczni i flavor; ilustracja: Austin Hsu, *Dark Ascension* (3 lutego 2012).
+1. [Forge Devil — Scryfall](https://scryfall.com/card/dka/91/forge-devil) — dane druku, tekst wyroczni i flavor.
 2. [Plane Shift: Innistrad](https://media.wizards.com/2016/dnd/downloads/Plane_Shift_Innistrad.pdf) — opis diabłów: wzrost trzech–czterech stóp, igiełkowate zęby, sabotaż i podjudzanie jako właściwa specjalność.
 3. [Archive Trap: The World of Innistrad](https://www.mtgsalvation.com/articles/49486-archive-trap-the-world-of-innistrad) — diabły jako sprawcy okrutnych psot kierowani przez demony; Skirsdag w hierarchii Kościoła; położenie Thraben i Katedry.
 4. [The Prison of Silver](https://mtglore.com/web-articles/the-prison-of-silver/) — uwięzienie Avacyn w Helvaulcie i zanik świętej mocy, czyli powód, dla którego diabły mogły wejść do katedry.
