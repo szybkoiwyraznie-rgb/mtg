@@ -1,3 +1,31 @@
+## 2026-09-08 12:20 — Iskry w archiwum: Innistrad wchodzi do Kodeksu
+
+- **Nowy plan:** [[innistrad|Innistrad]] — gotycki horror, cztery
+  prowincje wokół **Thraben**, jeden srebrny księżyc i Kościół, którego
+  archanioł zniknął. Strona planu opisuje geografię, **Helvault**,
+  pęknięcie Kościoła Avacyn i osobliwe rozróżnienie: demony knują,
+  a diabły są ich popędami przybranymi w ciało.
+- **Nowa karta:** [[393dka-forge-devil|Forge Devil]] (DKA) — dziesiąta
+  karta kolekcji. W najniższych poziomach Katedry w Thraben diabeł
+  rozbija żeliwnym prętem filar nośny, a wokół płoną bezcenne archiwa
+  Kościoła. Rykoszetujący gruz rani i katarów, i tych, którzy potwora
+  przywołali.
+- Sedno sceny: to nie atak, tylko **osłabianie**. Diabeł nie wygra
+  z katarem, więc podcina to, na czym stoi ich świat — konstrukcję
+  i pamięć. Mechanika mówi dokładnie to samo: jedno obrażenie w cel,
+  drugie zawsze we własną stronę.
+- **Mapa Innistradu** to pierwszy w Kodeksie podkład **T1** poza
+  Tarkirem: raster 4096×3072 dostarczony przez właściciela, z 64
+  kotwicami zweryfikowanymi w kanonie tekstowym. Oficjalnej mapy planu
+  Wizards nigdy nie wydał, więc kanoniczny podkład nie istnieje.
+- Pinezka stoi na **Thraben** z pewnością **dokładną** — miejsce podaje
+  wprost tekst karty. Na mapie widać, jak daleko stąd do **Ashmouth**
+  i **Devils' Breach**, dwóch bram do świata diabłów: ten stwór nie
+  przyszedł pieszo, ktoś go wpuścił.
+- Drabinę wyboru wariantów map (**T2 → T1 → T3 → T4**) utrwalono
+  w nowym ADR 0038 wraz z zasadą, że rekonstrukcja z samego tekstu jest
+  ostatecznością wymagającą uzasadnienia.
+
 ## 2026-09-08 11:40 — Niegodny konsekracji: biała Phyrexia na Mirrodinie
 
 - **Nowa karta:** [[476mbs-banishment-decree|Banishment Decree]] (MBS,

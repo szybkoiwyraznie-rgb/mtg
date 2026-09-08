@@ -1,0 +1,614 @@
+{
+ "plan": "innistrad",
+ "tytul": "Innistrad",
+ "wariant": "T1",
+ "podklad": "podklad-t1.jpg",
+ "miniatura": "podklad-t1-mini.jpg",
+ "wymiary": {
+  "szerokosc": 4096,
+  "wysokosc": 3072
+ },
+ "uklad_wspolrzednych": "ZŁOTY = raster T1 (podklad-t1.jpg, 4096×3072): x,y kotwic i pinezek znormalizowane 0–1 względem tego rastra. Nowa pinezka: odczyt X,Y na pełnym rasterze → x=X/4096, y=Y/3072.",
+ "zrodlo": {
+  "url": "https://reddit.com/r/mtgvorthos/comments/1iybtgj/i_made_of_map_of_innistrad_for_my_ttrpg_game/",
+  "tytul": "Mapa Innistradu (fan-made, r/mtgvorthos 2025) — rozwinięcie mapy „wittmitin”, wykonana w Inkarnate",
+  "autor": "autor postu na r/mtgvorthos (fan-made); plik dostarczony przez właściciela commitem 4411253 (2026-09-08)",
+  "licencja": "fan-made, prawa autora; użytek prywatny, niepubliczny (ADR 0031/0035). Przy upublicznieniu Codexu podkład do wymiany (ADR 0007 §3).",
+  "pobrano": "2026-09-08",
+  "notka": "Raster 4096×3072 px (dostarczony jako WebP, przekodowany do JPG q88 na podkład i q82/1024 px na miniaturę). WotC nigdy nie wydał oficjalnej mapy Innistradu (research MA1: maps/_warsztat/RESEARCH_2026-09-08-innistrad-warianty-mapy.md), więc żaden podkład kanoniczny nie istnieje. Wybór T1 = decyzja właściciela 2026-09-08 (drabina ADR 0038: T2 brak → T1). Raster ma własne etykiety, więc Codex nie rysuje żadnych swoich (etykiety wyłącznie jako kotwice wyszukiwarki)."
+ },
+ "rekonstrukcja": false,
+ "etykiety": false,
+ "epoka": "Innistrad / Dark Ascension — Avacyn uwięziona w Helvaulcie, Kościół słabnie. Geografia prowincji jest stabilna przez cały blok (ISD/DKA/AVR) i dalsze powroty, więc jedna mapa obsługuje wszystkie epoki planu (ADR 0033); zmiany punktowe (Avabruck → Hollowhenge) opisane w notkach kotwic.",
+ "kotwice": [
+  {
+   "nazwa": "Stensia",
+   "x": 0.228,
+   "y": 0.317,
+   "typ": "region",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "prowincja górska; wampirze rody, wieczna mgła, brak słońca",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Geier Reach",
+   "x": 0.331,
+   "y": 0.163,
+   "typ": "region",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "główne pasmo górskie Stensii; w jego centrum Ashmouth",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Ashmouth",
+   "x": 0.213,
+   "y": 0.253,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "największa brama do świata demonów i diabłów",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Needle's Eye Pass",
+   "x": 0.331,
+   "y": 0.163,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "przełęcz w głębi Geier Reach",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Farbog",
+   "x": 0.242,
+   "y": 0.126,
+   "typ": "region",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "mgliste, martwe niziny na północy Stensii",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Maurer Estate",
+   "x": 0.312,
+   "y": 0.08,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "posiadłość wampirza w północnej Stensii",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Voldaren Estate",
+   "x": 0.637,
+   "y": 0.124,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "siedziba rodu Voldaren przy Ziel Pass",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Lurenbraum Fortress",
+   "x": 0.575,
+   "y": 0.14,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "forteca strzegąca Ziel Pass; widać z niej wybrzeże Nephalii",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Ziel Pass",
+   "x": 0.517,
+   "y": 0.156,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "jedyna droga ze Stensii do morza",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Kruin Pass",
+   "x": 0.443,
+   "y": 0.283,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "przełęcz z Gavony do Stensii, pilnowana przez Markovów",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Markov Manor",
+   "x": 0.452,
+   "y": 0.253,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "dwór rodu Markov nad doliną Kruin Pass",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Devilthorn Lodge",
+   "x": 0.285,
+   "y": 0.289,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "odosobniona siedziba w cieniu Ashmouth",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Wollebank",
+   "x": 0.352,
+   "y": 0.323,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "wieś u stensiańskiego podnóża",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Hofsaddel Pass",
+   "x": 0.137,
+   "y": 0.413,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "zachodnia przełęcz Stensii",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Somberwald",
+   "x": 0.197,
+   "y": 0.484,
+   "typ": "region",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "niewielki las w obrębie Stensii",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Heilgtum",
+   "x": 0.253,
+   "y": 0.36,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "kaplica na stensiańskim pogórzu",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Heron's Grace Monastery",
+   "x": 0.283,
+   "y": 0.46,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "klasztor przy Hairpin Road",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Hairpin Road",
+   "x": 0.267,
+   "y": 0.418,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "serpentyna prowadząca ku Getander Pass",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Silbern",
+   "x": 0.222,
+   "y": 0.56,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "osada nad Getander Pass",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Getander Pass",
+   "x": 0.203,
+   "y": 0.64,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "jedyne przejście między Stensią a Kessigiem, pilnowane przez Falkenrathów",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Shadowgrange",
+   "x": 0.061,
+   "y": 0.453,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "odludna zagroda na zachodnim skraju",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Lammas",
+   "x": 0.08,
+   "y": 0.329,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "zagroda na zachodnim pograniczu Stensii",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Thraben",
+   "x": 0.668,
+   "y": 0.317,
+   "typ": "miasto",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "największe miasto Innistradu; siedziba Kościoła Avacyn i Katedra z Helvaultem",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Effalen",
+   "x": 0.543,
+   "y": 0.34,
+   "typ": "region",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "parafia zachodniej Gavony",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Ollenbock",
+   "x": 0.565,
+   "y": 0.347,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "wieś w parafii Effalen",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Videns",
+   "x": 0.657,
+   "y": 0.384,
+   "typ": "region",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "parafia Gavony na południe od Thraben",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Hanweir",
+   "x": 0.652,
+   "y": 0.434,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "wieś Nearheath nad rzeką Kirch",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "River Kirch",
+   "x": 0.627,
+   "y": 0.413,
+   "typ": "rzeka",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "rzeka Gavony; przy Thraben spada do morza wodospadem",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Gavony",
+   "x": 0.59,
+   "y": 0.449,
+   "typ": "region",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "centralna prowincja; skaliste wyżyny, serce ludzkiej cywilizacji",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Westvale",
+   "x": 0.47,
+   "y": 0.46,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "osada przy zachodniej granicy Gavony; opactwo Westvale",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Moorland",
+   "x": 0.57,
+   "y": 0.524,
+   "typ": "region",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "największa i najgroźniejsza parafia Gavony; najwięcej grafów",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Wittal",
+   "x": 0.74,
+   "y": 0.476,
+   "typ": "region",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "parafia wschodniej Gavony",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Estwald",
+   "x": 0.737,
+   "y": 0.496,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "wieś Nearheath",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Trostad",
+   "x": 0.53,
+   "y": 0.6,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "jedyna znacząca wieś Moorlandu, przy granicy z Kessigiem",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Bay of Vustrow",
+   "x": 0.717,
+   "y": 0.222,
+   "typ": "akwen",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "zatoka na północ od Thraben",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Selhoff",
+   "x": 0.773,
+   "y": 0.227,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "port na północnym skraju Nephalii",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Morkrut Swamp",
+   "x": 0.843,
+   "y": 0.274,
+   "typ": "region",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "bagna Nephalii, siedlisko upiorów",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Jenrik's Tower",
+   "x": 0.908,
+   "y": 0.354,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "samotna wieża astronoma Jenrika",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Lake Zhava",
+   "x": 0.815,
+   "y": 0.5,
+   "typ": "akwen",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "jezioro w głębi Nephalii",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Havengul",
+   "x": 0.911,
+   "y": 0.523,
+   "typ": "miasto",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "największe z miast Nephalii, u ujścia rzeki",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Nephalia",
+   "x": 0.803,
+   "y": 0.607,
+   "typ": "region",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "nadmorska prowincja mgieł, portów i srebrnych plaż",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Silver Beach",
+   "x": 0.945,
+   "y": 0.606,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "srebrne plaże wybrzeża Nephalii",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Drunau",
+   "x": 0.835,
+   "y": 0.662,
+   "typ": "miasto",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "port Nephalii na południu",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Ulm",
+   "x": 0.727,
+   "y": 0.662,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "siedziba nekroalchemika Ludevica",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Erdwal",
+   "x": 0.863,
+   "y": 0.411,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "osada na nephalijskim pograniczu bagien",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Rivstalt",
+   "x": 0.793,
+   "y": 0.776,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "nadbrzeżna osada południowej Nephalii",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Kessig",
+   "x": 0.41,
+   "y": 0.727,
+   "typ": "region",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "prowincja wiecznej jesieni; lasy i wilkołaki",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Ulvenwald",
+   "x": 0.54,
+   "y": 0.711,
+   "typ": "region",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "wielki las Kessigu, „Mglisty Bór”",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Natterknolls",
+   "x": 0.413,
+   "y": 0.582,
+   "typ": "region",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "pagórki na północnym skraju Ulvenwaldu",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Bower Passage",
+   "x": 0.479,
+   "y": 0.636,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "leśny trakt z Gavony w głąb Kessigu",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Alrun River",
+   "x": 0.583,
+   "y": 0.633,
+   "typ": "rzeka",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "rzeka płynąca przez Ulvenwald",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Gatstaf",
+   "x": 0.327,
+   "y": 0.656,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "wieś nękana przez wilkołaki",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Traublassen",
+   "x": 0.242,
+   "y": 0.677,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "osada u wylotu Getander Pass",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Karo",
+   "x": 0.439,
+   "y": 0.686,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "osada w głębi Ulvenwaldu",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Fellort",
+   "x": 0.625,
+   "y": 0.711,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "osada we wschodnim Ulvenwaldzie",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Hollowhenge",
+   "x": 0.322,
+   "y": 0.78,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "dawna stolica Kessigu Avabruck, zniszczona przez wilkołaki",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Lambholt",
+   "x": 0.457,
+   "y": 0.791,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "wieś w sercu Ulvenwaldu",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Briar Bridges",
+   "x": 0.51,
+   "y": 0.76,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "przeprawy przez cierniste rozlewiska",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Tefful",
+   "x": 0.339,
+   "y": 0.902,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "osada na południu Kessigu",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Hremeg's Bridge",
+   "x": 0.55,
+   "y": 0.907,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "most na południowym trakcie",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Verlasen",
+   "x": 0.625,
+   "y": 0.878,
+   "typ": "osada",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "osada u południowego skraju lasu",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "The Bog",
+   "x": 0.677,
+   "y": 0.92,
+   "typ": "region",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "mokradła na południowym wybrzeżu",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "Devils' Breach",
+   "x": 0.392,
+   "y": 0.945,
+   "typ": "lokacja",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "kessigijskie wejście do podziemi; po Uwolnieniu Avacyn wypuszcza więcej diabłów",
+   "uklad": "złoty T1"
+  },
+  {
+   "nazwa": "The Approaches",
+   "x": 0.533,
+   "y": 0.949,
+   "typ": "region",
+   "pozycja_zrodlo": "raster fanowski r/mtgvorthos 2025 (matryca geometrii, ADR 0031) — położenie zweryfikowane z kanonem tekstowym: Planeswalker's Guide to Innistrad (2011) i Archive Trap: The World of Innistrad (MTG Salvation)",
+   "notka": "południowe rubieże poza zasięgiem Kościoła",
+   "uklad": "złoty T1"
+  }
+ ],
+ "regiony": [],
+ "pinezki": [
+  {
+   "karta": "393dka-forge-devil",
+   "x": 0.668,
+   "y": 0.317,
+   "pewnosc": "dokladna",
+   "uzasadnienie": "Tekst karty podaje miejsce wprost: „the lower levels of Thraben Cathedral”. Pinezka stoi na Thraben w północnej Gavony; scena rozgrywa się w podziemiach katedry, więc rzut na powierzchnię jest jednoznaczny.",
+   "notka": "Epoka Dark Ascension — Avacyn uwięziona w Helvaulcie stojącym w dziedzińcu tej samej katedry."
+  }
+ ],
+ "zrodlo_fanmapa": "Podkład jest mapą fanowską, nie materiałem WotC. Zgodnie z ADR 0031 służy jako podkład prywatnego Kodeksu; każda kotwica została porównana z kanonem tekstowym, a rozbieżności rozstrzygane są na korzyść kanonu.",
+ "poza_zakresem": "Mapa pokazuje cztery prowincje znanego Innistradu. Poza kadrem: zachodnie rubieże za Hofsaddel Pass i wnętrze Farbogu (kanon ich nie opisuje), a także struktury spoza geografii powierzchniowej (Helvault jako obiekt wewnątrz Katedry, Ashmouth jako przejście do świata demonów) — te są kotwicami punktowymi, nie obszarami."
+}
