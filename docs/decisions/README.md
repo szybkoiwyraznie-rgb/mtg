@@ -56,6 +56,7 @@ dziedziczona z projektu mtg-game.
 | [0038](0038-drabina-preferencji-wariantow-map-t2-t1-t3-t4.md) | Drabina preferencji wariantów map: T2 → T1 → T3 → T4; T4 jest ostatecznością wymagającą uzasadnienia, rastry fanowskie są pełnoprawnym źródłem, wariant wybiera się po researchu | Zaakceptowana |
 | [0039](0039-piramida-lod-map-przyblizenia-kafelki.md) | Piramida LOD map: podmapy-światy vs podmapy-przybliżenia; szczeble L0/L1/L2, fallback do bazy, progi skali w map.json, procedura od razu docelowa | Zaakceptowana (warunek nowości detalu dla L2 + L0 jako `<img>` — patrz ADR 0041) |
 | [0040](0040-druk-zrodlowy-karty-nie-jest-kanoniczny.md) | Oryginalny druk karty nie jest kanoniczny: tor infoboksu tylko; zero nawiązań i wniosków z printu w treści, pinezkach i Źródłach; FOT/KON = jedyne kanoniczne ilustracje (agent bez dostępu) | Zaakceptowana |
+| [0041](0041-pokrycie-l2-tylko-z-nowym-detalem-dominaria-l0-l1.md) | Pokrycie L2 tylko z nowym detalem (wycinek bazy zabroniony); mapa Dominarii = L0 + kafle L1 (nakładka „Domeny" usunięta, pinezka z odczytu mastera); korekta ADR 0039 §8 (L0 jako `<img>`, nie inline) | Zaakceptowana |
 
 Spójnością rejestru (numeracja, statusy, tabela) pilnuje
 `test/rejestr-adr.test.js`.
