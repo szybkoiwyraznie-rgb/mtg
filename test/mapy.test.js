@@ -88,7 +88,8 @@ test('warianty podkładu (ADR 0035): pliki istnieją, dokładnie jeden domyślny
       if (!x.id || idy.has(x.id)) problemy.push(`${plan}: wariant bez unikalnego id`);
       idy.add(x.id);
       if (!['T1', 'T2', 'T3', 'T4'].includes(x.wariant)) problemy.push(`${plan}/${x.id}: wariant "${x.wariant}"`);
-      for (const plik of [x.podklad, x.miniatura].filter(Boolean)) {
+      // miniatura: pole wycofane (ADR 0027 v3) — mini-mapy generuje build
+      for (const plik of [x.podklad].filter(Boolean)) {
         if (!fs.existsSync(path.join('maps', plan, String(plik)))) problemy.push(`${plan}/${x.id}: brak pliku ${plik}`);
       }
       if (!x.wymiary?.szerokosc || !x.wymiary?.wysokosc) problemy.push(`${plan}/${x.id}: brak wymiarów`);

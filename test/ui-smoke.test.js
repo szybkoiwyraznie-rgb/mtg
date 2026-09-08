@@ -265,8 +265,8 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   // Tarkir (ADR 0035): atrybucja KAŻDEGO podkładu + legenda przełącznika; iframe w proporcjach T1
   shim4.idz('#/mapa/tarkir');
   const ramaT = shim4.app.innerHTML;
-  assert.equal(globalThis.CODEX_DATA.mapy.tarkir.podkladUrl, 'maps/tarkir/podklad-t1-mini.jpg',
-    'mini-mapy w głównym artefakcie nadal biorą miniaturę T1');
+  assert.equal(globalThis.CODEX_DATA.mapy.tarkir.podkladUrl, 'maps/tarkir/mini.jpg',
+    'mini-mapy biorą generowany w buildzie mini.jpg (ADR 0027 v3)');
   assert.ok(ramaT.includes('Lore Café'), 'mapa Tarkiru: brak atrybucji rastra T1 (Lore Café)');
   assert.ok(ramaT.includes('All Rights Reserved'), 'mapa Tarkiru: licencja rastra fanowskiego musi być widoczna');
   assert.ok(ramaT.includes('praca własna'), 'mapa Tarkiru: brak atrybucji rekonstrukcji T4');
@@ -467,10 +467,12 @@ test('UI/build: drzewo HTML map (ADR 0027 v2 — iframe, offline z dysku)', asyn
   assert.ok(html.includes('"stronaMapy": "maps/srodziemie.html"'), 'rejestr: strona mapy Śródziemia');
   assert.ok(html.includes('"stronaMapy": "maps/zendikar.html"'), 'rejestr: strona mapy Zendikaru');
   assert.ok(html.length < 2.5 * 1024 * 1024, `artefakt (${(html.length / 1048576).toFixed(2)} MB) ma być < 2.5 MB`);
-  // drzewo: strony map + surowe podkłady (mini-mapy)
+  // drzewo: strony map + mini-mapy z generowanego mini.jpg (ADR 0027 v3);
+  // wektorowe bazy NIE są w drzewie (są inline w stronach map)
   assert.ok(fs.existsSync('dist/maps/srodziemie.html'), 'dist/maps/srodziemie.html');
   assert.ok(fs.existsSync('dist/maps/zendikar.html'), 'dist/maps/zendikar.html');
-  assert.ok(fs.existsSync('dist/maps/zendikar/podklad.svg'), 'dist/maps/zendikar/podklad.svg (mini-mapy)');
+  assert.ok(fs.existsSync('dist/maps/zendikar/mini.jpg'), 'dist/maps/zendikar/mini.jpg (mini-mapy)');
+  assert.ok(!fs.existsSync('dist/maps/zendikar/podklad.svg'), 'brak duplikatu bazy SVG w drzewie (ADR 0027 v3)');
   const stronaMapy = fs.readFileSync('dist/maps/zendikar.html', 'utf8');
   assert.ok(stronaMapy.includes('CODEX_MAPA'), 'strona mapy: tryb CODEX_MAPA');
   assert.ok(stronaMapy.includes('podkladMarkup'), 'strona mapy: wstrzyknięty markup SVG');

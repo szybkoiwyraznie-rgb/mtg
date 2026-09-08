@@ -4,6 +4,7 @@
  * na realnej bazie repo.
  */
 import fs from 'node:fs';
+import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -73,9 +74,27 @@ test('pakiet dystrybucyjny: artefakt + drzewo map + ZIP (ADR 0027 v2)', async ()
   assert.ok(!index.includes('data:image/svg+xml;base64'), 'artefakt bez base64 podkładów');
   assert.ok(fs.existsSync('/tmp/codex-test-pakiet/maps/srodziemie.html'), 'pakiet: strona mapy Śródziemia');
   assert.ok(fs.existsSync('/tmp/codex-test-pakiet/maps/zendikar.html'), 'pakiet: strona mapy Zendikaru');
-  assert.ok(fs.existsSync('/tmp/codex-test-pakiet/maps/srodziemie/podklad.svg'), 'pakiet: surowy podkład (mini-mapy)');
+  assert.ok(fs.existsSync('/tmp/codex-test-pakiet/maps/srodziemie/mini.jpg'), 'pakiet: mini-mapa Śródziemia (screenshot bazy, ADR 0027 v3)');
   assert.ok(fs.existsSync(wynik.zip), 'pakiet: ZIP z całym drzewem');
   assert.ok(fs.statSync(wynik.zip).size > 4 * 1024 * 1024, 'ZIP ma zawierać drzewo map (nie sam artefakt)');
+  // ADR 0027 v3: w drzewie brak podwójnej bazy + mini-mapy z generowanego mini.jpg.
+  // Bramka restryktywna, gdy jest rasterizator SVG (resvg, dev-only); w
+  // środowisku bez rasterizatora build legalnie spada na pełną bazę.
+  const maResvg = await (async () => { try { await import('@resvg/resvg-js'); return true; } catch { return false; } })();
+  const plikiMap = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
+    e.isDirectory() ? plikiMap(path.join(dir, e.name)) : [path.join(dir, e.name)]);
+  const pliki = plikiMap('/tmp/codex-test-pakiet/maps');
+  if (maResvg) {
+    for (const f of pliki) {
+      assert.ok(!f.endsWith('.svg'), `brak duplikatu wektorowej bazy w drzewie (baza jest inline w html): ${f}`);
+    }
+  }
+  for (const f of pliki.filter((p) => p.endsWith('.html'))) {
+    const mini = `${f.replace(/\.html$/, '')}/mini.jpg`;
+    if (maResvg) assert.ok(fs.existsSync(mini), `mini-mapa planu: ${mini}`);
+    if (fs.existsSync(mini)) assert.ok(fs.statSync(mini).size <= 400 * 1024, `${mini} ≤ 400 kB (screenshot, nie cała baza)`);
+  }
+  if (maResvg) assert.ok(index.includes('maps/lorwyn/mini.jpg'), 'CODEX_DATA: mini-mapa Lorwyn z mini.jpg');
   fs.rmSync('/tmp/codex-test-pakiet', { recursive: true, force: true });
 });
 

@@ -27,6 +27,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      # dev-only (build): @resvg/resvg-js — rasterizacja mini-map (ADR 0027 v3);
+      # silnik (src/codex) pozostaje zero-dependency (ADR 0002)
+      - name: Zależności dev (build)
+        run: npm ci
       - name: Testy przed publikacją
         run: node tools/run-tests.mjs all
       - name: Build

@@ -44,9 +44,11 @@ test('manifest Dominarii zgadza się z plikami kafelków na dysku', (t) => {
   assert.equal(pliki.length, manifest.kolumny * manifest.wiersze);
   assert.equal(pliki[0], 'k000.jpg');
   assert.equal(pliki[pliki.length - 1], `k${String(manifest.kolumny * manifest.wiersze - 1).padStart(3, '0')}.jpg`);
-  for (const f of ['l0.jpg', 'mini.jpg']) {
+  for (const f of ['l0.jpg']) {
     assert.ok(fs.existsSync(path.join('maps/dominaria', f)), `brak ${f}`);
   }
+  // mini.jpg: warsztat generuje lokalnie (ADR 0027 v3) — mini-mapy kart
+  // wytwarza build z bazy domyślnego wariantu, plik nie jest commitowany
 });
 
 test('tnij() na mini-obrazku daje siatkę 4×2 + manifest', (t) => {

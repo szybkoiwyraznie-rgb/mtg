@@ -73,6 +73,38 @@ Mechanika:
   „Pobierz archiwum (ZIP)" na GitHub Pages dawał 404 (pages.yml buduje
   przez `--out dist/index.html`).
 
+## Uzupełnienie v3 (2026-09-08) — mini-mapy z generowanego mini.jpg; koniec dublowania bazy w drzewie
+
+Audyt ZIP-a (właściciel 2026-09-08): pliki podkładów w `dist/maps/<plan>/`
+były bajtowo identyczne z ich inline w `maps/<plan>.html` (baza inlinuje
+się, bo `file://` blokuje `fetch` — v2; plik w drzewie służył wyłącznie
+mini-mapom). Dublowanie ~28,8 MB z 90,5 MB ZIP-a (~32%); mini-mapy planów
+T4 dociągały CAŁY 8,3 MB SVG jako thumbnail (brak miniatury).
+
+Decyzja właściciela („rób po prostu jpg screenshota z umiejscowieniem
+tej pinezki, o wielkości miniaturki — będzie ważyć 100 kB”):
+
+1. **Mini-mapa = `mini.jpg` generowany w buildzie** — screenshot bazy
+   wariantu domyślnego, szer. 800 px, q80 (Lorwyn: 8,3 MB SVG → 92 kB;
+   wszystkie plany: 48–159 kB). Pinezka rysowana po stronie karty jako
+   kropka w dokładnych współrzędnych (mechanizm istniejący) — jedna mini
+   służy wszystkim kartom planu.
+2. **Drzewo dist nie zawiera wektorowych baz** — strona mapy ma je
+   inline (v2 bez zmian), więc build je nie kopiuje i utrzymuje
+   niezmiennik (usuwa resztki poprzedniego buildu). Rastry i kafle
+   zostają (strona mapy dociąga je `<img>`).
+3. **Pole `miniatura` w map.json wycofane** — committowane miniatury
+   (dominaria/mini.jpg, innistrad i tarkir -mini.jpg) usunięte; mini
+   jest artefaktem buildu.
+4. **Rasterizacja (łańcuch):** `@resvg/resvg-js` (devDependency buildu,
+   natywny bez zależności systemowych — silnik `src/codex` pozostaje
+   zero-dependency, ADR 0002; CI: `npm ci`) → ImageMagick `convert`
+   (rastry zawsze, SVG gdy jest delegat rsvg) → fallback: pełna baza
+   w drzewie + ostrzeżenie (działa, ZIP cięższy). Bramka testowa:
+   przy resvg mini.jpg ≤ 400 kB na każdy plan i zero `.svg` w drzewie.
+5. Skutek: ZIP 90,5 → 62,1 MB (−31%); mini-mapy T4 dociągają ~100 kB
+   zamiast 8,3 MB.
+
 ## Konsekwencje
 
 **Dodatnie:** offline z dysku = pełna funkcjonalność; artefakt główny
