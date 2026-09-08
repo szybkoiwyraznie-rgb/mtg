@@ -176,6 +176,41 @@ export function doUkladuWariantu(w, x, y) {
   return [k.ox + k.sx * x, k.oy + k.sy * y];
 }
 
+/**
+ * Siatka kafelków L1 (ADR 0039): master szer×wys cięty na kwadraty
+ * `rozmiar` (ostatnia kolumna/wiersz mogą być węższe — partial edge).
+ * Numeracja row-major: n = wiersz·kolumny + kolumna (k000.jpg …).
+ * Single source of truth: używa tools/kafle.mjs (cięcie), silnik
+ * (leniwe ładowanie) i testy.
+ */
+export function siatkaKafli(szer, wys, rozmiar) {
+  const kolumny = Math.ceil(szer / rozmiar);
+  const wiersze = Math.ceil(wys / rozmiar);
+  const prost = (n) => {
+    const c = n % kolumny;
+    const r = Math.floor(n / kolumny);
+    const x = c * rozmiar;
+    const y = r * rozmiar;
+    return { c, r, x, y, w: Math.min(rozmiar, szer - x), h: Math.min(rozmiar, wys - y) };
+  };
+  return { kolumny, wiersze, rozmiar, prost };
+}
+
+/**
+ * Które kafelki pokryć prostokąt w układzie złotym [0,1].
+ * Zwraca indeksy row-major (do URL-i) — czysta funkcja pod testy i silnik.
+ */
+export function kafleDlaRect(manifest, x0, y0, x1, y1) {
+  const { kolumny, wiersze } = manifest;
+  const c0 = Math.max(0, Math.floor(x0 * kolumny));
+  const c1 = Math.min(kolumny - 1, Math.floor(x1 * kolumny));
+  const r0 = Math.max(0, Math.floor(y0 * wiersze));
+  const r1 = Math.min(wiersze - 1, Math.floor(y1 * wiersze));
+  const out = [];
+  for (let r = r0; r <= r1; r++) for (let c = c0; c <= c1; c++) out.push(r * kolumny + c);
+  return out;
+}
+
 // ADR 0027 (v2 — drzewo HTML): każda mapa jest OSOBNĄ, samowystarczalną
 // stroną `maps/<plan>.html` (inline SVG + pełny silnik + dane), którą
 // główny artefakt osadza w <iframe>. file:// blokuje fetch, ale NIE
