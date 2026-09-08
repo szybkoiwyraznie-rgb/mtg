@@ -155,3 +155,9 @@ Completeness score strony = wypełnione obowiązkowe sekcje (waga 3) +
 cytowania (waga 2) + wikilinki wychodzące (waga 1) + pinezka (waga 2).
 Raport w opisie PR; twarde progi dopiero po zebraniu danych
 referencyjnych.
+
+Pinezka ma sens tylko dla stron z lokalizacją: dla haseł wyłącznie
+klasy `geografia`/`postac` (SZKIELET_HASLA: „Na mapie” — region/obwódka
+z pewnością). Dla pozostałych klas haseł komponent = **N/A** i nie
+liczy się do maksimów strony (maks 6 zamiast 8) — inaczej każdy
+np. hasło klasy `spolecznosc` byłby systematycznie „niekompletne”.
