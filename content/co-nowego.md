@@ -1,3 +1,29 @@
+## 2026-09-08 14:45 — Audyt PR-23: jezioro bez nazwy nocą, proweniencja kotwic Innistradu
+
+- **Lorwyn:** nazwa „Source of Lanes” znika z nocnego oblicza mapy —
+  efemeryczna kraina Shadowmoor nie pamięta dziennych nazw wód
+  (poprawka F3; test pilnuje odtąd rozdziału zestawów nazw).
+- **Innistrad:** sprostowanie do wpisu z 12:20 — nie wszystkie 64
+  kotwice da się zweryfikować w przewodnikach tekstowych. Każda ma
+  odtąd jawną proweniencję jednostkową: 24 miejsca poświadcza kanon
+  z cytowaniem źródła, 40 znanych wyłącznie z rastra czeka na
+  weryfikację przy karcie z regionu (poprawka F5; test-brama w pakiecie).
+- Licznik testów rośnie do **144**, strona Innistradu mówi już tylko
+  to, co da się udowodnić.
+
+## 2026-09-08 14:31 — Audyt PR-23: Fabuła dopisana do Forge Devil
+
+- Audyt scalonego PR-23 (81 plików) nie wykazał wad bazy: testy, build,
+  map-audit i kompletność zielone, mapy Lorwynu, Mirrodinu, Innistradu
+  i Tarkiru obejrzane rastrowo.
+- Jedyna naprawa treści: [[393dka-forge-devil|Forge Devil]] nie cytował
+  Fabuły właściciela (mimo Fabuły w dostawie) — dopisano osadzenie
+  w Transpozycji i wpis w Źródłach. Test pilnuje odtąd cytowania
+  Fabuły na każdej karcie.
+- Doprecyzowano opis pinezki [[476mbs-banishment-decree|Banishment Decree]]
+  (południowy wschód od Cave of Light) i domknięto dokumentację PR-23
+  o 6 commitów spoza handoffu (m.in. obie nowe karty i ADR 0038).
+
 ## 2026-09-08 12:20 — Iskry w archiwum: Innistrad wchodzi do Kodeksu
 
 - **Nowy plan:** [[innistrad|Innistrad]] — gotycki horror, cztery

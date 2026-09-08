@@ -367,7 +367,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (10)'), 'lista kart: brak 10 kart');
+  assert.ok(lista.includes('Karty Katalogowe (11)'), 'lista kart: brak 11 kart');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
     'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
@@ -436,6 +436,11 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   for (const slug of slugiKart) {
     shim.idz(`#/karta/${slug}`);
     const html = shim.app.innerHTML;
+    // F1 (audyt PR-23): każda dostawa w bazie niesie Fabułę (ADR 0026),
+    // więc każda karta ma ją cytować — 393DKA przeszła bez niej, bo
+    // pozytywna asercja obejmowała tylko 1LTR.
+    assert.ok(html.includes('Fabuła'),
+      `karta ${slug}: brak cytowania Fabuły (ADR 0026 pkt 4)`);
     assert.ok(!html.includes('Fabuła dostawy'),
       `karta ${slug}: termin „Fabuła dostawy" zabroniony (ADR 0026) — ma być samo „Fabuła"`);
     assert.ok(!html.includes('ADR'),

@@ -162,8 +162,8 @@ katedry.
 
 Pinezka o pewności **region**:
 `#/mapa/mirrodin?pin=476mbs-banishment-decree` — południowy skraj
-**Razor Fields**, między **Cave of Light** a **Taj-Nar**, na granicy
-z **Glimmervoid**.
+**Razor Fields**, na południowy wschód od **Cave of Light**, poniżej
+**Taj-Nar**, na granicy z **Glimmervoid**.
 
 Ani karta, ani Fabuła nie podają adresu katedry, więc pinezka nie
 udaje precyzji. Uzasadnienie wyboru jest takie: Fabuła każe wyrzucić

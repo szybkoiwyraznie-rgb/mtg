@@ -136,8 +136,10 @@ w centrum, Stensia na północy, Kessig na zachodzie, Nephalia na
 wschodzie, Voldaren Estate na tyle blisko krawędzi gór, by widzieć
 wybrzeże. Codex nie dorysowuje własnych etykiet — raster ma swoje;
 sześćdziesiąt cztery **kotwice** w `map.json` służą wyszukiwarce
-i pinezkom, a każda ma zapisaną proweniencję i weryfikację w źródłach
-tekstowych. Geografia prowincji jest stabilna przez cały blok
+i pinezkom. Każda ma jawną proweniencję jednostkową: miejsca
+poświadczone w przewodnikach — z cytowaniem źródła, nazwy znane
+wyłącznie z rastra — z oznaczeniem do weryfikacji przy karcie
+z regionu. Geografia prowincji jest stabilna przez cały blok
 i późniejsze powroty, więc jedna mapa obsługuje wszystkie epoki planu;
 zmiany punktowe (Avabruck → Hollowhenge) opisano w notkach kotwic.
 

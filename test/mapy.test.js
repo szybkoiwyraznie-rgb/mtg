@@ -93,13 +93,30 @@ test('warianty podkładu (ADR 0035): pliki istnieją, dokładnie jeden domyślny
       for (const klucz of ['sx', 'sy', 'ox', 'oy']) {
         if (typeof k[klucz] !== 'number' || !Number.isFinite(k[klucz])) problemy.push(`${plan}/${x.id}: kalibracja.${klucz} nie jest liczbą`);
       }
+      if (Array.isArray(x.bbox)) {
+        // LOD (ADR 0039): nakładka regionalna L2 — kalibracja jest odwrotnością bbox
+        const [x0, y0, x1, y1] = x.bbox;
+        const wB = x1 - x0; const hB = y1 - y0;
+        if (![x0, y0, x1, y1].every((v) => typeof v === 'number' && Number.isFinite(v)) || !(x0 >= 0 && y0 >= 0 && x1 <= 1 && y1 <= 1 && wB > 0 && hB > 0)) {
+          problemy.push(`${plan}/${x.id}: bbox nie jest prostokątem w [0,1]`);
+        } else {
+          const eps = 1e-6;
+          const spr = [['sx', 1 / wB], ['sy', 1 / hB], ['ox', -x0 / wB], ['oy', -y0 / hB]];
+          for (const [klucz, wart] of spr) {
+            if (Math.abs((k[klucz] ?? NaN) - wart) > eps) problemy.push(`${plan}/${x.id}: kalibracja.${klucz} nie jest odwrotnością bbox (oczekiwano ${wart})`);
+          }
+        }
+        if (x.domyslny) problemy.push(`${plan}/${x.id}: nakładka bbox nie może być wariantem domyślnym (układ złoty to cała scena)`);
+      }
       if (x.domyslny && !(k.sx === 1 && k.sy === 1 && k.ox === 0 && k.oy === 0)) {
         problemy.push(`${plan}/${x.id}: wariant domyślny MUSI mieć kalibrację tożsamościową (to on jest układem złotym)`);
       }
       if (x.wariant === 'T1' && x.etykiety !== false) problemy.push(`${plan}/${x.id}: raster T1 bez etykiet Codexu (etykiety:false — ADR 0035 §4)`);
     }
     // pinezki po kalibracji każdego wariantu nadal w [0,1]
+    // (LOD: nakładki bbox pomijamy — pinezki żyją w układzie złotym, nakładki nie są scenami)
     for (const x of w) {
+      if (Array.isArray(x.bbox)) continue;
       const k = x.kalibracja ?? {};
       for (const pin of mapa.pinezki ?? []) {
         const px = k.ox + k.sx * pin.x; const py = k.oy + k.sy * pin.y;
@@ -108,5 +125,22 @@ test('warianty podkładu (ADR 0035): pliki istnieją, dokładnie jeden domyślny
     }
   }
   assert.deepEqual(problemy, [], `Wadliwe warianty podkładu:\n${problemy.join('\n')}`);
+});
+
+test('Innistrad: kotwice z jawną proweniencją jednostkową (F5, audyt PR-23)', () => {
+  // Dwa poziomy: „kanon:” z URL-em przewodnika albo jawne „wyłącznie
+  // raster:” do weryfikacji przy karcie z regionu. Szablonowa kopia
+  // jednego zdania na wszystkie kotwice nie przechodzi.
+  const mapa = mapy.get('innistrad');
+  assert.ok(mapa && !mapa.problem, 'brak mapy innistrad');
+  assert.ok(mapa.kotwice.length >= 64, `oczekiwano ≥64 kotwic, jest ${mapa.kotwice.length}`);
+  const zle = [];
+  for (const k of mapa.kotwice ?? []) {
+    const z = k.pozycja_zrodlo ?? '';
+    const kanon = z.startsWith('kanon:') && z.includes('https://');
+    const raster = z.startsWith('wyłącznie raster:');
+    if (!kanon && !raster) zle.push(k.nazwa);
+  }
+  assert.deepEqual(zle, [], `Kotwice bez jawnej proweniencji: ${zle.join(', ')}`);
 });
 

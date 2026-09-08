@@ -209,8 +209,19 @@ export async function zbuduj({ out, root = ROOT } = {}) {
     // Warianty podkładu (ADR 0035): każdy podkład (i miniatura rastra)
     // trafia do drzewa map; mini-mapy kart biorą miniaturę wariantu
     // domyślnego (pełny raster T1 waży kilkanaście MB — nie na kafel).
+    const kopiujKatalog = (nazwa) => {
+      if (!nazwa) return;
+      const zrodlo = path.join(root, 'maps', slug, String(nazwa));
+      if (!fs.existsSync(zrodlo)) { problemy.push(`${slug}: brak katalogu kafelków ${nazwa} (LOD)`); return; }
+      const celKat = path.join(katalogOut, `maps/${slug}/${nazwa}`);
+      for (const f of chodz(zrodlo)) {
+        const cel = path.join(celKat, path.relative(zrodlo, f));
+        fs.mkdirSync(path.dirname(cel), { recursive: true });
+        fs.copyFileSync(f, cel);
+      }
+    };
     const warianty = Array.isArray(mapa.warianty) ? mapa.warianty : [];
-    for (const w of warianty) { kopiuj(w.podklad); kopiuj(w.miniatura); }
+    for (const w of warianty) { kopiuj(w.podklad); kopiuj(w.miniatura); if (w.kafle) kopiujKatalog(w.kafle.katalog); }
     const domyslny = warianty.find((w) => w.domyslny) ?? warianty[0];
     const miniatura = domyslny?.miniatura ? kopiuj(domyslny.miniatura) : null;
     mapa.podkladUrl = miniatura ?? `maps/${slug}/${domyslny?.podklad ?? mapa.podklad}`; // mini-mapy kart (<img>)

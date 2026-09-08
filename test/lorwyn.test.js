@@ -39,6 +39,10 @@ test('Lorwyn: nazwy właściwego oblicza, brak Eclipsed i wymyślonych aliasów'
     assert.ok(d.includes(a)&&!d.includes(b)); assert.ok(n.includes(b)&&!n.includes(a));
   }
   assert.ok(d.includes('The Great Forest') && !n.includes('The Great Forest'));
+  // F3 (audyt PR-23): jezioro źródłowe jak Wielki Las — nazwa dzienna
+  // bez nocnego odpowiednika (wcześniej opis „(źródło Wanderbrine)").
+  assert.ok(d.includes('Source of Lanes') && !n.includes('Source of Lanes'));
+  assert.ok(!n.some((t) => t.includes('źródło Wanderbrine')));
   for (const s of [d,n]) {
     assert.ok(s.includes('Glen Elendra')&&s.includes('Velis Vel'));
     for (const obce of ['Eirdu','Isilu','Glen Priseil','Boreal Ridge','Caer Flur','Grove of the Aurora Queen']) assert.ok(!s.includes(obce));

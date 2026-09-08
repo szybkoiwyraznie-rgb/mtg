@@ -1,0 +1,309 @@
+{
+ "epoka": "Stan współczesny wg podkładów fanowskich (Varghedin; mapa aktualizowana, ost. 2026-02 — bez datowania w chronologii kanonu). Pinezki datują się Fabułą karty, nie mapą (ADR 0033).",
+ "kotwice": [
+  {
+   "nazwa": "Aerona",
+   "notka": "kontynent Domen; Benalia, Llanowar, Icehaven, Keld",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Aerona — pozycja środka lądu na rastrze M1",
+   "typ": "kontynent",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
+   "x": 0.19,
+   "y": 0.35
+  },
+  {
+   "nazwa": "Benalia",
+   "notka": "kraina w północnej części Aerona; stolica Benalia City (osadzenie przy karcie 40USG, krok 4)",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Benalia — pozycja na lądzie wg rastra M1/D1",
+   "typ": "kraina",
+   "uklad": "złoty M1 — środek krainy z nakładki kalibracyjnej M1/D1",
+   "x": 0.155,
+   "y": 0.3
+  },
+  {
+   "nazwa": "Llanowar",
+   "notka": "wielki las w zachodniej części Aerona",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Llanowar — pozycja na lądzie wg rastra M1/D1",
+   "typ": "las",
+   "uklad": "złoty M1 — środek lasu z nakładki kalibracyjnej M1/D1",
+   "x": 0.17,
+   "y": 0.345
+  },
+  {
+   "nazwa": "Icehaven",
+   "notka": "północna kraina Aerona; uwaga: residuum kalibracji L2 do ~50 px M1 w tym rejonie (notka kalibracyjna wariantu domeny)",
+   "pozycja_zrodlo": "wyłącznie raster: ląd na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
+   "typ": "kraina",
+   "uklad": "złoty M1 — środek lądu, pomiar na masterze",
+   "x": 0.148,
+   "y": 0.186
+  },
+  {
+   "nazwa": "Kieve",
+   "notka": "wyspa na Morzu Wyjącym, na wschód od Aerona; punkt kalibracyjny L2 (dwie niezależne cechy: las i cypel S, zgodność 2 px)",
+   "pozycja_zrodlo": "wyłącznie raster: wyspa na M1/D1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
+   "px_t1": [
+    2558,
+    1318
+   ],
+   "typ": "wyspa",
+   "uklad": "złoty M1 — template-match 2026-09-08",
+   "x": 0.3158,
+   "y": 0.2535
+  },
+  {
+   "nazwa": "Tolaria West",
+   "notka": "wyspa Akademii Tolarianskiej (Urza); zachodni skraj okna L2",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Tolaria (akademia na Tolaria West) — pozycja wyspy na rastrze M1",
+   "typ": "wyspa",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
+   "x": 0.0241,
+   "y": 0.2829
+  },
+  {
+   "nazwa": "Ru-Nora",
+   "notka": "wyspa na południe od Aerona; kotwica na wyspie (etykieta na rastrze na N od lądu)",
+   "pozycja_zrodlo": "wyłącznie raster: wyspa na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
+   "typ": "wyspa",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
+   "x": 0.185,
+   "y": 0.525
+  },
+  {
+   "nazwa": "Saronia",
+   "notka": "wyspa na Morzu Voda, na wschód od Ru-Nora",
+   "pozycja_zrodlo": "wyłącznie raster: wyspa na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
+   "typ": "wyspa",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
+   "x": 0.255,
+   "y": 0.505
+  },
+  {
+   "nazwa": "Orvada",
+   "notka": "kraina na wschód od Aerona (Orvada, Walassa)",
+   "pozycja_zrodlo": "wyłącznie raster: ląd na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
+   "typ": "kraina",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
+   "x": 0.315,
+   "y": 0.375
+  },
+  {
+   "nazwa": "Voda Sea",
+   "notka": "morze między Orvadą a Burning Isles",
+   "pozycja_zrodlo": "wyłącznie raster: akwen na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
+   "typ": "morze",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
+   "x": 0.335,
+   "y": 0.45
+  },
+  {
+   "nazwa": "Burning Isles",
+   "notka": "archipelag na wschodnim skraju okna L2 (Bogardan)",
+   "pozycja_zrodlo": "wyłącznie raster: archipelag na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
+   "typ": "archipelag",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
+   "x": 0.36,
+   "y": 0.4
+  },
+  {
+   "nazwa": "Jamuraa",
+   "notka": "południowy kontynent (Zhalfir, Suq'Ata, Yavimaya, Wielka Pustynia)",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Jamuraa — pozycja środka lądu na rastrze M1",
+   "typ": "kontynent",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
+   "x": 0.5,
+   "y": 0.715
+  },
+  {
+   "nazwa": "Otaria",
+   "notka": "wschodni kontynent (Urborg, wirem Apokalipsy)",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Otaria — pozycja środka lądu na rastrze M1",
+   "typ": "kontynent",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
+   "x": 0.735,
+   "y": 0.5
+  },
+  {
+   "nazwa": "Terisiare",
+   "notka": "północno-wschodni kontynent (Argoth, epizod Braci)",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Terisiare — pozycja środka lądu na rastrze M1",
+   "typ": "kontynent",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
+   "x": 0.895,
+   "y": 0.3
+  },
+  {
+   "nazwa": "Sarpadia",
+   "notka": "południowo-wschodni kontynent (upadłe imperium thorne'ów)",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Sarpadia — pozycja środka lądu na rastrze M1",
+   "typ": "kontynent",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
+   "x": 0.935,
+   "y": 0.68
+  },
+  {
+   "nazwa": "Northland",
+   "notka": "lodowa kraina na północy (czapa polarna)",
+   "pozycja_zrodlo": "wyłącznie raster: ląd na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
+   "typ": "kraina",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
+   "x": 0.5,
+   "y": 0.035
+  },
+  {
+   "nazwa": "Frozen Reaches",
+   "notka": "lodowa kraina na południu (czapa polarna)",
+   "pozycja_zrodlo": "wyłącznie raster: ląd na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
+   "typ": "kraina",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
+   "x": 0.5,
+   "y": 0.965
+  },
+  {
+   "nazwa": "Great Ocean",
+   "notka": "centralny ocean między Aerona a Jamuraa/Otarią",
+   "pozycja_zrodlo": "wyłącznie raster: akwen na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
+   "typ": "morze",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
+   "x": 0.6,
+   "y": 0.35
+  },
+  {
+   "nazwa": "Sea of Serenity",
+   "notka": "morze na południe od Jamuraa",
+   "pozycja_zrodlo": "wyłącznie raster: akwen na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
+   "typ": "morze",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
+   "x": 0.5,
+   "y": 0.79
+  },
+  {
+   "nazwa": "Howling Sea",
+   "notka": "morze na północ od Aerona (Kieve, Stadlax)",
+   "pozycja_zrodlo": "wyłącznie raster: akwen na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
+   "typ": "morze",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
+   "x": 0.3,
+   "y": 0.155
+  },
+  {
+   "nazwa": "Cathedral of Serra",
+   "x": 0.1916,
+   "y": 0.3891,
+   "typ": "obiekt",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Cathedral_of_Serra (Równiny Sursi, lokalizacja benalijska) + ikona i etykieta na D1 (Varghedin)",
+   "notka": "świątynia Serran (brat Angus, ~3780 AR — stoi w epoce USG); pinezka 40USG",
+   "px_t1": [
+    1552,
+    2023
+   ],
+   "uklad": "złoty M1 — odczyt D1 (1417,1120) przez bbox L2, 2026-09-08"
+  }
+ ],
+ "otwarte_na_kolejne_przejscia": [
+  "DODANE 2026-09-08 (krok 3): pierwsza mapa LOD (ADR 0039): T1 Blando + kafle L1 + nakładka L2 Domeny z mierzalną kalibracją. Krok 4: pinezka 40USG (dziedziniec katedry w Benalii) — wymaga lokalnego osadzenia Benalia City na D1 (ref-benalia.jpg) i decyzji, czy scena to Benalia City, czy Cathedral of Serra (etykieta D1 na S Aerona).",
+  "Mikro-siatka kalibracji (±0.002) rozmyślnie pominięta: ghosting crossfade'u zdominowany różnicami typografii D1/M1, nie geometrią; ewentualny powrót przy skardze na szarpnięcie Icehaven.",
+  "Kotwice 'wyłącznie raster' (12) do weryfikacji przy pierwszej karcie z regionu (precedens F5 Innistrad, PR-23)."
+ ],
+ "pinezki": [
+  {
+   "karta": "40usg-expunge",
+   "x": 0.1916,
+   "y": 0.3891,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła: złotoskrzydły wojownik Serran (ilustracja Moellera, podgląd printu) wymazywany czarną mgłą nad dziedzińcem katedry w czasie inwazji Phyrexii (USG, 4205 AR). Katedra Serran na Równinach Sursi to jedyna nazwana katedra Benalii (kategoria wiki: lokalizacje benalijskie) i istnieje od ~3780 AR — stoi w epoce karty. D1 znaczy ją ikoną i etykietą (odczyt 1417,1120 → złoty przez bbox L2). Ilustracja pokazuje śmierć anioła w powietrzu nad kompleksem; dokładny dziedziniec nieoznaczony — stąd pewność region."
+  }
+ ],
+ "plan": "dominaria",
+ "podklad": "l0.jpg",
+ "regiony": [],
+ "rekonstrukcja": false,
+ "tytul": "Dominaria",
+ "uklad_wspolrzednych": "ZŁOTY = raster M1 Varghedina (master 8100×5200; plik l0.jpg 1920×1233 to jego pomniejszony proxy, ten sam kadr). x,y kotwic i pinezek znormalizowane 0–1 względem M1. Nowa pinezka: odczyt X,Y na masterze → x=X/8100, y=Y/5200; odczyt Dx,Dy na D1 (aerona.jpg 2767×2155) → Gx=0.02+Dx/2767·0.335, Gy=0.15+Dy/2155·0.46 (bbox L2, ADR 0039).",
+ "wariant": "T1",
+ "warianty": [
+  {
+   "domyslny": true,
+   "epoka": "stan współczesny wg podkładu fanowskiego (Varghedin; bez datowania kanonicznego)",
+   "etykiety": false,
+   "id": "t1",
+   "kafle": {
+    "katalog": "kafle",
+    "kolumny": 16,
+    "prog": 2.5,
+    "rozmiar": 512,
+    "wiersze": 11
+   },
+   "kalibracja": {
+    "ox": 0,
+    "oy": 0,
+    "sx": 1,
+    "sy": 1
+   },
+   "miniatura": "mini.jpg",
+   "podklad": "l0.jpg",
+   "tytul": "T1 · Varghedin",
+   "wariant": "T1",
+   "wymiary": {
+    "szerokosc": 8100,
+    "wysokosc": 5200
+   },
+   "zrodlo": {
+    "autor": "Varghedin (self-provided na MTG Wiki); geometria za oficjalną mapą WotC (Jared Blando, 2018; linia Venters → Fleischer → Blando, jw. wywiad kartograficzny)",
+    "licencja": "fan-made, self-provided; użytek prywatny, niepubliczny — ADR 0031; przy upublicznieniu Codexu podkład do wymiany (ADR 0007 §3)",
+    "notka": "Master 8100×5200 (9,65 MB) poza dist (cięty lokalnie tools/kafle.mjs); w repo i artyfakcie: l0.jpg (1920×1233, pierwszy render), mini.jpg (800 px, mini-mapy kart), kafle/kNNN.jpg (176 kafelków L1, 16×11 po 512 px, row-major). Podkład T1 = układ ZŁOTY współrzędnych wszystkich pinezek i kotwic (ADR 0035). Na rastrze Codex nie rysuje etykiet — zostają pinezki kart i kotwice.",
+    "pobrano": "2026-09-08",
+    "tytul": "Dominaria by Varghedin — fanowska mapa planu, pochodna oficjalnej mapy Jareda Blando (WotC, 2018)",
+    "url": "https://mtg.wiki/page/File:Dominaria_by_Varghedin.jpg",
+    "url2": "https://files.mtg.wiki/Dominaria_by_Varghedin.jpg"
+   }
+  },
+  {
+   "bbox": [
+    0.02,
+    0.15,
+    0.355,
+    0.61
+   ],
+   "epoka": "jw. (ten sam autor i stan; zbliżenie, nie osobna epoka)",
+   "etykiety": false,
+   "id": "domeny",
+   "kalibracja": {
+    "ox": -0.059701,
+    "oy": -0.326087,
+    "sx": 2.985075,
+    "sy": 2.173913
+   },
+   "kalibracja_notka": "złoty (M1, 0–1) → kadr D1 (0–1): xD=ox+sx·xG, yD=oy+sy·yG — odwrotność bbox (test mapy weryfikuje zgodność). Wyprowadzenie 2026-09-08: 4-parametrowy fit RMSE (kropka 1384×1078, blur) siatki x0/y0/w/h; aspekt NIEblokowany (D1 ma własną anizotropię ~13% — silnik absorbuje ją rozciągnięciem fill w bbox). Residua (nakładka 50% w pełnej rozdzielczości): Kieve/Ru-Nora/Tolaria/Burning <10 px M1; Icehaven (NW skraj okna) ≤50 px (lokalne wygięcie odwzorowania + większe glify D1) — wyłącznie ghosting crossfade'u L1→L2, w pełnym L2 obraz ostry. Mikro-siatka ±0.002 pominięta świadomie (ghosting zdominowany różnicami typografii, nie geometrią).",
+   "podklad": "aerona.jpg",
+   "prog": 6,
+   "tytul": "L2 · Domeny (zbliżenie Aerona)",
+   "wariant": "T1",
+   "wymiary": {
+    "szerokosc": 2767,
+    "wysokosc": 2155
+   },
+   "zrodlo": {
+    "autor": "Varghedin (self-provided na MTG Wiki); ten sam autor co M1 (spójność stylu i geometrii)",
+    "licencja": "fan-made, self-provided; użytek prywatny, niepubliczny — ADR 0031; przy upublicznieniu Codexu podkład do wymiany (ADR 0007 §3)",
+    "notka": "2767×2155 (1,58 MB), leniwe ładowanie od progu S2 (prog 6). Gęsta toponimia Domen: m.in. Benalia City, Cathedral of Serra, Tarmula, Hurloon, Sursi — kotwica 40USG w kroku 4. Kartusz 'The Domains' (L-D) i brak kompasu odróżniają D1 od kadru M1; linie brzegowe wspólne (zweryfikowane nakładką).",
+    "pobrano": "2026-09-08",
+    "tytul": "The Domains by Varghedin — fanowskie zbliżenie Aerona i Domen",
+    "url": "https://mtg.wiki/page/File:The_Domains_by_Varghedin.jpg",
+    "url2": "https://files.mtg.wiki/The_Domains_by_Varghedin.jpg"
+   }
+  }
+ ],
+ "wymiary": {
+  "szerokosc": 8100,
+  "wysokosc": 5200
+ },
+ "zrodlo": {
+  "autor": "Varghedin (self-provided na MTG Wiki); geometria za oficjalną mapą WotC (Jared Blando, 2018)",
+  "licencja": "fan-made, self-provided; użytek prywatny, niepubliczny — ADR 0031; przy upublicznieniu Codexu podkład do wymiany (ADR 0007 §3)",
+  "notka": "Mapa LOD (ADR 0039): podkład złoty M1 (l0.jpg + kafle L1) + nakładka regionalna L2 (D1, bbox). Szczegóły proweniencji i kalibracji w polach `warianty[]`.",
+  "pobrano": "2026-09-08",
+  "tytul": "Dominaria by Varghedin — fanowska mapa planu (M1) + The Domains (D1, nakładka L2)",
+  "url": "https://mtg.wiki/page/File:Dominaria_by_Varghedin.jpg",
+  "url2": "https://files.mtg.wiki/Dominaria_by_Varghedin.jpg"
+ }
+}
