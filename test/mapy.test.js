@@ -50,11 +50,28 @@ test('pinezki wskazują istniejące karty, mają współrzędne 0-1 i pewność'
         problemy.push(`${plan}: pinezka ${p.karta} przybliżona bez uzasadnienia (MA4)`);
       }
     }
-    for (const r of mapa.regiony ?? []) {
-      if (!strony.some((s) => s.slug === r.haslo)) problemy.push(`${plan}: region → nieistniejące hasło ${r.haslo}`);
-    }
+    // ADR 0043: pole "regiony" (obwódki haseł) wycofane ze schematu —
+    // na mapie oznaczenia noszą wyłącznie karty.
+    if ('regiony' in mapa) problemy.push(`${plan}: pole "regiony" w map.json — ADR 0043 (na mapie oznaczenia noszą wyłącznie karty)`);
   }
   assert.deepEqual(problemy, [], `Wadliwe pinezki:\n${problemy.join('\n')}`);
+});
+
+test('ADR 0043: na mapie oznaczenia noszą wyłącznie karty (pinezka tylko w frontmatterze karty; brak regiony)', () => {
+  const problemy = [];
+  // Frontmatter: pinezka poza typem "karta" = naruszenie (hasła/plany
+  // łączą się z mapą tylko odsyłaniem ?x=&y=, nie znacznikiem).
+  for (const s of strony) {
+    if (s.typ !== 'karta' && s.pinezka) {
+      problemy.push(`${s.slug} (${s.typ}): pinezka w frontmatterze — ADR 0043`);
+    }
+  }
+  // map.json: żaden region haseł/obwódka — nawet pusty kontener pola.
+  for (const [plan, mapa] of mapy) {
+    if (mapa.problem) continue;
+    if ('regiony' in mapa) problemy.push(`${plan}: pole "regiony" w map.json — ADR 0043`);
+  }
+  assert.deepEqual(problemy, [], `Znaczniki mapy poza kartami:\n${problemy.join('\n')}`);
 });
 
 test('karty z pinezką w frontmatterze mają ją też w map.json (jedno źródło prawdy)', () => {

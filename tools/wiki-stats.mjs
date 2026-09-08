@@ -11,9 +11,10 @@
  *                + cytowania w sekcji Źródła (waga 2)
  *                + wikilinki wychodzące (waga 1)
  *                + pinezka na mapie (waga 2)
- * Maksimum w obecnym wzorze: 8 punktów (3+2+1+2). Wyjątek: hasła poza
- * klasami geografia/postac (brak lokalizacji — SZKIELET_HASLA) mają
- * pinezkę N/A i maksimum 6 (3+2+1).
+ * Maksimum w obecnym wzorze: 8 punktów (3+2+1+2). Wyjątek: wszystkie
+ * hasła mają pinezkę N/A i maksimum 6 (3+2+1) — ADR 0043: na mapie
+ * oznaczenia noszą wyłącznie karty; hasło łączy się z mapą tylko
+ * odsyłaniem (?x=&y=), nie znacznikiem.
  *
  * Brak twardych progów — raport jest informacyjny; próg wprowadzi się,
  * gdy zbierzemy dane referencyjne (ADR 0006).
@@ -105,20 +106,19 @@ export function ocenStrone(strona) {
   const nWikilinki = policzWikilinki(strona);
   const wikilinki = nWikilinki >= 1 ? WAGA_WIKILINKI : 0;
 
-  // 4. Pinezka (2 = jest, 0 = brak). Dla haseł pinezka ma sens tylko
-  //    dla klas z lokalizacją (SZKIELET_HASLA: „Na mapie” =
-  //    geografia/postac z ustaloną lokalizacją) — dla pozostałych klas
-  //    komponent jest N/A i nie liczy się do maksimów strony.
-  const klasaBezMapy = strona.typ === 'haslo'
-    && !['geografia', 'postac'].includes(strona.klasa);
+  // 4. Pinezka (2 = jest, 0 = brak). ADR 0043: na mapie oznaczenia noszą
+  //    wyłącznie KARTY — hasła (każdej klasy) nie mają pinezki, więc
+  //    komponent jest dla nich N/A i nie liczy się do maksimum strony.
+  //    (Hasło łączy się z mapą tylko odsyłaniem ?x=&y=, nie znacznikiem.)
+  const hasloBezMapy = strona.typ === 'haslo';
   let pinezka = 0;
-  if (klasaBezMapy) {
+  if (hasloBezMapy) {
     pinezka = null; // N/A
   } else {
     pinezka = strona.pinezka ? WAGA_PINEZKA : 0;
   }
 
-  const maks = klasaBezMapy ? MAKS - WAGA_PINEZKA : MAKS;
+  const maks = hasloBezMapy ? MAKS - WAGA_PINEZKA : MAKS;
   const suma = Math.round((sekcje + zrodla + wikilinki + (pinezka ?? 0)) * 10) / 10;
 
   let brak = [];
@@ -126,7 +126,7 @@ export function ocenStrone(strona) {
   if (brakiWymagane.length) brak.push(`sekcje: ${brakiWymagane.join(', ')}`);
   if (nZrodla < 2) brak.push(`źródła: ${nZrodla}`);
   if (nWikilinki < 1) brak.push('wikilinki: 0');
-  if (!klasaBezMapy && !strona.pinezka) brak.push('pinezka: brak');
+  if (!hasloBezMapy && !strona.pinezka) brak.push('pinezka: brak');
 
   return {
     slug: strona.slug,
@@ -203,6 +203,6 @@ if (jestMain) {
   } else {
     console.log(formatuj(r));
     console.log('  Plany bez kontraktu sekcji mierzone są pragmatycznie („Setting w pigułce"); pinezka planu = pinezki kart na jego mapie.');
-    console.log('  Hasła poza klasami geografia/postac: pinezka = N/A (SZKIELET_HASLA: „Na mapie” tylko z lokalizacją); maks strony = 6.');
+    console.log('  Hasła (każdej klasy): pinezka = N/A (ADR 0043: na mapie oznaczenia noszą wyłącznie karty; hasło łączy się z mapą odsyłaniem ?x=&y=); maks strony = 6.');
   }
 }

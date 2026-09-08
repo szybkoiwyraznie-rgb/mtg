@@ -104,6 +104,13 @@ export function walidujStrone(strona, ctx) {
     }
   }
 
+  // ADR 0043: na mapie oznaczenia noszą WYŁĄCZNIE karty. Pinezka w
+  // frontmatterze typu innego niż `karta` (hasło/plan) = naruszenie —
+  // hasła/plany łączą się z mapą tylko odsyłaniem (?x=&y=), nie znacznikiem.
+  if (strona.typ !== 'karta' && strona.pinezka) {
+    p.push(`${gdzie}: pinezka dozwolona tylko dla typu "karta" (ADR 0043 — na mapie oznaczenia noszą wyłącznie karty)`);
+  }
+
   if (strona.typ === 'haslo') {
     if (!KLASY_HASEL.includes(strona.klasa)) p.push(`${gdzie}: klasa "${strona.klasa}" poza słownikiem (SZKIELET_HASLA.md)`);
     if (!ctx.plany.has(strona.plan)) p.push(`${gdzie}: plan "${strona.plan}" nie ma strony w content/planes/`);

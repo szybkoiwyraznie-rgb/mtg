@@ -122,7 +122,13 @@ export function wczytajMapy({ root = '.' } = {}) {
     const plik = path.join(dirPlan, 'map.json');
     if (fs.existsSync(plik)) {
       try {
-        mapa.set(plan, JSON.parse(fs.readFileSync(plik, 'utf8')));
+        const dane = JSON.parse(fs.readFileSync(plik, 'utf8'));
+        // ADR 0043: na mapie oznaczenia noszą wyłącznie karty — pole
+        // "regiony" (obwódki haseł) wycofane ze schematu.
+        if (dane && typeof dane === 'object' && 'regiony' in dane) {
+          dane.problem = 'map.json: pole "regiony" — ADR 0043 (na mapie oznaczenia noszą wyłącznie karty; hasła łączą się z mapą odsyłaniem ?x=&y=)';
+        }
+        mapa.set(plan, dane);
       } catch (e) {
         mapa.set(plan, { problem: `nieparsowalny map.json: ${e.message}` });
       }
@@ -133,7 +139,11 @@ export function wczytajMapy({ root = '.' } = {}) {
       if (!fs.existsSync(plikSub)) continue;
       const klucz = `${plan}/${sub}`;
       try {
-        mapa.set(klucz, JSON.parse(fs.readFileSync(plikSub, 'utf8')));
+        const dane = JSON.parse(fs.readFileSync(plikSub, 'utf8'));
+        if (dane && typeof dane === 'object' && 'regiony' in dane) {
+          dane.problem = 'map.json: pole "regiony" — ADR 0043 (na mapie oznaczenia noszą wyłącznie karty; hasła łączą się z mapą odsyłaniem ?x=&y=)';
+        }
+        mapa.set(klucz, dane);
       } catch (e) {
         mapa.set(klucz, { problem: `nieparsowalny map.json: ${e.message}` });
       }

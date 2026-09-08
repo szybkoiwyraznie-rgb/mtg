@@ -103,7 +103,6 @@ const MAPA_LOD = {
       etykiety: false, bbox: [0.05, 0.1, 0.3, 0.45], prog: 6 },
   ],
   pinezki: [{ karta: 'x', x: 0.1, y: 0.2, pewnosc: 'region' }],
-  regiony: [],
 };
 
 function zeSztucznymiDanymi(fn) {
