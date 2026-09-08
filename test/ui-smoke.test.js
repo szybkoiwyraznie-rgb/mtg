@@ -221,6 +221,16 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   assert.ok(!mapaZ.includes('mapa-epoki'), 'mapa Zendikaru: jeden podkład — bez przełącznika epok');
   shim3.przywroc();
 
+  // Lorwyn: dwa T4, jeden układ, brak kolizji id inline SVG.
+  const shimL = wykonajArtefakt('dist/maps/lorwyn.html');
+  const mapaL = shimL.app.innerHTML;
+  assert.ok(mapaL.includes('data-epoka="shadowmoor"') && mapaL.includes('data-epoka="lorwyn"'));
+  assert.ok(mapaL.includes('data-pinezka="605shm-consign-to-dream"'));
+  assert.ok(mapaL.includes('podklad-0-lady-klip') && mapaL.includes('podklad-1-lady-klip'));
+  const idyL = [...mapaL.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]);
+  assert.equal(new Set(idyL).size, idyL.length, 'Lorwyn: zduplikowane id SVG');
+  shimL.przywroc();
+
   // ── Strona mapy Tarkiru (ADR 0035: dwa podkłady-warianty, układ złoty = raster T1)
   const shim3b = wykonajArtefakt('dist/maps/tarkir.html');
   const mapaT = shim3b.app.innerHTML;
@@ -268,6 +278,13 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   const phyrexia = shim4.app.innerHTML;
   assert.ok(phyrexia.includes('Nowa Phyrexia') && phyrexia.includes('W kolekcji'), 'hasło: brak strony lub backlinków');
   assert.ok(phyrexia.includes('Illusory Demon') && phyrexia.includes('Carapace Forger'), 'hasło: brak obu kart z różnych planów');
+  shim4.idz('#/karta/605shm-consign-to-dream');
+  const karta605 = shim4.app.innerHTML;
+  assert.ok(karta605.includes('605SHM') && karta605.includes('Consign to Dream'));
+  assert.ok(karta605.includes('./img/605FOT.png|./img/605SHMFOT.png'));
+  assert.ok(karta605.includes('./img/605KON.png|./img/605SHMKON.png'));
+  assert.ok(!karta605.includes('./img/32FOT.png') && !karta605.includes('./img/32KON.png'));
+  assert.ok(karta605.includes('#/mapa/lorwyn?pin=605shm-consign-to-dream'));
   shim4.przywroc();
 
   // B1: badge pinezki ukryty do najechania/fokusu (CSS strony mapy)
@@ -350,7 +367,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (7)'), 'lista kart: brak 7 kart');
+  assert.ok(lista.includes('Karty Katalogowe (8)'), 'lista kart: brak 8 kart');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
     'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
