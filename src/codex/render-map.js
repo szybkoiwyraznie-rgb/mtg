@@ -404,8 +404,10 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
   const pinDocelowy = query.pin && pinezki.some((p) => p.karta === query.pin) ? query.pin : '';
   // ADR 0043: deep-link miejsca (?x=&y=, współrzędne normalizowane) —
   // odsyłanie strony do mapy zbliżonej w określonym miejscu, BEZ znacznika.
-  const xDocelowy = Number(query.x);
-  const yDocelowy = Number(query.y);
+  // Uwaga: pusty string = BRAK parametru, a Number('') = 0 — bez strazy
+  // każda mapa bez query centrowała się w rogu (0,0) z zoomem deep-linka.
+  const xDocelowy = query.x ? Number(query.x) : NaN;
+  const yDocelowy = query.y ? Number(query.y) : NaN;
   const docelMiejsca = Number.isFinite(xDocelowy) && Number.isFinite(yDocelowy)
     && xDocelowy >= 0 && xDocelowy <= 1 && yDocelowy >= 0 && yDocelowy <= 1
     ? { x: xDocelowy, y: yDocelowy } : null;

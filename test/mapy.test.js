@@ -7,6 +7,7 @@ import path from 'node:path';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { wczytajStrony, wczytajMapy } from '../tools/content-loader.mjs';
+import { renderMape } from '../src/codex/render-map.js';
 
 const strony = wczytajStrony().filter((s) => !s.problem);
 const karty = new Set(strony.filter((s) => s.typ === 'karta').map((s) => s.slug));
@@ -72,6 +73,50 @@ test('ADR 0043: na mapie oznaczenia noszą wyłącznie karty (pinezka tylko w fr
     if ('regiony' in mapa) problemy.push(`${plan}: pole "regiony" w map.json — ADR 0043`);
   }
   assert.deepEqual(problemy, [], `Znaczniki mapy poza kartami:\n${problemy.join('\n')}`);
+});
+
+test('ADR 0043 (regresja): brakujące ?x=&y= NIE jest miejscem (0,0) — Number(\"\") = 0', () => {
+  // Recenzja właściciela (2026-09-08): wszystkie mapy pokazywały lewy
+  // górny róg w środku okna (zoom deep-linka). Przyczyna: pusty string
+  // brakującego parametru przechodził przez Number('') = 0 i trafiał do
+  // centeringu jako miejsce (0,0). Pusty string = brak parametru.
+  const poprzednie = globalThis.CODEX_DATA;
+  globalThis.CODEX_DATA = {
+    zbudowano: '',
+    strony: { dominaria: { slug: 'dominaria', typ: 'plan', tytul: 'Dominaria' } },
+    plany: ['dominaria'],
+    tagi: {},
+    backlinki: {},
+    coNowego: [],
+    statystyki: { karty: 0, hasla: 0, plany: 1 },
+    mapy: {
+      dominaria: {
+        plan: 'dominaria', tytul: 'Dominaria', wariant: 'T1',
+        wymiary: { szerokosc: 1000, wysokosc: 600 },
+        podklad: 'podklad.svg',
+        zrodlo: { url: 'https://przyklad.test', pobrano: '2026-01-01' },
+        pinezki: [],
+      },
+    },
+  };
+  try {
+    const oknoZ = (html) => html.match(/<div class="mapa-okno"[^>]*>/)?.[0] ?? '';
+    // Brak parametru wcale (query = {})
+    const pusty = oknoZ(renderMape('dominaria', {}, {}));
+    assert.ok(!pusty.includes('data-x') && !pusty.includes('data-y'),
+      `brakujący parametr dał atrybut miejsca (0,0): ${pusty}`);
+    // Pusty string (tak main.js podaje brakujące query parametry)
+    const pustyStringi = oknoZ(renderMape('dominaria', { pin: '', epoka: '', x: '', y: '' }, {}));
+    assert.ok(!pustyStringi.includes('data-x') && !pustyStringi.includes('data-y'),
+      `pusty string dał atrybut miejsca (0,0): ${pustyStringi}`);
+    // Wyraźne parametry dalej działają (deep-link miejsca)
+    const zMiejscem = oknoZ(renderMape('dominaria', { x: '0.25', y: '0.75' }, {}));
+    assert.ok(zMiejscem.includes('data-x="0.25"') && zMiejscem.includes('data-y="0.75"'),
+      `wyraźne miejsce nie trafiło do okna: ${zMiejscem}`);
+  } finally {
+    if (poprzednie === undefined) delete globalThis.CODEX_DATA;
+    else globalThis.CODEX_DATA = poprzednie;
+  }
 });
 
 test('karty z pinezką w frontmatterze mają ją też w map.json (jedno źródło prawdy)', () => {
