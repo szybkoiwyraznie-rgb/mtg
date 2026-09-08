@@ -367,7 +367,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (11)'), 'lista kart: brak 11 kart');
+  assert.ok(lista.includes('Karty Katalogowe (12)'), 'lista kart: brak 12 kart');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
     'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
@@ -450,9 +450,9 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   }
 
   shim.idz('#/');
-  // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — przy ≥6 kartach
-  // najstarsza (1LTR) wypada z listy, więc sprawdzamy najnowszą (488SOM, 2026-09-06).
-  assert.ok(shim.app.innerHTML.includes('Highland Game'), 'home: brak ostatniej materializacji');
+  // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — przy 12 kartach
+  // starsze wypadają z listy, więc sprawdzamy piątą (605SHM, 2026-09-07).
+  assert.ok(shim.app.innerHTML.includes('Consign to Dream'), 'home: brak ostatniej materializacji');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();

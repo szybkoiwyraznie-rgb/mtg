@@ -1,0 +1,103 @@
+{
+ "plan": "forgotten-realms",
+ "tytul": "Forgotten Realms",
+ "wariant": "T2",
+ "podklad": "podklad.svg",
+ "wymiary": {
+  "szerokosc": 3055,
+  "wysokosc": 2044
+ },
+ "zrodlo": {
+  "url": "https://github.com/jonovotny/vectorized-realms",
+  "tytul": "Vectorized Realms — wektorowa mapa Faerûn (3.5e, ~1376 DR; cyfryzacja oficjalnej mapy 2001), plik faerun-v016-40dpi.svg",
+  "autor": "jonovotny (projekt fanowski „Vectorizing the Realms”; dane zebrane z Forgotten Realms Interactive Atlas (2e), Forgotten Realms Atlas (1e), Realmshelp.net, map Adam Whitehead i FR Fandom Wiki)",
+  "licencja": "brak otwartej licencji (projekt fanowski, WotC Fan Content Policy) — użytkowanie prywatne w projekcie prywatnym bez publicznej dystrybucji (decyzja właściciela 2026-09-08); źródło podane w stopce mapy (wzór Tarkir/Innistrad, ADR 0031)",
+  "pobrano": "2026-09-08",
+  "notka": "T2 przez adopcję (ADR 0009/0038): jedyny znany wektor Faerûn (research 2026-09-08, maps/_warsztat/RESEARCH_2026-09-08-forgotten-realms-mapa.md). Podkład bez etykiet — warstwa napisów „kodex-etykiety” (regiony i morza) dodana przez Kodeks bezpośrednio w SVG (wzór Śródziemie/mapome); etykiety skalują się z podkładem (T2 renderuje się inline, typografii silnik nie rusza). Topologia 3.5e ≈ oficjalna mapa 2001; 5e zachowuje ten sam kontur Faerûn (ADR 0033: jedna mapa — epokę datuje Fabuła karty, nie mapa)."
+ },
+ "rekonstrukcja": false,
+ "uklad_wspolrzednych": "ZŁOTY = viewBox podkładu (3055×2044). x,y kotwic i pinezek znormalizowane 0–1 względem niego; nowe pozycje mierzone na podkładzie (siatka 10%) i zapisywane z 4 miejscami.",
+ "kotwice": [
+  {
+   "nazwa": "Wybrzeże Mieczy",
+   "x": 0.19,
+   "y": 0.4,
+   "typ": "region",
+   "pozycja_zrodlo": "pas wybrzeża od Luskanu (północ) do przesmyku Baldur's Gate (południe) — kanon (FR CS 3e; MTG Wiki: Forgotten Realms, Sword Coast); punkt środkowy pasa, odczyt na podkładzie (siatka 10%)",
+   "notka": "serce Faerûn: Luskan, Neverwinter, Waterdeep, Baldur's Gate; scena 3CLB „gdzieś na Wybrzeżu Mieczy”"
+  },
+  {
+   "nazwa": "Morze Upadłych Gwiazd",
+   "x": 0.52,
+   "y": 0.42,
+   "typ": "region",
+   "pozycja_zrodlo": "wielkie morze w północno-środkowym Faerûn — kanon (FR CS 3e: Sea of Fallen Stars); środek akwenu, odczyt na podkładzie",
+   "notka": "największy akwen północy; w jego wodach m.in. Wyspy Labyrinthian"
+  },
+  {
+   "nazwa": "Wyspy Moonshaes",
+   "x": 0.078,
+   "y": 0.27,
+   "typ": "region",
+   "pozycja_zrodlo": "archipelag u północno-zachodniego wybrzeża, na północ od Luskanu — kanon (FR CS 3e: Moonshaes); gęsty łańcuch wysp na podkładzie",
+   "notka": "państwo-miasta drowów? NIE — Moonshaes to luźna liga ludzkich portów (kanon 3e: księżniczka Ahghairan, port Waterdeep)"
+  },
+  {
+   "nazwa": "Wyspy Nelanther",
+   "x": 0.1,
+   "y": 0.62,
+   "typ": "region",
+   "pozycja_zrodlo": "archipelag na zachód od Amnu, u południowego końca Wybrzeża Mieczy — kanon (FR CS 3e: Nelanther Isles); łańcuch wysp na podkładzie",
+   "notka": "Nelanther — „morze, które płynie pod ziemią”; Wyspa Zabicia (Isle of Slaughter) w kanonie nowszych epok"
+  },
+  {
+   "nazwa": "Amn",
+   "x": 0.155,
+   "y": 0.87,
+   "typ": "region",
+   "pozycja_zrodlo": "półwysep na południowym zachodzie Faerûn, między Nelanther a Luruar — kanon (FR CS 3e: Amn); środek masy lądowej, odczyt na podkładzie",
+   "notka": "państwo portów (Mulhorand leży w Luruar, nie w Amn); miasto Elsirith"
+  },
+  {
+   "nazwa": "Luruar",
+   "x": 0.42,
+   "y": 0.8,
+   "typ": "region",
+   "pozycja_zrodlo": "południowy pas Faerûn między Amnem a Królestwem Wysokim — kanon (FR CS 3e: Luruar); pas lądu na podkładzie",
+   "notka": "ziemia Mulhorandu (kult słońca) i plemion; po drodze z Amnu do Zatoki Calimportu"
+  },
+  {
+   "nazwa": "Morze Wewnętrzne",
+   "x": 0.735,
+   "y": 0.655,
+   "typ": "region",
+   "pozycja_zrodlo": "zatoka na południowym wschodzie Faerûn („morze o stu tysiącach wysp”) — kanon (FR CS 3e: Inner Sea); środek akwenu, odczyt na podkładzie",
+   "notka": "wyspy Morza Wewnętrznego: państwa-miasta, porty piratów"
+  },
+  {
+   "nazwa": "Królestwo Wysokie",
+   "x": 0.62,
+   "y": 0.885,
+   "typ": "region",
+   "pozycja_zrodlo": "duża zatoka na południu Faerûn z archipelagem — kanon (FR CS 3e: High Kingdom, Zatoka Calimportu); środek zatoki, odczyt na podkładzie",
+   "notka": "Calimport — „Złota Przystań”, stolica Królestwa Wysokiego"
+  },
+  {
+   "nazwa": "Morze Bezludne",
+   "x": 0.86,
+   "y": 0.92,
+   "typ": "region",
+   "pozycja_zrodlo": "otwarta woda na południowym wschodzie, za Faerûn — kanon (FR CS 3e: Trackless Sea); odczyt na podkładzie",
+   "notka": "„bezdroże” — bez wysepek, w których można by się schronić; trasa morska do Luruaru"
+  }
+ ],
+ "pinezki": [
+  {
+   "karta": "3clb-nefarious-imp",
+   "x": 0.18,
+   "y": 0.38,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła właściciela (3CLB): mroczny gabinet strategiczny „gdzieś na Wybrzeżu Mieczy” — scena wskazuje region, nie miasto (żadne miasto nie jest nazwane; spaloną mapę taktyczną i figurki nie da się przyporządkować do kanonicznego konfliktu 3e/5e bez wymyślania). Pinezka w środku pasa Wybrzeża Mieczy (między Neverwinter a Waterdeep wg odczytu na podkładzie), pewność region (MA4: kraina, nie punkt)."
+  }
+ ]
+}
