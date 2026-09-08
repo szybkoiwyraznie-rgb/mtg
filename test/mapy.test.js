@@ -58,6 +58,24 @@ test('pinezki wskazują istniejące karty, mają współrzędne 0-1 i pewność'
   assert.deepEqual(problemy, [], `Wadliwe pinezki:\n${problemy.join('\n')}`);
 });
 
+test('warstwa POI (kotwice pod przyszłe pinezki): nazwa + x/y w [0,1], bez duplikatów', () => {
+  const problemy = [];
+  for (const [plan, mapa] of mapy) {
+    if (mapa.problem) continue;
+    if (!Array.isArray(mapa.poi)) continue;
+    const nazwy = new Set();
+    for (const p of mapa.poi) {
+      if (!p.nazwa || typeof p.nazwa !== 'string') problemy.push(`${plan}: POI bez nazwy`);
+      else if (nazwy.has(p.nazwa)) problemy.push(`${plan}: POI "${p.nazwa}" — duplikat nazwy`);
+      else nazwy.add(p.nazwa);
+      const x = Number(p.x); const y = Number(p.y);
+      if (!Number.isFinite(x) || x < 0 || x > 1) problemy.push(`${plan}: POI ${p.nazwa} x poza [0,1] (${p.x})`);
+      if (!Number.isFinite(y) || y < 0 || y > 1) problemy.push(`${plan}: POI ${p.nazwa} y poza [0,1] (${p.y})`);
+    }
+  }
+  assert.deepEqual(problemy, [], `Wadliwa warstwa POI:\n${problemy.join('\n')}`);
+});
+
 test('ADR 0043: na mapie oznaczenia noszą wyłącznie karty (pinezka tylko w frontmatterze karty; brak regiony)', () => {
   const problemy = [];
   // Frontmatter: pinezka poza typem "karta" = naruszenie (hasła/plany

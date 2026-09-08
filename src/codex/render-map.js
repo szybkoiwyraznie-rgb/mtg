@@ -450,6 +450,26 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
   // w scenie ZŁOTEJ (dziedziczą jej pan/zoom; przy przełączeniu epoki
   // chowają się razem ze złotą sceną). Etykiety Codexu ich nie dotyczą
   // (T1 ma własne napisy na rastrze).
+  // Warstwa POI (decyzja właściciela 2026-09-08, FR): najważniejsze punkty
+  // odniesienia (miasta, huby archipelagów) jako małe złote kółka POD
+  // warstwą kafelków L1 — w fazie L0 widoczne na rastrze, po doładowaniu
+  // kafli pokryte drukiem mastera. Dane: mapa.poi[] (x,y 0–1 w układzie
+  // złotym). Bez etykiet (nazwy niesie raster) i bez interakcji
+  // (pointer-events none) — kotwice pod przyszłe pinezki kart (ADR 0043:
+  // piny na mapach = tylko karty).
+  const htmlPoi = (W, H) => {
+    const lista = Array.isArray(mapa.poi) ? mapa.poi : [];
+    const punkty = lista.filter((p) => Number.isFinite(Number(p.x)) && Number.isFinite(Number(p.y)));
+    if (punkty.length === 0) return '';
+    const r = Math.max(8, W / 320);
+    const koly = punkty.map((p) => {
+      const x = Math.min(1, Math.max(0, Number(p.x))) * W;
+      const y = Math.min(1, Math.max(0, Number(p.y))) * H;
+      return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}"${p.nazwa ? ` data-poi="${escapeHtml(String(p.nazwa))}"` : ''}/>`;
+    }).join('');
+    return `<svg class="mapa-poi" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">${koly}</svg>`;
+  };
+
   const htmlKafle = (w) => {
     if (!w.kafle) return '';
     const kf = w.kafle;
@@ -530,6 +550,7 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
           data-sx="${k.sx}" data-sy="${k.sy}" data-ox="${k.ox}" data-oy="${k.oy}" data-etykiety="${w.etykiety ? '1' : '0'}"${czyZlota ? ' data-zloty="1"' : ''}
           style="aspect-ratio: ${W} / ${H}"${w.id === start.id ? '' : ' hidden'}>
           ${podklad}
+          ${htmlPoi(W, H)}
           ${htmlKafle(w)}
           ${czyZlota ? htmlNakladkiL2 : ''}
         </div>`;

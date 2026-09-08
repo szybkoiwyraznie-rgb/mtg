@@ -325,16 +325,19 @@ test('UI: mapa T3 — etykiety podkładu w nakładce ekranowej (stały rozmiar, 
   const shim2 = wykonajArtefakt('dist/maps/srodziemie.html');
   assert.ok(!shim2.app.innerHTML.includes('data-podklad-etykieta'), 'podkład adoptowany (T2) nie może mieć przeniesionych etykiet');
 
-  // T2 (adoptowany, Vectorized Realms) — eksport Inkscape ma `<svg>` z
-  // nową linią po tagu; markup musi się wstrzyknąć INLINE (regresja:
-  // gate `<svg ` odrzucał taki plik → <img> do bazy, której nie ma w
-  // drzewie dist — ADR 0027 v3 — ikona niezaładowanej grafiki).
+  // T1 (oficjalna 3E, 2026-09-08 — decyzja właściciela: wektor T2
+  // Vectorized Realms skasowany po obejrzeniu mapy live): rastr jako
+  // <img> L0 + warstwa kafelków L1 (LOD, ADR 0039) + wektorowa warstwa
+  // POI pod kafelkami (kotwice pod przyszłe pinezki kart, ADR 0043).
   shim2.przywroc();
   const shim3 = wykonajArtefakt('dist/maps/forgotten-realms.html');
   const fr = shim3.app.innerHTML;
-  assert.ok(fr.includes('<svg class="mapa-podklad"'), 'FR: brak inline SVG podkładu (T2)');
-  assert.ok(!fr.includes('<img class="mapa-podklad"'), 'FR: podkład nie może być <img> (baza wektorowa nie jest w drzewie)');
-  assert.ok(fr.includes('kodex-etykiety'), 'FR: brak warstwy etykiet podkładu');
+  assert.ok(fr.includes('<img class="mapa-podklad" src="forgotten-realms/l0.jpg"'), 'FR: brak rastrowego podkładu L0 (T1)');
+  assert.ok(!fr.includes('<svg class="mapa-podklad"'), 'FR: podkład nie może być inline SVG (baza = rastr 3E, ADR 0027 v3)');
+  assert.ok(!fr.includes('kodex-etykiety'), 'FR: raster T1 nie niesie etykiet Codexu (etykiety:false — nazwy na rastrze)');
+  assert.ok(fr.includes('data-kafle'), 'FR: brak warstwy kafelków LOD (L1)');
+  assert.ok(fr.includes('<svg class="mapa-poi"'), 'FR: brak warstwy POI (kotwice pod przyszłe pinezki)');
+  assert.ok((fr.match(/<circle /g) ?? []).length >= 13, 'FR: warstwa POI niesie co najmniej 13 punktów');
 
   fs.rmSync(cel, { force: true });
   shim3.przywroc();
