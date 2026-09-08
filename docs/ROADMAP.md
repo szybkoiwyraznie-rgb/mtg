@@ -33,8 +33,9 @@ karty** — kliknięcie pinezki otwiera Kartę Katalogową na zmaksymalizowanej
 warstwie nad mapą, zamykanej ✕/tłem/Esc z powrotem do mapy w tym samym
 stanie zoomu (progressive enhancement: bez JS pinezka jest zwykłym
 linkiem). Regiony/obwódki haseł geograficznych NIE są zadaniem (wątek
-zamknięty decyzją właściciela 2026-09-05); dalszy rozwój po dostawach
-kolejnych kart.
+zamknięty decyzją właściciela 2026-09-05; **ADR 0043, 2026-09-08: na
+mapie oznaczenia noszą wyłącznie karty** — hasła łączą się z mapą
+odsyłaniem `?x=&y=`); dalszy rozwój po dostawach kolejnych kart.
 
 ## K5 — Pętla Jakości operacyjna — **domknięte (PR-3, 2026-08-31)**
 
