@@ -5,7 +5,7 @@
 
 import { escapeHtml } from './markdown.js';
 import { dajDane, listaKart, listaHasel, listaPlanow } from './data.js';
-import { stanPusty, kropkiKolorow } from './render.js';
+import { stanPusty, kropkiKolorow, odmiana } from './render.js';
 
 export function renderListeKart() {
   const karty = listaKart().sort((a, b) => a.tytul.localeCompare(b.tytul, 'pl'));
@@ -97,7 +97,7 @@ export function renderListePlanow() {
     ? stanPusty('Brak planów.', 'Plan powstaje razem z pierwszą kartą z niego. z niego.')
     : `<ul class="lista-planow">${plany.map((p) => {
         const n = listaKart().filter((k) => k.plan === p.slug).length;
-        return `<li><a href="#/plan/${p.slug}">${escapeHtml(p.tytul)}</a> <span class="meta">${n} ${n === 1 ? 'karta' : 'kart'}${p.mapa === 'pending' ? ' · mapa w przygotowaniu' : ''}</span></li>`;
+        return `<li><a href="#/plan/${p.slug}">${escapeHtml(p.tytul)}</a> <span class="meta">${n} ${odmiana(n, ['karta', 'karty', 'kart'])}${p.mapa === 'pending' ? ' · mapa w przygotowaniu' : ''}</span></li>`;
       }).join('')}</ul>`}`;
 }
 
