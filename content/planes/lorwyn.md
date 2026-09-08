@@ -76,6 +76,19 @@ oraz **Goldmeadow / Mistmeadow**. Na południe od Mistmeadow leży
 boggartów znana jest para **Mudbutton Warren / Greasewretch Warren**.
 To nazwy konkretnych społeczności, nie dwa równoległe katalogi planet.
 
+Atlas pokazuje szlaki lądowe wyłącznie na zachodzie, między clachanami
+kithkin, i nie jest to przeoczenie rysunku. Kithkin są jedynym ludem
+**osiadłym i rolniczym**, który wymienia zboże na żelazo i bottled
+spells, więc to oni depczą ścieżki między osadami. Główną siecią
+transportową krainy jest **woda**: merrow pełnią rolę kupców i kurierów,
+a ich **Merrow Lanes** łączą rzeki, podziemne korytarze i studnie
+w centrach cudzych miast — to one, nie trakty, „spinają" społeczności
+planu. Wanderwine jest najbardziej ruchliwą z nich; pod jej dnem
+zaczynają się tunele **Dark Meanders**. Pozostałe ludy przemieszczają
+się jeszcze inaczej: boggarci norami i rzeką, wróżki lotem, elfy w
+obrębie własnego lasu. Rysunek dróg biegnących przez cały plan
+sugerowałby handel i ruch, którego w epoce Oony po prostu nie było.
+
 **Velis Vel** jest podziemną grotą changelingów, istot zmieniających
 postać. Znana jest niewielu poza nimi i niektórymi merrow. **Glen Elendra**
 kryje się natomiast w górskiej dolinie na południe od Lys Alana/Cayr Ulios:
@@ -124,3 +137,5 @@ morza ani skali odległości bez podstaw w źródłach.
 - MTG Wiki, Murmuring Bosk/Weeping Bosk — gaj nad rzeką i Colfenor: https://mtg.wiki/page/Murmuring_Bosk/Weeping_Bosk
 - MTG Wiki, Mount Tanufel — szczyt i małe jezioro źródłowe: https://mtg.wiki/page/Mount_Tanufel
 - MTG Wiki, Velis Vel — podziemna grota changelingów: https://mtg.wiki/page/Velis_Vel
+- Planeswalker's Guide to Lorwyn Eclipsed (2025) — merrow jako kupcy i kurierzy, Merrow Lanes spinające społeczności, Dark Meanders, kithkin jako lud rolniczy z sieciami wymiany: https://magic.wizards.com/en/news/magic-story/planeswalkers-guide-to-lorwyn-eclipsed
+- MTG Wiki, Wanderwine River — najbardziej uczęszczana z Merrow Lanes; tunele do Dark Meanders zaczynają się w korycie rzeki: https://mtg.wiki/page/Wanderwine_River

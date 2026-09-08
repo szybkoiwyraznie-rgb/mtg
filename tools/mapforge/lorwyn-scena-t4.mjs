@@ -92,8 +92,14 @@ export function scenaLorwynu(oblicze) {
       { id: 'pola-osad-zachodu', typ: 'step', punkty: [[220,560],[725,555],[930,650],[915,895],[950,1110],[835,1340],[330,1350],[230,1180]], opcje: { gestosc: 0.36 } },
       { id: 'wschodnie-polany', typ: 'step', punkty: [[1200,970],[1340,880],[1720,845],[1900,900],[1850,1320],[1190,1340]], opcje: { gestosc: 0.18 } },
     ],
-    // Wyłącznie orientacyjne połączenia osad kithkin; żadnej drogi do
-    // ukrytej Glen Elendra i żadnych wymyślonych nazw traktów.
+    // Szlaki lądowe TYLKO między clachanami kithkin — to celowe, nie brak.
+    // Kithkin są jedynym ludem osiadłym i rolniczym, który utrzymuje wymianę
+    // lądową. Siecią transportową planu jest woda: Merrow Lanes (rzeki +
+    // podziemne korytarze + studnie) i Dark Meanders pod korytem Wanderwine.
+    // Boggarci chodzą norami, wróżki latają, elfy trzymają się swojego lasu.
+    // Dlatego NIE dorysowujemy traktów na wschodzie ani na południu: sieć
+    // dróg przez cały plan sugerowałaby ruch i handel, których w epoce Oony
+    // nie ma. Żadnej drogi do ukrytej Glen Elendra, żadnych nazw traktów.
     drogi: [
       { id: 'osady-kithkin', punkty: [[720,485],[820,565],[890,670],[890,815],[895,1030],[740,1130],[510,1120],[340,1035]], opcje: { typ: 'szlak' } },
       { id: 'ballyrush-goldmeadow', punkty: [[410,670],[570,585],[700,595],[890,670]], opcje: { typ: 'szlak' } },
@@ -113,7 +119,7 @@ export function modelMapyLorwynu() {
   const zrodlo = { url: GUIDE, url2: `${WIKI}Lorwyn-Shadowmoor`, tytul: 'Lorwyn–Shadowmoor — kanon tekstowy epoki Oony; autorska rekonstrukcja relacji',
     autor: 'MTG Lore Codex, mapforge (bez użycia geometrii odrzuconych fanmap)',
     licencja: 'praca własna; glify gór mapome CC-BY-4.0 (ADR 0020)', pobrano: '2026-09-07',
-    notka: 'Jeden wspólny układ T4 i dwa zestawy nazw (ADR 0037). Wspólna geometria jest konwencją atlasową, nie zaprzeczeniem przemian Wielkiej Zorzy. Pozycje umowne realizują opisane relacje; brak kanonicznych współrzędnych i skali. Zasięgi lasów/bezimiennych dopływów i połączenia osad są rekonstrukcją, nie odczytem z grafiki. Rzeka wychodzi poza kadr; brak wymyślonego oceanu. Eclipsed i nowe po nim lokacje poza zakresem.' };
+    notka: 'Jeden wspólny układ T4 i dwa zestawy nazw (ADR 0037). Wspólna geometria jest konwencją atlasową, nie zaprzeczeniem przemian Wielkiej Zorzy. Pozycje umowne realizują opisane relacje; brak kanonicznych współrzędnych i skali. Zasięgi lasów/bezimiennych dopływów i połączenia osad są rekonstrukcją, nie odczytem z grafiki. Szlaki lądowe występują wyłącznie między clachanami kithkin i jest to wybór merytoryczny: to jedyny lud osiadły i rolniczy utrzymujący wymianę lądową, a siecią transportową planu jest woda (Merrow Lanes, Dark Meanders pod korytem Wanderwine). Brak traktów na wschodzie i południu nie oznacza braku danych, lecz brak takiego ruchu w epoce Oony. Rzeka wychodzi poza kadr; brak wymyślonego oceanu. Eclipsed i nowe po nim lokacje poza zakresem.' };
   return {
     plan: 'lorwyn', tytul: 'Lorwyn–Shadowmoor', wariant: 'T4', podklad: 'podklad.svg', wymiary: { szerokosc: W, wysokosc: H },
     rekonstrukcja: true, epoka: 'epoka Oony — klasyczne oblicza Lorwyn i Shadowmoor', zrodlo,

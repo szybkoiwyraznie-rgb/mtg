@@ -16,7 +16,7 @@
   "autor": "MTG Lore Codex, mapforge (bez użycia geometrii odrzuconych fanmap)",
   "licencja": "praca własna; glify gór mapome CC-BY-4.0 (ADR 0020)",
   "pobrano": "2026-09-07",
-  "notka": "Jeden wspólny układ T4 i dwa zestawy nazw (ADR 0037). Wspólna geometria jest konwencją atlasową, nie zaprzeczeniem przemian Wielkiej Zorzy. Pozycje umowne realizują opisane relacje; brak kanonicznych współrzędnych i skali. Zasięgi lasów/bezimiennych dopływów i połączenia osad są rekonstrukcją, nie odczytem z grafiki. Rzeka wychodzi poza kadr; brak wymyślonego oceanu. Eclipsed i nowe po nim lokacje poza zakresem."
+  "notka": "Jeden wspólny układ T4 i dwa zestawy nazw (ADR 0037). Wspólna geometria jest konwencją atlasową, nie zaprzeczeniem przemian Wielkiej Zorzy. Pozycje umowne realizują opisane relacje; brak kanonicznych współrzędnych i skali. Zasięgi lasów/bezimiennych dopływów i połączenia osad są rekonstrukcją, nie odczytem z grafiki. Szlaki lądowe występują wyłącznie między clachanami kithkin i jest to wybór merytoryczny: to jedyny lud osiadły i rolniczy utrzymujący wymianę lądową, a siecią transportową planu jest woda (Merrow Lanes, Dark Meanders pod korytem Wanderwine). Brak traktów na wschodzie i południu nie oznacza braku danych, lecz brak takiego ruchu w epoce Oony. Rzeka wychodzi poza kadr; brak wymyślonego oceanu. Eclipsed i nowe po nim lokacje poza zakresem."
  },
  "uklad_wspolrzednych": "Autorski układ wspólnej sceny T4 2000×1400. Warianty różnią się wyłącznie etykietami; obie kalibracje tożsamościowe z konstrukcji i testu identyczności geometrii, nie z proporcji odrębnych rastrów.",
  "warianty": [
@@ -45,7 +45,7 @@
     "autor": "MTG Lore Codex, mapforge (bez użycia geometrii odrzuconych fanmap)",
     "licencja": "praca własna; glify gór mapome CC-BY-4.0 (ADR 0020)",
     "pobrano": "2026-09-07",
-    "notka": "Jeden wspólny układ T4 i dwa zestawy nazw (ADR 0037). Wspólna geometria jest konwencją atlasową, nie zaprzeczeniem przemian Wielkiej Zorzy. Pozycje umowne realizują opisane relacje; brak kanonicznych współrzędnych i skali. Zasięgi lasów/bezimiennych dopływów i połączenia osad są rekonstrukcją, nie odczytem z grafiki. Rzeka wychodzi poza kadr; brak wymyślonego oceanu. Eclipsed i nowe po nim lokacje poza zakresem."
+    "notka": "Jeden wspólny układ T4 i dwa zestawy nazw (ADR 0037). Wspólna geometria jest konwencją atlasową, nie zaprzeczeniem przemian Wielkiej Zorzy. Pozycje umowne realizują opisane relacje; brak kanonicznych współrzędnych i skali. Zasięgi lasów/bezimiennych dopływów i połączenia osad są rekonstrukcją, nie odczytem z grafiki. Szlaki lądowe występują wyłącznie między clachanami kithkin i jest to wybór merytoryczny: to jedyny lud osiadły i rolniczy utrzymujący wymianę lądową, a siecią transportową planu jest woda (Merrow Lanes, Dark Meanders pod korytem Wanderwine). Brak traktów na wschodzie i południu nie oznacza braku danych, lecz brak takiego ruchu w epoce Oony. Rzeka wychodzi poza kadr; brak wymyślonego oceanu. Eclipsed i nowe po nim lokacje poza zakresem."
    }
   },
   {
@@ -72,7 +72,7 @@
     "autor": "MTG Lore Codex, mapforge (bez użycia geometrii odrzuconych fanmap)",
     "licencja": "praca własna; glify gór mapome CC-BY-4.0 (ADR 0020)",
     "pobrano": "2026-09-07",
-    "notka": "Jeden wspólny układ T4 i dwa zestawy nazw (ADR 0037). Wspólna geometria jest konwencją atlasową, nie zaprzeczeniem przemian Wielkiej Zorzy. Pozycje umowne realizują opisane relacje; brak kanonicznych współrzędnych i skali. Zasięgi lasów/bezimiennych dopływów i połączenia osad są rekonstrukcją, nie odczytem z grafiki. Rzeka wychodzi poza kadr; brak wymyślonego oceanu. Eclipsed i nowe po nim lokacje poza zakresem."
+    "notka": "Jeden wspólny układ T4 i dwa zestawy nazw (ADR 0037). Wspólna geometria jest konwencją atlasową, nie zaprzeczeniem przemian Wielkiej Zorzy. Pozycje umowne realizują opisane relacje; brak kanonicznych współrzędnych i skali. Zasięgi lasów/bezimiennych dopływów i połączenia osad są rekonstrukcją, nie odczytem z grafiki. Szlaki lądowe występują wyłącznie między clachanami kithkin i jest to wybór merytoryczny: to jedyny lud osiadły i rolniczy utrzymujący wymianę lądową, a siecią transportową planu jest woda (Merrow Lanes, Dark Meanders pod korytem Wanderwine). Brak traktów na wschodzie i południu nie oznacza braku danych, lecz brak takiego ruchu w epoce Oony. Rzeka wychodzi poza kadr; brak wymyślonego oceanu. Eclipsed i nowe po nim lokacje poza zakresem."
    }
   }
  ],
