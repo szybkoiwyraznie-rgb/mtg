@@ -30,7 +30,7 @@ dziedziczona z projektu mtg-game.
 | [0012](0012-zendikar-rekonstrukcja-mapy-t3.md) | Zendikar — mapa rekonstrukcji wariantu T3: podkład własny z kanonu tekstowego (brak oficjalnej mapy), Murasa oznaczona jako przybliżona | Częściowo zastąpiona (adnotacje na podkładzie — patrz ADR 0013) |
 | [0013](0013-zendikar-mapa-bez-adnotacji-rekonstrukcyjnych.md) | Zendikar — mapa bez adnotacji rekonstrukcyjnych na podkładzie; proweniencja w map.json i treści strony planu | Zaakceptowana |
 | [0014](0014-karta-bez-sekcji-druk-w-kolekcji.md) | Karta Katalogowa bez sekcji „Druk w Kolekcji" — dane wydruku tylko w infoboksie; pogłębianie = lore, nie meta | Zaakceptowana |
-| [0015](0015-petla-jakosci-v2-lore-i-warsztat-mapowy.md) | Pętla Jakości v2 — krok 2: pogłębianie LORE; krok 4: kompletacja i jakość map (POI, weryfikacja, wspólny warsztat rysowania T4) | Zaakceptowana |
+| [0015](0015-petla-jakosci-v2-lore-i-warsztat-mapowy.md) | Pętla Jakości v2 — krok 2: pogłębianie LORE; krok 4: kompletacja i jakość map (POI, weryfikacja, wspólny warsztat rysowania T4) | Zaakceptowana (§2.6 regiony haseł — częściowo zastąpione, patrz ADR 0043) |
 | [0016](0016-format-wpisu-karty-kanon-katalogowy.md) | Format Wpisu Karty — kanon katalogowy: blok danych Oracle w treści, warstwy mechaniki, odczyt flavoru; bez sekcji „Ilustracja" i „Druk w Kolekcji" | Częściowo zastąpiona (układ LORE-first — patrz ADR 0030) |
 | [0017](0017-fot-kon-w-tresci-karty.md) | FOT/KON rysują się w treści karty (FOT nad sekcjami, KON pod pierwszą) — koniec przycisków torów; zastępuje mechanikę torów ADR 0008 | Zaakceptowana |
 | [0018](0018-wspolny-silnik-mapowy-mapforge.md) | Wspólny silnik mapowy `mapforge` — deterministyczny render SVG z danych (biomy, rzeki, pasma, etykiety pod kątem); warsztat T4 | Zaakceptowana |
@@ -58,6 +58,7 @@ dziedziczona z projektu mtg-game.
 | [0040](0040-druk-zrodlowy-karty-nie-jest-kanoniczny.md) | Oryginalny druk karty nie jest kanoniczny: tor infoboksu tylko; zero nawiązań i wniosków z printu w treści, pinezkach i Źródłach; FOT/KON = jedyne kanoniczne ilustracje (agent bez dostępu) | Zaakceptowana |
 | [0041](0041-pokrycie-l2-tylko-z-nowym-detalem-dominaria-l0-l1.md) | Pokrycie L2 tylko z nowym detalem (wycinek bazy zabroniony); mapa Dominarii = L0 + kafle L1 (nakładka „Domeny" usunięta, pinezka z odczytu mastera); korekta ADR 0039 §8 (L0 jako `<img>`, nie inline) | Zaakceptowana |
 | [0042](0042-glos-kronikarza-narracja-100-w-swiecie.md) | Głos Kronikarza: narracja wpisu karty (od pierwszej sekcji do „Mechanika jako Opowieść”) 100% w świecie, z leksyką zastępczą (scena/ryt/zapis/inskrypcja); terminy meta (karta, Fabuła, Kodeks, Scryfall, reguła, epoka karty, most) tylko w frontmatter/infoboksie/Mechanice/Źródłach; wycofany ADR 0030 §5; strażnik testowy | Zaakceptowana |
+| [0043](0043-na-mapie-oznaczenia-niosa-wylacznie-karty.md) | Na mapie oznaczenia noszą wyłącznie karty: piny/obwódki tylko kart (żadnych pinezek i obwódek haseł/planów); geografia nie jest na mapie zaznaczana; jedyny związek strony z mapą = odsyłanie do mapy zbliżonej w określonym miejscu (deep-link `?x=&y=`); walidacja: pinezka tylko `karta`, `regiony` wycofane; ADR 0015 §2.6 częściowo zastąpione | Zaakceptowana |
 
 Spójnością rejestru (numeracja, statusy, tabela) pilnuje
 `test/rejestr-adr.test.js`.

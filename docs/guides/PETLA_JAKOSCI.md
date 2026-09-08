@@ -128,9 +128,11 @@ najtańszej:
    — dążenie: jakość mapy Śródziemia (podkład mapome, T2), docelowo
    **wyprzedzająca** (kształty, kolory, czytelność, gęstość POI).
    Benchmark = porównanie z mapą Śródziemia + ocena właściciela.
-6. **Regiony haseł** geograficznych (obwódki) — gdy hasła istnieją
-   (próg ≥2 kart); dopóki nie istnieją, pod-punkty 2–5 są treścią
-   passu mapowego.
+6. **Hasła nie oznaczają mapy (ADR 0043):** na mapie oznaczenia
+   (piny/obwódki) noszą WYŁĄCZNIE karty; geografia nie jest na mapie
+   zaznaczana. Jedyny związek strony z mapą = odsyłanie do mapy
+   zbliżonej w określonym miejscu (deep-link `?x=&y=`). Pod-punkty
+   2–5 są treścią passu mapowego.
 
 Wynik każdego passu wpisuje się do `content/co-nowego.md` (co dodane,
 co zweryfikowane, co poprawione).
@@ -156,8 +158,10 @@ cytowania (waga 2) + wikilinki wychodzące (waga 1) + pinezka (waga 2).
 Raport w opisie PR; twarde progi dopiero po zebraniu danych
 referencyjnych.
 
-Pinezka ma sens tylko dla stron z lokalizacją: dla haseł wyłącznie
-klasy `geografia`/`postac` (SZKIELET_HASLA: „Na mapie” — region/obwódka
-z pewnością). Dla pozostałych klas haseł komponent = **N/A** i nie
-liczy się do maksimów strony (maks 6 zamiast 8) — inaczej każdy
-np. hasło klasy `spolecznosc` byłby systematycznie „niekompletne”.
+Pinezka ma sens tylko dla stron, które mogą nosić oznaczenie na mapie.
+**ADR 0043: na mapie oznaczenia noszą wyłącznie karty** — więc dla
+wszystkich haseł (każdej klasy) komponent pinezki = **N/A** i nie
+liczy się do maksimum strony (maks 6 zamiast 8). Hasło łączy się z
+mapą wyłącznie odsyłaniem do mapy zbliżonej w określonym miejscu
+(deep-link `?x=&y=`), nie znacznikiem — inaczej każdy hasło byłoby
+systematycznie „niekompletne”.

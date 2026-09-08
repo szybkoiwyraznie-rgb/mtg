@@ -1,3 +1,25 @@
+## 2026-09-08 20:15 — ADR 0043: na mapie oznaczenia noszą wyłącznie karty
+
+- **Reguła systemowa (właściciel):** piny/obwódki na mapie mogą mieć
+  **tylko KARTY**. Geografia nie jest na mapie zaznaczana; jedyny związek
+  strony (karty/hasła/planu) z mapą = **odsyłanie do mapy zbliżonej w
+  określonym miejscu** (deep-link `?x=<0–1>&y=<0–1>`).
+- **Czyszczenie bazy:** hasło `mephidross` traci pinezkę z frontmattera
+  i obwódkę regionu; „Na mapie” = zdanie o położeniu + odsyłanie
+  `#/mapa/mirrodin?x=0.6381&y=0.7787`. Pole `regiony` usunięte ze
+  wszystkich `map.json` (schemat wycofany).
+- **Silnik:** renderowanie obwódek/etykiet regionów haseł usunięte
+  (render-map.js + martwa CSS); **nowy deep-link `?x=&y=`** — centruje i
+  przybliża punkt bez zostawiania znacznika (działa z LOD, jak `?pin=`).
+- **Walidacja na sztywno:** frontmatter `pinezka` poza `karta` = błąd
+  (registry.js); `regiony` w `map.json` = problem (content-loader) +
+  guard test `mapy.test.js` (ADR 0043).
+- **Metryka (ADR 0043):** pinezka = N/A dla haseł **każdej klasy**
+  (maks 6 zamiast 8) — nie tylko niegeograficznych.
+- **Dokumentacja:** ADR 0043 (+ ADR 0015 §2.6 częściowo zastąpione);
+  SZKIELET_HASLA, PETLA_JAKOSCI, PROCES_MAP, PLAN mapforge E5.
+- Weryfikacja: 162/162 testów, build 23 strony, map-audit 0, stats 100%.
+
 ## 2026-09-08 18:50 — Pętla Jakości: pełny obieg (metyka, pogłębienie, hasło Mephidross)
 
 - **Metryka:** pinezka w stats nie ma sensu dla haseł bez lokalizacji

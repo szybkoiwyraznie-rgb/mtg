@@ -94,11 +94,12 @@ frakcji/istoty. Dalsze rozpoznane encje nadal wymagają drugiej karty:
 **Mephidross — wykonane 2026-09-08**, `content/lore/mephidross.md`,
 klasa `geografia`, plan Mirrodin. Próg (2 karty) spełniały
 476mbs-banishment-decree + 488som-carapace-forger (+ plan mirrodin);
-wikilinki dopisane we wszystkich trzech miejscach; na mapie Mirrodinu
-obwódka regionu (`regiony` w map.json, pewność region, bbox z kotwic
-kanonicznych). Uwaga: „Tangle” na liście encji ≥2 stron NIE tworzy
+wikilinki dopisane we wszystkich trzech miejscach; sekcja „Na mapie”
+odsyła do mapy Mirrodinu zbliżonej w określonym miejscu (deep-link
+`?x=&y=`). Uwaga: „Tangle” na liście encji ≥2 stron NIE tworzy
 hasła — to dwie różne encje o tej samej nazwie (miedziany las
-Mirrodinu i Drzewo Świata Aerony w Dominarii).
+Mirrodinu i Drzewo Świata Aerony w Dominarii). (Wcześniejsza obwódka
+regionu `regiony` w map.json wycofana — ADR 0043.)
 
 Encje „o jedną kartę” od progu (skan boldów 2026-09-08):
 
@@ -193,11 +194,14 @@ Snapshoty Scryfalla niosą `set`/`set_name`; przy dziesiątkach kart może
 przydać się rejestr `content/sets.json` z polskimi opisami. Zbierać
 potrzebę przy pierwszym panelu filtrów po wydaniach.
 
-## Metryka niegeograficznych haseł (rozpoznanie PR-22) — DOMKNIĘTE (PR-25)
+## Metryka haseł bez pinezki (rozpoznanie PR-22) — DOMKNIĘTE (PR-25)
 
 Pierwsze hasło klasy `spolecznosc` (Nowa Phyrexia) miało wszystkie
 wymagane sekcje, źródła i wikilinki, lecz stats dawał 6/8 za brak
 pinezki, choć szkielet nie wymaga lokalizacji tej klasy. Rozwiązanie
-(2026-09-08, `tools/wiki-stats.mjs`): dla haseł poza klasami
-`geografia`/`postac` komponent pinezki = N/A i nie liczy się do
-maksimum strony (maks 6); uwaga w gidzie Pętli Jakości.
+(2026-09-08, `tools/wiki-stats.mjs`): komponent pinezki = N/A i nie
+liczy się do maksimum strony (maks 6); uwaga w gidzie Pętli Jakości.
+**ADR 0043 (2026-09-08) poszerza regułę systemowo:** na mapie
+oznaczenia noszą wyłącznie karty, więc pinezka = N/A dla haseł
+**każdej** klasy (nie tylko niegeograficznych); hasło łączy się z
+mapą wyłącznie odsyłaniem (`?x=&y=`), pole `regiony` wycofane.

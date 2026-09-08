@@ -59,7 +59,10 @@ kolejności od najtańszej:
    dążyła do mapy Śródziemia (podkład mapome, T2) i docelowo ją
    **wyprzedzała** (kształty, kolory, czytelność, gęstość POI).
 6. **Regiony haseł** geograficznych (obwódki) — gdy hasła istnieją
-   (próg ≥2 kart).
+   (próg ≥2 kart). → **Częściowo zastąpione (ADR 0043):** hasła nie
+   oznaczają mapy (żadnej obwódki i pinezki); jedyny związek hasła z
+   mapą = odsyłanie ze strony do mapy zbliżonej w określonym miejscu
+   (deep-link `?x=&y=`).
 
 ### 3. Wariant T4 (definicja)
 
