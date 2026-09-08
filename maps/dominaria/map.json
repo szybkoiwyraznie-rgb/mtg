@@ -214,7 +214,6 @@
  ],
  "plan": "dominaria",
  "podklad": "l0.jpg",
- "regiony": [],
  "rekonstrukcja": false,
  "tytul": "Dominaria",
  "uklad_wspolrzednych": "ZŁOTY = raster M1 Varghedina (master 8100×5200; plik l0.jpg 1920×1233 to jego pomniejszony proxy, ten sam kadr). x,y kotwic i pinezek znormalizowane 0–1 względem M1. Nowa pinezka: odczyt X,Y na masterze → x=X/8100, y=Y/5200 (L13: współrzędne mierzone na docelowym pliku).",

@@ -223,7 +223,6 @@
    "uzasadnienie": "Fabuła właściciela: ostępy Glen Elendra, Oona, wróżki i usypiany olbrzym. Punkt w zalesionym otoczeniu górskiej doliny na południe od Lys Alana/Cayr Ulios; bez przypisywania sceny do konkretnego miejsca pałacu. Współrzędne są wspólne w obu obliczach T4, zgodnie z ADR 0037."
   }
  ],
- "regiony": [],
  "scena": "scena.json",
  "generator": "tools/mapforge/lorwyn-scena-t4.mjs",
  "silnik": "mapforge atlas; wspólna geometria, dwa słowniki etykiet; jaskinia Velis Vel ma własny glif",

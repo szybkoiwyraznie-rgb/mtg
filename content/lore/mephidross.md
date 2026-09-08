@@ -6,9 +6,6 @@ klasa: geografia
 plan: mirrodin
 tagi: [geografia, phyrexia]
 materializacja: 2026-09-08
-pinezka:
-  mapa: mirrodin
-  pewnosc: region
 ---
 
 ## Definicja
@@ -54,12 +51,11 @@ to, co bagno pochłaniało na zawsze.
 
 ## Na mapie
 
-Region Drossu ma na [[mirrodin|mapie Mirrodinu]] obwódkę
-regionu (pewność **region** — granice bagna są tylko
-przybliżone przez kanon: zachód po Oxidzie, wschód po Black
-Lacunie i Ish Sah, północ po brzegu Quicksilver Sea).
+Bagno trzyma południe planu: na [[mirrodin|mapie Mirrodinu]] leży
+między łańcuchem Oxiddy a brzegiem Quicksilver Sea, a kanon
+jego granic ostro nie wyznacza.
 
-[Otwórz mapę Mirrodinu z obwódką Mephidrossu](#/mapa/mirrodin).
+[Mephidross na mapie Mirrodinu](#/mapa/mirrodin?x=0.6381&y=0.7787)
 
 ## Źródła
 
