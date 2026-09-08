@@ -11,6 +11,12 @@
 > podmapy wg [ADR 0032](../../docs/decisions/0032-final-fantasy-plan-franczyza-mapy-wg-czesci-sagi.md),
 > jedna mapa stanu współczesnego wg
 > [ADR 0033](../../docs/decisions/0033-mapy-planow-jedna-mapa-aktualnego-stanu-kanonicznego.md).
+>
+> **Aktualizacja (ta sama sesja):** mechanizm podmapy Aerony rozstrzyga
+> [ADR 0039](../../docs/decisions/0039-piramida-lod-map-przyblizenia-kafelki.md) —
+> Aerona to **przybliżenie L2** w piramidzie LOD (L0 FHD → L1 kafelki
+> M1 → L2 region), nie podmapa-strona. Rekomendacja materiałowa z §5
+> (M1 + D1) bez zmian; procedura: §7 ADR 0039 (od razu docelowo).
 
 ## 0. Kotwica: karta inicjująca 40USG Expunge
 
