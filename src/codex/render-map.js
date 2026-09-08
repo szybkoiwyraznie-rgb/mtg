@@ -211,6 +211,43 @@ export function kafleDlaRect(manifest, x0, y0, x1, y1) {
   return out;
 }
 
+/**
+ * Prostokąt widzialny w układzie złotym [x0, y0, x1, y1] (clamp do [0,1]).
+ * Wejście: wymiary okna, stan {k, ox, oy}, wymiary sceny (px, bez transformu),
+ * kalibracja aktywnej sceny (złoty → scena). Czysta funkcja (testy + LOD).
+ */
+export function prostWidoczny({ oknoW, oknoH, stan, scenaW, scenaH, kal }) {
+  const u0 = (0 - stan.ox) / (scenaW * stan.k);
+  const v0 = (0 - stan.oy) / (scenaH * stan.k);
+  const u1 = (oknoW - stan.ox) / (scenaW * stan.k);
+  const v1 = (oknoH - stan.oy) / (scenaH * stan.k);
+  const zloty = (u, s, o) => (u - o) / s;
+  const clamp01 = (v) => Math.min(1, Math.max(0, v));
+  return [
+    clamp01(zloty(u0, kal.sx, kal.ox)), clamp01(zloty(v0, kal.sy, kal.oy)),
+    clamp01(zloty(u1, kal.sx, kal.ox)), clamp01(zloty(v1, kal.sy, kal.oy)),
+  ];
+}
+
+/** Czy prostokąty [x0,y0,x1,y1] mają część wspólną (brzeg styka się). */
+export function prostNaklada(a, b) {
+  return a[0] <= b[2] && b[0] <= a[2] && a[1] <= b[3] && b[1] <= a[3];
+}
+
+/** Czy punkt (x, y) leży w bbox [x0,y0,x1,y1]. */
+export function wBbox(x, y, bbox) {
+  return x >= bbox[0] && x <= bbox[2] && y >= bbox[1] && y <= bbox[3];
+}
+
+/**
+ * Decyzja L2 (ADR 0039 §3): pokazuj pokrycie, gdy skala wizualna
+ * w układzie złotym osiągnęła próg I viewport styka się z bbox.
+ * Poza pokryciem głęboki zoom pokazuje dalej L1 (nigdy pustki).
+ */
+export function czyPokazacL2(kWizualna, prog, widoczny, bbox) {
+  return kWizualna >= prog && prostNaklada(widoczny, bbox);
+}
+
 // ADR 0027 (v2 — drzewo HTML): każda mapa jest OSOBNĄ, samowystarczalną
 // stroną `maps/<plan>.html` (inline SVG + pełny silnik + dane), którą
 // główny artefakt osadza w <iframe>. file:// blokuje fetch, ale NIE
@@ -244,8 +281,9 @@ export function renderMapeIframe(slugPlanu, query = {}) {
     );
   }
   const warianty = wariantyMapy(mapa);
+  const epoki = warianty.filter((w) => !Array.isArray(w.bbox)); // LOD: nakładki bbox poza przełącznikiem
   // proporcje iframe'a = wariant startowy (ADR 0035: domyślny albo ?epoka=)
-  const startowy = warianty.find((w) => w.id === query.epoka) ?? wariantDomyslny(warianty);
+  const startowy = epoki.find((w) => w.id === query.epoka) ?? wariantDomyslny(warianty);
   const szer = startowy.wymiary?.szerokosc ?? mapa.wymiary?.szerokosc ?? 3200;
   const wys = startowy.wymiary?.wysokosc ?? mapa.wymiary?.wysokosc ?? 2400;
   const pinezki = mapa.pinezki ?? [];
@@ -290,7 +328,7 @@ export function renderMapeIframe(slugPlanu, query = {}) {
           <li><span class="mapa-pinezka-legenda" style="background:${p.kolor}"></span>
             <strong>${p.etykieta}</strong> — ${p.opis}</li>`).join('')}
         <li><span class="mapa-obwodka-legenda"></span><strong>obwódka regionu</strong> — kraina hasła geograficznego (kolor = pewność)</li>
-        ${warianty.length > 1 ? `<li><span class="mapa-epoki-legenda">⇄</span><strong>przełącznik epok</strong> (w oknie mapy) — ${warianty.map((w) => `<em>${escapeHtml(w.tytul ?? w.id)}</em>${w.epoka ? ` (${escapeHtml(w.epoka)})` : ''}`).join(' ↔ ')}; pinezki kart są wspólne dla wszystkich podkładów (jeden układ współrzędnych — ADR 0035)</li>` : ''}
+        ${epoki.length > 1 ? `<li><span class="mapa-epoki-legenda">⇄</span><strong>przełącznik epok</strong> (w oknie mapy) — ${epoki.map((w) => `<em>${escapeHtml(w.tytul ?? w.id)}</em>${w.epoka ? ` (${escapeHtml(w.epoka)})` : ''}`).join(' ↔ ')}; pinezki kart są wspólne dla wszystkich podkładów (jeden układ współrzędnych — ADR 0035)</li>` : ''}
       </ul>
     </section>
 
@@ -356,9 +394,17 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
 
   // Warianty podkładu (ADR 0035): układ ZŁOTY współrzędnych = wariant
   // domyślny; start z `?epoka=<id>` albo domyślny.
+  // LOD (ADR 0039): wariant z `bbox` to NAKŁADKA L2 (przybliżenie wycinka
+  // w ramce złotej — bez własnej sceny, automatyczna, spoza przełącznika
+  // epok); `?epoka=<id-nakładki>` dopasowuje widok do jej bbox.
   const warianty = wariantyMapy(mapa);
   const zloty = wariantDomyslny(warianty);
-  const start = warianty.find((w) => w.id === query.epoka) ?? zloty;
+  const nakladkiL2 = warianty.filter((w) => Array.isArray(w.bbox));
+  const scenyWarianty = warianty.filter((w) => !Array.isArray(w.bbox));
+  const epokaQuery = scenyWarianty.find((w) => w.id === query.epoka);
+  const regionQuery = nakladkiL2.find((w) => w.id === query.epoka) ?? null;
+  const start = epokaQuery ?? zloty;
+  const maLOD = nakladkiL2.length > 0 || scenyWarianty.some((w) => w.kafle);
   const szer = start.wymiary?.szerokosc ?? mapa.wymiary?.szerokosc ?? 3200;
   const wys = start.wymiary?.wysokosc ?? mapa.wymiary?.wysokosc ?? 2400;
 
@@ -396,7 +442,32 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
   // Per wariant: etykieta niesie `data-epoka` swojego podkładu i jest
   // widoczna tylko, gdy ten podkład jest aktywny; wariant z `etykiety:false`
   // (czysty raster — decyzja właściciela, ADR 0035) nie daje żadnych.
-  const sceny = warianty.map((w) => {
+  // LOD (ADR 0039): warstwa kafelków L1 w scenie + nakładki L2 (bbox)
+  // w scenie ZŁOTEJ (dziedziczą jej pan/zoom; przy przełączeniu epoki
+  // chowają się razem ze złotą sceną). Etykiety Codexu ich nie dotyczą
+  // (T1 ma własne napisy na rastrze).
+  const htmlKafle = (w) => {
+    if (!w.kafle) return '';
+    const kf = w.kafle;
+    const katalog = (w.podkladUrl ? String(w.podkladUrl).replace(/\/[^/]*$/, '')
+      : String(slugPlanu).split('/').pop()) + `/${kf.katalog}/k`;
+    return `<div class="mapa-kafle" data-kafle data-baza="${escapeHtml(katalog)}" data-format=".jpg"`
+      + ` data-kolumny="${kf.kolumny}" data-wiersze="${kf.wiersze}" data-rozmiar="${kf.rozmiar}"`
+      + ` data-prog="${Number(kf.prog ?? 2.5)}"`
+      + ` data-master-w="${w.wymiary?.szerokosc ?? 0}" data-master-h="${w.wymiary?.wysokosc ?? 0}" hidden></div>`;
+  };
+  const htmlNakladkiL2 = nakladkiL2.map((w) => {
+    const [x0, y0, x1, y1] = w.bbox ?? [];
+    if ([x0, y0, x1, y1].some((v) => typeof v !== 'number')) return '';
+    const src = w.podkladUrl ?? `${String(slugPlanu).split('/').pop()}/${w.podklad}`;
+    return `<div class="mapa-l2" data-l2="${escapeHtml(w.id)}" data-prog="${Number(w.prog ?? 6)}"`
+      + ` data-bbox="${[x0, y0, x1, y1].join(',')}"`
+      + ` style="left:${(x0 * 100).toFixed(3)}%;top:${(y0 * 100).toFixed(3)}%;`
+      + `width:${((x1 - x0) * 100).toFixed(3)}%;height:${((y1 - y0) * 100).toFixed(3)}%" hidden>`
+      + `<img data-l2-img data-src="${escapeHtml(src)}" alt="Zbliżenie: ${escapeHtml(w.tytul ?? w.id)}" draggable="false"></div>`;
+  }).join('');
+
+  const sceny = scenyWarianty.map((w) => {
     const tier = w.wariant ?? mapa.wariant;
     const svgTypograficzny = w.etykiety && w.podklad && tier !== 'T1' && tier !== 'T2'
       && /\.svg$/i.test(String(w.podklad));
@@ -460,18 +531,21 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
       || ((w.podkladData || w.podkladUrl)
         ? `<img class="mapa-podklad" src="${w.podkladData ?? w.podkladUrl}" alt="Podkład mapy: ${escapeHtml(w.tytul ?? mapa.tytul ?? slugPlanu)}" draggable="false"${w.id === start.id ? '' : ' loading="lazy"'}>`
         : `<div class="mapa-brak-podkladu">Brak osadzonego podkładu (build nie wstrzyknął pliku — sprawdź maps/${escapeHtml(slugPlanu)}/${escapeHtml(String(w.podklad ?? 'podklad.svg'))}).</div>`);
+    const czyZlota = w.id === zloty.id;
     return `<div class="mapa-scena" data-scena data-epoka="${escapeHtml(w.id)}" data-aspekt="${W / H}"
-          data-sx="${k.sx}" data-sy="${k.sy}" data-ox="${k.ox}" data-oy="${k.oy}" data-etykiety="${w.etykiety ? '1' : '0'}"
+          data-sx="${k.sx}" data-sy="${k.sy}" data-ox="${k.ox}" data-oy="${k.oy}" data-etykiety="${w.etykiety ? '1' : '0'}"${czyZlota ? ' data-zloty="1"' : ''}
           style="aspect-ratio: ${W} / ${H}"${w.id === start.id ? '' : ' hidden'}>
           ${podklad}
+          ${htmlKafle(w)}
+          ${czyZlota ? htmlNakladkiL2 : ''}
           <svg class="mapa-regiony" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">${svgRegionyDla(w)}</svg>
         </div>`;
   }).join('\n        ');
 
   // Przełącznik epok/podkładów (ADR 0035) — tylko gdy jest z czego wybierać.
-  const htmlEpoki = warianty.length > 1 ? `
+  const htmlEpoki = scenyWarianty.length > 1 ? `
       <div class="mapa-epoki" role="group" aria-label="Podkład mapy (epoka)">
-        ${warianty.map((w) => `<button type="button" data-epoka-przelacz="${escapeHtml(w.id)}"
+        ${scenyWarianty.map((w) => `<button type="button" data-epoka-przelacz="${escapeHtml(w.id)}"
           aria-pressed="${w.id === start.id ? 'true' : 'false'}"
           title="${escapeHtml(w.podtytul ?? w.epoka ?? w.tytul ?? w.id)}">${escapeHtml(w.tytul ?? w.id)}</button>`).join('')}
       </div>` : '';
@@ -491,7 +565,7 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
     </header>`}
     <div class="mapa-okno" id="mapa-okno" tabindex="0" role="application"
       aria-label="Mapa ${escapeHtml(mapa.tytul ?? slugPlanu)}: przeciągnij, aby przesunąć, kółko myszy, aby przybliżyć"
-      data-plan="${escapeHtml(slugPlanu)}" data-pin="${escapeHtml(pinDocelowy)}" data-aspekt="${szer / wys}" data-epoka="${escapeHtml(start.id)}">
+      data-plan="${escapeHtml(slugPlanu)}" data-pin="${escapeHtml(pinDocelowy)}" data-aspekt="${szer / wys}" data-epoka="${escapeHtml(start.id)}"${regionQuery ? ` data-region="${escapeHtml(regionQuery.id)}"` : ''}${maLOD ? ' data-kmax="22"' : ''}>
       <div class="mapa-ruch" data-mapa-ruch>
         ${htmlSceny}
       </div>
@@ -596,6 +670,29 @@ export function zamontujMape(app, opcje = {}) {
     return [kal.ox + kal.sx * x, kal.oy + kal.sy * y];
   };
 
+  // ── LOD (ADR 0039): kafelki L1 + nakładki L2 żyją w złotej scenie ──
+  // Mapy bez LOD nie mają tych węzłów — aktualizujLOD wychodzi natychmiast
+  // i zachowanie jest bitowo zgodne z v1.
+  const scenaZlota = sceny.find((s) => s.dataset?.zloty === '1') ?? null;
+  const warstwaKafli = scenaZlota?.querySelector?.('[data-kafle]') ?? null;
+  const manifestKafli = warstwaKafli ? {
+    baza: warstwaKafli.dataset?.baza ?? '',
+    format: warstwaKafli.dataset?.format ?? '.jpg',
+    kolumny: parseInt(warstwaKafli.dataset?.kolumny ?? '0', 10),
+    wiersze: parseInt(warstwaKafli.dataset?.wiersze ?? '0', 10),
+    rozmiar: parseInt(warstwaKafli.dataset?.rozmiar ?? '0', 10),
+    prog: parseFloat(warstwaKafli.dataset?.prog ?? '2.5'),
+    masterW: parseFloat(warstwaKafli.dataset?.masterW ?? '0'),
+    masterH: parseFloat(warstwaKafli.dataset?.masterH ?? '0'),
+  } : null;
+  const nakladki = [...(okno.querySelectorAll?.('[data-l2]') ?? [])].map((el) => ({
+    el,
+    img: el.querySelector?.('[data-l2-img]') ?? null,
+    prog: parseFloat(el.dataset?.prog ?? '6'),
+    bbox: String(el.dataset?.bbox ?? '').split(',').map(Number),
+  })).filter((n) => n.bbox.length === 4 && n.bbox.every(Number.isFinite));
+  const kafleCache = new Map(); // indeks row-major → <img> wmontowany w warstwę
+
   // ── Warstwa karty (B2): otwarcie z pinezki, zamknięcie z powrotem ──
   const warstwa = app.querySelector('[data-map-warstwa]');
   const trescWarstwy = warstwa?.querySelector?.('[data-map-warstwa-tresc]');
@@ -657,6 +754,74 @@ export function zamontujMape(app, opcje = {}) {
   const szerokoscSceny = () => ruch.clientWidth || ruch.offsetWidth || okno.clientWidth || 800;
   const wysokoscSceny = () => szerokoscSceny() / aspekt;
 
+  // Leniwe szczeble piramidy (ADR 0039 §2–3): L1 (kafelki mastera) od progu
+  // S1 zamiast rozciąganego L0; L2 (pokrycie regionalne) od progu S2, tylko
+  // gdy viewport styka się z bbox. Leniwy src (podmiana data-src → src)
+  // dopiero przy zbliżaniu do progu — mapa bez zoomu nie ciągnie bajtów.
+  const aktualizujLOD = () => {
+    if (!warstwaKafli && nakladki.length === 0) return;
+    if (scenaZlota?.hidden) return; // LOD obsługuje złotą scenę (inna epoka: pauza)
+    const kWiz = stan.k * kal.sx;
+    const w = szerokoscSceny();
+    const h = wysokoscSceny();
+    const widoczny = prostWidoczny({
+      oknoW: okno.clientWidth || w, oknoH: okno.clientHeight || h,
+      stan, scenaW: w, scenaH: h, kal,
+    });
+    if (warstwaKafli && manifestKafli) {
+      const m = manifestKafli;
+      const pokaz = kWiz >= m.prog && m.kolumny > 0 && m.masterW > 0;
+      warstwaKafli.hidden = !pokaz;
+      if (pokaz) {
+        const marg = m.rozmiar / m.masterW; // 1 kafel zapasu przeciw „popom" przy panie
+        const margH = m.rozmiar / m.masterH;
+        const idx = kafleDlaRect(m, widoczny[0] - marg, widoczny[1] - margH,
+          widoczny[2] + marg, widoczny[3] + margH);
+        const zestaw = new Set(idx);
+        const dok = globalThis.document;
+        for (const n of idx) {
+          if (kafleCache.has(n)) continue;
+          const img = dok?.createElement?.('img');
+          if (!img) break; // shim testowy bez document — logika działa, montażu nie ma
+          const c = n % m.kolumny;
+          const r = Math.floor(n / m.kolumny);
+          img.setAttribute?.('src', `${m.baza}${String(n).padStart(3, '0')}${m.format}`);
+          img.setAttribute?.('alt', '');
+          img.setAttribute?.('draggable', 'false');
+          if (img.style) {
+            img.style.position = 'absolute';
+            img.style.left = `${(c * m.rozmiar / m.masterW) * 100}%`;
+            img.style.top = `${(r * m.rozmiar / m.masterH) * 100}%`;
+            img.style.width = `${(Math.min(m.rozmiar, m.masterW - c * m.rozmiar) / m.masterW) * 100}%`;
+            img.style.height = `${(Math.min(m.rozmiar, m.masterH - r * m.rozmiar) / m.masterH) * 100}%`;
+          }
+          warstwaKafli.appendChild?.(img);
+          kafleCache.set(n, img);
+        }
+        for (const [n, img] of kafleCache) {
+          if (zestaw.has(n)) continue;
+          kafleCache.delete(n);
+          img.remove?.();
+        }
+      }
+    }
+    for (const n of nakladki) {
+      const pokaz = czyPokazacL2(kWiz, n.prog, widoczny, n.bbox);
+      if (n.img && !n.img.getAttribute?.('src') && kWiz >= n.prog - 1.5) {
+        n.img.setAttribute?.('src', n.img.dataset?.src ?? n.img.getAttribute?.('data-src') ?? '');
+      }
+      const widoczna = !n.el.hidden;
+      if (pokaz && !widoczna) {
+        n.el.hidden = false;
+        // Fade-in: klasa w następnej klatce (bez rAF — synchronicznie).
+        (globalThis.requestAnimationFrame ?? ((fn) => fn()))(() => n.el.classList?.toggle?.('widoczna', true));
+      } else if (!pokaz && widoczna) {
+        n.el.classList?.toggle?.('widoczna', false);
+        n.el.hidden = true; // fade-out odpuszczony (natychmiastowe ukrycie)
+      }
+    }
+  };
+
   // Domyślny widok = cała mapa dopasowana do okna (contain, wyśrodkowana),
   // bez ucinania. Okno ma stałą wysokość (clamp), a scena szerokość 100% +
   // aspect-ratio — dla wyższych map scena wychodziła poza okno i była
@@ -675,6 +840,7 @@ export function zamontujMape(app, opcje = {}) {
 
   const nanies = () => {
     ruch.style.transform = `translate(${stan.ox}px, ${stan.oy}px) scale(${stan.k})`;
+    aktualizujLOD();
     // Pinezki i etykiety regionów żyją w nakładce POZA skalowaną warstwą:
     // pozycję liczymy w pikselach ekranu (x·W·k + ox), więc markery mają
     // stały rozmiar i ostry render w każdym przybliżeniu — nie skalują
@@ -824,8 +990,33 @@ export function zamontujMape(app, opcje = {}) {
       const wysOkna = okno.clientHeight || h;
       const [px, py] = wUkladzie(el);
       stan.k = 2.5 / kal.sx; // ten sam wizualny zoom deep-linka w każdym wariancie
+      // LOD: pinezka w bbox nakładki → od razu zoom z jej progiem (ADR 0039 §6).
+      const gx = parseFloat(el.dataset.x);
+      const gy = parseFloat(el.dataset.y);
+      for (const n of nakladki) {
+        if (Number.isFinite(gx) && Number.isFinite(gy) && wBbox(gx, gy, n.bbox)) {
+          stan.k = Math.min(Math.max(stan.k, (n.prog * 1.1) / kal.sx), K_MAX);
+        }
+      }
       stan.ox = (okno.clientWidth || w) / 2 - px * w * stan.k;
       stan.oy = wysOkna / 2 - py * h * stan.k;
+    }
+  }
+
+  // ?epoka=<nakładka-L2> (ADR 0039): dopasuj widok do jej bbox — deep-link regionu.
+  const regionDocelowy = okno.getAttribute?.('data-region') ?? '';
+  if (regionDocelowy) {
+    const n = nakladki.find((x) => x.el.dataset?.l2 === regionDocelowy);
+    if (n) {
+      const w = szerokoscSceny();
+      const h = wysokoscSceny();
+      const winW = okno.clientWidth || w;
+      const winH = okno.clientHeight || h;
+      const [x0, y0, x1, y1] = n.bbox;
+      const kDopasuj = Math.min(winW / ((x1 - x0) * kal.sx * w), winH / ((y1 - y0) * kal.sy * h));
+      stan.k = Math.min(Math.max(kDopasuj * 0.95, n.prog / kal.sx), K_MAX);
+      stan.ox = winW / 2 - (kal.ox + kal.sx * (x0 + x1) / 2) * w * stan.k;
+      stan.oy = winH / 2 - (kal.oy + kal.sy * (y0 + y1) / 2) * h * stan.k;
     }
   }
 
