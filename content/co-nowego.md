@@ -1,3 +1,22 @@
+## 2026-09-08 18:10 — Głos Kronikarza: narracja kart 100% w świecie (ADR 0042)
+
+- **Decyzja właściciela (po recenzji Expunge):** „aż do części
+  Mechanika jako opowieść całość treści jest 100% osadzona w Lore” —
+  wpis karty czytany ma być jak fragment kroniki świata. Język procesu
+  (karta, Fabuła, Kodeks, kolekcja, kanon, Scryfall, oracle, print,
+  flavor, snapshot, dostawa, reguła karty, epoka karty, „most”)
+  zabroniony w narracji do sekcji „Mechanika jako Opowieść”; żyje tylko
+  w frontmatter/infoboksie/Mechanice/Źródłach.
+- **ADR 0042** + wycofany ADR 0030 §5 („skrajnie zwięźle”) + słowniczek
+  zastępczy: scena/ryt/zapis, inskrypcja, kronikarz dopowiada,
+  mechanika rytu, fakt świata.
+- **Skan katalogu: meta-język w narracji miały wszystkie 11 kart**
+  (w tym przepisany Expunge) — ~70 poprawek zdaniowych; fakty
+  (miejsc, bytów, epok, pinezek) bez zmian.
+- **Strażnik:** `test/glos-kronikarza.test.js` — 26 terminów meta na
+  ciało sekcji narracyjnych każdej karty ze snapshotem + regresja
+  40USG; **161/161 testów**.
+
 ## 2026-09-08 17:30 — ZIP lżejszy o 28 MB: mini-mapy z miniatur, koniec dublowania map
 
 - **Pytanie o ZIP rozstrzygnięte i naprawione.** Strony map inlinowały

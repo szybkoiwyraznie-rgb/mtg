@@ -53,6 +53,22 @@ stale), pole `miniatura` wycofane (committowane miniatury usunięte).
 **ZIP 90,5 → 62,1 MB (−31%)**; mini 48–159 kB per plan; bramki
 testowe (mini ≤ 400 kB, zero `.svg` w drzewie).
 
+**Głos Kronikarza (decyzja właściciela po recenzji Expunge):** narracja
+wpisu karty — od pierwszej sekcji do „Mechanika jako Opowieść” włącznie —
+jest 100% osadzona w świecie, pisana głosem niezależnego kronikarza,
+który nie zna procesu; terminy meta (karta, Fabuła, Kodeks, kolekcja,
+kanon, Scryfall, oracle, print, flavor, snapshot, dostawa, reguła
+karty, epoka karty, „most”) dozwolone tylko w frontmatter/infoboksie/
+Mechanice/Źródłach. **ADR 0042** + dopisek wycofujący ADR 0030 §5
+(wyjątek „skrajnie zwięźle”). Skan całego katalogu: meta-język w
+narracji miały **wszystkie 11 kart** (także przepisany Expunge) —
+poprawione (~70 miejsc): scena/ryt/zapis, inskrypcja, kronikarz
+dopowiada, mechanika rytu, fakt świata. **Strażnik**
+`test/glos-kronikarza.test.js` (26 terminów + regresja 40USG); regresja
+ui-smoke zaktualizowana („Na karcie obecne jest” → „W scenie obecne
+jest”; adnotacja o braku flavor w 1LTR w Źródłach). **161 testów,
+22 strony, ZIP 62,1 MB.**
+
 ## 2026-09-08 — PR-23: przejęcie przerwanej sesji PR-22 i domknięcie 605SHM / Lorwyn
 
 Sesja `arena/01a07fc3-mtg`, PR #23. Poprzedni agent (PR #22) przerwał
