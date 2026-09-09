@@ -147,6 +147,20 @@ Pozostałe encje „o jedną kartę” od progu:
 | Faerûn, Abeir-Toril, Morze Upadłych Gwiazd, Moonshaes, Nelanther, Amn, Luruar, Jezioro Pary, Królestwo Wysokie, Morze Bezludne | geografia | — (plan forgotten-realms) | licznik od kart, nie planów |
 | Mystra, Selûne, Lathander, Ilmater, Tempus, Tkanina Magii, Czas Kłopotów | postac/koncepcja | — (plan forgotten-realms) | licznik od kart, nie planów |
 
+## Link-mining Kaladesh (start: PR-28, 2026-09-09)
+
+Pierwsza karta planu (`610m19-gearsmith-prodigy`) — próg 2 kart
+niespełniony, nowych haseł brak. Encje „o jedną kartę” od progu:
+
+| Encja | Klasa (docelowa) | Karta wspominająca | Do progu brakuje |
+| --- | --- | --- | --- |
+| Ghirapur | geografia | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
+| Konsulat, mistrzowie Konsulatu | spolecznosc | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
+| Greenwheel, „Zoo” konstruktów | geografia | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
+| eter, rdzeń eterowy | koncepcja | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
+| Targ Wynalazców | wydarzenie | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
+| Iglica Eteru, Peema, Vahd, Lathnu, Vinday, Vasavati | geografia | — (plan kaladesh) | licznik od kart, nie planów |
+
 ## Mapa Zendikaru — WYKONANA (ADR 0012)
 
 Zrobione 2026-08-31 (feedback G właściciela): **rekonstrukcja własna

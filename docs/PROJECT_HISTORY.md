@@ -4,6 +4,44 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-09 — PR-28: audyt scalonego PR-27, mapa Kaladeshu T4 i Gearsmith Prodigy
+
+Sesja `arena/01a08651-mtg`, PR #28. Zgodnie z `AGENTS.md` najpierw
+powstała roadmapa i PR, a dopiero potem audyt poprzedniego scalonego PR.
+
+**Audyt PR-27** (`docs/audits/AUDYT_2026-09-09-PR27.md`): kod, testy
+i dokumentacja czyste i spójne; weryfikacje zielone (169/169 — handoff
+PR-27 podawał 166, delta +3 to testy `widok_domyslny` z końcowych
+commitów). Znaleziska: **F1/P2** — hasło Wybrzeże Mieczy powstało
+poniżej progu 2 kart (1 karta + plan; świadome odchylenie, treść
+dobra — nie kasować, reguła bez zmian); **F2/P3** — zdublowany
+i urwany blok wpisu PR-21 w PROJECT_HISTORY (regresja edycyjna PR-27,
+usunięta); **D1/nit** — brak pogrubienia wikilinku Oxidda w 488SOM
+(dopisane).
+
+**Mapa Kaladeshu (T4)** w `maps/kaladesh/` (generator
+`tools/mapforge/kaladesh-scena-t4.py`): jedna mapa całego planu —
+schematyczna prowincja (Vinday przez Peemę, Suramal, zlewisko,
+Vasavati do bezimiennego morza, Mapani, Vahd, Lathnu/Devra, Bunarat,
+3 wieże eterowe) + gęsty Ghirapur (Kanał Dukhara, 11 mostów, Iglica
+Eteru, stacja Aradara, Bastion, Akhara, 6 dzielnic, mury z bramami,
+Ovalchase, Shaila's Claim). Pierwsza mapa z `widok_domyslny` (ognisko
+Ghirapur, ADR 0045). Recenzja wizualna całości i cropów; `map-audit`
+0 problemów. Strona planu `content/planes/kaladesh.md` (Konsulat,
+KLD/AER).
+
+**Materializacja 610M19 · Gearsmith Prodigy · M19 · Kaladesh**
+(M19 #57): wpis verbatim, snapshot, Karta Katalogowa LORE-first
+z pinezką `region` w Greenwheel, link zwrotny na stronie planu,
+nowy tag `konstrukty`. Incydent procesowy: pełny tekst Fabuły nie
+zachował się w repo (sesja PR-27 streściła dostawę w planie) —
+właściciel wkleił go ponownie; lekcja **L16** (wpis verbatim
+natychmiast, przed researchem) + dopisek w SZKIELET_KARTY.
+
+Stan: **169/169 testów**, build **32 strony (15 kart, 5 haseł,
+12 planów)**, kompletność 100%. Handoff:
+`docs/setup/HANDOFF_2026-09-09-pr28.md`.
+
 ## 2026-09-09 — PR-27: audyt scalonego PR-25, Forgotten Realms, Ruthless Invasion, Civilized Scholar i Thraben
 
 Sesja `arena/01a08327-mtg`, PR #27. Zgodnie z `AGENTS.md` najpierw

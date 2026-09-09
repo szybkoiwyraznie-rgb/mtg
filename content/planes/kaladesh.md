@@ -62,7 +62,9 @@ i Nocnym Targowiskiem Gontiego, hutniczy **Embraal**, tor wyścigowy
 elfia rezydencjonalna **Kujar**, pionowy **Freejam** awiacji,
 **Aleja Olbrzymów** na wzgórzach nad Vindayem, metaloplastyczny
 **Weldfast** z Węzłem Eterowym, łęgowe **Przykrycie** i spalona przez
-Chandrę **Kuźnia Konsulów**.
+Chandrę **Kuźnia Konsulów**. Na tarasie Greenwheel swoją próbę
+przechodzi [[610m19-gearsmith-prodigy|Gearsmith Prodigy]] — młoda
+konstruktorka z mosiężnym lisem-automatonem.
 
 Na północy, pod urwiskiem **Devra**, leży **Lathnu** — wysunięta
 placówka górników i inżynierów na skraju cywilizacji; za nią wznosi
