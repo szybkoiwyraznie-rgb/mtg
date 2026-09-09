@@ -34,6 +34,15 @@ test('map.json ma strukturę wg PROCES_MAP.md (MA2)', () => {
     if (mapa.wariant !== 'T3' && !fs.existsSync(podklad)) problemy.push(`${plan}: brak pliku podkładu ${podklad}`);
     if (mapa.rekonstrukcja === undefined) problemy.push(`${plan}: brak flagi rekonstrukcja (T3 wymaga true)`);
     if (mapa.rekonstrukcja === true && !['T3', 'T4'].includes(mapa.wariant)) problemy.push(`${plan}: rekonstrukcja tylko dla T3/T4`);
+    if (mapa.widok_domyslny) {
+      const x = Number(mapa.widok_domyslny.x);
+      const y = Number(mapa.widok_domyslny.y);
+      const z = mapa.widok_domyslny.zoom === undefined ? 2.5 : Number(mapa.widok_domyslny.zoom);
+      if (!(Number.isFinite(x) && x >= 0 && x <= 1 && Number.isFinite(y) && y >= 0 && y <= 1)) {
+        problemy.push(`${plan}: widok_domyslny.x/y poza [0,1]`);
+      }
+      if (!(Number.isFinite(z) && z > 0)) problemy.push(`${plan}: widok_domyslny.zoom musi być dodatnią liczbą`);
+    }
   }
   assert.deepEqual(problemy, [], `Wadliwe map.json:\n${problemy.join('\n')}`);
 });

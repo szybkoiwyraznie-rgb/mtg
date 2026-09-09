@@ -410,6 +410,17 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
   const docelMiejsca = Number.isFinite(xDocelowy) && Number.isFinite(yDocelowy)
     && xDocelowy >= 0 && xDocelowy <= 1 && yDocelowy >= 0 && yDocelowy <= 1
     ? { x: xDocelowy, y: yDocelowy } : null;
+  // ADR 0045: opcjonalny startowy kadr mapy (bez znacznika) — używany
+  // tylko przy zwykłym wejściu, gdy nie ma silniejszej intencji użytkownika
+  // przez ?pin=, ?x=&y= albo ?epoka=<bbox>.
+  const xDomyslny = Number(mapa.widok_domyslny?.x);
+  const yDomyslny = Number(mapa.widok_domyslny?.y);
+  const zoomDomyslny = Number.isFinite(Number(mapa.widok_domyslny?.zoom))
+    ? Number(mapa.widok_domyslny?.zoom) : 2.5;
+  const widokDomyslny = Number.isFinite(xDomyslny) && Number.isFinite(yDomyslny)
+    && xDomyslny >= 0 && xDomyslny <= 1 && yDomyslny >= 0 && yDomyslny <= 1
+    && Number.isFinite(zoomDomyslny) && zoomDomyslny > 0
+    ? { x: xDomyslny, y: yDomyslny, zoom: zoomDomyslny } : null;
 
   // Warianty podkładu (ADR 0035): układ ZŁOTY współrzędnych = wariant
   // domyślny; start z `?epoka=<id>` albo domyślny.
@@ -557,7 +568,7 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
     </header>`}
     <div class="mapa-okno" id="mapa-okno" tabindex="0" role="application"
       aria-label="Mapa ${escapeHtml(mapa.tytul ?? slugPlanu)}: przeciągnij, aby przesunąć, kółko myszy, aby przybliżyć"
-      data-plan="${escapeHtml(slugPlanu)}" data-pin="${escapeHtml(pinDocelowy)}" data-aspekt="${szer / wys}" data-epoka="${escapeHtml(start.id)}"${docelMiejsca ? ` data-x="${docelMiejsca.x}" data-y="${docelMiejsca.y}"` : ''}${regionQuery ? ` data-region="${escapeHtml(regionQuery.id)}"` : ''}${maLOD ? ' data-kmax="22"' : ''}>
+      data-plan="${escapeHtml(slugPlanu)}" data-pin="${escapeHtml(pinDocelowy)}" data-aspekt="${szer / wys}" data-epoka="${escapeHtml(start.id)}"${docelMiejsca ? ` data-x="${docelMiejsca.x}" data-y="${docelMiejsca.y}"` : ''}${widokDomyslny ? ` data-domyslne-x="${widokDomyslny.x}" data-domyslne-y="${widokDomyslny.y}" data-domyslne-zoom="${widokDomyslny.zoom}"` : ''}${regionQuery ? ` data-region="${escapeHtml(regionQuery.id)}"` : ''}${maLOD ? ' data-kmax="22"' : ''}>
       <div class="mapa-ruch" data-mapa-ruch>
         ${htmlSceny}
       </div>
@@ -1035,6 +1046,25 @@ export function zamontujMape(app, opcje = {}) {
       stan.k = Math.min(Math.max(kDopasuj * 0.95, n.prog / kal.sx), K_MAX);
       stan.ox = winW / 2 - (kal.ox + kal.sx * (x0 + x1) / 2) * w * stan.k;
       stan.oy = winH / 2 - (kal.oy + kal.sy * (y0 + y1) / 2) * h * stan.k;
+    }
+  }
+
+  // ADR 0045: startowy kadr mapy z map.json (`widok_domyslny`) — tylko
+  // przy zwykłym wejściu, bez deep-linka pinezki/miejsca/regionu.
+  const maJawneMiejsce = docelX !== null && docelY !== null && docelX !== '' && docelY !== '';
+  if (!pinDocelowy && !maJawneMiejsce && !regionDocelowy) {
+    const gx = parseFloat(okno.getAttribute?.('data-domyslne-x') ?? '');
+    const gy = parseFloat(okno.getAttribute?.('data-domyslne-y') ?? '');
+    const gk = parseFloat(okno.getAttribute?.('data-domyslne-zoom') ?? '');
+    if (Number.isFinite(gx) && Number.isFinite(gy) && gx >= 0 && gx <= 1 && gy >= 0 && gy <= 1) {
+      const w = szerokoscSceny();
+      const h = wysokoscSceny();
+      const wysOkna = okno.clientHeight || h;
+      const px = kal.ox + kal.sx * gx;
+      const py = kal.oy + kal.sy * gy;
+      stan.k = clamp(Number.isFinite(gk) && gk > 0 ? gk : 2.5, K_MIN, K_MAX) / kal.sx;
+      stan.ox = (okno.clientWidth || w) / 2 - px * w * stan.k;
+      stan.oy = wysOkna / 2 - py * h * stan.k;
     }
   }
 

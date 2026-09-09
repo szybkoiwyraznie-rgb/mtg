@@ -49,7 +49,7 @@ function wezel(atrybuty = {}, dzieci = []) {
   return el;
 }
 
-function zamontowana({ start = 't1', pin = false, warianty = mapa.warianty, szerokosc = 1440, wysokosc = 1100 } = {}) {
+function zamontowana({ start = 't1', pin = false, miejsce = null, domyslnyWidok = null, warianty = mapa.warianty, szerokosc = 1440, wysokosc = 1100 } = {}) {
   const sceny = warianty.map((w) => {
     const k = w.kalibracja;
     const el = wezel({ 'data-scena': '', 'data-epoka': w.id,
@@ -67,7 +67,17 @@ function zamontowana({ start = 't1', pin = false, warianty = mapa.warianty, szer
   const guziki = warianty.map((w) => wezel({ 'data-epoka-przelacz': w.id, 'aria-pressed': w.id === start }));
   const nakladka = wezel({ 'data-mapa-nakladka': '' }, [pinezka, ...etykiety]);
   const ruch = wezel({ 'data-mapa-ruch': '' }, sceny);
-  const okno = wezel({ class: 'mapa-okno', 'data-pin': pin ? znacznik.karta : '' }, [ruch, nakladka, ...guziki]);
+  const attrsOkna = { class: 'mapa-okno', 'data-pin': pin ? znacznik.karta : '' };
+  if (miejsce) {
+    attrsOkna['data-x'] = miejsce.x;
+    attrsOkna['data-y'] = miejsce.y;
+  }
+  if (domyslnyWidok) {
+    attrsOkna['data-domyslne-x'] = domyslnyWidok.x;
+    attrsOkna['data-domyslne-y'] = domyslnyWidok.y;
+    attrsOkna['data-domyslne-zoom'] = domyslnyWidok.zoom;
+  }
+  const okno = wezel(attrsOkna, [ruch, nakladka, ...guziki]);
   ruch.clientWidth = okno.clientWidth = szerokosc; okno.clientHeight = wysokosc;
   const app = wezel({}, [okno]);
   zamontujMape(app);
@@ -78,7 +88,14 @@ function zamontowana({ start = 't1', pin = false, warianty = mapa.warianty, szer
       assert.ok(m, 'kontroler musi naprawdę nanieść transformację');
       const p = [...pinezka.style.transform.matchAll(/([-\d.]+)px/g)].map((x) => +x[1]);
       const scena = sceny.find((s) => !s.hidden);
-      return { ox: +m[1], oy: +m[2], k: +m[3], zlota: +m[3] * +scena.dataset.sx, pin: p };
+      const sx = +scena.dataset.sx; const sy = +scena.dataset.sy;
+      const oxKal = +scena.dataset.ox; const oyKal = +scena.dataset.oy;
+      const W = okno.clientWidth;
+      const H = W / (+scena.dataset.aspekt);
+      const k = +m[3]; const ox = +m[1]; const oy = +m[2];
+      const gx = ((W / 2 - ox) / (W * k) - oxKal) / sx;
+      const gy = ((okno.clientHeight / 2 - oy) / (H * k) - oyKal) / sy;
+      return { ox, oy, k, zlota: k * sx, pin: p, gx, gy };
     },
     przelacz(id) { guziki.find((g) => g.dataset.epokaPrzelacz === id).emit('click'); },
     kolko(delta, n = 1) {
@@ -140,6 +157,30 @@ test('mapa: deep-link na pinezkę ma tę samą złotą skalę w obu wariantach',
     blisko(m.widok().zlota, 2.5, 1e-9);
     blisko(m.widok().pin[0], 720); blisko(m.widok().pin[1], 550);
   }
+});
+
+test('mapa: widok_domyslny centruje mapę na wskazanym ognisku i zoomie (ADR 0045)', () => {
+  const m = zamontowana({ start: 't4', domyslnyWidok: { x: 0.22, y: 0.73, zoom: 3.4 } });
+  blisko(m.widok().zlota, 3.4, 1e-9);
+  blisko(m.widok().gx, 0.22, 1e-9);
+  blisko(m.widok().gy, 0.73, 1e-9);
+});
+
+test('mapa: jawny deep-link miejsca ma pierwszeństwo przed widokiem domyślnym (ADR 0045)', () => {
+  const m = zamontowana({
+    start: 't4',
+    miejsce: { x: 0.61, y: 0.18 },
+    domyslnyWidok: { x: 0.22, y: 0.73, zoom: 6.1 },
+  });
+  blisko(m.widok().zlota, 2.5, 1e-9);
+  blisko(m.widok().gx, 0.61, 1e-9);
+  blisko(m.widok().gy, 0.18, 1e-9);
+});
+
+test('mapa: deep-link pinezki ma pierwszeństwo przed widokiem domyślnym (ADR 0045)', () => {
+  const m = zamontowana({ start: 't4', pin: true, domyslnyWidok: { x: 0.22, y: 0.73, zoom: 6.1 } });
+  blisko(m.widok().zlota, 2.5, 1e-9);
+  blisko(m.widok().pin[0], 720); blisko(m.widok().pin[1], 550);
 });
 
 test('mapa: stary model bez wariantów nadal działa z tożsamościową kalibracją', () => {
