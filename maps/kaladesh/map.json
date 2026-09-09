@@ -1,0 +1,85 @@
+{
+ "plan": "kaladesh",
+ "tytul": "Kaladesh",
+ "wariant": "T4",
+ "podklad": "podklad.svg",
+ "wymiary": {"szerokosc": 2000, "wysokosc": 1400},
+ "widok_domyslny": {"x": 0.645, "y": 0.5714, "zoom": 2.2},
+ "zrodlo": {
+  "url": "https://mtg.wiki/page/Avishkar",
+  "url2": "https://mtg.wiki/page/Ghirapur",
+  "tytul": "Kaladesh — rekonstrukcja układu planu wg kanonu tekstowego (MTG Wiki: Avishkar, Ghirapur — za „The Art of Magic: The Gathering — Kaladesh”): trzy rzeki i zlewisko, Peema, Vahd, Lathnu/Devra, dzielnice Ghirapuru",
+  "autor": "MTG Lore Codex (praca własna — scena mapforge maps/kaladesh/scena.json z generatora tools/mapforge/kaladesh-scena-t4.py)",
+  "licencja": "praca własna na kanonie tekstowym; glify gór mapome CC-BY-4.0 (ADR 0020)",
+  "pobrano": "2026-09-09",
+  "notka": "T4 (rekonstrukcja kanoniczna): kanon nie podaje mapy planu ani współrzędnych — prawdziwe sąsiedztwa i przebiegi rzek, umowne kształty i odległości. Jedna mapa całego planu; Ghirapur jako gęste ognisko na zlewisku (decyzja właściciela 2026-09-08/09). Morze bez nazwy (kanon: „morze”, „odległe wybrzeże”). Skala wyłączona (brak odległości w kanonie)."
+ },
+ "rekonstrukcja": true,
+ "epoka": "Kaladesh za Konsulatu, doba KLD/AER (po spaleniu Kuźni Konsulów przez Chandrę, przed buntem eterowym)",
+ "kotwice": [
+  {
+   "nazwa": "Ghirapur",
+   "x": 0.645,
+   "y": 0.5714,
+   "typ": "miasto",
+   "pozycja_zrodlo": "kanon: stolica na zlewisku Vinday–Suramal (mtg.wiki: Ghirapur, Avishkar); pozycja środka arkusza = wybór rekonstrukcji (ognisko mapy, ADR 0045)",
+   "notka": "Indigo City; Kanał Dukhara, Jedenastu Mostów (First Bridge najpołudniejszy), Iglica Eteru, stacja Aradara, Bastion, Akhara, Bomat, Embraal, Ovalchase, Greenwheel, Kujar, Freejam, Aleja Olbrzymów, Weldfast, Przykrycie"
+  },
+  {
+   "nazwa": "Iglica Eteru",
+   "x": 0.65,
+   "y": 0.53,
+   "typ": "iglica",
+   "pozycja_zrodlo": "kanon: centralna wieża zbiorcza i serce administracyjne Ghirapuru (mtg.wiki: Ghirapur); środek dzielnicy Jedenastu Mostów = wybór rekonstrukcji",
+   "notka": "Aether Spire — główne źródło rafinowanego eteru i symbol władzy Konsulatu; wieże prowincjonalne (3) tłoczą eter do niej"
+  },
+  {
+   "nazwa": "Peema",
+   "x": 0.275,
+   "y": 0.4429,
+   "typ": "las",
+   "pozycja_zrodlo": "kanon: dziki las na zachód od Ghirapuru, Vinday płynie przez jego dzicz (mtg.wiki: Avishkar); kształt i rozciągłość = wybór rekonstrukcji",
+   "notka": "dziesiątki tysięcy akrów puszczy; największe skupisko elfów; ścieżka holownicza wzdłuż południowego brzegu Vindaya"
+  },
+  {
+   "nazwa": "Vahd",
+   "x": 0.82,
+   "y": 0.3357,
+   "typ": "kraina",
+   "pozycja_zrodlo": "kanon: Złote Stopnie — pola i wsie, ośrodek budowy i prób sterowców; Mapani jedną z granic (mtg.wiki: Avishkar); pozycja NE = wybór rekonstrukcji",
+   "notka": "wsie, przystań sterowców, trakt ze wschodniej bramy Ghirapuru"
+  },
+  {
+   "nazwa": "Lathnu",
+   "x": 0.44,
+   "y": 0.1821,
+   "typ": "osada",
+   "pozycja_zrodlo": "kanon: wysunięta placówka na północnym skraju cywilizacji, pod urwiskiem Devra (mtg.wiki: Avishkar); pozycja = wybór rekonstrukcji",
+   "notka": "górnicy i inżynierowie; trakt z północnej bramy; za miastem Wielka Wspinka (lód i śmierć)"
+  },
+  {
+   "nazwa": "Ujście Vasavati",
+   "x": 0.7225,
+   "y": 0.7857,
+   "typ": "miejsce",
+   "pozycja_zrodlo": "kanon: Vasavati ze zlewiska niesie handel do odległego wybrzeża (mtg.wiki: Avishkar, Ghirapur); linia brzegu = wybór rekonstrukcji; morze bez nazwy w kanonie",
+   "notka": "główna arteria eksportu Ghirapuru; Bomat obsługuje ruch rzeczno-morski"
+  },
+  {
+   "nazwa": "Vinday",
+   "x": 0.325,
+   "y": 0.4714,
+   "typ": "rzeka",
+   "pozycja_zrodlo": "kanon: płynie przez dzicz Peemy do Ghirapuru od zachodu; Mapani największym dopływem (mtg.wiki: Avishkar); przebieg = wybór rekonstrukcji",
+   "notka": "rzeka zachodnia; nad nią Aleja Olbrzymów u bram miasta"
+  }
+ ],
+ "pinezki": [],
+ "scena": "scena.json",
+ "generator": "tools/mapforge/kaladesh-scena-t4.py",
+ "silnik": "mapforge (ADR 0018/0019/0020/0022/0023/0045); styl atlas; klocki miejskie Ravniki (dzielnice, mury, tkanina, mosty, kopuły); skala wyłączona (brak odległości w kanonie); pierwsza mapa z widok_domyslny (ADR 0045)",
+ "zrodlo_fanmapa": null,
+ "otwarte_na_kolejne_przejscia": [
+  "DODANE 2026-09-09 (PR-28): mapa T4 epoki KLD/AER. Umowne: kształty i odległości, pozycje mostów 2–11 (w tym Ninth Bridge), Ovalchase i Shaila's Claim poza murami, pozycje wież eterowych i wsi Vahd, linia brzegu. Kolejne karty Kaladeshu (KLD/AER i późniejsze ery przed przemianowaniem w Avishkar) pinują na tej mapie; era Avishkar/Omenpathów (DFT) = osobna mapa na żądanie karty."
+ ]
+}
