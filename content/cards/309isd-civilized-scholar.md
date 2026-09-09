@@ -124,6 +124,8 @@ To również miejsce sensowne logicznie. Z Havengulu najłatwiej wysyłać
 raporty i traktaty do serca Kościoła, a jednocześnie właśnie tutaj wiedza
 najmocniej styka się z rzeczami, które gdzie indziej byłyby tabu.
 
+Pinezka: `#/mapa/innistrad?pin=309isd-civilized-scholar`.
+
 ## Mechanika jako Opowieść
 
 Ta strona niesie ciało **0/1 Human Advisor** za `{2}{U}` oraz zdolność:

@@ -98,6 +98,8 @@ konkretny taras nie ma imienia — stąd region, nie punkt. Pinezka leży
 w sercu dzielnicy, między kopułami a „Zoo”, tam, gdzie młodzi
 rzemieślnicy naprawdę testują swoje dzieła.
 
+Pinezka: `#/mapa/kaladesh?pin=610m19-gearsmith-prodigy`.
+
 ## Mechanika jako Opowieść
 
 Za jedną niebieską manę karta daje człowieka-rzemieślnika 1/2 —
