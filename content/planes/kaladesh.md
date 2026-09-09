@@ -49,22 +49,47 @@ największy dopływ Vindaya, wyznacza granicę **Vahd, Złotych Stopni** —
 krainy pól i wsi, dziś pierwszego ośrodka budowy i prób sterowców.
 
 **Ghirapur, Miasto Indygo** — stolica na zlewisku, zbudowana na
-neutralnym gruncie po Wojnie Jedenastu. Środek miasta przecina
-**Kanał Dukhara** z **Jedenastoma Mostami** (najpołudniejszy to
-First Bridge) — każdy most to osobne targowisko. Nad panoramą góruje
-**Iglica Eteru**, centralna wieża zbiorcza i serce administracji;
-eter spływa do niej z **wież zbiorczych** rozproszonych po prowincji.
-Wokół: **stacja Aradara** (wielki węzeł kolei z kopułą i Ogrodem
-Posągów), **Bastion Czcigodnych** (ośmiokątna kwatera straży),
-**Akhara** (okrągły plac-arena), portowy **Bomat** z dokami
-i Nocnym Targowiskiem Gontiego, hutniczy **Embraal**, tor wyścigowy
-**Ovalchase**, ogrodowy **Greenwheel** z kopułami i „Zoo” konstruktów,
-elfia rezydencjonalna **Kujar**, pionowy **Freejam** awiacji,
-**Aleja Olbrzymów** na wzgórzach nad Vindayem, metaloplastyczny
-**Weldfast** z Węzłem Eterowym, łęgowe **Przykrycie** i spalona przez
-Chandrę **Kuźnia Konsulów**. Na tarasie Greenwheel swoją próbę
-przechodzi [[610m19-gearsmith-prodigy|Gearsmith Prodigy]] — młoda
-konstruktorka z mosiężnym lisem-automatonem.
+neutralnym gruncie po Wojnie Jedenastu. Miasto żyje eterem: nad
+panoramą zawieszony jest **Aetherflux Reservoir**, największy zbiornik
+rafinowanego eteru, symbol innowacji i stałe ognisko sporów o kontrolę
+eteru. Środek miasta przecina **Kanał Dukhara** z
+**Jedenastoma Mostami** (najpołudniejszy to First Bridge, zwisły
+taras między skrzydłami dwóch gigantycznych mechanicznych ptaków) —
+każdy most to osobne targowisko, a pačewy siedzące na mostach to
+symbol jedności miasta. Nad panoramą góruje **Iglica Eteru**,
+centralna wieża zbiorcza i serce administracji; eter spływa do niej z
+**wież zbiorczych** rozproszonych po prowincji, a miastem rozprowadza
+go największy węzeł dystrybucyjny, **Węzeł Eterowy** w
+metaloplastycznym **Weldfast**. Wokół: **stacja Aradara** (wielki
+węzeł kolei z kopułą i Ogrodem Posągów), **Bastion Czcigodnych**
+(ośmiokątna kwatera straży Konsulatu, otoczona stawem, połączona
+czterema mostami), **Akhara** (okrągły plac-arena z amfiteatrem —
+miejsce publicznych egzekucji, zapłonu Chandry i wielkiego finału
+Targu Wynalazców), portowy **Bomat** z dokami, Nocnym Targowiskiem
+Gontiego i krętem The Dhund — siecią tuneli pod targiem, w której
+tajni agenci Konsulatu śledzą każdy nielegalny interes, hutniczy
+**Embraal** (dzielnica o antykonsulańskim duchu, z grafitti
+i Sudden Spectacles oraz Gremlin Hovels — opuszczoną, nigdy
+dokończoną fabryką, dziś największym gniazdem gremlinów), tor
+wyścigowy **Ovalchase**, ogrodowy **Greenwheel** z kopułami
+klimatycznymi i „Zoo” konstruktów, elfia rezydencjonalna **Kujar**
+(układana zgodnie z elwim filozofią Wielkiego Przewodu, z dyskretnym
+Prakhata Club — elitarnym klubem aetherborna Gontiego), pionowy
+**Freejam** awiacji (smocza architektura, w najwyższych iglicach
+czasem gnieźdzą się żywe smoki; awionety startują z hangarów
+w koronach magazynów), **Aleja Olbrzymów** na wzgórzach nad Vindayem
+(przekonstruowane śluzy pełnią funkcję gigantycznych stopni dla
+olbrzymów, którzy dwukrotnie w roku przechodzą przez miasto — święto
+migracji, dziś enklawa artystów i inżynierów), łęgowe **Przykrycie** (gęsty las rzeczny w
+sercu miasta, pilnowany przez odosobnionego elfiego opiekuna
+Surasha; ukrywa uciekinierów, wielkie pająki i sekrety, o których
+Konsulat woli nie wiedzieć), zieloną **Shaila's Claim** na skraju
+Ghirapuru — pastwisko, które istnieje, bo jedna pasterka odmówiła
+oddania swoich łąk Konsulatowi — oraz spalona przez Chandrę
+**Kuźnię Konsulów**, fabrykę masowo produkującą automaty dla
+konsulów. Na tarasie Greenwheel swoją próbę przechodzi
+[[610m19-gearsmith-prodigy|Gearsmith Prodigy]] — młoda konstruktorka
+z mosiężnym lisem-automatonem.
 
 Na północy, pod urwiskiem **Devra**, leży **Lathnu** — wysunięta
 placówka górników i inżynierów na skraju cywilizacji; za nią wznosi
@@ -78,10 +103,26 @@ w eter natury), vedalken, krasnoludy, a także **etherborn** — krótko
 żyjąca rasa rodząca się z użycia eteru. Anioły i demony to **żywe
 wynalazki** (te drugie z Mrocznego Schematu). Rodowici magowie
 są rzadcy i budzą lęk; piromancja była za Konsulatu karana śmiercią,
-bo ogień w nasyconym eterem powietrzu grozi katastrofą. W dziczy żyją
-**gremliny** (psują mechanizmy w pogoni za eterem), migrujące
-**olbrzymy**, smoki polujące na niebiańskie wieloryby, węże
-polujące na pojazdy oraz pająki Przykrycia.
+bo ogień w nasyconym eterem powietrzu grozi katastrofą. Na wybrzeżu
+południowego morza mieszkają **jalpari** — morski lud planu.
+W dziczy żyją **gremliny** (psują mechanizmy w pogoni za eterem),
+migrujące **olbrzymy** podążające śladami strumieni eteru, smoki
+polujące na niebiańskie wieloryby — latające cetaceoty żyjące
+w sferze eteru — węże polujące na pojazdy, słonie, krety i pająki
+Przykrycia.
+
+## Kultura i codzienne życie
+
+Kultura Kaladeshu ma ciepły, południowy charakter: obywatele chodzą
+w sari, a kuchnia miast opiera się na curry, samosach, idli,
+parathach i theplach z fenugrekiem; słodycze (soan papdi, shrikhand)
+i herbata chai to stały punkt każdej dzielnicy — od straganów
+Nocnego Targowiska po stoiska Targu Wynalazców. Freejam słynie
+z kucharskiej rywalizacji: ostre dania elfich i ludzkich szefów
+rywalizują o smak miasta. Popularnym sportem jest krykiet,
+a uliczne grafitti to domena podziemia. Artefakty — od mostu
+po latarnię — są projektowane również z dbałością o estetykę:
+w Ghirapurze maszyna, która nie jest ładna, jest niedokończona.
 
 ## Mapa
 
@@ -108,8 +149,11 @@ Era Avishkar/Omenpathów dostanie osobną mapę, gdy przyjdzie karta.
   Jedenastu, Konsulat, Rozkwit, Targ, bunt, inwazja, Indygo Rewolucja,
   przemianowanie), lokacje planu, ludy, fauna, kultura:
   https://mtg.wiki/page/Avishkar
-- MTG Wiki, hasło Ghirapur — stolica, Iglica Eteru, dzielnice
-  i lokacje (Jedenastu Mostów, Bomat, Embraal, Ovalchase, Greenwheel,
-  Kujar, Freejam, Aleja Olbrzymów, Weldfast, Przykrycie, Akhara,
-  stacja Aradara, Bastion, Kuźnia Konsulów), trzy rzeki:
+- MTG Wiki, hasło Ghirapur — stolica, Iglica Eteru, Aetherflux
+  Reservoir, Węzeł Eterowy, dzielnice i lokacje (Jedenastu Mostów
+  i First Bridge, Akhara, stacja Aradara i Ogród Posągów, Bastion
+  Czcigodnych, Bomat, The Dhund, Nocne Targowiska, Embraal i Gremlin
+  Hovels, Ovalchase, Greenwheel i „Zoo”, Kujar i Prakhata Club,
+  Freejam, Aleja Olbrzymów, Weldfast, Przykrycie i Surash,
+  Shaila's Claim, Kuźnia Konsulów), trzy rzeki:
   https://mtg.wiki/page/Ghirapur
