@@ -85,7 +85,7 @@
  ],
  "otwarte_na_kolejne_przejscia": [
   "Kotwice regionów wykalibrowane odczytem siatki 5% na rastrze 3E (l0.jpg 1920×1284 = proxy mastera 4763×3185, ten sam kadr); przy pierwszej karcie w danym rejonie warto domierzyć punkt na masterze, nie tylko na proxy.",
-  "Warstwa POI (14 punktów: miasta i huby archipelagów) renderowana w scenie POD warstwą kafelków L1 — kotwice pod przyszłe pinezki kart (decyzja właściciela 2026-09-08); dane w map.json (pole \"poi\").",
+  "Raster 3E ma już własne etykiety i ikony miast; nie dokładamy na T1 dodatkowych kropek/POI bez osobnej decyzji właściciela. Ewentualny deep-map ważnego miejsca wymaga osobnej konsultacji i osobnego wariantu/podmapy.",
   "T2 (Vectorized Realms, wektor) skasowany 2026-09-08 po obejrzeniu mapy live (decyzja właściciela: wolny, bez ikon lokalizacji, brzydki); plik podklad.svg usunięty, treści wektora nienaruszone w historii gałęzi."
  ],
  "pinezki": [
@@ -97,97 +97,11 @@
    "uzasadnienie": "Fabuła właściciela (3CLB): mroczny gabinet strategiczny „gdzieś na Wybrzeżu Mieczy” — scena wskazuje region, nie miasto (żadne miasto nie jest nazwane; spaloną mapę taktyczną i figurki nie da się przyporządkować do kanonicznego konfliktu bez wymyślania). Pinezka w środku pasa Wybrzeża Mieczy między Neverwinter (0.104, 0.141) a Waterdeep (0.145, 0.211) wg odczytu siatki 5% na rastrze 3E; pewność region (MA4: kraina, nie punkt)."
   }
  ],
- "poi": [
-  {
-   "nazwa": "Luskan",
-   "typ": "miasto",
-   "x": 0.085,
-   "y": 0.097
-  },
-  {
-   "nazwa": "Neverwinter",
-   "typ": "miasto",
-   "x": 0.104,
-   "y": 0.141
-  },
-  {
-   "nazwa": "Waterdeep",
-   "typ": "miasto",
-   "x": 0.145,
-   "y": 0.211
-  },
-  {
-   "nazwa": "Baldur's Gate",
-   "typ": "miasto",
-   "x": 0.217,
-   "y": 0.362
-  },
-  {
-   "nazwa": "Candlekeep",
-   "typ": "obiekt",
-   "x": 0.2,
-   "y": 0.424
-  },
-  {
-   "nazwa": "Silverymoon",
-   "typ": "miasto",
-   "x": 0.196,
-   "y": 0.065
-  },
-  {
-   "nazwa": "Mithral Hall",
-   "typ": "miasto",
-   "x": 0.185,
-   "y": 0.047
-  },
-  {
-   "nazwa": "Myth Drannor",
-   "typ": "ruiny",
-   "x": 0.425,
-   "y": 0.345
-  },
-  {
-   "nazwa": "Mulmaster",
-   "typ": "miasto",
-   "x": 0.44,
-   "y": 0.455
-  },
-  {
-   "nazwa": "Helondeth",
-   "typ": "miasto",
-   "x": 0.513,
-   "y": 0.51
-  },
-  {
-   "nazwa": "Mulhorand",
-   "typ": "miasto",
-   "x": 0.79,
-   "y": 0.56
-  },
-  {
-   "nazwa": "Calimport",
-   "typ": "miasto",
-   "x": 0.285,
-   "y": 0.736
-  },
-  {
-   "nazwa": "Moonshaes",
-   "typ": "archipelag",
-   "x": 0.07,
-   "y": 0.36
-  },
-  {
-   "nazwa": "Wyspy Nelanther",
-   "typ": "archipelag",
-   "x": 0.138,
-   "y": 0.562
-  }
- ],
  "plan": "forgotten-realms",
  "podklad": "l0.jpg",
  "rekonstrukcja": false,
  "tytul": "Faerûn — Zapomniane Krainy",
- "uklad_wspolrzednych": "ZŁOTY = raster oficjalnej mapy Faerûn 3E (master 4763×3185; plik l0.jpg 1920×1284 to jego pomniejszony proxy, ten sam kadr). x,y kotwic, pinezek i POI znormalizowane 0–1 względem mastera. Nowa pinezka: odczyt X,Y na masterze → x=X/4763, y=Y/3185 (L13: współrzędne mierzone na docelowym pliku).",
+ "uklad_wspolrzednych": "ZŁOTY = raster oficjalnej mapy Faerûn 3E (master 4763×3185; plik l0.jpg 1920×1284 to jego pomniejszony proxy, ten sam kadr). x,y kotwic i pinezek znormalizowane 0–1 względem mastera. Nowa pinezka: odczyt X,Y na masterze → x=X/4763, y=Y/3185 (L13: współrzędne mierzone na docelowym pliku).",
  "wariant": "T1",
  "warianty": [
   {
@@ -217,7 +131,7 @@
    "zrodlo": {
     "autor": "Wizards of the Coast / TSR — oficjalna mapa Faerûn do D&D 3.0 (2001); cyfrowa edycja znana z Forgotten Realms Wiki",
     "licencja": "materiał WotC — użytek prywatny, niepubliczny (ADR 0031); przy upublicznieniu Codexu podkład do wymiany (ADR 0007 §3)",
-    "notka": "Podkład dostarczył właściciel serwisu (webp 3,1 MB, commit c2c4b77, 2026-09-08); master.jpg = konwersja do JPG q92 (4,3 MB), siatka L1 cięta tools/kafle.mjs: 10×7 kafelków po 512 px (próg 2.5). Warstwa POI (14 punktów) renderowana w scenie pod kafelkami — kotwice pod przyszłe pinezki kart (decyzja właściciela 2026-09-08). T2 (Vectorized Realms) skasowany po decyzji właściciela.",
+    "notka": "Podkład dostarczył właściciel serwisu (webp 3,1 MB, commit c2c4b77, 2026-09-08); master.jpg = konwersja do JPG q92 (4,3 MB), siatka L1 cięta tools/kafle.mjs: 10×7 kafelków po 512 px (próg 2.5). Raster 3E pozostaje czysty: dodatkowe POI/labelki ponad to, co niesie podkład, wymagają osobnej decyzji właściciela. T2 (Vectorized Realms) skasowany po decyzji właściciela.",
     "pobrano": "2026-09-08",
     "tytul": "Map - Faerun - 3E — oficjalna mapa Faerûn (D&D 3.0, WotC/TSR)",
     "url": "https://forgottenrealms.fandom.com/wiki/File:Map_-_Faerun_-_3E.jpg"

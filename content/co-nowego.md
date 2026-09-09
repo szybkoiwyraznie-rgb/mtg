@@ -1,3 +1,19 @@
+## 2026-09-09 01:10 — Forgotten Realms: czysty raster bez brązowych kropek, legenda tylko dla pinezek kart
+
+- **Mapa Forgotten Realms wraca do czystego T1.** Z `maps/forgotten-realms/map.json`
+  zniknęła eksperymentalna warstwa dodatkowych kropek/POI; strona mapy
+  renderuje już wyłącznie raster 3E + kafelki LOD + pinezki kart.
+- **Legenda map** nie pokazuje już martwego wpisu
+  `obwódka regionu — kraina hasła geograficznego` — zgodnie z ADR 0043
+  na mapie oznaczenia niosą wyłącznie karty.
+- **Doprecyzowanie procesu:** `content/planes/forgotten-realms.md`,
+  `docs/guides/PETLA_JAKOSCI.md` i ADR 0038 jasno mówią teraz, że T1 z
+  dobrym rastrem startuje od zasady **„nic nie doklejamy ponad druk”**;
+  dodatkowe POI/labelki albo deep-map ważnego miejsca wymagają osobnej
+  konsultacji z właścicielem.
+- Regresja sprawdzona: `npm test` **166/166**, `npm run build` OK,
+  `python3 tools/map-audit.py` = **0 problemów**.
+
 ## 2026-09-09 00:48 — Audyt PR-25 domknięty: poprawiona geografia Forgotten Realms, pogłębiony Mephidross, nowe hasło Wybrzeże Mieczy
 
 - **Audyt poprzedniego scalonego PR #25** zapisany w

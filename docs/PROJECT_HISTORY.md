@@ -37,6 +37,17 @@ Wikilinki dopisano na karcie 3CLB i stronie planu Forgotten Realms;
 wykonanej. `content/co-nowego.md` i PR #27 zostały zaktualizowane
 kumulatywnie.
 
+**Follow-up po oglądzie mapy FR przez właściciela:** usunięta została
+warstwa brązowych kropek/POI z rastrowej mapy Forgotten Realms.
+W praktyce oznacza to powrót do czystego T1: raster 3E + kafelki LOD
++ pinezki kart, bez dodatkowych znaczników „kotwic pod przyszłe pinezki”.
+Przy okazji legenda map przestała pokazywać martwy wpis o „obwódce
+regionu”, bo po ADR 0043 taka warstwa nigdy nie wraca. Proceduralnie
+zapisano też doprecyzowanie: T1 z dobrym rastrem startuje od zasady
+**„nic nie doklejamy ponad druk”**; dodatkowe POI/labelki albo deep-map
+ważnego miejsca wymagają osobnej konsultacji z właścicielem
+(`docs/guides/PETLA_JAKOSCI.md`, ADR 0038).
+
 **Weryfikacja końcowa:** `npm test` **166/166**, `npm run build` OK,
 `python3 tools/map-audit.py` = **0 problemów**, `node tools/wiki-stats.mjs --json`
 = **26 stron (12 kart, 3 hasła, 11 planów), średnio 100% kompletności**.

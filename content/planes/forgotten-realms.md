@@ -78,14 +78,11 @@ progu przybliżenia 2.5. Master 4763×3185 (4,3 MB) żyje w repo,
 poza dist; podkład dostarczył właściciel, atrybucja źródła w
 stopce mapy (użytek prywatny, ADR 0031).
 
-Pod spodem rastrowych warstw leży **wektorowa warstwa POI**
-(złote kółka, bez etykiet — nazwy niesie sam podkład): czternaście
-najważniejszych punktów odniesienia (miasta Wybrzeża Mieczy,
-Silverymoon, Myth Drannor, Mulmaster, Helondeth, Mulhorand,
-Calimport i huby archipelagów) jako kotwice pod przyszłe pinezki
-kart (ADR 0043:
-piny na mapach = tylko karty). Po doładowaniu kafli L1 kółka
-pokrywa druk mastera.
+Raster 3E pozostaje tutaj **czystym podkładem**: nie dokładamy na nim
+żadnych dodatkowych kropek, etykiet ani POI ponad to, co już niesie
+oryginalny druk. Jeśli kiedyś pojawi się potrzeba osobnego zbliżenia
+na ważne miejsce, będzie to osobny wariant lub podmapa konsultowana z
+właścicielem, nie doraźna nakładka na tej stronie.
 
 Pinezki na mapie (ADR 0043: tylko karty):
 
