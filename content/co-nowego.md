@@ -1,3 +1,27 @@
+## 2026-09-09 19:52 — Audyt PR-28 i Pętla Jakości (PR-29)
+
+- **Audyt PR-28** (`docs/audits/AUDYT_2026-09-09-PR28.md`): werdykt —
+  powyżej standardu domowego; 5×P3 (N1–N5) z naprawami w tej sesji:
+  deep-linki w „Na Mapie” (610M19 + 309ISD + 393DKA), epoka mapy bez
+  szczegółu niepotwierdzonego źródłowo, pozycja Bunarat i liczba
+  wież (5) na listach umownych, konwencja nazewnictwa bezimiennych
+  POI (SKILL pkt 8), KOREKTA liczników w HANDOFF PR-28 (176/176).
+- **[[kaladesh|Kaladesh]] pogłębiony** o wiedzę świata:
+  **Aetherflux Reservoir** (największy zbiornik rafinowanego eteru),
+  detal dzielnic (First Bridge, Akhara, The Dhund, Gremlin Hovels,
+  Prakhata Club, śluzy-śniegi **Aleja Olbrzymów** z migracjami
+  olbrzymów 2× w roku, Surash w **Przykryciu**, **Shaila's Claim**),
+  jalpari i niebiańskie wieloryby + nowa sekcja
+  **„Kultura i codzienne życie”** (sari, kuchnia, krykiet,
+  estetyka artefaktów).
+- **Mapa: Aetherflux Reservoir na płycie L2 Ghirapuru** — nowy
+  klocek mapforge `zbiornik` (zawieszona kula eteru z linkami
+  nośnymi); pozycja nad Kujarem = wybór rekonstrukcji (kanon nie
+  podaje współrzędnych). map-audit 0; recenzja wizualna cropu.
+- Link-mining: bez nowych haseł — cała kolejka Kaladeshu (Ghirapur,
+  Konsulat, Greenwheel, eter, Targ Wynalazców) o jedną kartę od
+  progu (L17).
+
 ## 2026-09-09 16:13 — Korekta: hasło Wybrzeże Mieczy skasowane (poniżej progu 2 kart)
 
 - Hasło **Wybrzeże Mieczy** powstało w PR-27 przy jednej karcie

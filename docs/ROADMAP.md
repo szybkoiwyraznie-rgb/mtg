@@ -353,6 +353,19 @@ wektorową płytę L2 do drzewa (wyjątek ADR 0027 v3 — leniwy `<img>`).
 Stary generator `kaladesh-scena-t4.py` usunięty. **176 testów**;
 map-audit 0; szew i Cowl zweryfikowane rastrowo (resvg).
 
+**PR-29 (2026-09-09) — audyt PR-28 i Pętla Jakości.** Audyt: PR-28
+powyżej standardu; 5×P3 (N1–N5) — wszystkie naprawione w tej sesji:
+deep-linki w „Na Mapie” (3 karty), epoka mapy bez szczegółu
+niepotwierdzonego, Bunarat + wieże (5) na listach umownych,
+konwencja nazewnictwa bezimiennych POI (SKILL pkt 8), KOREKTA
+liczników w HANDOFF PR-28 (176/176, 31 stron). Pętla Jakości:
+pogłębienie strony Kaladeshu (Aetherflux Reservoir + detal dzielnic
++ sekcja „Kultura i codzienne życie”); link-mining bez nowych haseł
+(próg L17 — kolejka Kaladeshu o 1 kartę); pass mapowy: Aetherflux
+Reservoir na płycie L2 Ghirapuru, nowy klocek mapforge `zbiornik`.
+**176/176 testów**; 31 stron (15/4/12); map-audit 0; ZIP 87,8 MB.
+Raport: `docs/audits/AUDYT_2026-09-09-PR28.md`.
+
 ## Wątki otwarte (czekają na decyzję właściciela)
 
 > **Zamknięte decyzją właściciela 2026-09-05 — NIE wracać do nich:**
