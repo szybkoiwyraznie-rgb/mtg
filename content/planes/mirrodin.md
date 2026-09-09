@@ -68,7 +68,7 @@ schodzi w dół czarna lacuna. Dross rozlewa się: na Oxiddę przez
 **Rey-Goor**, Czarne Rozlewisko, gdzie las nasiąka olejem i zamienia
 się w mokradło.
 
-**Oxidda Chain** (R) — rdzawe góry; **Kuldotha**, Wielka Kuźnia, to
+**[[oxidda-chain|Oxidda Chain]]** (R) — rdzawe góry; **Kuldotha**, Wielka Kuźnia, to
 czynny wulkan i stolica goblinów czczących Stalową Matkę, z czerwoną
 lacuną („Łonem Stalowej Matki”) tuż obok. W tunelach **Krark-Home**
 żyje wyklęty klan Krark, w wioskach jak **Oxidagg** — sześć plemion

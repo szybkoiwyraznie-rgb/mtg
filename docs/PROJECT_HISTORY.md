@@ -4,7 +4,7 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
-## 2026-09-09 — PR-27: audyt scalonego PR-25, naprawa geografii Forgotten Realms, link-mining Wybrzeża Mieczy
+## 2026-09-09 — PR-27: audyt scalonego PR-25, Forgotten Realms, Ruthless Invasion i Oxidda Chain
 
 Sesja `arena/01a08327-mtg`, PR #27. Zgodnie z `AGENTS.md` najpierw
 powstała roadmapa i PR, a dopiero potem audyt poprzedniego scalonego PR.
@@ -48,9 +48,21 @@ zapisano też doprecyzowanie: T1 z dobrym rastrem startuje od zasady
 ważnego miejsca wymagają osobnej konsultacji z właścicielem
 (`docs/guides/PETLA_JAKOSCI.md`, ADR 0038).
 
-**Weryfikacja końcowa:** `npm test` **166/166**, `npm run build` OK,
+**Dostawa po domknięciu pętli:** właściciel przekazał kartę
+[[556nph-ruthless-invasion|Ruthless Invasion]] (`556NPH`, NPH, Mirrodin)
+z osadzeniem na pustkowiach Oxiddy, przy odwrocie Vulshoków pod naporem
+kolosa z płynnego metalu. Do repo trafiły: wpis archiwalny,
+pełny snapshot Scryfalla z notką o dwóch numeracjach (`556NPH` vs `93`),
+nowa karta LORE-first i pinezka `region` na mapie Mirrodinu. Link-mining
+uzasadnił też nowe hasło [[oxidda-chain|Oxidda Chain]]; `Pythor` i
+`Vulshok` zostały świadomie zatrzymane poniżej progu osobnych haseł
+i zapisane tylko w backlogu. Przy okazji dopięto strażników: smoke UI
+uwzględnia już **13 kart**, a narracja 556NPH została oczyszczona tak,
+by przejść **ADR 0042 (Głos Kronikarza)**.
+
+**Weryfikacja końcowa:** `npm test` **165/165**, `npm run build` OK,
 `python3 tools/map-audit.py` = **0 problemów**, `node tools/wiki-stats.mjs --json`
-= **26 stron (12 kart, 3 hasła, 11 planów), średnio 100% kompletności**.
+= **28 stron (13 kart, 4 hasła, 11 planów), średnio 100% kompletności**.
 Handoff: `docs/setup/HANDOFF_2026-09-09-pr27.md`.
 
 ## 2026-09-08 — PR-25: audyt scalonego PR-24, procedura ilustracji kart, decyzja o mapie Dominarii

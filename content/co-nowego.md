@@ -1,3 +1,27 @@
+## 2026-09-09 11:58 — Ruthless Invasion: trzynasta karta, nowy punkt Mirrodinu i hasło Oxidda Chain
+
+- **[[556nph-ruthless-invasion|Ruthless Invasion]]** dołącza do Kodeksu jako
+  trzynasta karta kolekcji i trzecia karta Mirrodinu z ery wojny przeciw
+  [[nowa-phyrexia|Nowej Phyrexii]]. Scena stoi po stronie odwrotu, nie zwycięstwa:
+  Vulshokowie na pustkowiach Oxiddy cofają się przed kolosem z płynnego
+  metalu, a głos **Pythora** zamienia odwrót w nową doktrynę przetrwania.
+- **Nowe hasło [[oxidda-chain|Oxidda Chain]].** Region przekroczył próg
+  praktyczny dzięki karcie [[488som-carapace-forger|Carapace Forger]],
+  nowemu [[556nph-ruthless-invasion|Ruthless Invasion]] i istniejącej stronie
+  planu [[mirrodin|Mirrodin]]. Wikilinki dopisano także w
+  [[mephidross|Mephidrossie]].
+- **Mapa Mirrodinu** dostała nową pinezkę karty `556nph-ruthless-invasion`
+  o pewności `region` na pograniczu Oxiddy i Kuldothy — dokładnie tam,
+  gdzie opis sceny pozwala mówić o przełamaniu linii Vulshoków bez
+  udawania, że znamy pojedynczy mur czy wąwóz.
+- **Porządki i strażnicy:** `test/ui-smoke.test.js` uwzględnia już 13 kart
+  i obecność najnowszej materializacji na stronie głównej, a karta 556NPH
+  została oczyszczona z meta-języka w narracji, by przejść bramkę
+  **Głosu Kronikarza (ADR 0042)**.
+- Weryfikacja po zmianach: `npm test` **165/165**, `npm run build` OK,
+  `python3 tools/map-audit.py` = **0 problemów**, `node tools/wiki-stats.mjs --json`
+  = **28 stron (13 kart, 4 hasła, 11 planów), średnio 100% kompletności**.
+
 ## 2026-09-09 01:10 — Forgotten Realms: czysty raster bez brązowych kropek, legenda tylko dla pinezek kart
 
 - **Mapa Forgotten Realms wraca do czystego T1.** Z `maps/forgotten-realms/map.json`

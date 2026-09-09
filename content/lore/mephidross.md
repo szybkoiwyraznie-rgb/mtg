@@ -14,7 +14,7 @@ materializacja: 2026-09-08
 chemikaliów i zużytego żelaza na południu [[mirrodin|Mirrodinu]]:
 płytkie błoto najeżone wywróconymi maszynami, korodującą stalą i
 żarzącymi kałużami nekrogenowych płynów. Graniczy z łańcuchem gór
-**Oxidda Chain** na zachodzie, wchodzi w miedziany las **Tangle**
+**[[oxidda-chain|Oxidda Chain]]** na zachodzie, wchodzi w miedziany las **Tangle**
 przez wąwóz **Rey-Goor**, a na północy dochodzi do brzegu
 **Quicksilver Sea**.
 
