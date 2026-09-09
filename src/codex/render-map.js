@@ -747,7 +747,7 @@ export function zamontujMape(app, opcje = {}) {
   // Limity dotyczą WIZUALNEJ skali w układzie złotym (k · sx), nie
   // surowego CSS-owego k aktywnego podkładu. Inaczej T1 przy k=14 po
   // przełączeniu na T4 wpada w clamp i traci skalę (A3, audyt PR-21).
-  const K_MIN = 0.4, K_MAX = 14;
+  const K_MIN = 0.4, K_MAX = 32;
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 
   // Wymiary TREŚCI mapy (układ, nie transform — nie zmieniają się z zoomem;

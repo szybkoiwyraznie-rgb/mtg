@@ -88,10 +88,13 @@ polujące na pojazdy oraz pająki Przykrycia.
 `maps/kaladesh/` — rekonstrukcja kanoniczna (T4): oficjalna mapa planu
 nigdy nie powstała, więc podkład powstał w silniku mapforge wyłącznie
 z kanonu tekstowego (MTG Wiki: Avishkar, Ghirapur — za „The Art of
-Magic: The Gathering — Kaladesh”). Jedna mapa całego planu:
-schematyczna prowincja z siecią rzeczną i gęsty Ghirapur na zlewisku
-z Kanałem Dukhara, Jedenastoma Mostami i dzielnicami; mapa otwiera się
-domyślnie na stolicy (pierwsze użycie `widok_domyslny`, ADR 0045).
+Magic: The Gathering — Kaladesh”). Jedna mapa całego planu w skali
+planu (arkusz 16000×11000): prowincja z siecią rzeczną, puszczą Peema,
+stepem Vahd i Lathnu pod urwiskiem Devra, a Ghirapur (~0,1%
+powierzchni arkusza) jako gęste ognisko na zlewisku z Kanałem Dukhara,
+Jedenastoma Mostami i dzielnicami; mapa otwiera się domyślnie na
+stolicy w zoomie 18 (pierwsze użycie `widok_domyslny`, ADR 0045),
+a po oddaleniu miasto jest kropką z nazwą (maks. zoom silnika 32).
 Epoka: Kaladesh Konsulatu (KLD/AER) — Kuźnia Konsulów już spalona,
 morze na południu bez nazwy, bo kanon jej nie podaje; skala liniowa
 wyłączona z braku odległości w kanonie. Pozycje są relacyjne (kanon

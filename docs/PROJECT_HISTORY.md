@@ -4,6 +4,33 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-09 — PR-28 cd.: przeskalowanie mapy Kaladeshu do skali planu (uwagi właściciela)
+
+Kontynuacja sesji `arena/01a08651-mtg` (ten sam PR): dwie uwagi
+właściciela do mapy T4 — (1) miasto ma zajmować ~0,1% powierzchni
+planu (było ~20%), zoom domyślny na Ghirapur, po oddaleniu miasto
+kropką z nazwą; (2) zero kolizji wizualnych + wykrywanie kolizji.
+
+**Przeskalowanie:** arkusz 2000×1400 → **16000×11000** (~63×
+powierzchni); Ghirapur geometrycznie bez zmian (samo przesunięcie
++(9210,6000) przy tych samych ziarnach PRNG — determinizm mapforge);
+ognisko na zlewisku (10500,6800), `widok_domyslny` zoom **18**;
+K_MAX silnika 14 → **32** (zoom `k=1` ≈ fit-width niezależnie od
+rozmiaru sceny, więc 14 nie wystarczało na wykadrowanie miasta) +
+test regresyjny głębokiego zoomu. Prowincja od nowa w skali planu:
+Peema/Vahd jako tytuły `duze` (zawsze widoczne), Lathnu/Devra/rzeki
+fs 17 (od pełnego widoku), stepy centralny i wschodni na pustkowiach,
+5 wież eterowych, osady rodzajowe, ujście Vasavati w wygładzonej zatoce. Pinezka 610M19 przeliczona na nowe wymiary (Greenwheel).
+
+**Kolizje:** wcięcia tkanin od murów (prześwit ≥12 j.), Aleja
+Olbrzymów na zachód z prześwitem od murów i Vindaya, Przykrycie
+odsunięte od muru W, Cowl −15 j. od mostów; `map-audit` 0 problemów
++ recenzja wizualna cropów 1:1 (miasto, zlewisko, ujście, regiony)
+i całego arkusza. Resvg panikuje na małych viewBoxach (obejście QA:
+render całości w zoomie 1.0 + crop PNG przez pngjs).
+
+Stan: **testy fast 171/171**, audyt mapy 0 problemów.
+
 ## 2026-09-09 — PR-28: audyt scalonego PR-27, mapa Kaladeshu T4 i Gearsmith Prodigy
 
 Sesja `arena/01a08651-mtg`, PR #28. Zgodnie z `AGENTS.md` najpierw

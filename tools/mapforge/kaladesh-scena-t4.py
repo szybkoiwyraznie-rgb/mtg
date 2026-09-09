@@ -5,49 +5,38 @@ Budowniczy sceny mapy Kaladeshu (T4 — rekonstrukcja kanoniczna, atlas).
 
 Kanon nie podaje mapy planu ani współrzędnych (research T1→T4 z 2026-09-09,
 docs/research/RESEARCH_2026-09-09-kaladesh-gearsmith-prodigy.md): mapa jest
-rekonstrukcją RELACYJNĄ w mapforge — prawdziwe są sąsiedztwa i przebiegi
+rekonstrukcją RELACYJNĄ w mapforge — prawdziwe sąsiedztwa i przebiegi
 rzek, umowne kształty i odległości (zob. maps/kaladesh/zrodlo-research.md).
 
 Decyzje właściciela (2026-09-08/09): JEDNA mapa całego planu; Ghirapur jako
 gęste ognisko miejskie na zlewisku rzek; domyślne otwarcie mapy na Ghirapurze
 (ADR 0045, `widok_domyslny` w map.json). Epoka: Kaladesh za Konsulatu —
-przed buntem eterowym (KLD/AER): kuźnia Konsulów cała stoi (ruina na mapie
-to pomyłka — patrz niżej), Targowisko Nocne Gontiego w Bomat.
+doba KLD/AER: kuźnia Konsulów spalona przez Chandrę, przed buntem eterowym.
+
+SKALA (korekta właściciela 2026-09-09): miasto nie może zajmować 20%
+planu. Arkusz 16000×11000; Ghirapur w obrysie murów (~500×440 j.)
+to ~0,1% powierzchni — z oddalenia kropka z nazwą, detale (fs<17)
+kryje LOD silnika. Zoom domyślny 18 kadruje miasto jak poprzednio.
+Prowincja jest schematyczna celowo: rzadkie biomy-znaczki (gestosc
+~0,03–0,06), pełny detal tylko w ognisku.
 
 Kanon geograficzny użyty w scenie (MTG Wiki: Avishkar, Ghirapur — za
-„The Art of Magic: The Gathering — Kaladesh"):
-  * Trzy rzeki miasta: Vinday płynie przez dzicz Peemy i wpada do Ghirapuru
-    od zachodu; Suramal spływa z północy; zlewisko w mieście tworzy wielką
-    Vasavati, która niesie handel do ODLEGŁEGO WYBRZEŻA na południu.
-  * Mapani to największy dopływ Vindaya i jedna z granic Vahd.
-  * Vahd (Złote Stopnie): pola i wsie na północnym wschodzie, ośrodek
-    budowy i prób sterowców.
-  * Peema: dziesiątki tysięcy akrów dzikiego lasu na zachodzie, elfy.
-  * Lathnu: wysunięta placówka na PÓŁNOCNYM skraju cywilizacji, pod urwiskiem
-    Devra; za nią Wielka Wspinka (lodowe góry, śmierć).
-  * Ghirapur: stolica na zlewisku; Kanał Dukhara przez środek dzielnicy
-    Jedenastu Mostów (First Bridge NAJPODNIEJSZY); Iglica Eteru w centrum;
-    stacja Aradara (wielki węzeł kolei z kopułą); Bastion Czcigodnych;
-    Bomat (port, molo, targowiska); Embraal (huty, dzielnica przemysłowa);
-    Ovalchase (tor wyścigowy); Greenwheel (kopuły ogrodowe, „Zoo”
-    konstruktów); Kujar (elfia dzielnica rezydencjonalna); Freejam
-    (pionowe pomosty, awiacje); Aleja Olbrzymów (wzgórza NAD Vindayem);
-    Weldfast (węzeł eterowy, metaloplastyka); Przykrycie (las łęgowy);
-    Akhara (okrągły plac-arena); Kuźnia Konsulów (spalona przez Chandrę).
+„The Art of Magic: The Gathering — Kaladesh"): trzy rzeki (Vinday przez
+Peemę z zachodu, Suramal z północy, zlewisko → Vasavati do odległego
+wybrzeża), Mapani (największy dopływ Vindaya, granica Vahd), Vahd
+(Złote Stopnie, sterowce), Peema (las, elfy), Lathnu pod Devra,
+Wielka Wspinka, Bunarat (spalona wieś), wieże eterowe, dzielnice
+Ghirapuru (osobna lista w zrodlo-research.md).
 
-Rozstrzygnięcia rekonstrukcji (umowne, do weryfikacji z kanonem):
-  * Morze na południu BEZ nazwy (kanon: „morze”, „odległe wybrzeże").
-  * Kuźnia Konsulów jako RUINA: epoka mapy to schyłek Konsulatu — pożar
-    Chandry już się dokonał (naprawiono opis epoki wyżej: mapa pokazuje
-    plan w dobie KLD/AER, po spaleniu kuźni).
-  * Mosty 2–11 na kanale: pozycje umowne wzdłuż kanału; Ninth Bridge
-    oznaczony bez roszczenia do kolejności kanonicznej.
-  * Ovalchase poza murami (tor potrzebuje miejsca); Shaila's Claim jako
-    pastwisko za murami; wieże eterowe rozproszone po prowincji (4).
-  * Skala liniowa WYŁĄCZONA (kanon nie podaje odległości); kompas tak
-    (północ = góra arkusza, konwencja rekonstrukcji).
+Rozstrzygnięcia rekonstrukcji (umowne): morze bez nazwy; mosty 2–11
+wzdłuż kanału; Ovalchase i Shaila's Claim poza murami; wieże i wsie
+symbolicznie; osady rodzajowe („osada leśna”, „osada rybacka”) to
+opisy, nie nazwy własne; linia brzegu; północ = góra; skala wyłączona.
 
-Deterministyczny: pisze maps/kaladesh/scena.json. Renderować przez
+Deterministyczny: pisze maps/kaladesh/scena.json. Miasto w identycznej
+geometrii względnej (przesunięcie DX/DY, te same ziarna PRNG) —
+render ogniska bajtowo zgodny z wersją z arkusza 2000×1400.
+Renderować przez
     node tools/mapforge/cli.mjs maps/kaladesh/scena.json -o maps/kaladesh/podklad.svg
 """
 import json
@@ -57,10 +46,23 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'maps' / 'kaladesh' / 'scena.json'
 
-SZER, WYS = 2000, 1400
+SZER, WYS = 16000, 11000
+
+# Przesunięcie ogniska miejskiego (stare współrzędne 2000×1400 + DX/DY).
+DX, DY = 9210, 6000
+
+
+def T(p):
+    """Stary punkt miasta → nowy arkusz."""
+    return [p[0] + DX, p[1] + DY]
+
+
+def TL(lamana):
+    return [T(p) for p in lamana]
+
 
 # Zlewisko Ghirapuru (ognisko mapy, ADR 0045).
-CX, CY = 1290.0, 800.0
+CX, CY = 1290.0 + DX, 800.0 + DY
 
 
 def dlugosc(lamana):
@@ -90,14 +92,16 @@ def elipsa(cx, cy, rx, ry, n=14):
             for i in range(n)]
 
 
-# ── Rzeki (osie kanoniczne) ──────────────────────────────────────────────
-VINDAY = [[30, 600], [250, 610], [450, 630], [650, 660], [850, 700],
-          [1050, 745], [1200, 775], [CX, CY]]
-SURAMAL = [[1130, 240], [1150, 380], [1180, 520], [1220, 650], [1260, 740],
-           [CX, CY]]
-VASAVATI = [[CX, CY], [1315, 880], [1350, 960], [1390, 1030], [1445, 1100]]
-MAPANI = [[1420, 330], [1310, 440], [1190, 550], [1070, 650], [975, 722]]
-DUKHARA = [[1205, 776], [1250, 786], [1290, 792], [1310, 830], [1320, 880]]
+# ── Rzeki (osie kanoniczne; końcówki miejskie = T(stare)) ────────────────
+VINDAY = [[150, 5300], [1500, 5400], [3500, 5600], [5500, 5900], [7500, 6300],
+          [9000, 6600], [10000, 6720]] + TL([[1050, 745], [1200, 775], [1290, 800]])
+SURAMAL = [[9800, 900], [9900, 2500], [10000, 4000], [10100, 5200],
+           [10250, 6100]] + TL([[1220, 650], [1260, 740], [1290, 800]])
+VASAVATI = (TL([[1290, 800], [1315, 880], [1350, 960]])
+            + [[10620, 7600], [10700, 8300], [10800, 8900], [10850, 9300]])
+MAPANI = [[13200, 2000], [12400, 3000], [11400, 4000], [10400, 5200],
+          [9900, 6050], [9800, 6705]]
+DUKHARA = TL([[1205, 776], [1250, 786], [1290, 792], [1310, 830], [1320, 880]])
 
 # Jedenastu Mostów: 11 przepraw wzdłuż kanału (most→prostopadle do osi).
 MOSTY = []
@@ -106,23 +110,23 @@ for i in range(11):
     MOSTY.append({'x': x, 'y': y, 'kat': round(kat + 90, 1)})
 
 # ── Ląd: kontynent pod ramą N/E/W (passe-partout), morze na południu ─────
-WYBRZEZE = [[2050, 1150], [1850, 1180], [1700, 1160], [1560, 1100],
-            [1490, 1070], [1460, 1095], [1430, 1095], [1400, 1070],
-            [1360, 1080], [1280, 1120], [1150, 1180], [1000, 1200],
-            [850, 1180], [700, 1130], [560, 1100], [420, 1120],
-            [300, 1080], [220, 1000], [120, 960], [-50, 980]]
-LAD = [[-50, -50], [2050, -50]] + WYBRZEZE + [[-50, -50]]
+WYBRZEZE = [[16100, 9300], [15000, 9500], [13800, 9300], [12800, 9600],
+            [11800, 9400], [11200, 9100], [10950, 9050], [10850, 9260],
+            [10750, 9050], [10200, 9300], [9000, 9600],
+            [7500, 9400], [6000, 9700], [4500, 9500], [3000, 9800],
+            [1500, 9600], [-100, 9800]]
+LAD = [[-100, -100], [16100, -100]] + WYBRZEZE + [[-100, -100]]
 
 scena = {
     'nazwa': 'kaladesh-t4',
     'szerokosc': SZER,
     'wysokosc': WYS,
     'styl': 'atlas',
-    'opis': ('Kaladesh T4 (rekonstrukcja kanoniczna, epoka KLD/AER): '
-             'schematyczny plan + gęsty Ghirapur na zlewisku Vinday–Suramal; '
-             'Vasavati do bezimiennego morza; Peema (las, zachód), Vahd '
-             '(pola i sterowce, północny wschód), Lathnu pod Devra '
-             '(północ); morze bez nazwy — kanon nie podaje; skala '
+    'opis': ('Kaladesh T4 (rekonstrukcja kanoniczna, epoka KLD/AER; arkusz '
+             '16000×11000): prowincja w skali planu — Ghirapur (~0,1% '
+             'powierzchni) jest z oddalenia kropką z nazwą; pełny detal '
+             'tylko w ognisku na zlewisku Vinday–Suramal; Vasavati do '
+             'bezimiennego morza; Peema, Vahd, Lathnu/Devra; skala '
              'wyłączona (brak odległości w kanonie).'),
     'ocean': {},
     'lądy': [{'id': 'kaladesh', 'punkty': LAD}],
@@ -131,248 +135,300 @@ scena = {
         {'id': 'suramal', 'punkty': SURAMAL, 'opcje': {'s0': 3, 's1': 6}},
         {'id': 'vasavati', 'punkty': VASAVATI,
          'opcje': {'s0': 7, 's1': 11, 'zrodlo': False}},
+        {'id': 'dukhara', 'punkty': DUKHARA,
+         'opcje': {'s0': 2.5, 's1': 4, 'zrodlo': False}},
     ],
     'pasma': [
-        {'id': 'devra', 'punkty': [[520, 180], [700, 160], [900, 170],
-                                  [1100, 155], [1280, 175]],
-         'opcje': {'szer': 46}},
-        {'id': 'aleja-olbrzymow', 'punkty': [[920, 600], [1020, 625],
-                                             [1110, 665]],
-         'opcje': {'szer': 40}},
+        {'id': 'devra', 'punkty': [[5500, 1400], [7000, 1250], [8500, 1350],
+                                  [10000, 1250], [11200, 1400]],
+         'opcje': {'szer': 60}},
+        # Aleja Olbrzymów na zachód od miasta, z prześwitem od murów
+        # i od Vindaya (kolizje wersji 2000×1400 — uwaga 2 właściciela).
+        {'id': 'aleja-olbrzymow', 'punkty': [[8500, 6250], [9100, 6400],
+                                             [9500, 6600]],
+         'opcje': {'szer': 44}},
     ],
     'biomy': [
-        # Przykrycie WCZEŚNIE (strefa zajęta dla późniejszej tkaniny).
+        # Przykrycie WCZEŚNIE (strefa zajęta dla późniejszej tkaniny);
+        # odsunięte od zachodniego muru (kolizja v1).
         {'id': 'przykrycie', 'typ': 'las',
-         'punkty': [[1110, 786], [1290, 820], [1290, 838], [1110, 804]],
+         'punkty': TL([[1160, 790], [1290, 820], [1290, 838], [1160, 808]]),
          'opcje': {'gestosc': 1.2, 'skala': 0.7}},
+        # Peema: znaczki puszczy, nie pełny rozsiew (skala planu).
         {'id': 'peema-pln', 'typ': 'las',
-         'punkty': [[80, 430], [500, 410], [900, 480], [1050, 600],
-                    [1030, 640], [850, 600], [500, 590], [150, 580]],
-         'opcje': {'gestosc': 1.0}},
+         'punkty': [[1500, 3800], [4500, 3600], [7000, 4200], [8000, 5200],
+                    [7800, 5800], [6000, 5600], [3000, 5400], [1200, 5000]],
+         'opcje': {'gestosc': 0.04, 'skala': 1.4}},
         {'id': 'peema-pld', 'typ': 'las',
-         'punkty': [[120, 680], [500, 690], [900, 760], [1030, 790],
-                    [1000, 860], [600, 840], [200, 780]],
-         'opcje': {'gestosc': 1.0}},
+         'punkty': [[1000, 5620], [3500, 5850], [6000, 6220], [7500, 6600],
+                    [7200, 7400], [4500, 7400], [1500, 6800]],
+         'opcje': {'gestosc': 0.04, 'skala': 1.4}},
         {'id': 'vahd-step', 'typ': 'step',
-         'punkty': [[1450, 350], [1750, 300], [1850, 450], [1750, 600],
-                    [1550, 620], [1430, 500]],
-         'opcje': {'gestosc': 0.9}},
+         'punkty': [[12800, 2400], [14800, 2300], [15400, 3400],
+                    [14700, 4500], [13000, 4600], [12500, 3500]],
+         'opcje': {'gestosc': 0.06}},
+        # Bezimienne pustkowia: rzadki step, żeby środek arkusza nie był
+        # białą plamą; poligony omijają Vinday/Suramal/Mapani/Vasavati.
+        {'id': 'step-centralny', 'typ': 'step',
+         'punkty': [[8100, 4300], [9700, 4300], [9750, 5900], [8200, 6000]],
+         'opcje': {'gestosc': 0.03}},
+        {'id': 'step-wschodni', 'typ': 'step',
+         'punkty': [[10800, 5000], [13000, 5000], [13200, 7800],
+                    [11000, 8000], [10800, 6800]],
+         'opcje': {'gestosc': 0.03}},
         {'id': 'shaila-pastwisko', 'typ': 'step',
-         'punkty': [[950, 950], [1100, 950], [1120, 1010], [980, 1030]],
+         'punkty': TL([[950, 950], [1100, 950], [1120, 1010], [980, 1030]]),
          'opcje': {'gestosc': 0.8}},
         # Tkanina miejska: poligony omijają rzeki z konstrukcji (rzeki nie
-        # tworzą stref zajętych); Przykrycie wykluczone jako wcześniejszy biom.
+        # tworzą stref zajętych); Przykrycie wykluczone jako wcześniejszy
+        # biom. Wcięcia od murów po uwadze 2 (prześwit ≥12 j.).
         {'id': 'tkanina-kujar', 'typ': 'tkanina',
-         'punkty': [[1255, 610], [1360, 605], [1370, 715], [1262, 715]],
+         'punkty': TL([[1255, 610], [1360, 605], [1370, 715], [1262, 715]]),
          'opcje': {'gestosc': 0.9}},
         {'id': 'tkanina-eleven-pln', 'typ': 'tkanina',
-         'punkty': [[1215, 725], [1360, 725], [1375, 780], [1330, 800],
-                    [1300, 788], [1255, 781], [1210, 771]],
+         'punkty': TL([[1215, 725], [1360, 725], [1375, 780], [1330, 800],
+                       [1300, 788], [1255, 781], [1210, 771]]),
          'opcje': {'gestosc': 1.0}},
         {'id': 'tkanina-eleven-pld', 'typ': 'tkanina',
-         'punkty': [[1225, 802], [1290, 810], [1305, 840], [1308, 880],
-                    [1250, 880], [1215, 840]],
+         'punkty': TL([[1225, 802], [1290, 810], [1305, 840], [1308, 880],
+                       [1250, 880], [1215, 840]]),
          'opcje': {'gestosc': 1.0}},
         {'id': 'tkanina-bomat', 'typ': 'tkanina',
-         'punkty': [[1255, 890], [1300, 890], [1315, 950], [1330, 1000],
-                    [1245, 1005], [1220, 950]],
+         'punkty': TL([[1255, 890], [1300, 890], [1315, 950], [1330, 1000],
+                       [1245, 1005], [1220, 950]]),
          'opcje': {'gestosc': 1.0}},
         {'id': 'tkanina-embraal', 'typ': 'tkanina',
-         'punkty': [[1390, 725], [1470, 765], [1495, 855], [1455, 945],
-                    [1415, 995], [1390, 900], [1392, 800]],
+         'punkty': TL([[1390, 725], [1470, 765], [1485, 855], [1440, 940],
+                       [1400, 985], [1390, 900], [1392, 800]]),
          'opcje': {'gestosc': 1.1}},
         {'id': 'tkanina-freejam', 'typ': 'tkanina',
-         'punkty': [[1095, 645], [1200, 645], [1200, 710], [1150, 725],
-                    [1085, 695]],
+         'punkty': TL([[1110, 640], [1200, 640], [1200, 710], [1150, 725],
+                       [1110, 692]]),
          'opcje': {'gestosc': 0.9}},
         {'id': 'tkanina-greenwheel', 'typ': 'tkanina',
-         'punkty': [[1095, 795], [1205, 795], [1230, 885], [1205, 945],
-                    [1105, 915]],
+         'punkty': TL([[1095, 795], [1205, 795], [1230, 885], [1205, 945],
+                       [1115, 910]]),
          'opcje': {'gestosc': 0.7}},
         {'id': 'tkanina-przedmiescie-wsch', 'typ': 'tkanina',
-         'punkty': [[1560, 700], [1700, 700], [1700, 900], [1560, 900]],
+         'punkty': TL([[1560, 700], [1700, 700], [1700, 900], [1560, 900]]),
          'opcje': {'gestosc': 0.3}},
         {'id': 'tkanina-przedmiescie-zach', 'typ': 'tkanina',
-         'punkty': [[800, 780], [1030, 795], [1030, 830], [800, 815]],
+         'punkty': TL([[800, 780], [1030, 795], [1030, 830], [800, 815]]),
          'opcje': {'gestosc': 0.3}},
         {'id': 'tkanina-przedmiescie-pln', 'typ': 'tkanina',
-         'punkty': [[1000, 450], [1140, 450], [1120, 570], [1020, 570]],
+         'punkty': TL([[1000, 450], [1140, 450], [1120, 570], [1020, 570]]),
          'opcje': {'gestosc': 0.3}},
     ],
     'dzielnice': [
         {'id': 'jedenascie-mostow',
-         'punkty': [[1210, 720], [1360, 720], [1380, 800], [1340, 880],
-                    [1250, 880], [1200, 810]],
+         'punkty': TL([[1210, 720], [1360, 720], [1380, 800], [1340, 880],
+                       [1250, 880], [1200, 810]]),
          'opcje': {'ton': 8}},
         {'id': 'bomat',
-         'punkty': [[1255, 885], [1345, 885], [1380, 960], [1360, 1010],
-                    [1240, 1010], [1215, 950]],
+         'punkty': TL([[1255, 885], [1345, 885], [1380, 960], [1360, 1010],
+                       [1240, 1010], [1215, 950]]),
          'opcje': {'ton': 4}},
         {'id': 'embraal',
-         'punkty': [[1385, 720], [1470, 760], [1500, 850], [1460, 950],
-                    [1415, 1000], [1385, 900], [1390, 800]],
+         'punkty': TL([[1385, 720], [1470, 760], [1500, 850], [1460, 950],
+                       [1415, 1000], [1385, 900], [1390, 800]]),
          'opcje': {'ton': 12}},
         {'id': 'kujar',
-         'punkty': [[1190, 600], [1360, 600], [1370, 715], [1215, 715]],
+         'punkty': TL([[1190, 600], [1360, 600], [1370, 715], [1215, 715]]),
          'opcje': {'ton': 2}},
         {'id': 'freejam',
-         'punkty': [[1090, 640], [1205, 640], [1205, 715], [1150, 730],
-                    [1080, 700]],
+         'punkty': TL([[1090, 640], [1205, 640], [1205, 715], [1150, 730],
+                       [1080, 700]]),
          'opcje': {'ton': 6}},
         {'id': 'greenwheel',
-         'punkty': [[1090, 800], [1210, 800], [1235, 885], [1210, 950],
-                    [1100, 920]],
+         'punkty': TL([[1090, 800], [1210, 800], [1235, 885], [1210, 950],
+                       [1100, 920]]),
          'opcje': {'ton': 3}},
     ],
-    # Mury z bramami: przerwy na rzekach (Vinday W, Suramal N, Vasavati S)
-    # i traktach (brama wschodnia, północna, południowa).
+    # Mury z bramami: przerwy na rzekach i traktach (geometria v1 + T).
     'mury': [
-        {'id': 'mur-pn-wsch', 'punkty': [[1218, 583], [1415, 583], [1520, 760]]},
-        {'id': 'mur-wsch-pld', 'punkty': [[1527, 815], [1470, 930], [1410, 1005]]},
-        {'id': 'mur-pld-1', 'punkty': [[1355, 1028], [1300, 1022]]},
-        {'id': 'mur-pld-2', 'punkty': [[1200, 1017], [1165, 1017], [1100, 920]]},
-        {'id': 'mur-zach', 'punkty': [[1062, 862], [1050, 795]]},
-        {'id': 'mur-pn-1', 'punkty': [[1095, 700], [1120, 610]]},
-        {'id': 'mur-pn-2', 'punkty': [[1145, 592], [1180, 583]]},
+        {'id': 'mur-pn-wsch',
+         'punkty': TL([[1218, 583], [1415, 583], [1520, 760]])},
+        {'id': 'mur-wsch-pld',
+         'punkty': TL([[1527, 815], [1470, 930], [1410, 1005]])},
+        {'id': 'mur-pld-1', 'punkty': TL([[1355, 1028], [1300, 1022]])},
+        {'id': 'mur-pld-2',
+         'punkty': TL([[1200, 1017], [1165, 1017], [1100, 920]])},
+        {'id': 'mur-zach', 'punkty': TL([[1062, 862], [1050, 795]])},
+        {'id': 'mur-pn-1', 'punkty': TL([[1095, 700], [1120, 610]])},
+        {'id': 'mur-pn-2', 'punkty': TL([[1145, 592], [1180, 583]])},
     ],
     'drogi': [
         {'id': 'trakt-vahd', 'typ': 'droga',
-         'punkty': [[1545, 800], [1650, 760], [1720, 680], [1750, 580]]},
+         'punkty': [[10755, 6800], [11400, 6500], [12200, 5800],
+                    [13000, 5000], [13400, 4650]]},
         {'id': 'trakt-lathnu', 'typ': 'droga',
-         'punkty': [[1130, 595], [1080, 480], [1000, 380], [920, 290]]},
+         'punkty': [[10340, 6595], [9900, 5200], [9200, 3800],
+                    [8600, 2600], [8350, 2050]]},
         {'id': 'trakt-poludniowy', 'typ': 'droga',
-         'punkty': [[1250, 1030], [1220, 1100], [1150, 1150]]},
+         'punkty': [[10460, 7030], [10550, 7700], [10650, 8300],
+                    [10700, 8700]]},
         {'id': 'sciezka-holownicza', 'typ': 'szlak',
-         'punkty': [[1060, 805], [950, 795], [800, 775]]},
+         'punkty': TL([[1060, 805], [950, 795], [800, 775]])},
         {'id': 'tor-ovalchase', 'typ': 'droga',
-         'punkty': elipsa(1680, 830, 100, 60) + [elipsa(1680, 830, 100, 60)[0]]},
+         'punkty': TL(elipsa(1680, 830, 100, 60) + [elipsa(1680, 830, 100, 60)[0]])},
     ],
     'poi': [
-        {'typ': 'iglica', 'x': 1300, 'y': 742, 'id': 'iglica-eteru',
+        {'typ': 'iglica', 'id': 'iglica-eteru', 'x': 1300 + DX, 'y': 742 + DY,
          'opcje': {'skala': 1.8}},
-        {'typ': 'kopula', 'x': 1355, 'y': 835, 'id': 'stacja-aradara',
+        {'typ': 'kopula', 'id': 'stacja-aradara', 'x': 1355 + DX, 'y': 835 + DY,
          'opcje': {'skala': 1.3}},
-        {'typ': 'fort', 'x': 1240, 'y': 845, 'id': 'bastion',
+        {'typ': 'fort', 'id': 'bastion', 'x': 1240 + DX, 'y': 845 + DY,
          'opcje': {'skala': 0.8}},
-        {'typ': 'plac', 'x': 1330, 'y': 775, 'id': 'akhara',
+        {'typ': 'plac', 'id': 'akhara', 'x': 1330 + DX, 'y': 775 + DY,
          'opcje': {'skala': 1.1}},
-        {'typ': 'kopula', 'x': 1360, 'y': 690, 'id': 'wezel-eterowy',
+        {'typ': 'kopula', 'id': 'wezel-eterowy', 'x': 1360 + DX, 'y': 690 + DY,
          'opcje': {'skala': 1.0}},
-        {'typ': 'ruina', 'x': 1420, 'y': 900, 'id': 'kuznia-konsulow',
+        {'typ': 'ruina', 'id': 'kuznia-konsulow', 'x': 1420 + DX, 'y': 900 + DY,
          'opcje': {'skala': 0.9}},
-        {'typ': 'plac', 'x': 1290, 'y': 950, 'id': 'bomat-targ',
+        {'typ': 'plac', 'id': 'bomat-targ', 'x': 1290 + DX, 'y': 950 + DY,
          'opcje': {'skala': 1.0}},
-        {'typ': 'kopula', 'x': 1170, 'y': 860, 'id': 'greenwheel-kopula-1',
-         'opcje': {'skala': 0.9}},
-        {'typ': 'kopula', 'x': 1215, 'y': 895, 'id': 'greenwheel-kopula-2',
-         'opcje': {'skala': 0.7}},
-        {'typ': 'drzewo', 'x': 1190, 'y': 875, 'id': 'greenwheel-drzewo',
-         'opcje': {'skala': 1.5}},
-        {'typ': 'platforma', 'x': 1140, 'y': 680, 'id': 'freejam-pomost',
-         'opcje': {'skala': 1.0}},
-        {'typ': 'miasto', 'x': 880, 'y': 255, 'id': 'lathnu',
+        {'typ': 'kopula', 'id': 'greenwheel-kopula-1',
+         'x': 1170 + DX, 'y': 860 + DY, 'opcje': {'skala': 0.9}},
+        {'typ': 'kopula', 'id': 'greenwheel-kopula-2',
+         'x': 1215 + DX, 'y': 895 + DY, 'opcje': {'skala': 0.7}},
+        {'typ': 'drzewo', 'id': 'greenwheel-drzewo',
+         'x': 1190 + DX, 'y': 875 + DY, 'opcje': {'skala': 1.5}},
+        {'typ': 'platforma', 'id': 'freejam-pomost',
+         'x': 1140 + DX, 'y': 680 + DY, 'opcje': {'skala': 1.0}},
+        {'typ': 'ruina', 'id': 'bunarat', 'x': 1050 + DX, 'y': 1010 + DY,
+         'opcje': {'skala': 0.8}},
+        {'typ': 'miasto', 'id': 'lathnu', 'x': 8300, 'y': 1900,
          'opcje': {'skala': 1.1}},
-        {'typ': 'szczyt', 'x': 980, 'y': 95, 'id': 'wielka-wspinka',
+        {'typ': 'szczyt', 'id': 'wielka-wspinka', 'x': 8300, 'y': 750,
          'opcje': {'skala': 1.1, 'snieg': True}},
-        {'typ': 'miasto', 'x': 1600, 'y': 450, 'id': 'vahd-wies-1',
+        {'typ': 'miasto', 'id': 'vahd-wies-1', 'x': 14000, 'y': 3200,
          'opcje': {'skala': 0.9}},
-        {'typ': 'miasto', 'x': 1700, 'y': 520, 'id': 'vahd-wies-2',
+        {'typ': 'miasto', 'id': 'vahd-wies-2', 'x': 14600, 'y': 3800,
          'opcje': {'skala': 0.9}},
-        {'typ': 'miasto', 'x': 1550, 'y': 540, 'id': 'vahd-wies-3',
+        {'typ': 'miasto', 'id': 'vahd-wies-3', 'x': 13600, 'y': 4100,
          'opcje': {'skala': 0.9}},
-        {'typ': 'platforma', 'x': 1650, 'y': 420, 'id': 'vahd-przystan',
+        {'typ': 'platforma', 'id': 'vahd-przystan', 'x': 14200, 'y': 2900,
          'opcje': {'skala': 1.2}},
-        {'typ': 'iglica', 'x': 500, 'y': 380, 'id': 'wieza-eterowa-1',
+        {'typ': 'iglica', 'id': 'wieza-eterowa-1', 'x': 2500, 'y': 7500,
          'opcje': {'skala': 1.3}},
-        {'typ': 'iglica', 'x': 1650, 'y': 640, 'id': 'wieza-eterowa-2',
+        {'typ': 'iglica', 'id': 'wieza-eterowa-2', 'x': 9500, 'y': 7800,
          'opcje': {'skala': 1.3}},
-        {'typ': 'iglica', 'x': 850, 'y': 980, 'id': 'wieza-eterowa-3',
+        {'typ': 'iglica', 'id': 'wieza-eterowa-3', 'x': 13500, 'y': 6000,
          'opcje': {'skala': 1.3}},
-        {'typ': 'ruina', 'x': 1050, 'y': 1010, 'id': 'bunarat',
-         'opcje': {'skala': 0.8}},
+        {'typ': 'iglica', 'id': 'wieza-eterowa-4', 'x': 6000, 'y': 3000,
+         'opcje': {'skala': 1.3}},
+        {'typ': 'iglica', 'id': 'wieza-eterowa-5', 'x': 14500, 'y': 8000,
+         'opcje': {'skala': 1.3}},
+        {'typ': 'miasto', 'id': 'osada-rybacka', 'x': 11200, 'y': 8800,
+         'opcje': {'skala': 0.9}},
+        {'typ': 'miasto', 'id': 'osada-lesna', 'x': 4500, 'y': 6300,
+         'opcje': {'skala': 0.9}},
     ] + [
         {'typ': 'most', 'x': m['x'], 'y': m['y'], 'id': f'most-{i + 1}',
          'opcje': {'skala': 0.7, 'kat': m['kat']}}
         for i, m in enumerate(MOSTY)
     ],
     'etykiety': [
-        {'tekst': 'Ghirapur', 'x': 1300, 'y': 550,
+        {'tekst': 'Ghirapur', 'x': 1300 + DX, 'y': 550 + DY,
          'opcje': {'fs': 38, 'duze': True}},
-        {'tekst': 'Eleven Bridges', 'x': 1345, 'y': 755,
+        {'tekst': 'Eleven Bridges', 'x': 1345 + DX, 'y': 755 + DY,
          'opcje': {'fs': 12}},
-        {'tekst': 'Bomat', 'x': 1290, 'y': 950,
-         'opcje': {'fs': 12, 'przyDo': [1290, 950]}},
-        {'tekst': 'Embraal', 'x': 1445, 'y': 860, 'opcje': {'fs': 12}},
-        {'tekst': 'Kujar', 'x': 1310, 'y': 650, 'opcje': {'fs': 12}},
-        {'tekst': 'Freejam', 'x': 1140, 'y': 680,
-         'opcje': {'fs': 11, 'przyDo': [1140, 680]}},
-        {'tekst': 'Greenwheel', 'x': 1108, 'y': 835, 'opcje': {'fs': 11}},
-        {'tekst': 'Weldfast', 'x': 1400, 'y': 665, 'opcje': {'fs': 11}},
-        {'tekst': 'Aether Spire', 'x': 1300, 'y': 742,
-         'opcje': {'fs': 12, 'przyDo': [1300, 742]}},
-        {'tekst': 'Aradara Station', 'x': 1355, 'y': 835,
-         'opcje': {'fs': 10, 'przyDo': [1355, 835]}},
-        {'tekst': 'Bastion', 'x': 1240, 'y': 845,
-         'opcje': {'fs': 10, 'przyDo': [1240, 845]}},
-        {'tekst': 'Akhara', 'x': 1330, 'y': 775,
-         'opcje': {'fs': 10, 'przyDo': [1330, 775]}},
-        {'tekst': 'Aether Hub', 'x': 1360, 'y': 690,
-         'opcje': {'fs': 10, 'przyDo': [1360, 690]}},
-        {'tekst': 'Foundry of the Consuls', 'x': 1420, 'y': 900,
-         'opcje': {'fs': 10, 'przyDo': [1420, 900]}},
+        {'tekst': 'Bomat', 'x': 1290 + DX, 'y': 950 + DY,
+         'opcje': {'fs': 12, 'przyDo': [1290 + DX, 950 + DY]}},
+        {'tekst': 'Embraal', 'x': 1445 + DX, 'y': 860 + DY,
+         'opcje': {'fs': 12}},
+        {'tekst': 'Kujar', 'x': 1310 + DX, 'y': 650 + DY,
+         'opcje': {'fs': 12}},
+        {'tekst': 'Freejam', 'x': 1140 + DX, 'y': 680 + DY,
+         'opcje': {'fs': 11, 'przyDo': [1140 + DX, 680 + DY]}},
+        {'tekst': 'Greenwheel', 'x': 1108 + DX, 'y': 835 + DY,
+         'opcje': {'fs': 11}},
+        {'tekst': 'Weldfast', 'x': 1400 + DX, 'y': 665 + DY,
+         'opcje': {'fs': 11}},
+        {'tekst': 'Aether Spire', 'x': 1300 + DX, 'y': 742 + DY,
+         'opcje': {'fs': 12, 'przyDo': [1300 + DX, 742 + DY]}},
+        {'tekst': 'Aradara Station', 'x': 1355 + DX, 'y': 835 + DY,
+         'opcje': {'fs': 10, 'przyDo': [1355 + DX, 835 + DY]}},
+        {'tekst': 'Bastion', 'x': 1240 + DX, 'y': 845 + DY,
+         'opcje': {'fs': 10, 'przyDo': [1240 + DX, 845 + DY]}},
+        {'tekst': 'Akhara', 'x': 1330 + DX, 'y': 775 + DY,
+         'opcje': {'fs': 10, 'przyDo': [1330 + DX, 775 + DY]}},
+        {'tekst': 'Aether Hub', 'x': 1360 + DX, 'y': 690 + DY,
+         'opcje': {'fs': 10, 'przyDo': [1360 + DX, 690 + DY]}},
+        {'tekst': 'Foundry of the Consuls', 'x': 1420 + DX, 'y': 900 + DY,
+         'opcje': {'fs': 10, 'przyDo': [1420 + DX, 900 + DY]}},
         {'tekst': 'First Bridge', 'x': MOSTY[10]['x'], 'y': MOSTY[10]['y'],
          'opcje': {'fs': 10, 'przyDo': [MOSTY[10]['x'], MOSTY[10]['y']]}},
         {'tekst': 'Ninth Bridge', 'x': MOSTY[2]['x'], 'y': MOSTY[2]['y'],
          'opcje': {'fs': 10, 'przyDo': [MOSTY[2]['x'], MOSTY[2]['y']]}},
-        {'tekst': 'The Cowl', 'x': 1200, 'y': 812, 'opcje': {'fs': 11}},
-        {'tekst': 'Dukhara Canal', 'x': 1262, 'y': 768,
-         'opcje': {'fs': 10, 'ital': True}},
-        {'tekst': 'Peema', 'x': 450, 'y': 500, 'opcje': {'fs': 22}},
-        {'tekst': 'Vahd', 'x': 1640, 'y': 475, 'opcje': {'fs': 20}},
-        {'tekst': 'Złote Stopnie', 'x': 1640, 'y': 500,
-         'opcje': {'fs': 12, 'ital': True}},
-        {'tekst': 'Lathnu', 'x': 880, 'y': 255,
-         'opcje': {'fs': 12, 'przyDo': [880, 255]}},
-        {'tekst': 'Devra Cliffs', 'x': 650, 'y': 215, 'opcje': {'fs': 13}},
-        {'tekst': 'The Great Climb', 'x': 980, 'y': 95,
-         'opcje': {'fs': 12, 'przyDo': [980, 95]}},
-        {'tekst': 'Bunarat', 'x': 1050, 'y': 1010,
-         'opcje': {'fs': 11, 'przyDo': [1050, 1010]}},
-        {'tekst': "Shaila's Claim", 'x': 1035, 'y': 990,
+        {'tekst': 'The Cowl', 'x': 1185 + DX, 'y': 814 + DY,
          'opcje': {'fs': 11}},
-        {'tekst': "Giants' Walk", 'x': 1015, 'y': 572,
+        {'tekst': 'Dukhara Canal', 'x': 1262 + DX, 'y': 768 + DY,
+         'opcje': {'fs': 10, 'ital': True}},
+        {'tekst': 'Greenwheel Domes', 'x': 1170 + DX, 'y': 860 + DY,
+         'opcje': {'fs': 10, 'przyDo': [1170 + DX, 860 + DY]}},
+        {'tekst': 'The Zoo', 'x': 1190 + DX, 'y': 875 + DY,
+         'opcje': {'fs': 10, 'przyDo': [1190 + DX, 875 + DY]}},
+        {'tekst': 'Bunarat', 'x': 1050 + DX, 'y': 1010 + DY,
+         'opcje': {'fs': 11, 'przyDo': [1050 + DX, 1010 + DY]}},
+        {'tekst': "Shaila's Claim", 'x': 1035 + DX, 'y': 990 + DY,
+         'opcje': {'fs': 11}},
+        # Prowincja: tytuły planu (duze = tier-kontynent, zawsze widoczne)
+        # i nazwy główne (fs 17 = widoczne od pełnego widoku).
+        {'tekst': 'Peema', 'x': 4500, 'y': 4500,
+         'opcje': {'fs': 24, 'duze': True}},
+        {'tekst': 'Vahd', 'x': 13900, 'y': 3400,
+         'opcje': {'fs': 22, 'duze': True}},
+        {'tekst': 'Złote Stopnie', 'x': 13900, 'y': 3470,
+         'opcje': {'fs': 12, 'ital': True}},
+        {'tekst': 'Lathnu', 'x': 8300, 'y': 1900,
+         'opcje': {'fs': 17, 'przyDo': [8300, 1900]}},
+        {'tekst': 'Devra Cliffs', 'x': 6800, 'y': 1900,
+         'opcje': {'fs': 17}},
+        {'tekst': 'The Great Climb', 'x': 8300, 'y': 750,
+         'opcje': {'fs': 17, 'przyDo': [8300, 750]}},
+        {'tekst': "Giants' Walk", 'x': 9000, 'y': 6150,
          'opcje': {'fs': 12}},
-        {'tekst': 'Ovalchase', 'x': 1680, 'y': 832, 'opcje': {'fs': 13}},
-        {'tekst': 'Aether Collection Tower', 'x': 500, 'y': 380,
-         'opcje': {'fs': 10, 'przyDo': [500, 380]}},
-        {'tekst': 'Aether Collection Tower', 'x': 1650, 'y': 640,
-         'opcje': {'fs': 10, 'przyDo': [1650, 640]}},
-        {'tekst': 'Aether Collection Tower', 'x': 850, 'y': 980,
-         'opcje': {'fs': 10, 'przyDo': [850, 980]}},
-        {'tekst': 'Greenwheel Domes', 'x': 1170, 'y': 860,
-         'opcje': {'fs': 10, 'przyDo': [1170, 860]}},
-        {'tekst': 'The Zoo', 'x': 1190, 'y': 875,
-         'opcje': {'fs': 10, 'przyDo': [1190, 875]}},
-        {'tekst': 'wsie Vahd', 'x': 1600, 'y': 450,
-         'opcje': {'fs': 10, 'przyDo': [1600, 450]}},
-        {'tekst': 'przystań sterowców', 'x': 1650, 'y': 420,
-         'opcje': {'fs': 10, 'przyDo': [1650, 420]}},
+        {'tekst': 'Ovalchase', 'x': 1680 + DX, 'y': 832 + DY,
+         'opcje': {'fs': 13}},
+        {'tekst': 'wieś', 'x': 14000, 'y': 3200,
+         'opcje': {'fs': 10, 'przyDo': [14000, 3200]}},
+        {'tekst': 'wieś', 'x': 14600, 'y': 3800,
+         'opcje': {'fs': 10, 'przyDo': [14600, 3800]}},
+        {'tekst': 'wieś', 'x': 13600, 'y': 4100,
+         'opcje': {'fs': 10, 'przyDo': [13600, 4100]}},
+        {'tekst': 'przystań sterowców', 'x': 14200, 'y': 2900,
+         'opcje': {'fs': 10, 'przyDo': [14200, 2900]}},
+        {'tekst': 'Aether Collection Tower', 'x': 2500, 'y': 7500,
+         'opcje': {'fs': 10, 'przyDo': [2500, 7500]}},
+        {'tekst': 'Aether Collection Tower', 'x': 9500, 'y': 7800,
+         'opcje': {'fs': 10, 'przyDo': [9500, 7800]}},
+        {'tekst': 'Aether Collection Tower', 'x': 13500, 'y': 6000,
+         'opcje': {'fs': 10, 'przyDo': [13500, 6000]}},
+        {'tekst': 'Aether Collection Tower', 'x': 6000, 'y': 3000,
+         'opcje': {'fs': 10, 'przyDo': [6000, 3000]}},
+        {'tekst': 'Aether Collection Tower', 'x': 14500, 'y': 8000,
+         'opcje': {'fs': 10, 'przyDo': [14500, 8000]}},
+        {'tekst': 'osada rybacka', 'x': 11200, 'y': 8800,
+         'opcje': {'fs': 10, 'przyDo': [11200, 8800]}},
+        {'tekst': 'osada leśna', 'x': 4500, 'y': 6300,
+         'opcje': {'fs': 10, 'przyDo': [4500, 6300]}},
     ],
     'etykietyLukowe': [
         {'id': 'luk-vinday', 'tekst': 'Vinday',
-         'punkty': [[300, 610], [600, 645], [900, 700]],
-         'opcje': {'fs': 13}},
+         'punkty': [[2500, 5450], [5000, 5800], [7500, 6250]],
+         'opcje': {'fs': 17}},
         {'id': 'luk-suramal', 'tekst': 'Suramal',
-         'punkty': [[1160, 400], [1200, 560]],
-         'opcje': {'fs': 13}},
+         'punkty': [[9920, 2500], [10050, 4200]],
+         'opcje': {'fs': 17}},
         {'id': 'luk-vasavati', 'tekst': 'Vasavati',
-         'punkty': [[1330, 920], [1400, 1030]],
-         'opcje': {'fs': 13}},
+         'punkty': [[10650, 8000], [10780, 8700]],
+         'opcje': {'fs': 17}},
         {'id': 'luk-mapani', 'tekst': 'Mapani',
-         'punkty': [[1330, 420], [1150, 560]],
+         'punkty': [[12400, 3100], [11000, 4300]],
          'opcje': {'fs': 12}},
     ],
-    'kompas': {'x': 1880, 'y': 1260, 'r': 40},
+    'kompas': {'x': 15200, 'y': 10200, 'r': 60},
     'skala': False,
     'ramka': {'margines': 22, 'passePartout': True},
 }
