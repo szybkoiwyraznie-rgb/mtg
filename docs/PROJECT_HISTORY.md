@@ -291,18 +291,6 @@ obrazów przez agenta** (rastry map przez resvg poza repo).
    Zendikaru, Midgaru, Ravniki — Alara v2 dobra co do topologii, ale
    trzy tytuły regionów na obiektach (W1–W3); B1 brak wpisu PR-20
    w PROJECT_HISTORY/ROADMAP; B2 luka `map-audit` (tytuł↔ikona).
-2. **Naprawy:** W1–W3 — tytuły Jund/Grixis/Naya przeną map + Pętla Jakości
-
-Sesja `arena/01a0770f-mtg` (PR #21, scalony 2026-09-07 20:47,
-squash `6bf2fba`). Tryb: „Kontynuuj zgodnie
-z AGENTS” — bez dostawy materializacji. **Pierwsza sesja z oglądem
-obrazów przez agenta** (rastry map przez resvg poza repo).
-
-1. **Audyt PR-20** (`docs/audits/AUDYT_2026-09-06-PR20.md`): A1–A4
-   poprawne i kompletne, L9 zastosowana; recenzja wizualna Alary,
-   Zendikaru, Midgaru, Ravniki — Alara v2 dobra co do topologii, ale
-   trzy tytuły regionów na obiektach (W1–W3); B1 brak wpisu PR-20
-   w PROJECT_HISTORY/ROADMAP; B2 luka `map-audit` (tytuł↔ikona).
 2. **Naprawy:** W1–W3 — tytuły Jund/Grixis/Naya przesunięte w
    `scena.json` (e5f0d8b); B1 — wpisy PR-20 (2c09978); B2 — reguła
    `TYTUŁ NA OBIEKCIE` w `tools/map-audit.py` + `test/map-audit.test.js`
