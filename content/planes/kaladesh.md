@@ -129,13 +129,15 @@ w Ghirapurze maszyna, która nie jest ładna, jest niedokończona.
 `maps/kaladesh/` — rekonstrukcja kanoniczna (T4): oficjalna mapa planu
 nigdy nie powstała, więc podkład powstał w silniku mapforge wyłącznie
 z kanonu tekstowego (MTG Wiki: Avishkar, Ghirapur — za „The Art of
-Magic: The Gathering — Kaladesh”). Jedna mapa całego planu w skali
-planu (arkusz 16000×11000): prowincja z siecią rzeczną, puszczą Peema,
-stepem Vahd i Lathnu pod urwiskiem Devra, a Ghirapur (~0,1%
-powierzchni arkusza) jako gęste ognisko na zlewisku z Kanałem Dukhara,
-Jedenastoma Mostami i dzielnicami; mapa otwiera się domyślnie na
-stolicy w zoomie 18 (pierwsze użycie `widok_domyslny`, ADR 0045),
-a po oddaleniu miasto jest kropką z nazwą (maks. zoom silnika 32).
+Magic: The Gathering — Kaladesh”). Dwie osobne mapy (ADR 0047):
+**mapa planu** w skali planu (arkusz 2000×1400, jak Zendikar) —
+prowincja z siecią rzeczną, dużą puszczą Peema, stepem Vahd i Lathnu
+pod urwiskiem Devra, a Ghirapur jako mała kropka z nazwą na zlewisku;
+oraz **osobna mapa miasta Ghirapur** we własnej, znacznie większej
+skali (Kanał Dukhara, Jedenaście Mostów, dzielnice, Iglica Eteru,
+Aetherflux Reservoir), którą silnik podgrywa **twardą podmianą**
+przy zbliżeniu na kropkę (przenikanie, bez wymogu łączenia rzek na
+krawędzi — to inne mapy).
 Epoka: Kaladesh Konsulatu (KLD/AER) — Kuźnia Konsulów już spalona,
 morze na południu bez nazwy, bo kanon jej nie podaje; skala liniowa
 wyłączona z braku odległości w kanonie. Pozycje są relacyjne (kanon

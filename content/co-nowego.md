@@ -1,3 +1,21 @@
+## 2026-09-10 00:40 — Kaladesh jako dwie osobne mapy (PR-30)
+
+- **Mapa [[kaladesh|Kaladeshu]] przebudowana na dwie osobne mapy**
+  (decyzja właściciela, `docs/decisions/0047-…`): **plan** rysuje się
+  teraz w skali planu (jak Zendikar) — duże, proporcjonalne góry
+  (Devra, Wielka Wspinka) i wyraźne lasy Peemy zamiast dawnych „ząbków
+  piły” i „ziarenek piasku”; **Ghirapur to na planie mała kropka
+  z nazwą**.
+- **Ghirapur to osobna mapa miasta o własnej skali** (~7× planu),
+  podgrywana **twardą podmianą** deep-zoom (z przenikaniem) od
+  pewnego poziomu zbliżenia — wzorzec Dominarii, ale jako naprawdę
+  inna mapa. Zniesiony wymóg idealnego łączenia rzek na krawędzi
+  (ADR 0046 §5 → **ADR 0047**): to inne mapy. Rysunek samego miasta
+  bez zmian (mury, Kanał Dukhara, Jedenaście Mostów, Greenwheel,
+  Iglica Eteru, Aetherflux Reservoir).
+- Deep-link pinezki **Gearsmith Prodigy** trafia w serce Greenwheel
+  i startuje z progiem podmiany na mapę miasta.
+
 ## 2026-09-09 19:52 — Audyt PR-28 i Pętla Jakości (PR-29)
 
 - **Audyt PR-28** (`docs/audits/AUDYT_2026-09-09-PR28.md`): werdykt —
