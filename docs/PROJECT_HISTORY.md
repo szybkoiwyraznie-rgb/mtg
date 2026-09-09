@@ -4,6 +4,29 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-10 — PR-30: Kaladesh jako dwie osobne mapy (sesja `arena/01a087fc-mtg`)
+
+Korekta właściciela do mapy Kaladeshu: miały być **dwie osobne mapy**.
+Diagnoza (rasteryzacja resvg): plan był na płótnie mastera miasta
+16000×11000 (~63× normy 2000×1400) → glify mapforge kurczyły się do
+„ząbków piły"/„ziarenek piasku"; płyta miasta była wycinkiem planu 1:1
+ze sztywnym szwem, nie osobną mapą.
+
+**ADR 0047** (mapa miasta jako osobna mapa o własnej skali + twarda
+podmiana deep-zoom; luzuje sztywny szew ADR 0046 §5). Plan przepisany
+do skali planu **2000×1400** (jak Zendikar): duże, proporcjonalne góry
+i lasy, **Ghirapur jako POI-kropka** z etykietą; densyty/skale glifów
+= benchmark Zendikaru; lasy Peemy dobrane pod limit <2 MB (podklad.svg
+1,82 MB). Ghirapur to **osobna mapa** we własnej skali (~7× planu):
+płyta `ghirapur.svg` geometrycznie bez zmian (art dobry), nowy
+`bbox`+`kalibracja` rozkładają ją na ~0,1 szerokości planu; twarda
+podmiana od `prog 6` z crossfade (tło płyty nieprzezroczyste — brak
+przebijania planu). `widok_domyslny` = cały plan; pinezka 610M19 →
+Greenwheel. Testy: `lod` (nowy bbox; test szwu wodnego zastąpiony
+testem „osobna mapa o własnej skali ≥5×"), `ui-smoke` (bbox/pin).
+Treść: co-nowego + strona planu przepisane na „dwie osobne mapy".
+Bramki: **176/176**, build 31 stron, map-audit 0.
+
 ## 2026-09-09 — PR-29: audyt scalonego PR-28 + Pętla Jakości (sesja `arena/01a0874a-mtg`)
 
 **Audyt PR-28** (`docs/audits/AUDYT_2026-09-09-PR28.md`): pełny przegląd
