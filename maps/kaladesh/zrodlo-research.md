@@ -41,5 +41,8 @@ wieże eterowe rozproszone, tłoczą eter do Iglicy; Bunarat (spalona wieś).
 
 Kształty i odległości; morze na południu bez nazwy (kanon nie podaje);
 mosty 2–11 wzdłuż kanału (pozycja Ninth Bridge umowna); Ovalchase
-i Shaila's Claim poza murami; 3 wieże eterowe i 3 wsie Vahd
-symbolicznie; linia brzegu; północ = góra arkusza; skala wyłączona.
+i Shaila's Claim poza murami; 5 wież eterowych i 3 wsie Vahd
+symbolicznie (liczba wież umowna — kanon mówi o wieżach „rozproszonych
+w prowincji” bez liczby); pozycja Bunarat za murami na SW (kanon: „wieś spalona
+przez kapitana Baralę” — bez położenia, wiki: Avishkar); linia
+brzegu; północ = góra arkusza; skala wyłączona.
