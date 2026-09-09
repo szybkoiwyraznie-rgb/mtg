@@ -78,9 +78,9 @@ Commons (jeden drobny plik, niekompletny).
 
 **Pierwszy wybór: A (3E, pełny Faerûn).** Rationale:
 1. pokrycie = cały plan (geografia strony planu opisuje 9 regionów —
-   Morze Upadłych Gwiazd, Wewnętrzne, Bezludne, Królestwo Wysokie —
-   mapy „tylko Wybrzeże” (B/C/G) wymagałyby przycięcia opisu planu
-   albo modelu podmapy ADR 0032);
+   Morze Upadłych Gwiazd, Jezioro Pary, Morze Bezludne,
+   Królestwo Wysokie — mapy „tylko Wybrzeże” (B/C/G) wymagałyby
+   przycięcia opisu planu albo modelu podmapy ADR 0032);
 2. adresuje obie dolegliwości: **ikony i etykiety miejsc są na
    podkładzie** (klasyka kartografii 3E) i **ładny, malowany styl**;
 3. 4763×3185 / 6,2 MB = klasa Tarkir T1 (4096×3072) — sprawdzona

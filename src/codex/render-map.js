@@ -339,7 +339,6 @@ export function renderMapeIframe(slugPlanu, query = {}) {
         ${Object.entries(POZIOMY_PEWNOSCI).map(([klucz, p]) => `
           <li><span class="mapa-pinezka-legenda" style="background:${p.kolor}"></span>
             <strong>${p.etykieta}</strong> — ${p.opis}</li>`).join('')}
-        <li><span class="mapa-obwodka-legenda"></span><strong>obwódka regionu</strong> — kraina hasła geograficznego (kolor = pewność)</li>
         ${epoki.length > 1 ? `<li><span class="mapa-epoki-legenda">⇄</span><strong>przełącznik epok</strong> (w oknie mapy) — ${epoki.map((w) => `<em>${escapeHtml(w.tytul ?? w.id)}</em>${w.epoka ? ` (${escapeHtml(w.epoka)})` : ''}`).join(' ↔ ')}; pinezki kart są wspólne dla wszystkich podkładów (jeden układ współrzędnych — ADR 0035)</li>` : ''}
       </ul>
     </section>
@@ -411,6 +410,17 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
   const docelMiejsca = Number.isFinite(xDocelowy) && Number.isFinite(yDocelowy)
     && xDocelowy >= 0 && xDocelowy <= 1 && yDocelowy >= 0 && yDocelowy <= 1
     ? { x: xDocelowy, y: yDocelowy } : null;
+  // ADR 0045: opcjonalny startowy kadr mapy (bez znacznika) — używany
+  // tylko przy zwykłym wejściu, gdy nie ma silniejszej intencji użytkownika
+  // przez ?pin=, ?x=&y= albo ?epoka=<bbox>.
+  const xDomyslny = Number(mapa.widok_domyslny?.x);
+  const yDomyslny = Number(mapa.widok_domyslny?.y);
+  const zoomDomyslny = Number.isFinite(Number(mapa.widok_domyslny?.zoom))
+    ? Number(mapa.widok_domyslny?.zoom) : 2.5;
+  const widokDomyslny = Number.isFinite(xDomyslny) && Number.isFinite(yDomyslny)
+    && xDomyslny >= 0 && xDomyslny <= 1 && yDomyslny >= 0 && yDomyslny <= 1
+    && Number.isFinite(zoomDomyslny) && zoomDomyslny > 0
+    ? { x: xDomyslny, y: yDomyslny, zoom: zoomDomyslny } : null;
 
   // Warianty podkładu (ADR 0035): układ ZŁOTY współrzędnych = wariant
   // domyślny; start z `?epoka=<id>` albo domyślny.
@@ -450,26 +460,6 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
   // w scenie ZŁOTEJ (dziedziczą jej pan/zoom; przy przełączeniu epoki
   // chowają się razem ze złotą sceną). Etykiety Codexu ich nie dotyczą
   // (T1 ma własne napisy na rastrze).
-  // Warstwa POI (decyzja właściciela 2026-09-08, FR): najważniejsze punkty
-  // odniesienia (miasta, huby archipelagów) jako małe złote kółka POD
-  // warstwą kafelków L1 — w fazie L0 widoczne na rastrze, po doładowaniu
-  // kafli pokryte drukiem mastera. Dane: mapa.poi[] (x,y 0–1 w układzie
-  // złotym). Bez etykiet (nazwy niesie raster) i bez interakcji
-  // (pointer-events none) — kotwice pod przyszłe pinezki kart (ADR 0043:
-  // piny na mapach = tylko karty).
-  const htmlPoi = (W, H) => {
-    const lista = Array.isArray(mapa.poi) ? mapa.poi : [];
-    const punkty = lista.filter((p) => Number.isFinite(Number(p.x)) && Number.isFinite(Number(p.y)));
-    if (punkty.length === 0) return '';
-    const r = Math.max(8, W / 320);
-    const koly = punkty.map((p) => {
-      const x = Math.min(1, Math.max(0, Number(p.x))) * W;
-      const y = Math.min(1, Math.max(0, Number(p.y))) * H;
-      return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}"${p.nazwa ? ` data-poi="${escapeHtml(String(p.nazwa))}"` : ''}/>`;
-    }).join('');
-    return `<svg class="mapa-poi" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">${koly}</svg>`;
-  };
-
   const htmlKafle = (w) => {
     if (!w.kafle) return '';
     const kf = w.kafle;
@@ -550,7 +540,6 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
           data-sx="${k.sx}" data-sy="${k.sy}" data-ox="${k.ox}" data-oy="${k.oy}" data-etykiety="${w.etykiety ? '1' : '0'}"${czyZlota ? ' data-zloty="1"' : ''}
           style="aspect-ratio: ${W} / ${H}"${w.id === start.id ? '' : ' hidden'}>
           ${podklad}
-          ${htmlPoi(W, H)}
           ${htmlKafle(w)}
           ${czyZlota ? htmlNakladkiL2 : ''}
         </div>`;
@@ -579,7 +568,7 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
     </header>`}
     <div class="mapa-okno" id="mapa-okno" tabindex="0" role="application"
       aria-label="Mapa ${escapeHtml(mapa.tytul ?? slugPlanu)}: przeciągnij, aby przesunąć, kółko myszy, aby przybliżyć"
-      data-plan="${escapeHtml(slugPlanu)}" data-pin="${escapeHtml(pinDocelowy)}" data-aspekt="${szer / wys}" data-epoka="${escapeHtml(start.id)}"${docelMiejsca ? ` data-x="${docelMiejsca.x}" data-y="${docelMiejsca.y}"` : ''}${regionQuery ? ` data-region="${escapeHtml(regionQuery.id)}"` : ''}${maLOD ? ' data-kmax="22"' : ''}>
+      data-plan="${escapeHtml(slugPlanu)}" data-pin="${escapeHtml(pinDocelowy)}" data-aspekt="${szer / wys}" data-epoka="${escapeHtml(start.id)}"${docelMiejsca ? ` data-x="${docelMiejsca.x}" data-y="${docelMiejsca.y}"` : ''}${widokDomyslny ? ` data-domyslne-x="${widokDomyslny.x}" data-domyslne-y="${widokDomyslny.y}" data-domyslne-zoom="${widokDomyslny.zoom}"` : ''}${regionQuery ? ` data-region="${escapeHtml(regionQuery.id)}"` : ''}${maLOD ? ' data-kmax="22"' : ''}>
       <div class="mapa-ruch" data-mapa-ruch>
         ${htmlSceny}
       </div>
@@ -603,7 +592,6 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
         ${Object.entries(POZIOMY_PEWNOSCI).map(([klucz, p]) => `
           <li><span class="mapa-pinezka-legenda" style="background:${p.kolor}"></span>
             <strong>${p.etykieta}</strong> — ${p.opis}</li>`).join('')}
-        <li><span class="mapa-obwodka-legenda"></span><strong>obwódka regionu</strong> — kraina hasła geograficznego (kolor = pewność)</li>
       </ul>
     </section>
 
@@ -668,7 +656,7 @@ export function zamontujMape(app, opcje = {}) {
   const nakladka = okno.querySelector('[data-mapa-nakladka]');
 
   // ── Warianty podkładu (ADR 0035): sceny [data-scena], jedna widoczna.
-  // Pinezki i etykiety regionów są w układzie ZŁOTYM (wariant domyślny);
+  // Pinezki kart i etykiety podkładu są w układzie ZŁOTYM (wariant domyślny);
   // aktywna scena niesie kalibrację złoty → własny (sx, sy, ox, oy).
   const sceny = [...ruch.querySelectorAll('[data-scena]')];
   const scenaAktywna = () => sceny.find((s) => !s.hidden) ?? sceny[0] ?? null;
@@ -855,7 +843,7 @@ export function zamontujMape(app, opcje = {}) {
   const nanies = () => {
     ruch.style.transform = `translate(${stan.ox}px, ${stan.oy}px) scale(${stan.k})`;
     aktualizujLOD();
-    // Pinezki i etykiety regionów żyją w nakładce POZA skalowaną warstwą:
+    // Pinezki i etykiety podkładu żyją w nakładce POZA skalowaną warstwą:
     // pozycję liczymy w pikselach ekranu (x·W·k + ox), więc markery mają
     // stały rozmiar i ostry render w każdym przybliżeniu — nie skalują
     // się z podkładem i nie dziedziczą rozciągniętej bitmapy warstwy.
@@ -1058,6 +1046,25 @@ export function zamontujMape(app, opcje = {}) {
       stan.k = Math.min(Math.max(kDopasuj * 0.95, n.prog / kal.sx), K_MAX);
       stan.ox = winW / 2 - (kal.ox + kal.sx * (x0 + x1) / 2) * w * stan.k;
       stan.oy = winH / 2 - (kal.oy + kal.sy * (y0 + y1) / 2) * h * stan.k;
+    }
+  }
+
+  // ADR 0045: startowy kadr mapy z map.json (`widok_domyslny`) — tylko
+  // przy zwykłym wejściu, bez deep-linka pinezki/miejsca/regionu.
+  const maJawneMiejsce = docelX !== null && docelY !== null && docelX !== '' && docelY !== '';
+  if (!pinDocelowy && !maJawneMiejsce && !regionDocelowy) {
+    const gx = parseFloat(okno.getAttribute?.('data-domyslne-x') ?? '');
+    const gy = parseFloat(okno.getAttribute?.('data-domyslne-y') ?? '');
+    const gk = parseFloat(okno.getAttribute?.('data-domyslne-zoom') ?? '');
+    if (Number.isFinite(gx) && Number.isFinite(gy) && gx >= 0 && gx <= 1 && gy >= 0 && gy <= 1) {
+      const w = szerokoscSceny();
+      const h = wysokoscSceny();
+      const wysOkna = okno.clientHeight || h;
+      const px = kal.ox + kal.sx * gx;
+      const py = kal.oy + kal.sy * gy;
+      stan.k = clamp(Number.isFinite(gk) && gk > 0 ? gk : 2.5, K_MIN, K_MAX) / kal.sx;
+      stan.ox = (okno.clientWidth || w) / 2 - px * w * stan.k;
+      stan.oy = wysOkna / 2 - py * h * stan.k;
     }
   }
 

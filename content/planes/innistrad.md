@@ -28,7 +28,7 @@ prawie nie widać. Cztery **prowincje** to nie państwa, lecz okręgi
 kościelne: podział na parafie jest zarazem podziałem administracyjnym,
 bo na Innistradzie granica między Kościołem a władzą świecką właściwie
 nie istnieje. Kościół prowadzi szkoły, sądy i cechy; niemal każdy zawód
-podlega jego zatwierdzeniu.
+podlega jego zatwierdzeniu, a jego sercem pozostaje [[thraben|Thraben]].
 
 Potwory Innistradu są osobliwe na tle reszty multiwersum i wszystkie
 łączy jedno: **wrażliwość na srebro**. Wampiry nie są nieumarłe, lecz
@@ -42,7 +42,7 @@ Avacyn: *co nie może być zniszczone, musi być związane* — i stąd
 ## Geografia
 
 **Gavony** — środek znanego świata, wyżyna skalistych wzgórz i serce
-ludzkiej cywilizacji. Na jej północnym skraju stoi **Thraben**,
+ludzkiej cywilizacji. Na jej północnym skraju stoi [[thraben|**Thraben**]],
 największe miasto planu, opasane wieloma pierścieniami murów; rzeka
 **Kirch** spada obok niego do morza dwutysięcznostopowym wodospadem.
 W Thraben wznosi się **Katedra Avacyn**, a w jej trójkątnym dziedzińcu

@@ -1,3 +1,95 @@
+## 2026-09-09 12:10 — Civilized Scholar: czternasta karta, pierwsza niezależna twarz DFC i hasło Thraben
+
+- **[[309isd-civilized-scholar|Civilized Scholar]]** dołącza do Kodeksu
+  jako czternasta karta kolekcji i druga karta [[innistrad|Innistradu]].
+  Strona dotyczy wyłącznie havengulskiego uczonego z Nephalii, który bada
+  gniew w epoce zniknięcia Avacyn i próbuje leczyć lęk wiedzą,
+  samodyscypliną oraz językiem traktatów.
+- **Nowe hasło [[thraben|Thraben]].** Miasto przekroczyło próg praktyczny
+  dzięki karcie [[393dka-forge-devil|Forge Devil]], nowemu
+  [[309isd-civilized-scholar|Civilized Scholar]] i stronie planu
+  [[innistrad|Innistrad]]. Wikilinki dopisano także na planie Innistradu.
+- **Mapa Innistradu** dostała nową pinezkę karty
+  `309isd-civilized-scholar` o pewności `dokladna` na **Havengulu** —
+  miejscu nazwanym wprost w przekazie sceny. Karta 393DKA zachowała
+  swoją pinezkę przy [[thraben|Thraben]], więc plan ma teraz dwa jawnie
+  rozdzielone punkty kartowe.
+- **Pierwsza lokalna obsługa niezależnej twarzy karty `layout: transform`.**
+  `scryfall/309isd-civilized-scholar.json` zachowuje pełną odpowiedź
+  `cards/isd/47` z `card_faces`, ale sama materializacja wykorzystuje tylko
+  stronę **Civilized Scholar**: frontmatter karty przyjmuje `kolory: [U]`,
+  a build/testy rozumieją już dopasowanie nazwy strony do właściwej twarzy
+  snapshotu bez mieszania obu stron w jednej karcie. Reguła została też
+  zapisana formalnie jako **ADR 0044**: dla karty dwustronnej jedna twarz
+  = jedna Karta Katalogowa.
+- Weryfikacja po zmianach: `npm test` **166/166**, `npm run build` OK,
+  `python3 tools/map-audit.py` = **0 problemów**, `node tools/wiki-stats.mjs --json`
+  = **30 stron (14 kart, 5 haseł, 11 planów), średnio 100% kompletności**.
+
+## 2026-09-09 11:58 — Ruthless Invasion: trzynasta karta, nowy punkt Mirrodinu i hasło Oxidda Chain
+
+- **[[556nph-ruthless-invasion|Ruthless Invasion]]** dołącza do Kodeksu jako
+  trzynasta karta kolekcji i trzecia karta Mirrodinu z ery wojny przeciw
+  [[nowa-phyrexia|Nowej Phyrexii]]. Scena stoi po stronie odwrotu, nie zwycięstwa:
+  Vulshokowie na pustkowiach Oxiddy cofają się przed kolosem z płynnego
+  metalu, a głos **Pythora** zamienia odwrót w nową doktrynę przetrwania.
+- **Nowe hasło [[oxidda-chain|Oxidda Chain]].** Region przekroczył próg
+  praktyczny dzięki karcie [[488som-carapace-forger|Carapace Forger]],
+  nowemu [[556nph-ruthless-invasion|Ruthless Invasion]] i istniejącej stronie
+  planu [[mirrodin|Mirrodin]]. Wikilinki dopisano także w
+  [[mephidross|Mephidrossie]].
+- **Mapa Mirrodinu** dostała nową pinezkę karty `556nph-ruthless-invasion`
+  o pewności `region` na pograniczu Oxiddy i Kuldothy — dokładnie tam,
+  gdzie opis sceny pozwala mówić o przełamaniu linii Vulshoków bez
+  udawania, że znamy pojedynczy mur czy wąwóz.
+- **Porządki i strażnicy:** `test/ui-smoke.test.js` uwzględnia już 13 kart
+  i obecność najnowszej materializacji na stronie głównej, a karta 556NPH
+  została oczyszczona z meta-języka w narracji, by przejść bramkę
+  **Głosu Kronikarza (ADR 0042)**.
+- Weryfikacja po zmianach: `npm test` **165/165**, `npm run build` OK,
+  `python3 tools/map-audit.py` = **0 problemów**, `node tools/wiki-stats.mjs --json`
+  = **28 stron (13 kart, 4 hasła, 11 planów), średnio 100% kompletności**.
+
+## 2026-09-09 01:10 — Forgotten Realms: czysty raster bez brązowych kropek, legenda tylko dla pinezek kart
+
+- **Mapa Forgotten Realms wraca do czystego T1.** Z `maps/forgotten-realms/map.json`
+  zniknęła eksperymentalna warstwa dodatkowych kropek/POI; strona mapy
+  renderuje już wyłącznie raster 3E + kafelki LOD + pinezki kart.
+- **Legenda map** nie pokazuje już martwego wpisu
+  `obwódka regionu — kraina hasła geograficznego` — zgodnie z ADR 0043
+  na mapie oznaczenia niosą wyłącznie karty.
+- **Doprecyzowanie procesu:** `content/planes/forgotten-realms.md`,
+  `docs/guides/PETLA_JAKOSCI.md` i ADR 0038 jasno mówią teraz, że T1 z
+  dobrym rastrem startuje od zasady **„nic nie doklejamy ponad druk”**;
+  dodatkowe POI/labelki albo deep-map ważnego miejsca wymagają osobnej
+  konsultacji z właścicielem.
+- Regresja sprawdzona: `npm test` **166/166**, `npm run build` OK,
+  `python3 tools/map-audit.py` = **0 problemów**.
+
+## 2026-09-09 00:48 — Audyt PR-25 domknięty: poprawiona geografia Forgotten Realms, pogłębiony Mephidross, nowe hasło Wybrzeże Mieczy
+
+- **Audyt poprzedniego scalonego PR #25** zapisany w
+  `docs/audits/AUDYT_2026-09-09-PR25.md`, a jego dwa znalezienia
+  zostały od razu obsłużone na gałęzi sesji.
+- **Forgotten Realms wyprostowane po audycie:** `content/planes/forgotten-realms.md`
+  i `maps/forgotten-realms/map.json` nie mylą już **Luruaru** z południem
+  przy Amnie, jasno traktują **Sea of Fallen Stars = Inner Sea**, a
+  południowy akwen podkładu opisują jako **Jezioro Pary (Lake of Steam)**;
+  opis `Trackless Sea` wrócił na zachód/południowy zachód. Warsztatowe
+  notki badań i backlog przestały dziedziczyć błędne nazwy.
+- **Karta [[3clb-nefarious-imp|Nefarious Imp]]** straciła niekonkretne
+  źródło `https://worldaneil.github.io`; zostaje bezpośredni, weryfikowalny
+  wpis o impach z FR Wiki.
+- **Pogłębienie LORE (krok 2):** [[mephidross|Mephidross]] dostał nowe
+  akapity o nimach, Moriokach, ruchomych granicach Drossu (Darkslick,
+  Blackcleave, Rey-Goor), Ish Sah i skali phyrexiańskiej infekcji.
+- **Link-mining (krok 3):** nowe hasło [[wybrzeze-mieczy|Wybrzeże Mieczy]]
+  (geografia, Forgotten Realms) z odsyłaczem do mapy Faerûnu; wikilinki
+  dopisane w karcie 3CLB i na stronie planu.
+- Weryfikacja po zmianach: `npm test` **166/166**, `npm run build` OK,
+  `python3 tools/map-audit.py` = **0 problemów**, `node tools/wiki-stats.mjs --json`
+  = **26 stron, średnio 100% kompletności**.
+
 ## 2026-09-08 22:35 — Mapa FR: Calimport odnaleziony na podkładzie — kotwica Królestwa Wysokiego na dobrej pozycji
 
 - **Korekta po recenzji właściciela:** twierdzenie „na mapie nie ma

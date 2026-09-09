@@ -15,7 +15,7 @@ pinezka:
 
 ## Kronika Lore
 
-Rok 1492 Smoka. W mrocznym gabinecie wojennym na **Wybrzeżu Mieczy**
+Rok 1492 Smoka. W mrocznym gabinecie wojennym na **[[wybrzeze-mieczy|Wybrzeżu Mieczy]]**
 — w sali dworu, którego kronika nie wymienia z imienia — nad
 dębowym stołem unosi się szkarłatny **imp** o złośliwym uśmiechu.
 Pod nim dopala się misterna mapa taktyczna; miniaturowe figurki
@@ -96,7 +96,7 @@ Scena jest rodzima dla świata [[forgotten-realms|Zapomnianych
 Krain]]: imp jest w Faerûn obywatelem od zawsze (chochliki służą
 tu śmiertelnym panom od epoki, w której miasta Wybrzeża dopiero
 się uczyły budować mury), gabinet wojenny mieści się na
-**Wybrzeżu Mieczy** — sercu świata, i jedyna droga, którą musiała
+**[[wybrzeze-mieczy|Wybrzeżu Mieczy]]** — sercu świata, i jedyna droga, którą musiała
 zbudować kronika, to czas. Scena ma w świecie czas: rok 1492
 Smoka, czasy obecne — po Wojnie Hobgoblinów i Najazdzie Tiamat
 miasta Wybrzeża planują wojny z podwójną gorliwością tych,
@@ -107,7 +107,7 @@ i nie wymyśla go.
 
 ## Na Mapie
 
-Gabinet stoi na **Wybrzeżu Mieczy** — zachodnim brzegu Faerûn,
+Gabinet stoi na **[[wybrzeze-mieczy|Wybrzeżu Mieczy]]** — zachodnim brzegu Faerûn,
 paskiem nadmorskich królestw od lodów Północy po pustkowie
 Amn. Scena nie nazywa dworu ani miasta, więc oznaczenie stoi
 w środku pasa, z pewnością rejonu, nie lokalu — tam, gdzie
@@ -149,16 +149,9 @@ informacji; jest jej surowcem.
   piekielnej (poniżej baatezu), forma humanoida ~2 st, rzadkie
   barwy, niewidzialność, wykrywanie magii, sugestia raz dziennie,
   szybka regeneracja, rany tylko srebrne/czarne, tchórzliwość,
-  kradzież kosztowności, służba każdemu złemu panu:
+  kradzież kosztowności, służba każdemu złemu panu oraz powrót na
+  rodzimą płaszczyznę po roku i dniu, jeśli zginie poza nią:
   https://forgottenrealms.fandom.com/wiki/Imp
-- Official Bestiary Wiki, *Imp (D&D)* — najsłabszy szczebel
-  legionów, kusiciel i służalca śmiertelników, familiar złego
-  czarnoksiężnika, ~9 dusz do awansu:
-  https://officialbestiary.fandom.com/wiki/Imp_(D&D)
-- FR Fan Wiki (społeczna), *Imp Species* — pochodzenie z
-  Acheronu/Baatoru, doradcy i szpiedzy, powrót po roku i dniu
-  (źródło społeczności, traktowane jako uzupełnienie):
-  https://worldaneil.github.io
 - Mapa Kodeksu: pinezka (0.124, 0.176) na rastrze oficjalnej mapy
   Faerûn 3E (WotC/TSR, 2001), rejon: Wybrzeże Mieczy (środek pasa,
   Neverwinter–Waterdeep).

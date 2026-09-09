@@ -24,19 +24,20 @@ kartę** (lub zlecenie właściciela). Pilot: Śródziemie, karta 1LTR.
 3. Wybór + uzasadnienie zapisane w `maps/<plan>/map.json` (pole
    `zrodlo`: URL, tytuł, autor, data pobrania; notka „użytek prywatny" —
    ADR 0007 §3).
-4. Gdy mapy nie ma (świat custom): wariant T3 — mapa proceduralna z opisów
-   lore, zapisana `rekonstrukcja: true` w map.json (proweniencja w danych,
-   bez adnotacji na podkładzie — ADR 0013); styl własny (nie podszywanie
-   pod kanon).
-5. T4 — rekonstrukcja wzniesiona na **wspólnym warsztacie mapowym**
-   (ADR 0015): te same zasady co T3 plus reużywalne metody rysowania
-   (pasma górskie, rzeki, biomu), wspólna paleta i pamięć warsztatu
-   w `SKILL_MAPA_PLANU.md`; jakościowo dąży do mapy Śródziemia (T2)
-   i wyżej. Mapa T3 dojrzewa do T4 wraz z warsztatem.
+4. Gdy istnieje **gotowa mapa wektorowa** (oficjalna albo adoptowalna),
+   wybieramy **T2**: commitujemy/adoptujemy wektor, zachowując jego
+   proweniencję w `map.json`.
+5. Gdy istnieje **dobry raster**, z którego da się zbudować własny wektor,
+   wybieramy **T3**: wektoryzacja z rastra, z jawną proweniencją geometrii
+   w `map.json` / nocie źródłowej.
+6. Gdy **brakuje użytecznego materiału graficznego**, wybieramy **T4**:
+   rekonstrukcję od podstaw z opisów tekstowych, zapisaną
+   `rekonstrukcja: true` w `map.json` (proweniencja w danych, bez adnotacji
+   na podkładzie — ADR 0013).
 
-   **E4 — nowy plan zaczyna od sceny + mapforge (od 2026-09-01, plan
+   **E4 — nowy plan T4 zaczyna od sceny + mapforge (od 2026-09-01, plan
    `PLAN_2026-09-01-mapforge.md`):** dla każdego nowego planu bez mapy
-   (T3/T4) nie rysujemy już podkładu ręcznie „od zera". Najpierw budujemy
+   nie rysujemy już podkładu ręcznie „od zera". Najpierw budujemy
    `maps/<plan>/scena.json` (deklaratywna scena: lądy, biomy, pasma,
    rzeki, jeziora, POI, etykiety — przekład z map.json/kotwic), potem
    renderujemy podkład silnikiem `tools/mapforge/` (motyw atlas,

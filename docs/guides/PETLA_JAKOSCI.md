@@ -104,13 +104,17 @@ najtańszej:
    ze źródeł, nigdy z kursora (MA4); źródło fanowskie tylko dla
    pozycji nieustalonych w kanonie — z adnotacją w `map.json`.
 
-   **Uwaga — zakres ubogacania (decyzja właściciela 2026-09-01):** nowe
-   POI i wzbogacanie podkładu dotyczą wyłącznie map **T3/T4** — czyli
-   podkładów **własnych** (rysowanych od zera, dzisiaj tylko **Zendikar**).
+   **Uwaga — zakres ubogacania (decyzja właściciela 2026-09-01,
+   doprecyzowanie 2026-09-09):** nowe POI i wzbogacanie podkładu dotyczą
+   domyślnie wyłącznie map **T3/T4** — czyli podkładów **własnych**
+   (rysowanych od zera, dzisiaj tylko **Zendikar**).
    Map **T2 (podkład adoptowany**, np. Śródziemie/mapome) **nie ruszamy**:
    ich line-artu i warstw przyrodniczo-osadniczych nie modyfikujemy pod
    kątem zmiany geometrii/stylu — to wektor gotowy, benchmark, nie pole
-   do „ubogacania". (Wyjątkiem może być jedynie rejestracja kotwic/pinezki
+   do „ubogacania". T1 z dobrym rastrem także startuje od zasady
+   **„nic nie doklejamy ponad druk”**; dodatkowe POI/labelki albo
+   deep-map miejsca są dopuszczalne tylko po **osobnej konsultacji z
+   właścicielem**. (Wyjątkiem może być jedynie rejestracja kotwic/pinezki
    z `map.json`, jeśli wymaga jej karta — bez zmiany samego podkładu.)
 3. **Weryfikacja dokładności istniejących wpisów:** przegląd elementów
    względem źródeł (nazwa, pozycja, status kanoniczny); korekty

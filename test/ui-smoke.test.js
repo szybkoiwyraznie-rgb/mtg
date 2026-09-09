@@ -10,7 +10,7 @@ import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { zbuduj } from '../tools/build.mjs';
+import { zbuduj, czyDostepnyRasterizer } from '../tools/build.mjs';
 import { stworzShim } from './pomocnicze.mjs';
 
 function wykonajArtefakt(sciezkaHtml) {
@@ -103,6 +103,7 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   // Sekcje towarzyszące żyją w ARTEFAKCIE BAZOWYM (nie w iframe):
   assert.ok(rama.includes('Legenda'), 'mapa: brak legendy pewności (w artefakcie bazowym)');
   assert.ok(rama.includes('dokładna'), 'mapa: brak poziomu pewności w legendzie');
+  assert.ok(!rama.includes('obwódka regionu'), 'mapa: legenda nie może sugerować obszarów haseł (ADR 0043)');
   assert.ok(rama.includes('CC-BY-4.0'), 'mapa: brak atrybucji podkładu (w artefakcie bazowym)');
   assert.ok(rama.includes('Pinezki kart ('), 'mapa: brak listy pinezek (w artefakcie bazowym)');
   // Warstwa karty otwiera się NAD CAŁYM Codexem — markup w rodzicu:
@@ -265,8 +266,9 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   // Tarkir (ADR 0035): atrybucja KAŻDEGO podkładu + legenda przełącznika; iframe w proporcjach T1
   shim4.idz('#/mapa/tarkir');
   const ramaT = shim4.app.innerHTML;
-  assert.equal(globalThis.CODEX_DATA.mapy.tarkir.podkladUrl, 'maps/tarkir/mini.jpg',
-    'mini-mapy biorą generowany w buildzie mini.jpg (ADR 0027 v3)');
+  const maRasterizer = await czyDostepnyRasterizer();
+  assert.equal(globalThis.CODEX_DATA.mapy.tarkir.podkladUrl, maRasterizer ? 'maps/tarkir/mini.jpg' : 'maps/tarkir/podklad-t1.jpg',
+    'mini-mapy biorą mini.jpg tylko gdy build ma rasterizator; inaczej zostaje pełna baza');
   assert.ok(ramaT.includes('Lore Café'), 'mapa Tarkiru: brak atrybucji rastra T1 (Lore Café)');
   assert.ok(ramaT.includes('All Rights Reserved'), 'mapa Tarkiru: licencja rastra fanowskiego musi być widoczna');
   assert.ok(ramaT.includes('praca własna'), 'mapa Tarkiru: brak atrybucji rekonstrukcji T4');
@@ -327,8 +329,8 @@ test('UI: mapa T3 — etykiety podkładu w nakładce ekranowej (stały rozmiar, 
 
   // T1 (oficjalna 3E, 2026-09-08 — decyzja właściciela: wektor T2
   // Vectorized Realms skasowany po obejrzeniu mapy live): rastr jako
-  // <img> L0 + warstwa kafelków L1 (LOD, ADR 0039) + wektorowa warstwa
-  // POI pod kafelkami (kotwice pod przyszłe pinezki kart, ADR 0043).
+  // <img> L0 + warstwa kafelków L1 (LOD, ADR 0039), bez dodatkowych
+  // kropek/POI ponad to, co już niesie podkład.
   shim2.przywroc();
   const shim3 = wykonajArtefakt('dist/maps/forgotten-realms.html');
   const fr = shim3.app.innerHTML;
@@ -336,8 +338,7 @@ test('UI: mapa T3 — etykiety podkładu w nakładce ekranowej (stały rozmiar, 
   assert.ok(!fr.includes('<svg class="mapa-podklad"'), 'FR: podkład nie może być inline SVG (baza = rastr 3E, ADR 0027 v3)');
   assert.ok(!fr.includes('kodex-etykiety'), 'FR: raster T1 nie niesie etykiet Codexu (etykiety:false — nazwy na rastrze)');
   assert.ok(fr.includes('data-kafle'), 'FR: brak warstwy kafelków LOD (L1)');
-  assert.ok(fr.includes('<svg class="mapa-poi"'), 'FR: brak warstwy POI (kotwice pod przyszłe pinezki)');
-  assert.ok((fr.match(/<circle /g) ?? []).length >= 14, 'FR: warstwa POI niesie co najmniej 14 punktów');
+  assert.ok(!fr.includes('mapa-poi'), 'FR: dodatkowe kropki/POI nie powinny być renderowane na T1 bez decyzji właściciela');
 
   fs.rmSync(cel, { force: true });
   shim3.przywroc();
@@ -381,7 +382,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (12)'), 'lista kart: brak 12 kart');
+  assert.ok(lista.includes('Karty Katalogowe (14)'), 'lista kart: brak 14 kart');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
     'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
@@ -439,6 +440,15 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(karta3.indexOf('<h2>Na Mapie</h2>') < karta3.indexOf('<h2>Mechanika jako Opowieść</h2>'), 'karta 137GPT: mechanika ma być po mapie/transpozycji');
   assert.ok(karta3.indexOf('<h2>Mechanika jako Opowieść</h2>') < karta3.indexOf('<h2>Źródła</h2>'), 'karta 137GPT: mechanika ma stać przed źródłami');
 
+  // 309ISD: materializacja niezależnej twarzy DFC — tylko Civilized Scholar,
+  // bez mieszania drugiej strony w tytule, typie i widocznej treści.
+  shim.idz('#/karta/309isd-civilized-scholar');
+  const karta4 = shim.app.innerHTML;
+  assert.ok(karta4.includes('<h1>Civilized Scholar</h1>'), 'karta 309ISD: tytuł ma dotyczyć tylko Civilized Scholar');
+  assert.ok(karta4.includes('Human Advisor'), 'karta 309ISD: brak typu właściwej twarzy');
+  assert.ok(!karta4.includes('Human Mutant'), 'karta 309ISD: nie może mieszać typu drugiej strony');
+  assert.ok(!karta4.includes('Homicidal Brute'), 'karta 309ISD: widoczna treść ma dotyczyć wyłącznie Civilized Scholar');
+
   // Z3 (audyt PR-18): zasady treści kart obowiązują KAŻDĄ kartę, nie tylko
   // 1LTR/2BFZ — termin „Fabuła dostawy" (ADR 0026 doprecyzowanie) i odsyłacze
   // do mechaniki Codexu / etykiety procesowe są zabronione w widocznej treści.
@@ -464,9 +474,9 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   }
 
   shim.idz('#/');
-  // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — przy 12 kartach
-  // starsze wypadają z listy, więc sprawdzamy piątą (605SHM, 2026-09-07).
-  assert.ok(shim.app.innerHTML.includes('Consign to Dream'), 'home: brak ostatniej materializacji');
+  // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — po dodaniu 556NPH
+  // najnowsza karta Mirrodinu musi wejść do skrótu na stronie głównej.
+  assert.ok(shim.app.innerHTML.includes('Ruthless Invasion'), 'home: brak najnowszej materializacji');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();
@@ -481,12 +491,17 @@ test('UI/build: drzewo HTML map (ADR 0027 v2 — iframe, offline z dysku)', asyn
   assert.ok(html.includes('"stronaMapy": "maps/srodziemie.html"'), 'rejestr: strona mapy Śródziemia');
   assert.ok(html.includes('"stronaMapy": "maps/zendikar.html"'), 'rejestr: strona mapy Zendikaru');
   assert.ok(html.length < 2.5 * 1024 * 1024, `artefakt (${(html.length / 1048576).toFixed(2)} MB) ma być < 2.5 MB`);
-  // drzewo: strony map + mini-mapy z generowanego mini.jpg (ADR 0027 v3);
-  // wektorowe bazy NIE są w drzewie (są inline w stronach map)
+  // drzewo: strony map + mini-mapy z generowanego mini.jpg, jeśli build ma
+  // rasterizator; inaczej legalny fallback do pełnej bazy (ADR 0027 v3).
   assert.ok(fs.existsSync('dist/maps/srodziemie.html'), 'dist/maps/srodziemie.html');
   assert.ok(fs.existsSync('dist/maps/zendikar.html'), 'dist/maps/zendikar.html');
-  assert.ok(fs.existsSync('dist/maps/zendikar/mini.jpg'), 'dist/maps/zendikar/mini.jpg (mini-mapy)');
-  assert.ok(!fs.existsSync('dist/maps/zendikar/podklad.svg'), 'brak duplikatu bazy SVG w drzewie (ADR 0027 v3)');
+  const maRasterizer = await czyDostepnyRasterizer();
+  if (maRasterizer) {
+    assert.ok(fs.existsSync('dist/maps/zendikar/mini.jpg'), 'dist/maps/zendikar/mini.jpg (mini-mapy)');
+    assert.ok(!fs.existsSync('dist/maps/zendikar/podklad.svg'), 'brak duplikatu bazy SVG w drzewie (ADR 0027 v3)');
+  } else {
+    assert.ok(fs.existsSync('dist/maps/zendikar/podklad.svg'), 'bez rasterizatora drzewo zachowuje pełną bazę SVG');
+  }
   const stronaMapy = fs.readFileSync('dist/maps/zendikar.html', 'utf8');
   assert.ok(stronaMapy.includes('CODEX_MAPA'), 'strona mapy: tryb CODEX_MAPA');
   assert.ok(stronaMapy.includes('podkladMarkup'), 'strona mapy: wstrzyknięty markup SVG');

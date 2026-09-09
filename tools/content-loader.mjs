@@ -107,6 +107,44 @@ export function wczytajScryfall({ root = '.' } = {}) {
 }
 
 /**
+ * Dla materializacji jednej strony karty wybiera „widok” snapshotu,
+ * który odpowiada tej konkretnej twarzy. Gdy `nazwaKarty` pokrywa się
+ * z nazwą jednej z `card_faces`, zwracamy pola tej twarzy; w przeciwnym
+ * razie zostaje klasyczny widok top-level całej karty.
+ *
+ * To pozwala materializować strony DFC niezależnie: np. dziś tylko
+ * „Civilized Scholar”, jutro osobno druga strona z własnym slugiem,
+ * treścią i kolorem — bez fałszowania pełnego snapshotu Scryfall.
+ */
+export function widokScryfallDlaKarty(snapshot, nazwaKarty) {
+  const twarz = znajdzTwarzScryfall(snapshot, nazwaKarty);
+  return {
+    name: twarz?.name ?? snapshot?.name ?? null,
+    mana_cost: twarz?.mana_cost ?? snapshot?.mana_cost ?? null,
+    cmc: snapshot?.cmc ?? null,
+    type_line: twarz?.type_line ?? snapshot?.type_line ?? null,
+    oracle_text: twarz?.oracle_text ?? snapshot?.oracle_text ?? null,
+    power: twarz?.power ?? snapshot?.power ?? null,
+    toughness: twarz?.toughness ?? snapshot?.toughness ?? null,
+    keywords: twarz?.keywords ?? snapshot?.keywords ?? [],
+    set: snapshot?.set ?? null,
+    set_name: snapshot?.set_name ?? null,
+    rarity: snapshot?.rarity ?? null,
+    artist: twarz?.artist ?? snapshot?.artist ?? null,
+    flavor_text: twarz?.flavor_text ?? snapshot?.flavor_text ?? null,
+    image_uris: twarz?.image_uris ?? snapshot?.image_uris ?? null,
+    scryfall_uri: snapshot?.scryfall_uri ?? null,
+    faceMatched: twarz?.name ?? null,
+  };
+}
+
+export function znajdzTwarzScryfall(snapshot, nazwaKarty) {
+  if (!snapshot || !Array.isArray(snapshot.card_faces) || !nazwaKarty) return null;
+  const cel = String(nazwaKarty).trim().toLowerCase();
+  return snapshot.card_faces.find((face) => String(face?.name ?? '').trim().toLowerCase() === cel) ?? null;
+}
+
+/**
  * Rejestry map: maps/<plan>/map.json → Map(plan → obiekt).
  * ADR 0032 (plan-franczyza): plan może też mieć podmapy części sagi —
  * maps/<plan>/<podmapa>/map.json trafia do rejestru pod kluczem

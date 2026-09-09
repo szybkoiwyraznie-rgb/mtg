@@ -605,6 +605,14 @@
    "pewnosc": "dokladna",
    "uzasadnienie": "Tekst karty podaje miejsce wprost: „the lower levels of Thraben Cathedral”. Pinezka stoi na Thraben w północnej Gavony; scena rozgrywa się w podziemiach katedry, więc rzut na powierzchnię jest jednoznaczny.",
    "notka": "Epoka Dark Ascension — Avacyn uwięziona w Helvaulcie stojącym w dziedzińcu tej samej katedry."
+  },
+  {
+   "karta": "309isd-civilized-scholar",
+   "x": 0.911,
+   "y": 0.523,
+   "pewnosc": "dokladna",
+   "uzasadnienie": "Przekaz sceny podaje miejsce wprost: Havengul w Nephalii. Uczelnia i gabinet nie mają osobnej kotwicy na mapie, ale samo miasto jest nazwane jednoznacznie, więc pinezka stoi dokładnie na Havengulu.",
+   "notka": "Nocne badania nad gniewem w porcie Nephalii; mgła od nabrzeża i szlak raportów ku Thraben są częścią tej samej sceny."
   }
  ],
  "zrodlo_fanmapa": "Podkład jest mapą fanowską, nie materiałem WotC. Zgodnie z ADR 0031 służy jako podkład prywatnego Kodeksu; każda kotwica została porównana z kanonem tekstowym, a rozbieżności rozstrzygane są na korzyść kanonu.",

@@ -96,37 +96,55 @@ klasa `geografia`, plan Mirrodin. Próg (2 karty) spełniały
 476mbs-banishment-decree + 488som-carapace-forger (+ plan mirrodin);
 wikilinki dopisane we wszystkich trzech miejscach; sekcja „Na mapie”
 odsyła do mapy Mirrodinu zbliżonej w określonym miejscu (deep-link
-`?x=&y=`). Uwaga: „Tangle” na liście encji ≥2 stron NIE tworzy
-hasła — to dwie różne encje o tej samej nazwie (miedziany las
-Mirrodinu i Drzewo Świata Aerony w Dominarii). (Wcześniejsza obwódka
-regionu `regiony` w map.json wycofana — ADR 0043.)
+`?x=&y=`).
 
-Encje „o jedną kartę” od progu (skan boldów 2026-09-08):
+**Oxidda Chain — wykonane 2026-09-09**, `content/lore/oxidda-chain.md`,
+klasa `geografia`, plan Mirrodin. Próg (2 karty) spełniły
+488som-carapace-forger + 556nph-ruthless-invasion (+ plan mirrodin,
++ hasło mephidross przez opis granicy); wikilinki dopisane na planie,
+w karcie 488SOM i w haśle Mephidross. Uwaga: „Tangle” na liście encji
+≥2 stron NIE tworzy hasła — to dwie różne encje o tej samej nazwie
+(miedziany las Mirrodinu i Drzewo Świata Aerony w Dominarii).
+
+**Thraben — wykonane 2026-09-09**, `content/lore/thraben.md`,
+klasa `geografia`, plan Innistrad. Próg (2 karty) spełniły
+393dka-forge-devil + 309isd-civilized-scholar (+ plan innistrad);
+wikilinki dopisane na planie, w karcie 393DKA i w nowej karcie 309ISD.
+(Wcześniejsza obwódka regionu `regiony` w map.json wycofana — ADR 0043.)
+
+Encje „o jedną kartę” od progu (skan boldów 2026-09-09):
 
 | Encja | Klasa (docelowa) | Karta wspominająca | Do progu brakuje |
 | --- | --- | --- | --- |
 | Elesh Norn | postac | 476mbs-banishment-decree (+ plan mirrodin, hasło nowa-phyrexia) | 1 karta |
 | Razor Fields, Ortodoksja Maszyn, Glimmervoid, Taj-Nar, Accorders, Argent Etchings, Cave of Light, Ten Shields | geografia/doktryna | 476mbs-banishment-decree (+ plan mirrodin) | 1 karta |
-| Copperline Gorge, Radix, Rey-Goor | geografia | 488som-carapace-forger (+ plan mirrodin) | 1 karta |
+| Copperline Gorge, Radix, Rey-Goor | geografia | 488som-carapace-forger (+ plan mirrodin, hasło oxidda-chain) | 1 karta |
+| Vulshok | spolecznosc | 556nph-ruthless-invasion (+ plan mirrodin, hasło oxidda-chain) | 1 karta |
+| Pythor | postac | 556nph-ruthless-invasion | 1 karta |
 | Oona, Glen Elendra | postac/geografia | 605shm-consign-to-dream (+ plan lorwyn) | 1 karta |
-| Thraben, Ashmouth, Kirch, Skirsdag, Mikaeusa, Katedra Avacyn, Devils' Breach | geografia | 393dka-forge-devil (+ plan innistrad) | 1 karta |
+| Ashmouth, Kirch, Skirsdag, Mikaeusa, Katedra Avacyn, Devils' Breach | geografia | 393dka-forge-devil (+ plan innistrad, hasło thraben) | 1 karta |
+| Havengul, Nephalia, Markovowie, wilkołaki Kessigu | geografia/spolecznosc | 309isd-civilized-scholar (+ plan innistrad, hasło thraben) | 1 karta |
 | Temur, Mardu, Qal Sisma, Karakyk Valley, Summer Landing, Eternal Ice, Dragon's Throat, The Scour, ainok | geografia/klany | 509ktk-highland-game (+ plan tarkir) | 1 karta |
 | Sunhome, Precinct Four | geografia | 137gpt-withstand (+ plan ravnica) | 1 karta |
 | Benalia, Wybrani, Pięć Edyktów, Tangle (Dominaria), Argoth, Sylex, Kabała, Aphetto, Daru, Tamingazin, Zhalfir, Suq'At, Sarpadyjskie Imperia, Ciemne Czasy, thrullowie, thalidzi, homaridi | geografia/spolecznosc | 40usg-expunge / plan dominaria | 1 karta |
 | Eldrazi, Roil, Halimar, Coralhelm, Jori En, merfolk | różne | 2bfz-coralhelm-guide (+ plan zendikar) | 1 karta |
 
-## Link-mining PR-26 (Forgotten Realms, 2026-09-08)
+## Link-mining Forgotten Realms (start: PR-25, aktualizacja 2026-09-09)
 
-Pierwsza karta FR: `3clb-nefarious-imp` (+ plan `forgotten-realms`).
-Encje „o jedną kartę” od progu (skan boldów 2026-09-08):
+**Wybrzeże Mieczy — wykonane 2026-09-09**,
+`content/lore/wybrzeze-mieczy.md`, klasa `geografia`, plan
+`forgotten-realms`. Próg spełniały `3clb-nefarious-imp` + plan
+`forgotten-realms`; wikilinki dopisane na obu stronach i hasło dostało
+odsyłacz do mapy Faerûnu (`?x=0.13&y=0.27`).
+
+Pozostałe encje „o jedną kartę” od progu:
 
 | Encja | Klasa (docelowa) | Karta wspominająca | Do progu brakuje |
 | --- | --- | --- | --- |
-| Wybrzeże Mieczy | geografia | 3clb-nefarious-imp (+ plan forgotten-realms) | 1 karta |
 | Avernus, Baator | geografia | 3clb-nefarious-imp | 1 karta |
 | imp (chochlik) | fauna | 3clb-nefarious-imp | 1 karta |
 | Wojna Hobgoblinów, Tiamat | wydarzenie/koncepcja | 3clb-nefarious-imp (+ plan forgotten-realms) | 1 karta |
-| Faerûn, Abeir-Toril, Morze Upadłych Gwiazd, Moonshaes, Nelanther, Amn, Luruar, Morze Wewnętrzne, Królestwo Wysokie, Morze Bezludne | geografia | — (plan forgotten-realms) | licznik od kart, nie planów |
+| Faerûn, Abeir-Toril, Morze Upadłych Gwiazd, Moonshaes, Nelanther, Amn, Luruar, Jezioro Pary, Królestwo Wysokie, Morze Bezludne | geografia | — (plan forgotten-realms) | licznik od kart, nie planów |
 | Mystra, Selûne, Lathander, Ilmater, Tempus, Tkanina Magii, Czas Kłopotów | postac/koncepcja | — (plan forgotten-realms) | licznik od kart, nie planów |
 
 ## Mapa Zendikaru — WYKONANA (ADR 0012)

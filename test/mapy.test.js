@@ -34,6 +34,15 @@ test('map.json ma strukturę wg PROCES_MAP.md (MA2)', () => {
     if (mapa.wariant !== 'T3' && !fs.existsSync(podklad)) problemy.push(`${plan}: brak pliku podkładu ${podklad}`);
     if (mapa.rekonstrukcja === undefined) problemy.push(`${plan}: brak flagi rekonstrukcja (T3 wymaga true)`);
     if (mapa.rekonstrukcja === true && !['T3', 'T4'].includes(mapa.wariant)) problemy.push(`${plan}: rekonstrukcja tylko dla T3/T4`);
+    if (mapa.widok_domyslny) {
+      const x = Number(mapa.widok_domyslny.x);
+      const y = Number(mapa.widok_domyslny.y);
+      const z = mapa.widok_domyslny.zoom === undefined ? 2.5 : Number(mapa.widok_domyslny.zoom);
+      if (!(Number.isFinite(x) && x >= 0 && x <= 1 && Number.isFinite(y) && y >= 0 && y <= 1)) {
+        problemy.push(`${plan}: widok_domyslny.x/y poza [0,1]`);
+      }
+      if (!(Number.isFinite(z) && z > 0)) problemy.push(`${plan}: widok_domyslny.zoom musi być dodatnią liczbą`);
+    }
   }
   assert.deepEqual(problemy, [], `Wadliwe map.json:\n${problemy.join('\n')}`);
 });
@@ -56,24 +65,6 @@ test('pinezki wskazują istniejące karty, mają współrzędne 0-1 i pewność'
     if ('regiony' in mapa) problemy.push(`${plan}: pole "regiony" w map.json — ADR 0043 (na mapie oznaczenia noszą wyłącznie karty)`);
   }
   assert.deepEqual(problemy, [], `Wadliwe pinezki:\n${problemy.join('\n')}`);
-});
-
-test('warstwa POI (kotwice pod przyszłe pinezki): nazwa + x/y w [0,1], bez duplikatów', () => {
-  const problemy = [];
-  for (const [plan, mapa] of mapy) {
-    if (mapa.problem) continue;
-    if (!Array.isArray(mapa.poi)) continue;
-    const nazwy = new Set();
-    for (const p of mapa.poi) {
-      if (!p.nazwa || typeof p.nazwa !== 'string') problemy.push(`${plan}: POI bez nazwy`);
-      else if (nazwy.has(p.nazwa)) problemy.push(`${plan}: POI "${p.nazwa}" — duplikat nazwy`);
-      else nazwy.add(p.nazwa);
-      const x = Number(p.x); const y = Number(p.y);
-      if (!Number.isFinite(x) || x < 0 || x > 1) problemy.push(`${plan}: POI ${p.nazwa} x poza [0,1] (${p.x})`);
-      if (!Number.isFinite(y) || y < 0 || y > 1) problemy.push(`${plan}: POI ${p.nazwa} y poza [0,1] (${p.y})`);
-    }
-  }
-  assert.deepEqual(problemy, [], `Wadliwa warstwa POI:\n${problemy.join('\n')}`);
 });
 
 test('ADR 0043: na mapie oznaczenia noszą wyłącznie karty (pinezka tylko w frontmatterze karty; brak regiony)', () => {

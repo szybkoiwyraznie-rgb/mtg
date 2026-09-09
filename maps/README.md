@@ -5,12 +5,12 @@ Katalog na plan: `maps/<plan>/`.
 ## Pliki
 
 - `map.json` — metadane mapy: wariant T1/T2/T3/T4, źródło podkładu,
-  wymiary, pinezki kart (współrzędne znormalizowane 0–1 + poziom
-  pewności + uzasadnienie), kotwice/proweniencja elementów, regiony
-  haseł geograficznych;
+  wymiary, opcjonalny `widok_domyslny`, pinezki kart (współrzędne
+  znormalizowane 0–1 + poziom pewności + uzasadnienie), kotwice /
+  proweniencja elementów;
 - `podklad.svg|png|jpg` — właściwy podkład mapy commitowany do repo;
-- `scena.json` — scena źródłowa mapforge dla map T3/T4 (gdy podkład
-  jest renderowany przez wspólny silnik);
+- `scena.json` — scena źródłowa mapforge dla map T4 (a dla starszych map
+  także części T3), gdy podkład jest renderowany przez wspólny silnik;
 - `podklad-reczny.svg` — opcjonalne archiwum starszej epoki ręcznej,
   gdy plan przeszedł migrację do mapforge;
 - `zrodlo-fanowska*.md` / inne noty źródłowe — opis źródeł pomocniczych

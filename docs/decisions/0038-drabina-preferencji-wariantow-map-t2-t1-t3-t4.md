@@ -67,6 +67,11 @@ Nowa sesja czytająca samo `maps/` mogłaby wziąć ten przypadek za normę.
 6. **T4 nie oznacza „bez rastra".** Rekonstrukcja tekstowa może używać
    rastra jako pomocy przy rozmieszczaniu POI, o ile geometria
    pozostaje własna, a rola źródła jest opisana w proweniencji.
+7. **T1 z rastrem opisanym na podkładzie startuje od zasady „nic nie
+   doklejamy”.** Jeśli raster ma już własne nazwy i ikony miejsc,
+   Codex nie dodaje na nim drugiej warstwy kropek/POI „na wszelki
+   wypadek”. Wyjątek — brakujący ważny obiekt albo deep-map miejsca —
+   wymaga osobnej konsultacji z właścicielem przed wdrożeniem.
 
 ## Konsekwencje
 

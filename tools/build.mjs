@@ -22,7 +22,7 @@ import { fileURLToPath } from 'node:url';
 import { collectModules, assertNoNameCollisions } from './module-graph.mjs';
 import {
   wczytajStrony, wczytajTaxonomie, wczytajKolekcje, wczytajScryfall,
-  wczytajMapy, wczytajCoNowego, parsujWpisyCoNowego,
+  wczytajMapy, wczytajCoNowego, parsujWpisyCoNowego, widokScryfallDlaKarty,
 } from './content-loader.mjs';
 import { renderMarkdown } from '../src/codex/markdown.js';
 import { napiszZip } from './zip.mjs';
@@ -198,6 +198,7 @@ export async function zbuduj({ out, root = ROOT } = {}) {
     const r = wyrenderowane.get(s.slug);
     const wpisKolekcji = kolekcja.get(s.slug) ?? null;
     const snap = scryfall.get(s.slug) ?? null;
+    const widokSnap = s.typ === 'karta' && snap ? widokScryfallDlaKarty(snap, s.nazwa) : null;
 
     if (s.typ === 'karta' && !wpisKolekcji) problemy.push(`${s.slug}: brak wpisu kolekcji (ADR 0003)`);
     if (s.typ === 'karta' && !snap) problemy.push(`${s.slug}: brak snapshotu Scryfall (ADR 0004)`);
@@ -228,12 +229,21 @@ export async function zbuduj({ out, root = ROOT } = {}) {
           dostarczono: wpisKolekcji.fm.dostarczono ?? null,
         } : null,
         scryfall: snap ? {
-          name: snap.name, mana_cost: snap.mana_cost, cmc: snap.cmc,
-          type_line: snap.type_line, oracle_text: snap.oracle_text,
-          power: snap.power, toughness: snap.toughness,
-          keywords: snap.keywords ?? [], set: snap.set, set_name: snap.set_name,
-          rarity: snap.rarity, artist: snap.artist, flavor_text: snap.flavor_text,
-          image_uris: snap.image_uris ?? null, scryfall_uri: snap.scryfall_uri,
+          name: widokSnap?.name ?? snap.name,
+          mana_cost: widokSnap?.mana_cost ?? snap.mana_cost,
+          cmc: widokSnap?.cmc ?? snap.cmc,
+          type_line: widokSnap?.type_line ?? snap.type_line,
+          oracle_text: widokSnap?.oracle_text ?? snap.oracle_text,
+          power: widokSnap?.power ?? snap.power,
+          toughness: widokSnap?.toughness ?? snap.toughness,
+          keywords: widokSnap?.keywords ?? snap.keywords ?? [],
+          set: widokSnap?.set ?? snap.set,
+          set_name: widokSnap?.set_name ?? snap.set_name,
+          rarity: widokSnap?.rarity ?? snap.rarity,
+          artist: widokSnap?.artist ?? snap.artist,
+          flavor_text: widokSnap?.flavor_text ?? snap.flavor_text,
+          image_uris: widokSnap?.image_uris ?? snap.image_uris ?? null,
+          scryfall_uri: widokSnap?.scryfall_uri ?? snap.scryfall_uri,
         } : null,
       } : {}),
       ...(s.typ === 'haslo' ? { klasa: s.klasa } : {}),

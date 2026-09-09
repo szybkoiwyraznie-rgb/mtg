@@ -4,6 +4,83 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-09 — PR-27: audyt scalonego PR-25, Forgotten Realms, Ruthless Invasion, Civilized Scholar i Thraben
+
+Sesja `arena/01a08327-mtg`, PR #27. Zgodnie z `AGENTS.md` najpierw
+powstała roadmapa i PR, a dopiero potem audyt poprzedniego scalonego PR.
+
+**Audyt PR-25** (`docs/audits/AUDYT_2026-09-09-PR25.md`) potwierdził,
+że warstwa kodowa i proceduralna poprzedniej sesji była mocna, ale nowa
+zawartość Forgotten Realms miała dwa realne problemy: **F1/P1**
+(błędna geografia Faerûnu: `Luruar`, `Sea of Fallen Stars` vs `Inner Sea`,
+południowy akwen podkładu, kierunek `Trackless Sea`) oraz **F2/P2**
+(zbyt słabe źródło w `content/cards/3clb-nefarious-imp.md`, wskazujące
+root serwisu zamiast konkretnego artykułu).
+
+**Naprawy po audycie:** `content/planes/forgotten-realms.md` i
+`maps/forgotten-realms/map.json` zostały zsynchronizowane z kanonem:
+`Luruar` wrócił do Silver Marches w północno-zachodnim Faerûnie,
+`Morze Upadłych Gwiazd` zostało jawnie utożsamione z `Inner Sea`,
+południowy akwen podkładu opisano jako `Jezioro Pary (Lake of Steam)`,
+a `Morze Bezludne` nie dryfuje już na południowy wschód. Research
+warsztatowy dostał erratę, backlog przestał dziedziczyć mylącą nazwę
+`Morze Wewnętrzne`, a karta [[3clb-nefarious-imp|Nefarious Imp]]
+straciła niekonkretne `https://worldaneil.github.io` na rzecz
+bezpośredniego źródła FR Wiki.
+
+**Pętla Jakości po audycie:** pogłębione zostało hasło
+[[mephidross|Mephidross]] (nimy, Moriokowie, Darkslick, Blackcleave,
+Rey-Goor, Ish Sah, skala infekcji), a link-mining przyniósł nowe hasło
+[[wybrzeze-mieczy|Wybrzeże Mieczy]] z odsyłaniem do mapy Faerûnu.
+Wikilinki dopisano na karcie 3CLB i stronie planu Forgotten Realms;
+`docs/backlog.md` przenosi Wybrzeże Mieczy z kolejki kandydatów do sekcji
+wykonanej. `content/co-nowego.md` i PR #27 zostały zaktualizowane
+kumulatywnie.
+
+**Follow-up po oglądzie mapy FR przez właściciela:** usunięta została
+warstwa brązowych kropek/POI z rastrowej mapy Forgotten Realms.
+W praktyce oznacza to powrót do czystego T1: raster 3E + kafelki LOD
++ pinezki kart, bez dodatkowych znaczników „kotwic pod przyszłe pinezki”.
+Przy okazji legenda map przestała pokazywać martwy wpis o „obwódce
+regionu”, bo po ADR 0043 taka warstwa nigdy nie wraca. Proceduralnie
+zapisano też doprecyzowanie: T1 z dobrym rastrem startuje od zasady
+**„nic nie doklejamy ponad druk”**; dodatkowe POI/labelki albo deep-map
+ważnego miejsca wymagają osobnej konsultacji z właścicielem
+(`docs/guides/PETLA_JAKOSCI.md`, ADR 0038).
+
+**Dostawa po domknięciu pętli:** właściciel przekazał kartę
+[[556nph-ruthless-invasion|Ruthless Invasion]] (`556NPH`, NPH, Mirrodin)
+z osadzeniem na pustkowiach Oxiddy, przy odwrocie Vulshoków pod naporem
+kolosa z płynnego metalu. Do repo trafiły: wpis archiwalny,
+pełny snapshot Scryfalla z notką o dwóch numeracjach (`556NPH` vs `93`),
+nowa karta LORE-first i pinezka `region` na mapie Mirrodinu. Link-mining
+uzasadnił też nowe hasło [[oxidda-chain|Oxidda Chain]]; `Pythor` i
+`Vulshok` zostały świadomie zatrzymane poniżej progu osobnych haseł
+i zapisane tylko w backlogu.
+
+**Kolejna dostawa w tej samej sesji:** właściciel przekazał też kartę
+[[309isd-civilized-scholar|Civilized Scholar]] (`309ISD`, ISD, Innistrad)
+z havengulskim uczonym badającym gniew w epoce, gdy po zniknięciu Avacyn
+słabnie kościelna ochrona. Do repo trafiły: wpis archiwalny, pełny
+snapshot `cards/isd/47`, nowa karta LORE-first, pinezka `dokladna` na
+Havengulu oraz pierwsza lokalna obsługa **niezależnej twarzy** karty o
+układzie `layout: transform`: build i testy rozumieją już dopasowanie
+nazwy strony do właściwej pozycji `card_faces`, a sama materializacja
+pozostaje wyłącznie po stronie **Civilized Scholar** (`kolory: [U]`).
+Link-mining dobił przy okazji próg dla nowego hasła [[thraben|Thraben]];
+wikilinki dopisano w planie Innistradu i na karcie
+[[393dka-forge-devil|Forge Devil]]. Smoke UI uwzględnia już **14 kart**,
+obecność najnowszej materializacji na stronie głównej i regresję, że
+`309ISD` renderuje wyłącznie stronę **Civilized Scholar**. Na koniec
+tej korekty decyzja właściciela została zapisana także jako **ADR 0044**:
+karta dwustronna = osobne materializacje per twarz, bez przecieku drugiej
+strony do treści.
+
+**Weryfikacja końcowa:** `npm test` **166/166**, `npm run build` OK,
+`python3 tools/map-audit.py` = **0 problemów**, `node tools/wiki-stats.mjs --json`
+= **30 stron (14 kart, 5 haseł, 11 planów), średnio 100% kompletności**.
+Handoff: `docs/setup/HANDOFF_2026-09-09-pr27.md`.
+
 ## 2026-09-08 — PR-25: audyt scalonego PR-24, procedura ilustracji kart, decyzja o mapie Dominarii
 
 Sesja `arena/01a081d0-mtg`, PR #25. Poprzedni agent (PR #24: Dominaria
@@ -203,6 +280,18 @@ Implementacja czeka na akceptację kierunku i pliki do rzeczywistego QA,
 nie na automatyczne uznanie fanowskiej kartografii za kanon.
 
 ## 2026-09-06 — sesja PR-21: audyt PR-20 z pierwszą recenzją wizualną map + Pętla Jakości
+
+Sesja `arena/01a0770f-mtg` (PR #21, scalony 2026-09-07 20:47,
+squash `6bf2fba`). Tryb: „Kontynuuj zgodnie
+z AGENTS” — bez dostawy materializacji. **Pierwsza sesja z oglądem
+obrazów przez agenta** (rastry map przez resvg poza repo).
+
+1. **Audyt PR-20** (`docs/audits/AUDYT_2026-09-06-PR20.md`): A1–A4
+   poprawne i kompletne, L9 zastosowana; recenzja wizualna Alary,
+   Zendikaru, Midgaru, Ravniki — Alara v2 dobra co do topologii, ale
+   trzy tytuły regionów na obiektach (W1–W3); B1 brak wpisu PR-20
+   w PROJECT_HISTORY/ROADMAP; B2 luka `map-audit` (tytuł↔ikona).
+2. **Naprawy:** W1–W3 — tytuły Jund/Grixis/Naya przeną map + Pętla Jakości
 
 Sesja `arena/01a0770f-mtg` (PR #21, scalony 2026-09-07 20:47,
 squash `6bf2fba`). Tryb: „Kontynuuj zgodnie
