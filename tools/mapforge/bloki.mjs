@@ -1008,6 +1008,26 @@ export function most(x, y, { skala = 1, kat = 0 } = {}) {
     `</g>`;
 }
 
+/** Zbiornik zawieszony (Aetherflux Reservoir, Kaladesh) — duża kula
+ *  rafinowanego eteru wisząca nad panoramą miasta, z góry: obwód +
+ *  wnętrze-poświata + pierścień wewnątrz + 4 linki nośne. Kolor
+ *  poświaty = `poswiataKolor` (spójne z eterem/wodą atlasu). */
+export function zbiornik(x, y, { skala = 1 } = {}) {
+  const s = skala;
+  let out = `<g class="mf-zbiornik" data-x="${rr(x)}" data-y="${rr(y)}">` + poiKolko(x, y, 13, s);
+  for (const a of [Math.PI / 2, 0, -Math.PI / 2, Math.PI]) {
+    const x1 = x + Math.cos(a) * 8.6 * s, y1 = y + Math.sin(a) * 8.6 * s;
+    const x2 = x + Math.cos(a) * 12.4 * s, y2 = y + Math.sin(a) * 12.4 * s;
+    out += `<path d="M ${rr(x1)} ${rr(y1)} L ${rr(x2)} ${rr(y2)}" stroke="${PAL.skalaCien}" stroke-width="${rr(1 * s)}"/>` +
+      `<circle cx="${rr(x2)}" cy="${rr(y2)}" r="${rr(1 * s)}" fill="${PAL.skalaCien}"/>`;
+  }
+  out += `<circle cx="${rr(x)}" cy="${rr(y)}" r="${rr(8.6 * s)}" fill="none" stroke="${PAL.skalaCien}" stroke-width="${rr(1.5 * s)}"/>` +
+    `<circle cx="${rr(x)}" cy="${rr(y)}" r="${rr(7 * s)}" fill="${PAL.poswiataKolor}" opacity="0.45"/>` +
+    `<circle cx="${rr(x)}" cy="${rr(y)}" r="${rr(3.6 * s)}" fill="none" stroke="${PAL.wodaStroke}" stroke-width="${rr(1.1 * s)}"/>` +
+    `<circle cx="${rr(x)}" cy="${rr(y)}" r="${rr(1.1 * s)}" fill="${PAL.wodaStroke}"/>`;
+  return out + `</g>`;
+}
+
 /** Ognisko zgromadzenia (Skarrg) — wieczny ogień Gruul w ruinach. */
 export function ognisko(x, y, { skala = 1 } = {}) {
   const s = skala;

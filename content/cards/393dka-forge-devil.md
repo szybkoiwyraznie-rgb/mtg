@@ -151,6 +151,8 @@ nie przyszedł stamtąd pieszo. Ktoś go **przywołał** na miejscu, w sercu
 najlepiej strzeżonego miasta planu. Odległość na mapie jest częścią
 zarzutu.
 
+Pinezka: `#/mapa/innistrad?pin=393dka-forge-devil`.
+
 ## Mechanika jako Opowieść
 
 `{R}`, stwór 1/1, i wejście do gry, które zadaje **1 obrażenie

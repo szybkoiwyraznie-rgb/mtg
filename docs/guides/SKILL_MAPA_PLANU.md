@@ -398,6 +398,15 @@ w testach na-lądzie z adnotacją.
 7. **Rejestruj wszystko, co narysowane**: etykieta/marker bez wpisu
    w `kotwice`/`elementy` (i odwrotnie) to dług techniczny mapy
    ( Living Spire był rysowany, niezarejestrowany — domknięte).
+8. **Nazewnictwo bezimiennych POI (mapforge; debiut: Kaladesh 2026-09-09,
+   zapisane audytem PR-28/N4):** miejsca nazwane w kanonie niosą toponim
+   kanoniczny po angielsku (Devra Cliffs, Giants’ Walk, Aether
+   Collection Tower — tak jak na pozostałych mapach); bezimienne
+   osady/ciekawostki dostają etykietę opisową po polsku (wieś, osada
+   rybacka, osada leśna, przystań sterowców). Etykieta opisowa opisuje,
+   nie nazywa (ADR 0010 — nie zmyślamy nazw), nie zwalnia z markera
+   (pkt 1) i może się powtarzać na równorzędnych obiekatach (wsie Vahd
+   ×3 „wieś”) — wiązanie działa per marker, nie per tekst.
 
 ---
 
@@ -417,7 +426,10 @@ Reguły użycia:
 1. **Nowy element mapy planu = klocek ze sceny**, nie ręczny `<path>`
    (las → `las`, grzbiet → `pasmo`, rzeka → `rzeka` z `s0/s1`, szlak →
    `droga` typ `szlak` — kropki jak w line-art mapome, zatoka →
-   `lukEtykieta`).
+   `lukEtykieta`, zawieszony zbiornik eteru → `zbiornik` — kula z góry
+   z obwodem, poświatą `poswiataKolor`, pierścieniem i 4 linkami
+   nośnymi; debiut: Aetherflux Reservoir na płycie L2 Ghirapuru,
+   PR-29).
 2. **Determinizm przez `id`**: zmiana jednego obiektu nie przetasowuje
    pozostałych; regeneracja daje identyczny SVG.
 3. **Po każdym renderze**: `python3 tools/map-audit.py <plan>` — 0

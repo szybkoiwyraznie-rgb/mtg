@@ -4,6 +4,44 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-09 — PR-29: audyt scalonego PR-28 + Pętla Jakości (sesja `arena/01a0874a-mtg`)
+
+**Audyt PR-28** (`docs/audits/AUDYT_2026-09-09-PR28.md`): pełny przegląd
+41 plików (treść, kod, mapa, docs) + recenzja wizualna resvg (L10)
++ weryfikacja kanonu fetch_page (mtg.wiki: Avishkar, Ghirapur).
+Werdykt: PR-28 powyżej standardu domowego. Pięć znalezień, wszystkie P3:
+N1 brak deep-linku w „Na Mapie” (610M19/309ISD/393DKA), N2 dryf
+licznika testów (ROADMAP 176 / opis PR 170 / HANDOFF 169 — zweryfikowane
+176/176, 0 pominiętych; suite ma 8 warunkowych ścieżek pomijania),
+N3 epoka mapy „przed buntem eterowym” bez pokrycia źródłowego,
+N4 konwencja opisowych etykiet bezimiennych POI nieudokumentowana,
+N5 pozycja Bunarat poza listą umownych.
+
+**Naprawy (każda zielonym commit):** deep-linki (ADR 0042 §5);
+epoka → „kanon nie datuje zdarzenia” + Bunarat na listach umownych
+(+ konsystencja: 5 wież eterowych, nie 3); konwencja nazewnictwa
+bezimiennych POI w SKILL_MAPA_PLANU pkt 8; KOREKTA liczników w
+HANDOFF PR-28.
+
+**Pętla Jakości:** pogłębienie strony [[kaladesh|Kaladeshu]]
+(Aetherflux Reservoir, Węzeł Eterowy, First Bridge, Akhara, The Dhund,
+Gremlin Hovels, Prakhata Club, smoki Freejam, śluzy Alei Olbrzymów,
+Surash, Shaila's Claim, jalpari + nowa sekcja „Kultura i codzienne
+życie” — bez anachronizmów DFT). Link-mining: brak nowych haseł
+(kolejka Kaladeshu cała o 1 kartę od progu — L17, egzekucja testem).
+Pass mapowy (T4 własna): **Aetherflux Reservoir na płycie L2
+Ghirapuru** — nowy klocek mapforge `zbiornik` (kula z góry + linki
+nośne, poświata `poswiataKolor`); pozycja = wybór rekonstrukcji
+(zapisany w map.json + research). map-audit 0; 176/176; 31 stron
+(15 kart, 4 hasła, 12 planów); ZIP 87,8 MB.
+
+**Uwagi środowiskowe (sandbox Arena):** `dist/` nie jest utrwalane
+między turami (katalog poza snapshotem) — odbudowa buildem w sesji;
+`node_modules` bez dev-deps → mini-mapy z pełnej bazy (fallback
+`build.mjs`; stan identyczny jak w PR-28); `git fetch --unshallow`
+weryfikować `git rev-list --count HEAD` + `git cat-file -e <rodzic>`,
+nie flagą `is-shallow` (pierwszy fetch wygasł cicho).
+
 ## 2026-09-09 — PR-28 cd.: przeskalowanie mapy Kaladeshu do skali planu (uwagi właściciela)
 
 Kontynuacja sesji `arena/01a08651-mtg` (ten sam PR): dwie uwagi

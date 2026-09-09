@@ -235,6 +235,12 @@ scena = {
     'poi': [
         {'typ': 'iglica', 'id': 'iglica-eteru', 'x': 780, 'y': 362,
          'opcje': {'skala': 1.8}},
+        # Aetherflux Reservoir (wiki: Ghirapur — największy zbiornik
+        # rafinowanego eteru, „zawieszony nad panoramą”). Kanon nie podaje
+        # współrzędnych — pozycja = wybór rekonstrukcji (nad Kujarem,
+        # na NW od Iglicy Eteru, przy sercu dystrybucji eteru).
+        {'typ': 'zbiornik', 'id': 'aetherflux-reservoir', 'x': 700, 'y': 255,
+         'opcje': {'skala': 1.6}},
         {'typ': 'kopula', 'id': 'stacja-aradara', 'x': 835, 'y': 455,
          'opcje': {'skala': 1.3}},
         {'typ': 'fort', 'id': 'bastion', 'x': 720, 'y': 465,
@@ -266,6 +272,8 @@ scena = {
     'etykiety': [
         {'tekst': 'Eleven Bridges', 'x': 825, 'y': 375,
          'opcje': {'fs': 12}},
+        {'tekst': 'Aetherflux Reservoir', 'x': 700, 'y': 255,
+         'opcje': {'fs': 10, 'przyDo': [700, 255]}},
         {'tekst': 'Bomat', 'x': 770, 'y': 570,
          'opcje': {'fs': 12, 'przyDo': [770, 570]}},
         {'tekst': 'Embraal', 'x': 925, 'y': 480, 'opcje': {'fs': 12}},
