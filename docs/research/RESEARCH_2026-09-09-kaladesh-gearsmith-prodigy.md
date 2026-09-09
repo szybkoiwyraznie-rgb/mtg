@@ -4,6 +4,16 @@ Data: 2026-09-09. **Etap: research i rekomendacja, przed decyzją właściciela.
 Roadmapa tej fazy: `docs/plans/PLAN_2026-09-09-pr27-kaladesh-gearsmith-prodigy-research.md`.
 Nie dodano jeszcze karty, planu, wpisu kolekcji ani plików mapy Kaladeshu.
 
+> **Rozstrzygnięcie właściciela po researchu (2026-09-09):** kierunek
+> przyjęty. Definicje drabiny obowiązujące w projekcie: **T1 = raster z
+> nałożonymi pinezkami/POI**, **T2 = gotowa mapa wektorowa**, **T3 =
+> własny wektor zbudowany z rastra**, **T4 = własny wektor zbudowany od
+> podstaw z tekstu**. Dla Kaladeshu wybrany model docelowy to **jedna mapa
+> T4 całego planu**, z **Ghirapurem jako głównym ogniskiem**: mapa ma
+> otwierać się domyślnie na Ghirapurze, a oddalanie ma odsłaniać cały,
+> schematyczny plan. To NIE jest osobna podmapa, tylko jeden podkład
+> z domyślnym kadrem startowym.
+
 ## Rekomendacja w skrócie
 
 **Nie zaczynać Kaladeshu od mapy całego świata.** W obecnym stanie źródeł

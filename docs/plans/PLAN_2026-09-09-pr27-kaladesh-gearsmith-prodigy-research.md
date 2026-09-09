@@ -59,3 +59,14 @@ wynalazczości Kaladeshu.
 - uczciwa rekomendacja wariantu dla Kaladeshu,
 - wskazanie, czy warto zaczynać od planu-świata czy od Ghirapuru,
 - raport zapisany w `docs/research/RESEARCH_2026-09-09-kaladesh-gearsmith-prodigy.md`.
+
+## Decyzja właściciela po researchu
+
+- przyjęty model: **jedna mapa T4 całego Kaladeshu**, ale z **domyślnym
+  otwarciem na Ghirapurze**;
+- oddalenie ma odsłaniać cały plan, bez przełączania na osobną podmapę;
+- Ghirapur ma dostać dużo większą gęstość obiektów/biomów/POI niż reszta
+  planu;
+- to wymaga dopisania do silnika obsługi `widok_domyslny` w `map.json`;
+- materializacja karty / strony planu nadal czeka na wpis w
+  `collection/entries/` (reguła ADR 0003 / AGENTS.md).
