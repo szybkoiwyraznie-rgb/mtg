@@ -56,13 +56,26 @@ pełny snapshot Scryfalla z notką o dwóch numeracjach (`556NPH` vs `93`),
 nowa karta LORE-first i pinezka `region` na mapie Mirrodinu. Link-mining
 uzasadnił też nowe hasło [[oxidda-chain|Oxidda Chain]]; `Pythor` i
 `Vulshok` zostały świadomie zatrzymane poniżej progu osobnych haseł
-i zapisane tylko w backlogu. Przy okazji dopięto strażników: smoke UI
-uwzględnia już **13 kart**, a narracja 556NPH została oczyszczona tak,
-by przejść **ADR 0042 (Głos Kronikarza)**.
+i zapisane tylko w backlogu.
 
-**Weryfikacja końcowa:** `npm test` **165/165**, `npm run build` OK,
+**Kolejna dostawa w tej samej sesji:** właściciel przekazał też kartę
+[[309isd-civilized-scholar|Civilized Scholar]] (`309ISD`, ISD, Innistrad)
+z havengulskim uczonym badającym gniew w epoce, gdy po zniknięciu Avacyn
+słabnie kościelna ochrona. Do repo trafiły: wpis archiwalny, pełny
+snapshot `cards/isd/47`, nowa karta LORE-first, pinezka `dokladna` na
+Havengulu oraz pierwsza lokalna obsługa **niezależnej twarzy** karty o
+układzie `layout: transform`: build i testy rozumieją już dopasowanie
+nazwy strony do właściwej pozycji `card_faces`, a sama materializacja
+pozostaje wyłącznie po stronie **Civilized Scholar** (`kolory: [U]`).
+Link-mining dobił przy okazji próg dla nowego hasła [[thraben|Thraben]];
+wikilinki dopisano w planie Innistradu i na karcie
+[[393dka-forge-devil|Forge Devil]]. Smoke UI uwzględnia już **14 kart**,
+obecność najnowszej materializacji na stronie głównej i regresję, że
+`309ISD` renderuje wyłącznie stronę **Civilized Scholar**.
+
+**Weryfikacja końcowa:** `npm test` **166/166**, `npm run build` OK,
 `python3 tools/map-audit.py` = **0 problemów**, `node tools/wiki-stats.mjs --json`
-= **28 stron (13 kart, 4 hasła, 11 planów), średnio 100% kompletności**.
+= **30 stron (14 kart, 5 haseł, 11 planów), średnio 100% kompletności**.
 Handoff: `docs/setup/HANDOFF_2026-09-09-pr27.md`.
 
 ## 2026-09-08 — PR-25: audyt scalonego PR-24, procedura ilustracji kart, decyzja o mapie Dominarii

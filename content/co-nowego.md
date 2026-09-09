@@ -1,27 +1,26 @@
-## 2026-09-09 12:10 — Civilized Scholar // Homicidal Brute: czternasta karta, pierwsza transformacja i hasło Thraben
+## 2026-09-09 12:10 — Civilized Scholar: czternasta karta, pierwsza niezależna twarz DFC i hasło Thraben
 
-- **[[309isd-civilized-scholar|Civilized Scholar // Homicidal Brute]]**
-  dołącza do Kodeksu jako czternasta karta kolekcji i druga karta
-  [[innistrad|Innistradu]]. To zarazem **pierwsza karta transformująca**
-  w repo: havengulski uczony z Nephalii bada gniew w epoce zniknięcia
-  Avacyn, a lustro odsłania w nim nagi kształt **Homicidal Brute**.
+- **[[309isd-civilized-scholar|Civilized Scholar]]** dołącza do Kodeksu
+  jako czternasta karta kolekcji i druga karta [[innistrad|Innistradu]].
+  Strona dotyczy wyłącznie havengulskiego uczonego z Nephalii, który bada
+  gniew w epoce zniknięcia Avacyn i próbuje leczyć lęk wiedzą,
+  samodyscypliną oraz językiem traktatów.
 - **Nowe hasło [[thraben|Thraben]].** Miasto przekroczyło próg praktyczny
   dzięki karcie [[393dka-forge-devil|Forge Devil]], nowemu
-  [[309isd-civilized-scholar|Civilized Scholar // Homicidal Brute]] i
-  stronie planu [[innistrad|Innistrad]]. Wikilinki dopisano także na
-  planie Innistradu.
+  [[309isd-civilized-scholar|Civilized Scholar]] i stronie planu
+  [[innistrad|Innistrad]]. Wikilinki dopisano także na planie Innistradu.
 - **Mapa Innistradu** dostała nową pinezkę karty
   `309isd-civilized-scholar` o pewności `dokladna` na **Havengulu** —
   miejscu nazwanym wprost w przekazie sceny. Karta 393DKA zachowała
   swoją pinezkę przy [[thraben|Thraben]], więc plan ma teraz dwa jawnie
   rozdzielone punkty kartowe.
-- **Pierwszy lokalny snapshot transform-card.** `scryfall/309isd-civilized-scholar.json`
-  zachowuje pełną odpowiedź `layout: transform` z oboma `card_faces`, a
-  na potrzeby obecnych strażników infoboksu front uczonego został
-  jawnie znormalizowany do pól legacy (`mana_cost`, `oracle_text`,
-  `image_uris`). Frontmatter karty przyjął płaskie `kolory: [U, R]`,
-  zgodnie z dzisiejszym schematem rejestru.
-- Weryfikacja po zmianach: `npm test` **165/165**, `npm run build` OK,
+- **Pierwsza lokalna obsługa niezależnej twarzy karty `layout: transform`.**
+  `scryfall/309isd-civilized-scholar.json` zachowuje pełną odpowiedź
+  `cards/isd/47` z `card_faces`, ale sama materializacja wykorzystuje tylko
+  stronę **Civilized Scholar**: frontmatter karty przyjmuje `kolory: [U]`,
+  a build/testy rozumieją już dopasowanie nazwy strony do właściwej twarzy
+  snapshotu bez mieszania obu stron w jednej karcie.
+- Weryfikacja po zmianach: `npm test` **166/166**, `npm run build` OK,
   `python3 tools/map-audit.py` = **0 problemów**, `node tools/wiki-stats.mjs --json`
   = **30 stron (14 kart, 5 haseł, 11 planów), średnio 100% kompletności**.
 

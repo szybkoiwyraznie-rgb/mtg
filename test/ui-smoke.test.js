@@ -440,6 +440,15 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(karta3.indexOf('<h2>Na Mapie</h2>') < karta3.indexOf('<h2>Mechanika jako Opowieść</h2>'), 'karta 137GPT: mechanika ma być po mapie/transpozycji');
   assert.ok(karta3.indexOf('<h2>Mechanika jako Opowieść</h2>') < karta3.indexOf('<h2>Źródła</h2>'), 'karta 137GPT: mechanika ma stać przed źródłami');
 
+  // 309ISD: materializacja niezależnej twarzy DFC — tylko Civilized Scholar,
+  // bez mieszania drugiej strony w tytule, typie i widocznej treści.
+  shim.idz('#/karta/309isd-civilized-scholar');
+  const karta4 = shim.app.innerHTML;
+  assert.ok(karta4.includes('<h1>Civilized Scholar</h1>'), 'karta 309ISD: tytuł ma dotyczyć tylko Civilized Scholar');
+  assert.ok(karta4.includes('Human Advisor'), 'karta 309ISD: brak typu właściwej twarzy');
+  assert.ok(!karta4.includes('Human Mutant'), 'karta 309ISD: nie może mieszać typu drugiej strony');
+  assert.ok(!karta4.includes('Homicidal Brute'), 'karta 309ISD: widoczna treść ma dotyczyć wyłącznie Civilized Scholar');
+
   // Z3 (audyt PR-18): zasady treści kart obowiązują KAŻDĄ kartę, nie tylko
   // 1LTR/2BFZ — termin „Fabuła dostawy" (ADR 0026 doprecyzowanie) i odsyłacze
   // do mechaniki Codexu / etykiety procesowe są zabronione w widocznej treści.

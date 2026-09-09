@@ -42,12 +42,11 @@ którzy mieszkają za najbezpieczniejszymi murami świata, zbyt łatwo mogą
 Z biegiem lat Thraben przestało być nietykalnym azylem. Gdy
 [[393dka-forge-devil|Forge Devil]] pokazuje diabły w najniższych poziomach
 katedry, zagrożenie wchodzi pod samo serce świętej architektury. Gdy
-[[309isd-civilized-scholar|Civilized Scholar // Homicidal Brute]] wysyła z
-Havengulu traktaty o wilkołakach i wampirach ku thrabeńskim szkołom,
-miasto wciąż pozostaje głównym odbiorcą wiedzy potrzebnej do walki z
-nocą. Ale ta wiedza nie gwarantuje już bezpieczeństwa. Thraben zostaje
-ważniejsze niż kiedykolwiek właśnie w chwili, gdy przestaje być
-niepodważalne.
+[[309isd-civilized-scholar|Civilized Scholar]] wysyła z Havengulu traktaty
+o wilkołakach i wampirach ku thrabeńskim szkołom, miasto wciąż pozostaje
+jednym z głównych odbiorców wiedzy potrzebnej do walki z nocą. Ale ta
+wiedza nie gwarantuje już bezpieczeństwa. Thraben staje się ważniejsze
+niż kiedykolwiek właśnie w chwili, gdy przestaje być niepodważalne.
 
 ## Na mapie
 

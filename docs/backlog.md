@@ -105,9 +105,14 @@ klasa `geografia`, plan Mirrodin. Próg (2 karty) spełniły
 w karcie 488SOM i w haśle Mephidross. Uwaga: „Tangle” na liście encji
 ≥2 stron NIE tworzy hasła — to dwie różne encje o tej samej nazwie
 (miedziany las Mirrodinu i Drzewo Świata Aerony w Dominarii).
+
+**Thraben — wykonane 2026-09-09**, `content/lore/thraben.md`,
+klasa `geografia`, plan Innistrad. Próg (2 karty) spełniły
+393dka-forge-devil + 309isd-civilized-scholar (+ plan innistrad);
+wikilinki dopisane na planie, w karcie 393DKA i w nowej karcie 309ISD.
 (Wcześniejsza obwódka regionu `regiony` w map.json wycofana — ADR 0043.)
 
-Encje „o jedną kartę” od progu (skan boldów 2026-09-08):
+Encje „o jedną kartę” od progu (skan boldów 2026-09-09):
 
 | Encja | Klasa (docelowa) | Karta wspominająca | Do progu brakuje |
 | --- | --- | --- | --- |
@@ -118,7 +123,7 @@ Encje „o jedną kartę” od progu (skan boldów 2026-09-08):
 | Pythor | postac | 556nph-ruthless-invasion | 1 karta |
 | Oona, Glen Elendra | postac/geografia | 605shm-consign-to-dream (+ plan lorwyn) | 1 karta |
 | Ashmouth, Kirch, Skirsdag, Mikaeusa, Katedra Avacyn, Devils' Breach | geografia | 393dka-forge-devil (+ plan innistrad, hasło thraben) | 1 karta |
-| Havengul, Nephalia, Homicidal Brute, Markovowie, wilkołaki Kessigu | geografia/postac/spolecznosc | 309isd-civilized-scholar (+ plan innistrad, hasło thraben) | 1 karta |
+| Havengul, Nephalia, Markovowie, wilkołaki Kessigu | geografia/spolecznosc | 309isd-civilized-scholar (+ plan innistrad, hasło thraben) | 1 karta |
 | Temur, Mardu, Qal Sisma, Karakyk Valley, Summer Landing, Eternal Ice, Dragon's Throat, The Scour, ainok | geografia/klany | 509ktk-highland-game (+ plan tarkir) | 1 karta |
 | Sunhome, Precinct Four | geografia | 137gpt-withstand (+ plan ravnica) | 1 karta |
 | Benalia, Wybrani, Pięć Edyktów, Tangle (Dominaria), Argoth, Sylex, Kabała, Aphetto, Daru, Tamingazin, Zhalfir, Suq'At, Sarpadyjskie Imperia, Ciemne Czasy, thrullowie, thalidzi, homaridi | geografia/spolecznosc | 40usg-expunge / plan dominaria | 1 karta |
