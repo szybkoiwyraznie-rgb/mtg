@@ -59,6 +59,7 @@ dziedziczona z projektu mtg-game.
 | [0041](0041-pokrycie-l2-tylko-z-nowym-detalem-dominaria-l0-l1.md) | Pokrycie L2 tylko z nowym detalem (wycinek bazy zabroniony); mapa Dominarii = L0 + kafle L1 (nakładka „Domeny" usunięta, pinezka z odczytu mastera); korekta ADR 0039 §8 (L0 jako `<img>`, nie inline) | Zaakceptowana |
 | [0042](0042-glos-kronikarza-narracja-100-w-swiecie.md) | Głos Kronikarza: narracja wpisu karty (od pierwszej sekcji do „Mechanika jako Opowieść”) 100% w świecie, z leksyką zastępczą (scena/ryt/zapis/inskrypcja); terminy meta (karta, Fabuła, Kodeks, Scryfall, reguła, epoka karty, most) tylko w frontmatter/infoboksie/Mechanice/Źródłach; wycofany ADR 0030 §5; strażnik testowy | Zaakceptowana |
 | [0043](0043-na-mapie-oznaczenia-niosa-wylacznie-karty.md) | Na mapie oznaczenia noszą wyłącznie karty: piny/obwódki tylko kart (żadnych pinezek i obwódek haseł/planów); geografia nie jest na mapie zaznaczana; jedyny związek strony z mapą = odsyłanie do mapy zbliżonej w określonym miejscu (deep-link `?x=&y=`); walidacja: pinezka tylko `karta`, `regiony` wycofane; ADR 0015 §2.6 częściowo zastąpione | Zaakceptowana |
+| [0044](0044-karty-dwustronne-jedna-twarz-jedna-karta.md) | Karty dwustronne: jedna twarz = jedna Karta Katalogowa; druga strona nie przecieka do treści; dane twarzy bierzemy z `card_faces[]`, nie tylko z top-level snapshotu | Zaakceptowana |
 
 Spójnością rejestru (numeracja, statusy, tabela) pilnuje
 `test/rejestr-adr.test.js`.

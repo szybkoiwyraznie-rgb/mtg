@@ -5,7 +5,9 @@ Powiązania: [ADR 0003](../decisions/0003-petla-jawnego-przekazywania-i-hierarch
 [ADR 0005](../decisions/0005-szkielety-stron-i-protokol-wikilinkow.md),
 [ADR 0008](../decisions/0008-tory-obrazow-fot-kon.md),
 [ADR 0011](../decisions/0011-chudy-format-dostawy.md) (chudy format dostawy),
-[ADR 0030](../decisions/0030-karta-katalogowa-lore-first.md) (LORE-first).
+[ADR 0030](../decisions/0030-karta-katalogowa-lore-first.md) (LORE-first),
+[ADR 0044](../decisions/0044-karty-dwustronne-jedna-twarz-jedna-karta.md)
+(karty dwustronne).
 
 ## Zasada czystości treści (feedback właściciela 2026-08-31, doprecyzowanie 2026-09-03)
 
@@ -75,6 +77,24 @@ dostarczono: YYYY-MM-DD
 **Wpis jest nienaruszalny.** Błędy w treści wpisu poprawia wyłącznie
 właściciel (nową wersją); sesja może je najwyżej jawnie skomentować
 w treści strony.
+
+## Karty dwustronne / transform (ADR 0044)
+
+Jeśli materializowana karta jest fizycznie dwustronna i snapshot Scryfalla
+niesie `card_faces[]`, obowiązuje zasada **jedna twarz = jedna karta**:
+
+- wpis i strona dotyczą wyłącznie tej twarzy, którą wskazał właściciel;
+- `nazwa` we frontmatterze = nazwa tej twarzy, nie nazwa całego fizycznego
+  druku;
+- druga strona **nie jest wspominana** w renderowanej treści karty;
+- pola właściwe twarzy (`mana_cost`, `type_line`, `oracle_text`, `colors`,
+  `power`, `toughness`, `flavor_text`, `artist`, `image_uris`) bierze się z
+  dopasowanej pozycji `card_faces[]`;
+- pola wspólne (`set`, `set_name`, `rarity`, `cmc`, `legalities`, `prices`,
+  URI, identyfikatory) mogą pozostać na poziomie głównego snapshotu.
+
+Jeżeli druga strona tej samej fizycznej karty zostanie kiedyś dostarczona,
+otrzymuje **osobny** wpis archiwalny i **osobną** Kartę Katalogową.
 
 ## Plik Karty Katalogowej
 

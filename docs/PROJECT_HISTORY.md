@@ -71,7 +71,10 @@ Link-mining dobił przy okazji próg dla nowego hasła [[thraben|Thraben]];
 wikilinki dopisano w planie Innistradu i na karcie
 [[393dka-forge-devil|Forge Devil]]. Smoke UI uwzględnia już **14 kart**,
 obecność najnowszej materializacji na stronie głównej i regresję, że
-`309ISD` renderuje wyłącznie stronę **Civilized Scholar**.
+`309ISD` renderuje wyłącznie stronę **Civilized Scholar**. Na koniec
+tej korekty decyzja właściciela została zapisana także jako **ADR 0044**:
+karta dwustronna = osobne materializacje per twarz, bez przecieku drugiej
+strony do treści.
 
 **Weryfikacja końcowa:** `npm test` **166/166**, `npm run build` OK,
 `python3 tools/map-audit.py` = **0 problemów**, `node tools/wiki-stats.mjs --json`

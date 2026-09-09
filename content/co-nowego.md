@@ -19,7 +19,9 @@
   `cards/isd/47` z `card_faces`, ale sama materializacja wykorzystuje tylko
   stronę **Civilized Scholar**: frontmatter karty przyjmuje `kolory: [U]`,
   a build/testy rozumieją już dopasowanie nazwy strony do właściwej twarzy
-  snapshotu bez mieszania obu stron w jednej karcie.
+  snapshotu bez mieszania obu stron w jednej karcie. Reguła została też
+  zapisana formalnie jako **ADR 0044**: dla karty dwustronnej jedna twarz
+  = jedna Karta Katalogowa.
 - Weryfikacja po zmianach: `npm test` **166/166**, `npm run build` OK,
   `python3 tools/map-audit.py` = **0 problemów**, `node tools/wiki-stats.mjs --json`
   = **30 stron (14 kart, 5 haseł, 11 planów), średnio 100% kompletności**.
