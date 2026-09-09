@@ -13,8 +13,10 @@ powstała roadmapa i PR, a dopiero potem audyt poprzedniego scalonego PR.
 i dokumentacja czyste i spójne; weryfikacje zielone (169/169 — handoff
 PR-27 podawał 166, delta +3 to testy `widok_domyslny` z końcowych
 commitów). Znaleziska: **F1/P2** — hasło Wybrzeże Mieczy powstało
-poniżej progu 2 kart (1 karta + plan; świadome odchylenie, treść
-dobra — nie kasować, reguła bez zmian); **F2/P3** — zdublowany
+poniżej progu 2 kart (1 karta + plan); pierwotna rekomendacja audytu
+(„nie kasować”) została tego samego dnia **unieważniona przez
+właściciela** — hasło skasowane, wikilinki zdjęte, próg egzekwowany
+testem `test/prog-hasel.test.js` (L17); **F2/P3** — zdublowany
 i urwany blok wpisu PR-21 w PROJECT_HISTORY (regresja edycyjna PR-27,
 usunięta); **D1/nit** — brak pogrubienia wikilinku Oxidda w 488SOM
 (dopisane).

@@ -1,3 +1,12 @@
+## 2026-09-09 16:13 — Korekta: hasło Wybrzeże Mieczy skasowane (poniżej progu 2 kart)
+
+- Hasło **Wybrzeże Mieczy** powstało w PR-27 przy jednej karcie
+  (3CLB) zamiast wymaganych dwóch — decyzją właściciela zostało
+  **skasowane**, a wzmianki w karcie i na planie wróciły do zwykłych
+  pogrubień. Encja czeka w kolejce link-miningu na drugą kartę.
+- Próg haseł (≥2 karty) jest odtąd egzekwowany testem regresyjnym —
+  strona poniżej progu nie przejdzie suitki.
+
 ## 2026-09-09 16:05 — Gearsmith Prodigy: piętnasta karta i nowy plan Kaladesh z mapą T4
 
 - **[[610m19-gearsmith-prodigy|Gearsmith Prodigy]]** dołącza do Kodeksu
@@ -102,9 +111,11 @@
 - **Pogłębienie LORE (krok 2):** [[mephidross|Mephidross]] dostał nowe
   akapity o nimach, Moriokach, ruchomych granicach Drossu (Darkslick,
   Blackcleave, Rey-Goor), Ish Sah i skali phyrexiańskiej infekcji.
-- **Link-mining (krok 3):** nowe hasło [[wybrzeze-mieczy|Wybrzeże Mieczy]]
+- **Link-mining (krok 3):** nowe hasło **Wybrzeże Mieczy**
   (geografia, Forgotten Realms) z odsyłaczem do mapy Faerûnu; wikilinki
-  dopisane w karcie 3CLB i na stronie planu.
+  dopisane w karcie 3CLB i na stronie planu. [KOREKTA 2026-09-09:
+  hasło powstało poniżej progu 2 kart i zostało skasowane decyzją
+  właściciela — wpis wyżej.]
 - Weryfikacja po zmianach: `npm test` **166/166**, `npm run build` OK,
   `python3 tools/map-audit.py` = **0 problemów**, `node tools/wiki-stats.mjs --json`
   = **26 stron, średnio 100% kompletności**.

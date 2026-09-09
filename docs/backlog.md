@@ -131,16 +131,17 @@ Encje „o jedną kartę” od progu (skan boldów 2026-09-09):
 
 ## Link-mining Forgotten Realms (start: PR-25, aktualizacja 2026-09-09)
 
-**Wybrzeże Mieczy — wykonane 2026-09-09**,
-`content/lore/wybrzeze-mieczy.md`, klasa `geografia`, plan
-`forgotten-realms`. Próg spełniały `3clb-nefarious-imp` + plan
-`forgotten-realms`; wikilinki dopisane na obu stronach i hasło dostało
-odsyłacz do mapy Faerûnu (`?x=0.13&y=0.27`).
+**Wybrzeże Mieczy — SKASOWANE 2026-09-09 decyzją właściciela.**
+Hasło powstało w PR-27 poniżej progu (1 karta + plan zamiast
+wymaganych 2 kart); audyt PR-27 (F1) niesłusznie rekomendował
+zachowanie. Wikilinki zdjęte do pogrubień, encja wróciła do kolejki.
+Próg haseł egzekwuje odtąd test `test/prog-hasel.test.js`.
 
-Pozostałe encje „o jedną kartę” od progu:
+Encje „o jedną kartę” od progu:
 
 | Encja | Klasa (docelowa) | Karta wspominająca | Do progu brakuje |
 | --- | --- | --- | --- |
+| Wybrzeże Mieczy | geografia | 3clb-nefarious-imp (+ plan forgotten-realms) | 1 karta |
 | Avernus, Baator | geografia | 3clb-nefarious-imp | 1 karta |
 | imp (chochlik) | fauna | 3clb-nefarious-imp | 1 karta |
 | Wojna Hobgoblinów, Tiamat | wydarzenie/koncepcja | 3clb-nefarious-imp (+ plan forgotten-realms) | 1 karta |

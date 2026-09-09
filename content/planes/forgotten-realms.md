@@ -38,7 +38,7 @@ Północy po pustkowie Amn na południu.
 Mapa settingu pokrywa Faerûn w granicach oficjalnej mapy 3E
 (różnice granic względem epoki 5e są kosmetyczne):
 
-- **[[wybrzeze-mieczy|Wybrzeże Mieczy]]** — pas nadmorskich królestw
+- **Wybrzeże Mieczy** — pas nadmorskich królestw
   i miast-handli wzdłuż zachodniego brzegu Faerûnu; serce
   współczesnego settingu i miejsce akcji CLB;
 - **Morze Upadłych Gwiazd** — największy śródlądowy akwen Faerûnu,
