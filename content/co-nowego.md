@@ -1,3 +1,30 @@
+## 2026-09-09 12:10 — Civilized Scholar // Homicidal Brute: czternasta karta, pierwsza transformacja i hasło Thraben
+
+- **[[309isd-civilized-scholar|Civilized Scholar // Homicidal Brute]]**
+  dołącza do Kodeksu jako czternasta karta kolekcji i druga karta
+  [[innistrad|Innistradu]]. To zarazem **pierwsza karta transformująca**
+  w repo: havengulski uczony z Nephalii bada gniew w epoce zniknięcia
+  Avacyn, a lustro odsłania w nim nagi kształt **Homicidal Brute**.
+- **Nowe hasło [[thraben|Thraben]].** Miasto przekroczyło próg praktyczny
+  dzięki karcie [[393dka-forge-devil|Forge Devil]], nowemu
+  [[309isd-civilized-scholar|Civilized Scholar // Homicidal Brute]] i
+  stronie planu [[innistrad|Innistrad]]. Wikilinki dopisano także na
+  planie Innistradu.
+- **Mapa Innistradu** dostała nową pinezkę karty
+  `309isd-civilized-scholar` o pewności `dokladna` na **Havengulu** —
+  miejscu nazwanym wprost w przekazie sceny. Karta 393DKA zachowała
+  swoją pinezkę przy [[thraben|Thraben]], więc plan ma teraz dwa jawnie
+  rozdzielone punkty kartowe.
+- **Pierwszy lokalny snapshot transform-card.** `scryfall/309isd-civilized-scholar.json`
+  zachowuje pełną odpowiedź `layout: transform` z oboma `card_faces`, a
+  na potrzeby obecnych strażników infoboksu front uczonego został
+  jawnie znormalizowany do pól legacy (`mana_cost`, `oracle_text`,
+  `image_uris`). Frontmatter karty przyjął płaskie `kolory: [U, R]`,
+  zgodnie z dzisiejszym schematem rejestru.
+- Weryfikacja po zmianach: `npm test` **165/165**, `npm run build` OK,
+  `python3 tools/map-audit.py` = **0 problemów**, `node tools/wiki-stats.mjs --json`
+  = **30 stron (14 kart, 5 haseł, 11 planów), średnio 100% kompletności**.
+
 ## 2026-09-09 11:58 — Ruthless Invasion: trzynasta karta, nowy punkt Mirrodinu i hasło Oxidda Chain
 
 - **[[556nph-ruthless-invasion|Ruthless Invasion]]** dołącza do Kodeksu jako

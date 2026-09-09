@@ -117,7 +117,8 @@ Encje „o jedną kartę” od progu (skan boldów 2026-09-08):
 | Vulshok | spolecznosc | 556nph-ruthless-invasion (+ plan mirrodin, hasło oxidda-chain) | 1 karta |
 | Pythor | postac | 556nph-ruthless-invasion | 1 karta |
 | Oona, Glen Elendra | postac/geografia | 605shm-consign-to-dream (+ plan lorwyn) | 1 karta |
-| Thraben, Ashmouth, Kirch, Skirsdag, Mikaeusa, Katedra Avacyn, Devils' Breach | geografia | 393dka-forge-devil (+ plan innistrad) | 1 karta |
+| Ashmouth, Kirch, Skirsdag, Mikaeusa, Katedra Avacyn, Devils' Breach | geografia | 393dka-forge-devil (+ plan innistrad, hasło thraben) | 1 karta |
+| Havengul, Nephalia, Homicidal Brute, Markovowie, wilkołaki Kessigu | geografia/postac/spolecznosc | 309isd-civilized-scholar (+ plan innistrad, hasło thraben) | 1 karta |
 | Temur, Mardu, Qal Sisma, Karakyk Valley, Summer Landing, Eternal Ice, Dragon's Throat, The Scour, ainok | geografia/klany | 509ktk-highland-game (+ plan tarkir) | 1 karta |
 | Sunhome, Precinct Four | geografia | 137gpt-withstand (+ plan ravnica) | 1 karta |
 | Benalia, Wybrani, Pięć Edyktów, Tangle (Dominaria), Argoth, Sylex, Kabała, Aphetto, Daru, Tamingazin, Zhalfir, Suq'At, Sarpadyjskie Imperia, Ciemne Czasy, thrullowie, thalidzi, homaridi | geografia/spolecznosc | 40usg-expunge / plan dominaria | 1 karta |

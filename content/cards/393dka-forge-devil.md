@@ -137,7 +137,7 @@ się znacznie więcej; wtedy nie potrzebowałyby żadnych przywoływaczy.
 
 ## Na Mapie
 
-Pinezka stoi na **Thraben**, w północnej Gavony — pewność
+Pinezka stoi na [[thraben|**Thraben**]], w północnej Gavony — pewność
 **dokładna**, bo miejsce podaje wprost inskrypcja. Miasto leży na
 płaskowyżu przy ujściu rzeki **Kirch**, która spada obok niego do morza
 dwutysięcznostopowym wodospadem, i jest opasane wieloma pierścieniami
