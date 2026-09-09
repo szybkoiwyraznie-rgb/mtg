@@ -44,5 +44,8 @@ mosty 2–11 wzdłuż kanału (pozycja Ninth Bridge umowna); Ovalchase
 i Shaila's Claim poza murami; 5 wież eterowych i 3 wsie Vahd
 symbolicznie (liczba wież umowna — kanon mówi o wieżach „rozproszonych
 w prowincji” bez liczby); pozycja Bunarat za murami na SW (kanon: „wieś spalona
-przez kapitana Baralę” — bez położenia, wiki: Avishkar); linia
-brzegu; północ = góra arkusza; skala wyłączona.
+przez kapitana Baralę” — bez położenia, wiki: Avishkar); pozycja
+Aetherflux Reservoir na płycie L2 nad Kujarem (kanon: „największy
+zbiornik rafinowanego eteru, zawieszony nad panoramą” — bez
+współrzędnych, wiki: Ghirapur; dorysowany w PR-29, klocek `zbiornik`);
+linia brzegu; północ = góra arkusza; skala wyłączona.

@@ -1113,6 +1113,15 @@
    }
   },
   {
+   "typ": "zbiornik",
+   "id": "aetherflux-reservoir",
+   "x": 700,
+   "y": 255,
+   "opcje": {
+    "skala": 1.6
+   }
+  },
+  {
    "typ": "kopula",
    "id": "stacja-aradara",
    "x": 835,
@@ -1329,6 +1338,18 @@
    "y": 375,
    "opcje": {
     "fs": 12
+   }
+  },
+  {
+   "tekst": "Aetherflux Reservoir",
+   "x": 700,
+   "y": 255,
+   "opcje": {
+    "fs": 10,
+    "przyDo": [
+     700,
+     255
+    ]
    }
   },
   {

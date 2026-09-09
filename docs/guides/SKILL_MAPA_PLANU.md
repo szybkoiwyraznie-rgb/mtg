@@ -426,7 +426,10 @@ Reguły użycia:
 1. **Nowy element mapy planu = klocek ze sceny**, nie ręczny `<path>`
    (las → `las`, grzbiet → `pasmo`, rzeka → `rzeka` z `s0/s1`, szlak →
    `droga` typ `szlak` — kropki jak w line-art mapome, zatoka →
-   `lukEtykieta`).
+   `lukEtykieta`, zawieszony zbiornik eteru → `zbiornik` — kula z góry
+   z obwodem, poświatą `poswiataKolor`, pierścieniem i 4 linkami
+   nośnymi; debiut: Aetherflux Reservoir na płycie L2 Ghirapuru,
+   PR-29).
 2. **Determinizm przez `id`**: zmiana jednego obiektu nie przetasowuje
    pozostałych; regeneracja daje identyczny SVG.
 3. **Po każdym renderze**: `python3 tools/map-audit.py <plan>` — 0

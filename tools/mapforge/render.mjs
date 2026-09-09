@@ -34,6 +34,7 @@ import {
   lukEtykieta, kompas, ramka, skalaLinia, drzewo,
   dzielnica, granicaDzielnicy, granicaRegionu, mur, szczelina, rozpadlina, tkanina, gruz,
   plac, kolumny, kopula, platforma, kolowrot, most, ognisko, drzewoPoi,
+  zbiornik,
   herb, HERBY_GILDII,
 } from './bloki.mjs';
 import { prng, gladka, prosta, parsujD, pit, chaikin } from './geom.mjs';
@@ -90,6 +91,10 @@ const BLOKI_POI = {
   // kołowrót nad wodą, most nad szczeliną, ognisko-zgromadzenie, wielkie
   // drzewo-pomnik (Vitu-Ghazi).
   plac, kolumny, kopula, platforma, kolowrot, most, ognisko, drzewo: drzewoPoi,
+  // `zbiornik` — zawieszony zbiornik eteru (Aetherflux Reservoir,
+  // Kaladesh): kula widoczna z góry + linki nośne; kolor poświaty
+  // spójny z eterem atlasu.
+  zbiornik,
   // `herb` — barwna odznaka gildii (Ravnica T4): barwny dysk + biały glif.
   herb,
   // `wodospad` — strugi spadającej wody + rozbryzg (Roaring Falls);
