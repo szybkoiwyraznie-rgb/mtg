@@ -673,14 +673,21 @@ export function sprawdzHydrologie(scena, { naLadzie, wJeziorze } = {}) {
   };
   const naInnejRzece = (p, wlasny) => cieki.some((c) => c.id !== wlasny
     && odlegloscOdLamanej(p, chaikin(c.punkty, 2, false)) <= 12);
+  // Płyta L2 (scena z `nakladka`): rzeka CIĘTA krawędzią płyty — koniec
+  // lub początek na obramowaniu (±2 j.) to nie „pole”, tylko szew
+  // z planem (ADR 0039; ciągłość pilnuje test aspektu bbox).
+  const plyta = typeof scena.nakladka === 'string'
+    ? { w: scena.szerokosc ?? 0, h: scena.wysokosc ?? 0 } : null;
+  const naKrawedziPlyty = ([x, y]) => !!plyta && plyta.w > 0
+    && (x <= 2 || y <= 2 || x >= plyta.w - 2 || y >= plyta.h - 2);
   for (const c of cieki) {
     const koniec = c.punkty[c.punkty.length - 1];
-    if (!wWodzie(koniec) && !naInnejRzece(koniec, c.id)) {
+    if (!wWodzie(koniec) && !naInnejRzece(koniec, c.id) && !naKrawedziPlyty(koniec)) {
       uwagi.push(`rzeka "${c.id}" kończy się w polu (${Math.round(koniec[0])},${Math.round(koniec[1])}) — musi uchodzić do morza, jeziora albo innej rzeki`);
     }
     if (!c.zrodlo) {
       const start = c.punkty[0];
-      if (!wWodzie(start) && !naInnejRzece(start, c.id)) {
+      if (!wWodzie(start) && !naInnejRzece(start, c.id) && !naKrawedziPlyty(start)) {
         uwagi.push(`rzeka "${c.id}" bez źródła zaczyna się w polu (${Math.round(start[0])},${Math.round(start[1])}) — odpływ musi wychodzić z jeziora/morza albo z innej rzeki`);
       }
     }

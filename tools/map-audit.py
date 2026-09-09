@@ -17,6 +17,15 @@ Sprawdza podsłuchem geometrii (bez oglądania obrazu):
      hedron/lacuna/wodospad/herb) — napis nad biomem jest OK (ADR 0025), napis
      zakrywający ikonę lub grzbiet nie (audyt PR-20: „Jund" na forcie
      Hellkite's Pass, „Grixis" na paśmie Kości, „Naya" na grzbiecie).
+  8. geometria miasta w scenach mapforge (scena.json + sceny płyt L2):
+     nakładki poligonów — dzielnica×dzielnica, tkanina×tkanina,
+     las×tkanina (biom leśny nie wchodzi na domy), mur w dzielnicy
+     i mur tnący dzielnicę. Test ścisły (właściwe przecięcie krawędzi +
+     wnętrze z eps 0,5 j.) — wspólne krawędzie kaflikowania to nie błąd
+     (przebudowa Ghirapuru 2026-09-09, druga iteracja uwag właściciela).
+  9. podkłady płyt L2 (warianty bbox z podkładem .svg w map.json) —
+     te same testy SVG co plan (pkt 1-7); pinezki/kotwice map.json
+     przelicza bbox wariantu (układ złoty → lokalny płyty).
 
 Ląd = <path> z fill lądu (#e8dbb8, #eef0e6) o ≥16 punktach + wysepki
 z <circle>/<path> w <g fill="#e8dbb8">. Krzywe Beziera są spłaszczane
@@ -31,6 +40,7 @@ Użycie:
   tools/map-audit.py /abs/katalog          # katalog spoza maps/ (fixtury testów)
 Kod wyjścia: 0 = bez problemów, 1 = są problemy (do CI).
 """
+import itertools
 import json
 import math
 import re
@@ -384,11 +394,48 @@ class Mapa:
         return out
 
 
+def _sceny_miasta(kat, dane):
+    """Sceny do testu geometrii miasta (pkt 8): plan + płyty L2.
+
+    Scenę płyty wskazuje jawnie wariant.scena; bez niego — konwencja
+    <stem-podkladu>-scena.json (np. ghirapur.svg → ghirapur-scena.json).
+    """
+    sceny = []
+    if (kat / 'scena.json').exists():
+        sceny.append(kat / 'scena.json')
+    for w in dane.get('warianty', []) or []:
+        if not w.get('bbox'):
+            continue
+        pod = w.get('podklad') or ''
+        sc = w.get('scena') or (Path(pod).stem + '-scena.json'
+                                if pod.endswith('.svg') else None)
+        if sc and (kat / sc).exists() and kat / sc not in sceny:
+            sceny.append(kat / sc)
+    return sceny
+
+
 def audytuj(plan, woda_dozwolona):
-    """Audytuje wszystkie podkłady planu (podklad*.svg)."""
+    """Audytuje wszystkie podkłady planu (podklad*.svg + płyty L2)."""
     problemy, info = [], []
     kat = ROOT / 'maps' / plan
     svgi = sorted(kat.glob('podklad*.svg'))
+    mjson = kat / 'map.json'
+    dane_mapy = {}
+    if mjson.exists():
+        try:
+            dane_mapy = json.loads(mjson.read_text(encoding='utf-8'))
+        except json.JSONDecodeError:
+            problemy.append('map.json nieparsowalna')
+    # Płyta L2 (ADR 0039): wariant bbox z podkładem SVG — te same testy
+    # co plan (pkt 9).
+    for w in dane_mapy.get('warianty', []) or []:
+        if w.get('bbox') and (w.get('podklad') or '').endswith('.svg'):
+            f = kat / w['podklad']
+            if f.exists():
+                if f not in svgi:
+                    svgi.append(f)
+            else:
+                problemy.append(f"wariant L2 {w.get('id')}: brak pliku {w['podklad']}")
     if not svgi:
         return [f'brak maps/{plan}/podklad*.svg'], []
     # Strefy wodne zadeklarowane w scenie mapforge (T4) dokładamy do
@@ -413,7 +460,113 @@ def audytuj(plan, woda_dozwolona):
         p2, i2 = audytuj_podklad(mapa, svg.name, kat / 'map.json', wody)
         problemy.extend(p2)
         info.extend(i2)
+    # Pkt 8: geometria miasta w scenach (plan + płyty L2).
+    for sc in _sceny_miasta(kat, dane_mapy):
+        problemy.extend(audytuj_miasto(sc))
     return problemy, info
+
+
+def _orient(a, b, c):
+    v = (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0])
+    return 0 if abs(v) < 1e-9 else (1 if v > 0 else -1)
+
+
+def _proper(p1, p2, p3, p4):
+    """Właściwe przecięcie odcinków (ścisłe rozejście obu par końców)."""
+    return (_orient(p1, p2, p3) * _orient(p1, p2, p4) < 0
+            and _orient(p3, p4, p1) * _orient(p3, p4, p2) < 0)
+
+
+def _odl_od_obrysu(pt, pg):
+    best = float('inf')
+    for i in range(len(pg)):
+        ax, ay = pg[i]
+        bx, by = pg[(i + 1) % len(pg)]
+        dx, dy = bx - ax, by - ay
+        t = max(0.0, min(1.0, ((pt[0] - ax) * dx + (pt[1] - ay) * dy)
+                             / (dx * dx + dy * dy or 1)))
+        best = min(best, math.hypot(pt[0] - ax - dx * t, pt[1] - ay - dy * t))
+    return best
+
+
+def _poligon(ob):
+    if ob.get('punkty'):
+        return [tuple(p) for p in ob['punkty']]
+    if ob.get('cx') is not None:           # plama kołowa → 24-kąt
+        cx, cy = ob['cx'], ob['cy']
+        rx = ob.get('rx', ob.get('r', 0))
+        ry = ob.get('ry', ob.get('r', 0))
+        return [(cx + rx * math.cos(a), cy + ry * math.sin(a))
+                for a in (i / 24 * 2 * math.pi for i in range(24))]
+    return []
+
+
+def _nakladka(a, b):
+    """Ścisła nakładka poligonów: (wierzchołki we wnętrzu, przecięcia).
+
+    Wierzchołek liczy się dopiero >0,5 j. od obrysu, przecięcie — tylko
+    właściwe. Wspólne krawędzie i styki wierzchołkowe kaflikowania
+    dzielnic to nie błąd."""
+    w = sum(1 for p in a if pit(p, b) and _odl_od_obrysu(p, b) > 0.5)
+    w += sum(1 for p in b if pit(p, a) and _odl_od_obrysu(p, a) > 0.5)
+    c = sum(1 for i in range(len(a)) for j in range(len(b))
+            if _proper(a[i], a[(i + 1) % len(a)], b[j], b[(j + 1) % len(b)]))
+    return w, c
+
+
+def audytuj_miasto(sciezka):
+    """Pkt 8: nakładki poligonów miasta w scenie mapforge.
+
+    Dzielnica×dzielnica, tkanina×tkanina, las×tkanina, mur w dzielnicy,
+    mur tnący dzielnicę. Bramy leżą na linii muru — pilnuje ich test
+    murów, tu nie są sprawdzane. Sceny bez dzielnic — pusty wynik.
+    """
+    problemy = []
+    try:
+        s = json.loads(sciezka.read_text(encoding='utf-8'))
+    except json.JSONDecodeError:
+        return [f'{sciezka.name}: scena.json nieparsowalna']
+    if not s.get('dzielnice'):
+        return []
+    nazwa = sciezka.name
+    dz = [(d.get('id', '?'), _poligon(d)) for d in s['dzielnice']]
+    dz = [(i, p) for i, p in dz if len(p) > 2]
+    for (ia, pa), (ib, pb) in itertools.combinations(dz, 2):
+        w, c = _nakladka(pa, pb)
+        if w or c:
+            problemy.append(f'{nazwa}: NAKŁADKA dzielnice {ia}×{ib} '
+                            f'(wnętrze {w}, przecięć {c})')
+    tk = [(t.get('id', '?'), _poligon(t)) for t in s.get('tkaniny', [])]
+    tk = [(i, p) for i, p in tk if len(p) > 2]
+    for (ia, pa), (ib, pb) in itertools.combinations(tk, 2):
+        w, c = _nakladka(pa, pb)
+        if w or c:
+            problemy.append(f'{nazwa}: NAKŁADKA tkaniny {ia}×{ib} '
+                            f'(wnętrze {w}, przecięć {c})')
+    for l in s.get('las', []):
+        pl = _poligon(l)
+        if len(pl) < 3:
+            continue
+        for it, pt_ in tk:
+            w, c = _nakladka(pl, pt_)
+            if w or c:
+                problemy.append(f'{nazwa}: LAS NA DOMACH: {l.get("id", "?")}×{it} '
+                                f'(wnętrze {w}, przecięć {c})')
+    for m in s.get('mury', []):
+        pm = [tuple(p) for p in m.get('punkty', [])]
+        if len(pm) < 2:
+            continue
+        for ide, pd in dz:
+            w = sum(1 for p in pm if pit(p, pd) and _odl_od_obrysu(p, pd) > 0.5)
+            c = sum(1 for i in range(len(pm) - 1) for j in range(len(pd))
+                    if _proper(pm[i], pm[i + 1], pd[j], pd[(j + 1) % len(pd)]))
+            if w:
+                problemy.append(f'{nazwa}: MUR W DZIELNICY: {m.get("id", "?")} '
+                                f'ma {w} wierzch. w {ide}')
+            if c:
+                problemy.append(f'{nazwa}: MUR TNIE DZIELNICĘ: {m.get("id", "?")}×{ide} '
+                                f'(przecięć {c})')
+    return problemy
 
 
 def _etykieta_box(txt, x, y, fs, rot=0.0):

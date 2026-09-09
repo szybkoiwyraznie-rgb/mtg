@@ -1,0 +1,164 @@
+{
+ "plan": "kaladesh",
+ "tytul": "Kaladesh",
+ "wariant": "T4",
+ "podklad": "podklad.svg",
+ "wymiary": {
+  "szerokosc": 16000,
+  "wysokosc": 11000
+ },
+ "widok_domyslny": {
+  "x": 0.65625,
+  "y": 0.6182,
+  "zoom": 18
+ },
+ "zrodlo": {
+  "url": "https://mtg.wiki/page/Avishkar",
+  "url2": "https://mtg.wiki/page/Ghirapur",
+  "tytul": "Kaladesh — rekonstrukcja układu planu wg kanonu tekstowego (MTG Wiki: Avishkar, Ghirapur — za „The Art of Magic: The Gathering — Kaladesh”): trzy rzeki i zlewisko, Peema, Vahd, Lathnu/Devra, dzielnice Ghirapuru",
+  "autor": "MTG Lore Codex (praca własna — scena mapforge maps/kaladesh/scena.json z generatora tools/mapforge/kaladesh-plan-t4.py + detal L2 maps/kaladesh/ghirapur-scena.json z tools/mapforge/kaladesh-ghirapur-l2.py)",
+  "licencja": "praca własna na kanonie tekstowym; glify gór mapome CC-BY-4.0 (ADR 0020)",
+  "pobrano": "2026-09-09",
+  "notka": "T4 (rekonstrukcja kanoniczna): kanon nie podaje mapy planu ani współrzędnych — prawdziwe sąsiedztwa i przebiegi rzek, umowne kształty i odległości. LOD (ADR 0039): lekki plan (Ghirapur tylko plamą z nazwą) + płyta detalu miasta od progu 6 (decyzja właściciela 2026-09-09, ścieżka Dominarii). Morze bez nazwy (kanon: „morze”, „odległe wybrzeże”). Skala wyłączona."
+ },
+ "rekonstrukcja": true,
+ "epoka": "Kaladesh za Konsulatu, doba KLD/AER (po spaleniu Kuźni Konsulów przez Chandrę, przed buntem eterowym)",
+ "kotwice": [
+  {
+   "nazwa": "Ghirapur",
+   "x": 0.65625,
+   "y": 0.6182,
+   "typ": "miasto",
+   "pozycja_zrodlo": "kanon: stolica na zlewisku Vinday–Suramal (mtg.wiki: Ghirapur, Avishkar); pozycja środka arkusza = wybór rekonstrukcji (ognisko mapy, ADR 0045)",
+   "notka": "Indigo City; Kanał Dukhara, Jedenastu Mostów (First Bridge najpołudniejszy), Iglica Eteru, stacja Aradara, Bastion, Akhara, Bomat, Embraal, Ovalchase, Greenwheel, Kujar, Freejam, Aleja Olbrzymów, Weldfast, Przykrycie"
+  },
+  {
+   "nazwa": "Iglica Eteru",
+   "x": 0.6569,
+   "y": 0.6129,
+   "typ": "iglica",
+   "pozycja_zrodlo": "kanon: centralna wieża zbiorcza i serce administracyjne Ghirapuru (mtg.wiki: Ghirapur); środek dzielnicy Jedenastu Mostów = wybór rekonstrukcji",
+   "notka": "Aether Spire — główne źródło rafinowanego eteru i symbol władzy Konsulatu; wieże prowincjonalne (5) tłoczą eter do niej"
+  },
+  {
+   "nazwa": "Peema",
+   "x": 0.2813,
+   "y": 0.4545,
+   "typ": "las",
+   "pozycja_zrodlo": "kanon: dziki las na zachód od Ghirapuru, Vinday płynie przez jego dzicz (mtg.wiki: Avishkar); kształt i rozciągłość = wybór rekonstrukcji",
+   "notka": "dziesiątki tysięcy akrów puszczy; największe skupisko elfów; ścieżka holownicza wzdłuż południowego brzegu Vindaya"
+  },
+  {
+   "nazwa": "Vahd",
+   "x": 0.8688,
+   "y": 0.3136,
+   "typ": "kraina",
+   "pozycja_zrodlo": "kanon: Złote Stopnie — pola i wsie, ośrodek budowy i prób sterowców; Mapani jedną z granic (mtg.wiki: Avishkar); pozycja NE = wybór rekonstrukcji",
+   "notka": "wsie, przystań sterowców, trakt ze wschodniej bramy Ghirapuru"
+  },
+  {
+   "nazwa": "Lathnu",
+   "x": 0.5188,
+   "y": 0.1727,
+   "typ": "osada",
+   "pozycja_zrodlo": "kanon: wysunięta placówka na północnym skraju cywilizacji, pod urwiskiem Devra (mtg.wiki: Avishkar); pozycja = wybór rekonstrukcji",
+   "notka": "górnicy i inżynierowie; trakt z północnej bramy; za miastem Wielka Wspinka (lód i śmierć)"
+  },
+  {
+   "nazwa": "Ujście Vasavati",
+   "x": 0.6781,
+   "y": 0.8455,
+   "typ": "miejsce",
+   "pozycja_zrodlo": "kanon: Vasavati ze zlewiska niesie handel do odległego wybrzeża (mtg.wiki: Avishkar, Ghirapur); linia brzegu = wybór rekonstrukcji; morze bez nazwy w kanonie",
+   "notka": "główna arteria eksportu Ghirapuru; Bomat obsługuje ruch rzeczno-morski"
+  },
+  {
+   "nazwa": "Vinday",
+   "x": 0.3438,
+   "y": 0.5364,
+   "typ": "rzeka",
+   "pozycja_zrodlo": "kanon: płynie przez dzicz Peemy do Ghirapuru od zachodu; Mapani największym dopływem (mtg.wiki: Avishkar); przebieg = wybór rekonstrukcji",
+   "notka": "rzeka zachodnia; nad nią Aleja Olbrzymów u bram miasta"
+  }
+ ],
+ "pinezki": [
+  {
+   "karta": "610m19-gearsmith-prodigy",
+   "x": 0.6483,
+   "y": 0.625,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła: „słoneczny taras miejskich ogrodów” w Ghirapurze — kanon nie nazywa konkretnego tarasu; pinezka w sercu Greenwheel (dzielnica ogrodów, kopuł i „Zoo” konstruktów), gdzie młodzi rzemieślnicy testują swoje dzieła. Decyzja wiążąca z roadmapy PR-28: region (okolice Greenwheel)."
+  }
+ ],
+ "scena": "scena.json",
+ "generator": "tools/mapforge/kaladesh-plan-t4.py (plan) + tools/mapforge/kaladesh-ghirapur-l2.py (detal L2)",
+ "silnik": "mapforge (ADR 0018/0019/0020/0022/0023/0045); styl atlas; klocki miejskie Ravniki (dzielnice, mury, tkanina, mosty, kopuły); skala wyłączona (brak odległości w kanonie); pierwsza mapa z widok_domyslny (ADR 0045)",
+ "zrodlo_fanmapa": null,
+ "otwarte_na_kolejne_przejscia": [
+  "DODANE 2026-09-09 (PR-28): mapa T4 epoki KLD/AER. Umowne: kształty i odległości, pozycje mostów 2–11 (w tym Ninth Bridge), Ovalchase i Shaila's Claim poza murami, pozycje wież eterowych i wsi Vahd, linia brzegu. Kolejne karty Kaladeshu (KLD/AER i późniejsze ery przed przemianowaniem w Avishkar) pinują na tej mapie; era Avishkar/Omenpathów (DFT) = osobna mapa na żądanie karty.",
+  "PRZESKALOWANE 2026-09-09 (uwaga właściciela: miasto ~0,1% planu): arkusz 16000×11000 (~63× powierzchni); Ghirapur geometrycznie bez zmian, samo przesunięcie +(9210,6000) przy tych samych ziarnach PRNG; widok domyślny zoom 18 na zlewisko; K_MAX silnika 14→32. Oddalenie: miasto kropką z nazwą; Peema/Vahd widoczne przy ficie (duze), Lathnu/Devra/rzeki fs 17.",
+  "PRZEBUDOWA LOD 2026-09-09 (druga iteracja uwag właściciela): plan jest lekki (1,1 MB, Ghirapur tylko plamą z nazwą), detal miasta w nakładce L2 (bbox prog 6, wzorzec Dominarii); miasto reprojektowane — kaflikowanie dzielnic (zero nachodzeń), mury poza obrysem, las łęgowy osobnym kaflikiem, Aleja Olbrzymów z powrotem u bram. Stary generator jednoplikowy usunięty."
+ ],
+ "warianty": [
+  {
+   "id": "plan",
+   "domyslny": true,
+   "tytul": "T4 · Plan prowincji",
+   "wariant": "T4",
+   "podklad": "podklad.svg",
+   "wymiary": {
+    "szerokosc": 16000,
+    "wysokosc": 11000
+   },
+   "kalibracja": {
+    "sx": 1,
+    "sy": 1,
+    "ox": 0,
+    "oy": 0
+   },
+   "zrodlo": {
+    "url": "https://mtg.wiki/page/Avishkar",
+    "url2": "https://mtg.wiki/page/Ghirapur",
+    "tytul": "Kaladesh — lekki plan prowincji (LOD0): trzy rzeki i zlewisko, Peema, Vahd, Lathnu/Devra; Ghirapur tylko plamą z nazwą",
+    "autor": "MTG Lore Codex (praca własna — scena mapforge maps/kaladesh/scena.json z generatora tools/mapforge/kaladesh-plan-t4.py)",
+    "licencja": "praca własna na kanonie tekstowym; glify gór mapome CC-BY-4.0 (ADR 0020)",
+    "pobrano": "2026-09-09",
+    "notka": "Układ ZŁOTY współrzędnych pinezek i kotwic. Detal miasta w nakładce L2 (wariant ghirapur, ADR 0039)."
+   }
+  },
+  {
+   "id": "ghirapur",
+   "tytul": "Ghirapur i okolice (L2)",
+   "wariant": "T4",
+   "podklad": "ghirapur.svg",
+   "wymiary": {
+    "szerokosc": 1400,
+    "wysokosc": 740
+   },
+   "etykiety": false,
+   "bbox": [
+    0.608125,
+    0.58,
+    0.695625,
+    0.6472727
+   ],
+   "prog": 6,
+   "scena": "ghirapur-scena.json",
+   "kalibracja": {
+    "sx": 11.428571428571425,
+    "sy": 14.864870891163859,
+    "ox": -6.949999999999998,
+    "oy": -8.621625116875038
+   },
+   "zrodlo": {
+    "url": "https://mtg.wiki/page/Ghirapur",
+    "tytul": "Ghirapur i okolice — płyta detalu L2 (kaflikowane dzielnice, mury, las łęgowy, Aleja Olbrzymów)",
+    "autor": "MTG Lore Codex (praca własna — scena mapforge maps/kaladesh/ghirapur-scena.json z generatora tools/mapforge/kaladesh-ghirapur-l2.py)",
+    "licencja": "praca własna na kanonie tekstowym; glify gór mapome CC-BY-4.0 (ADR 0020)",
+    "pobrano": "2026-09-09",
+    "notka": "Nakładka bbox (prog 6) na układzie złotym planu; kalibracja = odwrotność bbox (waliduje test ADR 0035)."
+   }
+  }
+ ],
+ "autor": "MTG Lore Codex (praca własna — scena mapforge maps/kaladesh/scena.json z generatora tools/mapforge/kaladesh-plan-t4.py, detal L2 maps/kaladesh/ghirapur-scena.json z tools/mapforge/kaladesh-ghirapur-l2.py)"
+}

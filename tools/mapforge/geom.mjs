@@ -222,7 +222,7 @@ export function kierunekNa(pts, t) {
  * Zwraca obiekt { d, lewo, prawo } (polilinie krawędzi, przydatne
  * przy ujściach i zbiegach dopływów).
  */
-export function wstega(pts, s0 = 3, s1 = 9) {
+export function wstega(pts, s0 = 3, s1 = 9, { taper = true } = {}) {
   const g = chaikin(pts, 2, false);
   const n = g.length;
   const lewo = [];
@@ -237,10 +237,12 @@ export function wstega(pts, s0 = 3, s1 = 9) {
     // Stożek: szerokość ZWĘŻA SIĘ DO PUNKTU na obu końcach (kształt półksiężyca
     // od źródła do ujścia) — bez tego rzeka urywa się płasko („abberacja").
     // s0/s1 to szerokość nominalna w środku; końce → ~0.
+    // `taper:false` — rzeka CIĘTA krawędzią płyty L2 (ADR 0039): liniowa
+    // szerokość s0→s1 bez stożka, płaskie ucięcie dokładnie w szwie.
     const t = i / Math.max(1, n - 1);
     const srodek = s0 + ((s1 - s0) * t);
     const stożek = Math.sin(Math.PI * Math.min(1, Math.max(0, t)));   // 0..1..0
-    const s = Math.max(0.2, srodek * (0.12 + 0.88 * stożek));
+    const s = taper ? Math.max(0.2, srodek * (0.12 + 0.88 * stożek)) : Math.max(0.2, srodek);
     lewo.push([g[i][0] - dy * s, g[i][1] + dx * s]);
     prawo.push([g[i][0] + dy * s, g[i][1] - dx * s]);
   }

@@ -131,21 +131,36 @@ Encje „o jedną kartę” od progu (skan boldów 2026-09-09):
 
 ## Link-mining Forgotten Realms (start: PR-25, aktualizacja 2026-09-09)
 
-**Wybrzeże Mieczy — wykonane 2026-09-09**,
-`content/lore/wybrzeze-mieczy.md`, klasa `geografia`, plan
-`forgotten-realms`. Próg spełniały `3clb-nefarious-imp` + plan
-`forgotten-realms`; wikilinki dopisane na obu stronach i hasło dostało
-odsyłacz do mapy Faerûnu (`?x=0.13&y=0.27`).
+**Wybrzeże Mieczy — SKASOWANE 2026-09-09 decyzją właściciela.**
+Hasło powstało w PR-27 poniżej progu (1 karta + plan zamiast
+wymaganych 2 kart); audyt PR-27 (F1) niesłusznie rekomendował
+zachowanie. Wikilinki zdjęte do pogrubień, encja wróciła do kolejki.
+Próg haseł egzekwuje odtąd test `test/prog-hasel.test.js`.
 
-Pozostałe encje „o jedną kartę” od progu:
+Encje „o jedną kartę” od progu:
 
 | Encja | Klasa (docelowa) | Karta wspominająca | Do progu brakuje |
 | --- | --- | --- | --- |
+| Wybrzeże Mieczy | geografia | 3clb-nefarious-imp (+ plan forgotten-realms) | 1 karta |
 | Avernus, Baator | geografia | 3clb-nefarious-imp | 1 karta |
 | imp (chochlik) | fauna | 3clb-nefarious-imp | 1 karta |
 | Wojna Hobgoblinów, Tiamat | wydarzenie/koncepcja | 3clb-nefarious-imp (+ plan forgotten-realms) | 1 karta |
 | Faerûn, Abeir-Toril, Morze Upadłych Gwiazd, Moonshaes, Nelanther, Amn, Luruar, Jezioro Pary, Królestwo Wysokie, Morze Bezludne | geografia | — (plan forgotten-realms) | licznik od kart, nie planów |
 | Mystra, Selûne, Lathander, Ilmater, Tempus, Tkanina Magii, Czas Kłopotów | postac/koncepcja | — (plan forgotten-realms) | licznik od kart, nie planów |
+
+## Link-mining Kaladesh (start: PR-28, 2026-09-09)
+
+Pierwsza karta planu (`610m19-gearsmith-prodigy`) — próg 2 kart
+niespełniony, nowych haseł brak. Encje „o jedną kartę” od progu:
+
+| Encja | Klasa (docelowa) | Karta wspominająca | Do progu brakuje |
+| --- | --- | --- | --- |
+| Ghirapur | geografia | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
+| Konsulat, mistrzowie Konsulatu | spolecznosc | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
+| Greenwheel, „Zoo” konstruktów | geografia | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
+| eter, rdzeń eterowy | koncepcja | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
+| Targ Wynalazców | wydarzenie | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
+| Iglica Eteru, Peema, Vahd, Lathnu, Vinday, Vasavati | geografia | — (plan kaladesh) | licznik od kart, nie planów |
 
 ## Mapa Zendikaru — WYKONANA (ADR 0012)
 

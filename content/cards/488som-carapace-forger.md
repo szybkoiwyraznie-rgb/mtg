@@ -133,7 +133,7 @@ umieścić przy największej osadzie Viridian, blisko Drzewa Opowieści.
 Mapa niesie resztę kontekstu: **Rey-Goor** na skraju lasu — kierunek,
 z którego przez bagna płynie zaraza — **Mephidross** z Ish Sah po
 drugiej stronie tarczy, **Copperline Gorge** oddzielający las od gór
-[[oxidda-chain|Oxidda Chain]] i **Radix** w środku lasu, święte miejsce elfów nad zieloną
+**[[oxidda-chain|Oxidda Chain]]** i **Radix** w środku lasu, święte miejsce elfów nad zieloną
 lacuną. Sama mapa jest odtworzeniem ze źródeł zapisu (Mirrodin znany
 jest z opisu, nie z pomiaru), a pozycje wewnątrz regionów są
 relacyjne — stąd pewność „region”, nie „dokładna”.

@@ -120,7 +120,7 @@ for (const start of ['t1', 't4']) {
       const delta = granica === 'max' ? -100 : 100;
       m.kolko(delta, 70);
       const przed = m.widok();
-      blisko(przed.zlota, granica === 'max' ? 14 : 0.4, 1e-9);
+      blisko(przed.zlota, granica === 'max' ? 32 : 0.4, 1e-9);
       m.przelacz(start === 't1' ? 't4' : 't1');
       tenSamWidok(przed, m.widok());
       // Kolejne zdarzenie na granicy też nie może nagle przyciąć nowego k.
@@ -187,12 +187,22 @@ test('mapa: stary model bez wariantów nadal działa z tożsamościową kalibrac
   const warianty = wariantyMapy({ tytul: 'Jedna mapa', podklad: 'podklad.svg', wariant: 'T4',
     wymiary: { szerokosc: 2000, wysokosc: 1400 } });
   const m = zamontowana({ start: 'podklad', warianty });
-  m.kolko(-100, 70); blisko(m.widok().k, 14);
+  m.kolko(-100, 70); blisko(m.widok().k, 32);
   m.kolko(100, 140); blisko(m.widok().k, 0.4);
   m.okno.emit('keydown', { key: 'Escape' });
   blisko(m.widok().k, 1);
 });
 
+
+test('mapa: głęboki zoom ogniska T4 — widok 18 działa, clamp dopiero na 32', () => {
+  const warianty = wariantyMapy({ tytul: 'Kaladesh', podklad: 'podklad.svg', wariant: 'T4',
+    wymiary: { szerokosc: 16000, wysokosc: 11000 } });
+  const m = zamontowana({ start: 'podklad', warianty,
+    domyslnyWidok: { x: 0.65625, y: 0.6182, zoom: 18 } });
+  blisko(m.widok().k, 18);
+  m.kolko(-100, 70); blisko(m.widok().k, 32);
+  m.kolko(100, 140); blisko(m.widok().k, 0.4);
+});
 
 test('mapa: na małym ekranie podpisy szczegółów czekają na zoom (QA A4)', () => {
   const m = zamontowana({ start: 't4', szerokosc: 356, wysokosc: 272 });

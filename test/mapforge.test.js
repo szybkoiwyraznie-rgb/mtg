@@ -61,6 +61,16 @@ test('mapforge: wstega szerokość rośnie liniowo (rzeka)', () => {
   assert.ok(szerNa(0) < 2.5 && szerNa(lewo.length - 1) < 2.5, 'końce zwężone do punktu');
 });
 
+test('mapforge: wstega taper:false — liniowa szerokość bez stożka (rzeka cięta krawędzią L2)', () => {
+  const { lewo, prawo } = wstega([[0, 0], [50, 0], [100, 0]], 2, 8, { taper: false });
+  const szerNa = (i) => Math.hypot(prawo[i][0] - lewo[i][0], prawo[i][1] - lewo[i][1]);
+  const n = lewo.length;
+  assert.ok(Math.abs(szerNa(0) - 4) < 0.01, `start = 2·s0, jest ${szerNa(0)}`);
+  assert.ok(Math.abs(szerNa(n - 1) - 16) < 0.01, `koniec = 2·s1, jest ${szerNa(n - 1)}`);
+  const srd = Math.floor(n / 2);
+  assert.ok(Math.abs(szerNa(srd) - 10) < 1.5, `środek ≈ s0+s1, jest ${szerNa(srd)}`);
+});
+
 test('mapforge: chaikin/gladka produkują path d', () => {
   const pts = [[0, 0], [50, 30], [100, 0], [150, 40]];
   assert.ok(gladka(pts).startsWith('M 0,0 C '));
@@ -400,10 +410,34 @@ test('mapforge: hydrologia — rzeka nie kończy się w polu (pkt 4; sprawdzWiaz
   assert.ok(uwagi.some((u) => u.includes('"znikad" bez źródła zaczyna się w polu')), 'odpływ znikąd');
   assert.equal(uwagi.length, 3);
   // Sceny repo z rzekami: 0 uwag (Tarkir po recenzji, Zendikar po dociągnięciu rzeki Bala Ged do Umung).
-  for (const plan of ['tarkir', 'zendikar', 'alara']) {
+  for (const plan of ['tarkir', 'zendikar', 'alara', 'kaladesh']) {
     const scena = JSON.parse(fs.readFileSync(`maps/${plan}/scena.json`, 'utf8'));
     assert.deepEqual(sprawdzHydrologie(scena), [], `hydrologia ${plan}`);
   }
+  // Płyta L2 Kaladeshu: rzeki cięte krawędzią płyty (szew z planem) — 0 uwag.
+  const l2 = JSON.parse(fs.readFileSync('maps/kaladesh/ghirapur-scena.json', 'utf8'));
+  assert.deepEqual(sprawdzHydrologie(l2), [], 'hydrologia kaladesh L2');
+});
+
+test('mapforge: hydrologia — krawędź płyty L2 to szew, nie „pole” (ADR 0039)', async () => {
+  const { sprawdzHydrologie } = await import('../tools/mapforge/render.mjs');
+  const lad = [{ id: 'l', punkty: [[-50, -50], [450, -50], [450, 350], [-50, 350]] }];
+  // rzeka od krawędzi do krawędzi płyty 400×300 — OK (cięta szwem)
+  const szew = { nakladka: 'scena.json', szerokosc: 400, wysokosc: 300,
+    lądy: lad, rzeki: [
+      { id: 'przelot', punkty: [[0, 150], [200, 150], [400, 150]] },
+      { id: 'doplyw-szew', punkty: [[200, 0], [200, 150]], opcje: { zrodlo: false } },
+    ] };
+  assert.deepEqual(sprawdzHydrologie(szew), []);
+  // ta sama geometria BEZ pola nakladka (pełna mapa) — początek/koniec w polu to błąd
+  const pelna = { szerokosc: 400, wysokosc: 300, lądy: lad, rzeki: szew.rzeki };
+  const uwagi = sprawdzHydrologie(pelna);
+  assert.ok(uwagi.some((u) => u.includes('"przelot" kończy się w polu')), 'koniec w polu bez płyty');
+  assert.ok(uwagi.some((u) => u.includes('"doplyw-szew" bez źródła zaczyna się w polu')), 'początek w polu bez płyty');
+  // rzeka kończąca się W ŚRODKU płyty — nadal błąd (zwolnienie tylko dla krawędzi)
+  const srodek = { nakladka: 'scena.json', szerokosc: 400, wysokosc: 300, lądy: lad,
+    rzeki: [{ id: 'urwana', punkty: [[0, 150], [200, 150], [250, 150]] }] };
+  assert.ok(sprawdzHydrologie(srodek).some((u) => u.includes('"urwana" kończy się w polu')), 'środek płyty to pole');
 });
 
 

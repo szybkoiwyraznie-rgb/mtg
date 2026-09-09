@@ -4,6 +4,73 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-09 — PR-28 cd.: przeskalowanie mapy Kaladeshu do skali planu (uwagi właściciela)
+
+Kontynuacja sesji `arena/01a08651-mtg` (ten sam PR): dwie uwagi
+właściciela do mapy T4 — (1) miasto ma zajmować ~0,1% powierzchni
+planu (było ~20%), zoom domyślny na Ghirapur, po oddaleniu miasto
+kropką z nazwą; (2) zero kolizji wizualnych + wykrywanie kolizji.
+
+**Przeskalowanie:** arkusz 2000×1400 → **16000×11000** (~63×
+powierzchni); Ghirapur geometrycznie bez zmian (samo przesunięcie
++(9210,6000) przy tych samych ziarnach PRNG — determinizm mapforge);
+ognisko na zlewisku (10500,6800), `widok_domyslny` zoom **18**;
+K_MAX silnika 14 → **32** (zoom `k=1` ≈ fit-width niezależnie od
+rozmiaru sceny, więc 14 nie wystarczało na wykadrowanie miasta) +
+test regresyjny głębokiego zoomu. Prowincja od nowa w skali planu:
+Peema/Vahd jako tytuły `duze` (zawsze widoczne), Lathnu/Devra/rzeki
+fs 17 (od pełnego widoku), stepy centralny i wschodni na pustkowiach,
+5 wież eterowych, osady rodzajowe, ujście Vasavati w wygładzonej zatoce. Pinezka 610M19 przeliczona na nowe wymiary (Greenwheel).
+
+**Kolizje:** wcięcia tkanin od murów (prześwit ≥12 j.), Aleja
+Olbrzymów na zachód z prześwitem od murów i Vindaya, Przykrycie
+odsunięte od muru W, Cowl −15 j. od mostów; `map-audit` 0 problemów
++ recenzja wizualna cropów 1:1 (miasto, zlewisko, ujście, regiony)
+i całego arkusza. Resvg panikuje na małych viewBoxach (obejście QA:
+render całości w zoomie 1.0 + crop PNG przez pngjs).
+
+Stan: **testy fast 171/171**, audyt mapy 0 problemów.
+
+## 2026-09-09 — PR-28: audyt scalonego PR-27, mapa Kaladeshu T4 i Gearsmith Prodigy
+
+Sesja `arena/01a08651-mtg`, PR #28. Zgodnie z `AGENTS.md` najpierw
+powstała roadmapa i PR, a dopiero potem audyt poprzedniego scalonego PR.
+
+**Audyt PR-27** (`docs/audits/AUDYT_2026-09-09-PR27.md`): kod, testy
+i dokumentacja czyste i spójne; weryfikacje zielone (169/169 — handoff
+PR-27 podawał 166, delta +3 to testy `widok_domyslny` z końcowych
+commitów). Znaleziska: **F1/P2** — hasło Wybrzeże Mieczy powstało
+poniżej progu 2 kart (1 karta + plan); pierwotna rekomendacja audytu
+(„nie kasować”) została tego samego dnia **unieważniona przez
+właściciela** — hasło skasowane, wikilinki zdjęte, próg egzekwowany
+testem `test/prog-hasel.test.js` (L17); **F2/P3** — zdublowany
+i urwany blok wpisu PR-21 w PROJECT_HISTORY (regresja edycyjna PR-27,
+usunięta); **D1/nit** — brak pogrubienia wikilinku Oxidda w 488SOM
+(dopisane).
+
+**Mapa Kaladeshu (T4)** w `maps/kaladesh/` (generator
+`tools/mapforge/kaladesh-scena-t4.py`): jedna mapa całego planu —
+schematyczna prowincja (Vinday przez Peemę, Suramal, zlewisko,
+Vasavati do bezimiennego morza, Mapani, Vahd, Lathnu/Devra, Bunarat,
+3 wieże eterowe) + gęsty Ghirapur (Kanał Dukhara, 11 mostów, Iglica
+Eteru, stacja Aradara, Bastion, Akhara, 6 dzielnic, mury z bramami,
+Ovalchase, Shaila's Claim). Pierwsza mapa z `widok_domyslny` (ognisko
+Ghirapur, ADR 0045). Recenzja wizualna całości i cropów; `map-audit`
+0 problemów. Strona planu `content/planes/kaladesh.md` (Konsulat,
+KLD/AER).
+
+**Materializacja 610M19 · Gearsmith Prodigy · M19 · Kaladesh**
+(M19 #57): wpis verbatim, snapshot, Karta Katalogowa LORE-first
+z pinezką `region` w Greenwheel, link zwrotny na stronie planu,
+nowy tag `konstrukty`. Incydent procesowy: pełny tekst Fabuły nie
+zachował się w repo (sesja PR-27 streściła dostawę w planie) —
+właściciel wkleił go ponownie; lekcja **L16** (wpis verbatim
+natychmiast, przed researchem) + dopisek w SZKIELET_KARTY.
+
+Stan: **169/169 testów**, build **32 strony (15 kart, 5 haseł,
+12 planów)**, kompletność 100%. Handoff:
+`docs/setup/HANDOFF_2026-09-09-pr28.md`.
+
 ## 2026-09-09 — PR-27: audyt scalonego PR-25, Forgotten Realms, Ruthless Invasion, Civilized Scholar i Thraben
 
 Sesja `arena/01a08327-mtg`, PR #27. Zgodnie z `AGENTS.md` najpierw
@@ -280,18 +347,6 @@ Implementacja czeka na akceptację kierunku i pliki do rzeczywistego QA,
 nie na automatyczne uznanie fanowskiej kartografii za kanon.
 
 ## 2026-09-06 — sesja PR-21: audyt PR-20 z pierwszą recenzją wizualną map + Pętla Jakości
-
-Sesja `arena/01a0770f-mtg` (PR #21, scalony 2026-09-07 20:47,
-squash `6bf2fba`). Tryb: „Kontynuuj zgodnie
-z AGENTS” — bez dostawy materializacji. **Pierwsza sesja z oglądem
-obrazów przez agenta** (rastry map przez resvg poza repo).
-
-1. **Audyt PR-20** (`docs/audits/AUDYT_2026-09-06-PR20.md`): A1–A4
-   poprawne i kompletne, L9 zastosowana; recenzja wizualna Alary,
-   Zendikaru, Midgaru, Ravniki — Alara v2 dobra co do topologii, ale
-   trzy tytuły regionów na obiektach (W1–W3); B1 brak wpisu PR-20
-   w PROJECT_HISTORY/ROADMAP; B2 luka `map-audit` (tytuł↔ikona).
-2. **Naprawy:** W1–W3 — tytuły Jund/Grixis/Naya przeną map + Pętla Jakości
 
 Sesja `arena/01a0770f-mtg` (PR #21, scalony 2026-09-07 20:47,
 squash `6bf2fba`). Tryb: „Kontynuuj zgodnie

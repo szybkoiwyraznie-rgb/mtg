@@ -321,3 +321,38 @@ akumulacją przebiegów. Test regresyjny w `test/artefakt.test.js`
 (stale plik w katalogu musi zniknąć). Jeśli kiedyś zbuduje się do
 katalogu z czymś cennym poza artefaktami — najpierw przenieś to, potem
 buduj.
+
+## L16 (2026-09-09) — dostawę karty zapisuj verbatim natychmiast, zanim cokolwiek innego
+
+**Objaw:** przy materializacji 610M19 w repo nie było pełnego tekstu
+Fabuły — sesja researchu (PR-27) streściła dostawę w planie, a wpis
+kolekcji miał powstać „później”. Trzeba było prosić właściciela
+o ponowne wklejenie tekstu, który już raz przekazał w całości.
+
+**Przyczyna:** procedura materializacji (SZKIELET_KARTY, krok 1) istnieje,
+ale research przed materializacją kusi, by „najpierw zbadać, potem
+zapisać”. Streszczenie dostawy w planie wygląda jak praca, a jest utratą
+danych: wpis jest nienaruszalny i verbatim, skrót nigdy go nie zastąpi.
+
+**Reguła:** w sesji, w której przychodzi dostawa, PIERWSZĄ operacją na
+plikach jest `collection/entries/<slug>.md` z pełnym verbatim (frontmatter
++ Fabuła) — przed researchem, roadmapą i snapshotem. Plany i researche
+mogą dostawę przywoływać, ale nigdy nie są jej jedynym nośnikiem.
+
+## L17 (2026-09-09) — scalenie PR nie jest akceptacją odchylenia; progi jakości egzekwuje test, nie domysł
+
+**Objaw:** PR-27 utworzył hasło `wybrzeze-mieczy` przy 1 karcie + planie
+(zamiast wymaganych 2 kart), a audyt w PR-28 rekomendował je zachować,
+bo „PR scalony przez właściciela”. Właściciel: kasować natychmiast —
+scalenie nie było akceptacją.
+
+**Przyczyna:** dwie wady naraz. (1) Sesja PR-27 świadomie zeszła poniżej
+progu zapisanego w SZKIELET_HASLA i nie zapytała właściciela ani nie
+zmieniła reguły. (2) Audyt przyjął, że brak sprzeciwu = zgoda —
+a audyt nie ma prawa zakładać akceptacji odchyleń od reguł twardych.
+
+**Reguła:** (a) progi liczbowe (hasła ≥2 karty, kolejne w przyszłości)
+są egzekwowane testem regresyjnym (`test/prog-hasel.test.js`) —
+strona poniżej progu nie przechodzi suitki; (b) świadome zejście poniżej
+twardej reguły wymaga jawnej decyzji właściciela PRZED scaleniem albo
+zmiany samej reguły — nigdy domniemania po fakcie.

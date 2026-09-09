@@ -163,7 +163,9 @@ inne i osadzone w innych planach.
 
 ## Procedura materializacji (kolejność kroków)
 
-1. Wpis właściciela → `collection/entries/<slug>.md` (verbatim).
+1. Wpis właściciela → `collection/entries/<slug>.md` (verbatim) —
+   natychmiast w sesji otrzymania dostawy, PRZED researchem i roadmapą
+   (L16: skrót w planie nigdy nie zastępuje wpisu).
 2. `fetch_page` na Scryfall → `scryfall/<slug>.json` (+ `source`,
    `pobrano`, `slug`).
 3. Strona planu istnieje? Nie → utwórz minimalną `content/planes/<plan>.md`
