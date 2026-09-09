@@ -1,9 +1,9 @@
 {
- "nazwa": "kaladesh-t4",
+ "nazwa": "kaladesh-plan-t4",
  "szerokosc": 16000,
  "wysokosc": 11000,
  "styl": "atlas",
- "opis": "Kaladesh T4 (rekonstrukcja kanoniczna, epoka KLD/AER; arkusz 16000×11000): prowincja w skali planu — Ghirapur (~0,1% powierzchni) jest z oddalenia kropką z nazwą; pełny detal tylko w ognisku na zlewisku Vinday–Suramal; Vasavati do bezimiennego morza; Peema, Vahd, Lathnu/Devra; skala wyłączona (brak odległości w kanonie).",
+ "opis": "Kaladesh T4 — PLAN (scena złota LOD, ADR 0039): prowincja w skali planu; Ghirapur wyłącznie jako plama z nazwą; detal miasta w nakładce L2 (ghirapur.svg od progu zoomu). Trzy rzeki i zlewisko, Peema, Vahd, Lathnu/Devra; skala wyłączona (brak odległości w kanonie).",
  "ocean": {},
  "lądy": [
   {
@@ -126,11 +126,11 @@
     ],
     [
      10260,
-     6745
+     6755
     ],
     [
      10410,
-     6775
+     6785
     ],
     [
      10500,
@@ -222,33 +222,36 @@
    }
   },
   {
-   "id": "dukhara",
+   "id": "mapani",
    "punkty": [
     [
-     10415,
-     6776
+     13200,
+     2000
     ],
     [
-     10460,
-     6786
+     12400,
+     3000
     ],
     [
-     10500,
-     6792
+     11400,
+     4000
     ],
     [
-     10520,
-     6830
+     10400,
+     5200
     ],
     [
-     10530,
-     6880
+     9900,
+     6050
+    ],
+    [
+     9800,
+     6705
     ]
    ],
    "opcje": {
-    "s0": 2.5,
-    "s1": 4,
-    "zrodlo": false
+    "s0": 2,
+    "s1": 4
    }
   }
  ],
@@ -285,16 +288,16 @@
    "id": "aleja-olbrzymow",
    "punkty": [
     [
-     8500,
-     6250
+     9860,
+     6560
     ],
     [
-     9100,
-     6400
-    ],
-    [
-     9500,
+     10030,
      6600
+    ],
+    [
+     10210,
+     6660
     ]
    ],
    "opcje": {
@@ -303,32 +306,6 @@
   }
  ],
  "biomy": [
-  {
-   "id": "przykrycie",
-   "typ": "las",
-   "punkty": [
-    [
-     10370,
-     6790
-    ],
-    [
-     10500,
-     6820
-    ],
-    [
-     10500,
-     6838
-    ],
-    [
-     10370,
-     6808
-    ]
-   ],
-   "opcje": {
-    "gestosc": 1.2,
-    "skala": 0.7
-   }
-  },
   {
    "id": "peema-pln",
    "typ": "las",
@@ -367,8 +344,8 @@
     ]
    ],
    "opcje": {
-    "gestosc": 0.04,
-    "skala": 1.4
+    "gestosc": 0.0025,
+    "skala": 1.5
    }
   },
   {
@@ -405,8 +382,8 @@
     ]
    ],
    "opcje": {
-    "gestosc": 0.04,
-    "skala": 1.4
+    "gestosc": 0.0025,
+    "skala": 1.5
    }
   },
   {
@@ -495,616 +472,45 @@
    "opcje": {
     "gestosc": 0.03
    }
-  },
-  {
-   "id": "shaila-pastwisko",
-   "typ": "step",
-   "punkty": [
-    [
-     10160,
-     6950
-    ],
-    [
-     10310,
-     6950
-    ],
-    [
-     10330,
-     7010
-    ],
-    [
-     10190,
-     7030
-    ]
-   ],
-   "opcje": {
-    "gestosc": 0.8
-   }
-  },
-  {
-   "id": "tkanina-kujar",
-   "typ": "tkanina",
-   "punkty": [
-    [
-     10465,
-     6610
-    ],
-    [
-     10570,
-     6605
-    ],
-    [
-     10580,
-     6715
-    ],
-    [
-     10472,
-     6715
-    ]
-   ],
-   "opcje": {
-    "gestosc": 0.9
-   }
-  },
-  {
-   "id": "tkanina-eleven-pln",
-   "typ": "tkanina",
-   "punkty": [
-    [
-     10425,
-     6725
-    ],
-    [
-     10570,
-     6725
-    ],
-    [
-     10585,
-     6780
-    ],
-    [
-     10540,
-     6800
-    ],
-    [
-     10510,
-     6788
-    ],
-    [
-     10465,
-     6781
-    ],
-    [
-     10420,
-     6771
-    ]
-   ],
-   "opcje": {
-    "gestosc": 1.0
-   }
-  },
-  {
-   "id": "tkanina-eleven-pld",
-   "typ": "tkanina",
-   "punkty": [
-    [
-     10435,
-     6802
-    ],
-    [
-     10500,
-     6810
-    ],
-    [
-     10515,
-     6840
-    ],
-    [
-     10518,
-     6880
-    ],
-    [
-     10460,
-     6880
-    ],
-    [
-     10425,
-     6840
-    ]
-   ],
-   "opcje": {
-    "gestosc": 1.0
-   }
-  },
-  {
-   "id": "tkanina-bomat",
-   "typ": "tkanina",
-   "punkty": [
-    [
-     10465,
-     6890
-    ],
-    [
-     10510,
-     6890
-    ],
-    [
-     10525,
-     6950
-    ],
-    [
-     10540,
-     7000
-    ],
-    [
-     10455,
-     7005
-    ],
-    [
-     10430,
-     6950
-    ]
-   ],
-   "opcje": {
-    "gestosc": 1.0
-   }
-  },
-  {
-   "id": "tkanina-embraal",
-   "typ": "tkanina",
-   "punkty": [
-    [
-     10600,
-     6725
-    ],
-    [
-     10680,
-     6765
-    ],
-    [
-     10695,
-     6855
-    ],
-    [
-     10650,
-     6940
-    ],
-    [
-     10610,
-     6985
-    ],
-    [
-     10600,
-     6900
-    ],
-    [
-     10602,
-     6800
-    ]
-   ],
-   "opcje": {
-    "gestosc": 1.1
-   }
-  },
-  {
-   "id": "tkanina-freejam",
-   "typ": "tkanina",
-   "punkty": [
-    [
-     10320,
-     6640
-    ],
-    [
-     10410,
-     6640
-    ],
-    [
-     10410,
-     6710
-    ],
-    [
-     10360,
-     6725
-    ],
-    [
-     10320,
-     6692
-    ]
-   ],
-   "opcje": {
-    "gestosc": 0.9
-   }
-  },
-  {
-   "id": "tkanina-greenwheel",
-   "typ": "tkanina",
-   "punkty": [
-    [
-     10305,
-     6795
-    ],
-    [
-     10415,
-     6795
-    ],
-    [
-     10440,
-     6885
-    ],
-    [
-     10415,
-     6945
-    ],
-    [
-     10325,
-     6910
-    ]
-   ],
-   "opcje": {
-    "gestosc": 0.7
-   }
-  },
-  {
-   "id": "tkanina-przedmiescie-wsch",
-   "typ": "tkanina",
-   "punkty": [
-    [
-     10770,
-     6700
-    ],
-    [
-     10910,
-     6700
-    ],
-    [
-     10910,
-     6900
-    ],
-    [
-     10770,
-     6900
-    ]
-   ],
-   "opcje": {
-    "gestosc": 0.3
-   }
-  },
-  {
-   "id": "tkanina-przedmiescie-zach",
-   "typ": "tkanina",
-   "punkty": [
-    [
-     10010,
-     6780
-    ],
-    [
-     10240,
-     6795
-    ],
-    [
-     10240,
-     6830
-    ],
-    [
-     10010,
-     6815
-    ]
-   ],
-   "opcje": {
-    "gestosc": 0.3
-   }
-  },
-  {
-   "id": "tkanina-przedmiescie-pln",
-   "typ": "tkanina",
-   "punkty": [
-    [
-     10210,
-     6450
-    ],
-    [
-     10350,
-     6450
-    ],
-    [
-     10330,
-     6570
-    ],
-    [
-     10230,
-     6570
-    ]
-   ],
-   "opcje": {
-    "gestosc": 0.3
-   }
   }
  ],
  "dzielnice": [
   {
-   "id": "jedenascie-mostow",
+   "id": "ghirapur-plama",
    "punkty": [
     [
-     10420,
-     6720
-    ],
-    [
-     10570,
-     6720
-    ],
-    [
-     10590,
-     6800
-    ],
-    [
-     10550,
-     6880
-    ],
-    [
-     10460,
-     6880
-    ],
-    [
-     10410,
-     6810
-    ]
-   ],
-   "opcje": {
-    "ton": 8
-   }
-  },
-  {
-   "id": "bomat",
-   "punkty": [
-    [
-     10465,
-     6885
-    ],
-    [
-     10555,
-     6885
-    ],
-    [
-     10590,
-     6960
-    ],
-    [
-     10570,
-     7010
-    ],
-    [
-     10450,
-     7010
-    ],
-    [
-     10425,
-     6950
-    ]
-   ],
-   "opcje": {
-    "ton": 4
-   }
-  },
-  {
-   "id": "embraal",
-   "punkty": [
-    [
-     10595,
-     6720
-    ],
-    [
-     10680,
-     6760
-    ],
-    [
-     10710,
-     6850
-    ],
-    [
-     10670,
-     6950
-    ],
-    [
-     10625,
-     7000
-    ],
-    [
-     10595,
-     6900
-    ],
-    [
-     10600,
-     6800
-    ]
-   ],
-   "opcje": {
-    "ton": 12
-   }
-  },
-  {
-   "id": "kujar",
-   "punkty": [
-    [
-     10400,
-     6600
-    ],
-    [
-     10570,
-     6600
+     10260,
+     6620
     ],
     [
      10580,
-     6715
-    ],
-    [
-     10425,
-     6715
-    ]
-   ],
-   "opcje": {
-    "ton": 2
-   }
-  },
-  {
-   "id": "freejam",
-   "punkty": [
-    [
-     10300,
-     6640
-    ],
-    [
-     10415,
-     6640
-    ],
-    [
-     10415,
-     6715
-    ],
-    [
-     10360,
-     6730
-    ],
-    [
-     10290,
-     6700
-    ]
-   ],
-   "opcje": {
-    "ton": 6
-   }
-  },
-  {
-   "id": "greenwheel",
-   "punkty": [
-    [
-     10300,
-     6800
-    ],
-    [
-     10420,
-     6800
-    ],
-    [
-     10445,
-     6885
-    ],
-    [
-     10420,
-     6950
-    ],
-    [
-     10310,
-     6920
-    ]
-   ],
-   "opcje": {
-    "ton": 3
-   }
-  }
- ],
- "mury": [
-  {
-   "id": "mur-pn-wsch",
-   "punkty": [
-    [
-     10428,
-     6583
-    ],
-    [
-     10625,
-     6583
+     6580
     ],
     [
      10730,
      6760
-    ]
-   ]
-  },
-  {
-   "id": "mur-wsch-pld",
-   "punkty": [
-    [
-     10737,
-     6815
     ],
     [
-     10680,
-     6930
+     10720,
+     6900
     ],
     [
      10620,
-     7005
-    ]
-   ]
-  },
-  {
-   "id": "mur-pld-1",
-   "punkty": [
-    [
-     10565,
-     7028
+     7030
     ],
     [
-     10510,
-     7022
-    ]
-   ]
-  },
-  {
-   "id": "mur-pld-2",
-   "punkty": [
-    [
-     10410,
-     7017
-    ],
-    [
-     10375,
-     7017
-    ],
-    [
-     10310,
-     6920
-    ]
-   ]
-  },
-  {
-   "id": "mur-zach",
-   "punkty": [
-    [
-     10272,
-     6862
+     10340,
+     7030
     ],
     [
      10260,
-     6795
+     6900
     ]
-   ]
-  },
-  {
-   "id": "mur-pn-1",
-   "punkty": [
-    [
-     10305,
-     6700
-    ],
-    [
-     10330,
-     6610
-    ]
-   ]
-  },
-  {
-   "id": "mur-pn-2",
-   "punkty": [
-    [
-     10355,
-     6592
-    ],
-    [
-     10390,
-     6583
-    ]
-   ]
+   ],
+   "opcje": {
+    "ton": 5,
+    "bezGranicy": true
+   }
   }
  ],
  "drogi": [
@@ -1181,201 +587,9 @@
      8700
     ]
    ]
-  },
-  {
-   "id": "sciezka-holownicza",
-   "typ": "szlak",
-   "punkty": [
-    [
-     10270,
-     6805
-    ],
-    [
-     10160,
-     6795
-    ],
-    [
-     10010,
-     6775
-    ]
-   ]
-  },
-  {
-   "id": "tor-ovalchase",
-   "typ": "droga",
-   "punkty": [
-    [
-     10990.0,
-     6830.0
-    ],
-    [
-     10980.1,
-     6856.0
-    ],
-    [
-     10952.3,
-     6876.9
-    ],
-    [
-     10912.3,
-     6888.5
-    ],
-    [
-     10867.7,
-     6888.5
-    ],
-    [
-     10827.7,
-     6876.9
-    ],
-    [
-     10799.9,
-     6856.0
-    ],
-    [
-     10790.0,
-     6830.0
-    ],
-    [
-     10799.9,
-     6804.0
-    ],
-    [
-     10827.7,
-     6783.1
-    ],
-    [
-     10867.7,
-     6771.5
-    ],
-    [
-     10912.3,
-     6771.5
-    ],
-    [
-     10952.3,
-     6783.1
-    ],
-    [
-     10980.1,
-     6804.0
-    ],
-    [
-     10990.0,
-     6830.0
-    ]
-   ]
   }
  ],
  "poi": [
-  {
-   "typ": "iglica",
-   "id": "iglica-eteru",
-   "x": 10510,
-   "y": 6742,
-   "opcje": {
-    "skala": 1.8
-   }
-  },
-  {
-   "typ": "kopula",
-   "id": "stacja-aradara",
-   "x": 10565,
-   "y": 6835,
-   "opcje": {
-    "skala": 1.3
-   }
-  },
-  {
-   "typ": "fort",
-   "id": "bastion",
-   "x": 10450,
-   "y": 6845,
-   "opcje": {
-    "skala": 0.8
-   }
-  },
-  {
-   "typ": "plac",
-   "id": "akhara",
-   "x": 10540,
-   "y": 6775,
-   "opcje": {
-    "skala": 1.1
-   }
-  },
-  {
-   "typ": "kopula",
-   "id": "wezel-eterowy",
-   "x": 10570,
-   "y": 6690,
-   "opcje": {
-    "skala": 1.0
-   }
-  },
-  {
-   "typ": "ruina",
-   "id": "kuznia-konsulow",
-   "x": 10630,
-   "y": 6900,
-   "opcje": {
-    "skala": 0.9
-   }
-  },
-  {
-   "typ": "plac",
-   "id": "bomat-targ",
-   "x": 10500,
-   "y": 6950,
-   "opcje": {
-    "skala": 1.0
-   }
-  },
-  {
-   "typ": "kopula",
-   "id": "greenwheel-kopula-1",
-   "x": 10380,
-   "y": 6860,
-   "opcje": {
-    "skala": 0.9
-   }
-  },
-  {
-   "typ": "kopula",
-   "id": "greenwheel-kopula-2",
-   "x": 10425,
-   "y": 6895,
-   "opcje": {
-    "skala": 0.7
-   }
-  },
-  {
-   "typ": "drzewo",
-   "id": "greenwheel-drzewo",
-   "x": 10400,
-   "y": 6875,
-   "opcje": {
-    "skala": 1.5
-   }
-  },
-  {
-   "typ": "platforma",
-   "id": "freejam-pomost",
-   "x": 10350,
-   "y": 6680,
-   "opcje": {
-    "skala": 1.0
-   }
-  },
-  {
-   "typ": "ruina",
-   "id": "bunarat",
-   "x": 10260,
-   "y": 7010,
-   "opcje": {
-    "skala": 0.8
-   }
-  },
   {
    "typ": "miasto",
    "id": "lathnu",
@@ -1493,116 +707,6 @@
    "opcje": {
     "skala": 0.9
    }
-  },
-  {
-   "typ": "most",
-   "x": 10425.6,
-   "y": 6778.3,
-   "id": "most-1",
-   "opcje": {
-    "skala": 0.7,
-    "kat": 102.5
-   }
-  },
-  {
-   "typ": "most",
-   "x": 10441.1,
-   "y": 6781.8,
-   "id": "most-2",
-   "opcje": {
-    "skala": 0.7,
-    "kat": 102.5
-   }
-  },
-  {
-   "typ": "most",
-   "x": 10456.6,
-   "y": 6785.2,
-   "id": "most-3",
-   "opcje": {
-    "skala": 0.7,
-    "kat": 102.5
-   }
-  },
-  {
-   "typ": "most",
-   "x": 10530,
-   "y": 6880,
-   "id": "most-4",
-   "opcje": {
-    "skala": 0.7,
-    "kat": 90.0
-   }
-  },
-  {
-   "typ": "most",
-   "x": 10530,
-   "y": 6880,
-   "id": "most-5",
-   "opcje": {
-    "skala": 0.7,
-    "kat": 90.0
-   }
-  },
-  {
-   "typ": "most",
-   "x": 10530,
-   "y": 6880,
-   "id": "most-6",
-   "opcje": {
-    "skala": 0.7,
-    "kat": 90.0
-   }
-  },
-  {
-   "typ": "most",
-   "x": 10530,
-   "y": 6880,
-   "id": "most-7",
-   "opcje": {
-    "skala": 0.7,
-    "kat": 90.0
-   }
-  },
-  {
-   "typ": "most",
-   "x": 10530,
-   "y": 6880,
-   "id": "most-8",
-   "opcje": {
-    "skala": 0.7,
-    "kat": 90.0
-   }
-  },
-  {
-   "typ": "most",
-   "x": 10530,
-   "y": 6880,
-   "id": "most-9",
-   "opcje": {
-    "skala": 0.7,
-    "kat": 90.0
-   }
-  },
-  {
-   "typ": "most",
-   "x": 10530,
-   "y": 6880,
-   "id": "most-10",
-   "opcje": {
-    "skala": 0.7,
-    "kat": 90.0
-   }
-  },
-  {
-   "typ": "most",
-   "x": 10530,
-   "y": 6880,
-   "id": "most-11",
-   "opcje": {
-    "skala": 0.7,
-    "kat": 90.0
-   }
   }
  ],
  "etykiety": [
@@ -1613,227 +717,6 @@
    "opcje": {
     "fs": 38,
     "duze": true
-   }
-  },
-  {
-   "tekst": "Eleven Bridges",
-   "x": 10555,
-   "y": 6755,
-   "opcje": {
-    "fs": 12
-   }
-  },
-  {
-   "tekst": "Bomat",
-   "x": 10500,
-   "y": 6950,
-   "opcje": {
-    "fs": 12,
-    "przyDo": [
-     10500,
-     6950
-    ]
-   }
-  },
-  {
-   "tekst": "Embraal",
-   "x": 10655,
-   "y": 6860,
-   "opcje": {
-    "fs": 12
-   }
-  },
-  {
-   "tekst": "Kujar",
-   "x": 10520,
-   "y": 6650,
-   "opcje": {
-    "fs": 12
-   }
-  },
-  {
-   "tekst": "Freejam",
-   "x": 10350,
-   "y": 6680,
-   "opcje": {
-    "fs": 11,
-    "przyDo": [
-     10350,
-     6680
-    ]
-   }
-  },
-  {
-   "tekst": "Greenwheel",
-   "x": 10318,
-   "y": 6835,
-   "opcje": {
-    "fs": 11
-   }
-  },
-  {
-   "tekst": "Weldfast",
-   "x": 10610,
-   "y": 6665,
-   "opcje": {
-    "fs": 11
-   }
-  },
-  {
-   "tekst": "Aether Spire",
-   "x": 10510,
-   "y": 6742,
-   "opcje": {
-    "fs": 12,
-    "przyDo": [
-     10510,
-     6742
-    ]
-   }
-  },
-  {
-   "tekst": "Aradara Station",
-   "x": 10565,
-   "y": 6835,
-   "opcje": {
-    "fs": 10,
-    "przyDo": [
-     10565,
-     6835
-    ]
-   }
-  },
-  {
-   "tekst": "Bastion",
-   "x": 10450,
-   "y": 6845,
-   "opcje": {
-    "fs": 10,
-    "przyDo": [
-     10450,
-     6845
-    ]
-   }
-  },
-  {
-   "tekst": "Akhara",
-   "x": 10540,
-   "y": 6775,
-   "opcje": {
-    "fs": 10,
-    "przyDo": [
-     10540,
-     6775
-    ]
-   }
-  },
-  {
-   "tekst": "Aether Hub",
-   "x": 10570,
-   "y": 6690,
-   "opcje": {
-    "fs": 10,
-    "przyDo": [
-     10570,
-     6690
-    ]
-   }
-  },
-  {
-   "tekst": "Foundry of the Consuls",
-   "x": 10630,
-   "y": 6900,
-   "opcje": {
-    "fs": 10,
-    "przyDo": [
-     10630,
-     6900
-    ]
-   }
-  },
-  {
-   "tekst": "First Bridge",
-   "x": 10530,
-   "y": 6880,
-   "opcje": {
-    "fs": 10,
-    "przyDo": [
-     10530,
-     6880
-    ]
-   }
-  },
-  {
-   "tekst": "Ninth Bridge",
-   "x": 10456.6,
-   "y": 6785.2,
-   "opcje": {
-    "fs": 10,
-    "przyDo": [
-     10456.6,
-     6785.2
-    ]
-   }
-  },
-  {
-   "tekst": "The Cowl",
-   "x": 10395,
-   "y": 6814,
-   "opcje": {
-    "fs": 11
-   }
-  },
-  {
-   "tekst": "Dukhara Canal",
-   "x": 10472,
-   "y": 6768,
-   "opcje": {
-    "fs": 10,
-    "ital": true
-   }
-  },
-  {
-   "tekst": "Greenwheel Domes",
-   "x": 10380,
-   "y": 6860,
-   "opcje": {
-    "fs": 10,
-    "przyDo": [
-     10380,
-     6860
-    ]
-   }
-  },
-  {
-   "tekst": "The Zoo",
-   "x": 10400,
-   "y": 6875,
-   "opcje": {
-    "fs": 10,
-    "przyDo": [
-     10400,
-     6875
-    ]
-   }
-  },
-  {
-   "tekst": "Bunarat",
-   "x": 10260,
-   "y": 7010,
-   "opcje": {
-    "fs": 11,
-    "przyDo": [
-     10260,
-     7010
-    ]
-   }
-  },
-  {
-   "tekst": "Shaila's Claim",
-   "x": 10245,
-   "y": 6990,
-   "opcje": {
-    "fs": 11
    }
   },
   {
@@ -1897,18 +780,10 @@
   },
   {
    "tekst": "Giants' Walk",
-   "x": 9000,
-   "y": 6150,
+   "x": 10030,
+   "y": 6540,
    "opcje": {
     "fs": 12
-   }
-  },
-  {
-   "tekst": "Ovalchase",
-   "x": 10890,
-   "y": 6832,
-   "opcje": {
-    "fs": 13
    }
   },
   {

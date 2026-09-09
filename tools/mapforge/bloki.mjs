@@ -432,8 +432,8 @@ export function wulkan(x, y, { skala = 1, dym = true } = {}) {
  * ujścia w morzu wyglądał źle; zamiast tego przyciemniono kolor wody
  * (kontrast z papierem) — ADR 0023.
  */
-export function rzeka(id, punkty, { s0 = 3, s1 = 9, zrodlo = true } = {}) {
-  const { d } = wstega(punkty, s0, s1);
+export function rzeka(id, punkty, { s0 = 3, s1 = 9, zrodlo = true, taper = true } = {}) {
+  const { d } = wstega(punkty, s0, s1, { taper });
   const kolor = PAL.woda;
   const pocz = punkty[0];
   return (zrodlo ? `<circle cx="${rr(pocz[0])}" cy="${rr(pocz[1])}" r="${rr(s0 * 0.7)}" fill="${kolor}"/>` : '') +
@@ -441,8 +441,8 @@ export function rzeka(id, punkty, { s0 = 3, s1 = 9, zrodlo = true } = {}) {
 }
 
 /** Dopływ — cieńsza wstęga wpadająca do rzeki głównej. */
-export function doplyw(id, punkty, { s0 = 1.5, s1 = 3.5 } = {}) {
-  return rzeka(id, punkty, { s0, s1, zrodlo: false });
+export function doplyw(id, punkty, { s0 = 1.5, s1 = 3.5, taper = true } = {}) {
+  return rzeka(id, punkty, { s0, s1, taper, zrodlo: false });
 }
 
 /* ---------- jezioro (tafla + linia brzegowa + fale) ---------- */

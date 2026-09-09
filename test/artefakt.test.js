@@ -88,8 +88,27 @@ test('pakiet dystrybucyjny: artefakt + drzewo map + ZIP (ADR 0027 v2)', async ()
     e.isDirectory() ? plikiMap(path.join(dir, e.name)) : [path.join(dir, e.name)]);
   const pliki = plikiMap('/tmp/codex-test-pakiet/maps');
   if (maRasterizer) {
+    // Wyjątek LOD (ADR 0039): wektorowa PŁYTA L2 nie jest inlinowana —
+    // jej <img> ładuje się leniwie z drzewa, więc plik MUSI w nim leżeć
+    // (whitelista z wariantów bbox w maps/*/map.json).
+    const plyty = new Set();
+    for (const katMapy of fs.readdirSync('maps', { withFileTypes: true })) {
+      if (!katMapy.isDirectory()) continue;
+      const mj = path.join('maps', katMapy.name, 'map.json');
+      if (!fs.existsSync(mj)) continue;
+      const d = JSON.parse(fs.readFileSync(mj, 'utf8'));
+      for (const w of d.warianty ?? []) {
+        if (Array.isArray(w.bbox) && String(w.podklad ?? '').endsWith('.svg')) {
+          plyty.add(path.join('/tmp/codex-test-pakiet/maps', katMapy.name, w.podklad));
+        }
+      }
+    }
     for (const f of pliki) {
-      assert.ok(!f.endsWith('.svg'), `brak duplikatu wektorowej bazy w drzewie (baza jest inline w html): ${f}`);
+      assert.ok(!f.endsWith('.svg') || plyty.has(f),
+        `brak duplikatu wektorowej bazy w drzewie (baza jest inline w html): ${f}`);
+    }
+    for (const p of plyty) {
+      assert.ok(fs.existsSync(p), `płyta L2 w drzewie pakietu (leniwy <img>): ${p}`);
     }
   }
   for (const f of pliki.filter((p) => p.endsWith('.html'))) {

@@ -337,6 +337,22 @@ pole `miniatura` wycofane. **ZIP 90,5 → 62,1 MB (−31%)**.
 Raporty: `docs/audits/AUDYT_2026-09-08-PR24.md`,
 `docs/plans/PLAN_2026-09-08-pr25-dominaria-l2-i-druk-zrodlowy.md`.
 
+**PR-28 (2026-09-09) — Kaladesh: odrzucenie jednowarstwówki, LOD ścieżką
+Dominarii + prawdziwa przebudowa Ghirapuru.** Właściciel odrzucił mapę
+16000×11000 (wolna, biomy za małe, kolizje w mieście): plan jest teraz
+lekki (1,1 MB, Ghirapur tylko plamą z nazwą), a detal miasta to osobna
+płyta L2 (1400×740, ~200 kB) dokładana od progu 6. Miasto
+reprojektowane: kaflikowanie dzielnic (zero nachodzeń), mury poza
+obrysem z bramami i przerwami na rzeki, las łęgowy osobnym kaflikiem,
+Aleja Olbrzymów z powrotem u bram (zakaz fix-by-deletion) — **ADR 0046**.
+Silnik: `wstega`/`rzeka`/`doplyw` z `taper:false` (płaskie cięcie płytą),
+`sprawdzHydrologie` zwalnia rzeki na krawędzi płyty; audytor pkt 8–9
+(geometria miasta + SVG płyt L2); szew wodny (pozycja ±1 j., szerokość
+±0,05 ze stożka planu) pilnuje test w `test/lod.test.js`. Build kopiuje
+wektorową płytę L2 do drzewa (wyjątek ADR 0027 v3 — leniwy `<img>`).
+Stary generator `kaladesh-scena-t4.py` usunięty. **176 testów**;
+map-audit 0; szew i Cowl zweryfikowane rastrowo (resvg).
+
 ## Wątki otwarte (czekają na decyzję właściciela)
 
 > **Zamknięte decyzją właściciela 2026-09-05 — NIE wracać do nich:**

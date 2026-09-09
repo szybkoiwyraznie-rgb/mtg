@@ -257,6 +257,27 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
     'mapa Tarkiru: pinezka 509KTK w układzie złotym (raster T1)');
   shim3b.przywroc();
 
+  // ── Strona mapy Kaladeshu (ADR 0039: lekki plan + detal Ghirapuru L2 od progu 6)
+  const shimK = wykonajArtefakt('dist/maps/kaladesh.html');
+  const mapaK = shimK.app.innerHTML;
+  const daneMapyK = globalThis.CODEX_DATA.mapy.kaladesh;
+  assert.ok(!Object.hasOwn(daneMapyK, 'podkladMarkup'), 'mapa wariantowa: nieużywana druga kopia SVG');
+  assert.ok(!mapaK.includes('data-epoka-przelacz'), 'Kaladesh: jeden podkład planu — brak przełącznika epok');
+  assert.ok(mapaK.includes('data-l2="ghirapur"'), 'Kaladesh: nakładka L2 w złotej scenie');
+  assert.ok(mapaK.includes('data-prog="6"'), 'Kaladesh: próg L2 = 6');
+  assert.ok(mapaK.includes('data-bbox="0.608125,0.58,0.695625,0.6472727"'), 'Kaladesh: bbox płyty w markapie');
+  assert.ok(mapaK.includes('data-src="kaladesh/ghirapur.svg"'), 'Kaladesh: L2 z leniwym src płyty');
+  assert.ok(!Object.hasOwn(daneMapyK.warianty.find((w) => w.id === 'ghirapur'), 'podkladMarkup'),
+    'Kaladesh: L2 bez inline markupu (A5 dla nakładek — renderer go nie używa)');
+  assert.ok(fs.existsSync('dist/maps/kaladesh/ghirapur.svg'),
+    'Kaladesh: wektorowa płyta L2 w drzewie dist (leniwy <img>, wyjątek ADR 0027 v3)');
+  assert.ok(mapaK.includes('>Ghirapur<'), 'Kaladesh: na planie Ghirapur tylko plamą z nazwą (lekki LOD0)');
+  assert.ok(mapaK.includes('data-pinezka="610m19-gearsmith-prodigy" data-x="0.6483" data-y="0.625"'),
+    'Kaladesh: pinezka w układzie złotym (deep-link startuje z progiem L2)');
+  assert.ok(fs.statSync('maps/kaladesh/podklad.svg').size < 2 * 1024 * 1024,
+    'Kaladesh: lekki plan (regresja przeciw 14 MB jednowarstwówce)');
+  shimK.przywroc();
+
   // atrybucja rekonstrukcji i uzasadnienia pinezek — w artefakcie bazowym
   const shim4 = wykonajArtefakt(cel);
   shim4.idz('#/mapa/zendikar');

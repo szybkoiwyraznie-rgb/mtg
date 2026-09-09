@@ -325,7 +325,15 @@ export async function zbuduj({ out, root = ROOT } = {}) {
       }
     };
     const warianty = Array.isArray(mapa.warianty) ? mapa.warianty : [];
-    for (const w of warianty) { kopiujPodklad(w.podklad); if (w.kafle) kopiujKatalog(w.kafle.katalog); }
+    // LOD (ADR 0039): nakładka L2 (bbox) NIE jest inlinowana (dostaje tylko
+    // URL, §5) — jej <img> ładuje się leniwie z drzewa, więc wektorową
+    // płytę ZAWSZE kopiujemy (wyjątek od reguły ADR 0027 v3: bez tego
+    // data-src płyty kończyłby się 404 w zbudowanej stronie).
+    for (const w of warianty) {
+      if (Array.isArray(w.bbox)) kopiuj(w.podklad);
+      else kopiujPodklad(w.podklad);
+      if (w.kafle) kopiujKatalog(w.kafle.katalog);
+    }
     const domyslny = warianty.find((w) => w.domyslny) ?? warianty[0];
     // Mini-mapa (kafel na stronie karty, <img>): jpg-screenshot bazy
     // domyślnego wariantu wygenerowany w buildzie (800 px, q80) —
@@ -408,9 +416,12 @@ export async function zbuduj({ out, root = ROOT } = {}) {
     const rejestr = `globalThis.CODEX_DATA.mapy[${JSON.stringify(slug)}]`;
     // Warianty podkładu (ADR 0035): każdy dostaje własny URL, a SVG —
     // surowy markup (etykiety do nakładki); raster zostaje <img> z URL.
+    // LOD (ADR 0039): nakładka L2 (bbox) dostaje TYLKO URL — jej <img>
+    // ładuje się leniwie od progu, a inline markup dublowałby payload
+    // w stronie (A5 dla nakładek: renderer markupu L2 nie używa).
     const wstrzyknijWarianty = warianty.map((w, i) => {
       const plikW = path.join(root, 'maps', slug, String(w.podklad ?? ''));
-      const svgW = /\.svg$/i.test(String(w.podklad ?? '')) && fs.existsSync(plikW) ? fs.readFileSync(plikW, 'utf8') : '';
+      const svgW = !Array.isArray(w.bbox) && /\.svg$/i.test(String(w.podklad ?? '')) && fs.existsSync(plikW) ? fs.readFileSync(plikW, 'utf8') : '';
       return `${rejestr}.warianty[${i}].podkladUrl = ${JSON.stringify(urlWzgledny(w.podklad))};\n` +
         (svgW ? `${rejestr}.warianty[${i}].podkladMarkup = ${JSON.stringify(svgW)};\n` : '');
     }).join('');

@@ -254,3 +254,86 @@ test('LOD montaż: ?pin= w bbox i ?epoka=region startują z progiem L2', () => {
     assert.equal(mRegion.l2.hidden, false);
   } finally { mRegion.przywroc(); }
 });
+
+test('LOD Kaladesh: wariant ghirapur L2 — bbox × aspekt × pliki × scena', () => {
+  const mapa = JSON.parse(fs.readFileSync('maps/kaladesh/map.json', 'utf8'));
+  const l2 = mapa.warianty.find((w) => w.id === 'ghirapur');
+  assert.ok(l2, 'wariant ghirapur istnieje');
+  assert.deepEqual(l2.bbox, [0.608125, 0.58, 0.695625, 0.6472727]);
+  assert.equal(l2.prog, 6);
+  assert.equal(l2.podklad, 'ghirapur.svg');
+  assert.equal(l2.etykiety, false);
+  // aspekt bbox (w układzie złotym 16000×11000) = aspekt płyty 1400×740
+  const W = mapa.wymiary.szerokosc, H = mapa.wymiary.wysokosc;
+  const ab = ((l2.bbox[2] - l2.bbox[0]) * W) / ((l2.bbox[3] - l2.bbox[1]) * H);
+  const ap = l2.wymiary.szerokosc / l2.wymiary.wysokosc;
+  assert.ok(Math.abs(ab - ap) < 1e-6, `aspekt bbox ${ab} vs płyty ${ap}`);
+  // pliki na dysku + scena wskazuje płytę macierzystą
+  for (const f of ['ghirapur.svg', 'ghirapur-scena.json']) {
+    assert.ok(fs.existsSync(path.join('maps/kaladesh', f)), `brak ${f}`);
+  }
+  const scena = JSON.parse(fs.readFileSync('maps/kaladesh/ghirapur-scena.json', 'utf8'));
+  assert.equal(scena.nakladka, l2.id, 'płyta zna swój wariant (zwolnienie wodne)');
+  assert.equal(scena.szerokosc, l2.wymiary.szerokosc);
+  assert.equal(scena.wysokosc, l2.wymiary.wysokosc);
+  // pinezka Ghirapuru leży w bbox (deep-link ?pin= startuje z progiem L2)
+  const pin = mapa.pinezki.find((p) => p.karta.includes('gearsmith-prodigy'));
+  assert.ok(pin && wBbox(pin.x, pin.y, l2.bbox), 'pin Ghirapuru w bbox');
+  // markup: nakładka w złotej scenie, leniwy src, brak w przełączniku epok
+  const poprzednie = globalThis.CODEX_DATA;
+  globalThis.CODEX_DATA = { strony: {}, mapy: { kaladesh: mapa } };
+  try {
+    const html = renderMape('kaladesh', {});
+    assert.ok(html.includes('data-l2="ghirapur"'), 'nakładka L2 w scenie');
+    assert.ok(html.includes('data-bbox="0.608125,0.58,0.695625,0.6472727"'), 'bbox w markapie');
+    assert.ok(html.includes('data-prog="6"'), 'próg w markapie');
+    assert.ok(html.includes('data-src="kaladesh/ghirapur.svg"'), 'leniwy src płyty');
+    assert.ok(!html.includes('data-epoka-przelacz'), 'bbox nie trafia do przełącznika epok');
+  } finally {
+    if (poprzednie === undefined) delete globalThis.CODEX_DATA;
+    else globalThis.CODEX_DATA = poprzednie;
+  }
+});
+
+test('LOD Kaladesh: szew wodny — pozycja i szerokość L2 = plan w cięciu', async () => {
+  const { chaikin } = await import('../tools/mapforge/geom.mjs');
+  const mapa = JSON.parse(fs.readFileSync('maps/kaladesh/map.json', 'utf8'));
+  const l2v = mapa.warianty.find((w) => w.id === 'ghirapur');
+  const W = mapa.wymiary.szerokosc, H = mapa.wymiary.wysokosc;
+  const [x0, y0, x1, y1] = [l2v.bbox[0] * W, l2v.bbox[1] * H, l2v.bbox[2] * W, l2v.bbox[3] * H];
+  const baza = JSON.parse(fs.readFileSync('maps/kaladesh/scena.json', 'utf8'));
+  const l2 = JSON.parse(fs.readFileSync('maps/kaladesh/ghirapur-scena.json', 'utf8'));
+  const Rb = Object.fromEntries(baza.rzeki.map((r) => [r.id, r]));
+  const Rl = Object.fromEntries(l2.rzeki.map((r) => [r.id, r]));
+  // [id, oś, współrzędna szwu, koniec L2 w szwie]
+  const szwy = [['vinday', 'x', x0, 's0'], ['suramal', 'y', y0, 's0'],
+    ['vasavati', 'y', y1, 's1'], ['mapani', 'y', y0, 's0']];
+  for (const [id, os, wart, koniec] of szwy) {
+    const b = Rb[id], c = Rl[id];
+    const g = chaikin(b.punkty, 2, false);
+    const wz = (p) => (os === 'x' ? p[0] : p[1]);
+    let fi = -1, hx = 0, hy = 0;
+    for (let i = 0; i < g.length - 1; i++) {
+      const a = wz(g[i]), d = wz(g[i + 1]);
+      if (a === d) continue;
+      if ((a <= wart && wart <= d) || (d <= wart && wart <= a)) {
+        const u = (wart - a) / (d - a);
+        fi = i + u;
+        hx = g[i][0] + (g[i + 1][0] - g[i][0]) * u;
+        hy = g[i][1] + (g[i + 1][1] - g[i][1]) * u;
+        break;
+      }
+    }
+    assert.ok(fi >= 0, `${id}: oś planu przecina szew`);
+    // koniec L2 leży na osi planu w szwie (±1 j. — subpiksel do k≈16)
+    const pl = koniec === 's0' ? c.punkty[0] : c.punkty[c.punkty.length - 1];
+    const dPoz = Math.hypot(pl[0] + x0 - hx, pl[1] + y0 - hy);
+    assert.ok(dPoz < 1, `${id}: koniec L2 ${dPoz.toFixed(2)} j. od osi planu`);
+    // szerokość L2 w szwie = stożek planu w cięciu (±0,05 — niewidzialny uskok)
+    const t = fi / (g.length - 1);
+    const srodek = b.opcje.s0 + (b.opcje.s1 - b.opcje.s0) * t;
+    const sPlan = Math.max(0.2, srodek * (0.12 + 0.88 * Math.sin(Math.PI * t)));
+    assert.ok(Math.abs(sPlan - c.opcje[koniec]) < 0.05,
+      `${id}: stożek planu ${sPlan.toFixed(2)} vs L2 ${c.opcje[koniec]}`);
+  }
+});

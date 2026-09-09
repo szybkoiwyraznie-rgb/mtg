@@ -88,6 +88,42 @@ test('map-audit: tytuł regionu obok glifu (poza boxem + margines 6) = OK', (t) 
 });
 
 
+test('map-audit: płyta L2 — kolizja etykiet w SVG i nakładka dzielnic w scenie (pkt 8–9)', (t) => {
+  if (!python) return t.skip('brak python3 w środowisku');
+  const kat = katalogZ(podklad({ fortX: 560, fortY: 580 }));
+  try {
+    const lad = [];
+    for (let i = 0; i <= 5; i++) lad.push(`${i * 80} 0`);
+    for (let i = 1; i <= 5; i++) lad.push(`400 ${i * 60}`);
+    for (let i = 1; i <= 5; i++) lad.push(`${400 - i * 80} 300`);
+    for (let i = 1; i < 5; i++) lad.push(`0 ${300 - i * 60}`);
+    fs.writeFileSync(path.join(kat, 'detal.svg'),
+      `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">\n` +
+      `<path d="M ${lad.join(' L ')} Z" fill="#f7f7f7"/>\n` +
+      `<text x="200" y="150" font-size="12" fill="#000">Ratusz</text>\n` +
+      `<text x="200" y="150" font-size="12" fill="#000">Ratusz-PROBA</text>\n</svg>\n`, 'utf8');
+    fs.writeFileSync(path.join(kat, 'map.json'), JSON.stringify({
+      warianty: [{ id: 'detal', bbox: [0.5, 0.5, 0.6, 0.6],
+        podklad: 'detal.svg', scena: 'detal-scena.json' }],
+    }), 'utf8');
+    fs.writeFileSync(path.join(kat, 'detal-scena.json'), JSON.stringify({
+      dzielnice: [
+        { id: 'a', punkty: [[10, 10], [100, 10], [100, 100], [10, 100]] },
+        { id: 'b', punkty: [[50, 50], [150, 50], [150, 150], [50, 150]] },
+      ],
+    }), 'utf8');
+    fs.writeFileSync(path.join(kat, 'scena.json'), JSON.stringify({
+      dzielnice: [{ id: 'sama', punkty: [[0, 0], [50, 0], [50, 50], [0, 50]] }],
+    }), 'utf8');
+    const { status, out } = audyt(kat);
+    assert.equal(status, 1, `oczekiwany kod 1, wyjście:\n${out}`);
+    assert.match(out, /detal\.svg: KOLIZJA ETYKIET: 'Ratusz' @\(200,150\) × 'Ratusz-PROBA' @\(200,150\)/);
+    assert.match(out, /detal-scena\.json: NAKŁADKA dzielnice a×b \(wnętrze \d+, przecięć 2\)/);
+    assert.doesNotMatch(out, / scena\.json: NAKŁADKA/);
+    assert.match(out, /RAZEM PROBLEMÓW: 2/);
+  } finally { fs.rmSync(kat, { recursive: true, force: true }); }
+});
+
 test('map-audit: sprawdza także niedomyślny SVG w podklad*.svg', (t) => {
   if (!python) return t.skip('brak python3 w środowisku');
   const kat = katalogZ(podklad({ fortX: 560, fortY: 580 }));

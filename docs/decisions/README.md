@@ -61,6 +61,7 @@ dziedziczona z projektu mtg-game.
 | [0043](0043-na-mapie-oznaczenia-niosa-wylacznie-karty.md) | Na mapie oznaczenia noszą wyłącznie karty: piny/obwódki tylko kart (żadnych pinezek i obwódek haseł/planów); geografia nie jest na mapie zaznaczana; jedyny związek strony z mapą = odsyłanie do mapy zbliżonej w określonym miejscu (deep-link `?x=&y=`); walidacja: pinezka tylko `karta`, `regiony` wycofane; ADR 0015 §2.6 częściowo zastąpione | Zaakceptowana |
 | [0044](0044-karty-dwustronne-jedna-twarz-jedna-karta.md) | Karty dwustronne: jedna twarz = jedna Karta Katalogowa; druga strona nie przecieka do treści; dane twarzy bierzemy z `card_faces[]`, nie tylko z top-level snapshotu | Zaakceptowana |
 | [0045](0045-domyslny-widok-mapy-i-ognisko-startowe.md) | Mapa może mieć domyślny widok startowy (`widok_domyslny`) w układzie złotym; start od miasta/regionu bez tworzenia nowej podmapy; deep-linki mają pierwszeństwo | Zaakceptowana |
+| [0046](0046-dyscyplina-geometrii-miasta-kaflikowanie-mury-szwy-l2.md) | Dyscyplina geometrii miasta: kaflikowanie dzielnic, las poza tkanką domów, mury poza obrysem, zakaz fix-by-deletion, sztywny szew wodny L2, ścisły test nakładki | Zaakceptowana |
 
 Spójnością rejestru (numeracja, statusy, tabela) pilnuje
 `test/rejestr-adr.test.js`.
