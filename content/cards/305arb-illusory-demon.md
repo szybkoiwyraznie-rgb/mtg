@@ -26,19 +26,20 @@ skrzydło i bark przepływa strumień bursztynowego światła; dolna część
 ręki, fragment ogona, kawałek skrzydła rozsypują się w świetliste
 drobiny. Sama obecność jest nietrwała.
 
-To nie demon. Maelstrom Alary — burza many zrodzona w Conflux,
-złączenie pięciu shardów — nie rodzi prawdziwych demonów. Rodzi
-błędy światła, które wyglądają jak demony: załamania łuny, w których
-głodny wzrok rozpoznaje rogi i pazury. I właśnie dlatego są groźne.
-Pokonasz jednego — a za kilka uderzeń serca wir zmieli światło
-na nowo i za twoimi plecami wyłoni się następny. Scena należy do ery
-scalonej Alary (*Alara Reborn*): Maelstrom istnieje dopiero od
-Conflux, więc ten „demon” wiruje dokładnie tam, gdzie pięć światów
-zszyto w jeden. Paleta wiru to mieszanka many wszystkich pięciu
-shardów — w uspokojonych momentach burzy widać jeszcze barwę
-każdego świata osobno, ale gdy wiatr szarpie łuną, kolory
-rozpuszczają się w fioletach, różach, błękitach i bursztynach,
-w których istota zyskuje swoją sylwetkę.
+To nie demon. Maelstrom [[alara|Alary]] — burza many zrodzona w
+[[conflux|Conflux]], złączeniu pięciu shardów — nie rodzi prawdziwych
+demonów. Rodzi błędy światła, które wyglądają jak demony: załamania
+łuny, w których głodny wzrok rozpoznaje rogi i pazury. I właśnie
+dlatego są groźne. Pokonasz jednego — a za kilka uderzeń serca wir
+zmieli światło na nowo i za twoimi plecami wyłoni się następny. Scena
+należy do ery scalonej Alary (*Alara Reborn*): Maelstrom istnieje
+dopiero od [[conflux|Confluxu]], więc ten „demon” wiruje dokładnie
+tam, gdzie pięć światów zszyto w jeden. Paleta wiru to mieszanka many
+wszystkich pięciu shardów — w uspokojonych momentach burzy widać
+jeszcze barwę każdego świata osobno (od czerni [[grixis|Grixis]] po
+blask [[536arb-ethersworn-shieldmage|Esperu]]), ale gdy wiatr szarpie
+łuną, kolory rozpuszczają się w fioletach, różach, błękitach
+i bursztynach, w których istota zyskuje swoją sylwetkę.
 
 ## Postacie i Byty
 
@@ -63,7 +64,7 @@ co w demonie prawdziwe. Po polsku: **Złudny Demon** — demon, który
 jest złudzeniem, lecz złudzenie, które je. Type line „Demon Illusion”
 domyka parados: w taksonomii istota należy do obu rodzajów naraz,
 bo Maelstrom nie odróżnia strachu od ciała, które strach
-przyciąga. Nazwa uczy czytać cały plan: na Alarze po Conflux
+przyciąga. Nazwa uczy czytać cały plan: na Alarze po [[conflux|Confluxie]]
 najgroźniejsze jest to, co nie do końca istnieje.
 
 ## Flavor Text
@@ -74,8 +75,7 @@ najgroźniejsze jest to, co nie do końca istnieje.
 Jedno zdanie, które jest całym zapisem sceny. „Trick of the light” —
 błąd załamania, omam — jest podmiotem czasownika „feast”. Inskrypcja
 nie mówi „wygląda jak demon”: mówi, że iluzja jest. Horror sceny nie
-polega
-na tym, że coś udaje drapieżnika, tylko na tym, że drapieżność
+polega na tym, że coś udaje drapieżnika, tylko na tym, że drapieżność
 nie wymaga ciała. Zapis powtarza to obrazem: istota, której
 ręka i ogon rozsypują się w świetliste drobiny, „jakby sama obecność
 była nietrwała” — i która mimo to poluje.
@@ -89,8 +89,8 @@ ustanawia paletę wiru (fiolety, róże, błękity, bursztyny),
 anatomię nietrwałości (skrzydła z cienia, rozsypujące się krawędzie)
 i tezę „Maelstrom nie rodzi demonów — rodzi błędy światła”. Era sceny
 (ARB, post-Conflux) jest zgodna z istnieniem Maelstromu w zapisie,
-który powstał dopiero w Conflux — pinezka nie mogłaby istnieć na
-żadnej mapie „przed”.
+który powstał dopiero w [[conflux|Confluxie]] — pinezka nie mogłaby
+istnieć na żadnej mapie „przed”.
 
 ## Na Mapie
 
@@ -98,8 +98,8 @@ Pinezka **dokładna**: `#/mapa/alara?pin=305arb-illusory-demon` —
 **Maelstrom**, centralny wir scalonej Alary, geometryczny środek
 mapy. Pewność pełna: cała scena dzieje się w burzy, a kotwica
 „Maelstrom” istnieje w `maps/alara/map.json`. Mapa niesie kontekst:
-pięć regionów w cyklu many (Bant, Esper, Grixis, Jund, Naya) wokół
-wiru, obeliski przy szwach regionów — pomniki epoki, gdy Bolas
+pięć regionów w cyklu many (Bant, Esper, [[grixis|Grixis]], Jund, Naya)
+wokół wiru, obeliski przy szwach regionów — pomniki epoki, gdy Bolas
 kierował ich maną w burzę — oraz miejsca regionów znane z zapisu
 (Valeron, Jhess, Akrasa, Sedraxis, Antali) jako kotwice przyszłych
 scen, także tych z epoki shardów.

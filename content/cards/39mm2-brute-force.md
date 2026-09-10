@@ -15,23 +15,23 @@ pinezka:
 
 ## Kronika Lore
 
-Na błotnistym polu bitwy Starego Świata, wśród połamanych drzewc i
-zdeptanych chorągwi, staje **ork** — masywny, ciemnozielony, w
-zardzewiałej kolczej zbroi. Okuty but wbija się w grząskie podłoże,
-rozbryzgując wodę i błoto; oburęczny topór wygląda w jego łapach jak
-zabawka. Ale to nie mięśnie są tu sednem. Wokół napiętego cielska wirują
-ostre, zygzakowate pasma **jaskrawoczerwonej magii Waaagh!**, nadające
-sylwetce nienaturalnie napęczniały kształt — ork rośnie w oczach,
-karmiony surową mocą, której sam nie rozumie.
+Na błotnistym polu bitwy [[warhammer-fantasy|Starego Świata]], wśród
+połamanych drzewc i zdeptanych chorągwi, staje **ork** — masywny,
+ciemnozielony, w zardzewiałej kolczej zbroi. Okuty but wbija się w
+grząskie podłoże, rozbryzgując wodę i błoto; oburęczny topór wygląda w
+jego łapach jak zabawka. Ale to nie mięśnie są tu sednem. Wokół
+napiętego cielska wirują ostre, zygzakowate pasma **jaskrawoczerwonej
+magii Waaagh!**, nadające sylwetce nienaturalnie napęczniały kształt —
+ork rośnie w oczach, karmiony surową mocą, której sam nie rozumie.
 
 Źródło tej mocy stoi za jego plecami: garbaty **szaman** w futrach i
 kościanych ozdobach wyciąga kostur, z którego płynie ta sama czerwona
 energia. Jeden **goblinoid** karmi drugiego — nie rozkazem, nie planem,
-lecz *wiarą*. W kulturze zielonoskórych Starego Świata magia nie jest
-nauką ani darem bogów udzielanym na modlitwę; jest wprost skroploną wolą
-tłumu, przekonaniem tak wielu orków naraz, że **większy i głośniejszy
-zawsze wygrywa**, iż samo to przekonanie zaczyna zakrzywiać
-rzeczywistość.
+lecz *wiarą*. W kulturze zielonoskórych [[warhammer-fantasy|Starego Świata]]
+magia nie jest nauką ani darem bogów udzielanym na modlitwę; jest
+wprost skroploną wolą tłumu, przekonaniem tak wielu orków naraz, że
+**większy i głośniejszy zawsze wygrywa**, iż samo to przekonanie
+zaczyna zakrzywiać rzeczywistość.
 
 Scena jest więc portretem najprostszej i najgroźniejszej doktryny tego
 świata. Orkowie nie potrzebują strategii, bo mają coś, co uważają za
@@ -42,8 +42,9 @@ ludzie z Imperium ustawiają szyki i modlą się do Sigmara, ork po prostu
 ## Postacie i Byty
 
 W scenie działa para bytów, obie ze zbiorowości **Zielonoskórych**
-(*Greenskins*) — orków, goblinów i pokrewnych goblinoidów Starego
-Świata, których jedynym powołaniem jest walka.
+(*Greenskins*) — orków, goblinów i pokrewnych goblinoidów
+[[warhammer-fantasy|Starego Świata]], których jedynym powołaniem jest
+walka.
 
 **Ork-wojownik** to trzon obrazu: przedstawiciel większej i silniejszej
 z dwóch głównych ras zielonoskórych, hodowany przez naturę wyłącznie do
@@ -102,9 +103,9 @@ właśnie o to chodzi. Dla zielonoskórego to nie wada. To ideał.
 
 Zapis narodził się gdzie indziej — jako obraz chwilowego, gwałtownego
 wzmocnienia wojownika, bez wskazania świata, w którym się dzieje.
-Kronika osadza go w Starym Świecie, i most okazuje się wyjątkowo krótki:
-sama scena — nagły, przemijający skok siły i wytrzymałości — ma w tym
-świecie **gotową przyczynę**.
+Kronika osadza go w [[warhammer-fantasy|Starym Świecie]], i most okazuje
+się wyjątkowo krótki: sama scena — nagły, przemijający skok siły i
+wytrzymałości — ma w tym świecie **gotową przyczynę**.
 
 Tą przyczyną jest **Waaagh!**. Energia zbiorowej wiary zielonoskórych
 realnie, fizycznie powiększa orka, gdy szaman ją kanalizuje — dokładnie
@@ -133,6 +134,8 @@ Miejsce sceny to środek **Badlands** — na południe od Border Princes, u
 zachodniego progu **Worlds Edge Mountains**, w pobliżu Mourkain. Pewność
 oznaczenia jest **regionalna**: to bezimienne pole bitwy pośród Ziem
 Jałowych, nie konkretne miasto.
+
+[Brute Force na mapie Warhammer Fantasy](#/mapa/warhammer-fantasy?pin=39mm2-brute-force)
 
 ## Mechanika jako Opowieść
 

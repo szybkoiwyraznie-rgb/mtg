@@ -15,13 +15,13 @@ pinezka:
 
 ## Kronika Lore
 
-Na skraju **Esperu**, tam gdzie po Confluxie szklane wyspy shardu
-kontroli ocierają się o gnijący brzeg **Grixis**, powietrze pełne jest
-świstu kości. Odłamki Alary, zderzone w jeden poszarpany plan, wrzuciły
-w metalowe miasto to, czego Esper nie znał przez stulecia: obcy najazd.
-Z martwej strefy nadciąga deszcz kościanych włóczni miotanych przez
-nieumarłych — a na ich drodze staje samotna postać, chłodna i
-nieporuszona.
+Na skraju **Esperu**, tam gdzie po [[conflux|Confluxie]] szklane wyspy
+shardu kontroli ocierają się o gnijący brzeg [[grixis|Grixis]],
+powietrze pełne jest świstu kości. Odłamki [[alara|Alary]], zderzone w
+jeden poszarpany plan, wrzuciły w metalowe miasto to, czego Esper nie
+znał przez stulecia: obcy, dziki najazd. Z martwej strefy nadciąga deszcz
+kościanych włóczni miotanych przez nieumarłych — a na ich drodze staje
+samotna postać, chłodna i nieporuszona.
 
 To wedalkeńska **mag bitewna** sekty **Ethersworn**. Jednym precyzyjnym
 ruchem ramion nasyconych **etherium** — filigranowym metalem eteru,
@@ -32,8 +32,9 @@ zmechanizowana bestia: konstrukt, którego nie tknął żaden cios.
 W teologii Esperu ten obraz nie jest tylko obroną. Jest dowodem.
 Ciało z metalu **odrzuca krzywdę** — a więc ścieżka **Noble Work**,
 Szlachetnego Dzieła nasycania wszelkiego życia etherium, prowadzi ku
-doskonałości. Wojna Confluxu jest dla Ethersworn nie klęską, lecz
-polem próby, na którym wyższość ich ewolucji ma się właśnie okazać.
+doskonałości. [[conflux|Wojna Confluxu]] jest dla Ethersworn nie
+klęską, lecz polem próby, na którym wyższość ich ewolucji ma się
+właśnie okazać.
 
 ## Postacie i Byty
 
@@ -47,15 +48,16 @@ atak, lecz zapobieganie krzywdzie — tarcza, nie miecz. Za nią stoi
 nasycona etherium, którą osłania: ucieleśnienie tego, czego sekta
 broni i czym chce uczynić cały plan.
 
-Naprzeciw — **nieumarli z Grixis**: hordy szkieletów i zombie z
-konającego shardu czerni, które po Confluxie ruszyły na sąsiadów,
-by kaleczyć, zniewalać i wysysać energię życia. Ich „prymitywny”,
-kościany oręż jest w scenie przeciwieństwem wyrafinowanego etherium —
-starciem rozkładu z perfekcją. W tle całości stoi niewymieniony z
-imienia sprawca chaosu: to knowania **Nicol Bolasa**, podsycane latami
+Naprzeciw — **nieumarli z [[grixis|Grixis]]**: hordy szkieletów i zombie
+z konającego shardu czerni, które po [[conflux|Confluxie]] ruszyły na
+sąsiadów, by kaleczyć, zniewalać i wysysać energię życia (*vis*). Ich
+„prymitywny”, kościany oręż jest w scenie przeciwieństwem wyrafinowanego
+etherium — starciem rozkładu z perfekcją. W tle całości stoi niewymieniony
+z imienia sprawca chaosu: to knowania **Nicol Bolasa**, podsycane latami
 przez **Seekers of Carmot** (esperski strach o kurczące się etherium)
 i nieumarłe armie Grixis, doprowadziły do wojny, której ta scena jest
-jedną klatką.
+jedną klatką, a której echo zasilało rodzący się w centrum planu
+wir [[305arb-illusory-demon|Maelstromu]].
 
 ## Nazwa Karty
 
@@ -93,26 +95,28 @@ sojusznika, lecz *dowodzi tezy*, że tylko metal jest doskonały.
 
 ## Transpozycja
 
-Scena jest rodzima dla Alary, więc kronika nie przenosi jej do obcego
-świata, lecz zawęża do jednej, precyzyjnej klatki dziejów. Zapis —
-zderzenie shardów rzuca hordy na krystaliczne mosty Esperu, a
-wedalkeńska mag bitewna zatrzymuje deszcz kościanych włóczni z Grixis
-barierą ze stwardniałej many, osłaniając zmechanizowaną bestię —
-mieści się w twardej prawdzie ery **Alara Reborn**: po Confluxie Esper
-realnie zderzył się z Grixis i Bant, a nieumarli Grixis realnie
-najechali sąsiadów. To osadza scenę na **granicy Esper–Grixis**, w
-strefie inkursji, gdzie „prymitywny” najazd spotyka wyrafinowaną
-obronę etherium. Zapis nie dopisuje światu nowej prawdy — dopowiada
-tło jednej z niezliczonych potyczek tej wojny.
+Scena jest rodzima dla [[alara|Alary]], więc kronika nie przenosi jej
+do obcego świata, lecz zawęża do jednej, precyzyjnej klatki dziejów.
+Zapis — zderzenie shardów rzuca hordy na krystaliczne mosty Esperu, a
+wedalkeńska mag bitewna zatrzymuje deszcz kościanych włóczni z
+[[grixis|Grixis]] barierą ze stwardniałej many, osłaniając
+zmechanizowaną bestię — mieści się w twardej prawdzie ery
+**Alara Reborn**: po [[conflux|Confluxie]] Esper realnie zderzył się z
+Grixis i Bant, a nieumarli Grixis realnie najechali sąsiadów. To osadza
+scenę na **granicy Esper–Grixis**, w strefie inkursji, gdzie
+„prymitywny” najazd spotyka wyrafinowaną obronę etherium. Zapis nie
+dopisuje światu nowej prawdy — dopowiada tło jednej z niezliczonych
+potyczek tej wojny.
 
 ## Na Mapie
 
 Scena należy do **Esperu**, do jego wschodniej rubieży zwróconej ku
-**Grixis** — tam po Confluxie przebiegały strefy zderzenia obu shardów.
-Dzieje nie zapisały adresu tej konkretnej potyczki, stąd pewność
-**region**: kotwica pada na esperskim brzegu graniczącym z martwym
-shardem, w rejonie **Tidehollow** i **The Glass Dunes**, gdzie
-metalowe wyspy Esperu najbliżej ocierają się o czerń Grixis.
+**[[grixis|Grixis]]** — tam po [[conflux|Confluxie]] przebiegały strefy
+zderzenia obu shardów. Dzieje nie zapisały adresu tej konkretnej
+potyczki, stąd pewność **region**: kotwica pada na esperskim brzegu
+graniczącym z martwym shardem, w rejonie **Tidehollow** i **The Glass
+Dunes**, gdzie metalowe wyspy Esperu najbliżej ocierają się o czerń
+Grixis.
 
 [Ethersworn Shieldmage na mapie Alary](#/mapa/alara?pin=536arb-ethersworn-shieldmage)
 
