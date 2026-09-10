@@ -1,5 +1,13 @@
-## 2026-09-10 01:20 — Pętla Jakości: pass mapowy Kaladeshu (5 wież eterowych)
+## 2026-09-10 01:20 — Pętla Jakości: pogłębienie Lathnu + pass mapowy (5 wież)
 
+- **Pogłębienie lore [[kaladesh|Kaladeshu]]** (krok 2): północna rubież
+  planu, dotąd zbyta dwoma zdaniami, dostała pełny akapit — **Lathnu**
+  („Miasto na Szczycie Świata") na **Urwiskach Devra**: pionowe klify
+  i lodowaty wiatr, gospodarka górnicza (wytop rud dla Ghirapuru),
+  mało vedalken/elfów z powodu chłodu, pionowa kolejka szynowa i dok
+  sterowców na krawędzi urwiska, **Wielka Wspinka** jako mur gór
+  „oddzielający Kaladesh od niebios". Dwa nowe źródła (Art of Magic:
+  Kaladesh / Concept Art Library + The World of Kaladesh).
 - **Weryfikacja dokładności mapy** (Pętla Jakości, krok 4.3): przy
   przeskalowaniu planu do skali planu (PR-30) liczba **wież eterowych**
   spadła z pięciu do trzech, choć kanon i `map.json` mówią o **pięciu**

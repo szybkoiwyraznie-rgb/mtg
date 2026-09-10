@@ -91,10 +91,22 @@ konsulów. Na tarasie Greenwheel swoją próbę przechodzi
 [[610m19-gearsmith-prodigy|Gearsmith Prodigy]] — młoda konstruktorka
 z mosiężnym lisem-automatonem.
 
-Na północy, pod urwiskiem **Devra**, leży **Lathnu** — wysunięta
-placówka górników i inżynierów na skraju cywilizacji; za nią wznosi
-się **Wielka Wspinka**, lodowe góry, z których się nie wraca.
-**Bunarat** to spalona przez kapitana Barala wieś na południu.
+Na dalekiej północy, uczepione szczytu **Urwisk Devra** (Devra
+Cliffs), leży **Lathnu** — „Miasto na Szczycie Świata", jedna
+z najodleglejszych większych placówek cywilizacji na planie. Wokół
+setki metrów pionowej skały wyje nieustanny wiatr rzadkiego, lodowatego
+powietrza, a gospodarka miasta stoi na **wydobyciu i wytopie** rud
+metali z gór — Lathnu jest jednym z głównych źródeł surowca dla
+nienasyconego apetytu Ghirapuru na materiały do jego cudownych maszyn.
+Z powodu chłodu żyje tu niewielu vedalken i elfów; miasto to domena
+ludzi i krasnoludów. Pionowa kolejka szynowa spuszcza towary z krawędzi
+urwiska do karawan, które rzadkim szlakiem przez góry docierają aż do
+Ghirapuru, ale większość ruchu i tak odbywa się powietrzem: z krawędzi
+klifu zwisa zaskakująco ruchliwy dok sterowców. Za miastem legenda
+każe widzieć **Wielką Wspinkę** (The Great Climb) — mur gór, który
+oddziela Kaladesh od niebios; miejscowi przewodnicy powtarzają, że
+jedyne, co czeka na północ od Lathnu, to lodowy grób na skalistym
+zboczu. Na południu **Bunarat** to spalona przez kapitana Barala wieś.
 
 ## Ludy i bestie
 
@@ -159,3 +171,14 @@ Era Avishkar/Omenpathów dostanie osobną mapę, gdy przyjdzie karta.
   Freejam, Aleja Olbrzymów, Weldfast, Przykrycie i Surash,
   Shaila's Claim, Kuźnia Konsulów), trzy rzeki:
   https://mtg.wiki/page/Ghirapur
+- „The Art of Magic: The Gathering — Kaladesh" (fragmenty w
+  Concept Art Library) — Lathnu na Urwiskach Devra jako najodleglejsza
+  placówka planu: pionowe klify i lodowaty wiatr, gospodarka oparta na
+  wydobyciu i wytopie rud dla Ghirapuru, mało vedalken i elfów z powodu
+  chłodu, pionowa kolejka szynowa i dok sterowców na krawędzi urwiska,
+  Wielka Wspinka jako mur gór na północy:
+  https://conceptartlibrary.tumblr.com/post/151709071625/the-art-of-magic-the-gathering-kaladesh-lathnu
+- „The World of Kaladesh, Part I: The Inventors' Fair" (MTG Salvation)
+  — Lathnu jako „City at the Top of the World" w paśmie Urwisk Devra,
+  jedna z trzech głównych lokacji planu poza Ghirapurem:
+  https://www.mtgsalvation.com/articles/49592-the-world-of-kaladesh-part-i-the-inventors-fair
