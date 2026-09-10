@@ -84,6 +84,12 @@ scena = {
                                       [8500, 1350], [10000, 1250],
                                       [11200, 1400]]),
          'opcje': {'szer': 42, 'snieg': True}},
+        # Aleja Olbrzymów — wzgórza nad Vindayem u wrót Ghirapuru (NW od
+        # kropki miasta). Spójne z pasmem widocznym na mapie miasta
+        # (deep) w narożniku NW; szlak dorocznej migracji olbrzymów.
+        {'id': 'aleja-olbrzymow',
+         'punkty': TL([[8800, 6050], [9500, 6220], [10150, 6420]]),
+         'opcje': {'szer': 26}},
     ],
     'biomy': [
         # Peema: puszcza jak lasy Zendikaru (gęsta masa kęp, nie kropki).
@@ -124,16 +130,14 @@ scena = {
         # Ghirapur — stolica na zlewisku: KROPKA (miasto) na planie.
         {'typ': 'miasto', 'id': 'ghirapur', 'x': GHIRAPUR[0], 'y': GHIRAPUR[1],
          'opcje': {'skala': 1.15}},
+        # Kanoniczne miejsca z nazwą (mtg.wiki: Avishkar): Lathnu na
+        # Urwiskach Devra + Wielka Wspinka za nim. Bezimiennych osad/wsi
+        # NIE rysujemy (decyzja właściciela 2026-09-10: brak nazwy → brak
+        # POI). Wieże eterowe (5) są nazwanym elementem kanonu.
         {'typ': 'miasto', 'id': 'lathnu', 'x': T(8300, 1900)[0],
          'y': T(8300, 1900)[1], 'opcje': {'skala': 0.8}},
         {'typ': 'szczyt', 'id': 'wielka-wspinka', 'x': T(8300, 750)[0],
          'y': T(8300, 750)[1], 'opcje': {'skala': 1.0, 'snieg': True}},
-        {'typ': 'miasto', 'id': 'vahd-wies-1', 'x': T(14000, 3200)[0],
-         'y': T(14000, 3200)[1], 'opcje': {'skala': 0.65}},
-        {'typ': 'miasto', 'id': 'vahd-wies-2', 'x': T(14600, 3800)[0],
-         'y': T(14600, 3800)[1], 'opcje': {'skala': 0.65}},
-        {'typ': 'platforma', 'id': 'vahd-przystan', 'x': T(14200, 2900)[0],
-         'y': T(14200, 2900)[1], 'opcje': {'skala': 0.9}},
         {'typ': 'iglica', 'id': 'wieza-eterowa-1', 'x': T(2500, 7500)[0],
          'y': T(2500, 7500)[1], 'opcje': {'skala': 1.0}},
         {'typ': 'iglica', 'id': 'wieza-eterowa-2', 'x': T(9500, 7800)[0],
@@ -144,10 +148,6 @@ scena = {
          'y': T(6000, 3000)[1], 'opcje': {'skala': 1.0}},
         {'typ': 'iglica', 'id': 'wieza-eterowa-5', 'x': T(14500, 8000)[0],
          'y': T(14500, 8000)[1], 'opcje': {'skala': 1.0}},
-        {'typ': 'miasto', 'id': 'osada-rybacka', 'x': T(11200, 8800)[0],
-         'y': T(11200, 8800)[1], 'opcje': {'skala': 0.65}},
-        {'typ': 'miasto', 'id': 'osada-lesna', 'x': T(4500, 6300)[0],
-         'y': T(4500, 6300)[1], 'opcje': {'skala': 0.65}},
     ],
     'etykiety': [
         {'tekst': 'Ghirapur', 'x': GHIRAPUR[0], 'y': GHIRAPUR[1],
@@ -160,16 +160,11 @@ scena = {
          'y': T(13900, 3520)[1], 'opcje': {'fs': 11, 'ital': True}},
         {'tekst': 'Lathnu', 'x': T(8300, 1900)[0], 'y': T(8300, 1900)[1],
          'opcje': {'fs': 14, 'przyDo': T(8300, 1900)}},
-        {'tekst': 'Devra Cliffs', 'x': T(6800, 1900)[0],
-         'y': T(6800, 1900)[1], 'opcje': {'fs': 13}},
+        # „Devra Cliffs” NA paśmie urwisk (y≈1250–1400), nie na stepie.
+        {'tekst': 'Devra Cliffs', 'x': T(6300, 1300)[0],
+         'y': T(6300, 1300)[1], 'opcje': {'fs': 13, 'ital': True}},
         {'tekst': 'The Great Climb', 'x': T(8300, 750)[0], 'y': T(8300, 750)[1],
          'opcje': {'fs': 12, 'przyDo': T(8300, 750)}},
-        {'tekst': 'wieś', 'x': T(14000, 3200)[0], 'y': T(14000, 3200)[1],
-         'opcje': {'fs': 9, 'przyDo': T(14000, 3200)}},
-        {'tekst': 'wieś', 'x': T(14600, 3800)[0], 'y': T(14600, 3800)[1],
-         'opcje': {'fs': 9, 'przyDo': T(14600, 3800)}},
-        {'tekst': 'przystań sterowców', 'x': T(14200, 2900)[0],
-         'y': T(14200, 2900)[1], 'opcje': {'fs': 9, 'przyDo': T(14200, 2900)}},
         {'tekst': 'Aether Collection Tower', 'x': T(2500, 7500)[0],
          'y': T(2500, 7500)[1], 'opcje': {'fs': 9, 'przyDo': T(2500, 7500)}},
         {'tekst': 'Aether Collection Tower', 'x': T(9500, 7800)[0],
@@ -180,25 +175,21 @@ scena = {
          'y': T(6000, 3000)[1], 'opcje': {'fs': 9, 'przyDo': T(6000, 3000)}},
         {'tekst': 'Aether Collection Tower', 'x': T(14500, 8000)[0],
          'y': T(14500, 8000)[1], 'opcje': {'fs': 9, 'przyDo': T(14500, 8000)}},
-        {'tekst': 'osada rybacka', 'x': T(11200, 8800)[0],
-         'y': T(11200, 8800)[1], 'opcje': {'fs': 9, 'przyDo': T(11200, 8800)}},
-        {'tekst': 'osada leśna', 'x': T(4500, 6300)[0], 'y': T(4500, 6300)[1],
-         'opcje': {'fs': 9, 'przyDo': T(4500, 6300)}},
+        # Nazwy rzek — POZIOME, granatowe (patrz strefyWodne/etykietyWodne).
+        {'tekst': 'Vinday', 'x': T(4600, 5760)[0], 'y': T(4600, 5760)[1],
+         'opcje': {'fs': 13, 'ital': True}},
+        {'tekst': 'Suramal', 'x': T(10050, 3550)[0], 'y': T(10050, 3550)[1],
+         'opcje': {'fs': 13, 'ital': True}},
+        {'tekst': 'Vasavati', 'x': T(10820, 8350)[0], 'y': T(10820, 8350)[1],
+         'opcje': {'fs': 13, 'ital': True}},
+        {'tekst': 'Mapani', 'x': T(11550, 3950)[0], 'y': T(11550, 3950)[1],
+         'opcje': {'fs': 11, 'ital': True}},
     ],
-    'etykietyLukowe': [
-        {'id': 'luk-vinday', 'tekst': 'Vinday',
-         'punkty': TL([[2500, 5450], [5000, 5800], [7500, 6250]]),
-         'opcje': {'fs': 13}},
-        {'id': 'luk-suramal', 'tekst': 'Suramal',
-         'punkty': TL([[9920, 2500], [10050, 4200]]),
-         'opcje': {'fs': 13}},
-        {'id': 'luk-vasavati', 'tekst': 'Vasavati',
-         'punkty': TL([[10650, 8000], [10780, 8700]]),
-         'opcje': {'fs': 13}},
-        {'id': 'luk-mapani', 'tekst': 'Mapani',
-         'punkty': TL([[12400, 3100], [11000, 4300]]),
-         'opcje': {'fs': 11}},
-    ],
+    # Nazwy wód: granatowe (etykietaWoda) i POZIOME (bez łuków/obrotów) —
+    # decyzja właściciela 2026-09-10. `strefyWodne` pozwala im leżeć na
+    # cieku, `etykietyWodne` nadaje granat.
+    'strefyWodne': ['Vinday', 'Suramal', 'Vasavati', 'Mapani'],
+    'etykietyWodne': ['Vinday', 'Suramal', 'Vasavati', 'Mapani'],
     'kompas': {'x': T(15200, 10200)[0], 'y': T(15200, 10200)[1], 'r': 42},
     'skala': False,
     'ramka': {'margines': 18, 'passePartout': True},

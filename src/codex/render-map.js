@@ -242,6 +242,14 @@ export function prostNaklada(a, b) {
   return a[0] <= b[2] && b[0] <= a[2] && a[1] <= b[3] && b[1] <= a[3];
 }
 
+/** Czy `zewn` [x0,y0,x1,y1] ZAWIERA `wewn` (z tolerancją e). Używane do
+ *  twardej podmiany (ADR 0047): mapa miasta wchodzi dopiero, gdy widoczny
+ *  kadr mieści się w bboksie miasta — czyli miasto wypełnia całą ramkę. */
+export function prostZawiera(zewn, wewn, e = 0.004) {
+  return wewn[0] >= zewn[0] - e && wewn[1] >= zewn[1] - e
+    && wewn[2] <= zewn[2] + e && wewn[3] <= zewn[3] + e;
+}
+
 /** Czy punkt (x, y) leży w bbox [x0,y0,x1,y1]. */
 export function wBbox(x, y, bbox) {
   return x >= bbox[0] && x <= bbox[2] && y >= bbox[1] && y <= bbox[3];
@@ -251,9 +259,16 @@ export function wBbox(x, y, bbox) {
  * Decyzja L2 (ADR 0039 §3): pokazuj pokrycie, gdy skala wizualna
  * w układzie złotym osiągnęła próg I viewport styka się z bbox.
  * Poza pokryciem głęboki zoom pokazuje dalej L1 (nigdy pustki).
+ *
+ * Tryb TWARDEJ PODMIANY (ADR 0047, `podmiana: true`): mapa miasta to
+ * osobna mapa, nie doklejane pokrycie — wchodzi dopiero, gdy widoczny
+ * kadr MIEŚCI SIĘ w bboksie (miasto wypełnia całą ramkę), a nie już przy
+ * samym dotknięciu brzegu. Wtedy silnik dodatkowo chowa mapę-plan pod
+ * spodem (koniec problemu „nietrafiania rzek”).
  */
-export function czyPokazacL2(kWizualna, prog, widoczny, bbox) {
-  return kWizualna >= prog && prostNaklada(widoczny, bbox);
+export function czyPokazacL2(kWizualna, prog, widoczny, bbox, podmiana = false) {
+  if (kWizualna < prog) return false;
+  return podmiana ? prostZawiera(bbox, widoczny) : prostNaklada(widoczny, bbox);
 }
 
 // ADR 0027 (v2 — drzewo HTML): każda mapa jest OSOBNĄ, samowystarczalną
@@ -475,6 +490,7 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
     if ([x0, y0, x1, y1].some((v) => typeof v !== 'number')) return '';
     const src = w.podkladUrl ?? `${String(slugPlanu).split('/').pop()}/${w.podklad}`;
     return `<div class="mapa-l2" data-l2="${escapeHtml(w.id)}" data-prog="${Number(w.prog ?? 6)}"`
+      + `${w.podmiana ? ' data-podmiana="1"' : ''}`
       + ` data-bbox="${[x0, y0, x1, y1].join(',')}"`
       + ` style="left:${(x0 * 100).toFixed(3)}%;top:${(y0 * 100).toFixed(3)}%;`
       + `width:${((x1 - x0) * 100).toFixed(3)}%;height:${((y1 - y0) * 100).toFixed(3)}%" hidden>`
@@ -691,8 +707,14 @@ export function zamontujMape(app, opcje = {}) {
     el,
     img: el.querySelector?.('[data-l2-img]') ?? null,
     prog: parseFloat(el.dataset?.prog ?? '6'),
+    podmiana: el.dataset?.podmiana === '1',
     bbox: String(el.dataset?.bbox ?? '').split(',').map(Number),
   })).filter((n) => n.bbox.length === 4 && n.bbox.every(Number.isFinite));
+  // Podkłady-plan złotej sceny (SVG inline lub <img>) — twarda podmiana
+  // (ADR 0047) chowa je, gdy mapa miasta wypełnia ramkę.
+  const podkladyZlote = scenaZlota
+    ? [...(scenaZlota.querySelectorAll?.('.mapa-podklad') ?? [])]
+    : [];
   const kafleCache = new Map(); // indeks row-major → <img> wmontowany w warstwę
 
   // ── Warstwa karty (B2): otwarcie z pinezki, zamknięcie z powrotem ──
@@ -807,8 +829,9 @@ export function zamontujMape(app, opcje = {}) {
         }
       }
     }
+    let podmianaAktywna = false;
     for (const n of nakladki) {
-      const pokaz = czyPokazacL2(kWiz, n.prog, widoczny, n.bbox);
+      const pokaz = czyPokazacL2(kWiz, n.prog, widoczny, n.bbox, n.podmiana);
       if (n.img && !n.img.getAttribute?.('src') && kWiz >= n.prog - 1.5) {
         n.img.setAttribute?.('src', n.img.dataset?.src ?? n.img.getAttribute?.('data-src') ?? '');
       }
@@ -821,7 +844,12 @@ export function zamontujMape(app, opcje = {}) {
         n.el.classList?.toggle?.('widoczna', false);
         n.el.hidden = true; // fade-out odpuszczony (natychmiastowe ukrycie)
       }
+      if (n.podmiana && pokaz) podmianaAktywna = true;
     }
+    // Twarda podmiana (ADR 0047): gdy mapa miasta wypełnia ramkę, chowamy
+    // plan pod spodem — dwie osobne mapy, więc nic nie prześwituje i nie ma
+    // problemu „nietrafiania” rzek na styku.
+    for (const p of podkladyZlote) p.classList?.toggle?.('podmieniony', podmianaAktywna);
   };
 
   // Domyślny widok = cała mapa dopasowana do okna (contain, wyśrodkowana),
@@ -982,6 +1010,23 @@ export function zamontujMape(app, opcje = {}) {
   dopasuj();
 
   // deep-link ?pin= — wyśrodkuj na pinezce z przybliżeniem
+  // Zoom deep-linka celujący w nakładkę L2. Dla zwykłego pokrycia = próg
+  // ×1,1. Dla TWARDEJ PODMIANY (ADR 0047) musi wystarczyć, by widoczny
+  // kadr zmieścił się w bboksie (miasto wypełnia ramkę) — inaczej mapa
+  // miasta nie wskoczy; bierzemy zoom „fit bbox” razy 1,04 (lekki zapas).
+  const zoomNakladki = (n, w, h) => {
+    const progK = (n.prog * 1.1) / kal.sx;
+    if (!n.podmiana) return progK;
+    const winW = okno.clientWidth || w;
+    const winH = okno.clientHeight || h;
+    const [x0, y0, x1, y1] = n.bbox;
+    const kFit = Math.max(
+      winW / ((x1 - x0) * kal.sx * w),
+      winH / ((y1 - y0) * kal.sy * h),
+    ) * 1.04;
+    return Math.max(progK, kFit);
+  };
+
   const escape = globalThis.CSS?.escape ?? ((s) => String(s));
   const pinDocelowy = okno.getAttribute('data-pin');
   if (pinDocelowy) {
@@ -997,7 +1042,7 @@ export function zamontujMape(app, opcje = {}) {
       const gy = parseFloat(el.dataset.y);
       for (const n of nakladki) {
         if (Number.isFinite(gx) && Number.isFinite(gy) && wBbox(gx, gy, n.bbox)) {
-          stan.k = Math.min(Math.max(stan.k, (n.prog * 1.1) / kal.sx), K_MAX);
+          stan.k = Math.min(Math.max(stan.k, zoomNakladki(n, w, h)), K_MAX);
         }
       }
       stan.ox = (okno.clientWidth || w) / 2 - px * w * stan.k;
@@ -1024,7 +1069,7 @@ export function zamontujMape(app, opcje = {}) {
       // LOD: miejsce w bbox nakładki → od razu zoom z jej progiem (ADR 0039 §6).
       for (const n of nakladki) {
         if (wBbox(gx, gy, n.bbox)) {
-          stan.k = Math.min(Math.max(stan.k, (n.prog * 1.1) / kal.sx), K_MAX);
+          stan.k = Math.min(Math.max(stan.k, zoomNakladki(n, w, h)), K_MAX);
         }
       }
       stan.ox = (okno.clientWidth || w) / 2 - px * w * stan.k;

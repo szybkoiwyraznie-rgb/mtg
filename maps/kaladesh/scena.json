@@ -284,6 +284,26 @@
     "szer": 42,
     "snieg": true
    }
+  },
+  {
+   "id": "aleja-olbrzymow",
+   "punkty": [
+    [
+     1100.0,
+     770.0
+    ],
+    [
+     1187.5,
+     791.6
+    ],
+    [
+     1268.8,
+     817.1
+    ]
+   ],
+   "opcje": {
+    "szer": 26
+   }
   }
  ],
  "biomy": [
@@ -561,33 +581,6 @@
    }
   },
   {
-   "typ": "miasto",
-   "id": "vahd-wies-1",
-   "x": 1750.0,
-   "y": 407.3,
-   "opcje": {
-    "skala": 0.65
-   }
-  },
-  {
-   "typ": "miasto",
-   "id": "vahd-wies-2",
-   "x": 1825.0,
-   "y": 483.6,
-   "opcje": {
-    "skala": 0.65
-   }
-  },
-  {
-   "typ": "platforma",
-   "id": "vahd-przystan",
-   "x": 1775.0,
-   "y": 369.1,
-   "opcje": {
-    "skala": 0.9
-   }
-  },
-  {
    "typ": "iglica",
    "id": "wieza-eterowa-1",
    "x": 312.5,
@@ -630,24 +623,6 @@
    "y": 1018.2,
    "opcje": {
     "skala": 1.0
-   }
-  },
-  {
-   "typ": "miasto",
-   "id": "osada-rybacka",
-   "x": 1400.0,
-   "y": 1120.0,
-   "opcje": {
-    "skala": 0.65
-   }
-  },
-  {
-   "typ": "miasto",
-   "id": "osada-lesna",
-   "x": 562.5,
-   "y": 801.8,
-   "opcje": {
-    "skala": 0.65
    }
   }
  ],
@@ -705,10 +680,11 @@
   },
   {
    "tekst": "Devra Cliffs",
-   "x": 850.0,
-   "y": 241.8,
+   "x": 787.5,
+   "y": 165.5,
    "opcje": {
-    "fs": 13
+    "fs": 13,
+    "ital": true
    }
   },
   {
@@ -720,42 +696,6 @@
     "przyDo": [
      1037.5,
      95.5
-    ]
-   }
-  },
-  {
-   "tekst": "wieś",
-   "x": 1750.0,
-   "y": 407.3,
-   "opcje": {
-    "fs": 9,
-    "przyDo": [
-     1750.0,
-     407.3
-    ]
-   }
-  },
-  {
-   "tekst": "wieś",
-   "x": 1825.0,
-   "y": 483.6,
-   "opcje": {
-    "fs": 9,
-    "przyDo": [
-     1825.0,
-     483.6
-    ]
-   }
-  },
-  {
-   "tekst": "przystań sterowców",
-   "x": 1775.0,
-   "y": 369.1,
-   "opcje": {
-    "fs": 9,
-    "przyDo": [
-     1775.0,
-     369.1
     ]
    }
   },
@@ -820,103 +760,53 @@
    }
   },
   {
-   "tekst": "osada rybacka",
-   "x": 1400.0,
-   "y": 1120.0,
+   "tekst": "Vinday",
+   "x": 575.0,
+   "y": 733.1,
    "opcje": {
-    "fs": 9,
-    "przyDo": [
-     1400.0,
-     1120.0
-    ]
+    "fs": 13,
+    "ital": true
    }
   },
   {
-   "tekst": "osada leśna",
-   "x": 562.5,
-   "y": 801.8,
+   "tekst": "Suramal",
+   "x": 1256.2,
+   "y": 451.8,
    "opcje": {
-    "fs": 9,
-    "przyDo": [
-     562.5,
-     801.8
-    ]
+    "fs": 13,
+    "ital": true
+   }
+  },
+  {
+   "tekst": "Vasavati",
+   "x": 1352.5,
+   "y": 1062.7,
+   "opcje": {
+    "fs": 13,
+    "ital": true
+   }
+  },
+  {
+   "tekst": "Mapani",
+   "x": 1443.8,
+   "y": 502.7,
+   "opcje": {
+    "fs": 11,
+    "ital": true
    }
   }
  ],
- "etykietyLukowe": [
-  {
-   "id": "luk-vinday",
-   "tekst": "Vinday",
-   "punkty": [
-    [
-     312.5,
-     693.6
-    ],
-    [
-     625.0,
-     738.2
-    ],
-    [
-     937.5,
-     795.5
-    ]
-   ],
-   "opcje": {
-    "fs": 13
-   }
-  },
-  {
-   "id": "luk-suramal",
-   "tekst": "Suramal",
-   "punkty": [
-    [
-     1240.0,
-     318.2
-    ],
-    [
-     1256.2,
-     534.5
-    ]
-   ],
-   "opcje": {
-    "fs": 13
-   }
-  },
-  {
-   "id": "luk-vasavati",
-   "tekst": "Vasavati",
-   "punkty": [
-    [
-     1331.2,
-     1018.2
-    ],
-    [
-     1347.5,
-     1107.3
-    ]
-   ],
-   "opcje": {
-    "fs": 13
-   }
-  },
-  {
-   "id": "luk-mapani",
-   "tekst": "Mapani",
-   "punkty": [
-    [
-     1550.0,
-     394.5
-    ],
-    [
-     1375.0,
-     547.3
-    ]
-   ],
-   "opcje": {
-    "fs": 11
-   }
-  }
+ "strefyWodne": [
+  "Vinday",
+  "Suramal",
+  "Vasavati",
+  "Mapani"
+ ],
+ "etykietyWodne": [
+  "Vinday",
+  "Suramal",
+  "Vasavati",
+  "Mapani"
  ],
  "kompas": {
   "x": 1900.0,

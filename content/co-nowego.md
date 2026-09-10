@@ -1,3 +1,22 @@
+## 2026-09-10 02:10 — Kaladesh: poprawki mapy po recenzji właściciela
+
+Sześć uwag do map Kaladeshu (plan + osobna mapa Ghirapuru):
+
+1. **Spójność gór:** pasmo widoczne na mapie miasta na NW (Aleja
+   Olbrzymów) dostało swój odpowiednik na planie — wzgórza u wrót
+   Ghirapuru nad Vindayem.
+2. **Pinezka karty** (Gearsmith Prodigy) wycentrowana dokładnie na
+   ikonie miasta (dawniej wisiała obok).
+3. **Twarda podmiana** mapy miasta wchodzi teraz dopiero, gdy miasto
+   **wypełnia całą ramkę** (a nie „za wcześnie”), i przy podmianie
+   **plan znika pod spodem** — koniec efektu „nietrafiania” rzek na styku.
+4. **Nazwy wód** na planie (Vinday, Suramal, Vasavati, Mapani) są
+   granatowe i **poziome** (bez łuków/obrotów).
+5. **Bezimienne POI usunięte:** żadnych „wsi”/„osad rybackich” bez
+   kanonicznej nazwy — jak nie znamy nazwy, nie rysujemy punktu.
+6. **„Devra Cliffs”** przeniesione z pustego stepu **na pasmo urwisk**,
+   gdzie faktycznie są klify.
+
 ## 2026-09-10 01:20 — Pętla Jakości: pogłębienie Lathnu + pass mapowy (5 wież)
 
 - **Pogłębienie lore [[kaladesh|Kaladeshu]]** (krok 2): północna rubież

@@ -58,12 +58,21 @@ w układzie współrzędnych planu — co blokuje własną skalę miasta.
      i biomy są duże i proporcjonalne do TEJ mapy).
 
 2. **Przejście = twarda podmiana deep-zoom (crossfade), nie wycinek.**
-   Od progu zoomu na kropce miasta plan zostaje **przykryty** mapą
-   miasta (pełne krycie, gdy podmiana zakończona) w małym bboksie wokół
-   kropki (kotwica startowa + strefa uruchomienia). Przejście jest
-   płynne (przenikanie opacity), ale **nie ma wymogu ciągłości geometrii
-   na krawędzi** — miasto to inna mapa, więc rzeki/drogi planu nie muszą
-   trafiać w rzeki/drogi miasta w punkcie cięcia.
+   Mapa miasta wchodzi dopiero, gdy **widoczny kadr mieści się w
+   bboksie miasta** — czyli gdy miasto **wypełnia całą ramkę**
+   (`prostZawiera(bbox, widoczny)`), a nie już przy samym dotknięciu
+   brzegu bboksu (doprecyzowanie po recenzji właściciela 2026-09-10:
+   „mapa deep pokazuje się za wcześnie”). Znacznik danych: nakładka
+   z `podmiana: true` w `map.json`; próg `prog` jest dolną bramką, a
+   warunek „mieści się w kadrze” — właściwym wyzwalaczem. W chwili
+   podmiany silnik **chowa podkład-plan** (`.mapa-podklad.podmieniony`,
+   opacity→0, ten sam 0,35 s co fade-in miasta), więc dwie osobne mapy
+   nigdy nie są widoczne naraz. Deep-link `?pin=`/`?x=&y=` w bboksie
+   ustawia od razu zoom „fit bbox” (miasto wypełnia ramkę). Przejście
+   jest płynne (przenikanie opacity), ale **nie ma wymogu ciągłości
+   geometrii na krawędzi** — miasto to inna mapa, więc rzeki/drogi
+   planu nie muszą trafiać w rzeki/drogi miasta w punkcie cięcia (a że
+   plan i tak znika pod miastem, styk jest niewidoczny).
 
 3. **Sztywny szew (ADR 0046 §5) nie obowiązuje dla mapy miasta.**
    Walidator hydrologii (`sprawdzHydrologie`) traktuje mapę miasta jak

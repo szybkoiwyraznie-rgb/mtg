@@ -8,7 +8,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { siatkaKafli, kafleDlaRect, prostWidoczny, prostNaklada, wBbox,
+import { siatkaKafli, kafleDlaRect, prostWidoczny, prostNaklada, prostZawiera, wBbox,
   czyPokazacL2, renderMape, zamontujMape } from '../src/codex/render-map.js';
 import { tnij, czyDostepnyConvert } from '../tools/kafle.mjs';
 
@@ -88,6 +88,24 @@ test('czyPokazacL2: próg i styczność z bbox (brzegi włącznie)', () => {
   assert.ok(!prostNaklada([0.31, 0, 1, 1], bbox));
   assert.ok(wBbox(0.1, 0.2, bbox));
   assert.ok(!wBbox(0.9, 0.9, bbox));
+});
+
+test('czyPokazacL2: TWARDA PODMIANA wchodzi dopiero, gdy kadr mieści się w bbox (ADR 0047)', () => {
+  const bbox = [0.60625, 0.5804449, 0.70625, 0.6559551];
+  // kadr dotyka brzegu bboksu (miasto jeszcze nie wypełnia ramki):
+  const kadrDuzy = [0.55, 0.55, 0.68, 0.63];
+  // kadr w całości wewnątrz bboksu (miasto wypełnia ramkę):
+  const kadrMaly = [0.62, 0.59, 0.69, 0.64];
+  // Tryb pokrycia (Dominaria): styczność wystarcza.
+  assert.equal(czyPokazacL2(9, 8, kadrDuzy, bbox, false), true);
+  // Tryb podmiany (Ghirapur): styczność NIE wystarcza…
+  assert.equal(czyPokazacL2(9, 8, kadrDuzy, bbox, true), false);
+  // …dopiero zawarcie kadru w bboksie.
+  assert.equal(czyPokazacL2(9, 8, kadrMaly, bbox, true), true);
+  // Próg to twarda dolna bramka także w podmianie.
+  assert.equal(czyPokazacL2(7.9, 8, kadrMaly, bbox, true), false);
+  assert.ok(prostZawiera(bbox, kadrMaly));
+  assert.ok(!prostZawiera(bbox, kadrDuzy));
 });
 
 const MAPA_LOD = {
@@ -260,7 +278,8 @@ test('LOD Kaladesh: wariant ghirapur L2 — bbox × aspekt × pliki × scena', (
   const l2 = mapa.warianty.find((w) => w.id === 'ghirapur');
   assert.ok(l2, 'wariant ghirapur istnieje');
   assert.deepEqual(l2.bbox, [0.60625, 0.5804449, 0.70625, 0.6559551]);
-  assert.equal(l2.prog, 6);
+  assert.equal(l2.prog, 8);
+  assert.equal(l2.podmiana, true, 'Ghirapur = twarda podmiana (ADR 0047)');
   assert.equal(l2.podklad, 'ghirapur.svg');
   assert.equal(l2.etykiety, false);
   // aspekt bbox (w układzie złotym planu 2000×1400) = aspekt płyty 1400×740
@@ -286,7 +305,8 @@ test('LOD Kaladesh: wariant ghirapur L2 — bbox × aspekt × pliki × scena', (
     const html = renderMape('kaladesh', {});
     assert.ok(html.includes('data-l2="ghirapur"'), 'nakładka L2 w scenie');
     assert.ok(html.includes('data-bbox="0.60625,0.5804449,0.70625,0.6559551"'), 'bbox w markapie');
-    assert.ok(html.includes('data-prog="6"'), 'próg w markapie');
+    assert.ok(html.includes('data-prog="8"'), 'próg w markapie');
+    assert.ok(html.includes('data-podmiana="1"'), 'twarda podmiana w markapie');
     assert.ok(html.includes('data-src="kaladesh/ghirapur.svg"'), 'leniwy src płyty');
     assert.ok(!html.includes('data-epoka-przelacz'), 'bbox nie trafia do przełącznika epok');
   } finally {
