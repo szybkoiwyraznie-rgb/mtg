@@ -1,3 +1,16 @@
+## 2026-09-10 01:20 — Pętla Jakości: pass mapowy Kaladeshu (5 wież eterowych)
+
+- **Weryfikacja dokładności mapy** (Pętla Jakości, krok 4.3): przy
+  przeskalowaniu planu do skali planu (PR-30) liczba **wież eterowych**
+  spadła z pięciu do trzech, choć kanon i `map.json` mówią o **pięciu**
+  (audyt PR-29 ustalił „5, nie 3”, lista umownych). Odtworzono
+  wieże 4 i 5 wraz z etykietami — plan znów zgodny z kanonem i własnymi
+  rozstrzygnięciami umownymi. Ogląd rastru (resvg): brak kolizji,
+  wszystkie na lądzie; map-audit 0; `podklad.svg` 1,82 MB (< limit).
+- Link-mining bez nowych haseł — żadna encja nie osiąga progu ≥2 kart
+  (kolejki Kaladeshu i Forgotten Realms wciąż o 1 kartę; „eter” pada
+  w 1 karcie Kaladeshu, drugie trafienie to „Eternal” z Tarkiru).
+
 ## 2026-09-10 00:40 — Kaladesh jako dwie osobne mapy (PR-30)
 
 - **Mapa [[kaladesh|Kaladeshu]] przebudowana na dwie osobne mapy**

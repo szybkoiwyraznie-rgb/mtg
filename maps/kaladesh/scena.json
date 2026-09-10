@@ -615,6 +615,24 @@
    }
   },
   {
+   "typ": "iglica",
+   "id": "wieza-eterowa-4",
+   "x": 750.0,
+   "y": 381.8,
+   "opcje": {
+    "skala": 1.0
+   }
+  },
+  {
+   "typ": "iglica",
+   "id": "wieza-eterowa-5",
+   "x": 1812.5,
+   "y": 1018.2,
+   "opcje": {
+    "skala": 1.0
+   }
+  },
+  {
    "typ": "miasto",
    "id": "osada-rybacka",
    "x": 1400.0,
@@ -774,6 +792,30 @@
     "przyDo": [
      1687.5,
      763.6
+    ]
+   }
+  },
+  {
+   "tekst": "Aether Collection Tower",
+   "x": 750.0,
+   "y": 381.8,
+   "opcje": {
+    "fs": 9,
+    "przyDo": [
+     750.0,
+     381.8
+    ]
+   }
+  },
+  {
+   "tekst": "Aether Collection Tower",
+   "x": 1812.5,
+   "y": 1018.2,
+   "opcje": {
+    "fs": 9,
+    "przyDo": [
+     1812.5,
+     1018.2
     ]
    }
   },
