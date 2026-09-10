@@ -3,7 +3,7 @@ typ: plan
 slug: warhammer-fantasy
 tytul: Warhammer Fantasy
 typIP: zewnetrzne
-mapa: pending
+mapa: warhammer-fantasy
 materializacja: 2026-09-10
 tagi: [geografia]
 ---
@@ -51,18 +51,23 @@ wygrywa*, jest samospełniającą się prawdą świata.
 
 ## Mapa
 
-`maps/warhammer-fantasy/` — **w przygotowaniu** (`pending`).
-Rekomendacja wariantu i badanie kandydatów graficznych:
-`maps/_warsztat/RESEARCH_2026-09-10-warhammer-fantasy-mapa.md`.
-Kierunek: **T1 (raster z etykietami)** na bazie oficjalnej mapy
-*Warhammer: The Old World* (Games Workshop, 2024), modelem jak Faerûn
-i Dominaria (ADR 0038/0039). Podkład binarny dostarcza właściciel
-(sandbox blokuje pobrania z media-CDN-ów), atrybucja źródła w stopce
-mapy (użytek prywatny, ADR 0031).
+`maps/warhammer-fantasy/` — mapa **T1 (raster z etykietami)** na bazie
+oficjalnej mapy *Warhammer: The Old World* (Games Workshop, 2024),
+modelem jak Faerûn i Dominaria (ADR 0038/0039). Badanie kandydatów i
+uzasadnienie wariantu: `maps/_warsztat/RESEARCH_2026-09-10-warhammer-fantasy-mapa.md`.
 
-Do czasu powstania mapy pinezka karty żyje jako opis w sekcji „Na Mapie"
-Karty Katalogowej (rejon **Badlands** — ojcowizna zielonoskórych),
-zgodnie z protokołem pinezek (PROCES_MAP.md, krok 6).
+Podkład jest bardzo duży (master 8682×12737 px), więc — jak Dominaria —
+wchodzi jako **piramida LOD** (ADR 0039): pierwszy render `l0.jpg`
+(1920 px) plus 425 kafelków L1 (17×25 po 512 px) doładowywanych przy
+zbliżeniu. Etykiety i ikony miejsc są nadrukowane na rastrze
+(`etykiety: false`) — Codex nakłada na nim wyłącznie pinezki kart.
+Podkład binarny dostarczył właściciel (sandbox blokuje pobrania z
+media-CDN-ów GW/Reddit), atrybucja źródła w stopce mapy (użytek
+prywatny, ADR 0031).
+
+Pierwsza pinezka — `39MM2 Brute Force` — trafia na rejon **Badlands**
+(Ziemie Jałowe na południe od Starego Świata, ojcowizna zielonoskórych),
+z pewnością **region** (bezimienne pole bitwy, nie konkretne miasto).
 
 ## Źródła
 

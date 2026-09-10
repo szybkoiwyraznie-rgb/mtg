@@ -8,6 +8,9 @@ plan: warhammer-fantasy
 kolory: [R]
 tagi: [demony, wojna, szamanizm]
 materializacja: 2026-09-10
+pinezka:
+  mapa: warhammer-fantasy
+  pewnosc: region
 ---
 
 ## Kronika Lore
@@ -126,11 +129,10 @@ wskazują jednego miasta: orkowie „można rzec, że ich ojczyzną są
 podnóży **Worlds Edge Mountains**, skąd od Wojen Goblinów wylewają się
 ich Waaagh!. Docelowa pewność: **region** — środek Badlands, nie punkt.
 
-Mapa planu **Warhammer Fantasy** jest w przygotowaniu (rekomendowany
-wariant: raster oficjalnej mapy *The Old World* z etykietami — badanie
-`maps/_warsztat/RESEARCH_2026-09-10-warhammer-fantasy-mapa.md`). Do czasu
-jej powstania położenie sceny opisuje ten akapit; pinezka trafi na
-Badlands, gdy podkład wejdzie do bazy.
+Miejsce sceny to środek **Badlands** — na południe od Border Princes, u
+zachodniego progu **Worlds Edge Mountains**, w pobliżu Mourkain. Pewność
+oznaczenia jest **regionalna**: to bezimienne pole bitwy pośród Ziem
+Jałowych, nie konkretne miasto.
 
 ## Mechanika jako Opowieść
 

@@ -1,0 +1,115 @@
+{
+ "epoka": "Stan współczesny wg zszytego rastra fanowskiego oficjalnej mapy Warhammer: The Old World (Games Workshop, 2024). Pinezki datują się Fabułą karty, nie mapą (ADR 0033).",
+ "kotwice": [
+  {
+   "nazwa": "The Badlands",
+   "notka": "Ziemie Jałowe na południe od Starego Świata — kanoniczna ojcowizna zielonoskórych (Orków i Goblinów); u wschodnich podnóży Worlds Edge Mountains, na płd. od Border Princes. Kotwica pinezki 39MM2.",
+   "pozycja_zrodlo": "kanon: https://whfb.lexicanum.com/wiki/Orc (Badlands jako homeland orków) + duża etykieta „THE BADLANDS\" i ikony orków na rastrze; odczyt z mastera px (3700, 7400), 2026-09-10",
+   "px_t1": [
+    3700,
+    7400
+   ],
+   "typ": "kraina",
+   "uklad": "złoty T1 — odczyt z mastera",
+   "x": 0.4262,
+   "y": 0.581
+  },
+  {
+   "nazwa": "Worlds Edge Mountains",
+   "notka": "wielkie pasmo na wschodniej granicy Starego Świata; wschodnie stoki przejęte przez zielonoskórych w Wojnach Goblinów",
+   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Worlds_Edge_Mountains + etykieta „WORLDS EDGE MOUNTAINS\" na rastrze (pasmo wzdłuż wschodniej krawędzi); odczyt z podglądu L0",
+   "typ": "pasmo",
+   "uklad": "złoty T1 — odczyt z podglądu L0",
+   "x": 0.78,
+   "y": 0.55
+  },
+  {
+   "nazwa": "The Border Princes",
+   "notka": "luźne włości ludzi między Imperium/Tileą a Badlands — bufor na północ od ojcowizny orków",
+   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Border_Princes + etykieta „THE BORDER PRINCES\" na rastrze (na płn. od Badlands); odczyt z podglądu L0",
+   "typ": "kraina",
+   "uklad": "złoty T1 — odczyt z podglądu L0",
+   "x": 0.44,
+   "y": 0.06
+  },
+  {
+   "nazwa": "Land of the Dead (Nehekhara)",
+   "notka": "pustynne południe: Khemri, Zandri, Numas, Mahrak, Lybaras — kraina nieumarłych królów grobowców",
+   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Nehekhara + etykiety miast Nehekhary (Numas, Marshes of Madness) w dolnej partii rastra; odczyt z podglądu L0",
+   "typ": "kraina",
+   "uklad": "złoty T1 — odczyt z podglądu L0",
+   "x": 0.4,
+   "y": 0.94
+  }
+ ],
+ "otwarte_na_kolejne_przejscia": [
+  "Kalibracja kotwic głównych krain ludzi (Reikland/Altdorf, Bretonnia, Kislev) do pierwszej karty Imperium/Bretonnii — na razie osadzona jest tylko południowa część świata (Badlands + otoczenie) potrzebna karcie 39MM2.",
+  "Kotwice „odczyt z podglądu L0\" (Worlds Edge Mountains, Border Princes, Nehekhara) do weryfikacji na masterze przy pierwszej karcie z regionu (precedens Dominaria)."
+ ],
+ "pinezki": [
+  {
+   "karta": "39mm2-brute-force",
+   "x": 0.4262,
+   "y": 0.581,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła właściciela: bezimienne, błotniste pole bitwy zielonoskórych — ork w zardzewiałej kolczudze pęczniejący od czerwonej magii Waaagh!, karmiony przez szamana. Dzieje świata nie wskazują jednego miasta: kanoniczną ojcowizną orków są Badlands (Lexicanum: „their homeland can be said to be the area known as the Badlands\"), na płd. od Border Princes u wschodnich podnóży Worlds Edge Mountains. Stąd pinezka na środku Badlands (odczyt z mastera px 3700, 7400) i pewność region (ADR 0040: lokalizacja i pewność z lore/Fabuły, nie z druku źródłowego)."
+  }
+ ],
+ "plan": "warhammer-fantasy",
+ "podklad": "l0.jpg",
+ "rekonstrukcja": false,
+ "tytul": "Warhammer Fantasy — Stary Świat",
+ "uklad_wspolrzednych": "ZŁOTY = raster T1 (master 8682×12737; plik l0.jpg 1920×2817 to jego pomniejszony proxy, ten sam kadr). x,y kotwic i pinezek znormalizowane 0–1 względem mastera. Nowa pinezka: odczyt X,Y na masterze → x=X/8682, y=Y/12737 (współrzędne mierzone na docelowym pliku).",
+ "wariant": "T1",
+ "warianty": [
+  {
+   "domyslny": true,
+   "epoka": "stan współczesny wg oficjalnej mapy Warhammer: The Old World (GW, 2024), zszytej fanowsko",
+   "etykiety": false,
+   "id": "t1",
+   "kafle": {
+    "katalog": "kafle",
+    "kolumny": 17,
+    "prog": 2.5,
+    "rozmiar": 512,
+    "wiersze": 25,
+    "wzorzec": "k{nnn}.jpg"
+   },
+   "kalibracja": {
+    "ox": 0,
+    "oy": 0,
+    "sx": 1,
+    "sy": 1
+   },
+   "podklad": "l0.jpg",
+   "tytul": "T1 · Stary Świat",
+   "wariant": "T1",
+   "wymiary": {
+    "szerokosc": 8682,
+    "wysokosc": 12737
+   },
+   "zrodlo": {
+    "autor": "Games Workshop (oryginał: mapa Warhammer: The Old World, 2024); zszycie fanowskie oficjalnych kafli, dostarczone przez właściciela",
+    "licencja": "materiał Games Workshop; użytek prywatny, niepubliczny — ADR 0031; przy upublicznieniu Codexu podkład do wymiany (ADR 0007 §3)",
+    "notka": "Master 8682×12737 (≈22 MB, q85, dostarczony przez właściciela) poza dist (cięty lokalnie tools/kafle.mjs); w repo i artefakcie: l0.jpg (1920×2817, pierwszy render), mini.jpg (800 px, mini-mapy kart), kafle/kNNN.jpg (425 kafelków L1, 17×25 po 512 px, row-major). Podkład T1 = układ ZŁOTY współrzędnych wszystkich pinezek i kotwic (ADR 0035). Na rastrze Codex nie rysuje etykiet (są nadrukowane na mapie) — zostają pinezki kart i kotwice.",
+    "pobrano": "2026-09-10",
+    "tytul": "Warhammer: The Old World — oficjalna mapa GW (2024), zszycie fanowskie kafli",
+    "url": "https://www.warhammer-community.com/",
+    "url2": "https://www.reddit.com/r/WarhammerFantasy/"
+   }
+  }
+ ],
+ "wymiary": {
+  "szerokosc": 8682,
+  "wysokosc": 12737
+ },
+ "zrodlo": {
+  "autor": "Games Workshop (oryginał: mapa Warhammer: The Old World, 2024); zszycie fanowskie oficjalnych kafli, dostarczone przez właściciela",
+  "licencja": "materiał Games Workshop; użytek prywatny, niepubliczny — ADR 0031; przy upublicznieniu Codexu podkład do wymiany (ADR 0007 §3)",
+  "notka": "Mapa LOD (ADR 0039): podkład złoty T1 — L0 (l0.jpg, pierwszy render) + kafle L1 (17×25×512, próg 2.5). Raster ma etykiety nadrukowane (etykiety: false — Codex nakłada tylko pinezki kart).",
+  "pobrano": "2026-09-10",
+  "tytul": "Warhammer: The Old World — oficjalna mapa GW (2024), zszycie fanowskie",
+  "url": "https://www.warhammer-community.com/",
+  "url2": "https://www.reddit.com/r/WarhammerFantasy/"
+ }
+}
