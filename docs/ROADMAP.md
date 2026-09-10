@@ -366,6 +366,15 @@ Reservoir na płycie L2 Ghirapuru, nowy klocek mapforge `zbiornik`.
 **176/176 testów**; 31 stron (15/4/12); map-audit 0; ZIP 87,8 MB.
 Raport: `docs/audits/AUDYT_2026-09-09-PR28.md`.
 
+**PR-31 (2026-09-10) — Pętla Jakości po PR-30:** audyt scalonego PR-30
+(ADR 0047, Kaladesh dwie mapy, 3 materializacje, Warhammer Fantasy T1,
+Auriokowie; integralność 180/180, build 36 stron, map-audit 0); pogłębienie
+kart `536arb-ethersworn-shieldmage`, `39mm2-brute-force` i `257ltr-lash-of-the-balrog`;
+dwa nowe hasła z link-miningu: `conflux` (wydarzenie, Alara) i `grixis`
+(geografia, Alara) łączące karty 305ARB i 536ARB; metryka kompletności
+100% na wszystkich 38 stronach (18 kart, 7 haseł, 13 planów); 18/18 pinezek
+kart w 13 mapach planów, map-audit 0. **180/180 testów**.
+
 **PR-30 (2026-09-10) — Kaladesh jako dwie osobne mapy.** Korekta
 właściciela: plan przeskalowany do skali planu **2000×1400** (jak
 Zendikar — duże, proporcjonalne góry/lasy; Ghirapur jako POI-kropka),

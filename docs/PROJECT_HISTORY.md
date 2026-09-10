@@ -4,6 +4,17 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-10 — PR-31: Pętla Jakości po PR-30 (sesja `arena/01a08d3e-mtg`)
+
+Pełna realizacja Pętli Jakości po scaleniu PR-30:
+1. **Audyt scalonego PR-30** (`docs/audits/AUDYT_2026-09-10-PR30.md`): pełna zgodność z ADR-ami (ADR 0047, Kaladesh dwie osobne mapy, 3 materializacje, mapa Warhammer Fantasy T1, hasło Auriokowie, 180/180 testów, build 36 stron, map-audit 0).
+2. **Pogłębianie LORE:** uzupełnienie brakujących wikilinków i tła świata w kartach `536arb-ethersworn-shieldmage` (doktryna Ethersworn, Conflux, Grixis, Alara) oraz `39mm2-brute-force` (Waaagh!, szamani, Badlands, Warhammer Fantasy), korekta leksyki reguł w `257ltr-lash-of-the-balrog` (czar zwykły / sorcery).
+3. **Link-mining i nowe hasła (próg ≥ 2 kart):**
+   - **`content/lore/conflux.md`** (wydarzenie, Alara): Scalenie Shardów, narodziny Maelstromu, spisek Bolasa, Wojna Confluxu (karty 305ARB + 536ARB).
+   - **`content/lore/grixis.md`** (geografia, Alara): martwy shard śmierci i rozkładu, Vithia, Sedraxis, najazdy nieumarłych (karty 305ARB + 536ARB).
+4. **Metryka:** completeness score osiąga **100% na wszystkich 38 stronach bazy** (18 kart, 7 haseł, 13 planów).
+5. **Pass mapowy:** weryfikacja 18/18 pinezek kart we wszystkich 13 mapach planów; `map-audit.py` = 0 uwag.
+
 ## 2026-09-10 — PR-30: Kaladesh jako dwie osobne mapy (sesja `arena/01a087fc-mtg`)
 
 Korekta właściciela do mapy Kaladeshu: miały być **dwie osobne mapy**.

@@ -1,3 +1,18 @@
+## 2026-09-10 23:45 — Pętla Jakości: hasła Conflux i Grixis + 100% kompletności w wiki-stats
+
+- **Audyt scalonego PR-30** (`docs/audits/AUDYT_2026-09-10-PR30.md`): werdykt — pełna zgodność z ADR-ami i wytycznymi właściciela (dwie osobne mapy Kaladeshu, ADR 0047, 3 materializacje, mapa Warhammer Fantasy T1, hasło Auriokowie).
+- **Link-mining i nowe hasła (krok 3):**
+  - **[[conflux|Conflux]]** (`content/lore/conflux.md`, klasa `wydarzenie`, plan [[alara|Alara]]) — Scalenie pięciu shardów Alary, narodziny Maelstromu, spisek Nicola Bolasa, wojny graniczne i triumf Ajaniego Goldmane'a. Próg ≥ 2 kart spełniony przez [[305arb-illusory-demon|Illusory Demon]] i [[536arb-ethersworn-shieldmage|Ethersworn Shieldmage]].
+  - **[[grixis|Grixis]]** (`content/lore/grixis.md`, klasa `geografia`, plan [[alara|Alara]]) — martwy shard śmierci, zgnilizny i vis, rządzony przez demony i nekromantów (Sedris, Malfegor), którego armie nieumarłych najechały Esper i Bant po Confluxie. Próg ≥ 2 kart spełniony przez obie karty Alary.
+- **Pogłębienie LORE i uzupełnienie wikilinków (krok 2):**
+  - [[536arb-ethersworn-shieldmage|Ethersworn Shieldmage]] oraz [[39mm2-brute-force|Brute Force]] zyskały wikilinki i pogłębione tło świata.
+  - [[257ltr-lash-of-the-balrog|Lash of the Balrog]] — poprawka leksyki reguł (czar zwykły / sorcery) i dodanie wikilinków.
+  - Strona planu [[alara|Alara]] zaktualizowana o wikilinki do Confluxu i Grixis.
+  - **Metryka kompletności (`tools/wiki-stats.mjs`): 100% na wszystkich 38 stronach bazy** (18 kart, 7 haseł, 13 planów).
+- **Pass mapowy (krok 4):**
+  - Weryfikacja 18/18 pinezek kart w 13 mapach planów — wszystkie zarejestrowane z kanonicznym uzasadnieniem.
+  - `python3 tools/map-audit.py` = 0 problemów na wszystkich scenach mapowych.
+
 ## 2026-09-10 16:00 — Nowy plan: Warhammer Fantasy + karta Brute Force
 
 Do Kodeksu wchodzi **nowy plan franczyzy zewnętrznej** —
