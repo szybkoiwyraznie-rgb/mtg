@@ -1175,8 +1175,17 @@ export function zamontujMape(app, opcje = {}) {
   // pan + szczypnięcie (pointer events: mysz i dotyk)
   const wskazniki = new Map();
   let ostatniDystans = null;
+  // Natywne przeciąganie obrazka / zaznaczanie tekstu kradnie gest panowania:
+  // pierwszy drag tworzy zaznaczenie, a kolejny mousedown nad nim uruchamia
+  // natywne drag-and-drop (ghost obrazka „wypada z przeglądarki”, pointercancel
+  // ubija pan). Blokujemy dragstart u źródła.
+  okno.addEventListener('dragstart', (e) => e.preventDefault?.());
   okno.addEventListener('pointerdown', (e) => {
     if (e.target.closest('a, button, input, label')) return;
+    // preventDefault ubija natywne zaznaczanie/DnD; fokus nadajemy ręcznie,
+    // żeby Escape (reset widoku) dalej działał.
+    e.preventDefault?.();
+    okno.focus?.({ preventScroll: true });
     okno.setPointerCapture?.(e.pointerId);
     wskazniki.set(e.pointerId, { x: e.clientX, y: e.clientY });
   });

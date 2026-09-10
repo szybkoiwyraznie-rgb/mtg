@@ -259,6 +259,9 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
   background: #efe9dc;
   border: 1px solid var(--ramka); border-radius: 10px;
   touch-action: none; cursor: grab;
+  /* pan-surface: żadnego zaznaczania tekstu ani natywnego DnD podkładu
+     (inaczej drugi drag startuje natywne drag-and-drop obrazka) */
+  user-select: none; -webkit-user-select: none;
   box-shadow: inset 0 0 24px rgba(60, 45, 20, 0.12);
 }
 .mapa-okno:active { cursor: grabbing; }
