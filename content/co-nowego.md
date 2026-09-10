@@ -1,3 +1,17 @@
+## 2026-09-10 15:15 — Materializacja: Lash of the Balrog (Śródziemie)
+
+Nowa dostawa właściciela zmaterializowana:
+
+- **[[257ltr-lash-of-the-balrog|Lash of the Balrog]]** (LTR, plan
+  [[srodziemie|Śródziemie]]) — spadający **Balrog** (Zguba Durina)
+  wyrzuca w górę płonący bicz, którego rzemienie owijają kolana
+  **Gandalfa Szarego** i ściągają go w przepaść Morii na Moście
+  Khazad-dûm. Karta Katalogowa LORE-first (Balrogowie jako skażeni
+  Majarowie Morgotha, Pierwsza Era, „Fly, you fools!"), snapshot
+  Scryfalla LTR/92, wpis kolekcji verbatim (Fabuła).
+- **Pinezka** na mapie Śródziemia (pewność: dokładna) w sercu Gór
+  Mglistych — Moria, między Bramą Morii a Doliną Strumienia.
+
 ## 2026-09-10 14:30 — Materializacja: Ethersworn Shieldmage (Alara)
 
 Nowa dostawa właściciela zmaterializowana:
