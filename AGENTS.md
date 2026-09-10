@@ -84,11 +84,12 @@ Jakości (ADR 0006).
 8. **Prywatne źródła fanowskie map (ADR 0031):** gdy właściciel dostarcza
    mapę i dopuszcza jej użycie, wolno ją wektoryzować jako źródło geometrii;
    raster źródłowy domyślnie poza gitem, wynik z proweniencją i QA.
-9. **Domyślna praca bez zlecenia = Pętla Jakości** (ADR 0006/0015):
-   integralność → pogłębianie **lore** (bez meta-informacji o wydrukach
-   i artystach — ADR 0014) → link-mining → pass mapowy: **kompletacja
-   i jakość map** (nowe POI, weryfikacja dokładności, wspólny warsztat
-   rysowania T4) → co-nowego. Szczegóły kroków
+9. **Domyślna praca bez zlecenia = Pętla Jakości** (ADR 0006/0015, L18):
+   integralność (w tym testy i `map-audit.py`) → pogłębianie **lore**
+   (bez meta-informacji o wydrukach i artystach — ADR 0014) → link-mining →
+   pass mapowy: **wzbogacenie i weryfikacja wyglądu map T3/T4** (nowe POI,
+   biomy, hydrografia, warsztat rysowania; bez sprawdzania pinezek, map
+   T1/T2 nie wzbogacamy) → co-nowego. Szczegóły kroków
    w `docs/guides/PETLA_JAKOSCI.md`.
 
 ## 3. Zasady pracy z repozytorium

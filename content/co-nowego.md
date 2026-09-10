@@ -9,9 +9,9 @@
   - [[257ltr-lash-of-the-balrog|Lash of the Balrog]] — poprawka leksyki reguł (czar zwykły / sorcery) i dodanie wikilinków.
   - Strona planu [[alara|Alara]] zaktualizowana o wikilinki do Confluxu i Grixis.
   - **Metryka kompletności (`tools/wiki-stats.mjs`): 100% na wszystkich 38 stronach bazy** (18 kart, 7 haseł, 13 planów).
-- **Pass mapowy (krok 4):**
-  - Weryfikacja 18/18 pinezek kart w 13 mapach planów — wszystkie zarejestrowane z kanonicznym uzasadnieniem.
-  - `python3 tools/map-audit.py` = 0 problemów na wszystkich scenach mapowych.
+- **Pass mapowy (krok 4 i reguła procesowa L18):**
+  - Wpisano do bazy wiedzy regułę **L18** (oraz aktualizacja `PETLA_JAKOSCI.md` i `AGENTS.md`): pass mapowy to wzbogacenie i weryfikacja wyglądu map wektorowych T3/T4 (POI, biomy, warsztat), a nie sprawdzanie pinezek (które audytują się automatycznie); map T1 i T2 nie wzbogacamy.
+  - Weryfikacja integralności mapowej `python3 tools/map-audit.py` = 0 problemów na wszystkich scenach mapowych.
 
 ## 2026-09-10 16:00 — Nowy plan: Warhammer Fantasy + karta Brute Force
 

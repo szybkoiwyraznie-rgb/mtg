@@ -85,58 +85,45 @@ kroku 3.
 Do 2 nowych haseł na przebieg pętli — pogłębienie ważniejsze niż
 rozrost.
 
-## Krok 4 — pass mapowy: kompletacja i jakość map (warsztat T4)
+## Krok 4 — pass mapowy: wzbogacenie i weryfikacja wyglądu map T3/T4
 
-Pass mapowy to **czynna praca nad jakością i kompletnością map**
-(ADR 0015), nie kontrola obecności. Pod-punkty w kolejności od
-najtańszej:
+> **Zasada procesowa (decyzja właściciela 2026-09-10, L18):**
+> Pass mapowy to **NIE jest sprawdzanie pinezek** — pinezki kart są
+> z zasady poprawnie dodawane przy materializacji i audytowane automatycznie
+> w kroku 1 (`map-audit.py`, testy integralności). Sprawdzanie ich co chwilę
+> nie jest celem passu mapowego.
+>
+> Pass mapowy to **czynne wzbogacenie i weryfikacja wyglądu map T3 i T4**
+> (podkładów własnych/wektorowych) oraz ewentualne dodanie nowych POI,
+> biomów, rzek i poprawek warsztatowych.
+> **Map T1 (rastry) i T2 (gotowe wektory, np. Śródziemie) NIE wzbogacamy.**
 
-1. **Kompletność operacyjna:** każda karta ma pinezkę? Brakujące →
-   ustal lokalizację z lore (kwerenda, poziom pewności, obowiązkowe
-   uzasadnienie) i dopisz do `maps/<plan>/map.json`. Plan ma ≥1 kartę
-   i nie ma mapy → proces mapowy (PROCES_MAP MA1–MA3) jako **osobne
-   zadanie z roadmapą w `docs/plans/`**, nie „przy okazji".
-2. **Nowe POI:** kwerenda źródeł (kanon settingu > oficjalne
-   przewodniki/artykuły > wiki — zawsze z cytowaniami) o miejsca,
-   ruiny, rzeki, pasma górskie, biomu, osady, punkty orientacyjne
-   z kart → wzbogacenie `podklad.svg` (elementy graficzne) oraz
-   `elementy`/`kotwice` w `map.json` (proweniencja). Zasada: pozycja
-   ze źródeł, nigdy z kursora (MA4); źródło fanowskie tylko dla
-   pozycji nieustalonych w kanonie — z adnotacją w `map.json`.
+Zakres prac w kroku 4:
 
-   **Uwaga — zakres ubogacania (decyzja właściciela 2026-09-01,
-   doprecyzowanie 2026-09-09):** nowe POI i wzbogacanie podkładu dotyczą
-   domyślnie wyłącznie map **T3/T4** — czyli podkładów **własnych**
-   (rysowanych od zera, dzisiaj tylko **Zendikar**).
-   Map **T2 (podkład adoptowany**, np. Śródziemie/mapome) **nie ruszamy**:
-   ich line-artu i warstw przyrodniczo-osadniczych nie modyfikujemy pod
-   kątem zmiany geometrii/stylu — to wektor gotowy, benchmark, nie pole
-   do „ubogacania". T1 z dobrym rastrem także startuje od zasady
-   **„nic nie doklejamy ponad druk”**; dodatkowe POI/labelki albo
-   deep-map miejsca są dopuszczalne tylko po **osobnej konsultacji z
-   właścicielem**. (Wyjątkiem może być jedynie rejestracja kotwic/pinezki
-   z `map.json`, jeśli wymaga jej karta — bez zmiany samego podkładu.)
-3. **Weryfikacja dokładności istniejących wpisów:** przegląd elementów
-   względem źródeł (nazwa, pozycja, status kanoniczny); korekty
-   z odnotowanym źródłem; skryptowe testy kolizji i „na lądzie"
-   (point-in-polygon, bbox etykiet, etykieta↔marker).
-4. **Warsztat rysowania wektorowego** (serce jakości): reużywalne
-   metody kodowania obiektów — pasma i grzbiety górskie, rzeki
-   (dopływy, ujścia, wodospady), biomu (las, bagno, step, lód,
-   pustynia), osady/ruiny/hedrony — w jednej, wspólnej palecie
-   (pergamin ADR 0008; halo `paint-order: stroke`; legenda symboli).
-   Każda nowa metoda trafia do `SKILL_MAPA_PLANU.md` (pamięć
-   warsztatu), żeby kolejne mapy rysować szybciej i spójnie.
-5. **Wspólny silnik mapowy T4:** mapy tworzone od zera (wszystkie
-   plany, aktualne i przyszłe) korzystają ze współdzielonego warsztatu
-   — dążenie: jakość mapy Śródziemia (podkład mapome, T2), docelowo
-   **wyprzedzająca** (kształty, kolory, czytelność, gęstość POI).
-   Benchmark = porównanie z mapą Śródziemia + ocena właściciela.
-6. **Hasła nie oznaczają mapy (ADR 0043):** na mapie oznaczenia
-   (piny/obwódki) noszą WYŁĄCZNIE karty; geografia nie jest na mapie
-   zaznaczana. Jedyny związek strony z mapą = odsyłanie do mapy
-   zbliżonej w określonym miejscu (deep-link `?x=&y=`). Pod-punkty
-   2–5 są treścią passu mapowego.
+1. **Nowe POI i obiekty geograficzne (tylko T3/T4):** kwerenda źródeł
+   (kanon settingu > oficjalne przewodniki/artykuły > wiki z cytowaniami)
+   o nowe kanoniczne miejsca, osady, ruiny, rzeki, pasma górskie, biomy
+   i punkty orientacyjne → wzbogacenie `podklad.svg` (wektorowe elementy
+   graficzne) oraz rejestracja w `map.json` (`elementy`/`kotwice`).
+   Zasada: pozycja ze źródeł, nigdy z kursora (MA4).
+2. **Weryfikacja wyglądu i dokładności (tylko T3/T4):** ocena wizualna
+   podkładu (czytelność, estetyka, proporcje, kolizje etykiet, właściwe
+   skalowanie glifów, ułożenie hydrografii, przebieg rzek i granic).
+   Korekty błędów rysunku i typografii.
+3. **Rozwój warsztatu rysowania wektorowego (T4):** reużywalne metody
+   kodowania obiektów — pasma górskie, rzeki (dopływy, ujścia, wodospady),
+   biomy (las, bagno, step, lód, pustynia), symbole osad/ruin — w jednej,
+   spójnej palecie (pergamin ADR 0008, halo `paint-order: stroke`,
+   legenda symboli). Nowe metody i uogólnienia trafiają do
+   `SKILL_MAPA_PLANU.md`.
+4. **Zakres wykluczeń:**
+   - **T1 (rastry):** zasada „nic nie doklejamy ponad druk”; nie rysujemy
+     obiektów na rastrze.
+   - **T2 (gotowe wektory adoptowane):** podkład gotowy, benchmark; nie
+     modyfikujemy jego geometrii ani stylu.
+   - **Hasła nie oznaczają mapy (ADR 0043):** na mapie oznaczenia noszą
+     wyłącznie karty; hasła łączą się z mapą jedynie odsyłaczem deep-link
+     (`?x=&y=`).
 
 Wynik każdego passu wpisuje się do `content/co-nowego.md` (co dodane,
 co zweryfikowane, co poprawione).

@@ -13,7 +13,7 @@ Pełna realizacja Pętli Jakości po scaleniu PR-30:
    - **`content/lore/conflux.md`** (wydarzenie, Alara): Scalenie Shardów, narodziny Maelstromu, spisek Bolasa, Wojna Confluxu (karty 305ARB + 536ARB).
    - **`content/lore/grixis.md`** (geografia, Alara): martwy shard śmierci i rozkładu, Vithia, Sedraxis, najazdy nieumarłych (karty 305ARB + 536ARB).
 4. **Metryka:** completeness score osiąga **100% na wszystkich 38 stronach bazy** (18 kart, 7 haseł, 13 planów).
-5. **Pass mapowy:** weryfikacja 18/18 pinezek kart we wszystkich 13 mapach planów; `map-audit.py` = 0 uwag.
+5. **Pass mapowy i reguła L18:** udokumentowanie reguły L18 (pass mapowy to wzbogacanie i weryfikacja wyglądu map T3/T4, bez badania pinezek i bez modyfikowania T1/T2); `map-audit.py` = 0 uwag.
 
 ## 2026-09-10 — PR-30: Kaladesh jako dwie osobne mapy (sesja `arena/01a087fc-mtg`)
 

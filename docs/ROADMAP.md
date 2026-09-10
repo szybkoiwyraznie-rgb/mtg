@@ -372,8 +372,9 @@ Auriokowie; integralność 180/180, build 36 stron, map-audit 0); pogłębienie
 kart `536arb-ethersworn-shieldmage`, `39mm2-brute-force` i `257ltr-lash-of-the-balrog`;
 dwa nowe hasła z link-miningu: `conflux` (wydarzenie, Alara) i `grixis`
 (geografia, Alara) łączące karty 305ARB i 536ARB; metryka kompletności
-100% na wszystkich 38 stronach (18 kart, 7 haseł, 13 planów); 18/18 pinezek
-kart w 13 mapach planów, map-audit 0. **180/180 testów**.
+100% na wszystkich 38 stronach (18 kart, 7 haseł, 13 planów); reguła
+L18 (pass mapowy = wygląd i wzbogacanie T3/T4, bez T1/T2 i bez badania
+pinezek), map-audit 0. **180/180 testów**.
 
 **PR-30 (2026-09-10) — Kaladesh jako dwie osobne mapy.** Korekta
 właściciela: plan przeskalowany do skali planu **2000×1400** (jak
