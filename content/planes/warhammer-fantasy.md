@@ -51,23 +51,26 @@ wygrywa*, jest samospełniającą się prawdą świata.
 
 ## Mapa
 
-`maps/warhammer-fantasy/` — mapa **T1 (raster z etykietami)** na bazie
-oficjalnej mapy *Warhammer: The Old World* (Games Workshop, 2024),
-modelem jak Faerûn i Dominaria (ADR 0038/0039). Badanie kandydatów i
-uzasadnienie wariantu: `maps/_warsztat/RESEARCH_2026-09-10-warhammer-fantasy-mapa.md`.
+`maps/warhammer-fantasy/` — wariant **T1 (rastr z etykietami)**:
+podkładem jest oficjalna mapa *Warhammer: The Old World* (Games
+Workshop, 2024), obejmująca cały Stary Świat od Pustkowi Chaosu na
+północy po Krainę Umarłych na południu, z nazwami krain, herbami frakcji
+i ikonami miast nadrukowanymi na podkładzie. Dostarczył ją właściciel
+(ADR 0031), atrybucja źródła w stopce mapy (użytek prywatny).
 
-Podkład jest bardzo duży (master 8682×12737 px), więc — jak Dominaria —
-wchodzi jako **piramida LOD** (ADR 0039): pierwszy render `l0.jpg`
-(1920 px) plus 425 kafelków L1 (17×25 po 512 px) doładowywanych przy
-zbliżeniu. Etykiety i ikony miejsc są nadrukowane na rastrze
-(`etykiety: false`) — Codex nakłada na nim wyłącznie pinezki kart.
-Podkład binarny dostarczył właściciel (sandbox blokuje pobrania z
-media-CDN-ów GW/Reddit), atrybucja źródła w stopce mapy (użytek
-prywatny, ADR 0031).
+Model ładowania jak w Dominarii (ADR 0039): master jest duży (8682×12737),
+więc mapa działa jako piramida LOD — pierwszy render to pomniejszona
+całość (`l0.jpg`, 1920 px), a od progu przybliżenia 2.5 dołączają
+**kafelki L1** w pełnej rozdzielczości (17×25 po 512 px). Raster
+pozostaje czystym podkładem: Codex nie dokłada na nim własnych napisów
+(`etykiety: false`) — widać tylko pinezki kart.
 
-Pierwsza pinezka — `39MM2 Brute Force` — trafia na rejon **Badlands**
-(Ziemie Jałowe na południe od Starego Świata, ojcowizna zielonoskórych),
-z pewnością **region** (bezimienne pole bitwy, nie konkretne miasto).
+Pinezki na mapie (ADR 0043: tylko karty):
+
+- **[[39mm2-brute-force|Brute Force]]** (39MM2); środek **Badlands**
+  (Ziemie Jałowe na południe od Starego Świata, ojcowizna
+  zielonoskórych), pewność region — scena to bezimienne pole bitwy, nie
+  konkretne miasto.
 
 ## Źródła
 
