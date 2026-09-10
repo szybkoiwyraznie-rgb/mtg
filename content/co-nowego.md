@@ -1,3 +1,19 @@
+## 2026-09-10 14:30 — Materializacja: Ethersworn Shieldmage (Alara)
+
+Nowa dostawa właściciela zmaterializowana:
+
+- **[[536arb-ethersworn-shieldmage|Ethersworn Shieldmage]]** (ARB, plan
+  [[alara|Alara]]) — wedalkeńska mag bitewna sekty Ethersworn zatrzymuje
+  na granicy Esper–Grixis deszcz kościanych włóczni nieumarłych barierą
+  ze stwardniałej many, osłaniając artefaktową bestię. Karta Katalogowa
+  LORE-first (etherium, Noble Work, Conflux), snapshot Scryfalla ARB/4,
+  wpis kolekcji verbatim.
+- **Pinezka** na mapie Alary (pewność: region) w rejonie Tidehollow /
+  The Glass Dunes — esperski brzeg zwrócony ku Grixis.
+- Korekta wydania w dostawie: pierwotnie oznaczone CON (Conflux), po
+  korekcie właściciela ARB (Alara Reborn) — zgodne ze Scryfallem (karta
+  nigdy nie wyszła w Conflux; pierwodruk to ARB 2009).
+
 ## 2026-09-10 14:00 — Pętla Jakości (repo-szeroko): hasło Auriokowie
 
 Link-mining Kroku 3 przeprowadzony na **całym repo**, nie tylko na
