@@ -1,3 +1,25 @@
+## 2026-09-10 16:00 — Nowy plan: Warhammer Fantasy + karta Brute Force
+
+Do Kodeksu wchodzi **nowy plan franczyzy zewnętrznej** —
+[[warhammer-fantasy|Warhammer Fantasy]] (Games Workshop / *Warhammer:
+The Old World*) — wraz z pierwszą kartą:
+
+- **[[39mm2-brute-force|Brute Force]]** (MM2, transpozycja do
+  Warhammer Fantasy) — ciemnozielony **ork** na błotnistym polu bitwy
+  pęcznieje od czerwonej magii **Waaagh!**, którą karmi go garbaty
+  szaman: portret doktryny zielonoskórych, że „większy i głośniejszy
+  zawsze wygrywa". Karta Katalogowa LORE-first (Zielonoskórzy, Gork i
+  Mork, Badlands), snapshot Scryfalla MM2/108, wpis kolekcji verbatim.
+- **Strona planu** `warhammer-fantasy` (Stary Świat, Mallus,
+  zielonoskórzy, Waaagh!, Imperium/Bretonnia).
+- **Research mapowy (MA1) + rekomendacja wariantu:** przeprowadzono
+  ogląd kandydatów graficznych i zarekomendowano **T1 (raster oficjalnej
+  mapy *The Old World*, GW 2024)** — wg drabiny ADR 0038 (T2 odpada:
+  brak dobrego wektora; T4 odrzucone: jest doskonały materiał). Badanie:
+  `maps/_warsztat/RESEARCH_2026-09-10-warhammer-fantasy-mapa.md`. Mapa
+  planu = `pending` do decyzji właściciela i dostarczenia rastra;
+  pinezka karty (rejon Badlands) żyje na razie w sekcji „Na Mapie".
+
 ## 2026-09-10 15:15 — Materializacja: Lash of the Balrog (Śródziemie)
 
 Nowa dostawa właściciela zmaterializowana:
