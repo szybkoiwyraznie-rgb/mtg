@@ -112,6 +112,14 @@ klasa `geografia`, plan Innistrad. Próg (2 karty) spełniły
 wikilinki dopisane na planie, w karcie 393DKA i w nowej karcie 309ISD.
 (Wcześniejsza obwódka regionu `regiony` w map.json wycofana — ADR 0043.)
 
+**Auriokowie — wykonane 2026-09-10**, `content/lore/auriok.md`,
+klasa `spolecznosc`, plan Mirrodin. Próg (2 karty) spełniły
+476mbs-banishment-decree + 556nph-ruthless-invasion (+ plan mirrodin,
++ hasło oxidda-chain); wikilinki dopisane w obu kartach, na planie
+i w haśle Oxidda Chain. Sekcja „Na mapie” odsyła do Razor Fields
+(deep-link `?x=0.5&y=0.2`). Znaleziona przez repo-szeroki link-mining
+Pętli Jakości (plany z ≥2 kartami: Mirrodin ×3, Innistrad ×2).
+
 Encje „o jedną kartę” od progu (skan boldów 2026-09-09):
 
 | Encja | Klasa (docelowa) | Karta wspominająca | Do progu brakuje |

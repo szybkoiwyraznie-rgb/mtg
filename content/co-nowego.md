@@ -1,3 +1,19 @@
+## 2026-09-10 14:00 — Pętla Jakości (repo-szeroko): hasło Auriokowie
+
+Link-mining Kroku 3 przeprowadzony na **całym repo**, nie tylko na
+Kaladeshu — skan encji w planach z ≥2 kartami (Mirrodin ×3, Innistrad ×2):
+
+- Nowe hasło **[[auriok|Auriokowie]]** (`content/lore/auriok.md`,
+  klasa `spolecznosc`, plan Mirrodin) — biali ludzie Razor Fields,
+  złoto w ciele, Accorderzy i *Accord of Equity*, technika *mirroring*
+  z Bladehold, największa odporność na kompleację. Próg 2 kart spełniły
+  Banishment Decree i Ruthless Invasion.
+- Wikilinki dopisane we wszystkich stronach, które o nich mówiły:
+  obie karty, strona planu Mirrodin i hasło Oxidda Chain.
+- Weryfikacja repo-szeroka: 15/15 kart ma pinezkę (poza planami bez
+  mapy), wszystkie 12 map przechodzą audyt (0 problemów), metryka
+  kompletności nasycona.
+
 ## 2026-09-10 13:30 — Pętla Jakości: pass mapowy Kaladeshu (wsie Vahd)
 
 Kwerenda kanonu (mtg.wiki: Avishkar; „The World of Kaladesh, Part I”)
