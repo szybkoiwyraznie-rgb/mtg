@@ -84,11 +84,14 @@ scena = {
                                       [8500, 1350], [10000, 1250],
                                       [11200, 1400]]),
          'opcje': {'szer': 42, 'snieg': True}},
-        # Aleja Olbrzymów — wzgórza nad Vindayem u wrót Ghirapuru (NW od
-        # kropki miasta). Spójne z pasmem widocznym na mapie miasta
+        # Aleja Olbrzymów — wzgórza tuż nad Vindayem u wrót Ghirapuru (NW
+        # od kropki miasta). Spójne z pasmem widocznym na mapie miasta
         # (deep) w narożniku NW; szlak dorocznej migracji olbrzymów.
+        # Przesunięte na południe (bliżej Vindaya), by zachować proporcję
+        # odległości pasmo–rzeka z mapy deep (~150 j. nad ciekiem) —
+        # korekta właściciela 2026-09-10.
         {'id': 'aleja-olbrzymow',
-         'punkty': TL([[8800, 6050], [9500, 6220], [10150, 6420]]),
+         'punkty': TL([[8800, 6440], [9500, 6560], [10150, 6650]]),
          'opcje': {'szer': 26}},
     ],
     'biomy': [
@@ -128,8 +131,12 @@ scena = {
     ],
     'poi': [
         # Ghirapur — stolica na zlewisku: KROPKA (miasto) na planie.
+        # Ikona nieco większa (korekta właściciela 2026-09-10): jej obwód
+        # obejmuje większość dzielnic widocznych na mapie deep (Greenwheel,
+        # Freejam, Kujar, Jedenaście Mostów, Bomat, Embraal), tak by karty
+        # rozrzucone po dzielnicach mieściły się w obrębie ikony.
         {'typ': 'miasto', 'id': 'ghirapur', 'x': GHIRAPUR[0], 'y': GHIRAPUR[1],
-         'opcje': {'skala': 1.15}},
+         'opcje': {'skala': 2.1}},
         # Kanoniczne miejsca z nazwą (mtg.wiki: Avishkar): Lathnu na
         # Urwiskach Devra + Wielka Wspinka za nim. Bezimiennych osad/wsi
         # NIE rysujemy (decyzja właściciela 2026-09-10: brak nazwy → brak

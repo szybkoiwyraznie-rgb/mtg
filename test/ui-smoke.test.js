@@ -273,8 +273,8 @@ test('UI: mapa planu z realnej bazy — iframe, strona mapy, pinezka, legenda', 
   assert.ok(fs.existsSync('dist/maps/kaladesh/ghirapur.svg'),
     'Kaladesh: wektorowa płyta L2 w drzewie dist (leniwy <img>, wyjątek ADR 0027 v3)');
   assert.ok(mapaK.includes('>Ghirapur<'), 'Kaladesh: na planie Ghirapur jako POI-kropka z nazwą (skala planu, ADR 0047)');
-  assert.ok(mapaK.includes('data-pinezka="610m19-gearsmith-prodigy" data-x="0.65625" data-y="0.6182"'),
-    'Kaladesh: pinezka wycentrowana na ikonie miasta (kotwica Ghirapur)');
+  assert.ok(mapaK.includes('data-pinezka="610m19-gearsmith-prodigy" data-x="0.6491" data-y="0.6292"'),
+    'Kaladesh: pinezka w dzielnicy Greenwheel (rozrzut po dzielnicach, w obrębie ikony miasta)');
   assert.ok(fs.statSync('maps/kaladesh/podklad.svg').size < 2 * 1024 * 1024,
     'Kaladesh: lekki plan (regresja przeciw 14 MB jednowarstwówce)');
   shimK.przywroc();

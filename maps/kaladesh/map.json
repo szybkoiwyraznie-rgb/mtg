@@ -84,10 +84,10 @@
  "pinezki": [
   {
    "karta": "610m19-gearsmith-prodigy",
-   "x": 0.65625,
-   "y": 0.6182,
+   "x": 0.6491,
+   "y": 0.6292,
    "pewnosc": "region",
-   "uzasadnienie": "Fabuła: „słoneczny taras miejskich ogrodów” w Ghirapurze — kanon nie nazywa konkretnego tarasu; pinezka w sercu Greenwheel (dzielnica ogrodów, kopuł i „Zoo” konstruktów), gdzie młodzi rzemieślnicy testują swoje dzieła. Decyzja wiążąca z roadmapy PR-28: region (okolice Greenwheel)."
+   "uzasadnienie": "Fabuła: „słoneczny taras miejskich ogrodów” w Ghirapurze — kanon nie nazywa konkretnego tarasu; pinezka w sercu Greenwheel (dzielnica ogrodów, kopuł i „Zoo” konstruktów), gdzie młodzi rzemieślnicy testują swoje dzieła. Pozycja = dzielnica Greenwheel na mapie deep (kopuły ogrodowe ~600,478) przeliczona do układu planu przez bbox miasta — NIE środek ikony: karty Ghirapuru rozkładają się po dzielnicach, a nie stosują w jednym punkcie (korekta właściciela 2026-09-10). Mieści się w obrębie (powiększonej) ikony miasta. Decyzja wiążąca z roadmapy PR-28: region (okolice Greenwheel)."
   }
  ],
  "scena": "scena.json",

@@ -1,3 +1,17 @@
+## 2026-09-10 12:40 — Kaladesh: dostrojenie planu (pasmo, ikona, pinezka)
+
+Drobne poprawki po recenzji właściciela:
+
+- **Aleja Olbrzymów** przesunięta na południe, tuż nad rzekę **Vinday** —
+  proporcja odległości pasmo↔rzeka zgadza się teraz z mapą deep Ghirapuru.
+- **Ikona Ghirapuru** na planie powiększona (skala 2,1), tak by jej obwód
+  obejmował większość dzielnic widocznych na deep-mapie (Greenwheel,
+  Freejam, Kujar, Jedenaście Mostów, Bomat, Embraal).
+- **Pinezka** karty 610M19 przeniesiona ze środka ikony do dzielnicy
+  **Greenwheel** (przeliczonej z deep-mapy) — kolejne karty Ghirapuru
+  będą rozrzucane po dzielnicach, a nie stosowane w jednym punkcie;
+  wciąż mieści się w obrębie (powiększonej) ikony.
+
 ## 2026-09-10 02:10 — Kaladesh: poprawki mapy po recenzji właściciela
 
 Sześć uwag do map Kaladeshu (plan + osobna mapa Ghirapuru):
