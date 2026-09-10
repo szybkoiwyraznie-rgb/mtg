@@ -589,6 +589,8 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
         ${htmlSceny}
       </div>
       <div class="mapa-nakladka" data-mapa-nakladka>${htmlEtykietyPodkladu}${htmlPinezki}</div>${htmlEpoki}
+      <button type="button" class="mapa-reset" data-mapa-reset
+        title="Przywróć widok startowy (Esc)" aria-label="Przywróć widok startowy mapy">⟲ Reset</button>
     </div>
 
     ${osadzona ? '' : `${pinezki.length > 0 ? `
@@ -1006,6 +1008,12 @@ export function zamontujMape(app, opcje = {}) {
     nanies();
   };
 
+  // Widok początkowy = kadr z momentu wejścia na stronę: dopasowanie
+  // całości nadpisane deep-linkiem (?pin=/?x=&y=/?epoka=) albo
+  // `widok_domyslny` z map.json. Wydzielone w funkcję, by guzik „reset”
+  // i Escape wracały DOKŁADNIE do tego kadru — liczonego wobec aktualnego
+  // rozmiaru okna, więc reset po resize też jest poprawny.
+  const widokPoczatkowy = () => {
   // Domyślnie dopasuj całą mapę (pin deep-link niżej nadpisze, jeśli jest)
   dopasuj();
 
@@ -1112,6 +1120,18 @@ export function zamontujMape(app, opcje = {}) {
       stan.oy = wysOkna / 2 - py * h * stan.k;
     }
   }
+  }; // koniec widokPoczatkowy
+
+  // Reset widoku (guzik „reset” + Escape): wróć do kadru startowego.
+  const resetWidoku = () => { widokPoczatkowy(); stanUkladu.k = -1; nanies(); };
+  widokPoczatkowy();
+  const guzikReset = okno.querySelector?.('[data-mapa-reset]');
+  guzikReset?.addEventListener?.('click', (e) => {
+    e.preventDefault?.();
+    e.stopPropagation?.();
+    resetWidoku();
+    okno.focus?.({ preventScroll: true });
+  });
 
   // ── Przełącznik wariantów/epok (ADR 0035): zmiana podkładu BEZ utraty
   // widoku — punkt złoty pod środkiem okna i wizualna skala zostają
@@ -1161,7 +1181,7 @@ export function zamontujMape(app, opcje = {}) {
 
   // Sterowanie bez paska (decyzja właściciela 2026-09-02): zoom = kółko
   // myszy / pinch; ESCAPE = reset widoku (dopasowanie całej mapy).
-  const naEscape = (e) => { if (e.key === 'Escape') { e.preventDefault?.(); dopasuj(); } };
+  const naEscape = (e) => { if (e.key === 'Escape') { e.preventDefault?.(); resetWidoku(); } };
   okno.addEventListener('keydown', naEscape);
   globalThis.document?.addEventListener?.('keydown', naEscape);
 

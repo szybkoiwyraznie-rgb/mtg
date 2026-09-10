@@ -141,6 +141,7 @@ test('LOD markup: warstwa kafli, nakładka L2, brak przełącznika, kmax, region
     assert.ok(html.includes('data-src="dominaria/pokrycie-testowe.jpg"'), 'leniwy src pokrycia');
     assert.ok(!html.includes('data-epoka-przelacz'), 'bbox nie trafia do przełącznika epok');
     assert.ok(html.includes('data-kmax="22"'), 'głębszy zoom dla map LOD');
+    assert.ok(html.includes('data-mapa-reset'), 'guzik reset widoku w oknie mapy');
     assert.ok(!html.includes('data-region='), 'bez ?epoka= brak dopasowania regionu');
     const htmlRegion = renderMape('dominaria', { epoka: 'pokrycie' });
     assert.ok(htmlRegion.includes('data-region="pokrycie"'), '?epoka=nakładka → deep-link regionu');
