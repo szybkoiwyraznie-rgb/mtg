@@ -624,6 +624,33 @@
    "opcje": {
     "skala": 1.0
    }
+  },
+  {
+   "typ": "miasto",
+   "id": "maranjapur",
+   "x": 1650.0,
+   "y": 369.1,
+   "opcje": {
+    "skala": 0.6
+   }
+  },
+  {
+   "typ": "miasto",
+   "id": "panka",
+   "x": 1793.8,
+   "y": 388.2,
+   "opcje": {
+    "skala": 0.6
+   }
+  },
+  {
+   "typ": "miasto",
+   "id": "cambi",
+   "x": 1706.2,
+   "y": 515.5,
+   "opcje": {
+    "skala": 0.6
+   }
   }
  ],
  "etykiety": [
@@ -664,6 +691,42 @@
    "opcje": {
     "fs": 11,
     "ital": true
+   }
+  },
+  {
+   "tekst": "Maranjapur",
+   "x": 1650.0,
+   "y": 369.1,
+   "opcje": {
+    "fs": 10,
+    "przyDo": [
+     1650.0,
+     369.1
+    ]
+   }
+  },
+  {
+   "tekst": "Panka",
+   "x": 1793.8,
+   "y": 388.2,
+   "opcje": {
+    "fs": 10,
+    "przyDo": [
+     1793.8,
+     388.2
+    ]
+   }
+  },
+  {
+   "tekst": "Cambi",
+   "x": 1706.2,
+   "y": 515.5,
+   "opcje": {
+    "fs": 10,
+    "przyDo": [
+     1706.2,
+     515.5
+    ]
    }
   },
   {

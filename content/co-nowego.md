@@ -1,3 +1,17 @@
+## 2026-09-10 13:30 — Pętla Jakości: pass mapowy Kaladeshu (wsie Vahd)
+
+Kwerenda kanonu (mtg.wiki: Avishkar; „The World of Kaladesh, Part I”)
+zwróciła **nazwy trzech wsi aerowrightów** w Vahd — dawnych wsi
+rolniczych Złotych Stopni, w czasie Rozkwitu Eteru przebudowanych na
+hangary i pasy startowe przemysłu sterowcowego:
+
+- Na planie doszły **Maranjapur, Panka i Cambi** jako kanonicznie
+  nazwane POI z etykietami (wcześniej zdjęte jako bezimienne „wieś” —
+  teraz nazwa znana, więc rysujemy).
+- Strona planu wzbogacona o zdanie o tych wsiach + cytowania w Źródłach.
+- Nowy test regresyjny pilnuje, że wsie są nazwane i że nie wraca
+  generyczna „wieś”.
+
 ## 2026-09-10 12:40 — Kaladesh: dostrojenie planu (pasmo, ikona, pinezka)
 
 Drobne poprawki po recenzji właściciela:

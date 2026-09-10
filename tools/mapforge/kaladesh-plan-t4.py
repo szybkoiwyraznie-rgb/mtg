@@ -155,6 +155,18 @@ scena = {
          'y': T(6000, 3000)[1], 'opcje': {'skala': 1.0}},
         {'typ': 'iglica', 'id': 'wieza-eterowa-5', 'x': T(14500, 8000)[0],
          'y': T(14500, 8000)[1], 'opcje': {'skala': 1.0}},
+        # Wsie aerowrightów w Vahd — KANONICZNIE NAZWANE (mtg.wiki: Avishkar;
+        # „The World of Kaladesh, Part I”): dawne wsie rolnicze Złotych
+        # Stopni przebudowane w czasie Rozkwitu Eteru na hangary, warsztaty
+        # i pasy startowe przemysłu sterowcowego. Wracają na plan z prawdziwymi
+        # nazwami (poprzednio zdjęte jako bezimienne „wieś” — decyzja
+        # właściciela 2026-09-10; teraz nazwa znana → rysujemy).
+        {'typ': 'miasto', 'id': 'maranjapur', 'x': T(13200, 2900)[0],
+         'y': T(13200, 2900)[1], 'opcje': {'skala': 0.6}},
+        {'typ': 'miasto', 'id': 'panka', 'x': T(14350, 3050)[0],
+         'y': T(14350, 3050)[1], 'opcje': {'skala': 0.6}},
+        {'typ': 'miasto', 'id': 'cambi', 'x': T(13650, 4050)[0],
+         'y': T(13650, 4050)[1], 'opcje': {'skala': 0.6}},
     ],
     'etykiety': [
         {'tekst': 'Ghirapur', 'x': GHIRAPUR[0], 'y': GHIRAPUR[1],
@@ -165,6 +177,13 @@ scena = {
          'opcje': {'fs': 22, 'duze': True}},
         {'tekst': 'Złote Stopnie', 'x': T(13900, 3520)[0],
          'y': T(13900, 3520)[1], 'opcje': {'fs': 11, 'ital': True}},
+        # Wsie aerowrightów Vahd (kanon: Maranjapur, Panka, Cambi).
+        {'tekst': 'Maranjapur', 'x': T(13200, 2900)[0], 'y': T(13200, 2900)[1],
+         'opcje': {'fs': 10, 'przyDo': T(13200, 2900)}},
+        {'tekst': 'Panka', 'x': T(14350, 3050)[0], 'y': T(14350, 3050)[1],
+         'opcje': {'fs': 10, 'przyDo': T(14350, 3050)}},
+        {'tekst': 'Cambi', 'x': T(13650, 4050)[0], 'y': T(13650, 4050)[1],
+         'opcje': {'fs': 10, 'przyDo': T(13650, 4050)}},
         {'tekst': 'Lathnu', 'x': T(8300, 1900)[0], 'y': T(8300, 1900)[1],
          'opcje': {'fs': 14, 'przyDo': T(8300, 1900)}},
         # „Devra Cliffs” NA paśmie urwisk (y≈1250–1400), nie na stepie.

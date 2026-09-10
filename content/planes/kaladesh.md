@@ -47,6 +47,10 @@ w Ghirapurze łączą się w wielką **Vasavati**, która niesie handel
 do odległego, bezimiennego w kanonie morza na południu. **Mapani**,
 największy dopływ Vindaya, wyznacza granicę **Vahd, Złotych Stopni** —
 krainy pól i wsi, dziś pierwszego ośrodka budowy i prób sterowców.
+Trzy dawne wsie rolnicze Złotych Stopni — **Maranjapur**, **Panka**
+i **Cambi** — w czasie Rozkwitu Eteru zamieniły łany zbóż na hangary,
+warsztaty i pasy startowe, a ich rolnicy przekwalifikowali się na
+aerowrightów i pilotów prób.
 
 **Ghirapur, Miasto Indygo** — stolica na zlewisku, zbudowana na
 neutralnym gruncie po Wojnie Jedenastu. Miasto żyje eterem: nad
@@ -180,5 +184,8 @@ Era Avishkar/Omenpathów dostanie osobną mapę, gdy przyjdzie karta.
   https://conceptartlibrary.tumblr.com/post/151709071625/the-art-of-magic-the-gathering-kaladesh-lathnu
 - „The World of Kaladesh, Part I: The Inventors' Fair" (MTG Salvation)
   — Lathnu jako „City at the Top of the World" w paśmie Urwisk Devra,
-  jedna z trzech głównych lokacji planu poza Ghirapurem:
+  jedna z trzech głównych lokacji planu poza Ghirapurem; Vahd (Złote
+  Stopnie) jako dawne rolnicze pola przebudowane w czasie Rozkwitu
+  Eteru na przemysł sterowcowy — wsie **Panka, Cambi i Maranjapur**
+  zamienione w hangary i pasy startowe:
   https://www.mtgsalvation.com/articles/49592-the-world-of-kaladesh-part-i-the-inventors-fair

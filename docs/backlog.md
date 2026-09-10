@@ -162,6 +162,13 @@ niespełniony, nowych haseł brak. Encje „o jedną kartę” od progu:
 | Targ Wynalazców | wydarzenie | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
 | Iglica Eteru, Peema, Vahd, Lathnu, Vinday, Vasavati | geografia | — (plan kaladesh) | licznik od kart, nie planów |
 
+**Pass mapowy 2026-09-10 (Pętla Jakości, PR-30):** wsie aerowrightów
+Vahd — **Maranjapur, Panka, Cambi** — dodane na plan jako kanonicznie
+nazwane POI (mtg.wiki: Avishkar; „The World of Kaladesh, Part I”;
+Magic Duels wiki). Wcześniej (korekta właściciela 2026-09-10) zdjęte
+jako bezimienne „wieś”; teraz nazwa znana z kanonu → narysowane
+z etykietami. Nie tworzą haseł (encje planowe, próg = 2 karty).
+
 ## Mapa Zendikaru — WYKONANA (ADR 0012)
 
 Zrobione 2026-08-31 (feedback G właściciela): **rekonstrukcja własna
