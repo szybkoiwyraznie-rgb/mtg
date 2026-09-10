@@ -37,7 +37,7 @@ dopiero od [[conflux|Confluxu]], więc ten „demon” wiruje dokładnie
 tam, gdzie pięć światów zszyto w jeden. Paleta wiru to mieszanka many
 wszystkich pięciu shardów — w uspokojonych momentach burzy widać
 jeszcze barwę każdego świata osobno (od czerni [[grixis|Grixis]] po
-blask [[536arb-ethersworn-shieldmage|Esperu]]), ale gdy wiatr szarpie
+blask [[esper|Esperu]]), ale gdy wiatr szarpie
 łuną, kolory rozpuszczają się w fioletach, różach, błękitach
 i bursztynach, w których istota zyskuje swoją sylwetkę.
 
@@ -98,7 +98,7 @@ Pinezka **dokładna**: `#/mapa/alara?pin=305arb-illusory-demon` —
 **Maelstrom**, centralny wir scalonej Alary, geometryczny środek
 mapy. Pewność pełna: cała scena dzieje się w burzy, a kotwica
 „Maelstrom” istnieje w `maps/alara/map.json`. Mapa niesie kontekst:
-pięć regionów w cyklu many (Bant, Esper, [[grixis|Grixis]], Jund, Naya)
+pięć regionów w cyklu many (Bant, [[esper|Esper]], [[grixis|Grixis]], Jund, Naya)
 wokół wiru, obeliski przy szwach regionów — pomniki epoki, gdy Bolas
 kierował ich maną w burzę — oraz miejsca regionów znane z zapisu
 (Valeron, Jhess, Akrasa, Sedraxis, Antali) jako kotwice przyszłych

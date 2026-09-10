@@ -22,7 +22,7 @@ i — przez regiony — sceny z epoki shardów.
 
 Pięć regionów w cyklu many (sąsiedzi dzielą dwa kolory): **Bant**
 (G/W/U — łąki, zamki, anioły i rytualizowane pojedynki rycerzy),
-**Esper** (W/U/B — oceaniczny archipelag wysp wykończonych etherium,
+**[[esper|Esper]]** (W/U/B — oceaniczny archipelag wysp wykończonych etherium,
 kasta magów, vedalken i sfinksów), [[grixis|Grixis]] (U/B/R — nekropolia
 demonów i nekromantów po upadku Vithii, nekropolis Sedraxis),
 **Jund** (B/R/G — wulkaniczny łańcuch pokarmowy ze smokami na

@@ -1,3 +1,16 @@
+## 2026-09-11 00:05 — Druga Pętla Jakości: hasła Esper i Stensia + wzbogacenie mapy Alary (Carmot Mines, Ruins of Vithia)
+
+- **Link-mining i nowe hasła (krok 3):**
+  - **[[esper|Esper]]** (`content/lore/esper.md`, klasa `geografia`, plan [[alara|Alara]]) — archipelag wysp ze stopu eterium, szklanych mórz (Dwindling Sea, Inkwell) i geometrycznych miast (Palandius, Vectis, Sanctum Arcanum). Sekta Ethersworn, doktryna Szlachetnego Dzieła (*Noble Work*) sfinksa Cruciusa, kryzys surowca carmotu i zderzenie w Confluxie z Grixis. Próg spełniony przez karty [[536arb-ethersworn-shieldmage|Ethersworn Shieldmage]] i [[305arb-illusory-demon|Illusory Demon]].
+  - **[[stensia|Stensia]]** (`content/lore/stensia.md`, klasa `geografia`, plan [[innistrad|Innistrad]]) — mroczna, górzysta prowincja pasma Geier Reach, ojczyzna wampirzych linii krwi (Markov, Falkenrath, Voldaren) i wulkanicznej czeluści Ashmouth — bramy demonów i diabłów. Próg spełniony przez karty [[309isd-civilized-scholar|Civilized Scholar]] i [[393dka-forge-devil|Forge Devil]].
+- **Pogłębienie LORE i wikilinków (krok 2):**
+  - Strony kart [[309isd-civilized-scholar|Civilized Scholar]], [[393dka-forge-devil|Forge Devil]], [[536arb-ethersworn-shieldmage|Ethersworn Shieldmage]] i [[305arb-illusory-demon|Illusory Demon]] zyskały pogłębione tło i wikilinki do haseł [[stensia|Stensia]] i [[esper|Esper]].
+  - Strony planów [[innistrad|Innistrad]] i [[alara|Alara]] zaktualizowane o wikilinki do haseł.
+  - **100% kompletności (`tools/wiki-stats.mjs`) na wszystkich 40 stronach bazy** (18 kart, 9 haseł, 13 planów).
+- **Pass mapowy T4 (krok 4):**
+  - Wzbogacenie wektorowej mapy Alary (`maps/alara/scena.json`, `podklad.svg` i `map.json`) o kanoniczne POI: **Carmot Mines** (mityczne kopalnie carmotu w archipelagu Esperu) oraz **Ruins of Vithia** (ruiny dawnego imperium w Grixis).
+  - Weryfikacja wizualna i integralnościowa: `python3 tools/map-audit.py` = 0 problemów.
+
 ## 2026-09-10 23:45 — Pętla Jakości: hasła Conflux i Grixis + 100% kompletności w wiki-stats
 
 - **Audyt scalonego PR-30** (`docs/audits/AUDYT_2026-09-10-PR30.md`): werdykt — pełna zgodność z ADR-ami i wytycznymi właściciela (dwie osobne mapy Kaladeshu, ADR 0047, 3 materializacje, mapa Warhammer Fantasy T1, hasło Auriokowie).

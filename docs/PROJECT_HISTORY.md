@@ -4,16 +4,22 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
-## 2026-09-10 — PR-31: Pętla Jakości po PR-30 (sesja `arena/01a08d3e-mtg`)
+## 2026-09-10 — PR-31: Pętla Jakości po PR-30 + Druga Pętla Jakości (sesja `arena/01a08d3e-mtg`)
 
-Pełna realizacja Pętli Jakości po scaleniu PR-30:
+Pełna realizacja dwóch kolejnych Pętli Jakości po scaleniu PR-30:
 1. **Audyt scalonego PR-30** (`docs/audits/AUDYT_2026-09-10-PR30.md`): pełna zgodność z ADR-ami (ADR 0047, Kaladesh dwie osobne mapy, 3 materializacje, mapa Warhammer Fantasy T1, hasło Auriokowie, 180/180 testów, build 36 stron, map-audit 0).
-2. **Pogłębianie LORE:** uzupełnienie brakujących wikilinków i tła świata w kartach `536arb-ethersworn-shieldmage` (doktryna Ethersworn, Conflux, Grixis, Alara) oraz `39mm2-brute-force` (Waaagh!, szamani, Badlands, Warhammer Fantasy), korekta leksyki reguł w `257ltr-lash-of-the-balrog` (czar zwykły / sorcery).
-3. **Link-mining i nowe hasła (próg ≥ 2 kart):**
-   - **`content/lore/conflux.md`** (wydarzenie, Alara): Scalenie Shardów, narodziny Maelstromu, spisek Bolasa, Wojna Confluxu (karty 305ARB + 536ARB).
-   - **`content/lore/grixis.md`** (geografia, Alara): martwy shard śmierci i rozkładu, Vithia, Sedraxis, najazdy nieumarłych (karty 305ARB + 536ARB).
-4. **Metryka:** completeness score osiąga **100% na wszystkich 38 stronach bazy** (18 kart, 7 haseł, 13 planów).
-5. **Pass mapowy i reguła L18:** udokumentowanie reguły L18 (pass mapowy to wzbogacanie i weryfikacja wyglądu map T3/T4, bez badania pinezek i bez modyfikowania T1/T2); `map-audit.py` = 0 uwag.
+2. **Pogłębianie LORE:**
+   - Przebieg 1: karty `536arb-ethersworn-shieldmage`, `39mm2-brute-force`, `257ltr-lash-of-the-balrog`.
+   - Przebieg 2: karty `309isd-civilized-scholar`, `393dka-forge-devil`, `536arb-ethersworn-shieldmage`, `305arb-illusory-demon` oraz strony planów `innistrad.md` i `alara.md`.
+3. **Link-mining i 4 nowe hasła (próg ≥ 2 kart):**
+   - **`content/lore/conflux.md`** (wydarzenie, Alara): Scalenie Shardów, narodziny Maelstromu, spisek Bolasa (karty 305ARB + 536ARB).
+   - **`content/lore/grixis.md`** (geografia, Alara): martwy shard śmierci i rozkładu, Vithia, Sedraxis (karty 305ARB + 536ARB).
+   - **`content/lore/esper.md`** (geografia, Alara): archipelag eterium, sfinks Crucius, doktryna Ethersworn i Szlachetne Dzieło (karty 305ARB + 536ARB).
+   - **`content/lore/stensia.md`** (geografia, Innistrad): mroczna prowincja Geier Reach, wampirze rody (Markov, Falkenrath) i krater Ashmouth (karty 309ISD + 393DKA).
+4. **Metryka:** completeness score osiąga **100% na wszystkich 40 stronach bazy** (18 kart, 9 haseł, 13 planów).
+5. **Passy mapowe i reguła L18:**
+   - Udokumentowanie reguły **L18** w `docs/LESSONS.md`, `PETLA_JAKOSCI.md` i `AGENTS.md` (pass mapowy to wzbogacanie i weryfikacja wyglądu map T3/T4, bez badania pinezek i bez modyfikowania T1/T2).
+   - Wzbogacenie mapy Alary (T3/T4 mapforge): dodanie kanonicznych POI **Carmot Mines** (Esper) oraz **Ruins of Vithia** (Grixis) do `scena.json`, `map.json` i podkładu; `map-audit.py` = 0 uwag.
 
 ## 2026-09-10 — PR-30: Kaladesh jako dwie osobne mapy (sesja `arena/01a087fc-mtg`)
 

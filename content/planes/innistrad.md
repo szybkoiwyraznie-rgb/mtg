@@ -61,7 +61,7 @@ Wsie **Lambholt** i **Gatstaf** żyją w rytmie pełni. Na południu leży
 przez cokolwiek poza garstką diabłów, dopóki po powrocie Avacyn nie
 otworzyło się szerzej.
 
-**Stensia** (północ) — ciemne góry **Geier Reach**, wieczna mgła
+**[[stensia|Stensia]]** (północ) — ciemne góry **Geier Reach**, wieczna mgła
 i wampirze rody w izolowanych dworach. Prowadzą tu trzy przełęcze:
 **Kruin Pass** z Gavony, pilnowana przez **Markovów**, **Getander
 Pass** — jedyne wejście od Kessigu, obserwowane przez **Falkenrathów**

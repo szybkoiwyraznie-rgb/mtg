@@ -15,7 +15,7 @@ pinezka:
 
 ## Kronika Lore
 
-Na skraju **Esperu**, tam gdzie po [[conflux|Confluxie]] szklane wyspy
+Na skraju [[esper|Esperu]], tam gdzie po [[conflux|Confluxie]] szklane wyspy
 shardu kontroli ocierają się o gnijący brzeg [[grixis|Grixis]],
 powietrze pełne jest świstu kości. Odłamki [[alara|Alary]], zderzone w
 jeden poszarpany plan, wrzuciły w metalowe miasto to, czego Esper nie
@@ -110,7 +110,7 @@ potyczek tej wojny.
 
 ## Na Mapie
 
-Scena należy do **Esperu**, do jego wschodniej rubieży zwróconej ku
+Scena należy do [[esper|Esperu]], do jego wschodniej rubieży zwróconej ku
 **[[grixis|Grixis]]** — tam po [[conflux|Confluxie]] przebiegały strefy
 zderzenia obu shardów. Dzieje nie zapisały adresu tej konkretnej
 potyczki, stąd pewność **region**: kotwica pada na esperskim brzegu
