@@ -77,12 +77,13 @@ function zamontowana({ start = 't1', pin = false, miejsce = null, domyslnyWidok 
     attrsOkna['data-domyslne-y'] = domyslnyWidok.y;
     attrsOkna['data-domyslne-zoom'] = domyslnyWidok.zoom;
   }
-  const okno = wezel(attrsOkna, [ruch, nakladka, ...guziki]);
+  const guzikReset = wezel({ 'data-mapa-reset': '', tag: 'button' });
+  const okno = wezel(attrsOkna, [ruch, nakladka, ...guziki, guzikReset]);
   ruch.clientWidth = okno.clientWidth = szerokosc; okno.clientHeight = wysokosc;
   const app = wezel({}, [okno]);
   zamontujMape(app);
   return {
-    okno, sceny, guziki, etykiety,
+    okno, sceny, guziki, etykiety, guzikReset,
     widok() {
       const m = ruch.style.transform.match(/translate\(([-\d.e+]+)px, ([-\d.e+]+)px\) scale\(([-\d.e+]+)\)/);
       assert.ok(m, 'kontroler musi naprawdę nanieść transformację');
@@ -98,6 +99,7 @@ function zamontowana({ start = 't1', pin = false, miejsce = null, domyslnyWidok 
       return { ox, oy, k, zlota: k * sx, pin: p, gx, gy };
     },
     przelacz(id) { guziki.find((g) => g.dataset.epokaPrzelacz === id).emit('click'); },
+    reset() { guzikReset.emit('click'); },
     kolko(delta, n = 1) {
       const [x, y] = this.widok().pin;
       for (let i = 0; i < n; i++) okno.emit('wheel', { clientX: x, clientY: y, deltaY: delta });
@@ -202,6 +204,37 @@ test('mapa: głęboki zoom ogniska T4 — widok 18 działa, clamp dopiero na 32'
   blisko(m.widok().k, 18);
   m.kolko(-100, 70); blisko(m.widok().k, 32);
   m.kolko(100, 140); blisko(m.widok().k, 0.4);
+});
+
+test('mapa: guzik reset przywraca kadr startowy (zoom + przesunięcie)', () => {
+  // wejście bez deep-linka: start = dopasowanie całości (k=1 w tym oknie).
+  const m = zamontowana({ start: 't4' });
+  const start = m.widok();
+  blisko(start.k, 1, 1e-9);
+  // użytkownik zoomuje i przesuwa…
+  m.kolko(-100, 8);
+  m.okno.emit('pointerdown', { pointerId: 1, clientX: 200, clientY: 300 });
+  m.okno.emit('pointermove', { pointerId: 1, clientX: 480, clientY: 560 });
+  m.okno.emit('pointerup', { pointerId: 1 });
+  assert.notEqual(m.widok().k, start.k, 'zoom faktycznie się zmienił');
+  // …guzik reset wraca DOKŁADNIE do kadru startowego.
+  m.reset();
+  blisko(m.widok().k, start.k, 1e-9);
+  blisko(m.widok().ox, start.ox, 1e-6);
+  blisko(m.widok().oy, start.oy, 1e-6);
+});
+
+test('mapa: reset wraca do kadru deep-linka pinezki, nie do dopasowania całości', () => {
+  const m = zamontowana({ start: 't4', pin: true });
+  const start = m.widok();
+  blisko(start.zlota, 2.5, 1e-9); // deep-link ?pin= startuje w zoomie 2.5
+  m.kolko(100, 20); // oddal
+  m.okno.emit('pointerdown', { pointerId: 1, clientX: 100, clientY: 100 });
+  m.okno.emit('pointermove', { pointerId: 1, clientX: 300, clientY: 250 });
+  m.okno.emit('pointerup', { pointerId: 1 });
+  m.reset();
+  blisko(m.widok().zlota, 2.5, 1e-9);
+  blisko(m.widok().pin[0], start.pin[0]); blisko(m.widok().pin[1], start.pin[1]);
 });
 
 test('mapa: na małym ekranie podpisy szczegółów czekają na zoom (QA A4)', () => {

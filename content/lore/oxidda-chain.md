@@ -45,7 +45,7 @@ W epoce powrotu Phyrexii Oxidda stała się jednocześnie bastionem i frontem.
 Z jednej strony trzymały ją plemiona Vulshoków oraz ich warsztaty; z drugiej
 od wnętrza planu naciskała czerwona frakcja pieców, a od strony Drossu bagno
 wżerało się w skałę przez **Blackcleave**. Kanon późnej wojny mówi wprost,
-że spośród dawnych kultur powierzchni to właśnie **Auriokowie** i
+że spośród dawnych kultur powierzchni to właśnie [[auriok|Auriokowie]] i
 **Vulshokowie** najdłużej utrzymywali większe skrawki własnego gruntu,
 ale oba ludy zostały przy tym straszliwie zdziesiątkowane.
 

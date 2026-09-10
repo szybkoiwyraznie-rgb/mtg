@@ -112,6 +112,14 @@ klasa `geografia`, plan Innistrad. Próg (2 karty) spełniły
 wikilinki dopisane na planie, w karcie 393DKA i w nowej karcie 309ISD.
 (Wcześniejsza obwódka regionu `regiony` w map.json wycofana — ADR 0043.)
 
+**Auriokowie — wykonane 2026-09-10**, `content/lore/auriok.md`,
+klasa `spolecznosc`, plan Mirrodin. Próg (2 karty) spełniły
+476mbs-banishment-decree + 556nph-ruthless-invasion (+ plan mirrodin,
++ hasło oxidda-chain); wikilinki dopisane w obu kartach, na planie
+i w haśle Oxidda Chain. Sekcja „Na mapie” odsyła do Razor Fields
+(deep-link `?x=0.5&y=0.2`). Znaleziona przez repo-szeroki link-mining
+Pętli Jakości (plany z ≥2 kartami: Mirrodin ×3, Innistrad ×2).
+
 Encje „o jedną kartę” od progu (skan boldów 2026-09-09):
 
 | Encja | Klasa (docelowa) | Karta wspominająca | Do progu brakuje |
@@ -161,6 +169,13 @@ niespełniony, nowych haseł brak. Encje „o jedną kartę” od progu:
 | eter, rdzeń eterowy | koncepcja | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
 | Targ Wynalazców | wydarzenie | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
 | Iglica Eteru, Peema, Vahd, Lathnu, Vinday, Vasavati | geografia | — (plan kaladesh) | licznik od kart, nie planów |
+
+**Pass mapowy 2026-09-10 (Pętla Jakości, PR-30):** wsie aerowrightów
+Vahd — **Maranjapur, Panka, Cambi** — dodane na plan jako kanonicznie
+nazwane POI (mtg.wiki: Avishkar; „The World of Kaladesh, Part I”;
+Magic Duels wiki). Wcześniej (korekta właściciela 2026-09-10) zdjęte
+jako bezimienne „wieś”; teraz nazwa znana z kanonu → narysowane
+z etykietami. Nie tworzą haseł (encje planowe, próg = 2 karty).
 
 ## Mapa Zendikaru — WYKONANA (ADR 0012)
 

@@ -4,13 +4,13 @@
  "wariant": "T4",
  "podklad": "podklad.svg",
  "wymiary": {
-  "szerokosc": 16000,
-  "wysokosc": 11000
+  "szerokosc": 2000,
+  "wysokosc": 1400
  },
  "widok_domyslny": {
-  "x": 0.65625,
-  "y": 0.6182,
-  "zoom": 18
+  "x": 0.5,
+  "y": 0.5,
+  "zoom": 1
  },
  "zrodlo": {
   "url": "https://mtg.wiki/page/Avishkar",
@@ -19,7 +19,7 @@
   "autor": "MTG Lore Codex (praca własna — scena mapforge maps/kaladesh/scena.json z generatora tools/mapforge/kaladesh-plan-t4.py + detal L2 maps/kaladesh/ghirapur-scena.json z tools/mapforge/kaladesh-ghirapur-l2.py)",
   "licencja": "praca własna na kanonie tekstowym; glify gór mapome CC-BY-4.0 (ADR 0020)",
   "pobrano": "2026-09-09",
-  "notka": "T4 (rekonstrukcja kanoniczna): kanon nie podaje mapy planu ani współrzędnych — prawdziwe sąsiedztwa i przebiegi rzek, umowne kształty i odległości. LOD (ADR 0039): lekki plan (Ghirapur tylko plamą z nazwą) + płyta detalu miasta od progu 6 (decyzja właściciela 2026-09-09, ścieżka Dominarii). Morze bez nazwy (kanon: „morze”, „odległe wybrzeże”). Skala wyłączona."
+   "notka": "T4 (rekonstrukcja kanoniczna): kanon nie podaje mapy planu ani współrzędnych — prawdziwe sąsiedztwa i przebiegi rzek, umowne kształty i odległości. DWIE OSOBNE MAPY (ADR 0047): plan w skali planu 2000×1400 (jak Zendikar; Ghirapur to POI-kropka z nazwą, duże proporcjonalne góry/lasy) + OSOBNA mapa miasta Ghirapur we własnej skali, podgrywana twardą podmianą deep-zoom od progu 6 (crossfade; bez wymogu sztywnego szwu — decyzja właściciela 2026-09-10). Morze bez nazwy (kanon: „morze”, „odległe wybrzeże”). Skala wyłączona."
  },
  "rekonstrukcja": true,
  "epoka": "Kaladesh za Konsulatu, doba KLD/AER (Kuźnia Konsulów spalona przez Chandrę — kanon nie datuje zdarzenia)",
@@ -84,10 +84,10 @@
  "pinezki": [
   {
    "karta": "610m19-gearsmith-prodigy",
-   "x": 0.6483,
-   "y": 0.625,
+   "x": 0.6491,
+   "y": 0.6292,
    "pewnosc": "region",
-   "uzasadnienie": "Fabuła: „słoneczny taras miejskich ogrodów” w Ghirapurze — kanon nie nazywa konkretnego tarasu; pinezka w sercu Greenwheel (dzielnica ogrodów, kopuł i „Zoo” konstruktów), gdzie młodzi rzemieślnicy testują swoje dzieła. Decyzja wiążąca z roadmapy PR-28: region (okolice Greenwheel)."
+   "uzasadnienie": "Fabuła: „słoneczny taras miejskich ogrodów” w Ghirapurze — kanon nie nazywa konkretnego tarasu; pinezka w sercu Greenwheel (dzielnica ogrodów, kopuł i „Zoo” konstruktów), gdzie młodzi rzemieślnicy testują swoje dzieła. Pozycja = dzielnica Greenwheel na mapie deep (kopuły ogrodowe ~600,478) przeliczona do układu planu przez bbox miasta — NIE środek ikony: karty Ghirapuru rozkładają się po dzielnicach, a nie stosują w jednym punkcie (korekta właściciela 2026-09-10). Mieści się w obrębie (powiększonej) ikony miasta. Decyzja wiążąca z roadmapy PR-28: region (okolice Greenwheel)."
   }
  ],
  "scena": "scena.json",
@@ -97,7 +97,8 @@
  "otwarte_na_kolejne_przejscia": [
   "DODANE 2026-09-09 (PR-28): mapa T4 epoki KLD/AER. Umowne: kształty i odległości, pozycje mostów 2–11 (w tym Ninth Bridge), Ovalchase i Shaila's Claim poza murami, pozycje wież eterowych i wsi Vahd, pozycja Bunarat (za murami na SW — kanon nie podaje położenia), pozycja Aetherflux Reservoir (płyta L2, nad Kujarem — kanon: „zawieszony nad panoramą”, bez współrzędnych), linia brzegu. Kolejne karty Kaladeshu (KLD/AER i późniejsze ery przed przemianowaniem w Avishkar) pinują na tej mapie; era Avishkar/Omenpathów (DFT) = osobna mapa na żądanie karty.",
   "PRZESKALOWANE 2026-09-09 (uwaga właściciela: miasto ~0,1% planu): arkusz 16000×11000 (~63× powierzchni); Ghirapur geometrycznie bez zmian, samo przesunięcie +(9210,6000) przy tych samych ziarnach PRNG; widok domyślny zoom 18 na zlewisko; K_MAX silnika 14→32. Oddalenie: miasto kropką z nazwą; Peema/Vahd widoczne przy ficie (duze), Lathnu/Devra/rzeki fs 17.",
-  "PRZEBUDOWA LOD 2026-09-09 (druga iteracja uwag właściciela): plan jest lekki (1,1 MB, Ghirapur tylko plamą z nazwą), detal miasta w nakładce L2 (bbox prog 6, wzorzec Dominarii); miasto reprojektowane — kaflikowanie dzielnic (zero nachodzeń), mury poza obrysem, las łęgowy osobnym kaflikiem, Aleja Olbrzymów z powrotem u bram. Stary generator jednoplikowy usunięty."
+  "PRZEBUDOWA LOD 2026-09-09 (druga iteracja uwag właściciela): plan jest lekki (1,1 MB, Ghirapur tylko plamą z nazwą), detal miasta w nakładce L2 (bbox prog 6, wzorzec Dominarii); miasto reprojektowane — kaflikowanie dzielnic (zero nachodzeń), mury poza obrysem, las łęgowy osobnym kaflikiem, Aleja Olbrzymów z powrotem u bram. Stary generator jednoplikowy usunięty.",
+  "DWIE OSOBNE MAPY 2026-09-10 (PR-30, korekta właściciela — ADR 0047): plan przeskalowany do skali planu 2000×1400 (jak Zendikar), by góry i lasy były duże i proporcjonalne, a Ghirapur był POI-kropką z nazwą, nie płytą. Miasto Ghirapur to teraz OSOBNA mapa we własnej skali (płyta 1400×740 na bboksie ~0,1 szerokości planu → ~7× powiększenie), podgrywana TWARDĄ PODMIANĄ deep-zoom (crossfade) od progu 6. Zniesiony wymóg sztywnego szwu wodnego (ADR 0046 §5 → ADR 0047): miasto to inna mapa, rzeki planu nie muszą trafiać w rzeki miasta na krawędzi. Pinezka 610M19 przeliczona do nowej skali (Greenwheel). Widok domyślny = cały plan (x0.5 y0.5 zoom1). Płyta miasta geometrycznie bez zmian (owner: art miasta dobry)."
  ],
  "warianty": [
   {
@@ -107,8 +108,8 @@
    "wariant": "T4",
    "podklad": "podklad.svg",
    "wymiary": {
-    "szerokosc": 16000,
-    "wysokosc": 11000
+    "szerokosc": 2000,
+    "wysokosc": 1400
    },
    "kalibracja": {
     "sx": 1,
@@ -119,11 +120,11 @@
    "zrodlo": {
     "url": "https://mtg.wiki/page/Avishkar",
     "url2": "https://mtg.wiki/page/Ghirapur",
-    "tytul": "Kaladesh — lekki plan prowincji (LOD0): trzy rzeki i zlewisko, Peema, Vahd, Lathnu/Devra; Ghirapur tylko plamą z nazwą",
+    "tytul": "Kaladesh — plan prowincji w skali planu (jak Zendikar): trzy rzeki i zlewisko, duża Peema i Devra, Vahd, Lathnu; Ghirapur jako POI-kropka z nazwą (miasto ma osobną mapę)",
     "autor": "MTG Lore Codex (praca własna — scena mapforge maps/kaladesh/scena.json z generatora tools/mapforge/kaladesh-plan-t4.py)",
     "licencja": "praca własna na kanonie tekstowym; glify gór mapome CC-BY-4.0 (ADR 0020)",
     "pobrano": "2026-09-09",
-    "notka": "Układ ZŁOTY współrzędnych pinezek i kotwic. Detal miasta w nakładce L2 (wariant ghirapur, ADR 0039)."
+    "notka": "Układ ZŁOTY współrzędnych pinezek i kotwic (plan 2000×1400, skala planu jak Zendikar). Miasto Ghirapur to osobna mapa (wariant ghirapur, ADR 0047), nie wycinek planu."
    }
   },
   {
@@ -136,19 +137,20 @@
     "wysokosc": 740
    },
    "etykiety": false,
+   "podmiana": true,
    "bbox": [
-    0.608125,
-    0.58,
-    0.695625,
-    0.6472727
+    0.60625,
+    0.5804449,
+    0.70625,
+    0.6559551
    ],
-   "prog": 6,
+   "prog": 8,
    "scena": "ghirapur-scena.json",
    "kalibracja": {
-    "sx": 11.428571428571425,
-    "sy": 14.864870891163859,
-    "ox": -6.949999999999998,
-    "oy": -8.621625116875038
+    "sx": 9.999999999999991,
+    "sy": 13.24324324324324,
+    "ox": -6.062499999999994,
+    "oy": -7.6869729729729706
    },
    "zrodlo": {
     "url": "https://mtg.wiki/page/Ghirapur",
@@ -156,7 +158,7 @@
     "autor": "MTG Lore Codex (praca własna — scena mapforge maps/kaladesh/ghirapur-scena.json z generatora tools/mapforge/kaladesh-ghirapur-l2.py)",
     "licencja": "praca własna na kanonie tekstowym; glify gór mapome CC-BY-4.0 (ADR 0020)",
     "pobrano": "2026-09-09",
-    "notka": "Nakładka bbox (prog 6) na układzie złotym planu; kalibracja = odwrotność bbox (waliduje test ADR 0035)."
+    "notka": "OSOBNA mapa miasta (ADR 0047): własna skala (płyta 1400×740 rozłożona na wycinku planu ~200×105 j. → ~7× powiększenie), twarda podmiana deep-zoom od progu 6 (crossfade). Bez wymogu sztywnego szwu (ADR 0046 §5 zwolniony). Kalibracja = odwrotność bbox (waliduje test ADR 0035)."
    }
   }
  ],

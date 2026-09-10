@@ -366,6 +366,18 @@ Reservoir na płycie L2 Ghirapuru, nowy klocek mapforge `zbiornik`.
 **176/176 testów**; 31 stron (15/4/12); map-audit 0; ZIP 87,8 MB.
 Raport: `docs/audits/AUDYT_2026-09-09-PR28.md`.
 
+**PR-30 (2026-09-10) — Kaladesh jako dwie osobne mapy.** Korekta
+właściciela: plan przeskalowany do skali planu **2000×1400** (jak
+Zendikar — duże, proporcjonalne góry/lasy; Ghirapur jako POI-kropka),
+a Ghirapur to **osobna mapa** o własnej skali (~7× planu) z **twardą
+podmianą** deep-zoom (crossfade, bez wymogu sztywnego szwu).
+**ADR 0047** (luzuje ADR 0046 §5). map.json (wymiary/bbox/kalibracja/
+widok), pinezka 610M19 → Greenwheel, testy `lod`/`ui-smoke`
+zaktualizowane (test szwu wodnego → test „osobna mapa o własnej
+skali"), treść (co-nowego + strona planu). **176/176 testów**;
+31 stron (15/4/12); map-audit 0. Audyt PR-29:
+`docs/audits/AUDYT_2026-09-10-PR29.md`.
+
 ## Wątki otwarte (czekają na decyzję właściciela)
 
 > **Zamknięte decyzją właściciela 2026-09-05 — NIE wracać do nich:**

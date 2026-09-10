@@ -419,6 +419,20 @@ test('mapforge: hydrologia — rzeka nie kończy się w polu (pkt 4; sprawdzWiaz
   assert.deepEqual(sprawdzHydrologie(l2), [], 'hydrologia kaladesh L2');
 });
 
+test('kaladesh plan: wsie Vahd nazwane kanonicznie (Maranjapur/Panka/Cambi), nie „wieś”', () => {
+  const scena = JSON.parse(fs.readFileSync('maps/kaladesh/scena.json', 'utf8'));
+  const idPoi = new Set((scena.poi ?? []).map((p) => p.id));
+  const teksty = new Set((scena.etykiety ?? []).map((e) => e.tekst));
+  for (const w of ['maranjapur', 'panka', 'cambi']) {
+    assert.ok(idPoi.has(w), `POI wsi Vahd: ${w}`);
+  }
+  for (const t of ['Maranjapur', 'Panka', 'Cambi']) {
+    assert.ok(teksty.has(t), `etykieta wsi Vahd: ${t}`);
+  }
+  // Regresja korekty właściciela 2026-09-10: żadnych bezimiennych „wieś”.
+  assert.ok(!teksty.has('wieś'), 'brak generycznej etykiety „wieś”');
+});
+
 test('mapforge: hydrologia — krawędź płyty L2 to szew, nie „pole” (ADR 0039)', async () => {
   const { sprawdzHydrologie } = await import('../tools/mapforge/render.mjs');
   const lad = [{ id: 'l', punkty: [[-50, -50], [450, -50], [450, 350], [-50, 350]] }];

@@ -8,7 +8,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { siatkaKafli, kafleDlaRect, prostWidoczny, prostNaklada, wBbox,
+import { siatkaKafli, kafleDlaRect, prostWidoczny, prostNaklada, prostZawiera, wBbox,
   czyPokazacL2, renderMape, zamontujMape } from '../src/codex/render-map.js';
 import { tnij, czyDostepnyConvert } from '../tools/kafle.mjs';
 
@@ -90,6 +90,24 @@ test('czyPokazacL2: próg i styczność z bbox (brzegi włącznie)', () => {
   assert.ok(!wBbox(0.9, 0.9, bbox));
 });
 
+test('czyPokazacL2: TWARDA PODMIANA wchodzi dopiero, gdy kadr mieści się w bbox (ADR 0047)', () => {
+  const bbox = [0.60625, 0.5804449, 0.70625, 0.6559551];
+  // kadr dotyka brzegu bboksu (miasto jeszcze nie wypełnia ramki):
+  const kadrDuzy = [0.55, 0.55, 0.68, 0.63];
+  // kadr w całości wewnątrz bboksu (miasto wypełnia ramkę):
+  const kadrMaly = [0.62, 0.59, 0.69, 0.64];
+  // Tryb pokrycia (Dominaria): styczność wystarcza.
+  assert.equal(czyPokazacL2(9, 8, kadrDuzy, bbox, false), true);
+  // Tryb podmiany (Ghirapur): styczność NIE wystarcza…
+  assert.equal(czyPokazacL2(9, 8, kadrDuzy, bbox, true), false);
+  // …dopiero zawarcie kadru w bboksie.
+  assert.equal(czyPokazacL2(9, 8, kadrMaly, bbox, true), true);
+  // Próg to twarda dolna bramka także w podmianie.
+  assert.equal(czyPokazacL2(7.9, 8, kadrMaly, bbox, true), false);
+  assert.ok(prostZawiera(bbox, kadrMaly));
+  assert.ok(!prostZawiera(bbox, kadrDuzy));
+});
+
 const MAPA_LOD = {
   plan: 'dominaria', tytul: 'Dominaria', wariant: 'T1',
   wymiary: { szerokosc: 8100, wysokosc: 5200 },
@@ -123,6 +141,7 @@ test('LOD markup: warstwa kafli, nakładka L2, brak przełącznika, kmax, region
     assert.ok(html.includes('data-src="dominaria/pokrycie-testowe.jpg"'), 'leniwy src pokrycia');
     assert.ok(!html.includes('data-epoka-przelacz'), 'bbox nie trafia do przełącznika epok');
     assert.ok(html.includes('data-kmax="22"'), 'głębszy zoom dla map LOD');
+    assert.ok(html.includes('data-mapa-reset'), 'guzik reset widoku w oknie mapy');
     assert.ok(!html.includes('data-region='), 'bez ?epoka= brak dopasowania regionu');
     const htmlRegion = renderMape('dominaria', { epoka: 'pokrycie' });
     assert.ok(htmlRegion.includes('data-region="pokrycie"'), '?epoka=nakładka → deep-link regionu');
@@ -259,11 +278,12 @@ test('LOD Kaladesh: wariant ghirapur L2 — bbox × aspekt × pliki × scena', (
   const mapa = JSON.parse(fs.readFileSync('maps/kaladesh/map.json', 'utf8'));
   const l2 = mapa.warianty.find((w) => w.id === 'ghirapur');
   assert.ok(l2, 'wariant ghirapur istnieje');
-  assert.deepEqual(l2.bbox, [0.608125, 0.58, 0.695625, 0.6472727]);
-  assert.equal(l2.prog, 6);
+  assert.deepEqual(l2.bbox, [0.60625, 0.5804449, 0.70625, 0.6559551]);
+  assert.equal(l2.prog, 8);
+  assert.equal(l2.podmiana, true, 'Ghirapur = twarda podmiana (ADR 0047)');
   assert.equal(l2.podklad, 'ghirapur.svg');
   assert.equal(l2.etykiety, false);
-  // aspekt bbox (w układzie złotym 16000×11000) = aspekt płyty 1400×740
+  // aspekt bbox (w układzie złotym planu 2000×1400) = aspekt płyty 1400×740
   const W = mapa.wymiary.szerokosc, H = mapa.wymiary.wysokosc;
   const ab = ((l2.bbox[2] - l2.bbox[0]) * W) / ((l2.bbox[3] - l2.bbox[1]) * H);
   const ap = l2.wymiary.szerokosc / l2.wymiary.wysokosc;
@@ -285,8 +305,9 @@ test('LOD Kaladesh: wariant ghirapur L2 — bbox × aspekt × pliki × scena', (
   try {
     const html = renderMape('kaladesh', {});
     assert.ok(html.includes('data-l2="ghirapur"'), 'nakładka L2 w scenie');
-    assert.ok(html.includes('data-bbox="0.608125,0.58,0.695625,0.6472727"'), 'bbox w markapie');
-    assert.ok(html.includes('data-prog="6"'), 'próg w markapie');
+    assert.ok(html.includes('data-bbox="0.60625,0.5804449,0.70625,0.6559551"'), 'bbox w markapie');
+    assert.ok(html.includes('data-prog="8"'), 'próg w markapie');
+    assert.ok(html.includes('data-podmiana="1"'), 'twarda podmiana w markapie');
     assert.ok(html.includes('data-src="kaladesh/ghirapur.svg"'), 'leniwy src płyty');
     assert.ok(!html.includes('data-epoka-przelacz'), 'bbox nie trafia do przełącznika epok');
   } finally {
@@ -295,45 +316,26 @@ test('LOD Kaladesh: wariant ghirapur L2 — bbox × aspekt × pliki × scena', (
   }
 });
 
-test('LOD Kaladesh: szew wodny — pozycja i szerokość L2 = plan w cięciu', async () => {
-  const { chaikin } = await import('../tools/mapforge/geom.mjs');
+test('LOD Kaladesh: Ghirapur to OSOBNA mapa o własnej skali (ADR 0047, nie wycinek 1:1)', () => {
+  // ADR 0047: plan jest w skali planu, a miasto to inna mapa o własnej,
+  // znacznie większej skali — bez wymogu sztywnego szwu (ADR 0046 §5
+  // zwolniony). Sprawdzamy, że płyta jest realnie POWIĘKSZONA względem
+  // planu (własna skala), a nie rozłożona 1:1 na wycinku planu.
   const mapa = JSON.parse(fs.readFileSync('maps/kaladesh/map.json', 'utf8'));
-  const l2v = mapa.warianty.find((w) => w.id === 'ghirapur');
+  const l2 = mapa.warianty.find((w) => w.id === 'ghirapur');
   const W = mapa.wymiary.szerokosc, H = mapa.wymiary.wysokosc;
-  const [x0, y0, x1, y1] = [l2v.bbox[0] * W, l2v.bbox[1] * H, l2v.bbox[2] * W, l2v.bbox[3] * H];
-  const baza = JSON.parse(fs.readFileSync('maps/kaladesh/scena.json', 'utf8'));
-  const l2 = JSON.parse(fs.readFileSync('maps/kaladesh/ghirapur-scena.json', 'utf8'));
-  const Rb = Object.fromEntries(baza.rzeki.map((r) => [r.id, r]));
-  const Rl = Object.fromEntries(l2.rzeki.map((r) => [r.id, r]));
-  // [id, oś, współrzędna szwu, koniec L2 w szwie]
-  const szwy = [['vinday', 'x', x0, 's0'], ['suramal', 'y', y0, 's0'],
-    ['vasavati', 'y', y1, 's1'], ['mapani', 'y', y0, 's0']];
-  for (const [id, os, wart, koniec] of szwy) {
-    const b = Rb[id], c = Rl[id];
-    const g = chaikin(b.punkty, 2, false);
-    const wz = (p) => (os === 'x' ? p[0] : p[1]);
-    let fi = -1, hx = 0, hy = 0;
-    for (let i = 0; i < g.length - 1; i++) {
-      const a = wz(g[i]), d = wz(g[i + 1]);
-      if (a === d) continue;
-      if ((a <= wart && wart <= d) || (d <= wart && wart <= a)) {
-        const u = (wart - a) / (d - a);
-        fi = i + u;
-        hx = g[i][0] + (g[i + 1][0] - g[i][0]) * u;
-        hy = g[i][1] + (g[i + 1][1] - g[i][1]) * u;
-        break;
-      }
-    }
-    assert.ok(fi >= 0, `${id}: oś planu przecina szew`);
-    // koniec L2 leży na osi planu w szwie (±1 j. — subpiksel do k≈16)
-    const pl = koniec === 's0' ? c.punkty[0] : c.punkty[c.punkty.length - 1];
-    const dPoz = Math.hypot(pl[0] + x0 - hx, pl[1] + y0 - hy);
-    assert.ok(dPoz < 1, `${id}: koniec L2 ${dPoz.toFixed(2)} j. od osi planu`);
-    // szerokość L2 w szwie = stożek planu w cięciu (±0,05 — niewidzialny uskok)
-    const t = fi / (g.length - 1);
-    const srodek = b.opcje.s0 + (b.opcje.s1 - b.opcje.s0) * t;
-    const sPlan = Math.max(0.2, srodek * (0.12 + 0.88 * Math.sin(Math.PI * t)));
-    assert.ok(Math.abs(sPlan - c.opcje[koniec]) < 0.05,
-      `${id}: stożek planu ${sPlan.toFixed(2)} vs L2 ${c.opcje[koniec]}`);
-  }
+  // plan w skali planu (jak Zendikar 2000×1400), nie w skali mastera miasta
+  assert.equal(W, 2000, 'plan w skali planu (szerokość)');
+  assert.equal(H, 1400, 'plan w skali planu (wysokość)');
+  // wycinek planu pod płytą (w jednostkach planu)
+  const wycinekW = (l2.bbox[2] - l2.bbox[0]) * W;
+  const powiekszenie = l2.wymiary.szerokosc / wycinekW;
+  assert.ok(powiekszenie >= 5,
+    `miasto ma własną skalę: płyta ${l2.wymiary.szerokosc} j. na wycinku ${wycinekW.toFixed(1)} j. planu = ×${powiekszenie.toFixed(1)} (≥5)`);
+  // kalibracja płyty = odwrotność bbox (waliduje ADR 0035 / render.prostWidoczny)
+  const k = l2.kalibracja;
+  assert.ok(Math.abs(k.sx * l2.bbox[0] + k.ox) < 1e-6 && Math.abs(k.sx * l2.bbox[2] + k.ox - 1) < 1e-6,
+    'kalibracja sx/ox = odwrotność bbox X');
+  assert.ok(Math.abs(k.sy * l2.bbox[1] + k.oy) < 1e-6 && Math.abs(k.sy * l2.bbox[3] + k.oy - 1) < 1e-6,
+    'kalibracja sy/oy = odwrotność bbox Y');
 });

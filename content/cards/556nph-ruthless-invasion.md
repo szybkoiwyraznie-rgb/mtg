@@ -17,7 +17,7 @@ pinezka:
 
 Na schyłku wojny o powierzchnię [[mirrodin|Mirrodinu]] nie wszystkie fronty
 pękły naraz. Najdłużej trzymały się te ludy, które potrafiły jeszcze
-zamieniać własne góry w broń: **Auriokowie** na ostrych polach północy
+zamieniać własne góry w broń: [[auriok|Auriokowie]] na ostrych polach północy
 oraz **Vulshokowie** w rdzawych pasmach [[oxidda-chain|Oxidda Chain]]. Ale nawet
 czerwone góry, hartowane od pokoleń ogniem kuźń i gniewem ludzi,
 w pewnym momencie przestają być twierdzą, a stają się pułapką. Żelazne

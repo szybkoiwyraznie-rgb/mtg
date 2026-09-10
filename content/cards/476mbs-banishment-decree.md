@@ -70,7 +70,7 @@ interpretacje Argent Etchings pod własne cele. W tej scenie nie ma
 jej fizycznie — jest jako **doktryna**, w imieniu której orzeka
 cenobita. To ważniejsze niż jej obecność: aparat działa sam.
 
-**Wojownik Aurioków** — Auriokowie to biali ludzie Razor Fields,
+**Wojownik Aurioków** — [[auriok|Auriokowie]] to biali ludzie Razor Fields,
 o brązowej skórze nakrapianej złotem i sztywnych, białych włosach
 (od słońca, które świeci tam niemal bez przerwy), z ciałami
 wzmocnionymi złotymi płytami. Nie tworzyli jednego państwa: każda

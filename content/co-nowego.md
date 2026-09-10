@@ -1,3 +1,157 @@
+## 2026-09-10 16:00 — Nowy plan: Warhammer Fantasy + karta Brute Force
+
+Do Kodeksu wchodzi **nowy plan franczyzy zewnętrznej** —
+[[warhammer-fantasy|Warhammer Fantasy]] (Games Workshop / *Warhammer:
+The Old World*) — wraz z pierwszą kartą:
+
+- **[[39mm2-brute-force|Brute Force]]** (MM2, transpozycja do
+  Warhammer Fantasy) — ciemnozielony **ork** na błotnistym polu bitwy
+  pęcznieje od czerwonej magii **Waaagh!**, którą karmi go garbaty
+  szaman: portret doktryny zielonoskórych, że „większy i głośniejszy
+  zawsze wygrywa". Karta Katalogowa LORE-first (Zielonoskórzy, Gork i
+  Mork, Badlands), snapshot Scryfalla MM2/108, wpis kolekcji verbatim.
+- **Strona planu** `warhammer-fantasy` (Stary Świat, Mallus,
+  zielonoskórzy, Waaagh!, Imperium/Bretonnia).
+- **Research mapowy (MA1) + rekomendacja wariantu:** przeprowadzono
+  ogląd kandydatów graficznych i zarekomendowano **T1 (raster oficjalnej
+  mapy *The Old World*, GW 2024)** — wg drabiny ADR 0038 (T2 odpada:
+  brak dobrego wektora; T4 odrzucone: jest doskonały materiał). Badanie:
+  `maps/_warsztat/RESEARCH_2026-09-10-warhammer-fantasy-mapa.md`. Mapa
+  planu = `pending` do decyzji właściciela i dostarczenia rastra;
+  pinezka karty (rejon Badlands) żyje na razie w sekcji „Na Mapie".
+
+## 2026-09-10 15:15 — Materializacja: Lash of the Balrog (Śródziemie)
+
+Nowa dostawa właściciela zmaterializowana:
+
+- **[[257ltr-lash-of-the-balrog|Lash of the Balrog]]** (LTR, plan
+  [[srodziemie|Śródziemie]]) — spadający **Balrog** (Zguba Durina)
+  wyrzuca w górę płonący bicz, którego rzemienie owijają kolana
+  **Gandalfa Szarego** i ściągają go w przepaść Morii na Moście
+  Khazad-dûm. Karta Katalogowa LORE-first (Balrogowie jako skażeni
+  Majarowie Morgotha, Pierwsza Era, „Fly, you fools!"), snapshot
+  Scryfalla LTR/92, wpis kolekcji verbatim (Fabuła).
+- **Pinezka** na mapie Śródziemia (pewność: dokładna) w sercu Gór
+  Mglistych — Moria, między Bramą Morii a Doliną Strumienia.
+
+## 2026-09-10 14:30 — Materializacja: Ethersworn Shieldmage (Alara)
+
+Nowa dostawa właściciela zmaterializowana:
+
+- **[[536arb-ethersworn-shieldmage|Ethersworn Shieldmage]]** (ARB, plan
+  [[alara|Alara]]) — wedalkeńska mag bitewna sekty Ethersworn zatrzymuje
+  na granicy Esper–Grixis deszcz kościanych włóczni nieumarłych barierą
+  ze stwardniałej many, osłaniając artefaktową bestię. Karta Katalogowa
+  LORE-first (etherium, Noble Work, Conflux), snapshot Scryfalla ARB/4,
+  wpis kolekcji verbatim.
+- **Pinezka** na mapie Alary (pewność: region) w rejonie Tidehollow /
+  The Glass Dunes — esperski brzeg zwrócony ku Grixis.
+- Korekta wydania w dostawie: pierwotnie oznaczone CON (Conflux), po
+  korekcie właściciela ARB (Alara Reborn) — zgodne ze Scryfallem (karta
+  nigdy nie wyszła w Conflux; pierwodruk to ARB 2009).
+
+## 2026-09-10 14:00 — Pętla Jakości (repo-szeroko): hasło Auriokowie
+
+Link-mining Kroku 3 przeprowadzony na **całym repo**, nie tylko na
+Kaladeshu — skan encji w planach z ≥2 kartami (Mirrodin ×3, Innistrad ×2):
+
+- Nowe hasło **[[auriok|Auriokowie]]** (`content/lore/auriok.md`,
+  klasa `spolecznosc`, plan Mirrodin) — biali ludzie Razor Fields,
+  złoto w ciele, Accorderzy i *Accord of Equity*, technika *mirroring*
+  z Bladehold, największa odporność na kompleację. Próg 2 kart spełniły
+  Banishment Decree i Ruthless Invasion.
+- Wikilinki dopisane we wszystkich stronach, które o nich mówiły:
+  obie karty, strona planu Mirrodin i hasło Oxidda Chain.
+- Weryfikacja repo-szeroka: 15/15 kart ma pinezkę (poza planami bez
+  mapy), wszystkie 12 map przechodzą audyt (0 problemów), metryka
+  kompletności nasycona.
+
+## 2026-09-10 13:30 — Pętla Jakości: pass mapowy Kaladeshu (wsie Vahd)
+
+Kwerenda kanonu (mtg.wiki: Avishkar; „The World of Kaladesh, Part I”)
+zwróciła **nazwy trzech wsi aerowrightów** w Vahd — dawnych wsi
+rolniczych Złotych Stopni, w czasie Rozkwitu Eteru przebudowanych na
+hangary i pasy startowe przemysłu sterowcowego:
+
+- Na planie doszły **Maranjapur, Panka i Cambi** jako kanonicznie
+  nazwane POI z etykietami (wcześniej zdjęte jako bezimienne „wieś” —
+  teraz nazwa znana, więc rysujemy).
+- Strona planu wzbogacona o zdanie o tych wsiach + cytowania w Źródłach.
+- Nowy test regresyjny pilnuje, że wsie są nazwane i że nie wraca
+  generyczna „wieś”.
+
+## 2026-09-10 12:40 — Kaladesh: dostrojenie planu (pasmo, ikona, pinezka)
+
+Drobne poprawki po recenzji właściciela:
+
+- **Aleja Olbrzymów** przesunięta na południe, tuż nad rzekę **Vinday** —
+  proporcja odległości pasmo↔rzeka zgadza się teraz z mapą deep Ghirapuru.
+- **Ikona Ghirapuru** na planie powiększona (skala 2,1), tak by jej obwód
+  obejmował większość dzielnic widocznych na deep-mapie (Greenwheel,
+  Freejam, Kujar, Jedenaście Mostów, Bomat, Embraal).
+- **Pinezka** karty 610M19 przeniesiona ze środka ikony do dzielnicy
+  **Greenwheel** (przeliczonej z deep-mapy) — kolejne karty Ghirapuru
+  będą rozrzucane po dzielnicach, a nie stosowane w jednym punkcie;
+  wciąż mieści się w obrębie (powiększonej) ikony.
+
+## 2026-09-10 02:10 — Kaladesh: poprawki mapy po recenzji właściciela
+
+Sześć uwag do map Kaladeshu (plan + osobna mapa Ghirapuru):
+
+1. **Spójność gór:** pasmo widoczne na mapie miasta na NW (Aleja
+   Olbrzymów) dostało swój odpowiednik na planie — wzgórza u wrót
+   Ghirapuru nad Vindayem.
+2. **Pinezka karty** (Gearsmith Prodigy) wycentrowana dokładnie na
+   ikonie miasta (dawniej wisiała obok).
+3. **Twarda podmiana** mapy miasta wchodzi teraz dopiero, gdy miasto
+   **wypełnia całą ramkę** (a nie „za wcześnie”), i przy podmianie
+   **plan znika pod spodem** — koniec efektu „nietrafiania” rzek na styku.
+4. **Nazwy wód** na planie (Vinday, Suramal, Vasavati, Mapani) są
+   granatowe i **poziome** (bez łuków/obrotów).
+5. **Bezimienne POI usunięte:** żadnych „wsi”/„osad rybackich” bez
+   kanonicznej nazwy — jak nie znamy nazwy, nie rysujemy punktu.
+6. **„Devra Cliffs”** przeniesione z pustego stepu **na pasmo urwisk**,
+   gdzie faktycznie są klify.
+
+## 2026-09-10 01:20 — Pętla Jakości: pogłębienie Lathnu + pass mapowy (5 wież)
+
+- **Pogłębienie lore [[kaladesh|Kaladeshu]]** (krok 2): północna rubież
+  planu, dotąd zbyta dwoma zdaniami, dostała pełny akapit — **Lathnu**
+  („Miasto na Szczycie Świata") na **Urwiskach Devra**: pionowe klify
+  i lodowaty wiatr, gospodarka górnicza (wytop rud dla Ghirapuru),
+  mało vedalken/elfów z powodu chłodu, pionowa kolejka szynowa i dok
+  sterowców na krawędzi urwiska, **Wielka Wspinka** jako mur gór
+  „oddzielający Kaladesh od niebios". Dwa nowe źródła (Art of Magic:
+  Kaladesh / Concept Art Library + The World of Kaladesh).
+- **Weryfikacja dokładności mapy** (Pętla Jakości, krok 4.3): przy
+  przeskalowaniu planu do skali planu (PR-30) liczba **wież eterowych**
+  spadła z pięciu do trzech, choć kanon i `map.json` mówią o **pięciu**
+  (audyt PR-29 ustalił „5, nie 3”, lista umownych). Odtworzono
+  wieże 4 i 5 wraz z etykietami — plan znów zgodny z kanonem i własnymi
+  rozstrzygnięciami umownymi. Ogląd rastru (resvg): brak kolizji,
+  wszystkie na lądzie; map-audit 0; `podklad.svg` 1,82 MB (< limit).
+- Link-mining bez nowych haseł — żadna encja nie osiąga progu ≥2 kart
+  (kolejki Kaladeshu i Forgotten Realms wciąż o 1 kartę; „eter” pada
+  w 1 karcie Kaladeshu, drugie trafienie to „Eternal” z Tarkiru).
+
+## 2026-09-10 00:40 — Kaladesh jako dwie osobne mapy (PR-30)
+
+- **Mapa [[kaladesh|Kaladeshu]] przebudowana na dwie osobne mapy**
+  (decyzja właściciela, `docs/decisions/0047-…`): **plan** rysuje się
+  teraz w skali planu (jak Zendikar) — duże, proporcjonalne góry
+  (Devra, Wielka Wspinka) i wyraźne lasy Peemy zamiast dawnych „ząbków
+  piły” i „ziarenek piasku”; **Ghirapur to na planie mała kropka
+  z nazwą**.
+- **Ghirapur to osobna mapa miasta o własnej skali** (~7× planu),
+  podgrywana **twardą podmianą** deep-zoom (z przenikaniem) od
+  pewnego poziomu zbliżenia — wzorzec Dominarii, ale jako naprawdę
+  inna mapa. Zniesiony wymóg idealnego łączenia rzek na krawędzi
+  (ADR 0046 §5 → **ADR 0047**): to inne mapy. Rysunek samego miasta
+  bez zmian (mury, Kanał Dukhara, Jedenaście Mostów, Greenwheel,
+  Iglica Eteru, Aetherflux Reservoir).
+- Deep-link pinezki **Gearsmith Prodigy** trafia w serce Greenwheel
+  i startuje z progiem podmiany na mapę miasta.
+
 ## 2026-09-09 19:52 — Audyt PR-28 i Pętla Jakości (PR-29)
 
 - **Audyt PR-28** (`docs/audits/AUDYT_2026-09-09-PR28.md`): werdykt —

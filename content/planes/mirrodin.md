@@ -96,7 +96,7 @@ usuwania bolesnych wspomnień, zapisywanych potem przez trolle w Drzewie.
 Elfy są łucznikami i myśliwymi lasu; ich zbrojmistrzowie kują w miedzi. **Sylvok** —
 zieloni ludzie Tangle — słuchają druidów. **Leonin** Razor Fields
 odpowiadają przed Kha, wojownikiem-wodzem z Taj-Nar; obok nich żyją
-**Auriok** i **loxodon**. Auriokowie to biali ludzie Pól: skóra
+[[auriok|Auriok]] i **loxodon**. Auriokowie to biali ludzie Pól: skóra
 brązowa, nakrapiana złotem i wzmocniona złotymi płytami, włosy
 wybielone słońcem, które nad Razor Fields prawie nie zachodzi.
 Nie tworzyli państwa — każda osada była miastem-państwem, a prawa

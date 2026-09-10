@@ -259,6 +259,9 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
   background: #efe9dc;
   border: 1px solid var(--ramka); border-radius: 10px;
   touch-action: none; cursor: grab;
+  /* pan-surface: żadnego zaznaczania tekstu ani natywnego DnD podkładu
+     (inaczej drugi drag startuje natywne drag-and-drop obrazka) */
+  user-select: none; -webkit-user-select: none;
   box-shadow: inset 0 0 24px rgba(60, 45, 20, 0.12);
 }
 .mapa-okno:active { cursor: grabbing; }
@@ -281,6 +284,9 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
 .mapa-l2[hidden] { display: none; }
 .mapa-l2.widoczna { opacity: 1; }
 .mapa-l2 img { display: block; width: 100%; height: 100%; user-select: none; -webkit-user-drag: none; }
+/* Twarda podmiana (ADR 0047): plan-podkład znika, gdy osobna mapa miasta
+   wypełnia ramkę — crossfade zgrany z fade-in mapy miasta (0.35s). */
+.mapa-podklad.podmieniony { opacity: 0; transition: opacity 0.35s ease; }
 /* Nakładka ekranowa: pinezki i etykiety podkładu ŻYJĄ poza skalowaną
    warstwą podkładu — silnik pozycjonuje je w pikselach (translate).
    Stały rozmiar i ostre krawędzie w każdym przybliżeniu; klikalne,
@@ -356,6 +362,18 @@ code { background: #ece2cc; border-radius: 4px; padding: 0.05rem 0.35rem; font-s
   display: flex; border-radius: 8px; overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
+/* Guzik „reset” — przywraca kadr startowy (zoom + przesunięcie). Lewy
+   górny róg, żeby nie kolidował z przełącznikiem epok (prawy górny). */
+.mapa-reset {
+  position: absolute; top: 10px; left: 10px; z-index: 8;
+  font: inherit; font-size: 0.8rem; font-weight: 600; line-height: 1.2;
+  padding: 0.38rem 0.7rem; cursor: pointer; border-radius: 8px;
+  border: 1px solid rgba(60, 45, 20, 0.55);
+  background: rgba(246, 239, 223, 0.94); color: #2c2313;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+.mapa-reset:hover { background: #fff8e8; }
+.mapa-reset:focus-visible { outline: 2px solid var(--akcent); outline-offset: 2px; }
 .mapa-epoki button {
   font: inherit; font-size: 0.8rem; font-weight: 600; line-height: 1.2;
   padding: 0.38rem 0.75rem; cursor: pointer;

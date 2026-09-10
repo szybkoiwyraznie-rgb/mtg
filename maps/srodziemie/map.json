@@ -103,6 +103,13 @@
    "y": 0.492,
    "pewnosc": "region",
    "uzasadnienie": "Dunland — kraina między rzeką Glanduin (płn.), Górami Mglistymi (wsch.) i rzeką Isen (płd.), na północny zachód od Isengardu. Scena karty rozgrywa się na dunlandzkim urwisku nad wąwozem armii — pinezka wskazuje środek krainy."
+  },
+  {
+   "karta": "257ltr-lash-of-the-balrog",
+   "x": 0.478,
+   "y": 0.384,
+   "pewnosc": "dokladna",
+   "uzasadnienie": "Moria (Khazad-dûm) w sercu Gór Mglistych. Scena — upadek Gandalfa z Balrogiem na Moście Khazad-dûm, 15 stycznia 3019 T.E. — rozgrywa się pod ziemią, w podziemnym mieście krasnoludów. Pinezka pada na grzbiet Gór Mglistych dokładnie w linii między zachodnią Bramą Morii (etykieta „Moria Gate\", ok. 0.44/0.40) a wschodnim wyjściem w Dolinie Strumienia (etykieta „Dimrill Dale\", ok. 0.52/0.38), reprezentujący nadziemne wrota podziemnej Morii."
   }
  ]
 }

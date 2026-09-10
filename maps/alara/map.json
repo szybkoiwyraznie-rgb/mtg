@@ -345,6 +345,13 @@
    "x": 0.475,
    "y": 0.475,
    "pewnosc": "dokladna"
+  },
+  {
+   "karta": "536arb-ethersworn-shieldmage",
+   "x": 0.8175,
+   "y": 0.4679,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła: zderzenie shardów rzuca hordy Grixis na krystaliczne mosty Esperu, a wedalkeńska mag Ethersworn zatrzymuje deszcz kościanych włóczni barierą ze stwardniałej many. Kanon (mtg.wiki: Alara — Conflux) potwierdza realne zderzenie Esper–Grixis i najazdy nieumarłych Grixis na sąsiadów, ale nie podaje adresu tej potyczki — stąd pewność 'region'. Pinezka na południowej, zwróconej ku Grixis rubieży Esperu, w rejonie Tidehollow (0.8175,0.4679) i The Glass Dunes (0.78,0.4571), gdzie metalowe wyspy shardu kontroli najbliżej ocierają się o czerń martwego shardu."
   }
  ],
  "otwarte_na_kolejne_przejscia": [
