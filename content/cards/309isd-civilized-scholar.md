@@ -26,8 +26,10 @@ Dlatego **Civilized Scholar** tak dobrze pasuje do **Havengulu** w
 **Nephalii**. To portowe miasto żyje z handlu, wiedzy i rzeczy, które w
 innych prowincjach nazywano by bez wahania podejrzanymi. W gabinecie
 uczonego piętrzą się traktaty o furii wilkołaków z **Kessigu** i o głodzie
-wampirzych dworów ze [[stensia|Stensii]] spod znaku **Markovów**. Wszystko to ma posłużyć jako
-materiały do większej pracy: zrozumienia gniewu, zanim gniew zrozumie jego.
+wampirzych dworów ze [[stensia|Stensii]] spod znaku **Markovów**. Poznaje te
+krainy z pism; opowieść nie prowadzi go osobiście do Stensii. Wszystko to
+ma posłużyć jako materiały do większej pracy: zrozumienia gniewu, zanim
+gniew zrozumie jego.
 
 W tym tkwi prawdziwy ciężar sceny. Nie ma tu wiwisekcji ani demonstracyjnej
 magii. Jest człowiek, który wierzy, że samym językiem, notatką i dyscypliną
@@ -163,7 +165,8 @@ uczony przekracza granicę, którą uważał za bezpieczną.
   jeden z głównych wzorów szału i strachu po zniknięciu Avacyn:
   https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-kessig-and-werewolves-2011-10-05
 - A Planeswalker's Guide to Innistrad: Stensia and Vampires — ród Markov i
-  kultura Stensii jako drugi wielki model przemocy badanej przez uczonego:
+  kultura Stensii, opisane w traktatach czytanych przez uczonego w scenie;
+  źródło nie jest dowodem jego podróży do tej prowincji:
   https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-stensia-and-vampires-2011-11-02
 - A Planeswalker's Guide to Innistrad: Gavony and Humans — Thraben jako
   centrum Kościoła, szkół i kancelarii, do których trafiają raporty z
