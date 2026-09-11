@@ -31,21 +31,21 @@
   - Dodana kotwica Karak Osiem Szczytów oraz pinezka w paśmie Worlds Edge Mountains (`maps/warhammer-fantasy/map.json`, pewność `region`, `x: 0.720, y: 0.580`).
   - Strona planu [[warhammer-fantasy|Warhammer Fantasy]] zaktualizowana o opis Nocnych Goblinów, plemienia Krzywego Księżyca i odsyłacz do nowej karty.
 
-## 2026-09-11 01:45 — Nowy plan: Eldraine (mapa T4) + nowa karta: Burning-Yard Trainer (Embereth, The Burning Yard)
+## 2026-09-11 17:50 — Nowy plan: Eldraine (mapa T4) + nowa karta: Burning-Yard Trainer (Ardenvale)
 
 - **Nowy plan:** [[eldraine|Eldraine]] — baśniowy i rycerski plan inspirowany legendami arturiańskimi i baśniami braci Grimm. Podział na cywilizowane Królestwo (*The Realm*) zorganizowane wokół Pięciu Dworów (Ardenvale, Vantress, Locthwain, Embereth, Garenbrig) oraz bezkresne Knieje (*The Wilds*) pełne magii Fae, czarownic, gigantów i pradawnych reliktów elfów.
 - **Wektorowa mapa Eldraine (T4):**
-  - Autorska rekonstrukcja wektorowa relacji przestrzennych w silniku Mapforge (`maps/eldraine/scena.json`, `podklad.svg`, `map.json`) zgodnie z drabiną preferencji ADR 0038 i kanonem *Planeswalker's Guide to Eldraine*.
-  - Geometria: Wyżyny Ardenvale w centrum, jezioro Lochmere z wyspą Vantress na północnym zachodzie, lewitujące Locthwain na moczarach południowo-zachodnich, wulkaniczny płaskowyż Embereth i poligon The Burning Yard na południowym wschodzie, Dolina Garen z Wielkim Kręgiem na północnym wschodzie oraz otaczające Knieje (The Wilds, las Tuinvale, ruiny Heart Land, podniebne zamczysko Stormkeld, chatka wiedźmy i karczma Edgewall Inn).
-  - Hydrologia i etykiety zgodne z regułami Codexu (0 błędów w audycie).
+  - Zatwierdzony przez właściciela autorski atlas relacyjny w silniku Mapforge (`maps/eldraine/scena.json`, `podklad.svg`, `map.json`), zgodny z drabiną ADR 0038.
+  - Globalne kierunki, odległości, rzeki i drogi są umowną kompozycją T4. Źródła potwierdzają byty i relacje lokalne: Castle Vantress na Lochmere, Circle of Loyalty w Castle Ardenvale, Burning Yard jako jeden kompleks Embereth, Irencrag przy Embereth i Great Henge w Castle Garenbrig.
+  - Mobilny Castle Locthwain jest symbolem bez stałego adresu; zaginionego Cauldron of Eternity nie naniesiono. Hydrologia i etykiety przechodzą audyt techniczny.
 - **Materializacja karty:**
-  - **[[209eld-burning-yard-trainer|Burning-Yard Trainer]]** (`209ELD`, wydanie `ELD` / *Throne of Eldraine*, plan [[eldraine|Eldraine]]) — piaszczysta arena turniejowa Płonącego Dziedzińca (*The Burning Yard*) pod zamkowymi wieżami; doświadczony instruktor z płonącym drewnianym mieczem treningowym uspokaja kasztanowego konia, asystując młodemu adeptowi w czerwonym wamsie przed torem płonących przeszkód; egzamin ognia jako ostateczna próba odwagi wpajająca tratowanie i pośpiech (`{4}{R}`, 3/3 Human Knight, Trample, Haste, wejście dające innemu Rycerzowi +2/+2, Trample i Haste).
+  - **[[209eld-burning-yard-trainer|Burning-Yard Trainer]]** (`209ELD`, wydanie `ELD` / *Throne of Eldraine*, plan [[eldraine|Eldraine]]) — piaszczysta arena pod wieżami Castle Ardenvale; doświadczony instruktor z płonącym drewnianym mieczem uspokaja konia i prowadzi młodego adepta przez tor płonących przeszkód (`{4}{R}`, 3/3 Human Knight, Trample, Haste, wejście dające innemu Rycerzowi +2/+2, Trample i Haste). Nazwa karty pochodzi z odrębnego kompleksu Burning Yard w Embereth, lecz Fabuła wiążąco lokuje scenę w Ardenvale.
 - **Wpis kolekcji i snapshot Scryfall:**
   - `collection/entries/209eld-burning-yard-trainer.md` (Fabuła właściciela zapisana verbatim, L16).
   - `scryfall/209eld-burning-yard-trainer.json` (pełny snapshot Scryfall ELD #117 z metadanymi pochodzenia).
 - **Pinezka i mapa Eldraine:**
-  - Pinezka karty osadzona w lokacji The Burning Yard (`maps/eldraine/map.json`, pewność `obiekt`, `x: 0.715, y: 0.7286`).
-  - Strona planu [[eldraine|Eldraine]] zsynchronizowana z nową mapą i odsyłaczem do karty.
+  - Pinezka karty osadzona przy Castle Ardenvale (`maps/eldraine/map.json`, pewność `dokladna`, `x: 0.500, y: 0.4643`).
+  - Strona planu [[eldraine|Eldraine]] rozdziela scenę 209ELD od kanonicznego Burning Yard w Embereth.
 
 ## 2026-09-11 01:30 — Nowa karta: Silvanus's Invoker (Zapomniane Krainy, Wysoki Las)
 

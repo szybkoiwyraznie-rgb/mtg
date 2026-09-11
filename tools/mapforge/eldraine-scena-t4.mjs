@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-/** Eldraine T4 (ADR 0038): Autorska rekonstrukcja relacji przestrzennych
- * Pięciu Dworów (The Five Courts) i Kniei (The Wilds) w silniku mapforge.
+/** Eldraine T4 (ADR 0038): zatwierdzony przez właściciela, autorski atlas
+ * relacyjny Pięciu Dworów (The Five Courts) i Kniei (The Wilds).
  *
  * Uruchomienie: node tools/mapforge/eldraine-scena-t4.mjs
  */
@@ -39,43 +39,33 @@ export const MIEJSCA_ELDRAINE = [
 
   // --- ARDENVALE (BIAŁY DWÓR) ---
   { id: 'castle-ardenvale', nazwa: 'Castle Ardenvale', x: 1000, y: 650, typ: 'twierdza', glif: 'fort', fs: 20, skala: 1.5,
-    z: 'Castle_Ardenvale', opis: 'Monumentalna biała twierdza i historyczna stolica Najwyższego Króla' },
-  { id: 'circle-of-loyalty', nazwa: 'The Circle of Loyalty', x: 940, y: 600, typ: 'miejsce_mocy', glif: 'kolumny', fs: 16, skala: 1.2,
-    z: 'The_Circle_of_Loyalty', opis: 'Święty krąg białego płomienia próby rycerskiej' },
-  { id: 'archers-tower', nazwa: "Archer's Tower", x: 1070, y: 620, typ: 'wieza', glif: 'iglica', fs: 15, skala: 1.1,
-    z: 'Ardenvale', opis: 'Wysoka wieża strażnicza strzegąca wschodnich podejść pod zamek' },
-  { id: 'wealdrum', nazwa: 'Wealdrum', x: 860, y: 550, typ: 'osada', glif: 'miasto', fs: 15, skala: 1.0,
-    z: 'Ardenvale', opis: 'Malownicza wieś rolnicza na zachodnich wyżynach Arden' },
-  { id: 'wesling', nazwa: 'Wesling', x: 1150, y: 560, typ: 'osada', glif: 'miasto', fs: 15, skala: 1.0,
-    z: 'Ardenvale', opis: 'Rycerska wieś na północno-wschodnich traktach Arden' },
-  { id: 'trekell', nazwa: 'Trekell', x: 1120, y: 790, typ: 'osada', glif: 'miasto', fs: 15, skala: 1.0,
-    z: 'Ardenvale', opis: 'Miasteczko targowe na południowo-wschodnim trakcie' },
+    z: 'Castle_Ardenvale', opis: 'Biała twierdza i historyczna stolica Najwyższego Króla; Circle of Loyalty znajduje się wewnątrz zamku' },
+  { id: 'archers-tower', nazwa: "Archer's Tower", x: 1090, y: 570, typ: 'wieza', glif: 'iglica', fs: 14, skala: 1.1,
+    z: 'Ardenvale', opis: 'Wieża należąca do domeny Ardenvale; dokładna pozycja na atlasie jest umowna' },
+  { id: 'wealdrum', nazwa: 'Wealdrum', x: 800, y: 540, typ: 'osada', glif: 'miasto', fs: 14, skala: 1.0,
+    z: 'Ardenvale', opis: 'Osada domeny Ardenvale; dokładna pozycja na atlasie jest umowna' },
+  { id: 'wesling', nazwa: 'Wesling', x: 1200, y: 550, typ: 'osada', glif: 'miasto', fs: 14, skala: 1.0,
+    z: 'Ardenvale', opis: 'Osada domeny Ardenvale; dokładna pozycja na atlasie jest umowna' },
+  { id: 'trekell', nazwa: 'Trekell', x: 1120, y: 810, typ: 'osada', glif: 'miasto', fs: 14, skala: 1.0,
+    z: 'Ardenvale', opis: 'Osada domeny Ardenvale; dokładna pozycja na atlasie jest umowna' },
 
   // --- VANTRESS (NIEBIESKI DWÓR) ---
   { id: 'castle-vantress', nazwa: 'Castle Vantress', x: 480, y: 400, typ: 'twierdza', glif: 'fort', fs: 19, skala: 1.4,
     z: 'Castle_Vantress', opis: 'Twierdza na wyspie otoczonej wodospadem na jeziorze Lochmere' },
   { id: 'lochmere', nazwa: 'Lochmere', x: 480, y: 490, typ: 'akwen', fs: 17, woda: true,
     z: 'Vantress', opis: 'Głębokie jezioro skrywające sekrety i podwodne groty syren' },
-  { id: 'indrelon', nazwa: 'Indrelon (Magic Mirror)', x: 550, y: 360, typ: 'miejsce_mocy', glif: 'plac', fs: 15, skala: 1.1,
-    z: 'The_Magic_Mirror', opis: 'Zatopione sanktuarium Magicznego Zwierciadła Indrelon' },
 
   // --- LOCTHWAIN (CZARNY DWÓR) ---
-  { id: 'castle-locthwain', nazwa: 'Castle Locthwain', x: 470, y: 1010, typ: 'twierdza', glif: 'fort', fs: 19, skala: 1.4,
-    z: 'Castle_Locthwain', opis: 'Lewitujący zamek z czarnego kamienia unoszący się nad moczarami' },
-  { id: 'loch-locthwain', nazwa: 'The Black Tarns', x: 470, y: 1090, typ: 'akwen', fs: 16, woda: true,
-    z: 'Locthwain', opis: 'Czarne, mgliste wody i bagniska u stóp lewitującej twierdzy' },
-  { id: 'cauldron-eternity', nazwa: 'Cauldron of Eternity', x: 540, y: 970, typ: 'miejsce_mocy', glif: 'plac', fs: 15, skala: 1.1,
-    z: 'The_Cauldron_of_Eternity', opis: 'Mityczny kocioł wskrzeszenia spoczywający w Locthwain' },
+  { id: 'castle-locthwain', nazwa: 'Castle Locthwain (mobilny)', x: 470, y: 1010, typ: 'twierdza', glif: 'fort', fs: 16, skala: 1.4,
+    z: 'Castle_Locthwain', opis: 'Mobilny lewitujący zamek, który przemierza Knieje w poszukiwaniu zaginionego Cauldron of Eternity; punkt jest wyłącznie symbolem dworu' },
+  { id: 'loch-locthwain', nazwa: 'The Black Tarns', x: 470, y: 1110, typ: 'akwen', fs: 15, woda: true,
+    z: 'Locthwain', opis: 'Czarne, mgliste wody i bagniska związane z domeną Locthwain; relacja z mobilnym zamkiem jest umowna' },
 
   // --- EMBERETH (CZERWONY DWÓR) ---
-  { id: 'castle-embereth', nazwa: 'Castle Embereth', x: 1510, y: 960, typ: 'twierdza', glif: 'fort', fs: 19, skala: 1.4,
-    z: 'Castle_Embereth', opis: 'Warowny ośrodek i siedziba rady rycerskiej Czerwonego Dworu' },
-  { id: 'the-burning-yard', nazwa: 'The Burning Yard', x: 1430, y: 1020, typ: 'arena', glif: 'plac', fs: 17, skala: 1.3,
-    z: 'Embereth', opis: 'Monumentalny poligon, szranki i areny rycerskich prób ognia (lokacja karty 209ELD)' },
-  { id: 'the-irencrag', nazwa: 'The Irencrag', x: 1590, y: 920, typ: 'szczyt', glif: 'szczyt', fs: 16, skala: 1.6,
-    z: 'The_Irencrag', opis: 'Mistyczny wulkaniczny głaz, w którym rycerze hartują swe miecze' },
-  { id: 'tournament-grounds', nazwa: 'Tournament Grounds', x: 1360, y: 940, typ: 'miejsce', glif: 'plac', fs: 15, skala: 1.1,
-    z: 'Tournament_Grounds', opis: 'Błonia wielkich turniejów rycerskich Królestwa' },
+  { id: 'the-burning-yard', nazwa: 'The Burning Yard', x: 1490, y: 1000, typ: 'arena', glif: 'plac', fs: 18, skala: 1.35,
+    z: 'Embereth', opis: 'Monumentalny kompleks turniejowy Embereth, mylnie nazywany Castle Embereth' },
+  { id: 'the-irencrag', nazwa: 'The Irencrag', x: 1600, y: 890, typ: 'szczyt', glif: 'szczyt', fs: 16, skala: 1.6,
+    z: 'The_Irencrag', opis: 'Mistyczny głaz, w którym rycerze Embereth hartują swe miecze' },
 
   // --- GARENBRIG (ZIELONY DWÓR) ---
   { id: 'castle-garenbrig', nazwa: 'Castle Garenbrig', x: 1480, y: 430, typ: 'twierdza', glif: 'fort', fs: 19, skala: 1.4,
@@ -98,8 +88,6 @@ export const MIEJSCA_ELDRAINE = [
     z: "Witch%27s_Cottage", opis: 'Piernikowa chatka czarownicy pośród zdradliwych bagien i lasów Kniei' },
   { id: 'dynnistan', nazwa: 'Dynnistan', x: 220, y: 230, typ: 'twierdza', glif: 'fort', fs: 16, skala: 1.1,
     z: 'Dynnistan', opis: 'Lodowy zamek Królowej Cieni w odległych północno-zachodnich rubieżach' },
-  { id: 'river-crossing', nazwa: "Syr Carenth's Crossing", x: 1220, y: 920, typ: 'miejsce', glif: 'most', fs: 14, skala: 1.0,
-    z: 'Eldraine', opis: 'Strategiczny most i przeprawa na trakcie ku Embereth' },
 ];
 
 const rzekaKrolewskaPts = [
@@ -115,7 +103,7 @@ export function scenaEldraine() {
     szerokosc: W,
     wysokosc: H,
     styl: 'atlas',
-    opis: 'Autorska rekonstrukcja relacji przestrzennych Pięciu Dworów i Kniei planu Eldraine, ADR 0038. Wymiary 2000×1400 px, styl atlasowy achromatyczny.',
+    opis: 'Zatwierdzony przez właściciela autorski atlas relacyjny T4 Eldraine. Rozmieszczenie globalne, rzeki i szlaki są umowne; źródła potwierdzają wyłącznie nazwane byty i relacje wewnątrz ich domen.',
     ocean: { kolor: '#e6e6e6' },
     lądy: [
       { id: 'kontynent-eldraine', punkty: [[-60, -60], [2060, -60], [2060, 1460], [-60, 1460]] }
@@ -179,12 +167,12 @@ export function scenaEldraine() {
       { id: 'las-wschodnie-knieje', typ: 'las', punkty: [[1680, 520], [1920, 500], [1940, 880], [1720, 860]], opcje: { gestosc: 0.52, skala: 1.0 } },
     ],
     drogi: [
-      // Trakt Królewski Zachodni: Ardenvale -> Wealdrum -> Vantress
-      { id: 'trakt-vantress', punkty: [[1000, 650], [860, 550], [710, 470], [580, 420], [480, 400]], opcje: { typ: 'droga' } },
+      // Szlak ku Vantress kończy się na brzegu Lochmere; dalsza przeprawa nie jest drogą lądową.
+      { id: 'trakt-vantress', punkty: [[1000, 650], [800, 540], [710, 470], [660, 420]], opcje: { typ: 'droga' } },
       // Trakt Królewski Południowo-Zachodni: Ardenvale -> Edgewall -> Locthwain
       { id: 'trakt-locthwain', punkty: [[1000, 650], [860, 720], [740, 790], [610, 890], [470, 1010]], opcje: { typ: 'droga' } },
-      // Trakt Królewski Południowo-Wschodni: Ardenvale -> Trekell -> Syr Carenth's Crossing -> Tournament Grounds -> Burning Yard -> Castle Embereth
-      { id: 'trakt-embereth', punkty: [[1000, 650], [1120, 790], [1220, 920], [1360, 940], [1430, 1020], [1510, 960]], opcje: { typ: 'droga' } },
+      // Umowny szlak między domenami Ardenvale i Embereth.
+      { id: 'trakt-embereth', punkty: [[1000, 650], [1120, 810], [1220, 900], [1360, 930], [1490, 1000]], opcje: { typ: 'droga' } },
       // Trakt Królewski Północno-Wschodni: Ardenvale -> Wesling -> Garen Valley -> Castle Garenbrig
       { id: 'trakt-garenbrig', punkty: [[1000, 650], [1150, 560], [1320, 510], [1480, 430]], opcje: { typ: 'droga' } },
       // Szlak do The Heart Land i Tuinvale
@@ -220,11 +208,11 @@ export function modelMapyEldraine() {
   const zrodlo = {
     url: GUIDE,
     url2: `${WIKI}Eldraine`,
-    tytul: "Planeswalker's Guide to Eldraine — oficjalny kanon geograficzny Pięciu Dworów i Kniei; autorska rekonstrukcja relacji T4",
+    tytul: "Planeswalker's Guide to Eldraine — oficjalne byty i relacje lokalne; zatwierdzony autorski układ relacyjny T4",
     autor: 'MTG Lore Codex, silnik mapforge (rekonstrukcja T4 wg ADR 0038)',
     licencja: 'praca własna; glify gór i lasów mapome CC-BY-4.0 (ADR 0020)',
     pobrano: '2026-09-11',
-    notka: 'Autorska rekonstrukcja wektorowa T4 dla planu Eldraine w układzie 2000×1400 px. Wobec braku oficjalnej mapy WotC oraz niskiej jakości i niekanoniczności fanowskich rastrów, mapa realizuje kanoniczną geometrię Pięciu Dworów (Ardenvale w centrum, Vantress na jeziorze Lochmere, lewitujące Locthwain na moczarach, Embereth przy głazie Irencrag i poligonach Burning Yard, Garenbrig przy Great Henge) opasanych przez Knieje (The Wilds). Rzeki, trakty królewskie i biomy są w pełni spójne z zasadami hydrologii i etykietowania Codexu.'
+    notka: 'Autorski atlas relacyjny T4 2000×1400 px, zatwierdzony przez właściciela 2026-09-11 po audycie PR-31. Oficjalna mapa geograficzna Eldraine nie istnieje: kierunki świata, odległości, rzeki, szlaki i wzajemne położenie Dworów są umownymi wyborami kompozycyjnymi, nie kanoniczną geometrią. Źródła potwierdzają nazwane byty i relacje lokalne: Vantress na Lochmere, Circle of Loyalty w Castle Ardenvale, Burning Yard jako kompleks Embereth, Irencrag przy Embereth oraz Great Henge w Castle Garenbrig. Mobilny Castle Locthwain pokazano symbolem bez roszczenia do stałej pozycji; zaginionego Cauldron of Eternity nie naniesiono.'
   };
 
   return {
@@ -236,7 +224,7 @@ export function modelMapyEldraine() {
     rekonstrukcja: true,
     epoka: 'Era Pięciu Dworów (przed i w trakcie wydarzeń Throne of Eldraine / Wilds of Eldraine)',
     zrodlo,
-    uklad_wspolrzednych: 'Autorski układ sceny T4 2000×1400 px wygenerowany deterministycznie w silniku mapforge (ADR 0018, ADR 0038).',
+    uklad_wspolrzednych: 'Zatwierdzony autorski układ relacyjny T4 2000×1400 px, wygenerowany deterministycznie w Mapforge. Globalne kierunki, odległości, wody i drogi są umowne (ADR 0018/0038).',
     kotwice: MIEJSCA_ELDRAINE.map((m) => ({
       nazwa: m.nazwa,
       x: m.x / W,
@@ -247,16 +235,17 @@ export function modelMapyEldraine() {
     pinezki: [
       {
         karta: '209eld-burning-yard-trainer',
-        x: 0.715,
-        y: 0.7286,
+        x: 0.5,
+        y: 0.4643,
         pewnosc: 'dokladna',
-        uzasadnienie: 'Scena 209ELD: Instruktor szermierki i młody rycerz na piaszczystej arenie przed płonącym torem przeszkód — poligon The Burning Yard przy Czerwonym Dworze Embereth / rycerskich szrankach Królestwa (x: 1430, y: 1020).'
+        uzasadnienie: 'Fabuła właściciela umieszcza piaszczystą arenę pod wieżami zamku w Ardenvale. Pinezka wskazuje Castle Ardenvale (x: 1000, y: 650); nazwa karty pochodzi z odrębnego, kanonicznego kompleksu Burning Yard w Embereth, ale nie zmienia lokacji przekazanej sceny.'
       }
     ],
     scena: 'scena.json',
     generator: 'tools/mapforge/eldraine-scena-t4.mjs',
-    silnik: 'mapforge atlas; pełna geometria T4 z hydrologią i kompletem kotwic Pięciu Dworów',
+    silnik: 'mapforge atlas relacyjny; deterministyczna, umowna kompozycja T4 z kotwicami źródłowo potwierdzonych bytów',
     zrodlo_fanmapa: null,
+    decyzja_wlasciciela: '2026-09-11: wariant T4 zatwierdzony; zachować mapę i naprawić pozostałe znaleziska audytu PR-31',
     poza_zakresem: [
       'Głębokie, pozawymiarowe enklawy Kniei nieposiadające stałych współrzędnych przestrzennych',
       'Inwazja Nowej Fyreksji — stan planu w erze klasycznej Dworów'

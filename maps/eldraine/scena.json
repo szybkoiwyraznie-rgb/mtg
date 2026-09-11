@@ -3,7 +3,7 @@
  "szerokosc": 2000,
  "wysokosc": 1400,
  "styl": "atlas",
- "opis": "Autorska rekonstrukcja relacji przestrzennych Pięciu Dworów i Kniei planu Eldraine, ADR 0038. Wymiary 2000×1400 px, styl atlasowy achromatyczny.",
+ "opis": "Zatwierdzony przez właściciela autorski atlas relacyjny T4 Eldraine. Rozmieszczenie globalne, rzeki i szlaki są umowne; źródła potwierdzają wyłącznie nazwane byty i relacje wewnątrz ich domen.",
  "ocean": {
   "kolor": "#e6e6e6"
  },
@@ -499,20 +499,16 @@
      650
     ],
     [
-     860,
-     550
+     800,
+     540
     ],
     [
      710,
      470
     ],
     [
-     580,
+     660,
      420
-    ],
-    [
-     480,
-     400
     ]
    ],
    "opcje": {
@@ -556,23 +552,19 @@
     ],
     [
      1120,
-     790
+     810
     ],
     [
      1220,
-     920
+     900
     ],
     [
      1360,
-     940
+     930
     ],
     [
-     1430,
-     1020
-    ],
-    [
-     1510,
-     960
+     1490,
+     1000
     ]
    ],
    "opcje": {
@@ -635,19 +627,10 @@
    }
   },
   {
-   "id": "circle-of-loyalty",
-   "typ": "kolumny",
-   "x": 940,
-   "y": 600,
-   "opcje": {
-    "skala": 1.2
-   }
-  },
-  {
    "id": "archers-tower",
    "typ": "iglica",
-   "x": 1070,
-   "y": 620,
+   "x": 1090,
+   "y": 570,
    "opcje": {
     "skala": 1.1
    }
@@ -655,8 +638,8 @@
   {
    "id": "wealdrum",
    "typ": "miasto",
-   "x": 860,
-   "y": 550,
+   "x": 800,
+   "y": 540,
    "opcje": {
     "skala": 1
    }
@@ -664,8 +647,8 @@
   {
    "id": "wesling",
    "typ": "miasto",
-   "x": 1150,
-   "y": 560,
+   "x": 1200,
+   "y": 550,
    "opcje": {
     "skala": 1
    }
@@ -674,7 +657,7 @@
    "id": "trekell",
    "typ": "miasto",
    "x": 1120,
-   "y": 790,
+   "y": 810,
    "opcje": {
     "skala": 1
    }
@@ -689,15 +672,6 @@
    }
   },
   {
-   "id": "indrelon",
-   "typ": "plac",
-   "x": 550,
-   "y": 360,
-   "opcje": {
-    "skala": 1.1
-   }
-  },
-  {
    "id": "castle-locthwain",
    "typ": "fort",
    "x": 470,
@@ -707,49 +681,22 @@
    }
   },
   {
-   "id": "cauldron-eternity",
-   "typ": "plac",
-   "x": 540,
-   "y": 970,
-   "opcje": {
-    "skala": 1.1
-   }
-  },
-  {
-   "id": "castle-embereth",
-   "typ": "fort",
-   "x": 1510,
-   "y": 960,
-   "opcje": {
-    "skala": 1.4
-   }
-  },
-  {
    "id": "the-burning-yard",
    "typ": "plac",
-   "x": 1430,
-   "y": 1020,
+   "x": 1490,
+   "y": 1000,
    "opcje": {
-    "skala": 1.3
+    "skala": 1.35
    }
   },
   {
    "id": "the-irencrag",
    "typ": "szczyt",
-   "x": 1590,
-   "y": 920,
+   "x": 1600,
+   "y": 890,
    "opcje": {
     "skala": 1.6,
     "snieg": false
-   }
-  },
-  {
-   "id": "tournament-grounds",
-   "typ": "plac",
-   "x": 1360,
-   "y": 940,
-   "opcje": {
-    "skala": 1.1
    }
   },
   {
@@ -832,15 +779,6 @@
    "y": 230,
    "opcje": {
     "skala": 1.1
-   }
-  },
-  {
-   "id": "river-crossing",
-   "typ": "most",
-   "x": 1220,
-   "y": 920,
-   "opcje": {
-    "skala": 1
    }
   }
  ],
@@ -949,67 +887,54 @@
    }
   },
   {
-   "tekst": "The Circle of Loyalty",
-   "x": 940,
-   "y": 600,
-   "opcje": {
-    "fs": 16,
-    "kotwica": "middle",
-    "przyDo": [
-     940,
-     600
-    ]
-   }
-  },
-  {
    "tekst": "Archer's Tower",
-   "x": 1070,
-   "y": 620,
+   "x": 1090,
+   "y": 570,
    "opcje": {
-    "fs": 15,
+    "fs": 14,
     "kotwica": "middle",
     "przyDo": [
-     1070,
-     620
+     1090,
+     570
     ]
    }
   },
   {
    "tekst": "Wealdrum",
-   "x": 860,
-   "y": 550,
+   "x": 800,
+   "y": 540,
    "opcje": {
-    "fs": 15,
+    "fs": 14,
     "kotwica": "middle",
     "przyDo": [
-     860,
-     550
+     800,
+     540
     ]
    }
   },
   {
    "tekst": "Wesling",
-   "x": 1150,
-   "y": 560,
+   "x": 1200,
+   "y": 550,
    "opcje": {
-    "fs": 15,
+    "fs": 14,
     "kotwica": "middle",
     "przyDo": [
-     1150,
-     560
+     1200,
+     550
     ]
    }
   },
   {
    "tekst": "Trekell",
    "x": 1120,
-   "y": 790,
+   "y": 810,
    "opcje": {
-    "fs": 15,
+    "fs": 14,
     "kotwica": "middle",
     "przyDo": [
      1120,
-     790
+     810
     ]
    }
   },
@@ -1036,24 +961,11 @@
    }
   },
   {
-   "tekst": "Indrelon (Magic Mirror)",
-   "x": 550,
-   "y": 360,
-   "opcje": {
-    "fs": 15,
-    "kotwica": "middle",
-    "przyDo": [
-     550,
-     360
-    ]
-   }
-  },
-  {
-   "tekst": "Castle Locthwain",
+   "tekst": "Castle Locthwain (mobilny)",
    "x": 470,
    "y": 1010,
    "opcje": {
-    "fs": 19,
+    "fs": 16,
     "kotwica": "middle",
     "przyDo": [
      470,
@@ -1064,74 +976,35 @@
   {
    "tekst": "The Black Tarns",
    "x": 470,
-   "y": 1090,
+   "y": 1110,
    "opcje": {
-    "fs": 16,
+    "fs": 15,
     "kotwica": "middle"
    }
   },
   {
-   "tekst": "Cauldron of Eternity",
-   "x": 540,
-   "y": 970,
-   "opcje": {
-    "fs": 15,
-    "kotwica": "middle",
-    "przyDo": [
-     540,
-     970
-    ]
-   }
-  },
-  {
-   "tekst": "Castle Embereth",
-   "x": 1510,
-   "y": 960,
-   "opcje": {
-    "fs": 19,
-    "kotwica": "middle",
-    "przyDo": [
-     1510,
-     960
-    ]
-   }
-  },
-  {
    "tekst": "The Burning Yard",
-   "x": 1430,
-   "y": 1020,
+   "x": 1490,
+   "y": 1000,
    "opcje": {
-    "fs": 17,
+    "fs": 18,
     "kotwica": "middle",
     "przyDo": [
-     1430,
-     1020
+     1490,
+     1000
     ]
    }
   },
   {
    "tekst": "The Irencrag",
-   "x": 1590,
-   "y": 920,
+   "x": 1600,
+   "y": 890,
    "opcje": {
     "fs": 16,
     "kotwica": "middle",
     "przyDo": [
-     1590,
-     920
-    ]
-   }
-  },
-  {
-   "tekst": "Tournament Grounds",
-   "x": 1360,
-   "y": 940,
-   "opcje": {
-    "fs": 15,
-    "kotwica": "middle",
-    "przyDo": [
-     1360,
-     940
+     1600,
+     890
     ]
    }
   },
@@ -1249,19 +1122,6 @@
     "przyDo": [
      220,
      230
-    ]
-   }
-  },
-  {
-   "tekst": "Syr Carenth's Crossing",
-   "x": 1220,
-   "y": 920,
-   "opcje": {
-    "fs": 14,
-    "kotwica": "middle",
-    "przyDo": [
-     1220,
-     920
     ]
    }
   }

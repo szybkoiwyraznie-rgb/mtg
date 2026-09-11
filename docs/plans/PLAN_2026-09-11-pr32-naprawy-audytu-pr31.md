@@ -9,7 +9,7 @@
 
 1. [x] **F1 — DFC:** oczyścić 118MID i 171ISD z nazw, flavoru i danych przeciwnych twarzy; oczyścić changelog; dodać repo-szeroki test nazw innych twarzy DFC.
 2. [x] **F2 — 347NPH:** usunąć znak wodny z widocznej treści, wycofać nieźródłowe Razor Fields/Białą Kuźnię-Świątynię/bastion Elspeth, skorygować pinezkę oraz rozszerzyć strażnik ADR 0040 o watermark.
-3. [ ] **F3–F5, F8–F9 — Eldraine:** zachować zatwierdzone T4; zapisać decyzję; osadzić 209ELD zgodnie z Fabułą w Ardenvale; poprawić pewność; usunąć fałszywe relacje Castle Embereth/Burning Yard/Tournament Grounds i Cauldron/Locthwain; jawnie oznaczyć topologię jako umowną; wykonać pass wizualny i ponowny ogląd.
+3. [x] **F3–F5, F8–F9 — Eldraine:** zachować zatwierdzone T4; zapisać decyzję; osadzić 209ELD zgodnie z Fabułą w Ardenvale; poprawić pewność; usunąć fałszywe relacje Castle Embereth/Burning Yard/Tournament Grounds i Cauldron/Locthwain; jawnie oznaczyć topologię jako umowną; wykonać pass wizualny i ponowny ogląd.
 4. [ ] **F6 — Alara:** wycofać niepotwierdzone POI Carmot Mines i Ruins of Vithia z mapy, planów i dokumentacji; zregenerować SVG deterministycznie.
 5. [ ] **F7 — źródła:** naprawić numerację cytowań Confluxu i nieźródłowe powiązanie Civilized Scholar ze Stensią.
 6. [ ] **F10–F13 — zamknięcie/redakcja/storage:** poprawić dokumentację PR-31, rzeczywiste godziny changelogu, literówki oraz usunąć nieużywany rootowy `wiedzmin.jpg` (runtime LOD pozostaje bez zmian).

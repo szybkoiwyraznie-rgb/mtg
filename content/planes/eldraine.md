@@ -56,22 +56,21 @@ oraz odpowiadającą mu fundamentalną cnotę rycerską:
    nie zna. Elitarni rycerze dosiadają sokołogryfów.
 
 3. **Locthwain (Czarny Dwór — Cnota: Wytrwałość)**:
-   Mroczny, lewitujący **Zamek Locthwain** unoszący się nad mgłami
-   **Czarnych Moczarów** (*The Black Tarns*). Rządzony przez królową
-   **Ayarę**, dwór strzeże **Kocła Wieczności** (*The Cauldron of Eternity*).
-   Rycerze Locthwain udowadniają swą wartość poprzez samotne, wyczerpujące
-   poszukiwania reliktu, mierząc się z pokusami i niebezpieczeństwami
+   Mroczny, lewitujący **Zamek Locthwain** pod rządami królowej **Ayary**
+   nie ma stałego miejsca: przemierza Knieje w poszukiwaniu **Kocła
+   Wieczności** (*The Cauldron of Eternity*). Relikt zaginął wiele pokoleń
+   wcześniej, dlatego rycerze Locthwain udowadniają swą wartość przez
+   samotne, wyczerpujące poszukiwania pośród pokus i niebezpieczeństw
    mrocznych ostępów.
 
 4. **Embereth (Czerwony Dwór — Cnota: Odwaga)**:
-   Skaliste, wulkaniczne wzgórza z wolnym miastem i monumentalnym
-   kompleksem szranków i aren zwanym **Płonącym Dziedzińcem**
-   (*The Burning Yard* / **Zamek Embereth**). Sercem dworu jest
-   żarzący się głaz **Irencrag**. Aby dowieść odwagi, pretendent
-   musi wbić swój oręż w rozpaloną skałę i wyciągnąć go bez lęku —
-   stąd pochodzą najpotężniejsze klingi planu, w tym legendarny
-   miecz *Embercleave*. Na tych arenach rozgrywa się scena
-   [[209eld-burning-yard-trainer|Burning-Yard Trainer]].
+   Skaliste wzgórza z wolnym miastem i monumentalnym kompleksem szranków
+   oraz aren zwanym **Płonącym Dziedzińcem** (*The Burning Yard*).
+   Określenie „Zamek Embereth” jest mylące — odnosi się do tego samego
+   rozległego ośrodka, nie do osobnej twierdzy. Sercem dworu jest żarzący
+   się głaz **Irencrag**. Aby dowieść odwagi, pretendent musi wbić swój
+   oręż w rozpaloną skałę i wyciągnąć go bez lęku; stąd pochodzą
+   najpotężniejsze klingi planu, w tym legendarny miecz *Embercleave*.
 
 5. **Garenbrig (Zielony Dwór — Cnota: Siła)**:
    Pradawna **Dolina Garen** pełna menhirów i megalitycznych kręgów,
@@ -93,20 +92,23 @@ jest słynna karczma **Edgewall Inn**.
 
 ## Na Mapie
 
-Eldraine jest zmapowane w autorskim układzie wektorowym **T4**
-wygenerowanym deterministycznie w silniku **Mapforge**
-(`#/mapa/eldraine`).
+Eldraine jest zmapowane w zatwierdzonym przez właściciela autorskim
+atlasie wektorowym **T4**, generowanym deterministycznie w silniku
+**Mapforge** (`#/mapa/eldraine`). Oficjalna mapa geograficzna planu nie
+istnieje, dlatego kierunki świata, odległości, rzeki, szlaki i wzajemne
+położenie Dworów są **umowną kompozycją**, a nie kanoniczną geometrią.
+Źródła potwierdzają nazwy miejsc i relacje wewnątrz ich domen.
 
-Struktura przestrzenna:
-- W centrum rozciągają się Wyżyny Arden z Zamkiem Ardenvale (`x: 0.500`, `y: 0.464`).
-- Na północnym zachodzie lśni jezioro Lochmere z Zamkiem Vantress (`x: 0.240`, `y: 0.286`).
-- Na południowym zachodzie zalegają Czarne Moczary i Zamek Locthwain (`x: 0.235`, `y: 0.721`).
-- Na południowym wschodzie wznoszą się wzgórza wulkaniczne z arenami The Burning Yard (`x: 0.715`, `y: 0.729`) i Zamkiem Embereth (`x: 0.755`, `y: 0.686`).
-- Na północnym wschodzie leży Dolina Garen z Wielkim Kręgiem i Zamkiem Garenbrig (`x: 0.740`, `y: 0.307`).
-- Zewnętrzny pierścień stanowią Knieje (The Wilds) z lasami Tuinvale, ruinami Heart Land i karczmą Edgewall Inn.
+Układ atlasu:
+- Wyżyny Arden z Castle Ardenvale leżą umownie w centrum (`x: 0.500`, `y: 0.464`). Circle of Loyalty znajduje się wewnątrz zamku.
+- Vantress jest związane z jeziorem Lochmere i wyspą Castle Vantress (`x: 0.240`, `y: 0.286`).
+- Mobilny Castle Locthwain ma wyłącznie symboliczną pozycję (`x: 0.235`, `y: 0.721`); zaginionego Kotła nie naniesiono.
+- Embereth obejmuje jeden kompleks The Burning Yard (`x: 0.745`, `y: 0.714`) oraz pobliski Irencrag; osobny „Castle Embereth” nie istnieje.
+- Castle Garenbrig i The Great Henge należą do tej samej domeny (`x: 0.740`, `y: 0.307`).
+- Zewnętrzny pierścień Kniei z Tuinvale, Heart Land, Stormkeld i Edgewall Inn sygnalizuje ich relację z Królestwem, nie dokładne kierunki.
 
 Karty osadzone na mapie Eldraine:
-- [[209eld-burning-yard-trainer|Burning-Yard Trainer]] — areny The Burning Yard w domenie Embereth / szranki rycerskie Królestwa (`x: 0.715`, `y: 0.729`).
+- [[209eld-burning-yard-trainer|Burning-Yard Trainer]] — arena treningowa pod wieżami Castle Ardenvale, zgodnie z przekazaną sceną (`x: 0.500`, `y: 0.4643`).
 
 ## Źródła
 

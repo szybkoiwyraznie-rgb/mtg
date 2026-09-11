@@ -1,9 +1,9 @@
 # Research mapowy: Eldraine — wybór wariantu podkładu
 
-> **STATUS: WYKONANY (2026-09-11, MA1).** Kwerenda materiałów kartograficznych
-> i analiza geografii planu Eldraine, inicjowanego dostawą karty
-> `209ELD Burning-Yard Trainer`. Rekomendacja przedstawiona właścicielowi
-> do decyzji zgodnie z drabiną preferencji **ADR 0038**.
+> **STATUS: ZATWIERDZONY (2026-09-11, MA1).** Po audycie PR-31 właściciel
+> zatwierdził wariant **T4**. Zachowujemy autorski atlas relacyjny i jawnie
+> oznaczamy globalne kierunki, odległości, rzeki oraz drogi jako umowne;
+> źródła potwierdzają byty i relacje lokalne, nie pełną geometrię planu.
 
 Powiązania: ADR 0038 (drabina wariantów T2→T1→T3→T4), ADR 0018 (silnik mapowy mapforge),
 ADR 0031 (źródła fanowskie i prywatny użytek), ADR 0033 (jedna mapa aktualnego stanu),
@@ -16,8 +16,8 @@ Zendikar (T4/T3), Faerûn (T1), Innistrad (T1).
 
 Dostawa właściciela (2026-09-11):
 - Karta: **209ELD Burning-Yard Trainer** (*Throne of Eldraine*, set `ELD`, #209, `{4}{R}`, Creature — Human Knight 3/3).
-- Scena: Piaszczysta arena otoczona drewnianymi trybunami pod wieżami baśniowego zamku w Ardenvale; instruktor w czerwonej tunice z opuszczonym płonącym mieczem treningowym uspokaja wierzchowca, obok młody rycerz przed płonącym torem przeszkód; motyw ognia jako ostatecznego egzaminu rycerskiego w akademiach Eldraine.
-- Lokacja fabularna: **The Burning Yard** (arena treningowo-turniejowa Dworów / zamek Embereth) z transpozycją do rycerskich szkół turniejowych **Ardenvale** w Królestwie Eldraine.
+- Scena: piaszczysta arena otoczona drewnianymi trybunami **pod wieżami zamku w Ardenvale**; instruktor w czerwonej tunice z opuszczonym płonącym mieczem treningowym uspokaja wierzchowca, obok młody rycerz przed płonącym torem przeszkód.
+- Rozstrzygnięcie po audycie: Fabuła wiążąco lokuje scenę w **Ardenvale**. Nazwa karty pochodzi od kanonicznego **The Burning Yard** w Embereth, ale te miejsca nie są utożsamiane; pinezka 209ELD wskazuje Castle Ardenvale.
 
 ---
 
@@ -32,8 +32,8 @@ Geografia planu opiera się na dualizmie dwóch przenikających się światów:
 1. **Królestwo (The Realm)** — cywilizowany rdzeń planu, powstały po obaleniu dawnych Władców Elfów. Zorganizowany wokół **Pięciu Dworów (Five Courts)**, z których każdy ucieleśnia jeden z kolorów many i fundamentalną cnotę rycerską:
    - **Ardenvale** ({W}, Cnota: **Lojalność**) — słoneczne wyżyny Arden, zamek Ardenvale strzeżony przez biały płomień Kręgu Lojalności (*Circle of Loyalty*); historyczna siedziba Najwyższego Króla Algenusa Kenritha i Królowej Linden.
    - **Vantress** ({U}, Cnota: **Wiedza**) — zamek Vantress wznoszący się na wyspie pośród wód jeziora Lochmere, chroniony przez wodospad; siedziba Magicznego Zwierciadła Indrelon.
-   - **Locthwain** ({B}, Cnota: **Wytrwałość**) — mroczne, mgliste mokradła i bagniska, pośród których unosi się lewitujący zamek Locthwain; siedziba Królowej Ayary i Kocła Wieczności (*Cauldron of Eternity*).
-   - **Embereth** ({R}, Cnota: **Odwaga**) — skaliste wzgórza wulkaniczne, wolne miasto oraz monumentalny kompleks turniejowy **The Burning Yard** (Zamek Embereth), gdzie rycerze hartują miecze w żarze mistycznego głazu **Irencrag** (skąd pochodzi legendarny miecz *Embercleave*).
+   - **Locthwain** ({B}, Cnota: **Wytrwałość**) — mobilny, lewitujący zamek Królowej Ayary przemierza Knieje w poszukiwaniu Kocła Wieczności (*Cauldron of Eternity*), zaginionego wiele pokoleń wcześniej.
+   - **Embereth** ({R}, Cnota: **Odwaga**) — skaliste wzgórza, wolne miasto oraz monumentalny kompleks turniejowy **The Burning Yard**, mylnie nazywany Zamkiem Embereth; rycerze hartują miecze w żarze głazu **Irencrag**.
    - **Garenbrig** ({G}, Cnota: **Siła**) — prastara, porośnięta lasami dolina pełna menhirów i megalitycznych kręgów; zamek Garenbrig zintegrowany z portalem Wielkiego Kręgu (*The Great Henge*), rządzony przez króla olbrzymów Yorvo.
 
 2. **Knieje / Dzicz (The Wilds)** — bezkresny, baśniowy i płynny ocean pierwotnej magii, otaczający domeny Dworów. W Kniejach tradycyjne pojęcia odległości i czasu ulegają zatarciu; to domena Fae (wróżek), czarownic (w tym chat z piernika i klątw), olbrzymów, syren oraz zaginionych ruin elfiej dominacji (*Heart Land*, *Tuinvale*).
@@ -80,47 +80,52 @@ Geografia planu opiera się na dualizmie dwóch przenikających się światów:
 | Rząd | Wariant | Dostępność dla Eldraine | Werdykt |
 |---|---|---|---|
 | 1 | **T2** (gotowy wektor SVG) | Brak | **Odrzucone** (brak źródła) |
-| 2 | **T1** (wyśmienity raster) | Brak oficjalnego; rastery fanowskie niekanoniczne | **Opcjonalny fallback** (jeśli właściciel wskaże konkretny plik) |
+| 2 | **T1** (wyśmienity raster) | Brak oficjalnego; kilka realizacji fanowskich | **Niewybrany** — właściciel zatwierdził T4 2026-09-11 |
 | 3 | **T3** (wektor z rastra fanowskiego) | Ograniczona (brak stabilnego wzorca) | **Rezerwa** |
-| 4 | **T4** (rekonstrukcja wektorowa z tekstu / Mapforge) | **Pełna (analogicznie do Alary, Zendikaru i Lorwynu)** | **GŁÓWNA REKOMENDACJA** |
+| 4 | **T4** (rekonstrukcja wektorowa z tekstu / Mapforge) | Możliwy atlas relacyjny bez roszczenia do kanonicznej topologii | **ZATWIERDZONY PRZEZ WŁAŚCICIELA 2026-09-11** |
 
-### Dlaczego T4 (Mapforge) jest najlepszym wyborem dla Eldraine?
-1. **Brak oficjalnego podkładu graficznego** — zgodnie z ADR 0038 pkt 2, gdy WotC nie wydało mapy, a brak bezdyskusyjnego wzorca fanowskiego (jak np. w przypadku Innistradu), rekonstrukcja wektorowa w Mapforge stanowi naturalny i sprawdzony standard projektu (precedens Alary, Lorwynu i Zendikaru).
-2. **Harmonia Pięciu Dworów** — struktura Eldraine jest z natury geometryczno-archetypowa (pięć królestw reprezentujących kolory many wokół centralnego Królestwa, przeplatanych traktami i otoczonych Kniejami). Mapforge potrafi oddać tę strukturę z pełną dyscypliną (rzeki spływające z Lochmere, wulkaniczne żebra Irencrag wokół Burning Yard, menhiry Garenbrigu, wyżyny Ardenvale).
-3. **Czystość i lekkość** — brak szumów rastrowych, pełna ostrość przy dowolnym zoomie, dynamiczne etykiety ekranowe (LOD), obsługa ciemnego/jasnego motywu oraz zerowy narzut transferu (plik SVG rzędu ~100–200 kB).
+### Dlaczego zachowujemy zatwierdzone T4?
+1. **Jawna decyzja właściciela** — po audycie PR-31 właściciel zatwierdził
+   wariant T4. Brak zachowanego w pierwotnym PR dowodu wizualnego oglądu
+   fanowskich kandydatów pozostaje faktem historycznym; nie dopisujemy
+   wstecznie oceny ich jakości.
+2. **Atlas relacyjny zamiast pozornej kartografii** — Mapforge pozwala
+   zestawić pięć Dworów i Knieje, a zarazem opisać globalny układ jako
+   umowny. Kanoniczne pozostają relacje lokalne, np. Vantress–Lochmere,
+   Ardenvale–Circle of Loyalty i Embereth–Burning Yard–Irencrag.
+3. **Czytelność i lekkość** — wektor zachowuje ostrość przy zoomie,
+   wspiera etykiety ekranowe LOD i nie wymaga ciężkiego rastra.
 
 ---
 
-## 4. Propozycja geometrii i układu przestrzennego (T4)
+## 4. Zatwierdzona kompozycja relacyjna T4
 
-Układ wektorowy w `maps/eldraine/scena.json` i `podklad.svg` (wymiary bazowe 2000×1400 px):
+Układ w `maps/eldraine/scena.json` i `podklad.svg` (2000×1400 px) jest
+**umowną kompozycją atlasu**. Poniższe kierunki nie są twierdzeniami
+kanonicznymi; porządkują zatwierdzony wizualnie schemat:
 
-1. **Centrum — Wysokie Królestwo i Wyżyny Arden (Ardenvale)**:
+1. **Umowne centrum — Wyżyny Arden (Ardenvale)**:
    - Zamek Ardenvale w sercu słonecznych równin i wyżyn, z traktami łączącymi stolicę z pozostałymi dworami.
-2. **Północny zachód — Jezioro Lochmere i Zamek Vantress**:
+2. **Umowny północny zachód — Lochmere i Castle Vantress**:
    - Głęboki akwen Lochmere, wodospady i wyspa zamkowa z wieżą Magicznego Zwierciadła.
-3. **Południowy zachód — Mroczne Mokradła Locthwain**:
-   - Mgliste bagniska, ciemne lasy i lewitująca forteca Locthwain nad Czarnym Jeziorem.
-4. **Południowy wschód — Wzgórza Irencrag i The Burning Yard (Embereth)**:
+3. **Umowny południowy zachód — symbol mobilnego Locthwain**:
+   - Lewitująca forteca jest symbolem Czarnego Dworu, nie stałym adresem; zaginionego Kotła nie naniesiono.
+4. **Umowny południowy wschód — Irencrag i The Burning Yard (Embereth)**:
    - Skalisty, wulkaniczny płaskowyż z arenami turniejowymi Burning Yard i żarzącym się głazem Irencrag.
-5. **Północny wschód — Pradawna Dolina Garenbrig**:
+5. **Umowny północny wschód — domena Garenbrig**:
    - Gęste bory, kamienne kręgi, menhiry i megalityczny portal The Great Henge u stóp gór.
-6. **Zewnętrzny pierścień i pasma graniczne — Knieje (The Wilds)**:
+6. **Zewnętrzny pierścień kompozycyjny — Knieje (The Wilds)**:
    - Lasy Tuinvale, Chatka Wiedźmy, Zamek Chmur olbrzymów, rzeki graniczne i tajemnicze trakty znikające w gęstwinie.
 
 ---
 
-## 5. Rekomendacja i opcje dla właściciela
+## 5. Decyzja właściciela
 
-Przedstawiam do wyboru dwie ścieżki realizacji:
-
-- **OPCJA A (Rekomendowana): Wektorowy podkład T4 wygenerowany w Mapforge**
-  - Pełna implementacja w silniku Mapforge (`scena.json` → `podklad.svg` + `map.json`).
-  - Elegancka, czytelna mapa z kompletem kotwic dla 5 Dworów i kluczowych lokacji Dziczy.
-  - Natychmiastowa gotowość do osadzenia pinezki karty `209ELD Burning-Yard Trainer` na arenie The Burning Yard / Ardenvale.
-- **OPCJA B: Podkład rastrowy T1 ze wskazanego przez właściciela pliku**
-  - Jeśli właściciel posiada lub preferuje konkretny fanowski plik rastrowy (np. z Inkarnate / Reddit), przyjmujemy go do `maps/eldraine/l0.jpg` w złotym układzie T1 (analogicznie do Innistradu i Faerûnu).
-
----
-
-*Czekam na decyzję właściciela co do wyboru wariantu (Opcja A vs Opcja B), aby przystąpić do materializacji planu i karty.*
+- **2026-09-11, po audycie PR-31:** właściciel zatwierdził mapę Eldraine
+  w wariancie **T4** i polecił naprawić pozostałe znaleziska.
+- T4 pozostaje jedynym aktywnym podkładem. Warianty fanowskie są zapisane
+  jako historia researchu, ale nie stanowią geometrii tej mapy.
+- Korekta po decyzji usuwa fałszywe osobne POI Castle Embereth,
+  Tournament Grounds i zaginiony Cauldron of Eternity, oznacza mobilność
+  Castle Locthwain, kończy drogę Vantress na brzegu Lochmere i przenosi
+  pinezkę 209ELD do Castle Ardenvale zgodnie z Fabułą.
