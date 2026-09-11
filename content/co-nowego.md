@@ -4,6 +4,7 @@
 - **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim w `collection/entries/132gnt-pilgrim-s-eye.md`; pełny snapshot GNT #55 żyje w `scryfall/132gnt-pilgrim-s-eye.json`. `132GNT` pozostaje niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim Scryfall.
 - **Pinezka i plan:** mapa Zendikaru dostała pinezkę `przyblizona` przy Sea Gate, rozumianą jako punkt operacyjny kanonicznej bazy ekspedycji, nie dokładny adres sceny. Fabuła nie nazywa kontynentu ani obozu i łączy wiele biomów, dlatego nie nadano jej pozornej dokładności. Strona planu opisuje teraz korowe Pilgrim's Eyes jako latawcowych zwiadowców terenu.
 - **Strażniki:** test Zendikaru rozdziela oba systemy numeracji oraz pilnuje przybliżonego charakteru pinezki i jej jawnego uzasadnienia.
+- **Bramki końcowe:** 194/194 testy, build 58 stron (34 karty, 9 haseł, 15 planów) / 859 plików, map-audit 0, wiki-stats 100%, czysty `git diff --check`; świeży preview karty i mapy odpowiada HTTP 200.
 
 ## 2026-09-11 22:44 — Naprawy audytu PR-31: F1–F13 domknięte
 

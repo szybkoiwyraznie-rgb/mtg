@@ -391,13 +391,17 @@ niepotwierdzone Carmot Mines/Ruins of Vithia. Szczegóły:
 `docs/setup/HANDOFF_2026-09-10-pr31.md` oraz
 `docs/audits/AUDYT_2026-09-11-PR31.md`.
 
-**PR-32 (2026-09-11) — audyt PR-31 i naprawy F1–F13.** Audyt pełnych
-251 plików; decyzja właściciela zachowująca Eldraine T4; naprawy DFC,
-347NPH, 209ELD, semantyki i kompozycji Eldraine, POI Alary, cytowań,
+**PR-32 (2026-09-11) — audyt PR-31, naprawy F1–F13 i 132GNT.** Audyt
+pełnych 251 plików; decyzja właściciela zachowująca Eldraine T4; naprawy
+DFC, 347NPH, 209ELD, semantyki i kompozycji Eldraine, POI Alary, cytowań,
 dokumentacji, czasów ADR 0029, storage Wiedźmina i redakcji. Dodano
 repo-szerokie strażniki ADR 0040/0044 oraz regresje map i zamknięcia.
-Bramki: **192/192**, build 57 stron / 859 plików, map-audit 0,
-wiki-stats 100%; Eldraine i Alara obejrzane przez vision. Szczegóły:
+Po pierwotnym zamknięciu doszła pełna materializacja **132GNT Pilgrim's
+Eye**: wpis Fabuły verbatim, snapshot właściwego druku GNT #55 z
+rozdzieleniem numeracji, Karta Katalogowa LORE-first, przybliżona pinezka
+przy Sea Gate, aktualizacja Zendikaru, changelog i test regresyjny.
+Finalne bramki: **194/194**, build 58 stron (34/9/15) / 859 plików,
+map-audit 0, wiki-stats 100%. Szczegóły:
 `docs/setup/HANDOFF_2026-09-11-pr32.md`.
 
 ## Wątki otwarte (czekają na decyzję właściciela)

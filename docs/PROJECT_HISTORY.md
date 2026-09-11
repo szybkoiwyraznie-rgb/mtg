@@ -4,6 +4,39 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-11 — PR-32 cd.: materializacja 132GNT Pilgrim's Eye (sesja `arena/01a091f4-mtg`)
+
+Po zamknięciu napraw F1–F13 właściciel przekazał nową dostawę:
+`132GNT / Pilgrim's Eye / GNT / Zendikar` wraz z Fabułą mechanicznego
+oka-thoptera skanującego zróżnicowany teren dla odległego obozu
+wędrowców. Zgodnie z L16 Fabuła została zapisana verbatim przed
+researchem i roadmapą.
+
+1. **Dwa systemy numeracji:** `132GNT` pozostało `imgId` właściciela,
+   natomiast właściwy druk Scryfall/Gatherer to GNT #55. Pełna odpowiedź
+   API wraz z jawną notką numeracyjną żyje w
+   `scryfall/132gnt-pilgrim-s-eye.json`.
+2. **Karta Katalogowa LORE-first:** dziewięć sekcji rozwija korowego,
+   latawcowego thoptera, Roil, hedrony, skanowanie kanionów, gór i dolin,
+   lampę obozu oraz coraz dłuższy powrót. Mechanika `{3}`, Flying i
+   wyszukanie dowolnego basic landu do ręki została odczytana jako zwiad,
+   który daje plan drogi, lecz nie gotowe schronienie.
+3. **Pinezka bez pozornej pewności:** Fabuła nie nazywa kontynentu ani
+   obozu i łączy wiele biomów. Znacznik `przyblizona` stoi na kotwicy
+   Sea Gate jako operacyjny indeks kanonicznej bazy wypraw, nie dokładny
+   adres sceny. Strona Zendikaru została uzupełniona o korowe Pilgrim's
+   Eyes i trzecią kartę planu.
+4. **Strażniki:** `test/zendikar.test.js` rozdziela `132GNT` od GNT #55
+   i pilnuje przybliżonej semantyki pinezki; licznik listy kart w smoke UI
+   wzrósł do 34.
+5. **Commity produktu:** `1d6f695` (wpis, snapshot i plan), `13fad1c`
+   (karta, mapa, strona planu, changelog i testy) oraz `bbefda2`
+   (usunięcie etykiety procesowej wykrytej przez smoke UI).
+
+Bramki końcowe po dokumentacji: **194/194 testy**, build **58 stron**
+(34 karty, 9 haseł, 15 planów) i **859 plików**, map-audit 0,
+wiki-stats 100% (7,7/8), czysty `git diff --check`.
+
 ## 2026-09-11 — PR-32: audyt PR-31 i naprawy F1–F13 (sesja `arena/01a091f4-mtg`)
 
 Pełny audyt 251 plików scalonego PR-31 wykazał 13 grup problemów od P0
