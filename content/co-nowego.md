@@ -1,3 +1,10 @@
+## 2026-09-11 23:12 — Nowa karta: Pilgrim's Eye (Zendikar)
+
+- **Materializacja karty:** **[[132gnt-pilgrim-s-eye|Pilgrim's Eye]]** (`132GNT`, wydanie `GNT` / *Game Night*, plan [[zendikar|Zendikar]]) — korowy, latawcowy thopter z błękitną soczewką przemierza zróżnicowany teren planu, nanosząc siatkę bezpiecznych przejść dla ekspedycji czekającej przy lampie dalekiego obozu (`{3}`, 1/1 Artifact Creature — Thopter, Flying, wejście wyszukujące dowolny basic land do ręki).
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim w `collection/entries/132gnt-pilgrim-s-eye.md`; pełny snapshot GNT #55 żyje w `scryfall/132gnt-pilgrim-s-eye.json`. `132GNT` pozostaje niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim Scryfall.
+- **Pinezka i plan:** mapa Zendikaru dostała pinezkę `przyblizona` przy Sea Gate, rozumianą jako punkt operacyjny kanonicznej bazy ekspedycji, nie dokładny adres sceny. Fabuła nie nazywa kontynentu ani obozu i łączy wiele biomów, dlatego nie nadano jej pozornej dokładności. Strona planu opisuje teraz korowe Pilgrim's Eyes jako latawcowych zwiadowców terenu.
+- **Strażniki:** test Zendikaru rozdziela oba systemy numeracji oraz pilnuje przybliżonego charakteru pinezki i jej jawnego uzasadnienia.
+
 ## 2026-09-11 22:44 — Naprawy audytu PR-31: F1–F13 domknięte
 
 - **DFC i druk źródłowy:** pojedyncze Karty Katalogowe nie ujawniają innych fizycznych twarzy; dodano repo-szerokie strażniki ADR 0044 i ADR 0040. Pristine Talisman nie dziedziczy metadanych ani nieźródłowej lokalizacji z konkretnego wydruku.
