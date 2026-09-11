@@ -1,3 +1,14 @@
+## 2026-09-11 02:30 — Nowa karta: Disa the Restless (Dominaria, Epoka Lodowcowa / Terisiare)
+
+- **Materializacja karty:**
+  - **[[531m3c-disa-the-restless|Disa the Restless]]** (`531M3C`, wydanie `M3C` / *Modern Horizons 3 Commander*, plan [[dominaria|Dominaria]]) — zasypane śniegiem pustkowia dawnego kontynentu Terisiare u stóp błękitnych lodowców i zrujnowanych filarów starożytnego imperium; nieustraszona zwiadowczyni i kronikarka bada w zmarzlinie masywne, szponiaste ślady Lhurgoyfa, ostrzegając rubieże królestwa Kjeldoru przed drapieżnikami epoki chłodu (`{2}{B}{R}{G}`, 5/6 Legendary Creature — Human Scout, wskrzeszanie stałych kart Lhurgoyfów trafiających na cmentarz oraz tworzenie tokenów Tarmogoyfa przy zranieniu gracza).
+- **Wpis kolekcji i snapshot Scryfall:**
+  - `collection/entries/531m3c-disa-the-restless.md` (Fabuła właściciela zapisana verbatim, L16).
+  - `scryfall/531m3c-disa-the-restless.json` (pełny snapshot Scryfall M3C #1 z metadanymi pochodzenia).
+- **Pinezka i mapa Dominarii:**
+  - Dodana kotwica Kjeldor oraz pinezka w północnym Terisiare (`maps/dominaria/map.json`, pewność `region`, `x: 0.885, y: 0.265`).
+  - Strona planu [[dominaria|Dominaria]] zaktualizowana o wzmiankę o Epoce Lodowcowej i nowej karcie.
+
 ## 2026-09-11 02:00 — Nowa karta: Goblin Battle Jester (Warhammer Fantasy, Góry Krańca Świata)
 
 - **Materializacja karty:**

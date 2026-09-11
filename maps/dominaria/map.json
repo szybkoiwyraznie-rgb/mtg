@@ -206,6 +206,15 @@
    "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Argoth \u2014 wyspa na po\u0142udnie od Terisiare zniszczona w finale Wojny Braci",
    "notka": "le\u015bna wyspa u wybrze\u017cy Terisiare, zniszczona w finale Wojny Braci przez Sylex Blast Urzy; miejsce wykopalisk i bitwy automat\u00f3w",
    "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0"
+  },
+  {
+   "nazwa": "Kjeldor",
+   "x": 0.885,
+   "y": 0.265,
+   "typ": "kraina",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Kjeldor \u2014 kr\u00f3lestwo ludzkiej cywilizacji w p\u00f3\u0142nocnym Terisiare podczas Epoki Lodowcowej; pozycja na l\u0105dzie Terisiare wg rastra M1",
+   "notka": "najwi\u0119ksze zjednoczone kr\u00f3lestwo ludzi na kontynencie Terisiare w Epoce Lodowcowej, ojczyzna Disy Niespokojnej i Halvora Arensona",
+   "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0"
   }
  ],
  "otwarte_na_kolejne_przejscia": [
@@ -226,6 +235,13 @@
    "y": 0.36,
    "pewnosc": "region",
    "uzasadnienie": "Fabu\u0142a: \u201eW porzuconej strefie warsztatowo-wykopaliskowej w lesie Argoth... W Wojnie Braci Urza i Mishra zostawili na Argoth dziesi\u0105tki takich warsztat\u00f3w \u2014 niekt\u00f3re konstrukty nie zgas\u0142y po upadku swoich tw\u00f3rc\u00f3w\u201d. Miejsce akcji to le\u015bna wyspa Argoth u po\u0142udniowych wybrze\u017cy Terisiare, zniszczona wybuchem Syleksu pod koniec Wojny Braci. Dzieje nie precyzuj\u0105 numeru ani sektora tego konkretnego warsztatu wykopaliskowego, st\u0105d pewno\u015b\u0107 'region'. Pinezka na mapie Dominarii wskazuje rejon wyspy Argoth przy po\u0142udniowo-wschodnim skraju Terisiare."
+  },
+  {
+   "karta": "531m3c-disa-the-restless",
+   "x": 0.885,
+   "y": 0.265,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabu\u0142a w\u0142a\u015bciciela: Disa Niespokojna na zasypanych \u015bniegiem pustkowiach dawnego Terisiare, u st\u00f3p b\u0142\u0119kitnych lodowc\u00f3w i zrujnowanych filar\u00f3w staro\u017cytnego imperium na rubie\u017cach Kjeldoru, badaj\u0105ca szponiaste \u015blady Lhurgoyfa. Scena rozgrywa si\u0119 w Epoce Lodowcowej w p\u00f3\u0142nocnym Terisiare (rejon kr\u00f3lestwa Kjeldor / Pustkowi Adarkar). Pinezka stoi w rejonie p\u00f3\u0142nocnego Terisiare na mapie Dominarii z pewno\u015bci\u0105 region."
   }
  ],
  "plan": "dominaria",
