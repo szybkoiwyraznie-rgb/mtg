@@ -1,3 +1,14 @@
+## 2026-09-11 00:20 — Nowa karta: Simian Simulacrum (Wojna Braci, Dominaria)
+
+- **Materializacja karty:**
+  - **[[362bro-simian-simulacrum|Simian Simulacrum]]** (`362BRO`, wydanie `BRO` / *The Brothers' War*, plan [[dominaria|Dominaria]]) — mechaniczny małpi konstrukt odkopany w zapomnianym warsztacie lasu Argoth; jednostka inżynieryjna montująca moduły wzmacniające (dwa znaczniki +1/+1) na opancerzonym automacie-strażniku i reaktywowana zieloną maną Argoth (Unearth `{2}{G}{G}`).
+- **Wpis kolekcji i snapshot Scryfall:**
+  - `collection/entries/362bro-simian-simulacrum.md` (Fabuła właściciela zapisana verbatim, L16).
+  - `scryfall/362bro-simian-simulacrum.json` (pełny snapshot Scryfall BRO #205 z metadanymi pochodzenia).
+- **Pinezka i mapa Dominarii:**
+  - Dodana kotwica i pinezka na wyspie Argoth u południowo-wschodnich wybrzeży Terisiare (`maps/dominaria/map.json`, pewność `region`).
+  - Strona planu [[dominaria|Dominaria]] zaktualizowana o nową kartę w osi czasu i sekcji mapy.
+
 ## 2026-09-11 00:05 — Druga Pętla Jakości: hasła Esper i Stensia + wzbogacenie mapy Alary (Carmot Mines, Ruins of Vithia)
 
 - **Link-mining i nowe hasła (krok 3):**

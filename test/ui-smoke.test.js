@@ -404,7 +404,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (18)'), 'lista kart: brak 18 kart');
+  assert.ok(lista.includes('Karty Katalogowe (19)'), 'lista kart: brak 19 kart');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
     'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
@@ -496,9 +496,9 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   }
 
   shim.idz('#/');
-  // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — po dodaniu 556NPH
-  // najnowsza karta Mirrodinu musi wejść do skrótu na stronie głównej.
-  assert.ok(shim.app.innerHTML.includes('Ruthless Invasion'), 'home: brak najnowszej materializacji');
+  // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — po dodaniu 362BRO
+  // najnowsza karta Dominarii musi wejść do skrótu na stronie głównej.
+  assert.ok(shim.app.innerHTML.includes('Simian Simulacrum'), 'home: brak najnowszej materializacji');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();
