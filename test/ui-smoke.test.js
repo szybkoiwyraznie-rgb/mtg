@@ -404,7 +404,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (32)'), 'lista kart: brak 32 kart');
+  assert.ok(lista.includes('Karty Katalogowe (33)'), 'lista kart: brak 33 kart');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
     'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');

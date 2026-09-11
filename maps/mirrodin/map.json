@@ -345,6 +345,13 @@
    "y": 0.7363,
    "pewnosc": "region",
    "uzasadnienie": "Fabuła właściciela: „na spalonych żelazem pustkowiach łańcucha Oxidda” hordy Nowej Phyrexii przełamują barykadę Vulshoków i zmuszają obrońców do odwrotu. Punkt w środkowo-zachodniej Oxiddzie, na podejściu między Oxidagg (jawna wioska Vulshoków) a Kuldothą (Wielka Kuźnia i naturalny kierunek presji ze strony świata pieców). Scena jest mocno osadzona w krainie Vulshoków, ale bez adresu jednego mostu czy jednej skały, stąd pewność „region”."
+  },
+  {
+   "karta": "347nph-pristine-talisman",
+   "x": 0.465,
+   "y": 0.24,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła właściciela: sterylna biała kuźnia-świątynia na Mirrodinie z mlecznobiałym światłem oculusu, w której unosi się czysty talizman z perłowego metalu leczący dotykających go wojowników oporu Mirran. Scena osadzona jest w domenie białego słońca (Razor Fields / tereny Aurioków i leoninów w pobliżu Bladehold i Taj-Nar), gdzie działał bastion mirrańskiego ruchu oporu pod przewodnictwem Elspeth Tirel. Pinezka w rejonie Razor Fields z pewnością region."
   }
  ],
  "scena": "scena.json",
