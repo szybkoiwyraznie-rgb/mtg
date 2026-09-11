@@ -404,7 +404,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (34)'), 'lista kart: brak 34 kart');
+  assert.ok(lista.includes('Karty Katalogowe (35)'), 'lista kart: brak 35 kart');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
     'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
@@ -461,6 +461,17 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(!karta3.includes('Cory') && !karta3.includes('nr 21/165'), 'karta 137GPT: nie może epatować procesem wydawniczym');
   assert.ok(karta3.indexOf('<h2>Na Mapie</h2>') < karta3.indexOf('<h2>Mechanika jako Opowieść</h2>'), 'karta 137GPT: mechanika ma być po mapie/transpozycji');
   assert.ok(karta3.indexOf('<h2>Mechanika jako Opowieść</h2>') < karta3.indexOf('<h2>Źródła</h2>'), 'karta 137GPT: mechanika ma stać przed źródłami');
+
+  // 42ISD: rodzima karta Innistradu — stensiański cmentarz, regionalna
+  // pinezka i dane właściwego druku ISD #70.
+  shim.idz('#/karta/42isd-murder-of-crows');
+  const karta42 = shim.app.innerHTML;
+  assert.ok(karta42.includes('<h1>Murder of Crows</h1>'), 'karta 42ISD: brak tytułu');
+  assert.ok(karta42.includes('Creature — Bird'), 'karta 42ISD: brak typu ze snapshotu');
+  assert.ok(karta42.includes('Even more than carrion'), 'karta 42ISD: brak flavoru ISD #70');
+  assert.ok(karta42.includes('href="#/haslo/stensia"'), 'karta 42ISD: brak wikilinku do Stensii');
+  assert.ok(karta42.includes('#/mapa/innistrad?pin=42isd-murder-of-crows'),
+    'karta 42ISD: brak deep-linka regionalnej pinezki');
 
   // 309ISD: materializacja niezależnej twarzy DFC — tylko Civilized Scholar,
   // bez mieszania drugiej strony w tytule, typie i widocznej treści.

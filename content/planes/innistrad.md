@@ -74,7 +74,13 @@ i wampirze rody w izolowanych dworach. Prowadzą tu trzy przełęcze:
 Pass** — jedyne wejście od Kessigu, obserwowane przez **Falkenrathów**
 — oraz **Ziel Pass**, jedyna droga ku morzu, przy której stoi
 **Voldaren Estate**. W centrum pasma zieje **Ashmouth**: największa
-brama do świata demonów i diabłów.
+brama do świata demonów i diabłów. Na obrzeżach torfowych **Farbogów**
+leżą stare grafy: groby osuwają się tam między martwe sosny, a wraz z ich
+rozpadem mnożą się geisty. Anonimowy cmentarz ukazany przez
+[[42isd-murder-of-crows|Murder of Crows]] należy do tej samej stensiańskiej
+tradycji grozy, choć nie zostaje utożsamiony z konkretnym grafem. Kruki nie
+szukają na nim ciał — chwytają błękitne ślady wspomnień i ostatnie słowa,
+które jeszcze nie zdążyły rozpłynąć się w Eterze.
 
 **Nephalia** (wschód i wybrzeże) — mgliste porty u ujść rzek, srebrne
 plaże i bagna **Morkrut**. **Havengul** jest największym z jej miast (gdzie
@@ -159,3 +165,5 @@ zmiany punktowe (Avabruck → Hollowhenge) opisano w notkach kotwic.
 4. [The Guardian, the Witch, and the Angel](https://mtglore.com/web-fiction/the-guardian-the-witch-and-the-angel/) — oblężenie Thraben, potajemny pochówek Mikaeusa, straż Thalii nad Helvaultem.
 5. [Church of Avacyn — MTG Wiki](https://mtg.wiki/page/Church_of_Avacyn) — hierarchia, katarowie, splot Kościoła z państwem.
 6. [Plane Shift: Innistrad](https://media.wizards.com/2016/dnd/downloads/Plane_Shift_Innistrad.pdf) — opis diabłów: wygląd, wzrost, sabotaż jako specjalność.
+7. [A Planeswalker's Guide to Innistrad: Stensia and Vampires](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-stensia-and-vampires-2011-11-02) — Farbogi, stare grafy na ich obrzeżach i geisty mnożące się wraz z rozpadem grobów.
+8. [A Planeswalker's Guide to Innistrad: Nephalia and the Undead](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-nephalia-and-undead-2011-10-19) — niebieskie geisty jako projekcje umysłu, obsesji i zbiorowych wspomnień.

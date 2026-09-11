@@ -1,3 +1,10 @@
+## 2026-09-11 23:28 — Nowa karta: Murder of Crows (Innistrad)
+
+- **Materializacja karty:** **[[42isd-murder-of-crows|Murder of Crows]]** (`42ISD`, wydanie `ISD` / *Innistrad*, plan [[innistrad|Innistrad]]) — na starym stensiańskim cmentarzu wielkie kruki przechwytują błękitne smugi wspomnień i ostatnie słowa unoszące się nad pustymi szatami oraz srebrną tarczą zmarłego strażnika (`{3}{U}{U}`, 4/4 Creature — Bird, Flying, śmierć innego stworzenia pozwala dobrać, a następnie odrzucić kartę).
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim w `collection/entries/42isd-murder-of-crows.md`; pełny snapshot ISD #70 żyje w `scryfall/42isd-murder-of-crows.json`. `42ISD` pozostaje niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim Scryfall.
+- **Pinezka i plan:** mapa Innistradu dostała pinezkę `region` na kotwicy Stensii. Fabuła nazywa prowincję, ale nie cmentarz ani dolinę; stare grafy przy Farbogach są potwierdzonym kontekstem geistów, nie dokładnym adresem sceny. Strona planu opisuje kruki żywiące się śladami pamięci zmarłych.
+- **Strażniki:** test Innistradu rozdziela oba systemy numeracji, pilnuje regionalnego charakteru pinezki oraz kotwic sceny: Stensii, srebrnej tarczy, błękitnych wspomnień i ostatnich słów.
+
 ## 2026-09-11 23:12 — Nowa karta: Pilgrim's Eye (Zendikar)
 
 - **Materializacja karty:** **[[132gnt-pilgrim-s-eye|Pilgrim's Eye]]** (`132GNT`, wydanie `GNT` / *Game Night*, plan [[zendikar|Zendikar]]) — korowy, latawcowy thopter z błękitną soczewką przemierza zróżnicowany teren planu, nanosząc siatkę bezpiecznych przejść dla ekspedycji czekającej przy lampie dalekiego obozu (`{3}`, 1/1 Artifact Creature — Thopter, Flying, wejście wyszukujące dowolny basic land do ręki).
