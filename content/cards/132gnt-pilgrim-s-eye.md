@@ -277,7 +277,7 @@ uszczegółowić. Bez takiego źródła dokładna pinezka byłaby pozorną pewno
 
 - **Fabuła właściciela kolekcji** — wiążące źródło sceny: wygląd mechanicznego
   oka, błękitny skan, zróżnicowane biomy, hedrony, obóz z lampą oraz motyw
-  coraz dłuższego powrotu; zapis verbatim:
+  coraz dłuższego powrotu; zapis źródłowy:
   `collection/entries/132gnt-pilgrim-s-eye.md`.
 - **Scryfall API — GNT #55** — pełny snapshot właściwego druku: koszt, typ,
   tekst Oracle, 1/1, rzadkość, ilustrator i tekst smakowy:
