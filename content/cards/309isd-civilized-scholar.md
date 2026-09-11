@@ -154,7 +154,7 @@ uczony przekracza granicę, którą uważał za bezpieczną.
   lustro i przewrócony kałamarz.
 - Scryfall, Civilized Scholar (front printu ISD/47) — koszt, typ, tekst
   wyroczni, flavor text i dane posiadanego druku:
-  https://scryfall.com/card/isd/47/civilized-scholar-homicidal-brute
+  https://scryfall.com/card/isd/47
 - A Planeswalker's Guide to Innistrad: Nephalia and the Undead — charakter
   Nephalii, Havengul przy ujściu Silburlindu, mieszanina handlu, rzemiosła
   i tolerowanych ciemnych praktyk:

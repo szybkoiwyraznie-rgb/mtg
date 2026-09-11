@@ -72,7 +72,7 @@
 ## 2026-09-11 01:10 — Nowa karta: Dire-Strain Brawler (Innistrad, Gavony)
 
 - **Materializacja karty:**
-  - **[[118mid-dire-strain-brawler|Dire-Strain Brawler]]** (`118MID`, wydanie `MID` / *Innistrad: Midnight Hunt*, plan [[innistrad|Innistrad]]) — nocna wiejska farma w Gavony pod pełnią księżyca; pracowity parobek (dzienna strona *Tireless Hauler*) zrzuca ludzką postać i czwartą parę butów przy stodole, stając się monstrualnym wilkołakiem rodu Dire-strain o ciele 6/6 z czujnością (*Vigilance*, *Nightbound*), spokojnie dominującym podwórze pośród zmowy milczenia zastraszonych gospodarzy.
+  - **[[118mid-dire-strain-brawler|Dire-Strain Brawler]]** (`118MID`, wydanie `MID` / *Innistrad: Midnight Hunt*, plan [[innistrad|Innistrad]]) — nocna wiejska farma w Gavony pod pełnią księżyca; czwarta para porzuconych butów przy stodole zdradza, że na podwórzu pojawił się monstrualny wilkołak rodu Dire-strain o ciele 6/6 z czujnością (*Vigilance*, *Nightbound*), spokojnie dominującym podwórze pośród zmowy milczenia zastraszonych gospodarzy.
 - **Wpis kolekcji i snapshot Scryfall:**
   - `collection/entries/118mid-dire-strain-brawler.md` (Fabuła właściciela zapisana verbatim, L16).
   - `scryfall/118mid-dire-strain-brawler.json` (pełny snapshot Scryfall MID #203 dla karty transformującej z widokiem twarzy nocnej).
