@@ -8,11 +8,11 @@
 
 1. [x] Przeczytać pełną lekturę obowiązkową z `AGENTS.md` §0, w tym wszystkie ADR-y, `LESSONS.md`, `ENVIRONMENT.md`, PR #31 z diffem oraz najnowszy handoff.
 2. [x] Potwierdzić pełną historię gita, właściwą gałąź i czysty stan roboczy.
-3. [ ] Otworzyć PR sesji z niniejszą roadmapą przed pracą audytową.
-4. [ ] Odtworzyć zależności deweloperskie przez `npm ci`; uruchomić `npm test`, `npm run build`, `python3 tools/map-audit.py` i `node tools/wiki-stats.mjs`.
-5. [ ] Zbadać każdy plik zmieniony w PR-31: treści kart i haseł, wpisy dostaw, snapshoty, plany, mapy i binaria, kod/testy oraz dokumentację — względem obowiązujących ADR-ów i stanu sprzed PR.
-6. [ ] Obejrzeć wizualnie nowe lub zmienione mapy T3/T4 oraz reprezentatywne fragmenty nowych map rastrowych; zapisać wnioski, nie artefakty robocze.
-7. [ ] Zapisać ustalenia w `docs/audits/AUDYT_2026-09-11-PR31.md`, zaktualizować opis PR kumulatywnie i przekazać właścicielowi wynik procedury startowej.
+3. [x] Otworzyć PR sesji z niniejszą roadmapą przed pracą audytową.
+4. [x] Odtworzyć zależności deweloperskie przez `npm ci`; uruchomić `npm test`, `npm run build`, `python3 tools/map-audit.py` i `node tools/wiki-stats.mjs`.
+5. [x] Zbadać każdy plik zmieniony w PR-31: treści kart i haseł, wpisy dostaw, snapshoty, plany, mapy i binaria, kod/testy oraz dokumentację — względem obowiązujących ADR-ów i stanu sprzed PR.
+6. [x] Obejrzeć wizualnie nowe lub zmienione mapy T3/T4 oraz reprezentatywne fragmenty nowych map rastrowych; zapisać wnioski, nie artefakty robocze.
+7. [x] Zapisać ustalenia w `docs/audits/AUDYT_2026-09-11-PR31.md`, zaktualizować opis PR kumulatywnie i przekazać właścicielowi wynik procedury startowej.
 
 ## Brama
 
