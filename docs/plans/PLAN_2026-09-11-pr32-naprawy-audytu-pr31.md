@@ -13,8 +13,8 @@
 4. [x] **F6 — Alara:** wycofać niepotwierdzone POI Carmot Mines i Ruins of Vithia z mapy, planów i dokumentacji; zregenerować SVG deterministycznie.
 5. [x] **F7 — źródła:** naprawić numerację cytowań Confluxu i nieźródłowe powiązanie Civilized Scholar ze Stensią.
 6. [x] **F10–F13 — zamknięcie/redakcja/storage:** poprawić dokumentację PR-31, rzeczywiste godziny changelogu, literówki oraz usunąć nieużywany rootowy `wiedzmin.jpg` (runtime LOD pozostaje bez zmian).
-7. [ ] Dodać widoczny wpis naprawczy do `content/co-nowego.md`, zaktualizować historię/roadmapę i przygotować handoff PR-32.
-8. [ ] Uruchomić pełne bramki: `npm test`, `npm run build`, `python3 tools/map-audit.py`, `node tools/wiki-stats.mjs`; obejrzeć Eldraine i Alarę przez vision; zaktualizować raport audytu statusem napraw i opis PR.
+7. [x] Dodać widoczny wpis naprawczy do `content/co-nowego.md`, zaktualizować historię/roadmapę i przygotować handoff PR-32.
+8. [x] Uruchomić pełne bramki: `npm test`, `npm run build`, `python3 tools/map-audit.py`, `node tools/wiki-stats.mjs`; obejrzeć Eldraine i Alarę przez vision; zaktualizować raport audytu statusem napraw i opis PR.
 
 ## Bramy akceptacji
 

@@ -4,6 +4,28 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-11 — PR-32: audyt PR-31 i naprawy F1–F13 (sesja `arena/01a091f4-mtg`)
+
+Pełny audyt 251 plików scalonego PR-31 wykazał 13 grup problemów od P0
+do P3. Właściciel zatwierdził istniejący wariant Eldraine T4 i zlecił
+naprawę całości. W sześciu inkrementalnych pakietach:
+
+1. oczyszczono 3 Karty Katalogowe DFC i dodano globalny strażnik ADR 0044;
+2. usunięto metadane druku oraz nieźródłową lokalizację 347NPH,
+   rozszerzając ADR 0040 i jego test;
+3. zachowano T4 Eldraine, przywrócono 209ELD do Ardenvale, poprawiono
+   relacje lore, proweniencję, pewność, trasę przez Lochmere i kompozycję;
+4. wycofano niepotwierdzone POI Alary oraz uporządkowano źródła Confluxu
+   i Stensii;
+5. odtworzono finalną dokumentację 15 materializacji PR-31 i rzeczywiste
+   czasy ADR 0029, dodano L19, poprawiono redakcję oraz usunięto zbędny
+   rootowy raster Wiedźmina bez zmiany runtime LOD;
+6. dodano testy regresyjne Eldraine, Alary, proweniencji i zamknięcia.
+
+Bramki końcowe: **192/192 testy**, build 57 stron (33/9/15) i 859
+plików, map-audit 0, wiki-stats 100% (7,7/8), czysty `git diff --check`.
+Poprawione Eldraine i Alarę obejrzano przez vision w 1600×1120.
+
 ## 2026-09-10 / 2026-09-11 — PR-31: dwie Pętle Jakości i 15 materializacji (sesja `arena/01a08d3e-mtg`)
 
 PR-31 został scalony jako `5a49ca3`. Pierwotny wpis historii powstał

@@ -1,3 +1,11 @@
+## 2026-09-11 22:44 — Naprawy audytu PR-31: F1–F13 domknięte
+
+- **DFC i druk źródłowy:** pojedyncze Karty Katalogowe nie ujawniają innych fizycznych twarzy; dodano repo-szerokie strażniki ADR 0044 i ADR 0040. Pristine Talisman nie dziedziczy metadanych ani nieźródłowej lokalizacji z konkretnego wydruku.
+- **Eldraine T4:** zachowano wariant zatwierdzony przez właściciela. Burning-Yard Trainer wrócił do Castle Ardenvale zgodnie z Fabułą; mapa jawnie pozostaje autorskim atlasem relacyjnym, poprawia mobilny Locthwain, zaginiony Kocioł, kompleks Burning Yard, trasę ku Vantress i kolizje etykiet.
+- **Alara i źródła:** wycofano niepotwierdzone punktowe lokalizacje Carmot Mines i Ruins of Vithia; uporządkowano cytowania Confluxu oraz rozdzielono lekturę traktatów od niepotwierdzonej podróży Civilized Scholar do Stensii.
+- **Dokumentacja i storage:** odtworzono finalny zakres 15 materializacji PR-31, skorygowano rzeczywiste godziny publikacji, domknięto plany, dodano regułę L19 i usunięto nieużywany rootowy raster Wiedźmina bez zmiany runtime LOD.
+- **Bramki końcowe:** 192/192 testy, build 57 stron / 859 plików, map-audit 0, wiki-stats 100%, czysty `git diff --check`. Poprawione mapy Eldraine i Alary obejrzano przez vision w 1600×1120.
+
 ## 2026-09-11 19:05 — Nowa karta: Pristine Talisman (Mirrodin)
 
 - **Materializacja karty:**
