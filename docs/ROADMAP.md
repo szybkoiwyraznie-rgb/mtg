@@ -374,8 +374,9 @@ kart `536arb-ethersworn-shieldmage`, `39mm2-brute-force`, `257ltr-lash-of-the-ba
 `conflux` (wydarzenie, Alara), `grixis` (geografia, Alara), `esper` (geografia, Alara)
 oraz `stensia` (geografia, Innistrad); metryka kompletności 100% na wszystkich
 40 stronach (18 kart, 9 haseł, 13 planów); reguła procesowa L18 (pass mapowy =
-wygląd i wzbogacanie T3/T4, bez T1/T2 i bez badania pinezek); wzbogacenie mapy
-Alary o Carmot Mines i Ruins of Vithia; map-audit 0. **180/180 testów**.
+wygląd i wzbogacanie T3/T4, bez T1/T2 i bez badania pinezek); weryfikacja mapy
+Alary — po audycie PR-31 wycofano niepotwierdzone współrzędne Carmot Mines i
+Ruins of Vithia; map-audit 0. **180/180 testów**.
 
 **PR-30 (2026-09-10) — Kaladesh jako dwie osobne mapy.** Korekta
 właściciela: plan przeskalowany do skali planu **2000×1400** (jak

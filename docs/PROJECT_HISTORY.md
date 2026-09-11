@@ -18,7 +18,7 @@ Pełna realizacja dwóch kolejnych Pętli Jakości po scaleniu PR-30 oraz materi
    - **`content/lore/stensia.md`** (geografia, Innistrad): mroczna prowincja Geier Reach, wampirze rody (Markov, Falkenrath) i krater Ashmouth (karty 309ISD + 393DKA).
 4. **Passy mapowe i reguła L18:**
    - Udokumentowanie reguły **L18** w `docs/LESSONS.md`, `PETLA_JAKOSCI.md` i `AGENTS.md` (pass mapowy to wzbogacanie i weryfikacja wyglądu map T3/T4, bez badania pinezek i bez modyfikowania T1/T2).
-   - Wzbogacenie mapy Alary (T3/T4 mapforge): dodanie kanonicznych POI **Carmot Mines** (Esper) oraz **Ruins of Vithia** (Grixis) do `scena.json`, `map.json` i podkładu; `map-audit.py` = 0 uwag.
+   - Weryfikacja mapy Alary (T3/T4 mapforge): research potwierdził carmot i dawną Vithię, ale nie współrzędne pojedynczych POI **Carmot Mines** ani **Ruins of Vithia**. Punkty wycofano po audycie PR-31; `map-audit.py` = 0 uwag.
 5. **Nowa dostawa i materializacja (362BRO Simian Simulacrum):**
    - Zapis verbatim `collection/entries/362bro-simian-simulacrum.md` (reguła L16).
    - Pobranie i sformatowanie snapshotu Scryfall `scryfall/362bro-simian-simulacrum.json`.

@@ -1688,18 +1688,6 @@
    "x": 1635,
    "y": 655,
    "id": "tidehollow"
-  },
-  {
-   "typ": "ruina",
-   "x": 1580,
-   "y": 490,
-   "id": "carmot-mines"
-  },
-  {
-   "typ": "ruina",
-   "x": 1220,
-   "y": 1120,
-   "id": "vithia"
   }
  ],
  "etykiety": [
@@ -2185,32 +2173,6 @@
     "fs": 14,
     "kotwica": "middle",
     "ital": true
-   }
-  },
-  {
-   "tekst": "Carmot Mines",
-   "x": 1580,
-   "y": 470,
-   "opcje": {
-    "fs": 13,
-    "kotwica": "middle",
-    "przyDo": [
-     1580,
-     490
-    ]
-   }
-  },
-  {
-   "tekst": "Ruins of Vithia",
-   "x": 1220,
-   "y": 1100,
-   "opcje": {
-    "fs": 13,
-    "kotwica": "middle",
-    "przyDo": [
-     1220,
-     1120
-    ]
    }
   }
  ],

@@ -19,8 +19,8 @@
 2. **`content/lore/stensia.md`** (klasa `geografia`, plan `innistrad`) — górzysta prowincja wampirzych linii (Markov, Falkenrath), szczyty Geier Reach, rozpadlina Ashmouth i diabły Innistradu (karty `309isd` i `393dka`).
 
 ### Krok 4: Pass mapowy (tylko T3/T4 — wzbogacenie wyglądu i nowe POI)
-- Kwerenda i wzbogacenie mapy Alary (T3/T4 mapforge):
-  - Dodanie kanonicznych POI: `Carmot Mines` (Esper) oraz `Vithia` (ruiny dawnego imperium w Grixis).
+- Kwerenda i weryfikacja mapy Alary (T3/T4 mapforge):
+  - **Korekta po audycie PR-31:** źródła potwierdzają carmot i dawną Vithię, ale nie pojedyncze punkty `Carmot Mines` ani `Ruins of Vithia`; oba POI wycofano.
   - Regeneracja `podklad.svg` przez `node tools/mapforge/cli.mjs`.
   - Kontrola braku kolizji, weryfikacja `python3 tools/map-audit.py` = 0.
 

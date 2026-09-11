@@ -135,7 +135,7 @@
   - Dodana kotwica i pinezka na wyspie Argoth u południowo-wschodnich wybrzeży Terisiare (`maps/dominaria/map.json`, pewność `region`).
   - Strona planu [[dominaria|Dominaria]] zaktualizowana o nową kartę w osi czasu i sekcji mapy.
 
-## 2026-09-11 00:05 — Druga Pętla Jakości: hasła Esper i Stensia + wzbogacenie mapy Alary (Carmot Mines, Ruins of Vithia)
+## 2026-09-11 17:15 — Druga Pętla Jakości: hasła Esper i Stensia + weryfikacja mapy Alary
 
 - **Link-mining i nowe hasła (krok 3):**
   - **[[esper|Esper]]** (`content/lore/esper.md`, klasa `geografia`, plan [[alara|Alara]]) — archipelag wysp ze stopu eterium, szklanych mórz (Dwindling Sea, Inkwell) i geometrycznych miast (Palandius, Vectis, Sanctum Arcanum). Sekta Ethersworn, doktryna Szlachetnego Dzieła (*Noble Work*) sfinksa Cruciusa, kryzys surowca carmotu i zderzenie w Confluxie z Grixis. Próg spełniony przez karty [[536arb-ethersworn-shieldmage|Ethersworn Shieldmage]] i [[305arb-illusory-demon|Illusory Demon]].
@@ -145,8 +145,8 @@
   - Strony planów [[innistrad|Innistrad]] i [[alara|Alara]] zaktualizowane o wikilinki do haseł.
   - **100% kompletności (`tools/wiki-stats.mjs`) na wszystkich 40 stronach bazy** (18 kart, 9 haseł, 13 planów).
 - **Pass mapowy T4 (krok 4):**
-  - Wzbogacenie wektorowej mapy Alary (`maps/alara/scena.json`, `podklad.svg` i `map.json`) o kanoniczne POI: **Carmot Mines** (mityczne kopalnie carmotu w archipelagu Esperu) oraz **Ruins of Vithia** (ruiny dawnego imperium w Grixis).
-  - Weryfikacja wizualna i integralnościowa: `python3 tools/map-audit.py` = 0 problemów.
+  - Research potwierdza carmot jako surowiec i Vithię jako dawne królestwo, lecz nie dostarcza współrzędnych pojedynczych **Carmot Mines** ani **Ruins of Vithia**. Nie są one nanoszone jako POI.
+  - Wektorową mapę Alary przywrócono do 28 źródłowych POI, zregenerowano deterministycznie i zweryfikowano integralnościowo: `python3 tools/map-audit.py` = 0 problemów.
 
 ## 2026-09-10 23:45 — Pętla Jakości: hasła Conflux i Grixis + 100% kompletności w wiki-stats
 
