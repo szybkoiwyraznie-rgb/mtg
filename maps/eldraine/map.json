@@ -1,0 +1,286 @@
+{
+ "plan": "eldraine",
+ "tytul": "Eldraine",
+ "wariant": "T4",
+ "podklad": "podklad.svg",
+ "wymiary": {
+  "szerokosc": 2000,
+  "wysokosc": 1400
+ },
+ "rekonstrukcja": true,
+ "epoka": "Era Pięciu Dworów (przed i w trakcie wydarzeń Throne of Eldraine / Wilds of Eldraine)",
+ "zrodlo": {
+  "url": "https://magic.wizards.com/en/news/feature/planeswalkers-guide-eldraine-2019-10-31",
+  "url2": "https://mtg.wiki/page/Eldraine",
+  "tytul": "Planeswalker's Guide to Eldraine — oficjalny kanon geograficzny Pięciu Dworów i Kniei; autorska rekonstrukcja relacji T4",
+  "autor": "MTG Lore Codex, silnik mapforge (rekonstrukcja T4 wg ADR 0038)",
+  "licencja": "praca własna; glify gór i lasów mapome CC-BY-4.0 (ADR 0020)",
+  "pobrano": "2026-09-11",
+  "notka": "Autorska rekonstrukcja wektorowa T4 dla planu Eldraine w układzie 2000×1400 px. Wobec braku oficjalnej mapy WotC oraz niskiej jakości i niekanoniczności fanowskich rastrów, mapa realizuje kanoniczną geometrię Pięciu Dworów (Ardenvale w centrum, Vantress na jeziorze Lochmere, lewitujące Locthwain na moczarach, Embereth przy głazie Irencrag i poligonach Burning Yard, Garenbrig przy Great Henge) opasanych przez Knieje (The Wilds). Rzeki, trakty królewskie i biomy są w pełni spójne z zasadami hydrologii i etykietowania Codexu."
+ },
+ "uklad_wspolrzednych": "Autorski układ sceny T4 2000×1400 px wygenerowany deterministycznie w silniku mapforge (ADR 0018, ADR 0038).",
+ "kotwice": [
+  {
+   "nazwa": "The Wilds",
+   "x": 0.41,
+   "y": 0.09285714285714286,
+   "typ": "region",
+   "pozycja_zrodlo": "Północne bezkresne Knieje, kraina pierwotnej magii fae i leśnych bestii; https://mtg.wiki/page/The_Wilds. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "The Wilds",
+   "x": 0.48,
+   "y": 0.9428571428571428,
+   "typ": "region",
+   "pozycja_zrodlo": "Południowe rubieże Dziczy poza domenami Królestwa; https://mtg.wiki/page/The_Wilds. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "The Wilds",
+   "x": 0.095,
+   "y": 0.4,
+   "typ": "region",
+   "pozycja_zrodlo": "Zachodnie ostępy Kniei otaczające Lochmere i bagniska; https://mtg.wiki/page/The_Wilds. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "The Wilds",
+   "x": 0.91,
+   "y": 0.4857142857142857,
+   "typ": "region",
+   "pozycja_zrodlo": "Wschodnie rubieże Kniei rozciągające się ku odległym szczytom; https://mtg.wiki/page/The_Wilds. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Highlands of Arden",
+   "x": 0.5,
+   "y": 0.5285714285714286,
+   "typ": "region",
+   "pozycja_zrodlo": "Słoneczne wyżyny Arden i serce Białego Dworu Lojalności; https://mtg.wiki/page/Ardenvale. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Vantress",
+   "x": 0.24,
+   "y": 0.18571428571428572,
+   "typ": "region",
+   "pozycja_zrodlo": "Dolina jeziora Lochmere i Niebieski Dwór Wiedzy; https://mtg.wiki/page/Vantress. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Locthwain Fens",
+   "x": 0.235,
+   "y": 0.8428571428571429,
+   "typ": "region",
+   "pozycja_zrodlo": "Mroczne mokradła, Czarne Jezioro i Czarny Dwór Wytrwałości; https://mtg.wiki/page/Locthwain. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Embereth",
+   "x": 0.765,
+   "y": 0.6142857142857143,
+   "typ": "region",
+   "pozycja_zrodlo": "Wulkaniczne wzgórza, wolne miasto i Czerwony Dwór Odwagi; https://mtg.wiki/page/Embereth. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Garen Valley",
+   "x": 0.78,
+   "y": 0.4,
+   "typ": "region",
+   "pozycja_zrodlo": "Pradawna dolina megalitycznych kręgów i Zielony Dwór Siły; https://mtg.wiki/page/Garenbrig. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Castle Ardenvale",
+   "x": 0.5,
+   "y": 0.4642857142857143,
+   "typ": "twierdza",
+   "pozycja_zrodlo": "Monumentalna biała twierdza i historyczna stolica Najwyższego Króla; https://mtg.wiki/page/Castle_Ardenvale. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "The Circle of Loyalty",
+   "x": 0.47,
+   "y": 0.42857142857142855,
+   "typ": "miejsce_mocy",
+   "pozycja_zrodlo": "Święty krąg białego płomienia próby rycerskiej; https://mtg.wiki/page/The_Circle_of_Loyalty. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Archer's Tower",
+   "x": 0.535,
+   "y": 0.44285714285714284,
+   "typ": "wieza",
+   "pozycja_zrodlo": "Wysoka wieża strażnicza strzegąca wschodnich podejść pod zamek; https://mtg.wiki/page/Ardenvale. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Wealdrum",
+   "x": 0.43,
+   "y": 0.39285714285714285,
+   "typ": "osada",
+   "pozycja_zrodlo": "Malownicza wieś rolnicza na zachodnich wyżynach Arden; https://mtg.wiki/page/Ardenvale. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Wesling",
+   "x": 0.575,
+   "y": 0.4,
+   "typ": "osada",
+   "pozycja_zrodlo": "Rycerska wieś na północno-wschodnich traktach Arden; https://mtg.wiki/page/Ardenvale. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Trekell",
+   "x": 0.56,
+   "y": 0.5642857142857143,
+   "typ": "osada",
+   "pozycja_zrodlo": "Miasteczko targowe na południowo-wschodnim trakcie; https://mtg.wiki/page/Ardenvale. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Castle Vantress",
+   "x": 0.24,
+   "y": 0.2857142857142857,
+   "typ": "twierdza",
+   "pozycja_zrodlo": "Twierdza na wyspie otoczonej wodospadem na jeziorze Lochmere; https://mtg.wiki/page/Castle_Vantress. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Lochmere",
+   "x": 0.24,
+   "y": 0.35,
+   "typ": "akwen",
+   "pozycja_zrodlo": "Głębokie jezioro skrywające sekrety i podwodne groty syren; https://mtg.wiki/page/Vantress. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Indrelon (Magic Mirror)",
+   "x": 0.275,
+   "y": 0.2571428571428571,
+   "typ": "miejsce_mocy",
+   "pozycja_zrodlo": "Zatopione sanktuarium Magicznego Zwierciadła Indrelon; https://mtg.wiki/page/The_Magic_Mirror. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Castle Locthwain",
+   "x": 0.235,
+   "y": 0.7214285714285714,
+   "typ": "twierdza",
+   "pozycja_zrodlo": "Lewitujący zamek z czarnego kamienia unoszący się nad moczarami; https://mtg.wiki/page/Castle_Locthwain. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "The Black Tarns",
+   "x": 0.235,
+   "y": 0.7785714285714286,
+   "typ": "akwen",
+   "pozycja_zrodlo": "Czarne, mgliste wody i bagniska u stóp lewitującej twierdzy; https://mtg.wiki/page/Locthwain. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Cauldron of Eternity",
+   "x": 0.27,
+   "y": 0.6928571428571428,
+   "typ": "miejsce_mocy",
+   "pozycja_zrodlo": "Mityczny kocioł wskrzeszenia spoczywający w Locthwain; https://mtg.wiki/page/The_Cauldron_of_Eternity. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Castle Embereth",
+   "x": 0.755,
+   "y": 0.6857142857142857,
+   "typ": "twierdza",
+   "pozycja_zrodlo": "Warowny ośrodek i siedziba rady rycerskiej Czerwonego Dworu; https://mtg.wiki/page/Castle_Embereth. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "The Burning Yard",
+   "x": 0.715,
+   "y": 0.7285714285714285,
+   "typ": "arena",
+   "pozycja_zrodlo": "Monumentalny poligon, szranki i areny rycerskich prób ognia (lokacja karty 209ELD); https://mtg.wiki/page/Embereth. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "The Irencrag",
+   "x": 0.795,
+   "y": 0.6571428571428571,
+   "typ": "szczyt",
+   "pozycja_zrodlo": "Mistyczny wulkaniczny głaz, w którym rycerze hartują swe miecze; https://mtg.wiki/page/The_Irencrag. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Tournament Grounds",
+   "x": 0.68,
+   "y": 0.6714285714285714,
+   "typ": "miejsce",
+   "pozycja_zrodlo": "Błonia wielkich turniejów rycerskich Królestwa; https://mtg.wiki/page/Tournament_Grounds. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Castle Garenbrig",
+   "x": 0.74,
+   "y": 0.30714285714285716,
+   "typ": "twierdza",
+   "pozycja_zrodlo": "Wielka twierdza olbrzymów wzniesiona na naturalnym skalnym okapie; https://mtg.wiki/page/Castle_Garenbrig. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "The Great Henge",
+   "x": 0.71,
+   "y": 0.2642857142857143,
+   "typ": "miejsce_mocy",
+   "pozycja_zrodlo": "Starożytny megalityczny portal i kręgi menhirów; https://mtg.wiki/page/The_Great_Henge. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Gnomon Stone",
+   "x": 0.765,
+   "y": 0.2785714285714286,
+   "typ": "miejsce",
+   "pozycja_zrodlo": "Potężny kamień górujący nad tronem króla Yorvo; https://mtg.wiki/page/Garenbrig. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Tuinvale",
+   "x": 0.395,
+   "y": 0.2,
+   "typ": "las",
+   "pozycja_zrodlo": "Pradawny las prastarych drzew, wróżek i dzikich stworzeń; https://mtg.wiki/page/Tuinvale_Treefolk. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "The Heart Land",
+   "x": 0.545,
+   "y": 0.19285714285714287,
+   "typ": "ruina",
+   "pozycja_zrodlo": "Ruiny dawnego serca imperium elfów z czterema piramidami i obeliskami; https://mtg.wiki/page/The_Heart_Land. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Edgewall Inn",
+   "x": 0.37,
+   "y": 0.5642857142857143,
+   "typ": "osada",
+   "pozycja_zrodlo": "Słynna karczma i osada na samej granicy Królestwa i Kniei; https://mtg.wiki/page/Edgewall_Inn. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Stormkeld",
+   "x": 0.89,
+   "y": 0.22142857142857142,
+   "typ": "twierdza",
+   "pozycja_zrodlo": "Podniebny zamek burzowej olbrzymki Beluny Grandsquall; https://mtg.wiki/page/Beluna_Grandsquall. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Witch's Cottage",
+   "x": 0.115,
+   "y": 0.5214285714285715,
+   "typ": "miejsce",
+   "pozycja_zrodlo": "Piernikowa chatka czarownicy pośród zdradliwych bagien i lasów Kniei; https://mtg.wiki/page/Witch%27s_Cottage. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Dynnistan",
+   "x": 0.11,
+   "y": 0.16428571428571428,
+   "typ": "twierdza",
+   "pozycja_zrodlo": "Lodowy zamek Królowej Cieni w odległych północno-zachodnich rubieżach; https://mtg.wiki/page/Dynnistan. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Syr Carenth's Crossing",
+   "x": 0.61,
+   "y": 0.6571428571428571,
+   "typ": "miejsce",
+   "pozycja_zrodlo": "Strategiczny most i przeprawa na trakcie ku Embereth; https://mtg.wiki/page/Eldraine. Rekonstrukcja relacyjna Codexu."
+  }
+ ],
+ "pinezki": [
+  {
+   "karta": "209eld-burning-yard-trainer",
+   "x": 0.715,
+   "y": 0.7286,
+   "pewnosc": "dokladna",
+   "uzasadnienie": "Scena 209ELD: Instruktor szermierki i młody rycerz na piaszczystej arenie przed płonącym torem przeszkód — poligon The Burning Yard przy Czerwonym Dworze Embereth / rycerskich szrankach Królestwa (x: 1430, y: 1020)."
+  }
+ ],
+ "scena": "scena.json",
+ "generator": "tools/mapforge/eldraine-scena-t4.mjs",
+ "silnik": "mapforge atlas; pełna geometria T4 z hydrologią i kompletem kotwic Pięciu Dworów",
+ "zrodlo_fanmapa": null,
+ "poza_zakresem": [
+  "Głębokie, pozawymiarowe enklawy Kniei nieposiadające stałych współrzędnych przestrzennych",
+  "Inwazja Nowej Fyreksji — stan planu w erze klasycznej Dworów"
+ ]
+}

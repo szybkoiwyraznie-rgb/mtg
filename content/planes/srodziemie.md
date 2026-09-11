@@ -45,8 +45,15 @@ miasto-most z czasów Arnoru i Gondoru, po powodzi zniszczone i opuszczone
 (T.E. 2912), ośrodek dawnej Wielkiej Drogi Północ–Południe. W Wojnie
 o Pierścień istnieje już tylko niebezpieczna przeprawa brodem po resztkach
 mostu — to tam, w drodze do Rivendell (T.E. 3018), Boromir stracił konia.
-Dla świata karty znaczy to tyle, że nawet na mapie dziczy zostają szlaki
-i przeprawy, o których wie każdy przewodnik — i każdy zwiadowca.
+Na północ od Enedwaithu rozciąga się bezkresny **Eriador** — rozległa
+kraina między Górami Błękitnymi a Górami Mglistymi, dawniej serce
+północnego królestwa Arnoru, w Trzeciej Erze w dużej mierze opustoszała
+dzicz. W jej zachodniej części leży spokojne **Shire** zamieszkane przez
+hobbitów; poza jego granicami rozciągają się pofałdowane wzgórza i wrzosowiska,
+przez które wiodą niebezpieczne nocne szlaki niziołków, co ukazuje
+[[612blb-crumb-and-get-it|Crumb and Get It]]. W sercu Gór Mglistych kryje
+się z kolei podziemna **Moria** (Khazad-dûm), gdzie rozegrał się upadek
+Gandalfa z Balrogiem w [[257ltr-lash-of-the-balrog|Lash of the Balrog]].
 
 ## Ludy
 
@@ -122,7 +129,11 @@ Białą Ręką, wysyłana przeciw Rohanowi.
   CC-BY-4.0) — otwórz przez przycisk powyżej lub trasę
   `#/mapa/srodziemie`.
 - **Karty kolekcji:** [[1ltr-dunland-crebain|Dunland Crebain]] (LTR) —
-  crebainy, zwiad Wojny o Pierścień z ojcowizną w Dunlandzie.
+  crebainy, zwiad Wojny o Pierścień z ojcowizną w Dunlandzie;
+  [[257ltr-lash-of-the-balrog|Lash of the Balrog]] (LTR) — starcie
+  z Balrogiem na Moście Khazad-dûm w Morii;
+  [[612blb-crumb-and-get-it|Crumb and Get It]] (BLB) — nocna wędrówka
+  hobbitów przez wzgórza Eriadoru i dar chleba podróżnego.
 
 ## Źródła
 

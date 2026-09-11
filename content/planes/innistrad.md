@@ -49,17 +49,24 @@ W Thraben wznosi się **Katedra Avacyn**, a w jej trójkątnym dziedzińcu
 stoi Helvault. Na południe ciągnie się **Nearheath** z parafiami
 winnic, lasu i skał (wsie **Hanweir**, **Estwald**), a dalej
 **Moorland** — największa i najgroźniejsza parafia, z wsią **Trostad**
-przy granicy Kessigu. Ludzi jest tu najwięcej, więc i **grafów** —
-cmentarzy — jest najwięcej, a wraz z nimi geistów i ghuli.
+przy granicy Kessigu. W kaplicach prowincji uświęciciele
+wiążą wrogów w eteryczne klatki snu, co ukazuje
+[[181avr-spectral-prison|Spectral Prison]]. W wiejskich gospodarstwach
+Gavony parobkowie z rodu Dire-strain skrywają pod ludzką skórą
+monstrualną bestię, terroryzując podwórza pod pełnią księżyca
+([[118mid-dire-strain-brawler|Dire-Strain Brawler]]). Ludzi jest tu najwięcej, więc
+i **grafów** — cmentarzy — jest najwięcej, a wraz z nimi geistów i ghuli.
 
 **Kessig** (zachód) — kraina wiecznej jesieni i wielkiego lasu
 **Ulvenwald**, zwanego Mglistym Borem. Ludzi mało, wilkołaków dużo.
+Watahę Hordy Krallen wędrującą pod ludzką postacią na skraj osad
+ukazuje [[171isd-grizzled-outcasts|Grizzled Outcasts]].
 **Hollowhenge** to dawna stolica prowincji, **Avabruck**, którą
 howlpacki zniszczyły doszczętnie; nazwa zmieniła się wraz z jej losem.
 Wsie **Lambholt** i **Gatstaf** żyją w rytmie pełni. Na południu leży
 **Devils' Breach** — kessigijskie wejście do podziemi, rzadko używane
 przez cokolwiek poza garstką diabłów, dopóki po powrocie Avacyn nie
-otworzyło się szerzej.
+otworzyło się szerzej (gdzie wyprawę katarów prowadzi [[544avr-thraben-valiant|Thraben Valiant]]).
 
 **[[stensia|Stensia]]** (północ) — ciemne góry **Geier Reach**, wieczna mgła
 i wampirze rody w izolowanych dworach. Prowadzą tu trzy przełęcze:
@@ -70,7 +77,8 @@ Pass** — jedyne wejście od Kessigu, obserwowane przez **Falkenrathów**
 brama do świata demonów i diabłów.
 
 **Nephalia** (wschód i wybrzeże) — mgliste porty u ujść rzek, srebrne
-plaże i bagna **Morkrut**. **Havengul** jest największym z jej miast;
+plaże i bagna **Morkrut**. **Havengul** jest największym z jej miast (gdzie
+nocne badania nad ludzką naturą prowadzi [[309isd-civilized-scholar|Civilized Scholar]]);
 w **Ulm** pracuje nekroalchemik **Ludevic**, a w samotnej wieży nad
 wybrzeżem astronom **Jenrik** dowodzi, że księżyc jest srebrną
 pustynią.

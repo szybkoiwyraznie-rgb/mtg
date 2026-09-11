@@ -8,7 +8,7 @@
  * Każda reguła tu zwraca PROBLEM (string), który build/test raportuje.
  */
 
-import { SLUG_RE, hrefDlaSlug } from './links.js';
+import { SLUG_RE, hrefDlaSlug, slugify } from './links.js';
 
 export const TYPY_STRON = ['karta', 'haslo', 'plan'];
 
@@ -77,8 +77,8 @@ export function walidujStrone(strona, ctx) {
 
   if (strona.typ === 'karta') {
     if (!strona.imgId || typeof strona.imgId !== 'string') p.push(`${gdzie}: karta bez imgId`);
-    else if (!strona.slug.startsWith(strona.imgId.toLowerCase() + '-')) {
-      p.push(`${gdzie}: slug karty musi zaczynać się od imgId (${strona.imgId.toLowerCase()}-)`);
+    else if (!strona.slug.startsWith(slugify(strona.imgId) + '-')) {
+      p.push(`${gdzie}: slug karty musi zaczynać się od imgId (${slugify(strona.imgId)}-)`);
     }
     if (!ctx.plany.has(strona.plan)) p.push(`${gdzie}: plan "${strona.plan}" nie ma strony w content/planes/`);
     const kolory = strona.kolory ?? [];

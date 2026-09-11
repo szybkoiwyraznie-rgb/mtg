@@ -1,3 +1,96 @@
+## 2026-09-11 01:45 — Nowy plan: Eldraine (mapa T4) + nowa karta: Burning-Yard Trainer (Embereth, The Burning Yard)
+
+- **Nowy plan:** [[eldraine|Eldraine]] — baśniowy i rycerski plan inspirowany legendami arturiańskimi i baśniami braci Grimm. Podział na cywilizowane Królestwo (*The Realm*) zorganizowane wokół Pięciu Dworów (Ardenvale, Vantress, Locthwain, Embereth, Garenbrig) oraz bezkresne Knieje (*The Wilds*) pełne magii Fae, czarownic, gigantów i pradawnych reliktów elfów.
+- **Wektorowa mapa Eldraine (T4):**
+  - Autorska rekonstrukcja wektorowa relacji przestrzennych w silniku Mapforge (`maps/eldraine/scena.json`, `podklad.svg`, `map.json`) zgodnie z drabiną preferencji ADR 0038 i kanonem *Planeswalker's Guide to Eldraine*.
+  - Geometria: Wyżyny Ardenvale w centrum, jezioro Lochmere z wyspą Vantress na północnym zachodzie, lewitujące Locthwain na moczarach południowo-zachodnich, wulkaniczny płaskowyż Embereth i poligon The Burning Yard na południowym wschodzie, Dolina Garen z Wielkim Kręgiem na północnym wschodzie oraz otaczające Knieje (The Wilds, las Tuinvale, ruiny Heart Land, podniebne zamczysko Stormkeld, chatka wiedźmy i karczma Edgewall Inn).
+  - Hydrologia i etykiety zgodne z regułami Codexu (0 błędów w audycie).
+- **Materializacja karty:**
+  - **[[209eld-burning-yard-trainer|Burning-Yard Trainer]]** (`209ELD`, wydanie `ELD` / *Throne of Eldraine*, plan [[eldraine|Eldraine]]) — piaszczysta arena turniejowa Płonącego Dziedzińca (*The Burning Yard*) pod zamkowymi wieżami; doświadczony instruktor z płonącym drewnianym mieczem treningowym uspokaja kasztanowego konia, asystując młodemu adeptowi w czerwonym wamsie przed torem płonących przeszkód; egzamin ognia jako ostateczna próba odwagi wpajająca tratowanie i pośpiech (`{4}{R}`, 3/3 Human Knight, Trample, Haste, wejście dające innemu Rycerzowi +2/+2, Trample i Haste).
+- **Wpis kolekcji i snapshot Scryfall:**
+  - `collection/entries/209eld-burning-yard-trainer.md` (Fabuła właściciela zapisana verbatim, L16).
+  - `scryfall/209eld-burning-yard-trainer.json` (pełny snapshot Scryfall ELD #117 z metadanymi pochodzenia).
+- **Pinezka i mapa Eldraine:**
+  - Pinezka karty osadzona w lokacji The Burning Yard (`maps/eldraine/map.json`, pewność `obiekt`, `x: 0.715, y: 0.7286`).
+  - Strona planu [[eldraine|Eldraine]] zsynchronizowana z nową mapą i odsyłaczem do karty.
+
+## 2026-09-11 01:30 — Nowa karta: Silvanus's Invoker (Zapomniane Krainy, Wysoki Las)
+
+- **Materializacja karty:**
+  - **[[539clb-silvanus-s-invoker|Silvanus's Invoker]]** (`539CLB`, wydanie `CLB` / *Commander Legends: Battle for Baldur's Gate*, plan [[forgotten-realms|Zapomniane Krainy]]) — smokowiec-druid w prastarych ostępach Wysokiego Lasu (*High Forest*) wsuwa szpony w glebę, wzywając w imię Silvanusa (Dębowego Ojca) potężnego żywiołaka ziemi i drewna do bezwzględnej obrony kniei przed intruzami (`{2}{G}`, 3/2 Dragon Druid, zdolność Conjure Elemental `{8}` budząca ląd jako żywiołaka 8/8 z tratowaniem i pośpiechem).
+- **Wpis kolekcji i snapshot Scryfall:**
+  - `collection/entries/539clb-silvanus-s-invoker.md` (Fabuła właściciela zapisana verbatim, L16).
+  - `scryfall/539clb-silvanus-s-invoker.json` (pełny snapshot Scryfall CLB #254 z metadanymi pochodzenia).
+- **Pinezka i mapa Zapomnianych Krain:**
+  - Dodana kotwica i pinezka dla regionu Wysoki Las (`maps/forgotten-realms/map.json`, pewność `region`, `x: 0.215, y: 0.175`).
+  - Strona planu [[forgotten-realms|Zapomniane Krainy]] uzupełniona o opis Wysokiego Lasu i odsyłacz do nowej karty.
+
+## 2026-09-11 01:20 — Nowa karta: Kor Cartographer (Zendikar, Ondu / Makindi)
+
+- **Materializacja karty:**
+  - **[[537cmr-kor-cartographer|Kor Cartographer]]** (`537CMR`, wydanie `CMR` / *Commander Legends*, plan [[zendikar|Zendikar]]) — zwiadowczyni korów na linach zwisająca z krawędzi lewitującego płaskowyżu nad kanionami Makindi na Ondu; precyzyjne nanoszenie ruchomych skał na pergamin wbrew wiatrowi i odnajdywanie stabilnych równin dla karawany (`{3}{W}`, 2/2 Kor Scout, wejście przeszukujące i wystawiające Równinę).
+- **Wpis kolekcji i snapshot Scryfall:**
+  - `collection/entries/537cmr-kor-cartographer.md` (Fabuła właściciela zapisana verbatim, L16).
+  - `scryfall/537cmr-kor-cartographer.json` (pełny snapshot Scryfall CMR #30 z metadanymi pochodzenia).
+- **Pinezka i mapa Zendikaru:**
+  - Dodana pinezka na kotwicy Makindi Trenches (`maps/zendikar/map.json`, pewność `dokladna`, `x: 0.28, y: 0.8429`).
+  - Strona planu [[zendikar|Zendikar]] uzupełniona o odsyłacz do nowej karty w sekcji Ondu i podsumowaniu.
+
+## 2026-09-11 01:10 — Nowa karta: Dire-Strain Brawler (Innistrad, Gavony)
+
+- **Materializacja karty:**
+  - **[[118mid-dire-strain-brawler|Dire-Strain Brawler]]** (`118MID`, wydanie `MID` / *Innistrad: Midnight Hunt*, plan [[innistrad|Innistrad]]) — nocna wiejska farma w Gavony pod pełnią księżyca; pracowity parobek (dzienna strona *Tireless Hauler*) zrzuca ludzką postać i czwartą parę butów przy stodole, stając się monstrualnym wilkołakiem rodu Dire-strain o ciele 6/6 z czujnością (*Vigilance*, *Nightbound*), spokojnie dominującym podwórze pośród zmowy milczenia zastraszonych gospodarzy.
+- **Wpis kolekcji i snapshot Scryfall:**
+  - `collection/entries/118mid-dire-strain-brawler.md` (Fabuła właściciela zapisana verbatim, L16).
+  - `scryfall/118mid-dire-strain-brawler.json` (pełny snapshot Scryfall MID #203 dla karty transformującej z widokiem twarzy nocnej).
+- **Pinezka i mapa Innistradu:**
+  - Dodana pinezka na rolniczym obszarze prowincji Gavony (`maps/innistrad/map.json`, pewność `region`, `x: 0.59, y: 0.449`).
+  - Strona planu [[innistrad|Innistrad]] zaktualizowana o odsyłacz do nowej karty.
+
+## 2026-09-11 01:00 — Nowa karta: Crumb and Get It (Śródziemie, Eriador)
+
+- **Materializacja karty:**
+  - **[[612blb-crumb-and-get-it|Crumb and Get It]]** (`612BLB`, wydanie `BLB` / *Bloomburrow*, transpozycja do planu [[srodziemie|Śródziemie]]) — hobbit podróżujący nocą przez wzgórza Eriadoru powstrzymuje wygłodniałego drapieżnika bochenkiem chleba podróżnego; dar gościnności i prowiantu rodzący świetlistą aurę niewrażliwości na ciosy (`{W}`, Instant, mechanika Gift a Food: +2/+2 i niezniszczalność).
+- **Wpis kolekcji i snapshot Scryfall:**
+  - `collection/entries/612blb-crumb-and-get-it.md` (Fabuła właściciela zapisana verbatim, L16).
+  - `scryfall/612blb-crumb-and-get-it.json` (pełny snapshot Scryfall BLB #8 z powiązanym tokenem Food i metadanymi).
+- **Pinezka i mapa Śródziemia:**
+  - Dodana pinezka na wzgórzach Eriadoru (`maps/srodziemie/map.json`, pewność `region`, `x: 0.28, y: 0.30`).
+  - Strona planu [[srodziemie|Śródziemie]] wzbogacona o akapit o Eriadorze oraz listę kart.
+
+## 2026-09-11 00:50 — Nowa karta: Ghirapur Gearcrafter (Kaladesh, Ghirapur)
+
+- **Materializacja karty:**
+  - **[[596ori-ghirapur-gearcrafter|Ghirapur Gearcrafter]]** (`596ORI`, wydanie `ORI` / *Magic Origins*, plan [[kaladesh|Kaladesh]]) — mistrz rzemiosła w nasłonecznionym warsztacie dzielnicy Embraal w Ghirapurze, tworzący filigranowego thoptera napędzanego czystym eterem (`{2}{R}`, 2/1 Human Artificer tworzący przy wejściu żeton 1/1 Thopter z lataniem, etos perfekcji wymagany przez Konsulat).
+- **Wpis kolekcji i snapshot Scryfall:**
+  - `collection/entries/596ori-ghirapur-gearcrafter.md` (Fabuła właściciela zapisana verbatim, L16).
+  - `scryfall/596ori-ghirapur-gearcrafter.json` (pełny snapshot Scryfall ORI #149 z metadanymi pochodzenia).
+- **Pinezka i mapa Kaladeshu:**
+  - Dodana pinezka w dzielnicy Embraal w Ghirapurze (`maps/kaladesh/map.json`, pewność `region`, `x: 0.6723, y: 0.6294`).
+  - Strona planu [[kaladesh|Kaladesh]] zaktualizowana o nową kartę.
+
+## 2026-09-11 00:40 — Nowa karta: Spectral Prison (Innistrad, Gavony)
+
+- **Materializacja karty:**
+  - **[[181avr-spectral-prison|Spectral Prison]]** (`181AVR`, wydanie `AVR` / *Avacyn Restored*, plan [[innistrad|Innistrad]]) — uśpiony wędrowiec w podróżnym płaszczu na posadzce gotyckiej kaplicy w Gavony, otoczony eteryczną kopułą ze światła i śpiących geistów; zaklęcie Aury Kościoła Avacyn (`{1}{U}`, paraliż/uśpienie woli, pęknięcie klatki przy zewnętrznej interwencji magicznej).
+- **Wpis kolekcji i snapshot Scryfall:**
+  - `collection/entries/181avr-spectral-prison.md` (Fabuła właściciela zapisana verbatim, L16).
+  - `scryfall/181avr-spectral-prison.json` (pełny snapshot Scryfall AVR #75 z metadanymi pochodzenia).
+- **Pinezka i mapa Innistradu:**
+  - Dodana pinezka na prowincji Gavony (`maps/innistrad/map.json`, pewność `region`, `x: 0.59, y: 0.449`).
+  - Strona planu [[innistrad|Innistrad]] zaktualizowana o nową kartę.
+
+## 2026-09-11 00:30 — Nowa karta: Grizzled Outcasts (Innistrad, Kessig)
+
+- **Materializacja karty:**
+  - **[[171isd-grizzled-outcasts|Grizzled Outcasts]]** (`171ISD`, wydanie `ISD` / *Innistrad*, plan [[innistrad|Innistrad]]) — czterech wędrownych myśliwych na obrzeżach kessigijskiej osady, obserwowanych przez zaryglowane okno; znoszone skóry, kusza i sękaty kij maskujące drapieżne cechy Hordy Krallen (*Krallenhorde*). Niezależna Karta Katalogowa przedniej strony DFC (4/4 Human Werewolf za `{4}{G}`, mechanika ciszy nocy i zrzucania ludzkiego obuwia).
+- **Wpis kolekcji i snapshot Scryfall:**
+  - `collection/entries/171isd-grizzled-outcasts.md` (Fabuła właściciela zapisana verbatim, L16).
+  - `scryfall/171isd-grizzled-outcasts.json` (pełny snapshot Scryfall ISD #185 z metadanymi pochodzenia).
+- **Pinezka i mapa Innistradu:**
+  - Dodana pinezka na prowincji Kessig (`maps/innistrad/map.json`, pewność `region`, `x: 0.41, y: 0.727`).
+  - Strona planu [[innistrad|Innistrad]] powiązana z nową kartą.
+
 ## 2026-09-11 00:20 — Nowa karta: Simian Simulacrum (Wojna Braci, Dominaria)
 
 - **Materializacja karty:**

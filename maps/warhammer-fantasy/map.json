@@ -15,6 +15,32 @@
    "y": 0.581
   },
   {
+   "nazwa": "The Great Forest",
+   "notka": "Wielki Las w sercu Imperium (Talabecland / Ostermark / Osterlund) — pierwotna, mroczna puszcza będąca matecznikiem stad Dzieci Chaosu i minotaurów pod znakiem Głazu Stada. Kotwica pinezki 83MM2.",
+   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/The_Great_Forest + ikona stada minotaurów/zwierzoludzi oraz etykieta „THE GREAT FOREST\" na rastrze; odczyt z mastera px (3520, 4940), 2026-09-11",
+   "px_t1": [
+    3520,
+    4940
+   ],
+   "typ": "region",
+   "uklad": "złoty T1 — odczyt z mastera",
+   "x": 0.4054,
+   "y": 0.3878
+  },
+  {
+   "nazwa": "Drakwald Forest",
+   "notka": "Las Drakwald w Middenlandzie i Nordlandzie — owiana ponurą sławą puszcza zwierzoludzi i potworów Chaosu",
+   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Drakwald_Forest + etykieta „DRAKWALD FOREST\" na rastrze; odczyt z mastera px (2680, 4400), 2026-09-11",
+   "px_t1": [
+    2680,
+    4400
+   ],
+   "typ": "region",
+   "uklad": "złoty T1 — odczyt z mastera",
+   "x": 0.3087,
+   "y": 0.3454
+  },
+  {
    "nazwa": "Worlds Edge Mountains",
    "notka": "wielkie pasmo na wschodniej granicy Starego Świata; wschodnie stoki przejęte przez zielonoskórych w Wojnach Goblinów",
    "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Worlds_Edge_Mountains + etykieta „WORLDS EDGE MOUNTAINS\" na rastrze (pasmo wzdłuż wschodniej krawędzi); odczyt z podglądu L0",
@@ -53,6 +79,14 @@
    "y": 0.581,
    "pewnosc": "region",
    "uzasadnienie": "Fabuła właściciela: bezimienne, błotniste pole bitwy zielonoskórych — ork w zardzewiałej kolczudze pęczniejący od czerwonej magii Waaagh!, karmiony przez szamana. Dzieje świata nie wskazują jednego miasta: kanoniczną ojcowizną orków są Badlands (Lexicanum: „their homeland can be said to be the area known as the Badlands\"), na płd. od Border Princes u wschodnich podnóży Worlds Edge Mountains. Stąd pinezka na środku Badlands (odczyt z mastera px 3700, 7400) i pewność region (ADR 0040: lokalizacja i pewność z lore/Fabuły, nie z druku źródłowego)."
+  },
+  {
+   "karta": "83mm2-gorehorn-minotaurs",
+   "x": 0.4054,
+   "y": 0.3878,
+   "pewnosc": "region",
+   "uzasadnienie": "Zapis opowieści przedstawia trójkę minotaurów-zwierzoludzi gnających przez mroczną iglastą puszczę z woli Głazu Stada. W Starym Świecie matecznikiem stad Dzieci Chaosu i byczych bestii są wielkie, pierwotne puszcze Imperium — przede wszystkim The Great Forest (Wielki Las) w centrum oraz Drakwald na północy. Pinezka stoi na ikonie stada zwierzoludzi w The Great Forest z pewnością region.",
+   "notka": "Epoka Starego Świata — Dzieci Chaosu pędzą przez gęstwiny puszczy, niosąc zniszczenie ludzkim osadom i traktom Imperium."
   }
  ],
  "plan": "warhammer-fantasy",

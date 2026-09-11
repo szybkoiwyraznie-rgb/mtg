@@ -49,6 +49,20 @@ szamanów i czyniąca wojowników dosłownie większymi i silniejszymi. To
 kanon: dla zielonoskórego wiara w to, że *większy i głośniejszy zawsze
 wygrywa*, jest samospełniającą się prawdą świata.
 
+## Zwierzoludzie i Dzieci Chaosu
+
+W głębi mrocznych, nieprzebytych puszcz Starego Świata — przede
+wszystkim w **Wielkim Lesie** (*The Great Forest*) w sercu Imperium
+oraz w lesie **Drakwald** — żyją **Zwierzoludzie** (*Beastmen*),
+zwani Dziećmi Chaosu. Zrodzeni ze spaczenia dawnych er, nie znają
+ludzkiego prawa ani miłosierdzia. Ich centrami kultu są wznoszone
+w ostępach **Głazy Stada** (*Herdstones*), wokół których szamani
+odprawiają krwawe rytuały. Najpotężniejszą formacją uderzeniową
+stad są **Minotaury** (*Bullgors*): potężne bestie z toporami,
+które po zwęszeniu krwi wpadają w morderczy szał. Karta
+[[83mm2-gorehorn-minotaurs|Gorehorn Minotaurs]] ukazuje ich
+niszczycielską szarżę przez bory Imperium.
+
 ## Mapa
 
 `maps/warhammer-fantasy/` — wariant **T1 (rastr z etykietami)**:
@@ -71,6 +85,9 @@ Pinezki na mapie (ADR 0043: tylko karty):
   (Ziemie Jałowe na południe od Starego Świata, ojcowizna
   zielonoskórych), pewność region — scena to bezimienne pole bitwy, nie
   konkretne miasto.
+- **[[83mm2-gorehorn-minotaurs|Gorehorn Minotaurs]]** (83MM2); **The
+  Great Forest** (Wielki Las w sercu Imperium), pewność region —
+  szarża minotaurów Dzieci Chaosu przez ostępy puszczy.
 
 ## Źródła
 
@@ -78,6 +95,9 @@ Pinezki na mapie (ADR 0043: tylko karty):
   goblinoidy Mallus, brak jednej ojczyzny, Badlands jako serce, Waaagh!
   jako migracja-wojna, Wojny Goblinów i utrata Worlds Edge Mountains:
   https://warhammerfantasy.fandom.com/wiki/Greenskins
+- Warhammer Fantasy Wiki, *Beastmen* oraz *Minotaur* — Dzieci Chaosu,
+  Głazy Stada, anatomia i kultura minotaurów (Bullgors):
+  https://warhammerfantasy.fandom.com/wiki/Beastmen
 - Warhammer Fantasy Wiki, *Gork and Mork* — dwaj bogowie-bracia
   zielonoskórych (przemoc sprytna i brutalna):
   https://warhammerfantasy.fandom.com/wiki/Gork_and_Mork

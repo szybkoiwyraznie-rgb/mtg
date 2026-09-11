@@ -73,7 +73,8 @@ Targu Wynalazców), portowy **Bomat** z dokami, Nocnym Targowiskiem
 Gontiego i krętem The Dhund — siecią tuneli pod targiem, w której
 tajni agenci Konsulatu śledzą każdy nielegalny interes, hutniczy
 **Embraal** (dzielnica o antykonsulańskim duchu, z grafitti
-i Sudden Spectacles oraz Gremlin Hovels — opuszczoną, nigdy
+i Sudden Spectacles, w której mistrzowie konstruują thoptery, co
+ukazuje [[596ori-ghirapur-gearcrafter|Ghirapur Gearcrafter]], oraz Gremlin Hovels — opuszczoną, nigdy
 dokończoną fabryką, dziś największym gniazdem gremlinów), tor
 wyścigowy **Ovalchase**, ogrodowy **Greenwheel** z kopułami
 klimatycznymi i „Zoo” konstruktów, elfia rezydencjonalna **Kujar**
