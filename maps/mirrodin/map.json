@@ -348,10 +348,10 @@
   },
   {
    "karta": "347nph-pristine-talisman",
-   "x": 0.465,
-   "y": 0.24,
-   "pewnosc": "region",
-   "uzasadnienie": "Fabuła właściciela: sterylna biała kuźnia-świątynia na Mirrodinie z mlecznobiałym światłem oculusu, w której unosi się czysty talizman z perłowego metalu leczący dotykających go wojowników oporu Mirran. Scena osadzona jest w domenie białego słońca (Razor Fields / tereny Aurioków i leoninów w pobliżu Bladehold i Taj-Nar), gdzie działał bastion mirrańskiego ruchu oporu pod przewodnictwem Elspeth Tirel. Pinezka w rejonie Razor Fields z pewnością region."
+   "x": 0.5,
+   "y": 0.5,
+   "pewnosc": "przyblizona",
+   "uzasadnienie": "Fabuła właściciela wskazuje wyłącznie Mirrodin: sterylną białą kuźnię-świątynię o nieznanym położeniu, w której czysty talizman leczy wojowników oporu. Brak nazwanego regionu lub obiektu; punkt w środku widoku planu jest umownym znacznikiem o pewności przybliżonej i nie przypisuje sceny do żadnej z nazwanych domen mapy."
   }
  ],
  "scena": "scena.json",

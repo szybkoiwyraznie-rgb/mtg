@@ -1,13 +1,13 @@
-## 2026-09-11 03:00 — Nowa karta: Pristine Talisman (Mirrodin, Razor Fields / Biała Kuźnia-Świątynia)
+## 2026-09-11 19:05 — Nowa karta: Pristine Talisman (Mirrodin)
 
 - **Materializacja karty:**
-  - **[[347nph-pristine-talisman|Pristine Talisman]]** (`347NPH`, wydanie `NPH` / *New Phyrexia*, plan [[mirrodin|Mirrodin]]) — sterylna biała kuźnia-świątynia na Razor Fields o mlecznobiałym świetle oculusu; unosi się w niej czysty, symetryczny talizman z perłowego metalu i obsydianowego rdzenia, otoczony liniami energii i symbolem harmonii czterech barw; w zakażonym świecie najeźdźcy artefakt leczy dotykających go wojowników i zasila opór nieskażoną energią (`{3}`, Artefakt ze znakiem wodnym Mirran, `{T}: Dodaj {C}. Otrzymujesz 1 punkt życia`, inskrypcja Elspeth Tirel).
+  - **[[347nph-pristine-talisman|Pristine Talisman]]** (`347NPH`, wydanie `NPH` / *New Phyrexia*, plan [[mirrodin|Mirrodin]]) — sterylna biała kuźnia-świątynia o nieznanym położeniu, rozświetlona mlecznym światłem oculusu; unosi się w niej czysty, symetryczny talizman z perłowego metalu i obsydianowego rdzenia, otoczony liniami energii i symbolem harmonii czterech barw; w zakażonym świecie najeźdźcy artefakt leczy dotykających go wojowników i zasila opór nieskażoną energią (`{3}`, `{T}: Dodaj {C}. Otrzymujesz 1 punkt życia`, inskrypcja Elspeth Tirel).
 - **Wpis kolekcji i snapshot Scryfall:**
   - `collection/entries/347nph-pristine-talisman.md` (Fabuła właściciela zapisana verbatim, L16).
   - `scryfall/347nph-pristine-talisman.json` (pełny snapshot Scryfall NPH #151 z metadanymi pochodzenia).
 - **Pinezka i mapa Mirrodinu:**
-  - Dodana pinezka w rejonie Razor Fields (`maps/mirrodin/map.json`, pewność `region`, `x: 0.465, y: 0.240`).
-  - Strona planu [[mirrodin|Mirrodin]] zaktualizowana o wzmiankę o czystym rzemiośle i nowej karcie.
+  - Dodana przybliżona pinezka planu (`maps/mirrodin/map.json`, `x: 0.500, y: 0.500`); Fabuła nie wskazuje regionu.
+  - Strona planu [[mirrodin|Mirrodin]] zaktualizowana o wzmiankę o czystym rzemiośle i nieznanym położeniu kuźni.
 
 ## 2026-09-11 02:30 — Nowa karta: Disa the Restless (Dominaria, Epoka Lodowcowa / Terisiare)
 

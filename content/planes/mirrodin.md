@@ -148,10 +148,11 @@ różnymi odpowiedziami na tę samą stratę.
 Na takim tle zwrot łuczników ku ciężkiemu orężowi w
 [[488som-carapace-forger|Carapace Forger]] nabiera dodatkowego znaczenia:
 las broni nie tylko ciał mieszkańców, ale kultury, która już raz
-utraciła znaczną część swoich strażników pamięci. Z kolei [[347nph-pristine-talisman|Pristine Talisman]]
-ukazuje nieskalany kunszt mirrańskich kuźni w rejonie Razor Fields:
-perłowy relikt, który leczy obrońców i daje czystą energię,
-przypominając, że wolnej iskry tworzenia nie da się zniszczyć.
+utraciła znaczną część swoich strażników pamięci. Z kolei
+[[347nph-pristine-talisman|Pristine Talisman]] ukazuje nieskalany kunszt
+mirrańskiej kuźni, której dokładnego położenia świadectwo nie
+podaje: perłowy relikt leczy obrońców i daje czystą energię, przypominając,
+że wolnej iskry tworzenia nie da się zniszczyć.
 
 ## Epoki: jedna powierzchnia, potem dziewięć sfer
 
@@ -220,7 +221,7 @@ w `map.json`, werdykt researchu w `zrodlo-research.md`.
   jako miejsce święte, największa odporność na compleation:
   https://mtg.wiki/page/Auriok
 - MTG Wiki, hasło Lacunae — tunele do jądra planu, pięć par
-  lacuna–słońce, magia grawitacyjna, watermark Mirran:
+  lacuna–słońce i magia grawitacyjna:
   https://mtg.wiki/page/Lacunae
 - MTG Wiki, hasło Tangle — miedziany las, Tel-Jilad, Viridia, Radix,
   sąsiedztwa: https://mtg.wiki/page/Tangle

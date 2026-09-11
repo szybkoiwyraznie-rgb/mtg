@@ -10,7 +10,7 @@ tagi: [rzemioslo, phyrexia, magia]
 materializacja: 2026-09-11
 pinezka:
   mapa: mirrodin
-  pewnosc: region
+  pewnosc: przyblizona
 ---
 
 ## Kronika Lore
@@ -61,10 +61,9 @@ twórczości nie da się zniewolić.
 Sylvoków, Vulshoków i Neuroków walczących o ocalenie resztek swojej
 tożsamości przed całkowitym wchłonięciem przez machiny najeźdźcy.
 
-**Biała Kuźnia-Świątynia na Razor Fields** — ukryte sanktuarium
-w rejonie Pól Żyletek, gdzie pod mlecznym światłem białego słońca
-Mirrodinu obrońcy pielęgnowali prastare tradycje kowalstwa nieskalanego
-olejem.
+**Kuźnia-świątynia ruchu oporu** — sterylne sanktuarium opisane
+w świadectwie sceny, w którym Mirranie chronią kunszt nieskalany olejem.
+Jej położenie na powierzchni planu pozostaje nieznane.
 
 ## Nazwa Karty
 
@@ -92,7 +91,7 @@ Inskrypcja:
 
 Słowa Elspeth Tirel definiują filozoficzny fundament oporu przeciw
 Phyrexii. Nawet jeśli najeźdźcy unicestwią warsztaty, zniszczą kuźnie
-i skompletują samych mistrzów rzemiosła, sama iskra wolnego tworzenia
+i zgładzą samych mistrzów rzemiosła, sama iskra wolnego tworzenia
 pozostaje poza zasięgiem biomechanicznego dogmatu.
 
 ## Transpozycja
@@ -100,22 +99,21 @@ pozostaje poza zasięgiem biomechanicznego dogmatu.
 Scena jest w pełni rdzenna dla [[mirrodin|Mirrodinu]] w dramatycznym
 okresie wojny o przetrwanie planu:
 
-- **Perłowy metal i obsydianowy rdzeń** — surowce nawiązujące do
-  szlachetnych stopów Aurioków i leonińskich kuźni Taj-Nar.
+- **Perłowy metal i obsydianowy rdzeń** — nieskażone tworzywo kontrastuje
+  z materią przeżartą phyrexiańskim olejem.
 - **Sterylna biel i oculus** — scenografia łącząca sakralną architekturę
   bieli z obronnym azylem przed zepsuciem rozlewającym się z innych domen.
 - **Harmonijny punkt czterech barw** — symbol wielobarwnej koalicji
   mirrańskich ras zjednoczonych przeciw monokulturowemu najeźdźcy.
-- **Znak wodny oporu** — relikt nosi symbol Mirran, stanowiąc
-  materialną przeciwwagę dla wszechobecnych symboli Phyrexii.
 
 ## Na Mapie
 
-Pinezka o pewności **region**: `#/mapa/mirrodin?pin=347nph-pristine-talisman`
-— północny region **Razor Fields**, ukryte sanktuarium w strefie oporu
-Mirran w pobliżu **Bladehold** i **Taj-Nar**.
+Świadectwo pozwala wskazać wyłącznie powierzchnię **Mirrodinu**.
+Nie nazywa regionu, osady ani konkretnego bastionu, dlatego położenie
+kuźni-świątyni pozostaje **przybliżone** i nie jest utożsamiane z żadną
+z nazwanych domen mapy.
 
-[Pristine Talisman na mapie Mirrodinu](#/mapa/mirrodin?pin=347nph-pristine-talisman)
+[Pinezka przybliżona na mapie Mirrodinu](#/mapa/mirrodin?pin=347nph-pristine-talisman)
 
 ## Mechanika jako Opowieść
 
@@ -138,8 +136,7 @@ Mechanika karty idealnie odzwierciedla działanie talizmanu:
   i obsydianowego rdzenia; białe linie energii i świetlisty symbol
   zbiegających się barw; leczenie w świecie zakażonym Phyrexią.
 - Scryfall, *Pristine Talisman* (NPH/151) — koszt `{3}`, typ Artifact,
-  zdolność `{T}: Add {C}. You gain 1 life`, znak wodny Mirran,
-  wydanie *New Phyrexia*:
+  zdolność `{T}: Add {C}. You gain 1 life` i wydanie *New Phyrexia*:
   <https://scryfall.com/card/nph/151/pristine-talisman>
 - MTG Wiki, hasło *New Phyrexia* oraz *Mirran* — historia oporu,
   rola Elspeth Tirel, enklawy Aurioków i kunszt czystego rzemiosła:
