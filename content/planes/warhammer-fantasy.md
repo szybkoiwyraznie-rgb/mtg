@@ -35,7 +35,7 @@ napędza też prymitywną wiarę zielonoskórych.
 
 ## Zielonoskórzy i Waaagh!
 
-Bohaterami pierwszej sceny są **Zielonoskórzy** (*Greenskins*) —
+Bohaterami scen są **Zielonoskórzy** (*Greenskins*) —
 zbiorcza nazwa **Orków i Goblinów** oraz pokrewnych goblinoidów. Nie
 pochodzą z jednej krainy: żyją w dzikich zakątkach całego świata, lecz
 ich sercem są **Badlands** (Ziemie Jałowe) na południe od Starego Świata
@@ -45,9 +45,14 @@ brutalnych bogów-braci, **Gorka i Morka** (przemoc sprytna i przemoc
 brutalna). Ich religią i militarną machiną jest **Waaagh!** — narastająca
 fala plemiennej migracji i wojny, w której psychiczna energia tysięcy
 orków materializuje się jako **czerwona magia Waaagh!**, karmiona przez
-szamanów i czyniąca wojowników dosłownie większymi i silniejszymi. To
-kanon: dla zielonoskórego wiara w to, że *większy i głośniejszy zawsze
-wygrywa*, jest samospełniającą się prawdą świata.
+szamanów i czyniąca wojowników dosłownie większymi i silniejszymi.
+
+Wśród goblinów prym wiodą podstępne **Nocne Gobliny** (*Night Goblins*),
+w tym słynne **Plemię Krzywego Księżyca** (*Crooked Moon Tribe*)
+związane z ruinami twierdzy Karak Osiem Szczytów. Gobliny te nadrabiają
+brak siły bezwzględnym sprytem, zastawianiem pułapek oraz wykorzystywaniem
+wojennych błaznów do dywersji i paraliżowania wrogiej obrony, co ukazuje
+świadectwo [[312m13-goblin-battle-jester|Goblin Battle Jester]].
 
 ## Zwierzoludzie i Dzieci Chaosu
 
@@ -88,13 +93,20 @@ Pinezki na mapie (ADR 0043: tylko karty):
 - **[[83mm2-gorehorn-minotaurs|Gorehorn Minotaurs]]** (83MM2); **The
   Great Forest** (Wielki Las w sercu Imperium), pewność region —
   szarża minotaurów Dzieci Chaosu przez ostępy puszczy.
+- **[[312m13-goblin-battle-jester|Goblin Battle Jester]]** (312M13);
+  **Worlds Edge Mountains** (Góry Krańca Świata u stóp Karak Osiem Szczytów),
+  pewność region — wojenny trefniś plemienia Krzywego Księżyca tańczący
+  na półce skalnej nad wąwozem.
 
 ## Źródła
 
-- Warhammer Fantasy Wiki, *Greenskins* — Orkowie i Gobliny jako
+- Warhammer Fantasy Wiki, *Greenskins* oraz *Night Goblin* — Orkowie i Gobliny jako
   goblinoidy Mallus, brak jednej ojczyzny, Badlands jako serce, Waaagh!
   jako migracja-wojna, Wojny Goblinów i utrata Worlds Edge Mountains:
   https://warhammerfantasy.fandom.com/wiki/Greenskins
+- Lexicanum (WHFB), *Crooked Moon* oraz *Karak Eight Peaks* — historia
+  plemienia Krzywego Księżyca, taktyka Nocnych Goblinów pod wodzą Skarsnika:
+  https://whfb.lexicanum.com/wiki/Crooked_Moon
 - Warhammer Fantasy Wiki, *Beastmen* oraz *Minotaur* — Dzieci Chaosu,
   Głazy Stada, anatomia i kultura minotaurów (Bullgors):
   https://warhammerfantasy.fandom.com/wiki/Beastmen

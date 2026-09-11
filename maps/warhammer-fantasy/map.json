@@ -50,6 +50,15 @@
    "y": 0.55
   },
   {
+   "nazwa": "Karak Eight Peaks (Karak Osiem Szczytów)",
+   "notka": "zrujnowana krasnoludzka twierdza w południowych Górach Krańca Świata, matecznik Nocnych Goblinów z plemienia Krzywego Księżyca (Crooked Moon) pod wodzą Skarsnika. Kotwica pinezki 312M13.",
+   "pozycja_zrodlo": "kanon: https://whfb.lexicanum.com/wiki/Karak_Eight_Peaks + etykieta „KARAK EIGHT PEAKS\" w pasmie Worlds Edge Mountains; odczyt z podglądu L0",
+   "typ": "ruina",
+   "uklad": "złoty T1 — odczyt z podglądu L0",
+   "x": 0.72,
+   "y": 0.58
+  },
+  {
    "nazwa": "The Border Princes",
    "notka": "luźne włości ludzi między Imperium/Tileą a Badlands — bufor na północ od ojcowizny orków",
    "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Border_Princes + etykieta „THE BORDER PRINCES\" na rastrze (na płn. od Badlands); odczyt z podglądu L0",
@@ -87,6 +96,13 @@
    "pewnosc": "region",
    "uzasadnienie": "Zapis opowieści przedstawia trójkę minotaurów-zwierzoludzi gnających przez mroczną iglastą puszczę z woli Głazu Stada. W Starym Świecie matecznikiem stad Dzieci Chaosu i byczych bestii są wielkie, pierwotne puszcze Imperium — przede wszystkim The Great Forest (Wielki Las) w centrum oraz Drakwald na północy. Pinezka stoi na ikonie stada zwierzoludzi w The Great Forest z pewnością region.",
    "notka": "Epoka Starego Świata — Dzieci Chaosu pędzą przez gęstwiny puszczy, niosąc zniszczenie ludzkim osadom i traktom Imperium."
+  },
+  {
+   "karta": "312m13-goblin-battle-jester",
+   "x": 0.72,
+   "y": 0.58,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła właściciela: czerwono-brązowa skalna półka nad wąwozem w domenie plemienia Krzywego Księżyca (Crooked Moon) — wojenny trefniś w asymetrycznym stroju z kości odwraca uwagę wrogów groteskowym tańcem na krawędzi urwiska. Kanonicznym matecznikiem plemienia są Góry Krańca Świata wokół Karak Osiem Szczytów (Karak Eight Peaks). Pinezka stoi w rejonie południowych Worlds Edge Mountains z pewnością region."
   }
  ],
  "plan": "warhammer-fantasy",

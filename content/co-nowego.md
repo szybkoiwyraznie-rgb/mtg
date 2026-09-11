@@ -1,3 +1,14 @@
+## 2026-09-11 02:00 — Nowa karta: Goblin Battle Jester (Warhammer Fantasy, Góry Krańca Świata)
+
+- **Materializacja karty:**
+  - **[[312m13-goblin-battle-jester|Goblin Battle Jester]]** (`312M13`, wydanie `M13` / *Magic 2013*, plan [[warhammer-fantasy|Warhammer Fantasy]]) — czerwono-brązowa skalista półka nad wąwozem w Górach Krańca Świata (*Worlds Edge Mountains*); wojenny trefniś z plemienia Krzywego Księżyca (*Crooked Moon*) w asymetrycznym stroju z kości i peruce odwraca uwagę wrogów groteskowym, prowokacyjnym tańcem na krawędzi urwiska, uniemożliwiając im uformowanie muru tarcz i otwierając drogę do zabójczego uderzenia większych goblinów i orków od tyłu (`{3}{R}`, 2/2 Goblin, wyzwalana zdolność: przy rzuceniu czerwonego zaklęcia docelowy stwór nie może blokować w tej turze).
+- **Wpis kolekcji i snapshot Scryfall:**
+  - `collection/entries/312m13-goblin-battle-jester.md` (Fabuła właściciela zapisana verbatim, L16).
+  - `scryfall/312m13-goblin-battle-jester.json` (pełny snapshot Scryfall M13 #135 z metadanymi pochodzenia).
+- **Pinezka i mapa Warhammer Fantasy:**
+  - Dodana kotwica Karak Osiem Szczytów oraz pinezka w paśmie Worlds Edge Mountains (`maps/warhammer-fantasy/map.json`, pewność `region`, `x: 0.720, y: 0.580`).
+  - Strona planu [[warhammer-fantasy|Warhammer Fantasy]] zaktualizowana o opis Nocnych Goblinów, plemienia Krzywego Księżyca i odsyłacz do nowej karty.
+
 ## 2026-09-11 01:45 — Nowy plan: Eldraine (mapa T4) + nowa karta: Burning-Yard Trainer (Embereth, The Burning Yard)
 
 - **Nowy plan:** [[eldraine|Eldraine]] — baśniowy i rycerski plan inspirowany legendami arturiańskimi i baśniami braci Grimm. Podział na cywilizowane Królestwo (*The Realm*) zorganizowane wokół Pięciu Dworów (Ardenvale, Vantress, Locthwain, Embereth, Garenbrig) oraz bezkresne Knieje (*The Wilds*) pełne magii Fae, czarownic, gigantów i pradawnych reliktów elfów.
