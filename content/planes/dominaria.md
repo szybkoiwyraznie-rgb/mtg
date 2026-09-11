@@ -29,7 +29,12 @@ po nim żadna wola nie zginie czasu, a Dominaria wchodzi w erę, w której
 mierzy ją kalendarz AR (po Mendingu) i spory planeswalkerów, nie bogowie.
 Karta [[40usg-expunge|Expunge]] pochodzi z samego serca inwazji:
 Benalia pod rządami koalicji, rycerstwo Serran walczy z czarną magią
-wroga.
+wroga. Z kolei [[362bro-simian-simulacrum|Simian Simulacrum]] ukazuje
+relikt dawniejszej epoki: mechaniczny konstrukt w opuszczonym warsztacie
+lasu Argoth, który nocami naprawia towarzysza, nie wiedząc o końcu Wojny Braci.
+Epokę Lodowcową reprezentuje z kolei zwiadowczyni [[531m3c-disa-the-restless|Disa the Restless]],
+która na zasypanych śniegiem pustkowiach Terisiare tropi żerujące bestie
+i ostrzega ludzkie królestwo Kjeldoru.
 
 ## Geografia
 
@@ -79,8 +84,10 @@ pierwszy render to obraz FHD (L0), a od progu zoomu 2.5 dołączają
 **kafelki L1** (16×11 po 512 px z mastera) — deep-zoom bez skokowej
 nakładki: master jest na tyle duży, że toponimia czytelnego detalu
 jest w samej bazie (nakładki L2 z 2026-09-08 nie ma — decyzja
-właściciela, ADR 0041). Pinezka: [[40usg-expunge|Expunge]] — Katedra
-Serran na Równinach Sursi, pewność region.
+właściciela, ADR 0041). Pinezki: [[40usg-expunge|Expunge]] — Katedra
+Serran na Równinach Sursi (pewność region); [[362bro-simian-simulacrum|Simian Simulacrum]]
+— wyspa Argoth u wybrzeży Terisiare (pewność region); [[531m3c-disa-the-restless|Disa the Restless]]
+— północne Terisiare / Kjeldor (pewność region).
 
 ## Źródła
 

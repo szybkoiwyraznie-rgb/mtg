@@ -1039,6 +1039,14 @@
    "y": 0.3607,
    "pewnosc": "region",
    "uzasadnienie": "Coralhelm Refuge — największa osada merfolków Zendikaru; w2 §5 umieszcza ją na płn. krańcu, na wybrzeży Halimar (morze śródlądowe Tazeem). Pinezka = osada na północnym brzegu; przeniesiona z (0.4,0.47) 2026-09-01 — stary punkt lądował w nowym akwenie Halimar."
+  },
+  {
+   "karta": "537cmr-kor-cartographer",
+   "x": 0.28,
+   "y": 0.8429,
+   "pewnosc": "dokladna",
+   "uzasadnienie": "Zapis sceny wskazuje kaniony Makindi (Makindi Trenches) na kontynencie Ondu wprost. Zwiadowczyni korów zwisa na linach z lewitującego płaskowyżu nad rozpadlinami, kreśląc bezpieczny szlak ku trawiastym równinom. Pinezka stoi bezpośrednio na kotwicy Makindi Trenches z pewnością dokładną.",
+   "notka": "Epoka Zendikaru — koczownicze karawany korów odtwarzające szlaki przez kaniony Ondu w obliczu nieustannych zmian wywoływanych przez Roil."
   }
  ],
  "zrodlo_fanmapa": {

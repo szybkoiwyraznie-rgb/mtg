@@ -12,7 +12,7 @@ Alara to rodzimy plan Magic: The Gathering o podwójnej biografii:
 niegdyś jeden, zasobny w manę świat obelisków i królestwa Vithia,
 potem — po **Sundering** — pięć odłamów-shardów dryfujących osobno,
 każdy odcięty od dwóch kolorów many i wykrzywiony w własną kulturę
-i ekologię; wreszcie, po **Conflux**, znów jeden plan: scalony,
+i ekologię; wreszcie, po [[conflux|Confluxie]], znów jeden plan: scalony,
 z **Maelstromem** — burzą many wszystkich pięciu shardów — w punkcie
 złączenia. Kodeks rysuje Alarę w stanie scalonym: regiony
 zachowały tożsamość, więc jedna mapa niesie i sceny post-Conflux,
@@ -22,8 +22,8 @@ i — przez regiony — sceny z epoki shardów.
 
 Pięć regionów w cyklu many (sąsiedzi dzielą dwa kolory): **Bant**
 (G/W/U — łąki, zamki, anioły i rytualizowane pojedynki rycerzy),
-**Esper** (W/U/B — oceaniczny archipelag wysp wykończonych etherium,
-kasta magów, vedalken i sfinksów), **Grixis** (U/B/R — nekropolia
+**[[esper|Esper]]** (W/U/B — oceaniczny archipelag wysp wykończonych etherium,
+kasta magów, vedalken i sfinksów), [[grixis|Grixis]] (U/B/R — nekropolia
 demonów i nekromantów po upadku Vithii, nekropolis Sedraxis),
 **Jund** (B/R/G — wulkaniczny łańcuch pokarmowy ze smokami na
 szczycie) i **Naya** (R/G/W — olbrzymi las-piętro, w którym żyje
@@ -89,7 +89,7 @@ którego nie umiano już wytwarzać, stało się skarbem do gromadzenia —
 aż artificerka **Breya** odnalazła w Jund **sangryt** i wykuła
 pierwsze od stuleci nowe etherium.
 
-**Grixis** (U/B/R) to trup świata: bez bieli i zieleni nie ma tu
+[[grixis|Grixis]] (U/B/R) to trup świata: bez bieli i zieleni nie ma tu
 wzrostu ani odnowy, a rozkład — spowolniony dawnymi zaklęciami —
 trwa bez końca. Niebo jest purpurowo-szare z różowymi błyskawicami,
 wzgórza usypano z kości, doliny są gnijącym ciałem, morza mętne
@@ -178,7 +178,7 @@ i duchowym sercem elfów. Wśród ludów Nai są też **minotaury**.
 Starożytna Alara była jednym planem; nieznany planeswalker wyssał
 jej manę, a **Sundering** rozłamał świat wzdłuż linii many „jak
 światło w pryzmacie”. Odłamy dryfowały w Blind Eternities, każdy
-okrojony z dwóch kolorów many. **Conflux** — przyspieszony przez
+okrojony z dwóch kolorów many. [[conflux|Conflux]] — przyspieszony przez
 Nicol Bolasa, który orkiestrował wojny shardów i kierował manę
 obelisków w burzę — scalił plan z powrotem; w punkcie, gdzie pięć
 shardów się zeszło, powstał Maelstrom, a Bolas wszedł w jego środek,

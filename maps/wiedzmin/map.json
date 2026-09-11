@@ -1,0 +1,138 @@
+{
+  "plan": "wiedzmin",
+  "tytul": "Wiedźmin — Kontynent",
+  "wariant": "T1",
+  "podklad": "l0.jpg",
+  "wymiary": {
+    "szerokosc": 5093,
+    "wysokosc": 7209
+  },
+  "uklad_wspolrzednych": "ZŁOTY = raster T1 (master 5093×7209 po wycięciu ramki ozdobnej; plik l0.jpg 1920×2718 to jego pomniejszony proxy, ten sam kadr). x,y kotwic i pinezek znormalizowane 0–1 względem mastera. Nowa pinezka: odczyt X,Y na masterze → x=X/5093, y=Y/7209 (współrzędne mierzone na docelowym pliku).",
+  "rekonstrukcja": false,
+  "zrodlo": {
+    "autor": "Ortelius Team (Dawid 'Torpeda' Giełdon, mBartek89 i polska społeczność fanowska Wiedźmina)",
+    "licencja": "materiał fanowski na motywach prozy Andrzeja Sapkowskiego i gier CD Projekt RED; użytek prywatny, niepubliczny — ADR 0031; przy upublicznieniu Codexu podkład do wymiany (ADR 0007 §3)",
+    "notka": "Mapa LOD (ADR 0039): master 5093×7209 (dostarczony przez właściciela z usuniętą ramką zewnętrzną), podkład złoty T1 — L0 (l0.jpg, 1920×2718) + kafle L1 (10×15 po 512 px, próg 2.5). Raster ma etykiety nadrukowane (etykiety: false — Codex nakłada tylko pinezki kart i kotwice relacyjne).",
+    "pobrano": "2026-09-11",
+    "tytul": "Mapa Orteliusa — mapa Kontynentu (Wiedźminland)",
+    "url": "https://i.redd.it/ht2ighn7e5f31.jpg",
+    "url2": "https://caalek.github.io/mapa-orteliusa/"
+  },
+  "warianty": [
+    {
+      "domyslny": true,
+      "epoka": "stan świata wg kanonu sagi Andrzeja Sapkowskiego i gier CD Projekt RED",
+      "etykiety": false,
+      "id": "t1",
+      "kafle": {
+        "katalog": "kafle",
+        "kolumny": 10,
+        "prog": 2.5,
+        "rozmiar": 512,
+        "wiersze": 15,
+        "wzorzec": "k{nnn}.jpg"
+      },
+      "kalibracja": {
+        "ox": 0,
+        "oy": 0,
+        "sx": 1,
+        "sy": 1
+      },
+      "podklad": "l0.jpg",
+      "tytul": "T1 · Kontynent (Ortelius)",
+      "wariant": "T1",
+      "wymiary": {
+        "szerokosc": 5093,
+        "wysokosc": 7209
+      },
+      "zrodlo": {
+        "autor": "Ortelius Team (Dawid 'Torpeda' Giełdon i polska społeczność fanowska)",
+        "licencja": "materiał fanowski; użytek prywatny — ADR 0031",
+        "notka": "Master 5093×7209 (≈12,7 MB, q86, cięty lokalnie narzędziem tools/kafle.mjs bez zewnętrznej ramki); w repo: l0.jpg (1920×2718), kafle/kNNN.jpg (150 kafelków L1, 10×15 po 512 px).",
+        "pobrano": "2026-09-11",
+        "tytul": "Mapa Orteliusa — Kontynent",
+        "url": "https://i.redd.it/ht2ighn7e5f31.jpg",
+        "url2": "https://caalek.github.io/mapa-orteliusa/"
+      }
+    }
+  ],
+  "kotwice": [
+    {
+      "nazwa": "Thanedd (Aretuza)",
+      "typ": "wyspa",
+      "x": 0.4153,
+      "y": 0.3045,
+      "px_t1": [
+        2115,
+        2195
+      ],
+      "uklad": "złoty T1 — odczyt z mastera",
+      "notka": "Wyspa Thanedd w Zatoce Praksedy na północny zachód od Gors Velen w Temerii — siedziba akademii czarodziejek w Aretuzie, pałacu Garstang i wieży Tor Lara. Kotwica pinezki 19_8ED (Twiddle).",
+      "pozycja_zrodlo": "kanon: Czas pogardy + etykieta „Thanedd\" i rysunek wieży Tor Lara / zigguratu Aretuzy; odczyt z mastera px (2115, 2195), 2026-09-11"
+    },
+    {
+      "nazwa": "Gors Velen",
+      "typ": "miasto",
+      "x": 0.431,
+      "y": 0.3093,
+      "px_t1": [
+        2195,
+        2230
+      ],
+      "uklad": "złoty T1 — odczyt z mastera",
+      "notka": "Portowe i handlowe miasto w Królestwie Temerii, połączone z wyspą Thanedd groblą i mostem.",
+      "pozycja_zrodlo": "kanon: Czas pogardy + etykieta „Gors Velen\" na masterze px (2195, 2230)"
+    },
+    {
+      "nazwa": "Wyzima (Vizima)",
+      "typ": "miasto",
+      "x": 0.5498,
+      "y": 0.2691,
+      "px_t1": [
+        2800,
+        1940
+      ],
+      "uklad": "złoty T1 — odczyt z mastera",
+      "notka": "Stolica Królestwa Temerii nad jeziorem i rzeką Ismeną, siedziba króla Foltesta; arena zmagań Geralta ze strzygą.",
+      "pozycja_zrodlo": "kanon: Ostatnie życzenie + etykieta „Vizima\" na masterze px (2800, 1940)"
+    },
+    {
+      "nazwa": "Oxenfurt",
+      "typ": "miasto",
+      "x": 0.4202,
+      "y": 0.2539,
+      "px_t1": [
+        2140,
+        1830
+      ],
+      "uklad": "złoty T1 — odczyt z mastera",
+      "notka": "Miasto uniwersyteckie w Królestwie Redanii nad rzeką Pontar, siedziba słynnej Akademii Oxenfurckiej.",
+      "pozycja_zrodlo": "kanon: Krew elfów + etykieta „Oxenfurt\" na masterze px (2140, 1830)"
+    },
+    {
+      "nazwa": "Novigrad",
+      "typ": "miasto",
+      "x": 0.3927,
+      "y": 0.2358,
+      "px_t1": [
+        2000,
+        1700
+      ],
+      "uklad": "złoty T1 — odczyt z mastera",
+      "notka": "Wolne Miasto Novigrad u ujścia rzeki Pontar do Morza Wielkiego — kluczowy ośrodek handlowy, portowy i religijny Północy.",
+      "pozycja_zrodlo": "kanon: Wieczny ogień + etykieta „Novigrad\" na masterze px (2000, 1700)"
+    }
+  ],
+  "pinezki": [
+    {
+      "karta": "19-8ed-twiddle",
+      "x": 0.4153,
+      "y": 0.3045,
+      "pewnosc": "dokladna",
+      "uzasadnienie": "Fabuła właściciela: mroczna komnata akademii w Aretuzie, czarodziejka w ciemnozielonej welurowej sukni manipulująca szafirowymi nićmi energii nad żelaznym astrolabium i płomieniem świecy. Aretuza to kanoniczna akademia czarodziejek na wyspie Thanedd w Zatoce Praksedy na wybrzeżu Temerii (odczyt z mastera px 2115, 2195; pewność dokladna — wyspa Thanedd i ziggurat Aretuzy jednoznacznie zlokalizowane na mapie)."
+    }
+  ],
+  "otwarte_na_kolejne_przejscia": [
+    "Dalsze kotwice relacyjne dla pozostałych krain Kontynentu (Kaer Morhen, Skellige, Cintra, Toussaint/Beauclair, Nilfgaard) do weryfikacji i rozbudowy przy kolejnych materializacjach z planu."
+  ]
+}

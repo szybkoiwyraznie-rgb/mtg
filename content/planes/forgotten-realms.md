@@ -54,6 +54,9 @@ Mapa settingu pokrywa Faerûn w granicach oficjalnej mapy 3E
 - **Luruar** — konfederacja **Silver Marches** w północno-zachodnim
   Faerûnie, ze środkiem w Silverymoon, między High Forest,
   Evermoors i Spine of the World;
+- **Wysoki Las** (*High Forest*) — olbrzymi, prastary masyw leśny
+  w sercu północno-zachodniego Faerûnu; matecznik druidów, smokowców
+  i wyznawców Dębowego Ojca ([[539clb-silvanus-s-invoker|Silvanus's Invoker]]);
 - **Jezioro Pary** (*Lake of Steam*) — południowy akwen Faerûnu,
   oddzielający ziemie wokół Morza Upadłych Gwiazd od Shining South;
 - **Królestwo Wysokie** (High Kingdom) — południowo-zachodni rejon
@@ -89,6 +92,9 @@ Pinezki na mapie (ADR 0043: tylko karty):
 - **[[3clb-nefarious-imp|Nefarious Imp]]** (3clb); środek Wybrzeża
   Mieczy (pewność: rejon) — scena nie wymienia miasta, więc pinezka
   stoi na rejonie, nie na lokalu.
+- **[[539clb-silvanus-s-invoker|Silvanus's Invoker]]** (539clb);
+  ostępy Wysokiego Lasu (pewność: rejon) — smokowiec-druid wzywający
+  żywiołaka ziemi i drewna w imię Silvanusa.
 
 ## Źródła
 

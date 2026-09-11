@@ -613,6 +613,38 @@
    "pewnosc": "dokladna",
    "uzasadnienie": "Przekaz sceny podaje miejsce wprost: Havengul w Nephalii. Uczelnia i gabinet nie mają osobnej kotwicy na mapie, ale samo miasto jest nazwane jednoznacznie, więc pinezka stoi dokładnie na Havengulu.",
    "notka": "Nocne badania nad gniewem w porcie Nephalii; mgła od nabrzeża i szlak raportów ku Thraben są częścią tej samej sceny."
+  },
+  {
+   "karta": "544avr-thraben-valiant",
+   "x": 0.392,
+   "y": 0.945,
+   "pewnosc": "dokladna",
+   "uzasadnienie": "Zarówno inskrypcja karty („Once more into Devil's Breach, soldiers”), jak i zapis sceny wskazują krawędź wulkanicznego wąwozu Devil's Breach w południowym Kessigu. Pinezka stoi dokładnie na kotwicy Devils' Breach.",
+   "notka": "Epoka Avacyn Restored (AVR) — po rozbiciu Helvaultu i powrocie Archanioła Avacyn, katarzy i weterani z Thraben ruszają w ekspedycje karne, by oczyszczać wyłomy piekielne z plag biesów."
+  },
+  {
+   "karta": "171isd-grizzled-outcasts",
+   "x": 0.41,
+   "y": 0.727,
+   "pewnosc": "region",
+   "uzasadnienie": "Zapis opowieści wskazuje prowincję Kessig wprost (miasteczko/wieś w Kessigu, gdzie mieszkańcy barykadują domy przed wędrownymi łowcami z Hordy Krallen). Ponieważ konkretna osada nie jest nazwana z imienia, pinezka stoi na regionie Kessig z pewnością region.",
+   "notka": "Epoka Innistrad (ISD) — w epoce osłabienia Kościoła stada Hordy Krallen krążą pod ludzką postacią po obrzeżach kessigijskich osad, zrzucając powłokę nocą."
+  },
+  {
+   "karta": "181avr-spectral-prison",
+   "x": 0.59,
+   "y": 0.449,
+   "pewnosc": "region",
+   "uzasadnienie": "Przekaz sceny wskazuje gotycką kaplicę w prowincji Gavony (gdzie Kościół Avacyn stosuje uśpienie i klatki ze światła zamiast miecza). Ponieważ konkretna parafia nie jest nazwana z imienia, pinezka stoi na regionie Gavony z pewnością region.",
+   "notka": "Epoka Avacyn Restored (AVR) — po powrocie Avacyn uświęciciele w kaplicach Gavony więżą bestie i wrogów w eterycznych pułapkach ze snu i geistów."
+  },
+  {
+   "karta": "118mid-dire-strain-brawler",
+   "x": 0.59,
+   "y": 0.449,
+   "pewnosc": "region",
+   "uzasadnienie": "Przekaz sceny wskazuje gospodarstwo w prowincji Gavony (gdzie obok stodoły i murku parobek ulega nocnej przemianie w bestię rodu Dire-strain). Ponieważ konkretna osada nie jest wymieniona z nazwy, pinezka stoi na regionie Gavony z pewnością region.",
+   "notka": "Epoka Midnight Hunt (MID) — narastająca długa noc na Innistradzie sprawia, że potężne wilkołaki rodu Dire-strain otwarcie panują nad podwórzami zastraszonych gospodarzy Gavony."
   }
  ],
  "zrodlo_fanmapa": "Podkład jest mapą fanowską, nie materiałem WotC. Zgodnie z ADR 0031 służy jako podkład prywatnego Kodeksu; każda kotwica została porównana z kanonem tekstowym, a rozbieżności rozstrzygane są na korzyść kanonu.",

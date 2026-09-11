@@ -356,3 +356,26 @@ są egzekwowane testem regresyjnym (`test/prog-hasel.test.js`) —
 strona poniżej progu nie przechodzi suitki; (b) świadome zejście poniżej
 twardej reguły wymaga jawnej decyzji właściciela PRZED scaleniem albo
 zmiany samej reguły — nigdy domniemania po fakcie.
+
+## L18 (2026-09-10) — pass mapowy to wzbogacenie i weryfikacja wyglądu map T3/T4, nie sprawdzanie pinezek ani modyfikacja T1/T2
+
+**Objaw:** w kroku 4 Pętli Jakości powtarzano mechaniczną kontrolę
+„18/18 kart ma pinezkę, map-audit 0”, traktując to jako wystarczający pass mapowy.
+
+**Przyczyna:** mylenie bieżącej kontroli integralności (która dzieje się
+automatycznie przy materializacji karty oraz podczas audytu w kroku 1)
+z właściwym celem passu mapowego.
+
+**Reguła (decyzja właściciela 2026-09-10):**
+1. **Pinezki kart** są z zasady poprawnie dodawane przy materializacji
+   i weryfikowane przez automatyczne audyty (`map-audit.py` i testy) —
+   nie ma sensu sprawdzać ich co chwilę w kroku 4.
+2. **Pass mapowy to wyłącznie praca nad mapami T3 i T4 (podkłady własne/wektorowe):**
+   wzbogacanie i weryfikacja ich wyglądu, kwerenda i dodawanie nowych
+   kanonicznych POI, ulepszanie biomów, rzek, pasm górskich, naprawa
+   kolizji etykiet i rozwój warsztatu rysowania.
+3. **Map T1 i T2 nie wzbogacamy:** są to mapy rastrowe (T1) lub
+   gotowe/zaadoptowane wektory (T2, np. Śródziemie z mapome). Nie doklejamy
+   do nich nowych warstw ani obiektów ponad stan źródłowy (chyba że za
+   osobną, wyraźną zgodą właściciela).
+

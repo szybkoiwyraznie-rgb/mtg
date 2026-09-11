@@ -88,6 +88,14 @@
    "y": 0.6292,
    "pewnosc": "region",
    "uzasadnienie": "Fabuła: „słoneczny taras miejskich ogrodów” w Ghirapurze — kanon nie nazywa konkretnego tarasu; pinezka w sercu Greenwheel (dzielnica ogrodów, kopuł i „Zoo” konstruktów), gdzie młodzi rzemieślnicy testują swoje dzieła. Pozycja = dzielnica Greenwheel na mapie deep (kopuły ogrodowe ~600,478) przeliczona do układu planu przez bbox miasta — NIE środek ikony: karty Ghirapuru rozkładają się po dzielnicach, a nie stosują w jednym punkcie (korekta właściciela 2026-09-10). Mieści się w obrębie (powiększonej) ikony miasta. Decyzja wiążąca z roadmapy PR-28: region (okolice Greenwheel)."
+  },
+  {
+   "karta": "596ori-ghirapur-gearcrafter",
+   "x": 0.6723,
+   "y": 0.6294,
+   "pewnosc": "region",
+   "uzasadnienie": "Przekaz sceny wskazuje warsztaty rzemieślnicze w metropolii Ghirapur, gdzie mistrzowie konstruują thoptery z kół zębatych i eteru. Pinezka stoi w dzielnicy rzemieślników i kowali Embraal na mapie deep (L2: ~925,480 przeliczone do układu planu przez bbox miasta).",
+   "notka": "Epoka Konsulatu (Magic Origins / Kaladesh) — mistrzowie rzemiosła tworzą filigranowe thoptery w dążeniu do konsularnej aprobaty."
   }
  ],
  "scena": "scena.json",

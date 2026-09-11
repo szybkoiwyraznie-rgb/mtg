@@ -3,8 +3,8 @@
  "szerokosc": 2000,
  "wysokosc": 1400,
  "styl": "atlas",
- "opis": "Scalona Alara post-Conflux: Bant (góra), Naya (zachód), Jund (południowy zachód), Grixis (południowy wschód) — nieregularne kontynenty zderzone wokół Maelstromu (równoprawny shard, etykieta jak pozostałe); Esper = ARCHIPELAG wysp na Morzu Esper. Linie brzegowe fraktalne (feel Zendikaru). Góry krótkie i zróżnicowane. Biomy wypełniają lądy (puszcza Naya, stepy Bantu, dżungla i nieużytki Jundu, Dregscape i bagna Grixis, szklana pustynia Glass Dunes). Rzeki płyną do morza; drogi i szlaki łączą osady. POI wyłącznie kanoniczne (MTG Wiki: Category:Alara locations).",
- "lądy": [
+ "opis": "Scalona Alara post-Conflux: Bant (g\u00f3ra), Naya (zach\u00f3d), Jund (po\u0142udniowy zach\u00f3d), Grixis (po\u0142udniowy wsch\u00f3d) \u2014 nieregularne kontynenty zderzone wok\u00f3\u0142 Maelstromu (r\u00f3wnoprawny shard, etykieta jak pozosta\u0142e); Esper = ARCHIPELAG wysp na Morzu Esper. Linie brzegowe fraktalne (feel Zendikaru). G\u00f3ry kr\u00f3tkie i zr\u00f3\u017cnicowane. Biomy wype\u0142niaj\u0105 l\u0105dy (puszcza Naya, stepy Bantu, d\u017cungla i nieu\u017cytki Jundu, Dregscape i bagna Grixis, szklana pustynia Glass Dunes). Rzeki p\u0142yn\u0105 do morza; drogi i szlaki \u0142\u0105cz\u0105 osady. POI wy\u0142\u0105cznie kanoniczne (MTG Wiki: Category:Alara locations).",
+ "l\u0105dy": [
   {
    "id": "serce-alary",
    "d": "M 960,510 L 975.5,509.9 L 989.7,516.1 L 1004.8,510.4 L 1020,516 L 1038.2,518.3 L 1054.3,527.2 L 1071.6,520.5 L 1090,522 L 1096.4,530.8 L 1105.7,536.2 L 1116.8,537.3 L 1125,545 L 1131.2,552.4 L 1139.1,557.9 L 1143.9,566.5 L 1152,572 L 1153.6,582.2 L 1153.5,592.6 L 1160,601.1 L 1170,605 L 1171.8,613.9 L 1176,622 L 1180.5,630.6 L 1178,640 L 1176.1,649.4 L 1174,658.8 L 1171.8,668.8 L 1176,678 L 1173.4,687.6 L 1175.9,697.2 L 1176,707 L 1172,716 L 1168.9,726.3 L 1162.8,735.1 L 1158.4,745.1 L 1150,752 L 1139.4,757.7 L 1134.2,768.6 L 1131.6,780.5 L 1122,788 L 1112.1,789.7 L 1105.5,797.2 L 1099.5,805.1 L 1090,808 L 1081.5,810.5 L 1072.9,812.6 L 1065.1,816.6 L 1058,822 L 1047.3,821.2 L 1038.2,826.8 L 1028.3,830 L 1018,830 L 1008.6,834.4 L 998.6,831.9 L 989.1,834.5 L 980,838 L 969.4,837.7 L 958.7,838.1 L 949.6,832.5 L 940,828 L 929.3,827 L 918.6,825.8 L 907.4,822.3 L 902,812 L 892.2,807.5 L 881.5,805.9 L 877.5,795.8 L 870,788 L 858.8,785 L 854.8,774.1 L 847.6,766.7 L 842,758 L 839.2,747.4 L 836.7,736.8 L 834.9,725.9 L 830,716 L 823.6,706.3 L 821.3,694.9 L 821.7,683.4 L 822,672 L 832.3,665.5 L 833.2,653.4 L 827.8,643.3 L 830,632 L 834.8,621.9 L 842.4,613.7 L 840,602.9 L 838,592 L 842.8,583.5 L 849.9,576.9 L 856,569.5 L 862,562 L 865.7,553.3 L 874.1,549.1 L 880.5,542.9 L 886,536 L 903.7,526.8 L 920.5,516 L 940.2,512.9 Z"
@@ -1688,6 +1688,18 @@
    "x": 1635,
    "y": 655,
    "id": "tidehollow"
+  },
+  {
+   "typ": "ruina",
+   "x": 1580,
+   "y": 490,
+   "id": "carmot-mines"
+  },
+  {
+   "typ": "ruina",
+   "x": 1220,
+   "y": 1120,
+   "id": "vithia"
   }
  ],
  "etykiety": [
@@ -2174,6 +2186,32 @@
     "kotwica": "middle",
     "ital": true
    }
+  },
+  {
+   "tekst": "Carmot Mines",
+   "x": 1580,
+   "y": 470,
+   "opcje": {
+    "fs": 13,
+    "kotwica": "middle",
+    "przyDo": [
+     1580,
+     490
+    ]
+   }
+  },
+  {
+   "tekst": "Ruins of Vithia",
+   "x": 1220,
+   "y": 1100,
+   "opcje": {
+    "fs": 13,
+    "kotwica": "middle",
+    "przyDo": [
+     1220,
+     1120
+    ]
+   }
   }
  ],
  "strefyWodne": [
@@ -2189,5 +2227,5 @@
  "kompas": false,
  "skala": false,
  "ramka": true,
- "zrośnięte": true
+ "zro\u015bni\u0119te": true
 }

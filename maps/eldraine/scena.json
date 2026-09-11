@@ -1,0 +1,1287 @@
+{
+ "nazwa": "eldraine-t4-plan-krolestwo-i-knieje",
+ "szerokosc": 2000,
+ "wysokosc": 1400,
+ "styl": "atlas",
+ "opis": "Autorska rekonstrukcja relacji przestrzennych Pięciu Dworów i Kniei planu Eldraine, ADR 0038. Wymiary 2000×1400 px, styl atlasowy achromatyczny.",
+ "ocean": {
+  "kolor": "#e6e6e6"
+ },
+ "lądy": [
+  {
+   "id": "kontynent-eldraine",
+   "punkty": [
+    [
+     -60,
+     -60
+    ],
+    [
+     2060,
+     -60
+    ],
+    [
+     2060,
+     1460
+    ],
+    [
+     -60,
+     1460
+    ]
+   ]
+  }
+ ],
+ "jeziora": [
+  {
+   "cx": 480,
+   "cy": 420,
+   "rx": 170,
+   "ry": 120,
+   "opcje": {
+    "fale": true
+   }
+  },
+  {
+   "cx": 470,
+   "cy": 1040,
+   "rx": 140,
+   "ry": 90,
+   "opcje": {
+    "fale": true
+   }
+  }
+ ],
+ "rzeki": [
+  {
+   "id": "rzeka-krolewska",
+   "punkty": [
+    [
+     1540,
+     220
+    ],
+    [
+     1370,
+     310
+    ],
+    [
+     1230,
+     420
+    ],
+    [
+     1190,
+     620
+    ],
+    [
+     1180,
+     850
+    ],
+    [
+     1140,
+     1060
+    ],
+    [
+     1100,
+     1230
+    ],
+    [
+     1080,
+     1510
+    ]
+   ],
+   "opcje": {
+    "s0": 3,
+    "s1": 10,
+    "zrodlo": true,
+    "ujscie": {
+     "typ": "morze"
+    }
+   },
+   "doplywy": [
+    {
+     "id": "doplyw-arden",
+     "punkty": [
+      [
+       960,
+       770
+      ],
+      [
+       1040,
+       820
+      ],
+      [
+       1175,
+       858.9
+      ]
+     ],
+     "opcje": {
+      "s0": 1.5,
+      "s1": 4
+     }
+    },
+    {
+     "id": "doplyw-tuinvale",
+     "punkty": [
+      [
+       870,
+       300
+      ],
+      [
+       1050,
+       360
+      ],
+      [
+       1270,
+       393.1
+      ]
+     ],
+     "opcje": {
+      "s0": 1.5,
+      "s1": 4.5
+     }
+    }
+   ]
+  },
+  {
+   "id": "rzeka-lochmere-n",
+   "punkty": [
+    [
+     270,
+     120
+    ],
+    [
+     350,
+     230
+    ],
+    [
+     420,
+     320
+    ]
+   ],
+   "opcje": {
+    "s0": 2,
+    "s1": 6,
+    "zrodlo": true,
+    "ujscie": {
+     "typ": "jezioro"
+    }
+   }
+  },
+  {
+   "id": "rzeka-locthwain-w",
+   "punkty": [
+    [
+     340,
+     1050
+    ],
+    [
+     250,
+     1120
+    ],
+    [
+     160,
+     1210
+    ],
+    [
+     -90,
+     1310
+    ]
+   ],
+   "opcje": {
+    "s0": 4,
+    "s1": 9,
+    "zrodlo": false,
+    "ujscie": {
+     "typ": "morze"
+    }
+   }
+  }
+ ],
+ "pasma": [
+  {
+   "id": "gory-polnocny-zachod",
+   "punkty": [
+    [
+     80,
+     160
+    ],
+    [
+     220,
+     110
+    ],
+    [
+     380,
+     140
+    ]
+   ],
+   "opcje": {
+    "szer": 48
+   }
+  },
+  {
+   "id": "gory-garenbrig-stormkeld",
+   "punkty": [
+    [
+     1280,
+     180
+    ],
+    [
+     1480,
+     130
+    ],
+    [
+     1680,
+     180
+    ],
+    [
+     1880,
+     260
+    ]
+   ],
+   "opcje": {
+    "szer": 54
+   }
+  },
+  {
+   "id": "pasmo-irencrag",
+   "punkty": [
+    [
+     1380,
+     1100
+    ],
+    [
+     1520,
+     1160
+    ],
+    [
+     1680,
+     1190
+    ],
+    [
+     1850,
+     1120
+    ]
+   ],
+   "opcje": {
+    "szer": 52
+   }
+  },
+  {
+   "id": "wzgorza-poludniowo-zachodnie",
+   "punkty": [
+    [
+     120,
+     940
+    ],
+    [
+     180,
+     1080
+    ],
+    [
+     260,
+     1260
+    ]
+   ],
+   "opcje": {
+    "szer": 42
+   }
+  }
+ ],
+ "biomy": [
+  {
+   "id": "las-tuinvale",
+   "typ": "las",
+   "punkty": [
+    [
+     640,
+     160
+    ],
+    [
+     920,
+     150
+    ],
+    [
+     980,
+     340
+    ],
+    [
+     880,
+     420
+    ],
+    [
+     670,
+     390
+    ]
+   ],
+   "opcje": {
+    "gestosc": 0.62,
+    "skala": 1.05
+   }
+  },
+  {
+   "id": "las-garenbrig",
+   "typ": "las",
+   "punkty": [
+    [
+     1320,
+     320
+    ],
+    [
+     1640,
+     300
+    ],
+    [
+     1720,
+     480
+    ],
+    [
+     1620,
+     620
+    ],
+    [
+     1360,
+     580
+    ],
+    [
+     1280,
+     440
+    ]
+   ],
+   "opcje": {
+    "gestosc": 0.58,
+    "skala": 1
+   }
+  },
+  {
+   "id": "mokradla-locthwain",
+   "typ": "bagno",
+   "punkty": [
+    [
+     310,
+     930
+    ],
+    [
+     620,
+     910
+    ],
+    [
+     640,
+     1140
+    ],
+    [
+     480,
+     1220
+    ],
+    [
+     290,
+     1170
+    ]
+   ],
+   "opcje": {
+    "gestosc": 0.65
+   }
+  },
+  {
+   "id": "las-zachodni-dzicz",
+   "typ": "las",
+   "punkty": [
+    [
+     100,
+     610
+    ],
+    [
+     330,
+     590
+    ],
+    [
+     350,
+     820
+    ],
+    [
+     120,
+     850
+    ]
+   ],
+   "opcje": {
+    "gestosc": 0.55,
+    "skala": 0.95
+   }
+  },
+  {
+   "id": "pola-ardenvale",
+   "typ": "step",
+   "punkty": [
+    [
+     780,
+     500
+    ],
+    [
+     1220,
+     490
+    ],
+    [
+     1250,
+     760
+    ],
+    [
+     1130,
+     900
+    ],
+    [
+     820,
+     890
+    ],
+    [
+     740,
+     710
+    ]
+   ],
+   "opcje": {
+    "gestosc": 0.32
+   }
+  },
+  {
+   "id": "step-embereth",
+   "typ": "step",
+   "punkty": [
+    [
+     1300,
+     840
+    ],
+    [
+     1680,
+     820
+    ],
+    [
+     1720,
+     1040
+    ],
+    [
+     1320,
+     1060
+    ]
+   ],
+   "opcje": {
+    "gestosc": 0.28
+   }
+  },
+  {
+   "id": "las-wschodnie-knieje",
+   "typ": "las",
+   "punkty": [
+    [
+     1680,
+     520
+    ],
+    [
+     1920,
+     500
+    ],
+    [
+     1940,
+     880
+    ],
+    [
+     1720,
+     860
+    ]
+   ],
+   "opcje": {
+    "gestosc": 0.52,
+    "skala": 1
+   }
+  }
+ ],
+ "drogi": [
+  {
+   "id": "trakt-vantress",
+   "punkty": [
+    [
+     1000,
+     650
+    ],
+    [
+     860,
+     550
+    ],
+    [
+     710,
+     470
+    ],
+    [
+     580,
+     420
+    ],
+    [
+     480,
+     400
+    ]
+   ],
+   "opcje": {
+    "typ": "droga"
+   }
+  },
+  {
+   "id": "trakt-locthwain",
+   "punkty": [
+    [
+     1000,
+     650
+    ],
+    [
+     860,
+     720
+    ],
+    [
+     740,
+     790
+    ],
+    [
+     610,
+     890
+    ],
+    [
+     470,
+     1010
+    ]
+   ],
+   "opcje": {
+    "typ": "droga"
+   }
+  },
+  {
+   "id": "trakt-embereth",
+   "punkty": [
+    [
+     1000,
+     650
+    ],
+    [
+     1120,
+     790
+    ],
+    [
+     1220,
+     920
+    ],
+    [
+     1360,
+     940
+    ],
+    [
+     1430,
+     1020
+    ],
+    [
+     1510,
+     960
+    ]
+   ],
+   "opcje": {
+    "typ": "droga"
+   }
+  },
+  {
+   "id": "trakt-garenbrig",
+   "punkty": [
+    [
+     1000,
+     650
+    ],
+    [
+     1150,
+     560
+    ],
+    [
+     1320,
+     510
+    ],
+    [
+     1480,
+     430
+    ]
+   ],
+   "opcje": {
+    "typ": "droga"
+   }
+  },
+  {
+   "id": "szlak-serce-elfow",
+   "punkty": [
+    [
+     1000,
+     650
+    ],
+    [
+     1040,
+     450
+    ],
+    [
+     1090,
+     270
+    ]
+   ],
+   "opcje": {
+    "typ": "szlak"
+   }
+  }
+ ],
+ "poi": [
+  {
+   "id": "castle-ardenvale",
+   "typ": "fort",
+   "x": 1000,
+   "y": 650,
+   "opcje": {
+    "skala": 1.5
+   }
+  },
+  {
+   "id": "circle-of-loyalty",
+   "typ": "kolumny",
+   "x": 940,
+   "y": 600,
+   "opcje": {
+    "skala": 1.2
+   }
+  },
+  {
+   "id": "archers-tower",
+   "typ": "iglica",
+   "x": 1070,
+   "y": 620,
+   "opcje": {
+    "skala": 1.1
+   }
+  },
+  {
+   "id": "wealdrum",
+   "typ": "miasto",
+   "x": 860,
+   "y": 550,
+   "opcje": {
+    "skala": 1
+   }
+  },
+  {
+   "id": "wesling",
+   "typ": "miasto",
+   "x": 1150,
+   "y": 560,
+   "opcje": {
+    "skala": 1
+   }
+  },
+  {
+   "id": "trekell",
+   "typ": "miasto",
+   "x": 1120,
+   "y": 790,
+   "opcje": {
+    "skala": 1
+   }
+  },
+  {
+   "id": "castle-vantress",
+   "typ": "fort",
+   "x": 480,
+   "y": 400,
+   "opcje": {
+    "skala": 1.4
+   }
+  },
+  {
+   "id": "indrelon",
+   "typ": "plac",
+   "x": 550,
+   "y": 360,
+   "opcje": {
+    "skala": 1.1
+   }
+  },
+  {
+   "id": "castle-locthwain",
+   "typ": "fort",
+   "x": 470,
+   "y": 1010,
+   "opcje": {
+    "skala": 1.4
+   }
+  },
+  {
+   "id": "cauldron-eternity",
+   "typ": "plac",
+   "x": 540,
+   "y": 970,
+   "opcje": {
+    "skala": 1.1
+   }
+  },
+  {
+   "id": "castle-embereth",
+   "typ": "fort",
+   "x": 1510,
+   "y": 960,
+   "opcje": {
+    "skala": 1.4
+   }
+  },
+  {
+   "id": "the-burning-yard",
+   "typ": "plac",
+   "x": 1430,
+   "y": 1020,
+   "opcje": {
+    "skala": 1.3
+   }
+  },
+  {
+   "id": "the-irencrag",
+   "typ": "szczyt",
+   "x": 1590,
+   "y": 920,
+   "opcje": {
+    "skala": 1.6,
+    "snieg": false
+   }
+  },
+  {
+   "id": "tournament-grounds",
+   "typ": "plac",
+   "x": 1360,
+   "y": 940,
+   "opcje": {
+    "skala": 1.1
+   }
+  },
+  {
+   "id": "castle-garenbrig",
+   "typ": "fort",
+   "x": 1480,
+   "y": 430,
+   "opcje": {
+    "skala": 1.4
+   }
+  },
+  {
+   "id": "the-great-henge",
+   "typ": "kolumny",
+   "x": 1420,
+   "y": 370,
+   "opcje": {
+    "skala": 1.4
+   }
+  },
+  {
+   "id": "gnomon-stone",
+   "typ": "szczyt",
+   "x": 1530,
+   "y": 390,
+   "opcje": {
+    "skala": 1.2,
+    "snieg": false
+   }
+  },
+  {
+   "id": "tuinvale",
+   "typ": "drzewo",
+   "x": 790,
+   "y": 280,
+   "opcje": {
+    "skala": 2
+   }
+  },
+  {
+   "id": "the-heart-land",
+   "typ": "ruina",
+   "x": 1090,
+   "y": 270,
+   "opcje": {
+    "skala": 1.3
+   }
+  },
+  {
+   "id": "edgewall-inn",
+   "typ": "miasto",
+   "x": 740,
+   "y": 790,
+   "opcje": {
+    "skala": 1.1
+   }
+  },
+  {
+   "id": "stormkeld",
+   "typ": "iglica",
+   "x": 1780,
+   "y": 310,
+   "opcje": {
+    "skala": 1.3
+   }
+  },
+  {
+   "id": "witchs-cottage",
+   "typ": "jaskinia",
+   "x": 230,
+   "y": 730,
+   "opcje": {
+    "skala": 1.1
+   }
+  },
+  {
+   "id": "dynnistan",
+   "typ": "fort",
+   "x": 220,
+   "y": 230,
+   "opcje": {
+    "skala": 1.1
+   }
+  },
+  {
+   "id": "river-crossing",
+   "typ": "most",
+   "x": 1220,
+   "y": 920,
+   "opcje": {
+    "skala": 1
+   }
+  }
+ ],
+ "etykiety": [
+  {
+   "tekst": "The Wilds",
+   "x": 820,
+   "y": 130,
+   "opcje": {
+    "fs": 36,
+    "kotwica": "middle",
+    "duze": true
+   }
+  },
+  {
+   "tekst": "The Wilds",
+   "x": 960,
+   "y": 1320,
+   "opcje": {
+    "fs": 34,
+    "kotwica": "middle",
+    "duze": true
+   }
+  },
+  {
+   "tekst": "The Wilds",
+   "x": 190,
+   "y": 560,
+   "opcje": {
+    "fs": 30,
+    "kotwica": "middle",
+    "duze": true
+   }
+  },
+  {
+   "tekst": "The Wilds",
+   "x": 1820,
+   "y": 680,
+   "opcje": {
+    "fs": 30,
+    "kotwica": "middle",
+    "duze": true
+   }
+  },
+  {
+   "tekst": "Highlands of Arden",
+   "x": 1000,
+   "y": 740,
+   "opcje": {
+    "fs": 26,
+    "kotwica": "middle",
+    "duze": true
+   }
+  },
+  {
+   "tekst": "Vantress",
+   "x": 480,
+   "y": 260,
+   "opcje": {
+    "fs": 28,
+    "kotwica": "middle",
+    "duze": true
+   }
+  },
+  {
+   "tekst": "Locthwain Fens",
+   "x": 470,
+   "y": 1180,
+   "opcje": {
+    "fs": 26,
+    "kotwica": "middle",
+    "duze": true
+   }
+  },
+  {
+   "tekst": "Embereth",
+   "x": 1530,
+   "y": 860,
+   "opcje": {
+    "fs": 28,
+    "kotwica": "middle",
+    "duze": true
+   }
+  },
+  {
+   "tekst": "Garen Valley",
+   "x": 1560,
+   "y": 560,
+   "opcje": {
+    "fs": 26,
+    "kotwica": "middle",
+    "duze": true
+   }
+  },
+  {
+   "tekst": "Castle Ardenvale",
+   "x": 1000,
+   "y": 650,
+   "opcje": {
+    "fs": 20,
+    "kotwica": "middle",
+    "przyDo": [
+     1000,
+     650
+    ]
+   }
+  },
+  {
+   "tekst": "The Circle of Loyalty",
+   "x": 940,
+   "y": 600,
+   "opcje": {
+    "fs": 16,
+    "kotwica": "middle",
+    "przyDo": [
+     940,
+     600
+    ]
+   }
+  },
+  {
+   "tekst": "Archer's Tower",
+   "x": 1070,
+   "y": 620,
+   "opcje": {
+    "fs": 15,
+    "kotwica": "middle",
+    "przyDo": [
+     1070,
+     620
+    ]
+   }
+  },
+  {
+   "tekst": "Wealdrum",
+   "x": 860,
+   "y": 550,
+   "opcje": {
+    "fs": 15,
+    "kotwica": "middle",
+    "przyDo": [
+     860,
+     550
+    ]
+   }
+  },
+  {
+   "tekst": "Wesling",
+   "x": 1150,
+   "y": 560,
+   "opcje": {
+    "fs": 15,
+    "kotwica": "middle",
+    "przyDo": [
+     1150,
+     560
+    ]
+   }
+  },
+  {
+   "tekst": "Trekell",
+   "x": 1120,
+   "y": 790,
+   "opcje": {
+    "fs": 15,
+    "kotwica": "middle",
+    "przyDo": [
+     1120,
+     790
+    ]
+   }
+  },
+  {
+   "tekst": "Castle Vantress",
+   "x": 480,
+   "y": 400,
+   "opcje": {
+    "fs": 19,
+    "kotwica": "middle",
+    "przyDo": [
+     480,
+     400
+    ]
+   }
+  },
+  {
+   "tekst": "Lochmere",
+   "x": 480,
+   "y": 490,
+   "opcje": {
+    "fs": 17,
+    "kotwica": "middle"
+   }
+  },
+  {
+   "tekst": "Indrelon (Magic Mirror)",
+   "x": 550,
+   "y": 360,
+   "opcje": {
+    "fs": 15,
+    "kotwica": "middle",
+    "przyDo": [
+     550,
+     360
+    ]
+   }
+  },
+  {
+   "tekst": "Castle Locthwain",
+   "x": 470,
+   "y": 1010,
+   "opcje": {
+    "fs": 19,
+    "kotwica": "middle",
+    "przyDo": [
+     470,
+     1010
+    ]
+   }
+  },
+  {
+   "tekst": "The Black Tarns",
+   "x": 470,
+   "y": 1090,
+   "opcje": {
+    "fs": 16,
+    "kotwica": "middle"
+   }
+  },
+  {
+   "tekst": "Cauldron of Eternity",
+   "x": 540,
+   "y": 970,
+   "opcje": {
+    "fs": 15,
+    "kotwica": "middle",
+    "przyDo": [
+     540,
+     970
+    ]
+   }
+  },
+  {
+   "tekst": "Castle Embereth",
+   "x": 1510,
+   "y": 960,
+   "opcje": {
+    "fs": 19,
+    "kotwica": "middle",
+    "przyDo": [
+     1510,
+     960
+    ]
+   }
+  },
+  {
+   "tekst": "The Burning Yard",
+   "x": 1430,
+   "y": 1020,
+   "opcje": {
+    "fs": 17,
+    "kotwica": "middle",
+    "przyDo": [
+     1430,
+     1020
+    ]
+   }
+  },
+  {
+   "tekst": "The Irencrag",
+   "x": 1590,
+   "y": 920,
+   "opcje": {
+    "fs": 16,
+    "kotwica": "middle",
+    "przyDo": [
+     1590,
+     920
+    ]
+   }
+  },
+  {
+   "tekst": "Tournament Grounds",
+   "x": 1360,
+   "y": 940,
+   "opcje": {
+    "fs": 15,
+    "kotwica": "middle",
+    "przyDo": [
+     1360,
+     940
+    ]
+   }
+  },
+  {
+   "tekst": "Castle Garenbrig",
+   "x": 1480,
+   "y": 430,
+   "opcje": {
+    "fs": 19,
+    "kotwica": "middle",
+    "przyDo": [
+     1480,
+     430
+    ]
+   }
+  },
+  {
+   "tekst": "The Great Henge",
+   "x": 1420,
+   "y": 370,
+   "opcje": {
+    "fs": 16,
+    "kotwica": "middle",
+    "przyDo": [
+     1420,
+     370
+    ]
+   }
+  },
+  {
+   "tekst": "Gnomon Stone",
+   "x": 1530,
+   "y": 390,
+   "opcje": {
+    "fs": 15,
+    "kotwica": "middle",
+    "przyDo": [
+     1530,
+     390
+    ]
+   }
+  },
+  {
+   "tekst": "Tuinvale",
+   "x": 790,
+   "y": 280,
+   "opcje": {
+    "fs": 18,
+    "kotwica": "middle",
+    "przyDo": [
+     790,
+     280
+    ]
+   }
+  },
+  {
+   "tekst": "The Heart Land",
+   "x": 1090,
+   "y": 270,
+   "opcje": {
+    "fs": 17,
+    "kotwica": "middle",
+    "przyDo": [
+     1090,
+     270
+    ]
+   }
+  },
+  {
+   "tekst": "Edgewall Inn",
+   "x": 740,
+   "y": 790,
+   "opcje": {
+    "fs": 16,
+    "kotwica": "middle",
+    "przyDo": [
+     740,
+     790
+    ]
+   }
+  },
+  {
+   "tekst": "Stormkeld",
+   "x": 1780,
+   "y": 310,
+   "opcje": {
+    "fs": 17,
+    "kotwica": "middle",
+    "przyDo": [
+     1780,
+     310
+    ]
+   }
+  },
+  {
+   "tekst": "Witch's Cottage",
+   "x": 230,
+   "y": 730,
+   "opcje": {
+    "fs": 15,
+    "kotwica": "middle",
+    "przyDo": [
+     230,
+     730
+    ]
+   }
+  },
+  {
+   "tekst": "Dynnistan",
+   "x": 220,
+   "y": 230,
+   "opcje": {
+    "fs": 16,
+    "kotwica": "middle",
+    "przyDo": [
+     220,
+     230
+    ]
+   }
+  },
+  {
+   "tekst": "Syr Carenth's Crossing",
+   "x": 1220,
+   "y": 920,
+   "opcje": {
+    "fs": 14,
+    "kotwica": "middle",
+    "przyDo": [
+     1220,
+     920
+    ]
+   }
+  }
+ ],
+ "strefyWodne": [
+  "Lochmere",
+  "The Black Tarns"
+ ],
+ "etykietyWodne": [
+  "Lochmere",
+  "The Black Tarns"
+ ],
+ "kompas": {
+  "x": 1860,
+  "y": 1280,
+  "r": 38
+ },
+ "skala": false,
+ "ramka": {
+  "margines": 22,
+  "passePartout": true
+ }
+}

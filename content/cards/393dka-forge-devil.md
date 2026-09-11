@@ -144,7 +144,7 @@ dwutysięcznostopowym wodospadem, i jest opasane wieloma pierścieniami
 murów. Katedra stoi w jego obrębie; scena rozgrywa się pod nią.
 
 Warto zestawić tę pinezkę z dwoma innymi punktami mapy. **Ashmouth**
-w centrum Geier Reach w Stensii i **Devils' Breach** na południu
+w centrum Geier Reach w [[stensia|Stensii]] i **Devils' Breach** na południu
 Kessigu to dwie bramy do świata demonów i diabłów — obie daleko od
 Thraben, obie za pasmami gór albo za wielkim lasem. Diabeł z tej sceny
 nie przyszedł stamtąd pieszo. Ktoś go **przywołał** na miejscu, w sercu

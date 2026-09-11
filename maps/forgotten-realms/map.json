@@ -81,6 +81,15 @@
    "uklad": "złoty 3E — odczyt z siatki 5% na rastrze",
    "x": 0.05,
    "y": 0.69
+  },
+  {
+   "nazwa": "Wysoki Las",
+   "notka": "High Forest — największy pierwotny las północnego Faerûnu; matecznik druidów, leśnych istot i kultu Silvanusa",
+   "pozycja_zrodlo": "kanon: FR CS 3e (High Forest) — olbrzymi masyw leśny na wschód od Wybrzeża Mieczy i na południe od Evermoors; środek puszczy na oficjalnej mapie Faerûn 3E",
+   "typ": "region",
+   "uklad": "złoty 3E — odczyt z siatki 5% na rastrze",
+   "x": 0.215,
+   "y": 0.175
   }
  ],
  "otwarte_na_kolejne_przejscia": [
@@ -95,6 +104,14 @@
    "y": 0.176,
    "pewnosc": "region",
    "uzasadnienie": "Fabuła właściciela (3CLB): mroczny gabinet strategiczny „gdzieś na Wybrzeżu Mieczy” — scena wskazuje region, nie miasto (żadne miasto nie jest nazwane; spaloną mapę taktyczną i figurki nie da się przyporządkować do kanonicznego konfliktu bez wymyślania). Pinezka w środku pasa Wybrzeża Mieczy między Neverwinter (0.104, 0.141) a Waterdeep (0.145, 0.211) wg odczytu siatki 5% na rastrze 3E; pewność region (MA4: kraina, nie punkt)."
+  },
+  {
+   "karta": "539clb-silvanus-s-invoker",
+   "x": 0.215,
+   "y": 0.175,
+   "pewnosc": "region",
+   "uzasadnienie": "Przekaz sceny wskazuje ostępy Wysokiego Lasu (High Forest) wprost. Smokowiec-druid, sługa boga Silvanusa (Dębowego Ojca), wzywa z pękniętej gleby i korzeni potężnego żywiołaka ziemi i drewna do obrony puszczy przed intruzami. Pinezka stoi na regionie Wysoki Las z pewnością region.",
+   "notka": "Epoka Forgotten Realms (CLB) — obrona nienaruszonej kniei Wysokiego Lasu przez kapłanów i druidów Silvanusa."
   }
  ],
  "plan": "forgotten-realms",

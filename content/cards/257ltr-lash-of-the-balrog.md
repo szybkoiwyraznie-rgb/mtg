@@ -52,12 +52,13 @@ Ten konkretny, **Zguba Durina**, uciekł po Wojnie Gniewu, która zamknęła
 Pierwszą Erę, i zapadł w sen pod Khazad-dûm.
 
 W scenie stoi naprzeciw niego **Gandalf Szary** — również Majar, wysłany
-do Śródziemia jako jeden z Istarich, by przeciwstawić się cieniowi.
-Kronikarz nie bez powodu widzi w tym starciu spotkanie **dwóch braci z
-tego samego zastępu**: jednego, który wybrał zniszczenie, i drugiego,
-który wybrał opiekę. Za plecami czarodzieja ucieka **Drużyna Pierścienia**
-— Frodo, Sam, Aragorn, Legolas, Gimli, Boromir oraz Merry i Pippin —
-świadkowie, którzy mogą tylko patrzeć.
+do [[srodziemie|Śródziemia]] jako jeden z Istarich, by przeciwstawić
+się cieniowi. Kronikarz nie bez powodu widzi w tym starciu spotkanie
+**dwóch braci z tego samego zastępu**: jednego, który wybrał zniszczenie,
+i drugiego, który wybrał opiekę. Za plecami czarodzieja ucieka
+**Drużyna Pierścienia** — Frodo, Sam, Aragorn, Legolas, Gimli, Boromir
+oraz Merry i Pippin — świadkowie, którzy mogą tylko patrzeć (ta sama
+wyprawa, którą na zachodzie tropili zwiadowcy [[1ltr-dunland-crebain|Dunland Crebain]]).
 
 Prawdziwym bohaterem tytułu jest jednak sam **bicz**. Zapis czyni z
 niego niemal osobny byt: „żywą, wężową esencję złości Morgotha",
@@ -105,12 +106,12 @@ przewodnik ginie w chwili triumfu.
 
 ## Transpozycja
 
-Scena rodzi się w Śródziemiu i nie wymaga przenoszenia do obcego
-świata — kotwicą jest sam most nad przepaścią Morii. Zapis właściciela
-zawęża tę chwilę do jej sedna: nie do całej walki Gandalfa z Balrogiem,
-lecz do **jednej wydłużonej sekundy**, w której spadający demon wyrzuca
-bicz w górę. To celne czytanie sceny, bo cała jej groza mieści się
-właśnie w tym odruchu.
+Scena rodzi się w [[srodziemie|Śródziemiu]] i nie wymaga przenoszenia do
+obcego świata — kotwicą jest sam most nad przepaścią Morii. Zapis
+właściciela zawęża tę chwilę do jej sedna: nie do całej walki Gandalfa
+z Balrogiem, lecz do **jednej wydłużonej sekundy**, w której spadający
+demon wyrzuca bicz w górę. To celne czytanie sceny, bo cała jej groza
+mieści się właśnie w tym odruchu.
 
 Jeden element zapisu jest sceniczną nadbudową, nie twardym zapisem
 świata: obraz *tego samego* bicza, który „przez niezliczone wieki
@@ -133,14 +134,14 @@ położenie na mapie jest jednoznaczne: pod pasmem gór, tuż przy obu
 bramach kopalni. Sam most jest bytem podziemnym, więc pinezka pada na
 grzbiet gór reprezentujący Morię, dokładnie w linii łączącej jej wrota.
 
-Pinezka: `#/mapa/srodziemie?pin=257ltr-lash-of-the-balrog`.
+[Lash of the Balrog na mapie Śródziemia](#/mapa/srodziemie?pin=257ltr-lash-of-the-balrog)
 
 ## Mechanika jako Opowieść
 
-W regułach gry jest to czar błyskawiczny — a właściwie *sorcery* —
-za `{B}`, który jako **dodatkowy koszt** każe poświęcić stworzenie
-albo zapłacić `{4}`, po czym **niszczy wybrane stworzenie**. Każdy
-element tej mechaniki czyta się jako scenę.
+W regułach gry jest to czar zwykły (*sorcery*) za `{B}`, który jako
+**dodatkowy koszt** każe poświęcić stworzenie albo zapłacić `{4}`,
+po czym **niszczy wybrane stworzenie**. Każdy element tej mechaniki
+czyta się jako scenę.
 
 **Czarna mana i pojedynczy koszt `{B}`** oddają, że to nie zaklęcie
 strategii ani budowy, lecz czysty akt zniszczenia — najtańszy możliwy,

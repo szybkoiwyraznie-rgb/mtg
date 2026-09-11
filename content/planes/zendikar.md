@@ -60,6 +60,10 @@ merfolkowie wolą go obchodzić dalekimi trasami; kras jest domem
 największych rzecznych drapieżników planu. **Ondu** zaś wcina się
 w **Silundi Sea** — morze południowo-zachodniego kwadrantu planu,
 którego wirujące prądy i węże morskie strzegą wyspy **Jwar**.
+Na samym lądzie Ondu poszarpane kaniony **Makindi** (Makindi Trenches)
+i lewitujące płaskowyże stanowią poligon dla koczowniczych zwiadowców
+korów, którzy na linach wyznaczają nowe szlaki pośród szalejącego Roilu
+([[537cmr-kor-cartographer|Kor Cartographer]]).
 U wybrzeży Ondu leżą trzy wyspy: maleńka, smagana morzem **Jwar**
 przy południowym brzegu kontynentu — otaczają ją sztormowe wody zwane
 **Serpent's Maw**, a jedynym schronieniem podróżnych jest **Jwar Isle
@@ -206,7 +210,9 @@ i z prób oswajania bestii, które zwykle ich zjadają.
   nigdy nie powstała, więc podkład jest własną rekonstrukcją geografii
   z tekstów źródłowych (położenie Murasy przybliżone).
 - **Karty kolekcji:** [[2bfz-coralhelm-guide|Coralhelm Guide]] (BFZ) —
-  merfolka-przewodniczka z Coralhelm nad Halimar na Tazeem.
+  merfolka-przewodniczka z Coralhelm nad Halimar na Tazeem;
+  [[537cmr-kor-cartographer|Kor Cartographer]] (CMR) — zwiadowczyni korów
+  wytyczająca szlaki na linach nad kanionami Makindi na Ondu.
 
 ## Źródła
 

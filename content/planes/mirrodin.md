@@ -148,7 +148,10 @@ różnymi odpowiedziami na tę samą stratę.
 Na takim tle zwrot łuczników ku ciężkiemu orężowi w
 [[488som-carapace-forger|Carapace Forger]] nabiera dodatkowego znaczenia:
 las broni nie tylko ciał mieszkańców, ale kultury, która już raz
-utraciła znaczną część swoich strażników pamięci.
+utraciła znaczną część swoich strażników pamięci. Z kolei [[347nph-pristine-talisman|Pristine Talisman]]
+ukazuje nieskalany kunszt mirrańskich kuźni w rejonie Razor Fields:
+perłowy relikt, który leczy obrońców i daje czystą energię,
+przypominając, że wolnej iskry tworzenia nie da się zniszczyć.
 
 ## Epoki: jedna powierzchnia, potem dziewięć sfer
 

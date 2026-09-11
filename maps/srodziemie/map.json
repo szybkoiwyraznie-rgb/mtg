@@ -94,6 +94,13 @@
    "y": 0.6654,
    "typ": "etykieta-podkladu",
    "notka": "środek etykiety pasma (Białe Góry)"
+  },
+  {
+   "nazwa": "Eriador",
+   "x": 0.28,
+   "y": 0.30,
+   "typ": "region",
+   "notka": "rozległa kraina północno-zachodniego Śródziemia między Górami Błękitnymi a Górami Mglistymi"
   }
  ],
  "pinezki": [
@@ -110,6 +117,14 @@
    "y": 0.384,
    "pewnosc": "dokladna",
    "uzasadnienie": "Moria (Khazad-dûm) w sercu Gór Mglistych. Scena — upadek Gandalfa z Balrogiem na Moście Khazad-dûm, 15 stycznia 3019 T.E. — rozgrywa się pod ziemią, w podziemnym mieście krasnoludów. Pinezka pada na grzbiet Gór Mglistych dokładnie w linii między zachodnią Bramą Morii (etykieta „Moria Gate\", ok. 0.44/0.40) a wschodnim wyjściem w Dolinie Strumienia (etykieta „Dimrill Dale\", ok. 0.52/0.38), reprezentujący nadziemne wrota podziemnej Morii."
+  },
+  {
+   "karta": "612blb-crumb-and-get-it",
+   "x": 0.28,
+   "y": 0.30,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła wskazuje spowite nocnym mrokiem wzgórza Eriadoru — pofałdowaną dzicz na wschód od Shire i Bree, przez którą wędrują hobbici. Ponieważ konkretne pasmo wzgórz nie jest nazwane z imienia, pinezka stoi na regionie Eriador z pewnością region.",
+   "notka": "Wędrówka niziołków przez pustkowia Eriadoru — dar chleba podróżnego i niezłomna odwaga jako obrona przed drapieżnikami."
   }
  ]
 }
