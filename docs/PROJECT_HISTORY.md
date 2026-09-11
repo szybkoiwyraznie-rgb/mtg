@@ -4,6 +4,39 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-11 — PR-32 cd.: materializacja 42ISD Murder of Crows (sesja `arena/01a091f4-mtg`)
+
+Właściciel przekazał `42ISD / Murder of Crows / ISD / Innistrad` wraz
+z Fabułą starego gotyckiego cmentarza w Stensii: przy pustych szatach
+i srebrnej tarczy strażnika kruki przechwytują błękitne wspomnienia oraz
+ostatnie słowa zmarłego. Fabuła została zapisana verbatim jako pierwsza
+operacja na plikach.
+
+1. **Druk źródłowy i numeracja:** właściwym drukiem jest ISD #70,
+   natomiast `42ISD` pozostaje niezależnym `imgId` właściciela. Pełny
+   rekord Scryfalla z jawną notką numeracyjną żyje w
+   `scryfall/42isd-murder-of-crows.json`.
+2. **Karta Katalogowa LORE-first:** dziewięć sekcji rozwija stensiański
+   cmentarz, błękitne geisty pamięci i podwójny sens angielskiego
+   *a murder of crows*. Mechanika Flying oraz śmierci innego stworzenia,
+   po której można dobrać i odrzucić kartę, staje się opowieścią o krukach
+   wyławiających jedną tajemnicę z nadmiaru gasnących śladów.
+3. **Pinezka bez fałszywej precyzji:** znacznik `region` stoi dokładnie
+   na kotwicy Stensii (`0.228`, `0.317`). Oficjalnie potwierdzone stare
+   grafy przy Farbogach są kontekstem prowincji, ale anonimowy cmentarz
+   nie został uznany za konkretny graf. Strona Innistradu opisuje teraz
+   siedem kart.
+4. **Regresje:** nowy `test/innistrad-42isd.test.js` rozdziela oba systemy
+   numeracji i pilnuje Fabuły oraz semantyki mapy; smoke UI sprawdza dane
+   ISD #70, wikilink Stensii i deep-link pinezki. Licznik wzrósł do 35
+   Kart Katalogowych.
+5. **Commity produktu:** `14ab6f2` (wpis, snapshot i plan dostawy) oraz
+   `dad617c` (karta, mapa, strona planu, changelog i regresje).
+
+Bramki końcowe po dokumentacji: **197/197 testów**, build **59 stron**
+(35 kart, 9 haseł, 15 planów) i **859 plików**, map-audit 0,
+wiki-stats 100% (7,7/8), czysty `git diff --check`.
+
 ## 2026-09-11 — PR-32 cd.: materializacja 132GNT Pilgrim's Eye (sesja `arena/01a091f4-mtg`)
 
 Po zamknięciu napraw F1–F13 właściciel przekazał nową dostawę:

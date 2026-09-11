@@ -4,6 +4,7 @@
 - **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim w `collection/entries/42isd-murder-of-crows.md`; pełny snapshot ISD #70 żyje w `scryfall/42isd-murder-of-crows.json`. `42ISD` pozostaje niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim Scryfall.
 - **Pinezka i plan:** mapa Innistradu dostała pinezkę `region` na kotwicy Stensii. Fabuła nazywa prowincję, ale nie cmentarz ani dolinę; stare grafy przy Farbogach są potwierdzonym kontekstem geistów, nie dokładnym adresem sceny. Strona planu opisuje kruki żywiące się śladami pamięci zmarłych.
 - **Strażniki:** test Innistradu rozdziela oba systemy numeracji, pilnuje regionalnego charakteru pinezki oraz kotwic sceny: Stensii, srebrnej tarczy, błękitnych wspomnień i ostatnich słów.
+- **Bramki końcowe:** 197/197 testów, build 59 stron (35 kart, 9 haseł, 15 planów) i 859 plików drzewa, map-audit 0 problemów, wiki-stats 100% (7,7/8), czysty `git diff --check` oraz świeży preview karty i mapy Innistradu.
 
 ## 2026-09-11 23:12 — Nowa karta: Pilgrim's Eye (Zendikar)
 
