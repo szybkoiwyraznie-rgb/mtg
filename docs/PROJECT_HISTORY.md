@@ -4,28 +4,31 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
-## 2026-09-10 — PR-31: Pętla Jakości po PR-30 + Druga Pętla Jakości + Karta Simian Simulacrum (sesja `arena/01a08d3e-mtg`)
+## 2026-09-10 / 2026-09-11 — PR-31: dwie Pętle Jakości i 15 materializacji (sesja `arena/01a08d3e-mtg`)
 
-Pełna realizacja dwóch kolejnych Pętli Jakości po scaleniu PR-30 oraz materializacja nowej karty z dostawy właściciela:
-1. **Audyt scalonego PR-30** (`docs/audits/AUDYT_2026-09-10-PR30.md`): pełna zgodność z ADR-ami (ADR 0047, Kaladesh dwie osobne mapy, 3 materializacje, mapa Warhammer Fantasy T1, hasło Auriokowie, 180/180 testów, build 36 stron, map-audit 0).
-2. **Pogłębianie LORE:**
-   - Przebieg 1: karty `536arb-ethersworn-shieldmage`, `39mm2-brute-force`, `257ltr-lash-of-the-balrog`.
-   - Przebieg 2: karty `309isd-civilized-scholar`, `393dka-forge-devil`, `536arb-ethersworn-shieldmage`, `305arb-illusory-demon` oraz strony planów `innistrad.md` i `alara.md`.
-3. **Link-mining i 4 nowe hasła (próg ≥ 2 kart):**
-   - **`content/lore/conflux.md`** (wydarzenie, Alara): Scalenie Shardów, narodziny Maelstromu, spisek Bolasa (karty 305ARB + 536ARB).
-   - **`content/lore/grixis.md`** (geografia, Alara): martwy shard śmierci i rozkładu, Vithia, Sedraxis (karty 305ARB + 536ARB).
-   - **`content/lore/esper.md`** (geografia, Alara): archipelag eterium, sfinks Crucius, doktryna Ethersworn i Szlachetne Dzieło (karty 305ARB + 536ARB).
-   - **`content/lore/stensia.md`** (geografia, Innistrad): mroczna prowincja Geier Reach, wampirze rody (Markov, Falkenrath) i krater Ashmouth (karty 309ISD + 393DKA).
-4. **Passy mapowe i reguła L18:**
-   - Udokumentowanie reguły **L18** w `docs/LESSONS.md`, `PETLA_JAKOSCI.md` i `AGENTS.md` (pass mapowy to wzbogacanie i weryfikacja wyglądu map T3/T4, bez badania pinezek i bez modyfikowania T1/T2).
-   - Weryfikacja mapy Alary (T3/T4 mapforge): research potwierdził carmot i dawną Vithię, ale nie współrzędne pojedynczych POI **Carmot Mines** ani **Ruins of Vithia**. Punkty wycofano po audycie PR-31; `map-audit.py` = 0 uwag.
-5. **Nowa dostawa i materializacja (362BRO Simian Simulacrum):**
-   - Zapis verbatim `collection/entries/362bro-simian-simulacrum.md` (reguła L16).
-   - Pobranie i sformatowanie snapshotu Scryfall `scryfall/362bro-simian-simulacrum.json`.
-   - Materializacja karty `content/cards/362bro-simian-simulacrum.md` (Wojna Braci, wyspa Argoth na Dominarii, mechanika Unearth `{2}{G}{G}`, montaż modułów wzmacniających).
-   - Kotwica i pinezka w `maps/dominaria/map.json` (Argoth, x: 0.885, y: 0.36, region).
-   - Aktualizacja strony planu Dominaria oraz wpis w `content/co-nowego.md`.
-6. **Metryka:** completeness score osiąga **100% na wszystkich 41 stronach bazy** (19 kart, 9 haseł, 13 planów). 180/180 testów zielonych, build 41 stron czysty, map-audit 0 problemów.
+PR-31 został scalony jako `5a49ca3`. Pierwotny wpis historii powstał
+przed późnymi commitami produktu i opisywał tylko 41 stron oraz Simian
+Simulacrum; ten zapis odtworzono po audycie PR-31 w sesji PR-32.
+
+1. **Dwie Pętle Jakości:** audyt PR-30, pogłębienie lore, reguła L18 oraz
+   cztery hasła: `conflux`, `grixis`, `esper`, `stensia`.
+2. **15 pełnych kompletów wpis–snapshot–karta–mapa:**
+   `362bro-simian-simulacrum`, `171isd-grizzled-outcasts`,
+   `181avr-spectral-prison`, `544avr-thraben-valiant`,
+   `596ori-ghirapur-gearcrafter`, `612blb-crumb-and-get-it`,
+   `118mid-dire-strain-brawler`, `537cmr-kor-cartographer`,
+   `539clb-silvanus-s-invoker`, `83mm2-gorehorn-minotaurs`,
+   `19-8ed-twiddle`, `209eld-burning-yard-trainer`,
+   `312m13-goblin-battle-jester`, `531m3c-disa-the-restless` i
+   `347nph-pristine-talisman`.
+3. **Dwa nowe plany:** Eldraine z autorskim podkładem T4 oraz Wiedźmin z
+   Mapą Orteliusa T1 i LOD (master, L0, miniatura, 150 kafli).
+4. **Stan przy scaleniu:** 180/180 testów; build 57 stron (33 karty,
+   9 haseł, 15 planów) i 859 plików drzewa; map-audit 0; wiki-stats 100%.
+5. **Korekta po audycie w PR-32:** zachowano zatwierdzone T4 Eldraine,
+   ale naprawiono F1–F13: DFC, druk źródłowy 347NPH, scenę 209ELD,
+   semantykę i wygląd Eldraine, POI Alary, cytowania, dokumentację,
+   godziny changelogu, storage Wiedźmina oraz redakcję.
 
 ## 2026-09-10 — PR-30: Kaladesh jako dwie osobne mapy (sesja `arena/01a087fc-mtg`)
 

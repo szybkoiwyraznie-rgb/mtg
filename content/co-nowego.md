@@ -9,7 +9,7 @@
   - Dodana przybliżona pinezka planu (`maps/mirrodin/map.json`, `x: 0.500, y: 0.500`); Fabuła nie wskazuje regionu.
   - Strona planu [[mirrodin|Mirrodin]] zaktualizowana o wzmiankę o czystym rzemiośle i nieznanym położeniu kuźni.
 
-## 2026-09-11 02:30 — Nowa karta: Disa the Restless (Dominaria, Epoka Lodowcowa / Terisiare)
+## 2026-09-11 18:09 — Nowa karta: Disa the Restless (Dominaria, Epoka Lodowcowa / Terisiare)
 
 - **Materializacja karty:**
   - **[[531m3c-disa-the-restless|Disa the Restless]]** (`531M3C`, wydanie `M3C` / *Modern Horizons 3 Commander*, plan [[dominaria|Dominaria]]) — zasypane śniegiem pustkowia dawnego kontynentu Terisiare u stóp błękitnych lodowców i zrujnowanych filarów starożytnego imperium; nieustraszona zwiadowczyni i kronikarka bada w zmarzlinie masywne, szponiaste ślady Lhurgoyfa, ostrzegając rubieże królestwa Kjeldoru przed drapieżnikami epoki chłodu (`{2}{B}{R}{G}`, 5/6 Legendary Creature — Human Scout, wskrzeszanie stałych kart Lhurgoyfów trafiających na cmentarz oraz tworzenie tokenów Tarmogoyfa przy zranieniu gracza).
@@ -20,7 +20,7 @@
   - Dodana kotwica Kjeldor oraz pinezka w północnym Terisiare (`maps/dominaria/map.json`, pewność `region`, `x: 0.885, y: 0.265`).
   - Strona planu [[dominaria|Dominaria]] zaktualizowana o wzmiankę o Epoce Lodowcowej i nowej karcie.
 
-## 2026-09-11 02:00 — Nowa karta: Goblin Battle Jester (Warhammer Fantasy, Góry Krańca Świata)
+## 2026-09-11 17:56 — Nowa karta: Goblin Battle Jester (Warhammer Fantasy, Góry Krańca Świata)
 
 - **Materializacja karty:**
   - **[[312m13-goblin-battle-jester|Goblin Battle Jester]]** (`312M13`, wydanie `M13` / *Magic 2013*, plan [[warhammer-fantasy|Warhammer Fantasy]]) — czerwono-brązowa skalista półka nad wąwozem w Górach Krańca Świata (*Worlds Edge Mountains*); wojenny trefniś z plemienia Krzywego Księżyca (*Crooked Moon*) w asymetrycznym stroju z kości i peruce odwraca uwagę wrogów groteskowym, prowokacyjnym tańcem na krawędzi urwiska, uniemożliwiając im uformowanie muru tarcz i otwierając drogę do zabójczego uderzenia większych goblinów i orków od tyłu (`{3}{R}`, 2/2 Goblin, wyzwalana zdolność: przy rzuceniu czerwonego zaklęcia docelowy stwór nie może blokować w tej turze).
@@ -30,6 +30,12 @@
 - **Pinezka i mapa Warhammer Fantasy:**
   - Dodana kotwica Karak Osiem Szczytów oraz pinezka w paśmie Worlds Edge Mountains (`maps/warhammer-fantasy/map.json`, pewność `region`, `x: 0.720, y: 0.580`).
   - Strona planu [[warhammer-fantasy|Warhammer Fantasy]] zaktualizowana o opis Nocnych Goblinów, plemienia Krzywego Księżyca i odsyłacz do nowej karty.
+
+## 2026-09-11 17:50 — Pakiet kart: Thraben Valiant, Gorehorn Minotaurs i Twiddle + nowy plan Wiedźmina
+
+- **[[544avr-thraben-valiant|Thraben Valiant]]** (`544AVR`, *Avacyn Restored*) — weteranka z Thraben schodzi do wulkanicznego Devils' Breach w Kessigu, uzbrojona w srebrny miecz i bicz do chwytania diabłów. Wpis kolekcji i snapshot Scryfall AVR #39 uzupełniają pinezkę dokładną (`x: 0.392`, `y: 0.945`) na mapie [[innistrad|Innistradu]].
+- **[[83mm2-gorehorn-minotaurs|Gorehorn Minotaurs]]** (`83MM2`, *Modern Masters 2015*) — trójka minotaurów Zwierzoludzi szarżuje przez puszczę z woli Głazu Stada. Wpis kolekcji i snapshot Scryfall MM2 #116 uzupełniają pinezkę regionalną w The Great Forest (`x: 0.4054`, `y: 0.3878`) na mapie [[warhammer-fantasy|Starego Świata]].
+- **Nowy plan [[wiedzmin|Wiedźmin]] i [[19-8ed-twiddle|Twiddle]]** (`19_8ED`, *Eighth Edition*) — czarodziejka z Aretuzy na wyspie Thanedd precyzyjnie obraca astrolabium szafirowymi nićmi energii. Plan otrzymał dostarczoną przez właściciela Mapę Orteliusa T1 z LOD: `master.jpg` 5093×7209, `l0.jpg`, `mini.jpg` i 150 kafli. Wpis kolekcji, snapshot Scryfall 8ED #111 i pinezka dokładna Thanedd (`x: 0.4153`, `y: 0.3045`) domykają materializację.
 
 ## 2026-09-11 17:50 — Nowy plan: Eldraine (mapa T4) + nowa karta: Burning-Yard Trainer (Ardenvale)
 
@@ -47,7 +53,7 @@
   - Pinezka karty osadzona przy Castle Ardenvale (`maps/eldraine/map.json`, pewność `dokladna`, `x: 0.500, y: 0.4643`).
   - Strona planu [[eldraine|Eldraine]] rozdziela scenę 209ELD od kanonicznego Burning Yard w Embereth.
 
-## 2026-09-11 01:30 — Nowa karta: Silvanus's Invoker (Zapomniane Krainy, Wysoki Las)
+## 2026-09-11 17:50 — Nowa karta: Silvanus's Invoker (Zapomniane Krainy, Wysoki Las)
 
 - **Materializacja karty:**
   - **[[539clb-silvanus-s-invoker|Silvanus's Invoker]]** (`539CLB`, wydanie `CLB` / *Commander Legends: Battle for Baldur's Gate*, plan [[forgotten-realms|Zapomniane Krainy]]) — smokowiec-druid w prastarych ostępach Wysokiego Lasu (*High Forest*) wsuwa szpony w glebę, wzywając w imię Silvanusa (Dębowego Ojca) potężnego żywiołaka ziemi i drewna do bezwzględnej obrony kniei przed intruzami (`{2}{G}`, 3/2 Dragon Druid, zdolność Conjure Elemental `{8}` budząca ląd jako żywiołaka 8/8 z tratowaniem i pośpiechem).
@@ -58,7 +64,7 @@
   - Dodana kotwica i pinezka dla regionu Wysoki Las (`maps/forgotten-realms/map.json`, pewność `region`, `x: 0.215, y: 0.175`).
   - Strona planu [[forgotten-realms|Zapomniane Krainy]] uzupełniona o opis Wysokiego Lasu i odsyłacz do nowej karty.
 
-## 2026-09-11 01:20 — Nowa karta: Kor Cartographer (Zendikar, Ondu / Makindi)
+## 2026-09-11 17:50 — Nowa karta: Kor Cartographer (Zendikar, Ondu / Makindi)
 
 - **Materializacja karty:**
   - **[[537cmr-kor-cartographer|Kor Cartographer]]** (`537CMR`, wydanie `CMR` / *Commander Legends*, plan [[zendikar|Zendikar]]) — zwiadowczyni korów na linach zwisająca z krawędzi lewitującego płaskowyżu nad kanionami Makindi na Ondu; precyzyjne nanoszenie ruchomych skał na pergamin wbrew wiatrowi i odnajdywanie stabilnych równin dla karawany (`{3}{W}`, 2/2 Kor Scout, wejście przeszukujące i wystawiające Równinę).
@@ -69,7 +75,7 @@
   - Dodana pinezka na kotwicy Makindi Trenches (`maps/zendikar/map.json`, pewność `dokladna`, `x: 0.28, y: 0.8429`).
   - Strona planu [[zendikar|Zendikar]] uzupełniona o odsyłacz do nowej karty w sekcji Ondu i podsumowaniu.
 
-## 2026-09-11 01:10 — Nowa karta: Dire-Strain Brawler (Innistrad, Gavony)
+## 2026-09-11 17:50 — Nowa karta: Dire-Strain Brawler (Innistrad, Gavony)
 
 - **Materializacja karty:**
   - **[[118mid-dire-strain-brawler|Dire-Strain Brawler]]** (`118MID`, wydanie `MID` / *Innistrad: Midnight Hunt*, plan [[innistrad|Innistrad]]) — nocna wiejska farma w Gavony pod pełnią księżyca; czwarta para porzuconych butów przy stodole zdradza, że na podwórzu pojawił się monstrualny wilkołak rodu Dire-strain o ciele 6/6 z czujnością (*Vigilance*, *Nightbound*), spokojnie dominującym podwórze pośród zmowy milczenia zastraszonych gospodarzy.
@@ -80,7 +86,7 @@
   - Dodana pinezka na rolniczym obszarze prowincji Gavony (`maps/innistrad/map.json`, pewność `region`, `x: 0.59, y: 0.449`).
   - Strona planu [[innistrad|Innistrad]] zaktualizowana o odsyłacz do nowej karty.
 
-## 2026-09-11 01:00 — Nowa karta: Crumb and Get It (Śródziemie, Eriador)
+## 2026-09-11 17:50 — Nowa karta: Crumb and Get It (Śródziemie, Eriador)
 
 - **Materializacja karty:**
   - **[[612blb-crumb-and-get-it|Crumb and Get It]]** (`612BLB`, wydanie `BLB` / *Bloomburrow*, transpozycja do planu [[srodziemie|Śródziemie]]) — hobbit podróżujący nocą przez wzgórza Eriadoru powstrzymuje wygłodniałego drapieżnika bochenkiem chleba podróżnego; dar gościnności i prowiantu rodzący świetlistą aurę niewrażliwości na ciosy (`{W}`, Instant, mechanika Gift a Food: +2/+2 i niezniszczalność).
@@ -91,7 +97,7 @@
   - Dodana pinezka na wzgórzach Eriadoru (`maps/srodziemie/map.json`, pewność `region`, `x: 0.28, y: 0.30`).
   - Strona planu [[srodziemie|Śródziemie]] wzbogacona o akapit o Eriadorze oraz listę kart.
 
-## 2026-09-11 00:50 — Nowa karta: Ghirapur Gearcrafter (Kaladesh, Ghirapur)
+## 2026-09-11 17:50 — Nowa karta: Ghirapur Gearcrafter (Kaladesh, Ghirapur)
 
 - **Materializacja karty:**
   - **[[596ori-ghirapur-gearcrafter|Ghirapur Gearcrafter]]** (`596ORI`, wydanie `ORI` / *Magic Origins*, plan [[kaladesh|Kaladesh]]) — mistrz rzemiosła w nasłonecznionym warsztacie dzielnicy Embraal w Ghirapurze, tworzący filigranowego thoptera napędzanego czystym eterem (`{2}{R}`, 2/1 Human Artificer tworzący przy wejściu żeton 1/1 Thopter z lataniem, etos perfekcji wymagany przez Konsulat).
@@ -102,7 +108,7 @@
   - Dodana pinezka w dzielnicy Embraal w Ghirapurze (`maps/kaladesh/map.json`, pewność `region`, `x: 0.6723, y: 0.6294`).
   - Strona planu [[kaladesh|Kaladesh]] zaktualizowana o nową kartę.
 
-## 2026-09-11 00:40 — Nowa karta: Spectral Prison (Innistrad, Gavony)
+## 2026-09-11 17:50 — Nowa karta: Spectral Prison (Innistrad, Gavony)
 
 - **Materializacja karty:**
   - **[[181avr-spectral-prison|Spectral Prison]]** (`181AVR`, wydanie `AVR` / *Avacyn Restored*, plan [[innistrad|Innistrad]]) — uśpiony wędrowiec w podróżnym płaszczu na posadzce gotyckiej kaplicy w Gavony, otoczony eteryczną kopułą ze światła i śpiących geistów; zaklęcie Aury Kościoła Avacyn (`{1}{U}`, paraliż/uśpienie woli, pęknięcie klatki przy zewnętrznej interwencji magicznej).
@@ -113,7 +119,7 @@
   - Dodana pinezka na prowincji Gavony (`maps/innistrad/map.json`, pewność `region`, `x: 0.59, y: 0.449`).
   - Strona planu [[innistrad|Innistrad]] zaktualizowana o nową kartę.
 
-## 2026-09-11 00:30 — Nowa karta: Grizzled Outcasts (Innistrad, Kessig)
+## 2026-09-11 17:50 — Nowa karta: Grizzled Outcasts (Innistrad, Kessig)
 
 - **Materializacja karty:**
   - **[[171isd-grizzled-outcasts|Grizzled Outcasts]]** (`171ISD`, wydanie `ISD` / *Innistrad*, plan [[innistrad|Innistrad]]) — czterech wędrownych myśliwych na obrzeżach kessigijskiej osady, obserwowanych przez zaryglowane okno; znoszone skóry, kusza i sękaty kij maskujące drapieżne cechy Hordy Krallen (*Krallenhorde*). Niezależna Karta Katalogowa przedniej strony DFC (4/4 Human Werewolf za `{4}{G}`, mechanika ciszy nocy i zrzucania ludzkiego obuwia).
@@ -124,7 +130,7 @@
   - Dodana pinezka na prowincji Kessig (`maps/innistrad/map.json`, pewność `region`, `x: 0.41, y: 0.727`).
   - Strona planu [[innistrad|Innistrad]] powiązana z nową kartą.
 
-## 2026-09-11 00:20 — Nowa karta: Simian Simulacrum (Wojna Braci, Dominaria)
+## 2026-09-11 10:51 — Nowa karta: Simian Simulacrum (Wojna Braci, Dominaria)
 
 - **Materializacja karty:**
   - **[[362bro-simian-simulacrum|Simian Simulacrum]]** (`362BRO`, wydanie `BRO` / *The Brothers' War*, plan [[dominaria|Dominaria]]) — mechaniczny małpi konstrukt odkopany w zapomnianym warsztacie lasu Argoth; jednostka inżynieryjna montująca moduły wzmacniające (dwa znaczniki +1/+1) na opancerzonym automacie-strażniku i reaktywowana zieloną maną Argoth (Unearth `{2}{G}{G}`).
@@ -135,7 +141,7 @@
   - Dodana kotwica i pinezka na wyspie Argoth u południowo-wschodnich wybrzeży Terisiare (`maps/dominaria/map.json`, pewność `region`).
   - Strona planu [[dominaria|Dominaria]] zaktualizowana o nową kartę w osi czasu i sekcji mapy.
 
-## 2026-09-11 17:15 — Druga Pętla Jakości: hasła Esper i Stensia + weryfikacja mapy Alary
+## 2026-09-11 00:17 — Druga Pętla Jakości: hasła Esper i Stensia + weryfikacja mapy Alary
 
 - **Link-mining i nowe hasła (krok 3):**
   - **[[esper|Esper]]** (`content/lore/esper.md`, klasa `geografia`, plan [[alara|Alara]]) — archipelag wysp ze stopu eterium, szklanych mórz (Dwindling Sea, Inkwell) i geometrycznych miast (Palandius, Vectis, Sanctum Arcanum). Sekta Ethersworn, doktryna Szlachetnego Dzieła (*Noble Work*) sfinksa Cruciusa, kryzys surowca carmotu i zderzenie w Confluxie z Grixis. Próg spełniony przez karty [[536arb-ethersworn-shieldmage|Ethersworn Shieldmage]] i [[305arb-illusory-demon|Illusory Demon]].

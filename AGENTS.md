@@ -159,12 +159,17 @@ handoff sesji. Nie duplikuj statusu w wielu miejscach.
 
 ### Zakończenie sesji
 
-1. `npm test` + `npm run build` zielone; `git status` czysty; wszystko
-   wypchnięte.
-2. `docs/setup/HANDOFF_<data>.md` — stan, kolejka, decyzje, pułapki.
-3. Wpis w `content/co-nowego.md` (co się zmieniło w bazie); nagłówek wg
-   ADR 0029: `## RRRR-MM-DD HH:MM — tytuł` (data i godzina publikacji,
-   Europe/Warsaw).
-4. Opis PR zaktualizowany kumulatywnie; PR pozostaje do scalenia przez
+1. Zakończ commity produktu i zapisz identyfikator ostatniego z nich.
+2. **Dopiero po ostatnim commicie produktu** zaktualizuj
+   `docs/PROJECT_HISTORY.md`, `docs/ROADMAP.md`, właściwy handoff oraz
+   `content/co-nowego.md`. Jeśli później powstanie choć jeden commit
+   zmieniający treść, mapę, kod albo testy, dokumentacja zamknięcia jest
+   nieaktualna i ten krok trzeba powtórzyć.
+3. W changelogu użyj nagłówka ADR 0029:
+   `## RRRR-MM-DD HH:MM — tytuł` (rzeczywista data i godzina publikacji,
+   Europe/Warsaw; nie syntetyzuj godzin).
+4. `npm test` + `npm run build` zielone; `git status` czysty; wszystko
+   wypchnięte. Handoff ma podawać wyniki tego przebiegu, nie wcześniejsze.
+5. Opis PR zaktualizowany kumulatywnie; PR pozostaje do scalenia przez
    właściciela (Squash and merge).
-5. W czacie: blok przekazania projektu dla następnej sesji.
+6. W czacie: blok przekazania projektu dla następnej sesji.

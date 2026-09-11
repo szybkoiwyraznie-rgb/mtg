@@ -2,6 +2,8 @@
 
 **Cel:** Przeprowadzenie drugiego pełnego przebiegu Pętli Jakości (ADR 0006/0015, L18) na aktualnej bazie wiedzy.
 
+**Status finalny:** wykonane; późniejszy zakres tego samego PR objął 15 materializacji i dwa nowe plany.
+
 ## Zadania szczegółowe
 
 ### Krok 0–1: Integralność i weryfikacja bazy
@@ -28,3 +30,12 @@
 - Wpis w `content/co-nowego.md` z godziną publikacji.
 - Aktualizacja `docs/PROJECT_HISTORY.md`, `docs/ROADMAP.md`, `docs/setup/HANDOFF_2026-09-10-pr31.md`.
 - Aktualizacja opisu PR #31.
+
+### Krok 6: Rzeczywisty finał otwartego PR
+
+Po drugim przebiegu do PR-31 dodano 15 kompletów
+`collection/entries`–Scryfall–Karta Katalogowa–mapa oraz plany Eldraine
+i Wiedźmina. Stan przy scaleniu: 180/180 testów, build 57 stron
+(33 karty, 9 haseł, 15 planów), drzewo 859 plików, map-audit 0 i
+wiki-stats 100%. Pełny wykaz znajduje się w
+`docs/setup/HANDOFF_2026-09-10-pr31.md`.

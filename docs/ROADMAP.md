@@ -366,18 +366,6 @@ Reservoir na płycie L2 Ghirapuru, nowy klocek mapforge `zbiornik`.
 **176/176 testów**; 31 stron (15/4/12); map-audit 0; ZIP 87,8 MB.
 Raport: `docs/audits/AUDYT_2026-09-09-PR28.md`.
 
-**PR-31 (2026-09-10) — Pętla Jakości po PR-30 (dwa przebiegi):** audyt scalonego PR-30
-(ADR 0047, Kaladesh dwie mapy, 3 materializacje, Warhammer Fantasy T1,
-Auriokowie; integralność 180/180, build 36 stron, map-audit 0); pogłębienie
-kart `536arb-ethersworn-shieldmage`, `39mm2-brute-force`, `257ltr-lash-of-the-balrog`,
-`309isd-civilized-scholar` i `393dka-forge-devil`; cztery nowe hasła z link-miningu:
-`conflux` (wydarzenie, Alara), `grixis` (geografia, Alara), `esper` (geografia, Alara)
-oraz `stensia` (geografia, Innistrad); metryka kompletności 100% na wszystkich
-40 stronach (18 kart, 9 haseł, 13 planów); reguła procesowa L18 (pass mapowy =
-wygląd i wzbogacanie T3/T4, bez T1/T2 i bez badania pinezek); weryfikacja mapy
-Alary — po audycie PR-31 wycofano niepotwierdzone współrzędne Carmot Mines i
-Ruins of Vithia; map-audit 0. **180/180 testów**.
-
 **PR-30 (2026-09-10) — Kaladesh jako dwie osobne mapy.** Korekta
 właściciela: plan przeskalowany do skali planu **2000×1400** (jak
 Zendikar — duże, proporcjonalne góry/lasy; Ghirapur jako POI-kropka),
@@ -389,6 +377,19 @@ zaktualizowane (test szwu wodnego → test „osobna mapa o własnej
 skali"), treść (co-nowego + strona planu). **176/176 testów**;
 31 stron (15/4/12); map-audit 0. Audyt PR-29:
 `docs/audits/AUDYT_2026-09-10-PR29.md`.
+
+**PR-31 (2026-09-10/11) — dwie Pętle Jakości + 15 materializacji.**
+Audyt PR-30; pogłębienie lore; hasła `conflux`, `grixis`, `esper` i
+`stensia`; reguła L18. Następnie 15 pełnych kompletów
+wpis–snapshot–karta–mapa: 362BRO, 171ISD, 181AVR, 544AVR, 596ORI,
+612BLB, 118MID, 537CMR, 539CLB, 83MM2, 19_8ED, 209ELD, 312M13, 531M3C
+i 347NPH. Nowe plany: **Eldraine T4** oraz **Wiedźmin T1/LOD**.
+Stan przy scaleniu: **180/180 testów**, 57 stron (33/9/15), drzewo 859
+plików, map-audit 0, wiki-stats 100%. Po audycie PR-31 sesja PR-32
+zachowała zatwierdzone T4 Eldraine i naprawiła F1–F13, w tym wycofała
+niepotwierdzone Carmot Mines/Ruins of Vithia. Szczegóły:
+`docs/setup/HANDOFF_2026-09-10-pr31.md` oraz
+`docs/audits/AUDYT_2026-09-11-PR31.md`.
 
 ## Wątki otwarte (czekają na decyzję właściciela)
 

@@ -102,7 +102,7 @@ Prawdę zachowano w tajemnicy, by nie wywołać paniki, a gdy Mikaeus
 zginął podczas oblężenia Thraben, pochowano go potajemnie w katakumbach
 pod katedrą — i sekret poszedł z nim do grobu.
 
-Skutki poznał cały plan. Święte wady przestały trzymać, modlitwy
+Skutki poznał cały plan. Święte osłony przestały trzymać, modlitwy
 milkły, aniołów widywano coraz rzadziej. Przez cztery prowincje
 przetoczył się kryzys wiary, a potwory, wyczuwając brak świętej mocy,
 stały się śmielsze i głodniejsze. To jest właśnie epoka *Dark

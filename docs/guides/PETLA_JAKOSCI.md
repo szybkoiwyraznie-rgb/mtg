@@ -130,10 +130,14 @@ co zweryfikowane, co poprawione).
 
 ## Krok 5 — co nowego + zamknięcie
 
-1. Wpis w `content/co-nowego.md`: data + lista zmian sesji (co pogłębione,
-   jakie hasła, jakie naprawy).
-2. Handoff sesji (AGENTS.md §7) — krótko: co zrobiono, co zostaje.
-3. Commit + push; opis PR kumulatywnie.
+1. Zakończ commity produktu i zanotuj ostatni z nich.
+2. Po nim zaktualizuj `content/co-nowego.md`, historię, roadmapę i handoff
+   sesji (AGENTS.md §7). Godzina changelogu ma być rzeczywistą godziną
+   publikacji w Europe/Warsaw.
+3. Uruchom pełne bramki i wpisz ich świeże wyniki do handoffu.
+4. Commit + push; opis PR zaktualizuj kumulatywnie.
+5. Jeżeli po kroku 2 pojawi się kolejny commit treści, mapy, kodu lub
+   testów, zamknięcie jest nieaktualne: wróć do kroku 2 przed scaleniem.
 
 ## Czego Pętla NIE robi
 
