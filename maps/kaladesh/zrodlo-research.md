@@ -1,6 +1,8 @@
 # Kaladesh — research mapy (T1 → T4) i decyzje rekonstrukcji
 
 Data: 2026-09-09 (sesja PR-28 — 610M19 Gearsmith Prodigy).
+Aktualizacje: 2026-09-10 (ADR 0047 — dwie osobne mapy) oraz 2026-09-12
+(pętla kart Kaladeshu: hasła Ghirapur/Konsulat + kotwice L2 miasta).
 Procedura: PROCES_MAP.md MA1 (kolejność tierów) + SKILL_MAPA_PLANU §11
 (mapforge). Pełny raport: `docs/research/RESEARCH_2026-09-09-kaladesh-gearsmith-prodigy.md`.
 
@@ -13,13 +15,23 @@ Procedura: PROCES_MAP.md MA1 (kolejność tierów) + SKILL_MAPA_PLANU §11
 | T3 (oficjalny raster) | **brak** | Brak rastra mapy planu; istnieje tylko szkic Ghirapuru z „Boom & Bust” (fragment miasta, nie plan). |
 | T4 (rekonstrukcja) | **wykonana** | Kanon tekstowy podaje sieć rzeczną i przynależność lokacji (trzy rzeki, Peema, Vahd, Lathnu, dzielnice), ale żadnych współrzędnych — mapa jest rekonstrukcją relacyjną w mapforge. |
 
-## Decyzje właściciela (2026-09-08/09)
+## Decyzje właściciela i aktualny stan
 
-1. **Jedna mapa całego planu** (schematyczny plan + gęsty Ghirapur),
-   nie osobna mapa miasta.
-2. **Domyślne otwarcie mapy na Ghirapurze** (ADR 0045) —
-   `widok_domyslny` w `map.json` (pierwsza mapa z tym polem).
-3. Pakiet Kaladesh w PR #28 (mapa + strona planu + 610M19).
+1. **Stan początkowy PR-28:** jedna mapa całego planu, z gęstym Ghirapurem
+   w środku, powstała jako pierwsza rekonstrukcja T4 Kaladeshu.
+2. **Korekta PR-30 / ADR 0047:** Kaladesh ma **dwie osobne mapy**:
+   plan prowincji w skali planu (`podklad.svg`) oraz mapę miasta
+   Ghirapur (`ghirapur.svg`) we własnej skali, ładowaną twardą podmianą
+   deep-zoomu. Miasto na planie jest kropką/POI, nie płytą, a rzeki
+   miasta nie muszą zszywać się na krawędzi z rzekami planu.
+3. **Widok domyślny po PR-30:** cały plan (`x=0.5`, `y=0.5`, `zoom=1`),
+   nie automatyczne otwarcie na miasto. Deep-linki kart i haseł nadal
+   prowadzą do Ghirapuru/dzielnic.
+4. **Pętla 2026-09-12:** po drugiej karcie Kaladeshu dodano hasła
+   Ghirapur i Konsulat Kaladeshu oraz promowano wybrane etykiety/POI
+   osobnej mapy Ghirapuru do kotwic w `map.json`. Te kotwice są projekcją
+   L2 do złotego układu planu: kanon potwierdza nazwy, funkcje i relacje,
+   ale nie precyzyjne adresy.
 
 ## Kanon geograficzny użyty w scenie
 
@@ -49,3 +61,18 @@ Aetherflux Reservoir na płycie L2 nad Kujarem (kanon: „największy
 zbiornik rafinowanego eteru, zawieszony nad panoramą” — bez
 współrzędnych, wiki: Ghirapur; dorysowany w PR-29, klocek `zbiornik`);
 linia brzegu; północ = góra arkusza; skala wyłączona.
+
+## Addendum 2026-09-12 — kotwice L2 po drugiej karcie Kaladeshu
+
+Druga karta planu (`596ORI`) sprawiła, że Ghirapur i Konsulat przekroczyły
+próg link-miningu. Przy tej samej pętli `map.json` dostał kotwice dzielnic
+i punktów miasta użytecznych dla kart oraz dalszego deep-linkowania:
+Greenwheel, Greenwheel Domes, The Zoo, Embraal, Aetherflux Reservoir,
+Aether Hub, Eleven Bridges, Dukhara Canal, Aradara Station, Bastion,
+Akhara, Bomat, Freejam, Kujar, Weldfast, The Cowl, Foundry of the Consuls,
+Bunarat, Shaila's Claim, Ovalchase, First Bridge i Ninth Bridge.
+
+Wszystkie nowe współrzędne są przeliczeniem z etykiet/POI mapy L2 miasta,
+a nie twierdzeniem, że kanon podaje ulicę, taras lub adres. Dla kart:
+`610M19` pozostaje pinezką regionalną Greenwheel/Greenwheel Domes, a
+`596ORI` pinezką regionalną Embraal.

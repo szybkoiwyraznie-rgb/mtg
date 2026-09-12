@@ -1,3 +1,31 @@
+## 2026-09-12 19:15 — Kaladesh: Ghirapur, Konsulat i kotwice L2 miasta
+
+- **Link-mining Kaladeshu:** po drugiej karcie planu próg haseł przekroczyły
+  **[[ghirapur|Ghirapur]]** i **[[konsulat-kaladeshu|Konsulat Kaladeshu]]**.
+  Oba nowe hasła spinają `610m19-gearsmith-prodigy` oraz
+  `596ori-ghirapur-gearcrafter`, a wikilinki dopięto w obu kartach i na
+  stronie planu [[kaladesh|Kaladesh]]. Greenwheel i Embraal pozostają
+  dzielnicami jednej karty każda — jako kotwice mapy, nie osobne hasła.
+- **Źródła i korekta URL-a:** kwerenda potwierdziła działający oficjalny
+  adres *Planeswalker's Guide to Kaladesh* (`/news/magic-story/...`), więc
+  karta `596ORI`, strona planu i nowe hasła nie używają starego wariantu
+  `/news/feature/...` zwracającego 404. Hasła cytują też MTG Wiki
+  `Ghirapur`, `Consulate`, `Avishkar` oraz syntetyczne ujęcie MTG Salvation.
+- **Mapa L2:** `maps/kaladesh/map.json` promuje etykiety osobnej mapy
+  Ghirapuru do kotwic: **Greenwheel**, **Greenwheel Domes**, **The Zoo**,
+  **Embraal**, **Aetherflux Reservoir**, **Aether Hub**, **Eleven Bridges**,
+  **Dukhara Canal**, **Aradara Station**, **Bastion**, **Akhara**, **Bomat**,
+  **Freejam**, **Kujar**, **Weldfast**, **The Cowl**, **Foundry of the
+  Consuls**, **Bunarat**, **Shaila's Claim**, **Ovalchase**, **First Bridge**
+  i **Ninth Bridge**. Pozycje są projekcją z mapy miasta L2 do złotego
+  układu planu — jawnie rekonstrukcyjną, bez udawania adresów.
+- **Regresja:** nowy `test/kaladesh-link-mining.test.js` pilnuje progu dwóch
+  kart, wikilinków, braku pinezek dla haseł (ADR 0043), niepowstawania haseł
+  `greenwheel`/`embraal`, spójności kotwic dzielnic z pinezkami kart oraz
+  działającego URL-a oficjalnego przewodnika.
+- **Bramki końcowe:** 239/239 testów; build 78 stron (40 kart, 23 hasła,
+  15 planów); `map-audit` 0 problemów; `git diff --check` czysty.
+
 ## 2026-09-12 18:55 — Pętla mapowa Alary T3: POI i biomy
 
 - **Mapa T3:** pierwszy przebieg poza Innistradem poszedł w stronę map

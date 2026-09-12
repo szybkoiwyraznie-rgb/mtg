@@ -15,7 +15,7 @@ pinezka:
 
 ## Kronika Lore
 
-W metropolii **Ghirapur** na [[kaladesh|Kaladeshu]], stolicy wynalazczości
+W metropolii **[[ghirapur|Ghirapur]]** na [[kaladesh|Kaladeshu]], stolicy wynalazczości
 i sercu eterowego renesansu, rzemiosło osiąga rangę sztuki najwyższej.
 W nasłonecznionych pracowniach i warsztatach dzielnicy **Embraal**,
 gdzie zapach politury z palisandru miesza się z ozonową wonią rafinowanego
@@ -29,12 +29,12 @@ dotknięciem cyjanowej energii. Doświadczony rzemieślnik w jubilerskich
 rękawicach ostrożnie cofa dłonie znad stołu, wstrzymując oddech: pierwszy
 bezgłośny wzlot skonstruowanego thoptera to moment narodzin bytu,
 w którym techniczna doskonałość stapia się z estetyczną harmonią.
-W świecie rządzonym przez **Konsulat** tylko nieskazitelna precyzja
+W świecie rządzonym przez **[[konsulat-kaladeshu|Konsulat]]** tylko nieskazitelna precyzja
 i mistrzostwo detalu otwierają drogę do sławy i oficjalnego uznania.
 
 ## Postacie i Byty
 
-**Mistrz Kołodziej z Ghirapuru (Ghirapur Gearcrafter)** — człowiek,
+**Mistrz Kołodziej z [[ghirapur|Ghirapuru]] (Ghirapur Gearcrafter)** — człowiek,
 mistrz rzemiosła (Human Artificer), którego kunszt opiera się na
 cierpliwości, pewnej ręce i absolutnej czystości stopu metalu.
 
@@ -42,17 +42,17 @@ cierpliwości, pewnej ręce i absolutnej czystości stopu metalu.
 napędzany eterem; filigranowe skrzydełka i błękitne kryształowe tryby
 pozwalają mu unosić się bezgłośnie nad warsztatem.
 
-**Ghirapur i dzielnice rzemieślnicze (Embraal)** — stolica Kaladeshu,
+**[[ghirapur|Ghirapur]] i dzielnice rzemieślnicze (Embraal)** — stolica Kaladeshu,
 ośrodek gildii rzemieślniczych, forjów i pracowni zegarmistrzowskich.
 
-**Konsulat i sędziowie wynalazków** — najwyższa władza planu, przed
+**[[konsulat-kaladeshu|Konsulat]] i sędziowie wynalazków** — najwyższa władza planu, przed
 której trybunałami i inspektorami każdy konstruktor musi dowieść
 nieskazitelności swojego dzieła.
 
 ## Nazwa Karty
 
 **Ghirapur Gearcrafter** — „Ghirapurski Twórca Trybów” (lub „Kunsztmistrz
-Kół Zębatych z Ghirapuru”). Człon *Ghirapur* wiąże rzemieślnika
+Kół Zębatych z [[ghirapur|Ghirapuru]]”). Człon *Ghirapur* wiąże rzemieślnika
 z prestiżową tradycją stolicy planu, a *Gearcrafter* — połączenie
 *gear* (koło zębate, tryb) oraz *crafter* (kunsztmistrz, rzemieślnik
 artysta) — podkreśla, że na Kaladeshu mechanika nie jest surowym
@@ -73,7 +73,7 @@ i każdy ruch dłoni prowadzą do celu, jakim jest absolutna perfekcja.
 
 ## Transpozycja
 
-Zapis ukazuje scenę w **warsztacie rzemieślniczym w Ghirapurze**:
+Zapis ukazuje scenę w **warsztacie rzemieślniczym w [[ghirapur|Ghirapurze]]**:
 
 - **Pracownia w słońcu i stół z palisandru** — pełne światła wnętrze
   pracowni, w którym szlachetne drewno blatu kontrastuje z połyskiem
@@ -88,7 +88,7 @@ Zapis ukazuje scenę w **warsztacie rzemieślniczym w Ghirapurze**:
 ## Na Mapie
 
 Pinezka stoi w dzielnicy warsztatów i kowali **Embraal** w metropolii
-**Ghirapur** (`x: 0.6723`, `y: 0.6294`) — pewność **region**. Embraal
+**[[ghirapur|Ghirapur]]** (`x: 0.6723`, `y: 0.6294`) — pewność **region**. Embraal
 to wschodnia część stolicy, słynąca z pracowni precyzyjnych i odlewni,
 leżąca w pobliżu Kanału Dukhara.
 
@@ -121,9 +121,9 @@ wrogów.
 ## Źródła
 
 1. [Ghirapur Gearcrafter — Scryfall](https://scryfall.com/card/ori/149/ghirapur-gearcrafter) — dane karty, koszt, typy, zdolność tworzenia thoptera i inskrypcja.
-2. [A Planeswalker's Guide to Kaladesh](https://magic.wizards.com/en/news/feature/planeswalkers-guide-kaladesh-2016-11-02) — struktura Ghirapuru, dzielnice Embraal i Freejam, kult kunsztu, rola Konsulatu i technologia thopterów.
+2. [A Planeswalker's Guide to Kaladesh](https://magic.wizards.com/en/news/magic-story/planeswalkers-guide-kaladesh-2016-11-02) — struktura [[ghirapur|Ghirapuru]], dzielnice Embraal i Freejam, kult kunsztu, rola [[konsulat-kaladeshu|Konsulatu]] i technologia thopterów.
 3. [The Art of Magic: The Gathering — Kaladesh](https://mtg.wiki/page/The_Art_of_Magic:_The_Gathering_-_Kaladesh) — eter jako paliwo innowacji, filigranowe wzornictwo, kultura warsztatów.
-4. Fabuła (2026-09-11) — warsztaty Ghirapuru, rzemieślnik w jubilerskich rękawicach przy blacie z palisandru, złocisty thopter z błękitnymi kryształowymi trybami i smużką cyjanowej energii, dążenie do perfekcji pod okiem konsulów.
+4. Fabuła (2026-09-11) — warsztaty [[ghirapur|Ghirapuru]], rzemieślnik w jubilerskich rękawicach przy blacie z palisandru, złocisty thopter z błękitnymi kryształowymi trybami i smużką cyjanowej energii, dążenie do perfekcji pod okiem [[konsulat-kaladeshu|konsulów]].
 
 ## Podsumowanie Lore
 
@@ -131,4 +131,4 @@ W słonecznym warsztacie Ghirapuru mistrz kołodziej powołuje do życia
 filigranowego thoptera, którego kryształowe tryby i błękitny eter unoszą
 w bezgłośnym locie. Karta za `{2}{R}` o ciele 2/1 natychmiast tworzy
 latającego automata 1/1, doskonale łącząc żar twórczej inwencji
-z kaladeskim etosem doskonałości wymaganym przez Konsulat.
+z kaladeskim etosem doskonałości wymaganym przez [[konsulat-kaladeshu|Konsulat]].
