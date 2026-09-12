@@ -1,3 +1,28 @@
+## 2026-09-12 17:31 — Pętla Jakości: Gavony i Kessig (Innistrad)
+
+- **Link-mining:** po przeglądzie kart Innistradu powstały dwa hasła
+  regionalne: **[[gavony|Gavony]]** i **[[kessig|Kessig]]**. Gavony
+  przekroczyło próg dzięki `118mid-dire-strain-brawler` i
+  `181avr-spectral-prison`; Kessig dzięki `171isd-grizzled-outcasts` i
+  `544avr-thraben-valiant`. Dodatkowe wikilinki dopięto w kartach
+  `309isd-civilized-scholar`, `393dka-forge-devil`, na planie
+  [[innistrad|Innistrad]] oraz w powiązanych hasłach.
+- **Źródła i korekta linków:** kwerenda potwierdziła działający adres
+  oficjalnego przewodnika Gavony (`2011-09-28`, zamiast starego 404
+  `2011-09-07`) oraz przewodnik Kessigu z `2011-10-05`; nowe hasła cytują
+  też MTG Wiki dla układu parafii, Ulvenwaldu, Breakneck Ride i Devil's
+  Breach.
+- **Mapa:** pass mapowy nie dorysował obiektów, bo Innistrad jest wariantem
+  T1. Hasła nie mają własnych pinezek; prowadzą jedynie deep-linkami do
+  regionalnych kotwic mapy: Gavony (`x: 0.59`, `y: 0.449`) i Kessig
+  (`x: 0.41`, `y: 0.727`).
+- **Regresja:** `test/innistrad-link-mining.test.js` pilnuje progu dwóch kart,
+  braku pinezek haseł, wikilinków kart/planów oraz poprawionego URL-a
+  przewodnika Gavony.
+- **Bramki końcowe:** 226/226 testów, build 72 strony (40 kart, 17 haseł,
+  15 planów) i 859 plików drzewa archiwum; map-audit 0; wiki-stats 100%
+  (7,5/8); `git diff --check` czysty.
+
 ## 2026-09-12 16:56 — Nowa karta: Tenth District Veteran (Ravnica)
 
 - **Materializacja karty:** **[[516rna-tenth-district-veteran|Tenth District

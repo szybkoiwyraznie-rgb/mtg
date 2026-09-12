@@ -58,6 +58,27 @@ liczą się do progu kart (zasada właściciela 2026-08-31):
 | Pakt Gildii | magia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
 | Wojek / Liga Wojek | spolecznosc | plan ravnica, źródła 516RNA | wymaga wzmianki w treści drugiej karty |
 
+## Link-mining Innistradu (Pętla Jakości, 2026-09-12)
+
+**Gavony — wykonane**, `content/lore/gavony.md`, klasa `geografia`, plan
+Innistrad. Próg spełniły treści kart `118mid-dire-strain-brawler` +
+`181avr-spectral-prison`; wikilinki dopisane też w kartach
+`393dka-forge-devil` i `544avr-thraben-valiant`, na planie Innistradu
+oraz w powiązanych hasłach. Hasło nie ma pinezki — odsyła do kotwicy
+regionu `#/mapa/innistrad?x=0.59&y=0.449`.
+
+**Kessig — wykonane**, `content/lore/kessig.md`, klasa `geografia`, plan
+Innistrad. Próg spełniły treści kart `171isd-grizzled-outcasts` +
+`544avr-thraben-valiant`; wikilinki dopisane też w kartach
+`181avr-spectral-prison`, `309isd-civilized-scholar` i
+`393dka-forge-devil`, na planie Innistradu oraz w powiązanych hasłach.
+Hasło nie ma pinezki — odsyła do kotwicy regionu
+`#/mapa/innistrad?x=0.41&y=0.727`.
+
+Encje nadal poniżej progu osobnego hasła albo wymagające dokładniejszej
+separacji zakresu: Ulvenwald, Devil's Breach, Nephalia, Markovowie,
+Kościół Avacyn/Katedra Avacyn, Skirsdag.
+
 ## Kolejka link-miningu: encje czekające na drugą kartę (Alara)
 
 Sesja PR-21 (2026-09-06) — pogłębienie strony planu Alary (sekcja

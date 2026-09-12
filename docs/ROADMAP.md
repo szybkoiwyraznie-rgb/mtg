@@ -452,6 +452,18 @@ zasilające próg, a hasła odsyłają do mapy tylko deep-linkami `?x=&y=`.
 map-audit 0; wiki-stats 100%. Handoff:
 `docs/setup/HANDOFF_2026-09-12-pr33.md`.
 
+**PR-33 cd. (2026-09-12) — Pętla Jakości: Gavony i Kessig.** Po zielonym
+kroku 0 pętla przeszła do link-miningu Innistradu. Powstały hasła
+`gavony` i `kessig` po progu dwóch kart; dopięto wikilinki w kartach
+118MID, 181AVR, 171ISD, 544AVR, 309ISD i 393DKA, na planie Innistradu oraz
+w powiązanych hasłach. Innistrad jest T1, więc pass mapowy nie zmienił
+rastra; hasła prowadzą tylko deep-linkami do kotwic regionów Gavony
+(`0.59/0.449`) i Kessig (`0.41/0.727`). Dodano regresję
+`test/innistrad-link-mining.test.js`, w tym strażnik działającego URL-a
+Gavony `2011-09-28`. **226/226 testów**; build 72 strony (40/17/15) /
+859 plików drzewa archiwum; map-audit 0; wiki-stats 100%. Handoff:
+`docs/setup/HANDOFF_2026-09-12-pr33.md`.
+
 ## Wątki otwarte (czekają na decyzję właściciela)
 
 > **Zamknięte decyzją właściciela 2026-09-05 — NIE wracać do nich:**

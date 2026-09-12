@@ -4,6 +4,41 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-12 — PR-33 cd.: Pętla Jakości Innistradu, Gavony i Kessig
+
+Po domknięciu 516RNA właściciel uruchomił Pętlę Jakości z instrukcją
+powtarzania, dopóki pozwala budżet sesji. Krok 0 był zielony: `npm test`
+222/222, `npm run build` 70 stron (40 kart, 15 haseł, 15 planów) i 859
+plików drzewa archiwum; `git log --oneline -5` potwierdził HEAD `9aaa13f`.
+
+1. **Rozpoznanie link-miningu:** grep po kartach Innistradu wskazał dwie
+   encje ponad progiem: **Gavony** (`118mid-dire-strain-brawler`,
+   `181avr-spectral-prison` oraz dalsze wzmianki) i **Kessig**
+   (`171isd-grizzled-outcasts`, `544avr-thraben-valiant` oraz dalsze
+   wzmianki). Thraben i Stensia miały już hasła; Nephalia, Ulvenwald czy
+   Devil's Breach zostały poniżej osobnego zakresu/progu.
+2. **Nowe hasła:** powstały `content/lore/gavony.md` i
+   `content/lore/kessig.md`, oba klasy `geografia`, plan `innistrad`, bez
+   frontmatterowej pinezki. Hasła opisują odpowiednio ludzkie centrum
+   prowincjonalne wokół Thraben oraz zachodnią krainę Ulvenwaldu, wsi,
+   Breakneck Ride i wilkołaków.
+3. **Wikilinki:** dopisano linki we wszystkich kartach i stronach planu,
+   które wspominają regiony: `118MID`, `181AVR`, `171ISD`, `544AVR`,
+   `309ISD`, `393DKA`, `content/planes/innistrad.md` oraz powiązane hasła
+   `thraben`/`stensia`. Przy okazji poprawiono martwy URL przewodnika
+   Gavony z `2011-09-07` na działający `2011-09-28`.
+4. **Mapa:** Innistrad jest T1, więc pass mapowy nie wzbogaca rastra. Nowe
+   hasła łączą się z mapą tylko deep-linkami do istniejących kotwic regionów:
+   Gavony `0.59/0.449`, Kessig `0.41/0.727`. Nie dodano żadnych pinezek
+   haseł, zgodnie z ADR 0043.
+5. **Regresja:** `test/innistrad-link-mining.test.js` pilnuje progów dwóch
+   kart, zakresu haseł, braku pinezek, linków w kartach/planie i działającego
+   źródła Gavony.
+
+Bramki końcowe po Pętli Jakości: **226/226 testów**, build **72 strony**
+(40 kart, 17 haseł, 15 planów) i **859 plików drzewa archiwum**, map-audit
+0, wiki-stats 100% (7,5/8), czysty `git diff --check`.
+
 ## 2026-09-12 — PR-33 cd.: materializacja 516RNA Tenth District Veteran
 
 Właściciel przekazał dostawę `516RNA / Tenth District Veteran / RNA /
