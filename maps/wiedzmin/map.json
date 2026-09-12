@@ -159,6 +159,13 @@
       "uzasadnienie": "Fabuła właściciela nazywa chatę sołtysa w Downwarren/Sztygarach oraz wodę z Krzywuchowych Moczarów, więc scena należy do południowego Velen. Globalny raster T1 nie zawiera osobnej etykiety tej wsi ani lokalnego planu chaty; pinezka dziedziczy regionalną kotwicę Velen (odczyt z mastera px 2095, 2024) i nie udaje dokładnego progu izby."
     },
     {
+      "karta": "599mid-candlegrove-witch",
+      "x": 0.4113,
+      "y": 0.2807,
+      "pewnosc": "region",
+      "uzasadnienie": "Fabuła właściciela wskazuje prastare, mgliste lasy wokół Łysej Góry w Velen. Źródła lokują Łysą Górę/Ard Cerbin w południowo-wschodnim lub południowym Velen i łączą ją z sabatem, ale globalny raster Orteliusa T1 nie zawiera lokalnego planu góry, polany ani brzozowego kręgu. Pinezka dziedziczy regionalną kotwicę Velen (odczyt z mastera px 2095, 2024) i nie udaje dokładnego gaju."
+    },
+    {
       "karta": "540dst-chittering-rats",
       "x": 0.4045,
       "y": 0.2469,

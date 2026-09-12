@@ -23,7 +23,10 @@ stronę Kontynentu: do opuszczonej wskutek wojny chaty na bagnach
 cielesnym zagrożeniem. `279M21 Village Rites` zostaje w tym samym regionie,
 ale schodzi do chaty sołtysa w Downwarren/Sztygarach: księga rodowa, woda z
 Krzywuchowych Moczarów, biała koza i sąsiedzi w lnianych kapturach tworzą
-rachunek długu wobec Pań Lasu. `540DST Chittering Rats` schodzi pod
+rachunek długu wobec [[panie-lasu|Pań Lasu]]. `599MID Candlegrove Witch`
+zostaje przy Łysej Górze w Velen: świecowy gaj z brzozowych gałęzi,
+guślarka w jelenim porożu i krąg wsi zmieniają coven w ziołowo-ogienną
+obronę przed nocą. `540DST Chittering Rats` schodzi pod
 [[novigrad|**Novigrad**]]: tam stado pseudoszczurów odcina drogę
 poszukiwaczowi skarbów i zmusza go, by zachował mapy kosztem wstrzymania
 dalszej wyprawy.
@@ -74,7 +77,7 @@ pograniczu oraz przy przeprawach przez Pontar, ale wojskowa obecność nie
 przywraca bezpieczeństwa bagnom poza głównymi traktami.
 
 Veleńskie wsie żyją między biedą, wojną i lokalnymi kultami. Źródła łączą
-ludność krainy z zabobonem, utratą domów i zależnością od Pań Lasu, czyli
+ludność krainy z zabobonem, utratą domów i zależnością od [[panie-lasu|Pań Lasu]], czyli
 Wiedźm z Krzywuchowych Moczarów. Sztygary/Downwarren leżą w południowym
 Velen przy bagnach, a ich mieszkańcy w angielskim opisie wprost oddają
 cześć Ladies of the Wood. To dlatego wiejska izba, szeptucha, ofiara i
@@ -96,6 +99,15 @@ Moczarów, parobek klęczy przy białej kozie z czerwoną wstążką, a sąsiedz
 w lnianych kapturach patrzą, jak dług przechodzi w zapłatę. Transpozycja
 zostawia parobka przy życiu, bo Fabuła wskazuje jako jawną ofiarę kozę;
 mechaniczny koszt wymaga jednej ofiary i dwóch nowych odczytów księgi.
+
+W scenie [[599mid-candlegrove-witch|**Candlegrove Witch**]] ten sam region
+pokazuje drugie, jaśniejsze oblicze wiejskiej magii. Łysa Góra jest w
+źródłach wzgórzem południowo-wschodniego Velen, związanym ze Świętym Dębem,
+Świętem Darów, sabatem i podaniami o czarownicach. Dlatego guślarka w
+lnianej koszuli i wieńcu z jeleniego poroża może unosić się nad kręgiem
+brzozowych gałęzi i świec, ale nie staje się przez to jedną z Pań Lasu:
+wiejski krąg jednoczy różne dary ludzi, by ogniem i ziołami odeprzeć nocne
+upiory oraz zbiegłe potwory.
 
 ## Novigrad — Wolne Miasto i jego podziemia
 
@@ -144,6 +156,11 @@ Pinezki na mapie (ADR 0043: tylko karty):
   wskazuje wieś i mokradła, lecz raster T1 nie rozrysowuje lokalnego planu
   chaty sołtysa, więc znacznik dziedziczy tę samą regionalną kotwicę Velen
   (`0.4113/0.2807`).
+- **[[599mid-candlegrove-witch|Candlegrove Witch]]** (599MID); **lasy wokół
+  Łysej Góry, Velen**, pewność `region` — źródła lokują Łysą Górę w
+  południowo-wschodnim Velen i łączą ją z sabatem, ale raster T1 nie ma
+  lokalnego planu góry ani leśnej polany; znacznik dziedziczy regionalną
+  kotwicę Velen (`0.4113/0.2807`).
 - **[[540dst-chittering-rats|Chittering Rats]]** (540DST); **Novigrad**,
   pewność `dokladna` w skali mapy Kontynentu — ponownie zweryfikowana
   miejska kotwica `0.4045/0.2469` wskazuje ikonę Novigradu, lecz Fabuła nie
@@ -173,9 +190,17 @@ Pinezki na mapie (ADR 0043: tylko karty):
   https://wiedzmin.fandom.com/wiki/Sztygary
   https://witcher.fandom.com/wiki/Downwarren
 - Wiedźmin Wiki, *Wiedźmy z Krzywuchowych Moczarów* — Panie Lasu jako
-  władczynie Velen, prośby wieśniaków, oczekiwane ofiary, sny i miejscowe
-  czarownice jako pośredniczki:
+  władczynie Velen, prośby wieśniaków, oczekiwane ofiary, sny, miejscowe
+  czarownice jako pośredniczki oraz wiosenne święto na Łysej Górze:
   https://wiedzmin.fandom.com/wiki/Wied%C5%BAmy_z_Krzywuchowych_Moczar%C3%B3w
+- Wiedźmin Wiki, *Łysa Góra* oraz Witcher Wiki, *Bald Mountain (location)* —
+  wzgórze w południowo-wschodnim/południowym Velen, Święty Dąb, jaskinia,
+  Święto Darów, sabat oraz lokalne podania o czarownicach i mglakach:
+  https://wiedzmin.fandom.com/wiki/%C5%81ysa_G%C3%B3ra
+  https://witcher.fandom.com/wiki/Bald_Mountain_(location)
+- Wiedźmin Wiki, *Upiór* — upiory jako potwory nawiedzające miejsca,
+  pogrążające je we mgle i ciemności:
+  https://wiedzmin.fandom.com/wiki/Upi%C3%B3r
 - Wiedźmin Wiki, *Konary* oraz Witcher Wiki, *Blackbough* — para nazw dla
   Blackbough/Konarów i kontekst guślarza z okolicy:
   https://wiedzmin.fandom.com/wiki/Konary

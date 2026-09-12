@@ -4,6 +4,47 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-12 — PR-33 cd.: 599MID Candlegrove Witch i Panie Lasu
+
+Właściciel dostarczył `599MID / Candlegrove Witch / MID / Wiedźmin` wraz z
+Fabułą o guślarce w lnianej koszuli i wieńcu z jeleniego poroża, unoszącej
+się w transie w mglistych lasach wokół Łysej Góry w Velen. Grube świece z
+pszczelego wosku na brzozowych gałęziach odpierają upiory i zbiegłe potwory,
+a wiejski krąg łączy dar i wolę, by ziołowo-ogienna magia wyniosła ludzi
+ponad nocne zagrożenia.
+
+1. **Materiał źródłowy:** utworzono
+   `collection/entries/599mid-candlegrove-witch.md` z Fabułą właściciela i
+   `imgId: 599MID` oraz pełny snapshot
+   `scryfall/599mid-candlegrove-witch.json` dla Scryfall **MID #8**.
+   Notka numeracji przypomina, że `599MID` nie jest numerem kolekcjonerskim
+   druku.
+2. **Karta Katalogowa:** `content/cards/599mid-candlegrove-witch.md` jest
+   lore-first: najpierw prowadzi przez mgły południowego Velen, lewitującą
+   guślarkę, jelenie poroże, brzozowy świecowy krąg i odpieranie upiorów,
+   dopiero później czyta `{1}{W}`, `Coven`, warunek trzech różnych sił i
+   chwilowe flying jako lewitację ponad nocnym starciem.
+3. **Mapa:** `maps/wiedzmin/map.json` dostał wyłącznie pinezkę karty, nie
+   hasła. Pinezka ma pewność `region` i dziedziczy istniejącą kotwicę Velen
+   (`0.4113/0.2807`, `px_t1 [2095, 2024]`), bo źródła lokują Łysą Górę w
+   południowo-wschodnim/południowym Velen, ale globalny raster Orteliusa T1
+   nie rozrysowuje lokalnej góry, polany ani świecowego gaju.
+4. **Link-mining Wiedźmina:** druga karta odwołująca się do Pań Lasu
+   (`279m21-village-rites` + `599mid-candlegrove-witch`) domknęła próg
+   hasła `content/lore/panie-lasu.md` (`spolecznosc`). Hasło nie ma własnej
+   pinezki i odsyła do regionalnej kotwicy Velen. Wikilinki dopisano w obu
+   kartach, haśle `velen` i stronie planu `wiedzmin`.
+5. **Dokumentacja i regresja:** dodano plan pracy
+   `docs/plans/PLAN_2026-09-12-599MID.md`, aktualizacje `content/co-nowego.md`,
+   `docs/backlog.md`, `docs/ROADMAP.md`, handoff PR-33 oraz test
+   `test/wiedzmin-599mid.test.js`. Test pilnuje Fabuły, rozdziału `599MID` od
+   MID #8, świecowego rytuału, ostrożnej transpozycji coven i braku pinezek
+   dla haseł.
+
+Bramki końcowe: **261/261 testów**, build **87 stron** (42 karty, 30 haseł,
+15 planów; artefakt 1540.7 kB) i **853 pliki drzewa archiwum**, map-audit 0,
+wiki-stats 100% (7,3/8) oraz czysty `git diff --check`.
+
 ## 2026-09-12 — PR-33 cd.: 242ALA Knight of the Skyward Eye i Bant
 
 Właściciel dostarczył pojedynczą nową materializację: `242ALA Knight of the

@@ -46,7 +46,7 @@ ozdobą krajobrazu, lecz praktycznym językiem przetrwania.
 [1](https://wiedzmin.fandom.com/wiki/Velen_(ziemia_niczyja))
 
 Najmocniej widać to przy Krzywuchowych Moczarach. Wiedźmy, znane także
-jako Panie Lasu, miały podporządkować sobie Velen, wysłuchiwać próśb
+jako [[panie-lasu|Panie Lasu]], miały podporządkować sobie Velen, wysłuchiwać próśb
 wieśniaków i oczekiwać w zamian ofiar. W kontaktach z ludnością często
 pośredniczyły miejscowe czarownice, a sny i leśne znaki stawały się częścią
 ich władzy. [3](https://wiedzmin.fandom.com/wiki/Wied%C5%BAmy_z_Krzywuchowych_Moczar%C3%B3w)
@@ -54,10 +54,18 @@ ich władzy. [3](https://wiedzmin.fandom.com/wiki/Wied%C5%BAmy_z_Krzywuchowych_M
 ### Sztygary i południowy skraj
 
 Sztygary, angielskie Downwarren, są jedną z wsi Velen. Źródła lokują je w
-południowej części regionu, przy bagnach, i łączą z kultem Pań Lasu,
-Krzywuchowymi Moczarami oraz historią złego ducha nawiedzającego
-mieszkańców w snach. [4](https://wiedzmin.fandom.com/wiki/Sztygary),
+południowej części regionu, przy bagnach, i łączą z kultem
+[[panie-lasu|Pań Lasu]], Krzywuchowymi Moczarami oraz historią złego ducha
+nawiedzającego mieszkańców w snach. [4](https://wiedzmin.fandom.com/wiki/Sztygary),
 [5](https://witcher.fandom.com/wiki/Downwarren)
+
+Łysa Góra, w Starszej Mowie Ard Cerbin, jest wzgórzem w południowo-wschodnim
+Velen. Na szczycie rośnie Święty Dąb, we wnętrzu znajduje się jaskinia, a
+źródła wiążą to miejsce ze Świętem Darów, sabatem oraz ludowymi podaniami o
+czarownicach, bobołakach i wichtach. Dlatego veleńskie sceny związane z
+wiejską magią mogą korzystać z Łysej Góry jako silnego, ale nadal
+regionalnego, punktu wyobraźni. [8](https://wiedzmin.fandom.com/wiki/%C5%81ysa_G%C3%B3ra),
+[9](https://witcher.fandom.com/wiki/Bald_Mountain_(location))
 
 Konary, angielskie Blackbough, należą do tego samego katalogu veleńskich
 wsi. W źródłach funkcjonują jako osobna miejscowość, ważna m.in. przez
@@ -85,8 +93,8 @@ Wrońcami a Gors Velen. Nie oznacza pojedynczej wsi, bagna ani chaty.
   Wojny Północnej:
   <https://witcher.fandom.com/wiki/Velen>.
 - **Wiedźmin Wiki — Wiedźmy z Krzywuchowych Moczarów** — władza Pań Lasu
-  nad Velen, prośby wieśniaków, oczekiwane ofiary, sny i pośrednictwo
-  miejscowych czarownic:
+  nad Velen, prośby wieśniaków, oczekiwane ofiary, sny, pośrednictwo
+  miejscowych czarownic i święto na Łysej Górze:
   <https://wiedzmin.fandom.com/wiki/Wied%C5%BAmy_z_Krzywuchowych_Moczar%C3%B3w>.
 - **Wiedźmin Wiki — Sztygary** — polska strona Downwarren: wieś w Velen,
   zły duch, sny i powiązane zadania „Powrót na Krzywuchowe Moczary” oraz
@@ -99,5 +107,11 @@ Wrońcami a Gors Velen. Nie oznacza pojedynczej wsi, bagna ani chaty.
   dla Blackbough/Konarów i kontekst guślarza z okolicy:
   <https://wiedzmin.fandom.com/wiki/Konary>,
   <https://witcher.fandom.com/wiki/Blackbough>.
+- **Wiedźmin Wiki — Łysa Góra** oraz **Witcher Wiki — Bald Mountain
+  (location)** — położenie Łysej Góry w południowo-wschodnim/południowym
+  Velen, Święty Dąb, jaskinia, Święto Darów, sabat i podania o
+  czarownicach:
+  <https://wiedzmin.fandom.com/wiki/%C5%81ysa_G%C3%B3ra>,
+  <https://witcher.fandom.com/wiki/Bald_Mountain_(location)>.
 - **Strona planu** — szersza geografia i epoka Kontynentu:
   [[wiedzmin|Wiedźmin]].

@@ -1,3 +1,33 @@
+## 2026-09-12 20:57 — Nowa karta: Candlegrove Witch (Wiedźmin)
+
+- **Materializacja karty:** **[[599mid-candlegrove-witch|Candlegrove
+  Witch]]** (`599MID`, wydanie `MID` / *Innistrad: Midnight Hunt*, plan
+  [[wiedzmin|Wiedźmin]]) — guślarka w lnianej koszuli i wieńcu z jeleniego
+  poroża lewituje w prastarych, mglistych lasach wokół Łysej Góry w
+  [[velen|Velen]], a świece z pszczelego wosku na brzozowych gałęziach
+  odpychają upiory i zbiegłe potwory.
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana w
+  `collection/entries/599mid-candlegrove-witch.md`; pełny snapshot MID #8
+  żyje w `scryfall/599mid-candlegrove-witch.json`. `599MID` pozostaje
+  niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim
+  Scryfall/Gatherera.
+- **Pinezka i plan:** `maps/wiedzmin/map.json` dodaje wyłącznie pinezkę
+  karty z pewnością `region` na kotwicy Velen (`x=0.4113`, `y=0.2807`).
+  Źródła lokują Łysą Górę/Ard Cerbin w południowo-wschodnim/południowym
+  Velen i łączą ją z sabatem, ale raster Orteliusa T1 nie rozrysowuje
+  lokalnej góry, polany ani świecowego gaju.
+- **Link-mining:** druga karta odwołująca się do **[[panie-lasu|Pań Lasu]]**
+  odblokowała hasło `panie-lasu` (`279M21` + `599MID`). Hasło nie ma własnej
+  pinezki, tylko deep-link do regionalnej kotwicy Velen; `Łysa Góra`,
+  `Krzywuchowe Moczary`, `upiory` i role szeptuch/guślarek zostają w
+  backlogu lub wymagają osobnego rozpoznania zakresu.
+- **Strażniki:** nowa regresja pilnuje Fabuły, rozdziału `599MID` od MID #8,
+  snapshotu, świecowego rytuału, braku twardego dopisywania guślarki do
+  Pań Lasu, regionalnej pinezki Łysej Góry oraz progu link-miningu.
+- **Bramki końcowe:** 261/261 testów; build 87 stron (42 karty, 30 haseł,
+  15 planów), artefakt 1540.7 kB i 853 pliki drzewa archiwum; map-audit 0;
+  wiki-stats 100% (7,3/8); `git diff --check` czysty.
+
 ## 2026-09-12 20:39 — Nowa karta: Knight of the Skyward Eye (Alara)
 
 - **Materializacja karty:** **[[242ala-knight-of-the-skyward-eye|Knight of the

@@ -418,89 +418,26 @@ bramki: **207/207**, build 62 strony (37/10/15) / 859 plików drzewa archiwum,
 map-audit 0, wiki-stats 100%. Szczegóły:
 `docs/setup/HANDOFF_2026-09-11-pr32.md`.
 
-**PR-33 (2026-09-12) — audyt PR-32 + 279M21 Village Rites + 110DVD
-Serra's Embrace.** Audyt PR-32 zamknięty bez nowych P0/P1; raport wskazał
-trzy drobne follow-upy i zostały one obsłużone przed dostawami: liczniki
-drzewa w żywych dokumentach 853→859, trailing whitespace w planach
-historycznych oraz nieużyte źródło Razor Fields w 347NPH. Materializacja
-**279M21 Village Rites** — M21 #126, wiejski obrzęd w Downwarren/Sztygarach,
-szeptucha z Velen, księga rodowa długu i zapłaty, woda z Krzywuchowych
-Moczarów, gospodarz z Czarnoboru, klęczący parobek, biała koza z czerwoną
-wstążką i zakapturzeni sąsiedzi. Pinezka `region` dziedziczy kotwicę Velen
-(`0.4113/0.2807`), bo T1 nie rozrysowuje chaty ani wsi. Link-mining
-utworzył hasło `velen` po spełnieniu progu przez 555DSK i 279M21.
-Druga dostawa w tym PR: **110DVD Serra's Embrace** — DVD #21, zwykły
-ludzki piechur na polu bitwy Dominarii objęty eteryczną łaską Serry,
-skrzydła światła i anielskie dłonie na rękojeści miecza. Pinezka ma pewność
-`region` i używa Sursi / Katedry Serran (`0.1937/0.3806`) jako kotwicy
-tradycji, nie dokładnego pola bitwy. Link-mining utworzył hasło `serra`
-po spełnieniu progu przez Expunge i Serra's Embrace. **217/217 testów**;
-build 66 stron (39/12/15) / 859 plików drzewa archiwum; map-audit 0;
-wiki-stats 100%. Handoff: `docs/setup/HANDOFF_2026-09-12-pr33.md`.
+**PR-33 (2026-09-12) — audyt PR-32, pięć materializacji i Pętle Jakości.**
+Audyt PR-32 zamknięty bez nowych P0/P1; trzy drobne follow-upy audytu
+(obsługa liczników drzewa, whitespace w planach i źródło Razor Fields w
+347NPH) zostały wykonane przed dalszą pracą. W PR #33 powstały pełne
+materializacje `279M21 Village Rites` (Wiedźmin/Velen), `110DVD Serra's
+Embrace` (Dominaria/Serra), `516RNA Tenth District Veteran` (Ravnica/Boros),
+`242ALA Knight of the Skyward Eye` (Alara/Bant) oraz `599MID Candlegrove
+Witch` (Wiedźmin/Łysa Góra).
 
-**PR-33 cd. (2026-09-12) — 516RNA Tenth District Veteran + hasła Ravniki.**
-Materializacja **516RNA Tenth District Veteran** — właścicielski `imgId`
-516RNA zachowany oddzielnie od druku **RNA #26**. Karta czyta scenę jako
-rodzimą dla Ravniki: dojrzała weteranka Legionu Boros w sercu Dziesiątego
-Dystryktu stoi na zrujnowanej barykadzie, broni wejścia do placu targowego
-i dźwiga młodszego rekruta do szyku. Pinezka ma pewność `region` i używa
-kotwicy Tin Street Market (`0.3406/0.4318`) bez udawania dokładnej barykady.
-Link-mining po drugiej karcie Ravniki utworzył hasła `boros-legion`,
-`dziesiaty-dystrykt` i `tin-street-market`; Withstand dostał wikilinki
-zasilające próg, a hasła odsyłają do mapy tylko deep-linkami `?x=&y=`.
-**222/222 testów**; build 70 stron (40/15/15) / 859 plików drzewa archiwum;
-map-audit 0; wiki-stats 100%. Handoff:
+Link-mining i pętle jakości domknęły hasła: `velen`, `serra`,
+`boros-legion`, `dziesiaty-dystrykt`, `tin-street-market`, `gavony`,
+`kessig`, `avacyn`, `devils-breach`, `ashmouth`, `helvault`, `bant`,
+`nicol-bolas`, `ghirapur`, `konsulat-kaladeshu`, `terisiare`, `sursi`,
+`ortodoksja-maszyn`, `vulshok` i `panie-lasu`. Mapa Alary T3 dostała nowe
+POI/biomy (m.in. Glass Dunes, Cicatrice, The Rip, Sea of Unknowing,
+Crystal Labyrinth), mapa Kaladeshu promowała kotwice L2 Ghirapuru, a
+Wiedźmin zachował dyscyplinę T1/LOD: dla Łysej Góry dodano tylko regionalną
+pinezkę karty na kotwicy Velen (`0.4113/0.2807`), bez pinezek haseł.
+
+Bramki końcowe po 599MID: **261/261 testów**, build **87 stron** (42 karty,
+30 haseł, 15 planów; artefakt 1540.7 kB) i **853 pliki** drzewa archiwum,
+map-audit 0, wiki-stats 100% (7,3/8), czysty `git diff --check`. Handoff:
 `docs/setup/HANDOFF_2026-09-12-pr33.md`.
-
-**PR-33 cd. (2026-09-12) — Pętla Jakości: Gavony i Kessig.** Po zielonym
-kroku 0 pętla przeszła do link-miningu Innistradu. Powstały hasła
-`gavony` i `kessig` po progu dwóch kart; dopięto wikilinki w kartach
-118MID, 181AVR, 171ISD, 544AVR, 309ISD i 393DKA, na planie Innistradu oraz
-w powiązanych hasłach. Innistrad jest T1, więc pass mapowy nie zmienił
-rastra; hasła prowadzą tylko deep-linkami do kotwic regionów Gavony
-(`0.59/0.449`) i Kessig (`0.41/0.727`). Dodano regresję
-`test/innistrad-link-mining.test.js`, w tym strażnik działającego URL-a
-Gavony `2011-09-28`. **226/226 testów**; build 72 strony (40/17/15) /
-859 plików drzewa archiwum; map-audit 0; wiki-stats 100%. Handoff:
-`docs/setup/HANDOFF_2026-09-12-pr33.md`.
-
-**PR-33 cd. (2026-09-12) — druga Pętla Jakości: Avacyn i Devil's Breach.**
-Po czystym stanie i zielonym CI powstały hasła `avacyn` (`postac`) oraz
-`devils-breach` (`geografia`). Avacyn spina sześć kart Innistradu wokół
-stworzenia przez Sorina, Kościoła, Helvaultu, zniknięcia i powrotu;
-Devil's Breach spina cztery karty wokół kessigijskiej rozpadliny, diabłów,
-wypraw katarów i kontrastu z Ashmouth. Wikilinki dopięto w kartach 42ISD,
-118MID, 171ISD, 181AVR, 309ISD, 393DKA i 544AVR, na planie Innistradu oraz
-w hasłach Gavony/Kessig/Thraben/Stensia. Mapa T1 bez zmian rysunkowych;
-hasła prowadzą deep-linkami do Thraben/Helvaultu (`0.668/0.317`) i Devil's
-Breach (`0.392/0.945`). **228/228 testów**; build 74 strony (40/19/15) /
-859 plików drzewa archiwum; map-audit 0; wiki-stats 100%. Handoff:
-`docs/setup/HANDOFF_2026-09-12-pr33.md`.
-
-**PR-33 cd. (2026-09-12) — trzecia Pętla Jakości: Ashmouth i Helvault.**
-Po kolejnym czystym stanie powstały hasła `ashmouth` (`geografia`) i
-`helvault` (`artefakt`) po parze kart 393DKA + 544AVR. Ashmouth opisuje
-stensiańską czeluść Geier Reach, demony/diabły i kontrast z Devil's Breach;
-Helvault opisuje srebrny monolit z dziedzińca Katedry Avacyn, doktrynę
-wiązania, uwięzienie Avacyn/Griselbranda i skutki rozbicia. Mapa T1 bez
-zmian; deep-linki: Ashmouth `0.213/0.253`, Helvault/Thraben `0.668/0.317`.
-Regresja Innistradu pilnuje progów, klas, braku pinezek i wikilinków.
-**230/230 testów**; build 76 stron (40/21/15) / 859 plików drzewa archiwum;
-map-audit 0; wiki-stats 100%. Handoff:
-`docs/setup/HANDOFF_2026-09-12-pr33.md`.
-
-## Wątki otwarte (czekają na decyzję właściciela)
-
-> **Zamknięte decyzją właściciela 2026-09-05 — NIE wracać do nich:**
-> globalna geometria Zendikaru (układ Akoum–Ondu), „obwódki haseł" (E5)
-> oraz rozszerzenia mapy Ravniki poza złoty standard a/b/c. Właściciel:
-> „ja tego nie wymyśliłem, nie chcę tych zadań". Wpisy skasowane;
-> ta notka istnieje tylko po to, żeby przyszłe sesje ich nie odtwarzały.
-
-- Grafiki dla Kart Haseł — czy, jakie, gdzie składowane (ADR 0008 zostawia
-  slot; wymaga decyzji + ewentualnego ADR o storage).
-- Wzbogacenie mapy Śródziemia (T2, podkład mapome) o warstwy
-  przyrodniczo-osadnicze w duchu warsztatu T4 — gdy właściciel zechce
-  (analogia do Zendikaru z PR-3).
-- Pełny offline (cache obrazów Scryfalla w repo) — gdy korzystanie z Pages
-  bez sieci będzie realnym scenariuszem.

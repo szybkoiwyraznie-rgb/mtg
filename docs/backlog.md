@@ -4,6 +4,26 @@
 > właściciela albo z Pętli Jakości. Tu zapisujemy rozpoznanie, żeby nie
 > robić go drugi raz. (Konwencja dziedziczona z mtg-game.)
 
+## Link-mining Wiedźmina (Pętla Jakości, 2026-09-12)
+
+**Panie Lasu — wykonane**, `content/lore/panie-lasu.md`, klasa
+`spolecznosc`, plan Wiedźmin. Próg spełniły treści kart
+`279m21-village-rites` + `599mid-candlegrove-witch`: pierwsza karta pokazuje
+wiejski rachunek długu wobec Pań Lasu, druga — lokalny krąg guślarki pod
+Łysą Górą, świadomie odróżniony od samych pradawnych władczyń Velen.
+Wikilinki dopisano w obu kartach, stronie planu i haśle Velen. Hasło nie ma
+pinezki; odsyła deep-linkiem do regionalnej kotwicy Velen
+`#/mapa/wiedzmin?x=0.4113&y=0.2807`.
+
+Encje nadal poniżej progu osobnego hasła albo wymagające separacji zakresu:
+
+| Encja | Klasa (docelowa) | Karty wspominające | Do hasła brakuje |
+|---|---|---|---|
+| Łysa Góra | geografia | 599mid-candlegrove-witch | 1 karta |
+| Krzywuchowe Moczary | geografia | 279m21-village-rites | 1 karta |
+| upiory | fauna/koncepcja | 599mid-candlegrove-witch | 1 karta + rozstrzygnięcie zakresu bestiariusza |
+| wiejskie szeptuchy/guślarki Velen | spolecznosc | 279m21-village-rites, 599mid-candlegrove-witch | wymaga osobnego rozpoznania zakresu; na razie role scen, nie jedna nazwana organizacja |
+
 ## Kolejka link-miningu: encje czekające na drugą kartę (Śródziemie)
 
 Hasło powstaje, gdy ≥2 karty odwołują się do encji w treści (zasada

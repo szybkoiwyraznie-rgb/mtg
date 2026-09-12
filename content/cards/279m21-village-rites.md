@@ -73,7 +73,7 @@ W scenie obecne jest sześć warstw świadków i uczestników.
   twarze, ale nie zdejmują odpowiedzialności; to oni korzystali z pomocy
   i to oni patrzą, kiedy przychodzi pora zapłaty.
 
-Za sceną stoją **Panie Lasu** oraz cień **Krzywuchowych Moczarów**. Nie
+Za sceną stoją **[[panie-lasu|Panie Lasu]]** oraz cień **Krzywuchowych Moczarów**. Nie
 trzeba ich wprowadzać do izby, bo ludzie południowego Velen sami przynoszą
 ich władzę w wodzie, snach i starych zwyczajach.
 
@@ -126,14 +126,14 @@ widoczny i wspólny.
 Czarnobór pozostaje w scenie jako głos spoza samej izby. Człowiek z innej
 wsi przynosi misę i wodę, a wraz z nimi pamięć, że veleńskie osady nie są
 samotnymi wyspami. Konary, Sztygary, mokradła i drogi ku Wrońcom łączy ten
-sam strach: jeśli Panie Lasu dotrzymują słowa, to ich wyznawcy również
+sam strach: jeśli [[panie-lasu|Panie Lasu]] dotrzymują słowa, to ich wyznawcy również
 muszą dotrzymać swojego.
 
 ## Na Mapie
 
 **Pinezka ma pewność `region`.** Scena nazywa Downwarren/Sztygary oraz
 wodę z Krzywuchowych Moczarów, więc należy do południowego Velen, przy
-bagnach i pod władzą Pań Lasu. Globalna Mapa Orteliusa T1 pokazuje jednak
+bagnach i pod władzą [[panie-lasu|Pań Lasu]]. Globalna Mapa Orteliusa T1 pokazuje jednak
 skalę całego Kontynentu, nie rozrysowuje wnętrza wsi ani progu chaty
 sołtysa. Znacznik dziedziczy zatem regionalną kotwicę
 [[velen|Velen/Ziemi Niczyjej]] (`x: 0.4113`, `y: 0.2807`; odczyt T1 około
