@@ -24,6 +24,9 @@
   DVD #21, regionalnej pinezki przy Sursi, zwykłego piechura jako odbiorcy
   objęcia oraz progu hasła Serra. UI oczekuje 39 Kart Katalogowych i
   renderuje hasło Serra z backlinkami.
+- **Bramki końcowe:** 217/217 testów, build 66 stron (39 kart, 12 haseł,
+  15 planów) i 859 plików drzewa archiwum, map-audit 0, wiki-stats 100%,
+  czysty `git diff --check`.
 
 ## 2026-09-12 15:10 — Nowa karta: Village Rites (Wiedźmin)
 

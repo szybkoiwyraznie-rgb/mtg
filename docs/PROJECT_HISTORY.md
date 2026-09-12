@@ -4,6 +4,50 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-12 — PR-33 cd.: materializacja 110DVD Serra's Embrace
+
+Właściciel przekazał nową dostawę `110DVD / Serra's Embrace / DVD /
+Dominaria` z Fabułą zwykłego ludzkiego piechura na polu bitwy Dominarii.
+W złotej godzinie zstępuje ku niemu eteryczna obecność Serry: skrzydła
+światła wyrastają jakby z pleców, dłonie anielskiej mocy nakładają się na
+jego dłonie na mieczu, a żołnierz unosi się kilka centymetrów nad ziemią,
+jeszcze tego nie zauważając.
+
+1. **Wpis i snapshot:** Fabułę zapisano verbatim w
+   `collection/entries/110dvd-serra-s-embrace.md`. Snapshot
+   `scryfall/110dvd-serra-s-embrace.json` odpowiada właściwemu drukowi
+   DVD #21 (*Duel Decks Anthology: Divine vs. Demonic*). `110DVD` pozostało
+   niezależnym `imgId` właściciela, a collector number Scryfall/Gatherer to
+   `21`.
+2. **Karta Katalogowa LORE-first:** `content/cards/110dvd-serra-s-embrace.md`
+   czyta nazwę jako **„Objęcie Serry”**: nie daleki rozkaz ani koronację,
+   lecz bliskie nałożenie ramion, skrzydeł i dłoni na zwykłego piechura.
+   Scena podkreśla, że Serra na Dominarii nie przychodzi po generałów, tylko
+   po tych, którzy stoją dalej mimo upadku reszty.
+3. **Mechanika:** `{2}{W}{W}` Enchantment — Aura, `Enchant creature`,
+   +2/+2, flying i vigilance. W opowieści +2/+2 to realny zapas siły i
+   odporności, flying to skrzydła z piór czystego światła, a vigilance
+   pozwala uderzyć bez porzucenia straży. Aura obejmuje jedną istotę, więc
+   błogosławieństwo pozostaje osobiste, nie masowe.
+4. **Mapa:** Fabuła mówi tylko o polu bitwy Dominarii, bez miasta,
+   wzgórza ani linii frontu. Pinezka ma więc pewność `region` i stoi na
+   najmocniejszej dominariańskiej kotwicy dziedzictwa Serry: Sursi /
+   Katedrze Serran (`x: 0.1937`, `y: 0.3806`, `px_t1 [1569, 1979]`).
+   To regionalny indeks tradycji, nie dokładne pole bitwy.
+5. **Link-mining:** po 110DVD próg dwóch kart spełniła **Serra**
+   (Expunge + Serra's Embrace). Powstało hasło `content/lore/serra.md`
+   klasy `postac`, bez własnej pinezki, z mapowym odsyłaczem do
+   Sursi/Katedry Serran. `content/cards/40usg-expunge.md` dostało wikilink
+   do nowego hasła.
+6. **Regresje:** `test/dominaria-110dvd.test.js` pilnuje Fabuły, DVD #21,
+   rozdziału numeracji, zwykłego piechura, objęcia Serry, mechaniki Aury,
+   regionalnej pinezki i progu hasła Serra. `test/ui-smoke.test.js`
+   oczekuje 39 Kart Katalogowych oraz renderuje hasło Serra z backlinkami.
+
+Bramki końcowe: **217/217 testów**, build **66 stron** (39 kart, 12 haseł,
+15 planów) i **859 plików drzewa archiwum**, map-audit 0, wiki-stats 100%
+(7,6/8), czysty `git diff --check`.
+
 ## 2026-09-12 — PR-33: audyt PR-32, naprawy Z1–Z3 i materializacja 279M21 Village Rites
 
 Sesja `arena/01a095bf-mtg`, PR #33. Najpierw domknięto audyt PR-32:
