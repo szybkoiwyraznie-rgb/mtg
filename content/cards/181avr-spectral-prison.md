@@ -15,15 +15,15 @@ pinezka:
 
 ## Kronika Lore
 
-W prowincji **Gavony** na [[innistrad|Innistradzie]], gdzie bije serce
-ludzkiego osadnictwa i kultu **Avacyn**, sprawiedliwość Kościoła
+W prowincji [[gavony|**Gavony**]] na [[innistrad|Innistradzie]], gdzie bije serce
+ludzkiego osadnictwa i kultu [[avacyn|**Avacyn**]], sprawiedliwość Kościoła
 nie zawsze przemawia ostrzem miecza katarów czy ogniem stosów.
 Wśród kapłanów i uświęcicieli (*Sanctifiers*) rozwinięto subtelniejsze
 metody neutralizacji zagrożeń: sztukę wiązania woli, usypiania umysłów
 oraz zamykania potworów w pułapkach ze skondensowanej energii duchowej.
 
 Gdy archanioł powraca, a moc świętych symboli odzyskuje dawną
-skuteczność, świątynie Gavony stają się miejscami nie tylko modlitwy,
+skuteczność, świątynie [[gavony|Gavony]] stają się miejscami nie tylko modlitwy,
 lecz także mistycznego odosobnienia. W bocznych nawach i kryptach
 kamiennych kaplic uświęciciele kreślą na posadzkach ochronne runy,
 przyzywając geisty — łagodne duchy przodków sprzyjające Kościołowi —
@@ -46,10 +46,10 @@ pozostają ukryte pod woalem głębokiego snu.
 klatki, których splecione nici energii utrzymują więźnia w uśpieniu.
 
 **Uświęcicielka Rebeka (Sanctifier Rebecca)** — kapłanka Kościoła
-Avacyn, autorka formuły wiążącej i sędzina orzekająca uśpienie jako
+[[avacyn|Avacyn]], autorka formuły wiążącej i sędzina orzekająca uśpienie jako
 karę za grzechy.
 
-**Kaplice Gavony** — kamienne sanktuaria o łukowych sklepieniach
+**Kaplice [[gavony|Gavony]]** — kamienne sanktuaria o łukowych sklepieniach
 i wąskich witrażach, służące jako miejsca rytuałów ochronnych.
 
 ## Nazwa Karty
@@ -78,7 +78,7 @@ sam na sam ze swoimi winami w bezkresie narzuconego snu.
 
 ## Transpozycja
 
-Zapis przedstawia wnętrze **gotyckiej kaplicy w Gavony**:
+Zapis przedstawia wnętrze **gotyckiej kaplicy w [[gavony|Gavony]]**:
 
 - **Kamienna architektura i światło księżyca** — wysokie łukowate
   sklepienia oraz wąskie witraże wpuszczające blade światło srebrnego
@@ -94,17 +94,17 @@ Zapis przedstawia wnętrze **gotyckiej kaplicy w Gavony**:
 
 ## Na Mapie
 
-Pinezka stoi na obszarze prowincji **Gavony** (`x: 0.59`, `y: 0.449`) —
-pewność **region**. Gavony to centrum religijne i cywilizacyjne
+Pinezka stoi na obszarze prowincji [[gavony|**Gavony**]] (`x: 0.59`, `y: 0.449`) —
+pewność **region**. [[gavony|Gavony]] to centrum religijne i cywilizacyjne
 Innistradu, w którym gęsta sieć parafii i kaplic skupia się wokół
 metropolii **Thraben** (`x: 0.668`, `y: 0.317`).
 
 Zestawienie z innymi punktami planu:
 - W odróżnieniu od zbrojnej obrony katedry w [[393dka-forge-devil|Forge Devil]]
   czy wojennych ekspedycji katarów w [[544avr-thraben-valiant|Thraben Valiant]],
-  ta scena ilustruje wewnętrzny, zakonny wymiar magii Kościoła Avacyn —
+  ta scena ilustruje wewnętrzny, zakonny wymiar magii Kościoła [[avacyn|Avacyn]] —
   ciche sanktuaria, w których więzi się wrogów potęgą uświęconego snu.
-- Położenie w Gavony kontrastuje z dzikimi ostępami Kessigu, gdzie
+- Położenie w [[gavony|Gavony]] kontrastuje z dzikimi ostępami [[kessig|Kessigu]], gdzie
   w [[171isd-grizzled-outcasts|Grizzled Outcasts]] mieszkańcy mogą liczyć
   jedynie na rygle i świece na parapetach.
 
@@ -132,14 +132,14 @@ pękła, uwalniając więźnia z letargu.
 ## Źródła
 
 1. [Spectral Prison — Scryfall](https://scryfall.com/card/avr/75/spectral-prison) — dane karty, koszt, typ, reguła aury i słowa Sanctifier Rebecca.
-2. [A Planeswalker's Guide to Innistrad: Gavony and Humans](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-gavony-and-humans-2011-09-07) — organizacja Kościoła Avacyn, uświęciciele (Sanctifiers), kultywowanie geistów i kaplice parafialne Gavony.
+2. [A Planeswalker's Guide to Innistrad: Gavony and Humans](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-gavony-and-humans-2011-09-28) — organizacja Kościoła Avacyn, uświęciciele (Sanctifiers), kultywowanie geistów i kaplice parafialne Gavony.
 3. [Plane Shift: Innistrad](https://media.wizards.com/2016/dnd/downloads/Plane_Shift_Innistrad.pdf) — natura geistów opiekuńczych, magia wiązania i runy ochronne.
 4. [The Prison of Silver](https://mtglore.com/web-articles/the-prison-of-silver/) — doktryna wiązania i izolacji potworów zamiast natychmiastowego niszczenia.
 5. Fabuła (2026-09-11) — gotycka kaplica w Gavony, łukowe sklepienia, księżycowe światło przez witraże, uśpiona postać w podróżnym płaszczu, eteryczna klatka z nici światła z twarzami strażników, runy na posadzce.
 
 ## Podsumowanie Lore
 
-W kamiennej kaplicy Gavony rozświetlonej księżycowym blaskiem więzień
+W kamiennej kaplicy [[gavony|Gavony]] rozświetlonej księżycowym blaskiem więzień
 Kościoła trwa w głębokim śnie, otoczony misterną kopułą z widmowych
 nici i uśpionych geistów. Karta Aury za `{1}{U}` unieruchamia cel
 bez zadawania ran, oddając filozofię uświęcicieli: sprawiedliwość

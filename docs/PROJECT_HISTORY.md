@@ -4,6 +4,230 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-12 — PR-33 cd.: trzecia Pętla Jakości Innistradu, Ashmouth i Helvault
+
+Po drugim przebiegu pętli i kolejnym zielonym CI PR #33 budżet sesji pozwolił
+na trzeci przebieg. Stan wejściowy: clean working tree, HEAD `a5f5e1e`,
+`npm run test:all` 228/228, build 74 strony (40 kart, 19 haseł, 15 planów),
+map-audit 0 i wiki-stats 100%.
+
+1. **Rozpoznanie link-miningu:** ponad progiem pozostały dwie mocne encje
+   z osi Forge Devil / Thraben Valiant: **Ashmouth** oraz **Helvault**. Obie
+   mają po dwie karty z wikilinkami po tym przebiegu.
+2. **Nowe hasła:** powstały `content/lore/ashmouth.md` (`geografia`) i
+   `content/lore/helvault.md` (`artefakt`). Ashmouth opisuje stensiańską
+   czeluść Geier Reach, demony/diabły i relację z Devil's Breach; Helvault
+   opisuje srebrny monolit, doktrynę wiązania, uwięzienie Avacyn oraz
+   konsekwencje rozbicia więzienia.
+3. **Wikilinki:** dopisano odsyłacze w kartach `393dka-forge-devil` i
+   `544avr-thraben-valiant`, na planie Innistradu oraz w hasłach Avacyn,
+   Devil's Breach, Gavony, Stensia i Thraben.
+4. **Mapa:** Innistrad pozostaje T1 bez rysunkowych zmian. Ashmouth odsyła do
+   istniejącej kotwicy `0.213/0.253`, Helvault do Thraben/Katedry
+   `0.668/0.317`; brak pinezek haseł zgodnie z ADR 0043.
+5. **Regresja:** `test/innistrad-link-mining.test.js` rozszerzono o progi
+   Ashmouth i Helvault, ich klasy (`geografia`/`artefakt`), brak pinezek i
+   wikilinki kart/planów.
+
+Bramki końcowe po trzecim przebiegu: **230/230 testów**, build **76 stron**
+(40 kart, 21 haseł, 15 planów) i **859 plików drzewa archiwum**, map-audit
+0, wiki-stats 100% (7,4/8), czysty `git diff --check`.
+
+## 2026-09-12 — PR-33 cd.: druga Pętla Jakości Innistradu, Avacyn i Devil's Breach
+
+Po zielonym zamknięciu pierwszej Pętli Jakości i zielonym CI PR #33 budżet
+sesji pozwolił na drugi przebieg od kroku integralności. Stan wejściowy:
+clean working tree, HEAD `5eef5a1`, `npm run test:all` 226/226, build 72
+strony (40 kart, 17 haseł, 15 planów), map-audit 0 i wiki-stats 100%.
+
+1. **Rozpoznanie link-miningu:** po materializacji Gavony/Kessigu ponad progiem
+   pozostały dwie mocne encje Innistradu: **Avacyn** i **Devil's Breach**.
+   Avacyn występowała w sześciu kartach, Devil's Breach w czterech.
+2. **Nowe hasła:** powstały `content/lore/avacyn.md` (`postac`) oraz
+   `content/lore/devils-breach.md` (`geografia`). Avacyn opisuje stworzenie
+   przez Sorina, Kościół, zasadę wiązania, Helvault, zniknięcie, powrót i
+   późniejszą tragedię; Devil's Breach opisuje kessigijską szczelinę, dym,
+   diabły, rolę wypraw katarów i kontrast z Ashmouth.
+3. **Wikilinki:** dopisano odsyłacze w kartach `171ISD`, `181AVR`, `309ISD`,
+   `393DKA`, `42ISD`, `544AVR`, `118MID`, na planie Innistradu i w hasłach
+   Gavony, Kessig, Thraben oraz Stensia.
+4. **Mapa:** pass mapowy nadal bez zmian rysunkowych, bo Innistrad jest T1.
+   Avacyn prowadzi deep-linkiem do Thraben/Helvaultu (`0.668/0.317`),
+   Devil's Breach do istniejącej kotwicy lokacji (`0.392/0.945`). Nie dodano
+   pinezek haseł.
+5. **Regresja:** `test/innistrad-link-mining.test.js` rozszerzono o progi
+   Avacyn i Devil's Breach, brak pinezek haseł i linki kart/planów.
+
+Bramki końcowe po drugim przebiegu: **228/228 testów**, build **74 strony**
+(40 kart, 19 haseł, 15 planów) i **859 plików drzewa archiwum**, map-audit
+0, wiki-stats 100% (7,5/8), czysty `git diff --check`.
+
+## 2026-09-12 — PR-33 cd.: Pętla Jakości Innistradu, Gavony i Kessig
+
+Po domknięciu 516RNA właściciel uruchomił Pętlę Jakości z instrukcją
+powtarzania, dopóki pozwala budżet sesji. Krok 0 był zielony: `npm test`
+222/222, `npm run build` 70 stron (40 kart, 15 haseł, 15 planów) i 859
+plików drzewa archiwum; `git log --oneline -5` potwierdził HEAD `9aaa13f`.
+
+1. **Rozpoznanie link-miningu:** grep po kartach Innistradu wskazał dwie
+   encje ponad progiem: **Gavony** (`118mid-dire-strain-brawler`,
+   `181avr-spectral-prison` oraz dalsze wzmianki) i **Kessig**
+   (`171isd-grizzled-outcasts`, `544avr-thraben-valiant` oraz dalsze
+   wzmianki). Thraben i Stensia miały już hasła; Nephalia, Ulvenwald czy
+   Devil's Breach zostały poniżej osobnego zakresu/progu.
+2. **Nowe hasła:** powstały `content/lore/gavony.md` i
+   `content/lore/kessig.md`, oba klasy `geografia`, plan `innistrad`, bez
+   frontmatterowej pinezki. Hasła opisują odpowiednio ludzkie centrum
+   prowincjonalne wokół Thraben oraz zachodnią krainę Ulvenwaldu, wsi,
+   Breakneck Ride i wilkołaków.
+3. **Wikilinki:** dopisano linki we wszystkich kartach i stronach planu,
+   które wspominają regiony: `118MID`, `181AVR`, `171ISD`, `544AVR`,
+   `309ISD`, `393DKA`, `content/planes/innistrad.md` oraz powiązane hasła
+   `thraben`/`stensia`. Przy okazji poprawiono martwy URL przewodnika
+   Gavony z `2011-09-07` na działający `2011-09-28`.
+4. **Mapa:** Innistrad jest T1, więc pass mapowy nie wzbogaca rastra. Nowe
+   hasła łączą się z mapą tylko deep-linkami do istniejących kotwic regionów:
+   Gavony `0.59/0.449`, Kessig `0.41/0.727`. Nie dodano żadnych pinezek
+   haseł, zgodnie z ADR 0043.
+5. **Regresja:** `test/innistrad-link-mining.test.js` pilnuje progów dwóch
+   kart, zakresu haseł, braku pinezek, linków w kartach/planie i działającego
+   źródła Gavony.
+
+Bramki końcowe po Pętli Jakości: **226/226 testów**, build **72 strony**
+(40 kart, 17 haseł, 15 planów) i **859 plików drzewa archiwum**, map-audit
+0, wiki-stats 100% (7,5/8), czysty `git diff --check`.
+
+## 2026-09-12 — PR-33 cd.: materializacja 516RNA Tenth District Veteran
+
+Właściciel przekazał dostawę `516RNA / Tenth District Veteran / RNA /
+Ravnica` z Fabułą dojrzałej wojowniczki Legionu Boros, która w sercu
+Dziesiątego Dystryktu stoi na zrujnowanej barykadzie, blokuje intruzom drogę
+do placu targowego i dźwiga młodszego rekruta z powrotem do szyku.
+
+1. **Wpis i snapshot:** Fabuła właściciela została zachowana verbatim w
+   `collection/entries/516rna-tenth-district-veteran.md`. Snapshot
+   `scryfall/516rna-tenth-district-veteran.json` opisuje właściwy druk
+   **RNA #26** (*Ravnica Allegiance*), a `516RNA` pozostaje wyłącznie
+   właścicielskim `imgId`.
+2. **Karta Katalogowa LORE-first:** `content/cards/516rna-tenth-district-veteran.md`
+   czyta nazwę jako **„Weteranka Dziesiątego Dystryktu”**. Scena pozostaje
+   rodzima dla Ravniki: bruk, jesienne liście, odłamki kamienia, wyszczerbiony
+   miecz, plac targowy i obrona architektonicznego dziedzictwa miasta nie są
+   przeniesieniem między planami, lecz zawężeniem do ulicznej linii Boros.
+3. **Mechanika:** `{2}{W}` Creature — Human Soldier, 2/3, Vigilance oraz
+   atakowe odtapowanie innej własnej istoty. W opowieści Vigilance pozwala
+   weterance ruszyć, nie porzucając posterunku, a odtapowanie staje się
+   gestem podniesienia młodszego rekruta do gotowości.
+4. **Mapa:** opis wskazuje serce Dziesiątego Dystryktu i kluczowy plac
+   targowy, ale nie dokładną barykadę. Pinezka ma pewność `region` i stoi
+   na kotwicy **Tin Street Market** w Czwartym Precykcie (`x: 0.3406`,
+   `y: 0.4318`) jako najtwardszym rejonie targowym Boros/Tin Street.
+5. **Link-mining Ravniki:** druga karta planu po Withstand przekroczyła próg
+   dla trzech haseł: `content/lore/boros-legion.md`,
+   `content/lore/dziesiaty-dystrykt.md` i `content/lore/tin-street-market.md`.
+   Withstand dostał wikilinki do tych haseł; hasła nie mają własnych pinezek,
+   tylko odsyłają do mapy przez deep-linki `?x=&y=`.
+6. **Regresje:** `test/ravnica-516rna.test.js` pilnuje Fabuły, rozdziału
+   `516RNA` od RNA #26, treści weteranki/rekruta, mechaniki gotowości,
+   regionalnej pinezki targu i progu link-miningu. `test/ui-smoke.test.js`
+   oczekuje 40 Kart Katalogowych i renderuje trzy nowe hasła Ravniki
+   z backlinkami.
+
+Bramki końcowe: **222/222 testów**, build **70 stron** (40 kart, 15 haseł,
+15 planów) i **859 plików drzewa archiwum**, map-audit 0, wiki-stats 100%
+(7,6/8), czysty `git diff --check`.
+
+## 2026-09-12 — PR-33 cd.: materializacja 110DVD Serra's Embrace
+
+Właściciel przekazał nową dostawę `110DVD / Serra's Embrace / DVD /
+Dominaria` z Fabułą zwykłego ludzkiego piechura na polu bitwy Dominarii.
+W złotej godzinie zstępuje ku niemu eteryczna obecność Serry: skrzydła
+światła wyrastają jakby z pleców, dłonie anielskiej mocy nakładają się na
+jego dłonie na mieczu, a żołnierz unosi się kilka centymetrów nad ziemią,
+jeszcze tego nie zauważając.
+
+1. **Wpis i snapshot:** Fabułę zapisano verbatim w
+   `collection/entries/110dvd-serra-s-embrace.md`. Snapshot
+   `scryfall/110dvd-serra-s-embrace.json` odpowiada właściwemu drukowi
+   DVD #21 (*Duel Decks Anthology: Divine vs. Demonic*). `110DVD` pozostało
+   niezależnym `imgId` właściciela, a collector number Scryfall/Gatherer to
+   `21`.
+2. **Karta Katalogowa LORE-first:** `content/cards/110dvd-serra-s-embrace.md`
+   czyta nazwę jako **„Objęcie Serry”**: nie daleki rozkaz ani koronację,
+   lecz bliskie nałożenie ramion, skrzydeł i dłoni na zwykłego piechura.
+   Scena podkreśla, że Serra na Dominarii nie przychodzi po generałów, tylko
+   po tych, którzy stoją dalej mimo upadku reszty.
+3. **Mechanika:** `{2}{W}{W}` Enchantment — Aura, `Enchant creature`,
+   +2/+2, flying i vigilance. W opowieści +2/+2 to realny zapas siły i
+   odporności, flying to skrzydła z piór czystego światła, a vigilance
+   pozwala uderzyć bez porzucenia straży. Aura obejmuje jedną istotę, więc
+   błogosławieństwo pozostaje osobiste, nie masowe.
+4. **Mapa:** Fabuła mówi tylko o polu bitwy Dominarii, bez miasta,
+   wzgórza ani linii frontu. Pinezka ma więc pewność `region` i stoi na
+   najmocniejszej dominariańskiej kotwicy dziedzictwa Serry: Sursi /
+   Katedrze Serran (`x: 0.1937`, `y: 0.3806`, `px_t1 [1569, 1979]`).
+   To regionalny indeks tradycji, nie dokładne pole bitwy.
+5. **Link-mining:** po 110DVD próg dwóch kart spełniła **Serra**
+   (Expunge + Serra's Embrace). Powstało hasło `content/lore/serra.md`
+   klasy `postac`, bez własnej pinezki, z mapowym odsyłaczem do
+   Sursi/Katedry Serran. `content/cards/40usg-expunge.md` dostało wikilink
+   do nowego hasła.
+6. **Regresje:** `test/dominaria-110dvd.test.js` pilnuje Fabuły, DVD #21,
+   rozdziału numeracji, zwykłego piechura, objęcia Serry, mechaniki Aury,
+   regionalnej pinezki i progu hasła Serra. `test/ui-smoke.test.js`
+   oczekuje 39 Kart Katalogowych oraz renderuje hasło Serra z backlinkami.
+
+Bramki końcowe: **217/217 testów**, build **66 stron** (39 kart, 12 haseł,
+15 planów) i **859 plików drzewa archiwum**, map-audit 0, wiki-stats 100%
+(7,6/8), czysty `git diff --check`.
+
+## 2026-09-12 — PR-33: audyt PR-32, naprawy Z1–Z3 i materializacja 279M21 Village Rites
+
+Sesja `arena/01a095bf-mtg`, PR #33. Najpierw domknięto audyt PR-32:
+raport `docs/audits/AUDYT_2026-09-12-PR32.md` nie znalazł nowych P0/P1,
+a PR #33 został zaktualizowany przez REST API po awarii `gh pr edit` na
+polu Projects classic. Następnie właściciel przekazał nową dostawę
+`279M21 / Village Rites / M21 / Wiedźmin` wraz z Fabułą obrzędu w chacie
+sołtysa w Downwarren/Sztygarach.
+
+1. **Wpis i snapshot:** Fabułę zapisano verbatim w
+   `collection/entries/279m21-village-rites.md`, a właściwy druk M21 #126
+   w `scryfall/279m21-village-rites.json`. Utrzymano twarde rozdzielenie
+   `imgId` właściciela `279M21` od numeru kolekcjonerskiego Scryfall/
+   Gatherer `126`.
+2. **Karta Katalogowa LORE-first:** `content/cards/279m21-village-rites.md`
+   rozwija scenę w Sztygarach: starsza szeptucha, księga rodowa z długiem
+   i zapłatą, gospodarz z Czarnoboru z wodą z Krzywuchowych Moczarów,
+   klęczący parobek, biała koza z czerwoną wstążką oraz zakapturzeni
+   sąsiedzi. „Village Rites” odczytano jako wiejskie obrzędy całej
+   wspólnoty; flavor jest rozliczeniem tych, którzy brali, lecz wahają się
+   oddać.
+3. **Mechanika:** `{B}` Instant wymaga dodatkowego kosztu poświęcenia
+   stworzenia i dobrania dwóch kart. W transpozycji jawnie poświęcana jest
+   koza; parobek pozostaje świadkiem długu, bo Fabuła nie dopisuje mu
+   śmierci. Dwie dobrane karty stają się dwiema stronami księgi rodowej:
+   długiem i zapłatą. Test pilnuje rulingu Gatherera: dokładnie jedno
+   stworzenie, bez dorzucania dodatkowych ofiar.
+4. **Mapa i hasło Velen:** scena nazywa Downwarren/Sztygary oraz
+   Krzywuchowe Moczary, ale globalny raster Orteliusa T1 nie ma planu wsi
+   ani chaty sołtysa. Pinezka 279M21 ma więc pewność `region` i dziedziczy
+   istniejącą kotwicę `Velen` (`x: 0.4113`, `y: 0.2807`, `px_t1 [2095,
+   2024]`). Po drugiej karcie odwołującej się do Velen powstało hasło
+   geograficzne `content/lore/velen.md`; wikilinki dopisano w 279M21 i
+   555DSK, bez osobnej pinezki hasła.
+5. **Naprawy follow-up z audytu PR-32:** w żywych dokumentach skorygowano
+   stale liczniki drzewa z 853 na rzeczywiste 859 plików, usunięto trailing
+   whitespace z historycznych planów 132GNT/42ISD/540DST/555DSK oraz zdjęto
+   nieużyte źródło Razor Fields z 347NPH Pristine Talisman.
+6. **Regresje:** `test/wiedzmin-279m21.test.js` pilnuje Fabuły, numeracji,
+   regionalnej pinezki, lokalizacji Sztygar/Krzywuchowych Moczarów, kozy
+   jako ofiary i progu hasła Velen. `test/ui-smoke.test.js` oczekuje 38
+   Kart Katalogowych i sprawdza widok hasła Velen z backlinkami.
+
+Bramki końcowe: **212/212 testów**, build **64 strony** (38 kart, 11 haseł,
+15 planów) i **859 plików drzewa archiwum**, map-audit 0, wiki-stats 100%
+(7,7/8), czysty `git diff --check`.
+
 ## 2026-09-12 — PR-32 cd.: materializacja 540DST Chittering Rats (sesja `arena/01a091f4-mtg`)
 
 Właściciel przekazał `540DST / Chittering Rats / DST / Wiedźmin` wraz z
@@ -54,7 +278,7 @@ kotwicę, pinezkę, deep-linki, opisy i regresje skorygowano na środek ikony
 miasta: `px_t1 [2060, 1780]`, czyli `0.4045/0.2469`.
 
 Bramki końcowe: **207/207 testów**, build **62 stron** (37 kart, 10
-haseł, 15 planów) i **853 pliki drzewa archiwum**, map-audit 0,
+haseł, 15 planów) i **859 plików drzewa archiwum**, map-audit 0,
 wiki-stats 100% (7,7/8), czysty `git diff --check`. Świeży preview
 aplikacji i mapy Wiedźmina odpowiada HTTP 200; payload zawiera kartę,
 hasło, współrzędne pinezki i deep-link powrotny.
@@ -92,7 +316,7 @@ verbatim jako pierwsza operacja na plikach.
    plan; `04ba588` dostarcza kartę, mapę, stronę planu, changelog i testy.
 
 Bramki końcowe: **201/201 testów**, build **60 stron** (36 kart, 9 haseł,
-15 planów) i **853 pliki drzewa archiwum**, map-audit 0, wiki-stats 100%
+15 planów) i **859 plików drzewa archiwum**, map-audit 0, wiki-stats 100%
 (7,7/8), czysty `git diff --check`. Świeży preview karty i mapy Wiedźmina
 działa na porcie 8000.
 

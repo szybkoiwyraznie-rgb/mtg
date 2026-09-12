@@ -11,9 +11,9 @@ tagi: [geografia, demony, doktryna]
 Innistrad to plan gotyckiego horroru: świat wiecznej nocy, w którym
 garstka ludzi broni się przed wampirami, wilkołakami, upiorami
 i ożywionymi trupami. Nie jest to jednak świat bez nadziei — ludzkość
-ma **Kościół Avacyn** i archanioła, którego imię nosi, a jej srebrne
+ma **Kościół [[avacyn|Avacyn]]** i archanioła, którego imię nosi, a jej srebrne
 symbole naprawdę odpychają potwory. Groza Innistradu polega na tym,
-że ta obrona zaczyna zawodzić: Avacyn zniknęła, wady przestają działać,
+że ta obrona zaczyna zawodzić: [[avacyn|Avacyn]] zniknęła, wady przestają działać,
 a modlitwy pozostają bez odpowiedzi. Kodeks rysuje Innistrad jako
 cztery prowincje wokół Thraben, bo w takim kształcie plan trwa przez
 cały blok i kolejne powroty.
@@ -37,43 +37,43 @@ Snu — są tu liczniejsze niż gdziekolwiek indziej. A **demonów** nie
 da się zabić: to byty czystej czarnej many, które po śmierci odradzają
 się w nowej postaci, zachowując część pamięci. Stąd wzięła się zasada
 Avacyn: *co nie może być zniszczone, musi być związane* — i stąd
-**Helvault**.
+[[helvault|**Helvault**]].
 
 ## Geografia
 
-**Gavony** — środek znanego świata, wyżyna skalistych wzgórz i serce
+[[gavony|**Gavony**]] — środek znanego świata, wyżyna skalistych wzgórz i serce
 ludzkiej cywilizacji. Na jej północnym skraju stoi [[thraben|**Thraben**]],
 największe miasto planu, opasane wieloma pierścieniami murów; rzeka
 **Kirch** spada obok niego do morza dwutysięcznostopowym wodospadem.
 W Thraben wznosi się **Katedra Avacyn**, a w jej trójkątnym dziedzińcu
-stoi Helvault. Na południe ciągnie się **Nearheath** z parafiami
+stoi [[helvault|Helvault]]. Na południe ciągnie się **Nearheath** z parafiami
 winnic, lasu i skał (wsie **Hanweir**, **Estwald**), a dalej
 **Moorland** — największa i najgroźniejsza parafia, z wsią **Trostad**
-przy granicy Kessigu. W kaplicach prowincji uświęciciele
+przy granicy [[kessig|Kessigu]]. W kaplicach prowincji uświęciciele
 wiążą wrogów w eteryczne klatki snu, co ukazuje
 [[181avr-spectral-prison|Spectral Prison]]. W wiejskich gospodarstwach
-Gavony parobkowie z rodu Dire-strain skrywają pod ludzką skórą
+[[gavony|Gavony]] parobkowie z rodu Dire-strain skrywają pod ludzką skórą
 monstrualną bestię, terroryzując podwórza pod pełnią księżyca
 ([[118mid-dire-strain-brawler|Dire-Strain Brawler]]). Ludzi jest tu najwięcej, więc
 i **grafów** — cmentarzy — jest najwięcej, a wraz z nimi geistów i ghuli.
 
-**Kessig** (zachód) — kraina wiecznej jesieni i wielkiego lasu
+[[kessig|**Kessig**]] (zachód) — kraina wiecznej jesieni i wielkiego lasu
 **Ulvenwald**, zwanego Mglistym Borem. Ludzi mało, wilkołaków dużo.
 Watahę Hordy Krallen wędrującą pod ludzką postacią na skraj osad
 ukazuje [[171isd-grizzled-outcasts|Grizzled Outcasts]].
 **Hollowhenge** to dawna stolica prowincji, **Avabruck**, którą
 howlpacki zniszczyły doszczętnie; nazwa zmieniła się wraz z jej losem.
 Wsie **Lambholt** i **Gatstaf** żyją w rytmie pełni. Na południu leży
-**Devils' Breach** — kessigijskie wejście do podziemi, rzadko używane
-przez cokolwiek poza garstką diabłów, dopóki po powrocie Avacyn nie
+[[devils-breach|**Devils' Breach**]] — kessigijskie wejście do podziemi, rzadko używane
+przez cokolwiek poza garstką diabłów, dopóki po powrocie [[avacyn|Avacyn]] nie
 otworzyło się szerzej (gdzie wyprawę katarów prowadzi [[544avr-thraben-valiant|Thraben Valiant]]).
 
 **[[stensia|Stensia]]** (północ) — ciemne góry **Geier Reach**, wieczna mgła
 i wampirze rody w izolowanych dworach. Prowadzą tu trzy przełęcze:
-**Kruin Pass** z Gavony, pilnowana przez **Markovów**, **Getander
-Pass** — jedyne wejście od Kessigu, obserwowane przez **Falkenrathów**
+**Kruin Pass** z [[gavony|Gavony]], pilnowana przez **Markovów**, **Getander
+Pass** — jedyne wejście od [[kessig|Kessigu]], obserwowane przez **Falkenrathów**
 — oraz **Ziel Pass**, jedyna droga ku morzu, przy której stoi
-**Voldaren Estate**. W centrum pasma zieje **Ashmouth**: największa
+**Voldaren Estate**. W centrum pasma zieje [[ashmouth|**Ashmouth**]]: największa
 brama do świata demonów i diabłów. Na obrzeżach torfowych **Farbogów**
 leżą stare grafy: groby osuwają się tam między martwe sosny, a wraz z ich
 rozpadem mnożą się geisty. Anonimowy cmentarz ukazany przez
@@ -91,15 +91,15 @@ pustynią.
 
 ## Kościół Avacyn i jego pęknięcie
 
-**Avacyn** nie jest bóstwem zastanym. Stworzył ją wampir-planeswalker
+[[avacyn|**Avacyn**]] nie jest bóstwem zastanym. Stworzył ją wampir-planeswalker
 **Sorin Markov** jako połowę zabezpieczenia, które miało utrzymać
 równowagę: jego dziadek **Edgar Markov** dał początek wampirom, więc
-Sorin dał ludziom archanioła. Drugą połową był **Helvault** — bryła
+Sorin dał ludziom archanioła. Drugą połową był [[helvault|**Helvault**]] — bryła
 księżycowego srebra, w której Avacyn i jej zastępy więziły demony
 niemożliwe do zabicia.
 
 Ten porządek runął, gdy demon **Griselbrand** wylądował na samym
-Helvaulcie i wyzwał Avacyn na pojedynek. Walczyli dniami, na oczach
+[[helvault|Helvaulcie]] i wyzwał Avacyn na pojedynek. Walczyli dniami, na oczach
 lunarchy **Mikaeusa** i jego najbardziej zaufanych biskupów. Avacyn
 zebrała resztki sił, by wepchnąć demona do srebrnej bryły — a on
 w ostatnim geście przebił jej serce włócznią. Zaklęcie wiążące odbiło
@@ -145,8 +145,8 @@ raster (4096×3072), dostarczony przez właściciela. Wizards of the Coast
 nigdy nie wydał oficjalnej mapy Innistradu — przewodniki po planie mają
 wyłącznie szkice koncepcyjne regionów — więc żaden podkład kanoniczny
 nie istnieje i istnieć nie może. Wybrany raster jest opracowaniem
-fanowskim, ale jego geometria zgadza się z kanonem tekstowym: Gavony
-w centrum, Stensia na północy, Kessig na zachodzie, Nephalia na
+fanowskim, ale jego geometria zgadza się z kanonem tekstowym: [[gavony|Gavony]]
+w centrum, [[stensia|Stensia]] na północy, [[kessig|Kessig]] na zachodzie, Nephalia na
 wschodzie, Voldaren Estate na tyle blisko krawędzi gór, by widzieć
 wybrzeże. Codex nie dorysowuje własnych etykiet — raster ma swoje;
 sześćdziesiąt cztery **kotwice** w `map.json` służą wyszukiwarce
@@ -167,3 +167,5 @@ zmiany punktowe (Avabruck → Hollowhenge) opisano w notkach kotwic.
 6. [Plane Shift: Innistrad](https://media.wizards.com/2016/dnd/downloads/Plane_Shift_Innistrad.pdf) — opis diabłów: wygląd, wzrost, sabotaż jako specjalność.
 7. [A Planeswalker's Guide to Innistrad: Stensia and Vampires](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-stensia-and-vampires-2011-11-02) — Farbogi, stare grafy na ich obrzeżach i geisty mnożące się wraz z rozpadem grobów.
 8. [A Planeswalker's Guide to Innistrad: Nephalia and the Undead](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-nephalia-and-undead-2011-10-19) — niebieskie geisty jako projekcje umysłu, obsesji i zbiorowych wspomnień.
+9. [A Planeswalker's Guide to Innistrad: Gavony and Humans](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-gavony-and-humans-2011-09-28) — Gavony, Thraben, Katedra Avacyn, mury i parafialny krajobraz ludzkości.
+10. [A Planeswalker's Guide to Innistrad: Kessig and Werewolves](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-kessig-and-werewolves-2011-10-05) — Kessig, Ulvenwald, kultura prowincji, trasy i wilkołacze watahy.

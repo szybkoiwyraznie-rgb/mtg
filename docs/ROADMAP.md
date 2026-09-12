@@ -414,9 +414,80 @@ materializacje:
 
 W każdej dostawie `imgId` właściciela jest jawnie oddzielone od collector
 number, a Fabuła została zachowana verbatim przed researchem. Finalne
-bramki: **207/207**, build 62 strony (37/10/15) / 853 pliki drzewa archiwum,
+bramki: **207/207**, build 62 strony (37/10/15) / 859 plików drzewa archiwum,
 map-audit 0, wiki-stats 100%. Szczegóły:
 `docs/setup/HANDOFF_2026-09-11-pr32.md`.
+
+**PR-33 (2026-09-12) — audyt PR-32 + 279M21 Village Rites + 110DVD
+Serra's Embrace.** Audyt PR-32 zamknięty bez nowych P0/P1; raport wskazał
+trzy drobne follow-upy i zostały one obsłużone przed dostawami: liczniki
+drzewa w żywych dokumentach 853→859, trailing whitespace w planach
+historycznych oraz nieużyte źródło Razor Fields w 347NPH. Materializacja
+**279M21 Village Rites** — M21 #126, wiejski obrzęd w Downwarren/Sztygarach,
+szeptucha z Velen, księga rodowa długu i zapłaty, woda z Krzywuchowych
+Moczarów, gospodarz z Czarnoboru, klęczący parobek, biała koza z czerwoną
+wstążką i zakapturzeni sąsiedzi. Pinezka `region` dziedziczy kotwicę Velen
+(`0.4113/0.2807`), bo T1 nie rozrysowuje chaty ani wsi. Link-mining
+utworzył hasło `velen` po spełnieniu progu przez 555DSK i 279M21.
+Druga dostawa w tym PR: **110DVD Serra's Embrace** — DVD #21, zwykły
+ludzki piechur na polu bitwy Dominarii objęty eteryczną łaską Serry,
+skrzydła światła i anielskie dłonie na rękojeści miecza. Pinezka ma pewność
+`region` i używa Sursi / Katedry Serran (`0.1937/0.3806`) jako kotwicy
+tradycji, nie dokładnego pola bitwy. Link-mining utworzył hasło `serra`
+po spełnieniu progu przez Expunge i Serra's Embrace. **217/217 testów**;
+build 66 stron (39/12/15) / 859 plików drzewa archiwum; map-audit 0;
+wiki-stats 100%. Handoff: `docs/setup/HANDOFF_2026-09-12-pr33.md`.
+
+**PR-33 cd. (2026-09-12) — 516RNA Tenth District Veteran + hasła Ravniki.**
+Materializacja **516RNA Tenth District Veteran** — właścicielski `imgId`
+516RNA zachowany oddzielnie od druku **RNA #26**. Karta czyta scenę jako
+rodzimą dla Ravniki: dojrzała weteranka Legionu Boros w sercu Dziesiątego
+Dystryktu stoi na zrujnowanej barykadzie, broni wejścia do placu targowego
+i dźwiga młodszego rekruta do szyku. Pinezka ma pewność `region` i używa
+kotwicy Tin Street Market (`0.3406/0.4318`) bez udawania dokładnej barykady.
+Link-mining po drugiej karcie Ravniki utworzył hasła `boros-legion`,
+`dziesiaty-dystrykt` i `tin-street-market`; Withstand dostał wikilinki
+zasilające próg, a hasła odsyłają do mapy tylko deep-linkami `?x=&y=`.
+**222/222 testów**; build 70 stron (40/15/15) / 859 plików drzewa archiwum;
+map-audit 0; wiki-stats 100%. Handoff:
+`docs/setup/HANDOFF_2026-09-12-pr33.md`.
+
+**PR-33 cd. (2026-09-12) — Pętla Jakości: Gavony i Kessig.** Po zielonym
+kroku 0 pętla przeszła do link-miningu Innistradu. Powstały hasła
+`gavony` i `kessig` po progu dwóch kart; dopięto wikilinki w kartach
+118MID, 181AVR, 171ISD, 544AVR, 309ISD i 393DKA, na planie Innistradu oraz
+w powiązanych hasłach. Innistrad jest T1, więc pass mapowy nie zmienił
+rastra; hasła prowadzą tylko deep-linkami do kotwic regionów Gavony
+(`0.59/0.449`) i Kessig (`0.41/0.727`). Dodano regresję
+`test/innistrad-link-mining.test.js`, w tym strażnik działającego URL-a
+Gavony `2011-09-28`. **226/226 testów**; build 72 strony (40/17/15) /
+859 plików drzewa archiwum; map-audit 0; wiki-stats 100%. Handoff:
+`docs/setup/HANDOFF_2026-09-12-pr33.md`.
+
+**PR-33 cd. (2026-09-12) — druga Pętla Jakości: Avacyn i Devil's Breach.**
+Po czystym stanie i zielonym CI powstały hasła `avacyn` (`postac`) oraz
+`devils-breach` (`geografia`). Avacyn spina sześć kart Innistradu wokół
+stworzenia przez Sorina, Kościoła, Helvaultu, zniknięcia i powrotu;
+Devil's Breach spina cztery karty wokół kessigijskiej rozpadliny, diabłów,
+wypraw katarów i kontrastu z Ashmouth. Wikilinki dopięto w kartach 42ISD,
+118MID, 171ISD, 181AVR, 309ISD, 393DKA i 544AVR, na planie Innistradu oraz
+w hasłach Gavony/Kessig/Thraben/Stensia. Mapa T1 bez zmian rysunkowych;
+hasła prowadzą deep-linkami do Thraben/Helvaultu (`0.668/0.317`) i Devil's
+Breach (`0.392/0.945`). **228/228 testów**; build 74 strony (40/19/15) /
+859 plików drzewa archiwum; map-audit 0; wiki-stats 100%. Handoff:
+`docs/setup/HANDOFF_2026-09-12-pr33.md`.
+
+**PR-33 cd. (2026-09-12) — trzecia Pętla Jakości: Ashmouth i Helvault.**
+Po kolejnym czystym stanie powstały hasła `ashmouth` (`geografia`) i
+`helvault` (`artefakt`) po parze kart 393DKA + 544AVR. Ashmouth opisuje
+stensiańską czeluść Geier Reach, demony/diabły i kontrast z Devil's Breach;
+Helvault opisuje srebrny monolit z dziedzińca Katedry Avacyn, doktrynę
+wiązania, uwięzienie Avacyn/Griselbranda i skutki rozbicia. Mapa T1 bez
+zmian; deep-linki: Ashmouth `0.213/0.253`, Helvault/Thraben `0.668/0.317`.
+Regresja Innistradu pilnuje progów, klas, braku pinezek i wikilinków.
+**230/230 testów**; build 76 stron (40/21/15) / 859 plików drzewa archiwum;
+map-audit 0; wiki-stats 100%. Handoff:
+`docs/setup/HANDOFF_2026-09-12-pr33.md`.
 
 ## Wątki otwarte (czekają na decyzję właściciela)
 

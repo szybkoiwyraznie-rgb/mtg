@@ -1,3 +1,189 @@
+## 2026-09-12 18:55 — Pętla mapowa Alary T3: POI i biomy
+
+- **Mapa T3:** pierwszy przebieg poza Innistradem poszedł w stronę map
+  wyższych progów: `maps/alara/scena.json` i `podklad.svg` dostały nowe
+  elementy mapforge. **The Glass Dunes** nie udaje już stepu, tylko renderuje
+  się jako biom pustyni; **Cicatrice** jest strefą gruzu/scar-lands,
+  **The Rip** osobną rozpadliną, a **Twin Maelstroms** dodatkowym znakiem
+  wiru na akwenie Esperu.
+- **POI i akweny:** dodano kotwice/etykiety dla **The Crystal Labyrinth**,
+  **Sea of Unknowing**, **Twin Maelstroms**, **The Valley of the Ancient**,
+  **Cicatrice**, **The Rip** i **The Bloodhall**. Nowe obiekty pozostają
+  relacyjne w obrębie shardów: kanon potwierdza przynależność i relacje,
+  ale nie współrzędne.
+- **Dokumentacja:** `maps/alara/map.json` opisuje rekonstrukcyjny charakter
+  położeń, a `content/planes/alara.md` wymienia nowy stan mapy i granice
+  pewności. Bez powrotu odrzuconych pseudo-POI `Carmot Mines`/`Ruins of
+  Vithia`.
+- **Regresja:** `test/alara.test.js` sprawdza pustynny biom Glass Dunes,
+  Cicatrice jako gruz, The Rip jako rozpadlinę, nowe POI, wodne etykiety
+  oraz wymagane notki „wybór rekonstrukcji T3”.
+- **Bramki końcowe:** 231/231 testów; `map-audit` 0 problemów; build 76 stron
+  (40 kart, 21 haseł, 15 planów).
+
+## 2026-09-12 17:54 — Trzecia Pętla Jakości: Ashmouth i Helvault
+
+- **Link-mining:** trzeci przebieg Innistradu utworzył hasła
+  **[[ashmouth|Ashmouth]]** i **[[helvault|Helvault]]**. Oba przekroczyły
+  próg dzięki parze kart `393dka-forge-devil` +
+  `544avr-thraben-valiant`: jedna scena pokazuje diabła pod katedrą w czasie
+  słabnących zabezpieczeń, druga ekspedycję po pęknięciu Helvaultu.
+- **Zakres haseł:** Ashmouth opisuje stensiańską czeluść Geier Reach, bramę
+  demonów/diabłów i kontrast z Devil's Breach; Helvault opisuje srebrny
+  monolit z dziedzińca Katedry Avacyn, zasadę wiązania, uwięzienie Avacyn
+  i Griselbranda oraz skutki rozbicia więzienia.
+- **Mapa:** mapa Innistradu nadal pozostaje T1 — bez nowych rysunków i bez
+  pinezek haseł. Ashmouth prowadzi deep-linkiem do istniejącej kotwicy
+  Stensii (`x: 0.213`, `y: 0.253`), a Helvault do Thraben/Katedry
+  (`x: 0.668`, `y: 0.317`).
+- **Regresja:** `test/innistrad-link-mining.test.js` rozszerzono o progi
+  Ashmouth/Helvault, typy haseł, deep-linki mapowe i wikilinki kart/planów.
+- **Bramki końcowe:** 230/230 testów, build 76 stron (40 kart, 21 haseł,
+  15 planów) i 859 plików drzewa archiwum; map-audit 0; wiki-stats 100%
+  (7,4/8); `git diff --check` czysty.
+
+## 2026-09-12 17:41 — Druga Pętla Jakości: Avacyn i Devil's Breach
+
+- **Link-mining:** drugi przebieg Innistradu utworzył hasła
+  **[[avacyn|Avacyn]]** i **[[devils-breach|Devil's Breach]]**. Avacyn
+  przekracza próg dzięki sześciu kartom (`171isd-grizzled-outcasts`,
+  `181avr-spectral-prison`, `309isd-civilized-scholar`,
+  `393dka-forge-devil`, `42isd-murder-of-crows`,
+  `544avr-thraben-valiant`); Devil's Breach dzięki czterem kartom
+  (`118mid-dire-strain-brawler`, `171isd-grizzled-outcasts`,
+  `393dka-forge-devil`, `544avr-thraben-valiant`).
+- **Zakres haseł:** Avacyn opisuje archanioła Sorina, Kościół, Helvault,
+  zniknięcie i powrót; Devil's Breach opisuje kessigijską rozpadlinę, dym,
+  diabły, kontrast z Ashmouth i wyprawę katarów z Thraben. Helvault,
+  Ashmouth, Griselbrand i Kościół Avacyn nie dostały osobnych haseł w tym
+  przebiegu.
+- **Mapa:** mapa Innistradu pozostaje T1 — bez doklejania nowych obiektów.
+  Avacyn prowadzi tylko deep-linkiem do Thraben/Helvaultu (`x: 0.668`,
+  `y: 0.317`), a Devil's Breach do istniejącej kotwicy rozpadliny
+  (`x: 0.392`, `y: 0.945`).
+- **Regresja:** `test/innistrad-link-mining.test.js` rozszerzono o progi
+  Avacyn/Devil's Breach, brak pinezek haseł i wikilinki kart/planów.
+- **Bramki końcowe:** 228/228 testów, build 74 strony (40 kart, 19 haseł,
+  15 planów) i 859 plików drzewa archiwum; map-audit 0; wiki-stats 100%
+  (7,5/8); `git diff --check` czysty.
+
+## 2026-09-12 17:31 — Pętla Jakości: Gavony i Kessig (Innistrad)
+
+- **Link-mining:** po przeglądzie kart Innistradu powstały dwa hasła
+  regionalne: **[[gavony|Gavony]]** i **[[kessig|Kessig]]**. Gavony
+  przekroczyło próg dzięki `118mid-dire-strain-brawler` i
+  `181avr-spectral-prison`; Kessig dzięki `171isd-grizzled-outcasts` i
+  `544avr-thraben-valiant`. Dodatkowe wikilinki dopięto w kartach
+  `309isd-civilized-scholar`, `393dka-forge-devil`, na planie
+  [[innistrad|Innistrad]] oraz w powiązanych hasłach.
+- **Źródła i korekta linków:** kwerenda potwierdziła działający adres
+  oficjalnego przewodnika Gavony (`2011-09-28`, zamiast starego 404
+  `2011-09-07`) oraz przewodnik Kessigu z `2011-10-05`; nowe hasła cytują
+  też MTG Wiki dla układu parafii, Ulvenwaldu, Breakneck Ride i Devil's
+  Breach.
+- **Mapa:** pass mapowy nie dorysował obiektów, bo Innistrad jest wariantem
+  T1. Hasła nie mają własnych pinezek; prowadzą jedynie deep-linkami do
+  regionalnych kotwic mapy: Gavony (`x: 0.59`, `y: 0.449`) i Kessig
+  (`x: 0.41`, `y: 0.727`).
+- **Regresja:** `test/innistrad-link-mining.test.js` pilnuje progu dwóch kart,
+  braku pinezek haseł, wikilinków kart/planów oraz poprawionego URL-a
+  przewodnika Gavony.
+- **Bramki końcowe:** 226/226 testów, build 72 strony (40 kart, 17 haseł,
+  15 planów) i 859 plików drzewa archiwum; map-audit 0; wiki-stats 100%
+  (7,5/8); `git diff --check` czysty.
+
+## 2026-09-12 16:56 — Nowa karta: Tenth District Veteran (Ravnica)
+
+- **Materializacja karty:** **[[516rna-tenth-district-veteran|Tenth District
+  Veteran]]** (`516RNA`, wydanie `RNA` / *Ravnica Allegiance*, plan
+  [[ravnica|Ravnica]]) — dojrzała wojowniczka [[boros-legion|Legionu Boros]]
+  stoi na zrujnowanej barykadzie w [[dziesiaty-dystrykt|Dziesiątym
+  Dystrykcie]], blokując intruzom drogę do placu targowego i dźwigając
+  młodszego rekruta z powrotem do szyku.
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim
+  w `collection/entries/516rna-tenth-district-veteran.md`; snapshot RNA #26
+  żyje w `scryfall/516rna-tenth-district-veteran.json`. `516RNA` pozostaje
+  niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim
+  Scryfall/Gatherera.
+- **Pinezka i plan:** scena nie wskazuje konkretnej barykady ani
+  skrzyżowania, więc pinezka ma pewność `region`. Używa kotwicy
+  [[tin-street-market|Tin Street Market]] w Czwartym Precykcie (`x: 0.3406`,
+  `y: 0.4318`) jako najtwardszego rejonu „kluczowego placu targowego”.
+- **Link-mining:** druga karta Ravniki po Withstand odblokowała hasła
+  **[[boros-legion|Legion Boros]]**, **[[dziesiaty-dystrykt|Dziesiąty
+  Dystrykt]]** i **[[tin-street-market|Tin Street Market]]**. Hasła nie mają
+  własnych pinezek; odsyłają do mapy przez deep-linki `?x=&y=`.
+- **Strażniki:** dedykowana regresja pilnuje Fabuły, rozdziału `516RNA` od
+  RNA #26, weteranki i rekruta, mechaniki Vigilance/odtapowania oraz
+  regionalnej pinezki targu. UI oczekuje 40 Kart Katalogowych i renderuje
+  nowe hasła Ravniki z backlinkami.
+- **Bramki końcowe:** 222/222 testów, build 70 stron (40 kart, 15 haseł,
+  15 planów) i 859 plików drzewa archiwum; map-audit 0; wiki-stats 100%
+  (7,6/8); `git diff --check` czysty.
+
+## 2026-09-12 16:42 — Nowa karta: Serra's Embrace (Dominaria)
+
+- **Materializacja karty:** **[[110dvd-serra-s-embrace|Serra's Embrace]]**
+  (`110DVD`, wydanie `DVD` / *Duel Decks Anthology: Divine vs. Demonic*,
+  plan [[dominaria|Dominaria]]) — zwykły, zakurzony piechur na polu bitwy
+  zostaje objęty eteryczną obecnością [[serra|Serry]]: skrzydła z czystego
+  światła wyrastają za jego plecami, dłonie anielskiej mocy prowadzą jego
+  miecz, a zmęczenie ustępuje sile, lotowi i czujności (`{2}{W}{W}`, Aura;
+  +2/+2, flying, vigilance).
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim
+  w `collection/entries/110dvd-serra-s-embrace.md`; pełny snapshot DVD #21
+  żyje w `scryfall/110dvd-serra-s-embrace.json`. `110DVD` pozostaje
+  niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim
+  Scryfall/Gatherera.
+- **Pinezka i plan:** opis nie podaje konkretnego wzgórza, miasta ani linii
+  frontu, dlatego pinezka ma pewność `region`. Dziedziczy dominariańską
+  kotwicę Sursi / Katedry Serran (`x: 0.1937`, `y: 0.3806`; `px_t1 [1569,
+  1979]`) jako najtwardsze miejsce pamięci i łaski Serry, nie dokładny adres
+  pola bitwy.
+- **Link-mining:** powstało hasło postaci **[[serra|Serra]]**, bo próg ≥2
+  kart spełniają Serra's Embrace i Expunge. Hasło nie ma własnej pinezki;
+  odsyła do Sursi/Katedry Serran jako geograficznej kotwicy dziedzictwa.
+- **Strażniki:** dedykowana regresja pilnuje Fabuły, rozdziału `110DVD` od
+  DVD #21, regionalnej pinezki przy Sursi, zwykłego piechura jako odbiorcy
+  objęcia oraz progu hasła Serra. UI oczekuje 39 Kart Katalogowych i
+  renderuje hasło Serra z backlinkami.
+- **Bramki końcowe:** 217/217 testów, build 66 stron (39 kart, 12 haseł,
+  15 planów) i 859 plików drzewa archiwum, map-audit 0, wiki-stats 100%,
+  czysty `git diff --check`.
+
+## 2026-09-12 15:10 — Nowa karta: Village Rites (Wiedźmin)
+
+- **Materializacja karty:** **[[279m21-village-rites|Village Rites]]**
+  (`279M21`, wydanie `M21` / *Core Set 2021*, plan [[wiedzmin|Wiedźmin]]) —
+  w chacie sołtysa w Downwarren/Sztygarach starsza szeptucha otwiera
+  księgę rodową długu i zapłaty, gospodarz z Czarnoboru trzyma misę wody z
+  Krzywuchowych Moczarów, parobek klęczy przy białej kozie z czerwoną
+  wstążką, a sąsiedzi w lnianych kapturach patrzą, jak wieś oddaje jedną
+  ofiarę za dwa nowe odczyty rachunku (`{B}`, Instant; dodatkowy koszt:
+  poświęć stworzenie, dobierz dwie karty).
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim
+  w `collection/entries/279m21-village-rites.md`; pełny snapshot M21 #126
+  żyje w `scryfall/279m21-village-rites.json`. `279M21` pozostaje
+  niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim
+  Scryfall/Gatherera.
+- **Pinezka i plan:** scena nazywa Downwarren/Sztygary oraz wodę z
+  Krzywuchowych Moczarów, ale globalny raster T1 nie rozrysowuje chaty ani
+  lokalnego planu wsi. Pinezka ma pewność `region` i dziedziczy kotwicę
+  [[velen|Velen/Ziemi Niczyjej]] (`x: 0.4113`, `y: 0.2807`; `px_t1 [2095,
+  2024]`).
+- **Link-mining i porządki po audycie:** powstało hasło geograficzne
+  **[[velen|Velen]]**, bo próg ≥2 kart spełniają Village Rites i Bedhead
+  Beastie. Przy okazji domknięto drobne pozycje z audytu PR-32: poprawiono
+  liczbę plików drzewa z 853 na 859 w żywych dokumentach, usunięto trailing
+  whitespace z historycznych planów i zdjęto nieużyte źródło Razor Fields z
+  Pristine Talisman.
+- **Strażniki:** dedykowana regresja pilnuje Fabuły, rozdziału `279M21` od
+  M21 #126, regionalnej pinezki, kozy jako dokładnie jednej ofiary, parobka
+  jako świadka oraz progu hasła Velen. UI oczekuje 38 Kart Katalogowych.
+- **Bramki końcowe:** 212/212 testów, build 64 strony (38 kart, 11 haseł,
+  15 planów) i 859 plików drzewa archiwum, map-audit 0, wiki-stats 100%,
+  czysty `git diff --check`.
+
 ## 2026-09-12 14:08 — Korekta pinezki Chittering Rats
 
 - Po uwadze właściciela ponownie sprawdzono master T1 Wiedźmina. Pierwotny

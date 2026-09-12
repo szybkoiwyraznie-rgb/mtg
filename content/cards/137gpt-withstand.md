@@ -21,8 +21,9 @@ która musi wytrzymać pierwszy napór, zanim ktokolwiek pomyśli o zwycięstwie
 *Withstand* zapisuje właśnie taką chwilę — nie triumf, lecz moment, w którym
 uderzenie nie przechodzi dalej.
 
-W Dziesiątym Dystrykcie za tę sztukę odpowiada przede wszystkim **Legion
-Boros**. Jego żołnierz nie jest tu samotnym bohaterem odciętym od armii,
+W [[dziesiaty-dystrykt|Dziesiątym Dystrykcie]] za tę sztukę odpowiada
+przede wszystkim [[boros-legion|**Legion Boros**]]. Jego żołnierz nie jest
+tu samotnym bohaterem odciętym od armii,
 lecz jednym z kamieni w murze: stal, złote okucia, wieżowa tarcza i znak
 płonącego słońca składają się na publiczną obietnicę, że porządek miasta
 ma jeszcze kogoś, kto stanie między mieszkańcem a przemocą. Ogień może
@@ -109,8 +110,9 @@ w gildii albo na jej pograniczu, w chwili zatrzymanego uderzenia.
 
 Najlepszym miejscem dla tej sceny jest **Precinct Four** Dziesiątego
 Dystryktu [[ravnica|Ravnicy]] — obszar Sunhome, The Bulwark i Tin Street.
-Pinezka wskazuje zachodni skraj borosijskiej strefy przy Tin Street Market,
-nie konkretny kamień uliczny. Pewność miejsca: **region**. Zapis daje
+Pinezka wskazuje zachodni skraj borosijskiej strefy przy
+[[tin-street-market|Tin Street Market]], nie konkretny kamień uliczny.
+Pewność miejsca: **region**. Zapis daje
 Boros i ravnicki bruk; zapis geograficzny dopowiada, że właśnie Czwarty
 Precykt jest naturalnym zapleczem Legionu.
 

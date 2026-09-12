@@ -35,19 +35,78 @@ mówiące o encji **w treści** (nie samym tagiem):
 
 ## Kolejka link-miningu: encje czekające na drugą kartę (Ravnica)
 
-Sesja PR-14 (2026-09-03) — link-mining po dostawie 137GPT: encje
-Rawnicy są już wspólnym mianownikiem karty, planu i mapy, ale licznik
-progowy idzie od KART (zasada właściciela 2026-08-31) — hasła ruszą
-przy drugiej karcie planu.
+Sesja PR-33 cd. (2026-09-12) — druga karta Ravniki (`516rna-tenth-district-veteran`)
+odblokowała progi link-miningu dla trzech encji uliczno-gildyjnych:
+
+- **Legion Boros** — wykonane: `content/lore/boros-legion.md`, klasa
+  `spolecznosc`, próg z kart `137gpt-withstand` +
+  `516rna-tenth-district-veteran`.
+- **Dziesiąty Dystrykt** — wykonane: `content/lore/dziesiaty-dystrykt.md`,
+  klasa `geografia`, próg z kart `137gpt-withstand` +
+  `516rna-tenth-district-veteran`.
+- **Tin Street Market** — wykonane: `content/lore/tin-street-market.md`,
+  klasa `geografia`, próg z kart `137gpt-withstand` +
+  `516rna-tenth-district-veteran`.
+
+Dalsze encje Ravniki nadal czekają na drugą kartę; wzmianki w planie nie
+liczą się do progu kart (zasada właściciela 2026-08-31):
 
 | Encja | Klasa (docelowa) | Karty wspominające | Do hasła brakuje |
 |---|---|---|---|
-| Boros | spolecznosc | 137gpt-withstand | 1 karta |
-| Legion Boros | spolecznosc | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
-| Dziesiąty Dystrykt | geografia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
 | Sunhome | geografia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
-| Tin Street | geografia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
+| Tin Street | geografia | 137gpt-withstand, plan ravnica, 516rna-tenth-district-veteran (przez Tin Street Market) | wymaga osobnej drugiej wzmianki jako arteria |
 | Pakt Gildii | magia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
+| Wojek / Liga Wojek | spolecznosc | plan ravnica, źródła 516RNA | wymaga wzmianki w treści drugiej karty |
+
+## Link-mining Innistradu (Pętla Jakości, 2026-09-12)
+
+**Gavony — wykonane**, `content/lore/gavony.md`, klasa `geografia`, plan
+Innistrad. Próg spełniły treści kart `118mid-dire-strain-brawler` +
+`181avr-spectral-prison`; wikilinki dopisane też w kartach
+`393dka-forge-devil` i `544avr-thraben-valiant`, na planie Innistradu
+oraz w powiązanych hasłach. Hasło nie ma pinezki — odsyła do kotwicy
+regionu `#/mapa/innistrad?x=0.59&y=0.449`.
+
+**Kessig — wykonane**, `content/lore/kessig.md`, klasa `geografia`, plan
+Innistrad. Próg spełniły treści kart `171isd-grizzled-outcasts` +
+`544avr-thraben-valiant`; wikilinki dopisane też w kartach
+`181avr-spectral-prison`, `309isd-civilized-scholar` i
+`393dka-forge-devil`, na planie Innistradu oraz w powiązanych hasłach.
+Hasło nie ma pinezki — odsyła do kotwicy regionu
+`#/mapa/innistrad?x=0.41&y=0.727`.
+
+**Avacyn — wykonane 2026-09-12 (drugi przebieg pętli)**,
+`content/lore/avacyn.md`, klasa `postac`, plan Innistrad. Próg spełniły
+karty `171isd-grizzled-outcasts`, `181avr-spectral-prison`,
+`309isd-civilized-scholar`, `393dka-forge-devil`, `42isd-murder-of-crows`
+i `544avr-thraben-valiant`; wikilinki dopisane też na planie Innistradu
+oraz w hasłach Gavony/Kessig/Thraben/Stensia. Hasło nie ma pinezki — odsyła
+do Thraben/Helvaultu `#/mapa/innistrad?x=0.668&y=0.317`.
+
+**Devil's Breach — wykonane 2026-09-12 (drugi przebieg pętli)**,
+`content/lore/devils-breach.md`, klasa `geografia`, plan Innistrad. Próg
+spełniły karty `118mid-dire-strain-brawler`, `171isd-grizzled-outcasts`,
+`393dka-forge-devil` i `544avr-thraben-valiant`; wikilinki dopisane też na
+planie Innistradu i w haśle Kessig. Hasło nie ma pinezki — odsyła do
+istniejącej kotwicy rozpadliny `#/mapa/innistrad?x=0.392&y=0.945`.
+
+**Ashmouth — wykonane 2026-09-12 (trzeci przebieg pętli)**,
+`content/lore/ashmouth.md`, klasa `geografia`, plan Innistrad. Próg spełniły
+karty `393dka-forge-devil` + `544avr-thraben-valiant`; wikilinki dopisane
+też na planie Innistradu, w haśle Stensia i Devil's Breach. Hasło nie ma
+pinezki — odsyła do istniejącej kotwicy Stensii
+`#/mapa/innistrad?x=0.213&y=0.253`.
+
+**Helvault — wykonane 2026-09-12 (trzeci przebieg pętli)**,
+`content/lore/helvault.md`, klasa `artefakt`, plan Innistrad. Próg spełniły
+karty `393dka-forge-devil` + `544avr-thraben-valiant`; wikilinki dopisane
+też na planie Innistradu oraz w hasłach Avacyn/Gavony/Thraben/Devil's
+Breach. Hasło nie ma pinezki — odsyła do Thraben/Katedry
+`#/mapa/innistrad?x=0.668&y=0.317`.
+
+Encje nadal poniżej progu osobnego hasła albo wymagające dokładniejszej
+separacji zakresu: Ulvenwald, Nephalia, Markovowie, Kościół Avacyn/Katedra
+Avacyn, Griselbrand, Shilgengar, Skirsdag.
 
 ## Kolejka link-miningu: encje czekające na drugą kartę (Alara)
 

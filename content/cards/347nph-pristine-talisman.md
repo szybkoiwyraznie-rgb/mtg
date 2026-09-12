@@ -141,8 +141,6 @@ Mechanika karty idealnie odzwierciedla działanie talizmanu:
 - MTG Wiki, hasło *New Phyrexia* oraz *Mirran* — historia oporu,
   rola Elspeth Tirel, enklawy Aurioków i kunszt czystego rzemiosła:
   <https://mtg.wiki/page/New_Phyrexia_(plane)>
-- MTG Wiki, hasło *Razor Fields* — geografia białego regionu Mirrodinu:
-  <https://mtg.wiki/page/Razor_Fields>
 
 ## Podsumowanie Lore
 

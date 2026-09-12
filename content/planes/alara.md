@@ -200,12 +200,16 @@ płyną do mórz, drogi i szlaki łączą osady. Nazwy wyłącznie kanoniczne
 (MTG Wiki, Category:Alara locations): w Bant Topa, Valeron, Akrasa,
 Jhess, Eos, Sun-Dappled Court, Serul Cove, Fort Dawnray, Obelisk
 of Bant i Cathedral of Bliss; w Naya Sacellum, ruiny Antali, Qasal,
-Etlan i Summoning Root; w Jund Mount Jhal, Boiling Slopes, Sweltering
-Cauldron i Hellkite's Pass; na Grixis Sedraxis, Unx, Torchlight,
-Boneheaps, Kederekt, Dregscape i Droning Isles; na Esper Sanctum
-Arcanum, Vectis, Palandius, Tidehollow i Glass Dunes. Scena
-wygenerowana w silniku mapforge (`scena.json`), proweniencja
-w `map.json`.
+Etlan, Summoning Root i Valley of the Ancient; w Jund Mount Jhal,
+Boiling Slopes, Sweltering Cauldron, Hellkite's Pass, Cicatrice,
+The Rip i Bloodhall; na Grixis Sedraxis, Unx, Torchlight, Boneheaps,
+Kederekt, Dregscape i Droning Isles; na Esper Sanctum Arcanum, Vectis,
+Palandius, Tidehollow, Glass Dunes, Crystal Labyrinth, Sea of Unknowing
+i Twin Maelstroms. Scena wygenerowana w silniku mapforge (`scena.json`),
+proweniencja w `map.json`. Nowe pozycje dodane w pętli 2026-09-12 są
+relacyjne w obrębie shardów: kanon wskazuje przynależność/topologię
+miejsc, natomiast konkretne współrzędne, przebieg The Rip i poligon
+Cicatrice pozostają wyborem rekonstrukcji T3.
 
 ## Źródła
 

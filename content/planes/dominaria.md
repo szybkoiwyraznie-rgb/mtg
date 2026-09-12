@@ -29,9 +29,12 @@ po nim żadna wola nie zginie czasu, a Dominaria wchodzi w erę, w której
 mierzy ją kalendarz AR (po Mendingu) i spory planeswalkerów, nie bogowie.
 Karta [[40usg-expunge|Expunge]] pochodzi z samego serca inwazji:
 Benalia pod rządami koalicji, rycerstwo Serran walczy z czarną magią
-wroga. Z kolei [[362bro-simian-simulacrum|Simian Simulacrum]] ukazuje
-relikt dawniejszej epoki: mechaniczny konstrukt w opuszczonym warsztacie
-lasu Argoth, który nocami naprawia towarzysza, nie wiedząc o końcu Wojny Braci.
+wroga. [[110dvd-serra-s-embrace|Serra's Embrace]] dopowiada jaśniejszą
+stronę tej samej tradycji: [[serra|Serra]] nie przychodzi po wodza, lecz
+po zwykłego piechura, który w złotej godzinie na polu bitwy jeszcze stoi.
+Z kolei [[362bro-simian-simulacrum|Simian Simulacrum]] ukazuje relikt
+dawniejszej epoki: mechaniczny konstrukt w opuszczonym warsztacie lasu
+Argoth, który nocami naprawia towarzysza, nie wiedząc o końcu Wojny Braci.
 Epokę Lodowcową reprezentuje z kolei zwiadowczyni [[531m3c-disa-the-restless|Disa the Restless]],
 która na zasypanych śniegiem pustkowiach Terisiare tropi żerujące bestie
 i ostrzega ludzkie królestwo Kjeldoru.
@@ -85,7 +88,9 @@ pierwszy render to obraz FHD (L0), a od progu zoomu 2.5 dołączają
 nakładki: master jest na tyle duży, że toponimia czytelnego detalu
 jest w samej bazie (nakładki L2 z 2026-09-08 nie ma — decyzja
 właściciela, ADR 0041). Pinezki: [[40usg-expunge|Expunge]] — Katedra
-Serran na Równinach Sursi (pewność region); [[362bro-simian-simulacrum|Simian Simulacrum]]
+Serran na Równinach Sursi (pewność region); [[110dvd-serra-s-embrace|Serra's Embrace]]
+— regionalny indeks łaski Serry przy Sursi/Katedrze, bez udawania
+konkretnego pola bitwy (pewność region); [[362bro-simian-simulacrum|Simian Simulacrum]]
 — wyspa Argoth u wybrzeży Terisiare (pewność region); [[531m3c-disa-the-restless|Disa the Restless]]
 — północne Terisiare / Kjeldor (pewność region).
 
@@ -102,6 +107,11 @@ Serran na Równinach Sursi (pewność region); [[362bro-simian-simulacrum|Simian
   https://mtg.wiki/page/Otaria · Terisiare:
   https://mtg.wiki/page/Terisiare · Sarpadia:
   https://mtg.wiki/page/Sarpadia
+- MTG Wiki, Serra / Church of Serra / Sursi / Cathedral of Serra —
+  tradycja Serran na Dominarii, śmierć i błogosławieństwo Serry w Sursi,
+  katedra i samorzutne pojawianie się aniołów:
+  https://mtg.wiki/page/Serra · https://mtg.wiki/page/Church_of_Serra ·
+  https://mtg.wiki/page/Sursi · https://mtg.wiki/page/Cathedral_of_Serra
 - MTG Wiki, Fall of the Sarpadian Empires — upadek imperiów
   (Icatia, Vodalia, Czarne Ręce, Havenwood) w Ciemnych Czasach
   (ok. 170 AR), thrullowie/thalidzi, homaridi:
