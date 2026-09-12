@@ -281,21 +281,23 @@ Encje „o jedną kartę” od progu (skan boldów 2026-09-09):
 | Benalia, Wybrani, Pięć Edyktów, Tangle (Dominaria), Argoth, Sylex, Kabała, Aphetto, Daru, Tamingazin, Zhalfir, Suq'At, Sarpadyjskie Imperia, Ciemne Czasy, thrullowie, thalidzi, homaridi | geografia/spolecznosc | 40usg-expunge / plan dominaria | 1 karta |
 | Eldrazi, Roil, Halimar, Coralhelm, Jori En, merfolk | różne | 2bfz-coralhelm-guide (+ plan zendikar) | 1 karta |
 
-## Link-mining Forgotten Realms (start: PR-25, aktualizacja 2026-09-09)
+## Link-mining Forgotten Realms (start: PR-25, aktualizacja 2026-09-12)
 
-**Wybrzeże Mieczy — SKASOWANE 2026-09-09 decyzją właściciela.**
-Hasło powstało w PR-27 poniżej progu (1 karta + plan zamiast
-wymaganych 2 kart); audyt PR-27 (F1) niesłusznie rekomendował
-zachowanie. Wikilinki zdjęte do pogrubień, encja wróciła do kolejki.
-Próg haseł egzekwuje odtąd test `test/prog-hasel.test.js`.
+**Wybrzeże Mieczy — ponownie utworzone 2026-09-12 po `234CLB`.**
+Historia progu: hasło powstało w PR-27 poniżej progu (1 karta + plan zamiast
+wymaganych 2 kart), a właściciel 2026-09-09 nakazał je skasować i zdjąć
+wikilinki do pogrubień. Po `234clb-gray-slaad` istnieją już dwie karty
+linkujące (`3clb-nefarious-imp` + `234clb-gray-slaad`), więc hasło wraca
+legalnie; test `test/prog-hasel.test.js` nadal pilnuje licznika od kart,
+nie od planów.
 
 Encje „o jedną kartę” od progu:
 
 | Encja | Klasa (docelowa) | Karta wspominająca | Do progu brakuje |
 | --- | --- | --- | --- |
-| Wybrzeże Mieczy | geografia | 3clb-nefarious-imp (+ plan forgotten-realms) | 1 karta |
 | Avernus, Baator | geografia | 3clb-nefarious-imp | 1 karta |
 | imp (chochlik) | fauna | 3clb-nefarious-imp | 1 karta |
+| slaadi, chaos phage, Limbo | fauna/choroba/geografia | 234clb-gray-slaad | 1 karta |
 | Wojna Hobgoblinów, Tiamat | wydarzenie/koncepcja | 3clb-nefarious-imp (+ plan forgotten-realms) | 1 karta |
 | Faerûn, Abeir-Toril, Morze Upadłych Gwiazd, Moonshaes, Nelanther, Amn, Luruar, Jezioro Pary, Królestwo Wysokie, Morze Bezludne | geografia | — (plan forgotten-realms) | licznik od kart, nie planów |
 | Mystra, Selûne, Lathander, Ilmater, Tempus, Tkanina Magii, Czas Kłopotów | postac/koncepcja | — (plan forgotten-realms) | licznik od kart, nie planów |

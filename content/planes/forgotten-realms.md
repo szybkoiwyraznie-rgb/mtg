@@ -30,7 +30,7 @@ m.in. **Selûne** (księżyc i nawigatorzy), **Mystra** (maga),
 **Lathander** (poranek i przeznaczenie), **Ilmater** (cierpienie
 i pomoc) oraz **Tempus** (wojna). To świat ludzi: wielkie mocarstwa
 epok dawnych (Netheril, Maztica) leżą w gruzach, a współczesna scena
-skupia się na miastach-handlach **Wybrzeża Mieczy** — od lodów
+skupia się na miastach-handlach **[[wybrzeze-mieczy|Wybrzeża Mieczy]]** — od lodów
 Północy po pustkowie Amn na południu.
 
 ## Geografia
@@ -38,9 +38,11 @@ Północy po pustkowie Amn na południu.
 Mapa settingu pokrywa Faerûn w granicach oficjalnej mapy 3E
 (różnice granic względem epoki 5e są kosmetyczne):
 
-- **Wybrzeże Mieczy** — pas nadmorskich królestw
+- **[[wybrzeze-mieczy|Wybrzeże Mieczy]]** — pas nadmorskich królestw
   i miast-handli wzdłuż zachodniego brzegu Faerûnu; serce
-  współczesnego settingu i miejsce akcji CLB;
+  współczesnego settingu i miejsce akcji CLB; w Kodeksie obejmuje
+  zarówno gabinet [[3clb-nefarious-imp|Nefarious Imp]], jak i chore
+  mokradło [[234clb-gray-slaad|Gray Slaad]];
 - **Morze Upadłych Gwiazd** — największy śródlądowy akwen Faerûnu,
   znany także jako **Inner Sea**; spina Cormyr, Sembię, Impiltur,
   Chessentę i południowe szlaki handlowe środka kontynentu;
@@ -92,6 +94,10 @@ Pinezki na mapie (ADR 0043: tylko karty):
 - **[[3clb-nefarious-imp|Nefarious Imp]]** (3clb); środek Wybrzeża
   Mieczy (pewność: rejon) — scena nie wymienia miasta, więc pinezka
   stoi na rejonie, nie na lokalu.
+- **[[234clb-gray-slaad|Gray Slaad]]** (234clb); regionalna kotwica
+  [[wybrzeze-mieczy|Wybrzeża Mieczy]] (pewność: rejon) — mglisty skraj
+  mokradła i przeklętego lasu bez nazwanej miejscowości, ruin ani
+  dokładnego traktu.
 - **[[539clb-silvanus-s-invoker|Silvanus's Invoker]]** (539clb);
   ostępy Wysokiego Lasu (pewność: rejon) — smokowiec-druid wzywający
   żywiołaka ziemi i drewna w imię Silvanusa.
@@ -126,3 +132,9 @@ Pinezki na mapie (ADR 0043: tylko karty):
 - Scryfall, set CLB (*Commander Legends: Battle for Baldur's Gate*,
   2022-06-10) — karty crossoveru do kodexu:
   https://scryfall.com/sets/clb
+- Forgotten Realms Wiki, *Slaad*, *Gray slaad* i *Chaos phage* —
+  pozaplanarne żabopodobne istoty z Limbo, szare slaady jako
+  przemienione zielone slaady oraz choroba/przemiana slaadów:
+  https://forgottenrealms.fandom.com/wiki/Slaad
+  https://forgottenrealms.fandom.com/wiki/Gray_slaad
+  https://forgottenrealms.fandom.com/wiki/Chaos_phage

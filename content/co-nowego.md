@@ -1,3 +1,34 @@
+## 2026-09-12 22:05 — Nowa karta: Gray Slaad (Forgotten Realms)
+
+- **Materializacja karty:** **[[234clb-gray-slaad|Gray Slaad]]** (`234CLB`,
+  wydanie `CLB` / *Commander Legends: Battle for Baldur's Gate*, plan
+  [[forgotten-realms|Zapomniane Krainy]]) — szary slaad stoi w mglistym
+  mokradle na skraju przeklętego lasu [[wybrzeze-mieczy|Wybrzeża Mieczy]],
+  wśród martwych drzew i resztek kamiennej drogi; nie atakuje jednej osoby,
+  lecz sprawia, że wszystko wokół zaczyna chorować.
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana w
+  `collection/entries/234clb-gray-slaad.md`; pełny snapshot Adventure żyje w
+  `scryfall/234clb-gray-slaad.json`. `234CLB` pozostaje niezależnym `imgId`
+  właściciela — właściwy druk to **Gray Slaad // Entropic Decay, CLB #129**,
+  multiverse ID `563012`; bezpośrednie `/cards/clb/234` prowadzi do Halsina,
+  nie do szarego slaada.
+- **Pinezka i plan:** `maps/forgotten-realms/map.json` dodaje wyłącznie
+  pinezkę karty z pewnością `region` na kotwicy Wybrzeża Mieczy (`x=0.13`,
+  `y=0.27`). Scena nie wymienia miasta, ruin, nazwanego mokradła ani
+  nazwanego lasu, więc nie udaje dokładnego punktu przy drodze.
+- **Link-mining:** druga karta Wybrzeża Mieczy (`3clb-nefarious-imp` +
+  `234clb-gray-slaad`) legalnie przywróciła hasło
+  **[[wybrzeze-mieczy|Wybrzeże Mieczy]]** po wcześniejszym skasowaniu poniżej
+  progu; hasło nie ma własnej pinezki, tylko deep-link do regionalnej kotwicy.
+  Slaadi, chaos phage i Limbo pozostają w backlogu po jednej karcie.
+- **Strażniki:** nowa regresja pilnuje Fabuły, rozdziału `234CLB` od CLB #129
+  i fałszywego CLB #234, snapshotu Adventure, widoku twarzy Gray Slaad,
+  Entropic Decay / mill four, regionalnej pinezki oraz progu hasła Wybrzeże
+  Mieczy.
+- **Bramki końcowe:** 286/286 testów; build 92 strony (46 kart, 31 haseł,
+  15 planów), artefakt 1618.6 kB i 853 pliki drzewa archiwum (148126.1 kB);
+  map-audit 0; wiki-stats 100% (7,3/8); `git diff --check` czysty.
+
 ## 2026-09-12 21:50 — Nowa karta: Frightful Delusion (Innistrad)
 
 - **Materializacja karty:** **[[256isd-frightful-delusion|Frightful Delusion]]**

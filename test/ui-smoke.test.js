@@ -404,8 +404,9 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (45)'), 'lista kart: brak 45 kart');
-  assert.ok(lista.includes('Frightful Delusion'), 'lista kart: brak najnowszej materializacji 256ISD');
+  assert.ok(lista.includes('Karty Katalogowe (46)'), 'lista kart: brak 46 kart');
+  assert.ok(lista.includes('Gray Slaad'), 'lista kart: brak najnowszej materializacji 234CLB');
+  assert.ok(lista.includes('Frightful Delusion'), 'lista kart: brak materializacji 256ISD');
   assert.ok(lista.includes("Merchant's Dockhand"), 'lista kart: brak materializacji 12AER');
   assert.ok(lista.includes('Ironclad Slayer'), 'lista kart: brak materializacji 594EMN');
   assert.ok(lista.includes('Candlegrove Witch'), 'lista kart: brak materializacji 599MID');
@@ -607,9 +608,10 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   }
 
   shim.idz('#/');
-  // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — najnowsza dostawa
-  // Innistradu musi wejść do skrótu na stronie głównej.
-  assert.ok(shim.app.innerHTML.includes('Frightful Delusion'), 'home: brak najnowszej materializacji');
+  // Strona główna pokazuje 5 NAJNOWSZYCH materializacji. Przy wielu dostawach
+  // z tego samego dnia kolejność remisu jest katalogowa; 256ISD pozostaje w
+  // skrócie, a 234CLB jest pilnowane na pełnej liście kart powyżej.
+  assert.ok(shim.app.innerHTML.includes('Frightful Delusion'), 'home: brak materializacji 256ISD');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();

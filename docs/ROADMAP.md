@@ -418,7 +418,7 @@ bramki: **207/207**, build 62 strony (37/10/15) / 859 plików drzewa archiwum,
 map-audit 0, wiki-stats 100%. Szczegóły:
 `docs/setup/HANDOFF_2026-09-11-pr32.md`.
 
-**PR-33 (2026-09-12) — audyt PR-32, osiem materializacji i Pętle Jakości.**
+**PR-33 (2026-09-12) — audyt PR-32, dziewięć materializacji i Pętle Jakości.**
 Audyt PR-32 zamknięty bez nowych P0/P1; trzy drobne follow-upy audytu
 (obsługa liczników drzewa, whitespace w planach i źródło Razor Fields w
 347NPH) zostały wykonane przed dalszą pracą. W PR #33 powstały pełne
@@ -426,23 +426,27 @@ materializacje `279M21 Village Rites` (Wiedźmin/Velen), `110DVD Serra's
 Embrace` (Dominaria/Serra), `516RNA Tenth District Veteran` (Ravnica/Boros),
 `242ALA Knight of the Skyward Eye` (Alara/Bant), `599MID Candlegrove Witch`
 (Wiedźmin/Łysa Góra), `594EMN Ironclad Slayer` (Wiedźmin/pobojowiska
-Ziemi Niczyjej), `12AER Merchant's Dockhand` (Kaladesh/Bomat) oraz
-`256ISD Frightful Delusion` (Innistrad/Stensia).
+Ziemi Niczyjej), `12AER Merchant's Dockhand` (Kaladesh/Bomat),
+`256ISD Frightful Delusion` (Innistrad/Stensia) oraz `234CLB Gray Slaad`
+(Forgotten Realms/Wybrzeże Mieczy).
 
 Link-mining i pętle jakości domknęły hasła: `velen`, `serra`,
 `boros-legion`, `dziesiaty-dystrykt`, `tin-street-market`, `gavony`,
 `kessig`, `avacyn`, `devils-breach`, `ashmouth`, `helvault`, `bant`,
 `nicol-bolas`, `ghirapur`, `konsulat-kaladeshu`, `terisiare`, `sursi`,
-`ortodoksja-maszyn`, `vulshok` i `panie-lasu`. Mapa Alary T3 dostała nowe
-POI/biomy (m.in. Glass Dunes, Cicatrice, The Rip, Sea of Unknowing,
-Crystal Labyrinth), mapa Kaladeshu promowała kotwice L2 Ghirapuru i po
-12AER używa Bomat jako regionalnej pinezki portowej, a Innistrad po 256ISD
-używa regionalnej kotwicy Stensii (`0.228/0.317`) dla anonimowej sypialni,
-bez udawania domu, wsi ani przełęczy. Wiedźmin zachował dyscyplinę T1/LOD:
-Łysa Góra i pobojowiska Ziemi Niczyjej mają tylko regionalne pinezki kart na
-kotwicy Velen (`0.4113/0.2807`), bez pinezek haseł.
+`ortodoksja-maszyn`, `vulshok`, `panie-lasu` i `wybrzeze-mieczy`. Mapa Alary
+T3 dostała nowe POI/biomy (m.in. Glass Dunes, Cicatrice, The Rip, Sea of
+Unknowing, Crystal Labyrinth), mapa Kaladeshu promowała kotwice L2 Ghirapuru
+i po 12AER używa Bomat jako regionalnej pinezki portowej, a Innistrad po
+256ISD używa regionalnej kotwicy Stensii (`0.228/0.317`) dla anonimowej
+sypialni, bez udawania domu, wsi ani przełęczy. Forgotten Realms po 234CLB
+odzyskało hasło Wybrzeże Mieczy dopiero po spełnieniu progu dwóch kart i
+używa regionalnej pinezki `0.13/0.27` dla mokradła szarego slaada, bez
+pinezki hasła i bez dokładnego lasu/mokradła. Wiedźmin zachował dyscyplinę
+T1/LOD: Łysa Góra i pobojowiska Ziemi Niczyjej mają tylko regionalne pinezki
+kart na kotwicy Velen (`0.4113/0.2807`), bez pinezek haseł.
 
-Bramki końcowe po 256ISD: **279/279 testów**, build **90 stron** (45 kart,
-30 haseł, 15 planów; artefakt 1596.1 kB) i **853 pliki** drzewa archiwum
-(147754.1 kB), map-audit 0, wiki-stats 100% (7,3/8), czysty
+Bramki końcowe po 234CLB: **286/286 testów**, build **92 strony** (46 kart,
+31 haseł, 15 planów; artefakt 1618.6 kB) i **853 pliki** drzewa archiwum
+(148126.1 kB), map-audit 0, wiki-stats 100% (7,3/8), czysty
 `git diff --check`. Handoff: `docs/setup/HANDOFF_2026-09-12-pr33.md`.

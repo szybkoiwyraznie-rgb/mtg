@@ -4,6 +4,52 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-12 — PR-33 cd.: 234CLB Gray Slaad i Wybrzeże Mieczy
+
+Właściciel dostarczył `234CLB / Gray Slaad / CLB / Forgotten Realms` wraz z
+Fabułą o szarym slaadzie stojącym w ponurym, mglistym mokradle na skraju
+przeklętego lasu. Stworzenie ma mokrą szarą skórę, wychudzoną muskularną
+sylwetkę, szeroką żabią szczękę pełną zębów, puste lśniące oczy, chitynowe
+guzki, ciemny wyciek z piersi i szarą mgłę wokół szponów; nie atakuje jednej
+osoby, bo wszystko w pobliżu zaczyna chorować.
+
+1. **Materiał źródłowy:** utworzono
+   `collection/entries/234clb-gray-slaad.md` z Fabułą właściciela i
+   `imgId: 234CLB` oraz pełny snapshot
+   `scryfall/234clb-gray-slaad.json` dla Scryfall/Gatherer **Gray Slaad //
+   Entropic Decay, CLB #129** (multiverse ID `563012`). Notka numeracji jawnie
+   ostrzega, że `234CLB` nie jest numerem kolekcjonerskim, a `/cards/clb/234`
+   wskazuje **Halsin, Emerald Archdruid**.
+2. **Karta Katalogowa:** `content/cards/234clb-gray-slaad.md` jest lore-first:
+   przed mechaniką prowadzi przez Wybrzeże Mieczy, mgliste mokradło, przeklęty
+   skraj lasu, martwe drzewa, starą kamienną drogę, slaadi jako istoty z Limbo
+   i chaosową chorobę działającą przez samą obecność.
+3. **Transpozycja mechaniki:** snapshot Adventure materializuje twarz **Gray
+   Slaad** (`{2}{B}`, `Creature — Frog Horror`, 4/1), a sekcja mechaniczna
+   łączy **Entropic Decay** (`{1}{B}`, `Sorcery — Adventure`, `Mill four cards`)
+   z entropią mokradła, gniciem pamięci drogi i progiem czterech stworzeń w
+   grobie, po którym menace/deathtouch oznaczają prawdziwie śmiertelny kontakt.
+4. **Mapa:** `maps/forgotten-realms/map.json` dostał wyłącznie pinezkę karty,
+   nie hasła. Pinezka ma pewność `region` i korzysta z kotwicy Wybrzeża Mieczy
+   (`0.13/0.27`), bo scena nie nazywa miasta, ruin, konkretnego mokradła ani
+   konkretnego lasu.
+5. **Link-mining Forgotten Realms:** po drugiej karcie linkującej do Wybrzeża
+   Mieczy (`3clb-nefarious-imp` + `234clb-gray-slaad`) przywrócono hasło
+   `content/lore/wybrzeze-mieczy.md`. To domyka wcześniejszą decyzję
+   właściciela z 2026-09-09: hasło usunięte poniżej progu wraca dopiero teraz,
+   już z licznikiem dwóch kart; hasło nie ma pinezki, tylko deep-link do mapy.
+   Slaadi, chaos phage i Limbo zostają w backlogu po jednej karcie.
+6. **Dokumentacja i regresja:** dodano plan pracy
+   `docs/plans/PLAN_2026-09-12-234CLB.md`, aktualizacje
+   `content/co-nowego.md`, `docs/backlog.md`, `docs/ROADMAP.md`, handoff PR-33
+   oraz test `test/forgotten-realms-234clb.test.js`. `test/pokrycie-scryfall`
+   dostał dodatkową asercję dla layoutu Adventure i zawęził regresję ADR 0044
+   do DFC, żeby przygodowy zwój mógł objaśniać obie swoje części.
+
+Bramki końcowe: **286/286 testów**, build **92 strony** (46 kart, 31 haseł,
+15 planów; artefakt 1618.6 kB) i **853 pliki drzewa archiwum** (148126.1 kB),
+map-audit 0, wiki-stats 100% (7,3/8) oraz czysty `git diff --check`.
+
 ## 2026-09-12 — PR-33 cd.: 256ISD Frightful Delusion i stensiańska sypialnia
 
 Właściciel dostarczył `256ISD / Frightful Delusion / ISD / Innistrad` wraz z
