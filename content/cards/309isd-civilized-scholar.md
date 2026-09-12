@@ -17,7 +17,7 @@ pinezka:
 
 Na [[innistrad|Innistradzie]] ludzie od pokoleń uczą się jednego:
 przetrwanie zależy nie tylko od murów, srebra i modlitwy, ale także od
-opanowania. Gdy jednak **Avacyn** znika, a dawny porządek zaczyna słabnąć,
+opanowania. Gdy jednak [[avacyn|**Avacyn**]] znika, a dawny porządek zaczyna słabnąć,
 najpierw pękają właśnie te wewnętrzne zabezpieczenia. Strach nie przychodzi
 już wyłącznie z lasów, krypt i dworów. Coraz częściej rodzi się przy
 lampie, nad księgą i we własnym oddechu.
@@ -104,7 +104,7 @@ Ta scena nie wymaga przenoszenia między planami; wymaga tylko właściwego
 zawężenia. Zamiast anonimowego stołu do badań dostajemy **Havengul**,
 portową stolicę Nephalii, gdzie uczoność styka się z praktyką śmierci,
 handlu i cichego lęku. Zamiast ogólnej refleksji o emocjach dostajemy epokę,
-w której po zniknięciu Avacyn kościelna ochrona traci dawną pewność, więc
+w której po zniknięciu [[avacyn|Avacyn]] kościelna ochrona traci dawną pewność, więc
 rozważania o samokontroli nabierają dosłownej wagi.
 
 Właśnie dlatego traktaty o wilkołakach i Markovach płyną ku

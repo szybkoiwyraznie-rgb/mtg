@@ -16,7 +16,7 @@ pinezka:
 ## Kronika Lore
 
 W prowincji [[gavony|**Gavony**]] na [[innistrad|Innistradzie]], gdzie bije serce
-ludzkiego osadnictwa i kultu **Avacyn**, sprawiedliwość Kościoła
+ludzkiego osadnictwa i kultu [[avacyn|**Avacyn**]], sprawiedliwość Kościoła
 nie zawsze przemawia ostrzem miecza katarów czy ogniem stosów.
 Wśród kapłanów i uświęcicieli (*Sanctifiers*) rozwinięto subtelniejsze
 metody neutralizacji zagrożeń: sztukę wiązania woli, usypiania umysłów
@@ -46,7 +46,7 @@ pozostają ukryte pod woalem głębokiego snu.
 klatki, których splecione nici energii utrzymują więźnia w uśpieniu.
 
 **Uświęcicielka Rebeka (Sanctifier Rebecca)** — kapłanka Kościoła
-Avacyn, autorka formuły wiążącej i sędzina orzekająca uśpienie jako
+[[avacyn|Avacyn]], autorka formuły wiążącej i sędzina orzekająca uśpienie jako
 karę za grzechy.
 
 **Kaplice [[gavony|Gavony]]** — kamienne sanktuaria o łukowych sklepieniach
@@ -102,7 +102,7 @@ metropolii **Thraben** (`x: 0.668`, `y: 0.317`).
 Zestawienie z innymi punktami planu:
 - W odróżnieniu od zbrojnej obrony katedry w [[393dka-forge-devil|Forge Devil]]
   czy wojennych ekspedycji katarów w [[544avr-thraben-valiant|Thraben Valiant]],
-  ta scena ilustruje wewnętrzny, zakonny wymiar magii Kościoła Avacyn —
+  ta scena ilustruje wewnętrzny, zakonny wymiar magii Kościoła [[avacyn|Avacyn]] —
   ciche sanktuaria, w których więzi się wrogów potęgą uświęconego snu.
 - Położenie w [[gavony|Gavony]] kontrastuje z dzikimi ostępami [[kessig|Kessigu]], gdzie
   w [[171isd-grizzled-outcasts|Grizzled Outcasts]] mieszkańcy mogą liczyć

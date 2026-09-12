@@ -23,7 +23,7 @@ zamków oraz rozpadlin prowadzących do piekielnych czeluści — takich jak
 ### Bastion wampirzych linii
 
 Podczas gdy [[thraben|Thraben]] w [[gavony|Gavony]] stanowi bastion ludzkości i Kościoła
-Avacyn, Stensia od wieków pozostaje matecznikiem wampirów. To tutaj tysiąclecia
+[[avacyn|Avacyn]], Stensia od wieków pozostaje matecznikiem wampirów. To tutaj tysiąclecia
 wcześniej alchemik **Edgar Markov** stworzył pierwszy rytuał krwi, dając
 początek wampirzej arystokracji. Społeczeństwo prowincji dzieli się na
 izolowane doliny kontrolowane przez poszczególne linie krwi:

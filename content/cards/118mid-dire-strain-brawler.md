@@ -108,7 +108,7 @@ stołecznego [[thraben|Thraben]].
 Kontekst geograficzny wobec innych świadectw planu:
 - Podczas gdy w [[181avr-spectral-prison|Spectral Prison]] uświęciciele
   wznoszą świetliste klatki w kaplicach [[gavony|Gavony]], a w [[544avr-thraben-valiant|Thraben Valiant]]
-  katarzy wyruszają ku Devils' Breach, ta scena dokumentuje codzienny,
+  katarzy wyruszają ku [[devils-breach|Devils' Breach]], ta scena dokumentuje codzienny,
   wiejski dramat rolników żyjących w cieniu likantropii.
 
 Pinezka: `#/mapa/innistrad?pin=118mid-dire-strain-brawler`.

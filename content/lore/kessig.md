@@ -30,9 +30,9 @@ kamiennych ścian niż wielkim przemowom z Thraben.
 [2](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-kessig-and-werewolves-2011-10-05)
 
 Ta praktyczność rodzi dystans wobec zewnętrznej władzy. Kessigerzy czczą
-Avacyn po swojemu: w obrazie „ziemi pod nami, ręcznie ciosanych murów wokół
+[[avacyn|Avacyn]] po swojemu: w obrazie „ziemi pod nami, ręcznie ciosanych murów wokół
 nas i anioła nad nami”, ale nie ufają lśniącym butom wielkomiejskich katarów
-ani dekretom arystokratów z Wysokiego Miasta Thraben. Po zniknięciu Avacyn
+ani dekretom arystokratów z Wysokiego Miasta Thraben. Po zniknięciu [[avacyn|Avacyn]]
 i po Curfew of Silver relacje z [[gavony|Gavony]] jeszcze się pogorszyły,
 bo święte amulety stały się towarem ograniczonym, rozdawanym nierówno.
 [2](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-kessig-and-werewolves-2011-10-05)
@@ -63,7 +63,7 @@ bitewnej: wystarczy krawędź osady, okno i grupa wędrownych ludzi, których
 kształty zdradzają Hordę Krallen.
 [2](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-kessig-and-werewolves-2011-10-05)
 
-Drugim biegunem grozy jest **Devil's Breach**, ognista jaskinia w skalistych
+Drugim biegunem grozy jest [[devils-breach|**Devil's Breach**]], ognista jaskinia w skalistych
 wzgórzach Kessigu, znana jako leże diabłów napadających nocą pobliskie
 okolice. Dym, żar i głosy z jej poszerzającego się wejścia uzasadniają,
 dlaczego wyprawa w [[544avr-thraben-valiant|Thraben Valiant]] jest karna i
@@ -86,7 +86,7 @@ noc wypływa na pola.
 
 Hasło nie ma własnej pinezki. Mapa Innistradu wskazuje Kessig jako zachodni
 region (`x: 0.41`, `y: 0.727`); dokładne sceny kart pozostają przy własnych
-pinezkach, w tym przy Devil's Breach dla wyprawy katarów.
+pinezkach, w tym przy [[devils-breach|Devil's Breach]] dla wyprawy katarów.
 
 [Kessig na mapie Innistradu](#/mapa/innistrad?x=0.41&y=0.727)
 

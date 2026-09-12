@@ -23,7 +23,7 @@ przyznać. W tej krainie wiecznego zmierzchu i opadających liści
 mieszkańcy nauczyli się bacznie obserwować każdego przybysza. Zanim
 zapadnie zmrok, rygle w drzwiach zostają zasunięte, okiennice przymknięte,
 a na drewnianych parapetach płoną świece — drobne, rozpaczliwe znaki
-świętego porządku, który w epoce uwięzienia **Avacyn** coraz rzadziej
+świętego porządku, który w epoce uwięzienia [[avacyn|**Avacyn**]] coraz rzadziej
 przynosi ocalenie.
 
 Na uboczu traktu, tuż za skrajnymi zabudowaniami miasteczka, zatrzymuje
@@ -118,7 +118,7 @@ jak **Gatstaf** (`x: 0.327`, `y: 0.656`) czy **Lambholt** (`x: 0.457`,
 Zestawienie tej pozycji z innymi punktami planu:
 - W odróżnieniu od [[393dka-forge-devil|Forge Devil]] w stołecznym
   [[thraben|Thraben]] czy ekspedycji w [[544avr-thraben-valiant|Thraben Valiant]]
-  do Devil's Breach, ta scena dotyka codziennego, wiejskiego horroru
+  do [[devils-breach|Devil's Breach]], ta scena dotyka codziennego, wiejskiego horroru
   kessigijskiej prowincji — cichego zagrożenia tuż za progiem domostwa.
 
 Pinezka: `#/mapa/innistrad?pin=171isd-grizzled-outcasts`.

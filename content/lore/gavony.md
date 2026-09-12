@@ -12,8 +12,8 @@ materializacja: 2026-09-12
 
 **Gavony** to centralna, najludniejsza i najściślej broniona prowincja
 [[innistrad|Innistradu]], dawny rdzeń bezpieczeństwa ludzkości pod opieką
-Kościoła Avacyn. Jej północny skraj kotwiczy [[thraben|Thraben]] z Katedrą
-Avacyn, a poza murami stolicy rozciągają się skaliste wzgórza, mokradła,
+Kościoła [[avacyn|Avacyn]]. Jej północny skraj kotwiczy [[thraben|Thraben]] z Katedrą
+[[avacyn|Avacyn]], a poza murami stolicy rozciągają się skaliste wzgórza, mokradła,
 parafie, małe miasta i gospodarstwa stale nękane przez duchy, ghule,
 wilkołaki i kulty demonów. [1](https://mtg.wiki/page/Gavony),
 [2](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-gavony-and-humans-2011-09-28)
@@ -27,11 +27,11 @@ ale nie dlatego, że prowincja jest spokojna. Oficjalny przewodnik opisuje
 ją jako dom Thraben, największego miasta planu, oraz krainę mniejszych
 osad promieniujących przez skaliste wrzosowiska i pagórki. To tu skupiają
 się mury, kaplice, parafie, trening katarów i administracyjny porządek
-Kościoła Avacyn. [2](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-gavony-and-humans-2011-09-28)
+Kościoła [[avacyn|Avacyn]]. [2](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-gavony-and-humans-2011-09-28)
 
 Ta siła ma ciemny rewers: w Gavony pochowano więcej ludzkich zmarłych niż
 w innych prowincjach, dlatego geisty i nieumarli są tu szczególnie liczni.
-Po zniknięciu Avacyn święte zabezpieczenia osłabły, a Mikaeus i hierarchia
+Po zniknięciu [[avacyn|Avacyn]] święte zabezpieczenia osłabły, a Mikaeus i hierarchia
 Kościoła mogli już tylko próbować uspokajać ludność, której bezpieczeństwo
 zależało od coraz bardziej kruchych murów i srebra.
 [1](https://mtg.wiki/page/Gavony),
@@ -57,7 +57,7 @@ wyruszają poza prowincję, by walczyć z diabłami w [[kessig|Kessigu]].
 ### Thraben i zewnętrzne granice
 
 Thraben nie wyczerpuje Gavony, ale przez długi czas nadawał jej sens:
-miasto murów, Katedra Avacyn, Helvault, szkoły, warsztaty i place targowe
+miasto murów, Katedra [[avacyn|Avacyn]], Helvault, szkoły, warsztaty i place targowe
 były obietnicą, że ludzki porządek może trwać mimo nocy. W praktyce ta
 obietnica działa tylko częściowo. Im dalej od stolicy, tym bardziej Gavony
 przypomina sieć małych punktów światła rozdzielonych cmentarzami, polami,

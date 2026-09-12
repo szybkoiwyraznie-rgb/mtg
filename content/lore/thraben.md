@@ -13,7 +13,7 @@ materializacja: 2026-09-09
 **Thraben** to największe i najlepiej ufortyfikowane miasto
 [[innistrad|Innistradu]], stojące w sercu [[gavony|**Gavony**]] na skale oblanej
 wodami **Jeziora Czapli**. Przez większą część znanej historii było
-siedzibą **Kościoła Avacyn**, miejscem **Katedry Avacyn** i punktem,
+siedzibą **Kościoła [[avacyn|Avacyn]]**, miejscem **Katedry [[avacyn|Avacyn]]** i punktem,
 z którego ludzkość próbowała narzucić porządek całemu planowi.
 
 ## Opis
@@ -29,7 +29,7 @@ dotrzeć za jej bramy, noc nie będzie już miała władzy.
 
 ### Serce Kościoła i jego ślepota
 
-W Thraben wznosi się **Katedra Avacyn** z trzema skrzydłami, dziedzińcem
+W Thraben wznosi się **Katedra [[avacyn|Avacyn]]** z trzema skrzydłami, dziedzińcem
 skrywającym **Helvault** oraz zapleczem szkół, krużganków, kuźni i placów
 ćwiczebnych. To stąd wychodzili katarowie, tu obradowała lunarchiczna
 władza i tu spływały raporty z prowincji. Właśnie dlatego miasto bywa na
@@ -67,7 +67,7 @@ Hasło nie ma własnej pinezki; prowadzi do zbliżenia miasta i jego okolic.
   układu murów i parafii:
   https://mtg.wiki/page/Thraben
 - The Guardian, the Witch, and the Angel — oblężenie miasta, katakumby
-  pod katedrą i ciężar tajemnicy po zniknięciu Avacyn:
+  pod katedrą i ciężar tajemnicy po zniknięciu [[avacyn|Avacyn]]:
   https://mtglore.com/web-fiction/the-guardian-the-witch-and-the-angel/
 - The Prison of Silver — Helvault i pęknięcie dawnego porządku ochrony,
   bez którego rola Thraben zaczęła się chwiać:

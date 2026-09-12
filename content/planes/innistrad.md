@@ -11,9 +11,9 @@ tagi: [geografia, demony, doktryna]
 Innistrad to plan gotyckiego horroru: świat wiecznej nocy, w którym
 garstka ludzi broni się przed wampirami, wilkołakami, upiorami
 i ożywionymi trupami. Nie jest to jednak świat bez nadziei — ludzkość
-ma **Kościół Avacyn** i archanioła, którego imię nosi, a jej srebrne
+ma **Kościół [[avacyn|Avacyn]]** i archanioła, którego imię nosi, a jej srebrne
 symbole naprawdę odpychają potwory. Groza Innistradu polega na tym,
-że ta obrona zaczyna zawodzić: Avacyn zniknęła, wady przestają działać,
+że ta obrona zaczyna zawodzić: [[avacyn|Avacyn]] zniknęła, wady przestają działać,
 a modlitwy pozostają bez odpowiedzi. Kodeks rysuje Innistrad jako
 cztery prowincje wokół Thraben, bo w takim kształcie plan trwa przez
 cały blok i kolejne powroty.
@@ -64,8 +64,8 @@ ukazuje [[171isd-grizzled-outcasts|Grizzled Outcasts]].
 **Hollowhenge** to dawna stolica prowincji, **Avabruck**, którą
 howlpacki zniszczyły doszczętnie; nazwa zmieniła się wraz z jej losem.
 Wsie **Lambholt** i **Gatstaf** żyją w rytmie pełni. Na południu leży
-**Devils' Breach** — kessigijskie wejście do podziemi, rzadko używane
-przez cokolwiek poza garstką diabłów, dopóki po powrocie Avacyn nie
+[[devils-breach|**Devils' Breach**]] — kessigijskie wejście do podziemi, rzadko używane
+przez cokolwiek poza garstką diabłów, dopóki po powrocie [[avacyn|Avacyn]] nie
 otworzyło się szerzej (gdzie wyprawę katarów prowadzi [[544avr-thraben-valiant|Thraben Valiant]]).
 
 **[[stensia|Stensia]]** (północ) — ciemne góry **Geier Reach**, wieczna mgła
@@ -91,7 +91,7 @@ pustynią.
 
 ## Kościół Avacyn i jego pęknięcie
 
-**Avacyn** nie jest bóstwem zastanym. Stworzył ją wampir-planeswalker
+[[avacyn|**Avacyn**]] nie jest bóstwem zastanym. Stworzył ją wampir-planeswalker
 **Sorin Markov** jako połowę zabezpieczenia, które miało utrzymać
 równowagę: jego dziadek **Edgar Markov** dał początek wampirom, więc
 Sorin dał ludziom archanioła. Drugą połową był **Helvault** — bryła

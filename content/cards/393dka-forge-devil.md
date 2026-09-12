@@ -15,14 +15,14 @@ pinezka:
 
 ## Kronika Lore
 
-Pod **Katedrą Avacyn** w Thraben jest więcej niż jedna kondygnacja.
+Pod **Katedrą [[avacyn|Avacyn]]** w Thraben jest więcej niż jedna kondygnacja.
 Nad ziemią stoi największa świątynia planu, opasana pierścieniami
 murów; pod nią schodzą archiwa, skarbce i katakumby — w jednej z nich
 pochowano potajemnie lunarchę **Mikaeusa**, a wraz z nim tajemnicę
 zniknięcia archanioła. To właśnie w tych najniższych poziomach zaczyna
 się ta scena.
 
-Kościół [[innistrad|Innistradu]] słabnie. Avacyn zniknęła — w istocie
+Kościół [[innistrad|Innistradu]] słabnie. [[avacyn|Avacyn]] zniknęła — w istocie
 została uwięziona w **Helvaulcie**, srebrnej bryle stojącej w trójkątnym
 dziedzińcu tej samej katedry, razem z demonem, którego próbowała
 związać. Święte osłony przestają trzymać, modlitwy pozostają bez
@@ -66,7 +66,7 @@ zagięte do tyłu rogi, długi ogon jak bicz. Narzędziem jest żeliwny
 pręt: nie broń, lecz łom. Nie ma imienia, bo w tej opowieści nie jest
 postacią — jest siłą, którą ktoś wypuścił.
 
-**Katarowie** — świeccy żołnierze Kościoła Avacyn, zbrojne ramię wiary,
+**Katarowie** — świeccy żołnierze Kościoła [[avacyn|Avacyn]], zbrojne ramię wiary,
 noszący srebrny symbol kolii. To oni odpowiadają za porządek w Thraben
 i to oni biegną do płonącego archiwum. W epoce *Dark Ascension* walczą
 z coraz mniejszym wsparciem świętej magii, która przestała odpowiadać
@@ -78,7 +78,7 @@ igrający z mocą ponad ich rozeznanie. Jedno i drugie zdarza się na
 Innistradzie równie często, a rezultat jest identyczny: przywołany
 diabeł rani również tego, kto go przywołał.
 
-**Katedra Avacyn** — nie tło, lecz uczestnik sceny. Jej filary trzymają
+**Katedra [[avacyn|Avacyn]]** — nie tło, lecz uczestnik sceny. Jej filary trzymają
 sklepienie, jej archiwa przechowują pamięć Kościoła, jej dziedziniec
 mieści Helvault, a jej katakumby — grób lunarchy. Wszystkie cztery
 warstwy są w tej chwili zagrożone przez stworzenie wielkości dziecka.
@@ -129,10 +129,10 @@ archiwów Kościoła. Elementy sceny mają pokrycie w kronice:
   ale spójny z inskrypcją: to, co się pali, jest tu jedyną lampą.
 
 Rozstrzygnięcie chronologiczne: scena należy do epoki *Dark Ascension*,
-gdy Avacyn jest jeszcze uwięziona w Helvaulcie, a Kościół słabnie. To
+gdy [[avacyn|Avacyn]] jest jeszcze uwięziona w Helvaulcie, a Kościół słabnie. To
 tłumaczy, dlaczego diabły w ogóle zdołały wejść — święte wady katedry
 przestały działać. Nie jest to natomiast epoka po powrocie archanioła,
-kiedy Devils' Breach w [[kessig|Kessigu]] otworzył się szerzej i diabłów pojawiło
+kiedy [[devils-breach|Devils' Breach]] w [[kessig|Kessigu]] otworzył się szerzej i diabłów pojawiło
 się znacznie więcej; wtedy nie potrzebowałyby żadnych przywoływaczy.
 
 ## Na Mapie
@@ -144,7 +144,7 @@ dwutysięcznostopowym wodospadem, i jest opasane wieloma pierścieniami
 murów. Katedra stoi w jego obrębie; scena rozgrywa się pod nią.
 
 Warto zestawić tę pinezkę z dwoma innymi punktami mapy. **Ashmouth**
-w centrum Geier Reach w [[stensia|Stensii]] i **Devils' Breach** na południu
+w centrum Geier Reach w [[stensia|Stensii]] i [[devils-breach|**Devils' Breach**]] na południu
 [[kessig|Kessigu]] to dwie bramy do świata demonów i diabłów — obie daleko od
 Thraben, obie za pasmami gór albo za wielkim lasem. Diabeł z tej sceny
 nie przyszedł stamtąd pieszo. Ktoś go **przywołał** na miejscu, w sercu

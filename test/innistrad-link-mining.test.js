@@ -16,6 +16,8 @@ const kartyLinkujace = (cel) => strony
 
 const hasloGavony = czyta('content/lore/gavony.md');
 const hasloKessig = czyta('content/lore/kessig.md');
+const hasloAvacyn = czyta('content/lore/avacyn.md');
+const hasloDevils = czyta('content/lore/devils-breach.md');
 const plan = czyta('content/planes/innistrad.md');
 const spectral = czyta('content/cards/181avr-spectral-prison.md');
 const dire = czyta('content/cards/118mid-dire-strain-brawler.md');
@@ -23,6 +25,7 @@ const outcasts = czyta('content/cards/171isd-grizzled-outcasts.md');
 const valiant = czyta('content/cards/544avr-thraben-valiant.md');
 const scholar = czyta('content/cards/309isd-civilized-scholar.md');
 const forge = czyta('content/cards/393dka-forge-devil.md');
+const crows = czyta('content/cards/42isd-murder-of-crows.md');
 
 test('Innistrad: Gavony i Kessig powstały dopiero po progu dwóch kart', () => {
   assert.equal(poSlugu.gavony.typ, 'haslo');
@@ -47,10 +50,36 @@ test('Innistrad: Gavony i Kessig powstały dopiero po progu dwóch kart', () => 
   ]);
 });
 
-test('Innistrad: hasła regionów nie mają własnych pinezek, tylko deep-linki mapy', () => {
+test('Innistrad: Avacyn i Devil\'s Breach też przekraczają próg kart', () => {
+  assert.equal(poSlugu.avacyn.typ, 'haslo');
+  assert.equal(poSlugu.avacyn.klasa, 'postac');
+  assert.equal(poSlugu.avacyn.plan, 'innistrad');
+  assert.equal(poSlugu['devils-breach'].typ, 'haslo');
+  assert.equal(poSlugu['devils-breach'].klasa, 'geografia');
+  assert.equal(poSlugu['devils-breach'].plan, 'innistrad');
+
+  assert.deepEqual(kartyLinkujace('avacyn'), [
+    '171isd-grizzled-outcasts',
+    '181avr-spectral-prison',
+    '309isd-civilized-scholar',
+    '393dka-forge-devil',
+    '42isd-murder-of-crows',
+    '544avr-thraben-valiant',
+  ]);
+  assert.deepEqual(kartyLinkujace('devils-breach'), [
+    '118mid-dire-strain-brawler',
+    '171isd-grizzled-outcasts',
+    '393dka-forge-devil',
+    '544avr-thraben-valiant',
+  ]);
+});
+
+test('Innistrad: hasła regionalne/postaci nie mają własnych pinezek, tylko deep-linki mapy', () => {
   for (const [slug, tresc, x, y] of [
     ['gavony', hasloGavony, '0.59', '0.449'],
     ['kessig', hasloKessig, '0.41', '0.727'],
+    ['avacyn', hasloAvacyn, '0.668', '0.317'],
+    ['devils-breach', hasloDevils, '0.392', '0.945'],
   ]) {
     assert.doesNotMatch(tresc, /^pinezka:/m, `${slug}: hasło nie może mieć frontmatterowej pinezki`);
     assert.ok(!mapa.pinezki.some((p) => p.karta === slug), `${slug}: hasło nie może dostać wpisu w pinezkach kart`);
@@ -58,9 +87,10 @@ test('Innistrad: hasła regionów nie mają własnych pinezek, tylko deep-linki 
   }
   assert.equal(mapa.kotwice.find((k) => k.nazwa === 'Gavony')?.typ, 'region');
   assert.equal(mapa.kotwice.find((k) => k.nazwa === 'Kessig')?.typ, 'region');
+  assert.equal(mapa.kotwice.find((k) => k.nazwa === "Devils' Breach")?.typ, 'lokacja');
 });
 
-test('Innistrad: wikilinki do nowych haseł są w kartach i planie', () => {
+test('Innistrad: wikilinki do Gavony/Kessigu są w kartach i planie', () => {
   for (const slug of ['181avr-spectral-prison', '118mid-dire-strain-brawler', '544avr-thraben-valiant', '393dka-forge-devil']) {
     assert.ok(linkuje(slug, 'gavony'), `${slug}: brak linku do Gavony`);
   }
@@ -78,6 +108,26 @@ test('Innistrad: wikilinki do nowych haseł są w kartach i planie', () => {
   assert.match(forge, /\[\[gavony\|Gavony\]\]/);
   assert.match(plan, /\[\[gavony\|\*\*Gavony\*\*\]\]/);
   assert.match(plan, /\[\[kessig\|\*\*Kessig\*\*\]\]/);
+});
+
+test('Innistrad: wikilinki do Avacyn i Devil\'s Breach są w kartach i planie', () => {
+  for (const slug of ['181avr-spectral-prison', '171isd-grizzled-outcasts', '309isd-civilized-scholar', '393dka-forge-devil', '42isd-murder-of-crows', '544avr-thraben-valiant']) {
+    assert.ok(linkuje(slug, 'avacyn'), `${slug}: brak linku do Avacyn`);
+  }
+  for (const slug of ['544avr-thraben-valiant', '393dka-forge-devil', '171isd-grizzled-outcasts', '118mid-dire-strain-brawler']) {
+    assert.ok(linkuje(slug, 'devils-breach'), `${slug}: brak linku do Devil's Breach`);
+  }
+  assert.ok(linkuje('innistrad', 'avacyn'), 'plan Innistrad: brak linku do Avacyn');
+  assert.ok(linkuje('innistrad', 'devils-breach'), 'plan Innistrad: brak linku do Devil\'s Breach');
+
+  assert.match(crows, /\[\[avacyn\|Avacyn\]\]/);
+  assert.match(outcasts, /\[\[avacyn\|\*\*Avacyn\*\*\]\]/);
+  assert.match(spectral, /\[\[avacyn\|\*\*Avacyn\*\*\]\]/);
+  assert.match(valiant, /\[\[devils-breach\|\*\*Devil's\s+Breach\*\*\]\]/);
+  assert.match(forge, /\[\[devils-breach\|Devils' Breach\]\]/);
+  assert.match(dire, /\[\[devils-breach\|Devils' Breach\]\]/);
+  assert.match(plan, /\[\[avacyn\|\*\*Avacyn\*\*\]\]/);
+  assert.match(plan, /\[\[devils-breach\|\*\*Devils' Breach\*\*\]\]/);
 });
 
 test('Innistrad: źródło Gavony korzysta z działającego URL-a 2011-09-28', () => {

@@ -17,15 +17,16 @@ pinezka:
 
 W epoce powrotu archanioła obrona [[innistrad|Innistradu]] przestaje
 być wyłącznie pasywnym wyczekiwaniem za grubymi murami. Gdy srebrna bryła
-Helvaultu pęka, a z jej wnętrza uwalnia się Avacyn wraz ze swoimi
+Helvaultu pęka, a z jej wnętrza uwalnia się [[avacyn|Avacyn]] wraz ze swoimi
 zastępami, Kościół odzyskuje utracony blask. Święte osłony znów zaczynają
 parzyć potwory nocy, a katarzy ze stolicy w [[thraben|Thraben]] ruszają
 z karnymi ekspedycjami w najdalsze zakątki planu. Nie czekają na wroga
 przy miejskich bramach — schodzą wprost do jego leży.
 
-Jednym z najniebezpieczniejszych celów tych wypraw staje się **Devil's
-Breach** (Diabelski Wyłom) — wulkaniczny wąwóz i głęboka, ziejąca żarem
-rozpadlina na południowych krańcach prowincji [[kessig|**Kessig**]]. Wraz
+Jednym z najniebezpieczniejszych celów tych wypraw staje się
+[[devils-breach|**Devil's Breach**]] (Diabelski Wyłom) — wulkaniczny wąwóz
+i głęboka, ziejąca żarem rozpadlina na południowych krańcach prowincji
+[[kessig|**Kessig**]]. Wraz
 z **Ashmouth** w górach Geier Reach w Stensii, Devil's Breach stanowi
 główną bramę łączącą powierzchnię świata z podziemnymi czeluściami,
 z których wypełzają chmary złośliwych biesów i diabłów. W przeciwieństwie
@@ -60,14 +61,14 @@ wyprawiających się w głąb [[kessig|Kessigu]]. Wyposażona w stalowy kirys, c
 płaszcz, srebrny miecz oraz chwytny bicz.
 
 **Katarzy i gwardziści z Thraben** — regularne formacje zbrojne
-Kościoła Avacyn, które po odzyskaniu anielskiego wsparcia opuściły
+Kościoła [[avacyn|Avacyn]], które po odzyskaniu anielskiego wsparcia opuściły
 stołeczne mury, by prowadzić aktywne operacje oczyszczające prowincje.
 
 **Diabły z [[kessig|Kessigu]]** — małe, czerwonoskóre istoty o zrogowaciałej
-skórze i zagiętych rogach, lęgnące się w podziemnych piecach Devil's
-Breach i terroryzujące południowe rubieże.
+skórze i zagiętych rogach, lęgnące się w podziemnych piecach
+[[devils-breach|Devil's Breach]] i terroryzujące południowe rubieże.
 
-**Devil's Breach** — głęboka rozpadlina wulkaniczna na południu
+[[devils-breach|**Devil's Breach**]] — głęboka rozpadlina wulkaniczna na południu
 [[kessig|Kessigu]], będąca jednym z dwóch naturalnych wyłomów prowadzących
 do piekielnych czeluści planu.
 
@@ -99,11 +100,11 @@ i bezlitosnemu rewanżowi.
 
 ## Transpozycja
 
-Kronika przenosi scenę na krawędź **Devil's Breach** w południowym
+Kronika przenosi scenę na krawędź [[devils-breach|**Devil's Breach**]] w południowym
 [[kessig|Kessigu]], ukazując weterankę gwardii z [[thraben|Thraben]] przygotowującą
 się do zejścia w rozpadlinę:
 
-- **Wulkaniczny wąwóz Devil's Breach** — wierne osadzenie w topografii
+- **Wulkaniczny wąwóz [[devils-breach|Devil's Breach]]** — wierne osadzenie w topografii
   [[kessig|Kessigu]] jako wyłomu piekielnego.
 - **Rynsztunek weteranki** — lśniący stalowy napierśnik i ciężki skórzany
   płaszcz, dostosowane do żaru i dymu wulkanicznych rozpadlin.
@@ -118,7 +119,7 @@ zabezpieczając dawne punkty zapalne.
 
 ## Na Mapie
 
-Pinezka stoi na **Devils' Breach** (`x: 0.392`, `y: 0.945`)
+Pinezka stoi na [[devils-breach|**Devils' Breach**]] (`x: 0.392`, `y: 0.945`)
 w południowym [[kessig|Kessigu]] — pewność **dokładna**, wyznaczona wprost przez
 nazwę wąwozu w inskrypcji i opisie sceny.
 
@@ -131,7 +132,7 @@ dla zrozumienia dynamiki konfliktu:
 - [[393dka-forge-devil|**Forge Devil**]] rozgrywał się w podziemiach
   katedry w Thraben w epoce upadku, gdy diabły infiltrowały serce
   ludzkiego państwa. W tej scenie sytuacja ulega odwróceniu: to gwardia
-  z Thraben szturmuje matecznik bestii w Devil's Breach.
+  z Thraben szturmuje matecznik bestii w [[devils-breach|Devil's Breach]].
 
 Pinezka: `#/mapa/innistrad?pin=544avr-thraben-valiant`.
 
@@ -164,7 +165,7 @@ krawędzi otchłani.
 
 ## Podsumowanie Lore
 
-Na krawędzi siarkowego wąwozu Devil's Breach w południowym [[kessig|Kessigu]]
+Na krawędzi siarkowego wąwozu [[devils-breach|Devil's Breach]] w południowym [[kessig|Kessigu]]
 weteranka z Thraben zbiera oddział do szturmu na gniazdo biesów. Uzbrojona
 w srebrny miecz i wielorzemienny bicz, chroniona stalą i skórą,
 uosabia przejście Kościoła Avacyn do bezwzględnej kontrofensywy. Karta
