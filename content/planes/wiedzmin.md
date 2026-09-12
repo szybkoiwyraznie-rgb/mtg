@@ -121,9 +121,9 @@ Pinezki na mapie (ADR 0043: tylko karty):
   nie nazywa wsi, chaty, mokradła ani redańskiego posterunku. Znacznik
   korzysta z regionalnej kotwicy między Wrońcami a Gors Velen.
 - **[[540dst-chittering-rats|Chittering Rats]]** (540DST); **Novigrad**,
-  pewność `dokladna` w skali mapy Kontynentu — nazwane miasto ma istniejącą
-  kotwicę `0.3927/0.2358`, lecz Fabuła nie wskazuje konkretnego włazu,
-  ulicy ani korytarza kanałów.
+  pewność `dokladna` w skali mapy Kontynentu — ponownie zweryfikowana
+  miejska kotwica `0.4045/0.2469` wskazuje ikonę Novigradu, lecz Fabuła nie
+  wskazuje konkretnego włazu, ulicy ani korytarza kanałów.
 
 ## Źródła
 

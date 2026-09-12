@@ -181,9 +181,10 @@ szczegóły wyprawy pozostają niedookreślone.
 ## Na Mapie
 
 **Pinezka ma pewność `dokladna` w skali globalnej mapy.** Opowieść nazywa
-kanały Novigradu, a istniejąca kotwica miasta stoi w `x: 0.3927`,
-`y: 0.2358` (około `px_t1 [2000, 1700]`). Znacznik wskazuje zatem właściwe,
-jednoznacznie nazwane miasto, nie tylko szeroki region Kontynentu.
+kanały Novigradu, a zweryfikowana na miejskiej ikonie kotwica stoi w
+`x: 0.4045`, `y: 0.2469` (około `px_t1 [2060, 1780]`). Znacznik wskazuje
+zatem właściwe, jednoznacznie nazwane miasto, nie tylko szeroki region
+Kontynentu.
 
 Dokładność kończy się na poziomie Novigradu. Opowieść nie nazywa włazu,
 rynku, bramy, nabrzeża ani korytarza. Źródła potwierdzają system pod ulicami

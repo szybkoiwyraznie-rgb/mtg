@@ -1,3 +1,14 @@
+## 2026-09-12 14:08 — Korekta pinezki Chittering Rats
+
+- Po uwadze właściciela ponownie sprawdzono master T1 Wiedźmina. Pierwotny
+  odczyt `px_t1 [2000, 1700]` trafiał na wybrzeże na północny zachód od
+  miejskiej ikony, więc nie przedstawiał Novigradu poprawnie.
+- Kotwicę Novigradu i pinezkę 540DST przesunięto na środek ikony Wolnego
+  Miasta: `px_t1 [2060, 1780]`, czyli `x: 0.4045`, `y: 0.2469`. Deep-link
+  hasła, opis mapowy i regresje korzystają z poprawionej pozycji; zakres
+  dokładności nadal kończy się na mieście i nie wskazuje konkretnego
+  tunelu kanałów.
+
 ## 2026-09-12 13:39 — Nowa karta: Chittering Rats (Wiedźmin)
 
 - **Materializacja karty:** **[[540dst-chittering-rats|Chittering Rats]]**
@@ -11,9 +22,9 @@
   w `collection/entries/540dst-chittering-rats.md`; pełny snapshot DST
   #39 żyje w `scryfall/540dst-chittering-rats.json`. `540DST` pozostaje
   niezależnym `imgId` właściciela.
-- **Pinezka i plan:** dokładna kotwica Novigradu (`x: 0.3927`,
-  `y: 0.2358`; `px_t1 [2000, 1700]`) wskazuje nazwane miasto w skali
-  mapy Kontynentu. Fabuła nie podaje włazu, ulicy ani konkretnego
+- **Pinezka i plan:** dokładna kotwica Novigradu (`x: 0.4045`,
+  `y: 0.2469`; `px_t1 [2060, 1780]`) wskazuje miejską ikonę w skali mapy
+  Kontynentu. Fabuła nie podaje włazu, ulicy ani konkretnego
   korytarza, więc pinezka nie udaje planu podziemi.
 - **Link-mining:** powstało geograficzne hasło **[[novigrad|Novigrad]]**.
   Próg ≥2 kart spełniają Chittering Rats oraz Bedhead Beastie, które

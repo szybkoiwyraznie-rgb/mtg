@@ -70,12 +70,17 @@ test('540DST: kanały mają dokładną pinezkę miasta, ale nie zmyślony tunel'
   assert.ok(pin, 'brak pinezki Chittering Rats');
   assert.ok(novigrad, 'brak kotwicy Novigradu');
   assert.equal(novigrad.typ, 'miasto');
-  assert.deepEqual(novigrad.px_t1, [2000, 1700]);
+  assert.deepEqual(novigrad.px_t1, [2060, 1780]);
+  assert.notDeepEqual(novigrad.px_t1, [2000, 1700],
+    'stary odczyt trafiał na wybrzeże na północny zachód od miasta');
+  assert.match(novigrad.pozycja_zrodlo, /ponowny odczyt wizualny mastera/i);
   assert.equal(pin.pewnosc, 'dokladna');
-  assert.equal(pin.x, 0.3927);
-  assert.equal(pin.y, 0.2358);
+  assert.equal(pin.x, 0.4045);
+  assert.equal(pin.y, 0.2469);
   assert.equal(pin.x, novigrad.x);
   assert.equal(pin.y, novigrad.y);
+  assert.ok(Math.abs(pin.x * mapa.wymiary.szerokosc - 2060) < 1);
+  assert.ok(Math.abs(pin.y * mapa.wymiary.wysokosc - 1780) < 1);
   assert.match(pin.uzasadnienie, /konkretnego włazu, ulicy ani korytarza/i);
   assert.match(karta, /Pinezka ma pewność `dokladna` w skali globalnej mapy/i);
   assert.match(karta, /Pinezka nie jest\s+planem kanałów ani adresem konkretnego tunelu/i);
@@ -95,7 +100,7 @@ test('540DST: Novigrad przekracza próg dwóch kart i ma jedno hasło geograficz
   assert.match(haslo, /^slug: novigrad$/m);
   assert.match(haslo, /^klasa: geografia$/m);
   assert.doesNotMatch(haslo, /^pinezka:/m);
-  assert.match(haslo, /#\/mapa\/wiedzmin\?x=0\.3927&y=0\.2358/);
+  assert.match(haslo, /#\/mapa\/wiedzmin\?x=0\.4045&y=0\.2469/);
   assert.match(karta, /\[\[novigrad\|/);
   assert.match(poprzedniaKarta, /\[\[novigrad\|/);
   assert.match(plan, /\[\[540dst-chittering-rats\|\*\*Chittering Rats\*\*\]\]/);

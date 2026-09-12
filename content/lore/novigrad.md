@@ -72,7 +72,7 @@ Novigrad leży w Delcie Pontaru, na północ od veleńskiej Ziemi Niczyjej.
 Globalna mapa Kontynentu wskazuje miasto dokładnie, lecz nie odwzorowuje
 sieci kanałów pod jego ulicami.
 
-[Novigrad na mapie Kontynentu](#/mapa/wiedzmin?x=0.3927&y=0.2358)
+[Novigrad na mapie Kontynentu](#/mapa/wiedzmin?x=0.4045&y=0.2469)
 
 ## Źródła
 

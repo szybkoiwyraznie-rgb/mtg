@@ -423,8 +423,8 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(novigrad.includes('W kolekcji'), 'hasło Novigrad: brak automatycznych backlinków');
   assert.ok(novigrad.includes('Chittering Rats') && novigrad.includes('Bedhead Beastie'),
     'hasło Novigrad: brak backlinków z dwóch kart spełniających próg');
-  assert.ok(novigrad.includes('#/mapa/wiedzmin?x=0.3927&amp;y=0.2358'),
-    'hasło Novigrad: brak deep-linka mapowego bez pinezki');
+  assert.ok(novigrad.includes('#/mapa/wiedzmin?x=0.4045&amp;y=0.2469'),
+    'hasło Novigrad: brak deep-linka do poprawionej kotwicy miejskiej');
 
   // ADR 0030: format Karty Katalogowej jest LORE-first — technikalia w infoboksie,
   // mechanika jako opowieść dopiero pod koniec; sekcje „Ilustracja"/„Druk w Kolekcji" nie istnieją

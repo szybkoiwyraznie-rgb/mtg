@@ -30,10 +30,10 @@ zapisana verbatim jako pierwsza operacja na plikach.
    zostaje odrzucony: wraca przy następnym zwykłym dobraniu, odbierając
    świeży dobór i opóźniając plan — tak jak mapy zachowane kosztem
    przerwania poszukiwań.
-4. **Pinezka bez zmyślonego tunelu:** istniejąca kotwica Novigradu
-   (`0.3927/0.2358`, `px_t1 [2000, 1700]`) otrzymała pinezkę
-   `dokladna` w skali globalnej mapy. Pewność dotyczy nazwanego miasta;
-   Fabuła nie wskazuje pojedynczego włazu, ulicy ani korytarza kanałów.
+4. **Pinezka bez zmyślonego tunelu:** kotwica Novigradu zweryfikowana na
+   miejskiej ikonie (`0.4045/0.2469`, `px_t1 [2060, 1780]`) otrzymała
+   pinezkę `dokladna` w skali globalnej mapy. Pewność dotyczy nazwanego
+   miasta; Fabuła nie wskazuje pojedynczego włazu, ulicy ani korytarza kanałów.
    Strona Wiedźmina opisuje teraz trzy karty.
 5. **Link-mining:** Novigrad przekroczył próg dwóch kart: nowa karta
    nazywa kanały miasta, a Bedhead Beastie wymienia Novigrad w relacji
@@ -46,6 +46,12 @@ zapisana verbatim jako pierwsza operacja na plikach.
    backlinków Novigradu. `76af35f` archiwizuje wpis, snapshot i plan;
    `e0a8ef9` dostarcza kartę, hasło, mapę, stronę planu, changelog i
    testy.
+
+Po zamknięciu właściciel zauważył, że pierwszy odczyt Novigradu
+`px_t1 [2000, 1700]` wypada na wybrzeżu na północny zachód od miejskiej
+ikony. Ponowna kontrola wizualna mastera 5093×7209 potwierdziła błąd;
+kotwicę, pinezkę, deep-linki, opisy i regresje skorygowano na środek ikony
+miasta: `px_t1 [2060, 1780]`, czyli `0.4045/0.2469`.
 
 Bramki końcowe: **207/207 testów**, build **62 stron** (37 kart, 10
 haseł, 15 planów) i **853 pliki drzewa archiwum**, map-audit 0,

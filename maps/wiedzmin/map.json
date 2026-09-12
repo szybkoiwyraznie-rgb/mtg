@@ -112,15 +112,15 @@
     {
       "nazwa": "Novigrad",
       "typ": "miasto",
-      "x": 0.3927,
-      "y": 0.2358,
+      "x": 0.4045,
+      "y": 0.2469,
       "px_t1": [
-        2000,
-        1700
+        2060,
+        1780
       ],
       "uklad": "złoty T1 — odczyt z mastera",
       "notka": "Wolne Miasto Novigrad u ujścia rzeki Pontar do Morza Wielkiego — kluczowy ośrodek handlowy, portowy i religijny Północy.",
-      "pozycja_zrodlo": "kanon: Wieczny ogień + etykieta „Novigrad\" na masterze px (2000, 1700)"
+      "pozycja_zrodlo": "kanon: Wieczny ogień + etykieta i miejska ikona „The Free City of Novigrad”; ponowny odczyt wizualny mastera px (2060, 1780), 2026-09-12"
     },
     {
       "nazwa": "Velen",
@@ -153,10 +153,10 @@
     },
     {
       "karta": "540dst-chittering-rats",
-      "x": 0.3927,
-      "y": 0.2358,
+      "x": 0.4045,
+      "y": 0.2469,
       "pewnosc": "dokladna",
-      "uzasadnienie": "Fabuła właściciela nazywa labirynt kanałów Novigradu, więc pinezka dziedziczy dokładną kotwicę miasta (odczyt z mastera px 2000, 1700). Pewność dotyczy Novigradu w skali mapy Kontynentu; scena nie wskazuje konkretnego włazu, ulicy ani korytarza pod miastem."
+      "uzasadnienie": "Fabuła właściciela nazywa labirynt kanałów Novigradu, więc pinezka dziedziczy dokładną kotwicę miasta (ponownie zweryfikowany odczyt z ikony miasta na masterze px 2060, 1780). Pewność dotyczy Novigradu w skali mapy Kontynentu; scena nie wskazuje konkretnego włazu, ulicy ani korytarza pod miastem."
     }
   ],
   "otwarte_na_kolejne_przejscia": [
