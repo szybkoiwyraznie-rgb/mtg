@@ -392,11 +392,11 @@ niepotwierdzone Carmot Mines/Ruins of Vithia. Szczegóły:
 `docs/audits/AUDYT_2026-09-11-PR31.md`.
 
 **PR-32 (2026-09-11/12) — audyt PR-31, naprawy F1–F13 oraz 132GNT,
-42ISD i 555DSK.** Audyt pełnych 251 plików; decyzja właściciela
+42ISD, 555DSK i 540DST.** Audyt pełnych 251 plików; decyzja właściciela
 zachowująca Eldraine T4; naprawy DFC, 347NPH, 209ELD, semantyki i
 kompozycji Eldraine, POI Alary, cytowań, dokumentacji, czasów ADR 0029,
 storage Wiedźmina i redakcji. Dodano repo-szerokie strażniki ADR 0040/0044
-oraz regresje map i zamknięcia. Po pierwotnym zamknięciu doszły trzy pełne
+oraz regresje map i zamknięcia. Po pierwotnym zamknięciu doszły cztery pełne
 materializacje:
 
 - **132GNT Pilgrim's Eye** — GNT #55, korowy zwiadowca i przybliżona
@@ -406,11 +406,15 @@ materializacje:
 - **555DSK Bedhead Beastie** — DSK #125, opuszczona chata z kudłatym
   bebokiem oraz dwoma redańskimi milicjantami; regionalna pinezka Velen
   bez wymyślania dokładnej osady i bez automatycznego utożsamienia
-  stworzenia z biesem.
+  stworzenia z biesem;
+- **540DST Chittering Rats** — DST #39, stado pseudoszczurów w kanałach
+  Novigradu, samotny poszukiwacz chroniący mapy i mechaniczne opóźnienie
+  planu bez utraty zasobu; dokładna kotwica miasta bez zmyślonego tunelu.
+  Link-mining utworzył hasło `novigrad` po spełnieniu progu dwóch kart.
 
 W każdej dostawie `imgId` właściciela jest jawnie oddzielone od collector
 number, a Fabuła została zachowana verbatim przed researchem. Finalne
-bramki: **201/201**, build 60 stron (36/9/15) / 853 pliki drzewa archiwum,
+bramki: **207/207**, build 62 strony (37/10/15) / 853 pliki drzewa archiwum,
 map-audit 0, wiki-stats 100%. Szczegóły:
 `docs/setup/HANDOFF_2026-09-11-pr32.md`.
 

@@ -4,6 +4,55 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-12 — PR-32 cd.: materializacja 540DST Chittering Rats (sesja `arena/01a091f4-mtg`)
+
+Właściciel przekazał `540DST / Chittering Rats / DST / Wiedźmin` wraz z
+Fabułą labiryntu novigradzkich kanałów. Stada zmutowanych szczurów
+odcinają drogę samotnemu poszukiwaczowi skarbów, który osłania cenne mapy
+i wstrzymuje dalszą wyprawę do czasu przepędzenia roju. Fabuła została
+zapisana verbatim jako pierwsza operacja na plikach.
+
+1. **Druk źródłowy i numeracja:** właściwym drukiem jest DST #39,
+   natomiast `540DST` pozostaje niezależnym `imgId` właściciela. Pełna
+   odpowiedź Scryfalla z metadanymi pochodzenia i jawną notą o obu
+   systemach numeracji żyje w
+   `scryfall/540dst-chittering-rats.json`.
+2. **Karta Katalogowa LORE-first:** dziewięć sekcji rozwija dolną warstwę
+   Wolnego Miasta, mapy jako chronioną zdobycz i zmutowane gryzonie jako
+   **pseudoszczury** — stadne potwory miejskich kanałów i piwnic, zdolne
+   atakować ludzi. Poszukiwacz pozostaje anonimowy; nie utożsamiono go z
+   Geraltem, profesorem ani członkiem konkretnego gangu. Nazwę odczytano
+   jako „Piszczące szczury”.
+3. **Flavor i mechanika:** „Ci, którzy żerują na dnie, czasem wychodzą na
+   wierzch” łączy dno kanału, ukryte podbrzusze miasta i wierzch
+   biblioteki. Wejście 2/2 za `{1}{B}{B}` zmusza wskazanego przeciwnika,
+   by wybrał kartę z ręki i położył ją na wierzchu biblioteki. Zasób nie
+   zostaje odrzucony: wraca przy następnym zwykłym dobraniu, odbierając
+   świeży dobór i opóźniając plan — tak jak mapy zachowane kosztem
+   przerwania poszukiwań.
+4. **Pinezka bez zmyślonego tunelu:** istniejąca kotwica Novigradu
+   (`0.3927/0.2358`, `px_t1 [2000, 1700]`) otrzymała pinezkę
+   `dokladna` w skali globalnej mapy. Pewność dotyczy nazwanego miasta;
+   Fabuła nie wskazuje pojedynczego włazu, ulicy ani korytarza kanałów.
+   Strona Wiedźmina opisuje teraz trzy karty.
+5. **Link-mining:** Novigrad przekroczył próg dwóch kart: nowa karta
+   nazywa kanały miasta, a Bedhead Beastie wymienia Novigrad w relacji
+   mapowej północnego Velen. Powstało hasło geograficzne `novigrad` z
+   automatycznymi backlinkami oraz deep-linkiem mapowym bez własnej
+   pinezki, zgodnie z ADR 0043.
+6. **Regresje i commity:** `test/wiedzmin-540dst.test.js` pilnuje Fabuły,
+   DST #39, semantyki zwłoki, pseudoszczurów, anonimowości poszukiwacza,
+   pinezki miasta i progu hasła; smoke UI oczekuje 37 kart i obu
+   backlinków Novigradu. `76af35f` archiwizuje wpis, snapshot i plan;
+   `e0a8ef9` dostarcza kartę, hasło, mapę, stronę planu, changelog i
+   testy.
+
+Bramki końcowe: **207/207 testów**, build **62 stron** (37 kart, 10
+haseł, 15 planów) i **853 pliki drzewa archiwum**, map-audit 0,
+wiki-stats 100% (7,7/8), czysty `git diff --check`. Świeży preview
+aplikacji i mapy Wiedźmina odpowiada HTTP 200; payload zawiera kartę,
+hasło, współrzędne pinezki i deep-link powrotny.
+
 ## 2026-09-12 — PR-32 cd.: materializacja 555DSK Bedhead Beastie (sesja `arena/01a091f4-mtg`)
 
 Właściciel przekazał `555DSK / Bedhead Beastie / DSK / Wiedźmin` wraz z
