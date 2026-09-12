@@ -477,6 +477,18 @@ Breach (`0.392/0.945`). **228/228 testów**; build 74 strony (40/19/15) /
 859 plików drzewa archiwum; map-audit 0; wiki-stats 100%. Handoff:
 `docs/setup/HANDOFF_2026-09-12-pr33.md`.
 
+**PR-33 cd. (2026-09-12) — trzecia Pętla Jakości: Ashmouth i Helvault.**
+Po kolejnym czystym stanie powstały hasła `ashmouth` (`geografia`) i
+`helvault` (`artefakt`) po parze kart 393DKA + 544AVR. Ashmouth opisuje
+stensiańską czeluść Geier Reach, demony/diabły i kontrast z Devil's Breach;
+Helvault opisuje srebrny monolit z dziedzińca Katedry Avacyn, doktrynę
+wiązania, uwięzienie Avacyn/Griselbranda i skutki rozbicia. Mapa T1 bez
+zmian; deep-linki: Ashmouth `0.213/0.253`, Helvault/Thraben `0.668/0.317`.
+Regresja Innistradu pilnuje progów, klas, braku pinezek i wikilinków.
+**230/230 testów**; build 76 stron (40/21/15) / 859 plików drzewa archiwum;
+map-audit 0; wiki-stats 100%. Handoff:
+`docs/setup/HANDOFF_2026-09-12-pr33.md`.
+
 ## Wątki otwarte (czekają na decyzję właściciela)
 
 > **Zamknięte decyzją właściciela 2026-09-05 — NIE wracać do nich:**

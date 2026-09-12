@@ -1,3 +1,24 @@
+## 2026-09-12 17:54 — Trzecia Pętla Jakości: Ashmouth i Helvault
+
+- **Link-mining:** trzeci przebieg Innistradu utworzył hasła
+  **[[ashmouth|Ashmouth]]** i **[[helvault|Helvault]]**. Oba przekroczyły
+  próg dzięki parze kart `393dka-forge-devil` +
+  `544avr-thraben-valiant`: jedna scena pokazuje diabła pod katedrą w czasie
+  słabnących zabezpieczeń, druga ekspedycję po pęknięciu Helvaultu.
+- **Zakres haseł:** Ashmouth opisuje stensiańską czeluść Geier Reach, bramę
+  demonów/diabłów i kontrast z Devil's Breach; Helvault opisuje srebrny
+  monolit z dziedzińca Katedry Avacyn, zasadę wiązania, uwięzienie Avacyn
+  i Griselbranda oraz skutki rozbicia więzienia.
+- **Mapa:** mapa Innistradu nadal pozostaje T1 — bez nowych rysunków i bez
+  pinezek haseł. Ashmouth prowadzi deep-linkiem do istniejącej kotwicy
+  Stensii (`x: 0.213`, `y: 0.253`), a Helvault do Thraben/Katedry
+  (`x: 0.668`, `y: 0.317`).
+- **Regresja:** `test/innistrad-link-mining.test.js` rozszerzono o progi
+  Ashmouth/Helvault, typy haseł, deep-linki mapowe i wikilinki kart/planów.
+- **Bramki końcowe:** 230/230 testów, build 76 stron (40 kart, 21 haseł,
+  15 planów) i 859 plików drzewa archiwum; map-audit 0; wiki-stats 100%
+  (7,4/8); `git diff --check` czysty.
+
 ## 2026-09-12 17:41 — Druga Pętla Jakości: Avacyn i Devil's Breach
 
 - **Link-mining:** drugi przebieg Innistradu utworzył hasła

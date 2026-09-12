@@ -90,9 +90,23 @@ spełniły karty `118mid-dire-strain-brawler`, `171isd-grizzled-outcasts`,
 planie Innistradu i w haśle Kessig. Hasło nie ma pinezki — odsyła do
 istniejącej kotwicy rozpadliny `#/mapa/innistrad?x=0.392&y=0.945`.
 
+**Ashmouth — wykonane 2026-09-12 (trzeci przebieg pętli)**,
+`content/lore/ashmouth.md`, klasa `geografia`, plan Innistrad. Próg spełniły
+karty `393dka-forge-devil` + `544avr-thraben-valiant`; wikilinki dopisane
+też na planie Innistradu, w haśle Stensia i Devil's Breach. Hasło nie ma
+pinezki — odsyła do istniejącej kotwicy Stensii
+`#/mapa/innistrad?x=0.213&y=0.253`.
+
+**Helvault — wykonane 2026-09-12 (trzeci przebieg pętli)**,
+`content/lore/helvault.md`, klasa `artefakt`, plan Innistrad. Próg spełniły
+karty `393dka-forge-devil` + `544avr-thraben-valiant`; wikilinki dopisane
+też na planie Innistradu oraz w hasłach Avacyn/Gavony/Thraben/Devil's
+Breach. Hasło nie ma pinezki — odsyła do Thraben/Katedry
+`#/mapa/innistrad?x=0.668&y=0.317`.
+
 Encje nadal poniżej progu osobnego hasła albo wymagające dokładniejszej
 separacji zakresu: Ulvenwald, Nephalia, Markovowie, Kościół Avacyn/Katedra
-Avacyn, Helvault, Griselbrand, Ashmouth, Skirsdag.
+Avacyn, Griselbrand, Shilgengar, Skirsdag.
 
 ## Kolejka link-miningu: encje czekające na drugą kartę (Alara)
 

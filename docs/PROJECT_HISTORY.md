@@ -4,6 +4,35 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-12 — PR-33 cd.: trzecia Pętla Jakości Innistradu, Ashmouth i Helvault
+
+Po drugim przebiegu pętli i kolejnym zielonym CI PR #33 budżet sesji pozwolił
+na trzeci przebieg. Stan wejściowy: clean working tree, HEAD `a5f5e1e`,
+`npm run test:all` 228/228, build 74 strony (40 kart, 19 haseł, 15 planów),
+map-audit 0 i wiki-stats 100%.
+
+1. **Rozpoznanie link-miningu:** ponad progiem pozostały dwie mocne encje
+   z osi Forge Devil / Thraben Valiant: **Ashmouth** oraz **Helvault**. Obie
+   mają po dwie karty z wikilinkami po tym przebiegu.
+2. **Nowe hasła:** powstały `content/lore/ashmouth.md` (`geografia`) i
+   `content/lore/helvault.md` (`artefakt`). Ashmouth opisuje stensiańską
+   czeluść Geier Reach, demony/diabły i relację z Devil's Breach; Helvault
+   opisuje srebrny monolit, doktrynę wiązania, uwięzienie Avacyn oraz
+   konsekwencje rozbicia więzienia.
+3. **Wikilinki:** dopisano odsyłacze w kartach `393dka-forge-devil` i
+   `544avr-thraben-valiant`, na planie Innistradu oraz w hasłach Avacyn,
+   Devil's Breach, Gavony, Stensia i Thraben.
+4. **Mapa:** Innistrad pozostaje T1 bez rysunkowych zmian. Ashmouth odsyła do
+   istniejącej kotwicy `0.213/0.253`, Helvault do Thraben/Katedry
+   `0.668/0.317`; brak pinezek haseł zgodnie z ADR 0043.
+5. **Regresja:** `test/innistrad-link-mining.test.js` rozszerzono o progi
+   Ashmouth i Helvault, ich klasy (`geografia`/`artefakt`), brak pinezek i
+   wikilinki kart/planów.
+
+Bramki końcowe po trzecim przebiegu: **230/230 testów**, build **76 stron**
+(40 kart, 21 haseł, 15 planów) i **859 plików drzewa archiwum**, map-audit
+0, wiki-stats 100% (7,4/8), czysty `git diff --check`.
+
 ## 2026-09-12 — PR-33 cd.: druga Pętla Jakości Innistradu, Avacyn i Devil's Breach
 
 Po zielonym zamknięciu pierwszej Pętli Jakości i zielonym CI PR #33 budżet
