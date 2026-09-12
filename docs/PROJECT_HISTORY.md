@@ -4,6 +4,38 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-12 — PR-33 cd.: Pętla Jakości Dominarii, Sursi i Terisiare
+
+Po domknięciu pętli Kaladeshu właściciel poprosił o kolejną Pętlę Jakości
+w następnym planie. Wybrano Dominarię, bo ma cztery karty i dwa czytelne
+progi encji wspólnych: `362BRO` + `531M3C` na osi Terisiare/Argoth/Kjeldor
+oraz `40USG` + `110DVD` na osi Sursi/Katedra/Serranowa łaska.
+
+1. **Rozpoznanie źródeł:** kwerenda objęła MTG Wiki: `Terisiare`, `Argoth`,
+   `Brothers' War`, `Kjeldor`, `Disa`, `Lhurgoyf`, `Sursi`,
+   `Cathedral of Serra`, `Church of Serra` oraz oficjalny WotC
+   *Planeswalker's Guide to Dominaria* (2022).
+2. **Nowe hasła:** powstały `content/lore/terisiare.md` i
+   `content/lore/sursi.md`, oba klasy `geografia`, plan `dominaria`, bez
+   frontmatterowych pinezek. Terisiare łączy Argoth Wojny Braci z lodowym
+   Kjeldorem Disy; Sursi łączy Katedrę Serran i regionalny adres łaski Serry.
+3. **Wikilinki:** dopisano odsyłacze w kartach
+   `362bro-simian-simulacrum`, `531m3c-disa-the-restless`,
+   `40usg-expunge`, `110dvd-serra-s-embrace`, na planie Dominarii oraz
+   w istniejącym haśle `serra`.
+4. **Mapa:** Dominaria pozostaje T1 bez nowego rysunku. `maps/dominaria/map.json`
+   dostał kotwicę `Sursi` przy adresie Katedry Serran (`0.1937/0.3806`)
+   oraz uźródłowioną notkę Terisiare (`0.895/0.3`). Pinezki kart nadal mają
+   pewność `region`; hasła odsyłają deep-linkiem i nie otrzymują własnych
+   pinezek (ADR 0043).
+5. **Regresja i dokumentacja:** dodano `test/dominaria-link-mining.test.js`,
+   uzupełniono `content/co-nowego.md`, `docs/backlog.md` i plan pracy
+   `docs/plans/PLAN_2026-09-12-petla-jakosci-dominaria.md`.
+
+Bramki końcowe: **245/245 testów**, build **80 stron** (40 kart, 25 haseł,
+15 planów; artefakt 1460.0 kB), map-audit 0, wiki-stats 100% (7,4/8)
+i czysty `git diff --check`.
+
 ## 2026-09-12 — PR-33 cd.: trzecia Pętla Jakości Innistradu, Ashmouth i Helvault
 
 Po drugim przebiegu pętli i kolejnym zielonym CI PR #33 budżet sesji pozwolił

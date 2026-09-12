@@ -15,7 +15,7 @@ pinezka:
 
 ## Kronika Lore
 
-W mroźnym sercu **Epoki Lodowcowej** (*Ice Age*), gdy kontynent **Terisiare**
+W mroźnym sercu **Epoki Lodowcowej** (*Ice Age*), gdy kontynent **[[terisiare|Terisiare]]**
 na [[dominaria|Dominarii]] skuty był wieczną zmarzliną i lodem po katastrofie
 wybuchu Golgothiańskiego Syleksu, przetrwanie ludzkości zależało od odwagi
 nielicznych odkrywców. Pośród bezkresnych, smaganych arktycznym wichrem
@@ -44,7 +44,7 @@ bestiami czyhającymi na rubieżach królestwa Kjeldoru.
 odkrywczyni i autorka zapisków podróżnych z królestwa Kjeldoru na Dominarii.
 Żona Arcydruida Kolbjörna z Zakonu Jałowca (*Juniper Order*) i przybrana
 matka Kaysy. Podczas wojen z nekromantą Lim-Dûlem stała na czele wielkich
-ekspedycji na zachód i północ Terisiare, przecierając szlaki w zlodowaciałym
+ekspedycji na zachód i północ [[terisiare|Terisiare]], przecierając szlaki w zlodowaciałym
 świecie. Jej kroniki i porady przetrwania uwieczniono w inskrypcjach
 ponad dwudziestu relacji z epoki *Ice Age*.
 
@@ -54,10 +54,10 @@ w ziemi i lodzie, tym większą masę i agresję osiąga Lhurgoyf. Odmiana
 Tarmogoyfa karmi się z kolei różnorodnością materii i esencji obecnych
 w mogiłach świata, stanowiąc szczytowego drapieżnika terenów zmarzliny.
 
-**Terisiare i Kjeldor w Epoce Lodowcowej** — północno-wschodni kontynent
+**[[terisiare|Terisiare]] i Kjeldor w Epoce Lodowcowej** — północno-wschodni kontynent
 Dominarii, niegdyś kolebka imperiów Wojny Braci (Argoth, Yotia, Korlis),
 w Epoce Lodowcowej zamieniony w bezkresne lodowe pustkowia (*Adarkar Wastes*).
-Największym bastioem ludzkiej cywilizacji stało się wówczas zjednoczone
+Największym bastionem ludzkiej cywilizacji stało się wówczas zjednoczone
 królestwo Kjeldoru, nieustannie nękane przez barbarzyńców z Balduvii,
 nieumarłe hordy Lim-Dûla oraz wygłodniałe arktyczne bestie.
 
@@ -82,14 +82,14 @@ towarzysząc opisom takich istot i zjawisk jak *Kjeldoran Frostbeast*,
 
 Scena jest w pełni rdzenna dla [[dominaria|Dominarii]] i jej klasycznej
 epoki — **Epoki Lodowcowej** (*Ice Age*). Osadzenie w zmarzlinie
-kontynentu **Terisiare** na północnych rubieżach królestwa **Kjeldoru**
+kontynentu **[[terisiare|Terisiare]]** na północnych rubieżach królestwa **Kjeldoru**
 doskonale łączy wątek historycznych wypraw badawczych Disy z motywem
 żerowania Lhurgoyfów na bezludnych pustkowiach dawnych pól bitewnych.
 
 ## Na Mapie
 
 Pinezka o pewności **region**: `#/mapa/dominaria?pin=531m3c-disa-the-restless`
-— północny kontynent **Terisiare**, rubieże królestwa **Kjeldor** i lodowcowe
+— północny kontynent **[[terisiare|Terisiare]]**, rubieże królestwa **Kjeldor** i lodowcowe
 pustkowia Adarkar.
 
 [Disa the Restless na mapie Dominarii](#/mapa/dominaria?pin=531m3c-disa-the-restless)
@@ -134,7 +134,8 @@ Zdolności karty idealnie odwzorowują naturę Disy jako tropielki bestii:
   <https://mtg.wiki/page/Lhurgoyf>
 - MTG Wiki, hasło *Terisiare* oraz *Kjeldor* — geografia kontynentu
   w Epoce Lodowcowej i struktura królestwa ludzi:
-  <https://mtg.wiki/page/Terisiare>
+  <https://mtg.wiki/page/Terisiare>,
+  <https://mtg.wiki/page/Kjeldor>
 
 ## Podsumowanie Lore
 

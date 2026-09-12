@@ -124,8 +124,8 @@
   },
   {
    "nazwa": "Terisiare",
-   "notka": "północno-wschodni kontynent (Argoth, epizod Braci)",
-   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Terisiare — pozycja środka lądu na rastrze M1",
+   "notka": "północno-wschodni dawny kontynent: Argoth i finał Wojny Braci, później zlodowaciałe Kjeldor/Adarkar; próg hasła: 362BRO + 531M3C",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Terisiare + Planeswalker's Guide to Dominaria 2022 (New Argive/Terisian Isles); pozycja środka lądu na rastrze M1",
    "typ": "kontynent",
    "uklad": "złoty M1 — odczyt z podglądu L0",
    "x": 0.895,
@@ -133,7 +133,7 @@
   },
   {
    "nazwa": "Sarpadia",
-   "notka": "południowo-wschodni kontynent (upadłe imperium thorne'ów)",
+   "notka": "południowo-wschodni kontynent: Icatia, Vodalia, Zakon Czarnej Ręki i Havenwood; upadek w Ciemnych Czasach, thrullowie, thalidzi i homaridi",
    "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Sarpadia — pozycja środka lądu na rastrze M1",
    "typ": "kontynent",
    "uklad": "złoty M1 — odczyt z podglądu L0",
@@ -190,8 +190,8 @@
    "x": 0.1937,
    "y": 0.3806,
    "typ": "obiekt",
-   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Cathedral_of_Serra (Równiny Sursi, lokalizacja benalijska) + ikona i etykieta na M1 (Varghedin); odczyt z mastera px (1569, 1979), 2026-09-08 (audyt PR-24, L13)",
-   "notka": "świątynia Serran (brat Angus, ~3780 AR — stoi w epoce USG); pinezka 40USG",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Cathedral_of_Serra i https://mtg.wiki/page/Sursi (Równiny Sursi, południowa Aerona) + ikona i etykieta na M1 (Varghedin); odczyt z mastera px (1569, 1979), 2026-09-08 (audyt PR-24, L13)",
+   "notka": "świątynia Serran na Równinach Sursi (brat Angus, ~3780 AR); wspólna kotwica regionalna 40USG i 110DVD",
    "px_t1": [
     1569,
     1979
@@ -199,12 +199,25 @@
    "uklad": "złoty M1 — odczyt z mastera"
   },
   {
+   "nazwa": "Sursi",
+   "x": 0.1937,
+   "y": 0.3806,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Sursi — duży płaskowyż/wieś/Równiny Sursi w południowej Aeronie; mapa T1 ma czytelną ikonę Cathedral of Serra w tym rejonie, odczyt z mastera px (1569, 1979)",
+   "notka": "regionalna kotwica Sursi/Katedry Serran dla haseł Serra i Sursi oraz pinezek 40USG/110DVD; nie granica całych Równin Sursi",
+   "px_t1": [
+    1569,
+    1979
+   ],
+   "uklad": "złoty M1 — odczyt z mastera (adres regionalny, nie granica płaskowyżu)"
+  },
+  {
    "nazwa": "Argoth",
    "x": 0.885,
    "y": 0.36,
    "typ": "wyspa",
    "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Argoth — wyspa na południe od Terisiare zniszczona w finale Wojny Braci",
-   "notka": "leśna wyspa u wybrzeży Terisiare, zniszczona w finale Wojny Braci przez Sylex Blast Urzy; miejsce wykopalisk i bitwy automatów",
+   "notka": "leśna wyspa u wybrzeży Terisiare, zniszczona w finale Wojny Braci przez Sylex Blast Urzy; regionalna kotwica 362BRO i hasła Terisiare",
    "uklad": "złoty M1 — odczyt z podglądu L0"
   },
   {
@@ -213,11 +226,12 @@
    "y": 0.265,
    "typ": "kraina",
    "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Kjeldor — królestwo ludzkiej cywilizacji w północnym Terisiare podczas Epoki Lodowcowej; pozycja na lądzie Terisiare wg rastra M1",
-   "notka": "największe zjednoczone królestwo ludzi na kontynencie Terisiare w Epoce Lodowcowej, ojczyzna Disy Niespokojnej i Halvora Arensona",
+   "notka": "największe zjednoczone królestwo ludzi na kontynencie Terisiare w Epoce Lodowcowej; ojczyzna Disy Niespokojnej, regionalna kotwica 531M3C i hasła Terisiare",
    "uklad": "złoty M1 — odczyt z podglądu L0"
   }
  ],
  "otwarte_na_kolejne_przejscia": [
+  "DOMKNIĘTE 2026-09-12 (PR-33): link-mining Dominarii dodał hasła Sursi i Terisiare; mapa zachowuje regionalną pewność kart (40USG/110DVD przy Sursi/Katedrze, 362BRO przy Argoth, 531M3C przy Kjeldorze) i nie dodaje pinezek dla haseł.",
   "DOMKNIĘTE 2026-09-08 (PR-25): nakładka L2 „Domeny\" usunięta (ADR 0041 — wycinek bazy bez nowego detalu); pinezka 40USG na ikonie Cathedral of Serra, odczyt z mastera px (1569, 1979). Benalia City zostaje do osadzenia przy karcie z rejonu (referencja: ref-benalia.jpg).",
   "Kotwice „wyłącznie raster\" (12) do weryfikacji przy pierwszej karcie z regionu (precedens F5 Innistrad, PR-23)."
  ],

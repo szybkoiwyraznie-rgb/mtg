@@ -58,6 +58,29 @@ liczą się do progu kart (zasada właściciela 2026-08-31):
 | Pakt Gildii | magia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
 | Wojek / Liga Wojek | spolecznosc | plan ravnica, źródła 516RNA | wymaga wzmianki w treści drugiej karty |
 
+## Link-mining Dominarii (Pętla Jakości, 2026-09-12)
+
+**Terisiare — wykonane**, `content/lore/terisiare.md`, klasa `geografia`,
+plan Dominaria. Próg spełniły treści kart `362bro-simian-simulacrum` +
+`531m3c-disa-the-restless`: Argoth i koniec Wojny Braci po jednej stronie,
+a zlodowaciały Kjeldor / Adarkar w Epoce Lodowcowej po drugiej. Wikilinki
+dopisane w obu kartach i na planie Dominarii. Hasło nie ma pinezki — odsyła
+do kotwicy kontynentu `#/mapa/dominaria?x=0.895&y=0.3`.
+
+**Sursi — wykonane**, `content/lore/sursi.md`, klasa `geografia`, plan
+Dominaria. Próg spełniły treści kart `40usg-expunge` +
+`110dvd-serra-s-embrace`: obie sceny są Serranowe, ale jedna dotyczy
+bluźnierstwa nad Katedrą Serran, a druga regionalnego adresu łaski Serry.
+Wikilinki dopisane w obu kartach, na planie Dominarii oraz w haśle
+`serra`. Hasło nie ma pinezki — odsyła do kotwicy Sursi/Katedry
+`#/mapa/dominaria?x=0.1937&y=0.3806` i jawnie nie udaje granic płaskowyżu
+ani dokładnej linii bitwy.
+
+Encje nadal poniżej progu osobnego hasła albo wymagające separacji zakresu:
+Argoth (jedna karta; druga wzmianka jest w haśle/planie, nie w karcie),
+Kjeldor (jedna karta jako królestwo; na razie mieści się w Terisiare),
+Disa, Lhurgoyfy, Benalia, Katedra Serran jako osobny budynek, Sylex.
+
 ## Link-mining Innistradu (Pętla Jakości, 2026-09-12)
 
 **Gavony — wykonane**, `content/lore/gavony.md`, klasa `geografia`, plan
@@ -215,19 +238,22 @@ Encje „o jedną kartę” od progu:
 | Faerûn, Abeir-Toril, Morze Upadłych Gwiazd, Moonshaes, Nelanther, Amn, Luruar, Jezioro Pary, Królestwo Wysokie, Morze Bezludne | geografia | — (plan forgotten-realms) | licznik od kart, nie planów |
 | Mystra, Selûne, Lathander, Ilmater, Tempus, Tkanina Magii, Czas Kłopotów | postac/koncepcja | — (plan forgotten-realms) | licznik od kart, nie planów |
 
-## Link-mining Kaladesh (start: PR-28, 2026-09-09)
+## Link-mining Kaladesh (Pętla Jakości, 2026-09-12)
 
-Pierwsza karta planu (`610m19-gearsmith-prodigy`) — próg 2 kart
-niespełniony, nowych haseł brak. Encje „o jedną kartę” od progu:
+Druga karta planu (`596ori-ghirapur-gearcrafter`) odblokowała dwa progi
+po pierwszej karcie `610m19-gearsmith-prodigy`:
 
-| Encja | Klasa (docelowa) | Karta wspominająca | Do progu brakuje |
-| --- | --- | --- | --- |
-| Ghirapur | geografia | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
-| Konsulat, mistrzowie Konsulatu | spolecznosc | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
-| Greenwheel, „Zoo” konstruktów | geografia | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
-| eter, rdzeń eterowy | koncepcja | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
-| Targ Wynalazców | wydarzenie | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
-| Iglica Eteru, Peema, Vahd, Lathnu, Vinday, Vasavati | geografia | — (plan kaladesh) | licznik od kart, nie planów |
+- **Ghirapur — wykonane**, `content/lore/ghirapur.md`, klasa `geografia`,
+  plan Kaladesh. Próg spełniły obie karty; wikilinki dopisane w kartach,
+  na planie i w haśle Konsulatu. Hasło nie ma pinezki — odsyła deep-linkiem
+  do kotwicy miasta.
+- **Konsulat Kaladeshu — wykonane**, `content/lore/konsulat-kaladeshu.md`,
+  klasa `spolecznosc`, plan Kaladesh. Próg spełniły obie karty; hasło nie
+  ma pinezki i odsyła do rejonu Consulate Building jako centrum instytucji.
+
+Encje nadal poniżej progu osobnego hasła albo wymagające separacji zakresu:
+Greenwheel, Embraal, „Zoo” konstruktów, eter / rdzeń eterowy, Targ
+Wynalazców, Iglica Eteru, Peema, Vahd, Lathnu, Vinday i Vasavati.
 
 **Pass mapowy 2026-09-10 (Pętla Jakości, PR-30):** wsie aerowrightów
 Vahd — **Maranjapur, Panka, Cambi** — dodane na plan jako kanonicznie
@@ -235,6 +261,12 @@ nazwane POI (mtg.wiki: Avishkar; „The World of Kaladesh, Part I”;
 Magic Duels wiki). Wcześniej (korekta właściciela 2026-09-10) zdjęte
 jako bezimienne „wieś”; teraz nazwa znana z kanonu → narysowane
 z etykietami. Nie tworzą haseł (encje planowe, próg = 2 karty).
+
+**Pass L2 2026-09-12 (Pętla Jakości, PR-33):** osobna mapa Ghirapuru
+z PR-30 została podniesiona do pełnego zestawu kotwic L2 w `map.json`
+(Greenwheel, Greenwheel Domes, The Zoo, Embraal, Aether Hub, Aetherflux
+Reservoir, Eleven Bridges itd.). Pozycje są projekcją L2/ADR 0047, nie
+kanonicznymi adresami.
 
 ## Mapa Zendikaru — WYKONANA (ADR 0012)
 

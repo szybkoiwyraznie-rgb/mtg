@@ -1,3 +1,28 @@
+## 2026-09-12 19:34 — Dominaria: Sursi i Terisiare w Pętli Jakości
+
+- **Link-mining Dominarii:** po czterech kartach planu próg haseł przekroczyły
+  dwie geografie: **[[terisiare|Terisiare]]** (`362BRO` + `531M3C`) oraz
+  **[[sursi|Sursi]]** (`40USG` + `110DVD`). Pierwsze hasło spina Argoth
+  Wojny Braci z lodowym Kjeldorem Disy, drugie — Katedrę Serran i regionalny
+  adres łaski Serry.
+- **Wikilinki i źródła:** odsyłacze trafiły do wszystkich kart progowych,
+  na plan [[dominaria|Dominaria]] oraz do istniejącego hasła [[serra|Serra]].
+  Nowe hasła cytują MTG Wiki (`Terisiare`, `Argoth`, `Kjeldor`, `Disa`,
+  `Lhurgoyf`, `Sursi`, `Cathedral of Serra`, `Church of Serra`) i oficjalny
+  *Planeswalker's Guide to Dominaria* z 2022 roku.
+- **Mapa:** `maps/dominaria/map.json` zachowuje regionalną pewność kart i nie
+  dodaje pinezek dla haseł. `Sursi` korzysta z adresu Katedry Serran
+  (`x=0.1937`, `y=0.3806`) jako kotwicy miejsca pamięci, bez udawania granic
+  płaskowyżu ani konkretnej linii bitwy; `Terisiare` odsyła do kotwicy
+  kontynentu (`x=0.895`, `y=0.3`) i rozdziela epoki Argothu, lodu oraz
+  współczesnego atlasu.
+- **Regresja:** nowy `test/dominaria-link-mining.test.js` pilnuje progu dwóch
+  kart, wikilinków, braku pinezek frontmatterowych dla haseł (ADR 0043),
+  deep-linków mapowych i źródłowych notek kotwic.
+- **Bramki końcowe:** 245/245 testów; build 80 stron (40 kart, 25 haseł,
+  15 planów), artefakt 1460.0 kB; `map-audit` 0 problemów; `wiki-stats`
+  100% (7,4/8); `git diff --check` czysty.
+
 ## 2026-09-12 19:15 — Kaladesh: Ghirapur, Konsulat i kotwice L2 miasta
 
 - **Link-mining Kaladeshu:** po drugiej karcie planu próg haseł przekroczyły

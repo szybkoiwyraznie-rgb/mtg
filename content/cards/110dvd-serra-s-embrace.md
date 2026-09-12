@@ -46,7 +46,7 @@ nie nagradza sławy, tylko wytrwanie.
 **Serra** — dawna planeswalkerka białej many, czczona na Dominarii jak
 bogini, związana z aniołami i ze światłem, które nie tyle niszczy wroga,
 ile podnosi słabych. Jej pamięć ma na tym planie własną religię,
-świątynie i anioły; w Sursi jej ostatnia moc uświęciła ziemię.
+świątynie i anioły; w [[sursi|Sursi]] jej ostatnia moc uświęciła ziemię.
 
 **Anielska obecność** — nie osobna, nazwana posłanniczka, lecz dotyk
 Serry rozpoznawalny po skrzydłach, świetle i dłoniach prowadzonych na
@@ -55,7 +55,7 @@ kształt nadziei, dzięki któremu zwykłe ciało może wykonać czyn większy n
 jego własna siła.
 
 **Serranowa wspólnota Dominarii** — kapłani, rycerze, pielgrzymi i anioły
-związane z Kościołem Serry, Benalią oraz Sursi. To tło wyjaśnia, dlaczego
+związane z Kościołem Serry, Benalią oraz [[sursi|Sursi]]. To tło wyjaśnia, dlaczego
 na dominariańskim froncie światło przychodzi jako opiekuńcze objęcie,
 a nie jako bezosobowa eksplozja mocy.
 
@@ -89,14 +89,14 @@ zmęczony żołnierz odmawia upadku.
 ## Transpozycja
 
 Ten zapis jest rodzimy dla Dominarii: imię Serry, anioły białej many,
-Kościół Serry, Benalia i Sursi należą do dziejów planu. Scena zawęża
+Kościół Serry, Benalia i [[sursi|Sursi]] należą do dziejów planu. Scena zawęża
 wielką religijną tradycję do jednego ciała w kurzu. Zamiast patrzeć na
 archanioła albo wodza, kronika zatrzymuje się przy szeregowym człowieku,
 bo właśnie taki wybór najlepiej objaśnia objęcie: łaska nie służy
 podziwianiu światła, lecz temu, by ktoś jeszcze utrzymał miecz.
 
 Pole bitwy pozostaje nienazwane, ale znak jest Serranowy. Dlatego
-najmocniejszym punktem odniesienia jest południowa Aerona: Sursi,
+najmocniejszym punktem odniesienia jest południowa Aerona: [[sursi|Sursi]],
 Katedra Serran i benalijska tradycja, w której anioły pomagają ludziom.
 Nie oznacza to, że piechur stoi pod samym portalem świątyni. Oznacza, że
 źródło rozpoznanego światła ma na Dominarii swoje miejsce i pamięć.
@@ -104,7 +104,7 @@ Nie oznacza to, że piechur stoi pod samym portalem świątyni. Oznacza, że
 ## Na Mapie
 
 Pinezka ma pewność `region`: `#/mapa/dominaria?pin=110dvd-serra-s-embrace`.
-Wskazuje rejon **Sursi / Katedry Serran** na południowej Aeronie — miejsce,
+Wskazuje rejon **[[sursi|Sursi / Katedry Serran]]** na południowej Aeronie — miejsce,
 w którym śmierć Serry uświęciła ziemię, a anioły Serran pojawiają się jako
 znak jej błogosławieństwa. To najtwardsza dominariańska kotwica dla
 objęcia Serry.
@@ -161,6 +161,8 @@ człowieka, który jeszcze stoi.
   oraz położenie Sursi na południu Aerony:
   <https://mtg.wiki/page/Cathedral_of_Serra>,
   <https://mtg.wiki/page/Sursi>.
+- Hasło Codexu, [[sursi|Sursi]] — wspólna geograficzna kotwica Expunge
+  i Serra's Embrace bez fałszywej precyzji pola bitwy.
 
 ## Podsumowanie Lore
 
@@ -169,7 +171,7 @@ człowieka, który jeszcze stoi.
 - **Skrzydła są pomocą, nie zastępstwem.** Żołnierz nie znika pod aniołem;
   anielska obecność prowadzi jego własne dłonie i wzmacnia jego własny
   krok.
-- **Sursi nadaje światłu adres pamięci.** Dominaria zna Serrę przez miejsca
+- **[[sursi|Sursi]] nadaje światłu adres pamięci.** Dominaria zna Serrę przez miejsca
   kultu, błogosławioną ziemię i anioły pojawiające się pośród ludzi.
 - **Czujność jest sednem odwagi.** Wzmocniony piechur może ruszyć naprzód
   bez porzucenia straży, bo objęcie Serry podnosi zarówno miecz, jak i linię.

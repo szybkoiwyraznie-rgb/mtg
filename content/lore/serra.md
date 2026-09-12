@@ -14,7 +14,7 @@ materializacja: 2026-09-12
 aniołami i ideą ochronnej łaski. Stworzyła własny rajski plan, znany jako
 Serra's Realm, zasiedlony przez jej anioły i wyznawców; na
 [[dominaria|Dominarii]] czczono ją później jak boginię w Kościele Serry.
-Jej dominariańska pamięć najmocniej skupia się w Sursi, gdzie po śmierci
+Jej dominariańska pamięć najmocniej skupia się w [[sursi|Sursi]], gdzie po śmierci
 uświęciła ziemię, a brat Angus wzniósł Katedrę Serran. [1](https://mtg.wiki/page/Serra),
 [2](https://mtg.wiki/page/Church_of_Serra),
 [3](https://mtg.wiki/page/Cathedral_of_Serra)
@@ -52,7 +52,7 @@ lecz siły, lotu i czujności.
 
 ### Sursi, Katedra i Kościół
 
-Na Równinach Sursi Serra została zaatakowana przez innego planeswalkera.
+Na [[sursi|Równinach Sursi]] Serra została zaatakowana przez innego planeswalkera.
 W ostatnich chwilach uświęciła i ożywiła otaczające ziemie, a brat Angus
 zabrał jej ciało i zbudował Katedrę Serran w pobliżu wioski Sursi. Katedra
 stała się jednym ze świętych miejsc Kościoła Serry; według źródeł anioły
@@ -70,7 +70,7 @@ anioły niosą łagodną pociechę pokornym i szybką sprawiedliwość okrutnym.
 ## Na mapie
 
 Serra nie jest miejscem i nie otrzymuje własnej pinezki. Jej
-najważniejszą dominariańską kotwicą jest jednak Sursi z Katedrą Serran:
+najważniejszą dominariańską kotwicą jest jednak [[sursi|Sursi]] z Katedrą Serran:
 południowa Aerona, Równiny Sursi, rejon uświęcony przez jej śmierć
 i związany z samorzutnym pojawianiem się aniołów.
 
@@ -92,7 +92,8 @@ i związany z samorzutnym pojawianiem się aniołów.
   anioły z Serra's Realm i byty powstające w odpowiedzi na modlitwy:
   <https://mtg.wiki/page/Angel#Serra_angels>.
 - MTG Wiki, Sursi — południowa Aerona, Równiny Sursi, śmierć Serry,
-  uświęcenie ziemi i założenie katedry w pobliżu wioski:
+  uświęcenie ziemi i założenie katedry w pobliżu wioski; w Codexie
+  osobne hasło [[sursi|Sursi]] łączy obie karty Serranowe:
   <https://mtg.wiki/page/Sursi>.
 - Wizards of the Coast, Planeswalker's Guide to Dominaria — współczesny
   opis Benalii i Kościoła Serry, w tym boskie błogosławieństwa, Sursi oraz
