@@ -294,19 +294,25 @@ Encje „o jedną kartę” od progu:
 ## Link-mining Kaladesh (Pętla Jakości, 2026-09-12)
 
 Druga karta planu (`596ori-ghirapur-gearcrafter`) odblokowała dwa progi
-po pierwszej karcie `610m19-gearsmith-prodigy`:
+po pierwszej karcie `610m19-gearsmith-prodigy`; późniejszy
+`12aer-merchant-s-dockhand` pogłębia oba wykonane hasła przez Bomat, ale
+nie tworzy osobnego hasła dzielnicy portowej:
 
 - **Ghirapur — wykonane**, `content/lore/ghirapur.md`, klasa `geografia`,
-  plan Kaladesh. Próg spełniły obie karty; wikilinki dopisane w kartach,
-  na planie i w haśle Konsulatu. Hasło nie ma pinezki — odsyła deep-linkiem
-  do kotwicy miasta.
+  plan Kaladesh. Próg pierwotnie spełniły dwie karty, a `12AER` dopisuje
+  trzecią scenę; wikilinki są w kartach, na planie i w haśle Konsulatu.
+  Hasło nie ma pinezki — odsyła deep-linkiem do kotwicy miasta.
 - **Konsulat Kaladeshu — wykonane**, `content/lore/konsulat-kaladeshu.md`,
-  klasa `spolecznosc`, plan Kaladesh. Próg spełniły obie karty; hasło nie
-  ma pinezki i odsyła do rejonu Consulate Building jako centrum instytucji.
+  klasa `spolecznosc`, plan Kaladesh. Próg pierwotnie spełniły dwie karty, a
+  `12AER` pogłębia instytucję od strony plomb, tras i portowej ewidencji;
+  hasło nie ma pinezki i odsyła do rejonu Consulate Building jako centrum
+  instytucji.
 
 Encje nadal poniżej progu osobnego hasła albo wymagające separacji zakresu:
-Greenwheel, Embraal, „Zoo” konstruktów, eter / rdzeń eterowy, Targ
-Wynalazców, Iglica Eteru, Peema, Vahd, Lathnu, Vinday i Vasavati.
+Bomat (`12aer-merchant-s-dockhand` — dzielnica portowa ma kotwicę mapy L2,
+ale tylko jedną kartę), Greenwheel, Embraal, „Zoo” konstruktów, eter / rdzeń
+eterowy, Targ Wynalazców, Iglica Eteru, Peema, Vahd, Lathnu, Vinday i
+Vasavati.
 
 **Pass mapowy 2026-09-10 (Pętla Jakości, PR-30):** wsie aerowrightów
 Vahd — **Maranjapur, Panka, Cambi** — dodane na plan jako kanonicznie

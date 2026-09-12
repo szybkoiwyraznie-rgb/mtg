@@ -4,6 +4,50 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-12 — PR-33 cd.: 12AER Merchant's Dockhand i port Bomat
+
+Właściciel dostarczył `12AER / Merchant's Dockhand / AER / Kaladesh` wraz z
+Fabułą o niewielkim konstrukcie na ruchliwym nabrzeżu Bomat. Automat o
+mosiężnych ramionach sortuje i katalogizuje skrzynie czterema chwytakami,
+ma błękitny rdzeń aetherowy i turkusowy wizjer, a wokół pracują kupcy,
+aetherowe dźwigi i pozłacane kopuły portowego miasta.
+
+1. **Materiał źródłowy:** utworzono
+   `collection/entries/12aer-merchant-s-dockhand.md` z Fabułą właściciela i
+   `imgId: 12AER` oraz pełny snapshot
+   `scryfall/12aer-merchant-s-dockhand.json` dla Scryfall/Gatherer **AER #163**.
+   Notka numeracji przypomina, że `12AER` nie jest numerem kolekcjonerskim
+   druku.
+2. **Karta Katalogowa:** `content/cards/12aer-merchant-s-dockhand.md` jest
+   lore-first: najpierw pokazuje port Bomat, skrzynie, kontener, kupców,
+   aetherowe dźwigi i ciche katalogowanie ładunków, dopiero później czyta
+   `{1}`, Artifact Creature — Construct 1/2 oraz aktywację `{3}{U}, {T}` z
+   tapowaniem X nietapniętych artefaktów.
+3. **Transpozycja mechaniki:** X artefaktów zostało opisane jako skrzynie,
+   dźwigi, platformy i pomocnicze automaty włączone w jeden przegląd
+   manifestu. Wybrana karta z wierzchu biblioteki staje się najpilniejszym
+   ładunkiem trafiającym do ręki kupca, a reszta wraca na dalszą trasę.
+4. **Mapa:** `maps/kaladesh/map.json` dostał wyłącznie pinezkę karty, nie
+   hasła. Pinezka ma pewność `region` i korzysta z kotwicy Bomat
+   (`0.6613/0.6386`), bo źródła potwierdzają Bomat jako port Ghirapuru, ale
+   nie wskazują jednego pirsu, magazynu, żurawia ani kontenera.
+5. **Link-mining Kaladeshu:** istniejące hasła `content/lore/ghirapur.md` i
+   `content/lore/konsulat-kaladeshu.md` zostały pogłębione o portową logistykę
+   Bomat oraz automatyczną ewidencję ładunków. Nowego hasła `bomat` nie
+   utworzono: dzielnica ma teraz jedną kartę i pozostaje w `docs/backlog.md`
+   jako encja poniżej progu.
+6. **Dokumentacja i regresja:** dodano plan pracy
+   `docs/plans/PLAN_2026-09-12-12AER.md`, aktualizacje `content/co-nowego.md`,
+   `docs/backlog.md`, `docs/ROADMAP.md`, handoff PR-33 oraz test
+   `test/kaladesh-12aer.test.js`. Test pilnuje Fabuły, rozdziału `12AER` od
+   AER #163, colorless/frontmatter vs niebieska aktywacja, portowej mechaniki
+   katalogowania, regionalnej pinezki Bomat i braku przedwczesnego hasła.
+
+Bramki końcowe: **273/273 testów**, build **89 stron** (44 karty, 30 haseł,
+15 planów; artefakt 1578.4 kB) i **853 pliki drzewa archiwum**
+(147462.0 kB), map-audit 0, wiki-stats 100% (7,3/8) oraz czysty
+`git diff --check`.
+
 ## 2026-09-12 — PR-33 cd.: 594EMN Ironclad Slayer i pobojowiska Velen
 
 Właściciel dostarczył `594EMN / Ironclad Slayer / EMN / Wiedźmin` wraz z

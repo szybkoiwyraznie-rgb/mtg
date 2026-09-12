@@ -24,7 +24,7 @@ const gearcrafter = czyta('content/cards/596ori-ghirapur-gearcrafter.md');
 const plan = czyta('content/planes/kaladesh.md');
 const research = czyta('maps/kaladesh/zrodlo-research.md');
 
-test('Kaladesh: Ghirapur i Konsulat powstają z progu dwóch kart, nie z samego planu', () => {
+test('Kaladesh: Ghirapur i Konsulat spełniają próg kart, nie samego planu', () => {
   assert.equal(poSlugu.ghirapur.typ, 'haslo');
   assert.equal(poSlugu.ghirapur.klasa, 'geografia');
   assert.equal(poSlugu.ghirapur.plan, 'kaladesh');
@@ -33,16 +33,18 @@ test('Kaladesh: Ghirapur i Konsulat powstają z progu dwóch kart, nie z samego 
   assert.equal(poSlugu['konsulat-kaladeshu'].plan, 'kaladesh');
 
   assert.deepEqual(kartyLinkujace('ghirapur'), [
+    '12aer-merchant-s-dockhand',
     '596ori-ghirapur-gearcrafter',
     '610m19-gearsmith-prodigy',
   ]);
   assert.deepEqual(kartyLinkujace('konsulat-kaladeshu'), [
+    '12aer-merchant-s-dockhand',
     '596ori-ghirapur-gearcrafter',
     '610m19-gearsmith-prodigy',
   ]);
 });
 
-test('Kaladesh: wikilinki są w obu kartach i na stronie planu', () => {
+test('Kaladesh: wikilinki są w kartach i na stronie planu', () => {
   for (const slug of ['596ori-ghirapur-gearcrafter', '610m19-gearsmith-prodigy']) {
     assert.ok(linkuje(slug, 'ghirapur'), `${slug}: brak linku do Ghirapuru`);
     assert.ok(linkuje(slug, 'konsulat-kaladeshu'), `${slug}: brak linku do Konsulatu`);
@@ -52,10 +54,13 @@ test('Kaladesh: wikilinki są w obu kartach i na stronie planu', () => {
   assert.ok(linkuje('ghirapur', 'konsulat-kaladeshu'), 'hasło Ghirapur: brak linku do Konsulatu');
   assert.ok(linkuje('konsulat-kaladeshu', 'ghirapur'), 'hasło Konsulat: brak linku do Ghirapuru');
 
+  const dockhand = czyta('content/cards/12aer-merchant-s-dockhand.md');
   assert.match(gearsmith, /\[\[ghirapur\|Ghirapurze\]\]/);
   assert.match(gearsmith, /\[\[konsulat-kaladeshu\|mistrzami Konsulatu\]\]/);
   assert.match(gearcrafter, /\[\[ghirapur\|Ghirapur\]\]/);
   assert.match(gearcrafter, /\[\[konsulat-kaladeshu\|Konsulat\]\]/);
+  assert.match(dockhand, /\[\[ghirapur\|Ghirapurze\]\]/);
+  assert.match(dockhand, /\[\[konsulat-kaladeshu\|Konsulat\]\]/);
   assert.match(plan, /\[\[ghirapur\|Ghirapur, Miasto Indygo\]\]/);
   assert.match(plan, /\[\[konsulat-kaladeshu\|Konsulatu\]\]/);
 });
@@ -74,10 +79,13 @@ test('Kaladesh: hasła nie dostają pinezek frontmatterowych, tylko deep-linki m
 test('Kaladesh: jednoprzebiegowe dzielnice kart są kotwicami mapy, nie osobnymi hasłami', () => {
   assert.ok(!fs.existsSync('content/lore/greenwheel.md'), 'Greenwheel ma jedną kartę — nie materializujemy osobnego hasła');
   assert.ok(!fs.existsSync('content/lore/embraal.md'), 'Embraal ma jedną kartę — nie materializujemy osobnego hasła');
+  assert.ok(!fs.existsSync('content/lore/bomat.md'), 'Bomat ma jedną kartę — nie materializujemy osobnego hasła');
   assert.equal(poSlugu.greenwheel, undefined);
   assert.equal(poSlugu.embraal, undefined);
+  assert.equal(poSlugu.bomat, undefined);
   assert.equal(kotwica('Greenwheel')?.typ, 'dzielnica');
   assert.equal(kotwica('Embraal')?.typ, 'dzielnica');
+  assert.equal(kotwica('Bomat')?.typ, 'dzielnica');
 });
 
 test('Kaladesh L2: nowe kotwice Ghirapuru zachowują ślad ADR 0047 i brak fałszywej precyzji', () => {
@@ -118,10 +126,14 @@ test('Kaladesh L2: kotwice dzielnic kart są spójne z pinezkami regionów', () 
   assert.ok(closeTo(kotwica('Greenwheel Domes').y, pinezka('610m19-gearsmith-prodigy').y));
   assert.ok(closeTo(kotwica('Embraal').x, pinezka('596ori-ghirapur-gearcrafter').x));
   assert.ok(closeTo(kotwica('Embraal').y, pinezka('596ori-ghirapur-gearcrafter').y));
+  assert.ok(closeTo(kotwica('Bomat').x, pinezka('12aer-merchant-s-dockhand').x));
+  assert.ok(closeTo(kotwica('Bomat').y, pinezka('12aer-merchant-s-dockhand').y));
   assert.equal(pinezka('610m19-gearsmith-prodigy').pewnosc, 'region');
   assert.equal(pinezka('596ori-ghirapur-gearcrafter').pewnosc, 'region');
+  assert.equal(pinezka('12aer-merchant-s-dockhand').pewnosc, 'region');
   assert.match(pinezka('610m19-gearsmith-prodigy').uzasadnienie, /kanon nie nazywa konkretnego tarasu/);
   assert.match(pinezka('596ori-ghirapur-gearcrafter').uzasadnienie, /L2: ~925,480/);
+  assert.match(pinezka('12aer-merchant-s-dockhand').uzasadnienie, /oznacza dzielnicę, nie dokładny pomost/);
 });
 
 test('Kaladesh: karty i nowe hasła używają działającego URL-a Planeswalker\'s Guide', () => {

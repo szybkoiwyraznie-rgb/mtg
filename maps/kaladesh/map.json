@@ -272,6 +272,13 @@
    "pewnosc": "region",
    "uzasadnienie": "Przekaz sceny wskazuje warsztaty rzemieślnicze w metropolii Ghirapur, gdzie mistrzowie konstruują thoptery z kół zębatych i eteru. Pinezka stoi w dzielnicy rzemieślników i kowali Embraal na mapie deep (L2: ~925,480 przeliczone do układu planu przez bbox miasta).",
    "notka": "Epoka Konsulatu (Magic Origins / Kaladesh) — mistrzowie rzemiosła tworzą filigranowe thoptery w dążeniu do konsularnej aprobaty."
+  },
+  {
+   "karta": "12aer-merchant-s-dockhand",
+   "x": 0.6613,
+   "y": 0.6386,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła właściciela wskazuje ruchliwe nabrzeże dzielnicy Bomat na Kaladeshu: sortowanie skrzyń, otwarty kontener, kupców, aetherowe dźwigi i portowe miasto. Źródła opisują Bomat jako port Ghirapuru z dokami, stoczniami, kanałami, magazynami oraz konsularnym nadzorem nad handlem, ale nie podają konkretnego pirsu, magazynu ani kontenera. Pinezka korzysta z kotwicy Bomat na mapie L2 Ghirapuru (wybór rekonstrukcji ADR 0047) i oznacza dzielnicę, nie dokładny pomost."
   }
  ],
  "scena": "scena.json",

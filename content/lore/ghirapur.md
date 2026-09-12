@@ -35,11 +35,13 @@ i stały punkt konfliktu o kontrolę nad zasobem. [1](https://mtg.wiki/page/Ghir
 To miasto nie oddziela funkcji od piękna. Thoptery, automaty, mosty,
 latarnie i koła zębate mają działać, ale mają też zachwycać. Dlatego
 rzemieślnik jest w Ghirapurze kimś więcej niż robotnikiem: to artysta,
-inżynier i obywatel naraz. W tej logice mieszczą się obie kaladeskie
-karty z kolekcji: [[610m19-gearsmith-prodigy|Gearsmith Prodigy]] pokazuje
-młodą konstruktorkę, której lis-automaton potwierdza talent w zielonych
-ogrodach Greenwheel, a [[596ori-ghirapur-gearcrafter|Ghirapur Gearcrafter]]
-— mistrza pracowni Embraal, gdzie perfekcja metalu i ręki rodzi thoptera.
+inżynier i obywatel naraz. W tej logice mieszczą się trzy kaladeskie sceny
+z kolekcji: [[610m19-gearsmith-prodigy|Gearsmith Prodigy]] pokazuje młodą
+konstruktorkę, której lis-automaton potwierdza talent w zielonych ogrodach
+Greenwheel, [[596ori-ghirapur-gearcrafter|Ghirapur Gearcrafter]] — mistrza
+pracowni Embraal, gdzie perfekcja metalu i ręki rodzi thoptera, a
+[[12aer-merchant-s-dockhand|Merchant's Dockhand]] — portowy automat Bomat,
+który zmienia handel w precyzyjny spis ładunków.
 
 ### Dzielnice Ghirapuru
 
@@ -54,9 +56,13 @@ kolejowych — oraz **Bastion**, ośmiokątna kwatera egzekutorów Konsulatu.
 zapłonu Chandry i finału Targu Wynalazców. [1](https://mtg.wiki/page/Ghirapur)
 
 Dzielnice specjalizują się jak elementy wielkiego mechanizmu:
-**Bomat** to port, magazyny, kanały, Nocne Targowiska i podziemny The Dhund;
-**Embraal** — hutniczy Sweatworks, przemysł metalowy, graffiti i
-antykonsulański duch; **Weldfast** — metaloplastyka i **Aether Hub**;
+**Bomat** to port, magazyny, kanały, stocznie, aetherowe dźwigi, barki,
+Nocne Targowiska i podziemny The Dhund. To tutaj
+[[12aer-merchant-s-dockhand|Merchant's Dockhand]] pokazuje mniej widowiskową,
+ale niezbędną pracę Ghirapuru: sortowanie, ważenie i kierowanie towarów,
+które później zasilają warsztaty oraz targi całego miasta. **Embraal** —
+hutniczy Sweatworks, przemysł metalowy, graffiti i antykonsulański duch;
+**Weldfast** — metaloplastyka i **Aether Hub**;
 **Freejam** — pionowe pomosty, lotnicy i hangary; **Kujar** — zielona,
 prestiżowa dzielnica elfów oraz wejścia do Prakhata Club. Z kolei
 **Greenwheel** zachowuje ogrody, kopuły klimatyczne i „Zoo” konstruktów,
@@ -65,7 +71,8 @@ publiczną menażerię maszyn naśladujących naturę. Na obrzeżach i w
 **Shaila's Claim**, pastwisko utrzymane wbrew ekspansji miasta,
 **Ovalchase**, tor wyścigów pojazdów, oraz spalona przez Chandrę
 **Foundry of the Consuls**. [1](https://mtg.wiki/page/Ghirapur),
-[3](https://www.mtgsalvation.com/articles/49592-the-world-of-kaladesh-part-i-the-inventors-fair)
+[3](https://www.mtgsalvation.com/articles/49592-the-world-of-kaladesh-part-i-the-inventors-fair),
+[4](https://mtg.wiki/page/Bomat)
 
 ### Skala polityczna
 
@@ -103,6 +110,8 @@ współrzędne ulic ani adresy warsztatów.
   młoda konstruktorka i lis-automaton na tarasie miejskich ogrodów.
 - **[[596ori-ghirapur-gearcrafter|Ghirapur Gearcrafter]]** — scena w Embraal:
   mistrz rzemiosła powołujący do życia złocistego thoptera.
+- **[[12aer-merchant-s-dockhand|Merchant's Dockhand]]** — scena w Bomat:
+  portowy konstrukt katalogujący skrzynie na nabrzeżu dzielnicy.
 
 ## Źródła
 
@@ -110,6 +119,10 @@ współrzędne ulic ani adresy warsztatów.
   Dukhara Canal, Eleven Bridges, Bomat, Embraal, Greenwheel, Kujar,
   Freejam, Weldfast, The Cowl, Shaila's Claim, Ovalchase i inne dzielnice:
   [1](https://mtg.wiki/page/Ghirapur)
+- MTG Wiki, *Bomat* — port Ghirapuru, doki, stocznie, kanały, magazyny,
+  aetherowe dźwigi, barki rzeczne, transport ładunków przez miasto i nadzór
+  Konsulatu:
+  [4](https://mtg.wiki/page/Bomat)
 - Wizards of the Coast, *Planeswalker's Guide to Kaladesh* — eter,
   Great Aether Boom, Konsulat, rzemiosło i Aether Cycle:
   [2](https://magic.wizards.com/en/news/magic-story/planeswalkers-guide-kaladesh-2016-11-02)

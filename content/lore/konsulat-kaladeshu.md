@@ -57,8 +57,13 @@ departamenty, The Honorable jako siła policyjna Ghirapuru, House of
 Knowledge jako zaplecze badawcze, flota ochraniająca górników i zbieraczy
 eteru oraz edificierzy odpowiedzialni za budowę i naprawę miasta.
 W topografii Ghirapuru tę władzę widać w **Aether Spire / Iglicy Eteru**,
-**Bastionie**, **Aether Hubie** i spalonym później **Foundry of the Consuls**.
-[2](https://mtg.wiki/page/Consulate), [3](https://mtg.wiki/page/Ghirapur)
+**Bastionie**, **Aether Hubie**, nadzorowanym handlu Bomat i spalonym
+później **Foundry of the Consuls**. Dlatego
+[[12aer-merchant-s-dockhand|Merchant's Dockhand]] pokazuje Konsulat nie jako
+oddział egzekutorów, lecz jako system plomb, tras, licencji i ewidencji,
+bez którego portowe bogactwo nie staje się dochodem państwa.
+[2](https://mtg.wiki/page/Consulate), [3](https://mtg.wiki/page/Ghirapur),
+[5](https://mtg.wiki/page/Bomat)
 
 ### Po Aether Revolt
 
@@ -98,6 +103,9 @@ określają funkcje i relacje dzielnic, ale nie podają dokładnych adresów.
 - **[[596ori-ghirapur-gearcrafter|Ghirapur Gearcrafter]]** — mistrz
   z Embraal tworzy thoptera w kulturze, w której doskonałość rzemiosła
   jest drogą do konsularnej aprobaty.
+- **[[12aer-merchant-s-dockhand|Merchant's Dockhand]]** — portowy automat
+  z Bomat sortuje ładunki w sieci plomb, tras i kupieckich rejestrów, które
+  zmieniają ruch towarów w bogactwo Konsulatu.
 
 ## Źródła
 
@@ -114,3 +122,6 @@ określają funkcje i relacje dzielnic, ale nie podają dokładnych adresów.
 - MTG Wiki, *Avishkar* — późniejsza nazwa planu, Omenpath Era i tło
   nasycenia eterem oraz kontroli magii ognia:
   [4](https://mtg.wiki/page/Avishkar)
+- MTG Wiki, *Bomat* — port Ghirapuru, doki, stocznie, kanały, magazyny,
+  dźwigi zasilane eterem, transport towarów i nadzór Konsulatu:
+  [5](https://mtg.wiki/page/Bomat)

@@ -1,3 +1,32 @@
+## 2026-09-12 21:33 — Nowa karta: Merchant's Dockhand (Kaladesh)
+
+- **Materializacja karty:** **[[12aer-merchant-s-dockhand|Merchant's
+  Dockhand]]** (`12AER`, wydanie `AER` / *Aether Revolt*, plan
+  [[kaladesh|Kaladesh]]) — niewielki konstrukt na nabrzeżu Bomat w
+  [[ghirapur|Ghirapurze]] sortuje skrzynie czterema chwytakami, patrzy w
+  otwarty kontener turkusowym wizjerem i pracuje jako ciche ogniwo
+  handlowego łańcucha [[konsulat-kaladeshu|Konsulatu]].
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana w
+  `collection/entries/12aer-merchant-s-dockhand.md`; pełny snapshot AER #163
+  żyje w `scryfall/12aer-merchant-s-dockhand.json`. `12AER` pozostaje
+  niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim
+  Scryfall/Gatherera.
+- **Pinezka i plan:** `maps/kaladesh/map.json` dodaje wyłącznie pinezkę
+  karty z pewnością `region` na kotwicy Bomat (`x=0.6613`, `y=0.6386`).
+  Źródła opisują Bomat jako port Ghirapuru, lecz scena nie wskazuje jednego
+  pirsu, magazynu ani kontenera.
+- **Link-mining:** wykonane hasła **[[ghirapur|Ghirapur]]** i
+  **[[konsulat-kaladeshu|Konsulat Kaladeshu]]** zostały pogłębione o portową
+  logistykę Bomat. Osobne hasło Bomat nie powstaje, bo dzielnica ma na razie
+  jedną kartę; decyzję zapisano w `docs/backlog.md`.
+- **Strażniki:** nowa regresja pilnuje Fabuły, rozdziału `12AER` od AER #163,
+  snapshotu, bezbarwnego konstrukta z niebieską aktywacją, mechaniki
+  katalogowania przez X artefaktów, regionalnej pinezki Bomat i braku
+  przedwczesnego hasła dzielnicy.
+- **Bramki końcowe:** 273/273 testów; build 89 stron (44 karty, 30 haseł,
+  15 planów), artefakt 1578.4 kB i 853 pliki drzewa archiwum; map-audit 0;
+  wiki-stats 100% (7,3/8); `git diff --check` czysty.
+
 ## 2026-09-12 21:21 — Nowa karta: Ironclad Slayer (Wiedźmin)
 
 - **Materializacja karty:** **[[594emn-ironclad-slayer|Ironclad Slayer]]**

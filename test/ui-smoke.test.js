@@ -404,8 +404,9 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (43)'), 'lista kart: brak 43 kart');
-  assert.ok(lista.includes('Ironclad Slayer'), 'lista kart: brak najnowszej materializacji 594EMN');
+  assert.ok(lista.includes('Karty Katalogowe (44)'), 'lista kart: brak 44 kart');
+  assert.ok(lista.includes("Merchant's Dockhand"), 'lista kart: brak najnowszej materializacji 12AER');
+  assert.ok(lista.includes('Ironclad Slayer'), 'lista kart: brak materializacji 594EMN');
   assert.ok(lista.includes('Candlegrove Witch'), 'lista kart: brak materializacji 599MID');
   assert.ok(lista.includes('Knight of the Skyward Eye'), 'lista kart: brak materializacji 242ALA');
   assert.ok(lista.includes('Tenth District Veteran'), 'lista kart: brak materializacji 516RNA');
@@ -486,6 +487,24 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
     'hasło Tin Street Market: brak backlinków z dwóch kart spełniających próg');
   assert.ok(tin.includes('#/mapa/ravnica?x=0.3406&amp;y=0.4318'),
     'hasło Tin Street Market: brak deep-linka do targu');
+
+  shim.idz('#/haslo/ghirapur');
+  const ghirapur = shim.app.innerHTML;
+  assert.ok(ghirapur.includes('Ghirapur') && ghirapur.includes('Miastem Indygo'),
+    'hasło Ghirapur: brak definicji');
+  assert.ok(ghirapur.includes('Gearsmith Prodigy') && ghirapur.includes('Ghirapur Gearcrafter') && ghirapur.includes("Merchant's Dockhand"),
+    'hasło Ghirapur: brak backlinków z kart Kaladeshu');
+  assert.ok(ghirapur.includes('#/mapa/kaladesh?x=0.65625&amp;y=0.6182'),
+    'hasło Ghirapur: brak deep-linka do miasta');
+
+  shim.idz('#/haslo/konsulat-kaladeshu');
+  const konsulat = shim.app.innerHTML;
+  assert.ok(konsulat.includes('technokratyczna władza konsulów'),
+    'hasło Konsulat Kaladeshu: brak definicji');
+  assert.ok(konsulat.includes('Gearsmith Prodigy') && konsulat.includes('Ghirapur Gearcrafter') && konsulat.includes("Merchant's Dockhand"),
+    'hasło Konsulat Kaladeshu: brak backlinków z kart Kaladeshu');
+  assert.ok(konsulat.includes('#/mapa/kaladesh?x=0.6569&amp;y=0.6129'),
+    'hasło Konsulat Kaladeshu: brak deep-linka do Iglicy Eteru');
 
   // ADR 0030: format Karty Katalogowej jest LORE-first — technikalia w infoboksie,
   // mechanika jako opowieść dopiero pod koniec; sekcje „Ilustracja"/„Druk w Kolekcji" nie istnieją
@@ -579,8 +598,8 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/');
   // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — najnowsza dostawa
-  // Wiedźmina musi wejść do skrótu na stronie głównej.
-  assert.ok(shim.app.innerHTML.includes('Ironclad Slayer'), 'home: brak najnowszej materializacji');
+  // Kaladeshu musi wejść do skrótu na stronie głównej.
+  assert.ok(shim.app.innerHTML.includes("Merchant's Dockhand"), 'home: brak najnowszej materializacji');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();

@@ -69,15 +69,18 @@ węzeł kolei z kopułą i Ogrodem Posągów), **Bastion Czcigodnych**
 (ośmiokątna kwatera straży Konsulatu, otoczona stawem, połączona
 czterema mostami), **Akhara** (okrągły plac-arena z amfiteatrem —
 miejsce publicznych egzekucji, zapłonu Chandry i wielkiego finału
-Targu Wynalazców), portowy **Bomat** z dokami, Nocnym Targowiskiem
-Gontiego i krętem The Dhund — siecią tuneli pod targiem, w której
-tajni agenci Konsulatu śledzą każdy nielegalny interes, hutniczy
-**Embraal** (dzielnica o antykonsulańskim duchu, z graffiti
-i Sudden Spectacles, w której mistrzowie konstruują thoptery, co
-ukazuje [[596ori-ghirapur-gearcrafter|Ghirapur Gearcrafter]], oraz Gremlin Hovels — opuszczoną, nigdy
-dokończoną fabryką, dziś największym gniazdem gremlinów), tor
-wyścigowy **Ovalchase**, ogrodowy **Greenwheel** z kopułami
-klimatycznymi i „Zoo” konstruktów, elfia rezydencjonalna **Kujar**
+Targu Wynalazców), portowy **Bomat** z dokami, magazynami, stoczniami,
+Nocnym Targowiskiem Gontiego i krętem The Dhund — siecią tuneli pod
+targiem, w której tajni agenci Konsulatu śledzą każdy nielegalny interes.
+Na nabrzeżu tej dzielnicy [[12aer-merchant-s-dockhand|Merchant's Dockhand]]
+sortuje skrzynie czterema chwytakami i pokazuje logistyczną stronę
+kupieckiego bogactwa. Dalej leży hutniczy **Embraal** (dzielnica o
+antykonsulańskim duchu, z graffiti i Sudden Spectacles, w której mistrzowie
+konstruują thoptery, co ukazuje [[596ori-ghirapur-gearcrafter|Ghirapur
+Gearcrafter]], oraz Gremlin Hovels — opuszczoną, nigdy dokończoną fabryką,
+dziś największym gniazdem gremlinów), tor wyścigowy **Ovalchase**, ogrodowy
+**Greenwheel** z kopułami klimatycznymi i „Zoo” konstruktów, elfia
+rezydencjonalna **Kujar**
 (układana zgodnie z elfią filozofią Wielkiego Przewodu, z dyskretnym
 Prakhata Club — elitarnym klubem aetherborna Gontiego), pionowy
 **Freejam** awiacji (smocza architektura, w najwyższych iglicach
@@ -161,10 +164,14 @@ wyłączona z braku odległości w kanonie. Pozycje są relacyjne (kanon
 podaje przynależność i sąsiedztwa, nie współrzędne); proweniencja
 każdej kotwicy w `map.json`, werdykt researchu w `zrodlo-research.md`.
 Pętla 2026-09-12 promuje etykiety L2 do kotwic dla Greenwheel, Embraal,
-The Zoo, Aetherflux Reservoir, Aether Hub, Eleven Bridges, Dukhara Canal,
-Aradara Station, Bastion, Akhara i pozostałych kluczowych POI Ghirapuru;
-to nadal wybory rekonstrukcyjne, nie kanoniczne adresy. Era
-Avishkar/Omenpathów dostanie osobną mapę, gdy przyjdzie karta.
+Bomat, The Zoo, Aetherflux Reservoir, Aether Hub, Eleven Bridges, Dukhara
+Canal, Aradara Station, Bastion, Akhara i pozostałych kluczowych POI
+Ghirapuru; to nadal wybory rekonstrukcyjne, nie kanoniczne adresy. Pinezki
+kart rozkładają się po dzielnicach: Greenwheel dla
+[[610m19-gearsmith-prodigy|Gearsmith Prodigy]], Embraal dla
+[[596ori-ghirapur-gearcrafter|Ghirapur Gearcrafter]] i Bomat dla
+[[12aer-merchant-s-dockhand|Merchant's Dockhand]]. Era Avishkar/Omenpathów
+dostanie osobną mapę, gdy przyjdzie karta.
 
 ## Źródła
 
@@ -184,6 +191,10 @@ Avishkar/Omenpathów dostanie osobną mapę, gdy przyjdzie karta.
   Freejam, Aleja Olbrzymów, Weldfast, Przykrycie i Surash,
   Shaila's Claim, Kuźnia Konsulów), trzy rzeki:
   https://mtg.wiki/page/Ghirapur
+- MTG Wiki, hasło Bomat — port Ghirapuru, doki, stocznie, kanały,
+  magazyny, aetherowe dźwigi, barki rzeczne, transport towarów przez miasto
+  i nadzór Konsulatu:
+  https://mtg.wiki/page/Bomat
 - „The Art of Magic: The Gathering — Kaladesh" (fragmenty w
   Concept Art Library) — Lathnu na Urwiskach Devra jako najodleglejsza
   placówka planu: pionowe klify i lodowaty wiatr, gospodarka oparta na
