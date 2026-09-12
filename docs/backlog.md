@@ -75,9 +75,24 @@ Innistrad. Próg spełniły treści kart `171isd-grizzled-outcasts` +
 Hasło nie ma pinezki — odsyła do kotwicy regionu
 `#/mapa/innistrad?x=0.41&y=0.727`.
 
+**Avacyn — wykonane 2026-09-12 (drugi przebieg pętli)**,
+`content/lore/avacyn.md`, klasa `postac`, plan Innistrad. Próg spełniły
+karty `171isd-grizzled-outcasts`, `181avr-spectral-prison`,
+`309isd-civilized-scholar`, `393dka-forge-devil`, `42isd-murder-of-crows`
+i `544avr-thraben-valiant`; wikilinki dopisane też na planie Innistradu
+oraz w hasłach Gavony/Kessig/Thraben/Stensia. Hasło nie ma pinezki — odsyła
+do Thraben/Helvaultu `#/mapa/innistrad?x=0.668&y=0.317`.
+
+**Devil's Breach — wykonane 2026-09-12 (drugi przebieg pętli)**,
+`content/lore/devils-breach.md`, klasa `geografia`, plan Innistrad. Próg
+spełniły karty `118mid-dire-strain-brawler`, `171isd-grizzled-outcasts`,
+`393dka-forge-devil` i `544avr-thraben-valiant`; wikilinki dopisane też na
+planie Innistradu i w haśle Kessig. Hasło nie ma pinezki — odsyła do
+istniejącej kotwicy rozpadliny `#/mapa/innistrad?x=0.392&y=0.945`.
+
 Encje nadal poniżej progu osobnego hasła albo wymagające dokładniejszej
-separacji zakresu: Ulvenwald, Devil's Breach, Nephalia, Markovowie,
-Kościół Avacyn/Katedra Avacyn, Skirsdag.
+separacji zakresu: Ulvenwald, Nephalia, Markovowie, Kościół Avacyn/Katedra
+Avacyn, Helvault, Griselbrand, Ashmouth, Skirsdag.
 
 ## Kolejka link-miningu: encje czekające na drugą kartę (Alara)
 

@@ -1,3 +1,28 @@
+## 2026-09-12 17:41 — Druga Pętla Jakości: Avacyn i Devil's Breach
+
+- **Link-mining:** drugi przebieg Innistradu utworzył hasła
+  **[[avacyn|Avacyn]]** i **[[devils-breach|Devil's Breach]]**. Avacyn
+  przekracza próg dzięki sześciu kartom (`171isd-grizzled-outcasts`,
+  `181avr-spectral-prison`, `309isd-civilized-scholar`,
+  `393dka-forge-devil`, `42isd-murder-of-crows`,
+  `544avr-thraben-valiant`); Devil's Breach dzięki czterem kartom
+  (`118mid-dire-strain-brawler`, `171isd-grizzled-outcasts`,
+  `393dka-forge-devil`, `544avr-thraben-valiant`).
+- **Zakres haseł:** Avacyn opisuje archanioła Sorina, Kościół, Helvault,
+  zniknięcie i powrót; Devil's Breach opisuje kessigijską rozpadlinę, dym,
+  diabły, kontrast z Ashmouth i wyprawę katarów z Thraben. Helvault,
+  Ashmouth, Griselbrand i Kościół Avacyn nie dostały osobnych haseł w tym
+  przebiegu.
+- **Mapa:** mapa Innistradu pozostaje T1 — bez doklejania nowych obiektów.
+  Avacyn prowadzi tylko deep-linkiem do Thraben/Helvaultu (`x: 0.668`,
+  `y: 0.317`), a Devil's Breach do istniejącej kotwicy rozpadliny
+  (`x: 0.392`, `y: 0.945`).
+- **Regresja:** `test/innistrad-link-mining.test.js` rozszerzono o progi
+  Avacyn/Devil's Breach, brak pinezek haseł i wikilinki kart/planów.
+- **Bramki końcowe:** 228/228 testów, build 74 strony (40 kart, 19 haseł,
+  15 planów) i 859 plików drzewa archiwum; map-audit 0; wiki-stats 100%
+  (7,5/8); `git diff --check` czysty.
+
 ## 2026-09-12 17:31 — Pętla Jakości: Gavony i Kessig (Innistrad)
 
 - **Link-mining:** po przeglądzie kart Innistradu powstały dwa hasła

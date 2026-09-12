@@ -4,6 +4,35 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-12 — PR-33 cd.: druga Pętla Jakości Innistradu, Avacyn i Devil's Breach
+
+Po zielonym zamknięciu pierwszej Pętli Jakości i zielonym CI PR #33 budżet
+sesji pozwolił na drugi przebieg od kroku integralności. Stan wejściowy:
+clean working tree, HEAD `5eef5a1`, `npm run test:all` 226/226, build 72
+strony (40 kart, 17 haseł, 15 planów), map-audit 0 i wiki-stats 100%.
+
+1. **Rozpoznanie link-miningu:** po materializacji Gavony/Kessigu ponad progiem
+   pozostały dwie mocne encje Innistradu: **Avacyn** i **Devil's Breach**.
+   Avacyn występowała w sześciu kartach, Devil's Breach w czterech.
+2. **Nowe hasła:** powstały `content/lore/avacyn.md` (`postac`) oraz
+   `content/lore/devils-breach.md` (`geografia`). Avacyn opisuje stworzenie
+   przez Sorina, Kościół, zasadę wiązania, Helvault, zniknięcie, powrót i
+   późniejszą tragedię; Devil's Breach opisuje kessigijską szczelinę, dym,
+   diabły, rolę wypraw katarów i kontrast z Ashmouth.
+3. **Wikilinki:** dopisano odsyłacze w kartach `171ISD`, `181AVR`, `309ISD`,
+   `393DKA`, `42ISD`, `544AVR`, `118MID`, na planie Innistradu i w hasłach
+   Gavony, Kessig, Thraben oraz Stensia.
+4. **Mapa:** pass mapowy nadal bez zmian rysunkowych, bo Innistrad jest T1.
+   Avacyn prowadzi deep-linkiem do Thraben/Helvaultu (`0.668/0.317`),
+   Devil's Breach do istniejącej kotwicy lokacji (`0.392/0.945`). Nie dodano
+   pinezek haseł.
+5. **Regresja:** `test/innistrad-link-mining.test.js` rozszerzono o progi
+   Avacyn i Devil's Breach, brak pinezek haseł i linki kart/planów.
+
+Bramki końcowe po drugim przebiegu: **228/228 testów**, build **74 strony**
+(40 kart, 19 haseł, 15 planów) i **859 plików drzewa archiwum**, map-audit
+0, wiki-stats 100% (7,5/8), czysty `git diff --check`.
+
 ## 2026-09-12 — PR-33 cd.: Pętla Jakości Innistradu, Gavony i Kessig
 
 Po domknięciu 516RNA właściciel uruchomił Pętlę Jakości z instrukcją

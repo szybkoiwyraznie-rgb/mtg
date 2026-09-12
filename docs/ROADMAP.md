@@ -464,6 +464,19 @@ Gavony `2011-09-28`. **226/226 testów**; build 72 strony (40/17/15) /
 859 plików drzewa archiwum; map-audit 0; wiki-stats 100%. Handoff:
 `docs/setup/HANDOFF_2026-09-12-pr33.md`.
 
+**PR-33 cd. (2026-09-12) — druga Pętla Jakości: Avacyn i Devil's Breach.**
+Po czystym stanie i zielonym CI powstały hasła `avacyn` (`postac`) oraz
+`devils-breach` (`geografia`). Avacyn spina sześć kart Innistradu wokół
+stworzenia przez Sorina, Kościoła, Helvaultu, zniknięcia i powrotu;
+Devil's Breach spina cztery karty wokół kessigijskiej rozpadliny, diabłów,
+wypraw katarów i kontrastu z Ashmouth. Wikilinki dopięto w kartach 42ISD,
+118MID, 171ISD, 181AVR, 309ISD, 393DKA i 544AVR, na planie Innistradu oraz
+w hasłach Gavony/Kessig/Thraben/Stensia. Mapa T1 bez zmian rysunkowych;
+hasła prowadzą deep-linkami do Thraben/Helvaultu (`0.668/0.317`) i Devil's
+Breach (`0.392/0.945`). **228/228 testów**; build 74 strony (40/19/15) /
+859 plików drzewa archiwum; map-audit 0; wiki-stats 100%. Handoff:
+`docs/setup/HANDOFF_2026-09-12-pr33.md`.
+
 ## Wątki otwarte (czekają na decyzję właściciela)
 
 > **Zamknięte decyzją właściciela 2026-09-05 — NIE wracać do nich:**
