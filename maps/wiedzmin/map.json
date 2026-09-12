@@ -121,6 +121,19 @@
       "uklad": "złoty T1 — odczyt z mastera",
       "notka": "Wolne Miasto Novigrad u ujścia rzeki Pontar do Morza Wielkiego — kluczowy ośrodek handlowy, portowy i religijny Północy.",
       "pozycja_zrodlo": "kanon: Wieczny ogień + etykieta „Novigrad\" na masterze px (2000, 1700)"
+    },
+    {
+      "nazwa": "Velen",
+      "typ": "region",
+      "x": 0.4113,
+      "y": 0.2807,
+      "px_t1": [
+        2095,
+        2024
+      ],
+      "uklad": "złoty T1 — odczyt z mastera",
+      "notka": "Kotwica regionalna Velen/Ziemi Niczyjej na południe od Pontaru, między Wrońcami a Gors Velen; nie wskazuje konkretnej wsi ani chaty.",
+      "pozycja_zrodlo": "kanon: Velen (ziemia niczyja), https://wiedzmin.fandom.com/wiki/Velen_(ziemia_niczyja) + regionalny odczyt Mapy Orteliusa T1 z mastera px (2095, 2024), 2026-09-12"
     }
   ],
   "pinezki": [
@@ -130,6 +143,13 @@
       "y": 0.3045,
       "pewnosc": "dokladna",
       "uzasadnienie": "Fabuła właściciela: mroczna komnata akademii w Aretuzie, czarodziejka w ciemnozielonej welurowej sukni manipulująca szafirowymi nićmi energii nad żelaznym astrolabium i płomieniem świecy. Aretuza to kanoniczna akademia czarodziejek na wyspie Thanedd w Zatoce Praksedy na wybrzeżu Temerii (odczyt z mastera px 2115, 2195; pewność dokladna — wyspa Thanedd i ziggurat Aretuzy jednoznacznie zlokalizowane na mapie)."
+    },
+    {
+      "karta": "555dsk-bedhead-beastie",
+      "x": 0.4113,
+      "y": 0.2807,
+      "pewnosc": "region",
+      "uzasadnienie": "Fabuła właściciela umieszcza opuszczoną wskutek wojny chatę na bagnach Velen, bez nazwy wsi, mokradła lub posterunku. Pinezka dziedziczy regionalną kotwicę Velen (odczyt z mastera px 2095, 2024); redańscy milicjanci są zgodni z sytuacją północnego pogranicza, ale nie zawężają miejsca."
     }
   ],
   "otwarte_na_kolejne_przejscia": [

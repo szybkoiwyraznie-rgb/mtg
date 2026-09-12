@@ -1,3 +1,25 @@
+## 2026-09-12 13:06 — Nowa karta: Bedhead Beastie (Wiedźmin)
+
+- **Materializacja karty:** **[[555dsk-bedhead-beastie|Bedhead Beastie]]**
+  (`555DSK`, wydanie `DSK` / *Duskmourn: House of Horror*, plan
+  [[wiedzmin|Wiedźmin]]) — w opuszczonej wskutek wojny chacie na bagnach
+  Velen kolosalny kudłaty bebok zaklinował na rogatym łbie szczątki łóżka
+  i siennika, a dwaj redańscy milicjanci wspólnie zwierają szyk w progu
+  (`{4}{R}{R}`, 5/6 Creature — Beast, Menace, Mountaincycling `{2}`).
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim
+  w `collection/entries/555dsk-bedhead-beastie.md`; pełny snapshot DSK
+  #125 żyje w `scryfall/555dsk-bedhead-beastie.json`. `555DSK` pozostaje
+  niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim
+  Scryfall.
+- **Pinezka i plan:** mapa Wiedźmina dostała regionalną kotwicę Velen i
+  pinezkę `region` (`x: 0.4113`, `y: 0.2807`; około `px_t1 [2095,
+  2024]`). Fabuła nie nazywa wsi, chaty, konkretnego bagna ani
+  posterunku. Strona planu opisuje wojenne Velen, folklor beboka i
+  ostrożne podobieństwo do biesa bez utożsamiania gatunku.
+- **Strażniki:** regresja rozdziela oba systemy numeracji i pilnuje
+  właścicielskiej Fabuły, parametrów druku, regionalnej pewności pinezki
+  oraz dokładnej zgodności współrzędnych z kotwicą Velen.
+
 ## 2026-09-11 23:28 — Nowa karta: Murder of Crows (Innistrad)
 
 - **Materializacja karty:** **[[42isd-murder-of-crows|Murder of Crows]]** (`42ISD`, wydanie `ISD` / *Innistrad*, plan [[innistrad|Innistrad]]) — na starym stensiańskim cmentarzu wielkie kruki przechwytują błękitne smugi wspomnień i ostatnie słowa unoszące się nad pustymi szatami oraz srebrną tarczą zmarłego strażnika (`{3}{U}{U}`, 4/4 Creature — Bird, Flying, śmierć innego stworzenia pozwala dobrać, a następnie odrzucić kartę).
