@@ -4,6 +4,48 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-12 — PR-33 cd.: 256ISD Frightful Delusion i stensiańska sypialnia
+
+Właściciel dostarczył `256ISD / Frightful Delusion / ISD / Innistrad` wraz z
+Fabułą o ciasnej sypialni gotyckiego domu: młoda kobieta budzi się w niemym
+krzyku, nad czołem formuje się bladoniebieska mgła z koszmarnymi twarzami, a
+świetlista smuga wchodzi przez ramię i znika w głowie, gdzie czyjaś magia
+miesza sen z rzeczywistością.
+
+1. **Materiał źródłowy:** utworzono
+   `collection/entries/256isd-frightful-delusion.md` z Fabułą właściciela i
+   `imgId: 256ISD` oraz pełny snapshot
+   `scryfall/256isd-frightful-delusion.json` dla Scryfall/Gatherer **ISD #57**
+   (multiverse ID `220031`). Notka numeracji jawnie ostrzega, że `256ISD` nie
+   jest numerem kolekcjonerskim, a `/cards/isd/256` wskazuje Swamp.
+2. **Karta Katalogowa:** `content/cards/256isd-frightful-delusion.md` jest
+   lore-first: przed mechaniką prowadzi przez Stensię, blady księżyc,
+   dogasającą świecę, młodą kobietę, mgłę, świetlistą smugę, niewidoczną
+   iluzjonistkę oraz inskrypcję o strachu prawdziwszym niż niepewny napastnik.
+3. **Transpozycja mechaniki:** `{2}{U}` i `Instant` zostały odczytane jako
+   nagłe wtargnięcie w wolę. Skontrowanie czaru, jeśli kontroler nie zapłaci
+   `{1}`, staje się przerwanym zamiarem; obowiązkowe odrzucenie karty — także
+   po zapłaceniu `{1}` — jest utratą myśli, wspomnienia lub planu.
+4. **Mapa:** `maps/innistrad/map.json` dostał wyłącznie pinezkę karty, nie
+   hasła. Pinezka ma pewność `region` i korzysta z kotwicy Stensii
+   (`0.228/0.317`), bo scena nie nazywa wsi, doliny, dworu, przełęczy ani
+   dokładnego adresu domu/sypialni.
+5. **Link-mining Innistradu:** istniejące hasło `content/lore/stensia.md` i
+   strona planu Innistrad zostały pogłębione o domową/psychiczną odmianę
+   stensiańskiej grozy. Nowych haseł dla koszmaru, snu ani iluzji nie
+   utworzono; decyzję zakresową zapisano w `docs/backlog.md`.
+6. **Dokumentacja i regresja:** dodano plan pracy
+   `docs/plans/PLAN_2026-09-12-256ISD.md`, aktualizacje `content/co-nowego.md`,
+   `docs/backlog.md`, `docs/ROADMAP.md`, handoff PR-33 oraz test
+   `test/innistrad-256isd.test.js`. Test pilnuje Fabuły, rozdziału `256ISD`
+   od ISD #57, snapshotu, stensiańskiej sypialni, regionalnej pinezki i
+   mechaniki odrzucenia karty nawet po zapłaceniu `{1}`.
+
+Bramki końcowe: **279/279 testów**, build **90 stron** (45 kart, 30 haseł,
+15 planów; artefakt 1596.1 kB) i **853 pliki drzewa archiwum**
+(147754.1 kB), map-audit 0, wiki-stats 100% (7,3/8) oraz czysty
+`git diff --check`.
+
 ## 2026-09-12 — PR-33 cd.: 12AER Merchant's Dockhand i port Bomat
 
 Właściciel dostarczył `12AER / Merchant's Dockhand / AER / Kaladesh` wraz z

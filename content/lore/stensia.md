@@ -61,12 +61,28 @@ często wędruje dalej w raportach oraz traktatach. Tak poznaje ją
 swego gabinetu w Havengulu; żadne świadectwo nie prowadzi go osobiście do
 Stensii.
 
+Stensiańska groza nie kończy się jednak na otwartym polowaniu. W anonimowych
+domach i sypialniach ta sama mgła, słabe światło i izolacja potrafią zamienić
+sen w narzędzie ataku. [[256isd-frightful-delusion|Frightful Delusion]] pokazuje
+młodą kobietę w ciasnym gotyckim pokoju: bladoniebieska iluzja wchodzi przez
+skórę i głowę, podsuwając jej koszmar tak realny, że może przerwać zamiar i
+zabrać myśl jeszcze przed świtem. To prywatna odmiana tej samej prowincjonalnej
+bezradności, jaką na starym cmentarzu materializuje
+[[42isd-murder-of-crows|Murder of Crows]] — nie dokładny adres, lecz regionalny
+język Stensii: mgła, pamięć, noc i strach mocniejsze od ścian domu.
+
 ## Powiązane hasła
 
 - **[[thraben|Thraben]]** — metropolia w sąsiedniej [[gavony|Gavony]], będąca
   religijnym i militarnym przeciwieństwem wampirzej Stensii.
 - **[[innistrad|Innistrad]]** — gotycki plan grozy, którego najmroczniejszą
   prowincją jest Stensia.
+- **[[256isd-frightful-delusion|Frightful Delusion]]** — nocna iluzja w anonimowym
+  stensiańskim domu; przykład grozy psychicznej osadzonej regionalnie, bez
+  wskazania dokładnej wsi ani dworu.
+- **[[42isd-murder-of-crows|Murder of Crows]]** — stensiański cmentarz i motyw
+  pamięci/ostatnich słów, również przypięty do prowincji, nie do konkretnego
+  grafu.
 
 ## Na mapie
 

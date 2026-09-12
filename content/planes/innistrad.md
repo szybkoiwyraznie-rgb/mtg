@@ -80,7 +80,10 @@ rozpadem mnożą się geisty. Anonimowy cmentarz ukazany przez
 [[42isd-murder-of-crows|Murder of Crows]] należy do tej samej stensiańskiej
 tradycji grozy, choć nie zostaje utożsamiony z konkretnym grafem. Kruki nie
 szukają na nim ciał — chwytają błękitne ślady wspomnień i ostatnie słowa,
-które jeszcze nie zdążyły rozpłynąć się w Eterze.
+które jeszcze nie zdążyły rozpłynąć się w Eterze. Ta groza potrafi też wejść
+do prywatnego domu: [[256isd-frightful-delusion|Frightful Delusion]] zamyka
+ją w ciasnej sypialni, gdzie bladoniebieska iluzja miesza sen, strach i
+cudzą wolę bez wskazywania konkretnej stensiańskiej osady.
 
 **Nephalia** (wschód i wybrzeże) — mgliste porty u ujść rzek, srebrne
 plaże i bagna **Morkrut**. **Havengul** jest największym z jej miast (gdzie

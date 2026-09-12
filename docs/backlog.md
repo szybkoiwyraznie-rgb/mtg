@@ -155,6 +155,15 @@ też na planie Innistradu oraz w hasłach Avacyn/Gavony/Thraben/Devil's
 Breach. Hasło nie ma pinezki — odsyła do Thraben/Katedry
 `#/mapa/innistrad?x=0.668&y=0.317`.
 
+**Stensia — uzupełnione po `256ISD` (PR-33)**, istniejące hasło
+`content/lore/stensia.md`, klasa `geografia`, plan Innistrad. Nowa karta
+`256isd-frightful-delusion` dołożyła wariant domowej/psychicznej grozy:
+ciasna sypialnia w anonimowym stensiańskim domu, bladoniebieska iluzja,
+sen przerwany strachem i utrata myśli. Hasło nadal nie ma pinezki — pinezki
+pozostają wyłącznie przy kartach `42isd-murder-of-crows` i
+`256isd-frightful-delusion`, obie z pewnością `region` na kotwicy Stensii
+`#/mapa/innistrad?x=0.228&y=0.317`.
+
 Encje nadal poniżej progu osobnego hasła albo wymagające dokładniejszej
 separacji zakresu: Ulvenwald, Nephalia, Markovowie, Kościół Avacyn/Katedra
 Avacyn, Griselbrand, Shilgengar, Skirsdag.

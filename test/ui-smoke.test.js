@@ -404,8 +404,9 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (44)'), 'lista kart: brak 44 kart');
-  assert.ok(lista.includes("Merchant's Dockhand"), 'lista kart: brak najnowszej materializacji 12AER');
+  assert.ok(lista.includes('Karty Katalogowe (45)'), 'lista kart: brak 45 kart');
+  assert.ok(lista.includes('Frightful Delusion'), 'lista kart: brak najnowszej materializacji 256ISD');
+  assert.ok(lista.includes("Merchant's Dockhand"), 'lista kart: brak materializacji 12AER');
   assert.ok(lista.includes('Ironclad Slayer'), 'lista kart: brak materializacji 594EMN');
   assert.ok(lista.includes('Candlegrove Witch'), 'lista kart: brak materializacji 599MID');
   assert.ok(lista.includes('Knight of the Skyward Eye'), 'lista kart: brak materializacji 242ALA');
@@ -552,8 +553,17 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(karta3.indexOf('<h2>Na Mapie</h2>') < karta3.indexOf('<h2>Mechanika jako Opowieść</h2>'), 'karta 137GPT: mechanika ma być po mapie/transpozycji');
   assert.ok(karta3.indexOf('<h2>Mechanika jako Opowieść</h2>') < karta3.indexOf('<h2>Źródła</h2>'), 'karta 137GPT: mechanika ma stać przed źródłami');
 
-  // 42ISD: rodzima karta Innistradu — stensiański cmentarz, regionalna
-  // pinezka i dane właściwego druku ISD #70.
+  // 256ISD/42ISD: rodzime karty Innistradu — Stensia z regionalnymi pinezkami
+  // i dane właściwych druków ISD #57/#70, bez mylenia z imgId właściciela.
+  shim.idz('#/karta/256isd-frightful-delusion');
+  const karta256 = shim.app.innerHTML;
+  assert.ok(karta256.includes('<h1>Frightful Delusion</h1>'), 'karta 256ISD: brak tytułu');
+  assert.ok(karta256.includes('Instant'), 'karta 256ISD: brak typu ze snapshotu');
+  assert.ok(karta256.includes('Whether he actually exists'), 'karta 256ISD: brak flavoru ISD #57');
+  assert.ok(karta256.includes('href="#/haslo/stensia"'), 'karta 256ISD: brak wikilinku do Stensii');
+  assert.ok(karta256.includes('#/mapa/innistrad?pin=256isd-frightful-delusion'),
+    'karta 256ISD: brak deep-linka regionalnej pinezki');
+
   shim.idz('#/karta/42isd-murder-of-crows');
   const karta42 = shim.app.innerHTML;
   assert.ok(karta42.includes('<h1>Murder of Crows</h1>'), 'karta 42ISD: brak tytułu');
@@ -598,8 +608,8 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/');
   // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — najnowsza dostawa
-  // Kaladeshu musi wejść do skrótu na stronie głównej.
-  assert.ok(shim.app.innerHTML.includes("Merchant's Dockhand"), 'home: brak najnowszej materializacji');
+  // Innistradu musi wejść do skrótu na stronie głównej.
+  assert.ok(shim.app.innerHTML.includes('Frightful Delusion'), 'home: brak najnowszej materializacji');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();

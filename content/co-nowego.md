@@ -1,3 +1,31 @@
+## 2026-09-12 21:50 — Nowa karta: Frightful Delusion (Innistrad)
+
+- **Materializacja karty:** **[[256isd-frightful-delusion|Frightful Delusion]]**
+  (`256ISD`, wydanie `ISD` / *Innistrad*, plan [[innistrad|Innistrad]]) — w
+  ciasnej sypialni gotyckiego domu w [[stensia|Stensii]] młoda kobieta budzi
+  się w niemym krzyku, gdy bladoniebieska mgła i świetlista smuga wprowadzają
+  do jej snu cudze przerażenie.
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana w
+  `collection/entries/256isd-frightful-delusion.md`; pełny snapshot ISD #57
+  żyje w `scryfall/256isd-frightful-delusion.json`. `256ISD` pozostaje
+  niezależnym `imgId` właściciela — nie jest numerem kolekcjonerskim; Scryfall
+  `/cards/isd/256` prowadzi do Swamp, a właściwy Frightful Delusion to ISD #57
+  z multiverse ID `220031`.
+- **Pinezka i plan:** `maps/innistrad/map.json` dodaje wyłącznie pinezkę karty
+  z pewnością `region` na kotwicy Stensii (`x=0.228`, `y=0.317`). Scena nie
+  nazywa domu, wsi, doliny, dworu ani przełęczy, więc nie udaje dokładnego
+  adresu sypialni.
+- **Link-mining:** istniejące hasło **[[stensia|Stensia]]** i strona planu
+  [[innistrad|Innistrad]] zostały pogłębione o domową/psychiczną odmianę
+  grozy: iluzja przerywa wolę i zostawia utraconą myśl bez tworzenia nowego
+  hasła dla koszmaru albo iluzji.
+- **Strażniki:** nowa regresja pilnuje Fabuły, rozdziału `256ISD` od ISD #57,
+  snapshotu, sypialni, bladoniebieskiej mgły, świetlistej smugi, rulingu o
+  odrzuceniu karty nawet po zapłaceniu `{1}` oraz regionalnej pinezki Stensii.
+- **Bramki końcowe:** 279/279 testów; build 90 stron (45 kart, 30 haseł,
+  15 planów), artefakt 1596.1 kB i 853 pliki drzewa archiwum; map-audit 0;
+  wiki-stats 100% (7,3/8); `git diff --check` czysty.
+
 ## 2026-09-12 21:33 — Nowa karta: Merchant's Dockhand (Kaladesh)
 
 - **Materializacja karty:** **[[12aer-merchant-s-dockhand|Merchant's
