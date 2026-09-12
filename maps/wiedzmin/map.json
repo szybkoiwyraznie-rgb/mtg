@@ -152,6 +152,13 @@
       "uzasadnienie": "Fabuła właściciela umieszcza opuszczoną wskutek wojny chatę na bagnach Velen, bez nazwy wsi, mokradła lub posterunku. Pinezka dziedziczy regionalną kotwicę Velen (odczyt z mastera px 2095, 2024); redańscy milicjanci są zgodni z sytuacją północnego pogranicza, ale nie zawężają miejsca."
     },
     {
+      "karta": "279m21-village-rites",
+      "x": 0.4113,
+      "y": 0.2807,
+      "pewnosc": "region",
+      "uzasadnienie": "Fabuła właściciela nazywa chatę sołtysa w Downwarren/Sztygarach oraz wodę z Krzywuchowych Moczarów, więc scena należy do południowego Velen. Globalny raster T1 nie zawiera osobnej etykiety tej wsi ani lokalnego planu chaty; pinezka dziedziczy regionalną kotwicę Velen (odczyt z mastera px 2095, 2024) i nie udaje dokładnego progu izby."
+    },
+    {
       "karta": "540dst-chittering-rats",
       "x": 0.4045,
       "y": 0.2469,

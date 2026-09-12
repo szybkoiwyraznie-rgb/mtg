@@ -404,7 +404,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (37)'), 'lista kart: brak 37 kart');
+  assert.ok(lista.includes('Karty Katalogowe (38)'), 'lista kart: brak 38 kart');
   assert.ok(lista.includes('Chittering Rats'), 'lista kart: brak najnowszej materializacji 540DST');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
     'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
@@ -425,6 +425,16 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
     'hasło Novigrad: brak backlinków z dwóch kart spełniających próg');
   assert.ok(novigrad.includes('#/mapa/wiedzmin?x=0.4045&amp;y=0.2469'),
     'hasło Novigrad: brak deep-linka do poprawionej kotwicy miejskiej');
+
+  shim.idz('#/haslo/velen');
+  const velen = shim.app.innerHTML;
+  assert.ok(velen.includes('północno-zachodni, podmokły region Temerii'),
+    'hasło Velen: brak definicji');
+  assert.ok(velen.includes('W kolekcji'), 'hasło Velen: brak automatycznych backlinków');
+  assert.ok(velen.includes('Village Rites') && velen.includes('Bedhead Beastie'),
+    'hasło Velen: brak backlinków z dwóch kart spełniających próg');
+  assert.ok(velen.includes('#/mapa/wiedzmin?x=0.4113&amp;y=0.2807'),
+    'hasło Velen: brak deep-linka do regionalnej kotwicy');
 
   // ADR 0030: format Karty Katalogowej jest LORE-first — technikalia w infoboksie,
   // mechanika jako opowieść dopiero pod koniec; sekcje „Ilustracja"/„Druk w Kolekcji" nie istnieją
@@ -517,9 +527,9 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   }
 
   shim.idz('#/');
-  // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — po dodaniu 612BLB
-  // najnowsza karta Śródziemia musi wejść do skrótu na stronie głównej.
-  assert.ok(shim.app.innerHTML.includes('Crumb and Get It'), 'home: brak najnowszej materializacji');
+  // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — najnowsza dostawa
+  // Wiedźmina musi wejść do skrótu na stronie głównej.
+  assert.ok(shim.app.innerHTML.includes('Village Rites'), 'home: brak najnowszej materializacji');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();

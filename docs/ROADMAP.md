@@ -414,9 +414,23 @@ materializacje:
 
 W każdej dostawie `imgId` właściciela jest jawnie oddzielone od collector
 number, a Fabuła została zachowana verbatim przed researchem. Finalne
-bramki: **207/207**, build 62 strony (37/10/15) / 853 pliki drzewa archiwum,
+bramki: **207/207**, build 62 strony (37/10/15) / 859 plików drzewa archiwum,
 map-audit 0, wiki-stats 100%. Szczegóły:
 `docs/setup/HANDOFF_2026-09-11-pr32.md`.
+
+**PR-33 (2026-09-12) — audyt PR-32 + 279M21 Village Rites.** Audyt PR-32
+zamknięty bez nowych P0/P1; raport wskazał trzy drobne follow-upy i zostały
+one obsłużone przed nową dostawą: liczniki drzewa w żywych dokumentach
+853→859, trailing whitespace w planach historycznych oraz nieużyte źródło
+Razor Fields w 347NPH. Nowa materializacja: **279M21 Village Rites** — M21
+#126, wiejski obrzęd w Downwarren/Sztygarach, szeptucha z Velen, księga
+rodowa długu i zapłaty, woda z Krzywuchowych Moczarów, gospodarz z
+Czarnoboru, klęczący parobek, biała koza z czerwoną wstążką i zakapturzeni
+sąsiedzi. Pinezka `region` dziedziczy kotwicę Velen (`0.4113/0.2807`), bo
+T1 nie rozrysowuje chaty ani wsi. Link-mining utworzył hasło `velen` po
+spełnieniu progu przez 555DSK i 279M21. **212/212 testów**; build 64 strony
+(38/11/15) / 859 plików drzewa archiwum; map-audit 0; wiki-stats 100%.
+Handoff: `docs/setup/HANDOFF_2026-09-12-pr33.md`.
 
 ## Wątki otwarte (czekają na decyzję właściciela)
 

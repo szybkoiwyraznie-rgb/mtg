@@ -1,3 +1,36 @@
+## 2026-09-12 15:10 — Nowa karta: Village Rites (Wiedźmin)
+
+- **Materializacja karty:** **[[279m21-village-rites|Village Rites]]**
+  (`279M21`, wydanie `M21` / *Core Set 2021*, plan [[wiedzmin|Wiedźmin]]) —
+  w chacie sołtysa w Downwarren/Sztygarach starsza szeptucha otwiera
+  księgę rodową długu i zapłaty, gospodarz z Czarnoboru trzyma misę wody z
+  Krzywuchowych Moczarów, parobek klęczy przy białej kozie z czerwoną
+  wstążką, a sąsiedzi w lnianych kapturach patrzą, jak wieś oddaje jedną
+  ofiarę za dwa nowe odczyty rachunku (`{B}`, Instant; dodatkowy koszt:
+  poświęć stworzenie, dobierz dwie karty).
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim
+  w `collection/entries/279m21-village-rites.md`; pełny snapshot M21 #126
+  żyje w `scryfall/279m21-village-rites.json`. `279M21` pozostaje
+  niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim
+  Scryfall/Gatherera.
+- **Pinezka i plan:** scena nazywa Downwarren/Sztygary oraz wodę z
+  Krzywuchowych Moczarów, ale globalny raster T1 nie rozrysowuje chaty ani
+  lokalnego planu wsi. Pinezka ma pewność `region` i dziedziczy kotwicę
+  [[velen|Velen/Ziemi Niczyjej]] (`x: 0.4113`, `y: 0.2807`; `px_t1 [2095,
+  2024]`).
+- **Link-mining i porządki po audycie:** powstało hasło geograficzne
+  **[[velen|Velen]]**, bo próg ≥2 kart spełniają Village Rites i Bedhead
+  Beastie. Przy okazji domknięto drobne pozycje z audytu PR-32: poprawiono
+  liczbę plików drzewa z 853 na 859 w żywych dokumentach, usunięto trailing
+  whitespace z historycznych planów i zdjęto nieużyte źródło Razor Fields z
+  Pristine Talisman.
+- **Strażniki:** dedykowana regresja pilnuje Fabuły, rozdziału `279M21` od
+  M21 #126, regionalnej pinezki, kozy jako dokładnie jednej ofiary, parobka
+  jako świadka oraz progu hasła Velen. UI oczekuje 38 Kart Katalogowych.
+- **Bramki końcowe:** 212/212 testów, build 64 strony (38 kart, 11 haseł,
+  15 planów) i 859 plików drzewa archiwum, map-audit 0, wiki-stats 100%,
+  czysty `git diff --check`.
+
 ## 2026-09-12 14:08 — Korekta pinezki Chittering Rats
 
 - Po uwadze właściciela ponownie sprawdzono master T1 Wiedźmina. Pierwotny

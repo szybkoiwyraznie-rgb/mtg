@@ -4,6 +4,53 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-12 — PR-33: audyt PR-32, naprawy Z1–Z3 i materializacja 279M21 Village Rites
+
+Sesja `arena/01a095bf-mtg`, PR #33. Najpierw domknięto audyt PR-32:
+raport `docs/audits/AUDYT_2026-09-12-PR32.md` nie znalazł nowych P0/P1,
+a PR #33 został zaktualizowany przez REST API po awarii `gh pr edit` na
+polu Projects classic. Następnie właściciel przekazał nową dostawę
+`279M21 / Village Rites / M21 / Wiedźmin` wraz z Fabułą obrzędu w chacie
+sołtysa w Downwarren/Sztygarach.
+
+1. **Wpis i snapshot:** Fabułę zapisano verbatim w
+   `collection/entries/279m21-village-rites.md`, a właściwy druk M21 #126
+   w `scryfall/279m21-village-rites.json`. Utrzymano twarde rozdzielenie
+   `imgId` właściciela `279M21` od numeru kolekcjonerskiego Scryfall/
+   Gatherer `126`.
+2. **Karta Katalogowa LORE-first:** `content/cards/279m21-village-rites.md`
+   rozwija scenę w Sztygarach: starsza szeptucha, księga rodowa z długiem
+   i zapłatą, gospodarz z Czarnoboru z wodą z Krzywuchowych Moczarów,
+   klęczący parobek, biała koza z czerwoną wstążką oraz zakapturzeni
+   sąsiedzi. „Village Rites” odczytano jako wiejskie obrzędy całej
+   wspólnoty; flavor jest rozliczeniem tych, którzy brali, lecz wahają się
+   oddać.
+3. **Mechanika:** `{B}` Instant wymaga dodatkowego kosztu poświęcenia
+   stworzenia i dobrania dwóch kart. W transpozycji jawnie poświęcana jest
+   koza; parobek pozostaje świadkiem długu, bo Fabuła nie dopisuje mu
+   śmierci. Dwie dobrane karty stają się dwiema stronami księgi rodowej:
+   długiem i zapłatą. Test pilnuje rulingu Gatherera: dokładnie jedno
+   stworzenie, bez dorzucania dodatkowych ofiar.
+4. **Mapa i hasło Velen:** scena nazywa Downwarren/Sztygary oraz
+   Krzywuchowe Moczary, ale globalny raster Orteliusa T1 nie ma planu wsi
+   ani chaty sołtysa. Pinezka 279M21 ma więc pewność `region` i dziedziczy
+   istniejącą kotwicę `Velen` (`x: 0.4113`, `y: 0.2807`, `px_t1 [2095,
+   2024]`). Po drugiej karcie odwołującej się do Velen powstało hasło
+   geograficzne `content/lore/velen.md`; wikilinki dopisano w 279M21 i
+   555DSK, bez osobnej pinezki hasła.
+5. **Naprawy follow-up z audytu PR-32:** w żywych dokumentach skorygowano
+   stale liczniki drzewa z 853 na rzeczywiste 859 plików, usunięto trailing
+   whitespace z historycznych planów 132GNT/42ISD/540DST/555DSK oraz zdjęto
+   nieużyte źródło Razor Fields z 347NPH Pristine Talisman.
+6. **Regresje:** `test/wiedzmin-279m21.test.js` pilnuje Fabuły, numeracji,
+   regionalnej pinezki, lokalizacji Sztygar/Krzywuchowych Moczarów, kozy
+   jako ofiary i progu hasła Velen. `test/ui-smoke.test.js` oczekuje 38
+   Kart Katalogowych i sprawdza widok hasła Velen z backlinkami.
+
+Bramki końcowe: **212/212 testów**, build **64 strony** (38 kart, 11 haseł,
+15 planów) i **859 plików drzewa archiwum**, map-audit 0, wiki-stats 100%
+(7,7/8), czysty `git diff --check`.
+
 ## 2026-09-12 — PR-32 cd.: materializacja 540DST Chittering Rats (sesja `arena/01a091f4-mtg`)
 
 Właściciel przekazał `540DST / Chittering Rats / DST / Wiedźmin` wraz z
@@ -54,7 +101,7 @@ kotwicę, pinezkę, deep-linki, opisy i regresje skorygowano na środek ikony
 miasta: `px_t1 [2060, 1780]`, czyli `0.4045/0.2469`.
 
 Bramki końcowe: **207/207 testów**, build **62 stron** (37 kart, 10
-haseł, 15 planów) i **853 pliki drzewa archiwum**, map-audit 0,
+haseł, 15 planów) i **859 plików drzewa archiwum**, map-audit 0,
 wiki-stats 100% (7,7/8), czysty `git diff --check`. Świeży preview
 aplikacji i mapy Wiedźmina odpowiada HTTP 200; payload zawiera kartę,
 hasło, współrzędne pinezki i deep-link powrotny.
@@ -92,7 +139,7 @@ verbatim jako pierwsza operacja na plikach.
    plan; `04ba588` dostarcza kartę, mapę, stronę planu, changelog i testy.
 
 Bramki końcowe: **201/201 testów**, build **60 stron** (36 kart, 9 haseł,
-15 planów) i **853 pliki drzewa archiwum**, map-audit 0, wiki-stats 100%
+15 planów) i **859 plików drzewa archiwum**, map-audit 0, wiki-stats 100%
 (7,7/8), czysty `git diff --check`. Świeży preview karty i mapy Wiedźmina
 działa na porcie 8000.
 
