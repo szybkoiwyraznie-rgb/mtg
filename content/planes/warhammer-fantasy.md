@@ -68,6 +68,24 @@ które po zwęszeniu krwi wpadają w morderczy szał. Karta
 [[83mm2-gorehorn-minotaurs|Gorehorn Minotaurs]] ukazuje ich
 niszczycielską szarżę przez bory Imperium.
 
+## Sylwania, wampiry i łowcy czarownic
+
+Na wschodnim skraju Imperium, między Stirlandem, Ostermarkiem i Górami
+Krańca Świata, leży **Sylwania** — kraina mgły, cmentarzy, wilgotnych
+lasów i zamków, których panowie zbyt często okazują się nieumarłymi.
+Formalnie pozostaje częścią porządku ludzkich prowincji, ale jej pamięć,
+ziemia i lęk mieszkańców są nierozerwalnie związane z **Vampire Counts**
+i rodem **von Carstein**. To przestrzeń, w której polityka szlachty,
+nekromancja i zabobon chłopskich wsi tworzą jedną, ponurą codzienność.
+
+Imperium odpowiada na takie zagrożenia łowcami czarownic i Templariuszami
+Sigmara: ludźmi pobożnymi, fanatycznymi, często bezlitosnymi, ścigającymi
+heretyków, mutantów, czarowników, kulty Chaosu oraz nieumarłych. Scena
+[[543isd-wooden-stake|Wooden Stake]] pokazuje tę walkę od strony narzędzia,
+nie wielkiej bitwy: pod omszałym grobowcem łowca czarownic musi doprowadzić
+wampira von Carstein do zwarcia i użyć dębowego kołka dokładnie w chwili,
+w której arystokratyczna pycha traci dystans.
+
 ## Mapa
 
 `maps/warhammer-fantasy/` — wariant **T1 (rastr z etykietami)**:
@@ -97,6 +115,10 @@ Pinezki na mapie (ADR 0043: tylko karty):
   **Worlds Edge Mountains** (Góry Krańca Świata u stóp Karak Osiem Szczytów),
   pewność region — wojenny trefniś plemienia Krzywego Księżyca tańczący
   na półce skalnej nad wąwozem.
+- **[[543isd-wooden-stake|Wooden Stake]]** (543ISD); **Sylwania** między
+  Stirlandem/Ostermarkiem a zachodnimi stokami Gór Krańca Świata, pewność
+  region — mgliste cmentarze i grobowiec nie są nazwane jako pojedyncza
+  nekropolia.
 
 ## Źródła
 
@@ -113,6 +135,20 @@ Pinezki na mapie (ADR 0043: tylko karty):
 - Warhammer Fantasy Wiki, *Gork and Mork* — dwaj bogowie-bracia
   zielonoskórych (przemoc sprytna i brutalna):
   https://warhammerfantasy.fandom.com/wiki/Gork_and_Mork
+- Warhammer Fantasy Wiki oraz Lexicanum, *Sylvania* — mroczna kraina na
+  wschodnim skraju Imperium, formalnie przy Stirlandzie, faktycznie kojarzona
+  z Vampire Counts i domeną von Carsteinów:
+  https://warhammerfantasy.fandom.com/wiki/Sylvania oraz
+  https://whfb.lexicanum.com/wiki/Sylvania
+- Warhammer Fantasy Wiki, *Witch Hunters* i *Templar Witch Hunter* —
+  imperialni łowcy czarownic / Templariusze Sigmara, ich mandat oraz katalog
+  wrogów obejmujący czarowników, heretyków, mutantów, nieumarłych i wampiry:
+  https://warhammerfantasy.fandom.com/wiki/Witch_Hunters oraz
+  https://warhammerfantasy.fandom.com/wiki/Templar_Witch_Hunter
+- Warhammer Fantasy Wiki, *Vampire Counts* i *Vampire* — wampirza arystokracja
+  Sylwanii, von Carsteinowie, moce wampirów i tradycyjne słabości:
+  https://warhammerfantasy.fandom.com/wiki/Vampire_Counts oraz
+  https://warhammerfantasy.fandom.com/wiki/Vampire
 - Lexicanum (WHFB), *Orc* — Badlands jako ojcowizna orków, życie dla
   walki, natura Waaagh!:
   https://whfb.lexicanum.com/wiki/Orc

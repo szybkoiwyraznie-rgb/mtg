@@ -32,6 +32,28 @@ Encje nadal poniżej progu osobnego hasła albo wymagające separacji zakresu:
 | stalowe miecze / łup z pobojowiska | rzemioslo/koncepcja | 594emn-ironclad-slayer | 1 karta + pytanie, czy sprzęt wojenny ma być hasłem, czy tylko motywem scen |
 | wiejskie szeptuchy/guślarki Velen | spolecznosc | 279m21-village-rites, 599mid-candlegrove-witch | wymaga osobnego rozpoznania zakresu; na razie role scen, nie jedna nazwana organizacja |
 
+## Link-mining Warhammer Fantasy (aktualizacja 2026-09-12)
+
+`543isd-wooden-stake` dołożył Sylwanię, łowców czarownic Imperium,
+wampiryczną arystokrację i ród von Carstein, ale nie odblokował osobnych
+haseł dla tych nowych encji: każda z nich ma na razie jedną scenę kartową.
+Wiedza żyje w karcie i na stronie planu Warhammer Fantasy; na mapie doszła
+wyłącznie pinezka karty oraz regionalna kotwica Sylvania.
+
+Szersze hasła Warhammera wymagają osobnej Pętli Jakości, bo część encji była
+powyżej progu już przed 543ISD i trzeba ustalić zakres bez hurtowego
+wikilinkowania wszystkiego naraz.
+
+| Encja | Klasa (docelowa) | Karty wspominające | Do hasła brakuje |
+|---|---|---|---|
+| Sylwania / Sylvania | geografia | 543isd-wooden-stake | 1 karta |
+| von Carsteinowie | spolecznosc/postac | 543isd-wooden-stake | 1 karta + decyzja zakresu rodu vs poszczególnych władców |
+| Vampire Counts / wampiry Sylwanii | spolecznosc/fauna | 543isd-wooden-stake | 1 karta + separacja ogólnych wampirów od frakcji Vampire Counts |
+| łowcy czarownic Imperium / Templariusze Sigmara | spolecznosc | 543isd-wooden-stake | 1 karta + rozstrzygnięcie zakresu zakonu, urzędu i archetypu |
+| Imperium | geografia/spolecznosc | 39mm2-brute-force, 83mm2-gorehorn-minotaurs, 543isd-wooden-stake | wymaga osobnego przebiegu link-miningu Warhammera; zakres państwa/prowincji jest większy niż pojedyncza dostawa |
+| Zielonoskórzy / Orkowie i Gobliny | spolecznosc | 39mm2-brute-force, 312m13-goblin-battle-jester | wymaga osobnego przebiegu link-miningu Warhammera |
+| Góry Krańca Świata | geografia | 312m13-goblin-battle-jester, 543isd-wooden-stake (relacja mapowa), plan warhammer-fantasy | policzyć tylko realne wzmianki w treści kart i ustalić zakres hasła |
+
 ## Kolejka link-miningu: encje czekające na drugą kartę (Śródziemie)
 
 Hasło powstaje, gdy ≥2 karty odwołują się do encji w treści (zasada

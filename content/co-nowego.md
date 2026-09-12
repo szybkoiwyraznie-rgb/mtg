@@ -1,3 +1,33 @@
+## 2026-09-12 23:13 — Nowa karta: Wooden Stake (Warhammer Fantasy)
+
+- **Materializacja karty:** **[[543isd-wooden-stake|Wooden Stake]]**
+  (`543ISD`, wydanie `ISD` / *Innistrad*, plan
+  [[warhammer-fantasy|Warhammer Fantasy]]) — na mglistych cmentarzach
+  Sylwanii imperialny łowca czarownic zapędza wampira rodu von Carstein
+  pod omszały grobowiec i przeciw jego nadnaturalnej pewności stawia
+  najprostsze narzędzie: dębowy kołek.
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim
+  w `collection/entries/543isd-wooden-stake.md`; pełny snapshot normalnego
+  druku żyje w `scryfall/543isd-wooden-stake.json`. `543ISD` pozostaje
+  niezależnym `imgId` właściciela — właściwy druk to **Wooden Stake,
+  ISD #237**, multiverse ID `226880`; bezpośrednie `/cards/isd/543` zwraca
+  `not_found`.
+- **Pinezka i plan:** `maps/warhammer-fantasy/map.json` dodaje wyłącznie
+  pinezkę karty z pewnością `region` na kotwicy Sylwanii (`x=0.487`,
+  `y=0.421`). Scena mówi o cmentarzach i grobowcu, ale nie nazywa miasta,
+  wsi, zamku ani konkretnej nekropolii.
+- **Link-mining:** Sylwania, von Carsteinowie, łowcy czarownic i Vampire
+  Counts pozostają poniżej progu osobnego hasła po jednej karcie; szerszy
+  Warhammerowy pass dla Imperium/Zielonoskórych/Gór Krańca Świata został
+  odnotowany w `docs/backlog.md`, bez tworzenia pinezek haseł.
+- **Strażniki:** nowa regresja pilnuje Fabuły, rozdziału `543ISD` od
+  ISD #237, pełnego snapshotu, bezbarwnego Equipmentu (`kolory: [C]` w
+  frontmatterze), dębowego kołka, von Carsteinów, mechaniki Vampire / braku
+  regeneracji oraz regionalnej pinezki Sylwanii.
+- **Bramki końcowe:** 292/292 testy; build 93 strony (47 kart, 31 haseł,
+  15 planów), artefakt 1637.1 kB i 853 pliki drzewa archiwum (148431.7 kB);
+  map-audit 0; wiki-stats 100% (7,3/8); `git diff --check` czysty.
+
 ## 2026-09-12 22:05 — Nowa karta: Gray Slaad (Forgotten Realms)
 
 - **Materializacja karty:** **[[234clb-gray-slaad|Gray Slaad]]** (`234CLB`,

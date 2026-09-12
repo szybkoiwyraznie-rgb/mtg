@@ -4,6 +4,49 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-12 — PR-33 cd.: 543ISD Wooden Stake i Sylwania
+
+Właściciel dostarczył `543ISD / Wooden Stake / ISD / Warhammer Fantasy` wraz
+z Fabułą o mglistych cmentarzach mrocznej Sylwanii, bezwzględnych łowcach
+czarownic Imperium, dębowym kołku i wampirze rodu von Carstein zapędzonym
+pod ścianę omszałego grobowca. Fabuła została zachowana bez zmian w archiwum
+kolekcji.
+
+1. **Materiał źródłowy:** utworzono
+   `collection/entries/543isd-wooden-stake.md` z Fabułą właściciela i
+   `imgId: 543ISD` oraz pełny snapshot `scryfall/543isd-wooden-stake.json`
+   dla właściwego druku **Wooden Stake, ISD #237** (multiverse ID `226880`).
+   Notka numeracji jawnie ostrzega, że `543ISD` nie jest numerem
+   kolekcjonerskim, a `/cards/isd/543` zwraca `not_found`.
+2. **Karta Katalogowa:** `content/cards/543isd-wooden-stake.md` jest
+   lore-first: przed mechaniką prowadzi przez Sylwanię, cmentarze, grobowce,
+   łowców czarownic, von Carsteinów i prostotę dębowego kołka. Frontmatter
+   używa `kolory: [C]`, bo snapshot ma puste `colors`/`color_identity`, ale
+   rejestr kart wymaga niepustego tokenu koloru.
+3. **Mechanika:** `{2}` Artifact — Equipment, `+1/+0`, zdolność niszcząca
+   Vampire blokowanego albo blokującego wyposażoną istotę, brak regeneracji i
+   `Equip {1}` zostały związane z krótkim zwarciem pod grobowcem. Ruling
+   Scryfall/Gatherer z 2011-09-22 dopowiada, że Vampire ginie przed obrażeniami
+   bojowymi.
+4. **Mapa:** `maps/warhammer-fantasy/map.json` dostał regionalną kotwicę
+   Sylvania i wyłącznie pinezkę karty `543isd-wooden-stake` (`0.487/0.421`).
+   Scena nie nazywa miasta, wsi, zamku ani konkretnej nekropolii, więc nie
+   udaje dokładnego cmentarza.
+5. **Link-mining Warhammer Fantasy:** Sylwania, von Carsteinowie, łowcy
+   czarownic i Vampire Counts pozostają poniżej progu osobnego hasła po jednej
+   scenie kartowej. `docs/backlog.md` odnotowuje też, że szersze encje
+   Warhammera (Imperium, Zielonoskórzy, Góry Krańca Świata) wymagają osobnej
+   Pętli Jakości zamiast automatycznego hurtowego zakresu przy jednej dostawie.
+6. **Dokumentacja i regresja:** dodano plan pracy
+   `docs/plans/PLAN_2026-09-12-543ISD.md`, aktualizacje `content/co-nowego.md`,
+   `docs/backlog.md`, `docs/ROADMAP.md`, handoff PR-33 oraz test
+   `test/warhammer-543isd.test.js`. Smoke UI oczekuje 47 Kart Katalogowych i
+   renderuje nową stronę ze źródłowym Equipmentem oraz pinezką Sylwanii.
+
+Bramki końcowe: **292/292 testy**, build **93 strony** (47 kart, 31 haseł,
+15 planów; artefakt 1637.1 kB) i **853 pliki drzewa archiwum** (148431.7 kB),
+map-audit 0, wiki-stats 100% (7,3/8) oraz czysty `git diff --check`.
+
 ## 2026-09-12 — PR-33 cd.: 234CLB Gray Slaad i Wybrzeże Mieczy
 
 Właściciel dostarczył `234CLB / Gray Slaad / CLB / Forgotten Realms` wraz z

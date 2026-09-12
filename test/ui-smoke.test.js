@@ -404,8 +404,9 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (46)'), 'lista kart: brak 46 kart');
-  assert.ok(lista.includes('Gray Slaad'), 'lista kart: brak najnowszej materializacji 234CLB');
+  assert.ok(lista.includes('Karty Katalogowe (47)'), 'lista kart: brak 47 kart');
+  assert.ok(lista.includes('Wooden Stake'), 'lista kart: brak najnowszej materializacji 543ISD');
+  assert.ok(lista.includes('Gray Slaad'), 'lista kart: brak materializacji 234CLB');
   assert.ok(lista.includes('Frightful Delusion'), 'lista kart: brak materializacji 256ISD');
   assert.ok(lista.includes("Merchant's Dockhand"), 'lista kart: brak materializacji 12AER');
   assert.ok(lista.includes('Ironclad Slayer'), 'lista kart: brak materializacji 594EMN');
@@ -553,6 +554,18 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(!karta3.includes('Cory') && !karta3.includes('nr 21/165'), 'karta 137GPT: nie może epatować procesem wydawniczym');
   assert.ok(karta3.indexOf('<h2>Na Mapie</h2>') < karta3.indexOf('<h2>Mechanika jako Opowieść</h2>'), 'karta 137GPT: mechanika ma być po mapie/transpozycji');
   assert.ok(karta3.indexOf('<h2>Mechanika jako Opowieść</h2>') < karta3.indexOf('<h2>Źródła</h2>'), 'karta 137GPT: mechanika ma stać przed źródłami');
+
+  // 543ISD: bezbarwny Equipment źródłowo z ISD #237, ale transponowany
+  // do Warhammer Fantasy/Sylwanii; imgId właściciela pozostaje niezależny.
+  shim.idz('#/karta/543isd-wooden-stake');
+  const karta543 = shim.app.innerHTML;
+  assert.ok(karta543.includes('<h1>Wooden Stake</h1>'), 'karta 543ISD: brak tytułu');
+  assert.ok(karta543.includes('Artifact — Equipment'), 'karta 543ISD: brak typu ze snapshotu');
+  assert.ok(karta543.includes('Sylwanii'), 'karta 543ISD: brak osadzenia w Sylwanii');
+  assert.ok(karta543.includes('von Carstein'), 'karta 543ISD: brak rodu von Carstein');
+  assert.ok(karta543.includes('Equip'), 'karta 543ISD: brak mechaniki Equip');
+  assert.ok(karta543.includes('#/mapa/warhammer-fantasy?pin=543isd-wooden-stake'),
+    'karta 543ISD: brak deep-linka regionalnej pinezki Sylwanii');
 
   // 256ISD/42ISD: rodzime karty Innistradu — Stensia z regionalnymi pinezkami
   // i dane właściwych druków ISD #57/#70, bez mylenia z imgId właściciela.
