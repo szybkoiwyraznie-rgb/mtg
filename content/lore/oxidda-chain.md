@@ -12,7 +12,7 @@ materializacja: 2026-09-09
 
 **Oxidda Chain** to czerwony region [[mirrodin|Mirrodinu]]: pas rdzawych gór,
 żelaznych stoków i wypalonych płaskowyżów, nad którymi świeciło słońce
-**Sky Tyrant**. Była ojczyzną **Vulshoków**, domem goblinów klanu **Krark**
+**Sky Tyrant**. Była ojczyzną **[[vulshok|Vulshoków]]**, domem goblinów klanu **Krark**
 i miejscem, gdzie ogień kuźni stykał się z presją [[nowa-phyrexia|Nowej Phyrexii]]
 rosnącej spod powierzchni planu.
 
@@ -27,9 +27,9 @@ kuźń i żywego ognia planu. Od strony środka świata góry dochodziły do
 **Glimmervoid**, a od południowego wschodu czuły napór [[mephidross|Mephidrossu]],
 który z czasem coraz mocniej podżerał ich zbocza.
 
-### Dom Vulshoków i Kuldothy
+### Dom [[vulshok|Vulshoków]] i Kuldothy
 
-To tutaj żyli **Vulshokowie** — ludzie Mirrodinu zrośnięci z metalem
+To tutaj żyli **[[vulshok|Vulshokowie]]** — ludzie Mirrodinu zrośnięci z metalem
 silniej niż większość innych kultur planu. Słynęli jako najlepsi kowale
 świata, twórcy broni, pancerzy i przedmiotów z darksteel, ale także jako
 czarownicy bitewni władający ogniem, błyskawicą i samym metalem gór.
@@ -42,11 +42,11 @@ Ich kultura dzieliła się na sześć plemion kuźni: **Młota**, **Ostrza**,
 ### Wojna i cofająca się granica
 
 W epoce powrotu Phyrexii Oxidda stała się jednocześnie bastionem i frontem.
-Z jednej strony trzymały ją plemiona Vulshoków oraz ich warsztaty; z drugiej
+Z jednej strony trzymały ją plemiona [[vulshok|Vulshoków]] oraz ich warsztaty; z drugiej
 od wnętrza planu naciskała czerwona frakcja pieców, a od strony Drossu bagno
 wżerało się w skałę przez **Blackcleave**. Kanon późnej wojny mówi wprost,
 że spośród dawnych kultur powierzchni to właśnie [[auriok|Auriokowie]] i
-**Vulshokowie** najdłużej utrzymywali większe skrawki własnego gruntu,
+**[[vulshok|Vulshokowie]]** najdłużej utrzymywali większe skrawki własnego gruntu,
 ale oba ludy zostały przy tym straszliwie zdziesiątkowane.
 
 Dlatego Oxidda w kartach tej ery prawie nigdy nie jest spokojnym pejzażem.
@@ -73,9 +73,9 @@ Mephidrossem.
   https://mtg.wiki/page/Vulshok
 - MTG Wiki, Koth of the Hammer — pochodzenie Kotha z Oxiddy,
   napięcia między plemionami po skażeniu rudy i rola geomancji w świecie
-  Vulshoków: https://mtg.wiki/page/Koth_of_the_Hammer
+  [[vulshok|Vulshoków]]: https://mtg.wiki/page/Koth_of_the_Hammer
 - Planeswalker's Guide to Phyrexia: All Will Be One (2023) — późnowojenny
-  stan Mirran: tylko Auriokowie i Vulshokowie utrzymywali jeszcze część
+  stan Mirran: tylko Auriokowie i [[vulshok|Vulshokowie]] utrzymywali jeszcze część
   swego terenu, zanim opór przeszedł w ruch uchodźczy:
   https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-phyrexia-all-will-be-one
 - A Planeswalker's Guide to New Phyrexia: The Quiet Furnace (2011) —

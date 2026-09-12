@@ -72,7 +72,7 @@ się w mokradło.
 czynny wulkan i stolica goblinów czczących Stalową Matkę, z czerwoną
 lacuną („Łonem Stalowej Matki”) tuż obok. W tunelach **Krark-Home**
 żyje wyklęty klan Krark, w wioskach jak **Oxidagg** — sześć plemion
-Vulshoków, a w **Wailing Cairns** — iglicach z czaszek — demon
+[[vulshok|Vulshoków]], a w **Wailing Cairns** — iglicach z czaszek — demon
 Azax-Azog. Od Tangle góry dzieli tylko wąski pas Glimmervoid:
 **Copperline Gorge**.
 
@@ -109,7 +109,7 @@ przed niemal całkowitą zagładą. **Vedalken**
 Quicksilver Sea rządzą przez Synod i trzymają w poddaństwie **Neurok**;
 gonią za serum z blinkmothów. **Gobliny** Oxiddy czczą Kuźnię i Stalową
 Matkę; klan Krark wierzy, że pod Mirrodinem jest jeszcze jedna warstwa
-— i ma rację. **Vulshok** to sześć plemion kowali (Tarcza, Młot,
+— i ma rację. **[[vulshok|Vulshok]]** to sześć plemion kowali (Tarcza, Młot,
 Ostrze, Włócznia, Hełm, Kowadło). **Moriok** Mephidrossu to
 nekromanci władający **nim** — zombie wylęgłymi z toksycznych mgieł;
 ich panem jest Geth. Wszędzie kręcą się **myr** — srebrne konstrukty
@@ -164,7 +164,7 @@ który Karn nieświadomie przyniósł do jądra, wyszli na powierzchnię przez
 Mephidross (*Scars of Mirrodin*), oblegli plan (*Mirrodin Besieged*)
 i zdobyli go (*New Phyrexia*). Najeźdźca nie jest przy tym jednolity:
 pięć frakcji pod pięcioma pretorami odpowiada pięciu kolorom many.
-Na białej stronie działa **Ortodoksja Maszyn** pretorki **Elesh Norn** —
+Na białej stronie działa **[[ortodoksja-maszyn|Ortodoksja Maszyn]]** pretorki **Elesh Norn** —
 frakcja, która nie tyle podbija, co **nawraca**: ma hierarchię
 kapłanów zwanych **cenobitami**, pisane prawo (**Argent Etchings**)
 i obrzęd przyjęcia do wspólnoty. Compleation nazywa w nim
@@ -214,7 +214,8 @@ w `map.json`, werdykt researchu w `zrodlo-research.md`.
 - A Planeswalker's Guide to New Phyrexia: The Machine Orthodoxy (2011)
   — biała frakcja Phyrexii: cenobici jako kapłani inkwizycji, Argent
   Etchings jako pismo święte, Elesh Norn jako Wielka Cenobitka
-  naginająca doktrynę, compleation jako „konsekracja”:
+  naginająca doktrynę, compleation jako „konsekracja”; w Codexie jako
+  [[ortodoksja-maszyn|Ortodoksja Maszyn]]:
   https://magic.wizards.com/en/news/feature/planeswalkers-guide-new-phyrexia-machine-orthodoxy-2011-04-06
 - MTG Wiki, hasło Auriok — złoto w ciele, osady jako miasta-państwa,
   Accorders i Accord of Equity, mirroring z Bladehold, Cave of Light
@@ -231,7 +232,7 @@ w `map.json`, werdykt researchu w `zrodlo-research.md`.
   i Mephidrossu: https://mtg.wiki/page/Rey-Goor
 - MTG Wiki, hasło Glimmervoid — centralna równina, Razor Fields jako
   jej część, Ur-Golem Towers: https://mtg.wiki/page/Glimmervoid
-- MTG Wiki, hasło Oxidda Chain — Kuldotha, Krark-Home, Vulshok:
+- MTG Wiki, hasło Oxidda Chain — Kuldotha, Krark-Home, [[vulshok|Vulshok]]:
   https://mtg.wiki/page/Oxidda_Chain
 - MTG Wiki, hasło Quicksilver Sea — Lumengrid, Medev, Quicksilver
   Spires, Titan Forge, Darkslick: https://mtg.wiki/page/Quicksilver_Sea

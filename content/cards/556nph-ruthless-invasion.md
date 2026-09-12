@@ -18,7 +18,7 @@ pinezka:
 Na schyłku wojny o powierzchnię [[mirrodin|Mirrodinu]] nie wszystkie fronty
 pękły naraz. Najdłużej trzymały się te ludy, które potrafiły jeszcze
 zamieniać własne góry w broń: [[auriok|Auriokowie]] na ostrych polach północy
-oraz **Vulshokowie** w rdzawych pasmach [[oxidda-chain|Oxidda Chain]]. Ale nawet
+oraz **[[vulshok|Vulshokowie]]** w rdzawych pasmach [[oxidda-chain|Oxidda Chain]]. Ale nawet
 czerwone góry, hartowane od pokoleń ogniem kuźń i gniewem ludzi,
 w pewnym momencie przestają być twierdzą, a stają się pułapką. Żelazne
 płaskowyże rozgrzane do białości odbijają blask pożarów, dym z kuźń miesza
@@ -51,7 +51,7 @@ by zobaczyć jego rolę: nie herosa pierwszej linii, lecz dowódcę, który
 rozumie, kiedy bitwy nie da się już wygrać i trzeba ratować ludzi,
 a nie pozycję.
 
-**Vulshokowie** — czerwono-zestrojeni ludzie Mirrodinu, górale i kowale
+**[[vulshok|Vulshokowie]]** — czerwono-zestrojeni ludzie Mirrodinu, górale i kowale
 Oxiddy. Ich ciała przez pokolenia wrastały w metal tego planu tak mocno,
 że na barkach i czaszkach wyrastały im naturalne żelazne narośla, a włosy
 przypominały drut. Byli najlepszymi płatnerzami Mirrodinu i zarazem ludem,
@@ -61,7 +61,7 @@ oglądamy tu pojedynku, tylko przełamanie całej linii oporu.
 
 **Nowa Phyrexia** — najeźdźcy, którzy zdołali podbić Mirrodin dzięki temu,
 że rozbijali kultury planu osobno, zanim te nauczyły się walczyć razem.
-W późnych dniach wojny tylko Auriokowie i Vulshokowie utrzymywali jeszcze
+W późnych dniach wojny tylko Auriokowie i [[vulshok|Vulshokowie]] utrzymywali jeszcze
 większe skrawki swego świata, lecz ich populacje były już zdziesiątkowane.
 Dlatego tutaj inwazja jest „bezwzględna” nie przez sadyzm jednego potwora,
 lecz przez skalę: fala naciera tak masywnie, że obrońcy mogą już tylko
@@ -120,7 +120,7 @@ Scena jest rodzima dla Mirrodinu, więc transpozycja nie musi przenosić
 obrazu między światami; musi tylko ustawić go dokładniej w czasie i miejscu.
 Inskrypcja daje mechanikę przełamania oraz cytat Pythora o koniecznym odwrocie.
 Zapis właściciela dopowiada, że rzecz dzieje się na spalonych pustkowiach
-Oxiddy, przy improwizowanej barykadzie Vulshoków, którą taranuje kolos
+Oxiddy, przy improwizowanej barykadzie [[vulshok|Vulshoków]], którą taranuje kolos
 z płynnego metalu. Reszta świata układa się jasno: Oxidda jest ojczyzną
 Vulshoków, a schyłek wojny o powierzchnię to moment, w którym tylko oni
 oraz Auriokowie utrzymują jeszcze część własnego gruntu, choć za cenę
@@ -140,7 +140,7 @@ Pinezka o pewności **region**:
 [[oxidda-chain|Oxidda Chain]], na podejściu między **Oxidagg** a **Kuldothą**.
 
 Uzasadnienie jest mocne co do krainy, słabsze co do punktu. Zapis
-właściciela mówi o pustkowiach Oxiddy i o wojownikach **Vulshoków**, więc
+właściciela mówi o pustkowiach Oxiddy i o wojownikach **[[vulshok|Vulshoków]]**, więc
 scena musi leżeć w czerwonym łańcuchu gór, najrozsądniej przy jednym z ich
 znanych siedlisk. **Oxidagg** jest na mapie jawną wioską Vulshoków; z kolei
 **Kuldotha** i pobliskie lakuny tworzą naturalny kierunek presji ze strony
@@ -158,7 +158,7 @@ zostaje heroicznie zgnieciona po walce; linia przestaje istnieć jako linia.
 
 Szczególnie ważne jest słowo **nonartifact**. Na Mirrodinie niemal każdy
 nosi metal w ciele, ale nie każdy jest w sensie reguł **artefaktem**.
-Ludzie Vulshoków pozostają istotami z krwi i kości, choć żelazo wyrasta im
+Ludzie [[vulshok|Vulshoków]] pozostają istotami z krwi i kości, choć żelazo wyrasta im
 ze skóry. To właśnie oni muszą ustąpić. Jeśli coś może jeszcze twardo stać
 na drodze szarży, będą to konstrukty, myry, maszyny i czysto metalowe ciała
 — nie społeczność, którą Pythor próbuje ocalić.
@@ -179,10 +179,11 @@ ucieczka staje się jedynym wyjściem.
   Glimmervoid i Mephidrossu, Kuldotha, Vulshokowie, Krark-Home:
   https://mtg.wiki/page/Oxidda_Chain
 - MTG Wiki, Vulshok — sześć plemion kuźni, rola kowali i czarowników
-  bitewnych, naturalne żelazne narośla ciała:
+  bitewnych, naturalne żelazne narośla ciała; w Codexie osobne hasło
+  [[vulshok|Vulshokowie]] spina tę scenę z Pristine Talisman:
   https://mtg.wiki/page/Vulshok
 - Planeswalker's Guide to Phyrexia: All Will Be One (2023) — tylko
-  Auriokowie i Vulshokowie utrzymali dłużej własny teren; później Mirranie
+  Auriokowie i [[vulshok|Vulshokowie]] utrzymali dłużej własny teren; później Mirranie
   uczyli się działać jako wspólny ruch oporu pod presją zagłady:
   https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-phyrexia-all-will-be-one
 - A Planeswalker's Guide to New Phyrexia: The Quiet Furnace (2011) —
@@ -198,7 +199,7 @@ ucieczka staje się jedynym wyjściem.
 - **Oxidda pęka późno, ale pęka ciężko.** To jedna z ostatnich krain,
   które jeszcze stawiają większy opór, dlatego scena ma wagę końca epoki,
   nie zwykłej potyczki.
-- **Vulshokowie to lud żelaza, nie maszyny.** Naturalne metalowe narośla
+- **[[vulshok|Vulshokowie]] to lud żelaza, nie maszyny.** Naturalne metalowe narośla
   i kunszt kuźni nie czynią ich artefaktami; w starciu z tą kartą właśnie
   żywe ciała muszą ustąpić.
 - **Mechanika i flavor patrzą z dwóch stron tej samej bitwy.** Cytat należy

@@ -33,7 +33,7 @@
    "y": 0.2,
    "typ": "region",
    "pozycja_zrodlo": "kanon (mtg.wiki: Razor Fields = część Glimmervoid; W); pozycja N = wybór rekonstrukcji (cykl fastlandów: Seachrome Coast → Quicksilver Sea, Razorverge Thicket → Tangle)",
-   "notka": "pola razorgrass; Auriok i leonin; Taj-Nar, Bladehold, Ten Shields, Liet Field, Manka Run"
+   "notka": "pola razorgrass; Auriok i leonin; Taj-Nar, Bladehold, Ten Shields, Liet Field, Manka Run; rejon przejęcia/wyroku Ortodoksji Maszyn w 476MBS"
   },
   {
    "nazwa": "Quicksilver Sea",
@@ -57,7 +57,7 @@
    "y": 0.7556,
    "typ": "region",
    "pozycja_zrodlo": "kanon (mtg.wiki: góry planu; graniczy z Glimmervoid; Moons of Mirrodin: blisko Tangle przez wąski pas Glimmervoid — Copperline Gorge)",
-   "notka": "rdzawe góry; gobliny, Vulshok, klan Krark; Kuldotha / Great Furnace, Krark-Home, Oxidagg, Wailing Cairns"
+   "notka": "rdzawe góry; ojczyzna Vulshoków (hasło vulshok) i goblinów Krarku; Kuldotha / Great Furnace, Krark-Home, Oxidagg, Wailing Cairns"
   },
   {
    "nazwa": "Tangle",
@@ -81,7 +81,7 @@
    "y": 0.2949,
    "typ": "poi",
    "pozycja_zrodlo": "kanon (mtg.wiki: pod Taj-Nar; White Lacuna = Great Deep)",
-   "notka": "biała lacuna — gigantyczny tunel do pustego jądra planu, którym wystrzeliło białe słońce (Bringer)"
+   "notka": "biała lacuna — gigantyczny tunel do pustego jądra planu; regionalne tło przejętych miejsc świętych Aurioków/Ortodoksji Maszyn w 476MBS"
   },
   {
    "nazwa": "Bladehold",
@@ -185,7 +185,7 @@
    "y": 0.7126,
    "typ": "poi",
    "pozycja_zrodlo": "kanon (mtg.wiki: wioska Vulshok w górach); pozycja w paśmie = rekonstrukcja",
-   "notka": "Vulshok; Alderok/Vektro"
+   "notka": "wioska Vulshoków (Alderok/Vektro); pomocnicza kotwica dla sceny 556NPH i hasła vulshok"
   },
   {
    "nazwa": "Wailing Cairns",
@@ -337,14 +337,14 @@
    "x": 0.523,
    "y": 0.317,
    "pewnosc": "region",
-   "uzasadnienie": "Fabuła właściciela: katedralne korytarze Ortodoksji Maszyn, wyrok cenobity i odepchnięcie wojownika Aurioków przez wrota z powrotem na Razor Fields. Punkt na południowym skraju Razor Fields, na południowy wschód od Cave of Light (biała lakuna u podnóża Taj-Nar) i na granicy z Glimmervoid: scena wymaga katedry w Polach lub przy nich, a biała frakcja zajmuje białe miejsca święte — świątynia najeźdźcy przy przejętym sanktuarium Aurioków i leonin. Ani karta, ani Fabuła nie podają adresu katedry, stąd pewność 'region', nie 'dokladna'. Kanoniczna Fair Basilica to sfera PÓŹNIEJSZEJ epoki (po zwycięstwie Phyrexii, gdy powierzchnia stała się Mirrexem) i świadomie NIE jest utożsamiana z tą katedrą — scena dzieje się w erze Mirrodin Besieged."
+   "uzasadnienie": "Fabuła właściciela: katedralne korytarze Ortodoksji Maszyn (hasło ortodoksja-maszyn), wyrok cenobity i odepchnięcie wojownika Aurioków przez wrota z powrotem na Razor Fields. Punkt na południowym skraju Razor Fields, na południowy wschód od Cave of Light (biała lakuna u podnóża Taj-Nar) i na granicy z Glimmervoid: scena wymaga katedry w Polach lub przy nich, a biała frakcja zajmuje białe miejsca święte — świątynia najeźdźcy przy przejętym sanktuarium Aurioków i leonin. Ani karta, ani Fabuła nie podają adresu katedry, stąd pewność 'region', nie 'dokladna'. Kanoniczna Fair Basilica to sfera PÓŹNIEJSZEJ epoki (po zwycięstwie Phyrexii, gdy powierzchnia stała się Mirrexem) i świadomie NIE jest utożsamiana z tą katedrą — scena dzieje się w erze Mirrodin Besieged."
   },
   {
    "karta": "556nph-ruthless-invasion",
    "x": 0.3379,
    "y": 0.7363,
    "pewnosc": "region",
-   "uzasadnienie": "Fabuła właściciela: „na spalonych żelazem pustkowiach łańcucha Oxidda” hordy Nowej Phyrexii przełamują barykadę Vulshoków i zmuszają obrońców do odwrotu. Punkt w środkowo-zachodniej Oxiddzie, na podejściu między Oxidagg (jawna wioska Vulshoków) a Kuldothą (Wielka Kuźnia i naturalny kierunek presji ze strony świata pieców). Scena jest mocno osadzona w krainie Vulshoków, ale bez adresu jednego mostu czy jednej skały, stąd pewność „region”."
+   "uzasadnienie": "Fabuła właściciela: „na spalonych żelazem pustkowiach łańcucha Oxidda” hordy Nowej Phyrexii przełamują barykadę Vulshoków (hasło vulshok) i zmuszają obrońców do odwrotu. Punkt w środkowo-zachodniej Oxiddzie, na podejściu między Oxidagg (jawna wioska Vulshoków) a Kuldothą (Wielka Kuźnia i naturalny kierunek presji ze strony świata pieców). Scena jest mocno osadzona w krainie Vulshoków, ale bez adresu jednego mostu czy jednej skały, stąd pewność „region”."
   },
   {
    "karta": "347nph-pristine-talisman",
@@ -359,6 +359,7 @@
  "silnik": "mapforge (ADR 0018/0019/0020/0022/0023); styl atlas; glif `lacuna` (szyb do jądra) dodany dla tej mapy; kompas i skala wyłączone (sfera bez biegunów, skala w adnotacji)",
  "zrodlo_fanmapa": null,
  "otwarte_na_kolejne_przejscia": [
+  "DOMKNIĘTE 2026-09-12 (PR-33): link-mining Mirrodinu dodał hasła Ortodoksja Maszyn i Vulshokowie; mapa pozostaje T4 bez nowych pinezek haseł, tylko z uźródłowionymi kotwicami scen 476MBS (Razor Fields/Cave of Light) i 556NPH (Oxidda/Oxidagg).",
   "DODANE 2026-09-06 (PR-21, pakiet 2): mapa T4 pre-kompleacyjna. Nierozstrzygnięte w kanonie: (a) wiki mówi, że Tangle graniczy też z Quicksilver Sea, a „Moons of Mirrodin” — że morze leży „za górami od Tangle”; na jednej półkuli z cyklem fastlandów obu naraz spełnić się nie da — przyjęto cykl fastlandów (karty drukowane), kontakt Tangle↔morze możliwy poza widoczną półkulą; (b) Titan Forge, Medev, Oxidagg, Wailing Cairns, Temple Might, Cambree Garden, Outer Altar — pozycje wewnątrz regionów symboliczne. Raster fanowski od właściciela może je doprecyzować (tylko pozycje nieustalone).",
   "Kolejne karty Mirrodinu: sceny z MRD/DST/5DN/SOM/MBS/NPH (i Planechase/Commander z tej ery) pinują na tej mapie; sceny z przebudowanego planu (ONE/MOM — dziewięć sfer, Mirrex) wymagają osobnej mapy, tworzonej dopiero na żądanie karty (ADR 0033).",
   "2026-09-06 (po recenzji właściciela): lacuny przeniesione z glifu hedron na własny glif `lacuna`; etykieta Rey-Goor/(Black Bayou) rozsunięta; epoka mapy rozszerzona na całą wojnę o New Phyrexię."

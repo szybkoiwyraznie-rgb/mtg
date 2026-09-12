@@ -1,3 +1,31 @@
+## 2026-09-12 19:53 — Mirrodin: Ortodoksja Maszyn i Vulshokowie
+
+- **Link-mining Mirrodinu:** po czwartej karcie planu próg haseł przekroczyły
+  dwie społeczności: **[[ortodoksja-maszyn|Ortodoksja Maszyn]]**
+  (`476MBS` + `347NPH`) oraz **[[vulshok|Vulshokowie]]** (`556NPH` +
+  `347NPH`). Pierwsze hasło spina cenobicki wyrok z Banishment Decree
+  z porcelanowym kontrastem dla Pristine Talisman; drugie łączy barykadę
+  Oxiddy z szerokim ruchem oporu Mirran.
+- **Wikilinki i źródła:** odsyłacze trafiły do kart `347NPH`, `476MBS`,
+  `556NPH`, na plan [[mirrodin|Mirrodin]] oraz do powiązanych haseł
+  [[nowa-phyrexia|Nowa Phyrexia]], [[auriok|Auriokowie]] i
+  [[oxidda-chain|Oxidda Chain]]. Źródła obejmują oficjalny przewodnik
+  *A Planeswalker's Guide to New Phyrexia: The Machine Orthodoxy*,
+  *Planeswalker's Guide to Phyrexia: All Will Be One* oraz MTG Wiki
+  (`Vulshok`, `Oxidda Chain`, `Koth of the Hammer`, `New Phyrexia`).
+- **Mapa:** `maps/mirrodin/map.json` nie dodaje pinezek dla haseł.
+  Ortodoksja odsyła do regionalnej sceny 476MBS przy Razor Fields / Cave
+  of Light (`x=0.523`, `y=0.317`) jako adresu aneksu, nie stolicy frakcji;
+  Vulshokowie odsyłają do Oxidda Chain (`x=0.3736`, `y=0.7556`) jako domu
+  ludu, nie granicy jednego plemienia.
+- **Regresja:** nowy `test/mirrodin-link-mining.test.js` pilnuje progów dwóch
+  kart, wikilinków, braku pinezek haseł (ADR 0043), deep-linków mapowych,
+  notek kotwic i rozdzielenia powierzchni Mirrodinu od późniejszej topologii
+  dziewięciu sfer Nowej Phyrexii.
+- **Bramki końcowe:** 250/250 testów; build 82 strony (40 kart, 27 haseł,
+  15 planów); `map-audit` 0 problemów; `wiki-stats` 100% (7,3/8);
+  `git diff --check` czysty.
+
 ## 2026-09-12 19:34 — Dominaria: Sursi i Terisiare w Pętli Jakości
 
 - **Link-mining Dominarii:** po czterech kartach planu próg haseł przekroczyły

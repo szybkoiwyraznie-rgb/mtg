@@ -202,14 +202,29 @@ i w haśle Oxidda Chain. Sekcja „Na mapie” odsyła do Razor Fields
 (deep-link `?x=0.5&y=0.2`). Znaleziona przez repo-szeroki link-mining
 Pętli Jakości (plany z ≥2 kartami: Mirrodin ×3, Innistrad ×2).
 
+**Ortodoksja Maszyn — wykonane 2026-09-12 (kolejna pętla planu)**,
+`content/lore/ortodoksja-maszyn.md`, klasa `spolecznosc`, plan Mirrodin.
+Próg spełniły karty `476mbs-banishment-decree` +
+`347nph-pristine-talisman`: jedna pokazuje cenobicki wyrok i aneks-katedrę,
+druga kontrast nieskalanego talizmanu z porcelanowym dogmatem. Hasło nie
+ma pinezki — odsyła do regionalnego adresu sceny 476MBS
+`#/mapa/mirrodin?x=0.523&y=0.317` i nie utożsamia jej z późniejszą Fair
+Basilica dziewięciu sfer.
+
+**Vulshokowie — wykonane 2026-09-12 (kolejna pętla planu)**,
+`content/lore/vulshok.md`, klasa `spolecznosc`, plan Mirrodin. Próg
+spełniły karty `556nph-ruthless-invasion` + `347nph-pristine-talisman`: jedna
+scena ma barykadę Vulshoków w Oxiddzie, druga wymienia ich jako część
+szerszego mirrańskiego oporu. Hasło nie ma pinezki — odsyła do regionu
+Oxidda Chain `#/mapa/mirrodin?x=0.3736&y=0.7556`.
+
 Encje „o jedną kartę” od progu (skan boldów 2026-09-09):
 
 | Encja | Klasa (docelowa) | Karta wspominająca | Do progu brakuje |
 | --- | --- | --- | --- |
 | Elesh Norn | postac | 476mbs-banishment-decree (+ plan mirrodin, hasło nowa-phyrexia) | 1 karta |
-| Razor Fields, Ortodoksja Maszyn, Glimmervoid, Taj-Nar, Accorders, Argent Etchings, Cave of Light, Ten Shields | geografia/doktryna | 476mbs-banishment-decree (+ plan mirrodin) | 1 karta |
+| Razor Fields, Glimmervoid, Taj-Nar, Accorders, Argent Etchings, Cave of Light, Ten Shields | geografia/doktryna | 476mbs-banishment-decree (+ plan mirrodin, hasło ortodoksja-maszyn) | 1 karta |
 | Copperline Gorge, Radix, Rey-Goor | geografia | 488som-carapace-forger (+ plan mirrodin, hasło oxidda-chain) | 1 karta |
-| Vulshok | spolecznosc | 556nph-ruthless-invasion (+ plan mirrodin, hasło oxidda-chain) | 1 karta |
 | Pythor | postac | 556nph-ruthless-invasion | 1 karta |
 | Oona, Glen Elendra | postac/geografia | 605shm-consign-to-dream (+ plan lorwyn) | 1 karta |
 | Ashmouth, Kirch, Skirsdag, Mikaeusa, Katedra Avacyn, Devils' Breach | geografia | 393dka-forge-devil (+ plan innistrad, hasło thraben) | 1 karta |

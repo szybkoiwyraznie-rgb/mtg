@@ -61,7 +61,7 @@ lecz ostatecznie zawarli z nimi trwały pokój. Ich odwiecznymi
 przeciwnikami byli **Moriok**, **nim** i inne istoty [[mephidross|Mephidrossu]],
 gdy bagno zaczęło się rozrastać, a także armie artefaktów Memnarcha;
 o części zapasowe i artefakty rywalizowali z vedalkenami. Choć nigdy
-nie byli sojusznikami **Vulshoków**, oba ludy zjednoczyły się w obliczu
+nie byli sojusznikami **[[vulshok|Vulshoków]]**, oba ludy zjednoczyły się w obliczu
 phyrexiańskiej zagłady: Auriokowie okazali się **najbardziej odpornym
 na kompleację** ludem Mirrodinu — dobrowolną i wymuszaną — lecz i tak
 ginęli masowo. [1](https://mtg.wiki/page/Auriok)
@@ -72,8 +72,8 @@ Auriokowie to biała frakcja ludzka bloku Mirrodin/Scars of Mirrodin,
 reprezentowana w kartach oporu wobec Phyrexii. W Kodeksie zbiegają się
 w niej dwie sceny: [[476mbs-banishment-decree|Banishment Decree]] — gdzie
 wojownik Auriok zostaje osądzony i odesłany przez katedralne wrota
-Ortodoksji Maszyn — oraz [[556nph-ruthless-invasion|Ruthless Invasion]],
-w której Auriokowie i Vulshokowie do późnych dni wojny utrzymują jeszcze
+[[ortodoksja-maszyn|Ortodoksji Maszyn]] — oraz [[556nph-ruthless-invasion|Ruthless Invasion]],
+w której Auriokowie i [[vulshok|Vulshokowie]] do późnych dni wojny utrzymują jeszcze
 własny grunt. Ich hasło powstało z link-miningu Pętli Jakości: encja
 opisana w dwóch kartach, na planie i w haśle sąsiedniego regionu.
 
@@ -92,7 +92,7 @@ regionów).
   (*aurum*), banesaint, edgewrighci/steelshaperzy i *mirroring* z
   Bladehold, Cave of Light jako miejsce święte i szkoła czarodziejek,
   osady jako miasta-państwa, Accorderzy i *Accord of Equity*, konflikty
-  z leoninami/Moriok/nim/Memnarchem/vedalkenami, sojusz z Vulshokami
+  z leoninami/Moriok/nim/Memnarchem/vedalkenami, sojusz z [[vulshok|Vulshokami]]
   i największa odporność na kompleację, funkcjonalne wymarcie i ocaleni
   na Zhalfirze: [1](https://mtg.wiki/page/Auriok)
 - MTG Wiki, Razor Fields — pola razorgrass, niemal stałe nasłonecznienie,

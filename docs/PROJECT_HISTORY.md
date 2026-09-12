@@ -4,6 +4,37 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-12 — PR-33 cd.: Pętla Jakości Mirrodinu, Ortodoksja i Vulshokowie
+
+Po zielonym domknięciu Dominarii właściciel poprosił o kontynuację w kolejnym
+planie. Wybrano Mirrodin, bo czwarta karta planu (`347NPH Pristine Talisman`)
+odblokowała dwa progi ponad istniejącymi hasłami Mephidross / Oxidda Chain /
+Auriokowie / Nowa Phyrexia.
+
+1. **Rozpoznanie źródeł:** kwerenda objęła oficjalne WotC
+   *A Planeswalker's Guide to New Phyrexia: The Machine Orthodoxy*,
+   *Planeswalker's Guide to Phyrexia: All Will Be One* oraz MTG Wiki:
+   `Vulshok`, `Oxidda Chain`, `Koth of the Hammer` i `New Phyrexia (plane)`.
+2. **Nowe hasła:** powstały `content/lore/ortodoksja-maszyn.md` i
+   `content/lore/vulshok.md`, oba klasy `spolecznosc`, plan `mirrodin`, bez
+   frontmatterowych pinezek. Ortodoksja spina `476MBS` z `347NPH`, a
+   Vulshokowie spinają `556NPH` z `347NPH`.
+3. **Wikilinki:** dopisano odsyłacze w kartach `347nph-pristine-talisman`,
+   `476mbs-banishment-decree`, `556nph-ruthless-invasion`, na planie
+   Mirrodinu oraz w hasłach `nowa-phyrexia`, `auriok` i `oxidda-chain`.
+4. **Mapa:** Mirrodin pozostaje T4 bez nowych pinezek haseł. Ortodoksja
+   odsyła deep-linkiem do regionalnej sceny 476MBS przy Razor Fields / Cave
+   of Light (`0.523/0.317`), a Vulshokowie do Oxidda Chain
+   (`0.3736/0.7556`). Mapowe notki podkreślają, że Fair Basilica należy do
+   późniejszej dziewięciosferowej topologii, nie do powierzchniowej sceny
+   *Mirrodin Besieged*.
+5. **Regresja i dokumentacja:** dodano `test/mirrodin-link-mining.test.js`,
+   uzupełniono `content/co-nowego.md`, `docs/backlog.md` i plan pracy
+   `docs/plans/PLAN_2026-09-12-petla-jakosci-mirrodin.md`.
+
+Bramki końcowe: **250/250 testów**, build **82 strony** (40 kart, 27 haseł,
+15 planów), map-audit 0, wiki-stats 100% (7,3/8) i czysty `git diff --check`.
+
 ## 2026-09-12 — PR-33 cd.: Pętla Jakości Dominarii, Sursi i Terisiare
 
 Po domknięciu pętli Kaladeshu właściciel poprosił o kolejną Pętlę Jakości
