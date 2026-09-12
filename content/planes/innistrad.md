@@ -41,7 +41,7 @@ Avacyn: *co nie może być zniszczone, musi być związane* — i stąd
 
 ## Geografia
 
-**Gavony** — środek znanego świata, wyżyna skalistych wzgórz i serce
+[[gavony|**Gavony**]] — środek znanego świata, wyżyna skalistych wzgórz i serce
 ludzkiej cywilizacji. Na jej północnym skraju stoi [[thraben|**Thraben**]],
 największe miasto planu, opasane wieloma pierścieniami murów; rzeka
 **Kirch** spada obok niego do morza dwutysięcznostopowym wodospadem.
@@ -49,15 +49,15 @@ W Thraben wznosi się **Katedra Avacyn**, a w jej trójkątnym dziedzińcu
 stoi Helvault. Na południe ciągnie się **Nearheath** z parafiami
 winnic, lasu i skał (wsie **Hanweir**, **Estwald**), a dalej
 **Moorland** — największa i najgroźniejsza parafia, z wsią **Trostad**
-przy granicy Kessigu. W kaplicach prowincji uświęciciele
+przy granicy [[kessig|Kessigu]]. W kaplicach prowincji uświęciciele
 wiążą wrogów w eteryczne klatki snu, co ukazuje
 [[181avr-spectral-prison|Spectral Prison]]. W wiejskich gospodarstwach
-Gavony parobkowie z rodu Dire-strain skrywają pod ludzką skórą
+[[gavony|Gavony]] parobkowie z rodu Dire-strain skrywają pod ludzką skórą
 monstrualną bestię, terroryzując podwórza pod pełnią księżyca
 ([[118mid-dire-strain-brawler|Dire-Strain Brawler]]). Ludzi jest tu najwięcej, więc
 i **grafów** — cmentarzy — jest najwięcej, a wraz z nimi geistów i ghuli.
 
-**Kessig** (zachód) — kraina wiecznej jesieni i wielkiego lasu
+[[kessig|**Kessig**]] (zachód) — kraina wiecznej jesieni i wielkiego lasu
 **Ulvenwald**, zwanego Mglistym Borem. Ludzi mało, wilkołaków dużo.
 Watahę Hordy Krallen wędrującą pod ludzką postacią na skraj osad
 ukazuje [[171isd-grizzled-outcasts|Grizzled Outcasts]].
@@ -70,8 +70,8 @@ otworzyło się szerzej (gdzie wyprawę katarów prowadzi [[544avr-thraben-valia
 
 **[[stensia|Stensia]]** (północ) — ciemne góry **Geier Reach**, wieczna mgła
 i wampirze rody w izolowanych dworach. Prowadzą tu trzy przełęcze:
-**Kruin Pass** z Gavony, pilnowana przez **Markovów**, **Getander
-Pass** — jedyne wejście od Kessigu, obserwowane przez **Falkenrathów**
+**Kruin Pass** z [[gavony|Gavony]], pilnowana przez **Markovów**, **Getander
+Pass** — jedyne wejście od [[kessig|Kessigu]], obserwowane przez **Falkenrathów**
 — oraz **Ziel Pass**, jedyna droga ku morzu, przy której stoi
 **Voldaren Estate**. W centrum pasma zieje **Ashmouth**: największa
 brama do świata demonów i diabłów. Na obrzeżach torfowych **Farbogów**
@@ -145,8 +145,8 @@ raster (4096×3072), dostarczony przez właściciela. Wizards of the Coast
 nigdy nie wydał oficjalnej mapy Innistradu — przewodniki po planie mają
 wyłącznie szkice koncepcyjne regionów — więc żaden podkład kanoniczny
 nie istnieje i istnieć nie może. Wybrany raster jest opracowaniem
-fanowskim, ale jego geometria zgadza się z kanonem tekstowym: Gavony
-w centrum, Stensia na północy, Kessig na zachodzie, Nephalia na
+fanowskim, ale jego geometria zgadza się z kanonem tekstowym: [[gavony|Gavony]]
+w centrum, [[stensia|Stensia]] na północy, [[kessig|Kessig]] na zachodzie, Nephalia na
 wschodzie, Voldaren Estate na tyle blisko krawędzi gór, by widzieć
 wybrzeże. Codex nie dorysowuje własnych etykiet — raster ma swoje;
 sześćdziesiąt cztery **kotwice** w `map.json` służą wyszukiwarce
@@ -167,3 +167,5 @@ zmiany punktowe (Avabruck → Hollowhenge) opisano w notkach kotwic.
 6. [Plane Shift: Innistrad](https://media.wizards.com/2016/dnd/downloads/Plane_Shift_Innistrad.pdf) — opis diabłów: wygląd, wzrost, sabotaż jako specjalność.
 7. [A Planeswalker's Guide to Innistrad: Stensia and Vampires](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-stensia-and-vampires-2011-11-02) — Farbogi, stare grafy na ich obrzeżach i geisty mnożące się wraz z rozpadem grobów.
 8. [A Planeswalker's Guide to Innistrad: Nephalia and the Undead](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-nephalia-and-undead-2011-10-19) — niebieskie geisty jako projekcje umysłu, obsesji i zbiorowych wspomnień.
+9. [A Planeswalker's Guide to Innistrad: Gavony and Humans](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-gavony-and-humans-2011-09-28) — Gavony, Thraben, Katedra Avacyn, mury i parafialny krajobraz ludzkości.
+10. [A Planeswalker's Guide to Innistrad: Kessig and Werewolves](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-kessig-and-werewolves-2011-10-05) — Kessig, Ulvenwald, kultura prowincji, trasy i wilkołacze watahy.

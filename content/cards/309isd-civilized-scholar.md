@@ -25,7 +25,7 @@ lampie, nad księgą i we własnym oddechu.
 Dlatego **Civilized Scholar** tak dobrze pasuje do **Havengulu** w
 **Nephalii**. To portowe miasto żyje z handlu, wiedzy i rzeczy, które w
 innych prowincjach nazywano by bez wahania podejrzanymi. W gabinecie
-uczonego piętrzą się traktaty o furii wilkołaków z **Kessigu** i o głodzie
+uczonego piętrzą się traktaty o furii wilkołaków z [[kessig|**Kessigu**]] i o głodzie
 wampirzych dworów ze [[stensia|Stensii]] spod znaku **Markovów**. Poznaje te
 krainy z pism; opowieść nie prowadzi go osobiście do Stensii. Wszystko to
 ma posłużyć jako materiały do większej pracy: zrozumienia gniewu, zanim
@@ -57,7 +57,7 @@ odbiorca traktatów i raportów z prowincji. Jeśli ktoś chce opisać zagrożen
 Innistradu językiem przydatnym dla szkół, kapłanów i kancelarii, to właśnie
 ku Thraben skieruje swoje księgi.
 
-**Wilkołaki Kessigu i Markovowie ze [[stensia|Stensii]]** — dwa wielkie podręczniki
+**Wilkołaki [[kessig|Kessigu]] i Markovowie ze [[stensia|Stensii]]** — dwa wielkie podręczniki
 innistradzkiego lęku. Jedni mówią o gwałtowności, która rozdziera człowieka
 od środka. Drudzy o głodzie, który umie przywdziać maniery, heraldykę i
 pozór wyższej kultury. Uczony z Havengulu studiuje oba zjawiska, bo szuka

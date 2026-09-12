@@ -25,7 +25,7 @@ przy miejskich bramach — schodzą wprost do jego leży.
 
 Jednym z najniebezpieczniejszych celów tych wypraw staje się **Devil's
 Breach** (Diabelski Wyłom) — wulkaniczny wąwóz i głęboka, ziejąca żarem
-rozpadlina na południowych krańcach prowincji **Kessig**. Wraz
+rozpadlina na południowych krańcach prowincji [[kessig|**Kessig**]]. Wraz
 z **Ashmouth** w górach Geier Reach w Stensii, Devil's Breach stanowi
 główną bramę łączącą powierzchnię świata z podziemnymi czeluściami,
 z których wypełzają chmary złośliwych biesów i diabłów. W przeciwieństwie
@@ -45,8 +45,8 @@ nieodzownego przeciw stworom mroku — sięga po wielorzemienny bicz.
 Giętkie rzemienie pozwalają pochwycić skaczącego po skałach diabła
 w locie, spętać jego szpony i ściągnąć go w zasięg śmiertelnego cięcia.
 
-Dla zaprawionych w bojach łowców z Gavony polowanie na biesy staje się
-niemal rzemiosłem. Zdziesiątkowane posterunki i spalone wsie Kessigu
+Dla zaprawionych w bojach łowców z [[gavony|Gavony]] polowanie na biesy staje się
+niemal rzemiosłem. Zdziesiątkowane posterunki i spalone wsie [[kessig|Kessigu]]
 zostają pomszczone, a obcięte diabelskie ogony służą weteranom za
 ponure, lecz wymowne trofea. Każde powiększenie tego osobliwego zbioru
 oznacza kolejną zabezpieczoną szczelinę i kolejny krok ku odzyskaniu
@@ -56,19 +56,19 @@ kontroli nad granicami cywilizacji.
 
 **Weteranka z Thraben (Thraben Valiant)** — zaprawiona w bojach
 wojowniczka elitarnej gwardii z Thraben, dowodząca oddziałem katarów
-wyprawiających się w głąb Kessigu. Wyposażona w stalowy kirys, ciężki
+wyprawiających się w głąb [[kessig|Kessigu]]. Wyposażona w stalowy kirys, ciężki
 płaszcz, srebrny miecz oraz chwytny bicz.
 
 **Katarzy i gwardziści z Thraben** — regularne formacje zbrojne
 Kościoła Avacyn, które po odzyskaniu anielskiego wsparcia opuściły
 stołeczne mury, by prowadzić aktywne operacje oczyszczające prowincje.
 
-**Diabły z Kessigu** — małe, czerwonoskóre istoty o zrogowaciałej
+**Diabły z [[kessig|Kessigu]]** — małe, czerwonoskóre istoty o zrogowaciałej
 skórze i zagiętych rogach, lęgnące się w podziemnych piecach Devil's
 Breach i terroryzujące południowe rubieże.
 
 **Devil's Breach** — głęboka rozpadlina wulkaniczna na południu
-Kessigu, będąca jednym z dwóch naturalnych wyłomów prowadzących
+[[kessig|Kessigu]], będąca jednym z dwóch naturalnych wyłomów prowadzących
 do piekielnych czeluści planu.
 
 ## Nazwa Karty
@@ -100,11 +100,11 @@ i bezlitosnemu rewanżowi.
 ## Transpozycja
 
 Kronika przenosi scenę na krawędź **Devil's Breach** w południowym
-Kessigu, ukazując weterankę gwardii z [[thraben|Thraben]] przygotowującą
+[[kessig|Kessigu]], ukazując weterankę gwardii z [[thraben|Thraben]] przygotowującą
 się do zejścia w rozpadlinę:
 
 - **Wulkaniczny wąwóz Devil's Breach** — wierne osadzenie w topografii
-  Kessigu jako wyłomu piekielnego.
+  [[kessig|Kessigu]] jako wyłomu piekielnego.
 - **Rynsztunek weteranki** — lśniący stalowy napierśnik i ciężki skórzany
   płaszcz, dostosowane do żaru i dymu wulkanicznych rozpadlin.
 - **Podwójny oręż** — ostry srebrny miecz do zadawania śmiertelnych ciosów
@@ -119,7 +119,7 @@ zabezpieczając dawne punkty zapalne.
 ## Na Mapie
 
 Pinezka stoi na **Devils' Breach** (`x: 0.392`, `y: 0.945`)
-w południowym Kessigu — pewność **dokładna**, wyznaczona wprost przez
+w południowym [[kessig|Kessigu]] — pewność **dokładna**, wyznaczona wprost przez
 nazwę wąwozu w inskrypcji i opisie sceny.
 
 Zestawienie tej pozycji z innymi punktami planu ma kluczowe znaczenie
@@ -164,7 +164,7 @@ krawędzi otchłani.
 
 ## Podsumowanie Lore
 
-Na krawędzi siarkowego wąwozu Devil's Breach w południowym Kessigu
+Na krawędzi siarkowego wąwozu Devil's Breach w południowym [[kessig|Kessigu]]
 weteranka z Thraben zbiera oddział do szturmu na gniazdo biesów. Uzbrojona
 w srebrny miecz i wielorzemienny bicz, chroniona stalą i skórą,
 uosabia przejście Kościoła Avacyn do bezwzględnej kontrofensywy. Karta

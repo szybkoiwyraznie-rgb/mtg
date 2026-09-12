@@ -22,17 +22,17 @@ zamków oraz rozpadlin prowadzących do piekielnych czeluści — takich jak
 
 ### Bastion wampirzych linii
 
-Podczas gdy [[thraben|Thraben]] w Gavony stanowi bastion ludzkości i Kościoła
+Podczas gdy [[thraben|Thraben]] w [[gavony|Gavony]] stanowi bastion ludzkości i Kościoła
 Avacyn, Stensia od wieków pozostaje matecznikiem wampirów. To tutaj tysiąclecia
 wcześniej alchemik **Edgar Markov** stworzył pierwszy rytuał krwi, dając
 początek wampirzej arystokracji. Społeczeństwo prowincji dzieli się na
 izolowane doliny kontrolowane przez poszczególne linie krwi:
 - **Ród Markov** — najbardziej prestiżowy ród o potężnych zdolnościach
   psionicznych, rezydujący w Markov Manor nad przełęczą Kruin Pass
-  (strzegącą wjazdu od strony Gavony);
+  (strzegącą wjazdu od strony [[gavony|Gavony]]);
 - **Ród Falkenrath** — drapieżna, wyspecjalizowana w polowaniach i locie
   linia władająca posępnym zamkiem Castle Falkenrath oraz przełęczą
-  Getander Pass (wiodącą do Kessigu);
+  Getander Pass (wiodącą do [[kessig|Kessigu]]);
 - **Ród Voldaren** — władający posiadłościami na krańcu Geier Reach
   przy Ziel Pass, jedynej drodze ku morzu i Nephalii. [2](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-stensia-and-vampires-2011-11-02)
 
@@ -48,7 +48,7 @@ i popiołem przepaść wulkaniczna, będąca największą naturalną bramą do
 podziemnych sfer demonów i diabłów. To z kominów i szczelin wokół Ashmouth
 na powierzchnię przedostają się m.in. złośliwe, miotające iskrami diabły
 (jak [[393dka-forge-devil|Forge Devil]]), nękające zarówno ludzkie
-osady, jak i kuźnie na pograniczu Stensii i Gavony. [3](https://www.mtgsalvation.com/articles/49486-archive-trap-the-world-of-innistrad)
+osady, jak i kuźnie na pograniczu Stensii i [[gavony|Gavony]]. [3](https://www.mtgsalvation.com/articles/49486-archive-trap-the-world-of-innistrad)
 
 ### Życie w cieniu drapieżników
 
@@ -63,7 +63,7 @@ Stensii.
 
 ## Powiązane hasła
 
-- **[[thraben|Thraben]]** — metropolia w sąsiedniej Gavony, będąca
+- **[[thraben|Thraben]]** — metropolia w sąsiedniej [[gavony|Gavony]], będąca
   religijnym i militarnym przeciwieństwem wampirzej Stensii.
 - **[[innistrad|Innistrad]]** — gotycki plan grozy, którego najmroczniejszą
   prowincją jest Stensia.

@@ -15,7 +15,7 @@ pinezka:
 
 ## Kronika Lore
 
-W prowincji **Kessig** na [[innistrad|Innistradzie]] las nie kończy
+W prowincji [[kessig|**Kessig**]] na [[innistrad|Innistradzie]] las nie kończy
 się tam, gdzie zaczynają się płoty ludzkich osad. Bory **Ulvenwaldu**
 otaczają wsie ze wszystkich stron, a granica między człowiekiem
 a drapieżnikiem bywa zatarta bardziej, niż ktokolwiek chciałby
@@ -61,7 +61,7 @@ na czele oddziału i skupiający na sobie czujne spojrzenia mieszkańców.
 żyjąca w ciągłym lęku przed pełnią księżyca; zza przymkniętych okiennic
 obserwują nieproszonych gości, nie otwierając bram.
 
-**Kessig i Ulvenwald** — lesista prowincja i pierwotny bór, stanowiące
+[[kessig|**Kessig**]] i **Ulvenwald** — lesista prowincja i pierwotny bór, stanowiące
 matecznik wilkołaczych watah na Innistradzie.
 
 ## Nazwa Karty
@@ -109,8 +109,8 @@ ludzie w odciętych parafiach zdani są wyłącznie na własną czujność.
 
 ## Na Mapie
 
-Pinezka stoi na obszarze prowincji **Kessig** (`x: 0.41`, `y: 0.727`) —
-pewność **region**. Kessig to kraina lasów iglastych, mgieł i wilkołaków,
+Pinezka stoi na obszarze prowincji [[kessig|**Kessig**]] (`x: 0.41`, `y: 0.727`) —
+pewność **region**. [[kessig|Kessig]] to kraina lasów iglastych, mgieł i wilkołaków,
 w której rozgrywają się wędrówki Hordy Krallen pomiędzy wsiami takimi
 jak **Gatstaf** (`x: 0.327`, `y: 0.656`) czy **Lambholt** (`x: 0.457`,
 `y: 0.791`).
@@ -137,7 +137,7 @@ walki wręcz.
 Kluczem jest jednak mechanizm **ciszy nocy**: gdy w turze zapada spokój
 i nikt nie wykonuje gwałtownych działań (brak rzuconych zaklęć),
 kontrola pęka. Czas uśpienia i braku czujności wyzwala uśpioną bestię.
-To wierny zapis narracyjny nocy w Kessigu — gdy gasną świece i cichną
+To wierny zapis narracyjny nocy w [[kessig|Kessigu]] — gdy gasną świece i cichną
 modlitwy, łowcy zrzucają ludzkie skóry, by powrócić jako krwiożercza
 wataha.
 

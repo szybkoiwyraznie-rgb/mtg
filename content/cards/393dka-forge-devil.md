@@ -132,12 +132,12 @@ Rozstrzygnięcie chronologiczne: scena należy do epoki *Dark Ascension*,
 gdy Avacyn jest jeszcze uwięziona w Helvaulcie, a Kościół słabnie. To
 tłumaczy, dlaczego diabły w ogóle zdołały wejść — święte wady katedry
 przestały działać. Nie jest to natomiast epoka po powrocie archanioła,
-kiedy Devils' Breach w Kessigu otworzył się szerzej i diabłów pojawiło
+kiedy Devils' Breach w [[kessig|Kessigu]] otworzył się szerzej i diabłów pojawiło
 się znacznie więcej; wtedy nie potrzebowałyby żadnych przywoływaczy.
 
 ## Na Mapie
 
-Pinezka stoi na [[thraben|**Thraben**]], w północnej Gavony — pewność
+Pinezka stoi na [[thraben|**Thraben**]], w północnej [[gavony|Gavony]] — pewność
 **dokładna**, bo miejsce podaje wprost inskrypcja. Miasto leży na
 płaskowyżu przy ujściu rzeki **Kirch**, która spada obok niego do morza
 dwutysięcznostopowym wodospadem, i jest opasane wieloma pierścieniami
@@ -145,7 +145,7 @@ murów. Katedra stoi w jego obrębie; scena rozgrywa się pod nią.
 
 Warto zestawić tę pinezkę z dwoma innymi punktami mapy. **Ashmouth**
 w centrum Geier Reach w [[stensia|Stensii]] i **Devils' Breach** na południu
-Kessigu to dwie bramy do świata demonów i diabłów — obie daleko od
+[[kessig|Kessigu]] to dwie bramy do świata demonów i diabłów — obie daleko od
 Thraben, obie za pasmami gór albo za wielkim lasem. Diabeł z tej sceny
 nie przyszedł stamtąd pieszo. Ktoś go **przywołał** na miejscu, w sercu
 najlepiej strzeżonego miasta planu. Odległość na mapie jest częścią

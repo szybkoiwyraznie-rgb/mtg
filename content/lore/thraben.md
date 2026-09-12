@@ -11,7 +11,7 @@ materializacja: 2026-09-09
 ## Definicja
 
 **Thraben** to największe i najlepiej ufortyfikowane miasto
-[[innistrad|Innistradu]], stojące w sercu **Gavony** na skale oblanej
+[[innistrad|Innistradu]], stojące w sercu [[gavony|**Gavony**]] na skale oblanej
 wodami **Jeziora Czapli**. Przez większą część znanej historii było
 siedzibą **Kościoła Avacyn**, miejscem **Katedry Avacyn** i punktem,
 z którego ludzkość próbowała narzucić porządek całemu planowi.
@@ -50,7 +50,7 @@ niż kiedykolwiek właśnie w chwili, gdy przestaje być niepodważalne.
 
 ## Na mapie
 
-Na [[innistrad|mapie Innistradu]] Thraben leży w północnej części Gavony,
+Na [[innistrad|mapie Innistradu]] Thraben leży w północnej części [[gavony|Gavony]],
 na skale przy krańcu Jeziora Czapli, tuż nad wodospadem rzeki Kirch.
 Hasło nie ma własnej pinezki; prowadzi do zbliżenia miasta i jego okolic.
 
