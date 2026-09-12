@@ -11,7 +11,7 @@ materializacja: 2026-09-10
 ## Definicja
 
 **Conflux** (Scalenie) to kataklizmiczne zjawisko powtórnego połączenia
-pięciu odłamów (shardów) [[alara|Alary]] — Bantu, Esperu, Grixis, Jundu
+pięciu odłamów (shardów) [[alara|Alary]] — [[bant|Bantu]], Esperu, Grixis, Jundu
 i Nai — w jeden zunifikowany plan po tysiącleciach ich izolacji.
 W punkcie zderzenia granic wywołało gwałtowne wojny graniczne
 (tzw. Wojnę Confluxu) oraz narodziny **Maelstromu**: gigantycznego,
@@ -26,12 +26,12 @@ Tysiąclecia przed Confluxem Alara została rozdarta na pięć odrębnych
 światów podczas kataklizmu zwanego **Sundering**. Każdy odłam został
 odcięty od dwóch kolorów many i rozwijał się w skrajnej izolacji,
 zatracając pamięć o pierwotnej całości. Sam Conflux był naturalnym
-cyklem kosmologicznym planu dążącego do ponownego zrośnięcia; Nicol Bolas
+cyklem kosmologicznym planu dążącego do ponownego zrośnięcia; [[nicol-bolas|Nicol Bolas]]
 nie wywołał tego procesu. [1](https://mtg.wiki/page/Conflux_(event))
 
-Po Naprawie Szczelin (Mending), gdy Bolas utracił dawną, boską potęgę,
+Po Naprawie Szczelin (Mending), gdy [[nicol-bolas|Bolas]] utracił dawną, boską potęgę,
 wybrał jednak Alarę na miejsce jej odzyskania. Przez uśpionych agentów —
-w tym Gwafę Hazida w Bancie, szamankę Rakkę Mar w Jundzie i demona
+w tym Gwafę Hazida w [[bant|Bancie]], szamankę Rakkę Mar w Jundzie i demona
 Malfegora w Grixis — odsłonił obeliski, zasiał strach oraz zaostrzył wojny
 między zbliżającymi się shardami. Obeliski i konflikty zasilały rodzący
 się Maelstrom energią, którą smok zamierzał pochłonąć.
@@ -42,14 +42,14 @@ się Maelstrom energią, którą smok zamierzał pochłonąć.
 Gdy bariery między shardami runęły, odmienne ekologie i cywilizacje
 zderzyły się bez uprzedzenia:
 - Hordy nieumarłych i demonów z [[grixis|Grixis]] pod wodzą Malfegora
-  wlały się na szklane wyspy Esperu oraz łąki Bantu, polując na
+  wlały się na szklane wyspy Esperu oraz łąki [[bant|Bantu]], polując na
   energię życiową (*vis*);
 - [[536arb-ethersworn-shieldmage|Magowie bitewni Ethersworn]] z Esperu
   stanęli do obrony krystalicznych miast, traktując starcie z hordami
   rozpadu jako ostateczną próbę wyższości Szlachetnego Dzieła
   (*Noble Work*);
-- Wściekłe smoki i drapieżniki z Jundu runęły na Nayę i Bant,
-  a rycerze Bantu musieli po raz pierwszy w historii walczyć w
+- Wściekłe smoki i drapieżniki z Jundu runęły na Nayę i [[bant|Bant]],
+  a rycerze [[bant|Bantu]] musieli po raz pierwszy w historii walczyć w
   bezwzględnej wojnie totalnej zamiast rytualnych pojedynków czempionów;
 - Na Nayi przebudziła się uśpiona hydra-bóstwo **Progenitus**, a elfy
   Cylian pod wodzą Mayael ruszyły w bój u boku gargantuanów. [2](https://mtg.wiki/page/Alara)
@@ -59,13 +59,13 @@ zderzyły się bez uprzedzenia:
 W samym centrum scalającej się Alary uformował się **Maelstrom** —
 chaotyczny wir niestabilnej many pięciu barw. Burza zaczęła rodzić
 potworne byty, anomalie i złudzenia, takie jak [[305arb-illusory-demon|Złudny Demon]]
-czy Child of Alara. W kulminacyjnym momencie Bolas wszedł w oko wiru,
+czy Child of Alara. W kulminacyjnym momencie [[nicol-bolas|Bolas]] wszedł w oko wiru,
 pochłaniając zgromadzoną manę i odzyskując dawną formę. [4](https://mtg.wiki/page/Maelstrom)
 
 Został jednak powstrzymany przez leonińskiego planeswalkera **Ajaniego
 Goldmane'a**. Używając magii duszy i resztek energii Maelstromu, Ajani
 zmaterializował duchowe odbicie samego smoka — awatara jego własnej
-pysznej potęgi. Widmowy duplikat zaatakował Bolasa, zmuszając
+pysznej potęgi. Widmowy duplikat zaatakował [[nicol-bolas|Bolasa]], zmuszając
 pradawnego smoka do panicznej ucieczki z planu. Wypalony Maelstrom
 uspokoił się, a Alara pozostała na zawsze jednym, złączonym światem
 (*Alara Reunited*). [1](https://mtg.wiki/page/Conflux_(event))
@@ -90,7 +90,7 @@ leżący w geometrycznym środku scalonego planu.
 ## Źródła
 
 - MTG Wiki, *Conflux (event)* — zderzenie odłamów, Maelstrom, intryga
-  Bolasa, rola Ajaniego Goldmane'a i bitwa awatarów:
+  [[nicol-bolas|Bolasa]], rola Ajaniego Goldmane'a i bitwa awatarów:
   [1](https://mtg.wiki/page/Conflux_(event))
 - MTG Wiki, *Alara* — historia Sunderingu i Confluxu, Wojna Confluxu,
   scalony plan Alara Reunited: [2](https://mtg.wiki/page/Alara)

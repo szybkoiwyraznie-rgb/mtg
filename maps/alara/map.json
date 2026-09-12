@@ -408,6 +408,13 @@
    "y": 0.4679,
    "pewnosc": "region",
    "uzasadnienie": "Fabu\u0142a: zderzenie shard\u00f3w rzuca hordy Grixis na krystaliczne mosty Esperu, a wedalke\u0144ska mag Ethersworn zatrzymuje deszcz ko\u015bcianych w\u0142\u00f3czni barier\u0105 ze stwardnia\u0142ej many. Kanon (mtg.wiki: Alara \u2014 Conflux) potwierdza realne zderzenie Esper\u2013Grixis i najazdy nieumar\u0142ych Grixis na s\u0105siad\u00f3w, ale nie podaje adresu tej potyczki \u2014 st\u0105d pewno\u015b\u0107 'region'. Pinezka na po\u0142udniowej, zwr\u00f3conej ku Grixis rubie\u017cy Esperu, w rejonie Tidehollow (0.8175,0.4679) i The Glass Dunes (0.78,0.4571), gdzie metalowe wyspy shardu kontroli najbli\u017cej ocieraj\u0105 si\u0119 o czer\u0144 martwego shardu."
+  },
+  {
+   "karta": "242ala-knight-of-the-skyward-eye",
+   "x": 0.56,
+   "y": 0.19,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabu\u0142a wskazuje jasny, idylliczny las Bantu, ceremonialn\u0105 marmurow\u0105 drog\u0119, rycerza Order of the Skyward Eye oraz cie\u0144 manipulacji Nicola Bolasa, lecz nie nazywa konkretnej miejscowo\u015bci ani traktu. Kanon lokuje Order of the Skyward Eye w Bancie, a sam opis pasuje do rdzenia Valeronu/Akrasy, mi\u0119dzy Sun-Dappled Court (0.59,0.2), Akrasa (0.5,0.2143), Valeron (0.65,0.1429) i kotwic\u0105 regionu Bant (0.45,0.175). Dlatego pinezka jest regionalna, nie jest dok\u0142adna: zaznacza ceremonialny le\u015bny Bant bez wymy\u015blania nazwy drogi."
   }
  ],
  "otwarte_na_kolejne_przejscia": [

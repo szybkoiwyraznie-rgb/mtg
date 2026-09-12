@@ -4,6 +4,43 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-12 — PR-33 cd.: 242ALA Knight of the Skyward Eye i Bant
+
+Właściciel dostarczył pojedynczą nową materializację: `242ALA Knight of the
+Skyward Eye` (`ALA`, plan Alara) wraz z Fabułą o jasnym lesie Bantu,
+ceremonialnej drodze, znaku otwartego oka i cieniu cierpliwej intrygi Nicola
+Bolasa. Zgodnie ze scope’em powstała jedna karta, a wpis kolekcji traktuje
+tekst właściciela jako archiwum.
+
+1. **Materiał źródłowy:** utworzono
+   `collection/entries/242ala-knight-of-the-skyward-eye.md` z Fabułą verbatim
+   i `imgId: 242ALA` oraz pełny snapshot
+   `scryfall/242ala-knight-of-the-skyward-eye.json` dla Scryfall ALA #15.
+   Notka numeracji przypomina, że `242ALA` nie jest numerem kolekcjonerskim
+   druku.
+2. **Karta Katalogowa:** `content/cards/242ala-knight-of-the-skyward-eye.md`
+   jest lore-first: przed sekcją „Mechanika jako Opowieść” prowadzi narrację
+   przez las Bantu, zakon Skyward Eye, otwarte oko, nieufność i niewidzialne
+   działanie Bolasa. Mechanika `{1}{W}` / `{3}{G}` / `2/2` została opisana
+   dopiero po mapie.
+3. **Link-mining Alary:** trzecia karta planu domknęła progi dla haseł
+   `content/lore/bant.md` (`geografia`) oraz
+   `content/lore/nicol-bolas.md` (`postac`). Dopisano wikilinki w istniejących
+   kartach `305arb-illusory-demon` i `536arb-ethersworn-shieldmage`, na
+   stronie planu Alary oraz w hasłach Conflux/Grixis tam, gdzie wzmianki
+   wspierały nowe byty.
+4. **Mapa:** `maps/alara/map.json` dostał wyłącznie pinezkę karty, nie haseł.
+   Pinezka ma pewność `region` (`0.56/0.19`) między Valeronem,
+   Sun-Dappled Court i Akrasą; uzasadnienie jawnie nie wymyśla nazwy drogi
+   ani exact POI dla leśno-ceremonialnej sceny Bantu.
+5. **Regresja i dokumentacja:** dodano `test/alara-242ala.test.js`,
+   uzupełniono `content/co-nowego.md`, `docs/backlog.md` i plan pracy
+   `docs/plans/PLAN_2026-09-12-242ALA.md`.
+
+Bramki końcowe: **255/255 testów**, build **85 stron** (41 kart, 29 haseł,
+15 planów; artefakt 1514.3 kB) i **853 pliki drzewa archiwum**, map-audit 0,
+wiki-stats 100% (7,3/8) oraz czysty `git diff --check`.
+
 ## 2026-09-12 — PR-33 cd.: Pętla Jakości Mirrodinu, Ortodoksja i Vulshokowie
 
 Po zielonym domknięciu Dominarii właściciel poprosił o kontynuację w kolejnym

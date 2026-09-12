@@ -42,8 +42,8 @@ ukrywających się w ufortyfikowanych ostojach, takich jak górska twierdza
 
 Światem Grixis władają bezwzględne siły:
 - **Demony i smoki:** na szczycie hierarchii stoi demoniczny smok
-  **Malfegor**, ucieleśnienie furii i sprytu, mianowany przez Nicola
-  Bolasa naczelnym dowódcą inwazji na inne shardy;
+  **Malfegor**, ucieleśnienie furii i sprytu, mianowany przez [[nicol-bolas|Nicola
+  Bolasa]] naczelnym dowódcą inwazji na inne shardy;
 - **Szkoły nekromancji:** *fleshcrafterzy* (zszywający z potwornych
   tkanek nowe abominacje), *lethemanci* (magowie wysysający pamięć
   i tożsamość), *ghostslaverzy* (wiążący widma w niewolnicze łańcuchy)
@@ -52,7 +52,7 @@ ukrywających się w ufortyfikowanych ostojach, takich jak górska twierdza
   bagnisko-ścierwisko **Dregscape**, znoszący kości ofiar w gigantyczne
   kopce **Boneheaps**;
 - **Kederekt:** na wpół zatopiona nekropolia, pod której mrocznymi
-  kryptami ukrywał się Nicol Bolas, manipulując z ukrycia losem odłamu.
+  kryptami ukrywał się [[nicol-bolas|Nicol Bolas]], manipulując z ukrycia losem odłamu.
   [1](https://mtg.wiki/page/Grixis), [2](https://mtg.wiki/page/Nicol_Bolas)
 
 ### Najazdy po Confluxie
@@ -60,7 +60,7 @@ ukrywających się w ufortyfikowanych ostojach, takich jak górska twierdza
 Gdy nadszedł [[conflux|Conflux]] i pękły granice światów, do Grixis
 zaczęła napływać obca mana, budząc nieumarłych do niespotykanej
 aktywności. Hordy szkieletów, zombie i demonów wylały się na krystaliczne
-archipelagi Esperu oraz świetliste równiny Bantu. To właśnie te
+archipelagi Esperu oraz świetliste równiny [[bant|Bantu]]. To właśnie te
 inwazje powstrzymywali [[536arb-ethersworn-shieldmage|magowie bitewni Ethersworn]],
 a echo zderzenia i wojen zasilało rodzący się w sercu Alary
 [[305arb-illusory-demon|Maelstrom]]. [1](https://mtg.wiki/page/Grixis),
@@ -91,6 +91,6 @@ archipelagu Esperu i na wschód od centralnego Maelstromu.
 - MTG Wiki, *Nicol Bolas* — kryjówka smoka pod Kederekt, sojusz z
   Malfegorem i inwazja na inne shardy: [2](https://mtg.wiki/page/Nicol_Bolas)
 - MTG Wiki, *Conflux (event)* — przebieg inwazji nieumarłych z Grixis na
-  Esper i Bant: [3](https://mtg.wiki/page/Conflux_(event))
+  Esper i [[bant|Bant]]: [3](https://mtg.wiki/page/Conflux_(event))
 - Doug Beyer, *Alara Unbroken* (Wizards of the Coast, 2009) — kronika
   upadku Vithii i wojen Confluxu.

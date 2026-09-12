@@ -131,21 +131,31 @@ Encje nadal poniżej progu osobnego hasła albo wymagające dokładniejszej
 separacji zakresu: Ulvenwald, Nephalia, Markovowie, Kościół Avacyn/Katedra
 Avacyn, Griselbrand, Shilgengar, Skirsdag.
 
-## Kolejka link-miningu: encje czekające na drugą kartę (Alara)
+## Link-mining Alary (PR-33, 2026-09-12)
 
-Sesja PR-21 (2026-09-06) — pogłębienie strony planu Alary (sekcja
-„Odłamy i ludy”, mtg.wiki) zasiało encje wspólne dla karty 305ARB
-i planu; licznik progowy idzie od KART, więc hasła ruszą przy drugiej
-karcie Alary.
+Dostawa `242ALA` dołożyła trzecią materializację Alary i domknęła dwa progi
+link-miningu liczone od kart, nie od samej strony planu:
+
+- **Bant — wykonane**, `content/lore/bant.md`, klasa `geografia`, plan
+  Alara. Próg spełniają karty `242ala-knight-of-the-skyward-eye` oraz
+  alaryjskie sceny Confluxu (`305arb-illusory-demon`,
+  `536arb-ethersworn-shieldmage`) po dopisaniu wikilinków. Hasło nie ma
+  pinezki — odsyła do regionalnej kotwicy Bantu `#/mapa/alara?x=0.45&y=0.175`.
+- **Nicol Bolas — wykonane**, `content/lore/nicol-bolas.md`, klasa `postac`,
+  plan Alara. Próg spełniają karty `242ala-knight-of-the-skyward-eye` +
+  `305arb-illusory-demon` (a `536arb-ethersworn-shieldmage` dopina echo
+  wojny shardów). Hasło nie ma pinezki — odsyła do skutku planu w Maelstromie
+  `#/mapa/alara?x=0.475&y=0.475`.
+
+Encje nadal poniżej progu osobnego hasła albo wymagające separacji zakresu:
 
 | Encja | Klasa (docelowa) | Karty wspominające | Do hasła brakuje |
 |---|---|---|---|
 | Maelstrom | geografia | 305arb-illusory-demon, plan alara | 1 karta |
-| Nicol Bolas | postac | 305arb-illusory-demon, plan alara | 1 karta |
 | Ajani Goldmane | postac | 305arb-illusory-demon, plan alara | 1 karta |
-| Conflux / Sundering | historia | 305arb-illusory-demon, plan alara | 1 karta |
-| Grixis (Sedraxis, Vithia) | geografia | plan alara | 2 karty |
-| Etherium / Ethersworn | magia | plan alara | 2 karty |
+| Conflux / Sundering | historia | 305arb-illusory-demon, 242ala-knight-of-the-skyward-eye, 536arb-ethersworn-shieldmage | możliwa rewizja zakresu; hasło Conflux już istnieje jako historia planu |
+| Grixis (Sedraxis, Vithia) | geografia | 305arb-illusory-demon, 536arb-ethersworn-shieldmage, plan alara | hasło Grixis już istnieje; Sedraxis/Vithia osobno bez progu |
+| Etherium / Ethersworn | magia/spolecznosc | 536arb-ethersworn-shieldmage, plan alara | 1 karta dla osobnego zakresu |
 | Nacatl (Coil, Claws of Marisi) | spolecznosc | plan alara | 2 karty |
 
 ## Link-mining PR-22 — encja wspólna dla różnych planów

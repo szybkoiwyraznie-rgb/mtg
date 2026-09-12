@@ -404,8 +404,9 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (40)'), 'lista kart: brak 40 kart');
-  assert.ok(lista.includes('Tenth District Veteran'), 'lista kart: brak najnowszej materializacji 516RNA');
+  assert.ok(lista.includes('Karty Katalogowe (41)'), 'lista kart: brak 41 kart');
+  assert.ok(lista.includes('Knight of the Skyward Eye'), 'lista kart: brak najnowszej materializacji 242ALA');
+  assert.ok(lista.includes('Tenth District Veteran'), 'lista kart: brak materializacji 516RNA');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
     'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');

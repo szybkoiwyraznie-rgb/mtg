@@ -1,3 +1,31 @@
+## 2026-09-12 20:39 — Nowa karta: Knight of the Skyward Eye (Alara)
+
+- **Materializacja karty:** **[[242ala-knight-of-the-skyward-eye|Knight of the
+  Skyward Eye]]** (`242ALA`, wydanie `ALA` / *Shards of Alara*, plan
+  [[alara|Alara]]) — rycerz zakonu Skyward Eye jedzie przez jasny las
+  [[bant|Bantu]] marmurową ceremonialną drogą, niosąc otwarte oko czujności,
+  podczas gdy cień między drzewami zapowiada cierpliwą intrygę
+  [[nicol-bolas|Nicola Bolasa]].
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim
+  w `collection/entries/242ala-knight-of-the-skyward-eye.md`; pełny snapshot
+  ALA #15 żyje w `scryfall/242ala-knight-of-the-skyward-eye.json`. `242ALA`
+  pozostaje niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim
+  Scryfall/Gatherera.
+- **Pinezka i plan:** opis nie podaje nazwy gaju, traktu ani dworu, więc
+  `maps/alara/map.json` dodaje pinezkę z pewnością `region` w północnym
+  Bancie (`x=0.56`, `y=0.19`), między Valeronem, Sun-Dappled Court i Akrasą.
+  Strona planu Alary opisuje tę regionalność bez udawania jednej drogi.
+- **Link-mining:** trzecia karta Alary odblokowała hasła
+  **[[bant|Bant]]** i **[[nicol-bolas|Nicol Bolas]]**. Oba hasła nie mają
+  własnych pinezek; prowadzą deep-linkami do regionalnej kotwicy Bantu oraz
+  do skutku planu Bolasa w Maelstromie.
+- **Strażniki:** nowa regresja pilnuje Fabuły, rozdziału `242ALA` od ALA #15,
+  snapshotu, rycerza/oka/cienia, regionalnej pinezki oraz progów link-miningu
+  dla Bantu i Nicola Bolasa.
+- **Bramki końcowe:** 255/255 testów; build 85 stron (41 kart, 29 haseł,
+  15 planów) i 853 pliki drzewa archiwum; map-audit 0; wiki-stats 100%
+  (7,3/8); `git diff --check` czysty.
+
 ## 2026-09-12 19:53 — Mirrodin: Ortodoksja Maszyn i Vulshokowie
 
 - **Link-mining Mirrodinu:** po czwartej karcie planu próg haseł przekroczyły
