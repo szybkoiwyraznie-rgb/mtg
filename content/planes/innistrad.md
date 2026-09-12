@@ -37,7 +37,7 @@ Snu — są tu liczniejsze niż gdziekolwiek indziej. A **demonów** nie
 da się zabić: to byty czystej czarnej many, które po śmierci odradzają
 się w nowej postaci, zachowując część pamięci. Stąd wzięła się zasada
 Avacyn: *co nie może być zniszczone, musi być związane* — i stąd
-**Helvault**.
+[[helvault|**Helvault**]].
 
 ## Geografia
 
@@ -46,7 +46,7 @@ ludzkiej cywilizacji. Na jej północnym skraju stoi [[thraben|**Thraben**]],
 największe miasto planu, opasane wieloma pierścieniami murów; rzeka
 **Kirch** spada obok niego do morza dwutysięcznostopowym wodospadem.
 W Thraben wznosi się **Katedra Avacyn**, a w jej trójkątnym dziedzińcu
-stoi Helvault. Na południe ciągnie się **Nearheath** z parafiami
+stoi [[helvault|Helvault]]. Na południe ciągnie się **Nearheath** z parafiami
 winnic, lasu i skał (wsie **Hanweir**, **Estwald**), a dalej
 **Moorland** — największa i najgroźniejsza parafia, z wsią **Trostad**
 przy granicy [[kessig|Kessigu]]. W kaplicach prowincji uświęciciele
@@ -73,7 +73,7 @@ i wampirze rody w izolowanych dworach. Prowadzą tu trzy przełęcze:
 **Kruin Pass** z [[gavony|Gavony]], pilnowana przez **Markovów**, **Getander
 Pass** — jedyne wejście od [[kessig|Kessigu]], obserwowane przez **Falkenrathów**
 — oraz **Ziel Pass**, jedyna droga ku morzu, przy której stoi
-**Voldaren Estate**. W centrum pasma zieje **Ashmouth**: największa
+**Voldaren Estate**. W centrum pasma zieje [[ashmouth|**Ashmouth**]]: największa
 brama do świata demonów i diabłów. Na obrzeżach torfowych **Farbogów**
 leżą stare grafy: groby osuwają się tam między martwe sosny, a wraz z ich
 rozpadem mnożą się geisty. Anonimowy cmentarz ukazany przez
@@ -94,12 +94,12 @@ pustynią.
 [[avacyn|**Avacyn**]] nie jest bóstwem zastanym. Stworzył ją wampir-planeswalker
 **Sorin Markov** jako połowę zabezpieczenia, które miało utrzymać
 równowagę: jego dziadek **Edgar Markov** dał początek wampirom, więc
-Sorin dał ludziom archanioła. Drugą połową był **Helvault** — bryła
+Sorin dał ludziom archanioła. Drugą połową był [[helvault|**Helvault**]] — bryła
 księżycowego srebra, w której Avacyn i jej zastępy więziły demony
 niemożliwe do zabicia.
 
 Ten porządek runął, gdy demon **Griselbrand** wylądował na samym
-Helvaulcie i wyzwał Avacyn na pojedynek. Walczyli dniami, na oczach
+[[helvault|Helvaulcie]] i wyzwał Avacyn na pojedynek. Walczyli dniami, na oczach
 lunarchy **Mikaeusa** i jego najbardziej zaufanych biskupów. Avacyn
 zebrała resztki sił, by wepchnąć demona do srebrnej bryły — a on
 w ostatnim geście przebił jej serce włócznią. Zaklęcie wiążące odbiło

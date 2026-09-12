@@ -17,7 +17,7 @@ pinezka:
 
 W epoce powrotu archanioła obrona [[innistrad|Innistradu]] przestaje
 być wyłącznie pasywnym wyczekiwaniem za grubymi murami. Gdy srebrna bryła
-Helvaultu pęka, a z jej wnętrza uwalnia się [[avacyn|Avacyn]] wraz ze swoimi
+[[helvault|Helvaultu]] pęka, a z jej wnętrza uwalnia się [[avacyn|Avacyn]] wraz ze swoimi
 zastępami, Kościół odzyskuje utracony blask. Święte osłony znów zaczynają
 parzyć potwory nocy, a katarzy ze stolicy w [[thraben|Thraben]] ruszają
 z karnymi ekspedycjami w najdalsze zakątki planu. Nie czekają na wroga
@@ -27,7 +27,7 @@ Jednym z najniebezpieczniejszych celów tych wypraw staje się
 [[devils-breach|**Devil's Breach**]] (Diabelski Wyłom) — wulkaniczny wąwóz
 i głęboka, ziejąca żarem rozpadlina na południowych krańcach prowincji
 [[kessig|**Kessig**]]. Wraz
-z **Ashmouth** w górach Geier Reach w Stensii, Devil's Breach stanowi
+z [[ashmouth|**Ashmouth**]] w górach Geier Reach w Stensii, Devil's Breach stanowi
 główną bramę łączącą powierzchnię świata z podziemnymi czeluściami,
 z których wypełzają chmary złośliwych biesów i diabłów. W przeciwieństwie
 do demonów knujących skomplikowane intrygi, diabły to zrodzone z chaosu

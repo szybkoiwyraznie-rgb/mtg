@@ -23,7 +23,7 @@ zniknięcia archanioła. To właśnie w tych najniższych poziomach zaczyna
 się ta scena.
 
 Kościół [[innistrad|Innistradu]] słabnie. [[avacyn|Avacyn]] zniknęła — w istocie
-została uwięziona w **Helvaulcie**, srebrnej bryle stojącej w trójkątnym
+została uwięziona w [[helvault|**Helvaulcie**]], srebrnej bryle stojącej w trójkątnym
 dziedzińcu tej samej katedry, razem z demonem, którego próbowała
 związać. Święte osłony przestają trzymać, modlitwy pozostają bez
 odpowiedzi, a stwory nocy wyczuwają brak świętej mocy i stają się
@@ -80,7 +80,7 @@ diabeł rani również tego, kto go przywołał.
 
 **Katedra [[avacyn|Avacyn]]** — nie tło, lecz uczestnik sceny. Jej filary trzymają
 sklepienie, jej archiwa przechowują pamięć Kościoła, jej dziedziniec
-mieści Helvault, a jej katakumby — grób lunarchy. Wszystkie cztery
+mieści [[helvault|Helvault]], a jej katakumby — grób lunarchy. Wszystkie cztery
 warstwy są w tej chwili zagrożone przez stworzenie wielkości dziecka.
 
 ## Nazwa Karty
@@ -129,7 +129,7 @@ archiwów Kościoła. Elementy sceny mają pokrycie w kronice:
   ale spójny z inskrypcją: to, co się pali, jest tu jedyną lampą.
 
 Rozstrzygnięcie chronologiczne: scena należy do epoki *Dark Ascension*,
-gdy [[avacyn|Avacyn]] jest jeszcze uwięziona w Helvaulcie, a Kościół słabnie. To
+gdy [[avacyn|Avacyn]] jest jeszcze uwięziona w [[helvault|Helvaulcie]], a Kościół słabnie. To
 tłumaczy, dlaczego diabły w ogóle zdołały wejść — święte wady katedry
 przestały działać. Nie jest to natomiast epoka po powrocie archanioła,
 kiedy [[devils-breach|Devils' Breach]] w [[kessig|Kessigu]] otworzył się szerzej i diabłów pojawiło
@@ -143,7 +143,7 @@ płaskowyżu przy ujściu rzeki **Kirch**, która spada obok niego do morza
 dwutysięcznostopowym wodospadem, i jest opasane wieloma pierścieniami
 murów. Katedra stoi w jego obrębie; scena rozgrywa się pod nią.
 
-Warto zestawić tę pinezkę z dwoma innymi punktami mapy. **Ashmouth**
+Warto zestawić tę pinezkę z dwoma innymi punktami mapy. [[ashmouth|**Ashmouth**]]
 w centrum Geier Reach w [[stensia|Stensii]] i [[devils-breach|**Devils' Breach**]] na południu
 [[kessig|Kessigu]] to dwie bramy do świata demonów i diabłów — obie daleko od
 Thraben, obie za pasmami gór albo za wielkim lasem. Diabeł z tej sceny

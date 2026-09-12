@@ -30,7 +30,7 @@ dotrzeć za jej bramy, noc nie będzie już miała władzy.
 ### Serce Kościoła i jego ślepota
 
 W Thraben wznosi się **Katedra [[avacyn|Avacyn]]** z trzema skrzydłami, dziedzińcem
-skrywającym **Helvault** oraz zapleczem szkół, krużganków, kuźni i placów
+skrywającym [[helvault|**Helvault**]] oraz zapleczem szkół, krużganków, kuźni i placów
 ćwiczebnych. To stąd wychodzili katarowie, tu obradowała lunarchiczna
 władza i tu spływały raporty z prowincji. Właśnie dlatego miasto bywa na
 Innistradzie jednocześnie źródłem ochrony i źródłem złudzeń: biskupi,

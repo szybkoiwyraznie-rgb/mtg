@@ -18,6 +18,8 @@ const hasloGavony = czyta('content/lore/gavony.md');
 const hasloKessig = czyta('content/lore/kessig.md');
 const hasloAvacyn = czyta('content/lore/avacyn.md');
 const hasloDevils = czyta('content/lore/devils-breach.md');
+const hasloAshmouth = czyta('content/lore/ashmouth.md');
+const hasloHelvault = czyta('content/lore/helvault.md');
 const plan = czyta('content/planes/innistrad.md');
 const spectral = czyta('content/cards/181avr-spectral-prison.md');
 const dire = czyta('content/cards/118mid-dire-strain-brawler.md');
@@ -74,12 +76,32 @@ test('Innistrad: Avacyn i Devil\'s Breach też przekraczają próg kart', () => 
   ]);
 });
 
-test('Innistrad: hasła regionalne/postaci nie mają własnych pinezek, tylko deep-linki mapy', () => {
+test('Innistrad: Ashmouth i Helvault przekraczają próg kart bez nowych pinezek', () => {
+  assert.equal(poSlugu.ashmouth.typ, 'haslo');
+  assert.equal(poSlugu.ashmouth.klasa, 'geografia');
+  assert.equal(poSlugu.ashmouth.plan, 'innistrad');
+  assert.equal(poSlugu.helvault.typ, 'haslo');
+  assert.equal(poSlugu.helvault.klasa, 'artefakt');
+  assert.equal(poSlugu.helvault.plan, 'innistrad');
+
+  assert.deepEqual(kartyLinkujace('ashmouth'), [
+    '393dka-forge-devil',
+    '544avr-thraben-valiant',
+  ]);
+  assert.deepEqual(kartyLinkujace('helvault'), [
+    '393dka-forge-devil',
+    '544avr-thraben-valiant',
+  ]);
+});
+
+test('Innistrad: hasła regionalne/postaci/artefaktu nie mają własnych pinezek, tylko deep-linki mapy', () => {
   for (const [slug, tresc, x, y] of [
     ['gavony', hasloGavony, '0.59', '0.449'],
     ['kessig', hasloKessig, '0.41', '0.727'],
     ['avacyn', hasloAvacyn, '0.668', '0.317'],
     ['devils-breach', hasloDevils, '0.392', '0.945'],
+    ['ashmouth', hasloAshmouth, '0.213', '0.253'],
+    ['helvault', hasloHelvault, '0.668', '0.317'],
   ]) {
     assert.doesNotMatch(tresc, /^pinezka:/m, `${slug}: hasło nie może mieć frontmatterowej pinezki`);
     assert.ok(!mapa.pinezki.some((p) => p.karta === slug), `${slug}: hasło nie może dostać wpisu w pinezkach kart`);
@@ -88,6 +110,7 @@ test('Innistrad: hasła regionalne/postaci nie mają własnych pinezek, tylko de
   assert.equal(mapa.kotwice.find((k) => k.nazwa === 'Gavony')?.typ, 'region');
   assert.equal(mapa.kotwice.find((k) => k.nazwa === 'Kessig')?.typ, 'region');
   assert.equal(mapa.kotwice.find((k) => k.nazwa === "Devils' Breach")?.typ, 'lokacja');
+  assert.equal(mapa.kotwice.find((k) => k.nazwa === 'Ashmouth')?.typ, 'lokacja');
 });
 
 test('Innistrad: wikilinki do Gavony/Kessigu są w kartach i planie', () => {
@@ -128,6 +151,25 @@ test('Innistrad: wikilinki do Avacyn i Devil\'s Breach są w kartach i planie', 
   assert.match(dire, /\[\[devils-breach\|Devils' Breach\]\]/);
   assert.match(plan, /\[\[avacyn\|\*\*Avacyn\*\*\]\]/);
   assert.match(plan, /\[\[devils-breach\|\*\*Devils' Breach\*\*\]\]/);
+});
+
+test('Innistrad: wikilinki do Ashmouth i Helvault są w kartach i planie', () => {
+  for (const slug of ['544avr-thraben-valiant', '393dka-forge-devil']) {
+    assert.ok(linkuje(slug, 'ashmouth'), `${slug}: brak linku do Ashmouth`);
+    assert.ok(linkuje(slug, 'helvault'), `${slug}: brak linku do Helvaultu`);
+  }
+  assert.ok(linkuje('innistrad', 'ashmouth'), 'plan Innistrad: brak linku do Ashmouth');
+  assert.ok(linkuje('innistrad', 'helvault'), 'plan Innistrad: brak linku do Helvaultu');
+  assert.ok(linkuje('stensia', 'ashmouth'), 'hasło Stensia: brak linku do Ashmouth');
+  assert.ok(linkuje('avacyn', 'helvault'), 'hasło Avacyn: brak linku do Helvaultu');
+  assert.ok(linkuje('devils-breach', 'ashmouth'), 'hasło Devil\'s Breach: brak linku do Ashmouth');
+
+  assert.match(valiant, /\[\[helvault\|Helvaultu\]\]/);
+  assert.match(valiant, /\[\[ashmouth\|\*\*Ashmouth\*\*\]\]/);
+  assert.match(forge, /\[\[helvault\|\*\*Helvaulcie\*\*\]\]/);
+  assert.match(forge, /\[\[ashmouth\|\*\*Ashmouth\*\*\]\]/);
+  assert.match(plan, /\[\[helvault\|\*\*Helvault\*\*\]\]/);
+  assert.match(plan, /\[\[ashmouth\|\*\*Ashmouth\*\*\]\]/);
 });
 
 test('Innistrad: źródło Gavony korzysta z działającego URL-a 2011-09-28', () => {

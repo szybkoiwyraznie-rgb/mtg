@@ -16,7 +16,7 @@ rody wampirów (Markov, Falkenrath, Maurer, Voldaren). Odcięta od reszty
 planu zdradliwymi przełęczami i spowita wieczną mgłą, pod którą rzadko
 przebija się słońce, jest krainą udręczonych pasterzy, ufortyfikowanych
 zamków oraz rozpadlin prowadzących do piekielnych czeluści — takich jak
-**Ashmouth**. [1](https://mtg.wiki/page/Stensia), [2](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-stensia-and-vampires-2011-11-02)
+[[ashmouth|**Ashmouth**]]. [1](https://mtg.wiki/page/Stensia), [2](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-stensia-and-vampires-2011-11-02)
 
 ## Opis
 
@@ -36,16 +36,16 @@ izolowane doliny kontrolowane przez poszczególne linie krwi:
 - **Ród Voldaren** — władający posiadłościami na krańcu Geier Reach
   przy Ziel Pass, jedynej drodze ku morzu i Nephalii. [2](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-stensia-and-vampires-2011-11-02)
 
-### Geografia Geier Reach i czeluść Ashmouth
+### Geografia Geier Reach i czeluść [[ashmouth|Ashmouth]]
 
 Kręgosłupem prowincji jest łańcuch górski **Geier Reach**, którego
 poszarpane granie dzielą Stensię na odizolowane, nieufne wobec siebie
 doliny (m.in. Shadowgrange i Lammas). W lasach iglastych zwanych
 **Somberwald** chronią się dzikie bestie i uchodźcy.
 
-W samym sercu Geier Reach leży **Ashmouth** — gigantyczna, ziejąca siarką
+W samym sercu Geier Reach leży [[ashmouth|**Ashmouth**]] — gigantyczna, ziejąca siarką
 i popiołem przepaść wulkaniczna, będąca największą naturalną bramą do
-podziemnych sfer demonów i diabłów. To z kominów i szczelin wokół Ashmouth
+podziemnych sfer demonów i diabłów. To z kominów i szczelin wokół [[ashmouth|Ashmouth]]
 na powierzchnię przedostają się m.in. złośliwe, miotające iskrami diabły
 (jak [[393dka-forge-devil|Forge Devil]]), nękające zarówno ludzkie
 osady, jak i kuźnie na pograniczu Stensii i [[gavony|Gavony]]. [3](https://www.mtgsalvation.com/articles/49486-archive-trap-the-world-of-innistrad)
@@ -71,7 +71,7 @@ Stensii.
 ## Na mapie
 
 Stensia zajmuje północno-zachodni i centralno-północny sektor mapy
-Innistradu, wzdłuż pasma Geier Reach, przełęczy Kruin Pass i krateru Ashmouth.
+Innistradu, wzdłuż pasma Geier Reach, przełęczy Kruin Pass i krateru [[ashmouth|Ashmouth]].
 
 [Prowincja Stensia na mapie Innistradu](#/mapa/innistrad?x=0.228&y=0.317)
 

@@ -14,7 +14,7 @@ materializacja: 2026-09-12
 postacią Kościoła Avacyn i najważniejszym zabezpieczeniem ludzkości
 [[innistrad|Innistradu]] przed wampirami, wilkołakami, geistami, ghulami,
 demonami i diabłami. Jej zniknięcie zachwiało całym porządkiem planu, a
-powrót z Helvaultu na krótko przywrócił ludziom wiarę i skuteczność świętych
+powrót z [[helvault|Helvaultu]] na krótko przywrócił ludziom wiarę i skuteczność świętych
 osłon. [1](https://mtg.wiki/page/Avacyn),
 [2](https://mtglore.com/web-articles/sorins-homecoming/),
 [3](https://mtglore.com/web-articles/the-prison-of-silver/)
@@ -41,13 +41,13 @@ sprawiała, że potwory nie mogły przechylić świata do końca na swoją stron
 
 Najważniejsza doktryna Avacyn brzmiała: „czego nie można zniszczyć, trzeba
 związać”. Ponieważ demony Innistradu odradzały się po śmierci, archanioł
-zaczęła więzić je w Helvaulcie — ogromnej bryle księżycowego srebra stojącej
+zaczęła więzić je w [[helvault|Helvaulcie]] — ogromnej bryle księżycowego srebra stojącej
 na dziedzińcu katedry w Thraben. W ten sposób zwycięstwo przestało oznaczać
 zabicie wroga, a zaczęło oznaczać odseparowanie go od świata ludzi.
 [3](https://mtglore.com/web-articles/the-prison-of-silver/)
 
 Ta sama zasada doprowadziła do katastrofy. Griselbrand wyzwał Avacyn na
-pojedynek pod pełnią księżyca, na samym Helvaulcie. Archanioł zdołała
+pojedynek pod pełnią księżyca, na samym [[helvault|Helvaulcie]]. Archanioł zdołała
 wepchnąć demona do srebrnego więzienia, lecz włócznia Griselbranda przebiła
 jej serce, a odbite zaklęcie uwięziło także ją. Kiedy Avacyn zniknęła,
 modlitwy zaczęły milknąć, wady zawodziły, anioły widywano coraz rzadziej,
@@ -73,25 +73,25 @@ Późniejsza historia Avacyn ma jeszcze ciemniejszy finał. Po czasie odnowy jej
 umysł został skażony przez wpływ kryptolitów i Emrakul; archanioł zwróciła
 się przeciw ludziom, których miała chronić, aż Sorin ją unicestwił. Dla kart
 obecnych w tej części kolekcji kluczowy pozostaje jednak wcześniejszy łuk:
-stworzenie, zniknięcie, Helvault i powrót.
+stworzenie, zniknięcie, [[helvault|Helvault]] i powrót.
 [1](https://mtg.wiki/page/Avacyn)
 
 ## Powiązane hasła
 
 - [[innistrad|Innistrad]] — plan, którego równowaga zależała od Avacyn.
-- [[thraben|Thraben]] — stolica Kościoła i miejsce Helvaultu.
+- [[thraben|Thraben]] — stolica Kościoła i miejsce [[helvault|Helvaultu]].
 - [[gavony|Gavony]] — najbezpieczniejsza ludzka prowincja, gdzie kult Avacyn
   miał najmocniejsze instytucje.
 - [[kessig|Kessig]] — prowincja, w której osłabienie świętej ochrony szybko
   przełożyło się na wilkołacze i diabelskie zagrożenia.
 - [[devils-breach|Devil's Breach]] — kessigijskie pęknięcie infernalne,
-  aktywniejsze po pęknięciu Helvaultu.
+  aktywniejsze po pęknięciu [[helvault|Helvaultu]].
 
 ## Na mapie
 
 Hasło nie ma własnej pinezki. Najsilniejszą kotwicą mapową Avacyn w obecnej
 bazie jest [[thraben|Thraben]] (`x: 0.668`, `y: 0.317`): miasto Katedry
-Avacyn, dziedzińca Helvaultu i najważniejszego centrum Kościoła.
+Avacyn, dziedzińca [[helvault|Helvaultu]] i najważniejszego centrum Kościoła.
 
 [Avacyn przy Thraben na mapie Innistradu](#/mapa/innistrad?x=0.668&y=0.317)
 

@@ -57,7 +57,7 @@ wyruszają poza prowincję, by walczyć z diabłami w [[kessig|Kessigu]].
 ### Thraben i zewnętrzne granice
 
 Thraben nie wyczerpuje Gavony, ale przez długi czas nadawał jej sens:
-miasto murów, Katedra [[avacyn|Avacyn]], Helvault, szkoły, warsztaty i place targowe
+miasto murów, Katedra [[avacyn|Avacyn]], [[helvault|Helvault]], szkoły, warsztaty i place targowe
 były obietnicą, że ludzki porządek może trwać mimo nocy. W praktyce ta
 obietnica działa tylko częściowo. Im dalej od stolicy, tym bardziej Gavony
 przypomina sieć małych punktów światła rozdzielonych cmentarzami, polami,

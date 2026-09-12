@@ -26,7 +26,7 @@ gorąco i dziwne głosy. W okresie przed pełnym powrotem infernalnych sił
 miejscowi traperzy widzieli już diabły w pobliżu, choć demoniczny wpływ nie
 zdążył jeszcze zdominować prowincji. [2](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-kessig-and-werewolves-2011-10-05)
 
-MTG Wiki dopowiada późniejszy stan po rozbiciu Helvaultu: wejście do jaskini
+MTG Wiki dopowiada późniejszy stan po rozbiciu [[helvault|Helvaultu]]: wejście do jaskini
 miało się poszerzyć, z wnętrza niemal co noc wychodziły bandy diabłów, a
 okolice stały się strefą patroli, zasadzek i wypraw ochronnych. Pęknięcie
 jest więc małe w skali mapy, lecz wielkie fabularnie: nie tworzy prowincji,
@@ -52,9 +52,9 @@ przywołaniu i osłabieniu świętych wad niż o podróży potwora z zachodu.
 
 ### Para z Ashmouth
 
-Na mapie Innistradu Devil's Breach tworzy parę z **Ashmouth** w
+Na mapie Innistradu Devil's Breach tworzy parę z [[ashmouth|**Ashmouth**]] w
 [[stensia|Stensii]]. Oba miejsca są wejściami dla istot infernalnych, ale
-mają różne role w opowieści. Ashmouth jest głęboką, wielką paszczą Geier
+mają różne role w opowieści. [[ashmouth|Ashmouth]] jest głęboką, wielką paszczą Geier
 Reach, powiązaną z demonami i dziejami wampiryzmu; Devil's Breach jest
 bardziej wiejskim, kessigijskim pęknięciem, które czyta się przez pryzmat
 patroli, traperów, katarów i gospodarstw nękanych przez nocne bandy diabłów.
@@ -67,7 +67,7 @@ patroli, traperów, katarów i gospodarstw nękanych przez nocne bandy diabłów
   katarom ruszyć przeciw diabłom.
 - [[thraben|Thraben]] — centrum Kościoła, skąd przychodzą katarzy i z którym
   Forge Devil kontrastuje naturalne wyłomy infernalne.
-- [[stensia|Stensia]] — prowincja Ashmouth, drugiej wielkiej bramy dla demonów
+- [[stensia|Stensia]] — prowincja [[ashmouth|Ashmouth]], drugiej wielkiej bramy dla demonów
   i diabłów Innistradu.
 
 ## Na mapie
