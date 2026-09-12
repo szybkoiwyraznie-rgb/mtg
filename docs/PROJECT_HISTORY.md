@@ -4,6 +4,43 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-12 — PR-32 cd.: materializacja 555DSK Bedhead Beastie (sesja `arena/01a091f4-mtg`)
+
+Właściciel przekazał `555DSK / Bedhead Beastie / DSK / Wiedźmin` wraz z
+Fabułą opuszczonej wojennej chaty na bagnach Velen: kolosalny kudłaty
+bebok nosi na rogatym łbie szczątki łóżka i siennika, a dwaj redańscy
+milicjanci wspólnie zwierają szyk w progu. Fabuła została zachowana
+verbatim jako pierwsza operacja na plikach.
+
+1. **Druk źródłowy i numeracja:** właściwym drukiem jest DSK #125,
+   natomiast `555DSK` pozostaje niezależnym `imgId` właściciela. Pełna
+   odpowiedź Scryfalla z jawną notą o obu systemach numeracji żyje w
+   `scryfall/555dsk-bedhead-beastie.json`.
+2. **Karta Katalogowa LORE-first:** dziewięć sekcji rozwija stratę
+   wpisaną w opuszczony dom, folklor beboka oraz komizm bestii, która nie
+   zdołała wejść pod łóżko, więc zaklinowała je na rogach. Nazwa otrzymała
+   polskie odczytania „Rozczochrany potworek”, „Łóżkogłowe straszydło” i
+   „Bebok z barłogu”. Rozmiar, rogi i mokradła pozwalają porównać stwora
+   z biesem, lecz brak wiedźmińskich oględzin i trzeciego oka wyklucza
+   automatyczne utożsamienie gatunku.
+3. **Mechanika jako opowieść:** koszt `{4}{R}{R}` i 5/6 niosą kolosalną
+   masę; Menace wymaga dokładnie tego, co pokazuje Fabuła — co najmniej
+   dwóch obrońców. Mountaincycling `{2}` jest odczytane jako wybór odwrotu
+   ku twardszemu, wyższemu terenowi, nie dowód na górskie Velen.
+4. **Pinezka bez fałszywej precyzji:** regionalna kotwica Velen i pinezka
+   `region` stoją w `0.4113/0.2807`, około `px_t1 [2095, 2024]` na Mapie
+   Orteliusa. Nie wymyślono konkretnej wsi, chaty, mokradła ani redańskiego
+   posterunku. Strona Wiedźmina opisuje teraz dwie karty.
+5. **Regresje i commity:** `test/wiedzmin-555dsk.test.js` pilnuje Fabuły
+   verbatim, DSK #125, numeracji, ostrożnego porównania gatunku oraz
+   zgodności pinezki z kotwicą. `ddf824e` archiwizuje wpis, snapshot i
+   plan; `04ba588` dostarcza kartę, mapę, stronę planu, changelog i testy.
+
+Bramki końcowe: **201/201 testów**, build **60 stron** (36 kart, 9 haseł,
+15 planów) i **853 pliki drzewa archiwum**, map-audit 0, wiki-stats 100%
+(7,7/8), czysty `git diff --check`. Świeży preview karty i mapy Wiedźmina
+działa na porcie 8000.
+
 ## 2026-09-11 — PR-32 cd.: materializacja 42ISD Murder of Crows (sesja `arena/01a091f4-mtg`)
 
 Właściciel przekazał `42ISD / Murder of Crows / ISD / Innistrad` wraz
