@@ -194,8 +194,8 @@ milicjantom, lecz jeszcze zbyt słabo zbadaną, by zamknąć ją w bestiariuszu.
 **Pinezka ma pewność `region`.** Znacznik stoi w północnym Velen,
 na regionalnej kotwicy odczytanej z Mapy Orteliusa (`x: 0.4113`,
 `y: 0.2807`; około `px 2095, 2024` na masterze). Punkt leży po temerskiej
-stronie obszaru Ziemi Niczyjej, w sąsiedztwie szlaków między Novigradem,
-Oxenfurtem, Wrońcami i Gors Velen.
+stronie obszaru Ziemi Niczyjej, w sąsiedztwie szlaków między
+[[novigrad|Novigradem]], Oxenfurtem, Wrońcami i Gors Velen.
 
 Nie jest to wskazanie Krzywuchowych Moczarów, konkretnej wsi ani nazwanej
 chaty. Opowieść podaje tylko bagna Velen, a redańskie barwy dwóch ludzi

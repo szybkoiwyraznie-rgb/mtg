@@ -1,3 +1,28 @@
+## 2026-09-12 13:39 — Nowa karta: Chittering Rats (Wiedźmin)
+
+- **Materializacja karty:** **[[540dst-chittering-rats|Chittering Rats]]**
+  (`540DST`, wydanie `DST` / *Darksteel*, plan [[wiedzmin|Wiedźmin]]) —
+  w labiryncie kanałów [[novigrad|Novigradu]] stado zmutowanych
+  pseudoszczurów odcina drogę samotnemu poszukiwaczowi skarbów. Mężczyzna
+  osłania cenne mapy i odkłada dalszą wyprawę do czasu przepędzenia roju
+  (`{1}{B}{B}`, 2/2 Creature — Rat; wejście odkłada kartę przeciwnika z
+  ręki na wierzch biblioteki).
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim
+  w `collection/entries/540dst-chittering-rats.md`; pełny snapshot DST
+  #39 żyje w `scryfall/540dst-chittering-rats.json`. `540DST` pozostaje
+  niezależnym `imgId` właściciela.
+- **Pinezka i plan:** dokładna kotwica Novigradu (`x: 0.3927`,
+  `y: 0.2358`; `px_t1 [2000, 1700]`) wskazuje nazwane miasto w skali
+  mapy Kontynentu. Fabuła nie podaje włazu, ulicy ani konkretnego
+  korytarza, więc pinezka nie udaje planu podziemi.
+- **Link-mining:** powstało geograficzne hasło **[[novigrad|Novigrad]]**.
+  Próg ≥2 kart spełniają Chittering Rats oraz Bedhead Beastie, które
+  wymienia Novigrad w relacji mapowej do północnego Velen.
+- **Strażniki:** dedykowana regresja pilnuje Fabuły, rozdziału `540DST`
+  od DST #39, mechanicznego opóźnienia bez odrzucenia map, pinezki miasta
+  oraz dwóch kart linkujących nowe hasło. UI oczekuje 37 Kart
+  Katalogowych.
+
 ## 2026-09-12 13:06 — Nowa karta: Bedhead Beastie (Wiedźmin)
 
 - **Materializacja karty:** **[[555dsk-bedhead-beastie|Bedhead Beastie]]**

@@ -150,6 +150,13 @@
       "y": 0.2807,
       "pewnosc": "region",
       "uzasadnienie": "Fabuła właściciela umieszcza opuszczoną wskutek wojny chatę na bagnach Velen, bez nazwy wsi, mokradła lub posterunku. Pinezka dziedziczy regionalną kotwicę Velen (odczyt z mastera px 2095, 2024); redańscy milicjanci są zgodni z sytuacją północnego pogranicza, ale nie zawężają miejsca."
+    },
+    {
+      "karta": "540dst-chittering-rats",
+      "x": 0.3927,
+      "y": 0.2358,
+      "pewnosc": "dokladna",
+      "uzasadnienie": "Fabuła właściciela nazywa labirynt kanałów Novigradu, więc pinezka dziedziczy dokładną kotwicę miasta (odczyt z mastera px 2000, 1700). Pewność dotyczy Novigradu w skali mapy Kontynentu; scena nie wskazuje konkretnego włazu, ulicy ani korytarza pod miastem."
     }
   ],
   "otwarte_na_kolejne_przejscia": [

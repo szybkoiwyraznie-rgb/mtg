@@ -4,7 +4,7 @@ slug: wiedzmin
 tytul: Wiedźmin
 typIP: zewnetrzne
 mapa: wiedzmin
-materializacja: 2026-09-11
+materializacja: 2026-09-12
 tagi: [geografia]
 ---
 
@@ -20,6 +20,9 @@ precyzyjny ruch astrolabium i gaszenie płomienia świecy decydują o
 powodzeniu wielkich zaklęć. `555DSK Bedhead Beastie` prowadzi w przeciwną
 stronę Kontynentu: do opuszczonej wskutek wojny chaty na bagnach **Velen**,
 gdzie ludowa opowieść o beboku spod łóżka staje się cielesnym zagrożeniem.
+`540DST Chittering Rats` schodzi pod [[novigrad|**Novigrad**]]: tam stado
+pseudoszczurów odcina drogę poszukiwaczowi skarbów i zmusza go, by zachował
+mapy kosztem wstrzymania dalszej wyprawy.
 
 ## Setting w pigułce
 
@@ -75,6 +78,22 @@ mokradłowe siedlisko pozwalają porównać je z biesem, lecz brak rozpoznania
 wiedźmińskiego i charakterystycznego trzeciego oka nie pozwala tych stworzeń
 utożsamić.
 
+## Novigrad — Wolne Miasto i jego podziemia
+
+**Novigrad** leży w Delcie Pontaru na terenie Redanii, lecz formalnie stanowi
+niezależne Wolne Miasto. To największa metropolia Północy: port, ośrodek
+handlu i bankowości oraz centrum kultu Wiecznego Ognia. Jego publiczna
+fasada ma jednak dolną warstwę. Pod ulicami biegnie sieć kanałów, która
+odprowadza brud ku delcie, służy jako ukryte przejście i mieści potwory oraz
+szczurze żerowiska.
+
+W scenie [[540dst-chittering-rats|**Chittering Rats**]] bezimienny
+poszukiwacz próbuje przenieść cenne mapy przez labirynt kanałów. Atakują go
+zmutowane, stadne gryzonie odpowiadające **pseudoszczurom** z wiedźmińskiego
+bestiariusza. Stado odcina odnogi, więc człowiek przerywa poszukiwania i
+osłania zdobycz. Mapy nie zostają utracone: wracają na początek listy jego
+przyszłych działań, a wyprawa czeka, aż rój zostanie przepędzony.
+
 ## Mapa
 
 `maps/wiedzmin/` — wariant **T1 (rastr z etykietami)**: podkładem jest
@@ -101,6 +120,10 @@ Pinezki na mapie (ADR 0043: tylko karty):
   Ziemia Niczyja**, pewność `region` — opowieść wskazuje bagna Velen, ale
   nie nazywa wsi, chaty, mokradła ani redańskiego posterunku. Znacznik
   korzysta z regionalnej kotwicy między Wrońcami a Gors Velen.
+- **[[540dst-chittering-rats|Chittering Rats]]** (540DST); **Novigrad**,
+  pewność `dokladna` w skali mapy Kontynentu — nazwane miasto ma istniejącą
+  kotwicę `0.3927/0.2358`, lecz Fabuła nie wskazuje konkretnego włazu,
+  ulicy ani korytarza kanałów.
 
 ## Źródła
 
@@ -125,5 +148,17 @@ Pinezki na mapie (ADR 0043: tylko karty):
 - Pismo Folkowe, *Bobo, macek, bizia bizia* — bobo/bobok/bebok jako ludowe
   straszydło używane do straszenia dzieci:
   https://pismofolkowe.pl/artykul/bobo-macek-bizia-bizia-4574
+- Wiedźmin Wiki, *Novigrad* — status Wolnego Miasta, Delta Pontaru, relacja
+  z Redanią, port, banki i kult Wiecznego Ognia:
+  https://wiedzmin.fandom.com/wiki/Novigrad
+- Witcher Wiki, *Novigrad sewers* — kanały pod ulicami miasta między Placem
+  Hierarchy a Bramą Oxenfurcką:
+  https://witcher.fandom.com/wiki/Novigrad_sewers
+- Wiedźmin Wiki, *Pseudoszczur* — zmutowany, stadny szczur miejskich kanałów
+  i piwnic, żerujący na odpadkach i atakujący ludzi:
+  https://wiedzmin.fandom.com/wiki/Pseudoszczur
+- Wiedźmin Wiki, *Teraz albo nigdy* — podziemna droga ku portowi, potwory i
+  szczurze żerowisko w kanałach Novigradu:
+  https://wiedzmin.fandom.com/wiki/Teraz_albo_nigdy
 - Ortelius Team, *Mapa Orteliusa* — opracowanie kartograficzne Kontynentu:
   https://caalek.github.io/mapa-orteliusa/

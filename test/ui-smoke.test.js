@@ -404,8 +404,8 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (36)'), 'lista kart: brak 36 kart');
-  assert.ok(lista.includes('Bedhead Beastie'), 'lista kart: brak najnowszej materializacji 555DSK');
+  assert.ok(lista.includes('Karty Katalogowe (37)'), 'lista kart: brak 37 kart');
+  assert.ok(lista.includes('Chittering Rats'), 'lista kart: brak najnowszej materializacji 540DST');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
     'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
@@ -416,6 +416,15 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(lista.includes('data-tag="ekspedycje"') && lista.includes('data-tag="fauna"'), 'lista kart: brak przycisków filtrowania po tagach (feedback E)');
   assert.ok(lista.includes('data-tagi='), 'lista kart: brak tagów w wierszach tabeli (feedback E)');
   assert.ok(!lista.includes('materializowana jawnie'), 'lista kart: bez meta-tekstu ADR 0003 (feedback F)');
+
+  shim.idz('#/haslo/novigrad');
+  const novigrad = shim.app.innerHTML;
+  assert.ok(novigrad.includes('Wolne Miasto Novigrad'), 'hasło Novigrad: brak definicji');
+  assert.ok(novigrad.includes('W kolekcji'), 'hasło Novigrad: brak automatycznych backlinków');
+  assert.ok(novigrad.includes('Chittering Rats') && novigrad.includes('Bedhead Beastie'),
+    'hasło Novigrad: brak backlinków z dwóch kart spełniających próg');
+  assert.ok(novigrad.includes('#/mapa/wiedzmin?x=0.3927&amp;y=0.2358'),
+    'hasło Novigrad: brak deep-linka mapowego bez pinezki');
 
   // ADR 0030: format Karty Katalogowej jest LORE-first — technikalia w infoboksie,
   // mechanika jako opowieść dopiero pod koniec; sekcje „Ilustracja"/„Druk w Kolekcji" nie istnieją
