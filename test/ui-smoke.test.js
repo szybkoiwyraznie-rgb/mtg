@@ -404,8 +404,8 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (39)'), 'lista kart: brak 39 kart');
-  assert.ok(lista.includes('Chittering Rats'), 'lista kart: brak najnowszej materializacji 540DST');
+  assert.ok(lista.includes('Karty Katalogowe (40)'), 'lista kart: brak 40 kart');
+  assert.ok(lista.includes('Tenth District Veteran'), 'lista kart: brak najnowszej materializacji 516RNA');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
     'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
@@ -445,6 +445,34 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
     'hasło Serra: brak backlinków z dwóch kart spełniających próg');
   assert.ok(serra.includes('#/mapa/dominaria?x=0.1937&amp;y=0.3806'),
     'hasło Serra: brak deep-linka do Sursi/Katedry Serran');
+
+  shim.idz('#/haslo/boros-legion');
+  const boros = shim.app.innerHTML;
+  assert.ok(boros.includes('czerwono-biała gildia Ravniki'),
+    'hasło Legion Boros: brak definicji');
+  assert.ok(boros.includes('W kolekcji'), 'hasło Legion Boros: brak automatycznych backlinków');
+  assert.ok(boros.includes('Withstand') && boros.includes('Tenth District Veteran'),
+    'hasło Legion Boros: brak backlinków z dwóch kart spełniających próg');
+  assert.ok(boros.includes('#/mapa/ravnica?x=0.5464&amp;y=0.3356'),
+    'hasło Legion Boros: brak deep-linka do Sunhome');
+
+  shim.idz('#/haslo/dziesiaty-dystrykt');
+  const dziesiaty = shim.app.innerHTML;
+  assert.ok(dziesiaty.includes('najruchliwszy i najbardziej wpływowy dystrykt'),
+    'hasło Dziesiąty Dystrykt: brak definicji');
+  assert.ok(dziesiaty.includes('Withstand') && dziesiaty.includes('Tenth District Veteran'),
+    'hasło Dziesiąty Dystrykt: brak backlinków z dwóch kart spełniających próg');
+  assert.ok(dziesiaty.includes('#/mapa/ravnica?x=0.485&amp;y=0.5616'),
+    'hasło Dziesiąty Dystrykt: brak deep-linka do Tenth District Plaza');
+
+  shim.idz('#/haslo/tin-street-market');
+  const tin = shim.app.innerHTML;
+  assert.ok(tin.includes('jeden z najruchliwszych targów Ravniki'),
+    'hasło Tin Street Market: brak definicji');
+  assert.ok(tin.includes('Withstand') && tin.includes('Tenth District Veteran'),
+    'hasło Tin Street Market: brak backlinków z dwóch kart spełniających próg');
+  assert.ok(tin.includes('#/mapa/ravnica?x=0.3406&amp;y=0.4318'),
+    'hasło Tin Street Market: brak deep-linka do targu');
 
   // ADR 0030: format Karty Katalogowej jest LORE-first — technikalia w infoboksie,
   // mechanika jako opowieść dopiero pod koniec; sekcje „Ilustracja"/„Druk w Kolekcji" nie istnieją
@@ -538,8 +566,8 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/');
   // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — najnowsza dostawa
-  // Dominarii musi wejść do skrótu na stronie głównej.
-  assert.ok(shim.app.innerHTML.includes("Serra's Embrace"), 'home: brak najnowszej materializacji');
+  // Ravniki musi wejść do skrótu na stronie głównej.
+  assert.ok(shim.app.innerHTML.includes('Tenth District Veteran'), 'home: brak najnowszej materializacji');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();

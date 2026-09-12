@@ -1,3 +1,32 @@
+## 2026-09-12 16:56 — Nowa karta: Tenth District Veteran (Ravnica)
+
+- **Materializacja karty:** **[[516rna-tenth-district-veteran|Tenth District
+  Veteran]]** (`516RNA`, wydanie `RNA` / *Ravnica Allegiance*, plan
+  [[ravnica|Ravnica]]) — dojrzała wojowniczka [[boros-legion|Legionu Boros]]
+  stoi na zrujnowanej barykadzie w [[dziesiaty-dystrykt|Dziesiątym
+  Dystrykcie]], blokując intruzom drogę do placu targowego i dźwigając
+  młodszego rekruta z powrotem do szyku.
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim
+  w `collection/entries/516rna-tenth-district-veteran.md`; snapshot RNA #26
+  żyje w `scryfall/516rna-tenth-district-veteran.json`. `516RNA` pozostaje
+  niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim
+  Scryfall/Gatherera.
+- **Pinezka i plan:** scena nie wskazuje konkretnej barykady ani
+  skrzyżowania, więc pinezka ma pewność `region`. Używa kotwicy
+  [[tin-street-market|Tin Street Market]] w Czwartym Precykcie (`x: 0.3406`,
+  `y: 0.4318`) jako najtwardszego rejonu „kluczowego placu targowego”.
+- **Link-mining:** druga karta Ravniki po Withstand odblokowała hasła
+  **[[boros-legion|Legion Boros]]**, **[[dziesiaty-dystrykt|Dziesiąty
+  Dystrykt]]** i **[[tin-street-market|Tin Street Market]]**. Hasła nie mają
+  własnych pinezek; odsyłają do mapy przez deep-linki `?x=&y=`.
+- **Strażniki:** dedykowana regresja pilnuje Fabuły, rozdziału `516RNA` od
+  RNA #26, weteranki i rekruta, mechaniki Vigilance/odtapowania oraz
+  regionalnej pinezki targu. UI oczekuje 40 Kart Katalogowych i renderuje
+  nowe hasła Ravniki z backlinkami.
+- **Bramki końcowe:** 222/222 testów, build 70 stron (40 kart, 15 haseł,
+  15 planów) i 859 plików drzewa archiwum; map-audit 0; wiki-stats 100%
+  (7,6/8); `git diff --check` czysty.
+
 ## 2026-09-12 16:42 — Nowa karta: Serra's Embrace (Dominaria)
 
 - **Materializacja karty:** **[[110dvd-serra-s-embrace|Serra's Embrace]]**

@@ -438,6 +438,20 @@ po spełnieniu progu przez Expunge i Serra's Embrace. **217/217 testów**;
 build 66 stron (39/12/15) / 859 plików drzewa archiwum; map-audit 0;
 wiki-stats 100%. Handoff: `docs/setup/HANDOFF_2026-09-12-pr33.md`.
 
+**PR-34 (2026-09-12) — 516RNA Tenth District Veteran + hasła Ravniki.**
+Materializacja **516RNA Tenth District Veteran** — właścicielski `imgId`
+516RNA zachowany oddzielnie od druku **RNA #26**. Karta czyta scenę jako
+rodzimą dla Ravniki: dojrzała weteranka Legionu Boros w sercu Dziesiątego
+Dystryktu stoi na zrujnowanej barykadzie, broni wejścia do placu targowego
+i dźwiga młodszego rekruta do szyku. Pinezka ma pewność `region` i używa
+kotwicy Tin Street Market (`0.3406/0.4318`) bez udawania dokładnej barykady.
+Link-mining po drugiej karcie Ravniki utworzył hasła `boros-legion`,
+`dziesiaty-dystrykt` i `tin-street-market`; Withstand dostał wikilinki
+zasilające próg, a hasła odsyłają do mapy tylko deep-linkami `?x=&y=`.
+**222/222 testów**; build 70 stron (40/15/15) / 859 plików drzewa archiwum;
+map-audit 0; wiki-stats 100%. Handoff:
+`docs/setup/HANDOFF_2026-09-12-pr34.md`.
+
 ## Wątki otwarte (czekają na decyzję właściciela)
 
 > **Zamknięte decyzją właściciela 2026-09-05 — NIE wracać do nich:**

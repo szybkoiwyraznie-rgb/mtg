@@ -35,19 +35,28 @@ mówiące o encji **w treści** (nie samym tagiem):
 
 ## Kolejka link-miningu: encje czekające na drugą kartę (Ravnica)
 
-Sesja PR-14 (2026-09-03) — link-mining po dostawie 137GPT: encje
-Rawnicy są już wspólnym mianownikiem karty, planu i mapy, ale licznik
-progowy idzie od KART (zasada właściciela 2026-08-31) — hasła ruszą
-przy drugiej karcie planu.
+Sesja PR-34 (2026-09-12) — druga karta Ravniki (`516rna-tenth-district-veteran`)
+odblokowała progi link-miningu dla trzech encji uliczno-gildyjnych:
+
+- **Legion Boros** — wykonane: `content/lore/boros-legion.md`, klasa
+  `spolecznosc`, próg z kart `137gpt-withstand` +
+  `516rna-tenth-district-veteran`.
+- **Dziesiąty Dystrykt** — wykonane: `content/lore/dziesiaty-dystrykt.md`,
+  klasa `geografia`, próg z kart `137gpt-withstand` +
+  `516rna-tenth-district-veteran`.
+- **Tin Street Market** — wykonane: `content/lore/tin-street-market.md`,
+  klasa `geografia`, próg z kart `137gpt-withstand` +
+  `516rna-tenth-district-veteran`.
+
+Dalsze encje Ravniki nadal czekają na drugą kartę; wzmianki w planie nie
+liczą się do progu kart (zasada właściciela 2026-08-31):
 
 | Encja | Klasa (docelowa) | Karty wspominające | Do hasła brakuje |
 |---|---|---|---|
-| Boros | spolecznosc | 137gpt-withstand | 1 karta |
-| Legion Boros | spolecznosc | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
-| Dziesiąty Dystrykt | geografia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
 | Sunhome | geografia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
-| Tin Street | geografia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
+| Tin Street | geografia | 137gpt-withstand, plan ravnica, 516rna-tenth-district-veteran (przez Tin Street Market) | wymaga osobnej drugiej wzmianki jako arteria |
 | Pakt Gildii | magia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
+| Wojek / Liga Wojek | spolecznosc | plan ravnica, źródła 516RNA | wymaga wzmianki w treści drugiej karty |
 
 ## Kolejka link-miningu: encje czekające na drugą kartę (Alara)
 

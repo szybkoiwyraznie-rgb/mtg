@@ -4,6 +4,46 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-12 — PR-34: materializacja 516RNA Tenth District Veteran
+
+Właściciel przekazał dostawę `516RNA / Tenth District Veteran / RNA /
+Ravnica` z Fabułą dojrzałej wojowniczki Legionu Boros, która w sercu
+Dziesiątego Dystryktu stoi na zrujnowanej barykadzie, blokuje intruzom drogę
+do placu targowego i dźwiga młodszego rekruta z powrotem do szyku.
+
+1. **Wpis i snapshot:** Fabuła właściciela została zachowana verbatim w
+   `collection/entries/516rna-tenth-district-veteran.md`. Snapshot
+   `scryfall/516rna-tenth-district-veteran.json` opisuje właściwy druk
+   **RNA #26** (*Ravnica Allegiance*), a `516RNA` pozostaje wyłącznie
+   właścicielskim `imgId`.
+2. **Karta Katalogowa LORE-first:** `content/cards/516rna-tenth-district-veteran.md`
+   czyta nazwę jako **„Weteranka Dziesiątego Dystryktu”**. Scena pozostaje
+   rodzima dla Ravniki: bruk, jesienne liście, odłamki kamienia, wyszczerbiony
+   miecz, plac targowy i obrona architektonicznego dziedzictwa miasta nie są
+   przeniesieniem między planami, lecz zawężeniem do ulicznej linii Boros.
+3. **Mechanika:** `{2}{W}` Creature — Human Soldier, 2/3, Vigilance oraz
+   atakowe odtapowanie innej własnej istoty. W opowieści Vigilance pozwala
+   weterance ruszyć, nie porzucając posterunku, a odtapowanie staje się
+   gestem podniesienia młodszego rekruta do gotowości.
+4. **Mapa:** opis wskazuje serce Dziesiątego Dystryktu i kluczowy plac
+   targowy, ale nie dokładną barykadę. Pinezka ma pewność `region` i stoi
+   na kotwicy **Tin Street Market** w Czwartym Precykcie (`x: 0.3406`,
+   `y: 0.4318`) jako najtwardszym rejonie targowym Boros/Tin Street.
+5. **Link-mining Ravniki:** druga karta planu po Withstand przekroczyła próg
+   dla trzech haseł: `content/lore/boros-legion.md`,
+   `content/lore/dziesiaty-dystrykt.md` i `content/lore/tin-street-market.md`.
+   Withstand dostał wikilinki do tych haseł; hasła nie mają własnych pinezek,
+   tylko odsyłają do mapy przez deep-linki `?x=&y=`.
+6. **Regresje:** `test/ravnica-516rna.test.js` pilnuje Fabuły, rozdziału
+   `516RNA` od RNA #26, treści weteranki/rekruta, mechaniki gotowości,
+   regionalnej pinezki targu i progu link-miningu. `test/ui-smoke.test.js`
+   oczekuje 40 Kart Katalogowych i renderuje trzy nowe hasła Ravniki
+   z backlinkami.
+
+Bramki końcowe: **222/222 testów**, build **70 stron** (40 kart, 15 haseł,
+15 planów) i **859 plików drzewa archiwum**, map-audit 0, wiki-stats 100%
+(7,6/8), czysty `git diff --check`.
+
 ## 2026-09-12 — PR-33 cd.: materializacja 110DVD Serra's Embrace
 
 Właściciel przekazał nową dostawę `110DVD / Serra's Embrace / DVD /
