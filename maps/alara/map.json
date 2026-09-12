@@ -337,22 +337,6 @@
    "typ": "poi",
    "pozycja_zrodlo": "kanon (mtg.wiki: Hellkite's Pass \u2014 prze\u0142\u0119cz w g\u00f3rach Jundu)",
    "notka": "Jund"
-  },
-  {
-   "nazwa": "Carmot Mines",
-   "x": 0.79,
-   "y": 0.35,
-   "typ": "poi",
-   "pozycja_zrodlo": "kanon (mtg.wiki: kopalnie carmotu w archipelagu Esperu, wyczerpane przed Confluxem)",
-   "notka": "Esper"
-  },
-  {
-   "nazwa": "Ruins of Vithia",
-   "x": 0.61,
-   "y": 0.8,
-   "typ": "poi",
-   "pozycja_zrodlo": "kanon (mtg.wiki: ruiny dawnego kr\u00f3lestwa Vithii w Grixis)",
-   "notka": "Grixis"
   }
  ],
  "pinezki": [

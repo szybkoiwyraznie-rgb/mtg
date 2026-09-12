@@ -366,17 +366,6 @@ Reservoir na płycie L2 Ghirapuru, nowy klocek mapforge `zbiornik`.
 **176/176 testów**; 31 stron (15/4/12); map-audit 0; ZIP 87,8 MB.
 Raport: `docs/audits/AUDYT_2026-09-09-PR28.md`.
 
-**PR-31 (2026-09-10) — Pętla Jakości po PR-30 (dwa przebiegi):** audyt scalonego PR-30
-(ADR 0047, Kaladesh dwie mapy, 3 materializacje, Warhammer Fantasy T1,
-Auriokowie; integralność 180/180, build 36 stron, map-audit 0); pogłębienie
-kart `536arb-ethersworn-shieldmage`, `39mm2-brute-force`, `257ltr-lash-of-the-balrog`,
-`309isd-civilized-scholar` i `393dka-forge-devil`; cztery nowe hasła z link-miningu:
-`conflux` (wydarzenie, Alara), `grixis` (geografia, Alara), `esper` (geografia, Alara)
-oraz `stensia` (geografia, Innistrad); metryka kompletności 100% na wszystkich
-40 stronach (18 kart, 9 haseł, 13 planów); reguła procesowa L18 (pass mapowy =
-wygląd i wzbogacanie T3/T4, bez T1/T2 i bez badania pinezek); wzbogacenie mapy
-Alary o Carmot Mines i Ruins of Vithia; map-audit 0. **180/180 testów**.
-
 **PR-30 (2026-09-10) — Kaladesh jako dwie osobne mapy.** Korekta
 właściciela: plan przeskalowany do skali planu **2000×1400** (jak
 Zendikar — duże, proporcjonalne góry/lasy; Ghirapur jako POI-kropka),
@@ -388,6 +377,46 @@ zaktualizowane (test szwu wodnego → test „osobna mapa o własnej
 skali"), treść (co-nowego + strona planu). **176/176 testów**;
 31 stron (15/4/12); map-audit 0. Audyt PR-29:
 `docs/audits/AUDYT_2026-09-10-PR29.md`.
+
+**PR-31 (2026-09-10/11) — dwie Pętle Jakości + 15 materializacji.**
+Audyt PR-30; pogłębienie lore; hasła `conflux`, `grixis`, `esper` i
+`stensia`; reguła L18. Następnie 15 pełnych kompletów
+wpis–snapshot–karta–mapa: 362BRO, 171ISD, 181AVR, 544AVR, 596ORI,
+612BLB, 118MID, 537CMR, 539CLB, 83MM2, 19_8ED, 209ELD, 312M13, 531M3C
+i 347NPH. Nowe plany: **Eldraine T4** oraz **Wiedźmin T1/LOD**.
+Stan przy scaleniu: **180/180 testów**, 57 stron (33/9/15), drzewo 859
+plików, map-audit 0, wiki-stats 100%. Po audycie PR-31 sesja PR-32
+zachowała zatwierdzone T4 Eldraine i naprawiła F1–F13, w tym wycofała
+niepotwierdzone Carmot Mines/Ruins of Vithia. Szczegóły:
+`docs/setup/HANDOFF_2026-09-10-pr31.md` oraz
+`docs/audits/AUDYT_2026-09-11-PR31.md`.
+
+**PR-32 (2026-09-11/12) — audyt PR-31, naprawy F1–F13 oraz 132GNT,
+42ISD, 555DSK i 540DST.** Audyt pełnych 251 plików; decyzja właściciela
+zachowująca Eldraine T4; naprawy DFC, 347NPH, 209ELD, semantyki i
+kompozycji Eldraine, POI Alary, cytowań, dokumentacji, czasów ADR 0029,
+storage Wiedźmina i redakcji. Dodano repo-szerokie strażniki ADR 0040/0044
+oraz regresje map i zamknięcia. Po pierwotnym zamknięciu doszły cztery pełne
+materializacje:
+
+- **132GNT Pilgrim's Eye** — GNT #55, korowy zwiadowca i przybliżona
+  pinezka przy Sea Gate;
+- **42ISD Murder of Crows** — ISD #70, stensiański cmentarz, błękitne
+  wspomnienia i regionalna pinezka na kotwicy Stensii;
+- **555DSK Bedhead Beastie** — DSK #125, opuszczona chata z kudłatym
+  bebokiem oraz dwoma redańskimi milicjantami; regionalna pinezka Velen
+  bez wymyślania dokładnej osady i bez automatycznego utożsamienia
+  stworzenia z biesem;
+- **540DST Chittering Rats** — DST #39, stado pseudoszczurów w kanałach
+  Novigradu, samotny poszukiwacz chroniący mapy i mechaniczne opóźnienie
+  planu bez utraty zasobu; dokładna kotwica miasta bez zmyślonego tunelu.
+  Link-mining utworzył hasło `novigrad` po spełnieniu progu dwóch kart.
+
+W każdej dostawie `imgId` właściciela jest jawnie oddzielone od collector
+number, a Fabuła została zachowana verbatim przed researchem. Finalne
+bramki: **207/207**, build 62 strony (37/10/15) / 853 pliki drzewa archiwum,
+map-audit 0, wiki-stats 100%. Szczegóły:
+`docs/setup/HANDOFF_2026-09-11-pr32.md`.
 
 ## Wątki otwarte (czekają na decyzję właściciela)
 

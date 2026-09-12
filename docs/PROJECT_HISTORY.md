@@ -4,28 +4,211 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
-## 2026-09-10 — PR-31: Pętla Jakości po PR-30 + Druga Pętla Jakości + Karta Simian Simulacrum (sesja `arena/01a08d3e-mtg`)
+## 2026-09-12 — PR-32 cd.: materializacja 540DST Chittering Rats (sesja `arena/01a091f4-mtg`)
 
-Pełna realizacja dwóch kolejnych Pętli Jakości po scaleniu PR-30 oraz materializacja nowej karty z dostawy właściciela:
-1. **Audyt scalonego PR-30** (`docs/audits/AUDYT_2026-09-10-PR30.md`): pełna zgodność z ADR-ami (ADR 0047, Kaladesh dwie osobne mapy, 3 materializacje, mapa Warhammer Fantasy T1, hasło Auriokowie, 180/180 testów, build 36 stron, map-audit 0).
-2. **Pogłębianie LORE:**
-   - Przebieg 1: karty `536arb-ethersworn-shieldmage`, `39mm2-brute-force`, `257ltr-lash-of-the-balrog`.
-   - Przebieg 2: karty `309isd-civilized-scholar`, `393dka-forge-devil`, `536arb-ethersworn-shieldmage`, `305arb-illusory-demon` oraz strony planów `innistrad.md` i `alara.md`.
-3. **Link-mining i 4 nowe hasła (próg ≥ 2 kart):**
-   - **`content/lore/conflux.md`** (wydarzenie, Alara): Scalenie Shardów, narodziny Maelstromu, spisek Bolasa (karty 305ARB + 536ARB).
-   - **`content/lore/grixis.md`** (geografia, Alara): martwy shard śmierci i rozkładu, Vithia, Sedraxis (karty 305ARB + 536ARB).
-   - **`content/lore/esper.md`** (geografia, Alara): archipelag eterium, sfinks Crucius, doktryna Ethersworn i Szlachetne Dzieło (karty 305ARB + 536ARB).
-   - **`content/lore/stensia.md`** (geografia, Innistrad): mroczna prowincja Geier Reach, wampirze rody (Markov, Falkenrath) i krater Ashmouth (karty 309ISD + 393DKA).
-4. **Passy mapowe i reguła L18:**
-   - Udokumentowanie reguły **L18** w `docs/LESSONS.md`, `PETLA_JAKOSCI.md` i `AGENTS.md` (pass mapowy to wzbogacanie i weryfikacja wyglądu map T3/T4, bez badania pinezek i bez modyfikowania T1/T2).
-   - Wzbogacenie mapy Alary (T3/T4 mapforge): dodanie kanonicznych POI **Carmot Mines** (Esper) oraz **Ruins of Vithia** (Grixis) do `scena.json`, `map.json` i podkładu; `map-audit.py` = 0 uwag.
-5. **Nowa dostawa i materializacja (362BRO Simian Simulacrum):**
-   - Zapis verbatim `collection/entries/362bro-simian-simulacrum.md` (reguła L16).
-   - Pobranie i sformatowanie snapshotu Scryfall `scryfall/362bro-simian-simulacrum.json`.
-   - Materializacja karty `content/cards/362bro-simian-simulacrum.md` (Wojna Braci, wyspa Argoth na Dominarii, mechanika Unearth `{2}{G}{G}`, montaż modułów wzmacniających).
-   - Kotwica i pinezka w `maps/dominaria/map.json` (Argoth, x: 0.885, y: 0.36, region).
-   - Aktualizacja strony planu Dominaria oraz wpis w `content/co-nowego.md`.
-6. **Metryka:** completeness score osiąga **100% na wszystkich 41 stronach bazy** (19 kart, 9 haseł, 13 planów). 180/180 testów zielonych, build 41 stron czysty, map-audit 0 problemów.
+Właściciel przekazał `540DST / Chittering Rats / DST / Wiedźmin` wraz z
+Fabułą labiryntu novigradzkich kanałów. Stada zmutowanych szczurów
+odcinają drogę samotnemu poszukiwaczowi skarbów, który osłania cenne mapy
+i wstrzymuje dalszą wyprawę do czasu przepędzenia roju. Fabuła została
+zapisana verbatim jako pierwsza operacja na plikach.
+
+1. **Druk źródłowy i numeracja:** właściwym drukiem jest DST #39,
+   natomiast `540DST` pozostaje niezależnym `imgId` właściciela. Pełna
+   odpowiedź Scryfalla z metadanymi pochodzenia i jawną notą o obu
+   systemach numeracji żyje w
+   `scryfall/540dst-chittering-rats.json`.
+2. **Karta Katalogowa LORE-first:** dziewięć sekcji rozwija dolną warstwę
+   Wolnego Miasta, mapy jako chronioną zdobycz i zmutowane gryzonie jako
+   **pseudoszczury** — stadne potwory miejskich kanałów i piwnic, zdolne
+   atakować ludzi. Poszukiwacz pozostaje anonimowy; nie utożsamiono go z
+   Geraltem, profesorem ani członkiem konkretnego gangu. Nazwę odczytano
+   jako „Piszczące szczury”.
+3. **Flavor i mechanika:** „Ci, którzy żerują na dnie, czasem wychodzą na
+   wierzch” łączy dno kanału, ukryte podbrzusze miasta i wierzch
+   biblioteki. Wejście 2/2 za `{1}{B}{B}` zmusza wskazanego przeciwnika,
+   by wybrał kartę z ręki i położył ją na wierzchu biblioteki. Zasób nie
+   zostaje odrzucony: wraca przy następnym zwykłym dobraniu, odbierając
+   świeży dobór i opóźniając plan — tak jak mapy zachowane kosztem
+   przerwania poszukiwań.
+4. **Pinezka bez zmyślonego tunelu:** kotwica Novigradu zweryfikowana na
+   miejskiej ikonie (`0.4045/0.2469`, `px_t1 [2060, 1780]`) otrzymała
+   pinezkę `dokladna` w skali globalnej mapy. Pewność dotyczy nazwanego
+   miasta; Fabuła nie wskazuje pojedynczego włazu, ulicy ani korytarza kanałów.
+   Strona Wiedźmina opisuje teraz trzy karty.
+5. **Link-mining:** Novigrad przekroczył próg dwóch kart: nowa karta
+   nazywa kanały miasta, a Bedhead Beastie wymienia Novigrad w relacji
+   mapowej północnego Velen. Powstało hasło geograficzne `novigrad` z
+   automatycznymi backlinkami oraz deep-linkiem mapowym bez własnej
+   pinezki, zgodnie z ADR 0043.
+6. **Regresje i commity:** `test/wiedzmin-540dst.test.js` pilnuje Fabuły,
+   DST #39, semantyki zwłoki, pseudoszczurów, anonimowości poszukiwacza,
+   pinezki miasta i progu hasła; smoke UI oczekuje 37 kart i obu
+   backlinków Novigradu. `76af35f` archiwizuje wpis, snapshot i plan;
+   `e0a8ef9` dostarcza kartę, hasło, mapę, stronę planu, changelog i
+   testy.
+
+Po zamknięciu właściciel zauważył, że pierwszy odczyt Novigradu
+`px_t1 [2000, 1700]` wypada na wybrzeżu na północny zachód od miejskiej
+ikony. Ponowna kontrola wizualna mastera 5093×7209 potwierdziła błąd;
+kotwicę, pinezkę, deep-linki, opisy i regresje skorygowano na środek ikony
+miasta: `px_t1 [2060, 1780]`, czyli `0.4045/0.2469`.
+
+Bramki końcowe: **207/207 testów**, build **62 stron** (37 kart, 10
+haseł, 15 planów) i **853 pliki drzewa archiwum**, map-audit 0,
+wiki-stats 100% (7,7/8), czysty `git diff --check`. Świeży preview
+aplikacji i mapy Wiedźmina odpowiada HTTP 200; payload zawiera kartę,
+hasło, współrzędne pinezki i deep-link powrotny.
+
+## 2026-09-12 — PR-32 cd.: materializacja 555DSK Bedhead Beastie (sesja `arena/01a091f4-mtg`)
+
+Właściciel przekazał `555DSK / Bedhead Beastie / DSK / Wiedźmin` wraz z
+Fabułą opuszczonej wojennej chaty na bagnach Velen: kolosalny kudłaty
+bebok nosi na rogatym łbie szczątki łóżka i siennika, a dwaj redańscy
+milicjanci wspólnie zwierają szyk w progu. Fabuła została zachowana
+verbatim jako pierwsza operacja na plikach.
+
+1. **Druk źródłowy i numeracja:** właściwym drukiem jest DSK #125,
+   natomiast `555DSK` pozostaje niezależnym `imgId` właściciela. Pełna
+   odpowiedź Scryfalla z jawną notą o obu systemach numeracji żyje w
+   `scryfall/555dsk-bedhead-beastie.json`.
+2. **Karta Katalogowa LORE-first:** dziewięć sekcji rozwija stratę
+   wpisaną w opuszczony dom, folklor beboka oraz komizm bestii, która nie
+   zdołała wejść pod łóżko, więc zaklinowała je na rogach. Nazwa otrzymała
+   polskie odczytania „Rozczochrany potworek”, „Łóżkogłowe straszydło” i
+   „Bebok z barłogu”. Rozmiar, rogi i mokradła pozwalają porównać stwora
+   z biesem, lecz brak wiedźmińskich oględzin i trzeciego oka wyklucza
+   automatyczne utożsamienie gatunku.
+3. **Mechanika jako opowieść:** koszt `{4}{R}{R}` i 5/6 niosą kolosalną
+   masę; Menace wymaga dokładnie tego, co pokazuje Fabuła — co najmniej
+   dwóch obrońców. Mountaincycling `{2}` jest odczytane jako wybór odwrotu
+   ku twardszemu, wyższemu terenowi, nie dowód na górskie Velen.
+4. **Pinezka bez fałszywej precyzji:** regionalna kotwica Velen i pinezka
+   `region` stoją w `0.4113/0.2807`, około `px_t1 [2095, 2024]` na Mapie
+   Orteliusa. Nie wymyślono konkretnej wsi, chaty, mokradła ani redańskiego
+   posterunku. Strona Wiedźmina opisuje teraz dwie karty.
+5. **Regresje i commity:** `test/wiedzmin-555dsk.test.js` pilnuje Fabuły
+   verbatim, DSK #125, numeracji, ostrożnego porównania gatunku oraz
+   zgodności pinezki z kotwicą. `ddf824e` archiwizuje wpis, snapshot i
+   plan; `04ba588` dostarcza kartę, mapę, stronę planu, changelog i testy.
+
+Bramki końcowe: **201/201 testów**, build **60 stron** (36 kart, 9 haseł,
+15 planów) i **853 pliki drzewa archiwum**, map-audit 0, wiki-stats 100%
+(7,7/8), czysty `git diff --check`. Świeży preview karty i mapy Wiedźmina
+działa na porcie 8000.
+
+## 2026-09-11 — PR-32 cd.: materializacja 42ISD Murder of Crows (sesja `arena/01a091f4-mtg`)
+
+Właściciel przekazał `42ISD / Murder of Crows / ISD / Innistrad` wraz
+z Fabułą starego gotyckiego cmentarza w Stensii: przy pustych szatach
+i srebrnej tarczy strażnika kruki przechwytują błękitne wspomnienia oraz
+ostatnie słowa zmarłego. Fabuła została zapisana verbatim jako pierwsza
+operacja na plikach.
+
+1. **Druk źródłowy i numeracja:** właściwym drukiem jest ISD #70,
+   natomiast `42ISD` pozostaje niezależnym `imgId` właściciela. Pełny
+   rekord Scryfalla z jawną notką numeracyjną żyje w
+   `scryfall/42isd-murder-of-crows.json`.
+2. **Karta Katalogowa LORE-first:** dziewięć sekcji rozwija stensiański
+   cmentarz, błękitne geisty pamięci i podwójny sens angielskiego
+   *a murder of crows*. Mechanika Flying oraz śmierci innego stworzenia,
+   po której można dobrać i odrzucić kartę, staje się opowieścią o krukach
+   wyławiających jedną tajemnicę z nadmiaru gasnących śladów.
+3. **Pinezka bez fałszywej precyzji:** znacznik `region` stoi dokładnie
+   na kotwicy Stensii (`0.228`, `0.317`). Oficjalnie potwierdzone stare
+   grafy przy Farbogach są kontekstem prowincji, ale anonimowy cmentarz
+   nie został uznany za konkretny graf. Strona Innistradu opisuje teraz
+   siedem kart.
+4. **Regresje:** nowy `test/innistrad-42isd.test.js` rozdziela oba systemy
+   numeracji i pilnuje Fabuły oraz semantyki mapy; smoke UI sprawdza dane
+   ISD #70, wikilink Stensii i deep-link pinezki. Licznik wzrósł do 35
+   Kart Katalogowych.
+5. **Commity produktu:** `14ab6f2` (wpis, snapshot i plan dostawy) oraz
+   `dad617c` (karta, mapa, strona planu, changelog i regresje).
+
+Bramki końcowe po dokumentacji: **197/197 testów**, build **59 stron**
+(35 kart, 9 haseł, 15 planów) i **859 plików**, map-audit 0,
+wiki-stats 100% (7,7/8), czysty `git diff --check`.
+
+## 2026-09-11 — PR-32 cd.: materializacja 132GNT Pilgrim's Eye (sesja `arena/01a091f4-mtg`)
+
+Po zamknięciu napraw F1–F13 właściciel przekazał nową dostawę:
+`132GNT / Pilgrim's Eye / GNT / Zendikar` wraz z Fabułą mechanicznego
+oka-thoptera skanującego zróżnicowany teren dla odległego obozu
+wędrowców. Zgodnie z L16 Fabuła została zapisana verbatim przed
+researchem i roadmapą.
+
+1. **Dwa systemy numeracji:** `132GNT` pozostało `imgId` właściciela,
+   natomiast właściwy druk Scryfall/Gatherer to GNT #55. Pełna odpowiedź
+   API wraz z jawną notką numeracyjną żyje w
+   `scryfall/132gnt-pilgrim-s-eye.json`.
+2. **Karta Katalogowa LORE-first:** dziewięć sekcji rozwija korowego,
+   latawcowego thoptera, Roil, hedrony, skanowanie kanionów, gór i dolin,
+   lampę obozu oraz coraz dłuższy powrót. Mechanika `{3}`, Flying i
+   wyszukanie dowolnego basic landu do ręki została odczytana jako zwiad,
+   który daje plan drogi, lecz nie gotowe schronienie.
+3. **Pinezka bez pozornej pewności:** Fabuła nie nazywa kontynentu ani
+   obozu i łączy wiele biomów. Znacznik `przyblizona` stoi na kotwicy
+   Sea Gate jako operacyjny indeks kanonicznej bazy wypraw, nie dokładny
+   adres sceny. Strona Zendikaru została uzupełniona o korowe Pilgrim's
+   Eyes i trzecią kartę planu.
+4. **Strażniki:** `test/zendikar.test.js` rozdziela `132GNT` od GNT #55
+   i pilnuje przybliżonej semantyki pinezki; licznik listy kart w smoke UI
+   wzrósł do 34.
+5. **Commity produktu:** `1d6f695` (wpis, snapshot i plan), `13fad1c`
+   (karta, mapa, strona planu, changelog i testy) oraz `bbefda2`
+   (usunięcie etykiety procesowej wykrytej przez smoke UI).
+
+Bramki końcowe po dokumentacji: **194/194 testy**, build **58 stron**
+(34 karty, 9 haseł, 15 planów) i **859 plików**, map-audit 0,
+wiki-stats 100% (7,7/8), czysty `git diff --check`.
+
+## 2026-09-11 — PR-32: audyt PR-31 i naprawy F1–F13 (sesja `arena/01a091f4-mtg`)
+
+Pełny audyt 251 plików scalonego PR-31 wykazał 13 grup problemów od P0
+do P3. Właściciel zatwierdził istniejący wariant Eldraine T4 i zlecił
+naprawę całości. W sześciu inkrementalnych pakietach:
+
+1. oczyszczono 3 Karty Katalogowe DFC i dodano globalny strażnik ADR 0044;
+2. usunięto metadane druku oraz nieźródłową lokalizację 347NPH,
+   rozszerzając ADR 0040 i jego test;
+3. zachowano T4 Eldraine, przywrócono 209ELD do Ardenvale, poprawiono
+   relacje lore, proweniencję, pewność, trasę przez Lochmere i kompozycję;
+4. wycofano niepotwierdzone POI Alary oraz uporządkowano źródła Confluxu
+   i Stensii;
+5. odtworzono finalną dokumentację 15 materializacji PR-31 i rzeczywiste
+   czasy ADR 0029, dodano L19, poprawiono redakcję oraz usunięto zbędny
+   rootowy raster Wiedźmina bez zmiany runtime LOD;
+6. dodano testy regresyjne Eldraine, Alary, proweniencji i zamknięcia.
+
+Bramki końcowe: **192/192 testy**, build 57 stron (33/9/15) i 859
+plików, map-audit 0, wiki-stats 100% (7,7/8), czysty `git diff --check`.
+Poprawione Eldraine i Alarę obejrzano przez vision w 1600×1120.
+
+## 2026-09-10 / 2026-09-11 — PR-31: dwie Pętle Jakości i 15 materializacji (sesja `arena/01a08d3e-mtg`)
+
+PR-31 został scalony jako `5a49ca3`. Pierwotny wpis historii powstał
+przed późnymi commitami produktu i opisywał tylko 41 stron oraz Simian
+Simulacrum; ten zapis odtworzono po audycie PR-31 w sesji PR-32.
+
+1. **Dwie Pętle Jakości:** audyt PR-30, pogłębienie lore, reguła L18 oraz
+   cztery hasła: `conflux`, `grixis`, `esper`, `stensia`.
+2. **15 pełnych kompletów wpis–snapshot–karta–mapa:**
+   `362bro-simian-simulacrum`, `171isd-grizzled-outcasts`,
+   `181avr-spectral-prison`, `544avr-thraben-valiant`,
+   `596ori-ghirapur-gearcrafter`, `612blb-crumb-and-get-it`,
+   `118mid-dire-strain-brawler`, `537cmr-kor-cartographer`,
+   `539clb-silvanus-s-invoker`, `83mm2-gorehorn-minotaurs`,
+   `19-8ed-twiddle`, `209eld-burning-yard-trainer`,
+   `312m13-goblin-battle-jester`, `531m3c-disa-the-restless` i
+   `347nph-pristine-talisman`.
+3. **Dwa nowe plany:** Eldraine z autorskim podkładem T4 oraz Wiedźmin z
+   Mapą Orteliusa T1 i LOD (master, L0, miniatura, 150 kafli).
+4. **Stan przy scaleniu:** 180/180 testów; build 57 stron (33 karty,
+   9 haseł, 15 planów) i 859 plików drzewa; map-audit 0; wiki-stats 100%.
+5. **Korekta po audycie w PR-32:** zachowano zatwierdzone T4 Eldraine,
+   ale naprawiono F1–F13: DFC, druk źródłowy 347NPH, scenę 209ELD,
+   semantykę i wygląd Eldraine, POI Alary, cytowania, dokumentację,
+   godziny changelogu, storage Wiedźmina oraz redakcję.
 
 ## 2026-09-10 — PR-30: Kaladesh jako dwie osobne mapy (sesja `arena/01a087fc-mtg`)
 

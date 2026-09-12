@@ -203,20 +203,19 @@ taniej i trwalej, to cena **legalizmu**: biel nie pozwala sobie na
 zniszczenie tego, co uznała jedynie za nieprzydatne. Podwójne {W}{W}
 osadza rzecz w rdzeniu koloru porządku, a **instant** oddaje realia
 sceny — wyrok zapada natychmiast, w reakcji, gdy heretyk już stoi
-przed ołtarzem. Znak wodny karty jest phyrexiański, choć zaklęcie jest
-białe: to jedna z tych kart bloku, które pokazują, że biel na
-Mirrodinie ma już dwóch właścicieli.
+przed ołtarzem. Biała magia Ortodoksji pokazuje, że porządek Mirrodinu
+został przejęty i wypaczony przez Phyrexię.
 
 ## Źródła
 
-- Scryfall, snapshot karty (MBS #3, 2011-02-04) — koszt, typ, Oracle, flavor, znak wodny phyrexiański: `scryfall/476mbs-banishment-decree.json`
+- Scryfall, snapshot karty (MBS #3, 2011-02-04) — koszt, typ, Oracle i flavor: `scryfall/476mbs-banishment-decree.json`
 - Fabuła właściciela (2026-09-08) — osadzenie sceny w katedralnych korytarzach Ortodoksji, gest cenobity, wyrzucenie na Razor Fields
 - A Planeswalker's Guide to New Phyrexia: The Machine Orthodoxy (2011) — cenobici jako kapłani inkwizycji, ranga i budowa z metalu, porcelanowy metal, Argent Etchings, Elesh Norn jako Wielka Cenobitka manipulująca doktryną: https://magic.wizards.com/en/news/feature/planeswalkers-guide-new-phyrexia-machine-orthodoxy-2011-04-06
 - Getting to Know the Praetors (2011) — Elesh Norn: Pretorka Jedności, brak skóry i porcelanowy metal, cenobici niosący jej tren; etymologia słowa „cenobita": https://magic.wizards.com/en/news/feature/getting-to-know-the-praetors
 - MTG Wiki, Auriok — wygląd i złoto w ciele, osady jako miasta-państwa, Accorders i Accord of Equity, Bladehold i technika *mirroring*, Cave of Light jako miejsce święte, największa odporność na compleation: https://mtg.wiki/page/Auriok
 - MTG Wiki, Razor Fields — razorgrass dzwoniący na wietrze, niemal stałe nasłonecznienie, Taj-Nar w centrum, Cave of Light, Bladehold i Ten Shields; późniejszy Mirrex i Fair Basilica: https://mtg.fandom.com/wiki/Razor_Fields
 - MTG Wiki, Fair Basilica — biała siódma sfera zbudowana przez Norn po zwycięstwie, ściany z skostniałych ciał, ołtarz-katedra (podstawa rozstrzygnięcia, że NIE jest to katedra z tej sceny): https://mtg.fandom.com/wiki/Fair_Basilica
-- MTG Wiki, Mirrodin Besieged — era zestawu: wojna o powierzchnię, podział Mirran/Phyrexian, znaki wodne frakcji: https://mtg.fandom.com/wiki/Mirrodin_Besieged
+- MTG Wiki, Mirrodin Besieged — era zestawu: wojna o powierzchnię i podział Mirran/Phyrexian: https://mtg.fandom.com/wiki/Mirrodin_Besieged
 
 ## Podsumowanie Lore
 

@@ -165,17 +165,16 @@ na drodze szarży, będą to konstrukty, myry, maszyny i czysto metalowe ciała
 
 Phyrexiański symbol w koszcie dopowiada ostatnią warstwę znaczenia.
 Czerwona mana albo własne życie: agresja tej frakcji może być zasilana
-zarówno ogniem gór, jak i samym zużywaniem ciała jako paliwa. To dlatego
-karta ma głos obrońcy w flavorze, ale znak wodny najeźdźcy w ramce. Cytat
-należy do tych, którzy uciekają; mechanika — do tych, którzy sprawiają,
-że ucieczka staje się jedynym wyjściem.
+zarówno ogniem gór, jak i samym zużywaniem ciała jako paliwa. Cytat należy
+do tych, którzy uciekają; mechanika — do tych, którzy sprawiają, że
+ucieczka staje się jedynym wyjściem.
 
 ## Źródła
 
 - Fabuła właściciela (2026-09-09) — barykada Vulshoków na pustkowiach
   Oxiddy, kolos z płynnego metalu, odwrót jako jedyna szansa przetrwania.
-- Scryfall, Ruthless Invasion (NPH/93) — koszt, Oracle, flavor text,
-  znak wodny phyrexiański: https://scryfall.com/card/nph/93/ruthless-invasion
+- Scryfall, Ruthless Invasion (NPH/93) — koszt, Oracle i flavor text:
+  https://scryfall.com/card/nph/93/ruthless-invasion
 - MTG Wiki, Oxidda Chain — położenie czerwonych gór Mirrodinu, sąsiedztwo
   Glimmervoid i Mephidrossu, Kuldotha, Vulshokowie, Krark-Home:
   https://mtg.wiki/page/Oxidda_Chain

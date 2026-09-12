@@ -5,6 +5,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { wczytajStrony, wczytajScryfall, widokScryfallDlaKarty } from '../tools/content-loader.mjs';
+import { slugify } from '../src/codex/links.js';
 
 const karty = wczytajStrony().filter((s) => !s.problem && s.typ === 'karta');
 const snapshoty = wczytajScryfall();
@@ -135,6 +136,53 @@ test('snapshot DFC może materializować jedną twarz niezależnie od nazwy cał
   assert.equal(widok.name, 'Civilized Scholar');
   assert.equal(widok.type_line, 'Creature — Human Advisor');
   assert.equal(widok.oracle_text.startsWith('{T}: Draw a card'), true);
+});
+
+test('ADR 0044: żadna materializacja DFC nie ujawnia danych innej twarzy', () => {
+  const problemy = [];
+  for (const karta of karty) {
+    const snap = snapshoty.get(karta.slug);
+    if (!Array.isArray(snap?.card_faces) || snap.card_faces.length < 2) continue;
+
+    const wybrana = snap.card_faces.find(
+      (face) => String(face?.name).trim().toLowerCase() === String(karta.nazwa).trim().toLowerCase(),
+    );
+    if (!wybrana) {
+      problemy.push(`${karta.slug}: nazwa nie wskazuje materializowanej twarzy`);
+      continue;
+    }
+
+    const body = String(karta.body).toLowerCase();
+    for (const inna of snap.card_faces.filter((face) => face !== wybrana)) {
+      const nazwa = String(inna.name ?? '').trim();
+      const wariantyNazwy = [nazwa.toLowerCase(), slugify(nazwa)];
+      for (const wariant of wariantyNazwy) {
+        if (wariant && body.includes(wariant)) {
+          problemy.push(`${karta.slug}: nazwa innej twarzy w treści: „${wariant}”`);
+        }
+      }
+
+      const flavor = String(inna.flavor_text ?? '').trim().toLowerCase();
+      if (flavor.length >= 12 && body.includes(flavor)) {
+        problemy.push(`${karta.slug}: flavor text innej twarzy w treści`);
+      }
+
+      const koszt = String(inna.mana_cost ?? '').trim().toLowerCase();
+      if (koszt && body.includes(koszt)) {
+        problemy.push(`${karta.slug}: koszt many innej twarzy w treści: ${inna.mana_cost}`);
+      }
+
+      const pt = inna.power && inna.toughness ? `${inna.power}/${inna.toughness}` : null;
+      if (pt && new RegExp(`(^|[^0-9])${pt.replace('/', '\\/')}([^0-9]|$)`).test(body)) {
+        problemy.push(`${karta.slug}: statystyki innej twarzy w treści: ${pt}`);
+      }
+    }
+  }
+  assert.deepEqual(
+    problemy,
+    [],
+    'przeciek danych przeciwnej twarzy DFC (ADR 0044):\n' + problemy.join('\n'),
+  );
 });
 
 test('snapshot: sam zestaw pól infoboksu nie spełnia kontraktu całego JSON-a (A2)', () => {

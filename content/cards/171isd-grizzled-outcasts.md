@@ -143,7 +143,7 @@ wataha.
 
 ## Źródła
 
-1. [Grizzled Outcasts // Krallenhorde Wantons — Scryfall](https://scryfall.com/card/isd/185/grizzled-outcasts-krallenhorde-wantons) — dane karty dwustronnej, koszt, typy, statystyki i teksty flavoru obu stron.
+1. [Grizzled Outcasts — Scryfall](https://scryfall.com/card/isd/185) — dane materializowanej twarzy: koszt, typ, statystyki, tekst reguł i flavor text.
 2. [A Planeswalker's Guide to Innistrad: Kessig and Werewolves](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-kessig-and-werewolves-2011-10-05) — kultura Kessigu, obyczaje zamykania domów, Horda Krallen (Krallenhorde) i cechy ludzkiej postaci wilkołaków.
 3. [Plane Shift: Innistrad](https://media.wizards.com/2016/dnd/downloads/Plane_Shift_Innistrad.pdf) — anatomia wilkołaków, subtelne cechy fizyczne likantropów, porzucane obuwie przy transformacji.
 4. [The Prison of Silver](https://mtglore.com/web-articles/the-prison-of-silver/) — osłabienie wad ochronnych Kościoła i bezbronność prowincji.

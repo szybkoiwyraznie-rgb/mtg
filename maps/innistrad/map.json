@@ -645,6 +645,14 @@
    "pewnosc": "region",
    "uzasadnienie": "Przekaz sceny wskazuje gospodarstwo w prowincji Gavony (gdzie obok stodoły i murku parobek ulega nocnej przemianie w bestię rodu Dire-strain). Ponieważ konkretna osada nie jest wymieniona z nazwy, pinezka stoi na regionie Gavony z pewnością region.",
    "notka": "Epoka Midnight Hunt (MID) — narastająca długa noc na Innistradzie sprawia, że potężne wilkołaki rodu Dire-strain otwarcie panują nad podwórzami zastraszonych gospodarzy Gavony."
+  },
+  {
+   "karta": "42isd-murder-of-crows",
+   "x": 0.228,
+   "y": 0.317,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła wskazuje Stensię wprost, lecz nie nazywa cmentarza, doliny ani osady. Pinezka stoi zatem na kotwicy prowincji z pewnością region; stare grafy przy Farbogach są potwierdzonym kontekstem stensiańskich cmentarzy i geistów, nie dokładnym adresem sceny.",
+   "notka": "Epoka Innistrad (ISD) — po zmierzchu kruki zbierają nad anonimowym stensiańskim cmentarzem ostatnie słowa i błękitne ślady pamięci zmarłego strażnika."
   }
  ],
  "zrodlo_fanmapa": "Podkład jest mapą fanowską, nie materiałem WotC. Zgodnie z ADR 0031 służy jako podkład prywatnego Kodeksu; każda kotwica została porównana z kanonem tekstowym, a rozbieżności rozstrzygane są na korzyść kanonu.",

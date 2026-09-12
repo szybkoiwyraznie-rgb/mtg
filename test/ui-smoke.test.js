@@ -404,7 +404,8 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (33)'), 'lista kart: brak 33 kart');
+  assert.ok(lista.includes('Karty Katalogowe (37)'), 'lista kart: brak 37 kart');
+  assert.ok(lista.includes('Chittering Rats'), 'lista kart: brak najnowszej materializacji 540DST');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
     'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
@@ -415,6 +416,15 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(lista.includes('data-tag="ekspedycje"') && lista.includes('data-tag="fauna"'), 'lista kart: brak przycisków filtrowania po tagach (feedback E)');
   assert.ok(lista.includes('data-tagi='), 'lista kart: brak tagów w wierszach tabeli (feedback E)');
   assert.ok(!lista.includes('materializowana jawnie'), 'lista kart: bez meta-tekstu ADR 0003 (feedback F)');
+
+  shim.idz('#/haslo/novigrad');
+  const novigrad = shim.app.innerHTML;
+  assert.ok(novigrad.includes('Wolne Miasto Novigrad'), 'hasło Novigrad: brak definicji');
+  assert.ok(novigrad.includes('W kolekcji'), 'hasło Novigrad: brak automatycznych backlinków');
+  assert.ok(novigrad.includes('Chittering Rats') && novigrad.includes('Bedhead Beastie'),
+    'hasło Novigrad: brak backlinków z dwóch kart spełniających próg');
+  assert.ok(novigrad.includes('#/mapa/wiedzmin?x=0.4045&amp;y=0.2469'),
+    'hasło Novigrad: brak deep-linka do poprawionej kotwicy miejskiej');
 
   // ADR 0030: format Karty Katalogowej jest LORE-first — technikalia w infoboksie,
   // mechanika jako opowieść dopiero pod koniec; sekcje „Ilustracja"/„Druk w Kolekcji" nie istnieją
@@ -461,6 +471,17 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(!karta3.includes('Cory') && !karta3.includes('nr 21/165'), 'karta 137GPT: nie może epatować procesem wydawniczym');
   assert.ok(karta3.indexOf('<h2>Na Mapie</h2>') < karta3.indexOf('<h2>Mechanika jako Opowieść</h2>'), 'karta 137GPT: mechanika ma być po mapie/transpozycji');
   assert.ok(karta3.indexOf('<h2>Mechanika jako Opowieść</h2>') < karta3.indexOf('<h2>Źródła</h2>'), 'karta 137GPT: mechanika ma stać przed źródłami');
+
+  // 42ISD: rodzima karta Innistradu — stensiański cmentarz, regionalna
+  // pinezka i dane właściwego druku ISD #70.
+  shim.idz('#/karta/42isd-murder-of-crows');
+  const karta42 = shim.app.innerHTML;
+  assert.ok(karta42.includes('<h1>Murder of Crows</h1>'), 'karta 42ISD: brak tytułu');
+  assert.ok(karta42.includes('Creature — Bird'), 'karta 42ISD: brak typu ze snapshotu');
+  assert.ok(karta42.includes('Even more than carrion'), 'karta 42ISD: brak flavoru ISD #70');
+  assert.ok(karta42.includes('href="#/haslo/stensia"'), 'karta 42ISD: brak wikilinku do Stensii');
+  assert.ok(karta42.includes('#/mapa/innistrad?pin=42isd-murder-of-crows'),
+    'karta 42ISD: brak deep-linka regionalnej pinezki');
 
   // 309ISD: materializacja niezależnej twarzy DFC — tylko Civilized Scholar,
   // bez mieszania drugiej strony w tytule, typie i widocznej treści.

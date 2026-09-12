@@ -55,10 +55,11 @@ osady, jak i kuźnie na pograniczu Stensii i Gavony. [3](https://www.mtgsalvatio
 Ludzka ludność Stensii to w przeważającej mierze pasterze owiec i kóz,
 drwale oraz kowale. Żyją w ciągłym strachu, uwięzieni w logice, którą
 wampiry opisują bezlitosnym aforyzmem: *ludzie zależą od owiec, a wampiry
-od ludzi*. Izolacja prowincji sprawia, że docierający tu uczeni i badacze
-(tacy jak [[309isd-civilized-scholar|Civilized Scholar]]) często
-poszukiwali w surowych, odciętych dolinach Stensii pierwotnych składników
-alchemicznych oraz sekretów natury potworności.
+od ludzi*. Izolacja prowincji sprawia, że wiedza o jej dolinach i rodach
+często wędruje dalej w raportach oraz traktatach. Tak poznaje ją
+[[309isd-civilized-scholar|Civilized Scholar]]: bada pisma o Markovach ze
+swego gabinetu w Havengulu; żadne świadectwo nie prowadzi go osobiście do
+Stensii.
 
 ## Powiązane hasła
 

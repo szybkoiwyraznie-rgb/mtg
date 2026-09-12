@@ -45,8 +45,8 @@ gospodarzy i nie obawia się żadnego sprzeciwu.
 
 **Wilkołak rodu Dire-strain (Dire-Strain Brawler)** — monstrualny
 likantrop z rodu Vildin, łączący potężną masę niedźwiedzia ze zwinnością
-i zmysłami wilka. Pod ludzką postacią pracowity parobek (*Tireless Hauler*),
-w nocy bezwzględny władca podwórza.
+i zmysłami wilka. Bezwzględny władca podwórza, świadomy lęku zamkniętych
+w domu mieszkańców.
 
 **Zastraszeni gospodarze** — mieszkańcy wiejskiego domu w Gavony, chroniący
 się za zaryglowanymi okiennicami przy blasku świecy; świadomi natury
@@ -69,19 +69,16 @@ nie potrzebuje broni ani finezji, polegając na miażdżącym uderzeniu łap.
 
 ## Flavor Text
 
-Inskrypcja na rewersie:
+Inskrypcja:
 
 > *„A few townsfolk had their suspicions, but none dared accuse him openly.”*
 >
 > — „Kilku mieszkańców miało swoje podejrzenia, lecz nikt nie odważył się
 > oskarżyć go otwarcie.”
 
-Zapis dopełnia inskrypcję z dziennej strony (*„Nowy najemnik okazał się
-więcej niż wystarczający, by zastąpić trzech parobków, którzy zniknęli
-tydzień wcześniej”*). Tekst doskonale chwyta atmosferę wiejskiego lęku:
-gospodarze wolą przymknąć oczy na potworną prawdę i cieszyć się darmową,
-nadludzką pracą w polu, niż zaryzykować bezpośrednią konfrontację
-z bestią pod pełnią księżyca.
+Tekst doskonale chwyta atmosferę wiejskiego lęku: mieszkańcy rozpoznają
+potworną prawdę, ale zmowa milczenia wydaje się bezpieczniejsza niż
+bezpośrednia konfrontacja z bestią pod pełnią księżyca.
 
 ## Transpozycja
 
@@ -93,8 +90,9 @@ Przekaz ukazuje nocną scenę na farmie w **Gavony**:
   przy stodole, z odciskami stóp przechodzącymi w ślady łap.
 - **Paraliż społeczności** — drżące światło świecy za okiennicami jako
   symbol bezradności ludzi wobec rosnącej potęgi watah.
-- **Dwoistość losu** — kontrast między dzienną użytecznością siłacza
-  a nocnym horrorem, nawiązujący do losu watah w [[171isd-grizzled-outcasts|Grizzled Outcasts]].
+- **Ślady utraconego porządku** — amulet, porzucone buty i zamknięte
+  domostwo kontrastują z nocnym panowaniem bestii, podobnie jak społeczny
+  lęk przed watahami w [[171isd-grizzled-outcasts|Grizzled Outcasts]].
 
 Scena osadzona jest w epoce długiej nocy (*Midnight Hunt*), gdy równowaga
 słońca i księżyca na Innistradzie załamuje się, a wilkołaki zyskują
@@ -117,26 +115,20 @@ Pinezka: `#/mapa/innistrad?pin=118mid-dire-strain-brawler`.
 
 ## Mechanika jako Opowieść
 
-Koszt dziennej postaci to `{4}{G}`, statystyki 4/5 z czujnością (*Vigilance*)
-oraz regułą **Daybound** (Dzienny cykl). W nocy stwór przekształca się
-w bestię **Dire-Strain Brawler** — monstrum 6/6 z czujnością i regułą
-**Nightbound** (Nocny cykl).
+Dire-Strain Brawler jest zielonym stworem **6/6** z czujnością
+(*Vigilance*) i regułą **Nightbound**. Ta twarz zapisuje chwilę pełnego
+panowania drapieżnika: jego siła przewyższa większość leśnych bestii,
+a czujność oznacza, że nie opuszcza gardy nawet podczas natarcia.
 
-Zielona mana i wysoki koszt odzwierciedlają pierwotną siłę fizyczną. Ciało
-4/5 za dnia oddaje potężnego tragarza wykonującego pracę za trzech ludzi
-bez oznak zmęczenia (czujność pozwala atakować bez wyczerpania).
-
-Gdy zapada noc (**Nightbound**), tłumiona zwierzęca natura eksploduje.
-Statystyki rosną do potężnego 6/6, przewyższającego większość leśnych
-bestii. Czujność na nocnej stronie doskonale odzwierciedla scenę: potwór
-nie śpi i nie odpoczywa — stoi na straży podwórza z uniesioną głową,
-bacznie obserwując każdy ruch za oknami. Powrót do formy ludzkiej wymaga
-rzucenia co najmniej dwóch zaklęć w jednej turze — gwałtownego wysiłku
-magicznego, który rozprasza mrok i przywraca dzienny porządek.
+Mechanika współgra ze sceną na farmie. Wilkołak stoi na otwartym
+podwórzu, obserwuje każde okno i nie musi wybierać między atakiem a
+pilnowaniem zastraszonych mieszkańców. **Nightbound** osadza go w porze,
+w której księżyc i mrok wzmacniają watahy Innistradu, a ludzkie osady
+tracą resztki bezpieczeństwa.
 
 ## Źródła
 
-1. [Tireless Hauler // Dire-Strain Brawler — Scryfall](https://scryfall.com/card/mid/203/tireless-hauler-dire-strain-brawler) — dane dwustronnej karty, typy stwora, statystyki 4/5 i 6/6, mechaniki Daybound/Nightbound oraz inskrypcje obu stron.
+1. [Dire-Strain Brawler — Scryfall](https://scryfall.com/card/mid/203) — dane materializowanej twarzy: typ stwora, statystyki 6/6, czujność, Nightbound oraz inskrypcja.
 2. [A Planeswalker's Guide to Innistrad: Kessig and Werewolves](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-kessig-and-werewolves-2011-10-05) — rody wilkołaków, charakterystyka rodu Vildin (Dire-strain), fizjologia i psychologia likantropów.
 3. [A Planeswalker's Guide to Innistrad: Gavony and Humans](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-gavony-and-humans-2011-09-07) — życie codzienne i rolnictwo w parafiach Gavony.
 4. [Plane Shift: Innistrad](https://media.wizards.com/2016/dnd/downloads/Plane_Shift_Innistrad.pdf) — detale anatomiczne i obyczajowe przemiany wilkołaków.
@@ -144,9 +136,10 @@ magicznego, który rozprasza mrok i przywraca dzienny porządek.
 
 ## Podsumowanie Lore
 
-Nocą na wiejskiej farmie w Gavony parobek rodu Dire-strain przyjmuje
-swoją prawdziwą postać — monstrualnego wilkołaka 6/6 z czujnością,
-spokojnie dominującego podwórze. Porzucone buty przy stodole i drżąca
+Nocą na wiejskiej farmie w Gavony monstrualny wilkołak rodu Dire-strain
+spokojnie dominuje podwórze; siła 6/6 i czujność czynią z niego drapieżnika,
+który ani na chwilę nie spuszcza mieszkańców z oczu. Porzucone buty przy
+stodole i drżąca
 świeca za okiennicami tworzą poruszający obraz cichej ugody ze strachem:
 społeczność woli znosić obecność drapieżnika, niż zmierzyć się
 z jego potęgą.

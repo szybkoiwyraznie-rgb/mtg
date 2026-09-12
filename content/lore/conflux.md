@@ -25,17 +25,17 @@ W punkcie zderzenia granic wywołało gwałtowne wojny graniczne
 Tysiąclecia przed Confluxem Alara została rozdarta na pięć odrębnych
 światów podczas kataklizmu zwanego **Sundering**. Każdy odłam został
 odcięty od dwóch kolorów many i rozwijał się w skrajnej izolacji,
-zatracając pamięć o pierwotnej całości. Conflux był naturalnym
-cyklem kosmologicznym planu dążącego do ponownego zrośnięcia, lecz jego
-gwałtowny, wojenny przebieg został zaplanowany i przyspieszony przez
-smoczego planeswalkera **Nicola Bolasa**. [1](https://mtg.wiki/page/Nicol_Bolas)
+zatracając pamięć o pierwotnej całości. Sam Conflux był naturalnym
+cyklem kosmologicznym planu dążącego do ponownego zrośnięcia; Nicol Bolas
+nie wywołał tego procesu. [1](https://mtg.wiki/page/Conflux_(event))
 
 Po Naprawie Szczelin (Mending), gdy Bolas utracił dawną, boską potęgę,
-wybrał Alarę na miejsce jej odzyskania. Przez swoich uśpionych agentów
-(w tym Gwafę Hazida w Bancie, szamankę Rakkę Mar w Jundzie czy demona
-Malfegora w Grixis) zasiał strach i nienawiść między shardami,
-aktywując pradawne obeliski many, aby skierować energię zderzenia wprost
-do rodzącego się Maelstromu. [1](https://mtg.wiki/page/Nicol_Bolas), [3](https://mtg.wiki/page/Maelstrom)
+wybrał jednak Alarę na miejsce jej odzyskania. Przez uśpionych agentów —
+w tym Gwafę Hazida w Bancie, szamankę Rakkę Mar w Jundzie i demona
+Malfegora w Grixis — odsłonił obeliski, zasiał strach oraz zaostrzył wojny
+między zbliżającymi się shardami. Obeliski i konflikty zasilały rodzący
+się Maelstrom energią, którą smok zamierzał pochłonąć.
+[3](https://mtg.wiki/page/Nicol_Bolas), [4](https://mtg.wiki/page/Maelstrom)
 
 ### Przebieg wojen granicznych
 
@@ -60,7 +60,7 @@ W samym centrum scalającej się Alary uformował się **Maelstrom** —
 chaotyczny wir niestabilnej many pięciu barw. Burza zaczęła rodzić
 potworne byty, anomalie i złudzenia, takie jak [[305arb-illusory-demon|Złudny Demon]]
 czy Child of Alara. W kulminacyjnym momencie Bolas wszedł w oko wiru,
-pochłaniając zgromadzoną manę i odzyskując dawną formę. [3](https://mtg.wiki/page/Maelstrom)
+pochłaniając zgromadzoną manę i odzyskując dawną formę. [4](https://mtg.wiki/page/Maelstrom)
 
 Został jednak powstrzymany przez leonińskiego planeswalkera **Ajaniego
 Goldmane'a**. Używając magii duszy i resztek energii Maelstromu, Ajani
@@ -96,8 +96,8 @@ leżący w geometrycznym środku scalonego planu.
   scalony plan Alara Reunited: [2](https://mtg.wiki/page/Alara)
 - MTG Wiki, *Nicol Bolas* — knowania smoka na Alarze, manipulacje
   w Grixis, Bancie i Jundzie, wejście w Maelstrom:
-  [1](https://mtg.wiki/page/Nicol_Bolas)
+  [3](https://mtg.wiki/page/Nicol_Bolas)
 - MTG Wiki, *Maelstrom* — wir pięciu kolorów many, narodziny istot
-  i złudzeń: [3](https://mtg.wiki/page/Maelstrom)
+  i złudzeń: [4](https://mtg.wiki/page/Maelstrom)
 - Doug Beyer, *Alara Unbroken* (Wizards of the Coast, 2009) — powieść
   dokumentująca przebieg Confluxu i konfrontację z Bolasem.

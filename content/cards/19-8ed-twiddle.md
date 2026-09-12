@@ -89,7 +89,7 @@ idealnie wpisuje mechanikę rytu w codzienność arkanów Thanedd.
 
 ## Na Mapie
 
-Pinezka o pewności **dokladna**: `#/mapa/wiedzmin?pin=19-8ed-twiddle` —
+Pinezka o pewności **dokładnej**: `#/mapa/wiedzmin?pin=19-8ed-twiddle` —
 wyspa **Thanedd** w Zatoce Praksedy, na północny zachód od **Gors Velen**
 na zachodnim wybrzeżu **Temerii**. Pozycja akademii Aretuzy i wieży
 Tor Lara jest jednoznacznie poświadczona na mapie Kontynentu.

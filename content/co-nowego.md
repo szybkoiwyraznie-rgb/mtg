@@ -1,15 +1,97 @@
-## 2026-09-11 03:00 — Nowa karta: Pristine Talisman (Mirrodin, Razor Fields / Biała Kuźnia-Świątynia)
+## 2026-09-12 14:08 — Korekta pinezki Chittering Rats
+
+- Po uwadze właściciela ponownie sprawdzono master T1 Wiedźmina. Pierwotny
+  odczyt `px_t1 [2000, 1700]` trafiał na wybrzeże na północny zachód od
+  miejskiej ikony, więc nie przedstawiał Novigradu poprawnie.
+- Kotwicę Novigradu i pinezkę 540DST przesunięto na środek ikony Wolnego
+  Miasta: `px_t1 [2060, 1780]`, czyli `x: 0.4045`, `y: 0.2469`. Deep-link
+  hasła, opis mapowy i regresje korzystają z poprawionej pozycji; zakres
+  dokładności nadal kończy się na mieście i nie wskazuje konkretnego
+  tunelu kanałów.
+
+## 2026-09-12 13:39 — Nowa karta: Chittering Rats (Wiedźmin)
+
+- **Materializacja karty:** **[[540dst-chittering-rats|Chittering Rats]]**
+  (`540DST`, wydanie `DST` / *Darksteel*, plan [[wiedzmin|Wiedźmin]]) —
+  w labiryncie kanałów [[novigrad|Novigradu]] stado zmutowanych
+  pseudoszczurów odcina drogę samotnemu poszukiwaczowi skarbów. Mężczyzna
+  osłania cenne mapy i odkłada dalszą wyprawę do czasu przepędzenia roju
+  (`{1}{B}{B}`, 2/2 Creature — Rat; wejście odkłada kartę przeciwnika z
+  ręki na wierzch biblioteki).
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim
+  w `collection/entries/540dst-chittering-rats.md`; pełny snapshot DST
+  #39 żyje w `scryfall/540dst-chittering-rats.json`. `540DST` pozostaje
+  niezależnym `imgId` właściciela.
+- **Pinezka i plan:** dokładna kotwica Novigradu (`x: 0.4045`,
+  `y: 0.2469`; `px_t1 [2060, 1780]`) wskazuje miejską ikonę w skali mapy
+  Kontynentu. Fabuła nie podaje włazu, ulicy ani konkretnego
+  korytarza, więc pinezka nie udaje planu podziemi.
+- **Link-mining:** powstało geograficzne hasło **[[novigrad|Novigrad]]**.
+  Próg ≥2 kart spełniają Chittering Rats oraz Bedhead Beastie, które
+  wymienia Novigrad w relacji mapowej do północnego Velen.
+- **Strażniki:** dedykowana regresja pilnuje Fabuły, rozdziału `540DST`
+  od DST #39, mechanicznego opóźnienia bez odrzucenia map, pinezki miasta
+  oraz dwóch kart linkujących nowe hasło. UI oczekuje 37 Kart
+  Katalogowych.
+
+## 2026-09-12 13:06 — Nowa karta: Bedhead Beastie (Wiedźmin)
+
+- **Materializacja karty:** **[[555dsk-bedhead-beastie|Bedhead Beastie]]**
+  (`555DSK`, wydanie `DSK` / *Duskmourn: House of Horror*, plan
+  [[wiedzmin|Wiedźmin]]) — w opuszczonej wskutek wojny chacie na bagnach
+  Velen kolosalny kudłaty bebok zaklinował na rogatym łbie szczątki łóżka
+  i siennika, a dwaj redańscy milicjanci wspólnie zwierają szyk w progu
+  (`{4}{R}{R}`, 5/6 Creature — Beast, Menace, Mountaincycling `{2}`).
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim
+  w `collection/entries/555dsk-bedhead-beastie.md`; pełny snapshot DSK
+  #125 żyje w `scryfall/555dsk-bedhead-beastie.json`. `555DSK` pozostaje
+  niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim
+  Scryfall.
+- **Pinezka i plan:** mapa Wiedźmina dostała regionalną kotwicę Velen i
+  pinezkę `region` (`x: 0.4113`, `y: 0.2807`; około `px_t1 [2095,
+  2024]`). Fabuła nie nazywa wsi, chaty, konkretnego bagna ani
+  posterunku. Strona planu opisuje wojenne Velen, folklor beboka i
+  ostrożne podobieństwo do biesa bez utożsamiania gatunku.
+- **Strażniki:** regresja rozdziela oba systemy numeracji i pilnuje
+  właścicielskiej Fabuły, parametrów druku, regionalnej pewności pinezki
+  oraz dokładnej zgodności współrzędnych z kotwicą Velen.
+
+## 2026-09-11 23:28 — Nowa karta: Murder of Crows (Innistrad)
+
+- **Materializacja karty:** **[[42isd-murder-of-crows|Murder of Crows]]** (`42ISD`, wydanie `ISD` / *Innistrad*, plan [[innistrad|Innistrad]]) — na starym stensiańskim cmentarzu wielkie kruki przechwytują błękitne smugi wspomnień i ostatnie słowa unoszące się nad pustymi szatami oraz srebrną tarczą zmarłego strażnika (`{3}{U}{U}`, 4/4 Creature — Bird, Flying, śmierć innego stworzenia pozwala dobrać, a następnie odrzucić kartę).
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim w `collection/entries/42isd-murder-of-crows.md`; pełny snapshot ISD #70 żyje w `scryfall/42isd-murder-of-crows.json`. `42ISD` pozostaje niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim Scryfall.
+- **Pinezka i plan:** mapa Innistradu dostała pinezkę `region` na kotwicy Stensii. Fabuła nazywa prowincję, ale nie cmentarz ani dolinę; stare grafy przy Farbogach są potwierdzonym kontekstem geistów, nie dokładnym adresem sceny. Strona planu opisuje kruki żywiące się śladami pamięci zmarłych.
+- **Strażniki:** test Innistradu rozdziela oba systemy numeracji, pilnuje regionalnego charakteru pinezki oraz kotwic sceny: Stensii, srebrnej tarczy, błękitnych wspomnień i ostatnich słów.
+- **Bramki końcowe:** 197/197 testów, build 59 stron (35 kart, 9 haseł, 15 planów) i 859 plików drzewa, map-audit 0 problemów, wiki-stats 100% (7,7/8), czysty `git diff --check` oraz świeży preview karty i mapy Innistradu.
+
+## 2026-09-11 23:12 — Nowa karta: Pilgrim's Eye (Zendikar)
+
+- **Materializacja karty:** **[[132gnt-pilgrim-s-eye|Pilgrim's Eye]]** (`132GNT`, wydanie `GNT` / *Game Night*, plan [[zendikar|Zendikar]]) — korowy, latawcowy thopter z błękitną soczewką przemierza zróżnicowany teren planu, nanosząc siatkę bezpiecznych przejść dla ekspedycji czekającej przy lampie dalekiego obozu (`{3}`, 1/1 Artifact Creature — Thopter, Flying, wejście wyszukujące dowolny basic land do ręki).
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim w `collection/entries/132gnt-pilgrim-s-eye.md`; pełny snapshot GNT #55 żyje w `scryfall/132gnt-pilgrim-s-eye.json`. `132GNT` pozostaje niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim Scryfall.
+- **Pinezka i plan:** mapa Zendikaru dostała pinezkę `przyblizona` przy Sea Gate, rozumianą jako punkt operacyjny kanonicznej bazy ekspedycji, nie dokładny adres sceny. Fabuła nie nazywa kontynentu ani obozu i łączy wiele biomów, dlatego nie nadano jej pozornej dokładności. Strona planu opisuje teraz korowe Pilgrim's Eyes jako latawcowych zwiadowców terenu.
+- **Strażniki:** test Zendikaru rozdziela oba systemy numeracji oraz pilnuje przybliżonego charakteru pinezki i jej jawnego uzasadnienia.
+- **Bramki końcowe:** 194/194 testy, build 58 stron (34 karty, 9 haseł, 15 planów) / 859 plików, map-audit 0, wiki-stats 100%, czysty `git diff --check`; świeży preview karty i mapy odpowiada HTTP 200.
+
+## 2026-09-11 22:44 — Naprawy audytu PR-31: F1–F13 domknięte
+
+- **DFC i druk źródłowy:** pojedyncze Karty Katalogowe nie ujawniają innych fizycznych twarzy; dodano repo-szerokie strażniki ADR 0044 i ADR 0040. Pristine Talisman nie dziedziczy metadanych ani nieźródłowej lokalizacji z konkretnego wydruku.
+- **Eldraine T4:** zachowano wariant zatwierdzony przez właściciela. Burning-Yard Trainer wrócił do Castle Ardenvale zgodnie z Fabułą; mapa jawnie pozostaje autorskim atlasem relacyjnym, poprawia mobilny Locthwain, zaginiony Kocioł, kompleks Burning Yard, trasę ku Vantress i kolizje etykiet.
+- **Alara i źródła:** wycofano niepotwierdzone punktowe lokalizacje Carmot Mines i Ruins of Vithia; uporządkowano cytowania Confluxu oraz rozdzielono lekturę traktatów od niepotwierdzonej podróży Civilized Scholar do Stensii.
+- **Dokumentacja i storage:** odtworzono finalny zakres 15 materializacji PR-31, skorygowano rzeczywiste godziny publikacji, domknięto plany, dodano regułę L19 i usunięto nieużywany rootowy raster Wiedźmina bez zmiany runtime LOD.
+- **Bramki końcowe:** 192/192 testy, build 57 stron / 859 plików, map-audit 0, wiki-stats 100%, czysty `git diff --check`. Poprawione mapy Eldraine i Alary obejrzano przez vision w 1600×1120.
+
+## 2026-09-11 19:05 — Nowa karta: Pristine Talisman (Mirrodin)
 
 - **Materializacja karty:**
-  - **[[347nph-pristine-talisman|Pristine Talisman]]** (`347NPH`, wydanie `NPH` / *New Phyrexia*, plan [[mirrodin|Mirrodin]]) — sterylna biała kuźnia-świątynia na Razor Fields o mlecznobiałym świetle oculusu; unosi się w niej czysty, symetryczny talizman z perłowego metalu i obsydianowego rdzenia, otoczony liniami energii i symbolem harmonii czterech barw; w zakażonym świecie najeźdźcy artefakt leczy dotykających go wojowników i zasila opór nieskażoną energią (`{3}`, Artefakt ze znakiem wodnym Mirran, `{T}: Dodaj {C}. Otrzymujesz 1 punkt życia`, inskrypcja Elspeth Tirel).
+  - **[[347nph-pristine-talisman|Pristine Talisman]]** (`347NPH`, wydanie `NPH` / *New Phyrexia*, plan [[mirrodin|Mirrodin]]) — sterylna biała kuźnia-świątynia o nieznanym położeniu, rozświetlona mlecznym światłem oculusu; unosi się w niej czysty, symetryczny talizman z perłowego metalu i obsydianowego rdzenia, otoczony liniami energii i symbolem harmonii czterech barw; w zakażonym świecie najeźdźcy artefakt leczy dotykających go wojowników i zasila opór nieskażoną energią (`{3}`, `{T}: Dodaj {C}. Otrzymujesz 1 punkt życia`, inskrypcja Elspeth Tirel).
 - **Wpis kolekcji i snapshot Scryfall:**
   - `collection/entries/347nph-pristine-talisman.md` (Fabuła właściciela zapisana verbatim, L16).
   - `scryfall/347nph-pristine-talisman.json` (pełny snapshot Scryfall NPH #151 z metadanymi pochodzenia).
 - **Pinezka i mapa Mirrodinu:**
-  - Dodana pinezka w rejonie Razor Fields (`maps/mirrodin/map.json`, pewność `region`, `x: 0.465, y: 0.240`).
-  - Strona planu [[mirrodin|Mirrodin]] zaktualizowana o wzmiankę o czystym rzemiośle i nowej karcie.
+  - Dodana przybliżona pinezka planu (`maps/mirrodin/map.json`, `x: 0.500, y: 0.500`); Fabuła nie wskazuje regionu.
+  - Strona planu [[mirrodin|Mirrodin]] zaktualizowana o wzmiankę o czystym rzemiośle i nieznanym położeniu kuźni.
 
-## 2026-09-11 02:30 — Nowa karta: Disa the Restless (Dominaria, Epoka Lodowcowa / Terisiare)
+## 2026-09-11 18:09 — Nowa karta: Disa the Restless (Dominaria, Epoka Lodowcowa / Terisiare)
 
 - **Materializacja karty:**
   - **[[531m3c-disa-the-restless|Disa the Restless]]** (`531M3C`, wydanie `M3C` / *Modern Horizons 3 Commander*, plan [[dominaria|Dominaria]]) — zasypane śniegiem pustkowia dawnego kontynentu Terisiare u stóp błękitnych lodowców i zrujnowanych filarów starożytnego imperium; nieustraszona zwiadowczyni i kronikarka bada w zmarzlinie masywne, szponiaste ślady Lhurgoyfa, ostrzegając rubieże królestwa Kjeldoru przed drapieżnikami epoki chłodu (`{2}{B}{R}{G}`, 5/6 Legendary Creature — Human Scout, wskrzeszanie stałych kart Lhurgoyfów trafiających na cmentarz oraz tworzenie tokenów Tarmogoyfa przy zranieniu gracza).
@@ -20,7 +102,7 @@
   - Dodana kotwica Kjeldor oraz pinezka w północnym Terisiare (`maps/dominaria/map.json`, pewność `region`, `x: 0.885, y: 0.265`).
   - Strona planu [[dominaria|Dominaria]] zaktualizowana o wzmiankę o Epoce Lodowcowej i nowej karcie.
 
-## 2026-09-11 02:00 — Nowa karta: Goblin Battle Jester (Warhammer Fantasy, Góry Krańca Świata)
+## 2026-09-11 17:56 — Nowa karta: Goblin Battle Jester (Warhammer Fantasy, Góry Krańca Świata)
 
 - **Materializacja karty:**
   - **[[312m13-goblin-battle-jester|Goblin Battle Jester]]** (`312M13`, wydanie `M13` / *Magic 2013*, plan [[warhammer-fantasy|Warhammer Fantasy]]) — czerwono-brązowa skalista półka nad wąwozem w Górach Krańca Świata (*Worlds Edge Mountains*); wojenny trefniś z plemienia Krzywego Księżyca (*Crooked Moon*) w asymetrycznym stroju z kości i peruce odwraca uwagę wrogów groteskowym, prowokacyjnym tańcem na krawędzi urwiska, uniemożliwiając im uformowanie muru tarcz i otwierając drogę do zabójczego uderzenia większych goblinów i orków od tyłu (`{3}{R}`, 2/2 Goblin, wyzwalana zdolność: przy rzuceniu czerwonego zaklęcia docelowy stwór nie może blokować w tej turze).
@@ -31,23 +113,29 @@
   - Dodana kotwica Karak Osiem Szczytów oraz pinezka w paśmie Worlds Edge Mountains (`maps/warhammer-fantasy/map.json`, pewność `region`, `x: 0.720, y: 0.580`).
   - Strona planu [[warhammer-fantasy|Warhammer Fantasy]] zaktualizowana o opis Nocnych Goblinów, plemienia Krzywego Księżyca i odsyłacz do nowej karty.
 
-## 2026-09-11 01:45 — Nowy plan: Eldraine (mapa T4) + nowa karta: Burning-Yard Trainer (Embereth, The Burning Yard)
+## 2026-09-11 17:50 — Pakiet kart: Thraben Valiant, Gorehorn Minotaurs i Twiddle + nowy plan Wiedźmina
+
+- **[[544avr-thraben-valiant|Thraben Valiant]]** (`544AVR`, *Avacyn Restored*) — weteranka z Thraben schodzi do wulkanicznego Devils' Breach w Kessigu, uzbrojona w srebrny miecz i bicz do chwytania diabłów. Wpis kolekcji i snapshot Scryfall AVR #39 uzupełniają pinezkę dokładną (`x: 0.392`, `y: 0.945`) na mapie [[innistrad|Innistradu]].
+- **[[83mm2-gorehorn-minotaurs|Gorehorn Minotaurs]]** (`83MM2`, *Modern Masters 2015*) — trójka minotaurów Zwierzoludzi szarżuje przez puszczę z woli Głazu Stada. Wpis kolekcji i snapshot Scryfall MM2 #116 uzupełniają pinezkę regionalną w The Great Forest (`x: 0.4054`, `y: 0.3878`) na mapie [[warhammer-fantasy|Starego Świata]].
+- **Nowy plan [[wiedzmin|Wiedźmin]] i [[19-8ed-twiddle|Twiddle]]** (`19_8ED`, *Eighth Edition*) — czarodziejka z Aretuzy na wyspie Thanedd precyzyjnie obraca astrolabium szafirowymi nićmi energii. Plan otrzymał dostarczoną przez właściciela Mapę Orteliusa T1 z LOD: `master.jpg` 5093×7209, `l0.jpg`, `mini.jpg` i 150 kafli. Wpis kolekcji, snapshot Scryfall 8ED #111 i pinezka dokładna Thanedd (`x: 0.4153`, `y: 0.3045`) domykają materializację.
+
+## 2026-09-11 17:50 — Nowy plan: Eldraine (mapa T4) + nowa karta: Burning-Yard Trainer (Ardenvale)
 
 - **Nowy plan:** [[eldraine|Eldraine]] — baśniowy i rycerski plan inspirowany legendami arturiańskimi i baśniami braci Grimm. Podział na cywilizowane Królestwo (*The Realm*) zorganizowane wokół Pięciu Dworów (Ardenvale, Vantress, Locthwain, Embereth, Garenbrig) oraz bezkresne Knieje (*The Wilds*) pełne magii Fae, czarownic, gigantów i pradawnych reliktów elfów.
 - **Wektorowa mapa Eldraine (T4):**
-  - Autorska rekonstrukcja wektorowa relacji przestrzennych w silniku Mapforge (`maps/eldraine/scena.json`, `podklad.svg`, `map.json`) zgodnie z drabiną preferencji ADR 0038 i kanonem *Planeswalker's Guide to Eldraine*.
-  - Geometria: Wyżyny Ardenvale w centrum, jezioro Lochmere z wyspą Vantress na północnym zachodzie, lewitujące Locthwain na moczarach południowo-zachodnich, wulkaniczny płaskowyż Embereth i poligon The Burning Yard na południowym wschodzie, Dolina Garen z Wielkim Kręgiem na północnym wschodzie oraz otaczające Knieje (The Wilds, las Tuinvale, ruiny Heart Land, podniebne zamczysko Stormkeld, chatka wiedźmy i karczma Edgewall Inn).
-  - Hydrologia i etykiety zgodne z regułami Codexu (0 błędów w audycie).
+  - Zatwierdzony przez właściciela autorski atlas relacyjny w silniku Mapforge (`maps/eldraine/scena.json`, `podklad.svg`, `map.json`), zgodny z drabiną ADR 0038.
+  - Globalne kierunki, odległości, rzeki i drogi są umowną kompozycją T4. Źródła potwierdzają byty i relacje lokalne: Castle Vantress na Lochmere, Circle of Loyalty w Castle Ardenvale, Burning Yard jako jeden kompleks Embereth, Irencrag przy Embereth i Great Henge w Castle Garenbrig.
+  - Mobilny Castle Locthwain jest symbolem bez stałego adresu; zaginionego Cauldron of Eternity nie naniesiono. Hydrologia i etykiety przechodzą audyt techniczny.
 - **Materializacja karty:**
-  - **[[209eld-burning-yard-trainer|Burning-Yard Trainer]]** (`209ELD`, wydanie `ELD` / *Throne of Eldraine*, plan [[eldraine|Eldraine]]) — piaszczysta arena turniejowa Płonącego Dziedzińca (*The Burning Yard*) pod zamkowymi wieżami; doświadczony instruktor z płonącym drewnianym mieczem treningowym uspokaja kasztanowego konia, asystując młodemu adeptowi w czerwonym wamsie przed torem płonących przeszkód; egzamin ognia jako ostateczna próba odwagi wpajająca tratowanie i pośpiech (`{4}{R}`, 3/3 Human Knight, Trample, Haste, wejście dające innemu Rycerzowi +2/+2, Trample i Haste).
+  - **[[209eld-burning-yard-trainer|Burning-Yard Trainer]]** (`209ELD`, wydanie `ELD` / *Throne of Eldraine*, plan [[eldraine|Eldraine]]) — piaszczysta arena pod wieżami Castle Ardenvale; doświadczony instruktor z płonącym drewnianym mieczem uspokaja konia i prowadzi młodego adepta przez tor płonących przeszkód (`{4}{R}`, 3/3 Human Knight, Trample, Haste, wejście dające innemu Rycerzowi +2/+2, Trample i Haste). Nazwa karty pochodzi z odrębnego kompleksu Burning Yard w Embereth, lecz Fabuła wiążąco lokuje scenę w Ardenvale.
 - **Wpis kolekcji i snapshot Scryfall:**
   - `collection/entries/209eld-burning-yard-trainer.md` (Fabuła właściciela zapisana verbatim, L16).
   - `scryfall/209eld-burning-yard-trainer.json` (pełny snapshot Scryfall ELD #117 z metadanymi pochodzenia).
 - **Pinezka i mapa Eldraine:**
-  - Pinezka karty osadzona w lokacji The Burning Yard (`maps/eldraine/map.json`, pewność `obiekt`, `x: 0.715, y: 0.7286`).
-  - Strona planu [[eldraine|Eldraine]] zsynchronizowana z nową mapą i odsyłaczem do karty.
+  - Pinezka karty osadzona przy Castle Ardenvale (`maps/eldraine/map.json`, pewność `dokladna`, `x: 0.500, y: 0.4643`).
+  - Strona planu [[eldraine|Eldraine]] rozdziela scenę 209ELD od kanonicznego Burning Yard w Embereth.
 
-## 2026-09-11 01:30 — Nowa karta: Silvanus's Invoker (Zapomniane Krainy, Wysoki Las)
+## 2026-09-11 17:50 — Nowa karta: Silvanus's Invoker (Zapomniane Krainy, Wysoki Las)
 
 - **Materializacja karty:**
   - **[[539clb-silvanus-s-invoker|Silvanus's Invoker]]** (`539CLB`, wydanie `CLB` / *Commander Legends: Battle for Baldur's Gate*, plan [[forgotten-realms|Zapomniane Krainy]]) — smokowiec-druid w prastarych ostępach Wysokiego Lasu (*High Forest*) wsuwa szpony w glebę, wzywając w imię Silvanusa (Dębowego Ojca) potężnego żywiołaka ziemi i drewna do bezwzględnej obrony kniei przed intruzami (`{2}{G}`, 3/2 Dragon Druid, zdolność Conjure Elemental `{8}` budząca ląd jako żywiołaka 8/8 z tratowaniem i pośpiechem).
@@ -58,7 +146,7 @@
   - Dodana kotwica i pinezka dla regionu Wysoki Las (`maps/forgotten-realms/map.json`, pewność `region`, `x: 0.215, y: 0.175`).
   - Strona planu [[forgotten-realms|Zapomniane Krainy]] uzupełniona o opis Wysokiego Lasu i odsyłacz do nowej karty.
 
-## 2026-09-11 01:20 — Nowa karta: Kor Cartographer (Zendikar, Ondu / Makindi)
+## 2026-09-11 17:50 — Nowa karta: Kor Cartographer (Zendikar, Ondu / Makindi)
 
 - **Materializacja karty:**
   - **[[537cmr-kor-cartographer|Kor Cartographer]]** (`537CMR`, wydanie `CMR` / *Commander Legends*, plan [[zendikar|Zendikar]]) — zwiadowczyni korów na linach zwisająca z krawędzi lewitującego płaskowyżu nad kanionami Makindi na Ondu; precyzyjne nanoszenie ruchomych skał na pergamin wbrew wiatrowi i odnajdywanie stabilnych równin dla karawany (`{3}{W}`, 2/2 Kor Scout, wejście przeszukujące i wystawiające Równinę).
@@ -69,10 +157,10 @@
   - Dodana pinezka na kotwicy Makindi Trenches (`maps/zendikar/map.json`, pewność `dokladna`, `x: 0.28, y: 0.8429`).
   - Strona planu [[zendikar|Zendikar]] uzupełniona o odsyłacz do nowej karty w sekcji Ondu i podsumowaniu.
 
-## 2026-09-11 01:10 — Nowa karta: Dire-Strain Brawler (Innistrad, Gavony)
+## 2026-09-11 17:50 — Nowa karta: Dire-Strain Brawler (Innistrad, Gavony)
 
 - **Materializacja karty:**
-  - **[[118mid-dire-strain-brawler|Dire-Strain Brawler]]** (`118MID`, wydanie `MID` / *Innistrad: Midnight Hunt*, plan [[innistrad|Innistrad]]) — nocna wiejska farma w Gavony pod pełnią księżyca; pracowity parobek (dzienna strona *Tireless Hauler*) zrzuca ludzką postać i czwartą parę butów przy stodole, stając się monstrualnym wilkołakiem rodu Dire-strain o ciele 6/6 z czujnością (*Vigilance*, *Nightbound*), spokojnie dominującym podwórze pośród zmowy milczenia zastraszonych gospodarzy.
+  - **[[118mid-dire-strain-brawler|Dire-Strain Brawler]]** (`118MID`, wydanie `MID` / *Innistrad: Midnight Hunt*, plan [[innistrad|Innistrad]]) — nocna wiejska farma w Gavony pod pełnią księżyca; czwarta para porzuconych butów przy stodole zdradza, że na podwórzu pojawił się monstrualny wilkołak rodu Dire-strain o ciele 6/6 z czujnością (*Vigilance*, *Nightbound*), spokojnie dominującym podwórze pośród zmowy milczenia zastraszonych gospodarzy.
 - **Wpis kolekcji i snapshot Scryfall:**
   - `collection/entries/118mid-dire-strain-brawler.md` (Fabuła właściciela zapisana verbatim, L16).
   - `scryfall/118mid-dire-strain-brawler.json` (pełny snapshot Scryfall MID #203 dla karty transformującej z widokiem twarzy nocnej).
@@ -80,7 +168,7 @@
   - Dodana pinezka na rolniczym obszarze prowincji Gavony (`maps/innistrad/map.json`, pewność `region`, `x: 0.59, y: 0.449`).
   - Strona planu [[innistrad|Innistrad]] zaktualizowana o odsyłacz do nowej karty.
 
-## 2026-09-11 01:00 — Nowa karta: Crumb and Get It (Śródziemie, Eriador)
+## 2026-09-11 17:50 — Nowa karta: Crumb and Get It (Śródziemie, Eriador)
 
 - **Materializacja karty:**
   - **[[612blb-crumb-and-get-it|Crumb and Get It]]** (`612BLB`, wydanie `BLB` / *Bloomburrow*, transpozycja do planu [[srodziemie|Śródziemie]]) — hobbit podróżujący nocą przez wzgórza Eriadoru powstrzymuje wygłodniałego drapieżnika bochenkiem chleba podróżnego; dar gościnności i prowiantu rodzący świetlistą aurę niewrażliwości na ciosy (`{W}`, Instant, mechanika Gift a Food: +2/+2 i niezniszczalność).
@@ -91,7 +179,7 @@
   - Dodana pinezka na wzgórzach Eriadoru (`maps/srodziemie/map.json`, pewność `region`, `x: 0.28, y: 0.30`).
   - Strona planu [[srodziemie|Śródziemie]] wzbogacona o akapit o Eriadorze oraz listę kart.
 
-## 2026-09-11 00:50 — Nowa karta: Ghirapur Gearcrafter (Kaladesh, Ghirapur)
+## 2026-09-11 17:50 — Nowa karta: Ghirapur Gearcrafter (Kaladesh, Ghirapur)
 
 - **Materializacja karty:**
   - **[[596ori-ghirapur-gearcrafter|Ghirapur Gearcrafter]]** (`596ORI`, wydanie `ORI` / *Magic Origins*, plan [[kaladesh|Kaladesh]]) — mistrz rzemiosła w nasłonecznionym warsztacie dzielnicy Embraal w Ghirapurze, tworzący filigranowego thoptera napędzanego czystym eterem (`{2}{R}`, 2/1 Human Artificer tworzący przy wejściu żeton 1/1 Thopter z lataniem, etos perfekcji wymagany przez Konsulat).
@@ -102,7 +190,7 @@
   - Dodana pinezka w dzielnicy Embraal w Ghirapurze (`maps/kaladesh/map.json`, pewność `region`, `x: 0.6723, y: 0.6294`).
   - Strona planu [[kaladesh|Kaladesh]] zaktualizowana o nową kartę.
 
-## 2026-09-11 00:40 — Nowa karta: Spectral Prison (Innistrad, Gavony)
+## 2026-09-11 17:50 — Nowa karta: Spectral Prison (Innistrad, Gavony)
 
 - **Materializacja karty:**
   - **[[181avr-spectral-prison|Spectral Prison]]** (`181AVR`, wydanie `AVR` / *Avacyn Restored*, plan [[innistrad|Innistrad]]) — uśpiony wędrowiec w podróżnym płaszczu na posadzce gotyckiej kaplicy w Gavony, otoczony eteryczną kopułą ze światła i śpiących geistów; zaklęcie Aury Kościoła Avacyn (`{1}{U}`, paraliż/uśpienie woli, pęknięcie klatki przy zewnętrznej interwencji magicznej).
@@ -113,7 +201,7 @@
   - Dodana pinezka na prowincji Gavony (`maps/innistrad/map.json`, pewność `region`, `x: 0.59, y: 0.449`).
   - Strona planu [[innistrad|Innistrad]] zaktualizowana o nową kartę.
 
-## 2026-09-11 00:30 — Nowa karta: Grizzled Outcasts (Innistrad, Kessig)
+## 2026-09-11 17:50 — Nowa karta: Grizzled Outcasts (Innistrad, Kessig)
 
 - **Materializacja karty:**
   - **[[171isd-grizzled-outcasts|Grizzled Outcasts]]** (`171ISD`, wydanie `ISD` / *Innistrad*, plan [[innistrad|Innistrad]]) — czterech wędrownych myśliwych na obrzeżach kessigijskiej osady, obserwowanych przez zaryglowane okno; znoszone skóry, kusza i sękaty kij maskujące drapieżne cechy Hordy Krallen (*Krallenhorde*). Niezależna Karta Katalogowa przedniej strony DFC (4/4 Human Werewolf za `{4}{G}`, mechanika ciszy nocy i zrzucania ludzkiego obuwia).
@@ -124,7 +212,7 @@
   - Dodana pinezka na prowincji Kessig (`maps/innistrad/map.json`, pewność `region`, `x: 0.41, y: 0.727`).
   - Strona planu [[innistrad|Innistrad]] powiązana z nową kartą.
 
-## 2026-09-11 00:20 — Nowa karta: Simian Simulacrum (Wojna Braci, Dominaria)
+## 2026-09-11 10:51 — Nowa karta: Simian Simulacrum (Wojna Braci, Dominaria)
 
 - **Materializacja karty:**
   - **[[362bro-simian-simulacrum|Simian Simulacrum]]** (`362BRO`, wydanie `BRO` / *The Brothers' War*, plan [[dominaria|Dominaria]]) — mechaniczny małpi konstrukt odkopany w zapomnianym warsztacie lasu Argoth; jednostka inżynieryjna montująca moduły wzmacniające (dwa znaczniki +1/+1) na opancerzonym automacie-strażniku i reaktywowana zieloną maną Argoth (Unearth `{2}{G}{G}`).
@@ -135,18 +223,18 @@
   - Dodana kotwica i pinezka na wyspie Argoth u południowo-wschodnich wybrzeży Terisiare (`maps/dominaria/map.json`, pewność `region`).
   - Strona planu [[dominaria|Dominaria]] zaktualizowana o nową kartę w osi czasu i sekcji mapy.
 
-## 2026-09-11 00:05 — Druga Pętla Jakości: hasła Esper i Stensia + wzbogacenie mapy Alary (Carmot Mines, Ruins of Vithia)
+## 2026-09-11 00:17 — Druga Pętla Jakości: hasła Esper i Stensia + weryfikacja mapy Alary
 
 - **Link-mining i nowe hasła (krok 3):**
   - **[[esper|Esper]]** (`content/lore/esper.md`, klasa `geografia`, plan [[alara|Alara]]) — archipelag wysp ze stopu eterium, szklanych mórz (Dwindling Sea, Inkwell) i geometrycznych miast (Palandius, Vectis, Sanctum Arcanum). Sekta Ethersworn, doktryna Szlachetnego Dzieła (*Noble Work*) sfinksa Cruciusa, kryzys surowca carmotu i zderzenie w Confluxie z Grixis. Próg spełniony przez karty [[536arb-ethersworn-shieldmage|Ethersworn Shieldmage]] i [[305arb-illusory-demon|Illusory Demon]].
   - **[[stensia|Stensia]]** (`content/lore/stensia.md`, klasa `geografia`, plan [[innistrad|Innistrad]]) — mroczna, górzysta prowincja pasma Geier Reach, ojczyzna wampirzych linii krwi (Markov, Falkenrath, Voldaren) i wulkanicznej czeluści Ashmouth — bramy demonów i diabłów. Próg spełniony przez karty [[309isd-civilized-scholar|Civilized Scholar]] i [[393dka-forge-devil|Forge Devil]].
 - **Pogłębienie LORE i wikilinków (krok 2):**
-  - Strony kart [[309isd-civilized-scholar|Civilized Scholar]], [[393dka-forge-devil|Forge Devil]], [[536arb-ethersworn-shieldmage|Ethersworn Shieldmage]] i [[305arb-illusory-demon|Illusory Demon]] zyskały pogłębione tło i wikilinki do haseł [[stensia|Stensia]] i [[esper|Esper]].
+  - Strony kart [[309isd-civilized-scholar|Civilized Scholar]], [[393dka-forge-devil|Forge Devil]], [[536arb-ethersworn-shieldmage|Ethersworn Shieldmage]] i [[305arb-illusory-demon|Illusory Demon]] zyskały pogłębione tło i wikilinki do haseł [[stensia|Stensia]] i [[esper|Esper]]. Civilized Scholar poznaje Stensię z traktatów czytanych w Havengulu; nie odbywa niepotwierdzonej podróży do prowincji.
   - Strony planów [[innistrad|Innistrad]] i [[alara|Alara]] zaktualizowane o wikilinki do haseł.
   - **100% kompletności (`tools/wiki-stats.mjs`) na wszystkich 40 stronach bazy** (18 kart, 9 haseł, 13 planów).
 - **Pass mapowy T4 (krok 4):**
-  - Wzbogacenie wektorowej mapy Alary (`maps/alara/scena.json`, `podklad.svg` i `map.json`) o kanoniczne POI: **Carmot Mines** (mityczne kopalnie carmotu w archipelagu Esperu) oraz **Ruins of Vithia** (ruiny dawnego imperium w Grixis).
-  - Weryfikacja wizualna i integralnościowa: `python3 tools/map-audit.py` = 0 problemów.
+  - Research potwierdza carmot jako surowiec i Vithię jako dawne królestwo, lecz nie dostarcza współrzędnych pojedynczych **Carmot Mines** ani **Ruins of Vithia**. Nie są one nanoszone jako POI.
+  - Wektorową mapę Alary przywrócono do 28 źródłowych POI, zregenerowano deterministycznie i zweryfikowano integralnościowo: `python3 tools/map-audit.py` = 0 problemów.
 
 ## 2026-09-10 23:45 — Pętla Jakości: hasła Conflux i Grixis + 100% kompletności w wiki-stats
 

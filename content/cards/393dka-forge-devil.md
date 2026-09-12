@@ -25,7 +25,7 @@ się ta scena.
 Kościół [[innistrad|Innistradu]] słabnie. Avacyn zniknęła — w istocie
 została uwięziona w **Helvaulcie**, srebrnej bryle stojącej w trójkątnym
 dziedzińcu tej samej katedry, razem z demonem, którego próbowała
-związać. Święte wady przestają trzymać, modlitwy pozostają bez
+związać. Święte osłony przestają trzymać, modlitwy pozostają bez
 odpowiedzi, a stwory nocy wyczuwają brak świętej mocy i stają się
 śmielsze. Diabły, dotąd trzymane z dala od ludzkiego życia, wchodzą
 tam, gdzie jeszcze niedawno spłonęłyby od samego progu.

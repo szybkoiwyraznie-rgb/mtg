@@ -379,3 +379,21 @@ z właściwym celem passu mapowego.
    do nich nowych warstw ani obiektów ponad stan źródłowy (chyba że za
    osobną, wyraźną zgodą właściciela).
 
+
+## L19 (2026-09-11) — dokumentacja zamknięcia powstaje po ostatnim commicie produktu
+
+**Objaw:** handoff PR-31 ogłaszał finał przy 41 stronach i kończył zakres
+na Simian Simulacrum, choć późniejsze commity tego samego otwartego PR
+dodały 14 materializacji, Eldraine, Wiedźmina i doprowadziły build do 57
+stron. Historia, roadmapa i changelog również zachowały stan pośredni.
+
+**Przyczyna:** dokumenty zamknięcia zostały potraktowane jako jednorazowy
+etap sesji, mimo że po ich utworzeniu praca produktowa trwała dalej.
+Zielone bramki nie wykrywają, że opis zakresu jest starszy od zmian.
+
+**Reguła:** przed scaleniem zanotuj ostatni commit zmieniający treść, mapę,
+kod lub testy. Dopiero po nim aktualizuj historię, roadmapę, changelog i
+handoff, a następnie uruchamiaj pełne bramki. Każdy późniejszy commit
+produktu unieważnia zamknięcie i wymaga ponownej aktualizacji dokumentów
+oraz świeżych wyników. Opis PR pozostaje dokumentem kumulatywnym zgodnie
+z L9.

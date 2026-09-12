@@ -156,8 +156,11 @@ wielkich: Nirkana, Kalastria, Emevera, Urnaav i Ghet). Korowie są
 odwrotnością tego świata: prowadzą surowe, koczownicze życie,
 w którym liczy się to, co da się nieść — „serce jest organem
 w ruchu" — a wędrówki splatają w pielgrzymki od świętego miejsca
-do świętego miejsca. Na styku ras i planu rośnie przemysł
-ekspedycyjny: w miastach-mieszańcach typu **Zulaport** na wybrzeżu
+do świętego miejsca. Do zwiadu nad terenem zmienianym przez Roil
+wytwarzają latawcowe thoptery zwane **Pilgrim's Eyes**: mechaniczne oczy,
+które mogą przelecieć nad urwanym szlakiem i wskazać wyprawie nowy grunt.
+Na styku ras i planu rośnie przemysł ekspedycyjny: w miastach-mieszańcach
+typu **Zulaport** na wybrzeżu
 Beyeen (ludzie, kor, gobliny, merfolkowie) handel ma swoich cichych
 władców — wierzy się, że lokalną ekonomię trzyma wampirzyca Indorel
 i jej siatka zauszników.
@@ -212,10 +215,15 @@ i z prób oswajania bestii, które zwykle ich zjadają.
 - **Karty kolekcji:** [[2bfz-coralhelm-guide|Coralhelm Guide]] (BFZ) —
   merfolka-przewodniczka z Coralhelm nad Halimar na Tazeem;
   [[537cmr-kor-cartographer|Kor Cartographer]] (CMR) — zwiadowczyni korów
-  wytyczająca szlaki na linach nad kanionami Makindi na Ondu.
+  wytyczająca szlaki na linach nad kanionami Makindi na Ondu;
+  [[132gnt-pilgrim-s-eye|Pilgrim's Eye]] (GNT) — korowy thopter skanujący
+  niestabilny teren w poszukiwaniu bezpiecznej ziemi dla ekspedycji.
 
 ## Źródła
 
+- MTG Wiki, „Thopter", sekcja Zendikar — korowie wytwarzają latawcowe
+  Pilgrim's Eyes do zwiadu nad niestabilnym terenem planu:
+  <https://mtg.wiki/page/Thopter#Zendikar>
 - MTG Wiki, „Tazeem" — trzy strefy kontynentu, Halimar (głębokie, sztuczne
   morze, mur 500+ stóp), Sea Gate na murze, Oran-Rief, rzeka Umara,
   Emeria, domy ekspedycyjne; Calcite Flats (ławice kalcytu wokół wybrzeży,

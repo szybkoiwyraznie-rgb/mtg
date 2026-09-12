@@ -12,13 +12,13 @@
  "zrodlo": {
   "url": "https://magic.wizards.com/en/news/feature/planeswalkers-guide-eldraine-2019-10-31",
   "url2": "https://mtg.wiki/page/Eldraine",
-  "tytul": "Planeswalker's Guide to Eldraine — oficjalny kanon geograficzny Pięciu Dworów i Kniei; autorska rekonstrukcja relacji T4",
+  "tytul": "Planeswalker's Guide to Eldraine — oficjalne byty i relacje lokalne; zatwierdzony autorski układ relacyjny T4",
   "autor": "MTG Lore Codex, silnik mapforge (rekonstrukcja T4 wg ADR 0038)",
   "licencja": "praca własna; glify gór i lasów mapome CC-BY-4.0 (ADR 0020)",
   "pobrano": "2026-09-11",
-  "notka": "Autorska rekonstrukcja wektorowa T4 dla planu Eldraine w układzie 2000×1400 px. Wobec braku oficjalnej mapy WotC oraz niskiej jakości i niekanoniczności fanowskich rastrów, mapa realizuje kanoniczną geometrię Pięciu Dworów (Ardenvale w centrum, Vantress na jeziorze Lochmere, lewitujące Locthwain na moczarach, Embereth przy głazie Irencrag i poligonach Burning Yard, Garenbrig przy Great Henge) opasanych przez Knieje (The Wilds). Rzeki, trakty królewskie i biomy są w pełni spójne z zasadami hydrologii i etykietowania Codexu."
+  "notka": "Autorski atlas relacyjny T4 2000×1400 px, zatwierdzony przez właściciela 2026-09-11 po audycie PR-31. Oficjalna mapa geograficzna Eldraine nie istnieje: kierunki świata, odległości, rzeki, szlaki i wzajemne położenie Dworów są umownymi wyborami kompozycyjnymi, nie kanoniczną geometrią. Źródła potwierdzają nazwane byty i relacje lokalne: Vantress na Lochmere, Circle of Loyalty w Castle Ardenvale, Burning Yard jako kompleks Embereth, Irencrag przy Embereth oraz Great Henge w Castle Garenbrig. Mobilny Castle Locthwain pokazano symbolem bez roszczenia do stałej pozycji; zaginionego Cauldron of Eternity nie naniesiono."
  },
- "uklad_wspolrzednych": "Autorski układ sceny T4 2000×1400 px wygenerowany deterministycznie w silniku mapforge (ADR 0018, ADR 0038).",
+ "uklad_wspolrzednych": "Zatwierdzony autorski układ relacyjny T4 2000×1400 px, wygenerowany deterministycznie w Mapforge. Globalne kierunki, odległości, wody i drogi są umowne (ADR 0018/0038).",
  "kotwice": [
   {
    "nazwa": "The Wilds",
@@ -88,42 +88,35 @@
    "x": 0.5,
    "y": 0.4642857142857143,
    "typ": "twierdza",
-   "pozycja_zrodlo": "Monumentalna biała twierdza i historyczna stolica Najwyższego Króla; https://mtg.wiki/page/Castle_Ardenvale. Rekonstrukcja relacyjna Codexu."
-  },
-  {
-   "nazwa": "The Circle of Loyalty",
-   "x": 0.47,
-   "y": 0.42857142857142855,
-   "typ": "miejsce_mocy",
-   "pozycja_zrodlo": "Święty krąg białego płomienia próby rycerskiej; https://mtg.wiki/page/The_Circle_of_Loyalty. Rekonstrukcja relacyjna Codexu."
+   "pozycja_zrodlo": "Biała twierdza i historyczna stolica Najwyższego Króla; Circle of Loyalty znajduje się wewnątrz zamku; https://mtg.wiki/page/Castle_Ardenvale. Rekonstrukcja relacyjna Codexu."
   },
   {
    "nazwa": "Archer's Tower",
-   "x": 0.535,
-   "y": 0.44285714285714284,
+   "x": 0.545,
+   "y": 0.40714285714285714,
    "typ": "wieza",
-   "pozycja_zrodlo": "Wysoka wieża strażnicza strzegąca wschodnich podejść pod zamek; https://mtg.wiki/page/Ardenvale. Rekonstrukcja relacyjna Codexu."
+   "pozycja_zrodlo": "Wieża należąca do domeny Ardenvale; dokładna pozycja na atlasie jest umowna; https://mtg.wiki/page/Ardenvale. Rekonstrukcja relacyjna Codexu."
   },
   {
    "nazwa": "Wealdrum",
-   "x": 0.43,
-   "y": 0.39285714285714285,
+   "x": 0.4,
+   "y": 0.38571428571428573,
    "typ": "osada",
-   "pozycja_zrodlo": "Malownicza wieś rolnicza na zachodnich wyżynach Arden; https://mtg.wiki/page/Ardenvale. Rekonstrukcja relacyjna Codexu."
+   "pozycja_zrodlo": "Osada domeny Ardenvale; dokładna pozycja na atlasie jest umowna; https://mtg.wiki/page/Ardenvale. Rekonstrukcja relacyjna Codexu."
   },
   {
    "nazwa": "Wesling",
-   "x": 0.575,
-   "y": 0.4,
+   "x": 0.6,
+   "y": 0.39285714285714285,
    "typ": "osada",
-   "pozycja_zrodlo": "Rycerska wieś na północno-wschodnich traktach Arden; https://mtg.wiki/page/Ardenvale. Rekonstrukcja relacyjna Codexu."
+   "pozycja_zrodlo": "Osada domeny Ardenvale; dokładna pozycja na atlasie jest umowna; https://mtg.wiki/page/Ardenvale. Rekonstrukcja relacyjna Codexu."
   },
   {
    "nazwa": "Trekell",
    "x": 0.56,
-   "y": 0.5642857142857143,
+   "y": 0.5785714285714286,
    "typ": "osada",
-   "pozycja_zrodlo": "Miasteczko targowe na południowo-wschodnim trakcie; https://mtg.wiki/page/Ardenvale. Rekonstrukcja relacyjna Codexu."
+   "pozycja_zrodlo": "Osada domeny Ardenvale; dokładna pozycja na atlasie jest umowna; https://mtg.wiki/page/Ardenvale. Rekonstrukcja relacyjna Codexu."
   },
   {
    "nazwa": "Castle Vantress",
@@ -140,60 +133,32 @@
    "pozycja_zrodlo": "Głębokie jezioro skrywające sekrety i podwodne groty syren; https://mtg.wiki/page/Vantress. Rekonstrukcja relacyjna Codexu."
   },
   {
-   "nazwa": "Indrelon (Magic Mirror)",
-   "x": 0.275,
-   "y": 0.2571428571428571,
-   "typ": "miejsce_mocy",
-   "pozycja_zrodlo": "Zatopione sanktuarium Magicznego Zwierciadła Indrelon; https://mtg.wiki/page/The_Magic_Mirror. Rekonstrukcja relacyjna Codexu."
-  },
-  {
-   "nazwa": "Castle Locthwain",
+   "nazwa": "Castle Locthwain (mobilny)",
    "x": 0.235,
    "y": 0.7214285714285714,
    "typ": "twierdza",
-   "pozycja_zrodlo": "Lewitujący zamek z czarnego kamienia unoszący się nad moczarami; https://mtg.wiki/page/Castle_Locthwain. Rekonstrukcja relacyjna Codexu."
+   "pozycja_zrodlo": "Mobilny lewitujący zamek, który przemierza Knieje w poszukiwaniu zaginionego Cauldron of Eternity; punkt jest wyłącznie symbolem dworu; https://mtg.wiki/page/Castle_Locthwain. Rekonstrukcja relacyjna Codexu."
   },
   {
    "nazwa": "The Black Tarns",
    "x": 0.235,
-   "y": 0.7785714285714286,
+   "y": 0.7928571428571428,
    "typ": "akwen",
-   "pozycja_zrodlo": "Czarne, mgliste wody i bagniska u stóp lewitującej twierdzy; https://mtg.wiki/page/Locthwain. Rekonstrukcja relacyjna Codexu."
-  },
-  {
-   "nazwa": "Cauldron of Eternity",
-   "x": 0.27,
-   "y": 0.6928571428571428,
-   "typ": "miejsce_mocy",
-   "pozycja_zrodlo": "Mityczny kocioł wskrzeszenia spoczywający w Locthwain; https://mtg.wiki/page/The_Cauldron_of_Eternity. Rekonstrukcja relacyjna Codexu."
-  },
-  {
-   "nazwa": "Castle Embereth",
-   "x": 0.755,
-   "y": 0.6857142857142857,
-   "typ": "twierdza",
-   "pozycja_zrodlo": "Warowny ośrodek i siedziba rady rycerskiej Czerwonego Dworu; https://mtg.wiki/page/Castle_Embereth. Rekonstrukcja relacyjna Codexu."
+   "pozycja_zrodlo": "Czarne, mgliste wody i bagniska związane z domeną Locthwain; relacja z mobilnym zamkiem jest umowna; https://mtg.wiki/page/Locthwain. Rekonstrukcja relacyjna Codexu."
   },
   {
    "nazwa": "The Burning Yard",
-   "x": 0.715,
-   "y": 0.7285714285714285,
+   "x": 0.745,
+   "y": 0.7142857142857143,
    "typ": "arena",
-   "pozycja_zrodlo": "Monumentalny poligon, szranki i areny rycerskich prób ognia (lokacja karty 209ELD); https://mtg.wiki/page/Embereth. Rekonstrukcja relacyjna Codexu."
+   "pozycja_zrodlo": "Monumentalny kompleks turniejowy Embereth, mylnie nazywany Castle Embereth; https://mtg.wiki/page/Embereth. Rekonstrukcja relacyjna Codexu."
   },
   {
    "nazwa": "The Irencrag",
-   "x": 0.795,
-   "y": 0.6571428571428571,
+   "x": 0.8,
+   "y": 0.6357142857142857,
    "typ": "szczyt",
-   "pozycja_zrodlo": "Mistyczny wulkaniczny głaz, w którym rycerze hartują swe miecze; https://mtg.wiki/page/The_Irencrag. Rekonstrukcja relacyjna Codexu."
-  },
-  {
-   "nazwa": "Tournament Grounds",
-   "x": 0.68,
-   "y": 0.6714285714285714,
-   "typ": "miejsce",
-   "pozycja_zrodlo": "Błonia wielkich turniejów rycerskich Królestwa; https://mtg.wiki/page/Tournament_Grounds. Rekonstrukcja relacyjna Codexu."
+   "pozycja_zrodlo": "Mistyczny głaz, w którym rycerze Embereth hartują swe miecze; https://mtg.wiki/page/The_Irencrag. Rekonstrukcja relacyjna Codexu."
   },
   {
    "nazwa": "Castle Garenbrig",
@@ -257,28 +222,22 @@
    "y": 0.16428571428571428,
    "typ": "twierdza",
    "pozycja_zrodlo": "Lodowy zamek Królowej Cieni w odległych północno-zachodnich rubieżach; https://mtg.wiki/page/Dynnistan. Rekonstrukcja relacyjna Codexu."
-  },
-  {
-   "nazwa": "Syr Carenth's Crossing",
-   "x": 0.61,
-   "y": 0.6571428571428571,
-   "typ": "miejsce",
-   "pozycja_zrodlo": "Strategiczny most i przeprawa na trakcie ku Embereth; https://mtg.wiki/page/Eldraine. Rekonstrukcja relacyjna Codexu."
   }
  ],
  "pinezki": [
   {
    "karta": "209eld-burning-yard-trainer",
-   "x": 0.715,
-   "y": 0.7286,
+   "x": 0.5,
+   "y": 0.4643,
    "pewnosc": "dokladna",
-   "uzasadnienie": "Scena 209ELD: Instruktor szermierki i młody rycerz na piaszczystej arenie przed płonącym torem przeszkód — poligon The Burning Yard przy Czerwonym Dworze Embereth / rycerskich szrankach Królestwa (x: 1430, y: 1020)."
+   "uzasadnienie": "Fabuła właściciela umieszcza piaszczystą arenę pod wieżami zamku w Ardenvale. Pinezka wskazuje Castle Ardenvale (x: 1000, y: 650); nazwa karty pochodzi z odrębnego, kanonicznego kompleksu Burning Yard w Embereth, ale nie zmienia lokacji przekazanej sceny."
   }
  ],
  "scena": "scena.json",
  "generator": "tools/mapforge/eldraine-scena-t4.mjs",
- "silnik": "mapforge atlas; pełna geometria T4 z hydrologią i kompletem kotwic Pięciu Dworów",
+ "silnik": "mapforge atlas relacyjny; deterministyczna, umowna kompozycja T4 z kotwicami źródłowo potwierdzonych bytów",
  "zrodlo_fanmapa": null,
+ "decyzja_wlasciciela": "2026-09-11: wariant T4 zatwierdzony; zachować mapę i naprawić pozostałe znaleziska audytu PR-31",
  "poza_zakresem": [
   "Głębokie, pozawymiarowe enklawy Kniei nieposiadające stałych współrzędnych przestrzennych",
   "Inwazja Nowej Fyreksji — stan planu w erze klasycznej Dworów"

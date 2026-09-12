@@ -6,7 +6,9 @@
  *       właściciela — jedyne kanoniczne);
  *   (b) „wignett*” zabronione;
  *   (c) nazwisko artysty ze snapshotu (token ≥4 znaki, granice słów)
- *       zabronione w treści — dane wydruku żyją tylko w infoboksie.
+ *       zabronione w treści — dane wydruku żyją tylko w infoboksie;
+ *   (d) watermark / znak wodny zabroniony we wszystkich widocznych
+ *       treściach i notkach map.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -27,6 +29,17 @@ function bezFrontmatter(md) {
 
 function ucieczRe(frag) {
   return frag.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function plikiRekurencyjnie(katalog, nazwa) {
+  if (!fs.existsSync(katalog)) return [];
+  const wynik = [];
+  for (const wpis of fs.readdirSync(katalog, { withFileTypes: true })) {
+    const pelna = path.join(katalog, wpis.name);
+    if (wpis.isDirectory()) wynik.push(...plikiRekurencyjnie(pelna, nazwa));
+    else if (nazwa(wpis.name)) wynik.push(pelna);
+  }
+  return wynik;
 }
 
 test('ADR 0040: Karty Katalogowe bez nawiązań do oryginalnego druku', () => {
@@ -68,5 +81,29 @@ test('ADR 0040: Karty Katalogowe bez nawiązań do oryginalnego druku', () => {
     problemy,
     [],
     'nawiązania do oryginalnego druku w treści kart (ADR 0040):\n' + problemy.join('\n'),
+  );
+});
+
+test('ADR 0040: watermark nie występuje w widocznej treści ani notkach map', () => {
+  const sciezki = [
+    ...plikiRekurencyjnie('content/cards', (nazwa) => nazwa.endsWith('.md')),
+    ...plikiRekurencyjnie('content/lore', (nazwa) => nazwa.endsWith('.md')),
+    ...plikiRekurencyjnie('content/planes', (nazwa) => nazwa.endsWith('.md')),
+    ...plikiRekurencyjnie('maps', (nazwa) => nazwa === 'map.json'),
+    'content/co-nowego.md',
+  ];
+  const problemy = [];
+  for (const sciezka of sciezki) {
+    const tresc = fs.readFileSync(sciezka, 'utf8');
+    tresc.split('\n').forEach((linia, i) => {
+      if (/\bwatermark\b|znak\S*\s+wodn/iu.test(linia)) {
+        problemy.push(`${sciezka}:${i + 1}: ${linia.trim().slice(0, 110)}`);
+      }
+    });
+  }
+  assert.deepEqual(
+    problemy,
+    [],
+    'watermark/znak wodny w widocznej treści (ADR 0040):\n' + problemy.join('\n'),
   );
 });

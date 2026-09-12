@@ -18,7 +18,7 @@ pinezka:
 W epoce powrotu archanioła obrona [[innistrad|Innistradu]] przestaje
 być wyłącznie pasywnym wyczekiwaniem za grubymi murami. Gdy srebrna bryła
 Helvaultu pęka, a z jej wnętrza uwalnia się Avacyn wraz ze swoimi
-zastępami, Kościół odzyskuje utracony blask. Święte wady znów zaczynają
+zastępami, Kościół odzyskuje utracony blask. Święte osłony znów zaczynają
 parzyć potwory nocy, a katarzy ze stolicy w [[thraben|Thraben]] ruszają
 z karnymi ekspedycjami w najdalsze zakątki planu. Nie czekają na wroga
 przy miejskich bramach — schodzą wprost do jego leży.

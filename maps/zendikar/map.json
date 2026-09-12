@@ -1047,6 +1047,14 @@
    "pewnosc": "dokladna",
    "uzasadnienie": "Zapis sceny wskazuje kaniony Makindi (Makindi Trenches) na kontynencie Ondu wprost. Zwiadowczyni korów zwisa na linach z lewitującego płaskowyżu nad rozpadlinami, kreśląc bezpieczny szlak ku trawiastym równinom. Pinezka stoi bezpośrednio na kotwicy Makindi Trenches z pewnością dokładną.",
    "notka": "Epoka Zendikaru — koczownicze karawany korów odtwarzające szlaki przez kaniony Ondu w obliczu nieustannych zmian wywoływanych przez Roil."
+  },
+  {
+   "karta": "132gnt-pilgrim-s-eye",
+   "x": 0.45,
+   "y": 0.4714,
+   "pewnosc": "przyblizona",
+   "uzasadnienie": "Fabuła właściciela nie nazywa kontynentu ani obozu i świadomie łączy czerwone kaniony, śnieżne góry, zieloną dolinę, lewitujące półki oraz hedrony. Pilgrim’s Eye jest ruchomym korowym zwiadowcą, dlatego znacznik stoi orientacyjnie przy Sea Gate — kanonicznej bazie ekspedycji — jako punkt operacyjny sieci wypraw, a nie dokładny adres sceny.",
+   "notka": "Epoka wypraw na niestabilnym Zendikarze; dokładna data nieustalona. Pozycja nie dowodzi, że obóz stoi w Sea Gate ani że lot odbywa się wyłącznie nad Tazeem."
   }
  ],
  "zrodlo_fanmapa": {
