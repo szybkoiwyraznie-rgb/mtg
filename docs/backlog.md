@@ -35,7 +35,7 @@ mówiące o encji **w treści** (nie samym tagiem):
 
 ## Kolejka link-miningu: encje czekające na drugą kartę (Ravnica)
 
-Sesja PR-34 (2026-09-12) — druga karta Ravniki (`516rna-tenth-district-veteran`)
+Sesja PR-33 cd. (2026-09-12) — druga karta Ravniki (`516rna-tenth-district-veteran`)
 odblokowała progi link-miningu dla trzech encji uliczno-gildyjnych:
 
 - **Legion Boros** — wykonane: `content/lore/boros-legion.md`, klasa

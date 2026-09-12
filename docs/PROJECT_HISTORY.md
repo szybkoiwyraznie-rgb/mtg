@@ -4,7 +4,7 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
-## 2026-09-12 — PR-34: materializacja 516RNA Tenth District Veteran
+## 2026-09-12 — PR-33 cd.: materializacja 516RNA Tenth District Veteran
 
 Właściciel przekazał dostawę `516RNA / Tenth District Veteran / RNA /
 Ravnica` z Fabułą dojrzałej wojowniczki Legionu Boros, która w sercu

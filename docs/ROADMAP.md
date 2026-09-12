@@ -438,7 +438,7 @@ po spełnieniu progu przez Expunge i Serra's Embrace. **217/217 testów**;
 build 66 stron (39/12/15) / 859 plików drzewa archiwum; map-audit 0;
 wiki-stats 100%. Handoff: `docs/setup/HANDOFF_2026-09-12-pr33.md`.
 
-**PR-34 (2026-09-12) — 516RNA Tenth District Veteran + hasła Ravniki.**
+**PR-33 cd. (2026-09-12) — 516RNA Tenth District Veteran + hasła Ravniki.**
 Materializacja **516RNA Tenth District Veteran** — właścicielski `imgId`
 516RNA zachowany oddzielnie od druku **RNA #26**. Karta czyta scenę jako
 rodzimą dla Ravniki: dojrzała weteranka Legionu Boros w sercu Dziesiątego
@@ -450,7 +450,7 @@ Link-mining po drugiej karcie Ravniki utworzył hasła `boros-legion`,
 zasilające próg, a hasła odsyłają do mapy tylko deep-linkami `?x=&y=`.
 **222/222 testów**; build 70 stron (40/15/15) / 859 plików drzewa archiwum;
 map-audit 0; wiki-stats 100%. Handoff:
-`docs/setup/HANDOFF_2026-09-12-pr34.md`.
+`docs/setup/HANDOFF_2026-09-12-pr33.md`.
 
 ## Wątki otwarte (czekają na decyzję właściciela)
 
