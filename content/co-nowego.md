@@ -1,3 +1,32 @@
+## 2026-09-12 21:21 — Nowa karta: Ironclad Slayer (Wiedźmin)
+
+- **Materializacja karty:** **[[594emn-ironclad-slayer|Ironclad Slayer]]**
+  (`594EMN`, wydanie `EMN` / *Eldritch Moon*, plan [[wiedzmin|Wiedźmin]]) —
+  ciężkozbrojny najemnik brodzi po spowitych mgłą pobojowiskach
+  [[velen|Ziemi Niczyjej w Velen]], przeszukuje zgliszcza i porzucone wozy
+  taborowe, po czym wydobywa z błota doskonale zachowany stalowy miecz, by
+  zastąpić wyszczerbiony oręż.
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana w
+  `collection/entries/594emn-ironclad-slayer.md`; pełny snapshot EMN #31
+  żyje w `scryfall/594emn-ironclad-slayer.json`. `594EMN` pozostaje
+  niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim
+  Scryfall/Gatherera.
+- **Pinezka i plan:** `maps/wiedzmin/map.json` dodaje wyłącznie pinezkę
+  karty z pewnością `region` na kotwicy Velen (`x=0.4113`, `y=0.2807`).
+  Opowieść wskazuje pobojowiska Ziemi Niczyjej, lecz raster Orteliusa T1 nie
+  rozrysowuje jednego pola bitwy, taboru ani koleiny w błocie.
+- **Link-mining:** istniejące hasło **[[velen|Velen]]** zostało pogłębione o
+  wojenny krajobraz pobojowisk i odsyłacz do `594EMN`. Nowe encje —
+  pobojowiska/Bitwa na błoniach Velen, najemnicy oraz stalowe miecze jako
+  łup wojenny — zostają poniżej progu osobnego hasła albo wymagają
+  rozpoznania zakresu.
+- **Strażniki:** nowa regresja pilnuje Fabuły, rozdziału `594EMN` od EMN #31,
+  snapshotu, ciężkozbrojnego najemnika, odzyskanego Equipmentu, ostrożnej
+  warstwy Aury oraz regionalnej pinezki Ziemi Niczyjej.
+- **Bramki końcowe:** 267/267 testów; build 88 stron (43 karty, 30 haseł,
+  15 planów), artefakt 1559.3 kB i 853 pliki drzewa archiwum; map-audit 0;
+  wiki-stats 100% (7,3/8); `git diff --check` czysty.
+
 ## 2026-09-12 20:57 — Nowa karta: Candlegrove Witch (Wiedźmin)
 
 - **Materializacja karty:** **[[599mid-candlegrove-witch|Candlegrove

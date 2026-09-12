@@ -20,13 +20,16 @@ precyzyjny ruch astrolabium i gaszenie płomienia świecy decydują o
 powodzeniu wielkich zaklęć. `555DSK Bedhead Beastie` prowadzi w przeciwną
 stronę Kontynentu: do opuszczonej wskutek wojny chaty na bagnach
 [[velen|**Velen**]], gdzie ludowa opowieść o beboku spod łóżka staje się
-cielesnym zagrożeniem. `279M21 Village Rites` zostaje w tym samym regionie,
-ale schodzi do chaty sołtysa w Downwarren/Sztygarach: księga rodowa, woda z
-Krzywuchowych Moczarów, biała koza i sąsiedzi w lnianych kapturach tworzą
-rachunek długu wobec [[panie-lasu|Pań Lasu]]. `599MID Candlegrove Witch`
-zostaje przy Łysej Górze w Velen: świecowy gaj z brzozowych gałęzi,
-guślarka w jelenim porożu i krąg wsi zmieniają coven w ziołowo-ogienną
-obronę przed nocą. `540DST Chittering Rats` schodzi pod
+cielesnym zagrożeniem. `594EMN Ironclad Slayer` zostaje na pobojowiskach
+Ziemi Niczyjej: ciężkozbrojny najemnik brodzi w leśnym błocie, przeszukuje
+zgliszcza i porzucone wozy taborowe, po czym zastępuje wyszczerbiony oręż
+stalowym mieczem wyciągniętym z mazi. `279M21 Village Rites` zostaje w tym
+samym regionie, ale schodzi do chaty sołtysa w Downwarren/Sztygarach:
+księga rodowa, woda z Krzywuchowych Moczarów, biała koza i sąsiedzi w
+lnianych kapturach tworzą rachunek długu wobec [[panie-lasu|Pań Lasu]].
+`599MID Candlegrove Witch` zostaje przy Łysej Górze w Velen: świecowy gaj z
+brzozowych gałęzi, guślarka w jelenim porożu i krąg wsi zmieniają coven w
+ziołowo-ogienną obronę przed nocą. `540DST Chittering Rats` schodzi pod
 [[novigrad|**Novigrad**]]: tam stado pseudoszczurów odcina drogę
 poszukiwaczowi skarbów i zmusza go, by zachował mapy kosztem wstrzymania
 dalszej wyprawy.
@@ -92,6 +95,14 @@ mokradłowe siedlisko pozwalają porównać je z biesem, lecz brak rozpoznania
 wiedźmińskiego i charakterystycznego trzeciego oka nie pozwala tych stworzeń
 utożsamić.
 
+W scenie [[594emn-ironclad-slayer|**Ironclad Slayer**]] wojna pokazuje mniej
+baśniową, a bardziej zawodową twarz. Na spowitych mgłą pobojowiskach Ziemi
+Niczyjej ciężkozbrojny najemnik przeszukuje zgliszcza i wozy taborowe,
+wyciąga z błota zachowany stalowy miecz i zastępuje nim wyszczerbiony oręż.
+Mechanika odzyskania Aury albo Equipmentu zostaje tu zawężona przez Fabułę do
+najmocniejszego obrazu Equipmentu: broni, która przeżyła poprzedniego
+właściciela i od razu może wrócić do ręki.
+
 W scenie [[279m21-village-rites|**Village Rites**]] wieś nie ucieka przed
 bagienną logiką, tylko ją wykonuje. Starsza szeptucha otwiera księgę rodową
 na dębowym pniu, gospodarz z Czarnoboru trzyma wodę z Krzywuchowych
@@ -151,6 +162,11 @@ Pinezki na mapie (ADR 0043: tylko karty):
   Ziemia Niczyja**, pewność `region` — opowieść wskazuje bagna Velen, ale
   nie nazywa wsi, chaty, mokradła ani redańskiego posterunku. Znacznik
   korzysta z regionalnej kotwicy między Wrońcami a Gors Velen.
+- **[[594emn-ironclad-slayer|Ironclad Slayer]]** (594EMN); **pobojowiska
+  Ziemi Niczyjej, Velen**, pewność `region` — opowieść wskazuje wojenne
+  błoto, zgliszcza i porzucone wozy taborowe, ale nie nazywa jednego pola,
+  wsi ani traktu; znacznik dziedziczy regionalną kotwicę Velen
+  (`0.4113/0.2807`).
 - **[[279m21-village-rites|Village Rites]]** (279M21); **Downwarren /
   Sztygary, Krzywuchowe Moczary, Velen**, pewność `region` — opowieść
   wskazuje wieś i mokradła, lecz raster T1 nie rozrysowuje lokalnego planu
@@ -184,6 +200,10 @@ Pinezki na mapie (ADR 0043: tylko karty):
   i Nilfgaardem, wiejska ludność oraz lista wsi obejmująca Konary i
   Sztygary:
   https://wiedzmin.fandom.com/wiki/Velen_(ziemia_niczyja)
+- Wiedźmin Wiki, *Bitwa na błoniach Velen* — największa bitwa III Wojny
+  Północnej na terenie Velen, starcie Redanii z wojskami Nilfgaardu,
+  ogromne straty i brak rozstrzygnięcia:
+  https://wiedzmin.fandom.com/wiki/Bitwa_na_b%C5%82oniach_Velen
 - Wiedźmin Wiki, *Sztygary* oraz Witcher Wiki, *Downwarren* — wieś w
   południowym Velen przy bagnach, zły duch/koszmary, kult Ladies of the
   Wood oraz powiązania z Krzywuchowymi Moczarami:

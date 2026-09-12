@@ -404,8 +404,9 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (42)'), 'lista kart: brak 42 kart');
-  assert.ok(lista.includes('Candlegrove Witch'), 'lista kart: brak najnowszej materializacji 599MID');
+  assert.ok(lista.includes('Karty Katalogowe (43)'), 'lista kart: brak 43 kart');
+  assert.ok(lista.includes('Ironclad Slayer'), 'lista kart: brak najnowszej materializacji 594EMN');
+  assert.ok(lista.includes('Candlegrove Witch'), 'lista kart: brak materializacji 599MID');
   assert.ok(lista.includes('Knight of the Skyward Eye'), 'lista kart: brak materializacji 242ALA');
   assert.ok(lista.includes('Tenth District Veteran'), 'lista kart: brak materializacji 516RNA');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
@@ -433,8 +434,8 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(velen.includes('północno-zachodni, podmokły region Temerii'),
     'hasło Velen: brak definicji');
   assert.ok(velen.includes('W kolekcji'), 'hasło Velen: brak automatycznych backlinków');
-  assert.ok(velen.includes('Village Rites') && velen.includes('Bedhead Beastie'),
-    'hasło Velen: brak backlinków z dwóch kart spełniających próg');
+  assert.ok(velen.includes('Village Rites') && velen.includes('Bedhead Beastie') && velen.includes('Ironclad Slayer'),
+    'hasło Velen: brak backlinków z kart spełniających próg');
   assert.ok(velen.includes('#/mapa/wiedzmin?x=0.4113&amp;y=0.2807'),
     'hasło Velen: brak deep-linka do regionalnej kotwicy');
 
@@ -578,8 +579,8 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/');
   // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — najnowsza dostawa
-  // Ravniki musi wejść do skrótu na stronie głównej.
-  assert.ok(shim.app.innerHTML.includes('Candlegrove Witch'), 'home: brak najnowszej materializacji');
+  // Wiedźmina musi wejść do skrótu na stronie głównej.
+  assert.ok(shim.app.innerHTML.includes('Ironclad Slayer'), 'home: brak najnowszej materializacji');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();

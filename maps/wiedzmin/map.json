@@ -166,6 +166,13 @@
       "uzasadnienie": "Fabuła właściciela wskazuje prastare, mgliste lasy wokół Łysej Góry w Velen. Źródła lokują Łysą Górę/Ard Cerbin w południowo-wschodnim lub południowym Velen i łączą ją z sabatem, ale globalny raster Orteliusa T1 nie zawiera lokalnego planu góry, polany ani brzozowego kręgu. Pinezka dziedziczy regionalną kotwicę Velen (odczyt z mastera px 2095, 2024) i nie udaje dokładnego gaju."
     },
     {
+      "karta": "594emn-ironclad-slayer",
+      "x": 0.4113,
+      "y": 0.2807,
+      "pewnosc": "region",
+      "uzasadnienie": "Fabuła właściciela wskazuje spowite mgłą pobojowiska Ziemi Niczyjej w Velen, zgliszcza i porzucone po bitwie wozy taborowe, ale nie podaje nazwy wsi, traktu ani konkretnego pola. Źródła opisują Velen jako ziemię niczyją III Wojny Północnej między Redanią i Nilfgaardem oraz miejsce największej bitwy, lecz globalny raster Orteliusa T1 nie zawiera lokalnego planu pobojowiska. Pinezka dziedziczy regionalną kotwicę Velen (odczyt z mastera px 2095, 2024) i nie udaje dokładnego taboru ani koleiny w błocie."
+    },
+    {
       "karta": "540dst-chittering-rats",
       "x": 0.4045,
       "y": 0.2469,

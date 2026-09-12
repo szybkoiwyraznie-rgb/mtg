@@ -26,8 +26,17 @@ Wariant znany z okresu III Wojny Północnej opisuje region jako
 spustoszoną, trudno kontrolowaną ziemię niczyją. Nilfgaardzka okupacja,
 redańskie działania wojenne, samozwańcza władza Krwawego Barona oraz
 bandy maruderów tworzą środowisko, w którym wieśniacy tracą domy, rodziny
-i źródła utrzymania. [1](https://wiedzmin.fandom.com/wiki/Velen_(ziemia_niczyja)),
-[2](https://witcher.fandom.com/wiki/Velen)
+i źródła utrzymania. Źródła wiążą Velen także z największą bitwą III Wojny
+Północnej: nierozstrzygniętym starciem Redanii i Nilfgaardu, po którym
+kraina została rozdarta między obozy, straty i porzucony sprzęt.
+[1](https://wiedzmin.fandom.com/wiki/Velen_(ziemia_niczyja)),
+[2](https://witcher.fandom.com/wiki/Velen),
+[10](https://wiedzmin.fandom.com/wiki/Bitwa_na_b%C5%82oniach_Velen)
+
+W tym właśnie sensie [[594emn-ironclad-slayer|Ironclad Slayer]] nie wymaga
+jednego nazwanego pola bitwy. Ciężkozbrojny najemnik z tej sceny brodzi po
+szerszym krajobrazie Ziemi Niczyjej: zgliszczach, błocie i taborach, które
+wojna zostawiła za sobą jak nieporządny magazyn broni.
 
 Geografia wzmacnia ten stan. Pontar i jego odpływy rozrywają krainę na
 mikrowyspy, trzęsawiska, jeziora i moczary. Większa część obszaru jest
@@ -113,5 +122,9 @@ Wrońcami a Gors Velen. Nie oznacza pojedynczej wsi, bagna ani chaty.
   czarownicach:
   <https://wiedzmin.fandom.com/wiki/%C5%81ysa_G%C3%B3ra>,
   <https://witcher.fandom.com/wiki/Bald_Mountain_(location)>.
+- **Wiedźmin Wiki — Bitwa na błoniach Velen** — największa bitwa III Wojny
+  Północnej na terenie Velen, starcie Redanii i Nilfgaardu, ogromne straty
+  oraz brak rozstrzygnięcia:
+  <https://wiedzmin.fandom.com/wiki/Bitwa_na_b%C5%82oniach_Velen>.
 - **Strona planu** — szersza geografia i epoka Kontynentu:
   [[wiedzmin|Wiedźmin]].

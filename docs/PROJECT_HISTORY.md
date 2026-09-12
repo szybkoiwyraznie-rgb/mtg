@@ -4,6 +4,50 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-12 — PR-33 cd.: 594EMN Ironclad Slayer i pobojowiska Velen
+
+Właściciel dostarczył `594EMN / Ironclad Slayer / EMN / Wiedźmin` wraz z
+Fabułą o ciężkozbrojnym najemniku na spowitych mgłą pobojowiskach Ziemi
+Niczyjej w Velen. Weteran brodzi w leśnym błocie, przeszukuje zgliszcza i
+porzucone po bitwie wozy taborowe, po czym wyciąga z mazi doskonale
+zachowany stalowy miecz i zastępuje nim wyszczerbiony oręż.
+
+1. **Materiał źródłowy:** utworzono
+   `collection/entries/594emn-ironclad-slayer.md` z Fabułą właściciela i
+   `imgId: 594EMN` oraz pełny snapshot
+   `scryfall/594emn-ironclad-slayer.json` dla Scryfall/Gatherer **EMN #31**.
+   Notka numeracji przypomina, że `594EMN` nie jest numerem kolekcjonerskim
+   druku.
+2. **Karta Katalogowa:** `content/cards/594emn-ironclad-slayer.md` jest
+   lore-first: najpierw pokazuje mgłę, błoto, zgliszcza, tabory, pancerz
+   płytowy i odzyskany stalowy miecz, dopiero później czyta `{2}{W}`,
+   Human Warrior 3/2 oraz wejście odzyskujące Aurę albo Equipment z
+   cmentarza do ręki.
+3. **Transpozycja mechaniki:** główną warstwą jest Equipment — miecz
+   wyciągnięty z pobojowiska i przypięty zamiast wyszczerbionego ostrza.
+   Aura została opisana jako możliwy odzyskany znak/urok, ale bez tworzenia
+   nowego obrzędu ani twardej instytucji świata Wiedźmina.
+4. **Mapa:** `maps/wiedzmin/map.json` dostał wyłącznie pinezkę karty, nie
+   hasła. Pinezka ma pewność `region` i dziedziczy kotwicę Velen
+   (`0.4113/0.2807`, `px_t1 [2095, 2024]`), bo źródła potwierdzają Velen
+   jako ziemię niczyją i miejsce wielkiej bitwy, ale globalny raster
+   Orteliusa T1 nie rozrysowuje jednego pobojowiska, taboru ani koleiny.
+5. **Link-mining Wiedźmina:** istniejące hasło `content/lore/velen.md`
+   zostało pogłębione o wojenny krajobraz pobojowisk i odsyłacz do `594EMN`.
+   Nowych haseł nie utworzono: pobojowiska/Bitwa na błoniach Velen,
+   najemnicy i stalowy łup wojenny zostają poniżej progu albo wymagają
+   rozpoznania zakresu; decyzje zapisano w `docs/backlog.md`.
+6. **Dokumentacja i regresja:** dodano plan pracy
+   `docs/plans/PLAN_2026-09-12-594EMN.md`, aktualizacje `content/co-nowego.md`,
+   `docs/backlog.md`, `docs/ROADMAP.md`, handoff PR-33 oraz test
+   `test/wiedzmin-594emn.test.js`. Test pilnuje Fabuły, rozdziału `594EMN` od
+   EMN #31, odzyskanego Equipmentu, ostrożnej Aury, regionalnej pinezki i
+   braku przedwczesnych haseł.
+
+Bramki końcowe: **267/267 testów**, build **88 stron** (43 karty, 30 haseł,
+15 planów; artefakt 1559.3 kB) i **853 pliki drzewa archiwum**, map-audit 0,
+wiki-stats 100% (7,3/8) oraz czysty `git diff --check`.
+
 ## 2026-09-12 — PR-33 cd.: 599MID Candlegrove Witch i Panie Lasu
 
 Właściciel dostarczył `599MID / Candlegrove Witch / MID / Wiedźmin` wraz z

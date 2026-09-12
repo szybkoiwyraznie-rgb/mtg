@@ -15,6 +15,11 @@ Wikilinki dopisano w obu kartach, stronie planu i haśle Velen. Hasło nie ma
 pinezki; odsyła deep-linkiem do regionalnej kotwicy Velen
 `#/mapa/wiedzmin?x=0.4113&y=0.2807`.
 
+`594emn-ironclad-slayer` pogłębił istniejące hasło `velen` o wojenny
+krajobraz pobojowisk i odzyskiwanie oręża z porzuconych taborów, ale nie
+odblokował nowego hasła: scena wskazuje Ziemię Niczyją szeroko, nie jedno
+nazwane pole bitwy ani osobną frakcję.
+
 Encje nadal poniżej progu osobnego hasła albo wymagające separacji zakresu:
 
 | Encja | Klasa (docelowa) | Karty wspominające | Do hasła brakuje |
@@ -22,6 +27,9 @@ Encje nadal poniżej progu osobnego hasła albo wymagające separacji zakresu:
 | Łysa Góra | geografia | 599mid-candlegrove-witch | 1 karta |
 | Krzywuchowe Moczary | geografia | 279m21-village-rites | 1 karta |
 | upiory | fauna/koncepcja | 599mid-candlegrove-witch | 1 karta + rozstrzygnięcie zakresu bestiariusza |
+| pobojowiska / Bitwa na błoniach Velen | wydarzenie/geografia | 594emn-ironclad-slayer | 1 karta + rozstrzygnięcie, czy chodzi o konkretną bitwę, czy szerszy krajobraz wojenny Ziemi Niczyjej |
+| najemnicy i maruderzy Velen | spolecznosc | 594emn-ironclad-slayer | 1 karta + separacja od regularnych armii Redanii/Nilfgaardu |
+| stalowe miecze / łup z pobojowiska | rzemioslo/koncepcja | 594emn-ironclad-slayer | 1 karta + pytanie, czy sprzęt wojenny ma być hasłem, czy tylko motywem scen |
 | wiejskie szeptuchy/guślarki Velen | spolecznosc | 279m21-village-rites, 599mid-candlegrove-witch | wymaga osobnego rozpoznania zakresu; na razie role scen, nie jedna nazwana organizacja |
 
 ## Kolejka link-miningu: encje czekające na drugą kartę (Śródziemie)
