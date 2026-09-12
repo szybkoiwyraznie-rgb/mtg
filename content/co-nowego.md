@@ -1,3 +1,26 @@
+## 2026-09-12 18:55 — Pętla mapowa Alary T3: POI i biomy
+
+- **Mapa T3:** pierwszy przebieg poza Innistradem poszedł w stronę map
+  wyższych progów: `maps/alara/scena.json` i `podklad.svg` dostały nowe
+  elementy mapforge. **The Glass Dunes** nie udaje już stepu, tylko renderuje
+  się jako biom pustyni; **Cicatrice** jest strefą gruzu/scar-lands,
+  **The Rip** osobną rozpadliną, a **Twin Maelstroms** dodatkowym znakiem
+  wiru na akwenie Esperu.
+- **POI i akweny:** dodano kotwice/etykiety dla **The Crystal Labyrinth**,
+  **Sea of Unknowing**, **Twin Maelstroms**, **The Valley of the Ancient**,
+  **Cicatrice**, **The Rip** i **The Bloodhall**. Nowe obiekty pozostają
+  relacyjne w obrębie shardów: kanon potwierdza przynależność i relacje,
+  ale nie współrzędne.
+- **Dokumentacja:** `maps/alara/map.json` opisuje rekonstrukcyjny charakter
+  położeń, a `content/planes/alara.md` wymienia nowy stan mapy i granice
+  pewności. Bez powrotu odrzuconych pseudo-POI `Carmot Mines`/`Ruins of
+  Vithia`.
+- **Regresja:** `test/alara.test.js` sprawdza pustynny biom Glass Dunes,
+  Cicatrice jako gruz, The Rip jako rozpadlinę, nowe POI, wodne etykiety
+  oraz wymagane notki „wybór rekonstrukcji T3”.
+- **Bramki końcowe:** 231/231 testów; `map-audit` 0 problemów; build 76 stron
+  (40 kart, 21 haseł, 15 planów).
+
 ## 2026-09-12 17:54 — Trzecia Pętla Jakości: Ashmouth i Helvault
 
 - **Link-mining:** trzeci przebieg Innistradu utworzył hasła

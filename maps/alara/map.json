@@ -14,7 +14,7 @@
   "autor": "MTG Lore Codex (praca w\u0142asna \u2014 transkrypcja topologii w silniku mapforge, scena maps/alara/scena.json)",
   "licencja": "praca w\u0142asna; rastry fanowskie u\u017cyte prywatnie jako referencja topologii poza gitem, bez redistribucji (ADR 0031)",
   "pobrano": "2026-09-05",
-  "notka": "T3: z referencji dziedziczymy TOPOLOGI\u0118 (Bant u g\u00f3ry, Naya zach\u00f3d, Jund po\u0142udniowy zach\u00f3d, Grixis po\u0142udnie/po\u0142udniowy wsch\u00f3d, Esper na wschodzie jako ARCHIPELAG wysp na Morzu Esper; Maelstrom = w\u0119ze\u0142 w punkcie z\u0142\u0105czenia, r\u00f3wnoprawny shard). NIE dziedziczymy fanowskich nazw spoza kanonu: etykiety i kotwice wy\u0142\u0105cznie z MTG Wiki (Category:Alara locations). Stan planu: post-Conflux (ADR 0033). Scena mapforge: nieregularne wybrze\u017ca fraktalne (styl Zendikaru, redo 2026-09-06); granice shard\u00f3w = zatoki morskie (jeden styl: woda); g\u00f3ry kr\u00f3tkie i zr\u00f3\u017cnicowane; biomy wype\u0142niaj\u0105 kontynenty; rzeki p\u0142yn\u0105 do morza; drogi i szlaki \u0142\u0105cz\u0105 osady; ~28 kanonicznych POI."
+  "notka": "T3: z referencji dziedziczymy TOPOLOGI\u0118 (Bant u g\u00f3ry, Naya zach\u00f3d, Jund po\u0142udniowy zach\u00f3d, Grixis po\u0142udnie/po\u0142udniowy wsch\u00f3d, Esper na wschodzie jako ARCHIPELAG wysp na Morzu Esper; Maelstrom = w\u0119ze\u0142 w punkcie z\u0142\u0105czenia, r\u00f3wnoprawny shard). NIE dziedziczymy fanowskich nazw spoza kanonu: etykiety i kotwice wy\u0142\u0105cznie z MTG Wiki (Category:Alara locations). Stan planu: post-Conflux (ADR 0033). Scena mapforge: nieregularne wybrze\u017ca fraktalne (styl Zendikaru, redo 2026-09-06); granice shard\u00f3w = zatoki morskie (jeden styl: woda); g\u00f3ry kr\u00f3tkie i zr\u00f3\u017cnicowane; biomy wype\u0142niaj\u0105 kontynenty; rzeki p\u0142yn\u0105 do morza; drogi i szlaki \u0142\u0105cz\u0105 osady; ~31 kanonicznych POI plus dodatkowe elementy terenowe (2026-09-12: Glass Dunes jako biom pustyni, The Rip jako rozpadlina, Cicatrice jako scar-land/gruz, Twin Maelstroms i Sea of Unknowing jako akweny Esperu)."
  },
  "rekonstrukcja": true,
  "kotwice": [
@@ -214,9 +214,9 @@
    "nazwa": "The Glass Dunes",
    "x": 0.78,
    "y": 0.4571,
-   "typ": "poi",
-   "pozycja_zrodlo": "kanon (mtg.wiki: The Glass Dunes \u2014 najwi\u0119kszy l\u0105d Esperu, bia\u0142a szklana pustynia)",
-   "notka": "Esper"
+   "typ": "pustynia",
+   "pozycja_zrodlo": "kanon (mtg.wiki: The Glass Dunes \u2014 najwi\u0119kszy zwarty l\u0105d Esperu, bia\u0142a szklana pustynia); kszta\u0142t i pozycja = wyb\u00f3r rekonstrukcji T3",
+   "notka": "Esper; biom mapforge \u201epustynia\u201d od 2026-09-12"
   },
   {
    "nazwa": "Unx",
@@ -337,6 +337,62 @@
    "typ": "poi",
    "pozycja_zrodlo": "kanon (mtg.wiki: Hellkite's Pass \u2014 prze\u0142\u0119cz w g\u00f3rach Jundu)",
    "notka": "Jund"
+  },
+  {
+   "nazwa": "The Crystal Labyrinth",
+   "x": 0.735,
+   "y": 0.4393,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon: labirynt w Netherglass pod Glass Dunes, prowadz\u0105cy do Riddle Gate sfinksa Kemuela (mtg.wiki: Esper); pozycja w obr\u0119bie Glass Dunes = wyb\u00f3r rekonstrukcji T3",
+   "notka": "Esper; podmiejscem The Glass Dunes, nie osobnym l\u0105dem"
+  },
+  {
+   "nazwa": "Sea of Unknowing",
+   "x": 0.915,
+   "y": 0.5429,
+   "typ": "akwen",
+   "pozycja_zrodlo": "kanon: rozleg\u0142e morze Esperu; Palandius i Vectis opisane jako le\u017c\u0105ce przy/ponad Sea of Unknowing (mtg.wiki: Esper); pozycja etykiety = wyb\u00f3r rekonstrukcji T3",
+   "notka": "Esper; uzupe\u0142nia wcze\u015bniejsze etykiety Dwindling Sea, Sea of Stars i Inkwell"
+  },
+  {
+   "nazwa": "Twin Maelstroms",
+   "x": 0.92,
+   "y": 0.3857,
+   "typ": "akwen",
+   "pozycja_zrodlo": "kanon: morski obszar wir\u00f3w na Esperze (mtg.wiki: Esper); dok\u0142adne po\u0142o\u017cenie niekanoniczne, znak wiru = wyb\u00f3r rekonstrukcji T3",
+   "notka": "Nie myli\u0107 z centralnym Maelstromem Alary; to esperyjski akwen wir\u00f3w"
+  },
+  {
+   "nazwa": "The Valley of the Ancient",
+   "x": 0.205,
+   "y": 0.6179,
+   "typ": "miejsce",
+   "pozycja_zrodlo": "kanon: dolina Nai/Valley of Progenitus, miejsce spoczynku Progenitusa (mtg.wiki: Naya); pozycja mi\u0119dzy Qasal, Sacellum i nizinami = wyb\u00f3r rekonstrukcji T3",
+   "notka": "Naya; para nad ziemi\u0105 i \u201eoddech\u201d Progenitusa, bez roszczenia do dok\u0142adnej doliny"
+  },
+  {
+   "nazwa": "Cicatrice",
+   "x": 0.3875,
+   "y": 0.6929,
+   "typ": "region",
+   "pozycja_zrodlo": "kanon: scar-lands Jundu mi\u0119dzy dwiema wielkimi dolinami ryftowymi (mtg.wiki: Jund); poligon gruzu = wyb\u00f3r rekonstrukcji T3",
+   "notka": "Jund; strefa blizn i smoczych gniazd, dodana jako biom gruzu"
+  },
+  {
+   "nazwa": "The Rip",
+   "x": 0.34,
+   "y": 0.75,
+   "typ": "szczelina",
+   "pozycja_zrodlo": "kanon: najg\u0142\u0119bsza ze szponiastych rozpadlin Jundu, prawie dwie mile ku bagnistej d\u017cungli (mtg.wiki: Jund); przebieg kreski = wyb\u00f3r rekonstrukcji T3",
+   "notka": "Jund; rysowana klockiem mapforge \u201erozpadlina\u201d"
+  },
+  {
+   "nazwa": "The Bloodhall",
+   "x": 0.355,
+   "y": 0.7393,
+   "typ": "jaskinia",
+   "pozycja_zrodlo": "kanon: sangrytowa jaskinia w scar-lands nad dolinami ryftowymi, miejsce zbi\u00f3rki Life Hunt (mtg.wiki: Jund); pozycja przy Cicatrice/The Rip = wyb\u00f3r rekonstrukcji T3",
+   "notka": "Jund; POI jaskiniowe, nie osada"
   }
  ],
  "pinezki": [
@@ -356,6 +412,7 @@
  ],
  "otwarte_na_kolejne_przejscia": [
   "DODANE 2026-09-05 (redo T3): mapa scalonego planu (ADR 0033) uniesie kolejne karty Alary \u2014 regiony przyjm\u0105 sceny z epoki shard\u00f3w (ALA); podmapa pre-Conflux (pi\u0119\u0107 wysp w Blind Eternities, referencja 2) powstanie wy\u0142\u0105cznie, gdy karta b\u0119dzie mia\u0142a scen\u0119 niereprezentowaln\u0105 na mapie scalonej.",
-  "KOREKTA 2026-09-06 (PR-21, pierwsza recenzja wizualna po rasteryzacji): tytu\u0142y region\u00f3w Jund/Grixis/Naya przesuni\u0119te w scena.json na wolny l\u0105d (Jund 620/1190\u2192800/1040 \u2014 napis zakrywa\u0142 fort Hellkite's Pass i grzbiet; Grixis 1260/1090\u21921320/1230 \u2014 napis le\u017ca\u0142 na szlaku i pa\u015bmie Ko\u015bci; Naya 430/700\u2192285/580 \u2014 napis ci\u0105\u0142 wschodnie pasmo i rzek\u0119). Kotwice region\u00f3w (pinezki) bez zmian \u2014 wskazuj\u0105 \u015brodki l\u0105d\u00f3w, nie typografi\u0119."
+  "KOREKTA 2026-09-06 (PR-21, pierwsza recenzja wizualna po rasteryzacji): tytu\u0142y region\u00f3w Jund/Grixis/Naya przesuni\u0119te w scena.json na wolny l\u0105d (Jund 620/1190\u2192800/1040 \u2014 napis zakrywa\u0142 fort Hellkite's Pass i grzbiet; Grixis 1260/1090\u21921320/1230 \u2014 napis le\u017ca\u0142 na szlaku i pa\u015bmie Ko\u015bci; Naya 430/700\u2192285/580 \u2014 napis ci\u0105\u0142 wschodnie pasmo i rzek\u0119). Kotwice region\u00f3w (pinezki) bez zmian \u2014 wskazuj\u0105 \u015brodki l\u0105d\u00f3w, nie typografi\u0119.",
+  "P\u0118TLA MAPOWA 2026-09-12 (Alara T3): Esper dosta\u0142 prawdziwy biom pustyni dla The Glass Dunes, etykiety Sea of Unknowing i Twin Maelstroms oraz POI The Crystal Labyrinth; Naya dosta\u0142a The Valley of the Ancient; Jund dosta\u0142 Cicatrice jako stref\u0119 gruzu, The Rip jako rozpadlin\u0119 i The Bloodhall jako jaskiniowy POI. Wszystkie nowe pozycje s\u0105 relacyjne w obr\u0119bie shard\u00f3w \u2014 kanon podaje przynale\u017cno\u015b\u0107/topologi\u0119, nie wsp\u00f3\u0142rz\u0119dne."
  ]
 }
