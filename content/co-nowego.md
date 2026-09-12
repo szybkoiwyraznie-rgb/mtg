@@ -1,3 +1,30 @@
+## 2026-09-12 16:42 — Nowa karta: Serra's Embrace (Dominaria)
+
+- **Materializacja karty:** **[[110dvd-serra-s-embrace|Serra's Embrace]]**
+  (`110DVD`, wydanie `DVD` / *Duel Decks Anthology: Divine vs. Demonic*,
+  plan [[dominaria|Dominaria]]) — zwykły, zakurzony piechur na polu bitwy
+  zostaje objęty eteryczną obecnością [[serra|Serry]]: skrzydła z czystego
+  światła wyrastają za jego plecami, dłonie anielskiej mocy prowadzą jego
+  miecz, a zmęczenie ustępuje sile, lotowi i czujności (`{2}{W}{W}`, Aura;
+  +2/+2, flying, vigilance).
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim
+  w `collection/entries/110dvd-serra-s-embrace.md`; pełny snapshot DVD #21
+  żyje w `scryfall/110dvd-serra-s-embrace.json`. `110DVD` pozostaje
+  niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim
+  Scryfall/Gatherera.
+- **Pinezka i plan:** opis nie podaje konkretnego wzgórza, miasta ani linii
+  frontu, dlatego pinezka ma pewność `region`. Dziedziczy dominariańską
+  kotwicę Sursi / Katedry Serran (`x: 0.1937`, `y: 0.3806`; `px_t1 [1569,
+  1979]`) jako najtwardsze miejsce pamięci i łaski Serry, nie dokładny adres
+  pola bitwy.
+- **Link-mining:** powstało hasło postaci **[[serra|Serra]]**, bo próg ≥2
+  kart spełniają Serra's Embrace i Expunge. Hasło nie ma własnej pinezki;
+  odsyła do Sursi/Katedry Serran jako geograficznej kotwicy dziedzictwa.
+- **Strażniki:** dedykowana regresja pilnuje Fabuły, rozdziału `110DVD` od
+  DVD #21, regionalnej pinezki przy Sursi, zwykłego piechura jako odbiorcy
+  objęcia oraz progu hasła Serra. UI oczekuje 39 Kart Katalogowych i
+  renderuje hasło Serra z backlinkami.
+
 ## 2026-09-12 15:10 — Nowa karta: Village Rites (Wiedźmin)
 
 - **Materializacja karty:** **[[279m21-village-rites|Village Rites]]**

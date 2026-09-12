@@ -21,7 +21,7 @@ krwawi jako jedna z pierwszych ofiar wyspecjalizowanych zabójców
 Tsabo Tavoc. Wojna nie oszczędza nawet miejsc świętych: na
 **Równinach Sursi**, na południe od benalijskiego serca, stoi
 **Katedra Serran**, wzniesiona około 3780 AR przez **brata Angusa**
-ku czci planeswalkerki **Serry**, która odchodząc pobłogosławiła tę
+ku czci planeswalkerki [[serra|**Serry**]], która odchodząc pobłogosławiła tę
 ziemię i uczyniła ją schronieniem przed ciemnością. Do dziś w katedrze
 samorzutnie pojawiają się **anioły Serran** — żywy znak błogosławieństwa.
 

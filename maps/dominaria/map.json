@@ -1,187 +1,187 @@
 {
- "epoka": "Stan wsp\u00f3\u0142czesny wg podk\u0142ad\u00f3w fanowskich (Varghedin; mapa aktualizowana, ost. 2026-02 \u2014 bez datowania w chronologii kanonu). Pinezki datuj\u0105 si\u0119 Fabu\u0142\u0105 karty, nie map\u0105 (ADR 0033).",
+ "epoka": "Stan współczesny wg podkładów fanowskich (Varghedin; mapa aktualizowana, ost. 2026-02 — bez datowania w chronologii kanonu). Pinezki datują się Fabułą karty, nie mapą (ADR 0033).",
  "kotwice": [
   {
    "nazwa": "Aerona",
    "notka": "kontynent Domen; Benalia, Llanowar, Icehaven, Keld",
-   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Aerona \u2014 pozycja \u015brodka l\u0105du na rastrze M1",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Aerona — pozycja środka lądu na rastrze M1",
    "typ": "kontynent",
-   "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
    "x": 0.19,
    "y": 0.35
   },
   {
    "nazwa": "Benalia",
-   "notka": "kraina w p\u00f3\u0142nocnej cz\u0119\u015bci Aerona; stolica Benalia City (osadzenie przy karcie 40USG, krok 4)",
-   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Benalia \u2014 pozycja na l\u0105dzie wg rastra M1",
+   "notka": "kraina w północnej części Aerona; stolica Benalia City (osadzenie przy karcie 40USG, krok 4)",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Benalia — pozycja na lądzie wg rastra M1",
    "typ": "kraina",
-   "uklad": "z\u0142oty M1 \u2014 \u015brodek krainy, odczyt z mastera",
+   "uklad": "złoty M1 — środek krainy, odczyt z mastera",
    "x": 0.155,
    "y": 0.3
   },
   {
    "nazwa": "Llanowar",
-   "notka": "wielki las w zachodniej cz\u0119\u015bci Aerona",
-   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Llanowar \u2014 pozycja na l\u0105dzie wg rastra M1",
+   "notka": "wielki las w zachodniej części Aerona",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Llanowar — pozycja na lądzie wg rastra M1",
    "typ": "las",
-   "uklad": "z\u0142oty M1 \u2014 \u015brodek lasu, odczyt z mastera",
+   "uklad": "złoty M1 — środek lasu, odczyt z mastera",
    "x": 0.17,
    "y": 0.345
   },
   {
    "nazwa": "Icehaven",
-   "notka": "p\u00f3\u0142nocna kraina Aerona",
-   "pozycja_zrodlo": "wy\u0142\u0105cznie raster: l\u0105d na M1 (Varghedin, jw.) \u2014 do weryfikacji przy karcie z regionu",
+   "notka": "północna kraina Aerona",
+   "pozycja_zrodlo": "wyłącznie raster: ląd na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
    "typ": "kraina",
-   "uklad": "z\u0142oty M1 \u2014 \u015brodek l\u0105du, pomiar na masterze",
+   "uklad": "złoty M1 — środek lądu, pomiar na masterze",
    "x": 0.148,
    "y": 0.186
   },
   {
    "nazwa": "Kieve",
-   "notka": "wyspa na Morzu Wyj\u0105cym, na wsch\u00f3d od Aerona",
-   "pozycja_zrodlo": "wy\u0142\u0105cznie raster: wyspa na M1/D1 (Varghedin, jw.) \u2014 do weryfikacji przy karcie z regionu",
+   "notka": "wyspa na Morzu Wyjącym, na wschód od Aerona",
+   "pozycja_zrodlo": "wyłącznie raster: wyspa na M1/D1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
    "px_t1": [
     2558,
     1318
    ],
    "typ": "wyspa",
-   "uklad": "z\u0142oty M1 \u2014 template-match 2026-09-08",
+   "uklad": "złoty M1 — template-match 2026-09-08",
    "x": 0.3158,
    "y": 0.2535
   },
   {
    "nazwa": "Tolaria West",
    "notka": "wyspa Akademii Tolarianskiej (Urza)",
-   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Tolaria (akademia na Tolaria West) \u2014 pozycja wyspy na rastrze M1",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Tolaria (akademia na Tolaria West) — pozycja wyspy na rastrze M1",
    "typ": "wyspa",
-   "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
    "x": 0.0241,
    "y": 0.2829
   },
   {
    "nazwa": "Ru-Nora",
-   "notka": "wyspa na po\u0142udnie od Aerona; kotwica na wyspie (etykieta na rastrze na N od l\u0105du)",
-   "pozycja_zrodlo": "wy\u0142\u0105cznie raster: wyspa na M1 (Varghedin, jw.) \u2014 do weryfikacji przy karcie z regionu",
+   "notka": "wyspa na południe od Aerona; kotwica na wyspie (etykieta na rastrze na N od lądu)",
+   "pozycja_zrodlo": "wyłącznie raster: wyspa na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
    "typ": "wyspa",
-   "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
    "x": 0.185,
    "y": 0.525
   },
   {
    "nazwa": "Saronia",
-   "notka": "wyspa na Morzu Voda, na wsch\u00f3d od Ru-Nora",
-   "pozycja_zrodlo": "wy\u0142\u0105cznie raster: wyspa na M1 (Varghedin, jw.) \u2014 do weryfikacji przy karcie z regionu",
+   "notka": "wyspa na Morzu Voda, na wschód od Ru-Nora",
+   "pozycja_zrodlo": "wyłącznie raster: wyspa na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
    "typ": "wyspa",
-   "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
    "x": 0.255,
    "y": 0.505
   },
   {
    "nazwa": "Orvada",
-   "notka": "kraina na wsch\u00f3d od Aerona (Orvada, Walassa)",
-   "pozycja_zrodlo": "wy\u0142\u0105cznie raster: l\u0105d na M1 (Varghedin, jw.) \u2014 do weryfikacji przy karcie z regionu",
+   "notka": "kraina na wschód od Aerona (Orvada, Walassa)",
+   "pozycja_zrodlo": "wyłącznie raster: ląd na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
    "typ": "kraina",
-   "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
    "x": 0.315,
    "y": 0.375
   },
   {
    "nazwa": "Voda Sea",
-   "notka": "morze mi\u0119dzy Orvad\u0105 a Burning Isles",
-   "pozycja_zrodlo": "wy\u0142\u0105cznie raster: akwen na M1 (Varghedin, jw.) \u2014 do weryfikacji przy karcie z regionu",
+   "notka": "morze między Orvadą a Burning Isles",
+   "pozycja_zrodlo": "wyłącznie raster: akwen na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
    "typ": "morze",
-   "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
    "x": 0.335,
    "y": 0.45
   },
   {
    "nazwa": "Burning Isles",
-   "notka": "archipelag na wsch\u00f3d od Aerona (Bogardan)",
-   "pozycja_zrodlo": "wy\u0142\u0105cznie raster: archipelag na M1 (Varghedin, jw.) \u2014 do weryfikacji przy karcie z regionu",
+   "notka": "archipelag na wschód od Aerona (Bogardan)",
+   "pozycja_zrodlo": "wyłącznie raster: archipelag na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
    "typ": "archipelag",
-   "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
    "x": 0.36,
    "y": 0.4
   },
   {
    "nazwa": "Jamuraa",
-   "notka": "po\u0142udniowy kontynent (Zhalfir, Suq'Ata, Yavimaya, Wielka Pustynia)",
-   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Jamuraa \u2014 pozycja \u015brodka l\u0105du na rastrze M1",
+   "notka": "południowy kontynent (Zhalfir, Suq'Ata, Yavimaya, Wielka Pustynia)",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Jamuraa — pozycja środka lądu na rastrze M1",
    "typ": "kontynent",
-   "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
    "x": 0.5,
    "y": 0.715
   },
   {
    "nazwa": "Otaria",
    "notka": "wschodni kontynent (Urborg, wirem Apokalipsy)",
-   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Otaria \u2014 pozycja \u015brodka l\u0105du na rastrze M1",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Otaria — pozycja środka lądu na rastrze M1",
    "typ": "kontynent",
-   "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
    "x": 0.735,
    "y": 0.5
   },
   {
    "nazwa": "Terisiare",
-   "notka": "p\u00f3\u0142nocno-wschodni kontynent (Argoth, epizod Braci)",
-   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Terisiare \u2014 pozycja \u015brodka l\u0105du na rastrze M1",
+   "notka": "północno-wschodni kontynent (Argoth, epizod Braci)",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Terisiare — pozycja środka lądu na rastrze M1",
    "typ": "kontynent",
-   "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
    "x": 0.895,
    "y": 0.3
   },
   {
    "nazwa": "Sarpadia",
-   "notka": "po\u0142udniowo-wschodni kontynent (upad\u0142e imperium thorne'\u00f3w)",
-   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Sarpadia \u2014 pozycja \u015brodka l\u0105du na rastrze M1",
+   "notka": "południowo-wschodni kontynent (upadłe imperium thorne'ów)",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Sarpadia — pozycja środka lądu na rastrze M1",
    "typ": "kontynent",
-   "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
    "x": 0.935,
    "y": 0.68
   },
   {
    "nazwa": "Northland",
-   "notka": "lodowa kraina na p\u00f3\u0142nocy (czapa polarna)",
-   "pozycja_zrodlo": "wy\u0142\u0105cznie raster: l\u0105d na M1 (Varghedin, jw.) \u2014 do weryfikacji przy karcie z regionu",
+   "notka": "lodowa kraina na północy (czapa polarna)",
+   "pozycja_zrodlo": "wyłącznie raster: ląd na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
    "typ": "kraina",
-   "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
    "x": 0.5,
    "y": 0.035
   },
   {
    "nazwa": "Frozen Reaches",
-   "notka": "lodowa kraina na po\u0142udniu (czapa polarna)",
-   "pozycja_zrodlo": "wy\u0142\u0105cznie raster: l\u0105d na M1 (Varghedin, jw.) \u2014 do weryfikacji przy karcie z regionu",
+   "notka": "lodowa kraina na południu (czapa polarna)",
+   "pozycja_zrodlo": "wyłącznie raster: ląd na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
    "typ": "kraina",
-   "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
    "x": 0.5,
    "y": 0.965
   },
   {
    "nazwa": "Great Ocean",
-   "notka": "centralny ocean mi\u0119dzy Aerona a Jamuraa/Otari\u0105",
-   "pozycja_zrodlo": "wy\u0142\u0105cznie raster: akwen na M1 (Varghedin, jw.) \u2014 do weryfikacji przy karcie z regionu",
+   "notka": "centralny ocean między Aerona a Jamuraa/Otarią",
+   "pozycja_zrodlo": "wyłącznie raster: akwen na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
    "typ": "morze",
-   "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
    "x": 0.6,
    "y": 0.35
   },
   {
    "nazwa": "Sea of Serenity",
-   "notka": "morze na po\u0142udnie od Jamuraa",
-   "pozycja_zrodlo": "wy\u0142\u0105cznie raster: akwen na M1 (Varghedin, jw.) \u2014 do weryfikacji przy karcie z regionu",
+   "notka": "morze na południe od Jamuraa",
+   "pozycja_zrodlo": "wyłącznie raster: akwen na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
    "typ": "morze",
-   "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
    "x": 0.5,
    "y": 0.79
   },
   {
    "nazwa": "Howling Sea",
-   "notka": "morze na p\u00f3\u0142noc od Aerona (Kieve, Stadlax)",
-   "pozycja_zrodlo": "wy\u0142\u0105cznie raster: akwen na M1 (Varghedin, jw.) \u2014 do weryfikacji przy karcie z regionu",
+   "notka": "morze na północ od Aerona (Kieve, Stadlax)",
+   "pozycja_zrodlo": "wyłącznie raster: akwen na M1 (Varghedin, jw.) — do weryfikacji przy karcie z regionu",
    "typ": "morze",
-   "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0",
+   "uklad": "złoty M1 — odczyt z podglądu L0",
    "x": 0.3,
    "y": 0.155
   },
@@ -190,36 +190,36 @@
    "x": 0.1937,
    "y": 0.3806,
    "typ": "obiekt",
-   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Cathedral_of_Serra (R\u00f3wniny Sursi, lokalizacja benalijska) + ikona i etykieta na M1 (Varghedin); odczyt z mastera px (1569, 1979), 2026-09-08 (audyt PR-24, L13)",
-   "notka": "\u015bwi\u0105tynia Serran (brat Angus, ~3780 AR \u2014 stoi w epoce USG); pinezka 40USG",
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Cathedral_of_Serra (Równiny Sursi, lokalizacja benalijska) + ikona i etykieta na M1 (Varghedin); odczyt z mastera px (1569, 1979), 2026-09-08 (audyt PR-24, L13)",
+   "notka": "świątynia Serran (brat Angus, ~3780 AR — stoi w epoce USG); pinezka 40USG",
    "px_t1": [
     1569,
     1979
    ],
-   "uklad": "z\u0142oty M1 \u2014 odczyt z mastera"
+   "uklad": "złoty M1 — odczyt z mastera"
   },
   {
    "nazwa": "Argoth",
    "x": 0.885,
    "y": 0.36,
    "typ": "wyspa",
-   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Argoth \u2014 wyspa na po\u0142udnie od Terisiare zniszczona w finale Wojny Braci",
-   "notka": "le\u015bna wyspa u wybrze\u017cy Terisiare, zniszczona w finale Wojny Braci przez Sylex Blast Urzy; miejsce wykopalisk i bitwy automat\u00f3w",
-   "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0"
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Argoth — wyspa na południe od Terisiare zniszczona w finale Wojny Braci",
+   "notka": "leśna wyspa u wybrzeży Terisiare, zniszczona w finale Wojny Braci przez Sylex Blast Urzy; miejsce wykopalisk i bitwy automatów",
+   "uklad": "złoty M1 — odczyt z podglądu L0"
   },
   {
    "nazwa": "Kjeldor",
    "x": 0.885,
    "y": 0.265,
    "typ": "kraina",
-   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Kjeldor \u2014 kr\u00f3lestwo ludzkiej cywilizacji w p\u00f3\u0142nocnym Terisiare podczas Epoki Lodowcowej; pozycja na l\u0105dzie Terisiare wg rastra M1",
-   "notka": "najwi\u0119ksze zjednoczone kr\u00f3lestwo ludzi na kontynencie Terisiare w Epoce Lodowcowej, ojczyzna Disy Niespokojnej i Halvora Arensona",
-   "uklad": "z\u0142oty M1 \u2014 odczyt z podgl\u0105du L0"
+   "pozycja_zrodlo": "kanon: https://mtg.wiki/page/Kjeldor — królestwo ludzkiej cywilizacji w północnym Terisiare podczas Epoki Lodowcowej; pozycja na lądzie Terisiare wg rastra M1",
+   "notka": "największe zjednoczone królestwo ludzi na kontynencie Terisiare w Epoce Lodowcowej, ojczyzna Disy Niespokojnej i Halvora Arensona",
+   "uklad": "złoty M1 — odczyt z podglądu L0"
   }
  ],
  "otwarte_na_kolejne_przejscia": [
-  "DOMKNI\u0118TE 2026-09-08 (PR-25): nak\u0142adka L2 \u201eDomeny\" usuni\u0119ta (ADR 0041 \u2014 wycinek bazy bez nowego detalu); pinezka 40USG na ikonie Cathedral of Serra, odczyt z mastera px (1569, 1979). Benalia City zostaje do osadzenia przy karcie z rejonu (referencja: ref-benalia.jpg).",
-  "Kotwice \u201ewy\u0142\u0105cznie raster\" (12) do weryfikacji przy pierwszej karcie z regionu (precedens F5 Innistrad, PR-23)."
+  "DOMKNIĘTE 2026-09-08 (PR-25): nakładka L2 „Domeny\" usunięta (ADR 0041 — wycinek bazy bez nowego detalu); pinezka 40USG na ikonie Cathedral of Serra, odczyt z mastera px (1569, 1979). Benalia City zostaje do osadzenia przy karcie z rejonu (referencja: ref-benalia.jpg).",
+  "Kotwice „wyłącznie raster\" (12) do weryfikacji przy pierwszej karcie z regionu (precedens F5 Innistrad, PR-23)."
  ],
  "pinezki": [
   {
@@ -227,33 +227,40 @@
    "x": 0.1937,
    "y": 0.3806,
    "pewnosc": "region",
-   "uzasadnienie": "Fabu\u0142a w\u0142a\u015bciciela: z\u0142otoskrzyd\u0142y wojownik Serran wymazywany czarn\u0105 mg\u0142\u0105 nad dziedzi\u0144cem katedry w Benalii, w czasie inwazji Phyrexii (USG, 4205 AR). Katedra Serran na R\u00f3wninach Sursi to jedyna nazwana katedra Benalii (kategoria wiki: lokalizacje benalijskie) i istnieje od ~3780 AR \u2014 stoi w epoce karty. Fabu\u0142a nie wskazuje, kt\u00f3rego podw\u00f3rka kompleksu dotyczy scena \u2014 st\u0105d pinezka na ikonie \u015bwi\u0105tyni na podk\u0142adzie i pewno\u015b\u0107 region (ADR 0040: lokalizacja i pewno\u015b\u0107 z lore/Fabu\u0142y, nie z druku \u017ar\u00f3d\u0142owego)."
+   "uzasadnienie": "Fabuła właściciela: złotoskrzydły wojownik Serran wymazywany czarną mgłą nad dziedzińcem katedry w Benalii, w czasie inwazji Phyrexii (USG, 4205 AR). Katedra Serran na Równinach Sursi to jedyna nazwana katedra Benalii (kategoria wiki: lokalizacje benalijskie) i istnieje od ~3780 AR — stoi w epoce karty. Fabuła nie wskazuje, którego podwórka kompleksu dotyczy scena — stąd pinezka na ikonie świątyni na podkładzie i pewność region (ADR 0040: lokalizacja i pewność z lore/Fabuły, nie z druku źródłowego)."
+  },
+  {
+   "karta": "110dvd-serra-s-embrace",
+   "x": 0.1937,
+   "y": 0.3806,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła właściciela mówi tylko o polu bitwy Dominarii i Serranowym objęciu zwykłego piechura, bez nazwy frontu, miasta ani wzgórza. Najtwardszą dominariańską kotwicą takiej łaski jest Sursi/Katedra Serran: miejsce uświęcone przez Serrę, gdzie jej anioły pojawiają się samorzutnie. Pinezka dziedziczy ikonę Katedry Serran (master px 1569, 1979) i oznacza regionalny indeks tradycji, nie dokładną linię bitwy."
   },
   {
    "karta": "362bro-simian-simulacrum",
    "x": 0.885,
    "y": 0.36,
    "pewnosc": "region",
-   "uzasadnienie": "Fabu\u0142a: \u201eW porzuconej strefie warsztatowo-wykopaliskowej w lesie Argoth... W Wojnie Braci Urza i Mishra zostawili na Argoth dziesi\u0105tki takich warsztat\u00f3w \u2014 niekt\u00f3re konstrukty nie zgas\u0142y po upadku swoich tw\u00f3rc\u00f3w\u201d. Miejsce akcji to le\u015bna wyspa Argoth u po\u0142udniowych wybrze\u017cy Terisiare, zniszczona wybuchem Syleksu pod koniec Wojny Braci. Dzieje nie precyzuj\u0105 numeru ani sektora tego konkretnego warsztatu wykopaliskowego, st\u0105d pewno\u015b\u0107 'region'. Pinezka na mapie Dominarii wskazuje rejon wyspy Argoth przy po\u0142udniowo-wschodnim skraju Terisiare."
+   "uzasadnienie": "Fabuła: „W porzuconej strefie warsztatowo-wykopaliskowej w lesie Argoth... W Wojnie Braci Urza i Mishra zostawili na Argoth dziesiątki takich warsztatów — niektóre konstrukty nie zgasły po upadku swoich twórców”. Miejsce akcji to leśna wyspa Argoth u południowych wybrzeży Terisiare, zniszczona wybuchem Syleksu pod koniec Wojny Braci. Dzieje nie precyzują numeru ani sektora tego konkretnego warsztatu wykopaliskowego, stąd pewność 'region'. Pinezka na mapie Dominarii wskazuje rejon wyspy Argoth przy południowo-wschodnim skraju Terisiare."
   },
   {
    "karta": "531m3c-disa-the-restless",
    "x": 0.885,
    "y": 0.265,
    "pewnosc": "region",
-   "uzasadnienie": "Fabu\u0142a w\u0142a\u015bciciela: Disa Niespokojna na zasypanych \u015bniegiem pustkowiach dawnego Terisiare, u st\u00f3p b\u0142\u0119kitnych lodowc\u00f3w i zrujnowanych filar\u00f3w staro\u017cytnego imperium na rubie\u017cach Kjeldoru, badaj\u0105ca szponiaste \u015blady Lhurgoyfa. Scena rozgrywa si\u0119 w Epoce Lodowcowej w p\u00f3\u0142nocnym Terisiare (rejon kr\u00f3lestwa Kjeldor / Pustkowi Adarkar). Pinezka stoi w rejonie p\u00f3\u0142nocnego Terisiare na mapie Dominarii z pewno\u015bci\u0105 region."
+   "uzasadnienie": "Fabuła właściciela: Disa Niespokojna na zasypanych śniegiem pustkowiach dawnego Terisiare, u stóp błękitnych lodowców i zrujnowanych filarów starożytnego imperium na rubieżach Kjeldoru, badająca szponiaste ślady Lhurgoyfa. Scena rozgrywa się w Epoce Lodowcowej w północnym Terisiare (rejon królestwa Kjeldor / Pustkowi Adarkar). Pinezka stoi w rejonie północnego Terisiare na mapie Dominarii z pewnością region."
   }
  ],
  "plan": "dominaria",
  "podklad": "l0.jpg",
  "rekonstrukcja": false,
  "tytul": "Dominaria",
- "uklad_wspolrzednych": "Z\u0141OTY = raster M1 Varghedina (master 8100\u00d75200; plik l0.jpg 1920\u00d71233 to jego pomniejszony proxy, ten sam kadr). x,y kotwic i pinezek znormalizowane 0\u20131 wzgl\u0119dem M1. Nowa pinezka: odczyt X,Y na masterze \u2192 x=X/8100, y=Y/5200 (L13: wsp\u00f3\u0142rz\u0119dne mierzone na docelowym pliku).",
+ "uklad_wspolrzednych": "ZŁOTY = raster M1 Varghedina (master 8100×5200; plik l0.jpg 1920×1233 to jego pomniejszony proxy, ten sam kadr). x,y kotwic i pinezek znormalizowane 0–1 względem M1. Nowa pinezka: odczyt X,Y na masterze → x=X/8100, y=Y/5200 (L13: współrzędne mierzone na docelowym pliku).",
  "wariant": "T1",
  "warianty": [
   {
    "domyslny": true,
-   "epoka": "stan wsp\u00f3\u0142czesny wg podk\u0142adu fanowskiego (Varghedin; bez datowania kanonicznego)",
+   "epoka": "stan współczesny wg podkładu fanowskiego (Varghedin; bez datowania kanonicznego)",
    "etykiety": false,
    "id": "t1",
    "kafle": {
@@ -270,18 +277,18 @@
     "sy": 1
    },
    "podklad": "l0.jpg",
-   "tytul": "T1 \u00b7 Varghedin",
+   "tytul": "T1 · Varghedin",
    "wariant": "T1",
    "wymiary": {
     "szerokosc": 8100,
     "wysokosc": 5200
    },
    "zrodlo": {
-    "autor": "Varghedin (self-provided na MTG Wiki); geometria za oficjaln\u0105 map\u0105 WotC (Jared Blando, 2018; linia Venters \u2192 Fleischer \u2192 Blando, jw. wywiad kartograficzny)",
-    "licencja": "fan-made, self-provided; u\u017cytek prywatny, niepubliczny \u2014 ADR 0031; przy upublicznieniu Codexu podk\u0142ad do wymiany (ADR 0007 \u00a73)",
-    "notka": "Master 8100\u00d75200 (9,65 MB) poza dist (ci\u0119ty lokalnie tools/kafle.mjs); w repo i artefakcie: l0.jpg (1920\u00d71233, pierwszy render), mini.jpg (800 px, mini-mapy kart), kafle/kNNN.jpg (176 kafelk\u00f3w L1, 16\u00d711 po 512 px, row-major). Podk\u0142ad T1 = uk\u0142ad Z\u0141OTY wsp\u00f3\u0142rz\u0119dnych wszystkich pinezek i kotwic (ADR 0035). Na rastrze Codex nie rysuje etykiet \u2014 zostaj\u0105 pinezki kart i kotwice.",
+    "autor": "Varghedin (self-provided na MTG Wiki); geometria za oficjalną mapą WotC (Jared Blando, 2018; linia Venters → Fleischer → Blando, jw. wywiad kartograficzny)",
+    "licencja": "fan-made, self-provided; użytek prywatny, niepubliczny — ADR 0031; przy upublicznieniu Codexu podkład do wymiany (ADR 0007 §3)",
+    "notka": "Master 8100×5200 (9,65 MB) poza dist (cięty lokalnie tools/kafle.mjs); w repo i artefakcie: l0.jpg (1920×1233, pierwszy render), mini.jpg (800 px, mini-mapy kart), kafle/kNNN.jpg (176 kafelków L1, 16×11 po 512 px, row-major). Podkład T1 = układ ZŁOTY współrzędnych wszystkich pinezek i kotwic (ADR 0035). Na rastrze Codex nie rysuje etykiet — zostają pinezki kart i kotwice.",
     "pobrano": "2026-09-08",
-    "tytul": "Dominaria by Varghedin \u2014 fanowska mapa planu, pochodna oficjalnej mapy Jareda Blando (WotC, 2018)",
+    "tytul": "Dominaria by Varghedin — fanowska mapa planu, pochodna oficjalnej mapy Jareda Blando (WotC, 2018)",
     "url": "https://mtg.wiki/page/File:Dominaria_by_Varghedin.jpg",
     "url2": "https://files.mtg.wiki/Dominaria_by_Varghedin.jpg"
    }
@@ -292,11 +299,11 @@
   "wysokosc": 5200
  },
  "zrodlo": {
-  "autor": "Varghedin (self-provided na MTG Wiki); geometria za oficjaln\u0105 map\u0105 WotC (Jared Blando, 2018)",
-  "licencja": "fan-made, self-provided; u\u017cytek prywatny, niepubliczny \u2014 ADR 0031; przy upublicznieniu Codexu podk\u0142ad do wymiany (ADR 0007 \u00a73)",
-  "notka": "Mapa LOD (ADR 0039, ADR 0041): podk\u0142ad z\u0142oty M1 \u2014 L0 (l0.jpg, pierwszy render) + kafle L1 (16\u00d711\u00d7512, pr\u00f3g 2.5). Nak\u0142adka L2 \u201eDomeny\" (D1) usuni\u0119ta 2026-09-08 \u2014 wycinek bazy bez nowego detalu (ADR 0041).",
+  "autor": "Varghedin (self-provided na MTG Wiki); geometria za oficjalną mapą WotC (Jared Blando, 2018)",
+  "licencja": "fan-made, self-provided; użytek prywatny, niepubliczny — ADR 0031; przy upublicznieniu Codexu podkład do wymiany (ADR 0007 §3)",
+  "notka": "Mapa LOD (ADR 0039, ADR 0041): podkład złoty M1 — L0 (l0.jpg, pierwszy render) + kafle L1 (16×11×512, próg 2.5). Nakładka L2 „Domeny\" (D1) usunięta 2026-09-08 — wycinek bazy bez nowego detalu (ADR 0041).",
   "pobrano": "2026-09-08",
-  "tytul": "Dominaria by Varghedin \u2014 fanowska mapa planu (M1)",
+  "tytul": "Dominaria by Varghedin — fanowska mapa planu (M1)",
   "url": "https://mtg.wiki/page/File:Dominaria_by_Varghedin.jpg",
   "url2": "https://files.mtg.wiki/Dominaria_by_Varghedin.jpg"
  }

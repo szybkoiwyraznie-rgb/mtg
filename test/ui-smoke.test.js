@@ -404,7 +404,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (38)'), 'lista kart: brak 38 kart');
+  assert.ok(lista.includes('Karty Katalogowe (39)'), 'lista kart: brak 39 kart');
   assert.ok(lista.includes('Chittering Rats'), 'lista kart: brak najnowszej materializacji 540DST');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
     'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
@@ -435,6 +435,16 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
     'hasło Velen: brak backlinków z dwóch kart spełniających próg');
   assert.ok(velen.includes('#/mapa/wiedzmin?x=0.4113&amp;y=0.2807'),
     'hasło Velen: brak deep-linka do regionalnej kotwicy');
+
+  shim.idz('#/haslo/serra');
+  const serra = shim.app.innerHTML;
+  assert.ok(serra.includes('planeswalkerką związaną z białą maną'),
+    'hasło Serra: brak definicji');
+  assert.ok(serra.includes('W kolekcji'), 'hasło Serra: brak automatycznych backlinków');
+  assert.ok(serra.includes("Serra's Embrace") && serra.includes('Expunge'),
+    'hasło Serra: brak backlinków z dwóch kart spełniających próg');
+  assert.ok(serra.includes('#/mapa/dominaria?x=0.1937&amp;y=0.3806'),
+    'hasło Serra: brak deep-linka do Sursi/Katedry Serran');
 
   // ADR 0030: format Karty Katalogowej jest LORE-first — technikalia w infoboksie,
   // mechanika jako opowieść dopiero pod koniec; sekcje „Ilustracja"/„Druk w Kolekcji" nie istnieją
@@ -528,8 +538,8 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/');
   // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — najnowsza dostawa
-  // Wiedźmina musi wejść do skrótu na stronie głównej.
-  assert.ok(shim.app.innerHTML.includes('Village Rites'), 'home: brak najnowszej materializacji');
+  // Dominarii musi wejść do skrótu na stronie głównej.
+  assert.ok(shim.app.innerHTML.includes("Serra's Embrace"), 'home: brak najnowszej materializacji');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();
