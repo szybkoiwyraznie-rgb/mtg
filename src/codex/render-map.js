@@ -453,12 +453,30 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
   const szer = start.wymiary?.szerokosc ?? mapa.wymiary?.szerokosc ?? 3200;
   const wys = start.wymiary?.wysokosc ?? mapa.wymiary?.wysokosc ?? 2400;
 
+  // Wiele kart może wskazywać tę samą regionalną kotwicę. Bez rozsunięcia
+  // ich znaczniki nakładałyby się idealnie i ostatni zasłaniałby pozostałe.
+  // Współrzędne geograficzne pozostają bez zmian; przesunięcie jest wyłącznie
+  // ekranowe i ma stały rozmiar niezależnie od zoomu.
+  const liczebnoscPunktow = new Map();
+  for (const p of pinezki) {
+    const klucz = `${p.x}:${p.y}`;
+    liczebnoscPunktow.set(klucz, (liczebnoscPunktow.get(klucz) ?? 0) + 1);
+  }
+  const indeksyPunktow = new Map();
   const htmlPinezki = pinezki.map((p) => {
     const karta = dane.strony?.[p.karta];
+    const klucz = `${p.x}:${p.y}`;
+    const ile = liczebnoscPunktow.get(klucz) ?? 1;
+    const indeks = indeksyPunktow.get(klucz) ?? 0;
+    indeksyPunktow.set(klucz, indeks + 1);
+    const promien = ile > 1 ? Math.max(14, ile * 5) : 0;
+    const kat = -Math.PI / 2 + (2 * Math.PI * indeks) / ile;
+    const dx = promien ? (Math.cos(kat) * promien).toFixed(2) : '0';
+    const dy = promien ? (Math.sin(kat) * promien).toFixed(2) : '0';
     const poz = POZIOMY_PEWNOSCI[p.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
     return `<a href="#/karta/${escapeHtml(p.karta)}" class="mapa-pinezka pewnosc-${p.pewnosc}"
       data-pinezka="${escapeHtml(p.karta)}" data-x="${p.x}" data-y="${p.y}"
-      style="--kolor:${poz.kolor}"
+      data-offset-x="${dx}" data-offset-y="${dy}" style="--kolor:${poz.kolor}"
       title="${escapeHtml(karta?.tytul ?? p.karta)} — pewność: ${poz.etykieta}">
       <span class="mapa-pinezka-glow"></span>
       <span class="mapa-pinezka-etykieta">${escapeHtml(karta?.tytul ?? p.karta)}</span>
@@ -987,7 +1005,9 @@ export function zamontujMape(app, opcje = {}) {
         if (polowa + 4 < w / 2) px = clamp(+px, polowa + 4, w - polowa - 4).toFixed(2);
       }
       if (!el.hasAttribute('data-podklad-etykieta')) {
-        el.style.transform = `translate(${px}px, ${py}px)`;
+        const oxPinezki = parseFloat(el.dataset.offsetX || '0');
+        const oyPinezki = parseFloat(el.dataset.offsetY || '0');
+        el.style.transform = `translate(${(+px + oxPinezki).toFixed(2)}px, ${(+py + oyPinezki).toFixed(2)}px)`;
         continue;
       }
       // Kotwiczenie jak w SVG: poziomo wg text-anchor (middle/start/end),
