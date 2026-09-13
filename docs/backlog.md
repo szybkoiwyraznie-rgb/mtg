@@ -451,3 +451,7 @@ liczy się do maksimum strony (maks 6); uwaga w gidzie Pętli Jakości.
 oznaczenia noszą wyłącznie karty, więc pinezka = N/A dla haseł
 **każdej** klasy (nie tylko niegeograficznych); hasło łączy się z
 mapą wyłącznie odsyłaniem (`?x=&y=`), pole `regiony` wycofane.
+
+- **Kolegium Światła / Kolegia Magii** — `69m11-tome-scour`; jedna scena
+  kartowa, osobne hasło czeka na drugi wpis. Altdorf również pozostaje bez
+  osobnego hasła do spełnienia progu.

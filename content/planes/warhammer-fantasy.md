@@ -85,6 +85,15 @@ nie wielkiej bitwy: pod omszałym grobowcem łowca czarownic musi doprowadzić
 wampira von Carstein do zwarcia i użyć dębowego kołka dokładnie w chwili,
 w której arystokratyczna pycha traci dystans.
 
+## Kolegia Magii i Kolegium Światła
+
+W Altdorfie działa osiem **Kolegiów Magii**, po jednym dla każdego Wiatru.
+Kolegium Światła skupia hierofantów Hysh: uczonych, egzorcystów i strażników
+wiedzy, dla których prawda oraz oczyszczenie są narzędziami walki z Chaosem.
+[[69m11-tome-scour|Tome Scour]] pokazuje ich pracę od strony zamkniętego
+laboratorium — pięć arkuszy niebezpiecznego woluminu zostaje starte, zanim
+treść znajdzie następnego czytelnika.
+
 ## Mapa
 
 `maps/warhammer-fantasy/` — wariant **T1 (rastr z etykietami)**:
@@ -118,6 +127,9 @@ Pinezki na mapie (ADR 0043: tylko karty):
   Stirlandem/Ostermarkiem a zachodnimi stokami [[gory-kranca-swiata|Gór Krańca Świata]], pewność
   region — mgliste cmentarze i grobowiec nie są nazwane jako pojedyncza
   nekropolia.
+- **[[69m11-tome-scour|Tome Scour]]** (69M11); **Altdorf** w Reiklandzie,
+  pewność dokładna na poziomie miasta — główna siedziba Kolegium Światła jest
+  kanonicznie altdorfska, lecz scena nie wskazuje konkretnej sali ani stołu.
 
 ## Źródła
 
