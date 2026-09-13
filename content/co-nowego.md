@@ -1,3 +1,20 @@
+## 2026-09-13 17:43 — Nowa karta: Tome Scour (Warhammer Fantasy)
+
+- **Materializacja:** **[[69m11-tome-scour|Tome Scour]]** (`69M11`, M11,
+  [[warhammer-fantasy|Warhammer Fantasy]]) przenosi mill five do laboratorium
+  Kolegium Światła: mosiężna rękawica ściera iluminowane litery, a pięć
+  arkuszy rozpada się w strzępy, pył i lewitujące krople tuszu.
+- **Snapshot:** właściwy druk to M11 #76; `69M11` pozostaje niezmiennym
+  identyfikatorem kolekcji właściciela. Fabuła została zachowana verbatim.
+- **Mapa:** nowa pinezka karty stoi na źródłowo zmierzonej kotwicy Altdorfu
+  (`0.2972/0.4035`). Pewność `dokladna` dotyczy miasta i głównej siedziby
+  Kolegiów Magii, nie konkretnej sali ani stołu.
+- **Link-mining:** istniejące hasło [[imperium|Imperium]] zyskało czwartą
+  kartę; Kolegium Światła, Kolegia Magii i Altdorf pozostają poniżej progu
+  osobnych haseł.
+- **Bramki:** 302/302 testy; build 97 stron (48 kart, 34 hasła, 15 planów),
+  artefakt 1677.3 kB, 859 plików drzewa; map-audit 0; wiki-stats 100%.
+
 ## 2026-09-13 00:45 — Pętle Jakości: Warhammer Fantasy ×3
 
 - **Imperium:** nowe hasło **[[imperium|Imperium]]** spina ludzkie państwo

@@ -4,6 +4,18 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-13 — PR-34: materializacja 69M11 Tome Scour
+
+Po audycie PR-33 zapisano dostawę `69M11 / Tome Scour / M11 / Warhammer
+Fantasy` i zmaterializowano ją jako pełny zestaw wpis–snapshot–karta–mapa.
+Snapshot wskazuje M11 #76, przy zachowaniu prywatnego imgId `69M11`. Karta
+LORE-first osadza pięć mielonych kart jako pięć arkuszy niszczonych w
+laboratorium Kolegium Światła. Mapa T1 dostała wyłącznie pinezkę karty na
+zmierzonej kotwicy Altdorfu; bez nowej warstwy haseł. Link-mining prowadzi
+do istniejącego hasła `imperium`, zaś Kolegium Światła, Kolegia Magii i
+Altdorf czekają na drugi wpis. Bramki produktu: 302/302 testy, build 97
+stron, 859 plików drzewa, map-audit 0 i wiki-stats 100%.
+
 ## 2026-09-13 — PR-33 cd.: trzy Pętle Jakości Warhammer Fantasy
 
 Po zamknięciu `543ISD Wooden Stake` właściciel poprosił o „3 pętle jakości”.

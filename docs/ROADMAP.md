@@ -458,3 +458,10 @@ build **96 stron** (47 kart, 34 hasła, 15 planów; artefakt 1665.6 kB) i
 **853 pliki** drzewa archiwum (148901.8 kB), map-audit 0, wiki-stats 100%
 (7,3/8), czysty `git diff --check`. Handoff:
 `docs/setup/HANDOFF_2026-09-12-pr33.md`.
+
+## PR-34 (2026-09-13) — **69M11 Tome Scour zmaterializowane**
+
+Audyt PR-33 + pełny komplet wpis–snapshot–karta–mapa dla Warhammer Fantasy.
+Altdorf dostał źródłową kotwicę miejską i wyłącznie pinezkę karty; nowe
+encje Kolegium Światła/Kolegia Magii pozostają poniżej progu haseł. Stan:
+97 stron (48 kart, 34 hasła, 15 planów), 302 testy, map-audit 0.
