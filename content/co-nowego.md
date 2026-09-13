@@ -1,3 +1,29 @@
+## 2026-09-13 00:45 — Pętle Jakości: Warhammer Fantasy ×3
+
+- **Imperium:** nowe hasło **[[imperium|Imperium]]** spina ludzkie państwo
+  Sigmara z kartami **[[39mm2-brute-force|Brute Force]]**,
+  **[[83mm2-gorehorn-minotaurs|Gorehorn Minotaurs]]** i
+  **[[543isd-wooden-stake|Wooden Stake]]**; zakres pozostaje państwowo-
+  społeczny, nie jedną lokalizacją na mapie.
+- **Zielonoskórzy:** nowe hasło **[[zielonoskorzy|Zielonoskórzy]]** łączy
+  orkową magię Waaagh! z goblińską dywersją
+  **[[312m13-goblin-battle-jester|Goblin Battle Jester]]**. Waaagh!, Gork
+  i Mork zostają na razie podzakresem tego hasła, nie osobnymi stronami.
+- **Góry Krańca Świata:** nowe hasło
+  **[[gory-kranca-swiata|Góry Krańca Świata]]** porządkuje skalę pasma między
+  Badlands, Karak Osiem Szczytów, Sylwanią i Imperium oraz linkuje karty
+  39MM2, 312M13 i 543ISD.
+- **Mapa bez nowych pinezek haseł:** `maps/warhammer-fantasy/map.json`
+  dostał tylko metadane kotwic i deep-linków. ADR 0043 zostaje zachowany:
+  pinezki mają wyłącznie karty, a hasła prowadzą do mapy przez `?x=&y=`.
+- **Strażniki:** nowy test `test/warhammer-link-mining.test.js` pilnuje progu
+  ≥2 kart, wikilinków, deep-linków mapy, braku regionów/obwódek i braku
+  przedwczesnych haseł dla Sylwanii, von Carsteinów, Vampire Counts, łowców
+  czarownic, Waaagh!, Gorka/Morka oraz Badlands.
+- **Bramki końcowe:** 297/297 testów; build 96 stron (47 kart, 34 hasła,
+  15 planów), artefakt 1665.6 kB i 853 pliki drzewa archiwum (148901.8 kB);
+  map-audit 0; wiki-stats 100% (7,3/8); `git diff --check` czysty.
+
 ## 2026-09-12 23:13 — Nowa karta: Wooden Stake (Warhammer Fantasy)
 
 - **Materializacja karty:** **[[543isd-wooden-stake|Wooden Stake]]**

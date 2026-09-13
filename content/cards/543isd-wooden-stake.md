@@ -20,7 +20,7 @@ czarnej ziemi i cmentarzy, na których świeżo usypane mogiły mieszają się
 z grobowcami starszymi od ludzkiej pamięci. Nad wsiami wiszą wilgotne
 chmury, z lasów dochodzi wycie wilków, a ruiny rodowych zamków rodu
 von Carstein przypominają, że tutejsza arystokracja nie zawsze oddycha.
-Dla mieszkańców Imperium to ziemia formalnie przyłączona do porządku
+Dla mieszkańców [[imperium|Imperium]] to ziemia formalnie przyłączona do porządku
 śmiertelników, lecz w praktyce wciąż należąca do panów nocy.
 
 W takich miejscach łowca czarownic nie może liczyć wyłącznie na herb,
@@ -41,7 +41,7 @@ kawałek drewna, któremu śmiertelnik powierza ostateczny, pewny koniec.
 
 ## Postacie i Byty
 
-**Łowcy czarownic Imperium** — bezwzględni tropiciele herezji, czarów,
+**Łowcy czarownic [[imperium|Imperium]]** — bezwzględni tropiciele herezji, czarów,
 mutacji i nieumarłych. W Sylwanii ich gorliwość spotyka przeciwników,
 którzy potrafią zastraszyć całe wsie, ale w zwarciu nadal muszą bać się
 prostych, sprawdzonych środków.
@@ -97,15 +97,14 @@ decyduje o wyniku.
 ## Na Mapie
 
 Pinezka stoi regionalnie w **Sylwanii** (`x: 0.487`, `y: 0.421`), na
-wschodnim skraju Imperium i u zachodnich stoków Gór Krańca Świata. To
+wschodnim skraju [[imperium|Imperium]] i u zachodnich stoków [[gory-kranca-swiata|Gór Krańca Świata]]. To
 świadome osadzenie w krainie, nie w jednym grobie: scena mówi o mglistych
 cmentarzach i omszałym grobowcu, ale nie nazywa miasta, wsi, zamku ani
 konkretnej nekropolii.
 
 Zestawienie z wcześniejszymi miejscami tego świata pokazuje inny rodzaj
 przemocy niż [[83mm2-gorehorn-minotaurs|Gorehorn Minotaurs]] w Wielkim Lesie czy
-[[312m13-goblin-battle-jester|Goblin Battle Jester]] w Górach Krańca
-Świata. Tam dominują stada i wojenny zgiełk; tutaj wszystko zwęża się do
+[[312m13-goblin-battle-jester|Goblin Battle Jester]] w [[gory-kranca-swiata|Górach Krańca Świata]]. Tam dominują stada i wojenny zgiełk; tutaj wszystko zwęża się do
 jednej dłoni, jednego cofniętego kroku i jednego kawałka drewna.
 
 Pinezka: `#/mapa/warhammer-fantasy?pin=543isd-wooden-stake`.

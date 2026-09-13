@@ -24,9 +24,9 @@ settingu **Stary Świat** (*the Old World*) — kontynent w północno-
 zachodniej części globu, kartograficznie i klimatycznie przypominający
 średniowieczną Europę. To świat pod nieustanną presją: z północy
 napiera **Chaos** (Pustkowia Chaosu, mroczni bogowie), ze wschodu przez
-**Worlds Edge Mountains** przelewają się hordy zielonoskórych, a pod
+**[[gory-kranca-swiata|Worlds Edge Mountains]]** przelewają się hordy [[zielonoskorzy|zielonoskórych]], a pod
 ziemią knują skaveny i nieumarli. Główne mocarstwa ludzi to feudalne
-**Imperium** (kraj Sigmara, luźna federacja prowincji jak Reikland,
+**[[imperium|Imperium]]** (kraj Sigmara, luźna federacja prowincji jak Reikland,
 Middenland, Stirland) i rycerska **Bretonnia** na zachodzie; obok nich
 trwają odwieczne **Krasnoludy** w górskich Karakach, wysokie i mroczne
 **Elfy** oraz jaszczuroludzie Lustrii. Magię niesie **Wiatr Chaosu**
@@ -35,11 +35,11 @@ napędza też prymitywną wiarę zielonoskórych.
 
 ## Zielonoskórzy i Waaagh!
 
-Bohaterami scen są **Zielonoskórzy** (*Greenskins*) —
+Bohaterami scen są **[[zielonoskorzy|Zielonoskórzy]]** (*Greenskins*) —
 zbiorcza nazwa **Orków i Goblinów** oraz pokrewnych goblinoidów. Nie
 pochodzą z jednej krainy: żyją w dzikich zakątkach całego świata, lecz
 ich sercem są **Badlands** (Ziemie Jałowe) na południe od Starego Świata
-i wschodnie stoki **Worlds Edge Mountains**, przejęte od krasnoludów w
+i wschodnie stoki **[[gory-kranca-swiata|Worlds Edge Mountains]]**, przejęte od krasnoludów w
 czasie Wojen Goblinów. Orkowie żyją wyłącznie dla walki i czczą dwóch
 brutalnych bogów-braci, **Gorka i Morka** (przemoc sprytna i przemoc
 brutalna). Ich religią i militarną machiną jest **Waaagh!** — narastająca
@@ -57,7 +57,7 @@ wojennych błaznów do dywersji i paraliżowania wrogiej obrony, co ukazuje
 ## Zwierzoludzie i Dzieci Chaosu
 
 W głębi mrocznych, nieprzebytych puszcz Starego Świata — przede
-wszystkim w **Wielkim Lesie** (*The Great Forest*) w sercu Imperium
+wszystkim w **Wielkim Lesie** (*The Great Forest*) w sercu [[imperium|Imperium]]
 oraz w lesie **Drakwald** — żyją **Zwierzoludzie** (*Beastmen*),
 zwani Dziećmi Chaosu. Zrodzeni ze spaczenia dawnych er, nie znają
 ludzkiego prawa ani miłosierdzia. Ich centrami kultu są wznoszone
@@ -66,12 +66,11 @@ odprawiają krwawe rytuały. Najpotężniejszą formacją uderzeniową
 stad są **Minotaury** (*Bullgors*): potężne bestie z toporami,
 które po zwęszeniu krwi wpadają w morderczy szał. Karta
 [[83mm2-gorehorn-minotaurs|Gorehorn Minotaurs]] ukazuje ich
-niszczycielską szarżę przez bory Imperium.
+niszczycielską szarżę przez bory [[imperium|Imperium]].
 
 ## Sylwania, wampiry i łowcy czarownic
 
-Na wschodnim skraju Imperium, między Stirlandem, Ostermarkiem i Górami
-Krańca Świata, leży **Sylwania** — kraina mgły, cmentarzy, wilgotnych
+Na wschodnim skraju [[imperium|Imperium]], między Stirlandem, Ostermarkiem i [[gory-kranca-swiata|Górami Krańca Świata]], leży **Sylwania** — kraina mgły, cmentarzy, wilgotnych
 lasów i zamków, których panowie zbyt często okazują się nieumarłymi.
 Formalnie pozostaje częścią porządku ludzkich prowincji, ale jej pamięć,
 ziemia i lęk mieszkańców są nierozerwalnie związane z **Vampire Counts**
@@ -106,17 +105,17 @@ Pinezki na mapie (ADR 0043: tylko karty):
 
 - **[[39mm2-brute-force|Brute Force]]** (39MM2); środek **Badlands**
   (Ziemie Jałowe na południe od Starego Świata, ojcowizna
-  zielonoskórych), pewność region — scena to bezimienne pole bitwy, nie
+  [[zielonoskorzy|zielonoskórych]]), pewność region — scena to bezimienne pole bitwy, nie
   konkretne miasto.
 - **[[83mm2-gorehorn-minotaurs|Gorehorn Minotaurs]]** (83MM2); **The
-  Great Forest** (Wielki Las w sercu Imperium), pewność region —
+  Great Forest** (Wielki Las w sercu [[imperium|Imperium]]), pewność region —
   szarża minotaurów Dzieci Chaosu przez ostępy puszczy.
 - **[[312m13-goblin-battle-jester|Goblin Battle Jester]]** (312M13);
-  **Worlds Edge Mountains** (Góry Krańca Świata u stóp Karak Osiem Szczytów),
+  **[[gory-kranca-swiata|Worlds Edge Mountains]]** (Góry Krańca Świata u stóp Karak Osiem Szczytów),
   pewność region — wojenny trefniś plemienia Krzywego Księżyca tańczący
   na półce skalnej nad wąwozem.
 - **[[543isd-wooden-stake|Wooden Stake]]** (543ISD); **Sylwania** między
-  Stirlandem/Ostermarkiem a zachodnimi stokami Gór Krańca Świata, pewność
+  Stirlandem/Ostermarkiem a zachodnimi stokami [[gory-kranca-swiata|Gór Krańca Świata]], pewność
   region — mgliste cmentarze i grobowiec nie są nazwane jako pojedyncza
   nekropolia.
 

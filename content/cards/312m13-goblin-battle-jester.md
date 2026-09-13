@@ -15,9 +15,9 @@ pinezka:
 
 ## Kronika Lore
 
-W poszarpanych turniach i ponurych rozpadlinach **Gór Krańca Świata**
+W poszarpanych turniach i ponurych rozpadlinach **[[gory-kranca-swiata|Gór Krańca Świata]]**
 (*Worlds Edge Mountains*) w [[warhammer-fantasy|Starym Świecie]],
-gdzie plemiona Nocnych Goblinów toczą nieustanne wojny z krasnoludzkimi
+gdzie plemiona [[zielonoskorzy|Nocnych Goblinów]] toczą nieustanne wojny z krasnoludzkimi
 twierdzami, brutalna siła rzadko wystarcza do odniesienia zwycięstwa.
 Pod sztandarami **Plemienia Krzywego Księżyca** (*Crooked Moon Tribe*),
 słynącego z bezwzględnego sprytu i zamiłowania do podstępnych zasadzek,
@@ -65,7 +65,7 @@ i tyły wroga.
 
 **Goblin Battle Jester** — „Gobliński Wojenny Błazen” (lub „Wojenny
 Trefniś Goblinów”). Nazwa oddaje rzadkie w sztuce wojennej połączenie
-błazeńskiego widowiska z realną taktyką wojskową zielonoskórych.
+błazeńskiego widowiska z realną taktyką wojskową [[zielonoskorzy|zielonoskórych]].
 
 ## Flavor Text
 
@@ -100,10 +100,10 @@ ze świadectwa [[39mm2-brute-force|Brute Force]].
 
 ## Na Mapie
 
-Pinezka stoi na obszarze **Gór Krańca Świata** (*Worlds Edge Mountains*,
+Pinezka stoi na obszarze **[[gory-kranca-swiata|Gór Krańca Świata]]** (*Worlds Edge Mountains*,
 `x: 0.720`, `y: 0.580`) — pewność **region**.
 
-Góry Krańca Świata to wschodni grzbiet Starego Świata, ciągnący się
+[[gory-kranca-swiata|Góry Krańca Świata]] to wschodni grzbiet Starego Świata, ciągnący się
 wzdłuż granicy z Ziemiami Jałowymi (**The Badlands**, `x: 0.4262`,
 `y: 0.5810`). W tym górzystym pasmie leży m.in. zrujnowana twierdza
 *Karak Osiem Szczytów*, stanowiąca matecznik plemienia Krzywego Księżyca.

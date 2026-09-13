@@ -4,6 +4,45 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-13 — PR-33 cd.: trzy Pętle Jakości Warhammer Fantasy
+
+Po zamknięciu `543ISD Wooden Stake` właściciel poprosił o „3 pętle jakości”.
+Zamiast nowej materializacji wykonano trzy kontrolowane przebiegi
+link-miningu Warhammera, oparte na realnych wzmiankach kartowych i bez
+naruszania ADR 0043.
+
+1. **Imperium:** powstało `content/lore/imperium.md` jako hasło
+   społecznościowo-państwowe dla ludzkiej federacji Sigmara. Linkują do niego
+   `39mm2-brute-force`, `83mm2-gorehorn-minotaurs` i
+   `543isd-wooden-stake`; deep-link mapy prowadzi do Wielkiego Lasu jako
+   dotychczasowej kotwicy imperialnych scen, bez udawania jednej stolicy
+   całego państwa.
+2. **Zielonoskórzy:** powstało `content/lore/zielonoskorzy.md`, obejmujące
+   orków, gobliny, Waaagh!, Gorka i Morka jako jeden zakres społecznościowy.
+   Hasło jest linkowane przez `39mm2-brute-force` i
+   `312m13-goblin-battle-jester`; osobne strony Waaagh!/Gork/Mork zostały
+   świadomie odłożone jako podzakres.
+3. **Góry Krańca Świata:** powstało
+   `content/lore/gory-kranca-swiata.md` jako hasło geograficzne dla pasma
+   między Starym Światem i Ciemnymi Ziemiami. Linkują do niego
+   `39mm2-brute-force`, `312m13-goblin-battle-jester` i
+   `543isd-wooden-stake`; deep-link prowadzi do rejonu Karak Osiem Szczytów.
+4. **Mapa i backlog:** `maps/warhammer-fantasy/map.json` dostał tylko
+   doprecyzowane metadane kotwic Badlands, The Great Forest i Worlds Edge
+   Mountains. Nie dodano pinezek haseł ani regionów. `docs/backlog.md`
+   odnotowuje wykonane trzy hasła oraz pozostawia poniżej progu Sylwanię,
+   von Carsteinów, Vampire Counts i łowców czarownic.
+5. **Dokumentacja i regresja:** dodano plan pracy
+   `docs/plans/PLAN_2026-09-13-trzy-petle-warhammer.md`, aktualizacje
+   `content/co-nowego.md`, `docs/ROADMAP.md`, handoff PR-33 i test
+   `test/warhammer-link-mining.test.js` pilnujący progów, wikilinków,
+   deep-linków mapy i braku przedwczesnych haseł.
+
+Bramki końcowe: **297/297 testów**, build **96 stron** (47 kart, 34 hasła,
+15 planów; artefakt 1665.6 kB) i **853 pliki drzewa archiwum**
+(148901.8 kB), map-audit 0, wiki-stats 100% (7,3/8) oraz czysty
+`git diff --check`.
+
 ## 2026-09-12 — PR-33 cd.: 543ISD Wooden Stake i Sylwania
 
 Właściciel dostarczył `543ISD / Wooden Stake / ISD / Warhammer Fantasy` wraz

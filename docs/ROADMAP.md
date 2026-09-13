@@ -446,11 +446,15 @@ używa regionalnej pinezki `0.13/0.27` dla mokradła szarego slaada, bez
 pinezki hasła i bez dokładnego lasu/mokradła. Warhammer Fantasy po 543ISD
 ma regionalną kotwicę i pinezkę Sylwanii (`0.487/0.421`) dla anonimowych
 cmentarzy/grobowca, bez haseł dla Sylwanii, von Carsteinów, łowców
-czarownic ani Vampire Counts poniżej progu. Wiedźmin zachował dyscyplinę
-T1/LOD: Łysa Góra i pobojowiska Ziemi Niczyjej mają tylko regionalne pinezki
-kart na kotwicy Velen (`0.4113/0.2807`), bez pinezek haseł.
+czarownic ani Vampire Counts poniżej progu. Dodatkowe trzy Pętle Jakości
+2026-09-13 domknęły Warhammerowe hasła `imperium`, `zielonoskorzy` i
+`gory-kranca-swiata`, z wikilinkami kartowymi i wyłącznie deep-linkami mapy
+zgodnie z ADR 0043. Wiedźmin zachował dyscyplinę T1/LOD: Łysa Góra i
+pobojowiska Ziemi Niczyjej mają tylko regionalne pinezki kart na kotwicy
+Velen (`0.4113/0.2807`), bez pinezek haseł.
 
-Bramki końcowe po 543ISD: **292/292 testy**, build **93 strony** (47 kart,
-31 haseł, 15 planów; artefakt 1637.1 kB) i **853 pliki** drzewa archiwum
-(148431.7 kB), map-audit 0, wiki-stats 100% (7,3/8), czysty
-`git diff --check`. Handoff: `docs/setup/HANDOFF_2026-09-12-pr33.md`.
+Bramki końcowe po trzech Pętlach Jakości Warhammera: **297/297 testów**,
+build **96 stron** (47 kart, 34 hasła, 15 planów; artefakt 1665.6 kB) i
+**853 pliki** drzewa archiwum (148901.8 kB), map-audit 0, wiki-stats 100%
+(7,3/8), czysty `git diff --check`. Handoff:
+`docs/setup/HANDOFF_2026-09-12-pr33.md`.
