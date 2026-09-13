@@ -25,8 +25,7 @@
 <g fill="#eee5cf" stroke="#4d1827" stroke-width="5">
  <path d="M835 465h330v235H835Z"/><path d="M885 505h230v155H885Z" fill="#251c25"/>
 </g>
-<text x="1000" y="420" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="800" fill="#35101b">WĘZEŁ ZMIENNYCH POKOI</text>
-<text x="1000" y="585" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#ffffff">przejścia stale zmieniają położenie</text>
+<text x="1000" y="585" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="800" fill="#ffffff">WĘZEŁ ZMIENNYCH POKOI</text>
 <g stroke="#493a36" stroke-width="8" fill="none" stroke-dasharray="18 18" opacity=".7">
  <path d="M355 480Q700 360 850 525"/><path d="M1160 520Q1400 480 1640 585"/><path d="M1090 690Q1300 770 1370 840"/><path d="M850 690Q710 760 650 850"/>
 </g>
@@ -38,9 +37,9 @@
  <text x="610" y="1232" font-size="44" font-weight="800" fill="#ffffff">THE BELOW</text>
 </g>
 <g font-family="Arial, Helvetica, sans-serif" fill="#4b3c36">
- <text x="1190" y="1125" font-size="30" font-weight="800">LEGENDA KONTRAKTU:</text>
- <text x="1190" y="1165" font-size="26" font-weight="600">• pola = temperament strefy, nie prowincja</text>
- <text x="1190" y="1200" font-size="26" font-weight="600">• linie przerywane = możliwe apertury, nie szlaki</text>
- <text x="1190" y="1235" font-size="26" font-weight="600">• tylko oś piwnica → The Below jest stała</text>
+ <text x="1060" y="1270" font-size="30" font-weight="800">LEGENDA KONTRAKTU:</text>
+ <text x="1060" y="1310" font-size="26" font-weight="600">• pola = temperament strefy, nie prowincja</text>
+ <text x="1060" y="1345" font-size="26" font-weight="600">• linie przerywane = możliwe apertury, nie szlaki</text>
+ <text x="1060" y="1380" font-size="26" font-weight="600">• tylko oś piwnica → The Below jest stała</text>
 </g>
 </svg>
