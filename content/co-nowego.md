@@ -1,3 +1,11 @@
+## 2026-09-13 18:12 — Nowa karta: Skinbrand Goblin (Ravnica)
+
+- **Materializacja:** **[[572gtc-skinbrand-goblin|Skinbrand Goblin]]** (`572GTC`, GTC, [[ravnica|Ravnica]]) pokazuje natarcie Płomiennoskórych w zarastającym Paśmie Gruzów.
+- **Snapshot:** właściwy druk to GTC #105; prywatny `572GTC` pozostaje osobnym identyfikatorem. Bloodrush kosztuje `{R}` i przekazuje `+2/+1`.
+- **Mapa:** regionalna pinezka korzysta z istniejącej kotwicy Red Wastes (`0.4109/0.216`), bez wymyślonej ulicy, obozu lub barykady.
+- **Link-mining:** powstały hasła [[gruul|Klany Gruul]] i [[liga-izzet|Liga Izzet]], każde podparte odwołaniami z dwóch kart; Płomiennoskórzy i Niv-Mizzet pozostają poniżej progu.
+- **Bramki:** 306/306 testów; build 100 stron (49 kart, 36 haseł, 15 planów), artefakt 1691.5 kB, 859 plików drzewa; map-audit 0; wiki-stats 100%.
+
 ## 2026-09-13 17:43 — Nowa karta: Tome Scour (Warhammer Fantasy)
 
 - **Materializacja:** **[[69m11-tome-scour|Tome Scour]]** (`69M11`, M11,

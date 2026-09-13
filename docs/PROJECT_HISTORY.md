@@ -4,6 +4,10 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-13 — PR-34: materializacja 572GTC Skinbrand Goblin
+
+Dostawę `572GTC / Skinbrand Goblin / GTC / Ravnica` domknięto pełnym zestawem wpis–snapshot–karta–mapa. Snapshot rozdziela prywatne `572GTC` od GTC #105. Karta LORE-first zachowuje runy Płomiennoskórych, Bloodrush `{R}` / `+2/+1` i badawczą hipotezę Izzetów. Regionalna pinezka stoi na Red Wastes, bez fałszywej lokalizacji sceny. Próg dwóch kart domknął hasła Gruul i Liga Izzet; Niv-Mizzet i Płomiennoskórzy czekają. Bramki produktu: 306/306, build 100 stron, map-audit 0, wiki-stats 100%.
+
 ## 2026-09-13 — PR-34: materializacja 69M11 Tome Scour
 
 Po audycie PR-33 zapisano dostawę `69M11 / Tome Scour / M11 / Warhammer
