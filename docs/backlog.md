@@ -457,3 +457,7 @@ mapą wyłącznie odsyłaniem (`?x=&y=`), pole `regiony` wycofane.
   osobnego hasła do spełnienia progu.
 
 - **Płomiennoskórzy / Niv-Mizzet** — motywy 572GTC pozostają poniżej progu osobnych haseł; Gruul i Liga Izzet mają już strony zbiorcze.
+
+- **Morze Żywego Srebra / Steelfin Whale** — pierwsza karta bezpośrednio
+  osadzona w akwenie; osobne hasło geograficzne czeka na drugi wpis kartowy.
+  Błękitne kule i heksagonalne kolumny pozostają elementami jednej sceny.

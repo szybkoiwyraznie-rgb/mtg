@@ -404,10 +404,11 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (49)'), 'lista kart: brak 49 kart');
+  assert.ok(lista.includes('Karty Katalogowe (50)'), 'lista kart: brak 50 kart');
   assert.ok(lista.includes('Wooden Stake'), 'lista kart: brak materializacji 543ISD');
   assert.ok(lista.includes('Tome Scour'), 'lista kart: brak materializacji 69M11');
-  assert.ok(lista.includes('Skinbrand Goblin'), 'lista kart: brak najnowszej materializacji 572GTC');
+  assert.ok(lista.includes('Skinbrand Goblin'), 'lista kart: brak materializacji 572GTC');
+  assert.ok(lista.includes('Steelfin Whale'), 'lista kart: brak najnowszej materializacji 99MH2');
   assert.ok(lista.includes('Gray Slaad'), 'lista kart: brak materializacji 234CLB');
   assert.ok(lista.includes('Frightful Delusion'), 'lista kart: brak materializacji 256ISD');
   assert.ok(lista.includes("Merchant's Dockhand"), 'lista kart: brak materializacji 12AER');
@@ -625,7 +626,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   shim.idz('#/');
   // Strona główna pokazuje 5 NAJNOWSZYCH materializacji; najświeższa dostawa
   // musi wejść do skrótu, a starsze są pilnowane na pełnej liście kart powyżej.
-  assert.ok(shim.app.innerHTML.includes('Skinbrand Goblin'), 'home: brak najnowszej materializacji 572GTC');
+  assert.ok(shim.app.innerHTML.includes('Steelfin Whale'), 'home: brak najnowszej materializacji 99MH2');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();

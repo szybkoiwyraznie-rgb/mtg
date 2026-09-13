@@ -200,6 +200,13 @@ wewnątrz regionów są relacyjne (kanon podaje przynależność
 i sąsiedztwa, nie współrzędne); proweniencja każdej kotwicy
 w `map.json`, werdykt researchu w `zrodlo-research.md`.
 
+## Wieloryb Morza Żywego Srebra
+
+[[99mh2-steelfin-whale|Steelfin Whale]] pokazuje metaliczną biologię planu
+w samym akcie żerowania: magnetyczne fiszbiny przesiewają opiłki i cenną
+rudę zawieszoną w Quicksilver Sea. Artefakty skracają drogę przywołania
+olbrzyma i każdy nowy obiekt przywraca mu gotowość do ruchu.
+
 ## Źródła
 
 - Doug Beyer, The Nonhuman Cultures of Mirrodin (2010), sekcje Leonin
