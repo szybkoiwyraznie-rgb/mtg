@@ -156,6 +156,14 @@ w erze Paktu nocami z Medori Park chodzą procesje nieumarłych.
   weteranka Boros podnosi młodszego rekruta na barykadzie broniącej placu
   targowego.
 
+## Nowa scena w Paśmie Gruzów
+
+[[572gtc-skinbrand-goblin|Skinbrand Goblin]] osadza klan Płomiennoskórych w
+Rubblebelcie nad Czwartym Precyktem. Wypalone runy zasilają Bloodrush, a
+[[liga-izzet|Liga Izzet]] pod wodzą Niv-Mizzeta próbuje odczytać w nich
+ulice i linie mocy. Scena domyka osobne hasła [[gruul|klanów Gruul]] oraz
+Ligi Izzet po dwóch kartach.
+
 ## Źródła
 
 - MTG Wiki, „Tenth District" (i strony „Precinct One"…„Precinct Six")

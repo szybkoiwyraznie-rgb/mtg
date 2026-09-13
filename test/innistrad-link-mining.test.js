@@ -64,6 +64,7 @@ test('Innistrad: Avacyn i Devil\'s Breach też przekraczają próg kart', () => 
     '171isd-grizzled-outcasts',
     '181avr-spectral-prison',
     '309isd-civilized-scholar',
+    '385dka-midnight-guard',
     '393dka-forge-devil',
     '42isd-murder-of-crows',
     '544avr-thraben-valiant',

@@ -38,6 +38,7 @@ test('Warhammer: trzy hasła powstają z progu kart po 543ISD', () => {
   assert.deepEqual(kartyLinkujace('imperium'), [
     '39mm2-brute-force',
     '543isd-wooden-stake',
+    '69m11-tome-scour',
     '83mm2-gorehorn-minotaurs',
   ]);
   assert.deepEqual(kartyLinkujace('zielonoskorzy'), [

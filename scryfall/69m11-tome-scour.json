@@ -1,0 +1,126 @@
+{
+  "object": "card",
+  "id": "6445f013-8b50-4ea3-9013-df85289c2605",
+  "oracle_id": "446a9d7e-9c1a-4e83-8342-2ed5acae2eed",
+  "multiverse_ids": [
+    205000
+  ],
+  "mtgo_id": 37110,
+  "mtgo_foil_id": 37111,
+  "tcgplayer_id": 35405,
+  "cardmarket_id": 241833,
+  "name": "Tome Scour",
+  "lang": "en",
+  "released_at": "2010-07-16",
+  "uri": "https://api.scryfall.com/cards/6445f013-8b50-4ea3-9013-df85289c2605",
+  "scryfall_uri": "https://scryfall.com/card/m11/76/tome-scour?utm_source=api",
+  "layout": "normal",
+  "highres_image": true,
+  "image_status": "highres_scan",
+  "image_updated_at": "2026-07-13T11:23:40Z",
+  "image_uris": {
+    "small": "https://cards.scryfall.io/small/front/6/4/6445f013-8b50-4ea3-9013-df85289c2605.jpg?1783941820",
+    "normal": "https://cards.scryfall.io/normal/front/6/4/6445f013-8b50-4ea3-9013-df85289c2605.jpg?1783941820",
+    "large": "https://cards.scryfall.io/large/front/6/4/6445f013-8b50-4ea3-9013-df85289c2605.jpg?1783941820",
+    "png": "https://cards.scryfall.io/png/front/6/4/6445f013-8b50-4ea3-9013-df85289c2605.png?1783941820",
+    "art_crop": "https://cards.scryfall.io/art_crop/front/6/4/6445f013-8b50-4ea3-9013-df85289c2605.jpg?1783941820",
+    "border_crop": "https://cards.scryfall.io/border_crop/front/6/4/6445f013-8b50-4ea3-9013-df85289c2605.jpg?1783941820"
+  },
+  "mana_cost": "{U}",
+  "cmc": 1.0,
+  "type_line": "Sorcery",
+  "oracle_text": "Target player mills five cards.",
+  "colors": [
+    "U"
+  ],
+  "color_identity": [
+    "U"
+  ],
+  "keywords": [
+    "Mill"
+  ],
+  "legalities": {
+    "standard": "not_legal",
+    "future": "not_legal",
+    "historic": "legal",
+    "timeless": "legal",
+    "gladiator": "legal",
+    "pioneer": "legal",
+    "modern": "legal",
+    "legacy": "legal",
+    "pauper": "legal",
+    "vintage": "legal",
+    "penny": "legal",
+    "commander": "legal",
+    "oathbreaker": "legal",
+    "standardbrawl": "not_legal",
+    "brawl": "legal",
+    "competitivebrawl": "legal",
+    "alchemy": "not_legal",
+    "paupercommander": "legal",
+    "duel": "legal",
+    "oldschool": "not_legal",
+    "premodern": "not_legal",
+    "predh": "legal",
+    "tlr": "legal"
+  },
+  "games": [
+    "paper",
+    "mtgo"
+  ],
+  "reserved": false,
+  "game_changer": false,
+  "foil": true,
+  "nonfoil": true,
+  "finishes": [
+    "nonfoil",
+    "foil"
+  ],
+  "oversized": false,
+  "promo": false,
+  "reprint": true,
+  "variation": false,
+  "set_id": "485d2468-18c8-42a4-9482-ca1c51e0470e",
+  "set": "m11",
+  "set_name": "Magic 2011",
+  "set_type": "core",
+  "set_uri": "https://api.scryfall.com/sets/485d2468-18c8-42a4-9482-ca1c51e0470e",
+  "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Am11&unique=prints",
+  "scryfall_set_uri": "https://scryfall.com/sets/m11?utm_source=api",
+  "rulings_uri": "https://api.scryfall.com/cards/6445f013-8b50-4ea3-9013-df85289c2605/rulings",
+  "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A446a9d7e-9c1a-4e83-8342-2ed5acae2eed&unique=prints",
+  "collector_number": "76",
+  "digital": false,
+  "rarity": "common",
+  "flavor_text": "Genius is overrated, especially when it's someone else's.",
+  "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+  "artist": "Steven Belledin",
+  "artist_ids": [
+    "f07d73b9-52a0-4fe5-858b-61f7b42174a5"
+  ],
+  "illustration_id": "7a853fa3-c738-44c3-b818-d149638e1ad5",
+  "border_color": "black",
+  "frame": "2003",
+  "full_art": false,
+  "textless": false,
+  "booster": true,
+  "story_spotlight": false,
+  "edhrec_rank": 11840,
+  "penny_rank": 4812,
+  "prices": {
+    "usd": "0.14",
+    "usd_foil": "0.28",
+    "usd_etched": null,
+    "eur": "0.29",
+    "eur_foil": "1.83",
+    "tix": "0.03"
+  },
+  "related_uris": {
+    "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=205000&printed=false",
+    "edhrec": "https://edhrec.com/route/?cc=Tome+Scour"
+  },
+  "source": "https://api.scryfall.com/cards/named?exact=Tome%20Scour&set=m11",
+  "pobrano": "2026-09-13",
+  "slug": "69m11-tome-scour",
+  "notka_numery": "imgId właściciela = 69M11; collector_number Scryfall właściwego druku M11 = 76. Liczba 69 jest indeksem prywatnej kolekcji i nie identyfikuje numeru wydruku."
+}

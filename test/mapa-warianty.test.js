@@ -185,6 +185,12 @@ test('mapa: deep-link pinezki ma pierwszeństwo przed widokiem domyślnym (ADR 0
   blisko(m.widok().pin[0], 720); blisko(m.widok().pin[1], 550);
 });
 
+test('mapa: płaski model przekazuje wyłączenie warstwy etykiet do syntetycznego wariantu', () => {
+  const [wariant] = wariantyMapy({ tytul: 'Diagram', podklad: 'podklad.svg', wariant: 'T4',
+    etykiety: false, wymiary: { szerokosc: 2000, wysokosc: 1400 } });
+  assert.equal(wariant.etykiety, false);
+});
+
 test('mapa: stary model bez wariantów nadal działa z tożsamościową kalibracją', () => {
   const warianty = wariantyMapy({ tytul: 'Jedna mapa', podklad: 'podklad.svg', wariant: 'T4',
     wymiary: { szerokosc: 2000, wysokosc: 1400 } });
