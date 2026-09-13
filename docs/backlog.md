@@ -455,3 +455,5 @@ mapą wyłącznie odsyłaniem (`?x=&y=`), pole `regiony` wycofane.
 - **Kolegium Światła / Kolegia Magii** — `69m11-tome-scour`; jedna scena
   kartowa, osobne hasło czeka na drugi wpis. Altdorf również pozostaje bez
   osobnego hasła do spełnienia progu.
+
+- **Płomiennoskórzy / Niv-Mizzet** — motywy 572GTC pozostają poniżej progu osobnych haseł; Gruul i Liga Izzet mają już strony zbiorcze.
