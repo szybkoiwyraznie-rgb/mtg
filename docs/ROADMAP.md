@@ -473,3 +473,7 @@ Domknięto drugą dostawę PR-34: wpis verbatim, GTC #105, Kartę LORE-first, re
 ## PR-34 (2026-09-13) — **99MH2 Steelfin Whale zmaterializowane**
 
 Domknięto trzecią dostawę PR-34: wpis verbatim, MH2 #65, Kartę LORE-first, regionalną pinezkę Quicksilver Sea i regresję. Stan: 50 kart, 36 haseł, 15 planów; 314/314 testów i komplet bramek zielony.
+
+## PR-34 (2026-09-13) — **385DKA Midnight Guard zmaterializowane**
+
+Domknięto czwartą dostawę PR-34: wpis verbatim, DKA #14, Kartę LORE-first, regionalną pinezkę Lake Zhava, hasło Nephalia i regresję skali geograficznej. Stan: 51 kart, 37 haseł, 15 planów; 320/320 testów.

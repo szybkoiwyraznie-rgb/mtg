@@ -4,6 +4,10 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-13 — PR-34: materializacja 385DKA Midnight Guard
+
+Dostawę `385DKA / Midnight Guard / DKA / Innistrad` domknięto pełnym zestawem wpis–snapshot–karta–mapa. Snapshot rozdziela prywatne `385DKA` od DKA #14. Karta LORE-first wiąże odtapowanie z reakcją na każdego przybysza, a regionalna pinezka stoi na Lake Zhava bez wymyślonej osady. Link-mining utworzył hasło Nephalia po dwóch kartach. Skala chroni geografię: Thraben pozostaje odległą stolicą, Gavony sąsiednią prowincją. Bramki produktu: 320/320, build 103 strony, map-audit 0, wiki-stats 100%.
+
 ## 2026-09-13 — PR-34: materializacja 99MH2 Steelfin Whale
 
 Dostawę `99MH2 / Steelfin Whale / MH2 / Mirrodin` domknięto pełnym zestawem wpis–snapshot–karta–mapa. Snapshot rozdziela prywatne `99MH2` od MH2 #65. Karta LORE-first wiąże Affinity i odtapowanie z metalicznym żerowaniem wieloryba. Regionalna pinezka stoi na kotwicy Quicksilver Sea bez wymyślonego siedliska. Morze Żywego Srebra pozostaje poniżej progu osobnego hasła. Bramki produktu: 314/314, build 101 stron, map-audit 0 i wiki-stats 100%.

@@ -1,3 +1,12 @@
+## 2026-09-13 21:28 — Nowa karta: Midnight Guard (Innistrad)
+
+- **Materializacja:** **[[385dka-midnight-guard|Midnight Guard]]** (`385DKA`, DKA, [[innistrad|Innistrad]]) pilnuje bezimiennej palisady nad jeziorem Zhava według nauki Olgarda ze Skiltfolk.
+- **Snapshot:** właściwy druk to DKA #14; prywatny `385DKA` pozostaje osobnym identyfikatorem. Strażnik 2/3 za `{2}{W}` odtapowuje się po wejściu każdej innej istoty.
+- **Mapa:** regionalna pinezka korzysta z kotwicy Lake Zhava (`0.815/0.5`), bez wymyślonej bramy lub utożsamienia wioski z Drunau.
+- **Link-mining:** nowe hasło [[nephalia|Nephalia]] przekroczyło próg dzięki kartom Midnight Guard i Civilized Scholar; Skiltfolk, Olgard i Zhava pozostają podzakresami.
+- **Skala:** Thraben zachowano jako odległą stolicę Kościoła, a Gavony jako sąsiednią prowincję, nie dosłowny lokalny krajobraz jeziora.
+- **Bramki:** 320/320 testów; build 103 strony (51 kart, 37 haseł, 15 planów); map-audit 0; wiki-stats 100%.
+
 ## 2026-09-13 21:08 — Nowa karta: Steelfin Whale (Mirrodin)
 
 - **Materializacja:** **[[99mh2-steelfin-whale|Steelfin Whale]]** (`99MH2`, MH2, [[mirrodin|Mirrodin]]) przesiewa metaliczne opiłki i rudę magnetycznymi fiszbinami w Morzu Żywego Srebra.
