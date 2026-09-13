@@ -17,7 +17,7 @@ pinezka:
 
 Zaraza, która wyszła z [[mephidross|Mephidrossu]], nie wszędzie przybiera postać
 gnijącego mięsa. Na białej stronie planu [[nowa-phyrexia|Phyrexia]] nie cuchnie — ona
-lśni. **Ortodoksja Maszyn**, frakcja związana z białą maną i prowadzona
+lśni. **[[ortodoksja-maszyn|Ortodoksja Maszyn]]**, frakcja związana z białą maną i prowadzona
 przez pretorkę **Elesh Norn**, buduje na Mirrodinie coś, co wygląda
 jak religia: hierarchię kapłanów, pisane prawo, liturgię i obrzęd
 przyjęcia do wspólnoty. Jej korytarze są czyste, jej posadzki gładkie,
@@ -53,7 +53,7 @@ kalał świętego miejsca.
 
 ## Postacie i Byty
 
-**Cenobita (wysoki, wierny doktrynie)** — kapłan Ortodoksji Maszyn.
+**Cenobita (wysoki, wierny doktrynie)** — kapłan [[ortodoksja-maszyn|Ortodoksji Maszyn]].
 Kronika dzieli ten stan duchowny na rangi; sama inskrypcja cytuje
 „Axsha, pomniejszego cenobitę", co pokazuje, że hierarchia jest
 rozbudowana i że wyroki wydają także urzędnicy niskiego szczebla.
@@ -132,7 +132,7 @@ rzeczą w białej Phyrexii.
 ## Transpozycja
 
 Scena jest rodzima dla Mirrodinu, więc droga do niej jest prosta:
-zapis ustawia ją w **katedralnych korytarzach Ortodoksji Maszyn**
+zapis ustawia ją w **katedralnych korytarzach [[ortodoksja-maszyn|Ortodoksji Maszyn]]**
 i zawęża ją do jednego momentu: **orzeczenia i odepchnięcia**. Zapis
 dostarcza wszystkich elementów — cenobitów jako kapłanów inkwizycji,
 Elesh Norn jako doktrynę, porcelanowy metal na żywym mięsie, ideę
@@ -210,7 +210,11 @@ został przejęty i wypaczony przez Phyrexię.
 
 - Scryfall, snapshot karty (MBS #3, 2011-02-04) — koszt, typ, Oracle i flavor: `scryfall/476mbs-banishment-decree.json`
 - Fabuła właściciela (2026-09-08) — osadzenie sceny w katedralnych korytarzach Ortodoksji, gest cenobity, wyrzucenie na Razor Fields
-- A Planeswalker's Guide to New Phyrexia: The Machine Orthodoxy (2011) — cenobici jako kapłani inkwizycji, ranga i budowa z metalu, porcelanowy metal, Argent Etchings, Elesh Norn jako Wielka Cenobitka manipulująca doktryną: https://magic.wizards.com/en/news/feature/planeswalkers-guide-new-phyrexia-machine-orthodoxy-2011-04-06
+- A Planeswalker's Guide to New Phyrexia: The Machine Orthodoxy (2011) —
+  cenobici jako kapłani inkwizycji, ranga i budowa z metalu, porcelanowy
+  metal, Argent Etchings, Elesh Norn jako Wielka Cenobitka manipulująca
+  doktryną; w Codexie osobne hasło [[ortodoksja-maszyn|Ortodoksja Maszyn]]:
+  https://magic.wizards.com/en/news/feature/planeswalkers-guide-new-phyrexia-machine-orthodoxy-2011-04-06
 - Getting to Know the Praetors (2011) — Elesh Norn: Pretorka Jedności, brak skóry i porcelanowy metal, cenobici niosący jej tren; etymologia słowa „cenobita": https://magic.wizards.com/en/news/feature/getting-to-know-the-praetors
 - MTG Wiki, Auriok — wygląd i złoto w ciele, osady jako miasta-państwa, Accorders i Accord of Equity, Bladehold i technika *mirroring*, Cave of Light jako miejsce święte, największa odporność na compleation: https://mtg.wiki/page/Auriok
 - MTG Wiki, Razor Fields — razorgrass dzwoniący na wietrze, niemal stałe nasłonecznienie, Taj-Nar w centrum, Cave of Light, Bladehold i Ten Shields; późniejszy Mirrex i Fair Basilica: https://mtg.fandom.com/wiki/Razor_Fields

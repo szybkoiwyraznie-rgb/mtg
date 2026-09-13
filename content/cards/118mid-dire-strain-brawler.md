@@ -15,7 +15,7 @@ pinezka:
 
 ## Kronika Lore
 
-W prowincji **Gavony** na [[innistrad|Innistradzie]], pośród skalistych
+W prowincji [[gavony|**Gavony**]] na [[innistrad|Innistradzie]], pośród skalistych
 wzgórz i rolniczych dolin zaopatrujących ludzkie osady, noc pod pełnią
 srebrnego księżyca zmienia wszystko. Gospodarstwo, które za dnia tętni
 zwykłym wiejskim trudem — kamienny murek, stodoła i zabudowania mieszkalne
@@ -37,7 +37,7 @@ Przy wrotach stodoły leżą cztery pary porzuconych butów. Trzy pierwsze
 należały do pomocników, którzy bez śladu zniknęli w minionych tygodniach;
 czwarta para została zrzucona przed chwilą, a obok niej ślady bosych
 stóp przechodzą płynnie w głębokie odciski pazurzastych łap. W rolniczych
-wspólnotach Gavony wszyscy widzą te znaki, lecz nikt nie waży się
+wspólnotach [[gavony|Gavony]] wszyscy widzą te znaki, lecz nikt nie waży się
 wypowiedzieć oskarżenia na głos. Bestia wie o paraliżującym strachu
 gospodarzy i nie obawia się żadnego sprzeciwu.
 
@@ -48,7 +48,7 @@ likantrop z rodu Vildin, łączący potężną masę niedźwiedzia ze zwinności
 i zmysłami wilka. Bezwzględny władca podwórza, świadomy lęku zamkniętych
 w domu mieszkańców.
 
-**Zastraszeni gospodarze** — mieszkańcy wiejskiego domu w Gavony, chroniący
+**Zastraszeni gospodarze** — mieszkańcy wiejskiego domu w [[gavony|Gavony]], chroniący
 się za zaryglowanymi okiennicami przy blasku świecy; świadomi natury
 nowego parobka, lecz zbyt przerażeni, by otwarcie wystąpić przeciw potworowi.
 
@@ -56,7 +56,7 @@ nowego parobka, lecz zbyt przerażeni, by otwarcie wystąpić przeciw potworowi.
 likantropów na Innistradzie, znany z bezkompromisowej siły fizycznej
 i zniekształconej, potężnej sylwetki.
 
-**Gavony** — centralna prowincja planu, gdzie ludzkie farmy graniczą
+[[gavony|**Gavony**]] — centralna prowincja planu, gdzie ludzkie farmy graniczą
 z pustkowiami nawiedzanymi przez watahy.
 
 ## Nazwa Karty
@@ -82,7 +82,7 @@ bezpośrednia konfrontacja z bestią pod pełnią księżyca.
 
 ## Transpozycja
 
-Przekaz ukazuje nocną scenę na farmie w **Gavony**:
+Przekaz ukazuje nocną scenę na farmie w [[gavony|**Gavony**]]:
 
 - **Spokój i dominacja bestii** — drapieżnik na środku podwórza, stojący
   pewnie i obserwujący okna gospodarzy bez cienia lęku przed wykryciem.
@@ -100,15 +100,15 @@ niespotykaną śmiałość.
 
 ## Na Mapie
 
-Pinezka stoi na obszarze prowincji **Gavony** (`x: 0.59`, `y: 0.449`) —
-pewność **region**. Gavony to serce rolniczego i miejskiego życia ludzi,
+Pinezka stoi na obszarze prowincji [[gavony|**Gavony**]] (`x: 0.59`, `y: 0.449`) —
+pewność **region**. [[gavony|Gavony]] to serce rolniczego i miejskiego życia ludzi,
 gdzie parafie takie jak Nearheath czy Moorland dostarczają plonów dla
 stołecznego [[thraben|Thraben]].
 
 Kontekst geograficzny wobec innych świadectw planu:
 - Podczas gdy w [[181avr-spectral-prison|Spectral Prison]] uświęciciele
-  wznoszą świetliste klatki w kaplicach Gavony, a w [[544avr-thraben-valiant|Thraben Valiant]]
-  katarzy wyruszają ku Devils' Breach, ta scena dokumentuje codzienny,
+  wznoszą świetliste klatki w kaplicach [[gavony|Gavony]], a w [[544avr-thraben-valiant|Thraben Valiant]]
+  katarzy wyruszają ku [[devils-breach|Devils' Breach]], ta scena dokumentuje codzienny,
   wiejski dramat rolników żyjących w cieniu likantropii.
 
 Pinezka: `#/mapa/innistrad?pin=118mid-dire-strain-brawler`.
@@ -130,13 +130,13 @@ tracą resztki bezpieczeństwa.
 
 1. [Dire-Strain Brawler — Scryfall](https://scryfall.com/card/mid/203) — dane materializowanej twarzy: typ stwora, statystyki 6/6, czujność, Nightbound oraz inskrypcja.
 2. [A Planeswalker's Guide to Innistrad: Kessig and Werewolves](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-kessig-and-werewolves-2011-10-05) — rody wilkołaków, charakterystyka rodu Vildin (Dire-strain), fizjologia i psychologia likantropów.
-3. [A Planeswalker's Guide to Innistrad: Gavony and Humans](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-gavony-and-humans-2011-09-07) — życie codzienne i rolnictwo w parafiach Gavony.
+3. [A Planeswalker's Guide to Innistrad: Gavony and Humans](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-gavony-and-humans-2011-09-28) — życie codzienne i rolnictwo w parafiach Gavony.
 4. [Plane Shift: Innistrad](https://media.wizards.com/2016/dnd/downloads/Plane_Shift_Innistrad.pdf) — detale anatomiczne i obyczajowe przemiany wilkołaków.
 5. Fabuła (2026-09-11) — nocna farma w Gavony, wilkołak rodu Dire-strain na czworakach z rzemykiem i amuletem, czwarta para porzuconych butów przy stodole, obserwacja okiennicy i zmowa milczenia.
 
 ## Podsumowanie Lore
 
-Nocą na wiejskiej farmie w Gavony monstrualny wilkołak rodu Dire-strain
+Nocą na wiejskiej farmie w [[gavony|Gavony]] monstrualny wilkołak rodu Dire-strain
 spokojnie dominuje podwórze; siła 6/6 i czujność czynią z niego drapieżnika,
 który ani na chwilę nie spuszcza mieszkańców z oczu. Porzucone buty przy
 stodole i drżąca

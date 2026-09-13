@@ -20,7 +20,7 @@ test('Conflux: każdy numer cytowania oznacza jedno źródło', () => {
     3: 'https://mtg.wiki/page/Nicol_Bolas',
     4: 'https://mtg.wiki/page/Maelstrom',
   });
-  assert.match(conflux, /Sam Conflux był naturalnym[\s\S]{0,160}Nicol Bolas\nnie wywołał tego procesu/);
+  assert.match(conflux, /Sam Conflux był naturalnym[\s\S]{0,200}(?:\[\[nicol-bolas\|)?Nicol Bolas(?:\]\])?\nnie wywołał tego procesu/);
   assert.doesNotMatch(conflux, /Conflux[\s\S]{0,100}zaplanowany i przyspieszony przez/i);
 });
 

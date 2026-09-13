@@ -17,8 +17,8 @@ pinezka:
 
 ### Chata, której wojna nie dokończyła
 
-Na bagnach **Velen** nawet opuszczony dom długo udaje, że ktoś jeszcze do
-niego wróci. Krzywa okiennica uderza o ścianę, wiatr przesuwa popiół po
+Na bagnach [[velen|**Velen**]] nawet opuszczony dom długo udaje, że ktoś
+jeszcze do niego wróci. Krzywa okiennica uderza o ścianę, wiatr przesuwa popiół po
 palenisku, a pod zgniłym dachem wciąż stoi stół, którego nie zabrano podczas
 ucieczki. Wojna wyrwała stąd ludzi szybciej, niż zdołali opróżnić skrzynie.
 Zostawili gliniane misy, ławy, słomę i posłania; wszystko, czego nie dało się

@@ -12,9 +12,9 @@ Kaladesh to plan Magic: The Gathering, w którym **eter** — surowa moc
 Ślepych Wieczności — przenika atmosferę: widać go jako wirujące smugi
 na niebie, spada na ziemię z deszczem, a cały ekosystem rośnie w jego
 rytmie. To świat **wynalazców**: co gdzie indziej robi magia, tu robi
-technika — teroptery, automatony, sterowce i żywe konstrukty, budowane
+technika — thoptery, automaty, sterowce i żywe konstrukty, budowane
 równie pięknie, co funkcjonalnie. Kodeks rysuje Kaladesh w dobie
-**Konsulatu** (ery *Kaladesh*/*Aether Revolt*) — bo z tej ery pochodzą
+**[[konsulat-kaladeshu|Konsulatu]]** (ery *Kaladesh*/*Aether Revolt*) — bo z tej ery pochodzą
 mapa i sceny kart; późniejsze przemianowanie planu w **Avishkar**
 wspomina tylko jako granicę epoki.
 
@@ -22,19 +22,19 @@ wspomina tylko jako granicę epoki.
 
 Po **Wojnie Jedenastu** jedenaście skłóconych królestw zawarło pokój
 za sprawą wynalazców — i jedenastu z nich, po jednym z każdego
-królestwa, utworzyło pierwszy **Konsulat**, nadając planowi imię
+królestwa, utworzyło pierwszy **[[konsulat-kaladeshu|Konsulat]]**, nadając planowi imię
 Kaladesh. Gdy **Avaati Vya** odkryła sposób rafinacji eteru,
-rozpoczął się **Wielki Rozkwit Eteru**: Konsulat pompował moc przez
+rozpoczął się **Wielki Rozkwit Eteru**: [[konsulat-kaladeshu|Konsulat]] pompował moc przez
 wieże zbiorcze i rurociągi do każdego warsztatu, a wynalazcy stali się
 najbardziej szanowanymi obywatelami. Raz w roku **Targ Wynalazców**
-zamieniał Ghirapur w miesięczne święto geniuszu — architekturę,
+zamieniał [[ghirapur|Ghirapur]] w miesięczne święto geniuszu — architekturę,
 naukę eteru, żywe konstrukty w sztucznym zoo, wyścigi pojazdów.
 Pod spodem Oświeceni Strażnicy licencjonowali wynalazki, a sprzeciw
 narastał, aż kradzież transportera materii i aresztowania pokazały
 autorytarne oblicze władzy. Wybuchł **bunt eterowy**: renegaci
 z Gatewatch obalili rządy Tezzereta w starciu o Iglicę Eteru,
 a przywódczyni buntu **Pia Nalaar** zasiadła w Konsulacie. Zreformowany
-Konsulat przetrwał jeszcze inwazję Phyrexii — po niej, w prawie
+[[konsulat-kaladeshu|Konsulat]] przetrwał jeszcze inwazję Phyrexii — po niej, w prawie
 bezkrwawej **Indygo Rewolucji**, władzę przejęło Zgromadzenie Ludowe,
 a plan przemianowano w Avishkar („wynalazek”).
 
@@ -52,16 +52,16 @@ i **Cambi** — w czasie Rozkwitu Eteru zamieniły łany zbóż na hangary,
 warsztaty i pasy startowe, a ich rolnicy przekwalifikowali się na
 aerowrightów i pilotów prób.
 
-**Ghirapur, Miasto Indygo** — stolica na zlewisku, zbudowana na
+**[[ghirapur|Ghirapur, Miasto Indygo]]** — stolica na zlewisku, zbudowana na
 neutralnym gruncie po Wojnie Jedenastu. Miasto żyje eterem: nad
 panoramą zawieszony jest **Aetherflux Reservoir**, największy zbiornik
 rafinowanego eteru, symbol innowacji i stałe ognisko sporów o kontrolę
 eteru. Środek miasta przecina **Kanał Dukhara** z
 **Jedenastoma Mostami** (najpołudniejszy to First Bridge, zwisły
 taras między skrzydłami dwóch gigantycznych mechanicznych ptaków) —
-każdy most to osobne targowisko, a pačewy siedzące na mostach to
+każdy most to osobne targowisko, a ptaki przysiadające na mostach to
 symbol jedności miasta. Nad panoramą góruje **Iglica Eteru**,
-centralna wieża zbiorcza i serce administracji; eter spływa do niej z
+centralna wieża zbiorcza i serce administracji [[konsulat-kaladeshu|Konsulatu]]; eter spływa do niej z
 **wież zbiorczych** rozproszonych po prowincji, a miastem rozprowadza
 go największy węzeł dystrybucyjny, **Węzeł Eterowy** w
 metaloplastycznym **Weldfast**. Wokół: **stacja Aradara** (wielki
@@ -69,16 +69,19 @@ węzeł kolei z kopułą i Ogrodem Posągów), **Bastion Czcigodnych**
 (ośmiokątna kwatera straży Konsulatu, otoczona stawem, połączona
 czterema mostami), **Akhara** (okrągły plac-arena z amfiteatrem —
 miejsce publicznych egzekucji, zapłonu Chandry i wielkiego finału
-Targu Wynalazców), portowy **Bomat** z dokami, Nocnym Targowiskiem
-Gontiego i krętem The Dhund — siecią tuneli pod targiem, w której
-tajni agenci Konsulatu śledzą każdy nielegalny interes, hutniczy
-**Embraal** (dzielnica o antykonsulańskim duchu, z grafitti
-i Sudden Spectacles, w której mistrzowie konstruują thoptery, co
-ukazuje [[596ori-ghirapur-gearcrafter|Ghirapur Gearcrafter]], oraz Gremlin Hovels — opuszczoną, nigdy
-dokończoną fabryką, dziś największym gniazdem gremlinów), tor
-wyścigowy **Ovalchase**, ogrodowy **Greenwheel** z kopułami
-klimatycznymi i „Zoo” konstruktów, elfia rezydencjonalna **Kujar**
-(układana zgodnie z elwim filozofią Wielkiego Przewodu, z dyskretnym
+Targu Wynalazców), portowy **Bomat** z dokami, magazynami, stoczniami,
+Nocnym Targowiskiem Gontiego i krętem The Dhund — siecią tuneli pod
+targiem, w której tajni agenci Konsulatu śledzą każdy nielegalny interes.
+Na nabrzeżu tej dzielnicy [[12aer-merchant-s-dockhand|Merchant's Dockhand]]
+sortuje skrzynie czterema chwytakami i pokazuje logistyczną stronę
+kupieckiego bogactwa. Dalej leży hutniczy **Embraal** (dzielnica o
+antykonsulańskim duchu, z graffiti i Sudden Spectacles, w której mistrzowie
+konstruują thoptery, co ukazuje [[596ori-ghirapur-gearcrafter|Ghirapur
+Gearcrafter]], oraz Gremlin Hovels — opuszczoną, nigdy dokończoną fabryką,
+dziś największym gniazdem gremlinów), tor wyścigowy **Ovalchase**, ogrodowy
+**Greenwheel** z kopułami klimatycznymi i „Zoo” konstruktów, elfia
+rezydencjonalna **Kujar**
+(układana zgodnie z elfią filozofią Wielkiego Przewodu, z dyskretnym
 Prakhata Club — elitarnym klubem aetherborna Gontiego), pionowy
 **Freejam** awiacji (smocza architektura, w najwyższych iglicach
 czasem gnieźdzą się żywe smoki; awionety startują z hangarów
@@ -88,9 +91,9 @@ olbrzymów, którzy dwukrotnie w roku przechodzą przez miasto — święto
 migracji, dziś enklawa artystów i inżynierów), łęgowe **Przykrycie** (gęsty las rzeczny w
 sercu miasta, pilnowany przez odosobnionego elfiego opiekuna
 Surasha; ukrywa uciekinierów, wielkie pająki i sekrety, o których
-Konsulat woli nie wiedzieć), zieloną **Shaila's Claim** na skraju
+[[konsulat-kaladeshu|Konsulat]] woli nie wiedzieć), zieloną **Shaila's Claim** na skraju
 Ghirapuru — pastwisko, które istnieje, bo jedna pasterka odmówiła
-oddania swoich łąk Konsulatowi — oraz spalona przez Chandrę
+oddania swoich łąk [[konsulat-kaladeshu|Konsulatowi]] — oraz spalona przez Chandrę
 **Kuźnię Konsulów**, fabrykę masowo produkującą automaty dla
 konsulów. Na tarasie Greenwheel swoją próbę przechodzi
 [[610m19-gearsmith-prodigy|Gearsmith Prodigy]] — młoda konstruktorka
@@ -137,7 +140,7 @@ i herbata chai to stały punkt każdej dzielnicy — od straganów
 Nocnego Targowiska po stoiska Targu Wynalazców. Freejam słynie
 z kucharskiej rywalizacji: ostre dania elfich i ludzkich szefów
 rywalizują o smak miasta. Popularnym sportem jest krykiet,
-a uliczne grafitti to domena podziemia. Artefakty — od mostu
+a uliczne graffiti to domena podziemia. Artefakty — od mostu
 po latarnię — są projektowane również z dbałością o estetykę:
 w Ghirapurze maszyna, która nie jest ładna, jest niedokończona.
 
@@ -150,7 +153,7 @@ Magic: The Gathering — Kaladesh”). Dwie osobne mapy (ADR 0047):
 **mapa planu** w skali planu (arkusz 2000×1400, jak Zendikar) —
 prowincja z siecią rzeczną, dużą puszczą Peema, stepem Vahd i Lathnu
 pod urwiskiem Devra, a Ghirapur jako mała kropka z nazwą na zlewisku;
-oraz **osobna mapa miasta Ghirapur** we własnej, znacznie większej
+oraz **osobna mapa miasta [[ghirapur|Ghirapur]]** we własnej, znacznie większej
 skali (Kanał Dukhara, Jedenaście Mostów, dzielnice, Iglica Eteru,
 Aetherflux Reservoir), którą silnik podgrywa **twardą podmianą**
 przy zbliżeniu na kropkę (przenikanie, bez wymogu łączenia rzek na
@@ -160,7 +163,15 @@ morze na południu bez nazwy, bo kanon jej nie podaje; skala liniowa
 wyłączona z braku odległości w kanonie. Pozycje są relacyjne (kanon
 podaje przynależność i sąsiedztwa, nie współrzędne); proweniencja
 każdej kotwicy w `map.json`, werdykt researchu w `zrodlo-research.md`.
-Era Avishkar/Omenpathów dostanie osobną mapę, gdy przyjdzie karta.
+Pętla 2026-09-12 promuje etykiety L2 do kotwic dla Greenwheel, Embraal,
+Bomat, The Zoo, Aetherflux Reservoir, Aether Hub, Eleven Bridges, Dukhara
+Canal, Aradara Station, Bastion, Akhara i pozostałych kluczowych POI
+Ghirapuru; to nadal wybory rekonstrukcyjne, nie kanoniczne adresy. Pinezki
+kart rozkładają się po dzielnicach: Greenwheel dla
+[[610m19-gearsmith-prodigy|Gearsmith Prodigy]], Embraal dla
+[[596ori-ghirapur-gearcrafter|Ghirapur Gearcrafter]] i Bomat dla
+[[12aer-merchant-s-dockhand|Merchant's Dockhand]]. Era Avishkar/Omenpathów
+dostanie osobną mapę, gdy przyjdzie karta.
 
 ## Źródła
 
@@ -168,6 +179,10 @@ Era Avishkar/Omenpathów dostanie osobną mapę, gdy przyjdzie karta.
   Jedenastu, Konsulat, Rozkwit, Targ, bunt, inwazja, Indygo Rewolucja,
   przemianowanie), lokacje planu, ludy, fauna, kultura:
   https://mtg.wiki/page/Avishkar
+- Wizards of the Coast, „Planeswalker's Guide to Kaladesh" — oficjalny
+  opis eteru jako energii, Great Aether Boom, dystrybucji przez Konsulat,
+  renegatów i Aether Cycle:
+  https://magic.wizards.com/en/news/magic-story/planeswalkers-guide-kaladesh-2016-11-02
 - MTG Wiki, hasło Ghirapur — stolica, Iglica Eteru, Aetherflux
   Reservoir, Węzeł Eterowy, dzielnice i lokacje (Jedenastu Mostów
   i First Bridge, Akhara, stacja Aradara i Ogród Posągów, Bastion
@@ -176,6 +191,10 @@ Era Avishkar/Omenpathów dostanie osobną mapę, gdy przyjdzie karta.
   Freejam, Aleja Olbrzymów, Weldfast, Przykrycie i Surash,
   Shaila's Claim, Kuźnia Konsulów), trzy rzeki:
   https://mtg.wiki/page/Ghirapur
+- MTG Wiki, hasło Bomat — port Ghirapuru, doki, stocznie, kanały,
+  magazyny, aetherowe dźwigi, barki rzeczne, transport towarów przez miasto
+  i nadzór Konsulatu:
+  https://mtg.wiki/page/Bomat
 - „The Art of Magic: The Gathering — Kaladesh" (fragmenty w
   Concept Art Library) — Lathnu na Urwiskach Devra jako najodleglejsza
   placówka planu: pionowe klify i lodowaty wiatr, gospodarka oparta na

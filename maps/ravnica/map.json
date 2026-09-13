@@ -513,6 +513,13 @@
    "y": 0.4149,
    "pewnosc": "region",
    "uzasadnienie": "Fabuła: „Na ravnickim bruku… w gildii Boros albo na pograniczu z nią” (dostawa właściciela 2026-09-02). v3: bruk przy Tin Street na zachodnim skraju P4 (oś drogi z warstwy a; ADR 0031); pewność region."
+  },
+  {
+   "karta": "516rna-tenth-district-veteran",
+   "x": 0.3406,
+   "y": 0.4318,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła: w sercu Dziesiątego Dystryktu, na zrujnowanej barykadzie blokującej intruzom drogę na kluczowy plac targowy. Kotwica Tin Street Market wskazuje najtwardszy znany rejon targowy Boros/Tin Street, nie dokładną barykadę ani pojedyncze skrzyżowanie."
   }
  ],
  "otwarte_na_kolejne_przejscia": [

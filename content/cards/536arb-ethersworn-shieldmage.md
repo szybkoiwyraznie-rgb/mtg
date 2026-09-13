@@ -53,7 +53,7 @@ z konającego shardu czerni, które po [[conflux|Confluxie]] ruszyły na
 sąsiadów, by kaleczyć, zniewalać i wysysać energię życia (*vis*). Ich
 „prymitywny”, kościany oręż jest w scenie przeciwieństwem wyrafinowanego
 etherium — starciem rozkładu z perfekcją. W tle całości stoi niewymieniony
-z imienia sprawca chaosu: to knowania **Nicol Bolasa**, podsycane latami
+z imienia sprawca chaosu: to knowania **[[nicol-bolas|Nicola Bolasa]]**, podsycane latami
 przez **Seekers of Carmot** (esperski strach o kurczące się etherium)
 i nieumarłe armie Grixis, doprowadziły do wojny, której ta scena jest
 jedną klatką, a której echo zasilało rodzący się w centrum planu
@@ -102,7 +102,7 @@ wedalkeńska mag bitewna zatrzymuje deszcz kościanych włóczni z
 [[grixis|Grixis]] barierą ze stwardniałej many, osłaniając
 zmechanizowaną bestię — mieści się w twardej prawdzie ery
 **Alara Reborn**: po [[conflux|Confluxie]] Esper realnie zderzył się z
-Grixis i Bant, a nieumarli Grixis realnie najechali sąsiadów. To osadza
+Grixis i [[bant|Bant]], a nieumarli Grixis realnie najechali sąsiadów. To osadza
 scenę na **granicy Esper–Grixis**, w strefie inkursji, gdzie
 „prymitywny” najazd spotyka wyrafinowaną obronę etherium. Zapis nie
 dopisuje światu nowej prawdy — dopowiada tło jednej z niezliczonych
@@ -156,14 +156,14 @@ o której naucza.
   i eter-lisze; rozpad hegemonii i niedobór etherium po Confluxie:
   https://mtg.fandom.com/wiki/Esper
 - MTG Wiki, Alara — **Conflux** jako wymuszone scalenie pięciu shardów,
-  strefy inkursji i zderzenie Esper–Grixis–Bant; hordy nieumarłych
-  Grixis najeżdżające sąsiadów; orkiestracja **Nicol Bolasa**:
+  strefy inkursji i zderzenie Esper–Grixis–[[bant|Bant]]; hordy nieumarłych
+  Grixis najeżdżające sąsiadów; orkiestracja **[[nicol-bolas|Nicola Bolasa]]**:
   https://mtg.wiki/page/Alara
 - MTG Wiki, Grixis — po Confluxie napływ bieli i zieleni pobudza
   nieumarłych, którzy najeżdżają sąsiednie ziemie, zamieniając poległych
   w nowych nieumarłych: https://mtg.fandom.com/wiki/Grixis
 - Gamelore, Alara Reborn — „Seekers of Carmot” podsycają na Esperze
-  strach o niedobór etherium; wojna shardów jako plan Bolasa; Esper widzi
+  strach o niedobór etherium; wojna shardów jako plan [[nicol-bolas|Bolasa]]; Esper widzi
   inne shardy jako surowiec do „rafinacji etherium”:
   https://gamelore.fandom.com/wiki/Alara_Reborn
 
@@ -176,7 +176,7 @@ o której naucza.
   Grixis z filigranową barierą Esperu — dwa przeciwne odczyty tego, czym
   ma być ciało po Confluxie.
 - **Wojna Confluxu jako pole próby.** Chaos scalenia shardów, zaplanowany
-  przez Nicol Bolasa, Ethersworn odczytują nie jako klęskę, lecz jako
+  przez [[nicol-bolas|Nicola Bolasa]], Ethersworn odczytują nie jako klęskę, lecz jako
   okazję, by udowodnić wyższość swojej ewolucji.
 
 Karta jest jedną klatką wielkiej wojny Alary widzianą oczami Esperu:

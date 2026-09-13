@@ -53,7 +53,7 @@ Jego turkusowo-stalowy pancerz segmentowy chroni rdzeń zasilany reliktową
 maną, a soczewka sensoryczna pozwala diagnozować uszkodzenia sojuszniczych
 konstrukcji.
 
-**Argoth** — legendarna, leśna wyspa u wybrzeży Terisiare, niegdyś
+**Argoth** — legendarna, leśna wyspa u wybrzeży [[terisiare|Terisiare]], niegdyś
 bogata w złoża rud, kamienie mocy (*powerstones*) i pierwotną zieloną manę,
 strzeżona przez Titanię. Podczas Wojny Braci stała się areną bezwzględnej
 eksploatacji przez armie Urzy i Mishry, a ostatecznie została unicestwiona
@@ -95,7 +95,7 @@ twórców i sam świat, w którym powstały.
 
 Pinezka o pewności **region**: `#/mapa/dominaria?pin=362bro-simian-simulacrum`
 — leśna wyspa **Argoth** u południowo-wschodnich wybrzeży kontynentu
-**Terisiare**. Dzieje Wojny Braci nie podają numeru ani współrzędnych
+**[[terisiare|Terisiare]]**. Dzieje Wojny Braci nie podają numeru ani współrzędnych
 konkretnego leśnego warsztatu, stąd pewność „region”.
 
 [Simian Simulacrum na mapie Dominarii](#/mapa/dominaria?pin=362bro-simian-simulacrum)
@@ -135,9 +135,11 @@ Każdy parametr przekłada się bezpośrednio na opowieść z Argoth:
 - MTG Wiki, hasło *Argoth* — leśna wyspa u wybrzeży Terisiare, bogactwo
   surowców i manowe serce Titanii, zniszczenie przez Sylex Blast:
   <https://mtg.wiki/page/Argoth>
-- MTG Wiki, hasło *The Brothers' War* — konflikt Urzy i Mishry, masowa
+- MTG Wiki, hasło *Brothers' War* — konflikt Urzy i Mishry, masowa
   produkcja machin wojennych i automatów, eksploatacja Terisiare i Argoth:
-  <https://mtg.wiki/page/The_Brothers%27_War>
+  <https://mtg.wiki/page/Brothers%27_War>
+- Hasło Codexu, [[terisiare|Terisiare]] — oś łącząca Argoth Wojny Braci
+  z lodowym Kjeldorem Disy w drugiej dominariańskiej scenie kolekcji.
 - MTG Wiki, hasło *Unearth* — mechanika odgrzebywania artefaktów
   z cmentarza zasilana maną środowiska:
   <https://mtg.wiki/page/Unearth>

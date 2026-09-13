@@ -138,11 +138,28 @@ test('snapshot DFC może materializować jedną twarz niezależnie od nazwy cał
   assert.equal(widok.oracle_text.startsWith('{T}: Draw a card'), true);
 });
 
+test('snapshot Adventure materializuje twarz stwora, zachowując pełny zwój', () => {
+  const snap = snapshoty.get('234clb-gray-slaad');
+  const widok = widokScryfallDlaKarty(snap, 'Gray Slaad');
+  assert.equal(snap.name, 'Gray Slaad // Entropic Decay');
+  assert.equal(snap.layout, 'adventure');
+  assert.equal(widok.name, 'Gray Slaad');
+  assert.equal(widok.type_line, 'Creature — Frog Horror');
+  assert.equal(widok.oracle_text.startsWith('As long as there are four or more creature cards'), true);
+  assert.deepEqual(widok.keywords, []);
+  assert.equal(snap.card_faces.find((face) => face.name === 'Entropic Decay')?.oracle_text, 'Mill four cards. (Then exile this card. You may cast the creature later from exile.)');
+});
+
 test('ADR 0044: żadna materializacja DFC nie ujawnia danych innej twarzy', () => {
   const problemy = [];
   for (const karta of karty) {
     const snap = snapshoty.get(karta.slug);
     if (!Array.isArray(snap?.card_faces) || snap.card_faces.length < 2) continue;
+    // Adventure celowo łączy dwie części jednego zwoju: infoboks wybiera
+    // materializowaną twarz, ale sekcja mechaniczna może objaśniać część
+    // Adventure. Zakaz przecieków dotyczy DFC, gdzie każda twarz może być
+    // osobną materializacją (regresja 309ISD).
+    if (snap.layout === 'adventure') continue;
 
     const wybrana = snap.card_faces.find(
       (face) => String(face?.name).trim().toLowerCase() === String(karta.nazwa).trim().toLowerCase(),

@@ -19,9 +19,9 @@ Rok 4205 AR. Phyrexiańska inwazja zalewa **Dominarię**, a **Benalia**
 — największe białe mocarstwo Aerona, miasto nad miastami Domen —
 krwawi jako jedna z pierwszych ofiar wyspecjalizowanych zabójców
 Tsabo Tavoc. Wojna nie oszczędza nawet miejsc świętych: na
-**Równinach Sursi**, na południe od benalijskiego serca, stoi
+**[[sursi|Równinach Sursi]]**, na południe od benalijskiego serca, stoi
 **Katedra Serran**, wzniesiona około 3780 AR przez **brata Angusa**
-ku czci planeswalkerki **Serry**, która odchodząc pobłogosławiła tę
+ku czci planeswalkerki [[serra|**Serry**]], która odchodząc pobłogosławiła tę
 ziemię i uczyniła ją schronieniem przed ciemnością. Do dziś w katedrze
 samorzutnie pojawiają się **anioły Serran** — żywy znak błogosławieństwa.
 
@@ -43,7 +43,7 @@ imienia — to anioł konkretnego miejsca, nie imienia. Okoliczności
 nie pozostawiają wątpliwości co do tożsamości: biały, skrzydlaty
 wojownik nad **Katedrą Serran**, świątynią, w której anioły Serran
 pojawiają się samorzutnie — żywym znakiem błogosławieństwa Serran
-spoczywającego na Równinach Sursi.
+spoczywającego na [[sursi|Równinach Sursi]].
 
 **Czarny sprawca** — nienazwany rzucający: czarna, oleista mgła o
 mackach wdziera się w ofiarę. W czasach inwazji (4205 AR) jej
@@ -52,7 +52,7 @@ nie rozstrzyga, czy to zaklęcie wroga, czy mroczna odpowiedź
 oblężonych, lecz odczytuje je jako atak inwazji na świętość Benalii.
 
 **Brat Angus** — święty mąż (~3780 AR), który odwrócił uwagę
-nienazwanego planeswalkera atakującego Serrę na Równinach Sursi,
+nienazwanego planeswalkera atakującego Serrę na [[sursi|Równinach Sursi]],
 uniósł jej umierające ciało i wzniósł na jej cześć świątynię —
 zaczątek Katedry Serran. Jego lament (kanty 1001–1020 Pieśni
 Wszystkiego) jest najstarszą warstwą tego miejsca; w chwili inwazji
@@ -142,10 +142,11 @@ dziedzińcem: to, co miało zabić, rozpływa się w wgląd.
   lotnicy wroga; czas inwazji.
 - Scryfall, Expunge (USG/135) — dane karty, oracle text, brak flavoru:
   https://scryfall.com/card/usg/135/expunge
-- MTG Wiki, hasło Cathedral of Serra — świątynia na Równinach Sursi
-  (Aerona, Domeny), lokalizacja benalijska, budowniczy brat Angus,
-  błogosławieństwo Serran, samorzutne anioły:
-  https://mtg.wiki/page/Cathedral_of_Serra
+- MTG Wiki, hasła Cathedral of Serra i Sursi — świątynia na Równinach
+  Sursi (Aerona, Domeny), lokalizacja benalijska, budowniczy brat Angus,
+  błogosławieństwo Serran, samorzutne anioły i południowa Aerona:
+  https://mtg.wiki/page/Cathedral_of_Serra,
+  https://mtg.wiki/page/Sursi
 - MTG Wiki, hasło Angus (Brother Angus) — żywot ok. 3780 AR, ocalenie
   umierającej Serran, budowa świątyni, lament (kanty 1001–1020):
   https://mtg.wiki/page/Angus
@@ -169,5 +170,5 @@ dziedzińcem: to, co miało zabić, rozpływa się w wgląd.
   dostają ostatniego słowa.
 
 Expunge jest małą kartą o wielkim bluźnierstwie inwazji: jedno
-zaklęcie za trzy many, po którym nad dziedzińcem w Sursi nie ma już
+zaklęcie za trzy many, po którym nad dziedzińcem w [[sursi|Sursi]] nie ma już
 ani anioła, ani nawet pewności, że kiedykolwiek był.

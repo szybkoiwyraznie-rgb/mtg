@@ -81,7 +81,7 @@ opuścić.
 
 Srebrna tarcza strażnika przypomina o obietnicy ochrony, która nie zawsze
 zostaje spełniona. Znaki Kościoła potrafią odpędzać potwory i prowadzić dusze
-ku spoczynkowi, lecz w czasie nieobecności Avacyn ich moc słabnie. Gdy obrona
+ku spoczynkowi, lecz w czasie nieobecności [[avacyn|Avacyn]] ich moc słabnie. Gdy obrona
 pęka, kruki nie muszą zabijać. Wystarczy, że cierpliwie czekają na chwilę, w
 której ktoś inny pozostawi po sobie słowo.
 
@@ -271,7 +271,7 @@ Pinezka: `#/mapa/innistrad?pin=42isd-murder-of-crows`.
   nazwy zbiorowej dla grupy kruków/wron i jej związek ze śmiercią oraz
   padlinożerstwem:
   <https://dictionary.cambridge.org/dictionary/english/murder-of-crows>.
-- **Strona planu** — synteza geografii, geistów i kryzysu ochrony Avacyn:
+- **Strona planu** — synteza geografii, geistów i kryzysu ochrony [[avacyn|Avacyn]]:
   [[innistrad|Innistrad]].
 
 > **Nota numeracyjna:** `42ISD` jest identyfikatorem `imgId` właściciela,

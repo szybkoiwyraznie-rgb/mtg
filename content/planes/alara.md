@@ -20,7 +20,7 @@ i — przez regiony — sceny z epoki shardów.
 
 ## Setting w pigułce
 
-Pięć regionów w cyklu many (sąsiedzi dzielą dwa kolory): **Bant**
+Pięć regionów w cyklu many (sąsiedzi dzielą dwa kolory): **[[bant|Bant]]**
 (G/W/U — łąki, zamki, anioły i rytualizowane pojedynki rycerzy),
 **[[esper|Esper]]** (W/U/B — oceaniczny archipelag wysp wykończonych etherium,
 kasta magów, vedalken i sfinksów), [[grixis|Grixis]] (U/B/R — nekropolia
@@ -38,7 +38,7 @@ Każdy z pięciu odłamów przez tysiąclecia rozłamu żył bez dwóch
 kolorów many — i to, czego mu brakowało, ukształtowało go mocniej
 niż to, co miał.
 
-**Bant** (G/W/U) jest ostoją porządku, honoru i wspólnoty: bez magii
+**[[bant|Bant]]** (G/W/U) jest ostoją porządku, honoru i wspólnoty: bez magii
 śmierci i chaosu obyczaje skostniały w prawo, a nad krainą wysokich
 zamków i falujących łąk czuwają anioły **Ashy**, których świątynia
 z jarzącego się marmuru, **Cathedral of Bliss**, unosi się wysoko
@@ -54,7 +54,10 @@ służby w każdej chwili. Spory rozstrzyga pojedynek czempionów, nie
 wojna armii; rycerze na **leotau** noszą ciężkie, ceremonialne zbroje,
 które mają łapać słońce i sygnalizować aniołom, a plecy zostawiają
 odsłonięte — cios z tyłu jest hańbą. Najsroższa kara Bantu to czasowe
-wygnanie na sawanny **Topy**. Trzy narody wnętrza (**Inner Three**):
+wygnanie na sawanny **Topy**. W tym porządku działa też **Order of the
+Skyward Eye**, zakon prawości, który w [[242ala-knight-of-the-skyward-eye|Knight of the Skyward Eye]]
+widzimy jeszcze jako świetlistą straż, choć [[nicol-bolas|Bolas]] umie
+przesunąć jego czujność w lęk i nieufność. Trzy narody wnętrza (**Inner Three**):
 rolnicza **Akrasa** („Morze Traw”), **Eos** Rycerzy Gałązki Oliwnej
 i **Topa** uczonych, mnichów i kupców — sąsiadują z wyspą Jhess
 i nadmorskim **Valeronem**, gdzie w **Serul Cove** paserzy handlują
@@ -106,7 +109,7 @@ ogromne bagno-ścierwisko, żerowisko sępoludzi **kathari**, którzy
 swoje wysypiska szkieletów usypują w **Boneheaps**; na płytkich
 mętnych morzach stoją wieże-ule banewasp, **Droning Isles**; pod
 pół zatopionymi dworami nekropolii **Kederekt** miał kryjówkę sam
-Nicol Bolas, a do dawnego stadionu **Unx** — leja do magmy otoczonego
+[[nicol-bolas|Nicol Bolas]], a do dawnego stadionu **Unx** — leja do magmy otoczonego
 szkieletem smoka — co roku zjeżdżają się wampiry. Conflux przyniósł
 Grixis napływ obcej many i hordy demona **Malfegora**; po jego
 śmierci frakcje pogrążyły się w chaosie.
@@ -137,7 +140,7 @@ ryftowymi, gniazdo jednej z najpotężniejszych czerwonych smoczyc;
 viashino Pitch Thrash; **Mount Jhal**, gdzie w leżu smoka
 **Malactotha** szamanka **Rakka Mar** odsłoniła Obelisk Jundu
 z czystego sangrytu; **Worldheart Chalice**, wulkaniczna kryjówka
-Nicola Bolasa z karmazynową helisą sangrytu w kręgosłupie góry.
+[[nicol-bolas|Nicola Bolasa]] z karmazynową helisą sangrytu w kręgosłupie góry.
 Conflux zalał Jund błękitną i białą maną i łańcuch pokarmowy się
 rozpadł: stworzenia stały się mniej gwałtowne, bardziej rozważne,
 a smoki poleciały niszczyć nowe krainy.
@@ -179,9 +182,9 @@ Starożytna Alara była jednym planem; nieznany planeswalker wyssał
 jej manę, a **Sundering** rozłamał świat wzdłuż linii many „jak
 światło w pryzmacie”. Odłamy dryfowały w Blind Eternities, każdy
 okrojony z dwóch kolorów many. [[conflux|Conflux]] — przyspieszony przez
-Nicol Bolasa, który orkiestrował wojny shardów i kierował manę
+[[nicol-bolas|Nicola Bolasa]], który orkiestrował wojny shardów i kierował manę
 obelisków w burzę — scalił plan z powrotem; w punkcie, gdzie pięć
-shardów się zeszło, powstał Maelstrom, a Bolas wszedł w jego środek,
+shardów się zeszło, powstał Maelstrom, a [[nicol-bolas|Bolas]] wszedł w jego środek,
 by odzyskać dawną moc (powstrzymał go Ajani Goldmane). Dziś Alara
 jest „Reunited” — i nawet podczas inwazji [[nowa-phyrexia|Nowej Phyrexii]]
 sam Maelstrom powstał przeciw najeźdźcy.
@@ -197,23 +200,32 @@ pustynie, akweny Dwindling Sea, Sea of Stars i Inkwell). W punkcie
 złączenia shardów mapa rysuje **Maelstrom jako równoprawny region-węzeł**
 (znak wiru), nie plamę na lądzie; linie brzegowe fraktalne, rzeki
 płyną do mórz, drogi i szlaki łączą osady. Nazwy wyłącznie kanoniczne
-(MTG Wiki, Category:Alara locations): w Bant Topa, Valeron, Akrasa,
+(MTG Wiki, Category:Alara locations): w [[bant|Bant]] Topa, Valeron, Akrasa,
 Jhess, Eos, Sun-Dappled Court, Serul Cove, Fort Dawnray, Obelisk
 of Bant i Cathedral of Bliss; w Naya Sacellum, ruiny Antali, Qasal,
-Etlan i Summoning Root; w Jund Mount Jhal, Boiling Slopes, Sweltering
-Cauldron i Hellkite's Pass; na Grixis Sedraxis, Unx, Torchlight,
-Boneheaps, Kederekt, Dregscape i Droning Isles; na Esper Sanctum
-Arcanum, Vectis, Palandius, Tidehollow i Glass Dunes. Scena
-wygenerowana w silniku mapforge (`scena.json`), proweniencja
-w `map.json`.
+Etlan, Summoning Root i Valley of the Ancient; w Jund Mount Jhal,
+Boiling Slopes, Sweltering Cauldron, Hellkite's Pass, Cicatrice,
+The Rip i Bloodhall; na Grixis Sedraxis, Unx, Torchlight, Boneheaps,
+Kederekt, Dregscape i Droning Isles; na Esper Sanctum Arcanum, Vectis,
+Palandius, Tidehollow, Glass Dunes, Crystal Labyrinth, Sea of Unknowing
+i Twin Maelstroms. Karta [[242ala-knight-of-the-skyward-eye|Knight of the Skyward Eye]]
+dostaje regionalną pinezkę w leśno-ceremonialnym [[bant|Bancie]], blisko Valeronu,
+Sun-Dappled Court i Akrasy, bez udawania nazwy jednej drogi. Scena wygenerowana
+w silniku mapforge (`scena.json`), proweniencja w `map.json`. Nowe pozycje dodane w pętli 2026-09-12 są
+relacyjne w obrębie shardów: kanon wskazuje przynależność/topologię
+miejsc, natomiast konkretne współrzędne, przebieg The Rip i poligon
+Cicatrice pozostają wyborem rekonstrukcji T3.
 
 ## Źródła
 
 - MTG Wiki, hasło Alara — historia (Sundering, Conflux, inwazja),
   regiony, status planu: https://mtg.wiki/page/Alara
-- MTG Wiki, hasło Bant — kasty (Blessed, Sighted, Sigiled, Mortar,
+- MTG Wiki, hasło [[bant|Bant]] — kasty (Blessed, Sighted, Sigiled, Mortar,
   Unbeholden), sigile, pojedynki czempionów, Inner Three, Jhess,
   Valeron, Cathedral of Bliss: https://mtg.wiki/page/Bant
+- MTG Wiki, hasło Order of the Skyward Eye — zakon rycerski Bantu,
+  idea prawości, nieświadoma manipulacja przez [[nicol-bolas|Nicola Bolasa]]
+  i rozniecanie strachu: https://mtg.wiki/page/Order_of_the_Skyward_Eye
 - MTG Wiki, hasło Esper — geografia shardu (oceaniczne wyspy, morza
   i akweny: Dwindling Sea, Sea of Stars, Inkwell), etherium, Ethersworn
   i Noble Work, Glass Dunes, Tidehollow, Sanctum Arcanum, Breya:
@@ -232,6 +244,9 @@ w `map.json`.
 - MTG Wiki, hasło Maelstrom — burza many powstała w Conflux
   w punkcie złączenia shardów; istoty zrodzone z burzy:
   https://mtg.wiki/page/Maelstrom
+- MTG Wiki, hasło [[nicol-bolas|Nicol Bolas]] — alaryjska intryga smoka,
+  agenci na shardach, Kederekt, Maelstrom i konfrontacja z Ajaninem:
+  https://mtg.wiki/page/Nicol_Bolas
 - MTG Wiki, Category:Alara locations — kanoniczne miejsca planu:
   https://mtg.wiki/page/Category:Alara_locations
 - Scryfall, set ARB (Alara Reborn): https://scryfall.com/sets/arb

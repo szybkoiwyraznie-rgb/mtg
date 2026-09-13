@@ -4,6 +4,57 @@
 > właściciela albo z Pętli Jakości. Tu zapisujemy rozpoznanie, żeby nie
 > robić go drugi raz. (Konwencja dziedziczona z mtg-game.)
 
+## Link-mining Wiedźmina (Pętla Jakości, 2026-09-12)
+
+**Panie Lasu — wykonane**, `content/lore/panie-lasu.md`, klasa
+`spolecznosc`, plan Wiedźmin. Próg spełniły treści kart
+`279m21-village-rites` + `599mid-candlegrove-witch`: pierwsza karta pokazuje
+wiejski rachunek długu wobec Pań Lasu, druga — lokalny krąg guślarki pod
+Łysą Górą, świadomie odróżniony od samych pradawnych władczyń Velen.
+Wikilinki dopisano w obu kartach, stronie planu i haśle Velen. Hasło nie ma
+pinezki; odsyła deep-linkiem do regionalnej kotwicy Velen
+`#/mapa/wiedzmin?x=0.4113&y=0.2807`.
+
+`594emn-ironclad-slayer` pogłębił istniejące hasło `velen` o wojenny
+krajobraz pobojowisk i odzyskiwanie oręża z porzuconych taborów, ale nie
+odblokował nowego hasła: scena wskazuje Ziemię Niczyją szeroko, nie jedno
+nazwane pole bitwy ani osobną frakcję.
+
+Encje nadal poniżej progu osobnego hasła albo wymagające separacji zakresu:
+
+| Encja | Klasa (docelowa) | Karty wspominające | Do hasła brakuje |
+|---|---|---|---|
+| Łysa Góra | geografia | 599mid-candlegrove-witch | 1 karta |
+| Krzywuchowe Moczary | geografia | 279m21-village-rites | 1 karta |
+| upiory | fauna/koncepcja | 599mid-candlegrove-witch | 1 karta + rozstrzygnięcie zakresu bestiariusza |
+| pobojowiska / Bitwa na błoniach Velen | wydarzenie/geografia | 594emn-ironclad-slayer | 1 karta + rozstrzygnięcie, czy chodzi o konkretną bitwę, czy szerszy krajobraz wojenny Ziemi Niczyjej |
+| najemnicy i maruderzy Velen | spolecznosc | 594emn-ironclad-slayer | 1 karta + separacja od regularnych armii Redanii/Nilfgaardu |
+| stalowe miecze / łup z pobojowiska | rzemioslo/koncepcja | 594emn-ironclad-slayer | 1 karta + pytanie, czy sprzęt wojenny ma być hasłem, czy tylko motywem scen |
+| wiejskie szeptuchy/guślarki Velen | spolecznosc | 279m21-village-rites, 599mid-candlegrove-witch | wymaga osobnego rozpoznania zakresu; na razie role scen, nie jedna nazwana organizacja |
+
+## Link-mining Warhammer Fantasy (aktualizacja 2026-09-13)
+
+`543isd-wooden-stake` domknął pierwszy większy pass Warhammera. Trzy
+przebiegi Pętli Jakości 2026-09-13 wydzieliły hasła:
+**[[imperium|Imperium]]**, **[[zielonoskorzy|Zielonoskórzy]]** i
+**[[gory-kranca-swiata|Góry Krańca Świata]]**. Każde ma co najmniej dwie
+karty linkujące i tylko deep-link do mapy; `maps/warhammer-fantasy/map.json`
+nie dostał pinezek haseł.
+
+Wiedza o nowych, jednoscenowych bytach z 543ISD nadal żyje w karcie i na
+stronie planu Warhammer Fantasy. Nie tworzymy haseł na zapas dla rodu,
+frakcji ani zawodu, dopóki nie pojawi się druga scena kartowa albo osobne
+zlecenie właściciela.
+
+| Encja | Klasa (docelowa) | Karty wspominające | Do hasła brakuje |
+|---|---|---|---|
+| Sylwania / Sylvania | geografia | 543isd-wooden-stake | 1 karta |
+| von Carsteinowie | spolecznosc/postac | 543isd-wooden-stake | 1 karta + decyzja zakresu rodu vs poszczególnych władców |
+| Vampire Counts / wampiry Sylwanii | spolecznosc/fauna | 543isd-wooden-stake | 1 karta + separacja ogólnych wampirów od frakcji Vampire Counts |
+| łowcy czarownic Imperium / Templariusze Sigmara | spolecznosc | 543isd-wooden-stake | 1 karta + rozstrzygnięcie zakresu zakonu, urzędu i archetypu |
+| Waaagh!, Gork i Mork | magia/doktryna | 39mm2-brute-force, 312m13-goblin-battle-jester | na razie ujęte w haśle `zielonoskorzy`; osobne hasło dopiero przy większym ciężarze niż podmechanika tej zbiorowości |
+| Badlands / Ziemie Jałowe | geografia | 39mm2-brute-force, 83mm2-gorehorn-minotaurs (relacja mapowa), 312m13-goblin-battle-jester (relacja mapowa) | policzyć tylko realne wzmianki w treści kart i rozstrzygnąć, czy to osobny region, czy część hasła `zielonoskorzy` |
+
 ## Kolejka link-miningu: encje czekające na drugą kartę (Śródziemie)
 
 Hasło powstaje, gdy ≥2 karty odwołują się do encji w treści (zasada
@@ -35,35 +86,136 @@ mówiące o encji **w treści** (nie samym tagiem):
 
 ## Kolejka link-miningu: encje czekające na drugą kartę (Ravnica)
 
-Sesja PR-14 (2026-09-03) — link-mining po dostawie 137GPT: encje
-Rawnicy są już wspólnym mianownikiem karty, planu i mapy, ale licznik
-progowy idzie od KART (zasada właściciela 2026-08-31) — hasła ruszą
-przy drugiej karcie planu.
+Sesja PR-33 cd. (2026-09-12) — druga karta Ravniki (`516rna-tenth-district-veteran`)
+odblokowała progi link-miningu dla trzech encji uliczno-gildyjnych:
+
+- **Legion Boros** — wykonane: `content/lore/boros-legion.md`, klasa
+  `spolecznosc`, próg z kart `137gpt-withstand` +
+  `516rna-tenth-district-veteran`.
+- **Dziesiąty Dystrykt** — wykonane: `content/lore/dziesiaty-dystrykt.md`,
+  klasa `geografia`, próg z kart `137gpt-withstand` +
+  `516rna-tenth-district-veteran`.
+- **Tin Street Market** — wykonane: `content/lore/tin-street-market.md`,
+  klasa `geografia`, próg z kart `137gpt-withstand` +
+  `516rna-tenth-district-veteran`.
+
+Dalsze encje Ravniki nadal czekają na drugą kartę; wzmianki w planie nie
+liczą się do progu kart (zasada właściciela 2026-08-31):
 
 | Encja | Klasa (docelowa) | Karty wspominające | Do hasła brakuje |
 |---|---|---|---|
-| Boros | spolecznosc | 137gpt-withstand | 1 karta |
-| Legion Boros | spolecznosc | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
-| Dziesiąty Dystrykt | geografia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
 | Sunhome | geografia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
-| Tin Street | geografia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
+| Tin Street | geografia | 137gpt-withstand, plan ravnica, 516rna-tenth-district-veteran (przez Tin Street Market) | wymaga osobnej drugiej wzmianki jako arteria |
 | Pakt Gildii | magia | 137gpt-withstand, plan ravnica | licznik od kart, nie planów |
+| Wojek / Liga Wojek | spolecznosc | plan ravnica, źródła 516RNA | wymaga wzmianki w treści drugiej karty |
 
-## Kolejka link-miningu: encje czekające na drugą kartę (Alara)
+## Link-mining Dominarii (Pętla Jakości, 2026-09-12)
 
-Sesja PR-21 (2026-09-06) — pogłębienie strony planu Alary (sekcja
-„Odłamy i ludy”, mtg.wiki) zasiało encje wspólne dla karty 305ARB
-i planu; licznik progowy idzie od KART, więc hasła ruszą przy drugiej
-karcie Alary.
+**Terisiare — wykonane**, `content/lore/terisiare.md`, klasa `geografia`,
+plan Dominaria. Próg spełniły treści kart `362bro-simian-simulacrum` +
+`531m3c-disa-the-restless`: Argoth i koniec Wojny Braci po jednej stronie,
+a zlodowaciały Kjeldor / Adarkar w Epoce Lodowcowej po drugiej. Wikilinki
+dopisane w obu kartach i na planie Dominarii. Hasło nie ma pinezki — odsyła
+do kotwicy kontynentu `#/mapa/dominaria?x=0.895&y=0.3`.
+
+**Sursi — wykonane**, `content/lore/sursi.md`, klasa `geografia`, plan
+Dominaria. Próg spełniły treści kart `40usg-expunge` +
+`110dvd-serra-s-embrace`: obie sceny są Serranowe, ale jedna dotyczy
+bluźnierstwa nad Katedrą Serran, a druga regionalnego adresu łaski Serry.
+Wikilinki dopisane w obu kartach, na planie Dominarii oraz w haśle
+`serra`. Hasło nie ma pinezki — odsyła do kotwicy Sursi/Katedry
+`#/mapa/dominaria?x=0.1937&y=0.3806` i jawnie nie udaje granic płaskowyżu
+ani dokładnej linii bitwy.
+
+Encje nadal poniżej progu osobnego hasła albo wymagające separacji zakresu:
+Argoth (jedna karta; druga wzmianka jest w haśle/planie, nie w karcie),
+Kjeldor (jedna karta jako królestwo; na razie mieści się w Terisiare),
+Disa, Lhurgoyfy, Benalia, Katedra Serran jako osobny budynek, Sylex.
+
+## Link-mining Innistradu (Pętla Jakości, 2026-09-12)
+
+**Gavony — wykonane**, `content/lore/gavony.md`, klasa `geografia`, plan
+Innistrad. Próg spełniły treści kart `118mid-dire-strain-brawler` +
+`181avr-spectral-prison`; wikilinki dopisane też w kartach
+`393dka-forge-devil` i `544avr-thraben-valiant`, na planie Innistradu
+oraz w powiązanych hasłach. Hasło nie ma pinezki — odsyła do kotwicy
+regionu `#/mapa/innistrad?x=0.59&y=0.449`.
+
+**Kessig — wykonane**, `content/lore/kessig.md`, klasa `geografia`, plan
+Innistrad. Próg spełniły treści kart `171isd-grizzled-outcasts` +
+`544avr-thraben-valiant`; wikilinki dopisane też w kartach
+`181avr-spectral-prison`, `309isd-civilized-scholar` i
+`393dka-forge-devil`, na planie Innistradu oraz w powiązanych hasłach.
+Hasło nie ma pinezki — odsyła do kotwicy regionu
+`#/mapa/innistrad?x=0.41&y=0.727`.
+
+**Avacyn — wykonane 2026-09-12 (drugi przebieg pętli)**,
+`content/lore/avacyn.md`, klasa `postac`, plan Innistrad. Próg spełniły
+karty `171isd-grizzled-outcasts`, `181avr-spectral-prison`,
+`309isd-civilized-scholar`, `393dka-forge-devil`, `42isd-murder-of-crows`
+i `544avr-thraben-valiant`; wikilinki dopisane też na planie Innistradu
+oraz w hasłach Gavony/Kessig/Thraben/Stensia. Hasło nie ma pinezki — odsyła
+do Thraben/Helvaultu `#/mapa/innistrad?x=0.668&y=0.317`.
+
+**Devil's Breach — wykonane 2026-09-12 (drugi przebieg pętli)**,
+`content/lore/devils-breach.md`, klasa `geografia`, plan Innistrad. Próg
+spełniły karty `118mid-dire-strain-brawler`, `171isd-grizzled-outcasts`,
+`393dka-forge-devil` i `544avr-thraben-valiant`; wikilinki dopisane też na
+planie Innistradu i w haśle Kessig. Hasło nie ma pinezki — odsyła do
+istniejącej kotwicy rozpadliny `#/mapa/innistrad?x=0.392&y=0.945`.
+
+**Ashmouth — wykonane 2026-09-12 (trzeci przebieg pętli)**,
+`content/lore/ashmouth.md`, klasa `geografia`, plan Innistrad. Próg spełniły
+karty `393dka-forge-devil` + `544avr-thraben-valiant`; wikilinki dopisane
+też na planie Innistradu, w haśle Stensia i Devil's Breach. Hasło nie ma
+pinezki — odsyła do istniejącej kotwicy Stensii
+`#/mapa/innistrad?x=0.213&y=0.253`.
+
+**Helvault — wykonane 2026-09-12 (trzeci przebieg pętli)**,
+`content/lore/helvault.md`, klasa `artefakt`, plan Innistrad. Próg spełniły
+karty `393dka-forge-devil` + `544avr-thraben-valiant`; wikilinki dopisane
+też na planie Innistradu oraz w hasłach Avacyn/Gavony/Thraben/Devil's
+Breach. Hasło nie ma pinezki — odsyła do Thraben/Katedry
+`#/mapa/innistrad?x=0.668&y=0.317`.
+
+**Stensia — uzupełnione po `256ISD` (PR-33)**, istniejące hasło
+`content/lore/stensia.md`, klasa `geografia`, plan Innistrad. Nowa karta
+`256isd-frightful-delusion` dołożyła wariant domowej/psychicznej grozy:
+ciasna sypialnia w anonimowym stensiańskim domu, bladoniebieska iluzja,
+sen przerwany strachem i utrata myśli. Hasło nadal nie ma pinezki — pinezki
+pozostają wyłącznie przy kartach `42isd-murder-of-crows` i
+`256isd-frightful-delusion`, obie z pewnością `region` na kotwicy Stensii
+`#/mapa/innistrad?x=0.228&y=0.317`.
+
+Encje nadal poniżej progu osobnego hasła albo wymagające dokładniejszej
+separacji zakresu: Ulvenwald, Nephalia, Markovowie, Kościół Avacyn/Katedra
+Avacyn, Griselbrand, Shilgengar, Skirsdag.
+
+## Link-mining Alary (PR-33, 2026-09-12)
+
+Dostawa `242ALA` dołożyła trzecią materializację Alary i domknęła dwa progi
+link-miningu liczone od kart, nie od samej strony planu:
+
+- **Bant — wykonane**, `content/lore/bant.md`, klasa `geografia`, plan
+  Alara. Próg spełniają karty `242ala-knight-of-the-skyward-eye` oraz
+  alaryjskie sceny Confluxu (`305arb-illusory-demon`,
+  `536arb-ethersworn-shieldmage`) po dopisaniu wikilinków. Hasło nie ma
+  pinezki — odsyła do regionalnej kotwicy Bantu `#/mapa/alara?x=0.45&y=0.175`.
+- **Nicol Bolas — wykonane**, `content/lore/nicol-bolas.md`, klasa `postac`,
+  plan Alara. Próg spełniają karty `242ala-knight-of-the-skyward-eye` +
+  `305arb-illusory-demon` (a `536arb-ethersworn-shieldmage` dopina echo
+  wojny shardów). Hasło nie ma pinezki — odsyła do skutku planu w Maelstromie
+  `#/mapa/alara?x=0.475&y=0.475`.
+
+Encje nadal poniżej progu osobnego hasła albo wymagające separacji zakresu:
 
 | Encja | Klasa (docelowa) | Karty wspominające | Do hasła brakuje |
 |---|---|---|---|
 | Maelstrom | geografia | 305arb-illusory-demon, plan alara | 1 karta |
-| Nicol Bolas | postac | 305arb-illusory-demon, plan alara | 1 karta |
 | Ajani Goldmane | postac | 305arb-illusory-demon, plan alara | 1 karta |
-| Conflux / Sundering | historia | 305arb-illusory-demon, plan alara | 1 karta |
-| Grixis (Sedraxis, Vithia) | geografia | plan alara | 2 karty |
-| Etherium / Ethersworn | magia | plan alara | 2 karty |
+| Conflux / Sundering | historia | 305arb-illusory-demon, 242ala-knight-of-the-skyward-eye, 536arb-ethersworn-shieldmage | możliwa rewizja zakresu; hasło Conflux już istnieje jako historia planu |
+| Grixis (Sedraxis, Vithia) | geografia | 305arb-illusory-demon, 536arb-ethersworn-shieldmage, plan alara | hasło Grixis już istnieje; Sedraxis/Vithia osobno bez progu |
+| Etherium / Ethersworn | magia/spolecznosc | 536arb-ethersworn-shieldmage, plan alara | 1 karta dla osobnego zakresu |
 | Nacatl (Coil, Claws of Marisi) | spolecznosc | plan alara | 2 karty |
 
 ## Link-mining PR-22 — encja wspólna dla różnych planów
@@ -120,14 +272,29 @@ i w haśle Oxidda Chain. Sekcja „Na mapie” odsyła do Razor Fields
 (deep-link `?x=0.5&y=0.2`). Znaleziona przez repo-szeroki link-mining
 Pętli Jakości (plany z ≥2 kartami: Mirrodin ×3, Innistrad ×2).
 
+**Ortodoksja Maszyn — wykonane 2026-09-12 (kolejna pętla planu)**,
+`content/lore/ortodoksja-maszyn.md`, klasa `spolecznosc`, plan Mirrodin.
+Próg spełniły karty `476mbs-banishment-decree` +
+`347nph-pristine-talisman`: jedna pokazuje cenobicki wyrok i aneks-katedrę,
+druga kontrast nieskalanego talizmanu z porcelanowym dogmatem. Hasło nie
+ma pinezki — odsyła do regionalnego adresu sceny 476MBS
+`#/mapa/mirrodin?x=0.523&y=0.317` i nie utożsamia jej z późniejszą Fair
+Basilica dziewięciu sfer.
+
+**Vulshokowie — wykonane 2026-09-12 (kolejna pętla planu)**,
+`content/lore/vulshok.md`, klasa `spolecznosc`, plan Mirrodin. Próg
+spełniły karty `556nph-ruthless-invasion` + `347nph-pristine-talisman`: jedna
+scena ma barykadę Vulshoków w Oxiddzie, druga wymienia ich jako część
+szerszego mirrańskiego oporu. Hasło nie ma pinezki — odsyła do regionu
+Oxidda Chain `#/mapa/mirrodin?x=0.3736&y=0.7556`.
+
 Encje „o jedną kartę” od progu (skan boldów 2026-09-09):
 
 | Encja | Klasa (docelowa) | Karta wspominająca | Do progu brakuje |
 | --- | --- | --- | --- |
 | Elesh Norn | postac | 476mbs-banishment-decree (+ plan mirrodin, hasło nowa-phyrexia) | 1 karta |
-| Razor Fields, Ortodoksja Maszyn, Glimmervoid, Taj-Nar, Accorders, Argent Etchings, Cave of Light, Ten Shields | geografia/doktryna | 476mbs-banishment-decree (+ plan mirrodin) | 1 karta |
+| Razor Fields, Glimmervoid, Taj-Nar, Accorders, Argent Etchings, Cave of Light, Ten Shields | geografia/doktryna | 476mbs-banishment-decree (+ plan mirrodin, hasło ortodoksja-maszyn) | 1 karta |
 | Copperline Gorge, Radix, Rey-Goor | geografia | 488som-carapace-forger (+ plan mirrodin, hasło oxidda-chain) | 1 karta |
-| Vulshok | spolecznosc | 556nph-ruthless-invasion (+ plan mirrodin, hasło oxidda-chain) | 1 karta |
 | Pythor | postac | 556nph-ruthless-invasion | 1 karta |
 | Oona, Glen Elendra | postac/geografia | 605shm-consign-to-dream (+ plan lorwyn) | 1 karta |
 | Ashmouth, Kirch, Skirsdag, Mikaeusa, Katedra Avacyn, Devils' Breach | geografia | 393dka-forge-devil (+ plan innistrad, hasło thraben) | 1 karta |
@@ -137,38 +304,49 @@ Encje „o jedną kartę” od progu (skan boldów 2026-09-09):
 | Benalia, Wybrani, Pięć Edyktów, Tangle (Dominaria), Argoth, Sylex, Kabała, Aphetto, Daru, Tamingazin, Zhalfir, Suq'At, Sarpadyjskie Imperia, Ciemne Czasy, thrullowie, thalidzi, homaridi | geografia/spolecznosc | 40usg-expunge / plan dominaria | 1 karta |
 | Eldrazi, Roil, Halimar, Coralhelm, Jori En, merfolk | różne | 2bfz-coralhelm-guide (+ plan zendikar) | 1 karta |
 
-## Link-mining Forgotten Realms (start: PR-25, aktualizacja 2026-09-09)
+## Link-mining Forgotten Realms (start: PR-25, aktualizacja 2026-09-12)
 
-**Wybrzeże Mieczy — SKASOWANE 2026-09-09 decyzją właściciela.**
-Hasło powstało w PR-27 poniżej progu (1 karta + plan zamiast
-wymaganych 2 kart); audyt PR-27 (F1) niesłusznie rekomendował
-zachowanie. Wikilinki zdjęte do pogrubień, encja wróciła do kolejki.
-Próg haseł egzekwuje odtąd test `test/prog-hasel.test.js`.
+**Wybrzeże Mieczy — ponownie utworzone 2026-09-12 po `234CLB`.**
+Historia progu: hasło powstało w PR-27 poniżej progu (1 karta + plan zamiast
+wymaganych 2 kart), a właściciel 2026-09-09 nakazał je skasować i zdjąć
+wikilinki do pogrubień. Po `234clb-gray-slaad` istnieją już dwie karty
+linkujące (`3clb-nefarious-imp` + `234clb-gray-slaad`), więc hasło wraca
+legalnie; test `test/prog-hasel.test.js` nadal pilnuje licznika od kart,
+nie od planów.
 
 Encje „o jedną kartę” od progu:
 
 | Encja | Klasa (docelowa) | Karta wspominająca | Do progu brakuje |
 | --- | --- | --- | --- |
-| Wybrzeże Mieczy | geografia | 3clb-nefarious-imp (+ plan forgotten-realms) | 1 karta |
 | Avernus, Baator | geografia | 3clb-nefarious-imp | 1 karta |
 | imp (chochlik) | fauna | 3clb-nefarious-imp | 1 karta |
+| slaadi, chaos phage, Limbo | fauna/choroba/geografia | 234clb-gray-slaad | 1 karta |
 | Wojna Hobgoblinów, Tiamat | wydarzenie/koncepcja | 3clb-nefarious-imp (+ plan forgotten-realms) | 1 karta |
 | Faerûn, Abeir-Toril, Morze Upadłych Gwiazd, Moonshaes, Nelanther, Amn, Luruar, Jezioro Pary, Królestwo Wysokie, Morze Bezludne | geografia | — (plan forgotten-realms) | licznik od kart, nie planów |
 | Mystra, Selûne, Lathander, Ilmater, Tempus, Tkanina Magii, Czas Kłopotów | postac/koncepcja | — (plan forgotten-realms) | licznik od kart, nie planów |
 
-## Link-mining Kaladesh (start: PR-28, 2026-09-09)
+## Link-mining Kaladesh (Pętla Jakości, 2026-09-12)
 
-Pierwsza karta planu (`610m19-gearsmith-prodigy`) — próg 2 kart
-niespełniony, nowych haseł brak. Encje „o jedną kartę” od progu:
+Druga karta planu (`596ori-ghirapur-gearcrafter`) odblokowała dwa progi
+po pierwszej karcie `610m19-gearsmith-prodigy`; późniejszy
+`12aer-merchant-s-dockhand` pogłębia oba wykonane hasła przez Bomat, ale
+nie tworzy osobnego hasła dzielnicy portowej:
 
-| Encja | Klasa (docelowa) | Karta wspominająca | Do progu brakuje |
-| --- | --- | --- | --- |
-| Ghirapur | geografia | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
-| Konsulat, mistrzowie Konsulatu | spolecznosc | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
-| Greenwheel, „Zoo” konstruktów | geografia | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
-| eter, rdzeń eterowy | koncepcja | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
-| Targ Wynalazców | wydarzenie | 610m19-gearsmith-prodigy (+ plan kaladesh) | 1 karta |
-| Iglica Eteru, Peema, Vahd, Lathnu, Vinday, Vasavati | geografia | — (plan kaladesh) | licznik od kart, nie planów |
+- **Ghirapur — wykonane**, `content/lore/ghirapur.md`, klasa `geografia`,
+  plan Kaladesh. Próg pierwotnie spełniły dwie karty, a `12AER` dopisuje
+  trzecią scenę; wikilinki są w kartach, na planie i w haśle Konsulatu.
+  Hasło nie ma pinezki — odsyła deep-linkiem do kotwicy miasta.
+- **Konsulat Kaladeshu — wykonane**, `content/lore/konsulat-kaladeshu.md`,
+  klasa `spolecznosc`, plan Kaladesh. Próg pierwotnie spełniły dwie karty, a
+  `12AER` pogłębia instytucję od strony plomb, tras i portowej ewidencji;
+  hasło nie ma pinezki i odsyła do rejonu Consulate Building jako centrum
+  instytucji.
+
+Encje nadal poniżej progu osobnego hasła albo wymagające separacji zakresu:
+Bomat (`12aer-merchant-s-dockhand` — dzielnica portowa ma kotwicę mapy L2,
+ale tylko jedną kartę), Greenwheel, Embraal, „Zoo” konstruktów, eter / rdzeń
+eterowy, Targ Wynalazców, Iglica Eteru, Peema, Vahd, Lathnu, Vinday i
+Vasavati.
 
 **Pass mapowy 2026-09-10 (Pętla Jakości, PR-30):** wsie aerowrightów
 Vahd — **Maranjapur, Panka, Cambi** — dodane na plan jako kanonicznie
@@ -176,6 +354,12 @@ nazwane POI (mtg.wiki: Avishkar; „The World of Kaladesh, Part I”;
 Magic Duels wiki). Wcześniej (korekta właściciela 2026-09-10) zdjęte
 jako bezimienne „wieś”; teraz nazwa znana z kanonu → narysowane
 z etykietami. Nie tworzą haseł (encje planowe, próg = 2 karty).
+
+**Pass L2 2026-09-12 (Pętla Jakości, PR-33):** osobna mapa Ghirapuru
+z PR-30 została podniesiona do pełnego zestawu kotwic L2 w `map.json`
+(Greenwheel, Greenwheel Domes, The Zoo, Embraal, Aether Hub, Aetherflux
+Reservoir, Eleven Bridges itd.). Pozycje są projekcją L2/ADR 0047, nie
+kanonicznymi adresami.
 
 ## Mapa Zendikaru — WYKONANA (ADR 0012)
 

@@ -15,7 +15,7 @@ pinezka:
 
 ## Kronika Lore
 
-Rok 1492 Smoka. W mrocznym gabinecie wojennym na **Wybrzeżu Mieczy**
+Rok 1492 Smoka. W mrocznym gabinecie wojennym na **[[wybrzeze-mieczy|Wybrzeżu Mieczy]]**
 — w sali dworu, którego kronika nie wymienia z imienia — nad
 dębowym stołem unosi się szkarłatny **imp** o złośliwym uśmiechu.
 Pod nim dopala się misterna mapa taktyczna; miniaturowe figurki
@@ -107,7 +107,7 @@ i nie wymyśla go.
 
 ## Na Mapie
 
-Gabinet stoi na **Wybrzeżu Mieczy** — zachodnim brzegu Faerûn,
+Gabinet stoi na **[[wybrzeze-mieczy|Wybrzeżu Mieczy]]** — zachodnim brzegu Faerûn,
 paskiem nadmorskich królestw od lodów Północy po pustkowie
 Amn. Scena nie nazywa dworu ani miasta, więc oznaczenie stoi
 w środku pasa, z pewnością rejonu, nie lokalu — tam, gdzie

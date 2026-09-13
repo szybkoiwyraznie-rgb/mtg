@@ -29,11 +29,14 @@ po nim żadna wola nie zginie czasu, a Dominaria wchodzi w erę, w której
 mierzy ją kalendarz AR (po Mendingu) i spory planeswalkerów, nie bogowie.
 Karta [[40usg-expunge|Expunge]] pochodzi z samego serca inwazji:
 Benalia pod rządami koalicji, rycerstwo Serran walczy z czarną magią
-wroga. Z kolei [[362bro-simian-simulacrum|Simian Simulacrum]] ukazuje
-relikt dawniejszej epoki: mechaniczny konstrukt w opuszczonym warsztacie
-lasu Argoth, który nocami naprawia towarzysza, nie wiedząc o końcu Wojny Braci.
+wroga. [[110dvd-serra-s-embrace|Serra's Embrace]] dopowiada jaśniejszą
+stronę tej samej tradycji: [[serra|Serra]] nie przychodzi po wodza, lecz
+po zwykłego piechura, który w złotej godzinie na polu bitwy jeszcze stoi.
+Z kolei [[362bro-simian-simulacrum|Simian Simulacrum]] ukazuje relikt
+dawniejszej epoki: mechaniczny konstrukt w opuszczonym warsztacie lasu
+Argoth, który nocami naprawia towarzysza, nie wiedząc o końcu Wojny Braci.
 Epokę Lodowcową reprezentuje z kolei zwiadowczyni [[531m3c-disa-the-restless|Disa the Restless]],
-która na zasypanych śniegiem pustkowiach Terisiare tropi żerujące bestie
+która na zasypanych śniegiem pustkowiach [[terisiare|Terisiare]] tropi żerujące bestie
 i ostrzega ludzkie królestwo Kjeldoru.
 
 ## Geografia
@@ -45,10 +48,12 @@ wokół Wielkiego Oceanu.
 tu leżą rycerska **Benalia** ze stolicą Benalia City, wielki las
 **Llanowar**, mroźna północna **Icehaven**, wyspa akademii
 **Tolaria West** oraz wyspy mórz Voda i Honeyed Sea: **Kieve**,
-**Ru-Nora**, **Saronia**, **Orvada** i **Burning Isles**. Serce
-kontynentu to lud **Wybranych** (The Chosen) urodzonych pod
-**Pięcioma Edyktami** i splecenie korzeni **Drzewa Świata** —
-**Tangle**, którego życiodajny sok karmił całą północ.
+**Ru-Nora**, **Saronia**, **Orvada** i **Burning Isles**. Południowe
+[[sursi|Sursi]] z Katedrą Serran jest tu najważniejszym adresem pamięci
+[[serra|Serry]]: błogosławiona ziemia, sanktuarium i źródło samorzutnie
+pojawiających się aniołów. Serce kontynentu to lud **Wybranych**
+(The Chosen) urodzonych pod **Pięcioma Edyktami** i splecenie korzeni
+**Drzewa Świata** — **Tangle**, którego życiodajny sok karmił całą północ.
 
 **Jamuraa** (południe) — tropikalny kontynent Zhalfiru, Suq'Aty,
 lasu Yavimaya i Wielkiej Pustyni, nad Morzem Serenity. Na południu
@@ -62,9 +67,12 @@ północ–południe; dom **Kabały** (Cabal), miasta umarłych: **Aphetto**,
 **Daru**, druidzi **Krosy** i subkontynent **Tamingazin**; na
 północy, poza kontynentem, archipelag **Shiv**.
 
-**Terisiare** (północny wschód) — ziemia **Argoth** i Wojen Braci:
-cytadela Urzy i **Sylex**, broń, której wybuch zamarzniętą północą
-nadał kontynentowi kształt, jaki mapa nosi do dziś.
+**[[terisiare|Terisiare]]** (północny wschód) — dawny kontynent Wojny Braci,
+Argothu i Epoki Lodowcowej. To tu Urza i Mishra spustoszyli stare królestwa,
+a wybuch Syleksu na Argoth zapoczątkował katastrofę klimatu; później
+zlodowaciały krajobraz stał się domeną Kjeldoru, Balduvii, Adarkar i kronik
+Disy Niespokojnej. Współcześnie pozostałości kontynentu tworzą archipelag
+Terisian Isles i wyspy New Argive.
 
 **Sarpadia** (południowy wschód) — ruiny **Sarpadyjskich Imperiów**
 (Icatia, Vodalia, Zakon Czarnej Ręki, elfy Havenwood), które upadły
@@ -85,9 +93,11 @@ pierwszy render to obraz FHD (L0), a od progu zoomu 2.5 dołączają
 nakładki: master jest na tyle duży, że toponimia czytelnego detalu
 jest w samej bazie (nakładki L2 z 2026-09-08 nie ma — decyzja
 właściciela, ADR 0041). Pinezki: [[40usg-expunge|Expunge]] — Katedra
-Serran na Równinach Sursi (pewność region); [[362bro-simian-simulacrum|Simian Simulacrum]]
-— wyspa Argoth u wybrzeży Terisiare (pewność region); [[531m3c-disa-the-restless|Disa the Restless]]
-— północne Terisiare / Kjeldor (pewność region).
+Serran na [[sursi|Równinach Sursi]] (pewność region); [[110dvd-serra-s-embrace|Serra's Embrace]]
+— regionalny indeks łaski Serry przy [[sursi|Sursi/Katedrze]], bez udawania
+konkretnego pola bitwy (pewność region); [[362bro-simian-simulacrum|Simian Simulacrum]]
+— wyspa Argoth u wybrzeży [[terisiare|Terisiare]] (pewność region); [[531m3c-disa-the-restless|Disa the Restless]]
+— północne [[terisiare|Terisiare]] / Kjeldor (pewność region).
 
 ## Źródła
 
@@ -102,6 +112,15 @@ Serran na Równinach Sursi (pewność region); [[362bro-simian-simulacrum|Simian
   https://mtg.wiki/page/Otaria · Terisiare:
   https://mtg.wiki/page/Terisiare · Sarpadia:
   https://mtg.wiki/page/Sarpadia
+- Wizards of the Coast, Planeswalker's Guide to Dominaria (2022) — New
+  Argive jako część archipelagu Terisiare, Sylex Blast, Flood Age oraz
+  współczesny opis Kościoła Serry i Sursi:
+  https://magic.wizards.com/en/news/feature/planeswalkers-guide-dominaria-2022-08-31
+- MTG Wiki, Serra / Church of Serra / Sursi / Cathedral of Serra —
+  tradycja Serran na Dominarii, śmierć i błogosławieństwo Serry w Sursi,
+  katedra i samorzutne pojawianie się aniołów:
+  https://mtg.wiki/page/Serra · https://mtg.wiki/page/Church_of_Serra ·
+  https://mtg.wiki/page/Sursi · https://mtg.wiki/page/Cathedral_of_Serra
 - MTG Wiki, Fall of the Sarpadian Empires — upadek imperiów
   (Icatia, Vodalia, Czarne Ręce, Havenwood) w Ciemnych Czasach
   (ok. 170 AR), thrullowie/thalidzi, homaridi:

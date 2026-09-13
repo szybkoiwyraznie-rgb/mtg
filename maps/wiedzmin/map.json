@@ -152,6 +152,27 @@
       "uzasadnienie": "Fabuła właściciela umieszcza opuszczoną wskutek wojny chatę na bagnach Velen, bez nazwy wsi, mokradła lub posterunku. Pinezka dziedziczy regionalną kotwicę Velen (odczyt z mastera px 2095, 2024); redańscy milicjanci są zgodni z sytuacją północnego pogranicza, ale nie zawężają miejsca."
     },
     {
+      "karta": "279m21-village-rites",
+      "x": 0.4113,
+      "y": 0.2807,
+      "pewnosc": "region",
+      "uzasadnienie": "Fabuła właściciela nazywa chatę sołtysa w Downwarren/Sztygarach oraz wodę z Krzywuchowych Moczarów, więc scena należy do południowego Velen. Globalny raster T1 nie zawiera osobnej etykiety tej wsi ani lokalnego planu chaty; pinezka dziedziczy regionalną kotwicę Velen (odczyt z mastera px 2095, 2024) i nie udaje dokładnego progu izby."
+    },
+    {
+      "karta": "599mid-candlegrove-witch",
+      "x": 0.4113,
+      "y": 0.2807,
+      "pewnosc": "region",
+      "uzasadnienie": "Fabuła właściciela wskazuje prastare, mgliste lasy wokół Łysej Góry w Velen. Źródła lokują Łysą Górę/Ard Cerbin w południowo-wschodnim lub południowym Velen i łączą ją z sabatem, ale globalny raster Orteliusa T1 nie zawiera lokalnego planu góry, polany ani brzozowego kręgu. Pinezka dziedziczy regionalną kotwicę Velen (odczyt z mastera px 2095, 2024) i nie udaje dokładnego gaju."
+    },
+    {
+      "karta": "594emn-ironclad-slayer",
+      "x": 0.4113,
+      "y": 0.2807,
+      "pewnosc": "region",
+      "uzasadnienie": "Fabuła właściciela wskazuje spowite mgłą pobojowiska Ziemi Niczyjej w Velen, zgliszcza i porzucone po bitwie wozy taborowe, ale nie podaje nazwy wsi, traktu ani konkretnego pola. Źródła opisują Velen jako ziemię niczyją III Wojny Północnej między Redanią i Nilfgaardem oraz miejsce największej bitwy, lecz globalny raster Orteliusa T1 nie zawiera lokalnego planu pobojowiska. Pinezka dziedziczy regionalną kotwicę Velen (odczyt z mastera px 2095, 2024) i nie udaje dokładnego taboru ani koleiny w błocie."
+    },
+    {
       "karta": "540dst-chittering-rats",
       "x": 0.4045,
       "y": 0.2469,

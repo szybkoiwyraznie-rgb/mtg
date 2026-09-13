@@ -50,7 +50,7 @@ każde załamanie światła. **Maelstrom** — prawdziwy sprawca: burza
 many wszystkich pięciu shardów, śmiertelne serce Alary, z którego
 wyszły też **Child of Alara** i **Maelstrom Wanderer**; podczas późniejszej
 inwazji [[nowa-phyrexia|Nowej Phyrexii]] sam powstał w obronie planu. I nieobecny
-**Nicol Bolas** — to jego wojny shardów karmiły burzę, to on
+**[[nicol-bolas|Nicol Bolas]]** — to jego wojny shardów karmiły burzę, to on
 kierował manę obelisków w wir i wszedł w jego środek po dawną moc;
 „demony” Maelstromu są echem jego orkiestracji, choć staruszka
 dawno już powstrzymał **Ajani Goldmane**.
@@ -98,8 +98,8 @@ Pinezka **dokładna**: `#/mapa/alara?pin=305arb-illusory-demon` —
 **Maelstrom**, centralny wir scalonej Alary, geometryczny środek
 mapy. Pewność pełna: cała scena dzieje się w burzy, a kotwica
 „Maelstrom” istnieje w `maps/alara/map.json`. Mapa niesie kontekst:
-pięć regionów w cyklu many (Bant, [[esper|Esper]], [[grixis|Grixis]], Jund, Naya)
-wokół wiru, obeliski przy szwach regionów — pomniki epoki, gdy Bolas
+pięć regionów w cyklu many ([[bant|Bant]], [[esper|Esper]], [[grixis|Grixis]], Jund, Naya)
+wokół wiru, obeliski przy szwach regionów — pomniki epoki, gdy [[nicol-bolas|Bolas]]
 kierował ich maną w burzę — oraz miejsca regionów znane z zapisu
 (Valeron, Jhess, Akrasa, Sedraxis, Antali) jako kotwice przyszłych
 scen, także tych z epoki shardów.
@@ -128,7 +128,7 @@ U/B to dokładny przepis na „błąd światła, który ucztuje”.
   w punkcie złączenia shardów; istoty zrodzone z burzy (Child of
   Alara, Maelstrom Wanderer); Illusory Demon wśród kart związanych
   z Maelstromem: https://mtg.wiki/page/Maelstrom
-- MTG Wiki, hasło Alara — Sundering, Conflux, orkiestracja Bolasa,
+- MTG Wiki, hasło Alara — Sundering, Conflux, orkiestracja [[nicol-bolas|Bolasa]],
   Ajani; status planu „Reunited”: https://mtg.wiki/page/Alara
 - Doug Beyer, „Graduation Day” (2009, Savor the Flavor) — potworne
   istoty rodzą się z Maelstromu:
@@ -143,8 +143,8 @@ U/B to dokładny przepis na „błąd światła, który ucztuje”.
 - **Nietrwałość jako istota.** Obraz (rozsypujące się krawędzie)
   i mechanika (poświęcenie przy czarze) mówią to samo: iluzja trwa
   dokładnie tak długo, jak długo nikt nie zaświeci.
-- **Maelstrom jako pomnik wojny Bolasa.** Burza jest blizną po
-  Conflux i po orkiestracji Nicol Bolasa; jej „demony” to echa
+- **Maelstrom jako pomnik wojny [[nicol-bolas|Bolasa]].** Burza jest blizną po
+  Conflux i po orkiestracji [[nicol-bolas|Nicola Bolasa]]; jej „demony” to echa
   tamtej wojny, które plan rodzi do dziś.
 - **Jedna mapa, dwie epoki.** Alara po Conflux jest jednym planem;
   karta pinuje w Maelstrom, a regiony mapy uniosą też przyszłe sceny

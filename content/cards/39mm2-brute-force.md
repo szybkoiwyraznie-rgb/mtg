@@ -36,12 +36,12 @@ zaczyna zakrzywiać rzeczywistość.
 Scena jest więc portretem najprostszej i najgroźniejszej doktryny tego
 świata. Orkowie nie potrzebują strategii, bo mają coś, co uważają za
 lepsze: dosłowną, fizycznie działającą wiarę w przemoc. Tam, gdzie
-ludzie z Imperium ustawiają szyki i modlą się do Sigmara, ork po prostu
+ludzie z [[imperium|Imperium]] ustawiają szyki i modlą się do Sigmara, ork po prostu
 *wie*, że jest wystarczająco duży — a **Waaagh!** dba, żeby miał rację.
 
 ## Postacie i Byty
 
-W scenie działa para bytów, obie ze zbiorowości **Zielonoskórych**
+W scenie działa para bytów, obie ze zbiorowości **[[zielonoskorzy|Zielonoskórych]]**
 (*Greenskins*) — orków, goblinów i pokrewnych goblinoidów
 [[warhammer-fantasy|Starego Świata]], których jedynym powołaniem jest
 walka.
@@ -127,11 +127,11 @@ Scena należy do **Starego Świata**, a konkretnie do żywiołu
 zielonoskórych — bezimiennego, błotnistego pola bitwy. Dzieje świata nie
 wskazują jednego miasta: orkowie „można rzec, że ich ojczyzną są
 **Badlands**" (Ziemie Jałowe) na południe od Starego Świata, u wschodnich
-podnóży **Worlds Edge Mountains**, skąd od Wojen Goblinów wylewają się
+podnóży **[[gory-kranca-swiata|Worlds Edge Mountains]]**, skąd od Wojen Goblinów wylewają się
 ich Waaagh!. Docelowa pewność: **region** — środek Badlands, nie punkt.
 
 Miejsce sceny to środek **Badlands** — na południe od Border Princes, u
-zachodniego progu **Worlds Edge Mountains**, w pobliżu Mourkain. Pewność
+zachodniego progu **[[gory-kranca-swiata|Worlds Edge Mountains]]**, w pobliżu Mourkain. Pewność
 oznaczenia jest **regionalna**: to bezimienne pole bitwy pośród Ziem
 Jałowych, nie konkretne miasto.
 

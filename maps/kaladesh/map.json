@@ -19,7 +19,7 @@
   "autor": "MTG Lore Codex (praca własna — scena mapforge maps/kaladesh/scena.json z generatora tools/mapforge/kaladesh-plan-t4.py + detal L2 maps/kaladesh/ghirapur-scena.json z tools/mapforge/kaladesh-ghirapur-l2.py)",
   "licencja": "praca własna na kanonie tekstowym; glify gór mapome CC-BY-4.0 (ADR 0020)",
   "pobrano": "2026-09-09",
-   "notka": "T4 (rekonstrukcja kanoniczna): kanon nie podaje mapy planu ani współrzędnych — prawdziwe sąsiedztwa i przebiegi rzek, umowne kształty i odległości. DWIE OSOBNE MAPY (ADR 0047): plan w skali planu 2000×1400 (jak Zendikar; Ghirapur to POI-kropka z nazwą, duże proporcjonalne góry/lasy) + OSOBNA mapa miasta Ghirapur we własnej skali, podgrywana twardą podmianą deep-zoom od progu 6 (crossfade; bez wymogu sztywnego szwu — decyzja właściciela 2026-09-10). Morze bez nazwy (kanon: „morze”, „odległe wybrzeże”). Skala wyłączona."
+  "notka": "T4 (rekonstrukcja kanoniczna): kanon nie podaje mapy planu ani współrzędnych — prawdziwe sąsiedztwa i przebiegi rzek, umowne kształty i odległości. DWIE OSOBNE MAPY (ADR 0047): plan w skali planu 2000×1400 (jak Zendikar; Ghirapur to POI-kropka z nazwą, duże proporcjonalne góry/lasy) + OSOBNA mapa miasta Ghirapur we własnej skali, podgrywana twardą podmianą deep-zoom od progu 6 (crossfade; bez wymogu sztywnego szwu — decyzja właściciela 2026-09-10). Morze bez nazwy (kanon: „morze”, „odległe wybrzeże”). Skala wyłączona."
  },
  "rekonstrukcja": true,
  "epoka": "Kaladesh za Konsulatu, doba KLD/AER (Kuźnia Konsulów spalona przez Chandrę — kanon nie datuje zdarzenia)",
@@ -37,8 +37,8 @@
    "x": 0.6569,
    "y": 0.6129,
    "typ": "iglica",
-   "pozycja_zrodlo": "kanon: centralna wieża zbiorcza i serce administracyjne Ghirapuru (mtg.wiki: Ghirapur); środek dzielnicy Jedenastu Mostów = wybór rekonstrukcji",
-   "notka": "Aether Spire — główne źródło rafinowanego eteru i symbol władzy Konsulatu; wieże prowincjonalne (5) tłoczą eter do niej"
+   "pozycja_zrodlo": "kanon: centralna wieża zbiorcza i serce administracyjne Ghirapuru (mtg.wiki: Ghirapur); pozycja w dzielnicy Eleven Bridges na mapie L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Aether Spire — główne źródło rafinowanego eteru i symbol władzy Konsulatu; współrzędne są rekonstrukcyjne w osobnej skali Ghirapuru"
   },
   {
    "nazwa": "Peema",
@@ -79,6 +79,182 @@
    "typ": "rzeka",
    "pozycja_zrodlo": "kanon: płynie przez dzicz Peemy do Ghirapuru od zachodu; Mapani największym dopływem (mtg.wiki: Avishkar); przebieg = wybór rekonstrukcji",
    "notka": "rzeka zachodnia; nad nią Aleja Olbrzymów u bram miasta"
+  },
+  {
+   "nazwa": "Greenwheel",
+   "x": 0.6487,
+   "y": 0.6253,
+   "typ": "dzielnica",
+   "pozycja_zrodlo": "kanon: dzielnica ogrodów i kopuł klimatycznych, hub lifecrafterów i elfów (mtg.wiki: Ghirapur); punkt etykiety L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Dzielnica karty 610M19; dokładny taras nieznany, karta ma pewność region."
+  },
+  {
+   "nazwa": "Greenwheel Domes",
+   "x": 0.6491,
+   "y": 0.6292,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon: kopuły klimatyczne Greenwheel (mtg.wiki: Ghirapur); punkt POI L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Punkt najbliższy pinezce 610M19, bo scena mówi o tarasie miejskich ogrodów."
+  },
+  {
+   "nazwa": "The Zoo",
+   "x": 0.6509,
+   "y": 0.633,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon: interaktywna menażeria konstruktów w sercu Greenwheel, zbudowana na Inventors' Fair (mtg.wiki: Ghirapur); punkt POI L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Testy zwinności, szybkości i siły konstruktów; kontekst lisa-automatonu 610M19."
+  },
+  {
+   "nazwa": "Embraal",
+   "x": 0.6723,
+   "y": 0.6294,
+   "typ": "dzielnica",
+   "pozycja_zrodlo": "kanon: przemysłowa strefa Ghirapuru, Sweatworks/metalworking, antykonsulański duch (mtg.wiki: Ghirapur); punkt etykiety L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Dzielnica karty 596ORI; dokładny warsztat nieznany, karta ma pewność region."
+  },
+  {
+   "nazwa": "Aetherflux Reservoir",
+   "x": 0.6562,
+   "y": 0.6065,
+   "typ": "obiekt",
+   "pozycja_zrodlo": "kanon: największy zbiornik eteru zawieszony nad panoramą Ghirapuru (mtg.wiki: Ghirapur); punkt POI L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Symbol innowacji i sporu o kontrolę eteru; nie dokładny adres podpór/lin."
+  },
+  {
+   "nazwa": "Aether Hub",
+   "x": 0.6663,
+   "y": 0.6121,
+   "typ": "obiekt",
+   "pozycja_zrodlo": "kanon: największy węzeł dystrybucji eteru w Ghirapurze, w Weldfast (mtg.wiki: Ghirapur); punkt POI L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Największy hub dystrybucyjny miasta, cel konfliktów o eter."
+  },
+  {
+   "nazwa": "Eleven Bridges",
+   "x": 0.6652,
+   "y": 0.6187,
+   "typ": "dzielnica",
+   "pozycja_zrodlo": "kanon: centralna dzielnica Jedenastu Mostów na Kanale Dukhara (mtg.wiki: Ghirapur); punkt etykiety L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Każdy most działa jako targowisko; symbol jedności po Wojnie Jedenastu."
+  },
+  {
+   "nazwa": "Dukhara Canal",
+   "x": 0.6634,
+   "y": 0.6248,
+   "typ": "kanał",
+   "pozycja_zrodlo": "kanon: kanał przecinający serce Ghirapuru, przekraczany przez Eleven Bridges (mtg.wiki: Ghirapur); przebieg/etykieta L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Obiekt wodny mapy miasta; współrzędna oznacza etykietę, nie cały kanał."
+  },
+  {
+   "nazwa": "Aradara Station",
+   "x": 0.6659,
+   "y": 0.6269,
+   "typ": "obiekt",
+   "pozycja_zrodlo": "kanon: wielki węzeł czterech linii kolejowych z kopułą i Ogrodem Posągów (mtg.wiki: Ghirapur); punkt POI L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Dworzec łączy Ghirapur z prowincją."
+  },
+  {
+   "nazwa": "Bastion",
+   "x": 0.6577,
+   "y": 0.6279,
+   "typ": "twierdza",
+   "pozycja_zrodlo": "kanon: The Bastion of the Honorable, ośmiokątna kwatera egzekutorów Konsulatu w Eleven Bridges (mtg.wiki: Ghirapur); punkt POI L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Symbol porządku Konsulatu i cel renegackich żartów/graffiti."
+  },
+  {
+   "nazwa": "Akhara",
+   "x": 0.6641,
+   "y": 0.6208,
+   "typ": "plac",
+   "pozycja_zrodlo": "kanon: okrągły plac-arena, egzekucje publiczne, zapłon Chandry i finał Inventors' Fair (mtg.wiki: Ghirapur); punkt POI L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Arena miejska, nie osobna dzielnica."
+  },
+  {
+   "nazwa": "Bomat",
+   "x": 0.6613,
+   "y": 0.6386,
+   "typ": "dzielnica",
+   "pozycja_zrodlo": "kanon: portowy i handlowy rejon Ghirapuru, piers, canals, warehouses and secret docks (mtg.wiki: Ghirapur); punkt POI/etykiety L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Doki, Night Markets i The Dhund."
+  },
+  {
+   "nazwa": "Freejam",
+   "x": 0.6505,
+   "y": 0.6111,
+   "typ": "dzielnica",
+   "pozycja_zrodlo": "kanon: pionowa dzielnica awiacji, skyships, walkways and aeronauts (mtg.wiki: Ghirapur); punkt POI L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Strefa lotników i kucharskiej rywalizacji."
+  },
+  {
+   "nazwa": "Kujar",
+   "x": 0.6627,
+   "y": 0.608,
+   "typ": "dzielnica",
+   "pozycja_zrodlo": "kanon: ekskluzywna, planowana dzielnica elfia zgodna z filozofią Great Conduit (mtg.wiki: Ghirapur); punkt etykiety L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Zawiera dyskretne wejścia do Prakhata Club."
+  },
+  {
+   "nazwa": "Weldfast",
+   "x": 0.6691,
+   "y": 0.6095,
+   "typ": "dzielnica",
+   "pozycja_zrodlo": "kanon: metaloplastyczna dzielnica wokół Aether Hub, rękodzielnicze mosty/iglice/lampy (mtg.wiki: Ghirapur); punkt etykiety L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Miejska strefa metalowców i pokazów wynalazców."
+  },
+  {
+   "nazwa": "The Cowl",
+   "x": 0.6538,
+   "y": 0.6247,
+   "typ": "las",
+   "pozycja_zrodlo": "kanon: łęgowy las w sercu Ghirapuru, opiekun Surash, kryjówki uciekinierów i pająki (mtg.wiki: Ghirapur); punkt etykiety L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Biom miasta; nie należy mylić z Peemą."
+  },
+  {
+   "nazwa": "Foundry of the Consuls",
+   "x": 0.6705,
+   "y": 0.6335,
+   "typ": "ruina",
+   "pozycja_zrodlo": "kanon: fabryka automatów Konsulatu spalona przez Chandrę (mtg.wiki: Ghirapur); punkt POI L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Na mapie epoki Konsulatu oznaczona jako spalona fabryka/ruina."
+  },
+  {
+   "nazwa": "Bunarat",
+   "x": 0.6441,
+   "y": 0.6447,
+   "typ": "ruina",
+   "pozycja_zrodlo": "kanon: wieś spalona przez kapitana Barala (mtg.wiki: Avishkar/Ghirapur); punkt POI L2 poza murami = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Miejsce poza zwartym centrum; pozycja umowna."
+  },
+  {
+   "nazwa": "Shaila's Claim",
+   "x": 0.643,
+   "y": 0.6427,
+   "typ": "kraina",
+   "pozycja_zrodlo": "kanon: zielony skraj Ghirapuru zachowany dzięki pasterce odmawiającej oddania łąk Konsulatowi (mtg.wiki: Ghirapur); punkt etykiety L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Pastwisko na krawędzi miasta; pozycja umowna."
+  },
+  {
+   "nazwa": "Ovalchase",
+   "x": 0.6891,
+   "y": 0.6266,
+   "typ": "arena",
+   "pozycja_zrodlo": "kanon: dzielnica/tor wyścigów pojazdów podczas Inventors' Fair (mtg.wiki: Ghirapur); punkt etykiety L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Tor wyścigowy poza zwartym śródmieściem L2."
+  },
+  {
+   "nazwa": "First Bridge",
+   "x": 0.6634,
+   "y": 0.6315,
+   "typ": "most",
+   "pozycja_zrodlo": "kanon: najpołudniejszy z Jedenastu Mostów, łuk na skrzydłach dwóch mechanicznych ptaków (mtg.wiki: Ghirapur); punkt POI L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Most-targowisko; dokładne położenie względem pozostałych mostów jest umowne."
+  },
+  {
+   "nazwa": "Ninth Bridge",
+   "x": 0.6582,
+   "y": 0.6218,
+   "typ": "most",
+   "pozycja_zrodlo": "kanon: most słynny z automaton builders and repairers, także nielegalnych walk automatów (mtg.wiki: Ghirapur); punkt POI L2 = wybór rekonstrukcji (ADR 0047)",
+   "notka": "Most-targowisko; dokładne położenie względem pozostałych mostów jest umowne."
   }
  ],
  "pinezki": [
@@ -96,6 +272,13 @@
    "pewnosc": "region",
    "uzasadnienie": "Przekaz sceny wskazuje warsztaty rzemieślnicze w metropolii Ghirapur, gdzie mistrzowie konstruują thoptery z kół zębatych i eteru. Pinezka stoi w dzielnicy rzemieślników i kowali Embraal na mapie deep (L2: ~925,480 przeliczone do układu planu przez bbox miasta).",
    "notka": "Epoka Konsulatu (Magic Origins / Kaladesh) — mistrzowie rzemiosła tworzą filigranowe thoptery w dążeniu do konsularnej aprobaty."
+  },
+  {
+   "karta": "12aer-merchant-s-dockhand",
+   "x": 0.6613,
+   "y": 0.6386,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła właściciela wskazuje ruchliwe nabrzeże dzielnicy Bomat na Kaladeshu: sortowanie skrzyń, otwarty kontener, kupców, aetherowe dźwigi i portowe miasto. Źródła opisują Bomat jako port Ghirapuru z dokami, stoczniami, kanałami, magazynami oraz konsularnym nadzorem nad handlem, ale nie podają konkretnego pirsu, magazynu ani kontenera. Pinezka korzysta z kotwicy Bomat na mapie L2 Ghirapuru (wybór rekonstrukcji ADR 0047) i oznacza dzielnicę, nie dokładny pomost."
   }
  ],
  "scena": "scena.json",
@@ -106,7 +289,8 @@
   "DODANE 2026-09-09 (PR-28): mapa T4 epoki KLD/AER. Umowne: kształty i odległości, pozycje mostów 2–11 (w tym Ninth Bridge), Ovalchase i Shaila's Claim poza murami, pozycje wież eterowych i wsi Vahd, pozycja Bunarat (za murami na SW — kanon nie podaje położenia), pozycja Aetherflux Reservoir (płyta L2, nad Kujarem — kanon: „zawieszony nad panoramą”, bez współrzędnych), linia brzegu. Kolejne karty Kaladeshu (KLD/AER i późniejsze ery przed przemianowaniem w Avishkar) pinują na tej mapie; era Avishkar/Omenpathów (DFT) = osobna mapa na żądanie karty.",
   "PRZESKALOWANE 2026-09-09 (uwaga właściciela: miasto ~0,1% planu): arkusz 16000×11000 (~63× powierzchni); Ghirapur geometrycznie bez zmian, samo przesunięcie +(9210,6000) przy tych samych ziarnach PRNG; widok domyślny zoom 18 na zlewisko; K_MAX silnika 14→32. Oddalenie: miasto kropką z nazwą; Peema/Vahd widoczne przy ficie (duze), Lathnu/Devra/rzeki fs 17.",
   "PRZEBUDOWA LOD 2026-09-09 (druga iteracja uwag właściciela): plan jest lekki (1,1 MB, Ghirapur tylko plamą z nazwą), detal miasta w nakładce L2 (bbox prog 6, wzorzec Dominarii); miasto reprojektowane — kaflikowanie dzielnic (zero nachodzeń), mury poza obrysem, las łęgowy osobnym kaflikiem, Aleja Olbrzymów z powrotem u bram. Stary generator jednoplikowy usunięty.",
-  "DWIE OSOBNE MAPY 2026-09-10 (PR-30, korekta właściciela — ADR 0047): plan przeskalowany do skali planu 2000×1400 (jak Zendikar), by góry i lasy były duże i proporcjonalne, a Ghirapur był POI-kropką z nazwą, nie płytą. Miasto Ghirapur to teraz OSOBNA mapa we własnej skali (płyta 1400×740 na bboksie ~0,1 szerokości planu → ~7× powiększenie), podgrywana TWARDĄ PODMIANĄ deep-zoom (crossfade) od progu 6. Zniesiony wymóg sztywnego szwu wodnego (ADR 0046 §5 → ADR 0047): miasto to inna mapa, rzeki planu nie muszą trafiać w rzeki miasta na krawędzi. Pinezka 610M19 przeliczona do nowej skali (Greenwheel). Widok domyślny = cały plan (x0.5 y0.5 zoom1). Płyta miasta geometrycznie bez zmian (owner: art miasta dobry)."
+  "DWIE OSOBNE MAPY 2026-09-10 (PR-30, korekta właściciela — ADR 0047): plan przeskalowany do skali planu 2000×1400 (jak Zendikar), by góry i lasy były duże i proporcjonalne, a Ghirapur był POI-kropką z nazwą, nie płytą. Miasto Ghirapur to teraz OSOBNA mapa we własnej skali (płyta 1400×740 na bboksie ~0,1 szerokości planu → ~7× powiększenie), podgrywana TWARDĄ PODMIANĄ deep-zoom (crossfade) od progu 6. Zniesiony wymóg sztywnego szwu wodnego (ADR 0046 §5 → ADR 0047): miasto to inna mapa, rzeki planu nie muszą trafiać w rzeki miasta na krawędzi. Pinezka 610M19 przeliczona do nowej skali (Greenwheel). Widok domyślny = cały plan (x0.5 y0.5 zoom1). Płyta miasta geometrycznie bez zmian (owner: art miasta dobry).",
+  "PĘTLA KALADESH 2026-09-12 (karty + L2): promowano etykiety osobnej mapy Ghirapuru do kotwic map.json dla dzielnic i POI związanych z kartami 610M19/596ORI (Greenwheel, Greenwheel Domes, The Zoo, Embraal) oraz kluczowej infrastruktury miasta (Aetherflux Reservoir, Aether Hub, Eleven Bridges, Dukhara Canal, Aradara Station, Bastion, Akhara, Bomat, Freejam, Kujar, Weldfast, The Cowl, Foundry of the Consuls, Bunarat, Shaila's Claim, Ovalchase, First/Ninth Bridge). Współrzędne są projekcją z osobnej mapy L2 do złotego układu planu; kanon podaje funkcję/przynależność, nie dokładne adresy."
  ],
  "warianty": [
   {

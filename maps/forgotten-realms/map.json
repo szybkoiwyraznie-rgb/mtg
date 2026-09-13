@@ -3,7 +3,7 @@
  "kotwice": [
   {
    "nazwa": "Wybrzeże Mieczy",
-   "notka": "serce Faerûn: Luskan, Neverwinter, Waterdeep, Baldur's Gate; scena 3CLB „gdzieś na Wybrzeżu Mieczy”",
+   "notka": "serce Faerûn: Luskan, Neverwinter, Waterdeep, Baldur's Gate; sceny 3CLB i 234CLB osadzone regionalnie na Wybrzeżu Mieczy",
    "pozycja_zrodlo": "kanon: Forgotten Realms Campaign Setting 3e (Sword Coast) — pas nadmorskich królestw od Luskanu (0.085, 0.097) po Baldur's Gate (0.217, 0.362); punkt środkowy pasa, odczyt siatki 5% na rastrze 3E (l0.jpg 1920×1284)",
    "typ": "region",
    "uklad": "złoty 3E — odczyt z siatki 5% na rastrze",
@@ -104,6 +104,14 @@
    "y": 0.176,
    "pewnosc": "region",
    "uzasadnienie": "Fabuła właściciela (3CLB): mroczny gabinet strategiczny „gdzieś na Wybrzeżu Mieczy” — scena wskazuje region, nie miasto (żadne miasto nie jest nazwane; spaloną mapę taktyczną i figurki nie da się przyporządkować do kanonicznego konfliktu bez wymyślania). Pinezka w środku pasa Wybrzeża Mieczy między Neverwinter (0.104, 0.141) a Waterdeep (0.145, 0.211) wg odczytu siatki 5% na rastrze 3E; pewność region (MA4: kraina, nie punkt)."
+  },
+  {
+   "karta": "234clb-gray-slaad",
+   "x": 0.13,
+   "y": 0.27,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła właściciela (234CLB): szary slaad stoi w ponurym, mglistym mokradle na skraju przeklętego lasu, wśród martwych drzew i resztek kamiennej drogi. Scena mówi o Wybrzeżu Mieczy oraz slaadach z Płaszczyzn Zewnętrznych pojawiających się tam, gdzie krzyżują się czary, ale nie nazywa miasta, ruin, konkretnego mokradła ani konkretnego lasu. Pinezka korzysta z regionalnej kotwicy Wybrzeża Mieczy; pewność region (MA4: pas krainy, nie punkt przy drodze).",
+   "notka": "Epoka Forgotten Realms (CLB) — bierna zaraza chaosu wokół szarego slaada na mokrym skraju dziczy Wybrzeża Mieczy."
   },
   {
    "karta": "539clb-silvanus-s-invoker",

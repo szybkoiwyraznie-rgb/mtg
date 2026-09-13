@@ -3,8 +3,8 @@
  "kotwice": [
   {
    "nazwa": "The Badlands",
-   "notka": "Ziemie Jałowe na południe od Starego Świata — kanoniczna ojcowizna zielonoskórych (Orków i Goblinów); u wschodnich podnóży Worlds Edge Mountains, na płd. od Border Princes. Kotwica pinezki 39MM2.",
-   "pozycja_zrodlo": "kanon: https://whfb.lexicanum.com/wiki/Orc (Badlands jako homeland orków) + duża etykieta „THE BADLANDS\" i ikony orków na rastrze; odczyt z mastera px (3700, 7400), 2026-09-10",
+   "notka": "Ziemie Jałowe na południe od Starego Świata — kanoniczna ojcowizna zielonoskórych (Orków i Goblinów); u wschodnich podnóży Worlds Edge Mountains, na płd. od Border Princes. Kotwica pinezki 39MM2 i deep-linku hasła zielonoskorzy.",
+   "pozycja_zrodlo": "kanon: https://whfb.lexicanum.com/wiki/Orc (Badlands jako homeland orków) + duża etykieta „THE BADLANDS” i ikony orków na rastrze; odczyt z mastera px (3700, 7400), 2026-09-10",
    "px_t1": [
     3700,
     7400
@@ -16,8 +16,8 @@
   },
   {
    "nazwa": "The Great Forest",
-   "notka": "Wielki Las w sercu Imperium (Talabecland / Ostermark / Osterlund) — pierwotna, mroczna puszcza będąca matecznikiem stad Dzieci Chaosu i minotaurów pod znakiem Głazu Stada. Kotwica pinezki 83MM2.",
-   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/The_Great_Forest + ikona stada minotaurów/zwierzoludzi oraz etykieta „THE GREAT FOREST\" na rastrze; odczyt z mastera px (3520, 4940), 2026-09-11",
+   "notka": "Wielki Las w sercu Imperium (Talabecland / Ostermark / Osterlund) — pierwotna, mroczna puszcza będąca matecznikiem stad Dzieci Chaosu i minotaurów pod znakiem Głazu Stada. Kotwica pinezki 83MM2 i deep-linku hasła imperium.",
+   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Great_Forest + ikona stada minotaurów/zwierzoludzi oraz etykieta „THE GREAT FOREST” na rastrze; odczyt z mastera px (3520, 4940), 2026-09-11",
    "px_t1": [
     3520,
     4940
@@ -30,7 +30,7 @@
   {
    "nazwa": "Drakwald Forest",
    "notka": "Las Drakwald w Middenlandzie i Nordlandzie — owiana ponurą sławą puszcza zwierzoludzi i potworów Chaosu",
-   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Drakwald_Forest + etykieta „DRAKWALD FOREST\" na rastrze; odczyt z mastera px (2680, 4400), 2026-09-11",
+   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Drakwald_Forest + etykieta „DRAKWALD FOREST” na rastrze; odczyt z mastera px (2680, 4400), 2026-09-11",
    "px_t1": [
     2680,
     4400
@@ -41,9 +41,22 @@
    "y": 0.3454
   },
   {
+   "nazwa": "Sylvania",
+   "notka": "mroczna, mglista kraina na wschodnim skraju Imperium, formalnie powiązana ze Stirlandem, lecz słynąca jako domena von Carsteinów i Vampire Counts. Kotwica regionalnej pinezki 543ISD.",
+   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Sylvania i https://whfb.lexicanum.com/wiki/Sylvania + etykieta „SYLVANIA” na rastrze między Stirlandem/Ostermarkiem a Worlds Edge Mountains; odczyt z podglądu L0 przeliczony do mastera px (4228, 5363), 2026-09-12",
+   "px_t1": [
+    4228,
+    5363
+   ],
+   "typ": "region",
+   "uklad": "złoty T1 — odczyt z podglądu L0 przeliczony do mastera",
+   "x": 0.487,
+   "y": 0.421
+  },
+  {
    "nazwa": "Worlds Edge Mountains",
-   "notka": "wielkie pasmo na wschodniej granicy Starego Świata; wschodnie stoki przejęte przez zielonoskórych w Wojnach Goblinów",
-   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Worlds_Edge_Mountains + etykieta „WORLDS EDGE MOUNTAINS\" na rastrze (pasmo wzdłuż wschodniej krawędzi); odczyt z podglądu L0",
+   "notka": "wielkie pasmo na wschodniej granicy Starego Świata; wschodnie stoki przejęte przez zielonoskórych w Wojnach Goblinów. Kotwica deep-linku hasła gory-kranca-swiata i regionalna skala relacji z 39MM2/312M13/543ISD.",
+   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Worlds_Edge_Mountains oraz https://whfb.lexicanum.com/wiki/Worlds_Edge_Mountains + etykieta „WORLDS EDGE MOUNTAINS” na rastrze (pasmo wzdłuż wschodniej krawędzi); odczyt z podglądu L0",
    "typ": "pasmo",
    "uklad": "złoty T1 — odczyt z podglądu L0",
    "x": 0.78,
@@ -52,7 +65,7 @@
   {
    "nazwa": "Karak Eight Peaks (Karak Osiem Szczytów)",
    "notka": "zrujnowana krasnoludzka twierdza w południowych Górach Krańca Świata, matecznik Nocnych Goblinów z plemienia Krzywego Księżyca (Crooked Moon) pod wodzą Skarsnika. Kotwica pinezki 312M13.",
-   "pozycja_zrodlo": "kanon: https://whfb.lexicanum.com/wiki/Karak_Eight_Peaks + etykieta „KARAK EIGHT PEAKS\" w pasmie Worlds Edge Mountains; odczyt z podglądu L0",
+   "pozycja_zrodlo": "kanon: https://whfb.lexicanum.com/wiki/Karak_Eight_Peaks + etykieta „KARAK EIGHT PEAKS” w pasmie Worlds Edge Mountains; odczyt z podglądu L0",
    "typ": "ruina",
    "uklad": "złoty T1 — odczyt z podglądu L0",
    "x": 0.72,
@@ -61,7 +74,7 @@
   {
    "nazwa": "The Border Princes",
    "notka": "luźne włości ludzi między Imperium/Tileą a Badlands — bufor na północ od ojcowizny orków",
-   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Border_Princes + etykieta „THE BORDER PRINCES\" na rastrze (na płn. od Badlands); odczyt z podglądu L0",
+   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Border_Princes + etykieta „THE BORDER PRINCES” na rastrze (na płn. od Badlands); odczyt z podglądu L0",
    "typ": "kraina",
    "uklad": "złoty T1 — odczyt z podglądu L0",
    "x": 0.44,
@@ -78,8 +91,9 @@
   }
  ],
  "otwarte_na_kolejne_przejscia": [
-  "Kalibracja kotwic głównych krain ludzi (Reikland/Altdorf, Bretonnia, Kislev) do pierwszej karty Imperium/Bretonnii — na razie osadzona jest tylko południowa część świata (Badlands + otoczenie) potrzebna karcie 39MM2.",
-  "Kotwice „odczyt z podglądu L0\" (Worlds Edge Mountains, Border Princes, Nehekhara) do weryfikacji na masterze przy pierwszej karcie z regionu (precedens Dominaria)."
+  "Kalibracja kotwic głównych krain ludzi (Reikland/Altdorf, Bretonnia, Kislev) do pierwszej karty w danej krainie; po 2026-09-13 Imperium ma hasło i deep-link przez Wielki Las, ale nie udaje jednej stolicy całej federacji.",
+  "Kotwice „odczyt z podglądu L0” (Worlds Edge Mountains, Sylvania, Border Princes, Nehekhara) do weryfikacji na masterze przy pierwszej karcie wymagającej większej precyzji (precedens Dominaria).",
+  "Pętla jakości Warhammer 2026-09-13 domknęła hasła imperium, zielonoskorzy i gory-kranca-swiata; poniżej progu zostają Sylwania, von Carsteinowie, Vampire Counts i łowcy czarownic."
  ],
  "pinezki": [
   {
@@ -103,6 +117,14 @@
    "y": 0.58,
    "pewnosc": "region",
    "uzasadnienie": "Fabuła właściciela: czerwono-brązowa skalna półka nad wąwozem w domenie plemienia Krzywego Księżyca (Crooked Moon) — wojenny trefniś w asymetrycznym stroju z kości odwraca uwagę wrogów groteskowym tańcem na krawędzi urwiska. Kanonicznym matecznikiem plemienia są Góry Krańca Świata wokół Karak Osiem Szczytów (Karak Eight Peaks). Pinezka stoi w rejonie południowych Worlds Edge Mountains z pewnością region."
+  },
+  {
+   "karta": "543isd-wooden-stake",
+   "x": 0.487,
+   "y": 0.421,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła właściciela: mgliste cmentarze mrocznej Sylwanii, omszały grobowiec i łowcy czarownic Imperium z dębowym kołkiem przeciw wampirowi rodu von Carstein. Scena nie podaje miasta, wsi, zamku ani konkretnej nekropolii, dlatego pinezka stoi na regionalnej kotwicy Sylvania między Stirlandem/Ostermarkiem a zachodnimi stokami Worlds Edge Mountains.",
+   "notka": "Epoka Starego Świata — łowcy czarownic Imperium tropią wampirzą arystokrację w krainie von Carsteinów, gdzie prosty kołek rozstrzyga zwarcie pod grobowcem."
   }
  ],
  "plan": "warhammer-fantasy",

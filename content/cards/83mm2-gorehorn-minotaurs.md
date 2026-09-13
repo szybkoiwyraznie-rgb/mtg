@@ -95,7 +95,7 @@ Zapis transponuje motyw nacierających minotaurów w realia
 **Wielkiego Lasu**:
 
 - **Zwierzoludzie Chaosu** — bycze monstra uosabiają bestialskie Dzieci
-  Chaosu (*Bullgors*), stanowiące postrach traktów Imperium.
+  Chaosu (*Bullgors*), stanowiące postrach traktów [[imperium|Imperium]].
 - **Mroczny las iglasty** — sceneria pierwotnych borów Starego Świata,
   w których kryją się stada zwierzoludzi.
 - **Topór o wyszczerbionych krawędziach** — typowy, bezlitosny oręż
@@ -109,7 +109,7 @@ mieszkańców Starego Świata w cieniu nieprzebytych puszcz.
 ## Na Mapie
 
 Pinezka stoi na obszarze **The Great Forest** (`x: 0.4054`, `y: 0.3878`)
-w centralnym Imperium — pewność **region**. Wielki Las, obok lasu
+w centralnym [[imperium|Imperium]] — pewność **region**. Wielki Las, obok lasu
 **Drakwald** (`x: 0.3087`, `y: 0.3454`), to główny matecznik stad
 zwierzoludzi i minotaurów w Starym Świecie.
 

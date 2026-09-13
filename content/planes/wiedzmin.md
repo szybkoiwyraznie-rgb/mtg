@@ -18,11 +18,21 @@ Twiddle` przenosi błękitną sztukę manipulacji stanem przedmiotów do
 zacisza akademii czarodziejek w **Aretuzie** na wyspie Thanedd, gdzie
 precyzyjny ruch astrolabium i gaszenie płomienia świecy decydują o
 powodzeniu wielkich zaklęć. `555DSK Bedhead Beastie` prowadzi w przeciwną
-stronę Kontynentu: do opuszczonej wskutek wojny chaty na bagnach **Velen**,
-gdzie ludowa opowieść o beboku spod łóżka staje się cielesnym zagrożeniem.
-`540DST Chittering Rats` schodzi pod [[novigrad|**Novigrad**]]: tam stado
-pseudoszczurów odcina drogę poszukiwaczowi skarbów i zmusza go, by zachował
-mapy kosztem wstrzymania dalszej wyprawy.
+stronę Kontynentu: do opuszczonej wskutek wojny chaty na bagnach
+[[velen|**Velen**]], gdzie ludowa opowieść o beboku spod łóżka staje się
+cielesnym zagrożeniem. `594EMN Ironclad Slayer` zostaje na pobojowiskach
+Ziemi Niczyjej: ciężkozbrojny najemnik brodzi w leśnym błocie, przeszukuje
+zgliszcza i porzucone wozy taborowe, po czym zastępuje wyszczerbiony oręż
+stalowym mieczem wyciągniętym z mazi. `279M21 Village Rites` zostaje w tym
+samym regionie, ale schodzi do chaty sołtysa w Downwarren/Sztygarach:
+księga rodowa, woda z Krzywuchowych Moczarów, biała koza i sąsiedzi w
+lnianych kapturach tworzą rachunek długu wobec [[panie-lasu|Pań Lasu]].
+`599MID Candlegrove Witch` zostaje przy Łysej Górze w Velen: świecowy gaj z
+brzozowych gałęzi, guślarka w jelenim porożu i krąg wsi zmieniają coven w
+ziołowo-ogienną obronę przed nocą. `540DST Chittering Rats` schodzi pod
+[[novigrad|**Novigrad**]]: tam stado pseudoszczurów odcina drogę
+poszukiwaczowi skarbów i zmusza go, by zachował mapy kosztem wstrzymania
+dalszej wyprawy.
 
 ## Setting w pigułce
 
@@ -46,7 +56,7 @@ Mocą czerpaną z czterech żywiołów (Pierwotnych Sił Chaosu). Wymaga
 i rygorystycznego wykształcenia. Głównym ośrodkiem kształcenia adeptek
 magii jest **Aretuza** — elitarna akademia żeńska założona przez Klarę
 Larissę de Winter na wyspie **Thanedd**, nieopodal portowego miasta
-**Gors Velen** w Temerii. 
+**Gors Velen** w Temerii.
 
 Wyspa Thanedd to potężny, skalny ziggurat wyrastający z Morza Wielkiego
 (Zatoki Praksedy), połączony ze stałym lądem ufortyfikowaną groblą. Na
@@ -59,15 +69,22 @@ przestawianie trybów astrolabiów, kalibrację sfer niebieskich i drobne
 ryty manipulacji energią, które zmieniają czas rzucenia zaklęcia
 i przesądzają o wyniku wojen królów.
 
-## Velen — wojna, mokradła i potwory
+## Velen — wojna, mokradła i wiejskie rachunki
 
-**Velen**, północna prowincja Temerii, w czasie III Wojny Północnej staje
-się Ziemią Niczyją między siłami Redanii i Nilfgaardu. Podmokła kraina jest
-pełna pobojowisk, porzuconych osad, uchodźców, dezerterów i potworów, które
-przejmują miejsca opuszczone przez ludzi. Redańskie posterunki, patrole i
-transporty działają zwłaszcza na północnym pograniczu oraz przy przeprawach
-przez Pontar, ale wojskowa obecność nie przywraca bezpieczeństwa bagnom poza
-głównymi traktami.
+[[velen|**Velen**]], północno-zachodni region Temerii, w czasie III Wojny
+Północnej staje się Ziemią Niczyją między siłami Redanii i Nilfgaardu.
+Podmokła kraina jest pełna pobojowisk, porzuconych osad, uchodźców,
+dezerterów i potworów, które przejmują miejsca opuszczone przez ludzi.
+Redańskie posterunki, patrole i transporty działają zwłaszcza na północnym
+pograniczu oraz przy przeprawach przez Pontar, ale wojskowa obecność nie
+przywraca bezpieczeństwa bagnom poza głównymi traktami.
+
+Veleńskie wsie żyją między biedą, wojną i lokalnymi kultami. Źródła łączą
+ludność krainy z zabobonem, utratą domów i zależnością od [[panie-lasu|Pań Lasu]], czyli
+Wiedźm z Krzywuchowych Moczarów. Sztygary/Downwarren leżą w południowym
+Velen przy bagnach, a ich mieszkańcy w angielskim opisie wprost oddają
+cześć Ladies of the Wood. To dlatego wiejska izba, szeptucha, ofiara i
+woda z moczarów są dla planu równie ważne jak akademicka komnata Aretuzy.
 
 W scenie [[555dsk-bedhead-beastie|**Bedhead Beastie**]] kolosalna, futrzasta
 i rogata bestia urządza leże w ruinie chaty. Szczątki łóżka oraz siennika
@@ -77,6 +94,31 @@ instrukcję, według której potwory chowają się pod posłaniem. Wiejska nazwa
 mokradłowe siedlisko pozwalają porównać je z biesem, lecz brak rozpoznania
 wiedźmińskiego i charakterystycznego trzeciego oka nie pozwala tych stworzeń
 utożsamić.
+
+W scenie [[594emn-ironclad-slayer|**Ironclad Slayer**]] wojna pokazuje mniej
+baśniową, a bardziej zawodową twarz. Na spowitych mgłą pobojowiskach Ziemi
+Niczyjej ciężkozbrojny najemnik przeszukuje zgliszcza i wozy taborowe,
+wyciąga z błota zachowany stalowy miecz i zastępuje nim wyszczerbiony oręż.
+Mechanika odzyskania Aury albo Equipmentu zostaje tu zawężona przez Fabułę do
+najmocniejszego obrazu Equipmentu: broni, która przeżyła poprzedniego
+właściciela i od razu może wrócić do ręki.
+
+W scenie [[279m21-village-rites|**Village Rites**]] wieś nie ucieka przed
+bagienną logiką, tylko ją wykonuje. Starsza szeptucha otwiera księgę rodową
+na dębowym pniu, gospodarz z Czarnoboru trzyma wodę z Krzywuchowych
+Moczarów, parobek klęczy przy białej kozie z czerwoną wstążką, a sąsiedzi
+w lnianych kapturach patrzą, jak dług przechodzi w zapłatę. Transpozycja
+zostawia parobka przy życiu, bo Fabuła wskazuje jako jawną ofiarę kozę;
+mechaniczny koszt wymaga jednej ofiary i dwóch nowych odczytów księgi.
+
+W scenie [[599mid-candlegrove-witch|**Candlegrove Witch**]] ten sam region
+pokazuje drugie, jaśniejsze oblicze wiejskiej magii. Łysa Góra jest w
+źródłach wzgórzem południowo-wschodniego Velen, związanym ze Świętym Dębem,
+Świętem Darów, sabatem i podaniami o czarownicach. Dlatego guślarka w
+lnianej koszuli i wieńcu z jeleniego poroża może unosić się nad kręgiem
+brzozowych gałęzi i świec, ale nie staje się przez to jedną z Pań Lasu:
+wiejski krąg jednoczy różne dary ludzi, by ogniem i ziołami odeprzeć nocne
+upiory oraz zbiegłe potwory.
 
 ## Novigrad — Wolne Miasto i jego podziemia
 
@@ -120,6 +162,21 @@ Pinezki na mapie (ADR 0043: tylko karty):
   Ziemia Niczyja**, pewność `region` — opowieść wskazuje bagna Velen, ale
   nie nazywa wsi, chaty, mokradła ani redańskiego posterunku. Znacznik
   korzysta z regionalnej kotwicy między Wrońcami a Gors Velen.
+- **[[594emn-ironclad-slayer|Ironclad Slayer]]** (594EMN); **pobojowiska
+  Ziemi Niczyjej, Velen**, pewność `region` — opowieść wskazuje wojenne
+  błoto, zgliszcza i porzucone wozy taborowe, ale nie nazywa jednego pola,
+  wsi ani traktu; znacznik dziedziczy regionalną kotwicę Velen
+  (`0.4113/0.2807`).
+- **[[279m21-village-rites|Village Rites]]** (279M21); **Downwarren /
+  Sztygary, Krzywuchowe Moczary, Velen**, pewność `region` — opowieść
+  wskazuje wieś i mokradła, lecz raster T1 nie rozrysowuje lokalnego planu
+  chaty sołtysa, więc znacznik dziedziczy tę samą regionalną kotwicę Velen
+  (`0.4113/0.2807`).
+- **[[599mid-candlegrove-witch|Candlegrove Witch]]** (599MID); **lasy wokół
+  Łysej Góry, Velen**, pewność `region` — źródła lokują Łysą Górę w
+  południowo-wschodnim Velen i łączą ją z sabatem, ale raster T1 nie ma
+  lokalnego planu góry ani leśnej polany; znacznik dziedziczy regionalną
+  kotwicę Velen (`0.4113/0.2807`).
 - **[[540dst-chittering-rats|Chittering Rats]]** (540DST); **Novigrad**,
   pewność `dokladna` w skali mapy Kontynentu — ponownie zweryfikowana
   miejska kotwica `0.4045/0.2469` wskazuje ikonę Novigradu, lecz Fabuła nie
@@ -138,10 +195,36 @@ Pinezki na mapie (ADR 0043: tylko karty):
 - Witcher Wiki, *Thanedd Island* — topografia wyspy, Tor Lara, grobla do
   Gors Velen:
   https://witcher.fandom.com/wiki/Thanedd_Island
-- Wiedźmin Wiki, *Velen (ziemia niczyja)* — podmokła północna prowincja
-  Temerii, zniszczenia III Wojny Północnej oraz położenie między Redanią i
-  Nilfgaardem:
+- Wiedźmin Wiki, *Velen (ziemia niczyja)* — podmokły północno-zachodni
+  region Temerii, zniszczenia III Wojny Północnej, położenie między Redanią
+  i Nilfgaardem, wiejska ludność oraz lista wsi obejmująca Konary i
+  Sztygary:
   https://wiedzmin.fandom.com/wiki/Velen_(ziemia_niczyja)
+- Wiedźmin Wiki, *Bitwa na błoniach Velen* — największa bitwa III Wojny
+  Północnej na terenie Velen, starcie Redanii z wojskami Nilfgaardu,
+  ogromne straty i brak rozstrzygnięcia:
+  https://wiedzmin.fandom.com/wiki/Bitwa_na_b%C5%82oniach_Velen
+- Wiedźmin Wiki, *Sztygary* oraz Witcher Wiki, *Downwarren* — wieś w
+  południowym Velen przy bagnach, zły duch/koszmary, kult Ladies of the
+  Wood oraz powiązania z Krzywuchowymi Moczarami:
+  https://wiedzmin.fandom.com/wiki/Sztygary
+  https://witcher.fandom.com/wiki/Downwarren
+- Wiedźmin Wiki, *Wiedźmy z Krzywuchowych Moczarów* — Panie Lasu jako
+  władczynie Velen, prośby wieśniaków, oczekiwane ofiary, sny, miejscowe
+  czarownice jako pośredniczki oraz wiosenne święto na Łysej Górze:
+  https://wiedzmin.fandom.com/wiki/Wied%C5%BAmy_z_Krzywuchowych_Moczar%C3%B3w
+- Wiedźmin Wiki, *Łysa Góra* oraz Witcher Wiki, *Bald Mountain (location)* —
+  wzgórze w południowo-wschodnim/południowym Velen, Święty Dąb, jaskinia,
+  Święto Darów, sabat oraz lokalne podania o czarownicach i mglakach:
+  https://wiedzmin.fandom.com/wiki/%C5%81ysa_G%C3%B3ra
+  https://witcher.fandom.com/wiki/Bald_Mountain_(location)
+- Wiedźmin Wiki, *Upiór* — upiory jako potwory nawiedzające miejsca,
+  pogrążające je we mgle i ciemności:
+  https://wiedzmin.fandom.com/wiki/Upi%C3%B3r
+- Wiedźmin Wiki, *Konary* oraz Witcher Wiki, *Blackbough* — para nazw dla
+  Blackbough/Konarów i kontekst guślarza z okolicy:
+  https://wiedzmin.fandom.com/wiki/Konary
+  https://witcher.fandom.com/wiki/Blackbough
 - Witcher Wiki, *Fiend* — bies jako ogromny, rogaty relikt bagien i moczarów;
   trzecie oko jako granica ostrożnego porównania:
   https://witcher.fandom.com/wiki/Fiend

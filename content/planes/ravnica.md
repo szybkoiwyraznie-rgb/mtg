@@ -14,8 +14,10 @@ to ciągnie się ponad horyzont w każdym kierunku. Nad tą niekończącą się
 agorą rząd sprawuje **Pakt Gildii** (*Guildpact*) — pradawny, magiczny
 kontrakt dziesięciu gildii, który od dziesięciu tysięcy lat pilnuje,
 by światowo-ogromna metropolia nie rozpadła się w wojnę o wszystko.
-Kolekcję osadza tu karta **Withstand** (Guildpact, 2006), związana
-z **Legionem Boros** — czerwono-białym wojskiem-konstablariem planu.
+Kolekcję osadzają tu [[137gpt-withstand|**Withstand**]] (Guildpact, 2006)
+oraz [[516rna-tenth-district-veteran|**Tenth District Veteran**]]
+(Ravnica Allegiance, 2019), związane z [[boros-legion|Legionem Boros]]
+— czerwono-białym wojskiem-konstablariem planu.
 
 ## Geografia
 
@@ -26,8 +28,8 @@ klany **Gruul** (znany punkt zgromadzeń: **Skarrg** wokół wiecznego
 ognia, technicznie już poza murami Miasta Ravnicy).
 
 Miasto zarządza się dzielnicami; najważniejszą, najgęstszą w wydarzenia
-jest **Dziesiąty Dystrykt** (the Tenth District) — metropolia
-w metropolii, centrum handlu, prawa i polityki gildii. Dzieli się na
+jest [[dziesiaty-dystrykt|**Dziesiąty Dystrykt**]] (the Tenth District) —
+metropolia w metropolii, centrum handlu, prawa i polityki gildii. Dzieli się na
 sześć **precyktów**, wielkich jak samodzielne miasta, graniczących
 wzdłuż wielkich arterii:
 
@@ -54,15 +56,18 @@ wzdłuż wielkich arterii:
   oplatane mchem; na południu graniczne place **Plaza East**
   i białokamienna **Whitestone**.
 - **Precinct Four** (środkowo-północny) — poparzone ulice poligonu:
-  dom **Legionu Boros**, którego twierdza-koszary-świątynia **Sunhome**
-  kotwiczy obronę północy; między nią a południem, gdzie nad panoramą
-  góruje iglica **Nivix** (Legowisko Ognistego Umysłu Izzet), leży
-  umocnione blokowisko **The Bulwark**. Wzdłuż arterii handlowej
-  **Tin Street** rozpościera się **Tin Street Market** — jeden
-  z najruchliwszych targów planu, względnie bezpieczny pod patrolem
-  Boros. W czwórkach odbywają się rekrutacje (**Horizon Military
-  Academy**), pracują więzienia (**Sawtooth Prison**) i jedyna odlewnia
-  **Mizzium Foundry**. Ponad północną granicą leży **Rubblebelt**
+  dom [[boros-legion|**Legionu Boros**]], którego twierdza-koszary-
+  świątynia **Sunhome** kotwiczy obronę północy; między nią a południem,
+  gdzie nad panoramą góruje iglica **Nivix** (Legowisko Ognistego Umysłu
+  Izzet), leży umocnione blokowisko **The Bulwark**. Wzdłuż arterii
+  handlowej **Tin Street** rozpościera się [[tin-street-market|**Tin Street
+  Market**]] — jeden z najruchliwszych targów planu, względnie bezpieczny
+  pod patrolem Boros. To naturalny rejon dla weteranki z barykady w
+  [[516rna-tenth-district-veteran|Tenth District Veteran]]: placowy handel,
+  gruzy Czwórki i borosijska linia obrony spotykają się tu bez potrzeby
+  wskazywania jednego skrzyżowania. W czwórkach odbywają się rekrutacje
+  (**Horizon Military Academy**), pracują więzienia (**Sawtooth Prison**)
+  i jedyna odlewnia **Mizzium Foundry**. Ponad północną granicą leży **Rubblebelt**
   (dawna czwórka Gruul): spalone dzikowisko **Red Wastes** ze
   zgromadziskiem **Skarrg** i wisząca na łańcuchach **Millennial
   Platform** (platforma-widowisko).
@@ -137,14 +142,19 @@ w erze Paktu nocami z Medori Park chodzą procesje nieumarłych.
   swój teren, biurokrację, magię i własny język ulicy.
 - Meta: **Pakt Gildii** (magiczny kontrakt prawny) — blokuje wojnę
   otwartą, kierując konflikt w intrygę, podatek i pojedynek prawny.
-- Era Kolekcji: pierwotny blok Ravnica (Ravnica: City of Guilds,
-  Guildpact, Dissension; 2005–2006) — schyłek dziesięciotysięcznej ery
-  Paktu, tuż przed jego śmiercią (Decamillennium, Dissension).
+- Era Kolekcji: rozpięta między pierwotnym blokiem Ravnica (Guildpact;
+  schyłek dziesięciotysięcznej ery Paktu) a epoką Ravnica Allegiance,
+  gdy Legion Boros pod Aurelią rekrutuje i broni ulic przed następnym
+  wielkim kryzysem miasta.
 - Ton: utopia procedury nad przepaścią — pokój jest możliwy, ale kruchy;
   wojna toczy się kontraktami, strażą i linią murów, nie jednym polem
   bitwy.
 - **Karty kolekcji:** [[137gpt-withstand|Withstand]] (GPT) — linia
-  tarcz Legionu Boros na bruku Dziesiątego Dystryktu.
+  tarcz Legionu Boros na bruku Dziesiątego Dystryktu;
+  [[516rna-tenth-district-veteran|Tenth District Veteran]] (516RNA;
+  pinezka przy [[tin-street-market|Tin Street Market]], pewność `region`) —
+  weteranka Boros podnosi młodszego rekruta na barykadzie broniącej placu
+  targowego.
 
 ## Źródła
 
@@ -166,10 +176,18 @@ w erze Paktu nocami z Medori Park chodzą procesje nieumarłych.
   **Rix Maadi** (pod Smelting Quarter), **Korozda & Svogthos** (pod P1)
   i **Nightveil & Duskmantle** (pod P2); Millennial Platform w północnej
   rubieży (nad Skarrg). Sam raster © WotC nieosadzany (licencja).
-- MTG Wiki, „Boros Legion" — Legion jako konstablary (Liga Wojek)
-  i armia, siedziba Sunhome, parun **Razia** i kolumna anielska,
-  Firefists (magowie gildii):
-  <https://mtg.fandom.com/wiki/Boros_Legion>
+- MTG Wiki, „Boros Legion" — Legion jako konstabularia (Liga Wojek)
+  i armia, siedziba Sunhome, parun **Razia**, anioły oraz struktury
+  dowodzenia i rekrutacji:
+  <https://mtg.wiki/page/Boros_Legion>
+- MTG Wiki, „Precinct Four" — Czwarty Precykt jako burzliwa strefa
+  Sunhome, The Bulwark, Tin Street Market, najazdów Gruul, eksperymentów
+  Izzet i patroli Boros:
+  <https://mtg.wiki/page/Precinct_Four>
+- MTG Wiki, „Tin Street Market" — targ przy Tin Street w Dziesiątym
+  Dystrykcie, centrum handlu, chaosu, straganów, przestępczości i agentów
+  gildii; kotwica scen targowych 516RNA:
+  <https://mtg.wiki/page/Tin_Street_Market>
 - MTG Wiki, „Ravnica" — opis planu (ekumenopolis, jeden z najgęściej
   zaludnionych planów), Historia („przez tysiąclecia miasta pokrywały
   powierzchnię planu, aż zrosły się w jedną megaliznę"),

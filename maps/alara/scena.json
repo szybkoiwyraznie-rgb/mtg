@@ -1012,8 +1012,8 @@
    }
   },
   {
-   "id": "step-esper",
-   "typ": "step",
+   "id": "glass-dunes",
+   "typ": "pustynia",
    "punkty": [
     [
      1450,
@@ -1053,7 +1053,78 @@
     ]
    ],
    "opcje": {
-    "gestosc": 0.8
+    "gestosc": 0.72
+   }
+  },
+  {
+   "id": "cicatrice-scarlands",
+   "typ": "gruz",
+   "punkty": [
+    [
+     660,
+     910
+    ],
+    [
+     775,
+     875
+    ],
+    [
+     870,
+     930
+    ],
+    [
+     845,
+     1015
+    ],
+    [
+     745,
+     1080
+    ],
+    [
+     650,
+     1020
+    ]
+   ],
+   "opcje": {
+    "gestosc": 0.52
+   }
+  },
+  {
+   "id": "twin-maelstroms",
+   "typ": "wir",
+   "punkty": [
+    [
+     1790,
+     500
+    ],
+    [
+     1825,
+     465
+    ],
+    [
+     1870,
+     480
+    ],
+    [
+     1900,
+     525
+    ],
+    [
+     1880,
+     575
+    ],
+    [
+     1825,
+     590
+    ],
+    [
+     1785,
+     555
+    ]
+   ],
+   "opcje": {
+    "pierscienie": 3,
+    "obroty": 2.1
    }
   }
  ],
@@ -1688,6 +1759,33 @@
    "x": 1635,
    "y": 655,
    "id": "tidehollow"
+  },
+  {
+   "typ": "jaskinia",
+   "x": 710,
+   "y": 1035,
+   "id": "bloodhall",
+   "opcje": {
+    "skala": 0.9
+   }
+  },
+  {
+   "typ": "jaskinia",
+   "x": 410,
+   "y": 865,
+   "id": "valley-of-the-ancient",
+   "opcje": {
+    "skala": 0.9
+   }
+  },
+  {
+   "typ": "ruina",
+   "x": 1470,
+   "y": 615,
+   "id": "crystal-labyrinth",
+   "opcje": {
+    "skala": 0.85
+   }
   }
  ],
  "etykiety": [
@@ -2174,20 +2272,138 @@
     "kotwica": "middle",
     "ital": true
    }
+  },
+  {
+   "tekst": "The Crystal Labyrinth",
+   "x": 1470,
+   "y": 595,
+   "opcje": {
+    "fs": 13,
+    "kotwica": "middle",
+    "przyDo": [
+     1470,
+     615
+    ]
+   }
+  },
+  {
+   "tekst": "The Valley of the Ancient",
+   "x": 410,
+   "y": 845,
+   "opcje": {
+    "fs": 13,
+    "kotwica": "middle",
+    "przyDo": [
+     410,
+     865
+    ]
+   }
+  },
+  {
+   "tekst": "The Bloodhall",
+   "x": 710,
+   "y": 1015,
+   "opcje": {
+    "fs": 13,
+    "kotwica": "middle",
+    "przyDo": [
+     710,
+     1035
+    ]
+   }
+  },
+  {
+   "tekst": "Cicatrice",
+   "x": 775,
+   "y": 970,
+   "opcje": {
+    "fs": 14,
+    "kotwica": "middle",
+    "ital": true
+   }
+  },
+  {
+   "tekst": "The Rip",
+   "x": 680,
+   "y": 1050,
+   "opcje": {
+    "fs": 13,
+    "kotwica": "middle",
+    "ital": true,
+    "przyDo": [
+     680,
+     1050
+    ]
+   }
+  },
+  {
+   "tekst": "Twin Maelstroms",
+   "x": 1840,
+   "y": 540,
+   "opcje": {
+    "fs": 14,
+    "kotwica": "middle",
+    "ital": true
+   }
+  },
+  {
+   "tekst": "Sea of Unknowing",
+   "x": 1830,
+   "y": 760,
+   "opcje": {
+    "fs": 14,
+    "kotwica": "middle",
+    "ital": true
+   }
   }
  ],
  "strefyWodne": [
   "Dwindling Sea",
   "Sea of Stars",
-  "Inkwell"
+  "Inkwell",
+  "Sea of Unknowing",
+  "Twin Maelstroms"
  ],
  "etykietyWodne": [
   "Dwindling Sea",
   "Sea of Stars",
-  "Inkwell"
+  "Inkwell",
+  "Sea of Unknowing",
+  "Twin Maelstroms"
  ],
  "kompas": false,
  "skala": false,
  "ramka": true,
- "zro\u015bni\u0119te": true
+ "zro\u015bni\u0119te": true,
+ "rozpadliny": [
+  {
+   "id": "the-rip",
+   "punkty": [
+    [
+     850,
+     880
+    ],
+    [
+     795,
+     940
+    ],
+    [
+     720,
+     1015
+    ],
+    [
+     640,
+     1105
+    ],
+    [
+     560,
+     1220
+    ]
+   ],
+   "opcje": {
+    "szer": 30,
+    "osuwiska": 0.95
+   }
+  }
+ ]
 }

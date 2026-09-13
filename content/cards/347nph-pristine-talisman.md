@@ -47,7 +47,7 @@ na drogę spaczenia.
 
 **Pristine Talisman (Nieskazitelny Talizman)** — uświęcony artefakt
 stworzony przez ocalałych rzemieślników i mistrzów kuźni Mirrodinu.
-W przeciwieństwie do tworów Ortodoksji Maszyn i biomechanicznych
+W przeciwieństwie do tworów [[ortodoksja-maszyn|Ortodoksji Maszyn]] i biomechanicznych
 konstruktów Phyrexii, perłowy talizman emanuje uzdrawiającą, czystą
 energią życia i zasila właściciela nieskażoną maną.
 
@@ -58,7 +58,7 @@ czyste dzieło mirrańskich kowali było dowodem, że wolnej woli i ducha
 twórczości nie da się zniewolić.
 
 **Ruch Oporu Mirran** — przymierze ocalałych [[auriok|Aurioków]], leoninów,
-Sylvoków, Vulshoków i Neuroków walczących o ocalenie resztek swojej
+Sylvoków, [[vulshok|Vulshoków]] i Neuroków walczących o ocalenie resztek swojej
 tożsamości przed całkowitym wchłonięciem przez machiny najeźdźcy.
 
 **Kuźnia-świątynia ruchu oporu** — sterylne sanktuarium opisane
@@ -141,8 +141,9 @@ Mechanika karty idealnie odzwierciedla działanie talizmanu:
 - MTG Wiki, hasło *New Phyrexia* oraz *Mirran* — historia oporu,
   rola Elspeth Tirel, enklawy Aurioków i kunszt czystego rzemiosła:
   <https://mtg.wiki/page/New_Phyrexia_(plane)>
-- MTG Wiki, hasło *Razor Fields* — geografia białego regionu Mirrodinu:
-  <https://mtg.wiki/page/Razor_Fields>
+- Hasła Codexu: [[ortodoksja-maszyn|Ortodoksja Maszyn]] jako porcelanowy
+  kontrast talizmanu oraz [[vulshok|Vulshokowie]] jako jeden z ludów
+  mirrańskiego oporu.
 
 ## Podsumowanie Lore
 

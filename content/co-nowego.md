@@ -1,3 +1,501 @@
+## 2026-09-13 00:45 — Pętle Jakości: Warhammer Fantasy ×3
+
+- **Imperium:** nowe hasło **[[imperium|Imperium]]** spina ludzkie państwo
+  Sigmara z kartami **[[39mm2-brute-force|Brute Force]]**,
+  **[[83mm2-gorehorn-minotaurs|Gorehorn Minotaurs]]** i
+  **[[543isd-wooden-stake|Wooden Stake]]**; zakres pozostaje państwowo-
+  społeczny, nie jedną lokalizacją na mapie.
+- **Zielonoskórzy:** nowe hasło **[[zielonoskorzy|Zielonoskórzy]]** łączy
+  orkową magię Waaagh! z goblińską dywersją
+  **[[312m13-goblin-battle-jester|Goblin Battle Jester]]**. Waaagh!, Gork
+  i Mork zostają na razie podzakresem tego hasła, nie osobnymi stronami.
+- **Góry Krańca Świata:** nowe hasło
+  **[[gory-kranca-swiata|Góry Krańca Świata]]** porządkuje skalę pasma między
+  Badlands, Karak Osiem Szczytów, Sylwanią i Imperium oraz linkuje karty
+  39MM2, 312M13 i 543ISD.
+- **Mapa bez nowych pinezek haseł:** `maps/warhammer-fantasy/map.json`
+  dostał tylko metadane kotwic i deep-linków. ADR 0043 zostaje zachowany:
+  pinezki mają wyłącznie karty, a hasła prowadzą do mapy przez `?x=&y=`.
+- **Strażniki:** nowy test `test/warhammer-link-mining.test.js` pilnuje progu
+  ≥2 kart, wikilinków, deep-linków mapy, braku regionów/obwódek i braku
+  przedwczesnych haseł dla Sylwanii, von Carsteinów, Vampire Counts, łowców
+  czarownic, Waaagh!, Gorka/Morka oraz Badlands.
+- **Bramki końcowe:** 297/297 testów; build 96 stron (47 kart, 34 hasła,
+  15 planów), artefakt 1665.6 kB i 853 pliki drzewa archiwum (148901.8 kB);
+  map-audit 0; wiki-stats 100% (7,3/8); `git diff --check` czysty.
+
+## 2026-09-12 23:13 — Nowa karta: Wooden Stake (Warhammer Fantasy)
+
+- **Materializacja karty:** **[[543isd-wooden-stake|Wooden Stake]]**
+  (`543ISD`, wydanie `ISD` / *Innistrad*, plan
+  [[warhammer-fantasy|Warhammer Fantasy]]) — na mglistych cmentarzach
+  Sylwanii imperialny łowca czarownic zapędza wampira rodu von Carstein
+  pod omszały grobowiec i przeciw jego nadnaturalnej pewności stawia
+  najprostsze narzędzie: dębowy kołek.
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim
+  w `collection/entries/543isd-wooden-stake.md`; pełny snapshot normalnego
+  druku żyje w `scryfall/543isd-wooden-stake.json`. `543ISD` pozostaje
+  niezależnym `imgId` właściciela — właściwy druk to **Wooden Stake,
+  ISD #237**, multiverse ID `226880`; bezpośrednie `/cards/isd/543` zwraca
+  `not_found`.
+- **Pinezka i plan:** `maps/warhammer-fantasy/map.json` dodaje wyłącznie
+  pinezkę karty z pewnością `region` na kotwicy Sylwanii (`x=0.487`,
+  `y=0.421`). Scena mówi o cmentarzach i grobowcu, ale nie nazywa miasta,
+  wsi, zamku ani konkretnej nekropolii.
+- **Link-mining:** Sylwania, von Carsteinowie, łowcy czarownic i Vampire
+  Counts pozostają poniżej progu osobnego hasła po jednej karcie; szerszy
+  Warhammerowy pass dla Imperium/Zielonoskórych/Gór Krańca Świata został
+  odnotowany w `docs/backlog.md`, bez tworzenia pinezek haseł.
+- **Strażniki:** nowa regresja pilnuje Fabuły, rozdziału `543ISD` od
+  ISD #237, pełnego snapshotu, bezbarwnego Equipmentu (`kolory: [C]` w
+  frontmatterze), dębowego kołka, von Carsteinów, mechaniki Vampire / braku
+  regeneracji oraz regionalnej pinezki Sylwanii.
+- **Bramki końcowe:** 292/292 testy; build 93 strony (47 kart, 31 haseł,
+  15 planów), artefakt 1637.1 kB i 853 pliki drzewa archiwum (148431.7 kB);
+  map-audit 0; wiki-stats 100% (7,3/8); `git diff --check` czysty.
+
+## 2026-09-12 22:05 — Nowa karta: Gray Slaad (Forgotten Realms)
+
+- **Materializacja karty:** **[[234clb-gray-slaad|Gray Slaad]]** (`234CLB`,
+  wydanie `CLB` / *Commander Legends: Battle for Baldur's Gate*, plan
+  [[forgotten-realms|Zapomniane Krainy]]) — szary slaad stoi w mglistym
+  mokradle na skraju przeklętego lasu [[wybrzeze-mieczy|Wybrzeża Mieczy]],
+  wśród martwych drzew i resztek kamiennej drogi; nie atakuje jednej osoby,
+  lecz sprawia, że wszystko wokół zaczyna chorować.
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana w
+  `collection/entries/234clb-gray-slaad.md`; pełny snapshot Adventure żyje w
+  `scryfall/234clb-gray-slaad.json`. `234CLB` pozostaje niezależnym `imgId`
+  właściciela — właściwy druk to **Gray Slaad // Entropic Decay, CLB #129**,
+  multiverse ID `563012`; bezpośrednie `/cards/clb/234` prowadzi do Halsina,
+  nie do szarego slaada.
+- **Pinezka i plan:** `maps/forgotten-realms/map.json` dodaje wyłącznie
+  pinezkę karty z pewnością `region` na kotwicy Wybrzeża Mieczy (`x=0.13`,
+  `y=0.27`). Scena nie wymienia miasta, ruin, nazwanego mokradła ani
+  nazwanego lasu, więc nie udaje dokładnego punktu przy drodze.
+- **Link-mining:** druga karta Wybrzeża Mieczy (`3clb-nefarious-imp` +
+  `234clb-gray-slaad`) legalnie przywróciła hasło
+  **[[wybrzeze-mieczy|Wybrzeże Mieczy]]** po wcześniejszym skasowaniu poniżej
+  progu; hasło nie ma własnej pinezki, tylko deep-link do regionalnej kotwicy.
+  Slaadi, chaos phage i Limbo pozostają w backlogu po jednej karcie.
+- **Strażniki:** nowa regresja pilnuje Fabuły, rozdziału `234CLB` od CLB #129
+  i fałszywego CLB #234, snapshotu Adventure, widoku twarzy Gray Slaad,
+  Entropic Decay / mill four, regionalnej pinezki oraz progu hasła Wybrzeże
+  Mieczy.
+- **Bramki końcowe:** 286/286 testów; build 92 strony (46 kart, 31 haseł,
+  15 planów), artefakt 1618.6 kB i 853 pliki drzewa archiwum (148126.1 kB);
+  map-audit 0; wiki-stats 100% (7,3/8); `git diff --check` czysty.
+
+## 2026-09-12 21:50 — Nowa karta: Frightful Delusion (Innistrad)
+
+- **Materializacja karty:** **[[256isd-frightful-delusion|Frightful Delusion]]**
+  (`256ISD`, wydanie `ISD` / *Innistrad*, plan [[innistrad|Innistrad]]) — w
+  ciasnej sypialni gotyckiego domu w [[stensia|Stensii]] młoda kobieta budzi
+  się w niemym krzyku, gdy bladoniebieska mgła i świetlista smuga wprowadzają
+  do jej snu cudze przerażenie.
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana w
+  `collection/entries/256isd-frightful-delusion.md`; pełny snapshot ISD #57
+  żyje w `scryfall/256isd-frightful-delusion.json`. `256ISD` pozostaje
+  niezależnym `imgId` właściciela — nie jest numerem kolekcjonerskim; Scryfall
+  `/cards/isd/256` prowadzi do Swamp, a właściwy Frightful Delusion to ISD #57
+  z multiverse ID `220031`.
+- **Pinezka i plan:** `maps/innistrad/map.json` dodaje wyłącznie pinezkę karty
+  z pewnością `region` na kotwicy Stensii (`x=0.228`, `y=0.317`). Scena nie
+  nazywa domu, wsi, doliny, dworu ani przełęczy, więc nie udaje dokładnego
+  adresu sypialni.
+- **Link-mining:** istniejące hasło **[[stensia|Stensia]]** i strona planu
+  [[innistrad|Innistrad]] zostały pogłębione o domową/psychiczną odmianę
+  grozy: iluzja przerywa wolę i zostawia utraconą myśl bez tworzenia nowego
+  hasła dla koszmaru albo iluzji.
+- **Strażniki:** nowa regresja pilnuje Fabuły, rozdziału `256ISD` od ISD #57,
+  snapshotu, sypialni, bladoniebieskiej mgły, świetlistej smugi, rulingu o
+  odrzuceniu karty nawet po zapłaceniu `{1}` oraz regionalnej pinezki Stensii.
+- **Bramki końcowe:** 279/279 testów; build 90 stron (45 kart, 30 haseł,
+  15 planów), artefakt 1596.1 kB i 853 pliki drzewa archiwum; map-audit 0;
+  wiki-stats 100% (7,3/8); `git diff --check` czysty.
+
+## 2026-09-12 21:33 — Nowa karta: Merchant's Dockhand (Kaladesh)
+
+- **Materializacja karty:** **[[12aer-merchant-s-dockhand|Merchant's
+  Dockhand]]** (`12AER`, wydanie `AER` / *Aether Revolt*, plan
+  [[kaladesh|Kaladesh]]) — niewielki konstrukt na nabrzeżu Bomat w
+  [[ghirapur|Ghirapurze]] sortuje skrzynie czterema chwytakami, patrzy w
+  otwarty kontener turkusowym wizjerem i pracuje jako ciche ogniwo
+  handlowego łańcucha [[konsulat-kaladeshu|Konsulatu]].
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana w
+  `collection/entries/12aer-merchant-s-dockhand.md`; pełny snapshot AER #163
+  żyje w `scryfall/12aer-merchant-s-dockhand.json`. `12AER` pozostaje
+  niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim
+  Scryfall/Gatherera.
+- **Pinezka i plan:** `maps/kaladesh/map.json` dodaje wyłącznie pinezkę
+  karty z pewnością `region` na kotwicy Bomat (`x=0.6613`, `y=0.6386`).
+  Źródła opisują Bomat jako port Ghirapuru, lecz scena nie wskazuje jednego
+  pirsu, magazynu ani kontenera.
+- **Link-mining:** wykonane hasła **[[ghirapur|Ghirapur]]** i
+  **[[konsulat-kaladeshu|Konsulat Kaladeshu]]** zostały pogłębione o portową
+  logistykę Bomat. Osobne hasło Bomat nie powstaje, bo dzielnica ma na razie
+  jedną kartę; decyzję zapisano w `docs/backlog.md`.
+- **Strażniki:** nowa regresja pilnuje Fabuły, rozdziału `12AER` od AER #163,
+  snapshotu, bezbarwnego konstrukta z niebieską aktywacją, mechaniki
+  katalogowania przez X artefaktów, regionalnej pinezki Bomat i braku
+  przedwczesnego hasła dzielnicy.
+- **Bramki końcowe:** 273/273 testów; build 89 stron (44 karty, 30 haseł,
+  15 planów), artefakt 1578.4 kB i 853 pliki drzewa archiwum; map-audit 0;
+  wiki-stats 100% (7,3/8); `git diff --check` czysty.
+
+## 2026-09-12 21:21 — Nowa karta: Ironclad Slayer (Wiedźmin)
+
+- **Materializacja karty:** **[[594emn-ironclad-slayer|Ironclad Slayer]]**
+  (`594EMN`, wydanie `EMN` / *Eldritch Moon*, plan [[wiedzmin|Wiedźmin]]) —
+  ciężkozbrojny najemnik brodzi po spowitych mgłą pobojowiskach
+  [[velen|Ziemi Niczyjej w Velen]], przeszukuje zgliszcza i porzucone wozy
+  taborowe, po czym wydobywa z błota doskonale zachowany stalowy miecz, by
+  zastąpić wyszczerbiony oręż.
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana w
+  `collection/entries/594emn-ironclad-slayer.md`; pełny snapshot EMN #31
+  żyje w `scryfall/594emn-ironclad-slayer.json`. `594EMN` pozostaje
+  niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim
+  Scryfall/Gatherera.
+- **Pinezka i plan:** `maps/wiedzmin/map.json` dodaje wyłącznie pinezkę
+  karty z pewnością `region` na kotwicy Velen (`x=0.4113`, `y=0.2807`).
+  Opowieść wskazuje pobojowiska Ziemi Niczyjej, lecz raster Orteliusa T1 nie
+  rozrysowuje jednego pola bitwy, taboru ani koleiny w błocie.
+- **Link-mining:** istniejące hasło **[[velen|Velen]]** zostało pogłębione o
+  wojenny krajobraz pobojowisk i odsyłacz do `594EMN`. Nowe encje —
+  pobojowiska/Bitwa na błoniach Velen, najemnicy oraz stalowe miecze jako
+  łup wojenny — zostają poniżej progu osobnego hasła albo wymagają
+  rozpoznania zakresu.
+- **Strażniki:** nowa regresja pilnuje Fabuły, rozdziału `594EMN` od EMN #31,
+  snapshotu, ciężkozbrojnego najemnika, odzyskanego Equipmentu, ostrożnej
+  warstwy Aury oraz regionalnej pinezki Ziemi Niczyjej.
+- **Bramki końcowe:** 267/267 testów; build 88 stron (43 karty, 30 haseł,
+  15 planów), artefakt 1559.3 kB i 853 pliki drzewa archiwum; map-audit 0;
+  wiki-stats 100% (7,3/8); `git diff --check` czysty.
+
+## 2026-09-12 20:57 — Nowa karta: Candlegrove Witch (Wiedźmin)
+
+- **Materializacja karty:** **[[599mid-candlegrove-witch|Candlegrove
+  Witch]]** (`599MID`, wydanie `MID` / *Innistrad: Midnight Hunt*, plan
+  [[wiedzmin|Wiedźmin]]) — guślarka w lnianej koszuli i wieńcu z jeleniego
+  poroża lewituje w prastarych, mglistych lasach wokół Łysej Góry w
+  [[velen|Velen]], a świece z pszczelego wosku na brzozowych gałęziach
+  odpychają upiory i zbiegłe potwory.
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana w
+  `collection/entries/599mid-candlegrove-witch.md`; pełny snapshot MID #8
+  żyje w `scryfall/599mid-candlegrove-witch.json`. `599MID` pozostaje
+  niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim
+  Scryfall/Gatherera.
+- **Pinezka i plan:** `maps/wiedzmin/map.json` dodaje wyłącznie pinezkę
+  karty z pewnością `region` na kotwicy Velen (`x=0.4113`, `y=0.2807`).
+  Źródła lokują Łysą Górę/Ard Cerbin w południowo-wschodnim/południowym
+  Velen i łączą ją z sabatem, ale raster Orteliusa T1 nie rozrysowuje
+  lokalnej góry, polany ani świecowego gaju.
+- **Link-mining:** druga karta odwołująca się do **[[panie-lasu|Pań Lasu]]**
+  odblokowała hasło `panie-lasu` (`279M21` + `599MID`). Hasło nie ma własnej
+  pinezki, tylko deep-link do regionalnej kotwicy Velen; `Łysa Góra`,
+  `Krzywuchowe Moczary`, `upiory` i role szeptuch/guślarek zostają w
+  backlogu lub wymagają osobnego rozpoznania zakresu.
+- **Strażniki:** nowa regresja pilnuje Fabuły, rozdziału `599MID` od MID #8,
+  snapshotu, świecowego rytuału, braku twardego dopisywania guślarki do
+  Pań Lasu, regionalnej pinezki Łysej Góry oraz progu link-miningu.
+- **Bramki końcowe:** 261/261 testów; build 87 stron (42 karty, 30 haseł,
+  15 planów), artefakt 1540.7 kB i 853 pliki drzewa archiwum; map-audit 0;
+  wiki-stats 100% (7,3/8); `git diff --check` czysty.
+
+## 2026-09-12 20:39 — Nowa karta: Knight of the Skyward Eye (Alara)
+
+- **Materializacja karty:** **[[242ala-knight-of-the-skyward-eye|Knight of the
+  Skyward Eye]]** (`242ALA`, wydanie `ALA` / *Shards of Alara*, plan
+  [[alara|Alara]]) — rycerz zakonu Skyward Eye jedzie przez jasny las
+  [[bant|Bantu]] marmurową ceremonialną drogą, niosąc otwarte oko czujności,
+  podczas gdy cień między drzewami zapowiada cierpliwą intrygę
+  [[nicol-bolas|Nicola Bolasa]].
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim
+  w `collection/entries/242ala-knight-of-the-skyward-eye.md`; pełny snapshot
+  ALA #15 żyje w `scryfall/242ala-knight-of-the-skyward-eye.json`. `242ALA`
+  pozostaje niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim
+  Scryfall/Gatherera.
+- **Pinezka i plan:** opis nie podaje nazwy gaju, traktu ani dworu, więc
+  `maps/alara/map.json` dodaje pinezkę z pewnością `region` w północnym
+  Bancie (`x=0.56`, `y=0.19`), między Valeronem, Sun-Dappled Court i Akrasą.
+  Strona planu Alary opisuje tę regionalność bez udawania jednej drogi.
+- **Link-mining:** trzecia karta Alary odblokowała hasła
+  **[[bant|Bant]]** i **[[nicol-bolas|Nicol Bolas]]**. Oba hasła nie mają
+  własnych pinezek; prowadzą deep-linkami do regionalnej kotwicy Bantu oraz
+  do skutku planu Bolasa w Maelstromie.
+- **Strażniki:** nowa regresja pilnuje Fabuły, rozdziału `242ALA` od ALA #15,
+  snapshotu, rycerza/oka/cienia, regionalnej pinezki oraz progów link-miningu
+  dla Bantu i Nicola Bolasa.
+- **Bramki końcowe:** 255/255 testów; build 85 stron (41 kart, 29 haseł,
+  15 planów) i 853 pliki drzewa archiwum; map-audit 0; wiki-stats 100%
+  (7,3/8); `git diff --check` czysty.
+
+## 2026-09-12 19:53 — Mirrodin: Ortodoksja Maszyn i Vulshokowie
+
+- **Link-mining Mirrodinu:** po czwartej karcie planu próg haseł przekroczyły
+  dwie społeczności: **[[ortodoksja-maszyn|Ortodoksja Maszyn]]**
+  (`476MBS` + `347NPH`) oraz **[[vulshok|Vulshokowie]]** (`556NPH` +
+  `347NPH`). Pierwsze hasło spina cenobicki wyrok z Banishment Decree
+  z porcelanowym kontrastem dla Pristine Talisman; drugie łączy barykadę
+  Oxiddy z szerokim ruchem oporu Mirran.
+- **Wikilinki i źródła:** odsyłacze trafiły do kart `347NPH`, `476MBS`,
+  `556NPH`, na plan [[mirrodin|Mirrodin]] oraz do powiązanych haseł
+  [[nowa-phyrexia|Nowa Phyrexia]], [[auriok|Auriokowie]] i
+  [[oxidda-chain|Oxidda Chain]]. Źródła obejmują oficjalny przewodnik
+  *A Planeswalker's Guide to New Phyrexia: The Machine Orthodoxy*,
+  *Planeswalker's Guide to Phyrexia: All Will Be One* oraz MTG Wiki
+  (`Vulshok`, `Oxidda Chain`, `Koth of the Hammer`, `New Phyrexia`).
+- **Mapa:** `maps/mirrodin/map.json` nie dodaje pinezek dla haseł.
+  Ortodoksja odsyła do regionalnej sceny 476MBS przy Razor Fields / Cave
+  of Light (`x=0.523`, `y=0.317`) jako adresu aneksu, nie stolicy frakcji;
+  Vulshokowie odsyłają do Oxidda Chain (`x=0.3736`, `y=0.7556`) jako domu
+  ludu, nie granicy jednego plemienia.
+- **Regresja:** nowy `test/mirrodin-link-mining.test.js` pilnuje progów dwóch
+  kart, wikilinków, braku pinezek haseł (ADR 0043), deep-linków mapowych,
+  notek kotwic i rozdzielenia powierzchni Mirrodinu od późniejszej topologii
+  dziewięciu sfer Nowej Phyrexii.
+- **Bramki końcowe:** 250/250 testów; build 82 strony (40 kart, 27 haseł,
+  15 planów); `map-audit` 0 problemów; `wiki-stats` 100% (7,3/8);
+  `git diff --check` czysty.
+
+## 2026-09-12 19:34 — Dominaria: Sursi i Terisiare w Pętli Jakości
+
+- **Link-mining Dominarii:** po czterech kartach planu próg haseł przekroczyły
+  dwie geografie: **[[terisiare|Terisiare]]** (`362BRO` + `531M3C`) oraz
+  **[[sursi|Sursi]]** (`40USG` + `110DVD`). Pierwsze hasło spina Argoth
+  Wojny Braci z lodowym Kjeldorem Disy, drugie — Katedrę Serran i regionalny
+  adres łaski Serry.
+- **Wikilinki i źródła:** odsyłacze trafiły do wszystkich kart progowych,
+  na plan [[dominaria|Dominaria]] oraz do istniejącego hasła [[serra|Serra]].
+  Nowe hasła cytują MTG Wiki (`Terisiare`, `Argoth`, `Kjeldor`, `Disa`,
+  `Lhurgoyf`, `Sursi`, `Cathedral of Serra`, `Church of Serra`) i oficjalny
+  *Planeswalker's Guide to Dominaria* z 2022 roku.
+- **Mapa:** `maps/dominaria/map.json` zachowuje regionalną pewność kart i nie
+  dodaje pinezek dla haseł. `Sursi` korzysta z adresu Katedry Serran
+  (`x=0.1937`, `y=0.3806`) jako kotwicy miejsca pamięci, bez udawania granic
+  płaskowyżu ani konkretnej linii bitwy; `Terisiare` odsyła do kotwicy
+  kontynentu (`x=0.895`, `y=0.3`) i rozdziela epoki Argothu, lodu oraz
+  współczesnego atlasu.
+- **Regresja:** nowy `test/dominaria-link-mining.test.js` pilnuje progu dwóch
+  kart, wikilinków, braku pinezek frontmatterowych dla haseł (ADR 0043),
+  deep-linków mapowych i źródłowych notek kotwic.
+- **Bramki końcowe:** 245/245 testów; build 80 stron (40 kart, 25 haseł,
+  15 planów), artefakt 1460.0 kB; `map-audit` 0 problemów; `wiki-stats`
+  100% (7,4/8); `git diff --check` czysty.
+
+## 2026-09-12 19:15 — Kaladesh: Ghirapur, Konsulat i kotwice L2 miasta
+
+- **Link-mining Kaladeshu:** po drugiej karcie planu próg haseł przekroczyły
+  **[[ghirapur|Ghirapur]]** i **[[konsulat-kaladeshu|Konsulat Kaladeshu]]**.
+  Oba nowe hasła spinają `610m19-gearsmith-prodigy` oraz
+  `596ori-ghirapur-gearcrafter`, a wikilinki dopięto w obu kartach i na
+  stronie planu [[kaladesh|Kaladesh]]. Greenwheel i Embraal pozostają
+  dzielnicami jednej karty każda — jako kotwice mapy, nie osobne hasła.
+- **Źródła i korekta URL-a:** kwerenda potwierdziła działający oficjalny
+  adres *Planeswalker's Guide to Kaladesh* (`/news/magic-story/...`), więc
+  karta `596ORI`, strona planu i nowe hasła nie używają starego wariantu
+  `/news/feature/...` zwracającego 404. Hasła cytują też MTG Wiki
+  `Ghirapur`, `Consulate`, `Avishkar` oraz syntetyczne ujęcie MTG Salvation.
+- **Mapa L2:** `maps/kaladesh/map.json` promuje etykiety osobnej mapy
+  Ghirapuru do kotwic: **Greenwheel**, **Greenwheel Domes**, **The Zoo**,
+  **Embraal**, **Aetherflux Reservoir**, **Aether Hub**, **Eleven Bridges**,
+  **Dukhara Canal**, **Aradara Station**, **Bastion**, **Akhara**, **Bomat**,
+  **Freejam**, **Kujar**, **Weldfast**, **The Cowl**, **Foundry of the
+  Consuls**, **Bunarat**, **Shaila's Claim**, **Ovalchase**, **First Bridge**
+  i **Ninth Bridge**. Pozycje są projekcją z mapy miasta L2 do złotego
+  układu planu — jawnie rekonstrukcyjną, bez udawania adresów.
+- **Regresja:** nowy `test/kaladesh-link-mining.test.js` pilnuje progu dwóch
+  kart, wikilinków, braku pinezek dla haseł (ADR 0043), niepowstawania haseł
+  `greenwheel`/`embraal`, spójności kotwic dzielnic z pinezkami kart oraz
+  działającego URL-a oficjalnego przewodnika.
+- **Bramki końcowe:** 239/239 testów; build 78 stron (40 kart, 23 hasła,
+  15 planów); `map-audit` 0 problemów; `git diff --check` czysty.
+
+## 2026-09-12 18:55 — Pętla mapowa Alary T3: POI i biomy
+
+- **Mapa T3:** pierwszy przebieg poza Innistradem poszedł w stronę map
+  wyższych progów: `maps/alara/scena.json` i `podklad.svg` dostały nowe
+  elementy mapforge. **The Glass Dunes** nie udaje już stepu, tylko renderuje
+  się jako biom pustyni; **Cicatrice** jest strefą gruzu/scar-lands,
+  **The Rip** osobną rozpadliną, a **Twin Maelstroms** dodatkowym znakiem
+  wiru na akwenie Esperu.
+- **POI i akweny:** dodano kotwice/etykiety dla **The Crystal Labyrinth**,
+  **Sea of Unknowing**, **Twin Maelstroms**, **The Valley of the Ancient**,
+  **Cicatrice**, **The Rip** i **The Bloodhall**. Nowe obiekty pozostają
+  relacyjne w obrębie shardów: kanon potwierdza przynależność i relacje,
+  ale nie współrzędne.
+- **Dokumentacja:** `maps/alara/map.json` opisuje rekonstrukcyjny charakter
+  położeń, a `content/planes/alara.md` wymienia nowy stan mapy i granice
+  pewności. Bez powrotu odrzuconych pseudo-POI `Carmot Mines`/`Ruins of
+  Vithia`.
+- **Regresja:** `test/alara.test.js` sprawdza pustynny biom Glass Dunes,
+  Cicatrice jako gruz, The Rip jako rozpadlinę, nowe POI, wodne etykiety
+  oraz wymagane notki „wybór rekonstrukcji T3”.
+- **Bramki końcowe:** 231/231 testów; `map-audit` 0 problemów; build 76 stron
+  (40 kart, 21 haseł, 15 planów).
+
+## 2026-09-12 17:54 — Trzecia Pętla Jakości: Ashmouth i Helvault
+
+- **Link-mining:** trzeci przebieg Innistradu utworzył hasła
+  **[[ashmouth|Ashmouth]]** i **[[helvault|Helvault]]**. Oba przekroczyły
+  próg dzięki parze kart `393dka-forge-devil` +
+  `544avr-thraben-valiant`: jedna scena pokazuje diabła pod katedrą w czasie
+  słabnących zabezpieczeń, druga ekspedycję po pęknięciu Helvaultu.
+- **Zakres haseł:** Ashmouth opisuje stensiańską czeluść Geier Reach, bramę
+  demonów/diabłów i kontrast z Devil's Breach; Helvault opisuje srebrny
+  monolit z dziedzińca Katedry Avacyn, zasadę wiązania, uwięzienie Avacyn
+  i Griselbranda oraz skutki rozbicia więzienia.
+- **Mapa:** mapa Innistradu nadal pozostaje T1 — bez nowych rysunków i bez
+  pinezek haseł. Ashmouth prowadzi deep-linkiem do istniejącej kotwicy
+  Stensii (`x: 0.213`, `y: 0.253`), a Helvault do Thraben/Katedry
+  (`x: 0.668`, `y: 0.317`).
+- **Regresja:** `test/innistrad-link-mining.test.js` rozszerzono o progi
+  Ashmouth/Helvault, typy haseł, deep-linki mapowe i wikilinki kart/planów.
+- **Bramki końcowe:** 230/230 testów, build 76 stron (40 kart, 21 haseł,
+  15 planów) i 859 plików drzewa archiwum; map-audit 0; wiki-stats 100%
+  (7,4/8); `git diff --check` czysty.
+
+## 2026-09-12 17:41 — Druga Pętla Jakości: Avacyn i Devil's Breach
+
+- **Link-mining:** drugi przebieg Innistradu utworzył hasła
+  **[[avacyn|Avacyn]]** i **[[devils-breach|Devil's Breach]]**. Avacyn
+  przekracza próg dzięki sześciu kartom (`171isd-grizzled-outcasts`,
+  `181avr-spectral-prison`, `309isd-civilized-scholar`,
+  `393dka-forge-devil`, `42isd-murder-of-crows`,
+  `544avr-thraben-valiant`); Devil's Breach dzięki czterem kartom
+  (`118mid-dire-strain-brawler`, `171isd-grizzled-outcasts`,
+  `393dka-forge-devil`, `544avr-thraben-valiant`).
+- **Zakres haseł:** Avacyn opisuje archanioła Sorina, Kościół, Helvault,
+  zniknięcie i powrót; Devil's Breach opisuje kessigijską rozpadlinę, dym,
+  diabły, kontrast z Ashmouth i wyprawę katarów z Thraben. Helvault,
+  Ashmouth, Griselbrand i Kościół Avacyn nie dostały osobnych haseł w tym
+  przebiegu.
+- **Mapa:** mapa Innistradu pozostaje T1 — bez doklejania nowych obiektów.
+  Avacyn prowadzi tylko deep-linkiem do Thraben/Helvaultu (`x: 0.668`,
+  `y: 0.317`), a Devil's Breach do istniejącej kotwicy rozpadliny
+  (`x: 0.392`, `y: 0.945`).
+- **Regresja:** `test/innistrad-link-mining.test.js` rozszerzono o progi
+  Avacyn/Devil's Breach, brak pinezek haseł i wikilinki kart/planów.
+- **Bramki końcowe:** 228/228 testów, build 74 strony (40 kart, 19 haseł,
+  15 planów) i 859 plików drzewa archiwum; map-audit 0; wiki-stats 100%
+  (7,5/8); `git diff --check` czysty.
+
+## 2026-09-12 17:31 — Pętla Jakości: Gavony i Kessig (Innistrad)
+
+- **Link-mining:** po przeglądzie kart Innistradu powstały dwa hasła
+  regionalne: **[[gavony|Gavony]]** i **[[kessig|Kessig]]**. Gavony
+  przekroczyło próg dzięki `118mid-dire-strain-brawler` i
+  `181avr-spectral-prison`; Kessig dzięki `171isd-grizzled-outcasts` i
+  `544avr-thraben-valiant`. Dodatkowe wikilinki dopięto w kartach
+  `309isd-civilized-scholar`, `393dka-forge-devil`, na planie
+  [[innistrad|Innistrad]] oraz w powiązanych hasłach.
+- **Źródła i korekta linków:** kwerenda potwierdziła działający adres
+  oficjalnego przewodnika Gavony (`2011-09-28`, zamiast starego 404
+  `2011-09-07`) oraz przewodnik Kessigu z `2011-10-05`; nowe hasła cytują
+  też MTG Wiki dla układu parafii, Ulvenwaldu, Breakneck Ride i Devil's
+  Breach.
+- **Mapa:** pass mapowy nie dorysował obiektów, bo Innistrad jest wariantem
+  T1. Hasła nie mają własnych pinezek; prowadzą jedynie deep-linkami do
+  regionalnych kotwic mapy: Gavony (`x: 0.59`, `y: 0.449`) i Kessig
+  (`x: 0.41`, `y: 0.727`).
+- **Regresja:** `test/innistrad-link-mining.test.js` pilnuje progu dwóch kart,
+  braku pinezek haseł, wikilinków kart/planów oraz poprawionego URL-a
+  przewodnika Gavony.
+- **Bramki końcowe:** 226/226 testów, build 72 strony (40 kart, 17 haseł,
+  15 planów) i 859 plików drzewa archiwum; map-audit 0; wiki-stats 100%
+  (7,5/8); `git diff --check` czysty.
+
+## 2026-09-12 16:56 — Nowa karta: Tenth District Veteran (Ravnica)
+
+- **Materializacja karty:** **[[516rna-tenth-district-veteran|Tenth District
+  Veteran]]** (`516RNA`, wydanie `RNA` / *Ravnica Allegiance*, plan
+  [[ravnica|Ravnica]]) — dojrzała wojowniczka [[boros-legion|Legionu Boros]]
+  stoi na zrujnowanej barykadzie w [[dziesiaty-dystrykt|Dziesiątym
+  Dystrykcie]], blokując intruzom drogę do placu targowego i dźwigając
+  młodszego rekruta z powrotem do szyku.
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim
+  w `collection/entries/516rna-tenth-district-veteran.md`; snapshot RNA #26
+  żyje w `scryfall/516rna-tenth-district-veteran.json`. `516RNA` pozostaje
+  niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim
+  Scryfall/Gatherera.
+- **Pinezka i plan:** scena nie wskazuje konkretnej barykady ani
+  skrzyżowania, więc pinezka ma pewność `region`. Używa kotwicy
+  [[tin-street-market|Tin Street Market]] w Czwartym Precykcie (`x: 0.3406`,
+  `y: 0.4318`) jako najtwardszego rejonu „kluczowego placu targowego”.
+- **Link-mining:** druga karta Ravniki po Withstand odblokowała hasła
+  **[[boros-legion|Legion Boros]]**, **[[dziesiaty-dystrykt|Dziesiąty
+  Dystrykt]]** i **[[tin-street-market|Tin Street Market]]**. Hasła nie mają
+  własnych pinezek; odsyłają do mapy przez deep-linki `?x=&y=`.
+- **Strażniki:** dedykowana regresja pilnuje Fabuły, rozdziału `516RNA` od
+  RNA #26, weteranki i rekruta, mechaniki Vigilance/odtapowania oraz
+  regionalnej pinezki targu. UI oczekuje 40 Kart Katalogowych i renderuje
+  nowe hasła Ravniki z backlinkami.
+- **Bramki końcowe:** 222/222 testów, build 70 stron (40 kart, 15 haseł,
+  15 planów) i 859 plików drzewa archiwum; map-audit 0; wiki-stats 100%
+  (7,6/8); `git diff --check` czysty.
+
+## 2026-09-12 16:42 — Nowa karta: Serra's Embrace (Dominaria)
+
+- **Materializacja karty:** **[[110dvd-serra-s-embrace|Serra's Embrace]]**
+  (`110DVD`, wydanie `DVD` / *Duel Decks Anthology: Divine vs. Demonic*,
+  plan [[dominaria|Dominaria]]) — zwykły, zakurzony piechur na polu bitwy
+  zostaje objęty eteryczną obecnością [[serra|Serry]]: skrzydła z czystego
+  światła wyrastają za jego plecami, dłonie anielskiej mocy prowadzą jego
+  miecz, a zmęczenie ustępuje sile, lotowi i czujności (`{2}{W}{W}`, Aura;
+  +2/+2, flying, vigilance).
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim
+  w `collection/entries/110dvd-serra-s-embrace.md`; pełny snapshot DVD #21
+  żyje w `scryfall/110dvd-serra-s-embrace.json`. `110DVD` pozostaje
+  niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim
+  Scryfall/Gatherera.
+- **Pinezka i plan:** opis nie podaje konkretnego wzgórza, miasta ani linii
+  frontu, dlatego pinezka ma pewność `region`. Dziedziczy dominariańską
+  kotwicę Sursi / Katedry Serran (`x: 0.1937`, `y: 0.3806`; `px_t1 [1569,
+  1979]`) jako najtwardsze miejsce pamięci i łaski Serry, nie dokładny adres
+  pola bitwy.
+- **Link-mining:** powstało hasło postaci **[[serra|Serra]]**, bo próg ≥2
+  kart spełniają Serra's Embrace i Expunge. Hasło nie ma własnej pinezki;
+  odsyła do Sursi/Katedry Serran jako geograficznej kotwicy dziedzictwa.
+- **Strażniki:** dedykowana regresja pilnuje Fabuły, rozdziału `110DVD` od
+  DVD #21, regionalnej pinezki przy Sursi, zwykłego piechura jako odbiorcy
+  objęcia oraz progu hasła Serra. UI oczekuje 39 Kart Katalogowych i
+  renderuje hasło Serra z backlinkami.
+- **Bramki końcowe:** 217/217 testów, build 66 stron (39 kart, 12 haseł,
+  15 planów) i 859 plików drzewa archiwum, map-audit 0, wiki-stats 100%,
+  czysty `git diff --check`.
+
+## 2026-09-12 15:10 — Nowa karta: Village Rites (Wiedźmin)
+
+- **Materializacja karty:** **[[279m21-village-rites|Village Rites]]**
+  (`279M21`, wydanie `M21` / *Core Set 2021*, plan [[wiedzmin|Wiedźmin]]) —
+  w chacie sołtysa w Downwarren/Sztygarach starsza szeptucha otwiera
+  księgę rodową długu i zapłaty, gospodarz z Czarnoboru trzyma misę wody z
+  Krzywuchowych Moczarów, parobek klęczy przy białej kozie z czerwoną
+  wstążką, a sąsiedzi w lnianych kapturach patrzą, jak wieś oddaje jedną
+  ofiarę za dwa nowe odczyty rachunku (`{B}`, Instant; dodatkowy koszt:
+  poświęć stworzenie, dobierz dwie karty).
+- **Wpis kolekcji i snapshot:** Fabuła właściciela jest zachowana verbatim
+  w `collection/entries/279m21-village-rites.md`; pełny snapshot M21 #126
+  żyje w `scryfall/279m21-village-rites.json`. `279M21` pozostaje
+  niezależnym `imgId` właściciela i nie jest numerem kolekcjonerskim
+  Scryfall/Gatherera.
+- **Pinezka i plan:** scena nazywa Downwarren/Sztygary oraz wodę z
+  Krzywuchowych Moczarów, ale globalny raster T1 nie rozrysowuje chaty ani
+  lokalnego planu wsi. Pinezka ma pewność `region` i dziedziczy kotwicę
+  [[velen|Velen/Ziemi Niczyjej]] (`x: 0.4113`, `y: 0.2807`; `px_t1 [2095,
+  2024]`).
+- **Link-mining i porządki po audycie:** powstało hasło geograficzne
+  **[[velen|Velen]]**, bo próg ≥2 kart spełniają Village Rites i Bedhead
+  Beastie. Przy okazji domknięto drobne pozycje z audytu PR-32: poprawiono
+  liczbę plików drzewa z 853 na 859 w żywych dokumentach, usunięto trailing
+  whitespace z historycznych planów i zdjęto nieużyte źródło Razor Fields z
+  Pristine Talisman.
+- **Strażniki:** dedykowana regresja pilnuje Fabuły, rozdziału `279M21` od
+  M21 #126, regionalnej pinezki, kozy jako dokładnie jednej ofiary, parobka
+  jako świadka oraz progu hasła Velen. UI oczekuje 38 Kart Katalogowych.
+- **Bramki końcowe:** 212/212 testów, build 64 strony (38 kart, 11 haseł,
+  15 planów) i 859 plików drzewa archiwum, map-audit 0, wiki-stats 100%,
+  czysty `git diff --check`.
+
 ## 2026-09-12 14:08 — Korekta pinezki Chittering Rats
 
 - Po uwadze właściciela ponownie sprawdzono master T1 Wiedźmina. Pierwotny

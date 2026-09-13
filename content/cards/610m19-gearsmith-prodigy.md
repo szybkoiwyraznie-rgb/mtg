@@ -15,12 +15,12 @@ pinezka:
 
 ## Kronika Lore
 
-Na [[kaladesh|Kaladeshu]] geniusz nie czeka na siwiznę. W **Ghirapurze**,
+Na [[kaladesh|Kaladeshu]] geniusz nie czeka na siwiznę. W **[[ghirapur|Ghirapurze]]**,
 gdzie eter wiruje na niebie, a warsztaty tętnią od świtu, dzieci
 wynalazców uczą się lutować wcześniej, niż uczą się pisać — i nikt nie
 dziwi się, gdy to właśnie młodzi przynoszą na Targ Wynalazców rzeczy,
 o których mistrzom się nie śniło. Miasto żyje z tej wymiany: starzy
-konsulowie pilnują licencji i porządku, młodzi przynoszą szaleństwo,
+[[konsulat-kaladeshu|konsulowie]] pilnują licencji i porządku, młodzi przynoszą szaleństwo,
 z którego jutro robi się postęp.
 
 **Gearsmith Prodigy** to właśnie taka chwila — uchwycona w południe,
@@ -30,12 +30,12 @@ z mosiężnego filigranu, który zrywa się do zwinnego skoku, zasilany
 czystą, błękitną energią **eterowego rdzenia**. Automat działa —
 a to zmienia wszystko. Dziewczyna, jeszcze przed chwilą uczennica,
 prostuje się i czuje, że może stanąć do rywalizacji z najbardziej
-doświadczonymi **mistrzami Konsulatu**. Na Kaladeshu maszyna nie jest
+doświadczonymi **[[konsulat-kaladeshu|mistrzami Konsulatu]]**. Na Kaladeshu maszyna nie jest
 narzędziem w ręku mistrza; maszyna jest dowodem, że mistrz się mylił.
 
 ## Postacie i Byty
 
-**Młoda konstruktorka z Ghirapuru** — człowiek, rzemieślnik
+**Młoda konstruktorka z [[ghirapur|Ghirapuru]]** — człowiek, rzemieślnik
 (Human Artificer). Jej rolą nie jest dźwiganie młota w kuźni, lecz
 to, co na Kaladeshu ceni się najwyżej: pomysł, który działa. Scena
 pokazuje ją w momencie próby — gdy sprawny automat potwierdza jej
@@ -47,7 +47,7 @@ liczy się w nim podwójnie, raz jako mechanizm, raz jako piękno. Takie
 stworzenia ocenia się w **„Zoo” Greenwheel** pod kątem zwinności,
 szybkości i siły — a skok mosiężnego lisa jest dokładnie taką próbą.
 
-**Mistrzowie Konsulatu** — licencjonowani strażnicy porządku
+**[[konsulat-kaladeshu|Mistrzowie Konsulatu]]** — licencjonowani strażnicy porządku
 wynalazczego, ci, z którymi mierzy się wynalazczyni. To ich Oświeceni
 Strażnicy zbierają i licencjonują cuda Targu Wynalazców — i to ich
 autorytet znaczy tyle, ile znaczy, dopóki jakaś młoda konstruktorka
@@ -86,7 +86,7 @@ wskazania miejsca. Zamiast ogólnej prawdy o młodych rzemieślnikach
 dostajemy jeden taras w **Greenwheel**, jeden automat, jedną rywalizację —
 i wszystko to mieści się w zwyczaju Ghirapuru bez tarć: ogrody
 z kopułami, konstrukty-naśladowcy natury, kult młodego geniuszu
-i cień Konsulatu nad każdym warsztatem. Nic nie wymaga przełożenia;
+i cień [[konsulat-kaladeshu|Konsulatu]] nad każdym warsztatem. Nic nie wymaga przełożenia;
 wszystko wymaga tylko wskazania palcem.
 
 ## Na Mapie
@@ -115,7 +115,7 @@ przez czar, lecz przez pewność siebie, którą daje działające dzieło.
 - Fabuła właściciela (2026-09-09) — Ghirapur, młoda konstruktorka
   na tarasie miejskich ogrodów, mechaniczny lis z mosiężnego
   filigranu na błękitnym rdzeniu eterowym, rywalizacja z mistrzami
-  Konsulatu.
+  [[konsulat-kaladeshu|Konsulatu]].
 - Scryfall, Gearsmith Prodigy (M19 #57) — dane karty: koszt, typ
   Human Artificer, 1/2, zdolność, flavor, artysta:
   https://api.scryfall.com/cards/named?exact=gearsmith%20prodigy&set=m19

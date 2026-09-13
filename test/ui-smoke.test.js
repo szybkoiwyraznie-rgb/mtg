@@ -404,8 +404,15 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (37)'), 'lista kart: brak 37 kart');
-  assert.ok(lista.includes('Chittering Rats'), 'lista kart: brak najnowszej materializacji 540DST');
+  assert.ok(lista.includes('Karty Katalogowe (47)'), 'lista kart: brak 47 kart');
+  assert.ok(lista.includes('Wooden Stake'), 'lista kart: brak najnowszej materializacji 543ISD');
+  assert.ok(lista.includes('Gray Slaad'), 'lista kart: brak materializacji 234CLB');
+  assert.ok(lista.includes('Frightful Delusion'), 'lista kart: brak materializacji 256ISD');
+  assert.ok(lista.includes("Merchant's Dockhand"), 'lista kart: brak materializacji 12AER');
+  assert.ok(lista.includes('Ironclad Slayer'), 'lista kart: brak materializacji 594EMN');
+  assert.ok(lista.includes('Candlegrove Witch'), 'lista kart: brak materializacji 599MID');
+  assert.ok(lista.includes('Knight of the Skyward Eye'), 'lista kart: brak materializacji 242ALA');
+  assert.ok(lista.includes('Tenth District Veteran'), 'lista kart: brak materializacji 516RNA');
   assert.ok(lista.indexOf('Aerith Rescue Mission') < lista.indexOf('Coralhelm Guide'),
     'lista kart: 305ARB sortuje się alfabetycznie (A przed C)');
   assert.ok(lista.includes('Śródziemie') && lista.includes('Zendikar'), 'lista kart: brak tytułów planów zamiast slugów (feedback G)');
@@ -425,6 +432,82 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
     'hasło Novigrad: brak backlinków z dwóch kart spełniających próg');
   assert.ok(novigrad.includes('#/mapa/wiedzmin?x=0.4045&amp;y=0.2469'),
     'hasło Novigrad: brak deep-linka do poprawionej kotwicy miejskiej');
+
+  shim.idz('#/haslo/velen');
+  const velen = shim.app.innerHTML;
+  assert.ok(velen.includes('północno-zachodni, podmokły region Temerii'),
+    'hasło Velen: brak definicji');
+  assert.ok(velen.includes('W kolekcji'), 'hasło Velen: brak automatycznych backlinków');
+  assert.ok(velen.includes('Village Rites') && velen.includes('Bedhead Beastie') && velen.includes('Ironclad Slayer'),
+    'hasło Velen: brak backlinków z kart spełniających próg');
+  assert.ok(velen.includes('#/mapa/wiedzmin?x=0.4113&amp;y=0.2807'),
+    'hasło Velen: brak deep-linka do regionalnej kotwicy');
+
+  shim.idz('#/haslo/panie-lasu');
+  const panie = shim.app.innerHTML;
+  assert.ok(panie.includes('Wiedźmy z Krzywuchowych Moczarów'),
+    'hasło Panie Lasu: brak definicji');
+  assert.ok(panie.includes('W kolekcji'), 'hasło Panie Lasu: brak automatycznych backlinków');
+  assert.ok(panie.includes('Village Rites') && panie.includes('Candlegrove Witch'),
+    'hasło Panie Lasu: brak backlinków z dwóch kart spełniających próg');
+  assert.ok(panie.includes('#/mapa/wiedzmin?x=0.4113&amp;y=0.2807'),
+    'hasło Panie Lasu: brak deep-linka do regionalnej kotwicy');
+
+  shim.idz('#/haslo/serra');
+  const serra = shim.app.innerHTML;
+  assert.ok(serra.includes('planeswalkerką związaną z białą maną'),
+    'hasło Serra: brak definicji');
+  assert.ok(serra.includes('W kolekcji'), 'hasło Serra: brak automatycznych backlinków');
+  assert.ok(serra.includes("Serra's Embrace") && serra.includes('Expunge'),
+    'hasło Serra: brak backlinków z dwóch kart spełniających próg');
+  assert.ok(serra.includes('#/mapa/dominaria?x=0.1937&amp;y=0.3806'),
+    'hasło Serra: brak deep-linka do Sursi/Katedry Serran');
+
+  shim.idz('#/haslo/boros-legion');
+  const boros = shim.app.innerHTML;
+  assert.ok(boros.includes('czerwono-biała gildia Ravniki'),
+    'hasło Legion Boros: brak definicji');
+  assert.ok(boros.includes('W kolekcji'), 'hasło Legion Boros: brak automatycznych backlinków');
+  assert.ok(boros.includes('Withstand') && boros.includes('Tenth District Veteran'),
+    'hasło Legion Boros: brak backlinków z dwóch kart spełniających próg');
+  assert.ok(boros.includes('#/mapa/ravnica?x=0.5464&amp;y=0.3356'),
+    'hasło Legion Boros: brak deep-linka do Sunhome');
+
+  shim.idz('#/haslo/dziesiaty-dystrykt');
+  const dziesiaty = shim.app.innerHTML;
+  assert.ok(dziesiaty.includes('najruchliwszy i najbardziej wpływowy dystrykt'),
+    'hasło Dziesiąty Dystrykt: brak definicji');
+  assert.ok(dziesiaty.includes('Withstand') && dziesiaty.includes('Tenth District Veteran'),
+    'hasło Dziesiąty Dystrykt: brak backlinków z dwóch kart spełniających próg');
+  assert.ok(dziesiaty.includes('#/mapa/ravnica?x=0.485&amp;y=0.5616'),
+    'hasło Dziesiąty Dystrykt: brak deep-linka do Tenth District Plaza');
+
+  shim.idz('#/haslo/tin-street-market');
+  const tin = shim.app.innerHTML;
+  assert.ok(tin.includes('jeden z najruchliwszych targów Ravniki'),
+    'hasło Tin Street Market: brak definicji');
+  assert.ok(tin.includes('Withstand') && tin.includes('Tenth District Veteran'),
+    'hasło Tin Street Market: brak backlinków z dwóch kart spełniających próg');
+  assert.ok(tin.includes('#/mapa/ravnica?x=0.3406&amp;y=0.4318'),
+    'hasło Tin Street Market: brak deep-linka do targu');
+
+  shim.idz('#/haslo/ghirapur');
+  const ghirapur = shim.app.innerHTML;
+  assert.ok(ghirapur.includes('Ghirapur') && ghirapur.includes('Miastem Indygo'),
+    'hasło Ghirapur: brak definicji');
+  assert.ok(ghirapur.includes('Gearsmith Prodigy') && ghirapur.includes('Ghirapur Gearcrafter') && ghirapur.includes("Merchant's Dockhand"),
+    'hasło Ghirapur: brak backlinków z kart Kaladeshu');
+  assert.ok(ghirapur.includes('#/mapa/kaladesh?x=0.65625&amp;y=0.6182'),
+    'hasło Ghirapur: brak deep-linka do miasta');
+
+  shim.idz('#/haslo/konsulat-kaladeshu');
+  const konsulat = shim.app.innerHTML;
+  assert.ok(konsulat.includes('technokratyczna władza konsulów'),
+    'hasło Konsulat Kaladeshu: brak definicji');
+  assert.ok(konsulat.includes('Gearsmith Prodigy') && konsulat.includes('Ghirapur Gearcrafter') && konsulat.includes("Merchant's Dockhand"),
+    'hasło Konsulat Kaladeshu: brak backlinków z kart Kaladeshu');
+  assert.ok(konsulat.includes('#/mapa/kaladesh?x=0.6569&amp;y=0.6129'),
+    'hasło Konsulat Kaladeshu: brak deep-linka do Iglicy Eteru');
 
   // ADR 0030: format Karty Katalogowej jest LORE-first — technikalia w infoboksie,
   // mechanika jako opowieść dopiero pod koniec; sekcje „Ilustracja"/„Druk w Kolekcji" nie istnieją
@@ -472,8 +555,29 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   assert.ok(karta3.indexOf('<h2>Na Mapie</h2>') < karta3.indexOf('<h2>Mechanika jako Opowieść</h2>'), 'karta 137GPT: mechanika ma być po mapie/transpozycji');
   assert.ok(karta3.indexOf('<h2>Mechanika jako Opowieść</h2>') < karta3.indexOf('<h2>Źródła</h2>'), 'karta 137GPT: mechanika ma stać przed źródłami');
 
-  // 42ISD: rodzima karta Innistradu — stensiański cmentarz, regionalna
-  // pinezka i dane właściwego druku ISD #70.
+  // 543ISD: bezbarwny Equipment źródłowo z ISD #237, ale transponowany
+  // do Warhammer Fantasy/Sylwanii; imgId właściciela pozostaje niezależny.
+  shim.idz('#/karta/543isd-wooden-stake');
+  const karta543 = shim.app.innerHTML;
+  assert.ok(karta543.includes('<h1>Wooden Stake</h1>'), 'karta 543ISD: brak tytułu');
+  assert.ok(karta543.includes('Artifact — Equipment'), 'karta 543ISD: brak typu ze snapshotu');
+  assert.ok(karta543.includes('Sylwanii'), 'karta 543ISD: brak osadzenia w Sylwanii');
+  assert.ok(karta543.includes('von Carstein'), 'karta 543ISD: brak rodu von Carstein');
+  assert.ok(karta543.includes('Equip'), 'karta 543ISD: brak mechaniki Equip');
+  assert.ok(karta543.includes('#/mapa/warhammer-fantasy?pin=543isd-wooden-stake'),
+    'karta 543ISD: brak deep-linka regionalnej pinezki Sylwanii');
+
+  // 256ISD/42ISD: rodzime karty Innistradu — Stensia z regionalnymi pinezkami
+  // i dane właściwych druków ISD #57/#70, bez mylenia z imgId właściciela.
+  shim.idz('#/karta/256isd-frightful-delusion');
+  const karta256 = shim.app.innerHTML;
+  assert.ok(karta256.includes('<h1>Frightful Delusion</h1>'), 'karta 256ISD: brak tytułu');
+  assert.ok(karta256.includes('Instant'), 'karta 256ISD: brak typu ze snapshotu');
+  assert.ok(karta256.includes('Whether he actually exists'), 'karta 256ISD: brak flavoru ISD #57');
+  assert.ok(karta256.includes('href="#/haslo/stensia"'), 'karta 256ISD: brak wikilinku do Stensii');
+  assert.ok(karta256.includes('#/mapa/innistrad?pin=256isd-frightful-delusion'),
+    'karta 256ISD: brak deep-linka regionalnej pinezki');
+
   shim.idz('#/karta/42isd-murder-of-crows');
   const karta42 = shim.app.innerHTML;
   assert.ok(karta42.includes('<h1>Murder of Crows</h1>'), 'karta 42ISD: brak tytułu');
@@ -517,9 +621,10 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   }
 
   shim.idz('#/');
-  // Strona główna pokazuje 5 NAJNOWSZYCH materializacji — po dodaniu 612BLB
-  // najnowsza karta Śródziemia musi wejść do skrótu na stronie głównej.
-  assert.ok(shim.app.innerHTML.includes('Crumb and Get It'), 'home: brak najnowszej materializacji');
+  // Strona główna pokazuje 5 NAJNOWSZYCH materializacji. Przy wielu dostawach
+  // z tego samego dnia kolejność remisu jest katalogowa; 256ISD pozostaje w
+  // skrócie, a 234CLB jest pilnowane na pełnej liście kart powyżej.
+  assert.ok(shim.app.innerHTML.includes('Frightful Delusion'), 'home: brak materializacji 256ISD');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();

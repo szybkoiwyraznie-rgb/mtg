@@ -414,22 +414,47 @@ materializacje:
 
 W każdej dostawie `imgId` właściciela jest jawnie oddzielone od collector
 number, a Fabuła została zachowana verbatim przed researchem. Finalne
-bramki: **207/207**, build 62 strony (37/10/15) / 853 pliki drzewa archiwum,
+bramki: **207/207**, build 62 strony (37/10/15) / 859 plików drzewa archiwum,
 map-audit 0, wiki-stats 100%. Szczegóły:
 `docs/setup/HANDOFF_2026-09-11-pr32.md`.
 
-## Wątki otwarte (czekają na decyzję właściciela)
+**PR-33 (2026-09-12) — audyt PR-32, dziesięć materializacji i Pętle Jakości.**
+Audyt PR-32 zamknięty bez nowych P0/P1; trzy drobne follow-upy audytu
+(obsługa liczników drzewa, whitespace w planach i źródło Razor Fields w
+347NPH) zostały wykonane przed dalszą pracą. W PR #33 powstały pełne
+materializacje `279M21 Village Rites` (Wiedźmin/Velen), `110DVD Serra's
+Embrace` (Dominaria/Serra), `516RNA Tenth District Veteran` (Ravnica/Boros),
+`242ALA Knight of the Skyward Eye` (Alara/Bant), `599MID Candlegrove Witch`
+(Wiedźmin/Łysa Góra), `594EMN Ironclad Slayer` (Wiedźmin/pobojowiska
+Ziemi Niczyjej), `12AER Merchant's Dockhand` (Kaladesh/Bomat),
+`256ISD Frightful Delusion` (Innistrad/Stensia), `234CLB Gray Slaad`
+(Forgotten Realms/Wybrzeże Mieczy) oraz `543ISD Wooden Stake` (Warhammer
+Fantasy/Sylwania).
 
-> **Zamknięte decyzją właściciela 2026-09-05 — NIE wracać do nich:**
-> globalna geometria Zendikaru (układ Akoum–Ondu), „obwódki haseł" (E5)
-> oraz rozszerzenia mapy Ravniki poza złoty standard a/b/c. Właściciel:
-> „ja tego nie wymyśliłem, nie chcę tych zadań". Wpisy skasowane;
-> ta notka istnieje tylko po to, żeby przyszłe sesje ich nie odtwarzały.
+Link-mining i pętle jakości domknęły hasła: `velen`, `serra`,
+`boros-legion`, `dziesiaty-dystrykt`, `tin-street-market`, `gavony`,
+`kessig`, `avacyn`, `devils-breach`, `ashmouth`, `helvault`, `bant`,
+`nicol-bolas`, `ghirapur`, `konsulat-kaladeshu`, `terisiare`, `sursi`,
+`ortodoksja-maszyn`, `vulshok`, `panie-lasu` i `wybrzeze-mieczy`. Mapa Alary
+T3 dostała nowe POI/biomy (m.in. Glass Dunes, Cicatrice, The Rip, Sea of
+Unknowing, Crystal Labyrinth), mapa Kaladeshu promowała kotwice L2 Ghirapuru
+i po 12AER używa Bomat jako regionalnej pinezki portowej, a Innistrad po
+256ISD używa regionalnej kotwicy Stensii (`0.228/0.317`) dla anonimowej
+sypialni, bez udawania domu, wsi ani przełęczy. Forgotten Realms po 234CLB
+odzyskało hasło Wybrzeże Mieczy dopiero po spełnieniu progu dwóch kart i
+używa regionalnej pinezki `0.13/0.27` dla mokradła szarego slaada, bez
+pinezki hasła i bez dokładnego lasu/mokradła. Warhammer Fantasy po 543ISD
+ma regionalną kotwicę i pinezkę Sylwanii (`0.487/0.421`) dla anonimowych
+cmentarzy/grobowca, bez haseł dla Sylwanii, von Carsteinów, łowców
+czarownic ani Vampire Counts poniżej progu. Dodatkowe trzy Pętle Jakości
+2026-09-13 domknęły Warhammerowe hasła `imperium`, `zielonoskorzy` i
+`gory-kranca-swiata`, z wikilinkami kartowymi i wyłącznie deep-linkami mapy
+zgodnie z ADR 0043. Wiedźmin zachował dyscyplinę T1/LOD: Łysa Góra i
+pobojowiska Ziemi Niczyjej mają tylko regionalne pinezki kart na kotwicy
+Velen (`0.4113/0.2807`), bez pinezek haseł.
 
-- Grafiki dla Kart Haseł — czy, jakie, gdzie składowane (ADR 0008 zostawia
-  slot; wymaga decyzji + ewentualnego ADR o storage).
-- Wzbogacenie mapy Śródziemia (T2, podkład mapome) o warstwy
-  przyrodniczo-osadnicze w duchu warsztatu T4 — gdy właściciel zechce
-  (analogia do Zendikaru z PR-3).
-- Pełny offline (cache obrazów Scryfalla w repo) — gdy korzystanie z Pages
-  bez sieci będzie realnym scenariuszem.
+Bramki końcowe po trzech Pętlach Jakości Warhammera: **297/297 testów**,
+build **96 stron** (47 kart, 34 hasła, 15 planów; artefakt 1665.6 kB) i
+**853 pliki** drzewa archiwum (148901.8 kB), map-audit 0, wiki-stats 100%
+(7,3/8), czysty `git diff --check`. Handoff:
+`docs/setup/HANDOFF_2026-09-12-pr33.md`.
