@@ -163,7 +163,7 @@ export function wariantyMapy(mapa) {
     : [{
       id: 'podklad', tytul: mapa?.tytul ?? '', podklad: mapa?.podklad, wymiary: mapa?.wymiary,
       wariant: mapa?.wariant, podkladUrl: mapa?.podkladUrl, podkladData: mapa?.podkladData,
-      podkladMarkup: mapa?.podkladMarkup, domyslny: true,
+      podkladMarkup: mapa?.podkladMarkup, etykiety: mapa?.etykiety, domyslny: true,
     }];
   return lista.map((w, i) => ({
     ...w,
