@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1400" role="img" aria-labelledby="title desc">
+<title id="title">Duskmourn — atlas niemożliwej topologii Domu</title>
+<desc id="desc">Diagram pięciu przenikających się stref, zmiennych pokoi i jedynej stałej osi z piwnicy pierwotnego domu do The Below.</desc>
+<defs>
+ <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="14" flood-opacity=".35"/></filter>
+ <pattern id="paper" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="24" height="24" fill="#e8dfce"/><path d="M0 8h24M7 0v24" stroke="#c9bca6" stroke-opacity=".12"/></pattern>
+ <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#4d1827"/></marker>
+</defs>
+<rect width="2000" height="1400" fill="url(#paper)"/>
+<path d="M65 75H1935V1325H65Z" fill="none" stroke="#332b2b" stroke-width="12"/>
+<text x="1000" y="70" text-anchor="middle" font-family="Georgia" font-size="44" fill="#2b2020">DUSKMOURN — DOM, KTÓREGO NIE DA SIĘ ZMIERZYĆ</text>
+<g filter="url(#shadow)" stroke-width="5">
+ <path d="M180 280Q390 80 780 215Q920 350 790 650Q520 790 210 650Q75 470 180 280Z" fill="#eee8d8" fill-opacity=".9" stroke="#a58f63"/>
+ <path d="M690 150Q1060 35 1325 240Q1410 500 1190 700Q890 745 680 555Q600 330 690 150Z" fill="#abc8d1" fill-opacity=".76" stroke="#416a7a"/>
+ <path d="M1185 240Q1630 95 1840 405Q1890 680 1590 825Q1260 800 1110 590Q1080 390 1185 240Z" fill="#d27d5d" fill-opacity=".69" stroke="#8b382b"/>
+ <path d="M1030 620Q1310 480 1740 680Q1840 980 1570 1170Q1200 1220 975 990Q900 785 1030 620Z" fill="#78956d" fill-opacity=".72" stroke="#365537"/>
+ <path d="M260 620Q610 470 1045 690Q1120 990 850 1200Q450 1230 205 1010Q110 790 260 620Z" fill="#66556c" fill-opacity=".72" stroke="#32283c"/>
+</g>
+<g font-family="Georgia" text-anchor="middle" fill="#211b1b">
+ <text x="410" y="320" font-size="38">MISTMOORS</text><text x="410" y="355" font-size="20">pustka • draperie • bezgłośne przestrzenie</text>
+ <text x="1000" y="255" font-size="38">FLOODPITS</text><text x="1000" y="290" font-size="20">woda • ekrany • niemożliwa fizyka</text>
+ <text x="1550" y="390" font-size="38">BOILERBILGES</text><text x="1550" y="425" font-size="20">ogień • przepaście • gwałtowne przemiany</text>
+ <text x="1450" y="900" font-size="38">HAUNTWOODS</text><text x="1450" y="935" font-size="20">roślinność • wnętrze udające zewnętrze</text>
+ <text x="610" y="940" font-size="38" fill="#f2eaf2">BALEMURK</text><text x="610" y="975" font-size="20" fill="#f2eaf2">sypialnie • strychy • piwnice • rozpad</text>
+</g>
+<g fill="#eee5cf" stroke="#4d1827" stroke-width="5">
+ <path d="M835 465h330v235H835Z"/><path d="M885 505h230v155H885Z" fill="#251c25"/>
+</g>
+<text x="1000" y="420" text-anchor="middle" font-family="Georgia" font-size="31" fill="#4d1827">ZMIENNE POKOJE DOMU</text>
+<text x="1000" y="585" text-anchor="middle" font-family="Georgia" font-size="22" fill="#eee5cf">drzwi nie są trasą</text>
+<g stroke="#493a36" stroke-width="8" fill="none" stroke-dasharray="18 18" opacity=".7">
+ <path d="M355 480Q700 360 850 525"/><path d="M1160 520Q1400 480 1640 585"/><path d="M1090 690Q1300 770 1370 840"/><path d="M850 690Q710 760 650 850"/>
+</g>
+<g font-family="Georgia" text-anchor="middle">
+ <rect x="425" y="1050" width="370" height="88" rx="8" fill="#2b2430" stroke="#d9cbbb" stroke-width="4"/>
+ <text x="610" y="1102" font-size="23" fill="#f1e8dc">PIWNICA PIERWOTNEGO DOMU</text>
+ <path d="M610 1140V1245" stroke="#4d1827" stroke-width="10" marker-end="url(#arrow)"/>
+ <ellipse cx="610" cy="1290" rx="185" ry="70" fill="#120f14" stroke="#4d1827" stroke-width="7"/>
+ <text x="610" y="1302" font-size="34" fill="#f1e8dc">THE BELOW</text>
+</g>
+<g font-family="Georgia" fill="#4b3c36">
+ <text x="1250" y="1260" font-size="21">LEGENDA KONTRAKTU:</text>
+ <text x="1250" y="1295" font-size="18">• pola = temperament strefy, nie prowincja</text>
+ <text x="1250" y="1325" font-size="18">• linie przerywane = możliwe apertury, nie szlaki</text>
+ <text x="1250" y="1355" font-size="18">• tylko oś piwnica → The Below jest stała</text>
+</g>
+</svg>

@@ -464,3 +464,7 @@ mapą wyłącznie odsyłaniem (`?x=&y=`), pole `regiony` wycofane.
 
 - **Skiltfolk / Olgard / Lake Zhava** — po 385DKA pozostają podzakresem
   nowego hasła Nephalia; każdy z tych bytów ma tylko jedną kartę.
+
+- **Valgavoth / pięć stref / The Below** — po 373DSK pozostają elementami
+  strony planu Duskmourn i atlasu topologicznego; osobne hasła czekają na
+  drugi wpis kartowy. Sypialnia-przedmieście nie otrzymuje nazwy ani adresu.
