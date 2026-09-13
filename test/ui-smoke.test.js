@@ -623,10 +623,9 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   }
 
   shim.idz('#/');
-  // Strona główna pokazuje 5 NAJNOWSZYCH materializacji. Przy wielu dostawach
-  // z tego samego dnia kolejność remisu jest katalogowa; 256ISD pozostaje w
-  // skrócie, a 234CLB jest pilnowane na pełnej liście kart powyżej.
-  assert.ok(shim.app.innerHTML.includes('Frightful Delusion'), 'home: brak materializacji 256ISD');
+  // Strona główna pokazuje 5 NAJNOWSZYCH materializacji; najświeższa dostawa
+  // musi wejść do skrótu, a starsze są pilnowane na pełnej liście kart powyżej.
+  assert.ok(shim.app.innerHTML.includes('Skinbrand Goblin'), 'home: brak najnowszej materializacji 572GTC');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();
