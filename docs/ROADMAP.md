@@ -481,3 +481,7 @@ Domknięto czwartą dostawę PR-34: wpis verbatim, DKA #14, Kartę LORE-first, r
 ## PR-34 (2026-09-13) — **373DSK i mapa Duskmourn zmaterializowane**
 
 Domknięto piątą dostawę PR-34 oraz szesnasty plan. Duskmourn otrzymał atlas niemożliwej topologii T4, kontrakt antykartograficzny i pierwszą przybliżoną pinezkę. Stan: 52 karty, 37 haseł, 16 planów; 326/326 testów.
+
+## PR-34 (2026-09-13) — **56EOE i mapa The Edge zmaterializowane**
+
+Domknięto szóstą dostawę PR-34 i siedemnasty plan. The Edge otrzymał fanowski podkład T1 systemu Sothera, jawny kontrakt interpretacyjny i pierwszą pinezkę na Evendo. Stan: 53 karty, 37 haseł, 17 planów; 334/334 testów.

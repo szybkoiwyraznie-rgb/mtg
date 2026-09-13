@@ -1,3 +1,11 @@
+## 2026-09-13 23:20 — Nowa karta i mapa: Diplomatic Relations (The Edge)
+
+- **Materializacja:** **[[56eoe-diplomatic-relations|Diplomatic Relations]]** (`56EOE`, EOE, [[the-edge|The Edge]]) pokazuje „dyplomację” Kavów jako uprzywilejowanie własnego funkcjonariusza przez pole bezpieczeństwa placówki Evendo.
+- **Korekta dnia zero:** snapshot EOE #177 zachowuje aktualny Oracle z brakującym na pierwotnym druku `you control`; wzmacniany jest własny Kav, nie dowolna istota przeciwnika.
+- **Nowa mapa T1:** dostarczona przez właściciela fanowska mapa Auroreona przedstawia system Sothera, wspólną orbitę Kavaronu i Evendo oraz Wurmwall. Research jawnie oddziela kanon orbit od interpretacyjnych kątów, I.G.S. i pierścienia Garden of Apeiron.
+- **Pinezka:** przybliżona na oznaczeniu Evendo; wskazuje planetę, nie wymyśloną placówkę powierzchniową.
+- **Bramki:** 334/334 testów; build 107 stron (53 karty, 37 haseł, 17 planów); map-audit 0; wiki-stats 100%.
+
 ## 2026-09-13 22:02 — Nowa karta i mapa: Fear of Abduction (Duskmourn)
 
 - **Materializacja:** **[[373dsk-fear-of-abduction|Fear of Abduction]]** (`373DSK`, DSK, [[duskmourn|Duskmourn]]) wykorzystuje dziecko jako kotwicę manifestacji i porywa drugą istotę ku obliczu w suficie.

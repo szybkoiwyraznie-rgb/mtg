@@ -4,6 +4,10 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-13 — PR-34: materializacja 56EOE Diplomatic Relations i mapa The Edge
+
+Dostawę `56EOE / Diplomatic Relations / EOE / The Edge` domknięto wraz z fanowską mapą T1 systemu Sothera dostarczoną przez właściciela. Karta zachowuje oficjalną korektę dnia zero: własna istota otrzymuje +1/+0 i vigilance, po czym zadaje obrażenia przeciwnikowi. Pinezka stoi na Evendo bez wymyślenia placówki powierzchniowej. Research rozdziela kanoniczną kolejność orbit od autorskich kątów, położenia I.G.S. i pierścieniowego Garden of Apeiron. Bramki: 334/334, build 107 stron, map-audit 0, wiki-stats 100%.
+
 ## 2026-09-13 — PR-34: materializacja 373DSK Fear of Abduction i mapa Duskmourn
 
 Dostawę `373DSK / Fear of Abduction / DSK / Duskmourn` domknięto razem z pierwszą mapą planu. Autorski atlas T4 respektuje niemożliwą geografię Domu: pięć stref przenika się, apertury nie są trasami, a jedyną stałą osią pozostaje piwnica pierwotnego domu prowadząca do The Below. Przybliżona pinezka klasyfikuje sypialnię-przedmieście jako zmienny pokój bez adresu i pewnej strefy. Karta rozdziela prywatne `373DSK` od DSK #9 i zachowuje dwie czasowo wygnane istoty oraz ich wspólny powrót. Bramki: 326/326, build 105 stron, map-audit 0, wiki-stats 100%.
