@@ -4,6 +4,10 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-13 — PR-34: materializacja 373DSK Fear of Abduction i mapa Duskmourn
+
+Dostawę `373DSK / Fear of Abduction / DSK / Duskmourn` domknięto razem z pierwszą mapą planu. Autorski atlas T4 respektuje niemożliwą geografię Domu: pięć stref przenika się, apertury nie są trasami, a jedyną stałą osią pozostaje piwnica pierwotnego domu prowadząca do The Below. Przybliżona pinezka klasyfikuje sypialnię-przedmieście jako zmienny pokój bez adresu i pewnej strefy. Karta rozdziela prywatne `373DSK` od DSK #9 i zachowuje dwie czasowo wygnane istoty oraz ich wspólny powrót. Bramki: 326/326, build 105 stron, map-audit 0, wiki-stats 100%.
+
 ## 2026-09-13 — PR-34: materializacja 385DKA Midnight Guard
 
 Dostawę `385DKA / Midnight Guard / DKA / Innistrad` domknięto pełnym zestawem wpis–snapshot–karta–mapa. Snapshot rozdziela prywatne `385DKA` od DKA #14. Karta LORE-first wiąże odtapowanie z reakcją na każdego przybysza, a regionalna pinezka stoi na Lake Zhava bez wymyślonej osady. Link-mining utworzył hasło Nephalia po dwóch kartach. Skala chroni geografię: Thraben pozostaje odległą stolicą, Gavony sąsiednią prowincją. Bramki produktu: 320/320, build 103 strony, map-audit 0, wiki-stats 100%.

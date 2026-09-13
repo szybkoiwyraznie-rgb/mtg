@@ -1,3 +1,11 @@
+## 2026-09-13 22:02 — Nowa karta i mapa: Fear of Abduction (Duskmourn)
+
+- **Materializacja:** **[[373dsk-fear-of-abduction|Fear of Abduction]]** (`373DSK`, DSK, [[duskmourn|Duskmourn]]) wykorzystuje dziecko jako kotwicę manifestacji i porywa drugą istotę ku obliczu w suficie.
+- **Snapshot:** właściwy druk to DSK #9; prywatny `373DSK` pozostaje osobnym identyfikatorem. Koszmar 5/5 za `{4}{W}{W}` czasowo wiąże dwa wygnania i zwraca obie karty do rąk właścicieli.
+- **Nowa mapa T4:** atlas niemożliwej topologii przedstawia pięć przenikających się stref jako klasyfikację, nie prowincje. Nie ma kompasu, skali ani trwałych tras; jedyną stałą osią jest piwnica pierwotnego domu → The Below.
+- **Pinezka:** przybliżona, w centralnym polu zmiennych pokoi na styku stylistycznym Mistmoors i Balemurku; bez ulicy, dzielnicy, adresu i bez utożsamienia nicości z The Below.
+- **Bramki:** 326/326 testów; build 105 stron (52 karty, 37 haseł, 16 planów); map-audit 0; wiki-stats 100%.
+
 ## 2026-09-13 21:28 — Nowa karta: Midnight Guard (Innistrad)
 
 - **Materializacja:** **[[385dka-midnight-guard|Midnight Guard]]** (`385DKA`, DKA, [[innistrad|Innistrad]]) pilnuje bezimiennej palisady nad jeziorem Zhava według nauki Olgarda ze Skiltfolk.

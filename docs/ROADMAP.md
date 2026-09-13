@@ -477,3 +477,7 @@ Domknięto trzecią dostawę PR-34: wpis verbatim, MH2 #65, Kartę LORE-first, r
 ## PR-34 (2026-09-13) — **385DKA Midnight Guard zmaterializowane**
 
 Domknięto czwartą dostawę PR-34: wpis verbatim, DKA #14, Kartę LORE-first, regionalną pinezkę Lake Zhava, hasło Nephalia i regresję skali geograficznej. Stan: 51 kart, 37 haseł, 15 planów; 320/320 testów.
+
+## PR-34 (2026-09-13) — **373DSK i mapa Duskmourn zmaterializowane**
+
+Domknięto piątą dostawę PR-34 oraz szesnasty plan. Duskmourn otrzymał atlas niemożliwej topologii T4, kontrakt antykartograficzny i pierwszą przybliżoną pinezkę. Stan: 52 karty, 37 haseł, 16 planów; 326/326 testów.
