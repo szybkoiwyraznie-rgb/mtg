@@ -461,3 +461,6 @@ mapą wyłącznie odsyłaniem (`?x=&y=`), pole `regiony` wycofane.
 - **Morze Żywego Srebra / Steelfin Whale** — pierwsza karta bezpośrednio
   osadzona w akwenie; osobne hasło geograficzne czeka na drugi wpis kartowy.
   Błękitne kule i heksagonalne kolumny pozostają elementami jednej sceny.
+
+- **Skiltfolk / Olgard / Lake Zhava** — po 385DKA pozostają podzakresem
+  nowego hasła Nephalia; każdy z tych bytów ma tylko jedną kartę.
