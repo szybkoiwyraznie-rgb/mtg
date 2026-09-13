@@ -24,18 +24,23 @@ test('wszystkie plany mają po jednej pinezce na każdą kartę z deklaracją ma
   }
 });
 
-test('pinezki współdzielące kotwicę dostają różne przesunięcia ekranowe', () => {
+test('wspólna kotwica spoczywa jako jedna pinezka i ma pełne menu radialne', () => {
   for (const slug of plany) {
     const m = mapa(slug);
     globalThis.CODEX_DATA = { mapy: { [slug]: m }, strony: Object.fromEntries(m.pinezki.map((p) => [p.karta, { tytul: p.karta }])) };
     const html = renderMape(slug, {}, { osadzona: true });
-    const znaczniki = [...html.matchAll(/data-pinezka="([^"]+)"[^>]*data-x="([^"]+)" data-y="([^"]+)"\s+data-offset-x="([^"]+)" data-offset-y="([^"]+)"/g)]
-      .map((x) => ({ karta: x[1], punkt: `${x[2]}:${x[3]}`, offset: `${x[4]}:${x[5]}` }));
-    assert.equal(znaczniki.length, m.pinezki.length, `render zgubił pinezki: ${slug}`);
+    assert.equal([...html.matchAll(/data-pinezka="/g)].length, m.pinezki.length, `render zgubił pinezki: ${slug}`);
     const grupy = new Map();
-    for (const p of znaczniki) grupy.set(p.punkt, [...(grupy.get(p.punkt) ?? []), p]);
+    for (const p of m.pinezki) {
+      const punkt = `${p.x}:${p.y}`;
+      grupy.set(punkt, [...(grupy.get(punkt) ?? []), p]);
+    }
     for (const grupa of grupy.values()) {
-      if (grupa.length > 1) assert.equal(new Set(grupa.map((p) => p.offset)).size, grupa.length, `nakładające się pinezki: ${slug}`);
+      if (grupa.length < 2) continue;
+      assert.match(html, new RegExp(`data-pinezka-klaster="${grupa.length}"\\s+data-x="${grupa[0].x}" data-y="${grupa[0].y}"`), `brak klastra w punkcie źródłowym: ${slug}`);
+      const offsety = grupa.map((p) => html.match(new RegExp(`data-pinezka="${p.karta}"[^>]*--klaster-x:([^;]+);--klaster-y:([^;]+)`))?.slice(1).join(':'));
+      assert.equal(new Set(offsety).size, grupa.length, `menu nie rozsuwa wszystkich kart: ${slug}`);
+      assert.ok(offsety.every(Boolean), `brak przesunięcia hover: ${slug}`);
     }
   }
   delete globalThis.CODEX_DATA;
