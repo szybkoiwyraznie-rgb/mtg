@@ -1,208 +1,208 @@
 {
-  "epoka": "Stan współczesny wg zszytego rastra fanowskiego oficjalnej mapy Warhammer: The Old World (Games Workshop, 2024). Pinezki datują się Fabułą karty, nie mapą (ADR 0033).",
-  "kotwice": [
-    {
-      "nazwa": "The Badlands",
-      "notka": "Ziemie Jałowe na południe od Starego Świata — kanoniczna ojcowizna zielonoskórych (Orków i Goblinów); u wschodnich podnóży Worlds Edge Mountains, na płd. od Border Princes. Kotwica pinezki 39MM2 i deep-linku hasła zielonoskorzy.",
-      "pozycja_zrodlo": "kanon: https://whfb.lexicanum.com/wiki/Orc (Badlands jako homeland orków) + duża etykieta „THE BADLANDS” i ikony orków na rastrze; odczyt z mastera px (3700, 7400), 2026-09-10",
-      "px_t1": [
-        3700,
-        7400
-      ],
-      "typ": "kraina",
-      "uklad": "złoty T1 — odczyt z mastera",
-      "x": 0.4262,
-      "y": 0.581
-    },
-    {
-      "nazwa": "The Great Forest",
-      "notka": "Wielki Las w sercu Imperium (Talabecland / Ostermark / Osterlund) — pierwotna, mroczna puszcza będąca matecznikiem stad Dzieci Chaosu i minotaurów pod znakiem Głazu Stada. Kotwica pinezki 83MM2 i deep-linku hasła imperium.",
-      "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Great_Forest + ikona stada minotaurów/zwierzoludzi oraz etykieta „THE GREAT FOREST” na rastrze; odczyt z mastera px (3520, 4940), 2026-09-11",
-      "px_t1": [
-        3520,
-        4940
-      ],
-      "typ": "region",
-      "uklad": "złoty T1 — odczyt z mastera",
-      "x": 0.4054,
-      "y": 0.3878
-    },
-    {
-      "nazwa": "Drakwald Forest",
-      "notka": "Las Drakwald w Middenlandzie i Nordlandzie — owiana ponurą sławą puszcza zwierzoludzi i potworów Chaosu",
-      "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Drakwald_Forest + etykieta „DRAKWALD FOREST” na rastrze; odczyt z mastera px (2680, 4400), 2026-09-11",
-      "px_t1": [
-        2680,
-        4400
-      ],
-      "typ": "region",
-      "uklad": "złoty T1 — odczyt z mastera",
-      "x": 0.3087,
-      "y": 0.3454
-    },
-    {
-      "nazwa": "Sylvania",
-      "notka": "mroczna, mglista kraina na wschodnim skraju Imperium, formalnie powiązana ze Stirlandem, lecz słynąca jako domena von Carsteinów i Vampire Counts. Kotwica regionalnej pinezki 543ISD.",
-      "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Sylvania i https://whfb.lexicanum.com/wiki/Sylvania + etykieta „SYLVANIA” na rastrze między Stirlandem/Ostermarkiem a Worlds Edge Mountains; odczyt z podglądu L0 przeliczony do mastera px (4228, 5363), 2026-09-12",
-      "px_t1": [
-        4228,
-        5363
-      ],
-      "typ": "region",
-      "uklad": "złoty T1 — odczyt z podglądu L0 przeliczony do mastera",
-      "x": 0.487,
-      "y": 0.421
-    },
-    {
-      "nazwa": "Worlds Edge Mountains",
-      "notka": "wielkie pasmo na wschodniej granicy Starego Świata; wschodnie stoki przejęte przez zielonoskórych w Wojnach Goblinów. Kotwica deep-linku hasła gory-kranca-swiata i regionalna skala relacji z 39MM2/312M13/543ISD.",
-      "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Worlds_Edge_Mountains oraz https://whfb.lexicanum.com/wiki/Worlds_Edge_Mountains + etykieta „WORLDS EDGE MOUNTAINS” na rastrze (pasmo wzdłuż wschodniej krawędzi); odczyt z podglądu L0",
-      "typ": "pasmo",
-      "uklad": "złoty T1 — odczyt z podglądu L0",
-      "x": 0.78,
-      "y": 0.55
-    },
-    {
-      "nazwa": "Karak Eight Peaks (Karak Osiem Szczytów)",
-      "notka": "zrujnowana krasnoludzka twierdza w południowych Górach Krańca Świata, matecznik Nocnych Goblinów z plemienia Krzywego Księżyca (Crooked Moon) pod wodzą Skarsnika. Kotwica pinezki 312M13.",
-      "pozycja_zrodlo": "kanon: https://whfb.lexicanum.com/wiki/Karak_Eight_Peaks + etykieta „KARAK EIGHT PEAKS” w pasmie Worlds Edge Mountains; odczyt z podglądu L0",
-      "typ": "ruina",
-      "uklad": "złoty T1 — odczyt z podglądu L0",
-      "x": 0.72,
-      "y": 0.58
-    },
-    {
-      "nazwa": "The Border Princes",
-      "notka": "luźne włości ludzi między Imperium/Tileą a Badlands — bufor na północ od ojcowizny orków",
-      "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Border_Princes + etykieta „THE BORDER PRINCES” na rastrze (na płn. od Badlands); odczyt z podglądu L0",
-      "typ": "kraina",
-      "uklad": "złoty T1 — odczyt z podglądu L0",
-      "x": 0.44,
-      "y": 0.06
-    },
-    {
-      "nazwa": "Land of the Dead (Nehekhara)",
-      "notka": "pustynne południe: Khemri, Zandri, Numas, Mahrak, Lybaras — kraina nieumarłych królów grobowców",
-      "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Nehekhara + etykiety miast Nehekhary (Numas, Marshes of Madness) w dolnej partii rastra; odczyt z podglądu L0",
-      "typ": "kraina",
-      "uklad": "złoty T1 — odczyt z podglądu L0",
-      "x": 0.4,
-      "y": 0.94
-    },
-    {
-      "nazwa": "Altdorf",
-      "notka": "Stolica Reiklandu i Imperium, główna siedziba ośmiu Kolegiów Magii; kotwica miejskiej pinezki 69M11 dla laboratorium Kolegium Światła.",
-      "pozycja_zrodlo": "kanon: https://whfb.lexicanum.com/wiki/Colleges_of_Magic i https://whfb.lexicanum.com/wiki/Light_Order + etykieta „Altdorf” na rastrze; odczyt z mastera px (2580, 5140), 2026-09-13",
-      "px_t1": [
-        2580,
-        5140
-      ],
-      "typ": "miasto",
-      "uklad": "złoty T1 — odczyt z mastera",
-      "x": 0.2972,
-      "y": 0.4035
-    }
-  ],
-  "otwarte_na_kolejne_przejscia": [
-    "Kalibracja kotwic głównych krain ludzi (Reikland/Altdorf, Bretonnia, Kislev) do pierwszej karty w danej krainie; po 2026-09-13 Imperium ma hasło i deep-link przez Wielki Las, ale nie udaje jednej stolicy całej federacji.",
-    "Kotwice „odczyt z podglądu L0” (Worlds Edge Mountains, Sylvania, Border Princes, Nehekhara) do weryfikacji na masterze przy pierwszej karcie wymagającej większej precyzji (precedens Dominaria).",
-    "Pętla jakości Warhammer 2026-09-13 domknęła hasła imperium, zielonoskorzy i gory-kranca-swiata; poniżej progu zostają Sylwania, von Carsteinowie, Vampire Counts i łowcy czarownic."
-  ],
-  "pinezki": [
-    {
-      "karta": "39mm2-brute-force",
-      "x": 0.4262,
-      "y": 0.581,
-      "pewnosc": "region",
-      "uzasadnienie": "Fabuła właściciela: bezimienne, błotniste pole bitwy zielonoskórych — ork w zardzewiałej kolczudze pęczniejący od czerwonej magii Waaagh!, karmiony przez szamana. Dzieje świata nie wskazują jednego miasta: kanoniczną ojcowizną orków są Badlands (Lexicanum: „their homeland can be said to be the area known as the Badlands\"), na płd. od Border Princes u wschodnich podnóży Worlds Edge Mountains. Stąd pinezka na środku Badlands (odczyt z mastera px 3700, 7400) i pewność region (ADR 0040: lokalizacja i pewność z lore/Fabuły, nie z druku źródłowego)."
-    },
-    {
-      "karta": "83mm2-gorehorn-minotaurs",
-      "x": 0.4054,
-      "y": 0.3878,
-      "pewnosc": "region",
-      "uzasadnienie": "Zapis opowieści przedstawia trójkę minotaurów-zwierzoludzi gnających przez mroczną iglastą puszczę z woli Głazu Stada. W Starym Świecie matecznikiem stad Dzieci Chaosu i byczych bestii są wielkie, pierwotne puszcze Imperium — przede wszystkim The Great Forest (Wielki Las) w centrum oraz Drakwald na północy. Pinezka stoi na ikonie stada zwierzoludzi w The Great Forest z pewnością region.",
-      "notka": "Epoka Starego Świata — Dzieci Chaosu pędzą przez gęstwiny puszczy, niosąc zniszczenie ludzkim osadom i traktom Imperium."
-    },
-    {
-      "karta": "312m13-goblin-battle-jester",
-      "x": 0.72,
-      "y": 0.58,
-      "pewnosc": "region",
-      "uzasadnienie": "Fabuła właściciela: czerwono-brązowa skalna półka nad wąwozem w domenie plemienia Krzywego Księżyca (Crooked Moon) — wojenny trefniś w asymetrycznym stroju z kości odwraca uwagę wrogów groteskowym tańcem na krawędzi urwiska. Kanonicznym matecznikiem plemienia są Góry Krańca Świata wokół Karak Osiem Szczytów (Karak Eight Peaks). Pinezka stoi w rejonie południowych Worlds Edge Mountains z pewnością region."
-    },
-    {
-      "karta": "543isd-wooden-stake",
-      "x": 0.487,
-      "y": 0.421,
-      "pewnosc": "region",
-      "uzasadnienie": "Fabuła właściciela: mgliste cmentarze mrocznej Sylwanii, omszały grobowiec i łowcy czarownic Imperium z dębowym kołkiem przeciw wampirowi rodu von Carstein. Scena nie podaje miasta, wsi, zamku ani konkretnej nekropolii, dlatego pinezka stoi na regionalnej kotwicy Sylvania między Stirlandem/Ostermarkiem a zachodnimi stokami Worlds Edge Mountains.",
-      "notka": "Epoka Starego Świata — łowcy czarownic Imperium tropią wampirzą arystokrację w krainie von Carsteinów, gdzie prosty kołek rozstrzyga zwarcie pod grobowcem."
-    },
-    {
-      "karta": "69m11-tome-scour",
-      "x": 0.2972,
-      "y": 0.4035,
-      "pewnosc": "dokladna",
-      "uzasadnienie": "Fabuła wskazuje laboratorium Wielkiego Magistra Nauk Tajemnych Kolegium Światła; kanon lokuje główną siedzibę Kolegium Światła i Kolegia Magii w Altdorfie. Pewność dokładna dotyczy miasta, nie konkretnej sali, stołu ani budynku.",
-      "pozycja_zrodlo": "Fabuła właściciela (2026-09-13) + https://whfb.lexicanum.com/wiki/Light_Order + https://whfb.lexicanum.com/wiki/Colleges_of_Magic; kotwica Altdorf odczytana z mastera T1 px (2580, 5140)"
-    }
-  ],
-  "plan": "warhammer-fantasy",
-  "podklad": "l0.jpg",
-  "rekonstrukcja": false,
-  "tytul": "Warhammer Fantasy — Stary Świat",
-  "uklad_wspolrzednych": "ZŁOTY = raster T1 (master 8682×12737; plik l0.jpg 1920×2817 to jego pomniejszony proxy, ten sam kadr). x,y kotwic i pinezek znormalizowane 0–1 względem mastera. Nowa pinezka: odczyt X,Y na masterze → x=X/8682, y=Y/12737 (współrzędne mierzone na docelowym pliku).",
-  "wariant": "T1",
-  "warianty": [
-    {
-      "domyslny": true,
-      "epoka": "stan współczesny wg oficjalnej mapy Warhammer: The Old World (GW, 2024), zszytej fanowsko",
-      "etykiety": false,
-      "id": "t1",
-      "kafle": {
-        "katalog": "kafle",
-        "kolumny": 17,
-        "prog": 2.5,
-        "rozmiar": 512,
-        "wiersze": 25,
-        "wzorzec": "k{nnn}.jpg"
-      },
-      "kalibracja": {
-        "ox": 0,
-        "oy": 0,
-        "sx": 1,
-        "sy": 1
-      },
-      "podklad": "l0.jpg",
-      "tytul": "T1 · Stary Świat",
-      "wariant": "T1",
-      "wymiary": {
-        "szerokosc": 8682,
-        "wysokosc": 12737
-      },
-      "zrodlo": {
-        "autor": "Games Workshop (oryginał: mapa Warhammer: The Old World, 2024); zszycie fanowskie oficjalnych kafli, dostarczone przez właściciela",
-        "licencja": "materiał Games Workshop; użytek prywatny, niepubliczny — ADR 0031; przy upublicznieniu Codexu podkład do wymiany (ADR 0007 §3)",
-        "notka": "Master 8682×12737 (≈22 MB, q85, dostarczony przez właściciela) poza dist (cięty lokalnie tools/kafle.mjs); w repo i artefakcie: l0.jpg (1920×2817, pierwszy render), mini.jpg (800 px, mini-mapy kart), kafle/kNNN.jpg (425 kafelków L1, 17×25 po 512 px, row-major). Podkład T1 = układ ZŁOTY współrzędnych wszystkich pinezek i kotwic (ADR 0035). Na rastrze Codex nie rysuje etykiet (są nadrukowane na mapie) — zostają pinezki kart i kotwice.",
-        "pobrano": "2026-09-10",
-        "tytul": "Warhammer: The Old World — oficjalna mapa GW (2024), zszycie fanowskie kafli",
-        "url": "https://www.warhammer-community.com/",
-        "url2": "https://www.reddit.com/r/WarhammerFantasy/"
-      }
-    }
-  ],
-  "wymiary": {
+ "epoka": "Stan współczesny wg zszytego rastra fanowskiego oficjalnej mapy Warhammer: The Old World (Games Workshop, 2024). Pinezki datują się Fabułą karty, nie mapą (ADR 0033).",
+ "kotwice": [
+  {
+   "nazwa": "The Badlands",
+   "notka": "Ziemie Jałowe na południe od Starego Świata — kanoniczna ojcowizna zielonoskórych (Orków i Goblinów); u wschodnich podnóży Worlds Edge Mountains, na płd. od Border Princes. Kotwica pinezki 39MM2 i deep-linku hasła zielonoskorzy.",
+   "pozycja_zrodlo": "kanon: https://whfb.lexicanum.com/wiki/Orc (Badlands jako homeland orków) + duża etykieta „THE BADLANDS” i ikony orków na rastrze; odczyt z mastera px (3700, 7400), 2026-09-10",
+   "px_t1": [
+    3700,
+    7400
+   ],
+   "typ": "kraina",
+   "uklad": "złoty T1 — odczyt z mastera",
+   "x": 0.4262,
+   "y": 0.581
+  },
+  {
+   "nazwa": "The Great Forest",
+   "notka": "Wielki Las w sercu Imperium (Talabecland / Ostermark / Osterlund) — pierwotna, mroczna puszcza będąca matecznikiem stad Dzieci Chaosu i minotaurów pod znakiem Głazu Stada. Kotwica pinezki 83MM2 i deep-linku hasła imperium.",
+   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Great_Forest + ikona stada minotaurów/zwierzoludzi oraz etykieta „THE GREAT FOREST” na rastrze; odczyt z mastera px (3520, 4940), 2026-09-11",
+   "px_t1": [
+    3520,
+    4940
+   ],
+   "typ": "region",
+   "uklad": "złoty T1 — odczyt z mastera",
+   "x": 0.4054,
+   "y": 0.3878
+  },
+  {
+   "nazwa": "Drakwald Forest",
+   "notka": "Las Drakwald w Middenlandzie i Nordlandzie — owiana ponurą sławą puszcza zwierzoludzi i potworów Chaosu",
+   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Drakwald_Forest + etykieta „DRAKWALD FOREST” na rastrze; odczyt z mastera px (2680, 4400), 2026-09-11",
+   "px_t1": [
+    2680,
+    4400
+   ],
+   "typ": "region",
+   "uklad": "złoty T1 — odczyt z mastera",
+   "x": 0.3087,
+   "y": 0.3454
+  },
+  {
+   "nazwa": "Sylvania",
+   "notka": "mroczna, mglista kraina na wschodnim skraju Imperium, formalnie powiązana ze Stirlandem, lecz słynąca jako domena von Carsteinów i Vampire Counts. Kotwica regionalnej pinezki 543ISD.",
+   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Sylvania i https://whfb.lexicanum.com/wiki/Sylvania + etykieta „SYLVANIA” na rastrze między Stirlandem/Ostermarkiem a Worlds Edge Mountains; odczyt z podglądu L0 przeliczony do mastera px (4228, 5363), 2026-09-12",
+   "px_t1": [
+    4228,
+    5363
+   ],
+   "typ": "region",
+   "uklad": "złoty T1 — odczyt z podglądu L0 przeliczony do mastera",
+   "x": 0.487,
+   "y": 0.421
+  },
+  {
+   "nazwa": "Worlds Edge Mountains",
+   "notka": "wielkie pasmo na wschodniej granicy Starego Świata; wschodnie stoki przejęte przez zielonoskórych w Wojnach Goblinów. Kotwica deep-linku hasła gory-kranca-swiata i regionalna skala relacji z 39MM2/312M13/543ISD.",
+   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Worlds_Edge_Mountains oraz https://whfb.lexicanum.com/wiki/Worlds_Edge_Mountains + etykieta „WORLDS EDGE MOUNTAINS” na rastrze (pasmo wzdłuż wschodniej krawędzi); odczyt z podglądu L0",
+   "typ": "pasmo",
+   "uklad": "złoty T1 — odczyt z podglądu L0",
+   "x": 0.78,
+   "y": 0.55
+  },
+  {
+   "nazwa": "Karak Eight Peaks (Karak Osiem Szczytów)",
+   "notka": "zrujnowana krasnoludzka twierdza w południowych Górach Krańca Świata, matecznik Nocnych Goblinów z plemienia Krzywego Księżyca (Crooked Moon) pod wodzą Skarsnika. Kotwica pinezki 312M13.",
+   "pozycja_zrodlo": "kanon: https://whfb.lexicanum.com/wiki/Karak_Eight_Peaks + etykieta „KARAK EIGHT PEAKS” w pasmie Worlds Edge Mountains; odczyt z podglądu L0",
+   "typ": "ruina",
+   "uklad": "złoty T1 — odczyt z podglądu L0",
+   "x": 0.72,
+   "y": 0.58
+  },
+  {
+   "nazwa": "The Border Princes",
+   "notka": "luźne włości ludzi między Imperium/Tileą a Badlands — bufor na północ od ojcowizny orków",
+   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Border_Princes + etykieta „THE BORDER PRINCES” na rastrze (na płn. od Badlands); odczyt z podglądu L0",
+   "typ": "kraina",
+   "uklad": "złoty T1 — odczyt z podglądu L0",
+   "x": 0.44,
+   "y": 0.06
+  },
+  {
+   "nazwa": "Land of the Dead (Nehekhara)",
+   "notka": "pustynne południe: Khemri, Zandri, Numas, Mahrak, Lybaras — kraina nieumarłych królów grobowców",
+   "pozycja_zrodlo": "kanon: https://warhammerfantasy.fandom.com/wiki/Nehekhara + etykiety miast Nehekhary (Numas, Marshes of Madness) w dolnej partii rastra; odczyt z podglądu L0",
+   "typ": "kraina",
+   "uklad": "złoty T1 — odczyt z podglądu L0",
+   "x": 0.4,
+   "y": 0.94
+  },
+  {
+   "nazwa": "Altdorf",
+   "notka": "Stolica Reiklandu i Imperium, główna siedziba ośmiu Kolegiów Magii; kotwica miejskiej pinezki 69M11 dla laboratorium Kolegium Światła.",
+   "pozycja_zrodlo": "kanon: https://whfb.lexicanum.com/wiki/Colleges_of_Magic i https://whfb.lexicanum.com/wiki/Light_Order + etykieta „Altdorf” na rastrze; odczyt z mastera px (2580, 5140), 2026-09-13",
+   "px_t1": [
+    2580,
+    5140
+   ],
+   "typ": "miasto",
+   "uklad": "złoty T1 — odczyt z mastera",
+   "x": 0.2972,
+   "y": 0.4035
+  }
+ ],
+ "otwarte_na_kolejne_przejscia": [
+  "Kalibracja kotwic głównych krain ludzi (Reikland/Altdorf, Bretonnia, Kislev) do pierwszej karty w danej krainie; po 2026-09-13 Imperium ma hasło i deep-link przez Wielki Las, ale nie udaje jednej stolicy całej federacji.",
+  "Kotwice „odczyt z podglądu L0” (Worlds Edge Mountains, Sylvania, Border Princes, Nehekhara) do weryfikacji na masterze przy pierwszej karcie wymagającej większej precyzji (precedens Dominaria).",
+  "Pętla jakości Warhammer 2026-09-13 domknęła hasła imperium, zielonoskorzy i gory-kranca-swiata; poniżej progu zostają Sylwania, von Carsteinowie, Vampire Counts i łowcy czarownic."
+ ],
+ "pinezki": [
+  {
+   "karta": "39mm2-brute-force",
+   "x": 0.4262,
+   "y": 0.581,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła właściciela: bezimienne, błotniste pole bitwy zielonoskórych — ork w zardzewiałej kolczudze pęczniejący od czerwonej magii Waaagh!, karmiony przez szamana. Dzieje świata nie wskazują jednego miasta: kanoniczną ojcowizną orków są Badlands (Lexicanum: „their homeland can be said to be the area known as the Badlands\"), na płd. od Border Princes u wschodnich podnóży Worlds Edge Mountains. Stąd pinezka na środku Badlands (odczyt z mastera px 3700, 7400) i pewność region (ADR 0040: lokalizacja i pewność z lore/Fabuły, nie z druku źródłowego)."
+  },
+  {
+   "karta": "83mm2-gorehorn-minotaurs",
+   "x": 0.4054,
+   "y": 0.3878,
+   "pewnosc": "region",
+   "uzasadnienie": "Zapis opowieści przedstawia trójkę minotaurów-zwierzoludzi gnających przez mroczną iglastą puszczę z woli Głazu Stada. W Starym Świecie matecznikiem stad Dzieci Chaosu i byczych bestii są wielkie, pierwotne puszcze Imperium — przede wszystkim The Great Forest (Wielki Las) w centrum oraz Drakwald na północy. Pinezka stoi na ikonie stada zwierzoludzi w The Great Forest z pewnością region.",
+   "notka": "Epoka Starego Świata — Dzieci Chaosu pędzą przez gęstwiny puszczy, niosąc zniszczenie ludzkim osadom i traktom Imperium."
+  },
+  {
+   "karta": "312m13-goblin-battle-jester",
+   "x": 0.72,
+   "y": 0.58,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła właściciela: czerwono-brązowa skalna półka nad wąwozem w domenie plemienia Krzywego Księżyca (Crooked Moon) — wojenny trefniś w asymetrycznym stroju z kości odwraca uwagę wrogów groteskowym tańcem na krawędzi urwiska. Kanonicznym matecznikiem plemienia są Góry Krańca Świata wokół Karak Osiem Szczytów (Karak Eight Peaks). Pinezka stoi w rejonie południowych Worlds Edge Mountains z pewnością region."
+  },
+  {
+   "karta": "543isd-wooden-stake",
+   "x": 0.487,
+   "y": 0.421,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła właściciela: mgliste cmentarze mrocznej Sylwanii, omszały grobowiec i łowcy czarownic Imperium z dębowym kołkiem przeciw wampirowi rodu von Carstein. Scena nie podaje miasta, wsi, zamku ani konkretnej nekropolii, dlatego pinezka stoi na regionalnej kotwicy Sylvania między Stirlandem/Ostermarkiem a zachodnimi stokami Worlds Edge Mountains.",
+   "notka": "Epoka Starego Świata — łowcy czarownic Imperium tropią wampirzą arystokrację w krainie von Carsteinów, gdzie prosty kołek rozstrzyga zwarcie pod grobowcem."
+  },
+  {
+   "karta": "69m11-tome-scour",
+   "x": 0.2972,
+   "y": 0.4035,
+   "pewnosc": "dokladna",
+   "uzasadnienie": "Fabuła wskazuje laboratorium Wielkiego Magistra Nauk Tajemnych Kolegium Światła; kanon lokuje główną siedzibę Kolegium Światła i Kolegia Magii w Altdorfie. Pewność dokładna dotyczy miasta, nie konkretnej sali, stołu ani budynku.",
+   "pozycja_zrodlo": "Fabuła właściciela (2026-09-13) + https://whfb.lexicanum.com/wiki/Light_Order + https://whfb.lexicanum.com/wiki/Colleges_of_Magic; kotwica Altdorf odczytana z mastera T1 px (2580, 5140)"
+  }
+ ],
+ "plan": "warhammer-fantasy",
+ "podklad": "l0.jpg",
+ "rekonstrukcja": false,
+ "tytul": "Warhammer Fantasy — Stary Świat",
+ "uklad_wspolrzednych": "ZŁOTY = raster T1 (master 8682×12737; plik l0.jpg 1920×2817 to jego pomniejszony proxy, ten sam kadr). x,y kotwic i pinezek znormalizowane 0–1 względem mastera. Nowa pinezka: odczyt X,Y na masterze → x=X/8682, y=Y/12737 (współrzędne mierzone na docelowym pliku).",
+ "wariant": "T1",
+ "warianty": [
+  {
+   "domyslny": true,
+   "epoka": "stan współczesny wg oficjalnej mapy Warhammer: The Old World (GW, 2024), zszytej fanowsko",
+   "etykiety": false,
+   "id": "t1",
+   "kafle": {
+    "katalog": "kafle",
+    "kolumny": 17,
+    "prog": 2.5,
+    "rozmiar": 512,
+    "wiersze": 25,
+    "wzorzec": "k{nnn}.jpg"
+   },
+   "kalibracja": {
+    "ox": 0,
+    "oy": 0,
+    "sx": 1,
+    "sy": 1
+   },
+   "podklad": "l0.jpg",
+   "tytul": "T1 · Stary Świat",
+   "wariant": "T1",
+   "wymiary": {
     "szerokosc": 8682,
     "wysokosc": 12737
-  },
-  "zrodlo": {
+   },
+   "zrodlo": {
     "autor": "Games Workshop (oryginał: mapa Warhammer: The Old World, 2024); zszycie fanowskie oficjalnych kafli, dostarczone przez właściciela",
     "licencja": "materiał Games Workshop; użytek prywatny, niepubliczny — ADR 0031; przy upublicznieniu Codexu podkład do wymiany (ADR 0007 §3)",
-    "notka": "Mapa LOD (ADR 0039): podkład złoty T1 — L0 (l0.jpg, pierwszy render) + kafle L1 (17×25×512, próg 2.5). Raster ma etykiety nadrukowane (etykiety: false — Codex nakłada tylko pinezki kart).",
+    "notka": "Master 8682×12737 (≈22 MB, q85, dostarczony przez właściciela) poza dist (cięty lokalnie tools/kafle.mjs); w repo i artefakcie: l0.jpg (1920×2817, pierwszy render), mini.jpg (800 px, mini-mapy kart), kafle/kNNN.jpg (425 kafelków L1, 17×25 po 512 px, row-major). Podkład T1 = układ ZŁOTY współrzędnych wszystkich pinezek i kotwic (ADR 0035). Na rastrze Codex nie rysuje etykiet (są nadrukowane na mapie) — zostają pinezki kart i kotwice.",
     "pobrano": "2026-09-10",
-    "tytul": "Warhammer: The Old World — oficjalna mapa GW (2024), zszycie fanowskie",
+    "tytul": "Warhammer: The Old World — oficjalna mapa GW (2024), zszycie fanowskie kafli",
     "url": "https://www.warhammer-community.com/",
     "url2": "https://www.reddit.com/r/WarhammerFantasy/"
+   }
   }
+ ],
+ "wymiary": {
+  "szerokosc": 8682,
+  "wysokosc": 12737
+ },
+ "zrodlo": {
+  "autor": "Games Workshop (oryginał: mapa Warhammer: The Old World, 2024); zszycie fanowskie oficjalnych kafli, dostarczone przez właściciela",
+  "licencja": "materiał Games Workshop; użytek prywatny, niepubliczny — ADR 0031; przy upublicznieniu Codexu podkład do wymiany (ADR 0007 §3)",
+  "notka": "Mapa LOD (ADR 0039): podkład złoty T1 — L0 (l0.jpg, pierwszy render) + kafle L1 (17×25×512, próg 2.5). Raster ma etykiety nadrukowane (etykiety: false — Codex nakłada tylko pinezki kart).",
+  "pobrano": "2026-09-10",
+  "tytul": "Warhammer: The Old World — oficjalna mapa GW (2024), zszycie fanowskie",
+  "url": "https://www.warhammer-community.com/",
+  "url2": "https://www.reddit.com/r/WarhammerFantasy/"
+ }
 }
