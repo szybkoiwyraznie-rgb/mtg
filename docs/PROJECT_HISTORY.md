@@ -4,6 +4,10 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-13 — PR-34: materializacja 99MH2 Steelfin Whale
+
+Dostawę `99MH2 / Steelfin Whale / MH2 / Mirrodin` domknięto pełnym zestawem wpis–snapshot–karta–mapa. Snapshot rozdziela prywatne `99MH2` od MH2 #65. Karta LORE-first wiąże Affinity i odtapowanie z metalicznym żerowaniem wieloryba. Regionalna pinezka stoi na kotwicy Quicksilver Sea bez wymyślonego siedliska. Morze Żywego Srebra pozostaje poniżej progu osobnego hasła. Bramki produktu: 314/314, build 101 stron, map-audit 0 i wiki-stats 100%.
+
 ## 2026-09-13 — PR-34: materializacja 572GTC Skinbrand Goblin
 
 Dostawę `572GTC / Skinbrand Goblin / GTC / Ravnica` domknięto pełnym zestawem wpis–snapshot–karta–mapa. Snapshot rozdziela prywatne `572GTC` od GTC #105. Karta LORE-first zachowuje runy Płomiennoskórych, Bloodrush `{R}` / `+2/+1` i badawczą hipotezę Izzetów. Regionalna pinezka stoi na Red Wastes, bez fałszywej lokalizacji sceny. Próg dwóch kart domknął hasła Gruul i Liga Izzet; Niv-Mizzet i Płomiennoskórzy czekają. Bramki produktu: 306/306, build 100 stron, map-audit 0, wiki-stats 100%.

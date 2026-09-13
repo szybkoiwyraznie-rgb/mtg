@@ -1,3 +1,11 @@
+## 2026-09-13 21:08 — Nowa karta: Steelfin Whale (Mirrodin)
+
+- **Materializacja:** **[[99mh2-steelfin-whale|Steelfin Whale]]** (`99MH2`, MH2, [[mirrodin|Mirrodin]]) przesiewa metaliczne opiłki i rudę magnetycznymi fiszbinami w Morzu Żywego Srebra.
+- **Snapshot:** właściwy druk to MH2 #65; prywatny `99MH2` pozostaje osobnym identyfikatorem. Affinity obniża koszt `{5}{U}`, a wejście artefaktu odtapowuje wieloryba 3/4.
+- **Mapa:** regionalna pinezka korzysta z istniejącej kotwicy Quicksilver Sea (`0.7045/0.4122`), bez wymyślonej zatoki, miasta lub siedliska.
+- **Link-mining:** Morze Żywego Srebra ma pierwsze bezpośrednie odwołanie kartowe i czeka na drugi wpis; kule oraz kolumny pozostają elementami jednej sceny.
+- **Bramki:** 314/314 testów; build 101 stron (50 kart, 36 haseł, 15 planów); map-audit 0; wiki-stats 100%.
+
 ## 2026-09-13 18:12 — Nowa karta: Skinbrand Goblin (Ravnica)
 
 - **Materializacja:** **[[572gtc-skinbrand-goblin|Skinbrand Goblin]]** (`572GTC`, GTC, [[ravnica|Ravnica]]) pokazuje natarcie Płomiennoskórych w zarastającym Paśmie Gruzów.

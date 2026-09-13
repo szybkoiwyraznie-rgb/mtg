@@ -469,3 +469,7 @@ encje Kolegium Światła/Kolegia Magii pozostają poniżej progu haseł. Stan:
 ## PR-34 (2026-09-13) — **572GTC Skinbrand Goblin zmaterializowane**
 
 Domknięto drugą dostawę PR-34: wpis verbatim, GTC #105, Kartę LORE-first, regionalną pinezkę Red Wastes, hasła Gruul i Liga Izzet oraz pełną regresję. Stan: 49 kart, 36 haseł, 15 planów; 306/306 testów i komplet bramek zielony.
+
+## PR-34 (2026-09-13) — **99MH2 Steelfin Whale zmaterializowane**
+
+Domknięto trzecią dostawę PR-34: wpis verbatim, MH2 #65, Kartę LORE-first, regionalną pinezkę Quicksilver Sea i regresję. Stan: 50 kart, 36 haseł, 15 planów; 314/314 testów i komplet bramek zielony.
