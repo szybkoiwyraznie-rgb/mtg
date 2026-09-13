@@ -694,6 +694,15 @@ export function zamontujMape(app, opcje = {}) {
   if (!ruch) return;
   const nakladka = okno.querySelector('[data-mapa-nakladka]');
 
+  // Klaster otwiera się wyłącznie po trafieniu w rzeczywistą pinezkę.
+  // Dopiero otwarty dostaje większy obszar podtrzymujący menu radialne.
+  for (const klaster of nakladka?.querySelectorAll?.('[data-pinezka-klaster]') ?? []) {
+    for (const pin of klaster.querySelectorAll('[data-pinezka]')) {
+      pin.addEventListener('pointerenter', () => klaster.classList.add('otwarty'));
+    }
+    klaster.addEventListener('pointerleave', () => klaster.classList.remove('otwarty'));
+  }
+
   // ── Warianty podkładu (ADR 0035): sceny [data-scena], jedna widoczna.
   // Pinezki kart i etykiety podkładu są w układzie ZŁOTYM (wariant domyślny);
   // aktywna scena niesie kalibrację złoty → własny (sx, sy, ox, oy).

@@ -24,6 +24,13 @@ test('wszystkie plany mają po jednej pinezce na każdą kartę z deklaracją ma
   }
 });
 
+test('zamknięty klaster aktywuje wyłącznie sama pinezka', () => {
+  const css = fs.readFileSync('src/codex/style.css', 'utf8');
+  assert.match(css, /\.mapa-klaster-pinezek\s*{[^}]*width:\s*0;\s*height:\s*0;[^}]*pointer-events:\s*none/s);
+  assert.match(css, /\.mapa-klaster-pinezek\.otwarty::before[\s\S]*pointer-events:\s*auto/);
+  assert.doesNotMatch(css, /\.mapa-klaster-pinezek:hover\s+\.mapa-pinezka/);
+});
+
 test('wspólna kotwica spoczywa jako jedna pinezka i ma pełne menu radialne', () => {
   for (const slug of plany) {
     const m = mapa(slug);
