@@ -4,6 +4,38 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-13 — PR-34: materializacja 56EOE Diplomatic Relations i mapa The Edge
+
+Dostawę `56EOE / Diplomatic Relations / EOE / The Edge` domknięto wraz z fanowską mapą T1 systemu Sothera dostarczoną przez właściciela. Karta zachowuje oficjalną korektę dnia zero: własna istota otrzymuje +1/+0 i vigilance, po czym zadaje obrażenia przeciwnikowi. Pinezka stoi na Evendo bez wymyślenia placówki powierzchniowej. Research rozdziela kanoniczną kolejność orbit od autorskich kątów, położenia I.G.S. i pierścieniowego Garden of Apeiron. Bramki: 334/334, build 107 stron, map-audit 0, wiki-stats 100%.
+
+## 2026-09-13 — PR-34: materializacja 373DSK Fear of Abduction i mapa Duskmourn
+
+Dostawę `373DSK / Fear of Abduction / DSK / Duskmourn` domknięto razem z pierwszą mapą planu. Autorski atlas T4 respektuje niemożliwą geografię Domu: pięć stref przenika się, apertury nie są trasami, a jedyną stałą osią pozostaje piwnica pierwotnego domu prowadząca do The Below. Przybliżona pinezka klasyfikuje sypialnię-przedmieście jako zmienny pokój bez adresu i pewnej strefy. Karta rozdziela prywatne `373DSK` od DSK #9 i zachowuje dwie czasowo wygnane istoty oraz ich wspólny powrót. Bramki: 326/326, build 105 stron, map-audit 0, wiki-stats 100%.
+
+## 2026-09-13 — PR-34: materializacja 385DKA Midnight Guard
+
+Dostawę `385DKA / Midnight Guard / DKA / Innistrad` domknięto pełnym zestawem wpis–snapshot–karta–mapa. Snapshot rozdziela prywatne `385DKA` od DKA #14. Karta LORE-first wiąże odtapowanie z reakcją na każdego przybysza, a regionalna pinezka stoi na Lake Zhava bez wymyślonej osady. Link-mining utworzył hasło Nephalia po dwóch kartach. Skala chroni geografię: Thraben pozostaje odległą stolicą, Gavony sąsiednią prowincją. Bramki produktu: 320/320, build 103 strony, map-audit 0, wiki-stats 100%.
+
+## 2026-09-13 — PR-34: materializacja 99MH2 Steelfin Whale
+
+Dostawę `99MH2 / Steelfin Whale / MH2 / Mirrodin` domknięto pełnym zestawem wpis–snapshot–karta–mapa. Snapshot rozdziela prywatne `99MH2` od MH2 #65. Karta LORE-first wiąże Affinity i odtapowanie z metalicznym żerowaniem wieloryba. Regionalna pinezka stoi na kotwicy Quicksilver Sea bez wymyślonego siedliska. Morze Żywego Srebra pozostaje poniżej progu osobnego hasła. Bramki produktu: 314/314, build 101 stron, map-audit 0 i wiki-stats 100%.
+
+## 2026-09-13 — PR-34: materializacja 572GTC Skinbrand Goblin
+
+Dostawę `572GTC / Skinbrand Goblin / GTC / Ravnica` domknięto pełnym zestawem wpis–snapshot–karta–mapa. Snapshot rozdziela prywatne `572GTC` od GTC #105. Karta LORE-first zachowuje runy Płomiennoskórych, Bloodrush `{R}` / `+2/+1` i badawczą hipotezę Izzetów. Regionalna pinezka stoi na Red Wastes, bez fałszywej lokalizacji sceny. Próg dwóch kart domknął hasła Gruul i Liga Izzet; Niv-Mizzet i Płomiennoskórzy czekają. Bramki produktu: 306/306, build 100 stron, map-audit 0, wiki-stats 100%.
+
+## 2026-09-13 — PR-34: materializacja 69M11 Tome Scour
+
+Po audycie PR-33 zapisano dostawę `69M11 / Tome Scour / M11 / Warhammer
+Fantasy` i zmaterializowano ją jako pełny zestaw wpis–snapshot–karta–mapa.
+Snapshot wskazuje M11 #76, przy zachowaniu prywatnego imgId `69M11`. Karta
+LORE-first osadza pięć mielonych kart jako pięć arkuszy niszczonych w
+laboratorium Kolegium Światła. Mapa T1 dostała wyłącznie pinezkę karty na
+zmierzonej kotwicy Altdorfu; bez nowej warstwy haseł. Link-mining prowadzi
+do istniejącego hasła `imperium`, zaś Kolegium Światła, Kolegia Magii i
+Altdorf czekają na drugi wpis. Bramki produktu: 302/302 testy, build 97
+stron, 859 plików drzewa, map-audit 0 i wiki-stats 100%.
+
 ## 2026-09-13 — PR-33 cd.: trzy Pętle Jakości Warhammer Fantasy
 
 Po zamknięciu `543ISD Wooden Stake` właściciel poprosił o „3 pętle jakości”.

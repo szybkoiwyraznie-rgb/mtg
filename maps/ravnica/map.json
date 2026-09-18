@@ -520,6 +520,13 @@
    "y": 0.4318,
    "pewnosc": "region",
    "uzasadnienie": "Fabuła: w sercu Dziesiątego Dystryktu, na zrujnowanej barykadzie blokującej intruzom drogę na kluczowy plac targowy. Kotwica Tin Street Market wskazuje najtwardszy znany rejon targowy Boros/Tin Street, nie dokładną barykadę ani pojedyncze skrzyżowanie."
+  },
+  {
+   "karta": "572gtc-skinbrand-goblin",
+   "x": 0.4109,
+   "y": 0.216,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła wskazuje zrujnowane, zarastające rejony Pasma Gruzów, ale nie nazywa ulicy, obozu ani konkretnej barykady. Kotwica Red Wastes reprezentuje północny Rubblebelt Gruulów nad Czwartym Precyktem."
   }
  ],
  "otwarte_na_kolejne_przejscia": [

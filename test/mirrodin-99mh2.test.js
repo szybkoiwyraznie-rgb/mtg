@@ -1,0 +1,11 @@
+import fs from 'node:fs'; import { test } from 'node:test'; import assert from 'node:assert/strict';
+const wpis=fs.readFileSync('collection/entries/99mh2-steelfin-whale.md','utf8');
+const karta=fs.readFileSync('content/cards/99mh2-steelfin-whale.md','utf8');
+const snap=JSON.parse(fs.readFileSync('scryfall/99mh2-steelfin-whale.json'));
+const mapa=JSON.parse(fs.readFileSync('maps/mirrodin/map.json'));
+const fabula='W ciemnoniebieskiej toni Morza Żywego Srebra na Mirrodinie płynie majestatyczny gigantyczny wieloryb o płetwach z polerowanej stali. Ma szeroko otwarty pysk, w którym rzędy grubych metalicznych fiszbinów przypominających namagnesowane pręty przyciągają gęste chmury srebrzystych opiłków metalu i drobiny lśniącej rudy zawieszone w wodzie. Wokół niego unosi się kilka precyzyjnie wykonanych kulistych artefaktów emanujących jaskrawym błękitnym światłem, które oświetla paszczę wieloryba i jego stalowe płetwy. W tle wznoszą się potężne heksagonalne kolumny mirrańskiego dna oceanu — w świecie bez ziemi żywe stworzenia nie polują na mięso, lecz na metal, który zastępuje im wszystko.';
+test('99MH2: Fabuła właściciela pozostaje verbatim',()=>assert.equal(wpis.match(/^---\n[\s\S]*?\n---\n\n([\s\S]*?)\n?$/)?.[1],fabula));
+test('99MH2: prywatny imgId jest niezależny od MH2 #65',()=>{assert.equal(snap.collector_number,'65');assert.match(snap.notka_numery,/99MH2/)});
+test('99MH2: mechanika i flavor zachowują pełny zapis',()=>{assert.equal(snap.mana_cost,'{5}{U}');assert.match(snap.oracle_text,/Affinity for artifacts/);assert.match(snap.oracle_text,/enters, untap this creature/);assert.equal(snap.power,'3');assert.equal(snap.toughness,'4');assert.match(snap.flavor_text,/magnetic baleen/)});
+test('99MH2: karta jest LORE-first i zachowuje elementy sceny',()=>{assert.match(karta,/magnetyczn/);assert.match(karta,/heksagonaln/);assert.match(karta,/błękitne kule/i);assert.match(karta,/Morze Żywego Srebra/)});
+test('99MH2: regionalna pinezka stoi na Quicksilver Sea',()=>{const p=mapa.pinezki.find(x=>x.karta==='99mh2-steelfin-whale');const a=mapa.kotwice.find(x=>x.nazwa==='Quicksilver Sea');assert.ok(p);assert.equal(p.pewnosc,'region');assert.equal(p.x,a.x);assert.equal(p.y,a.y);assert.match(p.uzasadnienie,/nie nazywa zatoki/)});

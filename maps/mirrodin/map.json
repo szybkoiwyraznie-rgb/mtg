@@ -352,6 +352,13 @@
    "y": 0.5,
    "pewnosc": "przyblizona",
    "uzasadnienie": "Fabuła właściciela wskazuje wyłącznie Mirrodin: sterylną białą kuźnię-świątynię o nieznanym położeniu, w której czysty talizman leczy wojowników oporu. Brak nazwanego regionu lub obiektu; punkt w środku widoku planu jest umownym znacznikiem o pewności przybliżonej i nie przypisuje sceny do żadnej z nazwanych domen mapy."
+  },
+  {
+   "karta": "99mh2-steelfin-whale",
+   "x": 0.7045,
+   "y": 0.4122,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła wskazuje Morze Żywego Srebra, ale nie nazywa zatoki, miasta ani konkretnego siedliska. Pinezka korzysta z istniejącej kotwicy regionu Quicksilver Sea i nie utożsamia heksagonalnych kolumn z Lumengridem, Medev ani innym POI."
   }
  ],
  "scena": "scena.json",

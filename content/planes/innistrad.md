@@ -160,6 +160,13 @@ z regionu. Geografia prowincji jest stabilna przez cały blok
 i późniejsze powroty, więc jedna mapa obsługuje wszystkie epoki planu;
 zmiany punktowe (Avabruck → Hollowhenge) opisano w notkach kotwic.
 
+## Warta nad jeziorem Zhava
+
+[[385dka-midnight-guard|Midnight Guard]] osadza naukę Olgarda ze Skiltfolk
+przy bezimiennej palisadzie nad jeziorem Zhava. Scena pogłębia
+[[nephalia|Nephalię]] obok Havengulu, zachowując pobliską granicę Gavony
+i odległe Thraben jako osobne skale geograficzne.
+
 ## Źródła
 
 1. [A Planeswalker's Guide to Innistrad: Introduction](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-introduction-2011-08-24) — cztery prowincje i ich charakterystyka.

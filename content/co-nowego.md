@@ -1,3 +1,61 @@
+## 2026-09-13 23:20 — Nowa karta i mapa: Diplomatic Relations (The Edge)
+
+- **Materializacja:** **[[56eoe-diplomatic-relations|Diplomatic Relations]]** (`56EOE`, EOE, [[the-edge|The Edge]]) pokazuje „dyplomację” Kavów jako uprzywilejowanie własnego funkcjonariusza przez pole bezpieczeństwa placówki Evendo.
+- **Korekta dnia zero:** snapshot EOE #177 zachowuje aktualny Oracle z brakującym na pierwotnym druku `you control`; wzmacniany jest własny Kav, nie dowolna istota przeciwnika.
+- **Nowa mapa T1:** dostarczona przez właściciela fanowska mapa Auroreona przedstawia system Sothera, wspólną orbitę Kavaronu i Evendo oraz Wurmwall. Research jawnie oddziela kanon orbit od interpretacyjnych kątów, I.G.S. i pierścienia Garden of Apeiron.
+- **Pinezka:** przybliżona na oznaczeniu Evendo; wskazuje planetę, nie wymyśloną placówkę powierzchniową.
+- **Bramki:** 334/334 testów; build 107 stron (53 karty, 37 haseł, 17 planów); map-audit 0; wiki-stats 100%.
+
+## 2026-09-13 22:02 — Nowa karta i mapa: Fear of Abduction (Duskmourn)
+
+- **Materializacja:** **[[373dsk-fear-of-abduction|Fear of Abduction]]** (`373DSK`, DSK, [[duskmourn|Duskmourn]]) wykorzystuje dziecko jako kotwicę manifestacji i porywa drugą istotę ku obliczu w suficie.
+- **Snapshot:** właściwy druk to DSK #9; prywatny `373DSK` pozostaje osobnym identyfikatorem. Koszmar 5/5 za `{4}{W}{W}` czasowo wiąże dwa wygnania i zwraca obie karty do rąk właścicieli.
+- **Nowa mapa T4:** atlas niemożliwej topologii przedstawia pięć przenikających się stref jako klasyfikację, nie prowincje. Nie ma kompasu, skali ani trwałych tras; jedyną stałą osią jest piwnica pierwotnego domu → The Below.
+- **Pinezka:** przybliżona, w centralnym polu zmiennych pokoi na styku stylistycznym Mistmoors i Balemurku; bez ulicy, dzielnicy, adresu i bez utożsamienia nicości z The Below.
+- **Bramki:** 326/326 testów; build 105 stron (52 karty, 37 haseł, 16 planów); map-audit 0; wiki-stats 100%.
+
+## 2026-09-13 21:28 — Nowa karta: Midnight Guard (Innistrad)
+
+- **Materializacja:** **[[385dka-midnight-guard|Midnight Guard]]** (`385DKA`, DKA, [[innistrad|Innistrad]]) pilnuje bezimiennej palisady nad jeziorem Zhava według nauki Olgarda ze Skiltfolk.
+- **Snapshot:** właściwy druk to DKA #14; prywatny `385DKA` pozostaje osobnym identyfikatorem. Strażnik 2/3 za `{2}{W}` odtapowuje się po wejściu każdej innej istoty.
+- **Mapa:** regionalna pinezka korzysta z kotwicy Lake Zhava (`0.815/0.5`), bez wymyślonej bramy lub utożsamienia wioski z Drunau.
+- **Link-mining:** nowe hasło [[nephalia|Nephalia]] przekroczyło próg dzięki kartom Midnight Guard i Civilized Scholar; Skiltfolk, Olgard i Zhava pozostają podzakresami.
+- **Skala:** Thraben zachowano jako odległą stolicę Kościoła, a Gavony jako sąsiednią prowincję, nie dosłowny lokalny krajobraz jeziora.
+- **Bramki:** 320/320 testów; build 103 strony (51 kart, 37 haseł, 15 planów); map-audit 0; wiki-stats 100%.
+
+## 2026-09-13 21:08 — Nowa karta: Steelfin Whale (Mirrodin)
+
+- **Materializacja:** **[[99mh2-steelfin-whale|Steelfin Whale]]** (`99MH2`, MH2, [[mirrodin|Mirrodin]]) przesiewa metaliczne opiłki i rudę magnetycznymi fiszbinami w Morzu Żywego Srebra.
+- **Snapshot:** właściwy druk to MH2 #65; prywatny `99MH2` pozostaje osobnym identyfikatorem. Affinity obniża koszt `{5}{U}`, a wejście artefaktu odtapowuje wieloryba 3/4.
+- **Mapa:** regionalna pinezka korzysta z istniejącej kotwicy Quicksilver Sea (`0.7045/0.4122`), bez wymyślonej zatoki, miasta lub siedliska.
+- **Link-mining:** Morze Żywego Srebra ma pierwsze bezpośrednie odwołanie kartowe i czeka na drugi wpis; kule oraz kolumny pozostają elementami jednej sceny.
+- **Bramki:** 314/314 testów; build 101 stron (50 kart, 36 haseł, 15 planów); map-audit 0; wiki-stats 100%.
+
+## 2026-09-13 18:12 — Nowa karta: Skinbrand Goblin (Ravnica)
+
+- **Materializacja:** **[[572gtc-skinbrand-goblin|Skinbrand Goblin]]** (`572GTC`, GTC, [[ravnica|Ravnica]]) pokazuje natarcie Płomiennoskórych w zarastającym Paśmie Gruzów.
+- **Snapshot:** właściwy druk to GTC #105; prywatny `572GTC` pozostaje osobnym identyfikatorem. Bloodrush kosztuje `{R}` i przekazuje `+2/+1`.
+- **Mapa:** regionalna pinezka korzysta z istniejącej kotwicy Red Wastes (`0.4109/0.216`), bez wymyślonej ulicy, obozu lub barykady.
+- **Link-mining:** powstały hasła [[gruul|Klany Gruul]] i [[liga-izzet|Liga Izzet]], każde podparte odwołaniami z dwóch kart; Płomiennoskórzy i Niv-Mizzet pozostają poniżej progu.
+- **Bramki:** 306/306 testów; build 100 stron (49 kart, 36 haseł, 15 planów), artefakt 1691.5 kB, 859 plików drzewa; map-audit 0; wiki-stats 100%.
+
+## 2026-09-13 17:43 — Nowa karta: Tome Scour (Warhammer Fantasy)
+
+- **Materializacja:** **[[69m11-tome-scour|Tome Scour]]** (`69M11`, M11,
+  [[warhammer-fantasy|Warhammer Fantasy]]) przenosi mill five do laboratorium
+  Kolegium Światła: mosiężna rękawica ściera iluminowane litery, a pięć
+  arkuszy rozpada się w strzępy, pył i lewitujące krople tuszu.
+- **Snapshot:** właściwy druk to M11 #76; `69M11` pozostaje niezmiennym
+  identyfikatorem kolekcji właściciela. Fabuła została zachowana verbatim.
+- **Mapa:** nowa pinezka karty stoi na źródłowo zmierzonej kotwicy Altdorfu
+  (`0.2972/0.4035`). Pewność `dokladna` dotyczy miasta i głównej siedziby
+  Kolegiów Magii, nie konkretnej sali ani stołu.
+- **Link-mining:** istniejące hasło [[imperium|Imperium]] zyskało czwartą
+  kartę; Kolegium Światła, Kolegia Magii i Altdorf pozostają poniżej progu
+  osobnych haseł.
+- **Bramki:** 302/302 testy; build 97 stron (48 kart, 34 hasła, 15 planów),
+  artefakt 1677.3 kB, 859 plików drzewa; map-audit 0; wiki-stats 100%.
+
 ## 2026-09-13 00:45 — Pętle Jakości: Warhammer Fantasy ×3
 
 - **Imperium:** nowe hasło **[[imperium|Imperium]]** spina ludzkie państwo

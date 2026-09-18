@@ -163,7 +163,7 @@ export function wariantyMapy(mapa) {
     : [{
       id: 'podklad', tytul: mapa?.tytul ?? '', podklad: mapa?.podklad, wymiary: mapa?.wymiary,
       wariant: mapa?.wariant, podkladUrl: mapa?.podkladUrl, podkladData: mapa?.podkladData,
-      podkladMarkup: mapa?.podkladMarkup, domyslny: true,
+      podkladMarkup: mapa?.podkladMarkup, etykiety: mapa?.etykiety, domyslny: true,
     }];
   return lista.map((w, i) => ({
     ...w,
@@ -453,16 +453,37 @@ export function renderMape(slugPlanu, query = {}, { osadzona = false } = {}) {
   const szer = start.wymiary?.szerokosc ?? mapa.wymiary?.szerokosc ?? 3200;
   const wys = start.wymiary?.wysokosc ?? mapa.wymiary?.wysokosc ?? 2400;
 
-  const htmlPinezki = pinezki.map((p) => {
-    const karta = dane.strony?.[p.karta];
-    const poz = POZIOMY_PEWNOSCI[p.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
-    return `<a href="#/karta/${escapeHtml(p.karta)}" class="mapa-pinezka pewnosc-${p.pewnosc}"
-      data-pinezka="${escapeHtml(p.karta)}" data-x="${p.x}" data-y="${p.y}"
-      style="--kolor:${poz.kolor}"
-      title="${escapeHtml(karta?.tytul ?? p.karta)} — pewność: ${poz.etykieta}">
-      <span class="mapa-pinezka-glow"></span>
-      <span class="mapa-pinezka-etykieta">${escapeHtml(karta?.tytul ?? p.karta)}</span>
-    </a>`;
+  // Karty mogą współdzielić regionalną kotwicę. Klaster spoczywa dokładnie
+  // w tym punkcie jako jedna pinezka; dopiero hover/focus rozsuwa dzieci.
+  const grupyPinezki = new Map();
+  for (const p of pinezki) {
+    const klucz = `${p.x}:${p.y}`;
+    grupyPinezki.set(klucz, [...(grupyPinezki.get(klucz) ?? []), p]);
+  }
+  const htmlPinezki = [...grupyPinezki.values()].map((grupa) => {
+    const ile = grupa.length;
+    const htmlGrupy = grupa.map((p, indeks) => {
+      const karta = dane.strony?.[p.karta];
+      const poz = POZIOMY_PEWNOSCI[p.pewnosc] ?? POZIOMY_PEWNOSCI.przyblizona;
+      const promien = ile > 1 ? Math.max(25, ile * 12) : 0;
+      const kat = -Math.PI / 2 + (2 * Math.PI * indeks) / ile;
+      const dx = promien ? (Math.cos(kat) * promien).toFixed(2) : '0';
+      const dy = promien ? (Math.sin(kat) * promien).toFixed(2) : '0';
+      const wspolrzedne = ile === 1 ? ` data-x="${p.x}" data-y="${p.y}"` : '';
+      return `<a href="#/karta/${escapeHtml(p.karta)}" class="mapa-pinezka pewnosc-${p.pewnosc}"
+        data-pinezka="${escapeHtml(p.karta)}"${wspolrzedne}
+        style="--kolor:${poz.kolor};--klaster-x:${dx}px;--klaster-y:${dy}px"
+        title="${escapeHtml(karta?.tytul ?? p.karta)} — pewność: ${poz.etykieta}">
+        <span class="mapa-pinezka-glow"></span>
+        <span class="mapa-pinezka-etykieta">${escapeHtml(karta?.tytul ?? p.karta)}</span>
+      </a>`;
+    }).join('');
+    if (ile === 1) return htmlGrupy;
+    const p = grupa[0];
+    return `<div class="mapa-klaster-pinezek" data-pinezka-klaster="${ile}"
+      data-x="${p.x}" data-y="${p.y}" aria-label="${ile} kart w tym miejscu">
+      ${htmlGrupy}
+    </div>`;
   }).join('');
 
   // Etykiety podkładu → nakładka ekranowa (stały rozmiar przy zoomie).
@@ -672,6 +693,15 @@ export function zamontujMape(app, opcje = {}) {
   const ruch = okno.querySelector('[data-mapa-ruch]');
   if (!ruch) return;
   const nakladka = okno.querySelector('[data-mapa-nakladka]');
+
+  // Klaster otwiera się wyłącznie po trafieniu w rzeczywistą pinezkę.
+  // Dopiero otwarty dostaje większy obszar podtrzymujący menu radialne.
+  for (const klaster of nakladka?.querySelectorAll?.('[data-pinezka-klaster]') ?? []) {
+    for (const pin of klaster.querySelectorAll('[data-pinezka]')) {
+      pin.addEventListener('pointerenter', () => klaster.classList.add('otwarty'));
+    }
+    klaster.addEventListener('pointerleave', () => klaster.classList.remove('otwarty'));
+  }
 
   // ── Warianty podkładu (ADR 0035): sceny [data-scena], jedna widoczna.
   // Pinezki kart i etykiety podkładu są w układzie ZŁOTYM (wariant domyślny);
@@ -957,7 +987,7 @@ export function zamontujMape(app, opcje = {}) {
     }
 
     // Pass 3 — pozycjonowanie wszystkich markerów nakładki.
-    for (const el of nakladka.querySelectorAll('[data-pinezka], [data-podklad-etykieta]')) {
+    for (const el of nakladka.querySelectorAll('[data-pinezka], [data-pinezka-klaster], [data-podklad-etykieta]')) {
       if (el.dataset.ax) {
         // Etykieta obiektowa: kotwica obiektu + strona/piętro z Pass 2.
         const px = (parseFloat(el.dataset.ax) * w * stan.k + stan.ox).toFixed(2);

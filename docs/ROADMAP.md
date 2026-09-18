@@ -458,3 +458,30 @@ build **96 stron** (47 kart, 34 hasła, 15 planów; artefakt 1665.6 kB) i
 **853 pliki** drzewa archiwum (148901.8 kB), map-audit 0, wiki-stats 100%
 (7,3/8), czysty `git diff --check`. Handoff:
 `docs/setup/HANDOFF_2026-09-12-pr33.md`.
+
+## PR-34 (2026-09-13) — **69M11 Tome Scour zmaterializowane**
+
+Audyt PR-33 + pełny komplet wpis–snapshot–karta–mapa dla Warhammer Fantasy.
+Altdorf dostał źródłową kotwicę miejską i wyłącznie pinezkę karty; nowe
+encje Kolegium Światła/Kolegia Magii pozostają poniżej progu haseł. Stan:
+97 stron (48 kart, 34 hasła, 15 planów), 302 testy, map-audit 0.
+
+## PR-34 (2026-09-13) — **572GTC Skinbrand Goblin zmaterializowane**
+
+Domknięto drugą dostawę PR-34: wpis verbatim, GTC #105, Kartę LORE-first, regionalną pinezkę Red Wastes, hasła Gruul i Liga Izzet oraz pełną regresję. Stan: 49 kart, 36 haseł, 15 planów; 306/306 testów i komplet bramek zielony.
+
+## PR-34 (2026-09-13) — **99MH2 Steelfin Whale zmaterializowane**
+
+Domknięto trzecią dostawę PR-34: wpis verbatim, MH2 #65, Kartę LORE-first, regionalną pinezkę Quicksilver Sea i regresję. Stan: 50 kart, 36 haseł, 15 planów; 314/314 testów i komplet bramek zielony.
+
+## PR-34 (2026-09-13) — **385DKA Midnight Guard zmaterializowane**
+
+Domknięto czwartą dostawę PR-34: wpis verbatim, DKA #14, Kartę LORE-first, regionalną pinezkę Lake Zhava, hasło Nephalia i regresję skali geograficznej. Stan: 51 kart, 37 haseł, 15 planów; 320/320 testów.
+
+## PR-34 (2026-09-13) — **373DSK i mapa Duskmourn zmaterializowane**
+
+Domknięto piątą dostawę PR-34 oraz szesnasty plan. Duskmourn otrzymał atlas niemożliwej topologii T4, kontrakt antykartograficzny i pierwszą przybliżoną pinezkę. Stan: 52 karty, 37 haseł, 16 planów; 326/326 testów.
+
+## PR-34 (2026-09-13) — **56EOE i mapa The Edge zmaterializowane**
+
+Domknięto szóstą dostawę PR-34 i siedemnasty plan. The Edge otrzymał fanowski podkład T1 systemu Sothera, jawny kontrakt interpretacyjny i pierwszą pinezkę na Evendo. Stan: 53 karty, 37 haseł, 17 planów; 334/334 testów.

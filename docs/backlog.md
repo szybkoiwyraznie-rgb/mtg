@@ -451,3 +451,20 @@ liczy się do maksimum strony (maks 6); uwaga w gidzie Pętli Jakości.
 oznaczenia noszą wyłącznie karty, więc pinezka = N/A dla haseł
 **każdej** klasy (nie tylko niegeograficznych); hasło łączy się z
 mapą wyłącznie odsyłaniem (`?x=&y=`), pole `regiony` wycofane.
+
+- **Kolegium Światła / Kolegia Magii** — `69m11-tome-scour`; jedna scena
+  kartowa, osobne hasło czeka na drugi wpis. Altdorf również pozostaje bez
+  osobnego hasła do spełnienia progu.
+
+- **Płomiennoskórzy / Niv-Mizzet** — motywy 572GTC pozostają poniżej progu osobnych haseł; Gruul i Liga Izzet mają już strony zbiorcze.
+
+- **Morze Żywego Srebra / Steelfin Whale** — pierwsza karta bezpośrednio
+  osadzona w akwenie; osobne hasło geograficzne czeka na drugi wpis kartowy.
+  Błękitne kule i heksagonalne kolumny pozostają elementami jednej sceny.
+
+- **Skiltfolk / Olgard / Lake Zhava** — po 385DKA pozostają podzakresem
+  nowego hasła Nephalia; każdy z tych bytów ma tylko jedną kartę.
+
+- **Valgavoth / pięć stref / The Below** — po 373DSK pozostają elementami
+  strony planu Duskmourn i atlasu topologicznego; osobne hasła czekają na
+  drugi wpis kartowy. Sypialnia-przedmieście nie otrzymuje nazwy ani adresu.

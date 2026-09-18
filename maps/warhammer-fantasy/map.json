@@ -88,6 +88,19 @@
    "uklad": "złoty T1 — odczyt z podglądu L0",
    "x": 0.4,
    "y": 0.94
+  },
+  {
+   "nazwa": "Altdorf",
+   "notka": "Stolica Reiklandu i Imperium, główna siedziba ośmiu Kolegiów Magii; kotwica miejskiej pinezki 69M11 dla laboratorium Kolegium Światła.",
+   "pozycja_zrodlo": "kanon: https://whfb.lexicanum.com/wiki/Colleges_of_Magic i https://whfb.lexicanum.com/wiki/Light_Order + etykieta „Altdorf” na rastrze; odczyt z mastera px (2580, 5140), 2026-09-13",
+   "px_t1": [
+    2580,
+    5140
+   ],
+   "typ": "miasto",
+   "uklad": "złoty T1 — odczyt z mastera",
+   "x": 0.2972,
+   "y": 0.4035
   }
  ],
  "otwarte_na_kolejne_przejscia": [
@@ -125,6 +138,14 @@
    "pewnosc": "region",
    "uzasadnienie": "Fabuła właściciela: mgliste cmentarze mrocznej Sylwanii, omszały grobowiec i łowcy czarownic Imperium z dębowym kołkiem przeciw wampirowi rodu von Carstein. Scena nie podaje miasta, wsi, zamku ani konkretnej nekropolii, dlatego pinezka stoi na regionalnej kotwicy Sylvania między Stirlandem/Ostermarkiem a zachodnimi stokami Worlds Edge Mountains.",
    "notka": "Epoka Starego Świata — łowcy czarownic Imperium tropią wampirzą arystokrację w krainie von Carsteinów, gdzie prosty kołek rozstrzyga zwarcie pod grobowcem."
+  },
+  {
+   "karta": "69m11-tome-scour",
+   "x": 0.2972,
+   "y": 0.4035,
+   "pewnosc": "dokladna",
+   "uzasadnienie": "Fabuła wskazuje laboratorium Wielkiego Magistra Nauk Tajemnych Kolegium Światła; kanon lokuje główną siedzibę Kolegium Światła i Kolegia Magii w Altdorfie. Pewność dokładna dotyczy miasta, nie konkretnej sali, stołu ani budynku.",
+   "pozycja_zrodlo": "Fabuła właściciela (2026-09-13) + https://whfb.lexicanum.com/wiki/Light_Order + https://whfb.lexicanum.com/wiki/Colleges_of_Magic; kotwica Altdorf odczytana z mastera T1 px (2580, 5140)"
   }
  ],
  "plan": "warhammer-fantasy",

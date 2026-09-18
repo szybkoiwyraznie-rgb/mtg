@@ -367,7 +367,7 @@
    "x": 0.815,
    "y": 0.5,
    "typ": "akwen",
-   "pozycja_zrodlo": "wyłącznie raster: nazwa i położenie z fanowskiego rastra T1 (r/mtgvorthos 2025, układ złoty); brak potwierdzenia w przewodnikach tekstowych — do weryfikacji przy karcie z regionu.",
+   "pozycja_zrodlo": "kanon: Wizards „Sacrifice” potwierdza Lake Zhava na wyżynach Nephalii blisko granicy z Gavony (https://magic.wizards.com/en/news/magic-story/sacrifice-2016-03-23); pozycja pomierzona z fanowskiego rastra T1 (układ złoty), bo tekst nie podaje współrzędnych.",
    "notka": "jezioro w głębi Nephalii",
    "uklad": "złoty T1"
   },
@@ -661,6 +661,13 @@
    "pewnosc": "region",
    "uzasadnienie": "Fabuła właściciela wskazuje Stensię i ciasną sypialnię gotyckiego domu na Innistradzie, ale nie nazywa wsi, doliny, dworu ani przełęczy. Pinezka stoi zatem na regionalnej kotwicy Stensii z pewnością region; nie oznacza dokładnego adresu domu ani pokoju.",
    "notka": "Epoka Innistrad (ISD) — w anonimowym stensiańskim domu nocna iluzja wprowadza do snu młodej kobiety przerażenie tak realne, że przerywa wolę i zostawia utraconą myśl."
+  },
+  {
+   "karta": "385dka-midnight-guard",
+   "x": 0.815,
+   "y": 0.5,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła wskazuje palisadę bezimiennej wioski Skiltfolk nad jeziorem Zhava. Źródło potwierdza jezioro na wyżynach Nephalii blisko granicy Gavony, lecz nie konkretną osadę, palisadę ani bramę; pinezka używa regionalnej kotwicy Lake Zhava."
   }
  ],
  "zrodlo_fanmapa": "Podkład jest mapą fanowską, nie materiałem WotC. Zgodnie z ADR 0031 służy jako podkład prywatnego Kodeksu; każda kotwica została porównana z kanonem tekstowym, a rozbieżności rozstrzygane są na korzyść kanonu.",

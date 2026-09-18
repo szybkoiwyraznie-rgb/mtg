@@ -1,0 +1,93 @@
+{
+  "plan": "duskmourn",
+  "tytul": "Duskmourn — atlas niemożliwej topologii Domu",
+  "wariant": "T4",
+  "podklad": "podklad.svg",
+  "wymiary": {
+    "szerokosc": 2000,
+    "wysokosc": 1400
+  },
+  "rekonstrukcja": true,
+  "epoka": "Po Ascension — cały plan wewnątrz Domu",
+  "zrodlo": {
+    "url": "https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-duskmourn",
+    "tytul": "Planeswalker's Guide to Duskmourn — niemożliwa geografia i pięć stref",
+    "autor": "MTG Lore Codex — autorski diagram relacyjny T4",
+    "licencja": "praca własna",
+    "pobrano": "2026-09-13",
+    "notka": "Oficjalna geografia wyklucza planimetrię: pokoje i połączenia stale się zmieniają, strefy przenikają się, a zewnętrze nie istnieje. Diagram klasyfikuje temperament przestrzeni; nie przedstawia kierunków, odległości ani trwałych tras. Jedyną stałą osią jest piwnica pierwotnego domu w Balemurku prowadząca do The Below. Model zatwierdzony przez właściciela 2026-09-13."
+  },
+  "uklad_wspolrzednych": "Autorski diagram relacyjny 2000×1400. Współrzędne oznaczają położenie w diagramie klasyfikacyjnym, nigdy fizyczną pozycję, kierunek lub odległość w Domu.",
+  "kotwice": [
+    {
+      "nazwa": "Mistmoors",
+      "x": 0.205,
+      "y": 0.25,
+      "typ": "strefa",
+      "pozycja_zrodlo": "kanon: strefa pustych, rozległych przestrzeni; https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-duskmourn; pozycja wyłącznie kompozycyjna."
+    },
+    {
+      "nazwa": "Floodpits",
+      "x": 0.5,
+      "y": 0.205,
+      "typ": "strefa",
+      "pozycja_zrodlo": "kanon: strefa wody i niemożliwej fizyki; https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-duskmourn; pozycja wyłącznie kompozycyjna."
+    },
+    {
+      "nazwa": "Boilerbilges",
+      "x": 0.775,
+      "y": 0.3,
+      "typ": "strefa",
+      "pozycja_zrodlo": "kanon: strefa ognia, przepaści i katastrof; https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-duskmourn; pozycja wyłącznie kompozycyjna."
+    },
+    {
+      "nazwa": "Hauntwoods",
+      "x": 0.725,
+      "y": 0.68,
+      "typ": "strefa",
+      "pozycja_zrodlo": "kanon: strefa roślinności przerastającej wnętrza; https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-duskmourn; pozycja wyłącznie kompozycyjna."
+    },
+    {
+      "nazwa": "Balemurk",
+      "x": 0.305,
+      "y": 0.69,
+      "typ": "strefa",
+      "pozycja_zrodlo": "kanon: strefa sypialni, strychów, krypt i piwnic; https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-duskmourn; pozycja wyłącznie kompozycyjna."
+    },
+    {
+      "nazwa": "Zmienne pokoje Domu",
+      "x": 0.5,
+      "y": 0.4,
+      "typ": "topologia",
+      "pozycja_zrodlo": "kanon: pokoje nie mają stałych sąsiedztw, a strefy często się łączą i przenikają; https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-duskmourn; środek diagramu umowny."
+    },
+    {
+      "nazwa": "Piwnica pierwotnego domu",
+      "x": 0.305,
+      "y": 0.785,
+      "typ": "lokacja",
+      "pozycja_zrodlo": "kanon: leży w głębi Balemurku i prowadzi do The Below; https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-duskmourn; położenie na diagramie relacyjne."
+    },
+    {
+      "nazwa": "The Below",
+      "x": 0.305,
+      "y": 0.921,
+      "typ": "lokacja_stala",
+      "pozycja_zrodlo": "kanon: jedyny stały punkt Duskmourn, osiągalny przez piwnicę pierwotnego domu; https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-duskmourn; położenie na arkuszu jest symbolem stałości, nie kierunkiem."
+    }
+  ],
+  "pinezki": [
+    {
+      "karta": "373dsk-fear-of-abduction",
+      "x": 0.5,
+      "y": 0.4,
+      "pewnosc": "przyblizona",
+      "uzasadnienie": "Fabuła wskazuje sypialnię w przestrzeni udającej opustoszałe przedmieście, ale nie nazywa strefy ani trwałego miejsca. Pinezka stoi w centralnym polu zmiennych pokoi, na styku stylistycznym Mistmoors i Balemurku; nie tworzy ulicy, dzielnicy, adresu ani połączenia z The Below."
+    }
+  ],
+  "otwarte_na_kolejne_przejscia": [
+    "Kolejne karty mogą zagęszczać strefy i nazwane kompleksy, ale nie tworzą trwałych tras bez jednoznacznego wyjątku w kanonie.",
+    "Valley of Serenity, razor mazes, House Institute i inne nazwane obszary czekają na kartę, która ich wymaga."
+  ],
+  "etykiety": false
+}

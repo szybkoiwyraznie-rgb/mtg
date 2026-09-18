@@ -1,0 +1,37 @@
+{
+  "plan": "the-edge",
+  "tytul": "The Edge — system Sothera",
+  "wariant": "T1",
+  "podklad": "podklad-t1.jpg",
+  "wymiary": {"szerokosc": 1024, "wysokosc": 1024},
+  "etykiety": false,
+  "rekonstrukcja": false,
+  "epoka": "System Sothera w okresie konfliktu o Endstone i roszczeń Kavów do Evendo",
+  "zrodlo": {
+    "url": "https://www.reddit.com/r/mtgvorthos/comments/1lwvah0/edge_of_eternities_fan_map/",
+    "tytul": "Edge of Eternities — Fan Map",
+    "autor": "Auroreon (r/mtgvorthos)",
+    "licencja": "fanowska mapa dostarczona przez właściciela do prywatnego użytku",
+    "pobrano": "2026-09-13",
+    "notka": "T1. Kolejność orbit, wspólna przeciwległa orbita Kavaronu i Evendo oraz Wurmwall wynikają z oficjalnego przewodnika. Kąty planet, położenie I.G.S. i pierścieniowe przedstawienie Garden of Apeiron są interpretacją autora."
+  },
+  "uklad_wspolrzednych": "Znormalizowane współrzędne rastra 1024×1024. Schemat pokazuje kolejność i relacje orbitalne, nie odległości, rozmiary ani aktualną fazę orbit.",
+  "kotwice": [
+    {"nazwa":"Sothera","x":0.5,"y":0.493,"typ":"supervoid","pozycja_zrodlo":"środek oznaczenia na fanowskim rastrze; kanon: centrum systemu"},
+    {"nazwa":"Susur Secundi","x":0.615,"y":0.568,"typ":"planeta","pozycja_zrodlo":"środek fioletowego oznaczenia na fanowskim rastrze; kanon: pierwsza planeta"},
+    {"nazwa":"Kavaron","x":0.361,"y":0.657,"typ":"planeta","pozycja_zrodlo":"środek czerwonego oznaczenia na fanowskim rastrze; kanon: wspólna druga orbita z Evendo"},
+    {"nazwa":"Evendo","x":0.615,"y":0.318,"typ":"planeta","pozycja_zrodlo":"środek zielonego oznaczenia na fanowskim rastrze; kanon: wspólna druga orbita z Kavaronem, niemal naprzeciw niego"},
+    {"nazwa":"Adagia","x":0.518,"y":0.765,"typ":"planeta","pozycja_zrodlo":"środek jasnego oznaczenia na fanowskim rastrze; kanon: trzecia planeta"},
+    {"nazwa":"Uthros","x":0.307,"y":0.234,"typ":"planeta","pozycja_zrodlo":"środek niebieskiego oznaczenia na fanowskim rastrze; kanon: czwarta planeta"},
+    {"nazwa":"Infinite Guideline Station","x":0.474,"y":0.686,"typ":"stacja","pozycja_zrodlo":"I.G.S. na fanowskim rastrze; dokładne położenie jest kompozycyjną interpretacją autora"},
+    {"nazwa":"Garden of Apeiron","x":0.5,"y":0.89,"typ":"anomalia","pozycja_zrodlo":"zielony pierścień rastra; kanon lokuje ruchomy obszar między Uthrosem a Wurmwallem, pełny pierścień jest interpretacją autora"},
+    {"nazwa":"Wurmwall","x":0.5,"y":0.975,"typ":"pas","pozycja_zrodlo":"zewnętrzny pierścień rastra; kanon: pas asteroid wyznaczający granicę systemu"}
+  ],
+  "pinezki": [
+    {"karta":"56eoe-diplomatic-relations","x":0.615,"y":0.318,"pewnosc":"przyblizona","uzasadnienie":"Fabuła jednoznacznie wskazuje Evendo, lecz nie nazywa granicznej placówki ani miejsca na powierzchni. Pinezka używa planetarnej kotwicy skali T1 i nie tworzy miasta, regionu ani dokładnych współrzędnych placówki."}
+  ],
+  "otwarte_na_kolejne_przejscia": [
+    "Kolejne karty mogą zagęścić kotwice planet i stacji, ale nie czynią fanowskich kątów orbitalnych kanonem.",
+    "Mapa powierzchni Evendo wymaga osobnego źródła albo zatwierdzonej rekonstrukcji; pinezka 56EOE pozostaje planetarna."
+  ]
+}

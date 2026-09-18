@@ -1,0 +1,10 @@
+import fs from 'node:fs'; import { test } from 'node:test'; import assert from 'node:assert/strict';
+const wpis=fs.readFileSync('collection/entries/572gtc-skinbrand-goblin.md','utf8');
+const karta=fs.readFileSync('content/cards/572gtc-skinbrand-goblin.md','utf8');
+const snap=JSON.parse(fs.readFileSync('scryfall/572gtc-skinbrand-goblin.json'));
+const mapa=JSON.parse(fs.readFileSync('maps/ravnica/map.json'));
+const fabula='W zrujnowanych, porosłych dziką knieją rejonach Pasma Gruzów na Ravnicy goblin z klanu Płomiennoskórych szykuje się do gwałtownego natarcia. Wypalone na jego czerwonym ciele rytualne runy rozbłyskują oślepiającym żarem, pompując w mięśnie wojownika pierwotną, niszczycielską furię klanów Gruul. Bestialski niszczyciel z impetem zeskakuje z pękniętej kolumny, gotów rozbić miejską barykadę ciężką maczugą z gruzu. Podczas gdy uczeni z Ligi Izzet pod wodzą Niv-Mizzeta daremnie badają te mistyczne znaki w poszukiwaniu miejskich linii geomantycznych, dla dzikich wojowników stanowią one po prostu niezawodne źródło brutalnej siły.';
+test('572GTC: Fabuła verbatim',()=>assert.equal(wpis.match(/^---\n[\s\S]*?\n---\n\n([\s\S]*?)\n?$/)?.[1],fabula));
+test('572GTC: snapshot GTC #105 i Bloodrush',()=>{assert.equal(snap.collector_number,'105');assert.equal(snap.mana_cost,'{1}{R}');assert.equal(snap.oracle_text,'Bloodrush — {R}, Discard this card: Target attacking creature gets +2/+1 until end of turn.');assert.equal(snap.power,'2');assert.equal(snap.toughness,'1');assert.match(snap.notka_numery,/572GTC/)});
+test('572GTC: karta zachowuje runy i badania Izzet',()=>{assert.match(karta,/Płomiennoskórych/);assert.match(karta,/piętn/);assert.match(karta,/Niv-Mizzeta/);assert.match(karta,/cztery dni/);assert.match(karta,/\[\[gruul\|klanów Gruul\]\]/);assert.match(karta,/\[\[liga-izzet\|Ligi Izzet\]\]/)});
+test('572GTC: regionalna pinezka Rubblebelt',()=>{const p=mapa.pinezki.find(x=>x.karta==='572gtc-skinbrand-goblin');const a=mapa.kotwice.find(x=>x.nazwa==='Red Wastes');assert.ok(p);assert.equal(p.pewnosc,'region');assert.equal(p.x,a.x);assert.equal(p.y,a.y);assert.match(p.uzasadnienie,/nie nazywa ulicy/)});

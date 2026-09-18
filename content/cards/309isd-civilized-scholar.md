@@ -23,7 +23,7 @@ już wyłącznie z lasów, krypt i dworów. Coraz częściej rodzi się przy
 lampie, nad księgą i we własnym oddechu.
 
 Dlatego **Civilized Scholar** tak dobrze pasuje do **Havengulu** w
-**Nephalii**. To portowe miasto żyje z handlu, wiedzy i rzeczy, które w
+**[[nephalia|Nephalii]]**. To portowe miasto żyje z handlu, wiedzy i rzeczy, które w
 innych prowincjach nazywano by bez wahania podejrzanymi. W gabinecie
 uczonego piętrzą się traktaty o furii wilkołaków z [[kessig|**Kessigu**]] i o głodzie
 wampirzych dworów ze [[stensia|Stensii]] spod znaku **Markovów**. Poznaje te
