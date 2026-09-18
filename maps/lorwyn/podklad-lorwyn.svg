@@ -6434,7 +6434,6 @@
 <path d="M 804.5 1203.3 l 4 -4 M 808.5 1204.3 l 4 -5 M 812.5 1202.3 l 4 -4" stroke="#9b9b9b" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 <path d="M 895.2 1098.3 l 4 -4 M 899.2 1099.3 l 4 -5 M 903.2 1097.3 l 4 -4" stroke="#9b9b9b" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 <path d="M 472.3 1196.2 l 4 -4 M 476.3 1197.2 l 4 -5 M 480.3 1195.2 l 4 -4" stroke="#9b9b9b" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-<path d="M 782 1095.6 l 4 -4 M 786 1096.6 l 4 -5 M 790 1094.6 l 4 -4" stroke="#9b9b9b" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 <path d="M 528.8 1319 l 4 -4 M 532.8 1320 l 4 -5 M 536.8 1318 l 4 -4" stroke="#9b9b9b" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 <path d="M 717.4 1124 l 4 -4 M 721.4 1125 l 4 -5 M 725.4 1123 l 4 -4" stroke="#9b9b9b" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 <path d="M 744.9 1151.3 l 4 -4 M 748.9 1152.3 l 4 -5 M 752.9 1150.3 l 4 -4" stroke="#9b9b9b" stroke-width="1.5" stroke-linecap="round" fill="none"/>
@@ -6579,6 +6578,7 @@
 <path d="M 465 1248 l 4 -4 M 469 1249 l 4 -5 M 473 1247 l 4 -4" stroke="#9b9b9b" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 <path d="M 768.6 1308.5 l 4 -4 M 772.6 1309.5 l 4 -5 M 776.6 1307.5 l 4 -4" stroke="#9b9b9b" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 <path d="M 635.7 1259.7 l 4 -4 M 639.7 1260.7 l 4 -5 M 643.7 1258.7 l 4 -4" stroke="#9b9b9b" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+<path d="M 722.2 1221.8 l 4 -4 M 726.2 1222.8 l 4 -5 M 730.2 1220.8 l 4 -4" stroke="#9b9b9b" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 <path d="M 1449.3 872.7 l 4 -4 M 1453.3 873.7 l 4 -5 M 1457.3 871.7 l 4 -4" stroke="#9b9b9b" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 <path d="M 1263.6 1018.5 l 4 -4 M 1267.6 1019.5 l 4 -5 M 1271.6 1017.5 l 4 -4" stroke="#9b9b9b" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 <path d="M 1379.2 1086.6 l 4 -4 M 1383.2 1087.6 l 4 -5 M 1387.2 1085.6 l 4 -4" stroke="#9b9b9b" stroke-width="1.5" stroke-linecap="round" fill="none"/>
@@ -6665,6 +6665,7 @@
 </g>
 <!-- === POI === -->
 <g class="mf-miasto" data-x="720" data-y="485"><circle cx="720" cy="485" r="12.5" fill="#f7f7f7" stroke="#6b6b6b" stroke-width="1.1"/><path d="M 711 487.6 L 711 483.6 L 714 482 L 717 483.6 L 717 487.6 Z" fill="#6b6b6b"/><path d="M 717.8 485.8 L 717.8 481.4 L 721 479.6 L 724.2 481.4 L 724.2 485.8 Z" fill="#6b6b6b"/><path d="M 723.4 488.4 L 723.4 484.8 L 726 483.4 L 728.6 484.8 L 728.6 488.4 Z" fill="#6b6b6b"/><path d="M 714.6 480.8 L 714.6 476.2 L 718 474.4 L 721.4 476.2 L 721.4 480.8 Z" fill="#6b6b6b"/><path d="M 722.6 480.3 L 722.6 477.1 L 725 475.8 L 727.4 477.1 L 727.4 480.3 Z" fill="#6b6b6b"/><path d="M 720.4 491.4 L 720.4 487.8 L 723 486.4 L 725.6 487.8 L 725.6 491.4 Z" fill="#6b6b6b"/><path d="M 712.2 492.5 L 712.2 488.7 L 715 487.2 L 717.8 488.7 L 717.8 492.5 Z" fill="#6b6b6b"/></g>
+<g class="mf-miasto" data-x="800" data-y="1085"><circle cx="800" cy="1085" r="14.4" fill="#f7f7f7" stroke="#6b6b6b" stroke-width="1.3"/><path d="M 789.7 1088 L 789.7 1083.4 L 793.1 1081.6 L 796.6 1083.4 L 796.6 1088 Z" fill="#6b6b6b"/><path d="M 797.5 1085.9 L 797.5 1080.8 L 801.2 1078.8 L 804.8 1080.8 L 804.8 1085.9 Z" fill="#6b6b6b"/><path d="M 803.9 1089 L 803.9 1084.8 L 806.9 1083.2 L 809.9 1084.8 L 809.9 1089 Z" fill="#6b6b6b"/><path d="M 793.8 1080.2 L 793.8 1074.9 L 797.7 1072.8 L 801.6 1074.9 L 801.6 1080.2 Z" fill="#6b6b6b"/><path d="M 803 1079.6 L 803 1075.9 L 805.8 1074.4 L 808.5 1075.9 L 808.5 1079.6 Z" fill="#6b6b6b"/><path d="M 800.5 1092.4 L 800.5 1088.3 L 803.5 1086.6 L 806.4 1088.3 L 806.4 1092.4 Z" fill="#6b6b6b"/><path d="M 791 1093.6 L 791 1089.3 L 794.3 1087.5 L 797.5 1089.3 L 797.5 1093.6 Z" fill="#6b6b6b"/></g>
 <g class="mf-miasto" data-x="410" data-y="670"><circle cx="410" cy="670" r="12.5" fill="#f7f7f7" stroke="#6b6b6b" stroke-width="1.1"/><path d="M 401 672.6 L 401 668.6 L 404 667 L 407 668.6 L 407 672.6 Z" fill="#6b6b6b"/><path d="M 407.8 670.8 L 407.8 666.4 L 411 664.6 L 414.2 666.4 L 414.2 670.8 Z" fill="#6b6b6b"/><path d="M 413.4 673.4 L 413.4 669.8 L 416 668.4 L 418.6 669.8 L 418.6 673.4 Z" fill="#6b6b6b"/><path d="M 404.6 665.8 L 404.6 661.2 L 408 659.4 L 411.4 661.2 L 411.4 665.8 Z" fill="#6b6b6b"/><path d="M 412.6 665.3 L 412.6 662.1 L 415 660.8 L 417.4 662.1 L 417.4 665.3 Z" fill="#6b6b6b"/><path d="M 410.4 676.4 L 410.4 672.8 L 413 671.4 L 415.6 672.8 L 415.6 676.4 Z" fill="#6b6b6b"/><path d="M 402.2 677.5 L 402.2 673.7 L 405 672.2 L 407.8 673.7 L 407.8 677.5 Z" fill="#6b6b6b"/></g>
 <g class="mf-miasto" data-x="340" data-y="1035"><circle cx="340" cy="1035" r="12.5" fill="#f7f7f7" stroke="#6b6b6b" stroke-width="1.1"/><path d="M 331 1037.6 L 331 1033.6 L 334 1032 L 337 1033.6 L 337 1037.6 Z" fill="#6b6b6b"/><path d="M 337.8 1035.8 L 337.8 1031.4 L 341 1029.6 L 344.2 1031.4 L 344.2 1035.8 Z" fill="#6b6b6b"/><path d="M 343.4 1038.4 L 343.4 1034.8 L 346 1033.4 L 348.6 1034.8 L 348.6 1038.4 Z" fill="#6b6b6b"/><path d="M 334.6 1030.8 L 334.6 1026.2 L 338 1024.4 L 341.4 1026.2 L 341.4 1030.8 Z" fill="#6b6b6b"/><path d="M 342.6 1030.3 L 342.6 1027.1 L 345 1025.8 L 347.4 1027.1 L 347.4 1030.3 Z" fill="#6b6b6b"/><path d="M 340.4 1041.4 L 340.4 1037.8 L 343 1036.4 L 345.6 1037.8 L 345.6 1041.4 Z" fill="#6b6b6b"/><path d="M 332.2 1042.5 L 332.2 1038.7 L 335 1037.2 L 337.8 1038.7 L 337.8 1042.5 Z" fill="#6b6b6b"/></g>
 <g class="mf-miasto" data-x="890" data-y="670"><circle cx="890" cy="670" r="12.5" fill="#f7f7f7" stroke="#6b6b6b" stroke-width="1.1"/><path d="M 881 672.6 L 881 668.6 L 884 667 L 887 668.6 L 887 672.6 Z" fill="#6b6b6b"/><path d="M 887.8 670.8 L 887.8 666.4 L 891 664.6 L 894.2 666.4 L 894.2 670.8 Z" fill="#6b6b6b"/><path d="M 893.4 673.4 L 893.4 669.8 L 896 668.4 L 898.6 669.8 L 898.6 673.4 Z" fill="#6b6b6b"/><path d="M 884.6 665.8 L 884.6 661.2 L 888 659.4 L 891.4 661.2 L 891.4 665.8 Z" fill="#6b6b6b"/><path d="M 892.6 665.3 L 892.6 662.1 L 895 660.8 L 897.4 662.1 L 897.4 665.3 Z" fill="#6b6b6b"/><path d="M 890.4 676.4 L 890.4 672.8 L 893 671.4 L 895.6 672.8 L 895.6 676.4 Z" fill="#6b6b6b"/><path d="M 882.2 677.5 L 882.2 673.7 L 885 672.2 L 887.8 673.7 L 887.8 677.5 Z" fill="#6b6b6b"/></g>
@@ -6681,10 +6682,14 @@
 <text x="470" y="790" font-size="28" fill="#1e4d2b" text-anchor="middle">The Great Forest</text>
 <text x="1490" y="665" font-size="33" fill="#1e4d2b" text-anchor="middle">Gilt-Leaf Wood</text>
 <text x="525" y="340" font-size="20" fill="#1e4d2b" text-anchor="middle">Wren's Run</text>
+<text x="795" y="415" font-size="16" fill="#1e4d2b" text-anchor="middle">Spinerock Knoll</text>
+<text x="650" y="568" font-size="16" fill="#6b1f2e" text-anchor="middle">Mosswort Bridge</text>
+<text x="150" y="565" font-size="16" fill="#6b1f2e" text-anchor="middle">Windbrisk Heights</text>
+<text x="300" y="880" font-size="18" fill="#1e4d2b" text-anchor="middle">Porringer Valley</text>
 <text x="1020" y="1190" font-size="21" fill="#1c3a5e" text-anchor="middle" transform="rotate(-79 1020 1190)">Wanderwine</text>
 <text x="945" y="251.2" font-size="18" fill="#6b1f2e" text-anchor="middle" data-ax="945" data-ay="225" data-r="10" data-rg="82">Mount Tanufel</text>
 <text x="1020" y="306.6" font-size="14" fill="#1c3a5e" text-anchor="middle" data-ax="1020" data-ay="290" data-r="4">Source of Lanes</text>
-<text x="920" y="426.6" font-size="16" fill="#6b1f2e" text-anchor="middle" data-ax="920" data-ay="395" data-r="17.2">Murmuring Bosk</text>
+<text x="920" y="373" font-size="16" fill="#6b1f2e" text-anchor="middle" data-ax="920" data-ay="395" data-r="17.2">Murmuring Bosk</text>
 <text x="1500" y="483.2" font-size="20" fill="#6b1f2e" text-anchor="middle" data-ax="1500" data-ay="445" data-r="20.2">Lys Alana</text>
 <text x="720" y="515.3" font-size="17" fill="#6b1f2e" text-anchor="middle" data-ax="720" data-ay="485" data-r="15">Burrenton</text>
 <text x="410" y="700.3" font-size="17" fill="#6b1f2e" text-anchor="middle" data-ax="410" data-ay="670" data-r="15">Ballyrush</text>
@@ -6693,6 +6698,7 @@
 <text x="620" y="1029.2" font-size="17" fill="#6b1f2e" text-anchor="middle" data-ax="620" data-ay="995" data-r="18.9">Velis Vel</text>
 <text x="895" y="1067.6" font-size="20" fill="#6b1f2e" text-anchor="middle" data-ax="895" data-ay="1030" data-r="19.6">Kinsbaile</text>
 <text x="340" y="1065.3" font-size="17" fill="#6b1f2e" text-anchor="middle" data-ax="340" data-ay="1035" data-r="15">Cloverdell</text>
+<text x="800" y="1118.2" font-size="18" fill="#6b1f2e" text-anchor="middle" data-ax="800" data-ay="1085" data-r="17">Dundoolin</text>
 <text x="1560" y="1173.4" font-size="22" fill="#6b1f2e" text-anchor="middle" data-ax="1560" data-ay="1130" data-r="23.6">Glen Elendra</text>
 </g>
 <!-- === OPRAWA (kompas, skala, ramka) === -->

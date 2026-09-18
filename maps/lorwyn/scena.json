@@ -657,6 +657,15 @@
    }
   },
   {
+   "id": "dundoolin",
+   "typ": "miasto",
+   "x": 800,
+   "y": 1085,
+   "opcje": {
+    "skala": 1.15
+   }
+  },
+  {
    "id": "ballyrush",
    "typ": "miasto",
    "x": 410,
@@ -788,6 +797,24 @@
      720,
      485
     ]
+   }
+  },
+  {
+   "tekst": "Ashenmoor",
+   "x": 1300,
+   "y": 235,
+   "opcje": {
+    "fs": 18,
+    "kotwica": "middle"
+   }
+  },
+  {
+   "tekst": "Druim Calad",
+   "x": 1150,
+   "y": 1085,
+   "opcje": {
+    "fs": 16,
+    "kotwica": "middle"
    }
   },
   {

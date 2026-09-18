@@ -657,6 +657,15 @@
    }
   },
   {
+   "id": "dundoolin",
+   "typ": "miasto",
+   "x": 800,
+   "y": 1085,
+   "opcje": {
+    "skala": 1.15
+   }
+  },
+  {
    "id": "ballyrush",
    "typ": "miasto",
    "x": 410,
@@ -797,6 +806,55 @@
      720,
      485
     ]
+   }
+  },
+  {
+   "tekst": "Dundoolin",
+   "x": 800,
+   "y": 1085,
+   "opcje": {
+    "fs": 18,
+    "kotwica": "middle",
+    "przyDo": [
+     800,
+     1085
+    ]
+   }
+  },
+  {
+   "tekst": "Spinerock Knoll",
+   "x": 795,
+   "y": 415,
+   "opcje": {
+    "fs": 16,
+    "kotwica": "middle"
+   }
+  },
+  {
+   "tekst": "Mosswort Bridge",
+   "x": 650,
+   "y": 568,
+   "opcje": {
+    "fs": 16,
+    "kotwica": "middle"
+   }
+  },
+  {
+   "tekst": "Windbrisk Heights",
+   "x": 150,
+   "y": 565,
+   "opcje": {
+    "fs": 16,
+    "kotwica": "middle"
+   }
+  },
+  {
+   "tekst": "Porringer Valley",
+   "x": 300,
+   "y": 880,
+   "opcje": {
+    "fs": 18,
+    "kotwica": "middle"
    }
   },
   {

@@ -45,6 +45,32 @@ Glen Elendra i Velis Vel zachowują nazwę. The Great Forest nie otrzymuje
 zmyślonego nocnego aliasu — napis jest tylko na dziennym widoku.
 „Źródło Wanderbrine” jest opisem funkcji, nie rzekomo kanonicznym imieniem.
 
+## Wzbogacenie 2026-09-18 (pass mapowy PR-35)
+
+Dodane kanoniczne lokacje klasycznej epoki (mtg.wiki/Lorwyn-Shadowmoor,
+sekcje „Locations on Lorwyn/Shadowmoor”); żadna nie otrzymała zmyślonego
+aliasu drugiego oblicza:
+
+- **Dundoolin** (dzień) — drugi co do wielkości clachan, mędrcy
+  Eightyfold Trail; nocny odpowiednik nieznany kanonowi.
+- **Spinerock Knoll** (dzień) — wzgórze-smok; kowale Burrenton biorą
+  z niego kamyki, stąd sąsiedztwo clachanu jako relacja.
+- **Mosswort Bridge** (dzień) — most z uwięzionym trollem; położenie
+  na przecięciu szlaku clachanów z bezimiennym dopływem jest wyborem
+  rekonstrukcji (kanon nie podaje miejsca).
+- **Windbrisk Heights** (dzień) — urwisko-raptor przy zachodnim paśmie.
+- **Porringer Valley** (dzień) — zalesiona dolina jesionowych treefolk;
+  zalana „Porringer Basin” to stan Eclipsed, poza zakresem mapy.
+- **Ashenmoor** (noc) — czarny dom cinderów; przy północnych górach,
+  bo cinders to nocne oblicze flamekinów gór (relacja, nie pomiar).
+- **Druim Calad** (noc) — jedyny duży naziemny port Shadowmooru,
+  na brzegu Wanderbrine.
+
+Nazwy jednostronne renderują się wyłącznie w swoim obliczu (test
+identyczności nietekstowej geometrii pozostaje w mocy). Oba rastry
+obejrzane w sesji PR-35 (L10). Kotwice map.json zaktualizowane świadomie
+z generatora, pinezki nietknięte.
+
 ## Generator i weryfikacja
 
 `node tools/mapforge/lorwyn-scena-t4.mjs` odtwarza:
