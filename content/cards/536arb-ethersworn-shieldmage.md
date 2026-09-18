@@ -57,7 +57,7 @@ z imienia sprawca chaosu: to knowania **[[nicol-bolas|Nicola Bolasa]]**, podsyca
 przez **Seekers of Carmot** (esperski strach o kurczące się etherium)
 i nieumarłe armie Grixis, doprowadziły do wojny, której ta scena jest
 jedną klatką, a której echo zasilało rodzący się w centrum planu
-wir [[305arb-illusory-demon|Maelstromu]].
+wir [[maelstrom|Maelstromu]].
 
 ## Nazwa Karty
 
