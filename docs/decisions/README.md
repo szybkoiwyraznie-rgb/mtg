@@ -63,6 +63,7 @@ dziedziczona z projektu mtg-game.
 | [0045](0045-domyslny-widok-mapy-i-ognisko-startowe.md) | Mapa może mieć domyślny widok startowy (`widok_domyslny`) w układzie złotym; start od miasta/regionu bez tworzenia nowej podmapy; deep-linki mają pierwszeństwo | Zaakceptowana |
 | [0046](0046-dyscyplina-geometrii-miasta-kaflikowanie-mury-szwy-l2.md) | Dyscyplina geometrii miasta: kaflikowanie dzielnic, las poza tkanką domów, mury poza obrysem, zakaz fix-by-deletion, sztywny szew wodny L2, ścisły test nakładki | Zaakceptowana (§5 sztywny szew — częściowo zastąpiony dla mapy miasta, patrz ADR 0047) |
 | [0047](0047-mapa-miasta-jako-osobna-mapa-twarda-podmiana.md) | Mapa miasta jako osobna mapa o własnej skali — twarda podmiana deep-zoom (nie wycinek planu); plan w skali planu (miasto kropką), miasto we własnej skali; luzuje sztywny szew ADR 0046 §5 | Zaakceptowana |
+| [0048](0048-mapa-diagram-relacyjny-planow-bez-planimetrii.md) | Mapa-diagram relacyjny dla planów, których kanon wyklucza planimetrię (Duskmourn): geometria kompozycyjna, jawny kontrakt antykartograficzny, stałe relacje tylko z kanonu, bez kompasu i skali | Zaakceptowana |
 
 Spójnością rejestru (numeracja, statusy, tabela) pilnuje
 `test/rejestr-adr.test.js`.

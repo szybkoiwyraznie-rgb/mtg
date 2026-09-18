@@ -39,6 +39,7 @@ const TERMINY_META = [
   { wzor: /\bfabule\b/i, nazwa: '„fabule”' },
   { wzor: /\bfabułą\b/i, nazwa: '„fabułą”' },
   { wzor: /\bkodeks/i, nazwa: '„Kodeks” (produkt)' },
+  { wzor: /\bcodex/i, nazwa: '„Codex” (produkt, pisownia łacińska — audyt PR-34 Z1)' },
   { wzor: /scryfall/i, nazwa: '„Scryfall”' },
   { wzor: /\boracle\b/i, nazwa: '„oracle”' },
   { wzor: /\bprint/i, nazwa: '„print”' },
