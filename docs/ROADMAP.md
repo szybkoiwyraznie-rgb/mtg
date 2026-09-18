@@ -485,3 +485,7 @@ Domknięto piątą dostawę PR-34 oraz szesnasty plan. Duskmourn otrzymał atlas
 ## PR-34 (2026-09-13) — **56EOE i mapa The Edge zmaterializowane**
 
 Domknięto szóstą dostawę PR-34 i siedemnasty plan. The Edge otrzymał fanowski podkład T1 systemu Sothera, jawny kontrakt interpretacyjny i pierwszą pinezkę na Evendo. Stan: 53 karty, 37 haseł, 17 planów; 334/334 testów.
+
+## PR-35 (2026-09-18) — **audyt PR-34 i pełna Pętla Jakości**
+
+Audyt PR-34 pozytywny (poprawka głosu Kronikarza w 56EOE + strażnik testowy; ADR 0048 dla map-diagramów). Pętla: sekcja „Setting w pigułce" dla The Edge, pierwszy wikilink 99MH2, nowe hasło Maelstrom po dwóch kartach, siedem kanonicznych kotwic Lorwyn–Shadowmoor. Stan: 53 karty, 39 haseł, 17 planów; 334/334 testów, build 108 stron, map-audit 0, wiki-stats 100%.

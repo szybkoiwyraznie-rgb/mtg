@@ -2293,3 +2293,7 @@ karta MtG + lore świata → ADR 0010 (zastępuje hierarchię ADR 0003);
 1LTR (prompt + narracja) → wpis kolekcji verbatim + Karta Katalogowa
 (12 sekcji) + pinezka regionu Dunland (0,406/0.492) w map.json →
 testy 64/64, artefakt 2,4 MB.
+
+## 2026-09-18 — PR-35: audyt PR-34 i Pętla Jakości
+
+Sesja bez dostaw kart. Audyt PR-34 (`docs/audits/AUDYT_2026-09-18-PR34.md`) zakończony pozytywnie z dwiema naprawami w tej samej sesji: Z1 — meta-termin „Codex" w prozie 56EOE zastąpiony „kroniką", a test głosu Kronikarza dostał strażnik `/\bcodex/i`; Z2 — decyzja właściciela o mapie-diagramie dla planów bez planimetrii utrwalona jako ADR 0048. Pętla Jakości: The Edge otrzymał sekcję „Setting w pigułce" (Pinnacle, Weft, wojna entropii, ludy socjentne) z cytowaniami; Steelfin Whale pierwszy wikilink; link-mining domknął hasło Maelstrom po dwóch kartach (Illusory Demon, Ethersworn Shieldmage); pass mapowy wzbogacił Lorwyn–Shadowmoor o siedem kanonicznych kotwic klasycznej epoki z obsługą nazw jednostronnych w generatorze (bez zmyślonych aliasów), oba rastry obejrzane, podobnie jak zaległe rastry Duskmourn i The Edge. Bramki: 334/334, build 108 stron, map-audit 0, wiki-stats 100%.

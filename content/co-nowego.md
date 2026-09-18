@@ -1,3 +1,11 @@
+## 2026-09-18 17:05 — Pętla Jakości: hasło Maelstrom, głębsze The Edge, bogatszy Lorwyn
+
+- **Nowe hasło:** [[maelstrom|Maelstrom]] — burza many w sercu scalonej [[alara|Alary]], zrodzona w [[conflux|Confluxie]]; matka bytów takich jak Child of Alara i obrońca planu podczas najazdu [[nowa-phyrexia|Nowej Phyrexii]]. Próg dwóch kart spełniły [[305arb-illusory-demon|Illusory Demon]] i [[536arb-ethersworn-shieldmage|Ethersworn Shieldmage]].
+- **Pogłębienie lore:** plan [[the-edge|The Edge]] dostał sekcję „Setting w pigułce" (Pinnacle, Weft, wojna entropii Palatynatu z Monasteriatem, ludy socjentne), a [[99mh2-steelfin-whale|Steelfin Whale]] — pierwszy wikilink do [[mirrodin|Mirrodinu]].
+- **Mapa Lorwyn–Shadowmoor:** siedem nowych kanonicznych kotwic klasycznej epoki — Dundoolin, Spinerock Knoll, Mosswort Bridge, Windbrisk Heights i Porringer Valley po stronie dnia; Ashenmoor i Druim Calad po stronie nocy. Nazwy jednostronne renderują się tylko w swoim obliczu; żadna nie dostała zmyślonego aliasu.
+- **Audyt PR-34:** pozytywny; poprawka głosu Kronikarza w [[56eoe-diplomatic-relations|Diplomatic Relations]] („kronika" zamiast nazwy własnej serwisu) i nowy strażnik testowy; ADR 0048 utrwala mapę-diagram dla planów bez planimetrii.
+- **Bramki:** 334/334 testów; build 108 stron (53 karty, 39 haseł, 17 planów); map-audit 0; wiki-stats 100%.
+
 ## 2026-09-13 23:20 — Nowa karta i mapa: Diplomatic Relations (The Edge)
 
 - **Materializacja:** **[[56eoe-diplomatic-relations|Diplomatic Relations]]** (`56EOE`, EOE, [[the-edge|The Edge]]) pokazuje „dyplomację” Kavów jako uprzywilejowanie własnego funkcjonariusza przez pole bezpieczeństwa placówki Evendo.
