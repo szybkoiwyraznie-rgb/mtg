@@ -24,7 +24,7 @@ Oxidda nie była zielonym pasmem górskim, lecz krajobrazem żelaza.
 Stoki, płyty i wyniesione tarasy zbudowane były z rdzewiejących struktur
 metalowych; gorąco nie wynikało tylko z klimatu, ale z pracy pieców,
 kuźń i żywego ognia planu. Od strony środka świata góry dochodziły do
-**Glimmervoid**, a od południowego wschodu czuły napór [[mephidross|Mephidrossu]],
+[[glimmervoid|**Glimmervoid**]], a od południowego wschodu czuły napór [[mephidross|Mephidrossu]],
 który z czasem coraz mocniej podżerał ich zbocza.
 
 ### Dom [[vulshok|Vulshoków]] i Kuldothy

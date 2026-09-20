@@ -46,7 +46,7 @@ osuwały się w bagno.
 
 W wojnie Mirran z [[nowa-phyrexia|Nową Phyrexią]] Dross był pierwszym
 miejscem powierzchni planu, w którym lśniący olej wszedł w świat w
-dużej skali — przed **Quicksilver Sea** i **Glimmervoidem**.
+dużej skali — przed **Quicksilver Sea** i [[glimmervoid|**Glimmervoidem**]].
 **Vedalken**, pierwsi, którzy odkryli olej, zaczęli go badać i
 rozprzestrzeniać; to tutaj phyrexiańska zaraza zalała bagniska,
 a z nich ruszyła w góry i na lakuny. Późniejsze sformułowania
