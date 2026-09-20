@@ -76,6 +76,19 @@ choć nie odzyskali po prostu dawnego Mirrodinu. Ten koniec imperium
 nie powinien być mylony z jego wcześniejszym zwycięstwem nad planem.
 [4](https://magic.wizards.com/en/news/magic-story/episode-10-the-rhythms-of-life)
 
+## Powiązane hasła
+
+- **[[mirrodin|Mirrodin]]** — plan, w którego wnętrzu wyrosła i który
+  podbiła Nowa Phyrexia.
+- **[[ortodoksja-maszyn|Ortodoksja Maszyn]]** — biała frakcja Norn
+  i jej doktryna narzuconej jedności.
+- **[[mephidross|Mephidross]]** — bagno, w którym lśniący olej najpierw
+  wszedł na powierzchnię planu.
+- **[[glimmervoid|Glimmervoid]]** — centralna równina zamieniona
+  w strefę wojny podczas podboju.
+- **[[maelstrom|Maelstrom]]** — burza many Alary, która powstała
+  przeciw phyrexiańskiej inwazji na tamten plan.
+
 ## Źródła
 
 - Grace P. Fong, Planeswalker's Guide to Phyrexia: All Will Be One (2023) — stara i nowa Phyrexia, olej/kompleacja, praetorzy, różnice frakcji, Mirranie, sfery i przygotowania do inwazji: [5](https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-phyrexia-all-will-be-one). Przewodnik przyjmuje głos phyrexiańskiej propagandy; jej twierdzenia o „doskonałości” są przekonaniami opisywanej cywilizacji. Osobne hasło [[ortodoksja-maszyn|Ortodoksja Maszyn]] opisuje białą frakcję Norn.

@@ -88,6 +88,16 @@ leżący w geometrycznym środku scalonego planu.
 
 [Maelstrom w centrum scalonej Alary](#/mapa/alara?x=0.5&y=0.5)
 
+## Powiązane hasła
+
+- **[[alara|Alara]]** — plan rozbity i ponownie scalony przez Conflux.
+- **[[maelstrom|Maelstrom]]** — burza many zrodzona w punkcie
+  zderzenia odłamów.
+- **[[grixis|Grixis]]** — odłam śmierci, który zderzenie rzuciło na
+  sąsiadów.
+- **[[nicol-bolas|Nicol Bolas]]** — architekt kataklizmu i wojen,
+  które go karmiły.
+
 ## Źródła
 
 - MTG Wiki, *Conflux (event)* — zderzenie odłamów, Maelstrom, intryga

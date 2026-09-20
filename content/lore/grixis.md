@@ -83,6 +83,16 @@ archipelagu Esperu i na wschód od centralnego Maelstromu.
 
 [Nekropolia Sedraxis w sercu Grixis](#/mapa/alara?x=0.75&y=0.55)
 
+## Powiązane hasła
+
+- **[[alara|Alara]]** — scalony plan, którego wschodni segment zajmuje
+  Grixis.
+- **[[conflux|Conflux]]** — kataklizm, który zderzył odłam z sąsiadami.
+- **[[maelstrom|Maelstrom]]** — burza many na zachodniej granicy
+  odłamu.
+- **[[nicol-bolas|Nicol Bolas]]** — smok, który uczynił z Grixis
+  scenę swoich intryg.
+
 ## Źródła
 
 - MTG Wiki, *Grixis* — geografia shardu, vis i Vitals, Vithia i zdrada
