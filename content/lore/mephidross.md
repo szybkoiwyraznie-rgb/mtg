@@ -75,6 +75,16 @@ jego granic ostro nie wyznacza.
 
 [Mephidross na mapie Mirrodinu](#/mapa/mirrodin?x=0.6381&y=0.7787)
 
+## Powiązane hasła
+
+- **[[mirrodin|Mirrodin]]** — plan, którego czarnym regionem jest Dross.
+- **[[oxidda-chain|Oxidda Chain]]** — góry podżerane przez pełznące
+  bagno od południowego wschodu.
+- **[[glimmervoid|Glimmervoid]]** — centralna równina, przez którą
+  wiedzie każda droga do Drossu.
+- **[[nowa-phyrexia|Nowa Phyrexia]]** — zaraza, która właśnie tutaj
+  najpierw wyszła na powierzchnię.
+
 ## Źródła
 
 - MTG Wiki, Mephidross — bagno ścieków i nekrogenu, graniczenie

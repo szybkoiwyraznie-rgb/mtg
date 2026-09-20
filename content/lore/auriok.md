@@ -86,6 +86,16 @@ regionów).
 
 [Razor Fields na mapie Mirrodinu](#/mapa/mirrodin?x=0.5&y=0.2)
 
+## Powiązane hasła
+
+- **[[mirrodin|Mirrodin]]** — metaliczny plan, którego biały region
+  zamieszkują Auriokowie.
+- **[[glimmervoid|Glimmervoid]]** — lustrzana równina granicząca
+  z Razor Fields od środka planu.
+- **[[vulshok|Vulshokowie]]** — górski lud sojuszniczy z czasów wojny.
+- **[[nowa-phyrexia|Nowa Phyrexia]]** — najeźdźca, przeciw któremu
+  stanęli Accorderzy.
+
 ## Źródła
 
 - MTG Wiki, Auriok — biali ludzie Razor Fields, złoto w ciele i nazwa

@@ -63,6 +63,17 @@ Mephidrossem.
 
 [Oxidda Chain na mapie Mirrodinu](#/mapa/mirrodin?x=0.3736&y=0.7556)
 
+## Powiązane hasła
+
+- **[[mirrodin|Mirrodin]]** — plan, którego czerwone góry tworzą łańcuch.
+- **[[vulshok|Vulshokowie]]** — kowale i wojownicy żelaznych stoków.
+- **[[glimmervoid|Glimmervoid]]** — równina, do której góry schodzą od
+  strony środka świata.
+- **[[mephidross|Mephidross]]** — bagno napierające na zbocza od
+  południowego wschodu.
+- **[[nowa-phyrexia|Nowa Phyrexia]]** — wróg, który przesuwał granicę
+  gór w wojnie o powierzchnię.
+
 ## Źródła
 
 - MTG Wiki, Oxidda Chain — definicja regionu, żelazne stoki i płaskowyże,
