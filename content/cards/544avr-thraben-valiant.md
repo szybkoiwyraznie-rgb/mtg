@@ -27,7 +27,7 @@ Jednym z najniebezpieczniejszych celów tych wypraw staje się
 [[devils-breach|**Devil's Breach**]] (Diabelski Wyłom) — wulkaniczny wąwóz
 i głęboka, ziejąca żarem rozpadlina na południowych krańcach prowincji
 [[kessig|**Kessig**]]. Wraz
-z [[ashmouth|**Ashmouth**]] w górach Geier Reach w Stensii, Devil's Breach stanowi
+z [[ashmouth|**Ashmouth**]] w górach [[geier-reach|Geier Reach]] w Stensii, Devil's Breach stanowi
 główną bramę łączącą powierzchnię świata z podziemnymi czeluściami,
 z których wypełzają chmary złośliwych biesów i diabłów. W przeciwieństwie
 do demonów knujących skomplikowane intrygi, diabły to zrodzone z chaosu

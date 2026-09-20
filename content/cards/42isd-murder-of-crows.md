@@ -18,7 +18,7 @@ pinezka:
 ### Cmentarz po zmierzchu
 
 Zmierzch w [[stensia|**Stensii**]] nie kończy dnia gwałtownie. Najpierw
-bledną granie Geier Reach, potem mgła odbiera głębię świerkom, a dopiero na
+bledną granie [[geier-reach|Geier Reach]], potem mgła odbiera głębię świerkom, a dopiero na
 końcu kamienie tracą ostatnie ciepło. Na starym cmentarzu ten porządek
 odwraca się jeszcze przed nocą: omszałe nagrobki zaczynają wyglądać jak
 sylwetki stojących ludzi, żelazne sztachety wyrastają z mroku niczym rząd

@@ -10,7 +10,7 @@ materializacja: 2026-09-12
 
 ## Definicja
 
-**Ashmouth** to głęboka, wulkaniczna czeluść w Geier Reach w
+**Ashmouth** to głęboka, wulkaniczna czeluść w [[geier-reach|Geier Reach]] w
 [[stensia|Stensii]] na [[innistrad|Innistradzie]], jedna z najważniejszych bram,
 przez które demony i diabły wydostają się na powierzchnię planu. Leży wśród
 przełęczy i górskich dróg Stensii, a jego dym, popiół i żar wyznaczają
