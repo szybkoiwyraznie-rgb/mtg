@@ -104,7 +104,7 @@ Pinezka stoi na obszarze **[[gory-kranca-swiata|Gór Krańca Świata]]** (*World
 `x: 0.720`, `y: 0.580`) — pewność **region**.
 
 [[gory-kranca-swiata|Góry Krańca Świata]] to wschodni grzbiet Starego Świata, ciągnący się
-wzdłuż granicy z Ziemiami Jałowymi (**The Badlands**, `x: 0.4262`,
+wzdłuż granicy z [[ziemie-jalowe|Ziemiami Jałowymi]] (**The Badlands**, `x: 0.4262`,
 `y: 0.5810`). W tym górzystym pasmie leży m.in. zrujnowana twierdza
 *Karak Osiem Szczytów*, stanowiąca matecznik plemienia Krzywego Księżyca.
 

@@ -126,11 +126,11 @@ o świecie.
 Scena należy do **Starego Świata**, a konkretnie do żywiołu
 zielonoskórych — bezimiennego, błotnistego pola bitwy. Dzieje świata nie
 wskazują jednego miasta: orkowie „można rzec, że ich ojczyzną są
-**Badlands**" (Ziemie Jałowe) na południe od Starego Świata, u wschodnich
+[[ziemie-jalowe|**Badlands**]]" (Ziemie Jałowe) na południe od Starego Świata, u wschodnich
 podnóży **[[gory-kranca-swiata|Worlds Edge Mountains]]**, skąd od Wojen Goblinów wylewają się
 ich Waaagh!. Docelowa pewność: **region** — środek Badlands, nie punkt.
 
-Miejsce sceny to środek **Badlands** — na południe od Border Princes, u
+Miejsce sceny to środek [[ziemie-jalowe|**Badlands**]] — na południe od Border Princes, u
 zachodniego progu **[[gory-kranca-swiata|Worlds Edge Mountains]]**, w pobliżu Mourkain. Pewność
 oznaczenia jest **regionalna**: to bezimienne pole bitwy pośród Ziem
 Jałowych, nie konkretne miasto.
