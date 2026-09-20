@@ -268,6 +268,62 @@
    "typ": "grota",
    "pozycja_zrodlo": "podziemna grota changelingów, dostępna przez sieć Dark Meanders; położenie symboliczne w zachodniej krainie, nie pomiar wejścia; https://mtg.wiki/page/Velis_Vel. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
    "notka": "Lorwyn: Velis Vel; Shadowmoor: Velis Vel."
+  },
+  {
+   "nazwa": "Mornsong",
+   "x": 0.62,
+   "y": 0.7228571428571429,
+   "typ": "region",
+   "pozycja_zrodlo": "las plemienia elfów Mornsong; kanon nie podaje położenia względem Gilt-Leaf, pozycja na południowo-wschodnich polanach jest rekonstrukcją; nocny odpowiednik nieznany kanonowi; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu."
+  },
+  {
+   "nazwa": "Arbor Morning",
+   "x": 0.6175,
+   "y": 0.775,
+   "typ": "osada",
+   "pozycja_zrodlo": "stolica elfów Mornsong, wewnątrz ich lasu; pozycja pochodna od rekonstrukcji lasu Mornsong; nocna nazwa nieznana; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu."
+  },
+  {
+   "nazwa": "Fen Grieve",
+   "x": 0.529,
+   "y": 0.41785714285714287,
+   "typ": "osada",
+   "pozycja_zrodlo": "port rzeczny z posągiem taercenna Grieve; funkcja portu wiąże go z Wanderwine, dokładne miejsce na rzece jest rekonstrukcją; nocna nazwa nieznana; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu."
+  },
+  {
+   "nazwa": "Duinshyle",
+   "x": 0.235,
+   "y": 0.8892857142857142,
+   "typ": "osada",
+   "pozycja_zrodlo": "clachan kithkin „daleko od Kinsbaile\"; pozycja na południowym skraju krainy osad realizuje tę relację, nie kanoniczny azymut; nocna nazwa nieznana; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu."
+  },
+  {
+   "nazwa": "The Bubbling Bog",
+   "x": 0.631,
+   "y": 0.5914285714285714,
+   "typ": "bagnisko",
+   "pozycja_zrodlo": "bagnisty obszar, którym kithkin przeklinają; umieszczony na mokradłach przy rzece — wybór rekonstrukcji; nocna nazwa nieznana; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu."
+  },
+  {
+   "nazwa": "Howltooth Hollow",
+   "x": 0.1075,
+   "y": 0.7178571428571429,
+   "typ": "grota",
+   "pozycja_zrodlo": "jaskinia Shadowmooru, w której potajemnie uwięziono barghesta (SHM Guide); pozycja przy południowo-zachodnich górach jest rekonstrukcją; dzienny odpowiednik nieznany kanonowi; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w nocnym zestawie; dzienny odpowiednik nieznany kanonowi — nie wymyślono aliasu."
+  },
+  {
+   "nazwa": "Amphitheater of Galanda Feudkiller",
+   "x": 0.309,
+   "y": 0.13,
+   "typ": "miejsce",
+   "pozycja_zrodlo": "misa dolmenów olbrzymów, gdzie spory rozstrzyga się szybko i gwałtownie (Survival Guide); pozycja w północnym paśmie jest rekonstrukcją królestwa olbrzymów; nocna nazwa nieznana; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu."
   }
  ],
  "pinezki": [

@@ -112,3 +112,31 @@ map-audit; przegląd nie kończy się na domyślnym obliczu.
   https://mtg.wiki/page/Mount_Tanufel/Mount_Kulrath,
   https://mtg.wiki/page/Wanderwine_River/Wanderbrine_River
 - Grota: https://mtg.wiki/page/Velis_Vel
+
+## Addendum 2026-09-20 — pass mapowy PR-35 (trzy Pętle, pętla 4)
+
+Drugi pass wzbogacający: 7 klasycznych miejsc epoki Oony z mtg.wiki
+(Lorwyn-Shadowmoor „Geography"; źródła klasyczne — powieść Lorwyn,
+Survival Guide, SHM Guide), kotwice 24 → 31:
+
+- **Mornsong** + **Arbor Morning** — las i stolica plemienia elfów
+  Mornsong (pozycja względem Gilt-Leaf nieznana — rekonstrukcja na
+  południowo-wschodnich polanach; dodany mały biom `las-mornsong`);
+- **Fen Grieve** — port rzeczny z posągiem taercenna Grieve (funkcja
+  portu wiąże z Wanderwine);
+- **Duinshyle** — clachan „daleko od Kinsbaile";
+- **The Bubbling Bog** — bagnisko-przekleństwo kithkin (na mokradłach
+  przy rzece);
+- **Howltooth Hollow** — jaskinia z barghestem (SHM Guide; nazwa tylko
+  nocna);
+- **Amphitheater of Galanda Feudkiller** — misa dolmenów olbrzymów
+  (Survival Guide; w północnym paśmie).
+
+Nazwy jednostronne zgodnie z kontraktem: bez wymyślonych aliasów
+(Mornsong/Arbor Morning/Fen Grieve/Duinshyle/Bubbling Bog/Amfiteatr —
+tylko dzień; Howltooth Hollow — tylko noc). Nowe jednostronne osady bez
+glifów POI (walidator wymaga etykiety przy glifie w OBU obliczach).
+Stany Eclipsed/ECL (Bristlebane, Longlake, Glen Priseil, Grave of Nath)
+świadomie poza zakresem. Oba rastry obejrzane (L10); po pierwszym
+oglądzie zawężono las Mornsong, by nocą nie połykał Druim Calad.
+Pinezka 605SHM nietknięta (L18); map-audit 0.

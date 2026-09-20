@@ -66,6 +66,24 @@ export const MIEJSCA_LORWYNU = [
     z: 'Wanderwine_River/Wanderbrine_River', opis: 'główna arteria rozdzielająca zachodnią krainę od Gilt-Leaf/Wilt-Leaf; dolny bieg wychodzi poza kadr, bez wymyślonego morza' },
   { id: 'velis-vel', dzien: 'Velis Vel', noc: 'Velis Vel', x: 620, y: 995, typ: 'grota', glif: 'jaskinia', fs: 17, skala: 1.3,
     z: 'Velis_Vel', opis: 'podziemna grota changelingów, dostępna przez sieć Dark Meanders; położenie symboliczne w zachodniej krainie, nie pomiar wejścia' },
+  // Pass mapowy PR-35 (2026-09-20): klasyczne miejsca epoki Oony z mtg.wiki
+  // (powieść Lorwyn, Survival Guide, SHM Guide). Stany Eclipsed/ECL —
+  // Bristlebane, Longlake, Glen Priseil, Grave of Nath — świadomie poza
+  // zakresem (poza_zakresem w map.json).
+  { id: 'mornsong', dzien: 'Mornsong', noc: null, x: 1240, y: 1012, typ: 'region', fs: 18,
+    z: 'Lorwyn-Shadowmoor', opis: 'las plemienia elfów Mornsong; kanon nie podaje położenia względem Gilt-Leaf, pozycja na południowo-wschodnich polanach jest rekonstrukcją; nocny odpowiednik nieznany kanonowi' },
+  { id: 'arbor-morning', dzien: 'Arbor Morning', noc: null, x: 1235, y: 1085, typ: 'osada', fs: 14, 
+    z: 'Lorwyn-Shadowmoor', opis: 'stolica elfów Mornsong, wewnątrz ich lasu; pozycja pochodna od rekonstrukcji lasu Mornsong; nocna nazwa nieznana' },
+  { id: 'fen-grieve', dzien: 'Fen Grieve', noc: null, x: 1058, y: 585, typ: 'osada', fs: 14, 
+    z: 'Lorwyn-Shadowmoor', opis: 'port rzeczny z posągiem taercenna Grieve; funkcja portu wiąże go z Wanderwine, dokładne miejsce na rzece jest rekonstrukcją; nocna nazwa nieznana' },
+  { id: 'duinshyle', dzien: 'Duinshyle', noc: null, x: 470, y: 1245, typ: 'osada', fs: 14, 
+    z: 'Lorwyn-Shadowmoor', opis: 'clachan kithkin „daleko od Kinsbaile"; pozycja na południowym skraju krainy osad realizuje tę relację, nie kanoniczny azymut; nocna nazwa nieznana' },
+  { id: 'bubbling-bog', dzien: 'The Bubbling Bog', noc: null, x: 1262, y: 828, typ: 'bagnisko', fs: 13,
+    z: 'Lorwyn-Shadowmoor', opis: 'bagnisty obszar, którym kithkin przeklinają; umieszczony na mokradłach przy rzece — wybór rekonstrukcji; nocna nazwa nieznana' },
+  { id: 'howltooth', dzien: null, noc: 'Howltooth Hollow', x: 215, y: 1005, typ: 'grota', fs: 14, 
+    z: 'Lorwyn-Shadowmoor', opis: 'jaskinia Shadowmooru, w której potajemnie uwięziono barghesta (SHM Guide); pozycja przy południowo-zachodnich górach jest rekonstrukcją; dzienny odpowiednik nieznany kanonowi' },
+  { id: 'amfiteatr-galandy', dzien: 'Amphitheater of Galanda Feudkiller', noc: null, x: 618, y: 182, typ: 'miejsce', fs: 12,
+    z: 'Lorwyn-Shadowmoor', opis: 'misa dolmenów olbrzymów, gdzie spory rozstrzyga się szybko i gwałtownie (Survival Guide); pozycja w północnym paśmie jest rekonstrukcją królestwa olbrzymów; nocna nazwa nieznana' },
 ];
 
 const rzekaGlowna = [[1020,290],[1020,360],[1080,505],[1040,650],[995,785],[1095,940],[1075,1100],[1100,1250],[1090,1510]];
@@ -103,6 +121,10 @@ export function scenaLorwynu(oblicze) {
       { id: 'las-wschodni', typ: 'las', punkty: [[1210,315],[1700,300],[1795,470],[1780,660],[1660,800],[1490,860],[1280,760],[1200,510]], opcje: { gestosc: 0.65, skala: 1.05 } },
       { id: 'otoczenie-glen', typ: 'las', punkty: [[1450,965],[1630,950],[1740,1060],[1700,1215],[1480,1240],[1405,1130]], opcje: { gestosc: 0.75, skala: 1 } },
       { id: 'mokradla-przy-rzece', typ: 'bagno', punkty: [[1140,760],[1260,785],[1320,865],[1210,910],[1140,875]], opcje: { gestosc: 0.6 } },
+      // Pass PR-35: las plemienia Mornsong — mały odrębny bór na południowo-
+      // wschodnich polanach (kanon: „forest of the eponymous tribe", pozycja
+      // względem Gilt-Leaf nieznana — rekonstrukcja).
+      { id: 'las-mornsong', typ: 'las', punkty: [[1195,960],[1330,950],[1360,1060],[1315,1175],[1205,1190],[1165,1070]], opcje: { gestosc: 0.55, skala: 0.9 } },
       { id: 'pola-osad-zachodu', typ: 'step', punkty: [[220,560],[725,555],[930,650],[915,895],[950,1110],[835,1340],[330,1350],[230,1180]], opcje: { gestosc: 0.36 } },
       { id: 'wschodnie-polany', typ: 'step', punkty: [[1200,970],[1340,880],[1720,845],[1900,900],[1850,1320],[1190,1340]], opcje: { gestosc: 0.18 } },
     ],
