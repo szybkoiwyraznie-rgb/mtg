@@ -58,7 +58,7 @@ monstrualną bestię, terroryzując podwórza pod pełnią księżyca
 i **grafów** — cmentarzy — jest najwięcej, a wraz z nimi geistów i ghuli.
 
 [[kessig|**Kessig**]] (zachód) — kraina wiecznej jesieni i wielkiego lasu
-**Ulvenwald**, zwanego Mglistym Borem. Ludzi mało, wilkołaków dużo.
+[[ulvenwald|**Ulvenwald**]], zwanego Mglistym Borem. Ludzi mało, wilkołaków dużo.
 Watahę Hordy Krallen wędrującą pod ludzką postacią na skraj osad
 ukazuje [[171isd-grizzled-outcasts|Grizzled Outcasts]].
 **Hollowhenge** to dawna stolica prowincji, **Avabruck**, którą

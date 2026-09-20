@@ -16,7 +16,7 @@ pinezka:
 ## Kronika Lore
 
 W prowincji [[kessig|**Kessig**]] na [[innistrad|Innistradzie]] las nie kończy
-się tam, gdzie zaczynają się płoty ludzkich osad. Bory **Ulvenwaldu**
+się tam, gdzie zaczynają się płoty ludzkich osad. Bory [[ulvenwald|**Ulvenwaldu**]]
 otaczają wsie ze wszystkich stron, a granica między człowiekiem
 a drapieżnikiem bywa zatarta bardziej, niż ktokolwiek chciałby
 przyznać. W tej krainie wiecznego zmierzchu i opadających liści
@@ -61,7 +61,7 @@ na czele oddziału i skupiający na sobie czujne spojrzenia mieszkańców.
 żyjąca w ciągłym lęku przed pełnią księżyca; zza przymkniętych okiennic
 obserwują nieproszonych gości, nie otwierając bram.
 
-[[kessig|**Kessig**]] i **Ulvenwald** — lesista prowincja i pierwotny bór, stanowiące
+[[kessig|**Kessig**]] i [[ulvenwald|**Ulvenwald**]] — lesista prowincja i pierwotny bór, stanowiące
 matecznik wilkołaczych watah na Innistradzie.
 
 ## Nazwa Karty

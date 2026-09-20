@@ -126,7 +126,7 @@ nazwę wąwozu w inskrypcji i opisie sceny.
 Zestawienie tej pozycji z innymi punktami planu ma kluczowe znaczenie
 dla zrozumienia dynamiki konfliktu:
 - [[thraben|**Thraben**]] (`x: 0.668`, `y: 0.317`) leży daleko na północnym
-  wschodzie, za pasmami Moorlandu i gęstwinami Ulvenwaldu. Obecność
+  wschodzie, za pasmami Moorlandu i gęstwinami [[ulvenwald|Ulvenwaldu]]. Obecność
   oddziałów gwardii z Thraben w tym miejscu unaocznia daleki zasięg
   ekspedycji karnych Kościoła.
 - [[393dka-forge-devil|**Forge Devil**]] rozgrywał się w podziemiach
