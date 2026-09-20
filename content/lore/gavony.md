@@ -41,7 +41,7 @@ zależało od coraz bardziej kruchych murów i srebra.
 
 Podział administracyjny Gavony jest kościelny: parafia działa jak hrabstwo,
 a każda może mieć kaplice, kapłanów i małe ołtarze. Źródła wyróżniają trzy
-główne regiony: Moorland, Nearheath i parafię Thraben. Moorland jest
+główne regiony: [[moorland|Moorland]], Nearheath i parafię Thraben. Moorland jest
 największy i najgroźniejszy, Nearheath obejmuje mniejsze parafie, a Thraben
 łączy miasto i parafię o tej samej nazwie. [1](https://mtg.wiki/page/Gavony)
 

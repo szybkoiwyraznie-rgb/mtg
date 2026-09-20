@@ -48,7 +48,7 @@ największe miasto planu, opasane wieloma pierścieniami murów; rzeka
 W Thraben wznosi się **Katedra Avacyn**, a w jej trójkątnym dziedzińcu
 stoi [[helvault|Helvault]]. Na południe ciągnie się **Nearheath** z parafiami
 winnic, lasu i skał (wsie **Hanweir**, **Estwald**), a dalej
-**Moorland** — największa i najgroźniejsza parafia, z wsią **Trostad**
+[[moorland|**Moorland**]] — największa i najgroźniejsza parafia, z wsią **Trostad**
 przy granicy [[kessig|Kessigu]]. W kaplicach prowincji uświęciciele
 wiążą wrogów w eteryczne klatki snu, co ukazuje
 [[181avr-spectral-prison|Spectral Prison]]. W wiejskich gospodarstwach

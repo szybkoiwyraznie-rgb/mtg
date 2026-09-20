@@ -71,7 +71,7 @@ sąsiednich krain.
   księżyca.
 - **[[gavony|Gavony]]** — prowincja po drugiej stronie Bower Passage.
 - **[[thraben|Thraben]]** — miasto, którego gwardia zapuszcza się za
-  pasma Moorlandu i gęstwiny boru.
+  pasma [[moorland|Moorlandu]] i gęstwiny boru.
 
 ## W kolekcji
 

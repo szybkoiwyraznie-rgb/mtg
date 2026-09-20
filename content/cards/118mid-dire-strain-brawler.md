@@ -102,7 +102,7 @@ niespotykaną śmiałość.
 
 Pinezka stoi na obszarze prowincji [[gavony|**Gavony**]] (`x: 0.59`, `y: 0.449`) —
 pewność **region**. [[gavony|Gavony]] to serce rolniczego i miejskiego życia ludzi,
-gdzie parafie takie jak Nearheath czy Moorland dostarczają plonów dla
+gdzie parafie takie jak Nearheath czy [[moorland|Moorland]] dostarczają plonów dla
 stołecznego [[thraben|Thraben]].
 
 Kontekst geograficzny wobec innych świadectw planu:
