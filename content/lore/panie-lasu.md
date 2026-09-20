@@ -72,6 +72,13 @@ Krzywuchowych Moczarów ani lokalnych leśnych ścieżek.
 
 [Panie Lasu w regionalnym Velen](#/mapa/wiedzmin?x=0.4113&y=0.2807)
 
+## Powiązane hasła
+
+- **[[velen|Velen]]** — Ziemia Niczyja, nad którą Panie sprawują
+  cichą, głodną władzę.
+- **[[wiedzmin|Kontynent]]** — świat, w którego starych kultach
+  zakorzenione są Damy.
+
 ## Źródła
 
 - **Wiedźmin Wiki — Wiedźmy z Krzywuchowych Moczarów** — nazwa, status
