@@ -39,7 +39,8 @@ odpowiada na cios kolejnym ustawieniem szeregu.
 
 ## Postacie i Byty
 
-**Weteranka Dziesiątego Dystryktu** jest ludzką żołnierką Boros: nie
+**Weteranka Dziesiątego Dystryktu** jest ludzką żołnierką Boros
+i weteranką ulicznych patroli [[wojek|Ligi Wojek]]: nie
 świeżą ikoną rekrutacji, lecz kimś, komu służba odcisnęła się w ruchach.
 Wyszczerbiony miecz i pewny chwyt nie mówią o nietykalności; mówią o
 praktycznej pamięci walk ulicznych, o ciele, które zna ciężar pancerza,

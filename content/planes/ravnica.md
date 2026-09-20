@@ -112,8 +112,8 @@ tłumaczy jej kosmopolityzm: każdy, kto ma co sprzedać, co ukraść
 albo co bronić, ma tu swój kawałek bruku.
 
 Rasy osiadły tu jak warstwy kamienia. Ludzie są ludem wszystkich
-dziesięciu gildii — od rekruta **Armii Boros** i patrolu **Ligi
-Wojek** po kupców Orzhov; elfy żyją podwójnie: pasterskie elfy
+dziesięciu gildii — od rekruta **Armii Boros** i patrolu [[wojek|**Ligi
+Wojek**]] po kupców Orzhov; elfy żyją podwójnie: pasterskie elfy
 **Selesnyi** w Canopy i nekromantyczne **Devkarin** w trumnach
 pod Medori Park, a przed nimi — **Erstwhile**, wysublimowany ród
 elfów uśpionych w mauzoleum **Umerilek**; **Vedalken** projektują

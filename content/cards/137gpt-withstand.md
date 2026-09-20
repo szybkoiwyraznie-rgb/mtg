@@ -47,7 +47,7 @@ człowiek w szeregu ma dokładnie tyle znaczenia, ile nacisku potrafi
 zatrzymać dla innych.
 
 Za żołnierzem stoi struktura gildii: [[sunhome|**Sunhome**]], twierdza-świątynia
-Legionu w Czwartym Precykcie; wojskowa tradycja **Wojek**; anielska
+Legionu w Czwartym Precykcie; wojskowa tradycja [[wojek|**Wojek**]]; anielska
 wyobraźnia sprawiedliwości, której symbolem jest **Razia**. Tarcza ze
 słońcem nie jest ozdobą. To znak przynależności do porządku, który widzi
 walkę jako służbę — ostrze i tarcza są narzędziami tej samej przysięgi.
