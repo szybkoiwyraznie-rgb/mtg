@@ -36,6 +36,32 @@ przeciwległy biegun: mglistą, chorą granicę mokradła i lasu, gdzie zagroże
 nie potrzebuje rozkazu ani adresata, bo sama bliskość istoty z chaosu psuje
 teren, ciała i pamięć drogi.
 
+### Puste Ziemie i Pakt traktu
+
+Sami mieszkańcy nazywają region bywało „Pustymi Ziemiami" — dla wielu
+to tylko kraj, przez który trzeba przejechać w drodze do celu. Nazwa
+„Wybrzeże Mieczy" ma dwa rodowody: białe klify, które wznoszą się
+ostro na setki mil między rzeką Dessarin a Baldur's Gate (zwane też
+Zębami Miecza), albo — jak chce podróżopisarz Volothamp Geddarm —
+niebezpiecznych mieszkańców, ludzkich i bestialskich. Wzdłuż traktu
+Coast Way obowiązuje „Pakt": umowa osad od Baldur's Gate po Amn
+o wspólnej ochronie podróżnych, bo poza traktami i zasięgiem miast
+kraj jest w większości bezprawny.
+[1](https://forgottenrealms.fandom.com/wiki/Sword_Coast)
+
+### Rzeka handlu i wzgórza trolli
+
+Osią handlu jest rzeka **Chionthar**, łącząca wielki port Baldur's
+Gate z miastami w głębi lądu — Elturel, Iriaebor, Berdusk i karawanową
+Scornubel. Na północ od niej zaczynają się złe ziemie: **Trollclaws**,
+strome, trawiaste wzgórza we mgle, przez które Coast Way przechodzi
+brodem Trollclaw Ford — karawany biorą tam po dwudziestu zbrojnych —
+oraz **Troll Hills**, wspólne terytorium trollich plemion. Kupców
+spinają też instytucje: od Ligi Kupieckiej Baldur's Gate po bank
+w Daggerford, w którym można złożyć majątek i podjąć go w Waterdeep.
+[1](https://forgottenrealms.fandom.com/wiki/Sword_Coast)
+[3](https://forgottenrealms.fandom.com/wiki/Trollclaws)
+
 ### Miejsca bez fałszywej precyzji
 
 Wybrzeże ma znane miasta, trakty, lasy i mokradła, lecz nie każda scena musi
@@ -75,10 +101,16 @@ poszczególne karty mają własne pinezki kart zgodnie ze stopniem pewności.
 
 - Forgotten Realms Wiki, *Sword Coast* — położenie w zachodnim Faerûnie,
   Morze Mieczy, miasta, dzicz, Lizard Marsh, Cloak Wood, trakty i zagrożenia
-  poza miejskim porządkiem:
+  poza miejskim porządkiem; „Puste Ziemie", etymologia nazwy (klify vs
+  Volothamp Geddarm), Pakt na Coast Way, rzeka Chionthar i handel,
+  Liga Kupiecka i bank w Daggerford:
   <https://forgottenrealms.fandom.com/wiki/Sword_Coast>
 - Forgotten Realms Wiki, *Cloak Wood* — stary, gęsty las na południowym końcu
   Wybrzeża Mieczy; potwory, niebezpieczna fauna i tradycja portali do innych
   części kosmosu:
   <https://forgottenrealms.fandom.com/wiki/Cloak_Wood>
+- Forgotten Realms Wiki, *Trollclaws* — mgliste, strome wzgórza trolli
+  na skraju Fields of the Dead; Coast Way i Winding Water przez region,
+  karawany z ok. dwudziestoma zbrojnymi:
+  <https://forgottenrealms.fandom.com/wiki/Trollclaws>
 - Strona planu: [[forgotten-realms|Zapomniane Krainy]].
