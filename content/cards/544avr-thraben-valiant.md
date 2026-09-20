@@ -27,7 +27,7 @@ Jednym z najniebezpieczniejszych celów tych wypraw staje się
 [[devils-breach|**Devil's Breach**]] (Diabelski Wyłom) — wulkaniczny wąwóz
 i głęboka, ziejąca żarem rozpadlina na południowych krańcach prowincji
 [[kessig|**Kessig**]]. Wraz
-z [[ashmouth|**Ashmouth**]] w górach Geier Reach w Stensii, Devil's Breach stanowi
+z [[ashmouth|**Ashmouth**]] w górach [[geier-reach|Geier Reach]] w Stensii, Devil's Breach stanowi
 główną bramę łączącą powierzchnię świata z podziemnymi czeluściami,
 z których wypełzają chmary złośliwych biesów i diabłów. W przeciwieństwie
 do demonów knujących skomplikowane intrygi, diabły to zrodzone z chaosu
@@ -126,7 +126,7 @@ nazwę wąwozu w inskrypcji i opisie sceny.
 Zestawienie tej pozycji z innymi punktami planu ma kluczowe znaczenie
 dla zrozumienia dynamiki konfliktu:
 - [[thraben|**Thraben**]] (`x: 0.668`, `y: 0.317`) leży daleko na północnym
-  wschodzie, za pasmami Moorlandu i gęstwinami Ulvenwaldu. Obecność
+  wschodzie, za pasmami [[moorland|Moorlandu]] i gęstwinami [[ulvenwald|Ulvenwaldu]]. Obecność
   oddziałów gwardii z Thraben w tym miejscu unaocznia daleki zasięg
   ekspedycji karnych Kościoła.
 - [[393dka-forge-devil|**Forge Devil**]] rozgrywał się w podziemiach

@@ -24,7 +24,7 @@ Oxidda nie była zielonym pasmem górskim, lecz krajobrazem żelaza.
 Stoki, płyty i wyniesione tarasy zbudowane były z rdzewiejących struktur
 metalowych; gorąco nie wynikało tylko z klimatu, ale z pracy pieców,
 kuźń i żywego ognia planu. Od strony środka świata góry dochodziły do
-**Glimmervoid**, a od południowego wschodu czuły napór [[mephidross|Mephidrossu]],
+[[glimmervoid|**Glimmervoid**]], a od południowego wschodu czuły napór [[mephidross|Mephidrossu]],
 który z czasem coraz mocniej podżerał ich zbocza.
 
 ### Dom [[vulshok|Vulshoków]] i Kuldothy
@@ -62,6 +62,17 @@ południowo-zachodniej części widocznej półkuli, między Glimmervoidem a
 Mephidrossem.
 
 [Oxidda Chain na mapie Mirrodinu](#/mapa/mirrodin?x=0.3736&y=0.7556)
+
+## Powiązane hasła
+
+- **[[mirrodin|Mirrodin]]** — plan, którego czerwone góry tworzą łańcuch.
+- **[[vulshok|Vulshokowie]]** — kowale i wojownicy żelaznych stoków.
+- **[[glimmervoid|Glimmervoid]]** — równina, do której góry schodzą od
+  strony środka świata.
+- **[[mephidross|Mephidross]]** — bagno napierające na zbocza od
+  południowego wschodu.
+- **[[nowa-phyrexia|Nowa Phyrexia]]** — wróg, który przesuwał granicę
+  gór w wojnie o powierzchnię.
 
 ## Źródła
 

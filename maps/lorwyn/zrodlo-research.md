@@ -45,6 +45,32 @@ Glen Elendra i Velis Vel zachowują nazwę. The Great Forest nie otrzymuje
 zmyślonego nocnego aliasu — napis jest tylko na dziennym widoku.
 „Źródło Wanderbrine” jest opisem funkcji, nie rzekomo kanonicznym imieniem.
 
+## Wzbogacenie 2026-09-18 (pass mapowy PR-35)
+
+Dodane kanoniczne lokacje klasycznej epoki (mtg.wiki/Lorwyn-Shadowmoor,
+sekcje „Locations on Lorwyn/Shadowmoor”); żadna nie otrzymała zmyślonego
+aliasu drugiego oblicza:
+
+- **Dundoolin** (dzień) — drugi co do wielkości clachan, mędrcy
+  Eightyfold Trail; nocny odpowiednik nieznany kanonowi.
+- **Spinerock Knoll** (dzień) — wzgórze-smok; kowale Burrenton biorą
+  z niego kamyki, stąd sąsiedztwo clachanu jako relacja.
+- **Mosswort Bridge** (dzień) — most z uwięzionym trollem; położenie
+  na przecięciu szlaku clachanów z bezimiennym dopływem jest wyborem
+  rekonstrukcji (kanon nie podaje miejsca).
+- **Windbrisk Heights** (dzień) — urwisko-raptor przy zachodnim paśmie.
+- **Porringer Valley** (dzień) — zalesiona dolina jesionowych treefolk;
+  zalana „Porringer Basin” to stan Eclipsed, poza zakresem mapy.
+- **Ashenmoor** (noc) — czarny dom cinderów; przy północnych górach,
+  bo cinders to nocne oblicze flamekinów gór (relacja, nie pomiar).
+- **Druim Calad** (noc) — jedyny duży naziemny port Shadowmooru,
+  na brzegu Wanderbrine.
+
+Nazwy jednostronne renderują się wyłącznie w swoim obliczu (test
+identyczności nietekstowej geometrii pozostaje w mocy). Oba rastry
+obejrzane w sesji PR-35 (L10). Kotwice map.json zaktualizowane świadomie
+z generatora, pinezki nietknięte.
+
 ## Generator i weryfikacja
 
 `node tools/mapforge/lorwyn-scena-t4.mjs` odtwarza:
@@ -86,3 +112,31 @@ map-audit; przegląd nie kończy się na domyślnym obliczu.
   https://mtg.wiki/page/Mount_Tanufel/Mount_Kulrath,
   https://mtg.wiki/page/Wanderwine_River/Wanderbrine_River
 - Grota: https://mtg.wiki/page/Velis_Vel
+
+## Addendum 2026-09-20 — pass mapowy PR-35 (trzy Pętle, pętla 4)
+
+Drugi pass wzbogacający: 7 klasycznych miejsc epoki Oony z mtg.wiki
+(Lorwyn-Shadowmoor „Geography"; źródła klasyczne — powieść Lorwyn,
+Survival Guide, SHM Guide), kotwice 24 → 31:
+
+- **Mornsong** + **Arbor Morning** — las i stolica plemienia elfów
+  Mornsong (pozycja względem Gilt-Leaf nieznana — rekonstrukcja na
+  południowo-wschodnich polanach; dodany mały biom `las-mornsong`);
+- **Fen Grieve** — port rzeczny z posągiem taercenna Grieve (funkcja
+  portu wiąże z Wanderwine);
+- **Duinshyle** — clachan „daleko od Kinsbaile";
+- **The Bubbling Bog** — bagnisko-przekleństwo kithkin (na mokradłach
+  przy rzece);
+- **Howltooth Hollow** — jaskinia z barghestem (SHM Guide; nazwa tylko
+  nocna);
+- **Amphitheater of Galanda Feudkiller** — misa dolmenów olbrzymów
+  (Survival Guide; w północnym paśmie).
+
+Nazwy jednostronne zgodnie z kontraktem: bez wymyślonych aliasów
+(Mornsong/Arbor Morning/Fen Grieve/Duinshyle/Bubbling Bog/Amfiteatr —
+tylko dzień; Howltooth Hollow — tylko noc). Nowe jednostronne osady bez
+glifów POI (walidator wymaga etykiety przy glifie w OBU obliczach).
+Stany Eclipsed/ECL (Bristlebane, Longlake, Glen Priseil, Grave of Nath)
+świadomie poza zakresem. Oba rastry obejrzane (L10); po pierwszym
+oglądzie zawężono las Mornsong, by nocą nie połykał Druim Calad.
+Pinezka 605SHM nietknięta (L18); map-audit 0.

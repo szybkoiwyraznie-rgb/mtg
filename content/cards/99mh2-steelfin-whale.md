@@ -37,9 +37,9 @@ artefakty wyznaczają rytm jego wędrówki.
 
 **Steelfin Whale** — olbrzymia istota morska o płetwach z polerowanej
 stali i magnetycznych fiszbinach. Nie jest konstruktem: typ zapisu nazywa
-ją stworzeniem i wielorybem. Mirrodin zaciera jednak granicę między
-organizmem a wyrobem, dlatego jej anatomia działa jak filtr, magnes i
-mechanizm napędowy jednocześnie.
+ją stworzeniem i wielorybem. [[mirrodin|Mirrodin]] zaciera jednak granicę
+między organizmem a wyrobem, dlatego jej anatomia działa jak filtr, magnes
+i mechanizm napędowy jednocześnie.
 
 **Morze Żywego Srebra** — jedyny ocean Mirrodinu, nieprzezroczysty akwen
 płynnego metalu. Nad nim wznosiły się miasta vedalken, w tym Lumengrid,

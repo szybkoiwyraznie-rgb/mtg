@@ -64,7 +64,7 @@ Eumidian — przeszkodą w rzekomym odzyskaniu świata.
 Scena jest rodzima dla [[the-edge|The Edge]] i rozwija konflikt zapisany
 w oficjalnej inskrypcji. Evendo jest pewne dzięki świadectwu sceny oraz
 roszczeniu do Kavaron Tomorrow. Nazwa placówki, miasto i region pozostają
-nieznane; Codex ich nie dopowiada.
+nieznane; kronika ich nie dopowiada.
 
 ## Na Mapie
 

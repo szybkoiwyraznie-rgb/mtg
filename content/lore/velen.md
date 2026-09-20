@@ -91,6 +91,14 @@ Wrońcami a Gors Velen. Nie oznacza pojedynczej wsi, bagna ani chaty.
 
 [Velen na mapie Kontynentu](#/mapa/wiedzmin?x=0.4113&y=0.2807)
 
+## Powiązane hasła
+
+- **[[wiedzmin|Kontynent]]** — świat, którego wojenną raną jest Ziemia
+  Niczyja.
+- **[[panie-lasu|Panie Lasu]]** — prawdziwa władza veleńskich moczarów.
+- **[[novigrad|Novigrad]]** — wielkie miasto za Pontarem, cel głodnych
+  wędrówek.
+
 ## Źródła
 
 - **Wiedźmin Wiki — Velen (ziemia niczyja)** — położenie w Temerii,

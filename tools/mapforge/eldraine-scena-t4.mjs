@@ -48,6 +48,10 @@ export const MIEJSCA_ELDRAINE = [
     z: 'Ardenvale', opis: 'Osada domeny Ardenvale; dokładna pozycja na atlasie jest umowna' },
   { id: 'trekell', nazwa: 'Trekell', x: 1120, y: 810, typ: 'osada', glif: 'miasto', fs: 14, skala: 1.0,
     z: 'Ardenvale', opis: 'Osada domeny Ardenvale; dokładna pozycja na atlasie jest umowna' },
+  { id: 'glass-tarn', nazwa: 'The Glass Tarn', x: 720, y: 620, typ: 'akwen', fs: 14, woda: true,
+    z: 'Ardenvale', opis: 'Szerokie jezioro nizin Ardenvale; mapa domeny z przewodnika pokazuje taflę na zachód od Castle Ardenvale, dokładny obrys jest rekonstrukcją' },
+  { id: 'beckborough', nazwa: 'Beckborough', x: 760, y: 730, typ: 'osada', glif: 'miasto', fs: 14, skala: 1.0,
+    z: 'Ardenvale', opis: 'Wioska nizin Ardenvale wymieniana obok Glass Tarn; pozycja pośród pól przy jeziorze jest rekonstrukcją relacji' },
 
   // --- VANTRESS (NIEBIESKI DWÓR) ---
   { id: 'castle-vantress', nazwa: 'Castle Vantress', x: 480, y: 400, typ: 'twierdza', glif: 'fort', fs: 19, skala: 1.4,
@@ -88,6 +92,16 @@ export const MIEJSCA_ELDRAINE = [
     z: "Witch%27s_Cottage", opis: 'Piernikowa chatka czarownicy pośród zdradliwych bagien i lasów Kniei' },
   { id: 'dynnistan', nazwa: 'Dynnistan', x: 220, y: 230, typ: 'twierdza', glif: 'fort', fs: 16, skala: 1.1,
     z: 'Dynnistan', opis: 'Lodowy zamek Królowej Cieni w odległych północno-zachodnich rubieżach' },
+  { id: 'dunbarrow', nazwa: 'Dunbarrow', x: 640, y: 860, typ: 'kraina', fs: 15,
+    z: 'Eldraine', opis: 'Mglisty moczar krzywych drzew niedaleko Edgewall, dom wiedźm i olbrzymich pająków; bliskość Edgewall Inn to relacja kanoniczna, dokładny zasięg jest rekonstrukcją' },
+  { id: 'sweettooth-village', nazwa: 'Sweettooth Village', x: 950, y: 1180, typ: 'osada', glif: 'ruina', fs: 14, skala: 1.0,
+    z: 'Eldraine', opis: 'Opuszczona wioska w Kniejach opanowana przez pokarmowe koszmary; położenie w południowej Dziczy jest rekonstrukcją (kanon podaje przynależność do Wilds, nie współrzędne)' },
+  { id: 'oakhame', nazwa: 'Oakhame', x: 900, y: 350, typ: 'osada', glif: 'miasto', fs: 14, skala: 1.0,
+    z: 'Eldraine', opis: 'Elfia osada Kniei; umieszczona przy lasach Tuinvale ze względu na elfi charakter północnych Kniei, pozycja umowna' },
+  { id: 'redtooth-keep', nazwa: 'Redtooth Keep', x: 1180, y: 170, typ: 'twierdza', glif: 'fort', fs: 14, skala: 1.1,
+    z: 'Eldraine', opis: 'Jedna z ostatnich elfich cytadel, dom elfów przeklętych w lisołaki; położenie w głębi północnych Kniei jest rekonstrukcją' },
+  { id: 'red-fell', nazwa: 'Red Fell', x: 1750, y: 1010, typ: 'kraina', fs: 15,
+    z: 'Eldraine', opis: 'Czerwone turnie, dom Torbrana; umieszczone przy wulkanicznym paśmie Embereth ze względu na czerwoną przynależność, pozycja umowna' },
 ];
 
 const rzekaKrolewskaPts = [
@@ -113,6 +127,8 @@ export function scenaEldraine() {
       { cx: 480, cy: 420, rx: 170, ry: 120, opcje: { fale: true } },
       // Czarne Moczary (Loch Locthwain)
       { cx: 470, cy: 1040, rx: 140, ry: 90, opcje: { fale: true } },
+      // The Glass Tarn — szerokie jezioro nizin Ardenvale (mapa domeny z przewodnika)
+      { cx: 720, cy: 620, rx: 80, ry: 50, opcje: { fale: true } },
     ],
     rzeki: [
       // Rzeka Królewska (spływa z Gór Północnych, mija Ardenvale i uchodzi na południu poza kadr)
@@ -157,6 +173,8 @@ export function scenaEldraine() {
       { id: 'las-garenbrig', typ: 'las', punkty: [[1320, 320], [1640, 300], [1720, 480], [1620, 620], [1360, 580], [1280, 440]], opcje: { gestosc: 0.58, skala: 1.0 } },
       // Bagna i moczary Locthwain
       { id: 'mokradla-locthwain', typ: 'bagno', punkty: [[310, 930], [620, 910], [640, 1140], [480, 1220], [290, 1170]], opcje: { gestosc: 0.65 } },
+      // Dunbarrow — mglisty moczar krzywych drzew niedaleko Edgewall (mtg.wiki: Eldraine)
+      { id: 'moczar-dunbarrow', typ: 'bagno', punkty: [[560, 810], [710, 830], [720, 920], [590, 940]], opcje: { gestosc: 0.55 } },
       // Lasy Kniei Zachodnich (wokół Chatki Czarownicy)
       { id: 'las-zachodni-dzicz', typ: 'las', punkty: [[100, 610], [330, 590], [350, 820], [120, 850]], opcje: { gestosc: 0.55, skala: 0.95 } },
       // Słoneczne pola Wyżyn Arden
@@ -212,7 +230,7 @@ export function modelMapyEldraine() {
     autor: 'MTG Lore Codex, silnik mapforge (rekonstrukcja T4 wg ADR 0038)',
     licencja: 'praca własna; glify gór i lasów mapome CC-BY-4.0 (ADR 0020)',
     pobrano: '2026-09-11',
-    notka: 'Autorski atlas relacyjny T4 2000×1400 px, zatwierdzony przez właściciela 2026-09-11 po audycie PR-31. Oficjalna mapa geograficzna Eldraine nie istnieje: kierunki świata, odległości, rzeki, szlaki i wzajemne położenie Dworów są umownymi wyborami kompozycyjnymi, nie kanoniczną geometrią. Źródła potwierdzają nazwane byty i relacje lokalne: Vantress na Lochmere, Circle of Loyalty w Castle Ardenvale, Burning Yard jako kompleks Embereth, Irencrag przy Embereth oraz Great Henge w Castle Garenbrig. Mobilny Castle Locthwain pokazano symbolem bez roszczenia do stałej pozycji; zaginionego Cauldron of Eternity nie naniesiono.'
+    notka: 'Autorski atlas relacyjny T4 2000×1400 px, zatwierdzony przez właściciela 2026-09-11 po audycie PR-31. Oficjalna mapa geograficzna Eldraine nie istnieje: kierunki świata, odległości, rzeki, szlaki i wzajemne położenie Dworów są umownymi wyborami kompozycyjnymi, nie kanoniczną geometrią. Źródła potwierdzają nazwane byty i relacje lokalne: Vantress na Lochmere, Circle of Loyalty w Castle Ardenvale, Burning Yard jako kompleks Embereth, Irencrag przy Embereth oraz Great Henge w Castle Garenbrig. Mobilny Castle Locthwain pokazano symbolem bez roszczenia do stałej pozycji; zaginionego Cauldron of Eternity nie naniesiono. PĘTLA MAPOWA 2026-09-20 (PR-35): dodano 7 kanonicznych lokacji z mtg.wiki/Eldraine i mtg.wiki/Ardenvale — The Glass Tarn z taflą jeziora i Beckborough (niziny Ardenvale, relacja z mapy domeny w przewodniku), Dunbarrow z biomem moczaru przy Edgewall, Sweettooth Village (Wilds, południe), Oakhame i Redtooth Keep (elfia północ Kniei), Red Fell przy paśmie Embereth. Pozycje wewnątrz domen są relacyjne — kanon podaje przynależność, nie współrzędne.'
   };
 
   return {

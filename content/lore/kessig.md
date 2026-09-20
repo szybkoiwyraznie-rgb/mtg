@@ -39,7 +39,7 @@ bo święte amulety stały się towarem ograniczonym, rozdawanym nierówno.
 
 ### Ulvenwald i drogi
 
-Największą siłą krajobrazu jest **Ulvenwald**, Mglisty Bór: las osik,
+Największą siłą krajobrazu jest [[ulvenwald|**Ulvenwald**]], Mglisty Bór: las osik,
 brzóz i klonów, pełen ciemnych pni, stale wiszącej mgły i wilkołaczych
 ataków. Jesienne barwy za dnia nie uspokajają, bo nocą zmieniają się
 w stalową poświatę srebrnego księżyca, oczy zwierząt i błędne ognie geistów.

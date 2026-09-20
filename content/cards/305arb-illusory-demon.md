@@ -15,7 +15,7 @@ pinezka:
 
 ## Kronika Lore
 
-Maelstrom nie ma horyzontu — jest wirem bez krawędzi: mgła i światło
+[[maelstrom|Maelstrom]] nie ma horyzontu — jest wirem bez krawędzi: mgła i światło
 splatają się w nim z odłamkami skał, fioletem, różem, błękitem
 i bursztynem, a „góra” i „dół” to słowa, które burza dawno zmieliła.
 W tym wirze unosi się istota o smukłej, drapieżnej sylwetce: wielkie

@@ -28,6 +28,20 @@ export const MIEJSCA_LORWYNU = [
     z: "Wren%27s_Run/Raven%27s_Run", opis: 'łowiska w obrębie zachodniego Wielkiego Lasu; dokładne miejsce w lesie jest rekonstrukcją' },
   { id: 'burrenton', dzien: 'Burrenton', noc: 'Barrenton', x: 720, y: 485, typ: 'osada', glif: 'miasto', fs: 17,
     z: 'Burrenton/Barrenton', opis: 'osada kithkin, kowale i kuźnie; orientacyjna pozycja przy północnych podnóżach, nie kanoniczne współrzędne' },
+  { id: 'dundoolin', dzien: 'Dundoolin', noc: null, x: 800, y: 1085, typ: 'osada', glif: 'miasto', fs: 18, skala: 1.15,
+    z: 'Lorwyn-Shadowmoor', opis: 'drugi co do wielkości clachan kithkin, znany z mędrców spisujących Eightyfold Trail; nocny odpowiednik nieznany kanonowi, pozycja na łąkach przy szlaku clachanów jest rekonstrukcją' },
+  { id: 'spinerock', dzien: 'Spinerock Knoll', noc: null, x: 795, y: 415, typ: 'szczyt', fs: 16,
+    z: 'Lorwyn-Shadowmoor', opis: 'zarośnięte wzgórze-smok, z którego kamyków korzystają kowale Burrenton; stąd bliskość clachanu jako relacja, nie pomiar; nocna nazwa jałowego krateru nieznana' },
+  { id: 'mosswort', dzien: 'Mosswort Bridge', noc: null, x: 650, y: 568, typ: 'most', fs: 16,
+    z: 'Lorwyn-Shadowmoor', opis: 'most, pod którym uwięziono trolla; umieszczony tam, gdzie szlak clachanów przecina bezimienny dopływ — wybór rekonstrukcji, kanon nie podaje miejsca' },
+  { id: 'windbrisk', dzien: 'Windbrisk Heights', noc: null, x: 150, y: 565, typ: 'kraina', fs: 16,
+    z: 'Lorwyn-Shadowmoor', opis: 'wietrzne urwisko-raptor; położenie przy zachodnim paśmie jest rekonstrukcją relacji „klif w górach", nie kanonicznym punktem' },
+  { id: 'porringer', dzien: 'Porringer Valley', noc: null, x: 300, y: 880, typ: 'kraina', fs: 18,
+    z: 'Lorwyn-Shadowmoor', opis: 'silnie zalesiona szeroka dolina, dom jesionowych treefolk; klasyczna nazwa epoki Oony (zalanie i „Basin" to stan Eclipsed, poza zakresem); pozycja w zachodnim lesie jest rekonstrukcją' },
+  { id: 'ashenmoor', dzien: null, noc: 'Ashenmoor', x: 1300, y: 235, typ: 'region', fs: 18,
+    z: 'Lorwyn-Shadowmoor', opis: 'czarny dom cinderów w Shadowmoor; dzienny odpowiednik nieznany kanonowi; położenie przy północnych górach to rekonstrukcja (cinders to nocne oblicze flamekinów gór)' },
+  { id: 'druim-calad', dzien: null, noc: 'Druim Calad', x: 1150, y: 1085, typ: 'osada', fs: 16,
+    z: 'Lorwyn-Shadowmoor', opis: 'jedyny duży naziemny port Shadowmooru; brzeg Wanderbrine jako relacja funkcjonalna portu, dokładne miejsce na rzece jest rekonstrukcją; dzienny odpowiednik nieznany' },
   { id: 'ballyrush', dzien: 'Ballyrush', noc: 'Ballynock', x: 410, y: 670, typ: 'osada', glif: 'miasto', fs: 17,
     z: 'Ballynock', opis: 'clachan/doun kithkin; lokalizacja wewnątrz krainy osad jest umowna' },
   { id: 'cloverdell', dzien: 'Cloverdell', noc: 'Thistledown', x: 340, y: 1035, typ: 'osada', glif: 'miasto', fs: 17,
@@ -52,6 +66,24 @@ export const MIEJSCA_LORWYNU = [
     z: 'Wanderwine_River/Wanderbrine_River', opis: 'główna arteria rozdzielająca zachodnią krainę od Gilt-Leaf/Wilt-Leaf; dolny bieg wychodzi poza kadr, bez wymyślonego morza' },
   { id: 'velis-vel', dzien: 'Velis Vel', noc: 'Velis Vel', x: 620, y: 995, typ: 'grota', glif: 'jaskinia', fs: 17, skala: 1.3,
     z: 'Velis_Vel', opis: 'podziemna grota changelingów, dostępna przez sieć Dark Meanders; położenie symboliczne w zachodniej krainie, nie pomiar wejścia' },
+  // Pass mapowy PR-35 (2026-09-20): klasyczne miejsca epoki Oony z mtg.wiki
+  // (powieść Lorwyn, Survival Guide, SHM Guide). Stany Eclipsed/ECL —
+  // Bristlebane, Longlake, Glen Priseil, Grave of Nath — świadomie poza
+  // zakresem (poza_zakresem w map.json).
+  { id: 'mornsong', dzien: 'Mornsong', noc: null, x: 1240, y: 1012, typ: 'region', fs: 18,
+    z: 'Lorwyn-Shadowmoor', opis: 'las plemienia elfów Mornsong; kanon nie podaje położenia względem Gilt-Leaf, pozycja na południowo-wschodnich polanach jest rekonstrukcją; nocny odpowiednik nieznany kanonowi' },
+  { id: 'arbor-morning', dzien: 'Arbor Morning', noc: null, x: 1235, y: 1085, typ: 'osada', fs: 14, 
+    z: 'Lorwyn-Shadowmoor', opis: 'stolica elfów Mornsong, wewnątrz ich lasu; pozycja pochodna od rekonstrukcji lasu Mornsong; nocna nazwa nieznana' },
+  { id: 'fen-grieve', dzien: 'Fen Grieve', noc: null, x: 1058, y: 585, typ: 'osada', fs: 14, 
+    z: 'Lorwyn-Shadowmoor', opis: 'port rzeczny z posągiem taercenna Grieve; funkcja portu wiąże go z Wanderwine, dokładne miejsce na rzece jest rekonstrukcją; nocna nazwa nieznana' },
+  { id: 'duinshyle', dzien: 'Duinshyle', noc: null, x: 470, y: 1245, typ: 'osada', fs: 14, 
+    z: 'Lorwyn-Shadowmoor', opis: 'clachan kithkin „daleko od Kinsbaile"; pozycja na południowym skraju krainy osad realizuje tę relację, nie kanoniczny azymut; nocna nazwa nieznana' },
+  { id: 'bubbling-bog', dzien: 'The Bubbling Bog', noc: null, x: 1262, y: 828, typ: 'bagnisko', fs: 13,
+    z: 'Lorwyn-Shadowmoor', opis: 'bagnisty obszar, którym kithkin przeklinają; umieszczony na mokradłach przy rzece — wybór rekonstrukcji; nocna nazwa nieznana' },
+  { id: 'howltooth', dzien: null, noc: 'Howltooth Hollow', x: 215, y: 1005, typ: 'grota', fs: 14, 
+    z: 'Lorwyn-Shadowmoor', opis: 'jaskinia Shadowmooru, w której potajemnie uwięziono barghesta (SHM Guide); pozycja przy południowo-zachodnich górach jest rekonstrukcją; dzienny odpowiednik nieznany kanonowi' },
+  { id: 'amfiteatr-galandy', dzien: 'Amphitheater of Galanda Feudkiller', noc: null, x: 618, y: 182, typ: 'miejsce', fs: 12,
+    z: 'Lorwyn-Shadowmoor', opis: 'misa dolmenów olbrzymów, gdzie spory rozstrzyga się szybko i gwałtownie (Survival Guide); pozycja w północnym paśmie jest rekonstrukcją królestwa olbrzymów; nocna nazwa nieznana' },
 ];
 
 const rzekaGlowna = [[1020,290],[1020,360],[1080,505],[1040,650],[995,785],[1095,940],[1075,1100],[1100,1250],[1090,1510]];
@@ -89,6 +121,10 @@ export function scenaLorwynu(oblicze) {
       { id: 'las-wschodni', typ: 'las', punkty: [[1210,315],[1700,300],[1795,470],[1780,660],[1660,800],[1490,860],[1280,760],[1200,510]], opcje: { gestosc: 0.65, skala: 1.05 } },
       { id: 'otoczenie-glen', typ: 'las', punkty: [[1450,965],[1630,950],[1740,1060],[1700,1215],[1480,1240],[1405,1130]], opcje: { gestosc: 0.75, skala: 1 } },
       { id: 'mokradla-przy-rzece', typ: 'bagno', punkty: [[1140,760],[1260,785],[1320,865],[1210,910],[1140,875]], opcje: { gestosc: 0.6 } },
+      // Pass PR-35: las plemienia Mornsong — mały odrębny bór na południowo-
+      // wschodnich polanach (kanon: „forest of the eponymous tribe", pozycja
+      // względem Gilt-Leaf nieznana — rekonstrukcja).
+      { id: 'las-mornsong', typ: 'las', punkty: [[1195,960],[1330,950],[1360,1060],[1315,1175],[1205,1190],[1165,1070]], opcje: { gestosc: 0.55, skala: 0.9 } },
       { id: 'pola-osad-zachodu', typ: 'step', punkty: [[220,560],[725,555],[930,650],[915,895],[950,1110],[835,1340],[330,1350],[230,1180]], opcje: { gestosc: 0.36 } },
       { id: 'wschodnie-polany', typ: 'step', punkty: [[1200,970],[1340,880],[1720,845],[1900,900],[1850,1320],[1190,1340]], opcje: { gestosc: 0.18 } },
     ],
@@ -130,10 +166,13 @@ export function modelMapyLorwynu() {
       podklad: id === 'shadowmoor' ? 'podklad.svg' : 'podklad-lorwyn.svg',
       wymiary: { szerokosc: W, wysokosc: H }, etykiety: true,
       kalibracja: { sx: 1, sy: 1, ox: 0, oy: 0 }, zrodlo })),
-    kotwice: MIEJSCA_LORWYNU.map((m) => ({ nazwa: m.noc && m.noc !== m.dzien ? `${m.dzien} / ${m.noc}` : m.dzien,
+    kotwice: MIEJSCA_LORWYNU.map((m) => ({
+      nazwa: m.dzien && m.noc && m.noc !== m.dzien ? `${m.dzien} / ${m.noc}` : (m.dzien ?? m.noc),
       x: m.x/W, y: m.y/H, typ: m.typ,
       pozycja_zrodlo: `${m.opis}; ${WIKI}${m.z}. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.`,
-      notka: m.noc ? `Lorwyn: ${m.dzien}; Shadowmoor: ${m.noc}.` : 'Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu.' })),
+      notka: m.dzien && m.noc ? `Lorwyn: ${m.dzien}; Shadowmoor: ${m.noc}.`
+        : m.dzien ? 'Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu.'
+        : 'Nazwa występuje tylko w nocnym zestawie; dzienny odpowiednik nieznany kanonowi — nie wymyślono aliasu.' })),
     pinezki: [{ karta: '605shm-consign-to-dream', x: 0.755, y: 0.7714, pewnosc: 'region',
       uzasadnienie: 'Fabuła właściciela: ostępy Glen Elendra, Oona, wróżki i usypiany olbrzym. Punkt w zalesionym otoczeniu górskiej doliny na południe od Lys Alana/Cayr Ulios; bez przypisywania sceny do konkretnego miejsca pałacu. Współrzędne są wspólne w obu obliczach T4, zgodnie z ADR 0037.' }],
     scena: 'scena.json', generator: 'tools/mapforge/lorwyn-scena-t4.mjs',

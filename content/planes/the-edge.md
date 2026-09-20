@@ -13,6 +13,34 @@ Codexu skupia się na systemie Sothera: pięciu światach orbitujących wokół
 supervoidu i konflikcie, w którym katastrofa jednej planety stała się
 uzasadnieniem roszczenia do drugiej.
 
+## Setting w pigułce
+
+The Edge to ogromny plan w kształcie pierścienia otaczającego Multiwersum,
+złożony z miliardów układów gwiezdnych. Od wewnątrz zamyka go Ściana
+Chaosu, a przeciwległy kraniec przestrzeni rozszerza się szybciej, niż
+sięga obserwacja — jest praktycznie nieskończony.
+
+Odległości między systemami czynią lot podświetlny niepraktycznym.
+Podróże międzygwiezdne zapewnia **Pinnacle** — wielogatunkowy sojusz,
+który od rasy Drixów otrzymał sekret podróży nadświetlnej przez **Weft**:
+równoległą przestrzeń za Ścianą Chaosu. Pinnacle buduje kolumny
+wieczności (eternity columns), w tym **Infinite Guideline** w systemie
+Sothera, i utrzymuje regularne trasy promów między systemami.
+
+Przez przestrzeń Pinnacle przetacza się **wojna entropii** — konflikt
+religijny między **Monoistami**, czcicielami kosmicznego kolapsu, którzy
+zamieniają gwiazdy w supervoidy w drodze ku „Następnej Wieczności”
+(INEVITA), a **Niebiańskim Palatynatem** Summistów, dążącym do ponownego
+rozpalania zapadniętych gwiazd. Sothera — tysięczny supervoid wiary
+Monoistów — jest jednym z frontów tej wojny; doktryny obu stron
+wykluczają pojednanie.
+
+Wśród ludów Krawędzi żyją m.in. wojowniczy **Kavowie** z rozdartego
+wydobyciem Kavaronu, terrasymbiotyczni **Eumidianie** z wielkich
+statków-nasion, galaretowaci **Illvoi** — badacze z atmosfer gazowych
+olbrzymów, porozumiewający się przez ekrany emotywne — oraz **Drixowie**,
+najstarszy gatunek planu, jedyny zdolny do wrodzonego weftwalkingu.
+
 ## System Sothera
 
 W centrum znajduje się **Sothera**, dawna gwiazda przeobrażona w supervoid.
@@ -64,8 +92,12 @@ udaje położenia placówki na powierzchni i dlatego ma pewność przybliżoną.
 ## Źródła
 
 - Wizards, *Planeswalker's Guide to Edge of Eternities* — Sothera, światy,
-  gatunki, terrasymbioza i konflikt o Evendo:
+  gatunki, terrasymbioza i konflikt o Evendo; Ściana Chaosu, Weft, kolumny
+  wieczności, Uthros Combine, Drixowie i wojna entropii:
   https://magic.wizards.com/en/news/magic-story/planeswalkers-guide-to-edge-of-eternities
+- MTG Wiki, *The Edge* — plan-pierścień wokół Multiwersum, Pinnacle,
+  frakcje (Palatynat, Monoisci, Drix Concordance, Illvoi Bloom) i gatunki:
+  https://mtg.fandom.com/wiki/The_Edge
 - Wizards, korekta tekstu zasad *Diplomatic Relations*:
   https://magic.wizards.com/en/news/announcements/a-statement-on-the-rules-text-of-diplomatic-relations
 - Auroreon, *Edge of Eternities — Fan Map*:

@@ -74,6 +74,13 @@ sieci kanałów pod jego ulicami.
 
 [Novigrad na mapie Kontynentu](#/mapa/wiedzmin?x=0.4045&y=0.2469)
 
+## Powiązane hasła
+
+- **[[wiedzmin|Kontynent]]** — świat, którego największym wolnym
+  miastem jest Novigrad.
+- **[[velen|Velen]]** — Ziemia Niczyja na południe od Delty Pontaru,
+  z której głód pcha ludzi ku miastu.
+
 ## Źródła
 
 - **Wiedźmin Wiki — Novigrad** — status Wolnego Miasta w Delcie Pontaru,

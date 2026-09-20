@@ -114,7 +114,7 @@ w centralnym [[imperium|Imperium]] — pewność **region**. Wielki Las, obok la
 zwierzoludzi i minotaurów w Starym Świecie.
 
 Zestawienie tej pozycji z drugą sceną planu — [[39mm2-brute-force|Brute Force]]
-w Ziemiach Jałowych (**The Badlands**, `x: 0.4262`, `y: 0.581`) — ukazuje
+w [[ziemie-jalowe|Ziemiach Jałowych]] (**The Badlands**, `x: 0.4262`, `y: 0.581`) — ukazuje
 dwa bieguny pierwotnej przemocy świata: zielonoskórych z południowych
 pustkowi oraz stada Dzieci Chaosu z północnych puszcz.
 

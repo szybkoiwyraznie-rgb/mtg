@@ -39,7 +39,7 @@ na bruku: przy bramie, barykadzie, posterunku, placu i targowisku.
 
 Założycielką Legionu była archanielica Razia, a później przywództwo objęła
 Aurelia. Anioły są dla Boros czymś więcej niż lotnym wsparciem: pełnią rolę
-symboli, dowódczyń, inspiracji i strażniczek doktryny. Sunhome, Forteca
+symboli, dowódczyń, inspiracji i strażniczek doktryny. [[sunhome|Sunhome]], Forteca
 Legionu, łączy w sobie koszary, twierdzę i duchowe centrum gildii.
 [1](https://mtg.wiki/page/Boros_Legion), [3](https://mtg.wiki/page/Sunhome)
 

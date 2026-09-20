@@ -172,7 +172,7 @@ formacji, tylko ją odbudowuje. Weteranka nie zdobywa placu sama; sprawia,
   Tin Street Market oraz place Ravniki:
   <https://mtg.wiki/page/Tenth_District>.
 - MTG Wiki, „Precinct Four” — Czwarty Precykt jako burzliwy obszar Boros,
-  [[gruul|Gruul]] i [[liga-izzet|Izzet]]; Sunhome, The Bulwark, Tin Street Market, częste walki
+  [[gruul|Gruul]] i [[liga-izzet|Izzet]]; [[sunhome|Sunhome]], The Bulwark, Tin Street Market, częste walki
   uliczne i stałe patrole Boros:
   <https://mtg.wiki/page/Precinct_Four>.
 - MTG Wiki, „Tin Street Market” — targ w sercu Tin Street i Dziesiątego

@@ -163,7 +163,7 @@ katedry.
 Pinezka o pewności **region**:
 `#/mapa/mirrodin?pin=476mbs-banishment-decree` — południowy skraj
 **Razor Fields**, na południowy wschód od **Cave of Light**, poniżej
-**Taj-Nar**, na granicy z **Glimmervoid**.
+**Taj-Nar**, na granicy z [[glimmervoid|**Glimmervoid**]].
 
 Ani inskrypcja, ani zapis nie podają adresu katedry, więc miejsce nie
 udaje precyzji. Uzasadnienie wyboru jest takie: Zapis każe wyrzucić

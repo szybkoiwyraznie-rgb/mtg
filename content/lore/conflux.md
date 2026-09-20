@@ -14,8 +14,9 @@ materializacja: 2026-09-10
 pięciu odłamów (shardów) [[alara|Alary]] — [[bant|Bantu]], Esperu, Grixis, Jundu
 i Nai — w jeden zunifikowany plan po tysiącleciach ich izolacji.
 W punkcie zderzenia granic wywołało gwałtowne wojny graniczne
-(tzw. Wojnę Confluxu) oraz narodziny **Maelstromu**: gigantycznego,
-żywiołowego wiru nasyconego surową maną wszystkich pięciu kolorów.
+(tzw. Wojnę Confluxu) oraz narodziny [[maelstrom|**Maelstromu**]]:
+gigantycznego, żywiołowego wiru nasyconego surową maną wszystkich
+pięciu kolorów.
 [1](https://mtg.wiki/page/Conflux_(event)), [2](https://mtg.wiki/page/Alara)
 
 ## Opis
@@ -86,6 +87,16 @@ Centrum zderzenia wszystkich pięciu odłamów wyznacza **Maelstrom**,
 leżący w geometrycznym środku scalonego planu.
 
 [Maelstrom w centrum scalonej Alary](#/mapa/alara?x=0.5&y=0.5)
+
+## Powiązane hasła
+
+- **[[alara|Alara]]** — plan rozbity i ponownie scalony przez Conflux.
+- **[[maelstrom|Maelstrom]]** — burza many zrodzona w punkcie
+  zderzenia odłamów.
+- **[[grixis|Grixis]]** — odłam śmierci, który zderzenie rzuciło na
+  sąsiadów.
+- **[[nicol-bolas|Nicol Bolas]]** — architekt kataklizmu i wojen,
+  które go karmiły.
 
 ## Źródła
 

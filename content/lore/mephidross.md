@@ -46,7 +46,7 @@ osuwały się w bagno.
 
 W wojnie Mirran z [[nowa-phyrexia|Nową Phyrexią]] Dross był pierwszym
 miejscem powierzchni planu, w którym lśniący olej wszedł w świat w
-dużej skali — przed **Quicksilver Sea** i **Glimmervoidem**.
+dużej skali — przed **Quicksilver Sea** i [[glimmervoid|**Glimmervoidem**]].
 **Vedalken**, pierwsi, którzy odkryli olej, zaczęli go badać i
 rozprzestrzeniać; to tutaj phyrexiańska zaraza zalała bagniska,
 a z nich ruszyła w góry i na lakuny. Późniejsze sformułowania
@@ -74,6 +74,16 @@ między łańcuchem Oxiddy a brzegiem Quicksilver Sea, a kanon
 jego granic ostro nie wyznacza.
 
 [Mephidross na mapie Mirrodinu](#/mapa/mirrodin?x=0.6381&y=0.7787)
+
+## Powiązane hasła
+
+- **[[mirrodin|Mirrodin]]** — plan, którego czarnym regionem jest Dross.
+- **[[oxidda-chain|Oxidda Chain]]** — góry podżerane przez pełznące
+  bagno od południowego wschodu.
+- **[[glimmervoid|Glimmervoid]]** — centralna równina, przez którą
+  wiedzie każda droga do Drossu.
+- **[[nowa-phyrexia|Nowa Phyrexia]]** — zaraza, która właśnie tutaj
+  najpierw wyszła na powierzchnię.
 
 ## Źródła
 

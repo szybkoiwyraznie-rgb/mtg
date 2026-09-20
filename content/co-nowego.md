@@ -1,3 +1,29 @@
+## 2026-09-20 19:26 — Trzy Pętle Jakości: Sunhome, Geier Reach, Moorland i trzy passy mapowe
+
+- **Nowe hasła (link-mining):** [[sunhome|Sunhome]] — forteca-świątynia Legionu Boros na [[ravnica|Ravnice]] (próg: [[137gpt-withstand|Withstand]] i [[516rna-tenth-district-veteran|Tenth District Veteran]]); [[geier-reach|Geier Reach]] — pasmo górskie definiujące [[stensia|Stensję]] z przełęczami Hofsaddel, Needle's Eye i Kruin (próg: trzy karty w prozie); [[moorland|Moorland]] — wrzosowiskowa parafia [[gavony|Gavony]] z geistami, Drogskol i wojną Gisy i Geralfa (próg: [[118mid-dire-strain-brawler|Dire-Strain Brawler]] i [[544avr-thraben-valiant|Thraben Valiant]]).
+- **Pogłębienie lore:** komplet sekcji „Powiązane hasła" we wszystkich hasłach bazy (dopisane w: Nowa Phyrexia, Grixis, Conflux, Novigrad, Panie Lasu, Serra, Velen); [[wybrzeze-mieczy|Wybrzeże Mieczy]] rozbudowane o „Puste Ziemie", Pakt traktu, rzekę Chionthar i wzgórza trolli.
+- **Pass mapowy Lorwyn–Shadowmoor (T4):** siedem klasycznych miejsc obu obliczy i biom lasu Mornsong — 24 → 31 kotwic.
+- **Pass mapowy Mirrodin (T4):** komplet pięciu lakun, trzy świątynie artefaktów (Great Furnace, Vault of Whispers, Tree of Tales) i Manka Run — 38 → 45 kotwic.
+- **Pass mapowy Alara (T3):** The Binding Wall (płyta z Coilem pod Antali), Qasali Valley, jamy smolne The Seethe i morze The Kingdom of Fog — 47 → 51 kotwic; nowy `zrodlo-research.md` mapy.
+- **Bramki:** 334/334 testów; build 114 stron (53 karty, 43 hasła, 17 planów); map-audit 0; rastry map obejrzane.
+
+## 2026-09-20 17:41 — Trzy Pętle Jakości: Glimmervoid, Ulvenwald, trzy passy mapowe
+
+- **Nowe hasła (link-mining):** [[glimmervoid|Glimmervoid]] — lustrzana pustynia w sercu [[mirrodin|Mirrodinu]] z wieżami Ur-Golemów (próg: [[476mbs-banishment-decree|Banishment Decree]] i [[488som-carapace-forger|Carapace Forger]]); [[ulvenwald|Ulvenwald]] — Mglisty Bór [[kessig|Kessigu]] z watahami Vildin, Mondronen i Leeraug (próg: [[171isd-grizzled-outcasts|Grizzled Outcasts]] i [[544avr-thraben-valiant|Thraben Valiant]]).
+- **Pogłębienie lore:** [[nephalia|Nephalia]] rozpisana na trzy obrazy — rzeki i Nebelgast, trzy porty z Erdwalem, jezioro Zhava ze Skiltfolk; [[thraben|Thraben]], [[auriok|Auriokowie]], [[mephidross|Mephidross]] i [[oxidda-chain|Oxidda Chain]] dostały kontraktowe sekcje „Powiązane hasła".
+- **Pass mapowy Eldraine (T4):** siedem kanonicznych kotwic (The Glass Tarn, Beckborough, Dunbarrow, Sweettooth Village, Oakhame, Redtooth Keep, Red Fell), tafla jeziora Glass Tarn i moczar pod Dunbarrow — 29 → 36 kotwic.
+- **Pass mapowy Kaladesh (T4):** kotwice dla elementów rysowanych od PR-30 bez wpisów — wsie aerowrightów Vahd (Maranjapur, Panka, Cambi), Devra Cliffs, The Great Climb oraz rzeki Suramal i Mapani — 29 → 36 kotwic.
+- **Pass mapowy Duskmourn (diagram ADR 0048):** siedem pod-lokacji stref z kanonu — Valley of Serenity, baza Instytutu Domu, razor mazes, Rollercrusher Ride, labirynt żywopłotów, utracone błonia karnawału i osady strychowe z muralem — 8 → 15 kotwic, bez naruszenia kontraktu antykartograficznego.
+- **Bramki:** 334/334 testów; build 111 stron (53 karty, 41 haseł, 17 planów); map-audit 0; wiki-stats 100%.
+
+## 2026-09-18 17:05 — Pętla Jakości: hasło Maelstrom, głębsze The Edge, bogatszy Lorwyn
+
+- **Nowe hasło:** [[maelstrom|Maelstrom]] — burza many w sercu scalonej [[alara|Alary]], zrodzona w [[conflux|Confluxie]]; matka bytów takich jak Child of Alara i obrońca planu podczas najazdu [[nowa-phyrexia|Nowej Phyrexii]]. Próg dwóch kart spełniły [[305arb-illusory-demon|Illusory Demon]] i [[536arb-ethersworn-shieldmage|Ethersworn Shieldmage]].
+- **Pogłębienie lore:** plan [[the-edge|The Edge]] dostał sekcję „Setting w pigułce" (Pinnacle, Weft, wojna entropii Palatynatu z Monasteriatem, ludy socjentne), a [[99mh2-steelfin-whale|Steelfin Whale]] — pierwszy wikilink do [[mirrodin|Mirrodinu]].
+- **Mapa Lorwyn–Shadowmoor:** siedem nowych kanonicznych kotwic klasycznej epoki — Dundoolin, Spinerock Knoll, Mosswort Bridge, Windbrisk Heights i Porringer Valley po stronie dnia; Ashenmoor i Druim Calad po stronie nocy. Nazwy jednostronne renderują się tylko w swoim obliczu; żadna nie dostała zmyślonego aliasu.
+- **Audyt PR-34:** pozytywny; poprawka głosu Kronikarza w [[56eoe-diplomatic-relations|Diplomatic Relations]] („kronika" zamiast nazwy własnej serwisu) i nowy strażnik testowy; ADR 0048 utrwala mapę-diagram dla planów bez planimetrii.
+- **Bramki:** 334/334 testów; build 108 stron (53 karty, 39 haseł, 17 planów); map-audit 0; wiki-stats 100%.
+
 ## 2026-09-13 23:20 — Nowa karta i mapa: Diplomatic Relations (The Edge)
 
 - **Materializacja:** **[[56eoe-diplomatic-relations|Diplomatic Relations]]** (`56EOE`, EOE, [[the-edge|The Edge]]) pokazuje „dyplomację” Kavów jako uprzywilejowanie własnego funkcjonariusza przez pole bezpieczeństwa placówki Evendo.

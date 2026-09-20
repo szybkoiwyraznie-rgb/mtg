@@ -62,7 +62,7 @@ zamyka krainę mgły i wampirów od strony dzikich rubieży.
 [5](https://warhammerfantasy.fandom.com/wiki/Sylvania),
 [6](https://warhammerfantasy.fandom.com/wiki/The_Empire)
 
-Od południa pasmo łączy się z Ziemiami Jałowymi. Tam
+Od południa pasmo łączy się z [[ziemie-jalowe|Ziemiami Jałowymi]]. Tam
 [[39mm2-brute-force|Brute Force]] pokazuje orkową masę u podnóża gór, w
 rejonie, z którego Waaagh! mogą przelewać się ku północy i zachodowi.
 Dlatego hasło spina dwa rodzaje wojny: frontalną zieloną falę z pustkowi oraz

@@ -121,7 +121,7 @@ i sama inskrypcja jako wyznanie tej przemiany. Kronikarz dopowiada obraz
 obrony**. Scena osadzona jest w epoce *Scars of Mirrodin* — na początku
 wojny, gdy Phyrexia dopiero wychodzi z bagien — i pinuje się na mapie
 [[mirrodin|Mirrodinu]] w jego klasycznej postaci pięciu regionów wokół
-Glimmervoid, wspólnej dla całej ery powierzchni planu.
+[[glimmervoid|Glimmervoid]], wspólnej dla całej ery powierzchni planu.
 
 ## Na Mapie
 

@@ -46,7 +46,7 @@ formacji. Boros nie przedstawia tu indywidualnej brawury, tylko dyscyplinę:
 człowiek w szeregu ma dokładnie tyle znaczenia, ile nacisku potrafi
 zatrzymać dla innych.
 
-Za żołnierzem stoi struktura gildii: **Sunhome**, twierdza-świątynia
+Za żołnierzem stoi struktura gildii: [[sunhome|**Sunhome**]], twierdza-świątynia
 Legionu w Czwartym Precykcie; wojskowa tradycja **Wojek**; anielska
 wyobraźnia sprawiedliwości, której symbolem jest **Razia**. Tarcza ze
 słońcem nie jest ozdobą. To znak przynależności do porządku, który widzi
@@ -109,7 +109,7 @@ w gildii albo na jej pograniczu, w chwili zatrzymanego uderzenia.
 ## Na Mapie
 
 Najlepszym miejscem dla tej sceny jest **Precinct Four** Dziesiątego
-Dystryktu [[ravnica|Ravnicy]] — obszar Sunhome, The Bulwark i Tin Street.
+Dystryktu [[ravnica|Ravnicy]] — obszar [[sunhome|Sunhome]], The Bulwark i Tin Street.
 Pinezka wskazuje zachodni skraj borosijskiej strefy przy
 [[tin-street-market|Tin Street Market]], nie konkretny kamień uliczny.
 Pewność miejsca: **region**. Zapis daje

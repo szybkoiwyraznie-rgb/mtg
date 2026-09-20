@@ -16,7 +16,7 @@
   "autor": "MTG Lore Codex, silnik mapforge (rekonstrukcja T4 wg ADR 0038)",
   "licencja": "praca własna; glify gór i lasów mapome CC-BY-4.0 (ADR 0020)",
   "pobrano": "2026-09-11",
-  "notka": "Autorski atlas relacyjny T4 2000×1400 px, zatwierdzony przez właściciela 2026-09-11 po audycie PR-31. Oficjalna mapa geograficzna Eldraine nie istnieje: kierunki świata, odległości, rzeki, szlaki i wzajemne położenie Dworów są umownymi wyborami kompozycyjnymi, nie kanoniczną geometrią. Źródła potwierdzają nazwane byty i relacje lokalne: Vantress na Lochmere, Circle of Loyalty w Castle Ardenvale, Burning Yard jako kompleks Embereth, Irencrag przy Embereth oraz Great Henge w Castle Garenbrig. Mobilny Castle Locthwain pokazano symbolem bez roszczenia do stałej pozycji; zaginionego Cauldron of Eternity nie naniesiono."
+  "notka": "Autorski atlas relacyjny T4 2000×1400 px, zatwierdzony przez właściciela 2026-09-11 po audycie PR-31. Oficjalna mapa geograficzna Eldraine nie istnieje: kierunki świata, odległości, rzeki, szlaki i wzajemne położenie Dworów są umownymi wyborami kompozycyjnymi, nie kanoniczną geometrią. Źródła potwierdzają nazwane byty i relacje lokalne: Vantress na Lochmere, Circle of Loyalty w Castle Ardenvale, Burning Yard jako kompleks Embereth, Irencrag przy Embereth oraz Great Henge w Castle Garenbrig. Mobilny Castle Locthwain pokazano symbolem bez roszczenia do stałej pozycji; zaginionego Cauldron of Eternity nie naniesiono. PĘTLA MAPOWA 2026-09-20 (PR-35): dodano 7 kanonicznych lokacji z mtg.wiki/Eldraine i mtg.wiki/Ardenvale — The Glass Tarn z taflą jeziora i Beckborough (niziny Ardenvale, relacja z mapy domeny w przewodniku), Dunbarrow z biomem moczaru przy Edgewall, Sweettooth Village (Wilds, południe), Oakhame i Redtooth Keep (elfia północ Kniei), Red Fell przy paśmie Embereth. Pozycje wewnątrz domen są relacyjne — kanon podaje przynależność, nie współrzędne."
  },
  "uklad_wspolrzednych": "Zatwierdzony autorski układ relacyjny T4 2000×1400 px, wygenerowany deterministycznie w Mapforge. Globalne kierunki, odległości, wody i drogi są umowne (ADR 0018/0038).",
  "kotwice": [
@@ -117,6 +117,20 @@
    "y": 0.5785714285714286,
    "typ": "osada",
    "pozycja_zrodlo": "Osada domeny Ardenvale; dokładna pozycja na atlasie jest umowna; https://mtg.wiki/page/Ardenvale. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "The Glass Tarn",
+   "x": 0.36,
+   "y": 0.44285714285714284,
+   "typ": "akwen",
+   "pozycja_zrodlo": "Szerokie jezioro nizin Ardenvale; mapa domeny z przewodnika pokazuje taflę na zachód od Castle Ardenvale, dokładny obrys jest rekonstrukcją; https://mtg.wiki/page/Ardenvale. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Beckborough",
+   "x": 0.38,
+   "y": 0.5214285714285715,
+   "typ": "osada",
+   "pozycja_zrodlo": "Wioska nizin Ardenvale wymieniana obok Glass Tarn; pozycja pośród pól przy jeziorze jest rekonstrukcją relacji; https://mtg.wiki/page/Ardenvale. Rekonstrukcja relacyjna Codexu."
   },
   {
    "nazwa": "Castle Vantress",
@@ -222,6 +236,41 @@
    "y": 0.16428571428571428,
    "typ": "twierdza",
    "pozycja_zrodlo": "Lodowy zamek Królowej Cieni w odległych północno-zachodnich rubieżach; https://mtg.wiki/page/Dynnistan. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Dunbarrow",
+   "x": 0.32,
+   "y": 0.6142857142857143,
+   "typ": "kraina",
+   "pozycja_zrodlo": "Mglisty moczar krzywych drzew niedaleko Edgewall, dom wiedźm i olbrzymich pająków; bliskość Edgewall Inn to relacja kanoniczna, dokładny zasięg jest rekonstrukcją; https://mtg.wiki/page/Eldraine. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Sweettooth Village",
+   "x": 0.475,
+   "y": 0.8428571428571429,
+   "typ": "osada",
+   "pozycja_zrodlo": "Opuszczona wioska w Kniejach opanowana przez pokarmowe koszmary; położenie w południowej Dziczy jest rekonstrukcją (kanon podaje przynależność do Wilds, nie współrzędne); https://mtg.wiki/page/Eldraine. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Oakhame",
+   "x": 0.45,
+   "y": 0.25,
+   "typ": "osada",
+   "pozycja_zrodlo": "Elfia osada Kniei; umieszczona przy lasach Tuinvale ze względu na elfi charakter północnych Kniei, pozycja umowna; https://mtg.wiki/page/Eldraine. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Redtooth Keep",
+   "x": 0.59,
+   "y": 0.12142857142857143,
+   "typ": "twierdza",
+   "pozycja_zrodlo": "Jedna z ostatnich elfich cytadel, dom elfów przeklętych w lisołaki; położenie w głębi północnych Kniei jest rekonstrukcją; https://mtg.wiki/page/Eldraine. Rekonstrukcja relacyjna Codexu."
+  },
+  {
+   "nazwa": "Red Fell",
+   "x": 0.875,
+   "y": 0.7214285714285714,
+   "typ": "kraina",
+   "pozycja_zrodlo": "Czerwone turnie, dom Torbrana; umieszczone przy wulkanicznym paśmie Embereth ze względu na czerwoną przynależność, pozycja umowna; https://mtg.wiki/page/Eldraine. Rekonstrukcja relacyjna Codexu."
   }
  ],
  "pinezki": [

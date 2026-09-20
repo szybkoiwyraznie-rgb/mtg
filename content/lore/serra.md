@@ -76,6 +76,12 @@ i związany z samorzutnym pojawianiem się aniołów.
 
 [Dziedzictwo Serry przy Katedrze Serran](#/mapa/dominaria?x=0.1937&y=0.3806)
 
+## Powiązane hasła
+
+- **[[dominaria|Dominaria]]** — plan, na którym Serra zmarła i który
+  nosi jej dziedzictwo.
+- **[[sursi|Sursi]]** — kraina Katedry Serran, uświęcona jej śmiercią.
+
 ## Źródła
 
 - MTG Wiki, Serra — planeswalkerka białej many, twórczyni Serra's Realm,

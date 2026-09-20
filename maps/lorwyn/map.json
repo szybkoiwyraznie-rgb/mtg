@@ -118,6 +118,62 @@
    "notka": "Lorwyn: Burrenton; Shadowmoor: Barrenton."
   },
   {
+   "nazwa": "Dundoolin",
+   "x": 0.4,
+   "y": 0.775,
+   "typ": "osada",
+   "pozycja_zrodlo": "drugi co do wielkości clachan kithkin, znany z mędrców spisujących Eightyfold Trail; nocny odpowiednik nieznany kanonowi, pozycja na łąkach przy szlaku clachanów jest rekonstrukcją; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu."
+  },
+  {
+   "nazwa": "Spinerock Knoll",
+   "x": 0.3975,
+   "y": 0.29642857142857143,
+   "typ": "szczyt",
+   "pozycja_zrodlo": "zarośnięte wzgórze-smok, z którego kamyków korzystają kowale Burrenton; stąd bliskość clachanu jako relacja, nie pomiar; nocna nazwa jałowego krateru nieznana; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu."
+  },
+  {
+   "nazwa": "Mosswort Bridge",
+   "x": 0.325,
+   "y": 0.4057142857142857,
+   "typ": "most",
+   "pozycja_zrodlo": "most, pod którym uwięziono trolla; umieszczony tam, gdzie szlak clachanów przecina bezimienny dopływ — wybór rekonstrukcji, kanon nie podaje miejsca; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu."
+  },
+  {
+   "nazwa": "Windbrisk Heights",
+   "x": 0.075,
+   "y": 0.4035714285714286,
+   "typ": "kraina",
+   "pozycja_zrodlo": "wietrzne urwisko-raptor; położenie przy zachodnim paśmie jest rekonstrukcją relacji „klif w górach\", nie kanonicznym punktem; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu."
+  },
+  {
+   "nazwa": "Porringer Valley",
+   "x": 0.15,
+   "y": 0.6285714285714286,
+   "typ": "kraina",
+   "pozycja_zrodlo": "silnie zalesiona szeroka dolina, dom jesionowych treefolk; klasyczna nazwa epoki Oony (zalanie i „Basin\" to stan Eclipsed, poza zakresem); pozycja w zachodnim lesie jest rekonstrukcją; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu."
+  },
+  {
+   "nazwa": "Ashenmoor",
+   "x": 0.65,
+   "y": 0.16785714285714284,
+   "typ": "region",
+   "pozycja_zrodlo": "czarny dom cinderów w Shadowmoor; dzienny odpowiednik nieznany kanonowi; położenie przy północnych górach to rekonstrukcja (cinders to nocne oblicze flamekinów gór); https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w nocnym zestawie; dzienny odpowiednik nieznany kanonowi — nie wymyślono aliasu."
+  },
+  {
+   "nazwa": "Druim Calad",
+   "x": 0.575,
+   "y": 0.775,
+   "typ": "osada",
+   "pozycja_zrodlo": "jedyny duży naziemny port Shadowmooru; brzeg Wanderbrine jako relacja funkcjonalna portu, dokładne miejsce na rzece jest rekonstrukcją; dzienny odpowiednik nieznany; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w nocnym zestawie; dzienny odpowiednik nieznany kanonowi — nie wymyślono aliasu."
+  },
+  {
    "nazwa": "Ballyrush / Ballynock",
    "x": 0.205,
    "y": 0.4785714285714286,
@@ -194,8 +250,8 @@
    "x": 0.51,
    "y": 0.20714285714285716,
    "typ": "akwen",
-   "pozycja_zrodlo": "małe jezioro źródłowe blisko szczytu Tanufel; nocny napis jest opisem funkcji na wspólnym układzie, nie dopisanym kanonicznym imieniem; https://mtg.wiki/page/Mount_Tanufel. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
-   "notka": "Lorwyn: Source of Lanes; Shadowmoor: (źródło Wanderbrine)."
+   "pozycja_zrodlo": "małe jezioro źródłowe blisko szczytu Tanufel; nazwa tylko w dziennym zestawie, nocnego imienia kanon nie podaje (jak The Great Forest — F3, audyt PR-23); https://mtg.wiki/page/Mount_Tanufel. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu."
   },
   {
    "nazwa": "Wanderwine / Wanderbrine",
@@ -212,6 +268,62 @@
    "typ": "grota",
    "pozycja_zrodlo": "podziemna grota changelingów, dostępna przez sieć Dark Meanders; położenie symboliczne w zachodniej krainie, nie pomiar wejścia; https://mtg.wiki/page/Velis_Vel. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
    "notka": "Lorwyn: Velis Vel; Shadowmoor: Velis Vel."
+  },
+  {
+   "nazwa": "Mornsong",
+   "x": 0.62,
+   "y": 0.7228571428571429,
+   "typ": "region",
+   "pozycja_zrodlo": "las plemienia elfów Mornsong; kanon nie podaje położenia względem Gilt-Leaf, pozycja na południowo-wschodnich polanach jest rekonstrukcją; nocny odpowiednik nieznany kanonowi; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu."
+  },
+  {
+   "nazwa": "Arbor Morning",
+   "x": 0.6175,
+   "y": 0.775,
+   "typ": "osada",
+   "pozycja_zrodlo": "stolica elfów Mornsong, wewnątrz ich lasu; pozycja pochodna od rekonstrukcji lasu Mornsong; nocna nazwa nieznana; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu."
+  },
+  {
+   "nazwa": "Fen Grieve",
+   "x": 0.529,
+   "y": 0.41785714285714287,
+   "typ": "osada",
+   "pozycja_zrodlo": "port rzeczny z posągiem taercenna Grieve; funkcja portu wiąże go z Wanderwine, dokładne miejsce na rzece jest rekonstrukcją; nocna nazwa nieznana; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu."
+  },
+  {
+   "nazwa": "Duinshyle",
+   "x": 0.235,
+   "y": 0.8892857142857142,
+   "typ": "osada",
+   "pozycja_zrodlo": "clachan kithkin „daleko od Kinsbaile\"; pozycja na południowym skraju krainy osad realizuje tę relację, nie kanoniczny azymut; nocna nazwa nieznana; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu."
+  },
+  {
+   "nazwa": "The Bubbling Bog",
+   "x": 0.631,
+   "y": 0.5914285714285714,
+   "typ": "bagnisko",
+   "pozycja_zrodlo": "bagnisty obszar, którym kithkin przeklinają; umieszczony na mokradłach przy rzece — wybór rekonstrukcji; nocna nazwa nieznana; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu."
+  },
+  {
+   "nazwa": "Howltooth Hollow",
+   "x": 0.1075,
+   "y": 0.7178571428571429,
+   "typ": "grota",
+   "pozycja_zrodlo": "jaskinia Shadowmooru, w której potajemnie uwięziono barghesta (SHM Guide); pozycja przy południowo-zachodnich górach jest rekonstrukcją; dzienny odpowiednik nieznany kanonowi; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w nocnym zestawie; dzienny odpowiednik nieznany kanonowi — nie wymyślono aliasu."
+  },
+  {
+   "nazwa": "Amphitheater of Galanda Feudkiller",
+   "x": 0.309,
+   "y": 0.13,
+   "typ": "miejsce",
+   "pozycja_zrodlo": "misa dolmenów olbrzymów, gdzie spory rozstrzyga się szybko i gwałtownie (Survival Guide); pozycja w północnym paśmie jest rekonstrukcją królestwa olbrzymów; nocna nazwa nieznana; https://mtg.wiki/page/Lorwyn-Shadowmoor. Współrzędne: rekonstrukcja relacyjna Kodeksu, nie pomiar kanoniczny.",
+   "notka": "Nazwa występuje tylko w dziennym zestawie; nie wymyślono nocnego aliasu."
   }
  ],
  "pinezki": [

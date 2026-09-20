@@ -32,7 +32,7 @@ dopiero w Piątym Świcie. Słońca wydostały się na powierzchnię przez
 po których ścianach dzięki magii grawitacyjnej można zejść do jądra;
 w jego środku pulsuje Rdzeń Many, a nad nim Memnarch zbudował
 **Panopticon**.
-Pośrodku powierzchni leży **Glimmervoid** — srebrna równina
+Pośrodku powierzchni leży [[glimmervoid|**Glimmervoid**]] — srebrna równina
 heksagonalnych płyt, którą trzeba przejść, by dostać się z jednego
 regionu do drugiego. Świat jest niewielki (obwód około 1400 km),
 a regiony dzielą od siebie dni marszu. Pod powierzchnią, w ciemności,

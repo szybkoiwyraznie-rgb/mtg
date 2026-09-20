@@ -76,3 +76,15 @@ Wszystkie nowe współrzędne są przeliczeniem z etykiet/POI mapy L2 miasta,
 a nie twierdzeniem, że kanon podaje ulicę, taras lub adres. Dla kart:
 `610M19` pozostaje pinezką regionalną Greenwheel/Greenwheel Domes, a
 `596ORI` pinezką regionalną Embraal.
+
+## Addendum 2026-09-20 — pass mapowy PR-35 (Pętla Jakości, krok 4)
+
+Pass wzbogacający `map.json` o kotwice elementów, które mapa (plan)
+rysowała od PR-30, ale które nie miały wpisów kotwic: wsie aerowrightów
+Vahd (**Maranjapur**, **Panka**, **Cambi**), **Devra Cliffs**,
+**The Great Climb** oraz rzeki **Suramal** i **Mapani** (29 → 36 kotwic).
+Współrzędne to przeliczenie pozycji etykiet/POI generatora
+(`kaladesh-plan-t4.py`, dawna siatka 16000×11000 → 0–1); kanon (mtg.wiki:
+Avishkar — „Known locations”) potwierdza nazwy, funkcje i relacje, nie
+adresy. Geometria podkładów bez zmian — `podklad.svg` i `ghirapur.svg`
+nietknięte; raster planu obejrzany (L10), `map-audit.py` 0 problemów.

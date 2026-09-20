@@ -26,7 +26,10 @@ test('Lorwyn: pochodne scen i SVG odtwarzają się z generatora', () => {
     assert.equal(fs.readFileSync(`maps/lorwyn/${svg}`,'utf8'),renderuj(s));
   }
   for (const m of MIEJSCA_LORWYNU) {
-    const k = mapa.kotwice.find((k) => k.nazwa === (m.noc && m.noc !== m.dzien ? `${m.dzien} / ${m.noc}` : m.dzien));
+    // Nazwa kotwicy: para „dzień / noc", albo pojedyncza nazwa, gdy kanon
+    // zna tylko jedno oblicze (np. Dundoolin — dzień; Ashenmoor — noc).
+    const nazwa = m.dzien && m.noc && m.noc !== m.dzien ? `${m.dzien} / ${m.noc}` : (m.dzien ?? m.noc);
+    const k = mapa.kotwice.find((k) => k.nazwa === nazwa);
     assert.ok(k,`brak kotwicy ${m.id}`);
     assert.equal(k.x,m.x/2000); assert.equal(k.y,m.y/1400);
     assert.ok(k.pozycja_zrodlo.includes('https://'));

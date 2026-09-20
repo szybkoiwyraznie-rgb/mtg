@@ -322,6 +322,62 @@
    "typ": "kraina",
    "pozycja_zrodlo": "kanon (mtg.wiki Oxidda_Chain: góra klanu Krark)",
    "notka": "tunele klanu Krark"
+  },
+  {
+   "nazwa": "White Lacuna",
+   "x": 0.4791,
+   "y": 0.2949,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Lacuna — biała lakuna w Cave of Light, tunel do Great Deep wnętrza planu); pozycja = etykieta generatora przy Cave of Light",
+   "notka": "biała lakuna pod Jaskinią Światła; korytarz błysku białego słońca"
+  },
+  {
+   "nazwa": "Blue Lacuna",
+   "x": 0.5955,
+   "y": 0.4081,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Lacuna — niebieska lakuna wewnątrz basenu Pool of Knowledge w Lumengrid); pozycja = etykieta generatora przy Pool of Knowledge",
+   "notka": "niebieska lakuna w basenie Wiedzy vedalkenów"
+  },
+  {
+   "nazwa": "Green Lacuna",
+   "x": 0.3098,
+   "y": 0.4189,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Tangle — zielona lakuna w Radix, sercu Tangle); pozycja = etykieta generatora przy Radix",
+   "notka": "zielona lakuna w Radix; tędy wraca zielone słońce"
+  },
+  {
+   "nazwa": "Manka Run",
+   "x": 0.4652,
+   "y": 0.1535,
+   "typ": "kraina",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Auriok — obwód patrolowy Aurioków między Bladehold, Liet Field i Ten Shields); przebieg pętli = rekonstrukcja",
+   "notka": "pętla patrolowa Aurioków przez pola razorgrass"
+  },
+  {
+   "nazwa": "Great Furnace",
+   "x": 0.2901,
+   "y": 0.7587,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Great Furnace — świątynia artefaktów w Kuldocie, kuźnia goblinów); pozycja = etykieta generatora przy Kuldocie",
+   "notka": "Wielki Piec — czerwona świątynia artefaktów w Kuldocie"
+  },
+  {
+   "nazwa": "Vault of Whispers",
+   "x": 0.6264,
+   "y": 0.7556,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Vault of Whispers — czarna świątynia artefaktów, komin Ish Sah); pozycja = etykieta generatora przy Ish Sah",
+   "notka": "Skarbiec Szeptów — siedziba Getha w Ish Sah"
+  },
+  {
+   "nazwa": "Tree of Tales",
+   "x": 0.2986,
+   "y": 0.3342,
+   "typ": "poi",
+   "pozycja_zrodlo": "kanon (mtg.wiki: Tree of Tales — zielona świątynia artefaktów, Tel-Jilad z historią planu wyrytą w pniu); pozycja = etykieta generatora przy Tel-Jilad",
+   "notka": "Drzewo Opowieści — metalowy pień z wyrytą kroniką planu"
   }
  ],
  "pinezki": [

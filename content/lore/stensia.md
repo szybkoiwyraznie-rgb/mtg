@@ -11,7 +11,7 @@ materializacja: 2026-09-10
 ## Definicja
 
 **Stensia** to najmroczniejsza, górzysta prowincja [[innistrad|Innistradu]],
-zdominowana przez potężne pasmo **Geier Reach** i rządzona przez starożytne
+zdominowana przez potężne pasmo [[geier-reach|**Geier Reach**]] i rządzona przez starożytne
 rody wampirów (Markov, Falkenrath, Maurer, Voldaren). Odcięta od reszty
 planu zdradliwymi przełęczami i spowita wieczną mgłą, pod którą rzadko
 przebija się słońce, jest krainą udręczonych pasterzy, ufortyfikowanych

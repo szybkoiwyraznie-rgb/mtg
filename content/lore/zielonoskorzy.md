@@ -61,7 +61,7 @@ ciężar niż podmechanika wspólnej kultury zielonoskórych. [2](https://whfb.l
 ### Pustkowia, tunele i przełęcze
 
 Zielonoskórzy nie mają jednej ojczyzny, ale w obecnych scenach ich ciężar
-skupia się na Ziemiach Jałowych oraz [[gory-kranca-swiata|Górach Krańca Świata]]. Badlands są tradycyjnie kojarzone z orkową masą, obozami i
+skupia się na [[ziemie-jalowe|Ziemiach Jałowych]] oraz [[gory-kranca-swiata|Górach Krańca Świata]]. Badlands są tradycyjnie kojarzone z orkową masą, obozami i
 wędrującymi hufcami, podczas gdy górskie tunele, opuszczone kopalnie i
 zrujnowane twierdze dają przewagę Nocnym Goblinom. [2](https://whfb.lexicanum.com/wiki/Greenskin),
 [4](https://whfb.lexicanum.com/wiki/Orc), [5](https://whfb.lexicanum.com/wiki/Worlds_Edge_Mountains)

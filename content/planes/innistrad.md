@@ -48,7 +48,7 @@ największe miasto planu, opasane wieloma pierścieniami murów; rzeka
 W Thraben wznosi się **Katedra Avacyn**, a w jej trójkątnym dziedzińcu
 stoi [[helvault|Helvault]]. Na południe ciągnie się **Nearheath** z parafiami
 winnic, lasu i skał (wsie **Hanweir**, **Estwald**), a dalej
-**Moorland** — największa i najgroźniejsza parafia, z wsią **Trostad**
+[[moorland|**Moorland**]] — największa i najgroźniejsza parafia, z wsią **Trostad**
 przy granicy [[kessig|Kessigu]]. W kaplicach prowincji uświęciciele
 wiążą wrogów w eteryczne klatki snu, co ukazuje
 [[181avr-spectral-prison|Spectral Prison]]. W wiejskich gospodarstwach
@@ -58,7 +58,7 @@ monstrualną bestię, terroryzując podwórza pod pełnią księżyca
 i **grafów** — cmentarzy — jest najwięcej, a wraz z nimi geistów i ghuli.
 
 [[kessig|**Kessig**]] (zachód) — kraina wiecznej jesieni i wielkiego lasu
-**Ulvenwald**, zwanego Mglistym Borem. Ludzi mało, wilkołaków dużo.
+[[ulvenwald|**Ulvenwald**]], zwanego Mglistym Borem. Ludzi mało, wilkołaków dużo.
 Watahę Hordy Krallen wędrującą pod ludzką postacią na skraj osad
 ukazuje [[171isd-grizzled-outcasts|Grizzled Outcasts]].
 **Hollowhenge** to dawna stolica prowincji, **Avabruck**, którą
@@ -68,7 +68,7 @@ Wsie **Lambholt** i **Gatstaf** żyją w rytmie pełni. Na południu leży
 przez cokolwiek poza garstką diabłów, dopóki po powrocie [[avacyn|Avacyn]] nie
 otworzyło się szerzej (gdzie wyprawę katarów prowadzi [[544avr-thraben-valiant|Thraben Valiant]]).
 
-**[[stensia|Stensia]]** (północ) — ciemne góry **Geier Reach**, wieczna mgła
+**[[stensia|Stensia]]** (północ) — ciemne góry [[geier-reach|**Geier Reach**]], wieczna mgła
 i wampirze rody w izolowanych dworach. Prowadzą tu trzy przełęcze:
 **Kruin Pass** z [[gavony|Gavony]], pilnowana przez **Markovów**, **Getander
 Pass** — jedyne wejście od [[kessig|Kessigu]], obserwowane przez **Falkenrathów**
