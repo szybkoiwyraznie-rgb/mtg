@@ -43,7 +43,7 @@ w cieniu New Prahv i porządku Azoriusza. Precinct Three, Greenbelt, niesie
 zielone wpływy Selesnyi i Vitu-Ghazi. [1](https://mtg.wiki/page/Tenth_District)
 
 Precinct Four jest szczególnie ważny dla [[boros-legion|Boros]]: to
-niespokojny obszar Sunhome, The Bulwark, Tin Street i konfliktów z Gruul
+niespokojny obszar [[sunhome|Sunhome]], The Bulwark, Tin Street i konfliktów z Gruul
 oraz Izzet. Precinct Five gromadzi uczelnie, biblioteki i laboratoria,
 a Precinct Six skupia magazyny, kuźnie, robotnicze dzielnice oraz wejścia
 do głębszego podziemia. [1](https://mtg.wiki/page/Tenth_District),
