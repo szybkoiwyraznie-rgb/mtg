@@ -141,3 +141,16 @@ hedrony na Mirrodinie nie występują.
   — archiwum map (15 planów), bez Mirrodinu.
 - https://inkarnate.com/m/p8zwPV-mirrodin/ — fanowska mapa (John Ruder),
   niedostępna z sandboxa (błąd strony, CDN 500).
+
+## Addendum 2026-09-20 — pass mapowy PR-35 (trzy Pętle, pętla 5)
+
+Wzbogacenie `map.json` o kotwice elementów rysowanych na podkładzie
+z etykietami, lecz bez wpisów kotwic (38 → 45): trzy brakujące lakuny
+(**White Lacuna** w Cave of Light, **Blue Lacuna** w basenie Pool of
+Knowledge, **Green Lacuna** w Radix — komplet pięciu lakun z Black
+i Red), pętla patrolowa Aurioków **Manka Run** oraz trzy świątynie
+artefaktów: **Great Furnace** (Kuldotha), **Vault of Whispers**
+(Ish Sah), **Tree of Tales** (Tel-Jilad). Współrzędne = pozycje
+etykiet generatora (`mirrodin-scena-t4.py`); kanon potwierdza funkcje
+i przynależność, nie adresy. Podkład SVG bez zmian; raster obejrzany
+(L10); pinezki (5) nietknięte (L18); map-audit 0.
