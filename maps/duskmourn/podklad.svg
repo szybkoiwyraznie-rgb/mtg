@@ -29,6 +29,15 @@
 <g stroke="#493a36" stroke-width="8" fill="none" stroke-dasharray="18 18" opacity=".7">
  <path d="M355 480Q700 360 850 525"/><path d="M1160 520Q1400 480 1640 585"/><path d="M1090 690Q1300 770 1370 840"/><path d="M850 690Q710 760 650 850"/>
 </g>
+<g font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-style="italic" fill="#211b1b">
+ <text x="395" y="520" font-size="24" font-weight="600">błonia karnawału (utracone)</text>
+ <text x="385" y="558" font-size="24" font-weight="600">osady strychowe • mural</text>
+ <text x="430" y="640" font-size="24" font-weight="700">Valley of Serenity</text>
+ <text x="1000" y="340" font-size="24" font-weight="600">baza Instytutu Domu</text>
+ <text x="1550" y="470" font-size="24" font-weight="600">razor mazes</text>
+ <text x="1550" y="508" font-size="24" font-weight="600">Rollercrusher Ride</text>
+ <text x="1450" y="975" font-size="24" font-weight="600">labirynt żywopłotów</text>
+</g>
 <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
  <rect x="425" y="1010" width="370" height="88" rx="8" fill="#2b2430" stroke="#d9cbbb" stroke-width="4"/>
  <text x="610" y="1062" font-size="29" font-weight="800" fill="#ffffff">PIWNICA PIERWOTNEGO DOMU</text>

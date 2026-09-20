@@ -37,3 +37,24 @@ Nicość uprowadzenia nie jest utożsamiona z The Below.
   https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-duskmourn
 - MTG Wiki, *Duskmourn* — zestawienie stref i nazwanych obszarów:
   https://mtg.wiki/page/Duskmourn
+
+## Addendum 2026-09-20 — pass mapowy PR-35 (Pętla Jakości, krok 4)
+
+Wzbogacenie diagramu (ADR 0048) o kanoniczne pod-lokacje stref z
+mtg.wiki: Duskmourn („Locations" + „Safe zones"), z zachowaniem
+kontraktu antykartograficznego — pozycje pod-lokacji są kompozycyjne
+(wewnątrz pola macierzystej strefy), nie planimetryczne:
+
+- **Valley of Serenity** — pokoje-pastwiska przez Mistmoors i Balemurk;
+  wioska i jaskiniowy ołtarz kultu Valgavotha;
+- **baza Instytutu Domu** — stałe zaplecze w salach operacyjnych
+  Floodpits;
+- **razor mazes** i **The Rollercrusher Ride** — Boilerbilges;
+- **labirynt żywopłotów** — Hauntwoods;
+- **błonia karnawału (utracone)** i **osady strychowe** z muralem —
+  strefy bezpieczne Mistmoors (karnawał utracony ok. 4564 AR; era
+  Omenpathów kurczy strefy bezpieczne).
+
+`map.json`: kotwice 8 → 15; podkład: 7 nowych etykiet kursywą
+(drugorzędna hierarchia wobec nazw stref). Raster obejrzany (L10),
+`map-audit.py` 0 problemów. Pinezka 373DSK nietknięta (L18).
