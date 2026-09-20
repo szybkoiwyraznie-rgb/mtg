@@ -684,6 +684,78 @@
    "pozycja_zrodlo": "rekonstrukcja: Sarkhan mówi, że Tarkir nie ma oceanów; Sultai „dredge the seas”, Sage-Eye nad zatoką — na rasterze bezimienne wody S; nazwa robocza Kodeksu",
    "notka": "morze śródlądowe, w które uchodzi delta Gudul; nazwa nie jest kanoniczna",
    "uklad": "złoty T1 — przeliczone z rysunku T4 kalibracją (odczyt z podglądu rastra)"
+  },
+  {
+   "nazwa": "Whisperwood",
+   "x": 0.3495,
+   "y": 0.1935,
+   "typ": "las",
+   "pozycja_zrodlo": "raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "pradawny las szeptaczy w Qal Sisma (Temur); dom szamanów i duchów przodków (Whisperwood Elemental)",
+   "uklad": "złoty T1 — przeliczone z rysunku T4 kalibracją (odczyt z podglądu rastra)"
+  },
+  {
+   "nazwa": "Rainveil Forest",
+   "x": 0.4337,
+   "y": 0.3295,
+   "typ": "las",
+   "pozycja_zrodlo": "kanon (KTK cz. 2: las niższych partii gór Temur) + raster fanowski Lore Café (3d4)",
+   "notka": "las deszczowej zasłony u stóp gór Temur, tydzień drogi od wysokich partii Qal Sisma",
+   "uklad": "złoty T1 — przeliczone z rysunku T4 kalibracją (odczyt z podglądu rastra)"
+  },
+  {
+   "nazwa": "Gudul Islands",
+   "x": 0.7015,
+   "y": 0.9092,
+   "typ": "wyspa",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: wyspy delty Gudul) + raster fanowski Lore Café (3d4)",
+   "notka": "labirynt podmokłych wysp i odnóg delty Gudul (Sultai Brood); gniazda krokodyli i bazyliszków",
+   "uklad": "złoty T1 — przeliczone z rysunku T4 kalibracją (odczyt z podglądu rastra)"
+  },
+  {
+   "nazwa": "Trail of Dead Emperors",
+   "x": 0.9566,
+   "y": 0.1935,
+   "typ": "szlak",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: szlak w górach Tiansun znaczony menhirami) + raster fanowski Lore Café (3d4)",
+   "notka": "szlak w wysokich partiach Tiansun (Jeskai), znaczony białymi menhirami dawnych cesarzy",
+   "uklad": "złoty T1 — przeliczone z rysunku T4 kalibracją (odczyt z podglądu rastra)"
+  },
+  {
+   "nazwa": "Dead Reckoning",
+   "x": 0.9502,
+   "y": 0.5338,
+   "typ": "szlak",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: droga przez bagna) + raster fanowski Lore Café (3d4)",
+   "notka": "szlak przemierzający mokradła na południowo-wschodnich rubieżach Jeskai",
+   "uklad": "złoty T1 — przeliczone z rysunku T4 kalibracją (odczyt z podglądu rastra)"
+  },
+  {
+   "nazwa": "Objung Swamp",
+   "x": 0.8482,
+   "y": 0.7966,
+   "typ": "bagno",
+   "pozycja_zrodlo": "raster fanowski Lore Café / MTG Wiki Italia (3d4, 2025) — źródło pomocnicze geometrii (ADR 0031)",
+   "notka": "rozległe bagniste rozlewisko u zbiegu rzek w dżungli Bloomvine (Sultai Brood)",
+   "uklad": "złoty T1 — przeliczone z rysunku T4 kalibracją (odczyt z podglądu rastra)"
+  },
+  {
+   "nazwa": "Dragon's Eye Bay",
+   "x": 0.9375,
+   "y": 0.3336,
+   "typ": "zatoka",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: zatoka pod twierdzą Sage-Eye) + raster fanowski Lore Café (3d4)",
+   "notka": "głęboka górska zatoka pod twierdzą Sage-Eye Stronghold (Jeskai Way)",
+   "uklad": "złoty T1 — przeliczone z rysunku T4 kalibracją (odczyt z podglądu rastra)"
+  },
+  {
+   "nazwa": "Sandsteppe River",
+   "x": 0.2902,
+   "y": 0.6131,
+   "typ": "rzeka",
+   "pozycja_zrodlo": "kanon (KTK cz. 1: rzeka wypływająca z ziem Abzan przez Sandsteppe Gateway) + raster fanowski Lore Café (3d4)",
+   "notka": "główna arteria wodna wypływająca z ziem Abzan przez Sandsteppe Gateway w step Mardu",
+   "uklad": "złoty T1 — przeliczone z rysunku T4 kalibracją (odczyt z podglądu rastra)"
   }
  ],
  "pinezki": [

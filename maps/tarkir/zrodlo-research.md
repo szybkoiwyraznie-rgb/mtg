@@ -234,3 +234,16 @@ oraz Karakyk) — pełne URL-e w sekcji Źródła.
 mapy. Raster T1, miniatura, kalibracja i regionalna pinezka 509KTK
 (0.4496,0.1846) nie zostały zmienione. Nowa karta wymaga sprawdzenia
 konkretnej sceny/epoki; wspólne współrzędne nie zastępują takiej kwerendy.
+
+## Aktualizacja 2026-09-20 — pass mapowy PR-36 (Tarkir T4)
+
+W ramach passu mapowego T3/T4 Pętli Jakości PR-36 zsynchronizowano rejestr
+kotwic `map.json` z elementami rysowanymi w `scena.json`:
+- dodano 8 brakujących kotwic dla obiektów sceny: `Whisperwood` (las),
+  `Rainveil Forest` (las), `Gudul Islands` (wyspy), `Trail of Dead Emperors`
+  (szlak), `Dead Reckoning` (szlak), `Objung Swamp` (bagno), `Dragon's Eye Bay`
+  (zatoka), `Sandsteppe River` (rzeka);
+- współrzędne przeliczone kalibracją do układu złotego T1;
+- łączna liczba kotwic wzrosła z 52 do 60;
+- brak modyfikacji pinezek kart (ADR 0006/0015, L18).
+
