@@ -489,3 +489,7 @@ Domknięto szóstą dostawę PR-34 i siedemnasty plan. The Edge otrzymał fanows
 ## PR-35 (2026-09-18) — **audyt PR-34 i pełna Pętla Jakości**
 
 Audyt PR-34 pozytywny (poprawka głosu Kronikarza w 56EOE + strażnik testowy; ADR 0048 dla map-diagramów). Pętla: sekcja „Setting w pigułce" dla The Edge, pierwszy wikilink 99MH2, nowe hasło Maelstrom po dwóch kartach, siedem kanonicznych kotwic Lorwyn–Shadowmoor. Stan: 53 karty, 39 haseł, 17 planów; 334/334 testów, build 108 stron, map-audit 0, wiki-stats 100%.
+
+## PR-35 cd. (2026-09-20) — **trzy Pętle Jakości**
+
+Trzy pełne przebiegi: hasła Ziemie Jałowe, Glimmervoid i Ulvenwald z link-miningu; pogłębienia Gruul, Liga Izzet, Nephalia, Thraben i klastra Mirrodinu; passy mapowe Eldraine (29→36 kotwic), Kaladesh (29→36) i Duskmourn (8→15, diagram ADR 0048). Stan: 53 karty, 41 haseł, 17 planów; 334/334 testów, build 111 stron, map-audit 0, wiki-stats 100%.

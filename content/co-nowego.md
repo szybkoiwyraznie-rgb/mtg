@@ -1,3 +1,12 @@
+## 2026-09-20 17:41 — Trzy Pętle Jakości: Glimmervoid, Ulvenwald, trzy passy mapowe
+
+- **Nowe hasła (link-mining):** [[glimmervoid|Glimmervoid]] — lustrzana pustynia w sercu [[mirrodin|Mirrodinu]] z wieżami Ur-Golemów (próg: [[476mbs-banishment-decree|Banishment Decree]] i [[488som-carapace-forger|Carapace Forger]]); [[ulvenwald|Ulvenwald]] — Mglisty Bór [[kessig|Kessigu]] z watahami Vildin, Mondronen i Leeraug (próg: [[171isd-grizzled-outcasts|Grizzled Outcasts]] i [[544avr-thraben-valiant|Thraben Valiant]]).
+- **Pogłębienie lore:** [[nephalia|Nephalia]] rozpisana na trzy obrazy — rzeki i Nebelgast, trzy porty z Erdwalem, jezioro Zhava ze Skiltfolk; [[thraben|Thraben]], [[auriok|Auriokowie]], [[mephidross|Mephidross]] i [[oxidda-chain|Oxidda Chain]] dostały kontraktowe sekcje „Powiązane hasła".
+- **Pass mapowy Eldraine (T4):** siedem kanonicznych kotwic (The Glass Tarn, Beckborough, Dunbarrow, Sweettooth Village, Oakhame, Redtooth Keep, Red Fell), tafla jeziora Glass Tarn i moczar pod Dunbarrow — 29 → 36 kotwic.
+- **Pass mapowy Kaladesh (T4):** kotwice dla elementów rysowanych od PR-30 bez wpisów — wsie aerowrightów Vahd (Maranjapur, Panka, Cambi), Devra Cliffs, The Great Climb oraz rzeki Suramal i Mapani — 29 → 36 kotwic.
+- **Pass mapowy Duskmourn (diagram ADR 0048):** siedem pod-lokacji stref z kanonu — Valley of Serenity, baza Instytutu Domu, razor mazes, Rollercrusher Ride, labirynt żywopłotów, utracone błonia karnawału i osady strychowe z muralem — 8 → 15 kotwic, bez naruszenia kontraktu antykartograficznego.
+- **Bramki:** 334/334 testów; build 111 stron (53 karty, 41 haseł, 17 planów); map-audit 0; wiki-stats 100%.
+
 ## 2026-09-18 17:05 — Pętla Jakości: hasło Maelstrom, głębsze The Edge, bogatszy Lorwyn
 
 - **Nowe hasło:** [[maelstrom|Maelstrom]] — burza many w sercu scalonej [[alara|Alary]], zrodzona w [[conflux|Confluxie]]; matka bytów takich jak Child of Alara i obrońca planu podczas najazdu [[nowa-phyrexia|Nowej Phyrexii]]. Próg dwóch kart spełniły [[305arb-illusory-demon|Illusory Demon]] i [[536arb-ethersworn-shieldmage|Ethersworn Shieldmage]].
