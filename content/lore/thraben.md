@@ -56,6 +56,18 @@ Hasło nie ma własnej pinezki; prowadzi do zbliżenia miasta i jego okolic.
 
 [Thraben na mapie Innistradu](#/mapa/innistrad?x=0.668&y=0.317)
 
+## Powiązane hasła
+
+- **[[innistrad|Innistrad]]** — plan, którego ludzkość broniła się zza
+  thrabeńskich murów.
+- **[[gavony|Gavony]]** — prowincja, w której sercu stoi miasto.
+- **[[avacyn|Avacyn]]** — opiekunka, której Kościół i katedra nadały
+  miastu rangę stolicy wiary.
+- **[[helvault|Helvault]]** — srebrne więzienie na dziedzińcu katedry,
+  filar dawnego porządku ochrony.
+- **[[nephalia|Nephalia]]** — nadmorska prowincja na południowy wschód,
+  skąd do thrabeńskich szkół płynęły traktaty.
+
 ## Źródła
 
 - A Planeswalker's Guide to Innistrad: Gavony and Humans — położenie
