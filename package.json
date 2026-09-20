@@ -5,6 +5,7 @@
   "type": "module",
   "description": "MTG Lore Codex — encyklopedia lore prywatnej kolekcji MtG (Karty Katalogowe, hasła, mapy planów)",
   "scripts": {
+    "dev": "node tools/serve.mjs",
     "test": "node tools/run-tests.mjs fast",
     "test:slow": "node tools/run-tests.mjs slow",
     "test:all": "node tools/run-tests.mjs all",
@@ -12,7 +13,7 @@
     "build": "node tools/build.mjs",
     "stats": "node tools/wiki-stats.mjs",
     "stats:json": "node tools/wiki-stats.mjs --json",
-    "serve": "python3 -m http.server --directory dist 8000"
+    "serve": "node tools/serve.mjs"
   },
   "engines": {
     "node": ">=22"
