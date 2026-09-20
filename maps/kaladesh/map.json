@@ -255,6 +255,62 @@
    "typ": "most",
    "pozycja_zrodlo": "kanon: most słynny z automaton builders and repairers, także nielegalnych walk automatów (mtg.wiki: Ghirapur); punkt POI L2 = wybór rekonstrukcji (ADR 0047)",
    "notka": "Most-targowisko; dokładne położenie względem pozostałych mostów jest umowne."
+  },
+  {
+   "nazwa": "Maranjapur",
+   "x": 0.825,
+   "y": 0.2636,
+   "typ": "osada",
+   "pozycja_zrodlo": "kanon: wieś aerowrightów Złotych Stopni Vahd (mtg.wiki: Avishkar; The World of Kaladesh, Part I); pozycja w Vahd = wybór rekonstrukcji",
+   "notka": "dawna wieś rolnicza przebudowana na hangary i warsztaty sterowcowe"
+  },
+  {
+   "nazwa": "Panka",
+   "x": 0.8969,
+   "y": 0.2773,
+   "typ": "osada",
+   "pozycja_zrodlo": "kanon: wieś aerowrightów Złotych Stopni Vahd (mtg.wiki: Avishkar; The World of Kaladesh, Part I); pozycja w Vahd = wybór rekonstrukcji",
+   "notka": "wieś prób sterowców; pasy startowe wśród pól Złotych Stopni"
+  },
+  {
+   "nazwa": "Cambi",
+   "x": 0.8531,
+   "y": 0.3682,
+   "typ": "osada",
+   "pozycja_zrodlo": "kanon: wieś aerowrightów Złotych Stopni Vahd (mtg.wiki: Avishkar; The World of Kaladesh, Part I); pozycja w Vahd = wybór rekonstrukcji",
+   "notka": "wieś warsztatów aerowrightów przy trakcie ze wschodniej bramy"
+  },
+  {
+   "nazwa": "Devra Cliffs",
+   "x": 0.3937,
+   "y": 0.1182,
+   "typ": "urwiska",
+   "pozycja_zrodlo": "kanon: strome ściany skalne kołyszące Lathnu na szczycie, granica świata osiadłego i gór (mtg.wiki: Avishkar); przebieg pasma = wybór rekonstrukcji",
+   "notka": "urwiska pod Lathnu; ostre wiatry i mroźne powietrze"
+  },
+  {
+   "nazwa": "The Great Climb",
+   "x": 0.5188,
+   "y": 0.0682,
+   "typ": "gory",
+   "pozycja_zrodlo": "kanon: legendarne pasmo za Lathnu, „ostatnie schody ku niebu” (mtg.wiki: Avishkar); pozycja za urwiskami = wybór rekonstrukcji",
+   "notka": "Wielka Wspinka — dalej tylko lód, skała i pewna śmierć"
+  },
+  {
+   "nazwa": "Suramal",
+   "x": 0.6281,
+   "y": 0.3227,
+   "typ": "rzeka",
+   "pozycja_zrodlo": "kanon: spływa z północy do Ghirapuru, w zlewisku z Vindayem tworzy Vasavati (mtg.wiki: Avishkar); przebieg = wybór rekonstrukcji",
+   "notka": "rzeka północna zlewiska Ghirapuru"
+  },
+  {
+   "nazwa": "Mapani",
+   "x": 0.7219,
+   "y": 0.3591,
+   "typ": "rzeka",
+   "pozycja_zrodlo": "kanon: największy dopływ Vindaya, jedna z granic Złotych Stopni Vahd (mtg.wiki: Avishkar); przebieg = wybór rekonstrukcji",
+   "notka": "dopływ graniczny Vahd; uchodzi do osi Vindaya przed miastem"
   }
  ],
  "pinezki": [
