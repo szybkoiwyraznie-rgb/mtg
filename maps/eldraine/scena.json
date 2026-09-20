@@ -48,6 +48,15 @@
    "opcje": {
     "fale": true
    }
+  },
+  {
+   "cx": 720,
+   "cy": 620,
+   "rx": 80,
+   "ry": 50,
+   "opcje": {
+    "fale": true
+   }
   }
  ],
  "rzeki": [
@@ -380,6 +389,31 @@
    }
   },
   {
+   "id": "moczar-dunbarrow",
+   "typ": "bagno",
+   "punkty": [
+    [
+     560,
+     810
+    ],
+    [
+     710,
+     830
+    ],
+    [
+     720,
+     920
+    ],
+    [
+     590,
+     940
+    ]
+   ],
+   "opcje": {
+    "gestosc": 0.55
+   }
+  },
+  {
    "id": "las-zachodni-dzicz",
    "typ": "las",
    "punkty": [
@@ -663,6 +697,15 @@
    }
   },
   {
+   "id": "beckborough",
+   "typ": "miasto",
+   "x": 760,
+   "y": 730,
+   "opcje": {
+    "skala": 1
+   }
+  },
+  {
    "id": "castle-vantress",
    "typ": "fort",
    "x": 480,
@@ -777,6 +820,33 @@
    "typ": "fort",
    "x": 220,
    "y": 230,
+   "opcje": {
+    "skala": 1.1
+   }
+  },
+  {
+   "id": "sweettooth-village",
+   "typ": "ruina",
+   "x": 950,
+   "y": 1180,
+   "opcje": {
+    "skala": 1
+   }
+  },
+  {
+   "id": "oakhame",
+   "typ": "miasto",
+   "x": 900,
+   "y": 350,
+   "opcje": {
+    "skala": 1
+   }
+  },
+  {
+   "id": "redtooth-keep",
+   "typ": "fort",
+   "x": 1180,
+   "y": 170,
    "opcje": {
     "skala": 1.1
    }
@@ -935,6 +1005,28 @@
     "przyDo": [
      1120,
      810
+    ]
+   }
+  },
+  {
+   "tekst": "The Glass Tarn",
+   "x": 720,
+   "y": 620,
+   "opcje": {
+    "fs": 14,
+    "kotwica": "middle"
+   }
+  },
+  {
+   "tekst": "Beckborough",
+   "x": 760,
+   "y": 730,
+   "opcje": {
+    "fs": 14,
+    "kotwica": "middle",
+    "przyDo": [
+     760,
+     730
     ]
    }
   },
@@ -1124,13 +1216,72 @@
      230
     ]
    }
+  },
+  {
+   "tekst": "Dunbarrow",
+   "x": 640,
+   "y": 860,
+   "opcje": {
+    "fs": 15,
+    "kotwica": "middle"
+   }
+  },
+  {
+   "tekst": "Sweettooth Village",
+   "x": 950,
+   "y": 1180,
+   "opcje": {
+    "fs": 14,
+    "kotwica": "middle",
+    "przyDo": [
+     950,
+     1180
+    ]
+   }
+  },
+  {
+   "tekst": "Oakhame",
+   "x": 900,
+   "y": 350,
+   "opcje": {
+    "fs": 14,
+    "kotwica": "middle",
+    "przyDo": [
+     900,
+     350
+    ]
+   }
+  },
+  {
+   "tekst": "Redtooth Keep",
+   "x": 1180,
+   "y": 170,
+   "opcje": {
+    "fs": 14,
+    "kotwica": "middle",
+    "przyDo": [
+     1180,
+     170
+    ]
+   }
+  },
+  {
+   "tekst": "Red Fell",
+   "x": 1750,
+   "y": 1010,
+   "opcje": {
+    "fs": 15,
+    "kotwica": "middle"
+   }
   }
  ],
  "strefyWodne": [
+  "The Glass Tarn",
   "Lochmere",
   "The Black Tarns"
  ],
  "etykietyWodne": [
+  "The Glass Tarn",
   "Lochmere",
   "The Black Tarns"
  ],
