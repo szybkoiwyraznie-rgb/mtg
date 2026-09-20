@@ -1,3 +1,12 @@
+## 2026-09-20 19:26 — Trzy Pętle Jakości: Sunhome, Geier Reach, Moorland i trzy passy mapowe
+
+- **Nowe hasła (link-mining):** [[sunhome|Sunhome]] — forteca-świątynia Legionu Boros na [[ravnica|Ravnice]] (próg: [[137gpt-withstand|Withstand]] i [[516rna-tenth-district-veteran|Tenth District Veteran]]); [[geier-reach|Geier Reach]] — pasmo górskie definiujące [[stensia|Stensję]] z przełęczami Hofsaddel, Needle's Eye i Kruin (próg: trzy karty w prozie); [[moorland|Moorland]] — wrzosowiskowa parafia [[gavony|Gavony]] z geistami, Drogskol i wojną Gisy i Geralfa (próg: [[118mid-dire-strain-brawler|Dire-Strain Brawler]] i [[544avr-thraben-valiant|Thraben Valiant]]).
+- **Pogłębienie lore:** komplet sekcji „Powiązane hasła" we wszystkich hasłach bazy (dopisane w: Nowa Phyrexia, Grixis, Conflux, Novigrad, Panie Lasu, Serra, Velen); [[wybrzeze-mieczy|Wybrzeże Mieczy]] rozbudowane o „Puste Ziemie", Pakt traktu, rzekę Chionthar i wzgórza trolli.
+- **Pass mapowy Lorwyn–Shadowmoor (T4):** siedem klasycznych miejsc obu obliczy i biom lasu Mornsong — 24 → 31 kotwic.
+- **Pass mapowy Mirrodin (T4):** komplet pięciu lakun, trzy świątynie artefaktów (Great Furnace, Vault of Whispers, Tree of Tales) i Manka Run — 38 → 45 kotwic.
+- **Pass mapowy Alara (T3):** The Binding Wall (płyta z Coilem pod Antali), Qasali Valley, jamy smolne The Seethe i morze The Kingdom of Fog — 47 → 51 kotwic; nowy `zrodlo-research.md` mapy.
+- **Bramki:** 334/334 testów; build 114 stron (53 karty, 43 hasła, 17 planów); map-audit 0; rastry map obejrzane.
+
 ## 2026-09-20 17:41 — Trzy Pętle Jakości: Glimmervoid, Ulvenwald, trzy passy mapowe
 
 - **Nowe hasła (link-mining):** [[glimmervoid|Glimmervoid]] — lustrzana pustynia w sercu [[mirrodin|Mirrodinu]] z wieżami Ur-Golemów (próg: [[476mbs-banishment-decree|Banishment Decree]] i [[488som-carapace-forger|Carapace Forger]]); [[ulvenwald|Ulvenwald]] — Mglisty Bór [[kessig|Kessigu]] z watahami Vildin, Mondronen i Leeraug (próg: [[171isd-grizzled-outcasts|Grizzled Outcasts]] i [[544avr-thraben-valiant|Thraben Valiant]]).
