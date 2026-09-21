@@ -514,6 +514,6 @@ Wykonano pięć kolejnych Pętli Jakości:
 - Hasło `kuldotha` (Kuldotha) na Mirrodinie po progu `556NPH` i `168_2XM`;
 - Hasło `neurok` (Neurokowie) i `sylvok` (Sylvokowie) na Mirrodinie oraz zjawisko `twor` (Twor) na Zendikarze.
 
-Stan końcowy PR-36: 128 stron (58 kart, 52 hasła, 18 planów); 354/354 testów zielonych (w tym regresja 135BOK), build pomyślny, map-audit 0 problemów, wiki-stats 100%. PR #36 gotowy do przeglądu i scalenia.
+Stan końcowy PR-36: 128 stron (58 kart, 52 hasła, 18 planów); 353/353 testów zielonych (w tym regresja 135BOK), build pomyślny, map-audit 0 problemów, wiki-stats 100%. PR #36 gotowy do przeglądu i scalenia.
 
 
