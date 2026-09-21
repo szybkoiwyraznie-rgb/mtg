@@ -1,3 +1,10 @@
+## 2026-09-20 21:30 — Nowa karta: Soulmender (Śródziemie)
+
+- **Materializacja:** **[[13m20-soulmender|Soulmender]]** (`13M20`, M20, [[srodziemie|Śródziemie]]) przedstawia kapłana-uzdrowiciela w kremowo-złotych szatach na skalistym wzniesieniu śródziemskich wzgórz, niosącego ratunek poprzez precyzyjny strumień złotobiałej energii życia.
+- **Snapshot:** właściwy druk to M20 #37; prywatny `13M20` pozostaje osobnym identyfikatorem. Istota Human Cleric 1/1 za `{W}` ze zdolnością `{T}: You gain 1 life.`.
+- **Mapa:** regionalna pinezka w krainie Eriadoru na mapie Śródziemia, wskazująca wzniesienia i łagodne doliny bez fałszywej precyzji.
+- **Bramki:** 338/338 testów; build 116 stron (54 karty, 43 hasła, 17 planów); mapa Śródziemia zaktualizowana.
+
 ## 2026-09-20 19:26 — Trzy Pętle Jakości: Sunhome, Geier Reach, Moorland i trzy passy mapowe
 
 - **Nowe hasła (link-mining):** [[sunhome|Sunhome]] — forteca-świątynia Legionu Boros na [[ravnica|Ravnice]] (próg: [[137gpt-withstand|Withstand]] i [[516rna-tenth-district-veteran|Tenth District Veteran]]); [[geier-reach|Geier Reach]] — pasmo górskie definiujące [[stensia|Stensję]] z przełęczami Hofsaddel, Needle's Eye i Kruin (próg: trzy karty w prozie); [[moorland|Moorland]] — wrzosowiskowa parafia [[gavony|Gavony]] z geistami, Drogskol i wojną Gisy i Geralfa (próg: [[118mid-dire-strain-brawler|Dire-Strain Brawler]] i [[544avr-thraben-valiant|Thraben Valiant]]).
