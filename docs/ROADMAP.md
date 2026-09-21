@@ -1,5 +1,13 @@
 # Roadmapa
 
+## PR-39 (2026-09-21) — audyt PR-36 i kontynuacja Pętli Jakości
+
+Audyt PR-36 zapisano w `docs/audits/AUDYT_2026-09-21-PR36.md`; nie wykazał
+P0/P1. Naprawiono rozbieżność dokumentacji (353 testy wykonane przez runner,
+nie 354) i pogłębiono hasło `kuldotha` o kontekst Wielkiego Pieca oraz warstwy
+Pieca na podstawie oficjalnego źródła. Bramki: 353/353, build 128 stron,
+map-audit 0, wiki-stats 100%.
+
 Kamienie (K) odpowiadają naturalnym PR-om; kolejność jest umowna —
 priorytet w każdej chwili ustawia właściciel (dostawy kart mają zawsze
 pierwszeństwo). Stan aktualizuje się na końcu sesji.

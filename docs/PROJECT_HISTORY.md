@@ -1,5 +1,13 @@
 # Historia projektu (dziennik sesji)
 
+## 2026-09-21 14:29 — PR-39: audyt PR-36 i kontynuacja Pętli Jakości
+
+Audyt PR-36 nie wykazał problemów P0/P1. Skorygowano dokumentację z 354 do
+353 testów, zgodnie z rzeczywistym wynikiem runnera. Pogłębiono hasło
+`kuldotha` o oficjalnie opisany kontekst żywego Wielkiego Pieca, drogi odwrotu
+Mirran do warstwy Pieca oraz wpływ zanieczyszczeń na konstrukcję. Bramki:
+353/353 testów, build 128 stron, map-audit 0 i wiki-stats 100%.
+
 > Dokument żywy, ale **NIE jest lekturą startową** (AGENTS.md §0) — sięgaj
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.

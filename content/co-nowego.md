@@ -1,3 +1,13 @@
+## 2026-09-21 14:29 — Audyt PR-36 i pogłębienie Kuldothy
+
+- **Audyt:** przejrzano zmiany PR-36; nie wykryto problemów P0/P1.
+- **Korekta bramki:** dokumentacja została zsynchronizowana z rzeczywistym
+  wynikiem runnera: 353/353 testy zielone.
+- **Lore:** hasło **[[kuldotha|Kuldotha]]** otrzymało sekcję o żywym Wielkim
+  Piecu, drodze odwrotu Mirran do warstwy Pieca i biologicznych cechach
+  konstrukcji, z cytowaniem oficjalnego przewodnika.
+- **Bramki:** build 128 stron; map-audit 0 problemów; wiki-stats 100%.
+
 ## 2026-09-21 13:22 — Nowa karta i plan: Kumano's Blessing (Kamigawa)
 
 - **Nowy plan i mapa (T4):** [[kamigawa|Kamigawa]] otrzymała wulkaniczną mapę Gór Sokenzan z 21 kanonicznymi kotwicami (m.in. Sokenzan Mountains, Jukai Forest, Minamo Academy, Numai Swamp, Towara, Sokenzan River).
