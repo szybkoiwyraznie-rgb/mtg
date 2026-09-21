@@ -178,6 +178,13 @@
       "y": 0.2469,
       "pewnosc": "dokladna",
       "uzasadnienie": "Fabuła właściciela nazywa labirynt kanałów Novigradu, więc pinezka dziedziczy dokładną kotwicę miasta (ponownie zweryfikowany odczyt z ikony miasta na masterze px 2060, 1780). Pewność dotyczy Novigradu w skali mapy Kontynentu; scena nie wskazuje konkretnego włazu, ulicy ani korytarza pod miastem."
+    },
+    {
+      "karta": "604zen-vampires-bite",
+      "x": 0.4113,
+      "y": 0.2807,
+      "pewnosc": "region",
+      "uzasadnienie": "Fabuła właściciela wskazuje opuszczony pałac w Toussaint, lecz nie podaje nazwy ruiny ani współrzędnych. Mapa Kontynentu nie rozstrzyga dokładnego miejsca sceny; pinezka dziedziczy regionalną kotwicę Velen i nie udaje konkretnego pałacu."
     }
   ],
   "otwarte_na_kolejne_przejscia": [
