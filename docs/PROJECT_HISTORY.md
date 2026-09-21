@@ -6,7 +6,7 @@
 
 ## 2026-09-21 — PR-36: materializacja 68KTK Ainok Tracker
 
-Dostawę `68KTK / Ainok Tracker / KTK / Tarkir` domknięto pełnym zestawem wpis–snapshot–karta–mapa. Snapshot rozdziela prywatne `68KTK` od KTK #96. Karta LORE-first oddaje surową codzienność klanu Temur w epoce khanów, węch psi zwiadowcy w zamieci Qal Sisma oraz mechaniki Morph i First strike. Regionalna pinezka stoi na wysokogórskich przełęczach pasma Qal Sisma w granicach Temur Frontier. Pełna zgodność z ADR 0040 i Głosem Kronikarza (ADR 0042). Bramki: 343/343, build 117 stron, map-audit 0, wiki-stats 100%.
+Dostawę `68KTK / Ainok Tracker / KTK / Tarkir` domknięto pełnym zestawem wpis–snapshot–karta–mapa. Snapshot rozdziela prywatne `68KTK` od KTK #96. Karta LORE-first oddaje surową codzienność klanu Temur w epoce khanów, węch psi zwiadowcy w zamieci Qal Sisma oraz mechaniki Morph i First strike. Regionalna pinezka stoi na wysokogórskich przełęczach pasma Qal Sisma w granicach Temur Frontier. Pełna zgodność z ADR 0040 i Głosem Kronikarza (ADR 0042). Bramki: 342/342, build 117 stron, map-audit 0, wiki-stats 100%.
 
 ## 2026-09-20 — PR-36: materializacja 13M20 Soulmender
 

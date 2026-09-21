@@ -503,6 +503,6 @@ Trzy kolejne przebiegi: hasła Sunhome, Geier Reach i Moorland z link-miningu; k
 Audyt PR-35 pozytywny; domknięto hasło Liga Wojek (Wojek) z link-miningu i pass mapowy Tarkiru T4 (8 kotwic sceny). Następnie zmaterializowano dwie dostawy właściciela:
 - `13M20 / Soulmender / M20 / Śródziemie` — kapłan-uzdrowiciel w kremowo-złotych szatach na wzgórzach Eriadoru, pinezka regionalna, snapshot M20 #37;
 - `68KTK / Ainok Tracker / KTK / Tarkir` — psi zwiadowca klanu Temur tropiący drapieżnika w zamieci Qal Sisma, pinezka regionalna Temur Frontier, snapshot KTK #96.
-Stan: 55 kart, 45 haseł, 17 planów; 343/343 testy zielone, build 117 stron, map-audit 0, wiki-stats 100%.
+Stan: 55 kart, 45 haseł, 17 planów; 342/342 testy zielone, build 117 stron, map-audit 0, wiki-stats 100%.
 
 
