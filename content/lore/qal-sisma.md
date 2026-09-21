@@ -63,6 +63,21 @@ gdzie przed tysiącleciami po śmiertelnym starciu z Nicolem Bolasem spoczął
 duchowy smok Ugin. [1](https://magic.wizards.com/en/news/feature/planeswalkers-guide-khans-tarkir-part-2-2014-09-10)
 [2](https://mtg.wiki/page/Qal_Sisma)
 
+### Zima jako pamięć i próba
+
+W Qal Sisma przestrzeń nie jest pustym tłem dla łowów. Śnieg zaciera
+ścieżki, lód przechowuje kości i głosy, a dolina staje się bezpiecznym
+miejscem tylko na krótki czas wspólnego przezimowania. Temur nie pokonuje
+tej surowości przez jej ujarzmienie: rodziny czytają pogodę, ślady i
+kształt skał, a szeptacze traktują zamarznięte warstwy jak archiwum
+starsze od pojedynczego życia.
+
+To tłumaczy, dlaczego Qal Sisma jest jednocześnie terytorium łowieckim,
+świątynią pamięci i szkołą orientacji. Łowca wraca z wyprawy nie tylko z
+mięsem, lecz także z wiedzą o tym, gdzie lód pęka, którędy schodzą wichry
+i które kości można wykorzystać bez naruszenia miejsca przodków. W tej
+kulturze przetrwanie jest wspólną umiejętnością, a nie prywatnym triumfem.
+
 ## Na mapie
 
 Góry Qal Sisma dominują na północy kontynentu Tarkir, rozciągając się
