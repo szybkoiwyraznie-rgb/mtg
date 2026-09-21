@@ -1,3 +1,16 @@
+## 2026-09-21 12:13 — Trzy Pętle Jakości: hasła Twor, Neurokowie i Sylvokowie oraz integracja lore i sieci odnośników
+
+- **Pętla 1 — Twor (Zendikar):**
+  - **Nowe hasło (link-mining):** **[[twor|Twor]]** (*The Roil*) — gwałtowne, żywiołowe zjawisko geologiczne i atmosferyczne obejmujące cały plan [[zendikar|Zendikar]], powstałe jako reakcja obronna magii świata na uwięzienie Eldrazi (próg trzech kart: **[[132gnt-pilgrim-s-eye|Pilgrim's Eye]]**, **[[2bfz-coralhelm-guide|Coralhelm Guide]]** i **[[537cmr-kor-cartographer|Kor Cartographer]]**).
+  - **Pogłębienie i spójność:** powiązano wikilinki na stronie planu Zendikar oraz w kartach zwiadowczych korów i syren.
+- **Pętla 2 — Neurokowie (Mirrodin):**
+  - **Nowe hasło (link-mining):** **[[neurok|Neurokowie]]** — ludzka kultura i rasa związana z niebieską maną, seromancją i pływającą stolicą w Lumengridzie nad Morzem Rtęciowym (próg kart: **[[99mh2-steelfin-whale|Steelfin Whale]]**, **[[347nph-pristine-talisman|Pristine Talisman]]** i **[[168-2xm-steel-sabotage|Steel Sabotage]]**).
+  - **Pogłębienie i spójność:** zintegrowano wikilinki w kartach i opisie ludów na stronie planu [[mirrodin|Mirrodin]].
+- **Pętla 3 — Sylvokowie (Mirrodin):**
+  - **Nowe hasło (link-mining):** **[[sylvok|Sylvokowie]]** — ludność miedzianego lasu Gęstwiny (*The Tangle*), kultywująca tradycje druidzkie, rzemiosło chitynowych pancerzy (*metalcraft*) i stawianie oporu skażeniu Phyrexii (próg kart: **[[488som-carapace-forger|Carapace Forger]]** i **[[347nph-pristine-talisman|Pristine Talisman]]**).
+  - **Pogłębienie i spójność:** zaktualizowano odnośniki w kartach Mirranu oraz w geografii Tangle na stronie planu Mirrodin.
+- **Bramki:** 52 nowe hasła w encyklopedii lore; 0 problemów map-audit; pełna integralność testów i kompilacji.
+
 ## 2026-09-21 11:42 — Nowa karta: Grounded (Innistrad)
 
 - **Materializacja:** **[[62avr-grounded|Grounded]]** (`62AVR`, AVR, [[innistrad|Innistrad]]) — w wilgotnym podszyciu i mchu puszczy [[ulvenwald|Ulvenwald]] budzący się las i gęste pnącza przykuwają potężną skrzydlatą abominację Ludevica do ciemnego błota, unieruchamiając jej skrzydła i zmuszając do walki jako piechota.

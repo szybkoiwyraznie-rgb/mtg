@@ -20,7 +20,7 @@ pinezka:
 Na Zendikarze droga nie jest trwałą kreską między dwoma punktami. Jest
 obietnicą z krótkim terminem ważności. Szlak, który wczoraj prowadził przez
 łagodną przełęcz, jutro może kończyć się nad świeżą rozpadliną. Rzeka potrafi
-zmienić koryto, skały wyrastają z ziemi, a poryw Roilu zrywa most linowy, zanim
+zmienić koryto, skały wyrastają z ziemi, a poryw [[twor|Tworu]] zrywa most linowy, zanim
 ostatni wędrowiec dotknie drugiego brzegu. Dlatego każda wyprawa musi poznawać
 teren na nowo — nie tylko przed wyruszeniem, lecz także po każdym wstrząsie.
 
@@ -51,7 +51,7 @@ różnych twarzy świata: czerwonych kanionów, ośnieżonych gór, zielonej dol
 pół unoszących się w powietrzu. Nad całością wiszą hedrony, nieruchome tylko z
 oddali. Ta różnorodność nie wskazuje pojedynczego kontynentu. Jest szerokim
 przeglądem ziem, które zwiadowca musi umieć rozpoznać: suchych, mroźnych,
-żyznych, stromych i poddanych kaprysom Roilu.
+żyznych, stromych i poddanych kaprysom [[twor|Tworu]].
 
 ### Błękitna siatka
 

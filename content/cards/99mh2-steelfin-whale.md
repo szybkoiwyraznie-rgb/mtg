@@ -43,7 +43,7 @@ i mechanizm napędowy jednocześnie.
 
 **Morze Żywego Srebra** — jedyny ocean Mirrodinu, nieprzezroczysty akwen
 płynnego metalu. Nad nim wznosiły się miasta vedalken, w tym [[lumengrid|Lumengrid]],
-a lud Neuroków żył na jego brzegach i platformach. Tutaj morze nie jest
+a lud [[neurok|Neuroków]] żył na jego brzegach i platformach. Tutaj morze nie jest
 jedynie tłem: jego zawiesina stanowi pokarm wieloryba.
 
 **Błękitne kule** — precyzyjne artefakty obecne w scenie. Kronika nie

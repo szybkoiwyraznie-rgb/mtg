@@ -58,7 +58,7 @@ czyste dzieło mirrańskich kowali było dowodem, że wolnej woli i ducha
 twórczości nie da się zniewolić.
 
 **Ruch Oporu Mirran** — przymierze ocalałych [[auriok|Aurioków]], leoninów,
-Sylvoków, [[vulshok|Vulshoków]] i Neuroków walczących o ocalenie resztek swojej
+[[sylvok|Sylvoków]], [[vulshok|Vulshoków]] i [[neurok|Neuroków]] walczących o ocalenie resztek swojej
 tożsamości przed całkowitym wchłonięciem przez machiny najeźdźcy.
 
 **Kuźnia-świątynia ruchu oporu** — sterylne sanktuarium opisane

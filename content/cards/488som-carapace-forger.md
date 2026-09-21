@@ -58,7 +58,7 @@ jest więc figurą paradoksalną: **Viridiańscy Resurgenci** pod wodzą
 a ciało jest bliższe naturze — a jednak, gdy przychodzi wróg, to
 właśnie elf-artificer ratuje las stopem, nie łukiem.
 
-**Tangle** — miedziany las, dom elfów, trolli i druidów Sylvok; w jego
+**Tangle** — miedziany las, dom elfów, trolli i druidów [[sylvok|Sylvok]]; w jego
 sercu **Radix**, krąg miedzi nad zieloną lacuną, i **Tel-Jilad**, drzewo,
 w którego pniu trolle wyryły historię planu. **[[mephidross|Mephidross]]** — bagno
 nekrogenu, z którego wyszła inwazja; jego kominy zionęły trującą mgłą

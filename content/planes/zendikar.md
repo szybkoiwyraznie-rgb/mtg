@@ -9,7 +9,7 @@ tagi: [geografia]
 ---
 
 Zendikar to rodzinny plan Magic: The Gathering — świat przygód, w którym
-sama ziemia jest przeciwnikiem: Mana planu szaleje jako **Roil**, żywioł,
+sama ziemia jest przeciwnikiem: Mana planu szaleje jako **[[twor|Twor]]** (ang. *The Roil*), żywioł,
 który przebudowuje krajobraz w przelocie, w powietrzu unoszą się kamienne
 **hedrony** sprzed tysiącleci, a ruiny zapomnianych cywilizacji (w tym
 niebiańskich Skyclave) czekają na śmiałków. Na Zendikarzu ekspedycje

@@ -38,7 +38,7 @@ ludziom i ludom, którzy potrafią przeprowadzić innych przez szczelinę w
 
 W scenie obecna jest **merfolka-przewodniczka** z Coralhelm: zwiadowczyni,
 która łączy znajomość wybrzeża z praktyką ekspedycji. Jej wartość nie
-wynika z siły ramienia, lecz z pamięci terenu. W świecie Roilu taka pamięć
+wynika z siły ramienia, lecz z pamięci terenu. W świecie [[twor|Tworu]] taka pamięć
 nie jest biernym wspomnieniem; musi być stale odnawiana, bo Zendikar zmusza
 każde pokolenie do ponownego uczenia się tej samej drogi.
 
