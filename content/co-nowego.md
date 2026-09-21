@@ -1,3 +1,30 @@
+## 2026-09-21 11:42 — Nowa karta: Grounded (Innistrad)
+
+- **Materializacja:** **[[62avr-grounded|Grounded]]** (`62AVR`, AVR, [[innistrad|Innistrad]]) — w wilgotnym podszyciu i mchu puszczy [[ulvenwald|Ulvenwald]] budzący się las i gęste pnącza przykuwają potężną skrzydlatą abominację Ludevica do ciemnego błota, unieruchamiając jej skrzydła i zmuszając do walki jako piechota.
+- **Snapshot:** właściwy druk to AVR #181; prywatny `62AVR` pozostaje osobnym identyfikatorem (ADR 0004/LESSONS L8). Zaczarowanie Aury za `{1}{G}` trwale odbierające zaczarowanemu stworzeniu zdolność latania (*Enchanted creature loses flying*).
+- **Mapa:** regionalna pinezka na mapie Innistradu na kotwicy boru Ulvenwald w prowincji [[kessig|Kessig]].
+- **Bramki:** pełna zgodność z ADR 0040 (zero nawiązań do oryginalnego druku), Głosem Kronikarza (ADR 0042) i cytowaniem Fabuły (ADR 0026); zielony zestaw testów i kompilacja bazy.
+
+## 2026-09-21 11:36 — Trzy Pętle Jakości: hasła Lumengrid, Dunland i Kuldotha oraz integracja lore i map
+
+- **Pętla 1 — Lumengrid (Mirrodin):**
+  - **Nowe hasło (link-mining):** **[[lumengrid|Lumengrid]]** — podwodna i częściowo wyniesiona metropolia vedalkenów nad Morzem Żywego Srebra, stolica Synodu Wiedzy i Basenu Wiedzy z Błękitną Lakuną, później zaadaptowana przez Frakcję Postępu Jin-Gitaxiasa na Sanatorium Chirurgiczne (próg dwóch kart: **[[99mh2-steelfin-whale|Steelfin Whale]]** i **[[168-2xm-steel-sabotage|Steel Sabotage]]**).
+  - **Pogłębienie i spójność:** zaktualizowano wikilinki w kartach i na stronie planu [[mirrodin|Mirrodin]]; powiązano deep-link do mapy (`#/mapa/mirrodin?x=0.6175&y=0.4461`).
+- **Pętla 2 — Dunland (Śródziemie):**
+  - **Nowe hasło (link-mining):** **[[dunland|Dunland]]** — wyżynna, surowa kraina u stóp Gór Mglistych na północ od Wrót Rohanu i rzeki Isen, ojczyzna Dunlendingów oraz naturalne siedlisko ptasiego zwiadu Sarumana (próg dwóch kart: **[[1ltr-dunland-crebain|Dunland Crebain]]** i **[[257ltr-lash-of-the-balrog|Lash of the Balrog]]**).
+  - **Pogłębienie i spójność:** powiązano wikilinki w kartach i na stronie planu [[srodziemie|Śródziemie]] wraz z deep-linkiem do mapy (`#/mapa/srodziemie?x=0.4060&y=0.4920`).
+- **Pętla 3 — Kuldotha (Mirrodin):**
+  - **Nowe hasło (link-mining):** **[[kuldotha|Kuldotha]]** — podziemna metropolia hutnicza i Wielki Piec goblinów w trzewiach [[oxidda-chain|Oxidda Chain]], serce kultu Stalowej Matki i Czerwonej Lakuny, arena starć oporu z Frakcją Cichej Kuźni (próg dwóch kart: **[[556nph-ruthless-invasion|Ruthless Invasion]]** i **[[168-2xm-steel-sabotage|Steel Sabotage]]**).
+  - **Pogłębienie i spójność:** zintegrowano wikilinki w kartach, hasłach powiązanych i na stronie planu Mirrodin wraz z deep-linkiem do mapy (`#/mapa/mirrodin?x=0.2901&y=0.7587`).
+- **Bramki:** 122 strony w bazie (56 kart, 49 haseł, 17 planów); 0 problemów map-audit; pełna integralność wikilinków i schematów.
+
+## 2026-09-21 11:25 — Nowa karta: Steel Sabotage (Mirrodin)
+
+- **Materializacja:** **[[168-2xm-steel-sabotage|Steel Sabotage]]** (`168_2XM`, 2XM, [[mirrodin|Mirrodin]]) — Rhmir, Ręka Wieszcza z Frakcji Postępu, przeprowadza sabotaż w głębi Rdzenia Mirrodinu pośród stanowisk Płomiennej Huty, obracając niedokończone myry w błękitny pył i odsyłając ożywione maszyny z powrotem ku dłoniom twórców z Lumengrid.
+- **Snapshot:** właściwy druk to 2XM #70; prywatny `168_2XM` pozostaje osobnym identyfikatorem (ADR 0004/LESSONS L8). Czar Instant za `{U}` oferujący modularny wybór: kontrowanie czaru artefaktu lub cofnięcie artefaktu do dłoni właściciela.
+- **Mapa:** regionalna pinezka na mapie Mirrodinu w rejonie Płomiennej Huty (Wielkiego Pieca) pod łańcuchem Oxidda Chain.
+- **Bramki:** pełna zgodność z ADR 0040 (brak nawiązań do oryginalnego druku), Głosem Kronikarza (ADR 0042) i cytowaniem Fabuły (ADR 0026); zielony zestaw testów i kompilacja bazy.
+
 ## 2026-09-21 11:03 — Pętla Jakości: hasło Qal Sisma (Tarkir) i link-mining klanu Temur
 
 - **Nowe hasło (link-mining):** **[[qal-sisma|Qal Sisma]]** — skute wiecznym lodem pasmo górskie na północy [[tarkir|Tarkiru]], ojczyzna i terytorium łowieckie klanu Temur (próg dwóch kart: **[[509ktk-highland-game|Highland Game]]** i **[[68ktk-ainok-tracker|Ainok Tracker]]**). Hasło opisuje cyrk lodowcowy Karakyk Valley, naturalne tarasy Staircase of Bones, szeptaczy (szamanów), tradycję łowów z ainokami oraz grobowiec ducha-smoka Ugina.
