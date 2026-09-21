@@ -4,9 +4,9 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
-## 2026-09-21 — PR-36: materializacje Grounded (62AVR) i Steel Sabotage (168_2XM) oraz sześć Pętli Jakości (Twor, Neurokowie, Sylvokowie, Lumengrid, Dunland, Kuldotha)
+## 2026-09-21 — PR-36: materializacje 135BOK, 62AVR i 168_2XM oraz sześć Pętli Jakości
 
-Zmaterializowano dwie nowe karty: `62AVR` Grounded (Innistrad, prowincja Kessig) oraz `168_2XM` Steel Sabotage (Mirrodin, Oxidda Chain). Przeprowadzono sześć Pętli Jakości: utworzono nowe hasła geograficzno-kulturowe `dunland` (Dunland) na Śródziemiu, `lumengrid` (Lumengrid), `kuldotha` (Kuldotha), `neurok` (Neurokowie), `sylvok` (Sylvokowie) na Mirrodinie oraz zjawisko geologiczne `twor` (Twor) na Zendikarze. Dokonano pełnej integracji wikilinków, zsynchronizowano deep-linki do map planów (zgodnie z ADR 0043) oraz zaimplementowano testy regresyjne. Wszystkie 353 testy są zielone, a baza pomyślnie buduje 126 stron.
+Zmaterializowano trzy nowe karty: `135BOK` Kumano's Blessing (Kamigawa), `62AVR` Grounded (Innistrad) oraz `168_2XM` Steel Sabotage (Mirrodin). Dodano plan Kamigawa z nową mapą T4 (21 kotwic). Przeprowadzono sześć Pętli Jakości: utworzono nowe hasła geograficzno-kulturowe `dunland` (Dunland) na Śródziemiu, `lumengrid` (Lumengrid), `kuldotha` (Kuldotha), `neurok` (Neurokowie), `sylvok` (Sylvokowie) na Mirrodinie oraz zjawisko geologiczne `twor` (Twor) na Zendikarze. Dokonano pełnej integracji wikilinków, zsynchronizowano deep-linki do map planów oraz zaimplementowano testy regresyjne. Wszystkie 354 testy są zielone, a baza pomyślnie buduje 128 stron.
 
 ## 2026-09-21 — PR-36: Pętla Jakości (hasło Qal Sisma i link-mining na Tarkirze)
 
