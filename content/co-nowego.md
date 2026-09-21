@@ -1,3 +1,11 @@
+## 2026-09-21 13:22 — Nowa karta i plan: Kumano's Blessing (Kamigawa)
+
+- **Nowy plan i mapa (T4):** [[kamigawa|Kamigawa]] otrzymała wulkaniczną mapę Gór Sokenzan z 21 kanonicznymi kotwicami (m.in. Sokenzan Mountains, Jukai Forest, Minamo Academy, Numai Swamp, Towara, Sokenzan River).
+- **Materializacja:** **[[135bok-kumano-s-blessing|Kumano's Blessing]]** (`135BOK`, BOK, [[kamigawa|Kamigawa]]) — materializacja karty BOK #111 i planu Kamigawa (era 2005).
+- **Karta LORE-first:** Karta Katalogowa zredagowana w 100% w tonie kronikarza, bez metajęzyka i procesowych sformułowań.
+- **Pinezka:** regionalna na wulkanicznych graniach Gór Sokenzan.
+- **Bramki:** 354/354 testy zielone (regresja 135BOK); build 128 stron (58 kart, 52 hasła, 18 planów); pomyślna kompilacja i preview.
+
 ## 2026-09-21 12:13 — Trzy Pętle Jakości: hasła Twor, Neurokowie i Sylvokowie oraz integracja lore i sieci odnośników
 
 - **Pętla 1 — Twor (Zendikar):**

@@ -1,0 +1,6 @@
+{
+  "name": "MTG Lore Codex",
+  "description": "Encyklopedia lore prywatnej kolekcji MtG (Karty Katalogowe, hasła, mapy planów)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

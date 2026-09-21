@@ -30,7 +30,9 @@ export function listaStron(typ) {
 
 export function listaKart() { return listaStron('karta'); }
 export function listaHasel() { return listaStron('haslo'); }
-export function listaPlanow() { return listaStron('plan'); }
+export function listaPlanow() {
+  return listaStron('plan').sort((a, b) => a.tytul.localeCompare(b.tytul, 'pl'));
+}
 
 export function ostatnieMaterializacje(n = 5) {
   return listaKart()
