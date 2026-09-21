@@ -628,7 +628,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   shim.idz('#/');
   // Strona główna pokazuje 5 NAJNOWSZYCH materializacji; najświeższa dostawa
   // musi wejść do skrótu, a starsze są pilnowane na pełnej liście kart powyżej.
-  assert.ok(shim.app.innerHTML.includes('Diplomatic Relations'), 'home: brak najnowszej materializacji 56EOE');
+  assert.ok(shim.app.innerHTML.includes('Ainok Tracker'), 'home: brak najnowszej materializacji 68KTK');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();
