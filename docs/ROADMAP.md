@@ -1,5 +1,12 @@
 # Roadmapa
 
+## PR-39 — dostawa 235RTR Trestle Troll (2026-09-21)
+
+Zmaterializowano Kartę Katalogową, snapshot i wpis `235RTR / Trestle Troll / RTR /
+Ravnica`. Karta otrzymała regionalną pinezkę przy Deadbridge Chasm w rejonie
+podziemnego Golgari; nie utworzono hasła poniżej progu dwóch kart. Stan:
+358/358 testów, build 129 stron (59 kart, 52 hasła, 18 planów), map-audit 0.
+
 ## PR-39 (2026-09-21) — audyt PR-36 i kontynuacja Pętli Jakości
 
 Audyt PR-36 zapisano w `docs/audits/AUDYT_2026-09-21-PR36.md`; nie wykazał

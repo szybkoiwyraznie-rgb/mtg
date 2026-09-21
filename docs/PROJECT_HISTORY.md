@@ -1,5 +1,14 @@
 # Historia projektu (dziennik sesji)
 
+## 2026-09-21 14:55 — PR-39: materializacja 235RTR Trestle Troll
+
+Zmaterializowano dostawę `235RTR / Trestle Troll / RTR / Ravnica`: wpis
+właściciela, snapshot Scryfall RTR #205, Kartę Katalogową LORE-first oraz
+regionalną pinezkę w rejonie Deadbridge Chasm, przy zachowaniu niepewności
+regionu i bez zmyślania konkretnej estakady. Pojedynczy troll nie przekracza
+progu nowego hasła. Bramki: 358/358 testów, build 129 stron (59 kart,
+52 hasła, 18 planów), map-audit 0, wiki-stats 100%.
+
 ## 2026-09-21 14:29 — PR-39: audyt PR-36 i kontynuacja Pętli Jakości
 
 Audyt PR-36 nie wykazał problemów P0/P1. Skorygowano dokumentację z 354 do

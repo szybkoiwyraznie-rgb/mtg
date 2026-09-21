@@ -1,3 +1,11 @@
+## 2026-09-21 14:55 — Nowa karta: Trestle Troll (Ravnica)
+
+- **Materializacja:** **[[235rtr-trestle-troll|Trestle Troll]]** (`235RTR`, RTR, [[ravnica|Ravnica]]) — RTR #205.
+- **Karta LORE-first:** golgariański troll trwa przy filarze starej estakady i blokuje przejście żywą zaporą.
+- **Pinezka:** regionalna przy Deadbridge Chasm, w rejonie podziemnego Golgari; bez wymyślania dokładnego mostu.
+- **Próg haseł:** pojedynczy troll nie tworzy osobnego hasła.
+- **Bramki:** 358/358 testów zielonych; build 129 stron (59 kart, 52 hasła, 18 planów); map-audit 0.
+
 ## 2026-09-21 14:29 — Audyt PR-36 i pogłębienie Kuldothy
 
 - **Audyt:** przejrzano zmiany PR-36; nie wykryto problemów P0/P1.
