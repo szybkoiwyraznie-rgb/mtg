@@ -1,3 +1,11 @@
+## 2026-09-21 15:32 — Nowa karta: Lightwalker (Tarkir)
+
+- **Materializacja:** **[[64dtk-lightwalker|Lightwalker]]** (`64DTK`, DTK, [[tarkir|Tarkir]]) — DTK #24.
+- **Karta LORE-first:** wojownik Dromoki biegnie po krystalicznych stopniach światła nad pustynnym kanionem.
+- **Pinezka:** regionalna przy Shifting Wastes; epoka Dragons of Tarkir nie została utożsamiona z konkretnym POI podkładu T4 Khans.
+- **Próg haseł:** pojedynczy wojownik i świetlne stopnie nie tworzą osobnych haseł.
+- **Bramki:** 368/368 testów zielonych; build 131 stron (61 kart, 52 hasła, 18 planów); map-audit 0.
+
 ## 2026-09-21 15:27 — Nowa karta: Join the Dance (Eldraine)
 
 - **Materializacja:** **[[138mid-join-the-dance|Join the Dance]]** (`138MID`, MID, [[eldraine|Eldraine]]) — MID #229.

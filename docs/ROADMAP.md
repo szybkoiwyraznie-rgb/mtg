@@ -1,5 +1,12 @@
 # Roadmapa
 
+## PR-39 — dostawa 64DTK Lightwalker (2026-09-21)
+
+Zmaterializowano wpis, snapshot i Kartę Katalogową `64DTK / Lightwalker /
+DTK / Tarkir`. Scena otrzymała regionalną pinezkę przy Shifting Wastes;
+jawnie zachowano rozdział epoki Dragons of Tarkir od podkładu T4 Khans.
+Stan: 368/368 testów, build 131 stron, map-audit 0, wiki-stats 100%.
+
 ## PR-39 — dostawa 138MID Join the Dance (2026-09-21)
 
 Zmaterializowano wpis, snapshot i Kartę Katalogową `138MID / Join the Dance /

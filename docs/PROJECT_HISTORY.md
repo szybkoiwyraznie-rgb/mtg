@@ -1,5 +1,14 @@
 # Historia projektu (dziennik sesji)
 
+## 2026-09-21 15:32 — PR-39: materializacja 64DTK Lightwalker
+
+Zmaterializowano dostawę `64DTK / Lightwalker / DTK / Tarkir`: wpis
+właściciela, snapshot Scryfall DTK #24, Kartę Katalogową LORE-first oraz
+regionalną pinezkę przy Shifting Wastes. Scena zachowuje epokę Dragons of
+Tarkir i nie utożsamia pustynnego kanionu z konkretnym obiektem podkładu T4
+Khans. Bramki: 368/368 testów, build 131 stron (61 kart, 52 hasła,
+18 planów), map-audit 0, wiki-stats 100%.
+
 ## 2026-09-21 15:27 — PR-39: materializacja 138MID Join the Dance
 
 Zmaterializowano dostawę `138MID / Join the Dance / MID / Eldraine`: wpis
