@@ -4,6 +4,10 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
+## 2026-09-21 — PR-36: materializacje Grounded (62AVR) i Steel Sabotage (168_2XM) oraz sześć Pętli Jakości (Twor, Neurokowie, Sylvokowie, Lumengrid, Dunland, Kuldotha)
+
+Zmaterializowano dwie nowe karty: `62AVR` Grounded (Innistrad, prowincja Kessig) oraz `168_2XM` Steel Sabotage (Mirrodin, Oxidda Chain). Przeprowadzono sześć Pętli Jakości: utworzono nowe hasła geograficzno-kulturowe `dunland` (Dunland) na Śródziemiu, `lumengrid` (Lumengrid), `kuldotha` (Kuldotha), `neurok` (Neurokowie), `sylvok` (Sylvokowie) na Mirrodinie oraz zjawisko geologiczne `twor` (Twor) na Zendikarze. Dokonano pełnej integracji wikilinków, zsynchronizowano deep-linki do map planów (zgodnie z ADR 0043) oraz zaimplementowano testy regresyjne. Wszystkie 353 testy są zielone, a baza pomyślnie buduje 126 stron.
+
 ## 2026-09-21 — PR-36: Pętla Jakości (hasło Qal Sisma i link-mining na Tarkirze)
 
 Po materializacji karty 68KTK Ainok Tracker wykonano pełną Pętlę Jakości: utworzono nowe hasło geograficzne `qal-sisma` (Qal Sisma) na Tarkirze po osiągnięciu progu dwóch kart (`509KTK` Highland Game i `68KTK` Ainok Tracker). Hasło połączono wikilinkami z obiema kartami i stroną planu, z zachowaniem standardu ADR 0043 (deep-link do mapy bez bezpośredniej pinezki hasła). Bramki: 345/345 testów zielonych, build 118 stron (55 kart, 46 haseł, 17 planów), map-audit 0 problemów, wiki-stats 100%.

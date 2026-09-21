@@ -498,15 +498,22 @@ Trzy pełne przebiegi: hasła Ziemie Jałowe, Glimmervoid i Ulvenwald z link-min
 
 Trzy kolejne przebiegi: hasła Sunhome, Geier Reach i Moorland z link-miningu; komplet sekcji „Powiązane hasła" we wszystkich hasłach bazy; pogłębienie Wybrzeża Mieczy; passy mapowe Lorwyn (24→31 kotwic), Mirrodin (38→45, komplet lakun i świątyń artefaktów) i Alara T3 (47→51, pierwszy zrodlo-research.md tej mapy). Stan: 53 karty, 43 hasła, 17 planów; 334/334 testów, build 114 stron, map-audit 0.
 
-## PR-36 (2026-09-21) — **audyt PR-35, materializacje 13M20 i 68KTK oraz Pętle Jakości (Wojek, Qal Sisma)**
+## PR-36 (2026-09-21) — **audyt PR-35, materializacje (13M20, 68KTK, 62AVR, 168_2XM) i sześć Pętle Jakości (Twor, Neurokowie, Sylvokowie, Lumengrid, Dunland, Kuldotha, Wojek, Qal Sisma)** — **domknięte**
 
-Audyt PR-35 pozytywny; domknięto hasło Liga Wojek (`wojek`) z link-miningu i pass mapowy Tarkiru T4 (8 kotwic sceny). Następnie zmaterializowano dwie dostawy właściciela:
-- `13M20 / Soulmender / M20 / Śródziemie` — kapłan-uzdrowiciel w kremowo-złotych szatach na wzgórzach Eriadoru, pinezka regionalna, snapshot M20 #37;
-- `68KTK / Ainok Tracker / KTK / Tarkir` — psi zwiadowca klanu Temur tropiący drapieżnika w zamieci Qal Sisma, pinezka regionalna Temur Frontier, snapshot KTK #96.
+Audyt PR-35 pozytywny; domknięto hasło Liga Wojek (`wojek`) z link-miningu i pass mapowy Tarkiru T4 (8 kotwic sceny). Zmaterializowano cztery dostawy właściciela:
+- `13M20 / Soulmender / M20 / Śródziemie` — kapłan-uzdrowiciel w Eriadorze, pinezka regionalna, snapshot M20 #37;
+- `68KTK / Ainok Tracker / KTK / Tarkir` — psi zwiadowca Temuru w zamieci Qal Sisma, pinezka regionalna, snapshot KTK #96;
+- `62AVR / Grounded / AVR / Innistrad` — pnącza puszczy Ulvenwald unieruchamiające abominację, pinezka regionalna, snapshot AVR #181, bez słów zakazanych ADR 0040/0042;
+- `168_2XM / Steel Sabotage / 2XM / Mirrodin` — sabotaż myrów w Oxidda Chain, pinezka regionalna Płomiennej Huty, snapshot 2XM #70.
 
-Wykonano kolejną Pętlę Jakości:
-- Hasło `qal-sisma` (Qal Sisma) na Tarkirze po progu dwóch kart (`509KTK`, `68KTK`), zlinkowane z obiema kartami i planem (ADR 0043 deep-link).
+Wykonano pięć kolejnych Pętli Jakości:
+- Hasło `qal-sisma` (Qal Sisma) na Tarkirze po progu `509KTK` i `68KTK`;
+- Hasło `dunland` (Dunland) na Śródziemiu po progu `1LTR` i `257LTR`;
+- Hasło `lumengrid` (Lumengrid) na Mirrodinie po progu `99MH2` i `168_2XM`;
+- Hasło `kuldotha` (Kuldotha) na Mirrodinie po progu `556NPH` i `168_2XM`;
+- Hasło `neurok` (Neurokowie) i `sylvok` (Sylvokowie) na Mirrodinie oraz zjawisko `twor` (Twor) na Zendikarze.
 
-Stan: 55 kart, 46 haseł, 17 planów; 345/345 testów zielonych, build 118 stron, map-audit 0, wiki-stats 100%.
+Stan końcowy PR-36: 126 stron (57 kart, 52 hasła, 17 planów); 353/353 testów zielonych, build pomyślny, map-audit 0 problemów, wiki-stats 100%. PR #36 gotowy do przeglądu i scalenia.
+
 
 
