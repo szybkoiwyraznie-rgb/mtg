@@ -2373,3 +2373,17 @@ Drugie zlecenie kontynuacyjne sesji PR-35: pętle 4, 5 i 6 (numeracja tytułów 
 Pierwsza sesja PR-37: pełna materializacja nowej dostawy karty `135BOK Kumano's Blessing` (BOK #111) oraz osiemnastego planu Kamigawa wraz z mapą T4. Zapisano snapshot Scryfalla `scryfall/135bok-kumano-s-blessing.json` z poprawnym imgId i metadanymi proweniencji. Przygotowano stronę planu `content/planes/kamigawa.md` oraz Kartę Katalogową `content/cards/135bok-kumano-s-blessing.md` w układzie LORE-first bez metajęzyka i procesowych sformułowań przed sekcją „Mechanika jako Opowieść”. Mapa Kamigawy otrzymała wulkaniczny podkład SVG Gór Sokenzan z 21 kotwicami (m.in. Minamo, Numai, Sokenzan Mountains, Jukai Forest). Wdrożono regresje oraz uaktualniono asercje w teście dymnym `test/ui-smoke.test.js` do nowej pojemności bazy (54 karty). Bramki końcowe: 334/334 testów, pomyślny build 116 stron (54 karty, 44 hasła, 18 planów).
 
 
+
+## 2026-09-21 — PR-39: materializacja 604ZEN Vampire's Bite
+
+Zmaterializowano dostawę właściciela `604ZEN Vampire's Bite` dla planu Wiedźmin:
+wpis verbatim, pełny snapshot Scryfall ZEN #117 oraz Kartę Katalogową LORE-first.
+Scena osadza bruxę w ruinach opuszczonego pałacu Toussaint, zachowuje mechanikę
+`{B}` / kicker `{2}{B}` / `+3/+0` / lifelink i jawnie odnotowuje brak oficjalnego
+flavoru. Dodano regionalną pinezkę karty przy kotwicy Velen bez wymyślania
+konkretnego pałacu; nie utworzono nowego hasła poniżej progu dwóch kart.
+Regresja `test/wiedzmin-604zen.test.js` domyka wpis, snapshot, kartę i mapę.
+
+Stan końcowy dostawy: 373/373 testów, build 132 stron (62 karty, 52 hasła,
+18 planów), map-audit 0 problemów, wiki-stats 100% i `git diff --check` bez uwag.
+Handoff: `docs/setup/HANDOFF_2026-09-21-604ZEN.md`.

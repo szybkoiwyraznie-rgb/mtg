@@ -1,3 +1,12 @@
+## PR-39 — dostawa 604ZEN Vampire's Bite (2026-09-21)
+
+Zmaterializowano wpis verbatim, snapshot Scryfall ZEN #117, Kartę Katalogową
+LORE-first i regresję `test/wiedzmin-604zen.test.js`. Bruxa otrzymała
+regionalną pinezkę przy kotwicy Velen dla sceny w nieokreślonej ruinie pałacu
+Toussaint; nie utworzono hasła poniżej progu dwóch kart. Stan: 373/373
+testów, build 132 stron (62 karty, 52 hasła, 18 planów), map-audit 0,
+wiki-stats 100%.
+
 # Roadmapa
 
 ## PR-39 — dostawa 64DTK Lightwalker (2026-09-21)

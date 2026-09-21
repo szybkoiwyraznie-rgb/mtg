@@ -1,3 +1,11 @@
+## 2026-09-21 — Nowa karta: Vampire's Bite (Wiedźmin)
+
+- **Materializacja:** **[[604zen-vampires-bite|Vampire's Bite]]** (`604ZEN`, ZEN, Wiedźmin) — ZEN #117.
+- **Karta LORE-first:** bruxa poluje nocą w ruinach opuszczonego pałacu Toussaint; ukąszenie kończy się wysysaniem esencji i szkarłatną regeneracją.
+- **Pinezka:** regionalna przy kotwicy Velen; brak nazwy konkretnego pałacu, więc mapa nie udaje fałszywej precyzji.
+- **Próg haseł:** pojedyncza bruxa i nienazwana ruina nie tworzą osobnych haseł.
+- **Bramki:** 373/373 testów zielonych; build 132 stron (62 karty, 52 hasła, 18 planów); map-audit 0; wiki-stats 100%.
+
 ## 2026-09-21 15:32 — Nowa karta: Lightwalker (Tarkir)
 
 - **Materializacja:** **[[64dtk-lightwalker|Lightwalker]]** (`64DTK`, DTK, [[tarkir|Tarkir]]) — DTK #24.
