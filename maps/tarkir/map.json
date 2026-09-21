@@ -772,6 +772,13 @@
    "y": 0.135,
    "pewnosc": "region",
    "uzasadnienie": "Zapis kroniki: humanoidalny psi zwiadowca (ainok) z klanu Temur przedziera się przez zaśnieżoną górską przełęcz Tarkiru, tropiąc drapieżnika w zamieci przed czekającymi wojownikami. Pasmo Qal Sisma to góry Temur Frontier; z braku nazwania konkretnej przełęczy z imienia, pinezka wskazuje skaliste przełęcze wysokogórskie Qal Sisma z pewnością region."
+  },
+  {
+   "karta": "64dtk-lightwalker",
+   "x": 0.1084,
+   "y": 0.8842,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła właściciela: wojownik Dromoki biegnie po świetlistych stopniach wysoko nad pustynnymi kanionami Tarkiru. Złota współrzędna wskazuje rejon Shifting Wastes / dawnych ziem Abzan, ale późniejsza epoka DTK nie pozwala utożsamić konkretnego kanionu z jednym punktem podkładu T4."
   }
  ],
  "scena": "scena.json",
