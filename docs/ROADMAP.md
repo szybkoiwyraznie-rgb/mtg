@@ -1,5 +1,12 @@
 # Roadmapa
 
+## PR-39 — trzy Pętle Jakości (2026-09-21)
+
+Domknięto trzy przebiegi lore: `lumengrid` (Mirrodin), `qal-sisma`
+(Tarkir) i `ghirapur` (Kaladesh). Pogłębienia zachowują istniejące
+cytowania i nie zmieniają pinezek kart ani geometrii map. Stan: 358/358
+testów, build 129 stron, map-audit 0, wiki-stats 100%.
+
 ## PR-39 — dostawa 235RTR Trestle Troll (2026-09-21)
 
 Zmaterializowano Kartę Katalogową, snapshot i wpis `235RTR / Trestle Troll / RTR /

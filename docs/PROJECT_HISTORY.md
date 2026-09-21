@@ -1,5 +1,14 @@
 # Historia projektu (dziennik sesji)
 
+## 2026-09-21 15:00 — PR-39: trzy Pętle Jakości
+
+Wykonano trzy pełne przebiegi bez nowych materializacji: pogłębiono
+`lumengrid` na Mirrodinie (miasto serum, przejęcie infrastruktury i opór),
+`qal-sisma` na Tarkirze (zima jako pamięć i wspólna próba Temur) oraz
+`ghirapur` na Kaladeshu (obieg eteru, towarów, wiedzy i punkty kontroli).
+Nie zmieniono pinezek ani geometrii map. Bramki: 358/358 testów, build 129
+stron, map-audit 0, wiki-stats 100%.
+
 ## 2026-09-21 14:55 — PR-39: materializacja 235RTR Trestle Troll
 
 Zmaterializowano dostawę `235RTR / Trestle Troll / RTR / Ravnica`: wpis

@@ -1,3 +1,11 @@
+## 2026-09-21 15:00 — Trzy Pętle Jakości: Lumengrid, Qal Sisma i Ghirapur
+
+- **Mirrodin:** pogłębiono [[lumengrid|Lumengrid]] o przejęcie infrastruktury serum i rolę sieci podziemnych w oporze.
+- **Tarkir:** pogłębiono [[qal-sisma|Qal Sisma]] o zimę jako pamięć, próbę i wspólną umiejętność Temur.
+- **Kaladesh:** pogłębiono [[ghirapur|Ghirapur]] o obieg eteru, towarów i wiedzy oraz punkty kontroli Konsulatu.
+- **Zakres mapowy:** brak zmian pinezek kart i geometrii map; brak nowych haseł poniżej progu.
+- **Bramki:** 358/358 testów zielonych; build 129 stron; map-audit 0; wiki-stats 100%.
+
 ## 2026-09-21 14:55 — Nowa karta: Trestle Troll (Ravnica)
 
 - **Materializacja:** **[[235rtr-trestle-troll|Trestle Troll]]** (`235RTR`, RTR, [[ravnica|Ravnica]]) — RTR #205.
