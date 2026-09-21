@@ -54,7 +54,7 @@ a na styku z Abzanem i Sultai — bagna **Screamreach**. Z gór Temur
 w step wcina się **The Scour**: rozpadlina, przez którą wiatr niesie
 czarny pył zdolny w dzień ogołocić trupa do kości.
 
-**Qal Sisma** (północ) — góry **Temur Frontier**: wysoki, pofałdowany
+**[[qal-sisma|Qal Sisma]]** (północ) — góry **Temur Frontier**: wysoki, pofałdowany
 płaskowyż z granitu i wapienia, poorany rzekami i sejsmiką, pełen jaskiń
 i lodowców, o klimacie subarktycznym. W dwóch najmroźniejszych miesiącach
 wszystkie wędrowne rodziny schodzą się do **Karakyk Valley** — cyrku

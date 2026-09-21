@@ -15,7 +15,7 @@ pinezka:
 
 ## Kronika Lore
 
-Zima w **Qal Sisma** nie jest porą roku — jest przeciwnikiem. Góry
+Zima w [[qal-sisma|Qal Sisma]] nie jest porą roku — jest przeciwnikiem. Góry
 **Temur Frontier** to wysoki płaskowyż z granitu i wapienia, pofałdowany
 przez rzeki i wstrząsy, pełen jaskiń, lodowców i wiatru, który tnie
 policzki i pęka na kostkach dłoni. Przez większość roku klan **Temur**

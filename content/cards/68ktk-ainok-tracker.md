@@ -15,7 +15,7 @@ pinezka:
 
 ## Kronika Lore
 
-Wysokie granie **Qal Sisma** nie wybaczają błędu ani zwłoki. Na lodowcowym
+Wysokie granie [[qal-sisma|Qal Sisma]] nie wybaczają błędu ani zwłoki. Na lodowcowym
 płaskowyżu **Temur Frontier** wiatr tnie jak krzemienny nóż, a zamieć
 śnieżna potrafi w ułamku oddechu odebrać wzrok nawet najwytrawniejszemu
 łowcy. W tym mroźnym świecie przetrwanie klanu zależy od zmysłów, które
