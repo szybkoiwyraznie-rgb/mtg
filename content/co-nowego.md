@@ -1,3 +1,9 @@
+## 2026-09-21 11:03 — Pętla Jakości: hasło Qal Sisma (Tarkir) i link-mining klanu Temur
+
+- **Nowe hasło (link-mining):** **[[qal-sisma|Qal Sisma]]** — skute wiecznym lodem pasmo górskie na północy [[tarkir|Tarkiru]], ojczyzna i terytorium łowieckie klanu Temur (próg dwóch kart: **[[509ktk-highland-game|Highland Game]]** i **[[68ktk-ainok-tracker|Ainok Tracker]]**). Hasło opisuje cyrk lodowcowy Karakyk Valley, naturalne tarasy Staircase of Bones, szeptaczy (szamanów), tradycję łowów z ainokami oraz grobowiec ducha-smoka Ugina.
+- **Link-mining i spójność:** zintegrowano wikilinki do Qal Sisma w kartach Highland Game i Ainok Tracker oraz na stronie planu Tarkir; zachowano pełny standard ADR 0043 (deep-link do mapy bez bezpośrednich pinezek haseł).
+- **Bramki:** 345/345 testów zielonych; kompilacja 118 stron (55 kart, 46 haseł, 17 planów); map-audit 0; wiki-stats 100%.
+
 ## 2026-09-21 10:05 — Nowa karta: Ainok Tracker (Tarkir)
 
 - **Materializacja:** **[[68ktk-ainok-tracker|Ainok Tracker]]** (`68KTK`, KTK, [[tarkir|Tarkir]]) — humanoidalny psi zwiadowca z klanu Temur przedziera się przez zaśnieżoną górską przełęcz Qal Sisma, tropiąc drapieżnika w zamieci przed ubezpieczającymi go wojownikami.
