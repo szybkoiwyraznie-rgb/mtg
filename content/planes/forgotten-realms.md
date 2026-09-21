@@ -1,7 +1,7 @@
 ---
 typ: plan
 slug: forgotten-realms
-tytul: Zapomniane Krainy
+tytul: Forgotten Realms
 typIP: zewnetrzne
 mapa: forgotten-realms
 materializacja: 2026-09-08

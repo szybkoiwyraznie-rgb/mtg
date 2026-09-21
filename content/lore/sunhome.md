@@ -25,7 +25,7 @@ Sunhome pełni trzy role naraz: to forteca i centrum dowodzenia
 górujące nad sercem Czwartego Precyktu, jedne z największych koszar
 miasta oraz duchowe centrum gildii, w którym służba wojskowa
 i kult płomienno-anielskiej tradycji Legionu są tym samym. Przez
-długi czas było bazą operacyjną **Ligi Wojek** — konstabularnego
+długi czas było bazą operacyjną [[wojek|Ligi Wojek]] — konstabularnego
 ramienia gildii. [1](https://mtg.wiki/page/Sunhome)
 
 ### Straż Sunhome
@@ -60,6 +60,8 @@ od centrum mapy, od strony rumowisk Gruul.
 
 - **[[boros-legion|Legion Boros]]** — gildia, której Sunhome jest
   siedzibą, koszarami i świątynią.
+- **[[wojek|Liga Wojek]]** — konstabularne ramię gildii, którego
+  historyczną kwaterą była twierdza.
 - **[[dziesiaty-dystrykt|Dziesiąty Dystrykt]]** — dystrykt, którego
   Czwarty Precykt broni twierdza.
 - **[[ravnica|Ravnica]]** — plan-miasto gildii.

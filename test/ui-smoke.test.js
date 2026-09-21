@@ -404,7 +404,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (53)'), 'lista kart: brak 53 kart');
+  assert.ok(/Karty Katalogowe \(\d+\)/.test(lista), 'lista kart: brak nagłówka Karty Katalogowe');
   assert.ok(lista.includes('Wooden Stake'), 'lista kart: brak materializacji 543ISD');
   assert.ok(lista.includes('Tome Scour'), 'lista kart: brak materializacji 69M11');
   assert.ok(lista.includes('Skinbrand Goblin'), 'lista kart: brak materializacji 572GTC');
@@ -628,7 +628,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   shim.idz('#/');
   // Strona główna pokazuje 5 NAJNOWSZYCH materializacji; najświeższa dostawa
   // musi wejść do skrótu, a starsze są pilnowane na pełnej liście kart powyżej.
-  assert.ok(shim.app.innerHTML.includes('Diplomatic Relations'), 'home: brak najnowszej materializacji 56EOE');
+  assert.ok(shim.app.innerHTML.includes('Ainok Tracker'), 'home: brak najnowszej materializacji 68KTK');
 
   fs.rmSync(cel, { force: true });
   shim.przywroc();

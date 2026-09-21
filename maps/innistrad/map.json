@@ -668,6 +668,14 @@
    "y": 0.5,
    "pewnosc": "region",
    "uzasadnienie": "Fabuła wskazuje palisadę bezimiennej wioski Skiltfolk nad jeziorem Zhava. Źródło potwierdza jezioro na wyżynach Nephalii blisko granicy Gavony, lecz nie konkretną osadę, palisadę ani bramę; pinezka używa regionalnej kotwicy Lake Zhava."
+  },
+  {
+   "karta": "62avr-grounded",
+   "x": 0.54,
+   "y": 0.711,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła właściciela wskazuje podszycie boru Ulvenwald na Innistradzie: oplecioną pnączami skrzydlatą bestię dociśniętą do błota i mchu. Pinezka stoi na regionalnej kotwicy Ulvenwald z pewnością region.",
+   "notka": "Epoka Avacyn Restored (AVR) — w głębi Ulvenwaldu roślinność i traperzy unieruchamiają zbiegłe abominacje, odbierając im zdolność lotu."
   }
  ],
  "zrodlo_fanmapa": "Podkład jest mapą fanowską, nie materiałem WotC. Zgodnie z ADR 0031 służy jako podkład prywatnego Kodeksu; każda kotwica została porównana z kanonem tekstowym, a rozbieżności rozstrzygane są na korzyść kanonu.",

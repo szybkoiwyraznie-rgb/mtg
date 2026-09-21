@@ -498,3 +498,22 @@ Trzy pełne przebiegi: hasła Ziemie Jałowe, Glimmervoid i Ulvenwald z link-min
 
 Trzy kolejne przebiegi: hasła Sunhome, Geier Reach i Moorland z link-miningu; komplet sekcji „Powiązane hasła" we wszystkich hasłach bazy; pogłębienie Wybrzeża Mieczy; passy mapowe Lorwyn (24→31 kotwic), Mirrodin (38→45, komplet lakun i świątyń artefaktów) i Alara T3 (47→51, pierwszy zrodlo-research.md tej mapy). Stan: 53 karty, 43 hasła, 17 planów; 334/334 testów, build 114 stron, map-audit 0.
 
+## PR-36 (2026-09-21) — **audyt PR-35, materializacje (13M20, 68KTK, 62AVR, 168_2XM, 135BOK), mapa Kamigawy i Pętle Jakości** — **domknięte**
+
+Audyt PR-35 pozytywny; domknięto hasło Liga Wojek (`wojek`) z link-miningu i pass mapowy Tarkiru T4 (8 kotwic sceny). Zmaterializowano pięć dostaw właściciela:
+- `13M20 / Soulmender / M20 / Śródziemie` — kapłan-uzdrowiciel w Eriadorze, pinezka regionalna, snapshot M20 #37;
+- `68KTK / Ainok Tracker / KTK / Tarkir` — psi zwiadowca Temuru w zamieci Qal Sisma, pinezka regionalna, snapshot KTK #96;
+- `62AVR / Grounded / AVR / Innistrad` — pnącza puszczy Ulvenwald unieruchamiające abominację, pinezka regionalna, snapshot AVR #181, bez słów zakazanych ADR 0040/0042;
+- `168_2XM / Steel Sabotage / 2XM / Mirrodin` — sabotaż myrów w Oxidda Chain, pinezka regionalna Płomiennej Huty, snapshot 2XM #70;
+- `135BOK / Kumano's Blessing / BOK / Kamigawa` — materializacja karty BOK #111 i planu Kamigawa wraz z mapą T4 (21 kotwic, m.in. Góry Sokenzan).
+
+Wykonano pięć kolejnych Pętli Jakości:
+- Hasło `qal-sisma` (Qal Sisma) na Tarkirze po progu `509KTK` i `68KTK`;
+- Hasło `dunland` (Dunland) na Śródziemiu po progu `1LTR` i `257LTR`;
+- Hasło `lumengrid` (Lumengrid) na Mirrodinie po progu `99MH2` i `168_2XM`;
+- Hasło `kuldotha` (Kuldotha) na Mirrodinie po progu `556NPH` i `168_2XM`;
+- Hasło `neurok` (Neurokowie) i `sylvok` (Sylvokowie) na Mirrodinie oraz zjawisko `twor` (Twor) na Zendikarze.
+
+Stan końcowy PR-36: 128 stron (58 kart, 52 hasła, 18 planów); 354/354 testów zielonych (w tym regresja 135BOK), build pomyślny, map-audit 0 problemów, wiki-stats 100%. PR #36 gotowy do przeglądu i scalenia.
+
+

@@ -16,7 +16,7 @@ pinezka:
 ## Kronika Lore
 
 Na [[zendikar|Zendikarze]], świecie nieustannych geologicznych wstrząsów
-i szalejącego **Roilu**, pojęcie stałego lądu jest iluzją. Ziemia faluje,
+i szalejącego **[[twor|Tworu]]**, pojęcie stałego lądu jest iluzją. Ziemia faluje,
 kaniony pękają pod stopami wędrowców, a olbrzymie kamienne bryły
 i lewitujące płaskowyże dryfują w powietrzu pod wpływem pierwotnej many.
 W tym niestabilnym środowisku koczowniczy lud **Korów** wypracował unikalną
@@ -54,7 +54,7 @@ nieustannych pielgrzymek i wędrówek pomiędzy świętymi miejscami.
 wąwozów i pęknięć tektonicznych w lądzie Ondu, nad którymi unoszą się
 oderwane od ziemi płyty skalne.
 
-**Roil** — pierwotny, żywiołowy fenomen Zendikaru, wywołujący nagłe fale
+**[[twor|Twor]]** — pierwotny, żywiołowy fenomen Zendikaru, wywołujący nagłe fale
 przeobrażeń krajobrazu, trzęsienia ziemi i przemieszczanie się formacji
 skalnych.
 

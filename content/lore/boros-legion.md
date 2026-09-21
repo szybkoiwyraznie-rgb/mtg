@@ -21,14 +21,14 @@ do ideału sprawiedliwości widzianej jako działanie w pierwszej linii.
 ### Armia i konstabularia
 
 Boros działa na Ravnicy na przecięciu wojska i prawa. Dawna struktura
-Legionu dzieliła siły śmiertelników między Armię Boros i Ligę Wojek:
+Legionu dzieliła siły śmiertelników między Armię Boros i [[wojek|Ligę Wojek]]:
 pierwsza była regularnym ramieniem wojskowym, druga pełniła funkcję
 porządkową w dystryktach miasta. W praktyce oznaczało to żołnierzy,
 patrole, oficerów, magów bojowych, skyjeków i zwykłych szeregowców
 utrzymujących ulice w stanie względnego bezpieczeństwa.
 [1](https://mtg.wiki/page/Boros_Legion), [2](https://mtg.wiki/page/Wojek_League)
 
-Liga Wojek jest szczególnie ważna dla ulicznej twarzy Boros. Jej członkowie
+[[wojek|Liga Wojek]] jest szczególnie ważna dla ulicznej twarzy Boros. Jej członkowie
 mają dbać o pokój i dobro mieszkańców dzielnic Miasta Ravnicy, a jednocześnie
 służą jako elitarni żołnierze, policja wojskowa i wywiad. To tłumaczy,
 dlaczego Boros tak często pojawia się nie na polu bitwy poza miastem, lecz
@@ -66,6 +66,10 @@ jego skraj wymaga ciągłej gotowości do opanowania chaosu.
 
 ## Powiązane hasła
 
+- [[sunhome|Sunhome]] — twierdza, koszary i duchowe centrum dowodzenia
+  Legionu w Czwartym Precykcie.
+- [[wojek|Liga Wojek]] — konstabularne i śledcze ramię Legionu
+  na bruku dzielnic.
 - [[dziesiaty-dystrykt|Dziesiąty Dystrykt]] — najważniejszy miejski obszar,
   w którym Legion patroluje, walczy i chroni instytucje Ravniki.
 - [[tin-street-market|Tin Street Market]] — ruchliwy targ przy Tin Street,

@@ -54,9 +54,9 @@ patrolowym, przy którym leży też **Liet Field** i wieś **Ten Shields**.
 
 **Quicksilver Sea** (U) — jedyny ocean planu, nieprzezroczysta tafla
 rtęci z wyspami zastygłego metalu. Na spirze przy brzegu stoi
-**Lumengrid**, Siedziba Synodu vedalken, z **Pool of Knowledge**
+[[lumengrid|**Lumengrid**]], Siedziba Synodu vedalken, z **Pool of Knowledge**
 i niebieską lacuną w jego wnętrzu; **Medev** to jedna z cynowych wiosek
-Neurok na brzegu; **Quicksilver Spires** — kryształowe iglice połączone
+[[neurok|Neuroków]] na brzegu; **Quicksilver Spires** — kryształowe iglice połączone
 mostami — tworzą sieć dróg przez morze, a **Titan Forge** stoi w kręgu
 nieruchomej rtęci.
 
@@ -68,7 +68,7 @@ schodzi w dół czarna lacuna. Dross rozlewa się: na Oxiddę przez
 **Rey-Goor**, Czarne Rozlewisko, gdzie las nasiąka olejem i zamienia
 się w mokradło.
 
-**[[oxidda-chain|Oxidda Chain]]** (R) — rdzawe góry; **Kuldotha**, Wielka Kuźnia, to
+**[[oxidda-chain|Oxidda Chain]]** (R) — rdzawe góry; [[kuldotha|**Kuldotha**]], Wielka Kuźnia, to
 czynny wulkan i stolica goblinów czczących Stalową Matkę, z czerwoną
 lacuną („Łonem Stalowej Matki”) tuż obok. W tunelach **Krark-Home**
 żyje wyklęty klan Krark, w wioskach jak **Oxidagg** — sześć plemion
@@ -83,7 +83,7 @@ leży **Radix** — krąg miedzi o średnicy stu stóp, nad zieloną lacuną
 rośnie **Tel-Jilad**, Drzewo Opowieści, dom trolli, w którego pniu
 wyryto historię planu, a wokół niego elfy zbudowały **Viridię**
 z Tarasem Sądu i Drzewem-Więzieniem. **Temple Might** i **Outer Altar**
-należą do druidów Sylvok, **Cambree Garden** to ufortyfikowany ogród
+należą do druidów [[sylvok|Sylvok]], **Cambree Garden** to ufortyfikowany ogród
 w koronie drzewa. Od Razor Fields Tangle oddziela **Razorverge
 Thicket**.
 
@@ -93,7 +93,7 @@ W czasach Memnarcha **elfy Viridian** i **trolle** Tangle łączyła
 szczególna więź: trolle strzegły pamięci w Tel-Jilad, a elfy podczas
 konwergencji słońc przechodziły przy Radiksie **Rebuking** — rytuał
 usuwania bolesnych wspomnień, zapisywanych potem przez trolle w Drzewie.
-Elfy są łucznikami i myśliwymi lasu; ich zbrojmistrzowie kują w miedzi. **Sylvok** —
+Elfy są łucznikami i myśliwymi lasu; ich zbrojmistrzowie kują w miedzi. [[sylvok|**Sylvokowie**]] —
 zieloni ludzie Tangle — słuchają druidów. **Leonin** Razor Fields
 odpowiadają przed Kha, wojownikiem-wodzem z Taj-Nar; obok nich żyją
 [[auriok|Auriok]] i **loxodon**. Auriokowie to biali ludzie Pól: skóra
@@ -106,7 +106,7 @@ a w Bladehold wymyślili *mirroring*: walkę z użyciem własnego odbicia
 w ostrzach trawy. Gdy przyszła Phyrexia, okazali się ludem
 **najbardziej opornym na compleation** — co nie uratowało ich
 przed niemal całkowitą zagładą. **Vedalken**
-Quicksilver Sea rządzą przez Synod i trzymają w poddaństwie **Neurok**;
+Quicksilver Sea rządzą przez Synod i trzymają w poddaństwie [[neurok|**Neuroków**]];
 gonią za serum z blinkmothów. **Gobliny** Oxiddy czczą Kuźnię i Stalową
 Matkę; klan Krark wierzy, że pod Mirrodinem jest jeszcze jedna warstwa
 — i ma rację. **[[vulshok|Vulshok]]** to sześć plemion kowali (Tarcza, Młot,
@@ -206,6 +206,13 @@ w `map.json`, werdykt researchu w `zrodlo-research.md`.
 w samym akcie żerowania: magnetyczne fiszbiny przesiewają opiłki i cenną
 rudę zawieszoną w Quicksilver Sea. Artefakty skracają drogę przywołania
 olbrzyma i każdy nowy obiekt przywraca mu gotowość do ruchu.
+
+## Sabotaż w Rdzeniu Mirrodinu
+
+[[168-2xm-steel-sabotage|Steel Sabotage]] dokumentuje dywersję Frakcji
+Postępu w głębi Rdzenia: Rhmir, Ręka Wieszcza, rozbija konstrukcję
+niedokończonego myra i odsyła gotowe mechanizmy z powrotem ku dłoniom
+twórców, ogłaszając nadejście Wielkiego Dzieła.
 
 ## Źródła
 

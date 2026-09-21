@@ -125,6 +125,14 @@
    "pewnosc": "region",
    "uzasadnienie": "Fabuła wskazuje spowite nocnym mrokiem wzgórza Eriadoru — pofałdowaną dzicz na wschód od Shire i Bree, przez którą wędrują hobbici. Ponieważ konkretne pasmo wzgórz nie jest nazwane z imienia, pinezka stoi na regionie Eriador z pewnością region.",
    "notka": "Wędrówka niziołków przez pustkowia Eriadoru — dar chleba podróżnego i niezłomna odwaga jako obrona przed drapieżnikami."
+  },
+  {
+   "karta": "13m20-soulmender",
+   "x": 0.28,
+   "y": 0.30,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła wskazuje skaliste wzniesienie śródziemskich wzgórz w krainie łagodnych dolin. Z racji braku konkretnego pasma z nazwy, pinezka wskazuje region Eriadoru z pewnością region.",
+   "notka": "Leczenie na skalistym wzniesieniu śródziemskich wzgórz — sztuka cierpliwości i precyzyjny strumień złotobiałej energii."
   }
  ]
 }

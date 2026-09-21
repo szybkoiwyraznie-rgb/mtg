@@ -90,7 +90,7 @@ przez którą wiodą szlaki z Shire i Bree ku brodom na rzekach.
 
 Zestawienie z innymi punktami planu:
 - W odróżnieniu od militarnego zwiadu w [[1ltr-dunland-crebain|Dunland Crebain]]
-  na południowych rubieżach Dunlandu (`x: 0.406`, `y: 0.492`) oraz
+  na południowych rubieżach [[dunland|Dunlandu]] (`x: 0.406`, `y: 0.492`) oraz
   katastrofalnego starcia w podziemiach Morii w [[257ltr-lash-of-the-balrog|Lash of the Balrog]]
   (`x: 0.478`, `y: 0.384`), ta scena ukazuje cichy, wędrowny wymiar
   Śródziemia — codzienną odwagę hobbitów wędrujących przez pustkowia.

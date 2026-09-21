@@ -1,3 +1,71 @@
+## 2026-09-21 13:22 — Nowa karta i plan: Kumano's Blessing (Kamigawa)
+
+- **Nowy plan i mapa (T4):** [[kamigawa|Kamigawa]] otrzymała wulkaniczną mapę Gór Sokenzan z 21 kanonicznymi kotwicami (m.in. Sokenzan Mountains, Jukai Forest, Minamo Academy, Numai Swamp, Towara, Sokenzan River).
+- **Materializacja:** **[[135bok-kumano-s-blessing|Kumano's Blessing]]** (`135BOK`, BOK, [[kamigawa|Kamigawa]]) — materializacja karty BOK #111 i planu Kamigawa (era 2005).
+- **Karta LORE-first:** Karta Katalogowa zredagowana w 100% w tonie kronikarza, bez metajęzyka i procesowych sformułowań.
+- **Pinezka:** regionalna na wulkanicznych graniach Gór Sokenzan.
+- **Bramki:** 354/354 testy zielone (regresja 135BOK); build 128 stron (58 kart, 52 hasła, 18 planów); pomyślna kompilacja i preview.
+
+## 2026-09-21 12:13 — Trzy Pętle Jakości: hasła Twor, Neurokowie i Sylvokowie oraz integracja lore i sieci odnośników
+
+- **Pętla 1 — Twor (Zendikar):**
+  - **Nowe hasło (link-mining):** **[[twor|Twor]]** (*The Roil*) — gwałtowne, żywiołowe zjawisko geologiczne i atmosferyczne obejmujące cały plan [[zendikar|Zendikar]], powstałe jako reakcja obronna magii świata na uwięzienie Eldrazi (próg trzech kart: **[[132gnt-pilgrim-s-eye|Pilgrim's Eye]]**, **[[2bfz-coralhelm-guide|Coralhelm Guide]]** i **[[537cmr-kor-cartographer|Kor Cartographer]]**).
+  - **Pogłębienie i spójność:** powiązano wikilinki na stronie planu Zendikar oraz w kartach zwiadowczych korów i syren.
+- **Pętla 2 — Neurokowie (Mirrodin):**
+  - **Nowe hasło (link-mining):** **[[neurok|Neurokowie]]** — ludzka kultura i rasa związana z niebieską maną, seromancją i pływającą stolicą w Lumengridzie nad Morzem Rtęciowym (próg kart: **[[99mh2-steelfin-whale|Steelfin Whale]]**, **[[347nph-pristine-talisman|Pristine Talisman]]** i **[[168-2xm-steel-sabotage|Steel Sabotage]]**).
+  - **Pogłębienie i spójność:** zintegrowano wikilinki w kartach i opisie ludów na stronie planu [[mirrodin|Mirrodin]].
+- **Pętla 3 — Sylvokowie (Mirrodin):**
+  - **Nowe hasło (link-mining):** **[[sylvok|Sylvokowie]]** — ludność miedzianego lasu Gęstwiny (*The Tangle*), kultywująca tradycje druidzkie, rzemiosło chitynowych pancerzy (*metalcraft*) i stawianie oporu skażeniu Phyrexii (próg kart: **[[488som-carapace-forger|Carapace Forger]]** i **[[347nph-pristine-talisman|Pristine Talisman]]**).
+  - **Pogłębienie i spójność:** zaktualizowano odnośniki w kartach Mirranu oraz w geografii Tangle na stronie planu Mirrodin.
+- **Bramki:** 52 nowe hasła w encyklopedii lore; 0 problemów map-audit; pełna integralność testów i kompilacji.
+
+## 2026-09-21 11:42 — Nowa karta: Grounded (Innistrad)
+
+- **Materializacja:** **[[62avr-grounded|Grounded]]** (`62AVR`, AVR, [[innistrad|Innistrad]]) — w wilgotnym podszyciu i mchu puszczy [[ulvenwald|Ulvenwald]] budzący się las i gęste pnącza przykuwają potężną skrzydlatą abominację Ludevica do ciemnego błota, unieruchamiając jej skrzydła i zmuszając do walki jako piechota.
+- **Snapshot:** właściwy druk to AVR #181; prywatny `62AVR` pozostaje osobnym identyfikatorem (ADR 0004/LESSONS L8). Zaczarowanie Aury za `{1}{G}` trwale odbierające zaczarowanemu stworzeniu zdolność latania (*Enchanted creature loses flying*).
+- **Mapa:** regionalna pinezka na mapie Innistradu na kotwicy boru Ulvenwald w prowincji [[kessig|Kessig]].
+- **Bramki:** pełna zgodność z ADR 0040 (zero nawiązań do oryginalnego druku), Głosem Kronikarza (ADR 0042) i cytowaniem Fabuły (ADR 0026); zielony zestaw testów i kompilacja bazy.
+
+## 2026-09-21 11:36 — Trzy Pętle Jakości: hasła Lumengrid, Dunland i Kuldotha oraz integracja lore i map
+
+- **Pętla 1 — Lumengrid (Mirrodin):**
+  - **Nowe hasło (link-mining):** **[[lumengrid|Lumengrid]]** — podwodna i częściowo wyniesiona metropolia vedalkenów nad Morzem Żywego Srebra, stolica Synodu Wiedzy i Basenu Wiedzy z Błękitną Lakuną, później zaadaptowana przez Frakcję Postępu Jin-Gitaxiasa na Sanatorium Chirurgiczne (próg dwóch kart: **[[99mh2-steelfin-whale|Steelfin Whale]]** i **[[168-2xm-steel-sabotage|Steel Sabotage]]**).
+  - **Pogłębienie i spójność:** zaktualizowano wikilinki w kartach i na stronie planu [[mirrodin|Mirrodin]]; powiązano deep-link do mapy (`#/mapa/mirrodin?x=0.6175&y=0.4461`).
+- **Pętla 2 — Dunland (Śródziemie):**
+  - **Nowe hasło (link-mining):** **[[dunland|Dunland]]** — wyżynna, surowa kraina u stóp Gór Mglistych na północ od Wrót Rohanu i rzeki Isen, ojczyzna Dunlendingów oraz naturalne siedlisko ptasiego zwiadu Sarumana (próg dwóch kart: **[[1ltr-dunland-crebain|Dunland Crebain]]** i **[[257ltr-lash-of-the-balrog|Lash of the Balrog]]**).
+  - **Pogłębienie i spójność:** powiązano wikilinki w kartach i na stronie planu [[srodziemie|Śródziemie]] wraz z deep-linkiem do mapy (`#/mapa/srodziemie?x=0.4060&y=0.4920`).
+- **Pętla 3 — Kuldotha (Mirrodin):**
+  - **Nowe hasło (link-mining):** **[[kuldotha|Kuldotha]]** — podziemna metropolia hutnicza i Wielki Piec goblinów w trzewiach [[oxidda-chain|Oxidda Chain]], serce kultu Stalowej Matki i Czerwonej Lakuny, arena starć oporu z Frakcją Cichej Kuźni (próg dwóch kart: **[[556nph-ruthless-invasion|Ruthless Invasion]]** i **[[168-2xm-steel-sabotage|Steel Sabotage]]**).
+  - **Pogłębienie i spójność:** zintegrowano wikilinki w kartach, hasłach powiązanych i na stronie planu Mirrodin wraz z deep-linkiem do mapy (`#/mapa/mirrodin?x=0.2901&y=0.7587`).
+- **Bramki:** 122 strony w bazie (56 kart, 49 haseł, 17 planów); 0 problemów map-audit; pełna integralność wikilinków i schematów.
+
+## 2026-09-21 11:25 — Nowa karta: Steel Sabotage (Mirrodin)
+
+- **Materializacja:** **[[168-2xm-steel-sabotage|Steel Sabotage]]** (`168_2XM`, 2XM, [[mirrodin|Mirrodin]]) — Rhmir, Ręka Wieszcza z Frakcji Postępu, przeprowadza sabotaż w głębi Rdzenia Mirrodinu pośród stanowisk Płomiennej Huty, obracając niedokończone myry w błękitny pył i odsyłając ożywione maszyny z powrotem ku dłoniom twórców z Lumengrid.
+- **Snapshot:** właściwy druk to 2XM #70; prywatny `168_2XM` pozostaje osobnym identyfikatorem (ADR 0004/LESSONS L8). Czar Instant za `{U}` oferujący modularny wybór: kontrowanie czaru artefaktu lub cofnięcie artefaktu do dłoni właściciela.
+- **Mapa:** regionalna pinezka na mapie Mirrodinu w rejonie Płomiennej Huty (Wielkiego Pieca) pod łańcuchem Oxidda Chain.
+- **Bramki:** pełna zgodność z ADR 0040 (brak nawiązań do oryginalnego druku), Głosem Kronikarza (ADR 0042) i cytowaniem Fabuły (ADR 0026); zielony zestaw testów i kompilacja bazy.
+
+## 2026-09-21 11:03 — Pętla Jakości: hasło Qal Sisma (Tarkir) i link-mining klanu Temur
+
+- **Nowe hasło (link-mining):** **[[qal-sisma|Qal Sisma]]** — skute wiecznym lodem pasmo górskie na północy [[tarkir|Tarkiru]], ojczyzna i terytorium łowieckie klanu Temur (próg dwóch kart: **[[509ktk-highland-game|Highland Game]]** i **[[68ktk-ainok-tracker|Ainok Tracker]]**). Hasło opisuje cyrk lodowcowy Karakyk Valley, naturalne tarasy Staircase of Bones, szeptaczy (szamanów), tradycję łowów z ainokami oraz grobowiec ducha-smoka Ugina.
+- **Link-mining i spójność:** zintegrowano wikilinki do Qal Sisma w kartach Highland Game i Ainok Tracker oraz na stronie planu Tarkir; zachowano pełny standard ADR 0043 (deep-link do mapy bez bezpośrednich pinezek haseł).
+- **Bramki:** 345/345 testów zielonych; kompilacja 118 stron (55 kart, 46 haseł, 17 planów); map-audit 0; wiki-stats 100%.
+
+## 2026-09-21 10:05 — Nowa karta: Ainok Tracker (Tarkir)
+
+- **Materializacja:** **[[68ktk-ainok-tracker|Ainok Tracker]]** (`68KTK`, KTK, [[tarkir|Tarkir]]) — humanoidalny psi zwiadowca z klanu Temur przedziera się przez zaśnieżoną górską przełęcz Qal Sisma, tropiąc drapieżnika w zamieci przed ubezpieczającymi go wojownikami.
+- **Snapshot:** właściwy druk to KTK #96; prywatny `68KTK` pozostaje osobnym identyfikatorem (ADR 0004/LESSONS L8). Stworzenie Dog Scout 3/3 za `{5}{R}` z mechanikami First strike oraz Morph `{4}{R}`.
+- **Mapa:** regionalna pinezka na mapie Tarkiru w paśmie Qal Sisma w granicach Temur Frontier.
+- **Bramki:** pełna zgodność z ADR 0040 (zero nawiązań do oryginalnego druku), Głosem Kronikarza (ADR 0042) i cytowaniem Fabuły (ADR 0026); zielony zestaw testów i kompilacja bazy.
+
+## 2026-09-20 21:30 — Nowa karta: Soulmender (Śródziemie)
+
+- **Materializacja:** **[[13m20-soulmender|Soulmender]]** (`13M20`, M20, [[srodziemie|Śródziemie]]) przedstawia kapłana-uzdrowiciela w kremowo-złotych szatach na skalistym wzniesieniu śródziemskich wzgórz, niosącego ratunek poprzez precyzyjny strumień złotobiałej energii życia.
+- **Snapshot:** właściwy druk to M20 #37; prywatny `13M20` pozostaje osobnym identyfikatorem. Istota Human Cleric 1/1 za `{W}` ze zdolnością `{T}: You gain 1 life.`.
+- **Mapa:** regionalna pinezka w krainie Eriadoru na mapie Śródziemia, wskazująca wzniesienia i łagodne doliny bez fałszywej precyzji.
+- **Bramki:** 338/338 testów; build 116 stron (54 karty, 43 hasła, 17 planów); mapa Śródziemia zaktualizowana.
+
 ## 2026-09-20 19:26 — Trzy Pętle Jakości: Sunhome, Geier Reach, Moorland i trzy passy mapowe
 
 - **Nowe hasła (link-mining):** [[sunhome|Sunhome]] — forteca-świątynia Legionu Boros na [[ravnica|Ravnice]] (próg: [[137gpt-withstand|Withstand]] i [[516rna-tenth-district-veteran|Tenth District Veteran]]); [[geier-reach|Geier Reach]] — pasmo górskie definiujące [[stensia|Stensję]] z przełęczami Hofsaddel, Needle's Eye i Kruin (próg: trzy karty w prozie); [[moorland|Moorland]] — wrzosowiskowa parafia [[gavony|Gavony]] z geistami, Drogskol i wojną Gisy i Geralfa (próg: [[118mid-dire-strain-brawler|Dire-Strain Brawler]] i [[544avr-thraben-valiant|Thraben Valiant]]).

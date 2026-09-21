@@ -17,12 +17,12 @@ pinezka:
 
 Nad zachodnimi kresami Śródziemia bywają chmury, które nie niosą deszczu.
 Ciemnieją na horyzoncie, suną nisko nad grzbietami wzgórz i nagle okazuje
-się, że są stadem oczu. **Crebain** z Dunlandu nie są zwykłym ptactwem
+się, że są stadem oczu. **Crebain** z [[dunland|Dunlandu]] nie są zwykłym ptactwem
 krajobrazu. W pamięci wojny zostały zapisane jako zwiad: istoty, których
 lot potrafi zmusić ludzi do zgaszenia ognia, przerwania marszu i całego
 dnia ciszy pod osłoną kamienia.
 
-Dunland leży między Isenem, południowym krańcem Gór Mglistych i starymi
+[[dunland|Dunland]] leży między Isenem, południowym krańcem Gór Mglistych i starymi
 ranami Rohanu. To ziemia pogranicza: dość bliska Isengardowi, by rozkazy
 Sarumana mogły dosięgać jej szybko, i dość dzika, by stada ptaków miały
 gdzie krążyć nad urwiskami, wąwozami i wrzosowiskami. W takim pejzażu lot

@@ -1,0 +1,236 @@
+{
+ "nazwa": "kamigawa-t4-rekonstrukcja",
+ "szerokosc": 2000,
+ "wysokosc": 1400,
+ "styl": "atlas",
+ "opis": "Rekonstrukcja planu Kamigawa (Góry Sokenzan, Las Jukai, Bagna Takenuma, Równiny Towara, Jezioro Minamo)",
+ "ocean": {
+  "seed": "kamigawa-ocean",
+  "plamy": 15
+ },
+ "lądy": [
+  {
+   "id": "kamigawa-kontynent",
+   "punkty": [
+    [-60, -60],
+    [2060, -60],
+    [2060, 1460],
+    [-60, 1460]
+   ]
+  }
+ ],
+ "jeziora": [
+  {
+   "cx": 900,
+   "cy": 450,
+   "rx": 70,
+   "ry": 40,
+   "opcje": {
+    "fale": true
+   }
+  }
+ ],
+ "biomy": [
+  {
+   "id": "jukai",
+   "typ": "las",
+   "punkty": [
+    [950, 850],
+    [1350, 800],
+    [1850, 900],
+    [1900, 1350],
+    [1250, 1350],
+    [900, 1150]
+   ],
+   "opcje": {
+    "gestosc": 0.7
+   }
+  },
+  {
+   "id": "takenuma",
+   "typ": "bagno",
+   "punkty": [
+    [150, 950],
+    [550, 900],
+    [750, 1050],
+    [700, 1350],
+    [250, 1350],
+    [100, 1150]
+   ],
+   "opcje": {
+    "gestosc": 0.6
+   }
+  },
+  {
+   "id": "towara",
+   "typ": "step",
+   "punkty": [
+    [750, 550],
+    [1350, 500],
+    [1550, 750],
+    [1150, 850],
+    [750, 800]
+   ],
+   "opcje": {
+    "gestosc": 0.5
+   }
+  }
+ ],
+ "pasma": [
+  {
+   "id": "sokenzan-range",
+   "punkty": [
+    [150, 300],
+    [350, 240],
+    [550, 280],
+    [750, 250],
+    [950, 290],
+    [1150, 260],
+    [1350, 280]
+   ],
+   "opcje": {
+    "szer": 55,
+    "snieg": true
+   }
+  }
+ ],
+ "wulkany": [
+  {
+   "x": 550,
+   "y": 270,
+   "opcje": {
+    "skala": 1.2
+   }
+  }
+ ],
+ "rzeki": [
+  {
+   "id": "rzeka-sokenzan",
+   "punkty": [
+    [550, 285],
+    [650, 360],
+    [780, 420],
+    [832, 440]
+   ],
+   "opcje": {
+    "s0": 2,
+    "s1": 6
+   }
+  },
+  {
+   "id": "rzeka-minamo-odplyw",
+   "punkty": [
+    [968, 455],
+    [1150, 480],
+    [1350, 460],
+    [1550, 500],
+    [1780, 480],
+    [2060, 500]
+   ],
+   "opcje": {
+    "s0": 4,
+    "s1": 8,
+    "zrodlo": false
+   }
+  }
+ ],
+ "poi": [
+  {
+   "typ": "iglica",
+   "x": 900,
+   "y": 445,
+   "opcje": {
+    "skala": 1.1
+   }
+  },
+  {
+   "typ": "miasto",
+   "x": 500,
+   "y": 275,
+   "opcje": {
+    "skala": 0.9
+   }
+  }
+ ],
+ "etykiety": [
+  {
+   "tekst": "Góry Sokenzan",
+   "x": 750,
+   "y": 180,
+   "opcje": {
+    "fs": 32,
+    "duze": true,
+    "kat": -2
+   }
+  },
+  {
+   "tekst": "Las Jukai",
+   "x": 1400,
+   "y": 1100,
+   "opcje": {
+    "fs": 28,
+    "duze": true,
+    "ital": true
+   }
+  },
+  {
+   "tekst": "Bagna Takenuma",
+   "x": 400,
+   "y": 1150,
+   "opcje": {
+    "fs": 26,
+    "duze": true,
+    "ital": true
+   }
+  },
+  {
+   "tekst": "Równiny Towara",
+   "x": 1050,
+   "y": 680,
+   "opcje": {
+    "fs": 24,
+    "duze": true,
+    "ital": true
+   }
+  },
+  {
+   "tekst": "Akademia Minamo",
+   "x": 900,
+   "y": 510,
+   "opcje": {
+    "fs": 14,
+    "przyDo": [900, 445]
+   }
+  },
+  {
+   "tekst": "Pustelnia Kumano",
+   "x": 500,
+   "y": 310,
+   "opcje": {
+    "fs": 14,
+    "przyDo": [500, 275]
+   }
+  },
+  {
+   "tekst": "Wulkan Untaidake",
+   "x": 550,
+   "y": 235,
+   "opcje": {
+    "fs": 14,
+    "ital": true
+   }
+  }
+ ],
+ "kompas": {
+  "x": 1850,
+  "y": 180,
+  "r": 42
+ },
+ "skala": {
+  "x": 1700,
+  "y": 1300,
+  "px": 150,
+  "km": 150
+ },
+ "ramka": true
+}

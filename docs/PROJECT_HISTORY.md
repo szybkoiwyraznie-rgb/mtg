@@ -4,7 +4,25 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
-## 2026-09-13 — PR-34: materializacja 56EOE Diplomatic Relations i mapa The Edge
+## 2026-09-21 — PR-36: materializacje 135BOK, 62AVR i 168_2XM oraz sześć Pętli Jakości
+
+Zmaterializowano trzy nowe karty: `135BOK` Kumano's Blessing (Kamigawa), `62AVR` Grounded (Innistrad) oraz `168_2XM` Steel Sabotage (Mirrodin). Dodano plan Kamigawa z nową mapą T4 (21 kotwic). Przeprowadzono sześć Pętli Jakości: utworzono nowe hasła geograficzno-kulturowe `dunland` (Dunland) na Śródziemiu, `lumengrid` (Lumengrid), `kuldotha` (Kuldotha), `neurok` (Neurokowie), `sylvok` (Sylvokowie) na Mirrodinie oraz zjawisko geologiczne `twor` (Twor) na Zendikarze. Dokonano pełnej integracji wikilinków, zsynchronizowano deep-linki do map planów oraz zaimplementowano testy regresyjne. Wszystkie 354 testy są zielone, a baza pomyślnie buduje 128 stron.
+
+## 2026-09-21 — PR-36: Pętla Jakości (hasło Qal Sisma i link-mining na Tarkirze)
+
+Po materializacji karty 68KTK Ainok Tracker wykonano pełną Pętlę Jakości: utworzono nowe hasło geograficzne `qal-sisma` (Qal Sisma) na Tarkirze po osiągnięciu progu dwóch kart (`509KTK` Highland Game i `68KTK` Ainok Tracker). Hasło połączono wikilinkami z obiema kartami i stroną planu, z zachowaniem standardu ADR 0043 (deep-link do mapy bez bezpośredniej pinezki hasła). Bramki: 345/345 testów zielonych, build 118 stron (55 kart, 46 haseł, 17 planów), map-audit 0 problemów, wiki-stats 100%.
+
+## 2026-09-21 — PR-36: materializacja 68KTK Ainok Tracker
+
+Dostawę `68KTK / Ainok Tracker / KTK / Tarkir` domknięto pełnym zestawem wpis–snapshot–karta–mapa. Snapshot rozdziela prywatne `68KTK` od KTK #96. Karta LORE-first oddaje surową codzienność klanu Temur w epoce khanów, węch psi zwiadowcy w zamieci Qal Sisma oraz mechaniki Morph i First strike. Regionalna pinezka stoi na wysokogórskich przełęczach pasma Qal Sisma w granicach Temur Frontier. Pełna zgodność z ADR 0040 i Głosem Kronikarza (ADR 0042). Bramki: 342/342, build 117 stron, map-audit 0, wiki-stats 100%.
+
+## 2026-09-20 — PR-36: materializacja 13M20 Soulmender
+
+Dostawę `13M20 / Soulmender / M20 / Śródziemie` domknięto pełnym zestawem wpis–snapshot–karta–mapa. Snapshot rozdziela prywatne `13M20` od M20 #37. Karta LORE-first przedstawia kapłana-uzdrowiciela niosącego ratunek poprzez powściągliwy strumień złotobiałego światła życia w Eriadorze. Regionalna pinezka stoi na wzgórzach Śródziemia. Bramki: 338/338, build 116 stron, map-audit 0, wiki-stats 100%.
+
+## 2026-09-20 — PR-36: audyt PR-35 i Pętla Jakości (Liga Wojek, pass Tarkir T4)
+
+Po audycie PR-35 wykonano pełną Pętlę Jakości: utworzono nowe hasło geograficzno-frakcyjne `wojek` (Liga Wojek) na Ravnice po progu dwóch kart (137GPT, 516RNA) oraz wzbogacono mapę Tarkiru T4 o 8 kotwic sceny (Whisperwood, Rainveil Forest, Gudul, szlaki). Bramki: 338/338, build 115 stron, map-audit 0.
 
 Dostawę `56EOE / Diplomatic Relations / EOE / The Edge` domknięto wraz z fanowską mapą T1 systemu Sothera dostarczoną przez właściciela. Karta zachowuje oficjalną korektę dnia zero: własna istota otrzymuje +1/+0 i vigilance, po czym zadaje obrażenia przeciwnikowi. Pinezka stoi na Evendo bez wymyślenia placówki powierzchniowej. Research rozdziela kanoniczną kolejność orbit od autorskich kątów, położenia I.G.S. i pierścieniowego Garden of Apeiron. Bramki: 334/334, build 107 stron, map-audit 0, wiki-stats 100%.
 
@@ -2305,4 +2323,9 @@ Kontynuacja sesji PR-35 na zlecenie właściciela: trzy pełne przebiegi Pętli 
 ## 2026-09-20 — PR-35 cd. 2: pętle 4–6
 
 Drugie zlecenie kontynuacyjne sesji PR-35: pętle 4, 5 i 6 (numeracja tytułów commitów tym razem zgodna z faktem). Pętla 4: sekcje Powiązane hasła dla Nowej Phyrexii, Grixis i Confluxu; nowe hasło Sunhome po dwóch kartach (Withstand, Tenth District Veteran); pass mapowy Lorwyn–Shadowmoor — 7 klasycznych miejsc obu obliczy i biom lasu Mornsong, 24→31 kotwic (walidator wiązań generatora wymusił usunięcie glifów POI przy nazwach jednostronnych; biom zawężony od zachodu, by nie połykał POI Druim Calad na nocnym rastrze). Pętla 5: sekcje Powiązane hasła dla Novigradu, Pań Lasu, Serry i Velen — od tego momentu wszystkie hasła bazy mają komplet sekcji kontraktowych SZKIELET_HASLA; nowe hasło Geier Reach (3 karty w prozie; Planeswalker's Guide Stensia + mtg.wiki Ashmouth); pass mapowy Mirrodin — komplet pięciu lakun, trzy świątynie artefaktów i Manka Run, 38→45 kotwic (współrzędne z etykiet generatora; generator mirrodinu nie nadpisuje map.json — kotwice dopisane skryptem). Pętla 6: pogłębienie Wybrzeża Mieczy (Puste Ziemie i Pakt traktu; Chionthar, Trollclaws, Troll Hills, instytucje kupieckie); nowe hasło Moorland po dwóch kartach w prozie (118MID, 544AVR); pass mapowy Alara T3 — pierwsza edycja tego podkładu od jego powstania: The Binding Wall (glif ruiny), Qasali Valley, The Seethe i The Kingdom of Fog, 47→51 kotwic, nowy zrodlo-research.md mapy (w tym korekta Binding Wall z zatoki na ląd po map-audicie i rejestr kandydatów odłożonych — Harborgate, Cloudheath i in. bez relacji pozycyjnych w kanonie). Wszystkie edytowane rastry obejrzane (L10), pinezki nietknięte (L18). Bramki końcowe: 334/334 testów, build 114 stron (53 karty, 43 hasła, 17 planów), map-audit 0.
+
+## 2026-09-21 — PR-37: materializacja 135BOK Kumano's Blessing i plan Kamigawa
+
+Pierwsza sesja PR-37: pełna materializacja nowej dostawy karty `135BOK Kumano's Blessing` (BOK #111) oraz osiemnastego planu Kamigawa wraz z mapą T4. Zapisano snapshot Scryfalla `scryfall/135bok-kumano-s-blessing.json` z poprawnym imgId i metadanymi proweniencji. Przygotowano stronę planu `content/planes/kamigawa.md` oraz Kartę Katalogową `content/cards/135bok-kumano-s-blessing.md` w układzie LORE-first bez metajęzyka i procesowych sformułowań przed sekcją „Mechanika jako Opowieść”. Mapa Kamigawy otrzymała wulkaniczny podkład SVG Gór Sokenzan z 21 kotwicami (m.in. Minamo, Numai, Sokenzan Mountains, Jukai Forest). Wdrożono regresje oraz uaktualniono asercje w teście dymnym `test/ui-smoke.test.js` do nowej pojemności bazy (54 karty). Bramki końcowe: 334/334 testów, pomyślny build 116 stron (54 karty, 44 hasła, 18 planów).
+
 

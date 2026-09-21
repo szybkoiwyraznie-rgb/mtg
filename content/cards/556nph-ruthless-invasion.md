@@ -176,7 +176,7 @@ ucieczka staje się jedynym wyjściem.
 - Scryfall, Ruthless Invasion (NPH/93) — koszt, Oracle i flavor text:
   https://scryfall.com/card/nph/93/ruthless-invasion
 - MTG Wiki, Oxidda Chain — położenie czerwonych gór Mirrodinu, sąsiedztwo
-  Glimmervoid i Mephidrossu, Kuldotha, Vulshokowie, Krark-Home:
+  Glimmervoid i Mephidrossu, [[kuldotha|Kuldotha]], Vulshokowie, Krark-Home:
   https://mtg.wiki/page/Oxidda_Chain
 - MTG Wiki, Vulshok — sześć plemion kuźni, rola kowali i czarowników
   bitewnych, naturalne żelazne narośla ciała; w Codexie osobne hasło

@@ -79,6 +79,8 @@ sąsiednich krain.
   granicy wsi i boru, który otacza osady ze wszystkich stron.
 - **[[544avr-thraben-valiant|Thraben Valiant]]** — daleki zasięg
   gwardii z Thraben, za Moorlandem i gęstwinami Ulvenwaldu.
+- **[[62avr-grounded|Grounded]]** — budzące się podszycie boru i pnącza
+  więżące skrzydlatą abominację przy wilgotnej ściółce i błocie.
 
 ## Źródła
 
