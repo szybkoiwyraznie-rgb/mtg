@@ -54,7 +54,7 @@ Wśród ocalałych Neuroków i vedalkenów pamięć o mieście nie jest wspomnie
 utraconej akademii, lecz instrukcją przetrwania. Znają układ hal, prądów i
 szybów; wiedzą, które konstrukcje można odłączyć, a które podtrzymują
 całą podwodną dzielnicę. Lumengrid pozostaje więc jednocześnie miejscem
-kompleacji i narzędziem oporu — jego własna infrastruktura zdradza, że
+komplikacji i narzędziem oporu — jego własna infrastruktura zdradza, że
 nawet przejęta wiedza nie zawsze daje się całkowicie ujarzmić.
 
 ## Powiązane hasła
