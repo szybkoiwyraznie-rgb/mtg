@@ -38,6 +38,17 @@ W głębszych poziomach pod piecami Frakcja Cichej Kuźni pod wodzą Urabraska
 oraz dywersanci Frakcji Postępu prowadzili demontaż mirrańskich konstrukcji,
 co dokumentuje sabotaż z karty [[168-2xm-steel-sabotage|Steel Sabotage]].
 
+### Żywy Wielki Piec i droga odwrotu
+
+Podczas inwazji Kuldotha stała się nie tylko bramą do warstwy Pieca, ale też
+przejściem dla Mirran uciekających do podziemnych szczelin. Oficjalny opis
+Nowej Phyrexii przedstawia Wielki Piec jako strukturę, która zaczęła wykazywać
+cechy biologiczne: reagowała na jakość przetapianego metalu, a zanieczyszczenia
+miały ją „chorować". To nie jest metafora żywiołu, lecz kolejny ślad tego, jak
+phyreksjańska przemiana mieszała metal, olej i pamięć planu. Kuldotha pozostaje
+więc jednocześnie miejscem oporu, kanałem transportu rudy i organizmem, którego
+kaprysy wpływały na los tych, którzy próbowali przejść przez jego wnętrze.
+
 ## Powiązane hasła
 
 - [[mirrodin|Mirrodin]] — metaliczny plan i macierzysty świat Kuldothy.
