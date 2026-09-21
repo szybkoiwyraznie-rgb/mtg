@@ -1,4 +1,4 @@
-## 2026-09-21 — Nowa karta: Vampire's Bite (Wiedźmin)
+## 2026-09-21 16:00 — Nowa karta: Vampire's Bite (Wiedźmin)
 
 - **Materializacja:** **[[604zen-vampires-bite|Vampire's Bite]]** (`604ZEN`, ZEN, Wiedźmin) — ZEN #117.
 - **Karta LORE-first:** bruxa poluje nocą w ruinach opuszczonego pałacu Toussaint; ukąszenie kończy się wysysaniem esencji i szkarłatną regeneracją.
