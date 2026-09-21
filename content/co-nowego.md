@@ -1,3 +1,11 @@
+## 2026-09-21 15:27 — Nowa karta: Join the Dance (Eldraine)
+
+- **Materializacja:** **[[138mid-join-the-dance|Join the Dance]]** (`138MID`, MID, [[eldraine|Eldraine]]) — MID #229.
+- **Karta LORE-first:** wiejska wspólnota Ardenvale, święto żniw, ognisko i taniec jako obrona przed mrokiem Kniei.
+- **Pinezka:** regionalna przy Highlands of Arden; bez wymyślania nazwy wsi ani lokalizacji Castle Ardenvale.
+- **Próg haseł:** pojedyncze święto i osada nie tworzą osobnego hasła.
+- **Bramki:** 363/363 testów zielonych; build 130 stron (60 kart, 52 hasła, 18 planów); map-audit 0.
+
 ## 2026-09-21 15:00 — Trzy Pętle Jakości: Lumengrid, Qal Sisma i Ghirapur
 
 - **Mirrodin:** pogłębiono [[lumengrid|Lumengrid]] o przejęcie infrastruktury serum i rolę sieci podziemnych w oporze.

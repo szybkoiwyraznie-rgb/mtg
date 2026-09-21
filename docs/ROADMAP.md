@@ -1,5 +1,12 @@
 # Roadmapa
 
+## PR-39 — dostawa 138MID Join the Dance (2026-09-21)
+
+Zmaterializowano wpis, snapshot i Kartę Katalogową `138MID / Join the Dance /
+MID / Eldraine`. Scena otrzymała regionalną pinezkę przy Highlands of Arden,
+bez udawania nazwy konkretnej osady ani Castle Ardenvale. Stan: 363/363
+testów, build 130 stron, map-audit 0, wiki-stats 100%.
+
 ## PR-39 — trzy Pętle Jakości (2026-09-21)
 
 Domknięto trzy przebiegi lore: `lumengrid` (Mirrodin), `qal-sisma`

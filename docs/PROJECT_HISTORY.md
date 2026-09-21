@@ -1,5 +1,14 @@
 # Historia projektu (dziennik sesji)
 
+## 2026-09-21 15:27 — PR-39: materializacja 138MID Join the Dance
+
+Zmaterializowano dostawę `138MID / Join the Dance / MID / Eldraine`: wpis
+właściciela, snapshot Scryfall MID #229, Kartę Katalogową LORE-first oraz
+regionalną pinezkę przy Highlands of Arden. Scena pozostaje wiejską osadą
+na pograniczu Ardenvale; nie przypisano jej zamku ani konkretnej wsi i nie
+utworzono hasła poniżej progu. Bramki: 363/363 testów, build 130 stron
+(60 kart, 52 hasła, 18 planów), map-audit 0, wiki-stats 100%.
+
 ## 2026-09-21 15:00 — PR-39: trzy Pętle Jakości
 
 Wykonano trzy pełne przebiegi bez nowych materializacji: pogłębiono
