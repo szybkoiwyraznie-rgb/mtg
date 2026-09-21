@@ -42,6 +42,7 @@ test('Innistrad: Gavony i Kessig powstały dopiero po progu dwóch kart', () => 
     '181avr-spectral-prison',
     '393dka-forge-devil',
     '544avr-thraben-valiant',
+    '62avr-grounded',
   ]);
   assert.deepEqual(kartyLinkujace('kessig'), [
     '171isd-grizzled-outcasts',
@@ -49,6 +50,7 @@ test('Innistrad: Gavony i Kessig powstały dopiero po progu dwóch kart', () => 
     '309isd-civilized-scholar',
     '393dka-forge-devil',
     '544avr-thraben-valiant',
+    '62avr-grounded',
   ]);
 });
 

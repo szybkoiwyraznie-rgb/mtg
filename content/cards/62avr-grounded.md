@@ -55,7 +55,7 @@ sploty leśnej magii.
 
 ## Flavor Text
 
-Inskrypcja na karcie:
+Inskrypcja w kronice:
 
 > *„We've tracked Ludevic's monster across four provinces. When it lands, make sure it stays put.”*
 >
@@ -109,7 +109,7 @@ leśnego, gdzie kessigijscy łowcy mogą dokończyć polowania.
 
 ## Źródła
 
-1. [Grounded — Scryfall](https://scryfall.com/card/avr/181/grounded) — dane karty, koszt, typ aury, odebranie latania, flavor text Aleny i Halany oraz ilustracja Grega Staplesa.
+1. [Grounded — Scryfall](https://scryfall.com/card/avr/181/grounded) — dane karty, koszt, typ aury, odebranie latania oraz flavor text Aleny i Halany.
 2. [A Planeswalker's Guide to Innistrad: Kessig and Werewolves](https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-kessig-and-werewolves-2011-10-05) — geografia Kessigu, bór Ulvenwald, traperzy i flora boru.
 3. MTG Wiki, *Ulvenwald* — Impossible Wood, specyfika mglistego boru i naturalne pułapki roślinne: <https://mtg.wiki/page/Ulvenwald>
 4. MTG Wiki, *Halana and Alena* — partnerstwo tropicielek, ochrona Kessigu i polowania na uciekające abominacje: <https://mtg.wiki/page/Halana_and_Alena>
