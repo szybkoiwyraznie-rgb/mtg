@@ -2387,3 +2387,17 @@ Regresja `test/wiedzmin-604zen.test.js` domyka wpis, snapshot, kartę i mapę.
 Stan końcowy dostawy: 373/373 testów, build 132 stron (62 karty, 52 hasła,
 18 planów), map-audit 0 problemów, wiki-stats 100% i `git diff --check` bez uwag.
 Handoff: `docs/setup/HANDOFF_2026-09-21-604ZEN.md`.
+
+## 2026-09-21 — PR-39: materializacja 9WAR Toll of the Invasion
+
+Zmaterializowano dostawę `9WAR Toll of the Invasion` dla Ravniki: wpis
+właściciela verbatim, pełny snapshot Scryfall WAR #108 oraz Kartę Katalogową
+LORE-first. Narracja zachowuje cywila tracącego wspomnienie podczas inwazji
+Nicola Bolasa, powołanie lazotepowego Wiecznego i mechanikę ujawnienia ręki,
+odrzucenia nielądowej karty oraz `Amass Zombies 1`. Dodano regionalną pinezkę
+przy Precinct One bez wymyślania konkretnej ulicy, domu ani cytadeli; nie
+utworzono nowych haseł poniżej progu dwóch kart.
+
+Bramki dostawy: 378/378 testów, build 133 stron (63 karty, 52 hasła, 18
+planów), map-audit 0 problemów, wiki-stats 100% i `git diff --check` bez uwag.
+Handoff: `docs/setup/HANDOFF_2026-09-21-9WAR.md`.

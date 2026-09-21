@@ -1,3 +1,11 @@
+## 2026-09-21 18:14 — Nowa karta: Toll of the Invasion (Ravnica)
+
+- **Materializacja:** **[[9war-toll-of-the-invasion|Toll of the Invasion]]** (`9WAR`, WAR, [[ravnica|Ravnica]]) — WAR #108.
+- **Karta LORE-first:** zwykły cywil traci najcenniejszą myśl podczas inwazji Bolasa, a za nim pojawia się lazotepowy Wieczny.
+- **Pinezka:** regionalna przy Precinct One; bez wymyślania konkretnej ulicy, domu ani cytadeli.
+- **Próg haseł:** pojedynczy cywil, Wieczny i cytadela nie tworzą nowych haseł.
+- **Bramki:** 378/378 testów zielonych; build 133 stron (63 karty, 52 hasła, 18 planów); map-audit 0; wiki-stats 100%.
+
 ## 2026-09-21 16:00 — Nowa karta: Vampire's Bite (Wiedźmin)
 
 - **Materializacja:** **[[604zen-vampires-bite|Vampire's Bite]]** (`604ZEN`, ZEN, Wiedźmin) — ZEN #117.

@@ -1,3 +1,12 @@
+## PR-39 — dostawa 9WAR Toll of the Invasion (2026-09-21)
+
+Zmaterializowano wpis verbatim, pełny snapshot Scryfall WAR #108, Kartę
+Katalogową LORE-first i regresję `test/ravnica-9war.test.js`. Scena cywila
+i lazotepowego Wiecznego otrzymała regionalną pinezkę przy Precinct One, bez
+fałszywej precyzji ulicy ani cytadeli Bolasa. Nie utworzono haseł poniżej
+progu dwóch kart. Stan: 378/378 testów, build 133 stron (63 karty, 52 hasła,
+18 planów), map-audit 0, wiki-stats 100%.
+
 ## PR-39 — dostawa 604ZEN Vampire's Bite (2026-09-21)
 
 Zmaterializowano wpis verbatim, snapshot Scryfall ZEN #117, Kartę Katalogową
