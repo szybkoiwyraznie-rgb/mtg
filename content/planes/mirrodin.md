@@ -54,7 +54,7 @@ patrolowym, przy którym leży też **Liet Field** i wieś **Ten Shields**.
 
 **Quicksilver Sea** (U) — jedyny ocean planu, nieprzezroczysta tafla
 rtęci z wyspami zastygłego metalu. Na spirze przy brzegu stoi
-**Lumengrid**, Siedziba Synodu vedalken, z **Pool of Knowledge**
+[[lumengrid|**Lumengrid**]], Siedziba Synodu vedalken, z **Pool of Knowledge**
 i niebieską lacuną w jego wnętrzu; **Medev** to jedna z cynowych wiosek
 Neurok na brzegu; **Quicksilver Spires** — kryształowe iglice połączone
 mostami — tworzą sieć dróg przez morze, a **Titan Forge** stoi w kręgu
@@ -68,7 +68,7 @@ schodzi w dół czarna lacuna. Dross rozlewa się: na Oxiddę przez
 **Rey-Goor**, Czarne Rozlewisko, gdzie las nasiąka olejem i zamienia
 się w mokradło.
 
-**[[oxidda-chain|Oxidda Chain]]** (R) — rdzawe góry; **Kuldotha**, Wielka Kuźnia, to
+**[[oxidda-chain|Oxidda Chain]]** (R) — rdzawe góry; [[kuldotha|**Kuldotha**]], Wielka Kuźnia, to
 czynny wulkan i stolica goblinów czczących Stalową Matkę, z czerwoną
 lacuną („Łonem Stalowej Matki”) tuż obok. W tunelach **Krark-Home**
 żyje wyklęty klan Krark, w wioskach jak **Oxidagg** — sześć plemion
@@ -206,6 +206,13 @@ w `map.json`, werdykt researchu w `zrodlo-research.md`.
 w samym akcie żerowania: magnetyczne fiszbiny przesiewają opiłki i cenną
 rudę zawieszoną w Quicksilver Sea. Artefakty skracają drogę przywołania
 olbrzyma i każdy nowy obiekt przywraca mu gotowość do ruchu.
+
+## Sabotaż w Rdzeniu Mirrodinu
+
+[[168-2xm-steel-sabotage|Steel Sabotage]] dokumentuje dywersję Frakcji
+Postępu w głębi Rdzenia: Rhmir, Ręka Wieszcza, rozbija konstrukcję
+niedokończonego myra i odsyła gotowe mechanizmy z powrotem ku dłoniom
+twórców, ogłaszając nadejście Wielkiego Dzieła.
 
 ## Źródła
 

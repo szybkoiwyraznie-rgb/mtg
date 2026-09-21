@@ -24,7 +24,7 @@ Mglistych a północnym podnóżem Białych Gór, leżą kluczowe punkty tego
 obszaru: twierdza **Isengard** (Nan Curunír, z wieżą **Orthanc** w
 środku) i brody na rzece **Isen**.
 
-Na zachód i północ od Isengardu rozciąga się **Dunland** — dzika kraina
+Na zachód i północ od Isengardu rozciąga się [[dunland|**Dunland**]] — dzika kraina
 u stóp Gór Mglistych, ojcowizna **Dunlendów** („Wildmen of Dunland"),
 potomków ludów zamieszkujących niegdyś doliny Białych Gór. W Trzeciej
 Erze, po odrzuceniu ich przez Gondor, Dunlendowie stali się zgorzkniałymi
@@ -37,7 +37,7 @@ rozciągające się aż po Dolinę Anduiny, a na północny zachód od Dunlandu
 **Gwathló** a Iseną, po Wielkiej Zarazie (T.E. 1636) i powodzi (T.E. 2912)
 opuszczony, bagnisty obszar dziczy. W kanonie to właśnie nad Enedwaith,
 w dawnym **Eregionie** (Hollin), przelatuje zwiad crebainów, który widzi
-Drużyna Pierścienia w drodze na południe — a ptaki te mają w Dunlandzie
+Drużyna Pierścienia w drodze na południe — a ptaki te mają w [[dunland|Dunlandzie]]
 swoją ojcowiznę.
 
 Na południowej krawędzi Enedwaith, na Gwathló, leżą ruiny **Tharbad**:

@@ -415,6 +415,13 @@
    "y": 0.4122,
    "pewnosc": "region",
    "uzasadnienie": "Fabuła wskazuje Morze Żywego Srebra, ale nie nazywa zatoki, miasta ani konkretnego siedliska. Pinezka korzysta z istniejącej kotwicy regionu Quicksilver Sea i nie utożsamia heksagonalnych kolumn z Lumengridem, Medev ani innym POI."
+  },
+  {
+   "karta": "168-2xm-steel-sabotage",
+   "x": 0.2901,
+   "y": 0.7587,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła właściciela: w głębi Rdzenia Mirrodina Rhmir staje między stołami Płomiennej Huty, gdzie składano myry. Podkład mapy Mirrodinu przedstawia powierzchnię sfery (z lacunami schodzącymi do jądra); pinezka wskazuje rejon Płomiennej Huty (Great Furnace przy Kuldocie) z pewnością region."
   }
  ],
  "scena": "scena.json",
