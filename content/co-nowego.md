@@ -1,3 +1,10 @@
+## 2026-09-21 10:05 — Nowa karta: Ainok Tracker (Tarkir)
+
+- **Materializacja:** **[[68ktk-ainok-tracker|Ainok Tracker]]** (`68KTK`, KTK, [[tarkir|Tarkir]]) — humanoidalny psi zwiadowca z klanu Temur przedziera się przez zaśnieżoną górską przełęcz Qal Sisma, tropiąc drapieżnika w zamieci przed ubezpieczającymi go wojownikami.
+- **Snapshot:** właściwy druk to KTK #96; prywatny `68KTK` pozostaje osobnym identyfikatorem (ADR 0004/LESSONS L8). Stworzenie Dog Scout 3/3 za `{5}{R}` z mechanikami First strike oraz Morph `{4}{R}`.
+- **Mapa:** regionalna pinezka na mapie Tarkiru w paśmie Qal Sisma w granicach Temur Frontier.
+- **Bramki:** pełna zgodność z ADR 0040 (zero nawiązań do oryginalnego druku), Głosem Kronikarza (ADR 0042) i cytowaniem Fabuły (ADR 0026); zielony zestaw testów i kompilacja bazy.
+
 ## 2026-09-20 21:30 — Nowa karta: Soulmender (Śródziemie)
 
 - **Materializacja:** **[[13m20-soulmender|Soulmender]]** (`13M20`, M20, [[srodziemie|Śródziemie]]) przedstawia kapłana-uzdrowiciela w kremowo-złotych szatach na skalistym wzniesieniu śródziemskich wzgórz, niosącego ratunek poprzez precyzyjny strumień złotobiałej energii życia.

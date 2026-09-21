@@ -4,7 +4,17 @@
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
-## 2026-09-13 — PR-34: materializacja 56EOE Diplomatic Relations i mapa The Edge
+## 2026-09-21 — PR-36: materializacja 68KTK Ainok Tracker
+
+Dostawę `68KTK / Ainok Tracker / KTK / Tarkir` domknięto pełnym zestawem wpis–snapshot–karta–mapa. Snapshot rozdziela prywatne `68KTK` od KTK #96. Karta LORE-first oddaje surową codzienność klanu Temur w epoce khanów, węch psi zwiadowcy w zamieci Qal Sisma oraz mechaniki Morph i First strike. Regionalna pinezka stoi na wysokogórskich przełęczach pasma Qal Sisma w granicach Temur Frontier. Pełna zgodność z ADR 0040 i Głosem Kronikarza (ADR 0042). Bramki: 343/343, build 117 stron, map-audit 0, wiki-stats 100%.
+
+## 2026-09-20 — PR-36: materializacja 13M20 Soulmender
+
+Dostawę `13M20 / Soulmender / M20 / Śródziemie` domknięto pełnym zestawem wpis–snapshot–karta–mapa. Snapshot rozdziela prywatne `13M20` od M20 #37. Karta LORE-first przedstawia kapłana-uzdrowiciela niosącego ratunek poprzez powściągliwy strumień złotobiałego światła życia w Eriadorze. Regionalna pinezka stoi na wzgórzach Śródziemia. Bramki: 338/338, build 116 stron, map-audit 0, wiki-stats 100%.
+
+## 2026-09-20 — PR-36: audyt PR-35 i Pętla Jakości (Liga Wojek, pass Tarkir T4)
+
+Po audycie PR-35 wykonano pełną Pętlę Jakości: utworzono nowe hasło geograficzno-frakcyjne `wojek` (Liga Wojek) na Ravnice po progu dwóch kart (137GPT, 516RNA) oraz wzbogacono mapę Tarkiru T4 o 8 kotwic sceny (Whisperwood, Rainveil Forest, Gudul, szlaki). Bramki: 338/338, build 115 stron, map-audit 0.
 
 Dostawę `56EOE / Diplomatic Relations / EOE / The Edge` domknięto wraz z fanowską mapą T1 systemu Sothera dostarczoną przez właściciela. Karta zachowuje oficjalną korektę dnia zero: własna istota otrzymuje +1/+0 i vigilance, po czym zadaje obrażenia przeciwnikowi. Pinezka stoi na Evendo bez wymyślenia placówki powierzchniowej. Research rozdziela kanoniczną kolejność orbit od autorskich kątów, położenia I.G.S. i pierścieniowego Garden of Apeiron. Bramki: 334/334, build 107 stron, map-audit 0, wiki-stats 100%.
 
