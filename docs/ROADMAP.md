@@ -498,3 +498,8 @@ Trzy pełne przebiegi: hasła Ziemie Jałowe, Glimmervoid i Ulvenwald z link-min
 
 Trzy kolejne przebiegi: hasła Sunhome, Geier Reach i Moorland z link-miningu; komplet sekcji „Powiązane hasła" we wszystkich hasłach bazy; pogłębienie Wybrzeża Mieczy; passy mapowe Lorwyn (24→31 kotwic), Mirrodin (38→45, komplet lakun i świątyń artefaktów) i Alara T3 (47→51, pierwszy zrodlo-research.md tej mapy). Stan: 53 karty, 43 hasła, 17 planów; 334/334 testów, build 114 stron, map-audit 0.
 
+## PR-37 (2026-09-21) — **135BOK Kumano's Blessing i mapa Kamigawa zmaterializowane**
+
+Domknięto pierwszą dostawę PR-37 i osiemnasty plan: wpis verbatim, BOK #111, Kartę LORE-first z regionalną pinezką Gór Sokenzan na mapie Kamigawy i regresję. Kamigawa otrzymała mapę T4 z wulkanicznymi graniami Gór Sokenzan, rzeką Sokenzan, Numai, Minamo, Jukai Forest i innymi kotwicami (łącznie 21 kotwic). Stan bazy: 54 karty, 44 hasła, 18 planów. Wszystkie bramki i 334/334 testów są zielone.
+
+

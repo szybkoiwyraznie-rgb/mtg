@@ -1,3 +1,11 @@
+## 2026-09-21 13:22 — Nowa karta i plan: Kumano's Blessing (Kamigawa)
+
+- **Nowy plan i mapa (T4):** [[kamigawa|Kamigawa]] otrzymała wulkaniczną mapę Gór Sokenzan z 21 kanonicznymi kotwicami (m.in. Sokenzan Mountains, Jukai Forest, Minamo Academy, Numai Swamp, Towara, Sokenzan River).
+- **Materializacja:** **[[135bok-kumano-s-blessing|Kumano's Blessing]]** (`135BOK`, BOK, [[kamigawa|Kamigawa]]) przedstawia błogosławieństwo yamabushi i wstęgi sakralnego płomienia, wymazujące mrocznego kami z obu wymiarów rzeczywistości.
+- **Karta LORE-first:** Karta Katalogowa została zredagowana w 100% w tonie kronikarza, bez metajęzyka i procesowych sformułowań. snapshot Scryfalla (`scryfall/135bok-kumano-s-blessing.json`) poprawnie oddziela imgId od numeru kolekcjonerskiego #111.
+- **Pinezka:** regionalna na wulkanicznych graniach Gór Sokenzan (`0.4901/0.3807`).
+- **Bramki:** 334/334 testów; build 116 stron (54 karty, 44 hasła, 18 planów); map-audit 0; pomyślna kompilacja i preview.
+
 ## 2026-09-20 19:26 — Trzy Pętle Jakości: Sunhome, Geier Reach, Moorland i trzy passy mapowe
 
 - **Nowe hasła (link-mining):** [[sunhome|Sunhome]] — forteca-świątynia Legionu Boros na [[ravnica|Ravnice]] (próg: [[137gpt-withstand|Withstand]] i [[516rna-tenth-district-veteran|Tenth District Veteran]]); [[geier-reach|Geier Reach]] — pasmo górskie definiujące [[stensia|Stensję]] z przełęczami Hofsaddel, Needle's Eye i Kruin (próg: trzy karty w prozie); [[moorland|Moorland]] — wrzosowiskowa parafia [[gavony|Gavony]] z geistami, Drogskol i wojną Gisy i Geralfa (próg: [[118mid-dire-strain-brawler|Dire-Strain Brawler]] i [[544avr-thraben-valiant|Thraben Valiant]]).

@@ -12,7 +12,9 @@
     "build": "node tools/build.mjs",
     "stats": "node tools/wiki-stats.mjs",
     "stats:json": "node tools/wiki-stats.mjs --json",
-    "serve": "python3 -m http.server --directory dist 8000"
+    "serve": "node tools/build.mjs && python3 -m http.server --directory dist 3000",
+    "dev": "node tools/build.mjs && python3 -m http.server --directory dist 3000",
+    "start": "node tools/build.mjs && python3 -m http.server --directory dist 3000"
   },
   "engines": {
     "node": ">=22"

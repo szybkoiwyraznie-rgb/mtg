@@ -1,0 +1,26 @@
+{
+ "plan": "kamigawa",
+ "tytul": "Kamigawa",
+ "wariant": "T4",
+ "podklad": "podklad.svg",
+ "wymiary": {
+  "szerokosc": 2000,
+  "wysokosc": 1400
+ },
+ "zrodlo": {
+  "url": "https://magic.wizards.com/en/news/feature/planeswalkers-guide-kamigawa",
+  "tytul": "Kamigawa — rekonstrukcja terytoriów wg kanonu literackiego Champions block",
+  "autor": "MTG Lore Codex (praca własna — scena mapforge maps/kamigawa/scena.json)",
+  "pobrano": "2026-09-21"
+ },
+ "rekonstrukcja": true,
+ "pinezki": [
+  {
+   "karta": "135bok-kumano-s-blessing",
+   "x": 0.25,
+   "y": 0.20,
+   "pewnosc": "region",
+   "uzasadnienie": "Góry Sokenzan — surowe, wulkaniczne granie na planie Kamigawa, ojczyzna yamabushi stawiających czoła mrocznym kami."
+  }
+ ]
+}

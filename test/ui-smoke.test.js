@@ -404,7 +404,7 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
 
   shim.idz('#/karty');
   const lista = shim.app.innerHTML;
-  assert.ok(lista.includes('Karty Katalogowe (53)'), 'lista kart: brak 53 kart');
+  assert.ok(lista.includes('Karty Katalogowe (54)'), 'lista kart: brak 54 kart');
   assert.ok(lista.includes('Wooden Stake'), 'lista kart: brak materializacji 543ISD');
   assert.ok(lista.includes('Tome Scour'), 'lista kart: brak materializacji 69M11');
   assert.ok(lista.includes('Skinbrand Goblin'), 'lista kart: brak materializacji 572GTC');
