@@ -1,0 +1,123 @@
+{
+  "object": "card",
+  "id": "6d224279-83f3-4a29-9fd9-86b72407b87a",
+  "oracle_id": "8661d773-3b92-4fcf-8ffc-aced1ff7be8a",
+  "name": "Trestle Troll",
+  "lang": "en",
+  "released_at": "2012-10-05",
+  "uri": "https://api.scryfall.com/cards/6d224279-83f3-4a29-9fd9-86b72407b87a",
+  "scryfall_uri": "https://scryfall.com/card/rtr/205/trestle-troll?utm_source=api",
+  "layout": "normal",
+  "highres_image": true,
+  "image_status": "highres_scan",
+  "image_uris": {
+    "small": "https://cards.scryfall.io/small/front/6/d/6d224279-83f3-4a29-9fd9-86b72407b87a.jpg?1783940330",
+    "normal": "https://cards.scryfall.io/normal/front/6/d/6d224279-83f3-4a29-9fd9-86b72407b87a.jpg?1783940330",
+    "large": "https://cards.scryfall.io/large/front/6/d/6d224279-83f3-4a29-9fd9-86b72407b87a.jpg?1783940330",
+    "png": "https://cards.scryfall.io/png/front/6/d/6d224279-83f3-4a29-9fd9-86b72407b87a.png?1783940330",
+    "art_crop": "https://cards.scryfall.io/art_crop/front/6/d/6d224279-83f3-4a29-9fd9-86b72407b87a.jpg?1783940330",
+    "border_crop": "https://cards.scryfall.io/border_crop/front/6/d/6d224279-83f3-4a29-9fd9-86b72407b87a.jpg?1783940330"
+  },
+  "mana_cost": "{1}{B}{G}",
+  "cmc": 3,
+  "type_line": "Creature — Troll",
+  "oracle_text": "Defender\nReach (This creature can block creatures with flying.)\n{1}{B}{G}: Regenerate this creature.",
+  "power": "1",
+  "toughness": "4",
+  "colors": [
+    "B",
+    "G"
+  ],
+  "color_identity": [
+    "B",
+    "G"
+  ],
+  "keywords": [
+    "Reach",
+    "Regenerate",
+    "Defender"
+  ],
+  "set": "rtr",
+  "set_name": "Return to Ravnica",
+  "set_type": "expansion",
+  "collector_number": "205",
+  "rarity": "common",
+  "watermark": "golgari",
+  "artist": "Peter Mohrbacher",
+  "flavor_text": "Unwelcome in Golgari colonies, he found his own dark place from which to represent the Swarm.",
+  "border_color": "black",
+  "frame": "2003",
+  "full_art": false,
+  "textless": false,
+  "booster": true,
+  "games": [
+    "paper",
+    "mtgo"
+  ],
+  "legalities": {
+    "standard": "not_legal",
+    "future": "not_legal",
+    "historic": "not_legal",
+    "timeless": "not_legal",
+    "gladiator": "not_legal",
+    "pioneer": "legal",
+    "modern": "legal",
+    "legacy": "legal",
+    "pauper": "legal",
+    "vintage": "legal",
+    "penny": "not_legal",
+    "commander": "legal",
+    "oathbreaker": "legal",
+    "standardbrawl": "not_legal",
+    "brawl": "not_legal",
+    "alchemy": "not_legal",
+    "paupercommander": "legal",
+    "duel": "not_legal",
+    "oldschool": "not_legal",
+    "premodern": "not_legal"
+  },
+  "related_uris": {
+    "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=289220&printed=false",
+    "edhrec": "https://edhrec.com/route/?cc=Trestle+Troll"
+  },
+  "purchase_uris": {
+    "cardmarket": "https://www.cardmarket.com/en/Magic/Products?idProduct=258507"
+  },
+  "slug": "235rtr-trestle-troll",
+  "source": "https://api.scryfall.com/cards/named?exact=Trestle%20Troll&set=RTR",
+  "pobrano": "2026-09-21",
+  "notka_numery": "imgId właściciela = 235RTR (klucz plików FOT/KON na dysku właściciela, LESSONS L8); collector_number Scryfall = 205. Dwa niezależne systemy numeracji — nigdy nie nadpisywać jednego drugim.",
+  "set_id": "80b2374d-c5f1-403e-9772-f6c806fd275e",
+  "set_uri": "https://api.scryfall.com/sets/80b2374d-c5f1-403e-9772-f6c806fd275e",
+  "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Artr&unique=prints",
+  "scryfall_set_uri": "https://scryfall.com/sets/rtr",
+  "rulings_uri": "https://api.scryfall.com/cards/6d224279-83f3-4a29-9fd9-86b72407b87a/rulings",
+  "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A8661d773-3b92-4fcf-8ffc-aced1ff7be8a&unique=prints",
+  "multiverse_ids": [
+    289220
+  ],
+  "reserved": false,
+  "foil": true,
+  "nonfoil": true,
+  "oversized": false,
+  "promo": false,
+  "reprint": false,
+  "variation": false,
+  "digital": false,
+  "story_spotlight": false,
+  "finishes": [
+    "nonfoil",
+    "foil"
+  ],
+  "artist_ids": [
+    "c8f27311-46a5-4eaf-9b2e-d660ed1db649"
+  ],
+  "prices": {
+    "usd": "0.06",
+    "usd_foil": "0.13",
+    "usd_etched": null,
+    "eur": "0.05",
+    "eur_foil": "0.15",
+    "tix": "0.03"
+  }
+}

@@ -435,8 +435,8 @@
   },
   {
    "nazwa": "Korozda & Svogthos",
-   "x": 0.5656,
-   "y": 0.8955,
+   "x": 0.4122,
+   "y": 0.7302,
    "typ": "ruina",
    "pozycja_zrodlo": "kanon (v2)",
    "notka": "Undercity — marker przekrojowy (poza sylwetką)"
@@ -527,6 +527,13 @@
    "y": 0.216,
    "pewnosc": "region",
    "uzasadnienie": "Fabuła wskazuje zrujnowane, zarastające rejony Pasma Gruzów, ale nie nazywa ulicy, obozu ani konkretnej barykady. Kotwica Red Wastes reprezentuje północny Rubblebelt Gruulów nad Czwartym Precyktem."
+  },
+  {
+   "karta": "235rtr-trestle-troll",
+   "x": 0.4122,
+   "y": 0.7302,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła: troll trwa przy starej estakadzie w najniższych poziomach Ravnicy, w wilgotnym i zaniedbanym rejonie Golgari. Kotwica Korozda & Svogthos wskazuje podziemny region Undercity, nie konkretny most ani filar."
   }
  ],
  "otwarte_na_kolejne_przejscia": [
