@@ -280,6 +280,13 @@
    "y": 0.4643,
    "pewnosc": "dokladna",
    "uzasadnienie": "Fabuła właściciela umieszcza piaszczystą arenę pod wieżami zamku w Ardenvale. Pinezka wskazuje Castle Ardenvale (x: 1000, y: 650); nazwa karty pochodzi z odrębnego, kanonicznego kompleksu Burning Yard w Embereth, ale nie zmienia lokacji przekazanej sceny."
+  },
+  {
+   "karta": "138mid-join-the-dance",
+   "x": 0.5,
+   "y": 0.5285714285714286,
+   "pewnosc": "region",
+   "uzasadnienie": "Fabuła właściciela: rolnicza osada na pograniczu Ardenvale, święto żniw i rynek przy skraju Kniei. Kotwica Highlands of Arden reprezentuje szeroki rejon wiejskich osad; opis nie podaje nazwy wsi ani dokładnego rynku, więc pinezka nie wskazuje Castle Ardenvale."
   }
  ],
  "scena": "scena.json",
