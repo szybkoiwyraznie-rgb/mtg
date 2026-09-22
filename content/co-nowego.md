@@ -1,10 +1,68 @@
+## 2026-09-21 18:14 — Nowa karta: Toll of the Invasion (Ravnica)
+
+- **Materializacja:** **[[9war-toll-of-the-invasion|Toll of the Invasion]]** (`9WAR`, WAR, [[ravnica|Ravnica]]) — WAR #108.
+- **Karta LORE-first:** zwykły cywil traci najcenniejszą myśl podczas inwazji Bolasa, a za nim pojawia się lazotepowy Wieczny.
+- **Pinezka:** regionalna przy Precinct One; bez wymyślania konkretnej ulicy, domu ani cytadeli.
+- **Próg haseł:** pojedynczy cywil, Wieczny i cytadela nie tworzą nowych haseł.
+- **Bramki:** 378/378 testów zielonych; build 133 stron (63 karty, 52 hasła, 18 planów); map-audit 0; wiki-stats 100%.
+
+## 2026-09-21 16:00 — Nowa karta: Vampire's Bite (Wiedźmin)
+
+- **Materializacja:** **[[604zen-vampires-bite|Vampire's Bite]]** (`604ZEN`, ZEN, Wiedźmin) — ZEN #117.
+- **Karta LORE-first:** bruxa poluje nocą w ruinach opuszczonego pałacu Toussaint; ukąszenie kończy się wysysaniem esencji i szkarłatną regeneracją.
+- **Pinezka:** regionalna przy kotwicy Velen; brak nazwy konkretnego pałacu, więc mapa nie udaje fałszywej precyzji.
+- **Próg haseł:** pojedyncza bruxa i nienazwana ruina nie tworzą osobnych haseł.
+- **Bramki:** 373/373 testów zielonych; build 132 stron (62 karty, 52 hasła, 18 planów); map-audit 0; wiki-stats 100%.
+
+## 2026-09-21 15:32 — Nowa karta: Lightwalker (Tarkir)
+
+- **Materializacja:** **[[64dtk-lightwalker|Lightwalker]]** (`64DTK`, DTK, [[tarkir|Tarkir]]) — DTK #24.
+- **Karta LORE-first:** wojownik Dromoki biegnie po krystalicznych stopniach światła nad pustynnym kanionem.
+- **Pinezka:** regionalna przy Shifting Wastes; epoka Dragons of Tarkir nie została utożsamiona z konkretnym POI podkładu T4 Khans.
+- **Próg haseł:** pojedynczy wojownik i świetlne stopnie nie tworzą osobnych haseł.
+- **Bramki:** 368/368 testów zielonych; build 131 stron (61 kart, 52 hasła, 18 planów); map-audit 0.
+
+## 2026-09-21 15:27 — Nowa karta: Join the Dance (Eldraine)
+
+- **Materializacja:** **[[138mid-join-the-dance|Join the Dance]]** (`138MID`, MID, [[eldraine|Eldraine]]) — MID #229.
+- **Karta LORE-first:** wiejska wspólnota Ardenvale, święto żniw, ognisko i taniec jako obrona przed mrokiem Kniei.
+- **Pinezka:** regionalna przy Highlands of Arden; bez wymyślania nazwy wsi ani lokalizacji Castle Ardenvale.
+- **Próg haseł:** pojedyncze święto i osada nie tworzą osobnego hasła.
+- **Bramki:** 363/363 testów zielonych; build 130 stron (60 kart, 52 hasła, 18 planów); map-audit 0.
+
+## 2026-09-21 15:00 — Trzy Pętle Jakości: Lumengrid, Qal Sisma i Ghirapur
+
+- **Mirrodin:** pogłębiono [[lumengrid|Lumengrid]] o przejęcie infrastruktury serum i rolę sieci podziemnych w oporze.
+- **Tarkir:** pogłębiono [[qal-sisma|Qal Sisma]] o zimę jako pamięć, próbę i wspólną umiejętność Temur.
+- **Kaladesh:** pogłębiono [[ghirapur|Ghirapur]] o obieg eteru, towarów i wiedzy oraz punkty kontroli Konsulatu.
+- **Zakres mapowy:** brak zmian pinezek kart i geometrii map; brak nowych haseł poniżej progu.
+- **Bramki:** 358/358 testów zielonych; build 129 stron; map-audit 0; wiki-stats 100%.
+
+## 2026-09-21 14:55 — Nowa karta: Trestle Troll (Ravnica)
+
+- **Materializacja:** **[[235rtr-trestle-troll|Trestle Troll]]** (`235RTR`, RTR, [[ravnica|Ravnica]]) — RTR #205.
+- **Karta LORE-first:** golgariański troll trwa przy filarze starej estakady i blokuje przejście żywą zaporą.
+- **Pinezka:** regionalna przy Deadbridge Chasm, w rejonie podziemnego Golgari; bez wymyślania dokładnego mostu.
+- **Próg haseł:** pojedynczy troll nie tworzy osobnego hasła.
+- **Bramki:** 358/358 testów zielonych; build 129 stron (59 kart, 52 hasła, 18 planów); map-audit 0.
+
+## 2026-09-21 14:29 — Audyt PR-36 i pogłębienie Kuldothy
+
+- **Audyt:** przejrzano zmiany PR-36; nie wykryto problemów P0/P1.
+- **Korekta bramki:** dokumentacja została zsynchronizowana z rzeczywistym
+  wynikiem runnera: 353/353 testy zielone.
+- **Lore:** hasło **[[kuldotha|Kuldotha]]** otrzymało sekcję o żywym Wielkim
+  Piecu, drodze odwrotu Mirran do warstwy Pieca i biologicznych cechach
+  konstrukcji, z cytowaniem oficjalnego przewodnika.
+- **Bramki:** build 128 stron; map-audit 0 problemów; wiki-stats 100%.
+
 ## 2026-09-21 13:22 — Nowa karta i plan: Kumano's Blessing (Kamigawa)
 
 - **Nowy plan i mapa (T4):** [[kamigawa|Kamigawa]] otrzymała wulkaniczną mapę Gór Sokenzan z 21 kanonicznymi kotwicami (m.in. Sokenzan Mountains, Jukai Forest, Minamo Academy, Numai Swamp, Towara, Sokenzan River).
 - **Materializacja:** **[[135bok-kumano-s-blessing|Kumano's Blessing]]** (`135BOK`, BOK, [[kamigawa|Kamigawa]]) — materializacja karty BOK #111 i planu Kamigawa (era 2005).
 - **Karta LORE-first:** Karta Katalogowa zredagowana w 100% w tonie kronikarza, bez metajęzyka i procesowych sformułowań.
 - **Pinezka:** regionalna na wulkanicznych graniach Gór Sokenzan.
-- **Bramki:** 354/354 testy zielone (regresja 135BOK); build 128 stron (58 kart, 52 hasła, 18 planów); pomyślna kompilacja i preview.
+- **Bramki:** 353/353 testy zielone (regresja 135BOK); build 128 stron (58 kart, 52 hasła, 18 planów); pomyślna kompilacja i preview.
 
 ## 2026-09-21 12:13 — Trzy Pętle Jakości: hasła Twor, Neurokowie i Sylvokowie oraz integracja lore i sieci odnośników
 

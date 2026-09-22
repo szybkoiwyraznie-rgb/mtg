@@ -39,6 +39,24 @@ gdzie apostołowie i wieszcze tacy jak Rhmir z karty [[168-2xm-steel-sabotage|St
 prowadzili systematyczny demontaż mirrańskiej inżynierii i wdrażali doktrynę
 Wielkiego Dzieła.
 
+### Od miasta serum do warsztatu oporu
+
+Lumengrid nie upadł jednym ciosem. Jego dawne funkcje zostały przejęte
+jedna po drugiej: baseny, które służyły poszerzaniu percepcji, mogły stać
+się zbiornikami dla nowych procedur; laboratoria, które budowały automaty,
+stały się miejscami ich rozbierania; a podwodne przejścia pozwalały
+przemieszczać narzędzia, ciała i ocalałych poza wzrokiem strażników.
+Właśnie dlatego sabotaż nie oznacza tu tylko uszkodzenia pojedynczego
+urządzenia. Każdy zerwany przewód odbiera Frakcji Postępu fragment dawnej
+sieci, która łączyła wiedzę, wodę i pracę rąk.
+
+Wśród ocalałych Neuroków i vedalkenów pamięć o mieście nie jest wspomnieniem
+utraconej akademii, lecz instrukcją przetrwania. Znają układ hal, prądów i
+szybów; wiedzą, które konstrukcje można odłączyć, a które podtrzymują
+całą podwodną dzielnicę. Lumengrid pozostaje więc jednocześnie miejscem
+komplikacji i narzędziem oporu — jego własna infrastruktura zdradza, że
+nawet przejęta wiedza nie zawsze daje się całkowicie ujarzmić.
+
 ## Powiązane hasła
 
 - [[mirrodin|Mirrodin]] — metalowy plan będący domem Lumengridu i Morza Żywego Srebra.

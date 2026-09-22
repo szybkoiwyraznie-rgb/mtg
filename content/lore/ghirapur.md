@@ -85,6 +85,22 @@ kontroli. W kartach kolekcji Konsulat nie musi stać w kadrze jako żołnierz:
 wystarczy, że młody wynalazca musi mierzyć się z mistrzami, a mistrz
 warsztatu dąży do doskonałości wymaganej przez system aprobaty.
 
+### Miasto jako obieg
+
+Najważniejszą cechą Ghirapuru nie jest pojedyncza wieża, lecz obieg.
+Eter spływa od prowincjonalnych źródeł i wież, przechodzi przez rafinerie,
+port Bomat i kanał Dukhara, a następnie zasila warsztaty, pojazdy i
+konstrukty. W drugą stronę płyną towary, prototypy, dokumenty i plotki.
+Eleven Bridges nie jest więc tylko dekoracyjnym węzłem: łączy brzegi,
+które mają różne tempo pracy, różne ryzyka i różny dostęp do bogactwa.
+
+Ten obieg wyjaśnia, dlaczego Konsulat mógł przedstawiać kontrolę jako
+utrzymanie porządku. Wystarczyło regulować jeden punkt — licencję, dźwig,
+most albo zbiornik — by wpływać na całe miasto. Jednocześnie ta sama sieć
+stwarzała miejsca oporu: portowy pracownik, mechanik z Embraal i młody
+konstruktor z Greenwheel mogli przekazywać sobie wiedzę poza oficjalnym
+porządkiem, bo Ghirapur nigdy nie działał wyłącznie z góry na dół.
+
 ## Na mapie
 
 Na mapie Kaladeshu Ghirapur ma dwa poziomy. Na planie ogólnym jest

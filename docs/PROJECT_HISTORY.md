@@ -1,12 +1,56 @@
 # Historia projektu (dziennik sesji)
 
+## 2026-09-21 15:32 — PR-39: materializacja 64DTK Lightwalker
+
+Zmaterializowano dostawę `64DTK / Lightwalker / DTK / Tarkir`: wpis
+właściciela, snapshot Scryfall DTK #24, Kartę Katalogową LORE-first oraz
+regionalną pinezkę przy Shifting Wastes. Scena zachowuje epokę Dragons of
+Tarkir i nie utożsamia pustynnego kanionu z konkretnym obiektem podkładu T4
+Khans. Bramki: 368/368 testów, build 131 stron (61 kart, 52 hasła,
+18 planów), map-audit 0, wiki-stats 100%.
+
+## 2026-09-21 15:27 — PR-39: materializacja 138MID Join the Dance
+
+Zmaterializowano dostawę `138MID / Join the Dance / MID / Eldraine`: wpis
+właściciela, snapshot Scryfall MID #229, Kartę Katalogową LORE-first oraz
+regionalną pinezkę przy Highlands of Arden. Scena pozostaje wiejską osadą
+na pograniczu Ardenvale; nie przypisano jej zamku ani konkretnej wsi i nie
+utworzono hasła poniżej progu. Bramki: 363/363 testów, build 130 stron
+(60 kart, 52 hasła, 18 planów), map-audit 0, wiki-stats 100%.
+
+## 2026-09-21 15:00 — PR-39: trzy Pętle Jakości
+
+Wykonano trzy pełne przebiegi bez nowych materializacji: pogłębiono
+`lumengrid` na Mirrodinie (miasto serum, przejęcie infrastruktury i opór),
+`qal-sisma` na Tarkirze (zima jako pamięć i wspólna próba Temur) oraz
+`ghirapur` na Kaladeshu (obieg eteru, towarów, wiedzy i punkty kontroli).
+Nie zmieniono pinezek ani geometrii map. Bramki: 358/358 testów, build 129
+stron, map-audit 0, wiki-stats 100%.
+
+## 2026-09-21 14:55 — PR-39: materializacja 235RTR Trestle Troll
+
+Zmaterializowano dostawę `235RTR / Trestle Troll / RTR / Ravnica`: wpis
+właściciela, snapshot Scryfall RTR #205, Kartę Katalogową LORE-first oraz
+regionalną pinezkę w rejonie Deadbridge Chasm, przy zachowaniu niepewności
+regionu i bez zmyślania konkretnej estakady. Pojedynczy troll nie przekracza
+progu nowego hasła. Bramki: 358/358 testów, build 129 stron (59 kart,
+52 hasła, 18 planów), map-audit 0, wiki-stats 100%.
+
+## 2026-09-21 14:29 — PR-39: audyt PR-36 i kontynuacja Pętli Jakości
+
+Audyt PR-36 nie wykazał problemów P0/P1. Skorygowano dokumentację z 354 do
+353 testów, zgodnie z rzeczywistym wynikiem runnera. Pogłębiono hasło
+`kuldotha` o oficjalnie opisany kontekst żywego Wielkiego Pieca, drogi odwrotu
+Mirran do warstwy Pieca oraz wpływ zanieczyszczeń na konstrukcję. Bramki:
+353/353 testów, build 128 stron, map-audit 0 i wiki-stats 100%.
+
 > Dokument żywy, ale **NIE jest lekturą startową** (AGENTS.md §0) — sięgaj
 > tu grepem/punktowo po kontekst historyczny. Reguły mieszkają w ADR-ach,
 > LESSONS i AGENTS.md.
 
 ## 2026-09-21 — PR-36: materializacje 135BOK, 62AVR i 168_2XM oraz sześć Pętli Jakości
 
-Zmaterializowano trzy nowe karty: `135BOK` Kumano's Blessing (Kamigawa), `62AVR` Grounded (Innistrad) oraz `168_2XM` Steel Sabotage (Mirrodin). Dodano plan Kamigawa z nową mapą T4 (21 kotwic). Przeprowadzono sześć Pętli Jakości: utworzono nowe hasła geograficzno-kulturowe `dunland` (Dunland) na Śródziemiu, `lumengrid` (Lumengrid), `kuldotha` (Kuldotha), `neurok` (Neurokowie), `sylvok` (Sylvokowie) na Mirrodinie oraz zjawisko geologiczne `twor` (Twor) na Zendikarze. Dokonano pełnej integracji wikilinków, zsynchronizowano deep-linki do map planów oraz zaimplementowano testy regresyjne. Wszystkie 354 testy są zielone, a baza pomyślnie buduje 128 stron.
+Zmaterializowano trzy nowe karty: `135BOK` Kumano's Blessing (Kamigawa), `62AVR` Grounded (Innistrad) oraz `168_2XM` Steel Sabotage (Mirrodin). Dodano plan Kamigawa z nową mapą T4 (21 kotwic). Przeprowadzono sześć Pętli Jakości: utworzono nowe hasła geograficzno-kulturowe `dunland` (Dunland) na Śródziemiu, `lumengrid` (Lumengrid), `kuldotha` (Kuldotha), `neurok` (Neurokowie), `sylvok` (Sylvokowie) na Mirrodinie oraz zjawisko geologiczne `twor` (Twor) na Zendikarze. Dokonano pełnej integracji wikilinków, zsynchronizowano deep-linki do map planów oraz zaimplementowano testy regresyjne. Wszystkie 353 testy są zielone, a baza pomyślnie buduje 128 stron.
 
 ## 2026-09-21 — PR-36: Pętla Jakości (hasło Qal Sisma i link-mining na Tarkirze)
 
@@ -2329,3 +2373,31 @@ Drugie zlecenie kontynuacyjne sesji PR-35: pętle 4, 5 i 6 (numeracja tytułów 
 Pierwsza sesja PR-37: pełna materializacja nowej dostawy karty `135BOK Kumano's Blessing` (BOK #111) oraz osiemnastego planu Kamigawa wraz z mapą T4. Zapisano snapshot Scryfalla `scryfall/135bok-kumano-s-blessing.json` z poprawnym imgId i metadanymi proweniencji. Przygotowano stronę planu `content/planes/kamigawa.md` oraz Kartę Katalogową `content/cards/135bok-kumano-s-blessing.md` w układzie LORE-first bez metajęzyka i procesowych sformułowań przed sekcją „Mechanika jako Opowieść”. Mapa Kamigawy otrzymała wulkaniczny podkład SVG Gór Sokenzan z 21 kotwicami (m.in. Minamo, Numai, Sokenzan Mountains, Jukai Forest). Wdrożono regresje oraz uaktualniono asercje w teście dymnym `test/ui-smoke.test.js` do nowej pojemności bazy (54 karty). Bramki końcowe: 334/334 testów, pomyślny build 116 stron (54 karty, 44 hasła, 18 planów).
 
 
+
+## 2026-09-21 — PR-39: materializacja 604ZEN Vampire's Bite
+
+Zmaterializowano dostawę właściciela `604ZEN Vampire's Bite` dla planu Wiedźmin:
+wpis verbatim, pełny snapshot Scryfall ZEN #117 oraz Kartę Katalogową LORE-first.
+Scena osadza bruxę w ruinach opuszczonego pałacu Toussaint, zachowuje mechanikę
+`{B}` / kicker `{2}{B}` / `+3/+0` / lifelink i jawnie odnotowuje brak oficjalnego
+flavoru. Dodano regionalną pinezkę karty przy kotwicy Velen bez wymyślania
+konkretnego pałacu; nie utworzono nowego hasła poniżej progu dwóch kart.
+Regresja `test/wiedzmin-604zen.test.js` domyka wpis, snapshot, kartę i mapę.
+
+Stan końcowy dostawy: 373/373 testów, build 132 stron (62 karty, 52 hasła,
+18 planów), map-audit 0 problemów, wiki-stats 100% i `git diff --check` bez uwag.
+Handoff: `docs/setup/HANDOFF_2026-09-21-604ZEN.md`.
+
+## 2026-09-21 — PR-39: materializacja 9WAR Toll of the Invasion
+
+Zmaterializowano dostawę `9WAR Toll of the Invasion` dla Ravniki: wpis
+właściciela verbatim, pełny snapshot Scryfall WAR #108 oraz Kartę Katalogową
+LORE-first. Narracja zachowuje cywila tracącego wspomnienie podczas inwazji
+Nicola Bolasa, powołanie lazotepowego Wiecznego i mechanikę ujawnienia ręki,
+odrzucenia nielądowej karty oraz `Amass Zombies 1`. Dodano regionalną pinezkę
+przy Precinct One bez wymyślania konkretnej ulicy, domu ani cytadeli; nie
+utworzono nowych haseł poniżej progu dwóch kart.
+
+Bramki dostawy: 378/378 testów, build 133 stron (63 karty, 52 hasła, 18
+planów), map-audit 0 problemów, wiki-stats 100% i `git diff --check` bez uwag.
+Handoff: `docs/setup/HANDOFF_2026-09-21-9WAR.md`.

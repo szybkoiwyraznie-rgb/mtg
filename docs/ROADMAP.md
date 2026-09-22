@@ -1,4 +1,58 @@
+## PR-39 — dostawa 9WAR Toll of the Invasion (2026-09-21)
+
+Zmaterializowano wpis verbatim, pełny snapshot Scryfall WAR #108, Kartę
+Katalogową LORE-first i regresję `test/ravnica-9war.test.js`. Scena cywila
+i lazotepowego Wiecznego otrzymała regionalną pinezkę przy Precinct One, bez
+fałszywej precyzji ulicy ani cytadeli Bolasa. Nie utworzono haseł poniżej
+progu dwóch kart. Stan: 378/378 testów, build 133 stron (63 karty, 52 hasła,
+18 planów), map-audit 0, wiki-stats 100%.
+
+## PR-39 — dostawa 604ZEN Vampire's Bite (2026-09-21)
+
+Zmaterializowano wpis verbatim, snapshot Scryfall ZEN #117, Kartę Katalogową
+LORE-first i regresję `test/wiedzmin-604zen.test.js`. Bruxa otrzymała
+regionalną pinezkę przy kotwicy Velen dla sceny w nieokreślonej ruinie pałacu
+Toussaint; nie utworzono hasła poniżej progu dwóch kart. Stan: 373/373
+testów, build 132 stron (62 karty, 52 hasła, 18 planów), map-audit 0,
+wiki-stats 100%.
+
 # Roadmapa
+
+## PR-39 — dostawa 64DTK Lightwalker (2026-09-21)
+
+Zmaterializowano wpis, snapshot i Kartę Katalogową `64DTK / Lightwalker /
+DTK / Tarkir`. Scena otrzymała regionalną pinezkę przy Shifting Wastes;
+jawnie zachowano rozdział epoki Dragons of Tarkir od podkładu T4 Khans.
+Stan: 368/368 testów, build 131 stron, map-audit 0, wiki-stats 100%.
+
+## PR-39 — dostawa 138MID Join the Dance (2026-09-21)
+
+Zmaterializowano wpis, snapshot i Kartę Katalogową `138MID / Join the Dance /
+MID / Eldraine`. Scena otrzymała regionalną pinezkę przy Highlands of Arden,
+bez udawania nazwy konkretnej osady ani Castle Ardenvale. Stan: 363/363
+testów, build 130 stron, map-audit 0, wiki-stats 100%.
+
+## PR-39 — trzy Pętle Jakości (2026-09-21)
+
+Domknięto trzy przebiegi lore: `lumengrid` (Mirrodin), `qal-sisma`
+(Tarkir) i `ghirapur` (Kaladesh). Pogłębienia zachowują istniejące
+cytowania i nie zmieniają pinezek kart ani geometrii map. Stan: 358/358
+testów, build 129 stron, map-audit 0, wiki-stats 100%.
+
+## PR-39 — dostawa 235RTR Trestle Troll (2026-09-21)
+
+Zmaterializowano Kartę Katalogową, snapshot i wpis `235RTR / Trestle Troll / RTR /
+Ravnica`. Karta otrzymała regionalną pinezkę przy Deadbridge Chasm w rejonie
+podziemnego Golgari; nie utworzono hasła poniżej progu dwóch kart. Stan:
+358/358 testów, build 129 stron (59 kart, 52 hasła, 18 planów), map-audit 0.
+
+## PR-39 (2026-09-21) — audyt PR-36 i kontynuacja Pętli Jakości
+
+Audyt PR-36 zapisano w `docs/audits/AUDYT_2026-09-21-PR36.md`; nie wykazał
+P0/P1. Naprawiono rozbieżność dokumentacji (353 testy wykonane przez runner,
+nie 354) i pogłębiono hasło `kuldotha` o kontekst Wielkiego Pieca oraz warstwy
+Pieca na podstawie oficjalnego źródła. Bramki: 353/353, build 128 stron,
+map-audit 0, wiki-stats 100%.
 
 Kamienie (K) odpowiadają naturalnym PR-om; kolejność jest umowna —
 priorytet w każdej chwili ustawia właściciel (dostawy kart mają zawsze
@@ -514,6 +568,6 @@ Wykonano pięć kolejnych Pętli Jakości:
 - Hasło `kuldotha` (Kuldotha) na Mirrodinie po progu `556NPH` i `168_2XM`;
 - Hasło `neurok` (Neurokowie) i `sylvok` (Sylvokowie) na Mirrodinie oraz zjawisko `twor` (Twor) na Zendikarze.
 
-Stan końcowy PR-36: 128 stron (58 kart, 52 hasła, 18 planów); 354/354 testów zielonych (w tym regresja 135BOK), build pomyślny, map-audit 0 problemów, wiki-stats 100%. PR #36 gotowy do przeglądu i scalenia.
+Stan końcowy PR-36: 128 stron (58 kart, 52 hasła, 18 planów); 353/353 testów zielonych (w tym regresja 135BOK), build pomyślny, map-audit 0 problemów, wiki-stats 100%. PR #36 gotowy do przeglądu i scalenia.
 
 
