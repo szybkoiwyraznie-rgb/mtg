@@ -19,6 +19,10 @@ export function renderHaslo(slug) {
   const plan = dane.strony[haslo.plan];
   const linkujace = backlinki(slug).map((s) => dane.strony[s]).filter(Boolean);
   const kartyKolekcji = linkujace.filter((s) => s.typ === 'karta');
+  // Ręcznie dopisana sekcja „W kolekcji" w markdownie hasła wycisza
+  // automatyczną listę backlinków — bez tego strona renderuje dwie sekcje
+  // o tym samym tytule (defekt znaleziony w audycie PR-39, 2026-09-29).
+  const recznaSekcjaKolekcji = (haslo.html ?? '').includes('<h2>W kolekcji</h2>');
 
   return `
   <nav class="okruszki">
@@ -40,7 +44,7 @@ export function renderHaslo(slug) {
     <div class="haslo-uklad">
       <div class="haslo-tresc">
         ${haslo.html ?? ''}
-        ${kartyKolekcji.length > 0 ? `<section class="w-kolekcji">
+        ${!recznaSekcjaKolekcji && kartyKolekcji.length > 0 ? `<section class="w-kolekcji">
           <h2>W kolekcji</h2>
           <ul>${kartyKolekcji.map((k) => `<li><a href="#/karta/${k.slug}">${escapeHtml(k.tytul)}</a></li>`).join('')}</ul>
         </section>` : ''}
