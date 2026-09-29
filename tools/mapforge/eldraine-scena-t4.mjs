@@ -44,14 +44,23 @@ export const MIEJSCA_ELDRAINE = [
     z: 'Ardenvale', opis: 'Wieża należąca do domeny Ardenvale; dokładna pozycja na atlasie jest umowna' },
   { id: 'wealdrum', nazwa: 'Wealdrum', x: 800, y: 540, typ: 'osada', glif: 'miasto', fs: 14, skala: 1.0,
     z: 'Ardenvale', opis: 'Osada domeny Ardenvale; dokładna pozycja na atlasie jest umowna' },
-  { id: 'wesling', nazwa: 'Wesling', x: 1200, y: 550, typ: 'osada', glif: 'miasto', fs: 14, skala: 1.0,
-    z: 'Ardenvale', opis: 'Osada domeny Ardenvale; dokładna pozycja na atlasie jest umowna' },
+  { id: 'wesling', nazwa: 'Wesling', x: 700, y: 470, typ: 'osada', glif: 'miasto', fs: 14, skala: 1.0,
+    z: 'Ardenvale', opis: 'Wioska pół dnia jazdy na zachód od Castle Ardenvale (The Wildered Quest), nawiedzana przez redkapy; umieszczona przy traktie ku Vantress, dokładna pozycja jest umowna' },
   { id: 'trekell', nazwa: 'Trekell', x: 1120, y: 810, typ: 'osada', glif: 'miasto', fs: 14, skala: 1.0,
     z: 'Ardenvale', opis: 'Osada domeny Ardenvale; dokładna pozycja na atlasie jest umowna' },
-  { id: 'glass-tarn', nazwa: 'The Glass Tarn', x: 720, y: 620, typ: 'akwen', fs: 14, woda: true,
+  { id: 'glass-tarn', nazwa: 'The Glass Tarn', x: 700, y: 595, typ: 'akwen', fs: 14, woda: true,
     z: 'Ardenvale', opis: 'Szerokie jezioro nizin Ardenvale; mapa domeny z przewodnika pokazuje taflę na zachód od Castle Ardenvale, dokładny obrys jest rekonstrukcją' },
   { id: 'beckborough', nazwa: 'Beckborough', x: 760, y: 730, typ: 'osada', glif: 'miasto', fs: 14, skala: 1.0,
     z: 'Ardenvale', opis: 'Wioska nizin Ardenvale wymieniana obok Glass Tarn; pozycja pośród pól przy jeziorze jest rekonstrukcją relacji' },
+  { id: 'the-choking-drum', nazwa: 'The Choking Drum', x: 795, y: 700, typ: 'pasmo-górskie', fs: 13,
+    z: 'Ardenvale', opis: 'Grań między Giant\'s Jaw Hill a Crown Crag, nazwana od licznych węży; oddziela dolinkę z Wealdrum i Glass Tarn od nizin Ardenvale — przebieg na atlasie jest rekonstrukcją relacji' },
+  { id: 'giants-jaw-hill', nazwa: "Giant's Jaw Hill", x: 895, y: 548, typ: 'szczyt', glif: 'szczyt', fs: 12, skala: 1.15,
+    z: 'Ardenvale', opis: 'Skaliste wzgórze zamykające bliski kraniec Choking Drum; z pewnych kierunków zasłania zamek Ardenvale. Kanon podaje relację do grani i zamku, nie współrzędne' },
+  { id: 'the-crown-crag', nazwa: 'The Crown Crag', x: 660, y: 715, typ: 'szczyt', glif: 'szczyt', fs: 13, skala: 1.3,
+    z: 'Ardenvale', opis: 'Odległa góra zamykająca dalszy kraniec Choking Drum; pozycja na atlasie jest umowna' },  { id: 'kenrith-town', nazwa: 'Kenrith Town', x: 940, y: 835, typ: 'osada', glif: 'miasto', fs: 13, skala: 1.0,
+    z: 'Kenrith', opis: 'Miasteczko kantonu Kenrith na nizinach Ardenvale, w którym dorastał Algenus Kenrith; kanon podaje przynależność do nizin, nie współrzędne' },
+  { id: 'kenrith-coombe', nazwa: 'Kenrith Coombe', x: 870, y: 800, typ: 'osada', glif: 'miasto', fs: 13, skala: 1.0,
+    z: 'Kenrith', opis: 'Zagłębie kantonu Kenrith, na którego farmie dorastała Linden Kenrith; kanon podaje przynależność do nizin, nie współrzędne' },
 
   // --- VANTRESS (NIEBIESKI DWÓR) ---
   { id: 'castle-vantress', nazwa: 'Castle Vantress', x: 480, y: 400, typ: 'twierdza', glif: 'fort', fs: 19, skala: 1.4,
@@ -127,8 +136,10 @@ export function scenaEldraine() {
       { cx: 480, cy: 420, rx: 170, ry: 120, opcje: { fale: true } },
       // Czarne Moczary (Loch Locthwain)
       { cx: 470, cy: 1040, rx: 140, ry: 90, opcje: { fale: true } },
-      // The Glass Tarn — szerokie jezioro nizin Ardenvale (mapa domeny z przewodnika)
-      { cx: 720, cy: 620, rx: 80, ry: 50, opcje: { fale: true } },
+      // The Glass Tarn — szerokie jezioro nizin Ardenvale (mapa domeny z przewodnika);
+      // tafla cofnięta ku dolince Wealdrum, by grań Choking Drum mieściła się
+      // między jeziorem a Beckborough (relacja kanoniczna: tarn po stronie dolinki)
+      { cx: 700, cy: 595, rx: 80, ry: 50, opcje: { fale: true } },
     ],
     rzeki: [
       // Rzeka Królewska (spływa z Gór Północnych, mija Ardenvale i uchodzi na południu poza kadr)
@@ -157,6 +168,11 @@ export function scenaEldraine() {
       }
     ],
     pasma: [
+      // Choking Drum — grań między Giant's Jaw Hill a Crown Crag, bariera
+      // między dolinką Wealdrum/Glass Tarn a nizinami Ardenvale (mtg.wiki/Ardenvale).
+      // Podstawa biegnie na południe od tafla Glass Tarn — glify grani
+      // wyrastają w górę od linii podstawy i nie mogą stać w wodzie.
+      { id: 'choking-drum', punkty: [[895, 565], [810, 650], [730, 700], [660, 720]], opcje: { szer: 36 } },
       // Góry Północno-Zachodnie (wokół Dynnistan)
       { id: 'gory-polnocny-zachod', punkty: [[80, 160], [220, 110], [380, 140]], opcje: { szer: 48 } },
       // Góry Północno-Wschodnie (wokół Garenbrig i Stormkeld)
@@ -185,13 +201,15 @@ export function scenaEldraine() {
       { id: 'las-wschodnie-knieje', typ: 'las', punkty: [[1680, 520], [1920, 500], [1940, 880], [1720, 860]], opcje: { gestosc: 0.52, skala: 1.0 } },
     ],
     drogi: [
-      // Szlak ku Vantress kończy się na brzegu Lochmere; dalsza przeprawa nie jest drogą lądową.
-      { id: 'trakt-vantress', punkty: [[1000, 650], [800, 540], [710, 470], [660, 420]], opcje: { typ: 'droga' } },
+      // Szlak ku Vantress prowadzi z zamku przez Wealdrum i Wesling, wyprowadzając
+      // z doliny u podnóża Giant's Jaw Hill; kończy się na brzegu Lochmere,
+      // dalsza przeprawa nie jest drogą lądową.
+      { id: 'trakt-vantress', punkty: [[1000, 650], [930, 615], [865, 578], [800, 540], [700, 470], [660, 420]], opcje: { typ: 'droga' } },
       // Trakt Królewski Południowo-Zachodni: Ardenvale -> Edgewall -> Locthwain
       { id: 'trakt-locthwain', punkty: [[1000, 650], [860, 720], [740, 790], [610, 890], [470, 1010]], opcje: { typ: 'droga' } },
       // Umowny szlak między domenami Ardenvale i Embereth.
       { id: 'trakt-embereth', punkty: [[1000, 650], [1120, 810], [1220, 900], [1360, 930], [1490, 1000]], opcje: { typ: 'droga' } },
-      // Trakt Królewski Północno-Wschodni: Ardenvale -> Wesling -> Garen Valley -> Castle Garenbrig
+      // Trakt Królewski Północno-Wschodni: Ardenvale -> Garen Valley -> Castle Garenbrig
       { id: 'trakt-garenbrig', punkty: [[1000, 650], [1150, 560], [1320, 510], [1480, 430]], opcje: { typ: 'droga' } },
       // Szlak do The Heart Land i Tuinvale
       { id: 'szlak-serce-elfow', punkty: [[1000, 650], [1040, 450], [1090, 270]], opcje: { typ: 'szlak' } },
@@ -230,7 +248,7 @@ export function modelMapyEldraine() {
     autor: 'MTG Lore Codex, silnik mapforge (rekonstrukcja T4 wg ADR 0038)',
     licencja: 'praca własna; glify gór i lasów mapome CC-BY-4.0 (ADR 0020)',
     pobrano: '2026-09-11',
-    notka: 'Autorski atlas relacyjny T4 2000×1400 px, zatwierdzony przez właściciela 2026-09-11 po audycie PR-31. Oficjalna mapa geograficzna Eldraine nie istnieje: kierunki świata, odległości, rzeki, szlaki i wzajemne położenie Dworów są umownymi wyborami kompozycyjnymi, nie kanoniczną geometrią. Źródła potwierdzają nazwane byty i relacje lokalne: Vantress na Lochmere, Circle of Loyalty w Castle Ardenvale, Burning Yard jako kompleks Embereth, Irencrag przy Embereth oraz Great Henge w Castle Garenbrig. Mobilny Castle Locthwain pokazano symbolem bez roszczenia do stałej pozycji; zaginionego Cauldron of Eternity nie naniesiono. PĘTLA MAPOWA 2026-09-20 (PR-35): dodano 7 kanonicznych lokacji z mtg.wiki/Eldraine i mtg.wiki/Ardenvale — The Glass Tarn z taflą jeziora i Beckborough (niziny Ardenvale, relacja z mapy domeny w przewodniku), Dunbarrow z biomem moczaru przy Edgewall, Sweettooth Village (Wilds, południe), Oakhame i Redtooth Keep (elfia północ Kniei), Red Fell przy paśmie Embereth. Pozycje wewnątrz domen są relacyjne — kanon podaje przynależność, nie współrzędne.'
+    notka: 'Autorski atlas relacyjny T4 2000×1400 px, zatwierdzony przez właściciela 2026-09-11 po audycie PR-31. Oficjalna mapa geograficzna Eldraine nie istnieje: kierunki świata, odległości, rzeki, szlaki i wzajemne położenie Dworów są umownymi wyborami kompozycyjnymi, nie kanoniczną geometrią. Źródła potwierdzają nazwane byty i relacje lokalne: Vantress na Lochmere, Circle of Loyalty w Castle Ardenvale, Burning Yard jako kompleks Embereth, Irencrag przy Embereth oraz Great Henge w Castle Garenbrig. Mobilny Castle Locthwain pokazano symbolem bez roszczenia do stałej pozycji; zaginionego Cauldron of Eternity nie naniesiono. PĘTLA MAPOWA 2026-09-20 (PR-35): dodano 7 kanonicznych lokacji z mtg.wiki/Eldraine i mtg.wiki/Ardenvale — The Glass Tarn z taflą jeziora i Beckborough (niziny Ardenvale, relacja z mapy domeny w przewodniku), Dunbarrow z biomem moczaru przy Edgewall, Sweettooth Village (Wilds, południe), Oakhame i Redtooth Keep (elfia północ Kniei), Red Fell przy paśmie Embereth. Pozycje wewnątrz domen są relacyjne — kanon podaje przynależność, nie współrzędne. PĘTLA MAPOWA 2026-09-29 (PR-40): domena Ardenvale pogłębiona wg mtg.wiki/Ardenvale i mtg.wiki/Kenrith (The Wildered Quest) — dodano grań Choking Drum z Giant\'s Jaw Hill i Crown Crag (bariera między dolinką Wealdrum/Glass Tarn a nizinami), osady Kenrith Town i Kenrith Coombe na nizinach, a Wesling przeniesiono na trakt ku Vantress zgodnie z kanoniczną relacją „pół dnia jazdy na zachód od zamku". Przebieg grani i pozycje wewnątrz domeny pozostają rekonstrukcją relacyjną.'
   };
 
   return {
@@ -257,6 +275,14 @@ export function modelMapyEldraine() {
         y: 0.4643,
         pewnosc: 'dokladna',
         uzasadnienie: 'Fabuła właściciela umieszcza piaszczystą arenę pod wieżami zamku w Ardenvale. Pinezka wskazuje Castle Ardenvale (x: 1000, y: 650); nazwa karty pochodzi z odrębnego, kanonicznego kompleksu Burning Yard w Embereth, ale nie zmienia lokacji przekazanej sceny.'
+      },
+      {
+        // Kotwica Highlands of Arden (1000, 740) — pinezka regionalna.
+        karta: '138mid-join-the-dance',
+        x: 0.5,
+        y: 0.5285714285714286,
+        pewnosc: 'region',
+        uzasadnienie: 'Fabuła właściciela: rolnicza osada na pograniczu Ardenvale, święto żniw i rynek przy skraju Kniei. Kotwica Highlands of Arden reprezentuje szeroki rejon wiejskich osad; opis nie podaje nazwy wsi ani dokładnego rynku, więc pinezka nie wskazuje Castle Ardenvale.'
       }
     ],
     scena: 'scena.json',

@@ -299,7 +299,7 @@ Encje „o jedną kartę” od progu (skan boldów 2026-09-09):
 | Oona, Glen Elendra | postac/geografia | 605shm-consign-to-dream (+ plan lorwyn) | 1 karta |
 | Ashmouth, Kirch, Skirsdag, Mikaeusa, Katedra Avacyn, Devils' Breach | geografia | 393dka-forge-devil (+ plan innistrad, hasło thraben) | 1 karta |
 | Havengul, Nephalia, Markovowie, wilkołaki Kessigu | geografia/spolecznosc | 309isd-civilized-scholar (+ plan innistrad, hasło thraben) | 1 karta |
-| Temur, Mardu, Qal Sisma, Karakyk Valley, Summer Landing, Eternal Ice, Dragon's Throat, The Scour, ainok | geografia/klany | 509ktk-highland-game (+ plan tarkir) | 1 karta |
+| Mardu, Karakyk Valley, Summer Landing, Eternal Ice, Dragon's Throat, The Scour | geografia/klany | 509ktk-highland-game (+ plan tarkir) | 1 karta |
 | Sunhome, Precinct Four | geografia | 137gpt-withstand (+ plan ravnica) | 1 karta |
 | Benalia, Wybrani, Pięć Edyktów, Tangle (Dominaria), Argoth, Sylex, Kabała, Aphetto, Daru, Tamingazin, Zhalfir, Suq'At, Sarpadyjskie Imperia, Ciemne Czasy, thrullowie, thalidzi, homaridi | geografia/spolecznosc | 40usg-expunge / plan dominaria | 1 karta |
 | Eldrazi, Roil, Halimar, Coralhelm, Jori En, merfolk | różne | 2bfz-coralhelm-guide (+ plan zendikar) | 1 karta |
@@ -360,6 +360,39 @@ z PR-30 została podniesiona do pełnego zestawu kotwic L2 w `map.json`
 (Greenwheel, Greenwheel Domes, The Zoo, Embraal, Aether Hub, Aetherflux
 Reservoir, Eleven Bridges itd.). Pozycje są projekcją L2/ADR 0047, nie
 kanonicznymi adresami.
+
+## Link-mining Tarkiru i Eldraine (Pętla Jakości, 2026-09-29)
+
+**Temur — wykonane**, `content/lore/temur.md`, klasa `spolecznosc`, plan
+Tarkir. Próg spełniły treści kart `509ktk-highland-game` +
+`68ktk-ainok-tracker` (audyt PR-39 Z3); wikilinki dopisano w obu kartach,
+na planie Tarkiru i w haśle Qal Sisma. Hasło nie ma pinezki (ADR 0043) —
+odsyła deep-linkiem do kotwicy Temur Frontier
+`#/mapa/tarkir?x=0.1914&y=0.2377`.
+
+**Ardenvale — wykonane**, `content/lore/ardenvale.md`, klasa `geografia`,
+plan Eldraine. Próg spełniły treści kart `138mid-join-the-dance` +
+`209eld-burning-yard-trainer`; wikilinki dopisano w obu kartach i na planie
+Eldraine. Hasło odsyła deep-linkami do Castle Ardenvale i (po passie
+mapowym PR-40) do grani Choking Drum.
+
+Encje na progu lub poniżej (rozpoznanie audytu PR-39 + weryfikacja PR-40):
+
+| Encja | Klasa (docelowa) | Karty wspominające | Do hasła brakuje |
+|---|---|---|---|
+| ainok | fauna/spolecznosc | 68ktk-ainok-tracker (bohater sceny), 509ktk-highland-game (wzmianka w opisie klanu) | nic — na progu od PR-39; budżet 2 haseł przebiegu zużyły Temur i Ardenvale, pierwszokolejny kandydat następnego przebiegu (rozstrzygnąć zakres: rasa psia ogółem vs ainokowie Qal Sisma vs pobratymcy z pustyń Abzan) |
+| Shifting Wastes | geografia | 64dtk-lightwalker (narracja i pinezka), 68ktk-ainok-tracker (wzmianka uboczna) | ciężar: druga karta wspomina mimochodem — odczekać na pełniejszą scenę |
+| Abzan (Abzan Houses) | spolecznosc | 64dtk-lightwalker, 68ktk-ainok-tracker (wzmianka uboczna) | ciężar: jak wyżej; hasło klanu wymaga pełnej drugiej sceny |
+| Mardu, Summer Landing, Karakyk Valley, Eternal Ice, Dragon's Throat, The Scour | geografia/klany | 509ktk-highland-game (Mardu/The Scour/Summer Landing także w treści; wzmianki w haśle qal-sisma i planie nie liczą się) | 1 karta |
+
+Pass mapowy PR-40 (Eldraine): domena Ardenvale pogłębiona o grań Choking
+Drum z Giant's Jaw Hill i Crown Crag oraz kanton Kenrith (Kenrith Town,
+Kenrith Coombe); Wesling przeniesiona na zachód od zamku zgodnie
+z kanoniczną relacją „pół dnia jazdy". Generator
+`tools/mapforge/eldraine-scena-t4.mjs` uzupełniony o pinezkę 138MID
+(wcześniejszy dryf generator↔map.json). Region Temur na Tarkirze
+zweryfikowany programatycznie — bez zmian (wszystkie kanoniczne kotwice
+obecne, map-audit 0).
 
 ## Mapa Zendikaru — WYKONANA (ADR 0012)
 

@@ -49,6 +49,8 @@ test('9WAR: Karta Katalogowa jest LORE-first i zachowuje Wiecznego', () => {
   assert.match(karta, /Amass Zombies 1/);
   assert.match(karta, /Oficjalna inskrypcja nie pojawia się/);
   assert.match(karta, /To nie portret konkretnego generała/);
+  // Z2 (audyt PR-39): Bolas łączy się wikilinkiem z istniejącym hasłem
+  assert.match(karta, /\[\[nicol-bolas\|Nicola Bolas\]\]/);
 });
 
 test('9WAR: regionalna pinezka dziedziczy Precinct One', () => {

@@ -1,3 +1,13 @@
+## PR-40 — Pętla Jakości: Temur, Ardenvale, pass mapowy Eldraine (2026-09-29)
+
+Audyt PR-39 bez P0/P1; naprawione wikilinki 604ZEN→velen i 9WAR→nicol-bolas.
+Nowe hasła na progu dwóch kart: `temur` (Tarkir) i `ardenvale` (Eldraine).
+Pass mapowy Eldraine: grań Choking Drum (Giant's Jaw Hill, Crown Crag),
+kanton Kenrith, Wesling zgodnie z kanonem; generator uzupełniony o pinezkę
+138MID. Naprawa podwójnej sekcji „W kolekcji" (22 hasła) z regresją.
+Stan: 379/379 testów, build 135 stron (63/54/18), map-audit 0,
+wiki-stats 100%.
+
 ## PR-39 — dostawa 9WAR Toll of the Invasion (2026-09-21)
 
 Zmaterializowano wpis verbatim, pełny snapshot Scryfall WAR #108, Kartę
