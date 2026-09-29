@@ -67,3 +67,12 @@ dopiero po ostatnim commicie produktu). Pełne bramki na świeżym stanie.
 
 `npm test` + `npm run build` + `map-audit` + `wiki-stats` + `git diff --check`
 po każdym zielonym kroku = osobny commit + push (AGENTS.md §1.3).
+
+## Wykonanie (2026-09-29)
+
+Wszystkie kroki domknięte; pełny zapis zakresu i bramek w
+`docs/setup/HANDOFF_2026-09-29-petla-jakosci.md`. Odbicie od planu:
+raster review wykonany sondami programatycznymi (agent sesji bez
+widzenia obrazów — szczegóły i rekomendacja okiem w handoffie, pkt 5),
+a pass mapowy wykrył i naprawił dryf generator↔map.json Eldraine
+(brak pinezki 138MID w generatorze).
