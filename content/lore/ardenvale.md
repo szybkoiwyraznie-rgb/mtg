@@ -53,11 +53,14 @@ skarbów, które cenią ponad wszystkie inne.
 
 Domena dzieli się na **wyżyny Arden** z zamkiem oraz **Niziny
 Ardenvale** — krainę spokojnych wiosek rozsianych wśród stawów, strumieni,
-sadów i schludnych pól. Grzbiet **Choking Drum** (od licznych węży)
-oddziela nizinną dolinkę z wioską Wealdrum i jeziorem **Glass Tarn**
-od reszty domeny; w jego cieniu leżą Beckborough, a dalej na zachód
-Trekell i Wesling, nawiedzane przez redkapy. Ziemia Kenrithów — kantona,
-z którego pochodzili Algenus i Linden — też leży w tej domenie.
+sadów i schludnych pól. Grzbiet **Choking Drum** (od licznych węży) biegnie
+między wzgórzem Giant's Jaw Hill a odległą górą Crown Crag i oddziela
+dolinkę z wioską Wealdrum oraz jeziorem **Glass Tarn** od nizin; po drugiej
+stronie grani leży Beckborough. Wealdrum, godzina drogi od zamku, i położona
+pół dnia jazdy na zachód Wesling miewają kłopoty z redkapami; Trekell
+zapamiętano z upadku złotego jaja z nieba. Na nizinach rozsiadł się kanton
+Kenrith — Kenrith Town, gdzie dorastał Algenus, i Kenrith Coombe,
+rodzinna farma Linden.
 [1](https://mtg.wiki/page/Ardenvale)
 
 ### Historia i upadek
@@ -86,11 +89,16 @@ Eriette, aż została zdetronizowana i pojmana przez Willa.
 
 ## Na mapie
 
-Atlas relacyjny Eldraine pokazuje domenę na wyżynach Arden: zamek nad
-Nizinami, z Glass Tarn i Beckborough na zachód od grzbietu. Pozycje
-wewnątrz domeny są relacyjne — kanon podaje przynależność, nie współrzędne.
+Atlas relacyjny Eldraine pokazuje domenę Ardenvale: zamek i wieżę
+łuczników na wyżynach, grań Choking Drum między Giant's Jaw Hill
+a Crown Crag, po północnej stronie grani dolinkę z Glass Tarn
+i Wealdrum, a po południowej Beckborough i osady kantonu Kenrith.
+Pozycje wewnątrz domeny są relacyjne — kanon podaje przynależność,
+nie współrzędne.
 
 [Castle Ardenvale na mapie Eldraine](#/mapa/eldraine?x=0.5&y=0.4643)
+
+[Grzbiet Choking Drum na mapie Eldraine](#/mapa/eldraine?x=0.3975&y=0.5)
 
 ## Powiązane hasła
 
