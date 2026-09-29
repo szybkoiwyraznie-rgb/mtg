@@ -18,7 +18,7 @@ pinezka:
 Zima w [[qal-sisma|Qal Sisma]] nie jest porą roku — jest przeciwnikiem. Góry
 **Temur Frontier** to wysoki płaskowyż z granitu i wapienia, pofałdowany
 przez rzeki i wstrząsy, pełen jaskiń, lodowców i wiatru, który tnie
-policzki i pęka na kostkach dłoni. Przez większość roku klan **Temur**
+policzki i pęka na kostkach dłoni. Przez większość roku klan **[[temur|Temur]]**
 wędruje tędy rodzinami — „wędrujące niedźwiedzie” — za stadami
 zwierzyny, od zagajnika jagód po strumień pełen ryb, z całym dobytkiem
 na plecach i saniach. Gdy przychodzą dwa najmroźniejsze miesiące,
