@@ -15,7 +15,7 @@ pinezka:
 
 ## Kronika Lore
 
-Na pograniczu Ardenvale noc nie zaczyna się wtedy, gdy zachodzi słońce.
+Na pograniczu [[ardenvale|Ardenvale]] noc nie zaczyna się wtedy, gdy zachodzi słońce.
 Zaczyna się wtedy, gdy rozmowy cichną, furtki zostają zamknięte, a za
 opłotkami puszcza przestaje wyglądać jak las i zaczyna przypominać coś,
 co patrzy. Wiejskie osady nie mają murów Castle Ardenvale ani rycerzy na
