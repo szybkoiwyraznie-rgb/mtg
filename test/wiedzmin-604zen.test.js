@@ -58,7 +58,8 @@ test('604ZEN: regionalna pinezka trafia na Velen bez fałszywego pałacu', () =>
   assert.match(pin.uzasadnienie, /opuszczony pałac w Toussaint/);
   assert.match(pin.uzasadnienie, /nie udaje konkretnego pałacu/);
   assert.match(karta, /Pinezka ma pewność \*\*region\*\*/);
-  assert.match(karta, /regionalną kotwicę \*\*Velen\*\*/);
+  // Z1 (audyt PR-39): kotwica Velen łączy się wikilinkiem z hasłem
+  assert.match(karta, /regionalną kotwicę \*\*\[\[velen\|Velen\]\]\*\*/);
   assert.match(plan, /Kontynent|Velen/i);
 });
 
