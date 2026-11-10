@@ -50,8 +50,8 @@
    }
   },
   {
-   "cx": 720,
-   "cy": 620,
+   "cx": 700,
+   "cy": 595,
    "rx": 80,
    "ry": 50,
    "opcje": {
@@ -205,6 +205,30 @@
   }
  ],
  "pasma": [
+  {
+   "id": "choking-drum",
+   "punkty": [
+    [
+     895,
+     565
+    ],
+    [
+     810,
+     650
+    ],
+    [
+     730,
+     700
+    ],
+    [
+     660,
+     720
+    ]
+   ],
+   "opcje": {
+    "szer": 36
+   }
+  },
   {
    "id": "gory-polnocny-zachod",
    "punkty": [
@@ -533,11 +557,19 @@
      650
     ],
     [
+     930,
+     615
+    ],
+    [
+     865,
+     578
+    ],
+    [
      800,
      540
     ],
     [
-     710,
+     700,
      470
     ],
     [
@@ -681,8 +713,8 @@
   {
    "id": "wesling",
    "typ": "miasto",
-   "x": 1200,
-   "y": 550,
+   "x": 700,
+   "y": 470,
    "opcje": {
     "skala": 1
    }
@@ -701,6 +733,44 @@
    "typ": "miasto",
    "x": 760,
    "y": 730,
+   "opcje": {
+    "skala": 1
+   }
+  },
+  {
+   "id": "giants-jaw-hill",
+   "typ": "szczyt",
+   "x": 895,
+   "y": 548,
+   "opcje": {
+    "skala": 1.15,
+    "snieg": false
+   }
+  },
+  {
+   "id": "the-crown-crag",
+   "typ": "szczyt",
+   "x": 660,
+   "y": 715,
+   "opcje": {
+    "skala": 1.3,
+    "snieg": false
+   }
+  },
+  {
+   "id": "kenrith-town",
+   "typ": "miasto",
+   "x": 940,
+   "y": 835,
+   "opcje": {
+    "skala": 1
+   }
+  },
+  {
+   "id": "kenrith-coombe",
+   "typ": "miasto",
+   "x": 870,
+   "y": 800,
    "opcje": {
     "skala": 1
    }
@@ -984,14 +1054,14 @@
   },
   {
    "tekst": "Wesling",
-   "x": 1200,
-   "y": 550,
+   "x": 700,
+   "y": 470,
    "opcje": {
     "fs": 14,
     "kotwica": "middle",
     "przyDo": [
-     1200,
-     550
+     700,
+     470
     ]
    }
   },
@@ -1010,8 +1080,8 @@
   },
   {
    "tekst": "The Glass Tarn",
-   "x": 720,
-   "y": 620,
+   "x": 700,
+   "y": 595,
    "opcje": {
     "fs": 14,
     "kotwica": "middle"
@@ -1027,6 +1097,67 @@
     "przyDo": [
      760,
      730
+    ]
+   }
+  },
+  {
+   "tekst": "The Choking Drum",
+   "x": 795,
+   "y": 700,
+   "opcje": {
+    "fs": 13,
+    "kotwica": "middle"
+   }
+  },
+  {
+   "tekst": "Giant's Jaw Hill",
+   "x": 895,
+   "y": 548,
+   "opcje": {
+    "fs": 12,
+    "kotwica": "middle",
+    "przyDo": [
+     895,
+     548
+    ]
+   }
+  },
+  {
+   "tekst": "The Crown Crag",
+   "x": 660,
+   "y": 715,
+   "opcje": {
+    "fs": 13,
+    "kotwica": "middle",
+    "przyDo": [
+     660,
+     715
+    ]
+   }
+  },
+  {
+   "tekst": "Kenrith Town",
+   "x": 940,
+   "y": 835,
+   "opcje": {
+    "fs": 13,
+    "kotwica": "middle",
+    "przyDo": [
+     940,
+     835
+    ]
+   }
+  },
+  {
+   "tekst": "Kenrith Coombe",
+   "x": 870,
+   "y": 800,
+   "opcje": {
+    "fs": 13,
+    "kotwica": "middle",
+    "przyDo": [
+     870,
+     800
     ]
    }
   },

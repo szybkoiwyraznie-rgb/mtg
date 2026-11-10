@@ -1,3 +1,13 @@
+## 2026-09-29 17:00 — Pętla Jakości PR-40: hasła Temur i Ardenvale, pass mapowy Eldraine, jedna sekcja „W kolekcji"
+
+- **Audyt PR-39** (`docs/audits/AUDYT_2026-09-29-PR39.md`): bez P0/P1; znaleziska Z1 (604ZEN bez wikilinka do Velen) i Z2 (9WAR bez wikilinka do Nicolasa Bolasa) naprawione wraz z regresjami; Z3 (progi link-miningu) rozstrzygnięte — Temur i Ardenvale wykonane, ainok/Shifting Wastes/Abzan wróciły do backlogu z oceną ciężaru.
+- **Nowe hasło:** **[[temur|Temur]]** (spolecznosc, [[tarkir|Tarkir]]) — próg z kart 509KTK + 68KTK; Pieśń Bez Końca, szeptacze, los klanu od Yasovy po Eshki; wikilinki z obu kart, planu i [[qal-sisma|Qal Sisma]]; deep-link do kotwicy Temur Frontier.
+- **Nowe hasło:** **[[ardenvale|Ardenvale]]** (geografia, [[eldraine|Eldraine]]) — próg z kart 138MID + 209ELD; Krąg Lojalności, rycerze na gryfach i jednorożcach, upadek zamku; wikilinki z obu kart i planu; deep-linki do Castle Ardenvale i grani Choking Drum.
+- **Pass mapowy Eldraine (T4):** domena Ardenvale pogłębiona wg *The Wildered Quest* — grań **Choking Drum** między Giant's Jaw Hill a Crown Crag, osady kantonu Kenrith (Kenrith Town, Kenrith Coombe), a Wesling przeniesiona na trakt ku Vantress zgodnie z kanoniczną relacją „pół dnia jazdy na zachód od zamku". Region Temur na Tarkirze zweryfikowany bez zmian.
+- **Naprawa warsztatu:** generator Eldraine uzupełniony o pinezkę 138MID (dryf generator↔map.json odkryty przy regeneracji); raster domeny sprawdzony sondami programatycznymi (podstawa grani poza taflą jeziora, glify i etykiety bez kolizji).
+- **Naprawa UI:** ręcznie dopisana sekcja „W kolekcji" wycisza teraz automatyczną listę backlinków — 22 hasła renderowały tę sekcję podwójnie; regresja pilnuje dokładnie jednego nagłówka na każdej stronie hasła.
+- **Bramki:** 379/379 testów zielonych; build 135 stron (63 karty, 54 hasła, 18 planów); map-audit 0; wiki-stats 100%.
+
 ## 2026-09-21 18:14 — Nowa karta: Toll of the Invasion (Ravnica)
 
 - **Materializacja:** **[[9war-toll-of-the-invasion|Toll of the Invasion]]** (`9WAR`, WAR, [[ravnica|Ravnica]]) — WAR #108.

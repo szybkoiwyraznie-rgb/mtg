@@ -27,7 +27,7 @@ z Nicolem Bolasem. Wraz z nim ustały burze, nie rodziły się nowe smoki,
 a klany wybiły do ostatniego resztę skrzydlatych tyranów. W świecie bez
 smoków każdy klan zatrzymał sobie jeden ich **aspekt**: **Abzan** —
 wytrwałość (łuska), **Jeskai** — przebiegłość (oko), **Sultai** —
-bezwzględność (kieł), **Mardu** — szybkość (skrzydło), **Temur** —
+bezwzględność (kieł), **Mardu** — szybkość (skrzydło), **[[temur|Temur]]** —
 dzikość (pazur). Klanami rządzą **khanowie**: Anafenza, Narset, Sidisi,
 Zurgo Helmsmasher i Surrak Dragonclaw; krajobraz zaścielają smocze kości,
 z których klany robią namioty, łuki, harfy i trony. Ta epoka kończy się,

@@ -80,7 +80,7 @@ zasłania nie tylko zęby, ale i różnicę między pałacem a grobowcem.
 
 ## Na Mapie
 
-Pinezka ma pewność **region** i wskazuje regionalną kotwicę **Velen** na
+Pinezka ma pewność **region** i wskazuje regionalną kotwicę **[[velen|Velen]]** na
 mapie Wiedźmina. Opis mówi o Toussaint, ale nie podaje nazwy pałacu, wsi
 ani ruin, które można uczciwie wskazać na atlasie Kontynentu. Marker nie
 udaje więc dokładnego zamku; oznacza scenę w świecie Wiedźmina przy

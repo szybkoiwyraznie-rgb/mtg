@@ -47,7 +47,7 @@ pokazuje, że przemiana cywila w koszt wojny i pojawienie się nowego żołnierz
 są jednym aktem. To nie portret konkretnego generała, lecz obraz systemu,
 w którym ciało i pamięć mieszkańców mogą zostać zużyte do produkcji armii.
 
-**Nicola Bolas** pozostaje odległym sprawcą. Majacząca cytadela nie jest
+**[[nicol-bolas|Nicola Bolas]]** pozostaje odległym sprawcą. Majacząca cytadela nie jest
 adresem ulicy ani dokładną lokalizacją jego twierdzy; jest znakiem władzy,
 która potrafi być obecna nad całym miastem, nawet gdy sam tyran nie stoi
 przy ofierze.

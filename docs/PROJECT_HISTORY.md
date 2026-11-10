@@ -1,5 +1,21 @@
 # Historia projektu (dziennik sesji)
 
+## 2026-09-29 17:00 — PR-40: Pętla Jakości (audyt PR-39, Temur, Ardenvale, pass mapowy)
+
+Sesja kontynuacji bez dostaw kart. Audyt scalonego PR-39 (bez P0/P1)
+naprawił brakujące wikilinki 604ZEN→velen i 9WAR→nicol-bolas wraz
+z regresjami. Link-mining wyłonił dwa nowe hasła na progu dwóch kart:
+`temur` (klasy spolecznosc, Tarkir; 509KTK + 68KTK — Pieśń Bez Końca,
+szeptacze i los klanu) oraz `ardenvale` (klasy geografia, Eldraine;
+138MID + 209ELD — Krąg Lojalności, rycerze, upadek zamku). Pass mapowy
+Eldraine pogłębił domenę Ardenvale o grań Choking Drum z Giant's Jaw
+Hill i Crown Crag oraz kanton Kenrith, a Wesling wróciła na zachód od
+zamku zgodnie z kanonem; generator mapy Eldraine domknięty o pinezkę
+138MID (wcześniejszy dryf generator↔map.json). Naprawiono defekt UI
+podwójnej sekcji „W kolekcji" (22 hasła) z regresją; render-lore.js
+respektuje ręcznie dopisaną sekcję. Bramki: 379/379 testów, build 135
+stron (63 karty, 54 hasła, 18 planów), map-audit 0, wiki-stats 100%.
+
 ## 2026-09-21 15:32 — PR-39: materializacja 64DTK Lightwalker
 
 Zmaterializowano dostawę `64DTK / Lightwalker / DTK / Tarkir`: wpis

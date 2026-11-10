@@ -37,7 +37,7 @@ strażników dawnego porządku.
 Każdy z dworów Królestwa ucieleśnia jeden z pięciu kolorów many
 oraz odpowiadającą mu fundamentalną cnotę rycerską:
 
-1. **Ardenvale (Biały Dwór — Cnota: Lojalność)**:
+1. **[[ardenvale|Ardenvale]] (Biały Dwór — Cnota: Lojalność)**:
    Słoneczne **Wyżyny Arden** (*Highlands of Arden*) ze stolicą
    w **Zamku Ardenvale**. Rycerze i kapłani czerpią moc z białego
    płomienia **Kręgu Lojalności** (*Circle of Loyalty*). Wyprawa

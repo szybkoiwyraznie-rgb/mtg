@@ -12,7 +12,7 @@ materializacja: 2026-09-21
 
 **Qal Sisma** to skute lodowcami, wysokogórskie pasmo na północy
 planu [[tarkir|Tarkir]], stanowiące ojczyznę i surowe terytorium
-łowieckie klanu Temur. Charakteryzuje się rozległymi płaskowyżami
+łowieckie klanu [[temur|Temur]]. Charakteryzuje się rozległymi płaskowyżami
 z granitu i wapienia, głębokimi cyrkami lodowcowymi oraz jaskiniami
 kryjącymi zamarznięte kości pradawnych smoków.
 [1](https://magic.wizards.com/en/news/feature/planeswalkers-guide-khans-tarkir-part-2-2014-09-10)

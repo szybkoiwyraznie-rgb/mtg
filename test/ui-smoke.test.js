@@ -634,6 +634,36 @@ test('UI: karta 1LTR z realnej bazy — infoboks, sekcje, mini-mapa', async () =
   shim.przywroc();
 });
 
+test('UI: hasła z realnej bazy — dokładnie jedna sekcja „W kolekcji” (audyt PR-39)', async () => {
+  const cel = await zbuduj({ out: 'dist/test-ui-hasla.html' });
+  const shim = wykonajArtefakt(cel);
+
+  // Ręcznie dopisana sekcja „W kolekcji” w markdownie hasła wycisza
+  // automatyczną listę backlinków; duplikat nagłówka to regresja
+  // (defekt z audytu PR-39: 22 hasła renderowały obie sekcje naraz).
+  const slugi = fs.readdirSync('content/lore')
+    .filter((f) => f.endsWith('.md') && f !== 'README.md')
+    .map((f) => f.slice(0, -3));
+  assert.ok(slugi.length >= 50, `nieprawdopodobnie mało haseł w bazie (${slugi.length})`);
+  for (const slug of slugi) {
+    shim.idz(`#/haslo/${slug}`);
+    const n = (shim.app.innerHTML.match(/<h2>W kolekcji<\/h2>/g) || []).length;
+    assert.ok(n <= 1, `hasło ${slug}: nagłówek „W kolekcji” renderuje się ${n}× — ma być najwyżej jeden`);
+  }
+
+  // Obie konwencje dają dokładnie jedną sekcję: ręczna (ghirapur)
+  // i automatyczna (novigrad).
+  shim.idz('#/haslo/ghirapur');
+  assert.equal((shim.app.innerHTML.match(/<h2>W kolekcji<\/h2>/g) || []).length, 1,
+    'hasło ghirapur: ręczna sekcja „W kolekcji” ma wyciszać automatyczną');
+  shim.idz('#/haslo/novigrad');
+  assert.equal((shim.app.innerHTML.match(/<h2>W kolekcji<\/h2>/g) || []).length, 1,
+    'hasło novigrad: automatyczna sekcja „W kolekcji” ma być dokładnie jedna');
+
+  fs.rmSync(cel, { force: true });
+  shim.przywroc();
+});
+
 
 test('UI/build: drzewo HTML map (ADR 0027 v2 — iframe, offline z dysku)', async () => {
   const cel = await zbuduj({ out: 'dist/test-ui-split.html' });

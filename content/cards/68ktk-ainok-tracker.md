@@ -32,7 +32,7 @@ z kościanym grotem, wystawioną do przodu w gotowości do natychmiastowego
 odparcia ataku. Na śniegu widnieją świeże, głębokie odciski łap bestii,
 która zaledwie chwilę wcześniej przecięła grań. Kilkadziesiąt kroków za
 zwiadowcą, ukryci pod skalnym nawisem, trwają w bezruchu wojownicy
-klanu Temur. Wiedzą, że w krainie wiecznego lodu instynkt psa wyprzedza
+klanu [[temur|Temur]]. Wiedzą, że w krainie wiecznego lodu instynkt psa wyprzedza
 ludzkie zmysły o całe uderzenie serca.
 
 W klanie Temur ainokowie z gór nie są sługami ani niewolnikami — są

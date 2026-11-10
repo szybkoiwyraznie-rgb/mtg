@@ -18,7 +18,7 @@ pinezka:
 W [[eldraine|baśniowym świecie Eldraine]], gdzie rycerskie cnoty
 wyznaczają ramy ludzkiego losu, droga do pasowania nie opiera się
 wyłącznie na sile ramienia ani biegłości w fechtunku. Na dworze
-**Ardenvale**, pod wieżami zamku Najwyższego Króla, lojalność hartuje się
+**[[ardenvale|Ardenvale]]**, pod wieżami zamku Najwyższego Króla, lojalność hartuje się
 w ćwiczeniach wymagających panowania nad sobą i troski o towarzyszy.
 
 Na piaszczystej arenie otoczonej drewnianymi trybunami doświadczony
